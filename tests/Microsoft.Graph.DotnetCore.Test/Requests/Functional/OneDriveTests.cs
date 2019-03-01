@@ -9,7 +9,7 @@ using System.Net.Http;
 using Xunit;
 using Async = System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class OneDriveTests : GraphTestBase
     {
@@ -320,7 +320,7 @@ namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
+                Assert.StartsWith("Timesheet", itemToShare[0].Name);
 
                 var permission = await graphClient.Me.Drive.Root
                                                            .ItemWithPath(itemToShare[0].Name)
@@ -352,7 +352,7 @@ namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
+                Assert.StartsWith("Timesheet", itemToShare[0].Name);
 
                 var me = await graphClient.Me.Request().GetAsync();
                 var domain = me.Mail.Split('@')[1];

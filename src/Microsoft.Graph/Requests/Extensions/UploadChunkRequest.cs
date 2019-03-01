@@ -13,7 +13,7 @@ using System.Runtime.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     /// <summary>
     /// The type UploadChunkRequest.

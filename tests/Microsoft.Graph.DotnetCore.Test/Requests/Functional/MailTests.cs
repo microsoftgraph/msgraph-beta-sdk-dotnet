@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class MailTests : GraphTestBase
     {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
                 var attachment = new FileAttachment();
                 attachment.ODataType = "#microsoft.graph.fileAttachment";
                 attachment.Name = "MyFileAttachment.txt";
-                attachment.ContentBytes = Microsoft.Graph.Beta.DotnetCore.Test.Properties.Resource1.hamilton;
+                attachment.ContentBytes = Microsoft.Graph.DotnetCore.Test.Properties.Resource1.hamilton;
 
                 message.Attachments = new MessageAttachmentsCollectionPage();
                 message.Attachments.Add(attachment);

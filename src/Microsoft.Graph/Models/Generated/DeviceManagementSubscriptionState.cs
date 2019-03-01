@@ -7,7 +7,7 @@
 // Template Source: Templates\CSharp\Model\EnumType.cs.tt
 
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using Newtonsoft.Json;
 

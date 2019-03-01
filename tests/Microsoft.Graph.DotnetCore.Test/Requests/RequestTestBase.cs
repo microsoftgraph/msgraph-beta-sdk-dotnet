@@ -2,11 +2,11 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.Beta.DotnetCore.Core.Test.Mocks;
+using Microsoft.Graph.DotnetCore.Core.Test.Mocks;
 using System;
 using System.Net.Http;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests
+namespace Microsoft.Graph.DotnetCore.Test.Requests
 {
     public class RequestTestBase : IDisposable
     {

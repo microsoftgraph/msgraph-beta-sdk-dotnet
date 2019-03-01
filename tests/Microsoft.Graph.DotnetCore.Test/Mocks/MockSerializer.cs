@@ -4,7 +4,7 @@
 
 using Moq;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Core.Test.Mocks
+namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 {
     public class MockSerializer : Mock<ISerializer>
     {

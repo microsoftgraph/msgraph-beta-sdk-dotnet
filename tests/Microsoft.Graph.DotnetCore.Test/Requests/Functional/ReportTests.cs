@@ -2,7 +2,7 @@
 using Xunit;
 using Async = System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     /// <summary>
     /// Ad hoc functional tests to make sure that the Reports API works.

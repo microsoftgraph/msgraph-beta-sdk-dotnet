@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Models.Generated
+namespace Microsoft.Graph.DotnetCore.Test.Models.Generated
 {
     public class EntityTests
     {

@@ -4,7 +4,7 @@ using System.Net.Http;
 using Xunit;
 using Async = System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class Given_a_valid_SharePoint_Site : GraphTestBase
     {

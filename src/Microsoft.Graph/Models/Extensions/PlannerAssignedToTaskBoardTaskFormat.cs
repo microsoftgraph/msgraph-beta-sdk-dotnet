@@ -2,7 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     /// <summary>
     /// Represents ordering onformation for the containing <see cref="PlannerTask"/> on "assigned to" task board.

@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Core.Test.Mocks
+namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 {
     public class TestHttpMessageHandler : HttpMessageHandler
     {

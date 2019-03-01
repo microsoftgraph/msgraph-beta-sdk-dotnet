@@ -7,7 +7,7 @@ using System.Text;
 using Async = System.Threading.Tasks;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class OneNoteTests : GraphTestBase
     {
@@ -597,7 +597,7 @@ namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
                 // We get a 204 No Content.
                 if (response.IsSuccessStatusCode)
                 {
-                    Assert.Equal(response.StatusCode, System.Net.HttpStatusCode.NoContent); // Expected: 204 No Content, Actual: {response.StatusCode}
+                    Assert.Equal(System.Net.HttpStatusCode.NoContent, response.StatusCode); // Expected: 204 No Content, Actual: {response.StatusCode}
                 }
                 else
                     throw new ServiceException(

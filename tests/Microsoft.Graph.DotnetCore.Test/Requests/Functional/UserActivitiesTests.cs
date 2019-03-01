@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class UserActivitiesTests : GraphTestBase
     {

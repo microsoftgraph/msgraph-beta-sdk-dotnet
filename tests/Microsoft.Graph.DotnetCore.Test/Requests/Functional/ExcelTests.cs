@@ -14,7 +14,7 @@ using System.Net.Http;
 using Async = System.Threading.Tasks;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class ExcelTests : GraphTestBase
     {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
                 var excelWorkbook = new DriveItem()
                 {
                     Name = fileName,
-                    File = new Microsoft.Graph.Beta.File()
+                    File = new Microsoft.Graph.File()
                 };
 
                 // Create the Excel file.

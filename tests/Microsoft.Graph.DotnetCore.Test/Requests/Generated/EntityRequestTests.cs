@@ -14,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Generated
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
     public class EntityRequestTests : RequestTestBase
     {

@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Requests\MethodCollectionPage.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     /// <summary>
     /// The type DirectoryRoleDeltaCollectionPage.

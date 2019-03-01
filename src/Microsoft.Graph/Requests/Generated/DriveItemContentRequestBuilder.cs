@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Requests\StreamRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using System.Collections.Generic;
 

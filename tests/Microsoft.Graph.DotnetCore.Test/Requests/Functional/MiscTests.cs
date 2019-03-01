@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Xunit;
 using Async = System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class MiscTests : GraphTestBase
     {

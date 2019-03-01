@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Model\MethodRequestBody.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using Newtonsoft.Json;
     using System;

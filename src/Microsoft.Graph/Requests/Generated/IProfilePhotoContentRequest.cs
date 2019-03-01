@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Requests\IStreamRequest.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using System.Collections.Generic;
     using System.IO;

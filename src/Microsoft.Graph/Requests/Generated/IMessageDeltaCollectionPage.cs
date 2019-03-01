@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Requests\IMethodCollectionPage.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using Newtonsoft.Json;
 

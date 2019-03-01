@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Requests\MethodCollectionResponse.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;

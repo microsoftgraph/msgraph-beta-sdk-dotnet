@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Xunit;
 using Async = System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class EventTests : GraphTestBase
     {
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                var myEvent = new Microsoft.Graph.Beta.Event();
+                var myEvent = new Microsoft.Graph.Event();
                 myEvent.Subject = "Lunch with my friend";
                 myEvent.Body = new ItemBody() { ContentType = BodyType.Text, Content = "Catch up on old times." };
                 myEvent.Start = new DateTimeTimeZone() { DateTime = "2017-05-29T12:00:00", TimeZone = "Pacific Standard Time" };

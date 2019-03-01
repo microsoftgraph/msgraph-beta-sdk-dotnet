@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Properties {
+namespace Microsoft.Graph.DotnetCore.Test.Properties {
     using System;
     using System.Reflection;
     

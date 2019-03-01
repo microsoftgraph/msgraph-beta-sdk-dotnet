@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Graph.Beta
+﻿namespace Microsoft.Graph
 {
     using System.Threading;
 

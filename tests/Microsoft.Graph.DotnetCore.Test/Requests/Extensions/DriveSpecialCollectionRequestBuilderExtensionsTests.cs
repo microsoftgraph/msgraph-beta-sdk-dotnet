@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Extensions
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
 {
     public class DriveSpecialCollectionRequestBuilderExtensionsTests : RequestTestBase
     {

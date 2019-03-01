@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Requests\MethodRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;

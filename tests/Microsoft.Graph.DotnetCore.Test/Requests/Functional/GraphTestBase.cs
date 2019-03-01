@@ -7,7 +7,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class GraphTestBase
     {

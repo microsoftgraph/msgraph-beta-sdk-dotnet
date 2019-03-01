@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Test.Requests.Functional
+namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     public class UserTests : GraphTestBase
     {

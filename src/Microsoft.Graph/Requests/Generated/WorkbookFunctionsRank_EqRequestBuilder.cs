@@ -6,7 +6,7 @@
 
 // Template Source: Templates\CSharp\Requests\MethodRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="number">A number parameter for the OData method call.</param>
-        /// <param name="@ref">A @ref parameter for the OData method call.</param>
+        /// <param name="ref">A @ref parameter for the OData method call.</param>
         /// <param name="order">A order parameter for the OData method call.</param>
         public WorkbookFunctionsRank_EqRequestBuilder(
             string requestUrl,

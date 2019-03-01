@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace Microsoft.Graph.Beta
+namespace Microsoft.Graph
 {
     public partial interface ITeamRequest
     {

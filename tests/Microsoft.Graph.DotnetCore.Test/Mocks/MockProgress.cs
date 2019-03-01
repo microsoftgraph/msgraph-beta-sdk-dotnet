@@ -5,7 +5,7 @@
 using Moq;
 using System;
 
-namespace Microsoft.Graph.Beta.DotnetCore.Core.Test.Mocks
+namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 {
     public class MockProgress : Mock<IProgress<AsyncOperationStatus>>
     {
