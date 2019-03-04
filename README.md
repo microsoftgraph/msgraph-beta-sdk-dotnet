@@ -12,8 +12,45 @@ The Microsoft Graph .NET Client Library targets .NetStandard 1.1 and .Net Framew
 
 To install the client library via NuGet:
 
-* Search for `Microsoft.Graph` in the NuGet Library, or
-* Type `Install-Package Microsoft.Graph` into the Package Manager Console.
+* Search for `Microsoft.Graph.Beta` in the NuGet Library, or
+* Type `Install-Package Microsoft.Graph.Beta` into the Package Manager Console.
+
+## Using this alongside the v1.0 library
+
+You'll have an extra step if you are going to use this package alongside the Microsoft.Graph v1.0 package.
+
+If your project uses a <Reference> to reference this library, you'll need to specify the dll alias like this:
+  
+```
+<Reference Include="Microsoft.Graph.Beta, Version=0.1.0.0, Culture=neutral>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Microsoft.Graph.Beta.dll</HintPath>
+      <Aliases>Beta</Aliases>
+</Reference>
+```
+
+If your project uses a PackageReference to reference this library, you'll need to specify the dll alias like this (this is a workaround): 
+
+```
+  <Target Name="ChangeAliasesOfStrongNameAssemblies" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Microsoft.Graph.Beta'">
+        <Aliases>Beta</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
+```
+
+> The project reference approach will be updated and is on the NuGet [backlog](https://github.com/NuGet/Home/issues/4989#issuecomment-311042085).
+
+Now, you set the extern alias directive to get access to the Microsoft.Graph.Beta models : `extern alias Beta`.
+
+You can now reference the beta models like this:
+
+`var contact = new Beta.Contact();`
+
+
+
 
 ## Getting started
 
