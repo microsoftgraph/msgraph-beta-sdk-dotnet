@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content location.
-        /// Do not use this property as it is not supported.
+        /// The Uniform Resource Identifier (URI) that corresponds to the location of the content of the attachment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentLocation", Required = Newtonsoft.Json.Required.Default)]
         public string ContentLocation { get; set; }

@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public EducationUserRole? PrimaryRole { get; set; }
     
         /// <summary>
+        /// Gets or sets related contacts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relatedContacts", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RelatedContact> RelatedContacts { get; set; }
+    
+        /// <summary>
         /// Gets or sets middle name.
         /// The middle name of user.
         /// </summary>
@@ -76,13 +82,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet CreatedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets related contacts.
-        /// Set of contacts related to the user.  This optional property must be specified in a $select clause and can only be retrieved for an individual user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relatedContacts", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<EducationRelatedContact> RelatedContacts { get; set; }
     
         /// <summary>
         /// Gets or sets account enabled.
@@ -248,6 +247,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
         public User User { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignments.
+        /// List of assignments for the user. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
     
     }
 }

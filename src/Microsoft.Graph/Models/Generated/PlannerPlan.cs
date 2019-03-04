@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owner.
-        /// ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
+        /// ID of the Group that owns the plan. A valid group must exist before this field can be set. Once set, this can only be updated by the owner.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
         public string Owner { get; set; }
@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
         public string Title { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contexts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contexts", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerPlanContextCollection Contexts { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.

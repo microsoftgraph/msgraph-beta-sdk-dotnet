@@ -23,14 +23,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app.
-        /// The app that is installed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsApp", Required = Newtonsoft.Json.Required.Default)]
         public TeamsApp TeamsApp { get; set; }
     
         /// <summary>
         /// Gets or sets teams app definition.
-        /// The details of this version of the app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppDefinition", Required = Newtonsoft.Json.Required.Default)]
         public TeamsAppDefinition TeamsAppDefinition { get; set; }

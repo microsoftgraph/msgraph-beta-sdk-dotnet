@@ -31,10 +31,22 @@ namespace Microsoft.Graph
         new ITeamRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Template.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
+        ITeamsTemplateWithReferenceRequestBuilder Template { get; }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
         ITeamChannelsCollectionRequestBuilder Channels { get; }
+
+        /// <summary>
+        /// Gets the request builder for Apps.
+        /// </summary>
+        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
+        ITeamAppsCollectionRequestBuilder Apps { get; }
 
         /// <summary>
         /// Gets the request builder for InstalledApps.
@@ -47,6 +59,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamOperationsCollectionRequestBuilder"/>.</returns>
         ITeamOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="ITeamOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        ITeamOwnersCollectionWithReferencesRequestBuilder Owners { get; }
     
         /// <summary>
         /// Gets the request builder for TeamClone.

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     public partial class AndroidManagedAppRegistration : ManagedAppRegistration
     {
     
+        /// <summary>
+        /// Gets or sets patch version.
+        /// The patch version for the current android app registration
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "patchVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string PatchVersion { get; set; }
+    
     }
 }
 

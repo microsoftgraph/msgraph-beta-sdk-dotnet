@@ -35,6 +35,27 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
         public string CorrelationId { get; set; }
     
+        /// <summary>
+        /// Gets or sets troubleshooting error details.
+        /// Object containing detailed information about the error and its remediation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingErrorDetails", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets event name.
+        /// Event Name corresponding to the Troubleshooting Event. It is an Optional field
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventName", Required = Newtonsoft.Json.Required.Default)]
+        public string EventName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets additional information.
+        /// A set of string key and string value pairs which provides additional information on the Troubleshooting event
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> AdditionalInformation { get; set; }
+    
     }
 }
 

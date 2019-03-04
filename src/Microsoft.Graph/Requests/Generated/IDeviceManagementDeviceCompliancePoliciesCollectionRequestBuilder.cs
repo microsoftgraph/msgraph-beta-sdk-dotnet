@@ -35,6 +35,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceCompliancePolicyRequestBuilder"/>.</returns>
         IDeviceCompliancePolicyRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization();
     }
 }

@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public bool? ForceChangePasswordNextSignIn { get; set; }
     
         /// <summary>
+        /// Gets or sets forceChangePasswordNextSignInWithMfa.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forceChangePasswordNextSignInWithMfa", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ForceChangePasswordNextSignInWithMfa { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

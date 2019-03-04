@@ -65,6 +65,20 @@ namespace Microsoft.Graph
         public bool? WindowsUpdateForBusiness { get; set; }
     
         /// <summary>
+        /// Gets or sets endpointProtection.
+        /// Whether Endpoint Protection is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EndpointProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets officeApps.
+        /// Whether Office application is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OfficeApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

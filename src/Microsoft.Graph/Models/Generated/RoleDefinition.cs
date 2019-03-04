@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets permissions.
+        /// List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RolePermission> Permissions { get; set; }
+    
+        /// <summary>
         /// Gets or sets role permissions.
         /// List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
         /// </summary>
@@ -43,11 +50,25 @@ namespace Microsoft.Graph
         public IEnumerable<RolePermission> RolePermissions { get; set; }
     
         /// <summary>
+        /// Gets or sets is built in role definition.
+        /// Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltInRoleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBuiltInRoleDefinition { get; set; }
+    
+        /// <summary>
         /// Gets or sets is built in.
         /// Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsBuiltIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of Scope Tags for this Entity instance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.

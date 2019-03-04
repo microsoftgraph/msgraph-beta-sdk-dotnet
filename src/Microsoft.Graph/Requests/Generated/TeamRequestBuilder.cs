@@ -50,6 +50,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Template.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
+        public ITeamsTemplateWithReferenceRequestBuilder Template
+        {
+            get
+            {
+                return new TeamsTemplateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("template"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -58,6 +70,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamChannelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("channels"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Apps.
+        /// </summary>
+        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
+        public ITeamAppsCollectionRequestBuilder Apps
+        {
+            get
+            {
+                return new TeamAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("apps"), this.Client);
             }
         }
 
@@ -82,6 +106,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="ITeamOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ITeamOwnersCollectionWithReferencesRequestBuilder Owners
+        {
+            get
+            {
+                return new TeamOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
             }
         }
     

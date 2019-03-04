@@ -206,65 +206,33 @@ namespace Microsoft.Graph
             if (userToInitialize != null && userToInitialize.AdditionalData != null)
             {
 
-                if (userToInitialize.OwnedDevices != null && userToInitialize.OwnedDevices.CurrentPage != null)
+                if (userToInitialize.Extensions != null && userToInitialize.Extensions.CurrentPage != null)
                 {
-                    userToInitialize.OwnedDevices.AdditionalData = userToInitialize.AdditionalData;
+                    userToInitialize.Extensions.AdditionalData = userToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("ownedDevices@odata.nextLink", out nextPageLink);
+                    userToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        userToInitialize.OwnedDevices.InitializeNextPageRequest(
+                        userToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
                 }
 
-                if (userToInitialize.RegisteredDevices != null && userToInitialize.RegisteredDevices.CurrentPage != null)
+                if (userToInitialize.AppRoleAssignments != null && userToInitialize.AppRoleAssignments.CurrentPage != null)
                 {
-                    userToInitialize.RegisteredDevices.AdditionalData = userToInitialize.AdditionalData;
+                    userToInitialize.AppRoleAssignments.AdditionalData = userToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("registeredDevices@odata.nextLink", out nextPageLink);
+                    userToInitialize.AdditionalData.TryGetValue("appRoleAssignments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        userToInitialize.RegisteredDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (userToInitialize.DirectReports != null && userToInitialize.DirectReports.CurrentPage != null)
-                {
-                    userToInitialize.DirectReports.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("directReports@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.DirectReports.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (userToInitialize.MemberOf != null && userToInitialize.MemberOf.CurrentPage != null)
-                {
-                    userToInitialize.MemberOf.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.MemberOf.InitializeNextPageRequest(
+                        userToInitialize.AppRoleAssignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -286,17 +254,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (userToInitialize.OwnedObjects != null && userToInitialize.OwnedObjects.CurrentPage != null)
+                if (userToInitialize.DirectReports != null && userToInitialize.DirectReports.CurrentPage != null)
                 {
-                    userToInitialize.OwnedObjects.AdditionalData = userToInitialize.AdditionalData;
+                    userToInitialize.DirectReports.AdditionalData = userToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("ownedObjects@odata.nextLink", out nextPageLink);
+                    userToInitialize.AdditionalData.TryGetValue("directReports@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        userToInitialize.OwnedObjects.InitializeNextPageRequest(
+                        userToInitialize.DirectReports.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -318,6 +286,86 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (userToInitialize.MemberOf != null && userToInitialize.MemberOf.CurrentPage != null)
+                {
+                    userToInitialize.MemberOf.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("memberOf@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.MemberOf.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.OwnedDevices != null && userToInitialize.OwnedDevices.CurrentPage != null)
+                {
+                    userToInitialize.OwnedDevices.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("ownedDevices@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.OwnedDevices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.OwnedObjects != null && userToInitialize.OwnedObjects.CurrentPage != null)
+                {
+                    userToInitialize.OwnedObjects.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("ownedObjects@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.OwnedObjects.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.RegisteredDevices != null && userToInitialize.RegisteredDevices.CurrentPage != null)
+                {
+                    userToInitialize.RegisteredDevices.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("registeredDevices@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.RegisteredDevices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.ScopedRoleMemberOf != null && userToInitialize.ScopedRoleMemberOf.CurrentPage != null)
+                {
+                    userToInitialize.ScopedRoleMemberOf.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("scopedRoleMemberOf@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.ScopedRoleMemberOf.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (userToInitialize.TransitiveMemberOf != null && userToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
                     userToInitialize.TransitiveMemberOf.AdditionalData = userToInitialize.AdditionalData;
@@ -334,17 +382,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (userToInitialize.Extensions != null && userToInitialize.Extensions.CurrentPage != null)
+                if (userToInitialize.Activities != null && userToInitialize.Activities.CurrentPage != null)
                 {
-                    userToInitialize.Extensions.AdditionalData = userToInitialize.AdditionalData;
+                    userToInitialize.Activities.AdditionalData = userToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    userToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        userToInitialize.Extensions.InitializeNextPageRequest(
+                        userToInitialize.Activities.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -361,6 +409,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.Messages.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.JoinedGroups != null && userToInitialize.JoinedGroups.CurrentPage != null)
+                {
+                    userToInitialize.JoinedGroups.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("joinedGroups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.JoinedGroups.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -526,6 +590,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (userToInitialize.FollowedSites != null && userToInitialize.FollowedSites.CurrentPage != null)
+                {
+                    userToInitialize.FollowedSites.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("followedSites@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.FollowedSites.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (userToInitialize.ManagedDevices != null && userToInitialize.ManagedDevices.CurrentPage != null)
                 {
                     userToInitialize.ManagedDevices.AdditionalData = userToInitialize.AdditionalData;
@@ -537,6 +617,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.ManagedDevices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.DeviceEnrollmentConfigurations != null && userToInitialize.DeviceEnrollmentConfigurations.CurrentPage != null)
+                {
+                    userToInitialize.DeviceEnrollmentConfigurations.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("deviceEnrollmentConfigurations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -558,33 +654,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (userToInitialize.DeviceManagementTroubleshootingEvents != null && userToInitialize.DeviceManagementTroubleshootingEvents.CurrentPage != null)
+                if (userToInitialize.WindowsInformationProtectionDeviceRegistrations != null && userToInitialize.WindowsInformationProtectionDeviceRegistrations.CurrentPage != null)
                 {
-                    userToInitialize.DeviceManagementTroubleshootingEvents.AdditionalData = userToInitialize.AdditionalData;
+                    userToInitialize.WindowsInformationProtectionDeviceRegistrations.AdditionalData = userToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("deviceManagementTroubleshootingEvents@odata.nextLink", out nextPageLink);
+                    userToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionDeviceRegistrations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        userToInitialize.DeviceManagementTroubleshootingEvents.InitializeNextPageRequest(
+                        userToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
                 }
 
-                if (userToInitialize.Activities != null && userToInitialize.Activities.CurrentPage != null)
+                if (userToInitialize.Devices != null && userToInitialize.Devices.CurrentPage != null)
                 {
-                    userToInitialize.Activities.AdditionalData = userToInitialize.AdditionalData;
+                    userToInitialize.Devices.AdditionalData = userToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out nextPageLink);
+                    userToInitialize.AdditionalData.TryGetValue("devices@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        userToInitialize.Activities.InitializeNextPageRequest(
+                        userToInitialize.Devices.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -601,6 +697,86 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.JoinedTeams.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.DeviceManagementTroubleshootingEvents != null && userToInitialize.DeviceManagementTroubleshootingEvents.CurrentPage != null)
+                {
+                    userToInitialize.DeviceManagementTroubleshootingEvents.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("deviceManagementTroubleshootingEvents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.DeviceManagementTroubleshootingEvents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.MobileAppIntentAndStates != null && userToInitialize.MobileAppIntentAndStates.CurrentPage != null)
+                {
+                    userToInitialize.MobileAppIntentAndStates.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("mobileAppIntentAndStates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.MobileAppIntentAndStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.MobileAppTroubleshootingEvents != null && userToInitialize.MobileAppTroubleshootingEvents.CurrentPage != null)
+                {
+                    userToInitialize.MobileAppTroubleshootingEvents.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("mobileAppTroubleshootingEvents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.MobileAppTroubleshootingEvents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.AgreementAcceptances != null && userToInitialize.AgreementAcceptances.CurrentPage != null)
+                {
+                    userToInitialize.AgreementAcceptances.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.AgreementAcceptances.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.Notifications != null && userToInitialize.Notifications.CurrentPage != null)
+                {
+                    userToInitialize.Notifications.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("notifications@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.Notifications.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

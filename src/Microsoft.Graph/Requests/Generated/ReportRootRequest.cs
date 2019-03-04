@@ -203,6 +203,44 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ReportRoot reportRootToInitialize)
         {
 
+            if (reportRootToInitialize != null && reportRootToInitialize.AdditionalData != null)
+            {
+
+                if (reportRootToInitialize.ApplicationSignInDetailedSummary != null && reportRootToInitialize.ApplicationSignInDetailedSummary.CurrentPage != null)
+                {
+                    reportRootToInitialize.ApplicationSignInDetailedSummary.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("applicationSignInDetailedSummary@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.ApplicationSignInDetailedSummary.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (reportRootToInitialize.CredentialUserRegistrationDetails != null && reportRootToInitialize.CredentialUserRegistrationDetails.CurrentPage != null)
+                {
+                    reportRootToInitialize.CredentialUserRegistrationDetails.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("credentialUserRegistrationDetails@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.CredentialUserRegistrationDetails.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

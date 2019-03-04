@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public Int32? PasscodeMinutesOfInactivityBeforeLock { get; set; }
     
         /// <summary>
+        /// Gets or sets passcode minutes of inactivity before screen timeout.
+        /// Minutes of inactivity before the screen times out.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasscodeMinutesOfInactivityBeforeScreenTimeout { get; set; }
+    
+        /// <summary>
         /// Gets or sets passcode previous passcode block count.
         /// Number of previous passcodes to block. Valid values 1 to 24
         /// </summary>
@@ -92,6 +99,20 @@ namespace Microsoft.Graph
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets os minimum build version.
+        /// Minimum IOS build version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumBuildVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMinimumBuildVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os maximum build version.
+        /// Maximum IOS build version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumBuildVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMaximumBuildVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets security block jailbroken devices.
         /// Devices must not be jailbroken or rooted.
         /// </summary>
@@ -118,6 +139,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEmailProfileRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? ManagedEmailProfileRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restricted apps.
+        /// Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> RestrictedApps { get; set; }
     
     }
 }

@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public string AssetTagTemplate { get; set; }
     
         /// <summary>
+        /// Gets or sets content filter settings.
+        /// Gets or sets iOS Web Content Filter settings, supervised mode only
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentFilterSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IosWebContentFilterBase ContentFilterSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets lock screen footnote.
         /// A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
         /// </summary>
@@ -55,6 +62,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationSettings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IosNotificationSettings> NotificationSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single sign on settings.
+        /// The Kerberos login settings that enable apps on receiving devices to authenticate smoothly.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IosSingleSignOnSettings SingleSignOnSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wallpaper display location.
+        /// A wallpaper display location specifier.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wallpaperDisplayLocation", Required = Newtonsoft.Json.Required.Default)]
+        public IosWallpaperDisplayLocation? WallpaperDisplayLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wallpaper image.
+        /// A wallpaper image must be in either PNG or JPEG format. It requires a supervised device with iOS 8 or later version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wallpaperImage", Required = Newtonsoft.Json.Required.Default)]
+        public MimeContent WallpaperImage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identity certificate for client authentication.
+        /// Identity Certificate for the renewal of Kerberos ticket used in single sign-on settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificateForClientAuthentication", Required = Newtonsoft.Json.Required.Default)]
+        public IosCertificateProfileBase IdentityCertificateForClientAuthentication { get; set; }
     
     }
 }

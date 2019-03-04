@@ -49,5 +49,17 @@ namespace Microsoft.Graph
             return new WindowsUniversalAppXRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for CommittedContainedApps.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder"/>.</returns>
+        public IWindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder CommittedContainedApps
+        {
+            get
+            {
+                return new WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("committedContainedApps"), this.Client);
+            }
+        }
+    
     }
 }

@@ -24,14 +24,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowCreateUpdateChannels.
-        /// If set to true, guests can add and update channels.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCreateUpdateChannels", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowCreateUpdateChannels { get; set; }
     
         /// <summary>
         /// Gets or sets allowDeleteChannels.
-        /// If set to true, guests can delete channels.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeleteChannels", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowDeleteChannels { get; set; }

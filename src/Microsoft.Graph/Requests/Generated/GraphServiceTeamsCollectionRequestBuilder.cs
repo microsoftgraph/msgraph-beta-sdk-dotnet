@@ -59,6 +59,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for TeamAllMessages.
+        /// </summary>
+        /// <returns>The <see cref="ITeamAllMessagesRequestBuilder"/>.</returns>
+        public ITeamAllMessagesRequestBuilder AllMessages()
+        {
+            return new TeamAllMessagesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.allMessages"),
+                this.Client);
+        }
     }
 }

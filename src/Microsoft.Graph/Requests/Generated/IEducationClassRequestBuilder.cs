@@ -53,6 +53,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
         IGroupWithReferenceRequestBuilder Group { get; }
+
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
+        IEducationClassAssignmentsCollectionRequestBuilder Assignments { get; }
     
     }
 }

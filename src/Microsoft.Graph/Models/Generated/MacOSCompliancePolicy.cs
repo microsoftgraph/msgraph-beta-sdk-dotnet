@@ -92,6 +92,20 @@ namespace Microsoft.Graph
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets os minimum build version.
+        /// Minimum MacOS build version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumBuildVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMinimumBuildVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os maximum build version.
+        /// Maximum MacOS build version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMaximumBuildVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMaximumBuildVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets system integrity protection enabled.
         /// Require that devices have enabled system integrity protection.
         /// </summary>
@@ -118,6 +132,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRequireEncryption", Required = Newtonsoft.Json.Required.Default)]
         public bool? StorageRequireEncryption { get; set; }
+    
+        /// <summary>
+        /// Gets or sets gatekeeper allowed app source.
+        /// System and Privacy setting that determines which download locations apps can be run from on a macOS device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gatekeeperAllowedAppSource", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSGatekeeperAppSources? GatekeeperAllowedAppSource { get; set; }
     
         /// <summary>
         /// Gets or sets firewall enabled.

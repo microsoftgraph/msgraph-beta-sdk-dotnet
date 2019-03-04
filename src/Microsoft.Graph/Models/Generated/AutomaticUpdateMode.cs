@@ -48,5 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         AutoInstallAndRebootWithoutEndUserControl = 5,
 	
+        /// <summary>
+        /// windows Default
+        /// </summary>
+        WindowsDefault = 6,
+	
     }
 }

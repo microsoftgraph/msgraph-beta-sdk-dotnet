@@ -21,6 +21,18 @@ namespace Microsoft.Graph
     public partial class ReportRoot : Entity
     {
     
+        /// <summary>
+        /// Gets or sets application sign in detailed summary.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationSignInDetailedSummary", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootApplicationSignInDetailedSummaryCollectionPage ApplicationSignInDetailedSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets credential user registration details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentialUserRegistrationDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootCredentialUserRegistrationDetailsCollectionPage CredentialUserRegistrationDetails { get; set; }
+    
     }
 }
 

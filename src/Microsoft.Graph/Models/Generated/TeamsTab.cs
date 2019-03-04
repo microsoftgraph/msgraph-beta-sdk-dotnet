@@ -22,29 +22,49 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
-        /// Name of the tab.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets teams app id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string TeamsAppId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sort order index.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortOrderIndex", Required = Newtonsoft.Json.Required.Default)]
+        public string SortOrderIndex { get; set; }
+    
+        /// <summary>
+        /// Gets or sets message id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageId", Required = Newtonsoft.Json.Required.Default)]
+        public string MessageId { get; set; }
+    
+        /// <summary>
         /// Gets or sets web url.
-        /// Deep link url of the tab instance. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets configuration.
-        /// Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
         public TeamsTabConfiguration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets teams app.
-        /// The application that is linked to the tab. This cannot be changed after tab creation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsApp", Required = Newtonsoft.Json.Required.Default)]
         public TeamsApp TeamsApp { get; set; }

@@ -203,6 +203,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Windows10GeneralConfiguration windows10GeneralConfigurationToInitialize)
         {
 
+            if (windows10GeneralConfigurationToInitialize != null && windows10GeneralConfigurationToInitialize.AdditionalData != null)
+            {
+
+                if (windows10GeneralConfigurationToInitialize.PrivacyAccessControls != null && windows10GeneralConfigurationToInitialize.PrivacyAccessControls.CurrentPage != null)
+                {
+                    windows10GeneralConfigurationToInitialize.PrivacyAccessControls.AdditionalData = windows10GeneralConfigurationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    windows10GeneralConfigurationToInitialize.AdditionalData.TryGetValue("privacyAccessControls@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        windows10GeneralConfigurationToInitialize.PrivacyAccessControls.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

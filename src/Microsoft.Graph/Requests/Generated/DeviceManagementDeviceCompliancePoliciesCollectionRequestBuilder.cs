@@ -59,6 +59,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization()
+        {
+            return new DeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.refreshDeviceComplianceReportSummarization"),
+                this.Client);
+        }
     }
 }

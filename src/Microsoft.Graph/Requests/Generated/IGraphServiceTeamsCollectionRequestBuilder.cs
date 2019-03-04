@@ -35,6 +35,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITeamRequestBuilder"/>.</returns>
         ITeamRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for TeamAllMessages.
+        /// </summary>
+        /// <returns>The <see cref="ITeamAllMessagesRequestBuilder"/>.</returns>
+        ITeamAllMessagesRequestBuilder AllMessages();
     }
 }

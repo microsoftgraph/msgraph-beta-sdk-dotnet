@@ -50,6 +50,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Messages.
+        /// </summary>
+        /// <returns>The <see cref="IChannelMessagesCollectionRequestBuilder"/>.</returns>
+        public IChannelMessagesCollectionRequestBuilder Messages
+        {
+            get
+            {
+                return new ChannelMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChatThreads.
+        /// </summary>
+        /// <returns>The <see cref="IChannelChatThreadsCollectionRequestBuilder"/>.</returns>
+        public IChannelChatThreadsCollectionRequestBuilder ChatThreads
+        {
+            get
+            {
+                return new ChannelChatThreadsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("chatThreads"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>

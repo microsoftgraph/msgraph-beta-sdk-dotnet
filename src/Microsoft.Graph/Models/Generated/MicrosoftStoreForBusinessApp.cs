@@ -56,6 +56,20 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageIdentityName", Required = Newtonsoft.Json.Required.Default)]
         public string PackageIdentityName { get; set; }
     
+        /// <summary>
+        /// Gets or sets licensing type.
+        /// The supported License Type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licensingType", Required = Newtonsoft.Json.Required.Default)]
+        public VppLicensingType LicensingType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contained apps.
+        /// The collection of contained apps in a mobileApp acting as a package.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "containedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IMicrosoftStoreForBusinessAppContainedAppsCollectionPage ContainedApps { get; set; }
+    
     }
 }
 

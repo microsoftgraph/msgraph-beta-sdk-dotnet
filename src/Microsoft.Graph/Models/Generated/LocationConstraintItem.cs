@@ -18,7 +18,7 @@ namespace Microsoft.Graph
     /// The type LocationConstraintItem.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class LocationConstraintItem : Location
+    public partial class LocationConstraintItem : LocationDataModel
     {
 
         /// <summary>

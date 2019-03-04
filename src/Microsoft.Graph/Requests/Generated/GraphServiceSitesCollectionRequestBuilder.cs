@@ -59,6 +59,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for SiteAdd.
+        /// </summary>
+        /// <returns>The <see cref="ISiteAddRequestBuilder"/>.</returns>
+        public ISiteAddRequestBuilder Add(
+            IEnumerable<Site> value = null)
+        {
+            return new SiteAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                value);
+        }
     }
 }

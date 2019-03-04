@@ -94,13 +94,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 // Get the first three users in the org as attendees unless user is the organizer.
                 var orgUsers = await graphClient.Users.Request().GetAsync();
-                List<Attendee> attendees = new List<Attendee>();
+                List<AttendeeDataModel> attendees = new List<AttendeeDataModel>();
                 for (int i = 0; i < 3; ++i)
                 {
                     if (orgUsers[i].Mail == me.Mail)
                         continue; // Skip the organizer.
 
-                    Attendee attendee = new Attendee();
+                    AttendeeDataModel attendee = new AttendeeDataModel();
                     attendee.EmailAddress = new EmailAddress();
                     attendee.EmailAddress.Address = orgUsers[i].Mail;
                     attendees.Add(attendee);
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 // Create a duration with an ISO8601 duration.
                 Duration durationFromISO8601 = new Duration("PT1H");
-                MeetingTimeSuggestionsResult resultsFromISO8601 = await graphClient.Me.FindMeetingTimes(attendees,
+                FindMeetingTimesResponse resultsFromISO8601 = await graphClient.Me.FindMeetingTimes(attendees,
                                                                                                             null,
                                                                                                             null,
                                                                                                             durationFromISO8601,
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 // Create a duration with a TimeSpan.
                 Duration durationFromTimeSpan = new Duration(new TimeSpan(1, 0, 0));
-                MeetingTimeSuggestionsResult resultsFromTimeSpan = await graphClient.Me.FindMeetingTimes(attendees,
+                FindMeetingTimesResponse resultsFromTimeSpan = await graphClient.Me.FindMeetingTimes(attendees,
                                                                                                              null,
                                                                                                              null,
                                                                                                              durationFromTimeSpan,

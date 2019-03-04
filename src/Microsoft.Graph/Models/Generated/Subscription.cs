@@ -70,6 +70,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creatorId", Required = Newtonsoft.Json.Required.Default)]
         public string CreatorId { get; set; }
     
+        /// <summary>
+        /// Gets or sets include properties.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeProperties", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IncludeProperties { get; set; }
+    
     }
 }
 

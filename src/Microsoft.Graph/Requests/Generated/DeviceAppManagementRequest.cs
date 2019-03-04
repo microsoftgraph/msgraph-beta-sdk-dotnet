@@ -238,6 +238,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates != null && deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("enterpriseCodeSigningCertificates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceAppManagementToInitialize.EnterpriseCodeSigningCertificates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations != null && deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("iosLobAppProvisioningConfigurations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceAppManagementToInitialize.IosLobAppProvisioningConfigurations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceAppManagementToInitialize.MobileAppConfigurations != null && deviceAppManagementToInitialize.MobileAppConfigurations.CurrentPage != null)
                 {
                     deviceAppManagementToInitialize.MobileAppConfigurations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
@@ -249,6 +281,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceAppManagementToInitialize.MobileAppConfigurations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceAppManagementToInitialize.SideLoadingKeys != null && deviceAppManagementToInitialize.SideLoadingKeys.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.SideLoadingKeys.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("sideLoadingKeys@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceAppManagementToInitialize.SideLoadingKeys.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -414,6 +462,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations != null && deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionDeviceRegistrations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceAppManagementToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions != null && deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("windowsInformationProtectionWipeActions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceAppManagementToInitialize.ManagedEBooks != null && deviceAppManagementToInitialize.ManagedEBooks.CurrentPage != null)
                 {
                     deviceAppManagementToInitialize.ManagedEBooks.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
@@ -425,6 +505,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceAppManagementToInitialize.ManagedEBooks.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceAppManagementToInitialize.ManagedEBookCategories != null && deviceAppManagementToInitialize.ManagedEBookCategories.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.ManagedEBookCategories.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceAppManagementToInitialize.AdditionalData.TryGetValue("managedEBookCategories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceAppManagementToInitialize.ManagedEBookCategories.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

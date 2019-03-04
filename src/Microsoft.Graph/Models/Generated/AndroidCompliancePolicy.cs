@@ -64,6 +64,13 @@ namespace Microsoft.Graph
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
+        /// Gets or sets password sign in failure count before factory reset.
+        /// Number of sign-in failures allowed before factory reset. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
+    
+        /// <summary>
         /// Gets or sets security prevent install apps from unknown sources.
         /// Require that devices disallow installation of apps from unknown sources.
         /// </summary>
@@ -167,6 +174,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireCompanyPortalAppIntegrity", Required = Newtonsoft.Json.Required.Default)]
         public bool? SecurityRequireCompanyPortalAppIntegrity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets condition statement id.
+        /// Condition statement id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionStatementId", Required = Newtonsoft.Json.Required.Default)]
+        public string ConditionStatementId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restricted apps.
+        /// Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> RestrictedApps { get; set; }
     
     }
 }

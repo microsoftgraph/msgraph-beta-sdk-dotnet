@@ -64,6 +64,13 @@ namespace Microsoft.Graph
         public Int32? PasswordPreviousPasswordBlockCount { get; set; }
     
         /// <summary>
+        /// Gets or sets password sign in failure count before factory reset.
+        /// Number of sign-in failures allowed before factory reset. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
+    
+        /// <summary>
         /// Gets or sets security prevent install apps from unknown sources.
         /// Require that devices disallow installation of apps from unknown sources.
         /// </summary>

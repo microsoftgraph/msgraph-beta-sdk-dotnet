@@ -22,57 +22,91 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        public string Classification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets specialization.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specialization", Required = Newtonsoft.Json.Required.Default)]
+        public TeamSpecialization? Specialization { get; set; }
+    
+        /// <summary>
+        /// Gets or sets visibility.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
+        public TeamVisibilityType? Visibility { get; set; }
+    
+        /// <summary>
         /// Gets or sets web url.
-        /// A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets member settings.
-        /// Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberSettings", Required = Newtonsoft.Json.Required.Default)]
         public TeamMemberSettings MemberSettings { get; set; }
     
         /// <summary>
         /// Gets or sets guest settings.
-        /// Settings to configure whether guests can create, update, or delete channels in the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guestSettings", Required = Newtonsoft.Json.Required.Default)]
         public TeamGuestSettings GuestSettings { get; set; }
     
         /// <summary>
         /// Gets or sets messaging settings.
-        /// Settings to configure messaging and mentions in the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingSettings", Required = Newtonsoft.Json.Required.Default)]
         public TeamMessagingSettings MessagingSettings { get; set; }
     
         /// <summary>
         /// Gets or sets fun settings.
-        /// Settings to configure use of Giphy, memes, and stickers in the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "funSettings", Required = Newtonsoft.Json.Required.Default)]
         public TeamFunSettings FunSettings { get; set; }
     
         /// <summary>
         /// Gets or sets is archived.
-        /// Whether this team is in read-only mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsArchived { get; set; }
     
         /// <summary>
+        /// Gets or sets template.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsTemplate Template { get; set; }
+    
+        /// <summary>
         /// Gets or sets channels.
-        /// The collection of channels &amp; messages associated with the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channels", Required = Newtonsoft.Json.Required.Default)]
         public ITeamChannelsCollectionPage Channels { get; set; }
     
         /// <summary>
+        /// Gets or sets apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apps", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamAppsCollectionPage Apps { get; set; }
+    
+        /// <summary>
         /// Gets or sets installed apps.
-        /// The apps installed in this team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
         public ITeamInstalledAppsCollectionPage InstalledApps { get; set; }
@@ -82,6 +116,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public ITeamOperationsCollectionPage Operations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets owners.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
     
     }
 }

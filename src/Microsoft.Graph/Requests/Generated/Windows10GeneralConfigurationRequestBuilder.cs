@@ -49,5 +49,17 @@ namespace Microsoft.Graph
             return new Windows10GeneralConfigurationRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for PrivacyAccessControls.
+        /// </summary>
+        /// <returns>The <see cref="IWindows10GeneralConfigurationPrivacyAccessControlsCollectionRequestBuilder"/>.</returns>
+        public IWindows10GeneralConfigurationPrivacyAccessControlsCollectionRequestBuilder PrivacyAccessControls
+        {
+            get
+            {
+                return new Windows10GeneralConfigurationPrivacyAccessControlsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("privacyAccessControls"), this.Client);
+            }
+        }
+    
     }
 }

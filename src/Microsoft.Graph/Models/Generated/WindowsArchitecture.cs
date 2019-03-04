@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         Neutral = 8,
 	
+        /// <summary>
+        /// arm64
+        /// </summary>
+        Arm64 = 16,
+	
     }
 }

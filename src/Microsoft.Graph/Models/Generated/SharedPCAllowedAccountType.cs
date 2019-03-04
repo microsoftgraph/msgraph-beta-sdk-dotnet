@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// not Configured
+        /// </summary>
+        NotConfigured = 0,
+	
+        /// <summary>
         /// guest
         /// </summary>
         Guest = 1,

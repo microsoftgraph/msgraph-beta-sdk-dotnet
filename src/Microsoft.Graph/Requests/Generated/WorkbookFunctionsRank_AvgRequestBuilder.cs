@@ -23,7 +23,7 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="number">A number parameter for the OData method call.</param>
-        /// <param name="ref">A @ref parameter for the OData method call.</param>
+        /// <param name="@ref">A @ref parameter for the OData method call.</param>
         /// <param name="order">A order parameter for the OData method call.</param>
         public WorkbookFunctionsRank_AvgRequestBuilder(
             string requestUrl,

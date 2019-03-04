@@ -23,21 +23,48 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// Channel name as it will appear to the user in Microsoft Teams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Optional textual description for the channel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets is favorite by default.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFavoriteByDefault", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFavoriteByDefault { get; set; }
+    
+        /// <summary>
+        /// Gets or sets email.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        public string Email { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string WebUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets messages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
+        public IChannelMessagesCollectionPage Messages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets chat threads.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatThreads", Required = Newtonsoft.Json.Required.Default)]
+        public IChannelChatThreadsCollectionPage ChatThreads { get; set; }
+    
+        /// <summary>
         /// Gets or sets tabs.
-        /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]
         public IChannelTabsCollectionPage Tabs { get; set; }

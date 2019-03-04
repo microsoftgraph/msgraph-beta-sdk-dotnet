@@ -50,62 +50,26 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for OwnedDevices.
+        /// Gets the request builder for Extensions.
         /// </summary>
-        /// <returns>The <see cref="IUserOwnedDevicesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUserOwnedDevicesCollectionWithReferencesRequestBuilder OwnedDevices
+        /// <returns>The <see cref="IUserExtensionsCollectionRequestBuilder"/>.</returns>
+        public IUserExtensionsCollectionRequestBuilder Extensions
         {
             get
             {
-                return new UserOwnedDevicesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("ownedDevices"), this.Client);
+                return new UserExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for RegisteredDevices.
+        /// Gets the request builder for AppRoleAssignments.
         /// </summary>
-        /// <returns>The <see cref="IUserRegisteredDevicesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUserRegisteredDevicesCollectionWithReferencesRequestBuilder RegisteredDevices
+        /// <returns>The <see cref="IUserAppRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserAppRoleAssignmentsCollectionWithReferencesRequestBuilder AppRoleAssignments
         {
             get
             {
-                return new UserRegisteredDevicesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("registeredDevices"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Manager.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        public IDirectoryObjectWithReferenceRequestBuilder Manager
-        {
-            get
-            {
-                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("manager"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DirectReports.
-        /// </summary>
-        /// <returns>The <see cref="IUserDirectReportsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUserDirectReportsCollectionWithReferencesRequestBuilder DirectReports
-        {
-            get
-            {
-                return new UserDirectReportsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("directReports"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IUserMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUserMemberOfCollectionWithReferencesRequestBuilder MemberOf
-        {
-            get
-            {
-                return new UserMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("memberOf"), this.Client);
+                return new UserAppRoleAssignmentsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignments"), this.Client);
             }
         }
 
@@ -122,14 +86,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for OwnedObjects.
+        /// Gets the request builder for DirectReports.
         /// </summary>
-        /// <returns>The <see cref="IUserOwnedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUserOwnedObjectsCollectionWithReferencesRequestBuilder OwnedObjects
+        /// <returns>The <see cref="IUserDirectReportsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserDirectReportsCollectionWithReferencesRequestBuilder DirectReports
         {
             get
             {
-                return new UserOwnedObjectsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("ownedObjects"), this.Client);
+                return new UserDirectReportsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("directReports"), this.Client);
             }
         }
 
@@ -146,6 +110,78 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Manager.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        public IDirectoryObjectWithReferenceRequestBuilder Manager
+        {
+            get
+            {
+                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("manager"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IUserMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserMemberOfCollectionWithReferencesRequestBuilder MemberOf
+        {
+            get
+            {
+                return new UserMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("memberOf"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OwnedDevices.
+        /// </summary>
+        /// <returns>The <see cref="IUserOwnedDevicesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserOwnedDevicesCollectionWithReferencesRequestBuilder OwnedDevices
+        {
+            get
+            {
+                return new UserOwnedDevicesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("ownedDevices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OwnedObjects.
+        /// </summary>
+        /// <returns>The <see cref="IUserOwnedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserOwnedObjectsCollectionWithReferencesRequestBuilder OwnedObjects
+        {
+            get
+            {
+                return new UserOwnedObjectsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("ownedObjects"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RegisteredDevices.
+        /// </summary>
+        /// <returns>The <see cref="IUserRegisteredDevicesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserRegisteredDevicesCollectionWithReferencesRequestBuilder RegisteredDevices
+        {
+            get
+            {
+                return new UserRegisteredDevicesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("registeredDevices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ScopedRoleMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IUserScopedRoleMemberOfCollectionRequestBuilder"/>.</returns>
+        public IUserScopedRoleMemberOfCollectionRequestBuilder ScopedRoleMemberOf
+        {
+            get
+            {
+                return new UserScopedRoleMemberOfCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scopedRoleMemberOf"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TransitiveMemberOf.
         /// </summary>
         /// <returns>The <see cref="IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -158,14 +194,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Extensions.
+        /// Gets the request builder for Activities.
         /// </summary>
-        /// <returns>The <see cref="IUserExtensionsCollectionRequestBuilder"/>.</returns>
-        public IUserExtensionsCollectionRequestBuilder Extensions
+        /// <returns>The <see cref="IUserActivitiesCollectionRequestBuilder"/>.</returns>
+        public IUserActivitiesCollectionRequestBuilder Activities
         {
             get
             {
-                return new UserExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+                return new UserActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
             }
         }
 
@@ -190,6 +226,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for JoinedGroups.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedGroupsCollectionRequestBuilder"/>.</returns>
+        public IUserJoinedGroupsCollectionRequestBuilder JoinedGroups
+        {
+            get
+            {
+                return new UserJoinedGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedGroups"), this.Client);
             }
         }
 
@@ -362,6 +410,42 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for FollowedSites.
+        /// </summary>
+        /// <returns>The <see cref="IUserFollowedSitesCollectionRequestBuilder"/>.</returns>
+        public IUserFollowedSitesCollectionRequestBuilder FollowedSites
+        {
+            get
+            {
+                return new UserFollowedSitesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("followedSites"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
+        public IOfficeGraphInsightsRequestBuilder Insights
+        {
+            get
+            {
+                return new OfficeGraphInsightsRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IUserSettingsRequestBuilder"/>.</returns>
+        public IUserSettingsRequestBuilder Settings
+        {
+            get
+            {
+                return new UserSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Planner.
         /// </summary>
         /// <returns>The <see cref="IPlannerUserRequestBuilder"/>.</returns>
@@ -398,6 +482,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IUserDeviceEnrollmentConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IUserDeviceEnrollmentConfigurationsCollectionRequestBuilder DeviceEnrollmentConfigurations
+        {
+            get
+            {
+                return new UserDeviceEnrollmentConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceEnrollmentConfigurations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedAppRegistrations.
         /// </summary>
         /// <returns>The <see cref="IUserManagedAppRegistrationsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -406,6 +502,42 @@ namespace Microsoft.Graph
             get
             {
                 return new UserManagedAppRegistrationsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("managedAppRegistrations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsInformationProtectionDeviceRegistrations.
+        /// </summary>
+        /// <returns>The <see cref="IUserWindowsInformationProtectionDeviceRegistrationsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserWindowsInformationProtectionDeviceRegistrationsCollectionWithReferencesRequestBuilder WindowsInformationProtectionDeviceRegistrations
+        {
+            get
+            {
+                return new UserWindowsInformationProtectionDeviceRegistrationsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionDeviceRegistrations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Devices.
+        /// </summary>
+        /// <returns>The <see cref="IUserDevicesCollectionRequestBuilder"/>.</returns>
+        public IUserDevicesCollectionRequestBuilder Devices
+        {
+            get
+            {
+                return new UserDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("devices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for JoinedTeams.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
+        public IUserJoinedTeamsCollectionRequestBuilder JoinedTeams
+        {
+            get
+            {
+                return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
             }
         }
 
@@ -422,50 +554,50 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Activities.
+        /// Gets the request builder for MobileAppIntentAndStates.
         /// </summary>
-        /// <returns>The <see cref="IUserActivitiesCollectionRequestBuilder"/>.</returns>
-        public IUserActivitiesCollectionRequestBuilder Activities
+        /// <returns>The <see cref="IUserMobileAppIntentAndStatesCollectionRequestBuilder"/>.</returns>
+        public IUserMobileAppIntentAndStatesCollectionRequestBuilder MobileAppIntentAndStates
         {
             get
             {
-                return new UserActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
+                return new UserMobileAppIntentAndStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileAppIntentAndStates"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for Insights.
+        /// Gets the request builder for MobileAppTroubleshootingEvents.
         /// </summary>
-        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
-        public IOfficeGraphInsightsRequestBuilder Insights
+        /// <returns>The <see cref="IUserMobileAppTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
+        public IUserMobileAppTroubleshootingEventsCollectionRequestBuilder MobileAppTroubleshootingEvents
         {
             get
             {
-                return new OfficeGraphInsightsRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
+                return new UserMobileAppTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileAppTroubleshootingEvents"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for Settings.
+        /// Gets the request builder for AgreementAcceptances.
         /// </summary>
-        /// <returns>The <see cref="IUserSettingsRequestBuilder"/>.</returns>
-        public IUserSettingsRequestBuilder Settings
+        /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder AgreementAcceptances
         {
             get
             {
-                return new UserSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+                return new UserAgreementAcceptancesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("agreementAcceptances"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for JoinedTeams.
+        /// Gets the request builder for Notifications.
         /// </summary>
-        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
-        public IUserJoinedTeamsCollectionRequestBuilder JoinedTeams
+        /// <returns>The <see cref="IUserNotificationsCollectionRequestBuilder"/>.</returns>
+        public IUserNotificationsCollectionRequestBuilder Notifications
         {
             get
             {
-                return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+                return new UserNotificationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("notifications"), this.Client);
             }
         }
     
@@ -500,6 +632,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserInvalidateAllRefreshTokens.
+        /// </summary>
+        /// <returns>The <see cref="IUserInvalidateAllRefreshTokensRequestBuilder"/>.</returns>
+        public IUserInvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens()
+        {
+            return new UserInvalidateAllRefreshTokensRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.invalidateAllRefreshTokens"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserSendMail.
         /// </summary>
         /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>
@@ -512,33 +655,6 @@ namespace Microsoft.Graph
                 this.Client,
                 Message,
                 SaveToSentItems);
-        }
-
-        /// <summary>
-        /// Gets the request builder for UserFindMeetingTimes.
-        /// </summary>
-        /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>
-        public IUserFindMeetingTimesRequestBuilder FindMeetingTimes(
-            IEnumerable<AttendeeBase> Attendees = null,
-            LocationConstraint LocationConstraint = null,
-            TimeConstraint TimeConstraint = null,
-            Duration MeetingDuration = null,
-            Int32? MaxCandidates = null,
-            bool? IsOrganizerOptional = null,
-            bool? ReturnSuggestionReasons = null,
-            double? MinimumAttendeePercentage = null)
-        {
-            return new UserFindMeetingTimesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.findMeetingTimes"),
-                this.Client,
-                Attendees,
-                LocationConstraint,
-                TimeConstraint,
-                MeetingDuration,
-                MaxCandidates,
-                IsOrganizerOptional,
-                ReturnSuggestionReasons,
-                MinimumAttendeePercentage);
         }
 
         /// <summary>
@@ -557,6 +673,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserTranslateExchangeIds.
+        /// </summary>
+        /// <returns>The <see cref="IUserTranslateExchangeIdsRequestBuilder"/>.</returns>
+        public IUserTranslateExchangeIdsRequestBuilder TranslateExchangeIds(
+            IEnumerable<string> InputIds,
+            ExchangeIdFormat TargetIdType,
+            ExchangeIdFormat SourceIdType)
+        {
+            return new UserTranslateExchangeIdsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.translateExchangeIds"),
+                this.Client,
+                InputIds,
+                TargetIdType,
+                SourceIdType);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserRemoveAllDevicesFromManagement.
         /// </summary>
         /// <returns>The <see cref="IUserRemoveAllDevicesFromManagementRequestBuilder"/>.</returns>
@@ -565,6 +698,19 @@ namespace Microsoft.Graph
             return new UserRemoveAllDevicesFromManagementRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.removeAllDevicesFromManagement"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserWipeManagedAppRegistrationByDeviceTag.
+        /// </summary>
+        /// <returns>The <see cref="IUserWipeManagedAppRegistrationByDeviceTagRequestBuilder"/>.</returns>
+        public IUserWipeManagedAppRegistrationByDeviceTagRequestBuilder WipeManagedAppRegistrationByDeviceTag(
+            string deviceTag = null)
+        {
+            return new UserWipeManagedAppRegistrationByDeviceTagRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.wipeManagedAppRegistrationByDeviceTag"),
+                this.Client,
+                deviceTag);
         }
 
         /// <summary>
@@ -594,6 +740,33 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserFindMeetingTimes.
+        /// </summary>
+        /// <returns>The <see cref="IUserFindMeetingTimesRequestBuilder"/>.</returns>
+        public IUserFindMeetingTimesRequestBuilder FindMeetingTimes(
+            IEnumerable<AttendeeDataModel> attendees = null,
+            LocationConstraints locationConstraint = null,
+            FindMeetingTimesTimeConstraints timeConstraint = null,
+            Duration meetingDuration = null,
+            Int32? maxCandidates = null,
+            bool? isOrganizerOptional = null,
+            bool? returnSuggestionReasons = null,
+            double? minimumAttendeePercentage = null)
+        {
+            return new UserFindMeetingTimesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findMeetingTimes"),
+                this.Client,
+                attendees,
+                locationConstraint,
+                timeConstraint,
+                meetingDuration,
+                maxCandidates,
+                isOrganizerOptional,
+                returnSuggestionReasons,
+                minimumAttendeePercentage);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserReminderView.
         /// </summary>
         /// <returns>The <see cref="IUserReminderViewRequestBuilder"/>.</returns>
@@ -606,6 +779,89 @@ namespace Microsoft.Graph
                 this.Client,
                 StartDateTime,
                 EndDateTime);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserFindRoomLists.
+        /// </summary>
+        /// <returns>The <see cref="IUserFindRoomListsRequestBuilder"/>.</returns>
+        public IUserFindRoomListsRequestBuilder FindRoomLists()
+        {
+            return new UserFindRoomListsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findRoomLists"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserFindRooms.
+        /// </summary>
+        /// <returns>The <see cref="IUserFindRoomsRequestBuilder"/>.</returns>
+        public IUserFindRoomsRequestBuilder FindRooms(
+            string RoomList)
+        {
+            return new UserFindRoomsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findRooms"),
+                this.Client,
+                RoomList);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserFindRooms.
+        /// </summary>
+        /// <returns>The <see cref="IUserFindRoomsRequestBuilder"/>.</returns>
+        public IUserFindRoomsRequestBuilder FindRooms()
+        {
+            return new UserFindRoomsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findRooms"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserGetLoggedOnManagedDevices.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetLoggedOnManagedDevicesRequestBuilder"/>.</returns>
+        public IUserGetLoggedOnManagedDevicesRequestBuilder GetLoggedOnManagedDevices()
+        {
+            return new UserGetLoggedOnManagedDevicesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getLoggedOnManagedDevices"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExportDeviceAndAppManagementData.
+        /// </summary>
+        /// <returns>The <see cref="IUserExportDeviceAndAppManagementDataRequestBuilder"/>.</returns>
+        public IUserExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData()
+        {
+            return new UserExportDeviceAndAppManagementDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.exportDeviceAndAppManagementData"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExportDeviceAndAppManagementData.
+        /// </summary>
+        /// <returns>The <see cref="IUserExportDeviceAndAppManagementDataRequestBuilder"/>.</returns>
+        public IUserExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData(
+            Int32 skip,
+            Int32 top)
+        {
+            return new UserExportDeviceAndAppManagementDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.exportDeviceAndAppManagementData"),
+                this.Client,
+                skip,
+                top);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserGetEffectiveDeviceEnrollmentConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder"/>.</returns>
+        public IUserGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder GetEffectiveDeviceEnrollmentConfigurations()
+        {
+            return new UserGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEffectiveDeviceEnrollmentConfigurations"),
+                this.Client);
         }
 
         /// <summary>
@@ -627,6 +883,17 @@ namespace Microsoft.Graph
         {
             return new UserGetManagedAppPoliciesRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getManagedAppPolicies"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserGetManagedDevicesWithAppFailures.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetManagedDevicesWithAppFailuresRequestBuilder"/>.</returns>
+        public IUserGetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures()
+        {
+            return new UserGetManagedDevicesWithAppFailuresRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getManagedDevicesWithAppFailures"),
                 this.Client);
         }
     

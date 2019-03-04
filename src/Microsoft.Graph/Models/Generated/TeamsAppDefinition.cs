@@ -23,21 +23,18 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app id.
-        /// The id from the Teams App manifest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamsAppId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name of the app provided by the app developer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets version.
-        /// The version number of the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public string Version { get; set; }

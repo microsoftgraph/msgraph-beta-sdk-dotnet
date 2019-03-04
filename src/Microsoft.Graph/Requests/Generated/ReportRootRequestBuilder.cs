@@ -50,6 +50,139 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ApplicationSignInDetailedSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootApplicationSignInDetailedSummaryCollectionRequestBuilder"/>.</returns>
+        public IReportRootApplicationSignInDetailedSummaryCollectionRequestBuilder ApplicationSignInDetailedSummary
+        {
+            get
+            {
+                return new ReportRootApplicationSignInDetailedSummaryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("applicationSignInDetailedSummary"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CredentialUserRegistrationDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>
+        public IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder CredentialUserRegistrationDetails
+        {
+            get
+            {
+                return new ReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("credentialUserRegistrationDetails"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAzureADLicenseUsage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAzureADLicenseUsageRequestBuilder"/>.</returns>
+        public IReportRootGetAzureADLicenseUsageRequestBuilder GetAzureADLicenseUsage(
+            string period)
+        {
+            return new ReportRootGetAzureADLicenseUsageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADLicenseUsage"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAzureADUserFeatureUsage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAzureADUserFeatureUsageRequestBuilder"/>.</returns>
+        public IReportRootGetAzureADUserFeatureUsageRequestBuilder GetAzureADUserFeatureUsage()
+        {
+            return new ReportRootGetAzureADUserFeatureUsageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADUserFeatureUsage"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAzureADFeatureUsage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAzureADFeatureUsageRequestBuilder"/>.</returns>
+        public IReportRootGetAzureADFeatureUsageRequestBuilder GetAzureADFeatureUsage(
+            string period)
+        {
+            return new ReportRootGetAzureADFeatureUsageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADFeatureUsage"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAzureADApplicationSignInSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAzureADApplicationSignInSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetAzureADApplicationSignInSummaryRequestBuilder GetAzureADApplicationSignInSummary(
+            string period)
+        {
+            return new ReportRootGetAzureADApplicationSignInSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADApplicationSignInSummary"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetCredentialUserRegistrationCount.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetCredentialUserRegistrationCountRequestBuilder"/>.</returns>
+        public IReportRootGetCredentialUserRegistrationCountRequestBuilder GetCredentialUserRegistrationCount()
+        {
+            return new ReportRootGetCredentialUserRegistrationCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCredentialUserRegistrationCount"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetCredentialUsageSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetCredentialUsageSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetCredentialUsageSummaryRequestBuilder GetCredentialUsageSummary(
+            string period)
+        {
+            return new ReportRootGetCredentialUsageSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCredentialUsageSummary"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserCredentialUsageDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserCredentialUsageDetailsRequestBuilder"/>.</returns>
+        public IReportRootGetUserCredentialUsageDetailsRequestBuilder GetUserCredentialUsageDetails(
+            string period)
+        {
+            return new ReportRootGetUserCredentialUsageDetailsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getUserCredentialUsageDetails"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>
+        public IReportRootDeviceConfigurationUserActivityRequestBuilder DeviceConfigurationUserActivity()
+        {
+            return new ReportRootDeviceConfigurationUserActivityRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.deviceConfigurationUserActivity"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootDeviceConfigurationDeviceActivity.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
+        public IReportRootDeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity()
+        {
+            return new ReportRootDeviceConfigurationDeviceActivityRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.deviceConfigurationDeviceActivity"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetOffice365ActivationsUserDetail.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserDetailRequestBuilder"/>.</returns>
@@ -1123,25 +1256,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
+        /// Gets the request builder for ReportRootGetTenantSecureScores.
         /// </summary>
-        /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>
-        public IReportRootDeviceConfigurationUserActivityRequestBuilder DeviceConfigurationUserActivity()
+        /// <returns>The <see cref="IReportRootGetTenantSecureScoresRequestBuilder"/>.</returns>
+        public IReportRootGetTenantSecureScoresRequestBuilder GetTenantSecureScores(
+            Int32 period)
         {
-            return new ReportRootDeviceConfigurationUserActivityRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.deviceConfigurationUserActivity"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootDeviceConfigurationDeviceActivity.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
-        public IReportRootDeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity()
-        {
-            return new ReportRootDeviceConfigurationDeviceActivityRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.deviceConfigurationDeviceActivity"),
-                this.Client);
+            return new ReportRootGetTenantSecureScoresRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTenantSecureScores"),
+                this.Client,
+                period);
         }
 
         /// <summary>
@@ -1175,6 +1299,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureTrends.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder ManagedDeviceEnrollmentFailureTrends()
+        {
+            return new ReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentFailureTrends"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
         /// </summary>
         /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
@@ -1196,6 +1331,44 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentTopFailures"),
                 this.Client,
                 period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder ManagedDeviceEnrollmentAbandonmentSummary(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null)
+        {
+            return new ReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentSummary"),
+                this.Client,
+                skip,
+                top,
+                filter,
+                skipToken);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder ManagedDeviceEnrollmentAbandonmentDetails(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null)
+        {
+            return new ReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentDetails"),
+                this.Client,
+                skip,
+                top,
+                filter,
+                skipToken);
         }
     
     }

@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         new IChannelRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Messages.
+        /// </summary>
+        /// <returns>The <see cref="IChannelMessagesCollectionRequestBuilder"/>.</returns>
+        IChannelMessagesCollectionRequestBuilder Messages { get; }
+
+        /// <summary>
+        /// Gets the request builder for ChatThreads.
+        /// </summary>
+        /// <returns>The <see cref="IChannelChatThreadsCollectionRequestBuilder"/>.</returns>
+        IChannelChatThreadsCollectionRequestBuilder ChatThreads { get; }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>

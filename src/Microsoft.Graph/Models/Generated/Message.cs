@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets internet message headers.
-        /// A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+        /// A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internetMessageHeaders", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<InternetMessageHeader> InternetMessageHeaders { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets body.
-        /// The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
+        /// The body of the message. It can be in HTML or text format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody Body { get; set; }
@@ -93,14 +93,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sender.
-        /// The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, or sending a message as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
+        /// The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, or sending a message as a delegate. In any case, the value must correspond to the actual mailbox used.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sender", Required = Newtonsoft.Json.Required.Default)]
         public Recipient Sender { get; set; }
     
         /// <summary>
         /// Gets or sets from.
-        /// The mailbox owner and sender of the message. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
+        /// The mailbox owner and sender of the message. The value must correspond to the actual mailbox used.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
         public Recipient From { get; set; }
@@ -139,6 +139,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationId", Required = Newtonsoft.Json.Required.Default)]
         public string ConversationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets conversation index.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationIndex", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] ConversationIndex { get; set; }
     
         /// <summary>
         /// Gets or sets unique body.
@@ -183,11 +189,29 @@ namespace Microsoft.Graph
         public string WebLink { get; set; }
     
         /// <summary>
+        /// Gets or sets mentions preview.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentionsPreview", Required = Newtonsoft.Json.Required.Default)]
+        public MentionsPreview MentionsPreview { get; set; }
+    
+        /// <summary>
         /// Gets or sets inference classification.
         /// The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused or other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inferenceClassification", Required = Newtonsoft.Json.Required.Default)]
         public InferenceClassificationType? InferenceClassification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unsubscribe data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unsubscribeData", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> UnsubscribeData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unsubscribe enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unsubscribeEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UnsubscribeEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets flag.
@@ -205,24 +229,30 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for the message. Nullable.
+        /// The collection of open extensions defined for the message. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
         public IMessageExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
-        /// The collection of single-value extended properties defined for the message. Nullable.
+        /// The collection of single-value extended properties defined for the message. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IMessageSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
-        /// The collection of multi-value extended properties defined for the message. Nullable.
+        /// The collection of multi-value extended properties defined for the message. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IMessageMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mentions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentions", Required = Newtonsoft.Json.Required.Default)]
+        public IMessageMentionsCollectionPage Mentions { get; set; }
     
     }
 }

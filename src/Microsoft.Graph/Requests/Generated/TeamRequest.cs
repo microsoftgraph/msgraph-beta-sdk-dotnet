@@ -222,6 +222,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (teamToInitialize.Apps != null && teamToInitialize.Apps.CurrentPage != null)
+                {
+                    teamToInitialize.Apps.AdditionalData = teamToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    teamToInitialize.AdditionalData.TryGetValue("apps@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        teamToInitialize.Apps.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (teamToInitialize.InstalledApps != null && teamToInitialize.InstalledApps.CurrentPage != null)
                 {
                     teamToInitialize.InstalledApps.AdditionalData = teamToInitialize.AdditionalData;
@@ -249,6 +265,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         teamToInitialize.Operations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (teamToInitialize.Owners != null && teamToInitialize.Owners.CurrentPage != null)
+                {
+                    teamToInitialize.Owners.AdditionalData = teamToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    teamToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        teamToInitialize.Owners.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
