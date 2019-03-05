@@ -16,7 +16,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/user_list_calendarview
+                // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/user_list_calendarview
                 var queryOptions = new List<QueryOption>()
                 {
                     new QueryOption("startDateTime", DateTime.Today.ToUniversalTime().ToString()),
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
-        // https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_post_events
-        // https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/singlevaluelegacyextendedproperty_post_singlevalueextendedproperties
-        // https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/extended-properties-overview
+        // https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/user_post_events
+        // https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/singlevaluelegacyextendedproperty_post_singlevalueextendedproperties
+        // https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/extended-properties-overview
         [Fact(Skip = "No CI set up for functional tests")]
         public async System.Threading.Tasks.Task EventCreateExtendedProperty()
         {

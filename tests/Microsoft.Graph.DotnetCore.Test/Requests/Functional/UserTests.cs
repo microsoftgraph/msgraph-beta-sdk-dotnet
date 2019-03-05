@@ -63,12 +63,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
             /* Notes
              * 
-             * GET https://graph.microsoft.com/v1.0/me?$select=mailboxsettings 
+             * GET https://graph.microsoft.com/beta/me?$select=mailboxsettings 
              * 
              * RESPONSE
              * 
              * {
-                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(mailboxSettings)/$entity",
+                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users(mailboxSettings)/$entity",
                     "id": "c8616fa2-6a9e-4196-9912-e7fbea37fbd1@d0b7ccde-8426-4e94-a77b-a53e1bcd66c6",
                     "mailboxSettings": {
                         "automaticRepliesSetting": {
@@ -92,12 +92,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                         }
                     }
                 }
-             * GET https://graph.microsoft.com/v1.0/me/mailboxsettings
+             * GET https://graph.microsoft.com/beta/me/mailboxsettings
              * 
              * RESPONSE
              * 
              * {
-                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
+                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
                     "automaticRepliesSetting": {
                         "status": "alwaysEnabled",
                         "externalAudience": "all",
@@ -119,10 +119,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     }
                 }
              * This PATCH is successful
-             * PATCH https://graph.microsoft.com/v1.0/me/mailboxsettings
+             * PATCH https://graph.microsoft.com/beta/me/mailboxsettings
              * 
              * {
-                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
+                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
                     "automaticRepliesSetting": {
                         "status": "alwaysEnabled",
                         "externalAudience": "all",
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     }
                 }
              * This PATCH is unsuccessful
-             * PATCH https://graph.microsoft.com/v1.0/me
+             * PATCH https://graph.microsoft.com/beta/me
              * 
              * {
              *      "id": "c8616fa2-6a9e-4196-9912-e7fbea37fbd1@d0b7ccde-8426-4e94-a77b-a53e1bcd66c6",
-                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(mailboxSettings)/$entity"
+                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users(mailboxSettings)/$entity"
                     "mailboxSettings": {
                         "automaticRepliesSetting": {
                             "status": "alwaysEnabled",
@@ -201,8 +201,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // Gets the user's photo.
-                // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/profilephoto_get
-                // GET https://graph.microsoft.com/v1.0/me/photo/$value
+                // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/profilephoto_get
+                // GET https://graph.microsoft.com/beta/me/photo/$value
                 var originalPhoto = await graphClient.Me.Photo.Content.Request().GetAsync();
 
                 Assert.NotNull(originalPhoto); // The photo value is null
@@ -231,8 +231,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         //        using (System.IO.MemoryStream ms = new System.IO.MemoryStream(buff))
         //        {
         //            // Sets the user's photo.
-        //            // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/profilephoto_update
-        //            // PUT https://graph.microsoft.com/v1.0/me/photo/$value
+        //            // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/profilephoto_update
+        //            // PUT https://graph.microsoft.com/beta/me/photo/$value
         //            await graphClient.Me.Photo.Content.Request().PutAsync(ms);
         //        }
         //    }
@@ -272,9 +272,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
-        // PUT https://graph.microsoft.com/v1.0/me/manager/$ref
-        // {    "@odata.id": "https://graph.microsoft.com/v1.0/users/55aa3346-08cb-4e98-8567-879b039a72c1" }
-        // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/user_post_manager
+        // PUT https://graph.microsoft.com/beta/me/manager/$ref
+        // {    "@odata.id": "https://graph.microsoft.com/beta/users/55aa3346-08cb-4e98-8567-879b039a72c1" }
+        // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/user_post_manager
         // We are getting and setting the user's manager.
         // Must be an admin to set this
         [Fact(Skip = "No CI set up for functional tests")]

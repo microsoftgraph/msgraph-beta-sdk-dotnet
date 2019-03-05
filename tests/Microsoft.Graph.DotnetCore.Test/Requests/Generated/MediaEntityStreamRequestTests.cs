@@ -20,7 +20,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void RequestBuilder()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/photo/$value");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value");
             var profilePhotoContentRequestBuilder = this.graphServiceClient.Me.Photo.Content as ProfilePhotoContentRequestBuilder;
 
             Assert.NotNull(profilePhotoContentRequestBuilder);
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             {
                 httpResponseMessage.Content = streamContent;
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/photo/$value";
+                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value";
                 this.httpProvider.Setup(
                     provider => provider.SendAsync(
                         It.Is<HttpRequestMessage>(
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             {
                 httpResponseMessage.Content = streamContent;
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/photo/$value";
+                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value";
                 this.httpProvider.Setup(
                     provider => provider.SendAsync(
                         It.Is<HttpRequestMessage>(

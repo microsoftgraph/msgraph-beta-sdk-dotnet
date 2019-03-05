@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         /// <summary>
         /// Get the OneNote notebooks.
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/notebook_get
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/notebook_get
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task OneNoteGetNotebooks()
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         /// <summary>
         /// List a user's OneNote pages. You can also do this for groups.
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/onenote_list_pages
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/onenote_list_pages
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task OneNoteListPages()
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         /// <summary>
         /// List a user's OneNote sections. You can also do this for groups.
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/onenote_list_sections
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/onenote_list_sections
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task OneNoteListSections()
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         /// <summary>
         /// List a user's OneNote section groups. You can also do this for groups.
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/onenote_list_sectiongroups
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/onenote_list_sectiongroups
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task OneNoteGetSectionGroups()
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         /// <summary>
         /// Lists a user's notebooks with the section object expanded.
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/onenote_list_notebooks
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/onenote_list_notebooks
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task OneNoteGetNotebooksExpandSection()
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Get a handle to the first section.
                 string pageId = pageCollection[0].Id;
 
-                // URL to update a page. https://graph.microsoft.com/v1.0/me/onenote/sections/{id}/pages/{id}/preview
+                // URL to update a page. https://graph.microsoft.com/beta/me/onenote/sections/{id}/pages/{id}/preview
                 OnenotePagePreview pagePreview = await graphClient.Me
                                                                   .Onenote
                                                                   .Pages[pageId]
@@ -545,8 +545,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         /// <summary>
         /// This is a workaround for updating a page.
         /// We can't support generation for the update scenario.
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/page_update
-        /// The service expects PATCH https://graph.microsoft.com/v1.0/me/onenote/pages/{id}/content with a
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/page_update
+        /// The service expects PATCH https://graph.microsoft.com/beta/me/onenote/pages/{id}/content with a
         /// body that includes a JSON object that describes the PATCH. We generate a dummy object that is
         /// supposed to be set with the properties PATCH. 
         /// Issue: metadata describes a onenotePatchContent action. This scenario would probably generate correctly.
@@ -565,7 +565,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Get a handle to the first section.
                 string pageId = pageCollection[0].Id;
 
-                // URL to update a page. https://graph.microsoft.com/v1.0/me/onenote/sections/{id}/pages/{id}/content
+                // URL to update a page. https://graph.microsoft.com/beta/me/onenote/sections/{id}/pages/{id}/content
                 var requestUrl = graphClient.Me.Onenote.Pages[pageId].Content.Request().RequestUrl;
 
                 // Create the patch command to update thebody of the OneNote page.

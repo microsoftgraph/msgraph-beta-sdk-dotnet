@@ -23,7 +23,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void BuildRequest()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/manager");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/manager");
             var managerRequestBuilder = this.graphServiceClient.Me.Manager as DirectoryObjectWithReferenceRequestBuilder;
 
             Assert.NotNull(managerRequestBuilder);

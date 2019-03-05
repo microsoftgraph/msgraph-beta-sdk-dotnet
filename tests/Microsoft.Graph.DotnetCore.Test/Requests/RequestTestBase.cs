@@ -10,7 +10,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests
 {
     public class RequestTestBase : IDisposable
     {
-        protected string graphBaseUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0");
+        protected string graphBaseUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta");
 
         protected MockAuthenticationProvider authenticationProvider;
         protected MockHttpProvider httpProvider;

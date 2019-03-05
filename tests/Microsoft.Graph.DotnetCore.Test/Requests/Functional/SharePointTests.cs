@@ -102,7 +102,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         /// <summary>
         /// Tests the GetSiteByPath method added in GraphServiceSitesCollectionRequestBuilderExtension.cs
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/site_get
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/site_get
         /// </summary>
         /// Open question: how is a customer expected to get Site path. This part of the experience is unclear to me. 
         /// 

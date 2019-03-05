@@ -222,7 +222,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             {
                 httpResponseMessage.Content = streamContent;
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/drive/items/id/microsoft.graph.createLink";
+                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id/microsoft.graph.createLink";
                 this.httpProvider.Setup(
                     provider => provider.SendAsync(
                         It.Is<HttpRequestMessage>(
@@ -261,7 +261,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             {
                 httpResponseMessage.Content = streamContent;
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/mailFolders/Drafts/messages/messageId/microsoft.graph.send";
+                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/Drafts/messages/messageId/microsoft.graph.send";
                 this.httpProvider.Setup(
                     provider => provider.SendAsync(
                         It.Is<HttpRequestMessage>(

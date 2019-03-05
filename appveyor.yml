@@ -1,8 +1,8 @@
-version: 1.0.{build}-{branch}
+version: beta.{build}-{branch}
 branches:
   only:
-  - dev
   - master
+
 image: Visual Studio 2017
 
 before_build:
@@ -14,15 +14,10 @@ build:
 test:
   assemblies:
     only:
-    - tests/Microsoft.Graph.Core.Test/bin/Debug/Microsoft.Graph.Core.dll
-    - tests/Microsoft.Graph.Test/bin/Debug/Microsoft.Graph.Test.dll
+    - tests/Microsoft.Graph.DotnetCore.Test/bin/Debug/Microsoft.Graph.DotnetCore.Test.dll
 after_test:
 - cmd: >-
     cd tests/Microsoft.Graph.DotnetCore.Test
-
-    dotnet test
-
-    cd ../Microsoft.Graph.DotnetCore.Core.Test
 
     dotnet test
 

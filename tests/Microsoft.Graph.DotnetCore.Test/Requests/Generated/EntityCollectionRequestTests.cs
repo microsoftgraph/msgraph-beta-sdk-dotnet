@@ -23,7 +23,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void BuildRequest()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/calendars");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/calendars");
             var calendarsCollectionRequestBuilder = this.graphServiceClient.Me.Calendars as UserCalendarsCollectionRequestBuilder;
 
             Assert.NotNull(calendarsCollectionRequestBuilder);

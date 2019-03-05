@@ -23,7 +23,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void BuildRequest()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/groups/groupId/members/memberId/$ref");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/groups/groupId/members/memberId/$ref");
             var memberReferenceRequestBuilder = this.graphServiceClient.Groups["groupId"].Members["memberId"].Reference as DirectoryObjectReferenceRequestBuilder;
 
             Assert.NotNull(memberReferenceRequestBuilder);

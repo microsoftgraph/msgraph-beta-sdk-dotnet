@@ -16,7 +16,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         [Fact]
         public void DeletedItems()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/mailFolders/DeletedItems");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/DeletedItems");
             var mailFolderRequestBuilder = this.graphServiceClient.Me.MailFolders.DeletedItems as MailFolderRequestBuilder;
 
             Assert.NotNull(mailFolderRequestBuilder);
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         [Fact]
         public void Drafts()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/mailFolders/Drafts");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/Drafts");
             var mailFolderRequestBuilder = this.graphServiceClient.Me.MailFolders.Drafts as MailFolderRequestBuilder;
 
             Assert.NotNull(mailFolderRequestBuilder);
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         [Fact]
         public void Inbox()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/mailFolders/Inbox");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/Inbox");
             var mailFolderRequestBuilder = this.graphServiceClient.Me.MailFolders.Inbox as MailFolderRequestBuilder;
 
             Assert.NotNull(mailFolderRequestBuilder);
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         [Fact]
         public void SentItems()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/mailFolders/SentItems");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/SentItems");
             var mailFolderRequestBuilder = this.graphServiceClient.Me.MailFolders.SentItems as MailFolderRequestBuilder;
 
             Assert.NotNull(mailFolderRequestBuilder);

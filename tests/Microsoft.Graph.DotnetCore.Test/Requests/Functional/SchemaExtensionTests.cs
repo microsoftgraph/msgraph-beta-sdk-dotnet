@@ -22,7 +22,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     {
         /// <summary>
         /// Create a schema extension test 
-        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/schemaextension_post_schemaextensions
+        /// https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/schemaextension_post_schemaextensions
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Async.Task SchemaExtensionTest()
