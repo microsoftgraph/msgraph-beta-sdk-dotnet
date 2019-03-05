@@ -1,12 +1,14 @@
-# Microsoft Graph .NET Client Library
+# Microsoft Graph Beta .NET Client Library
 
+<!--
 [![Build status](https://ci.appveyor.com/api/projects/status/m8qncaosr2ry4ks6/branch/master?svg=true)](https://ci.appveyor.com/project/MIchaelMainer/msgraph-sdk-dotnet/branch/master)
 [![NuGet Version](https://buildstats.info/nuget/Microsoft.Graph)](https://www.nuget.org/packages/Microsoft.Graph/)
+-->
 
-Integrate the [Microsoft Graph API](https://graph.microsoft.io) into your .NET
+Integrate the [Microsoft Graph Beta API](https://graph.microsoft.io) into your .NET
 project!
 
-The Microsoft Graph .NET Client Library targets .NetStandard 1.1 and .Net Framework 4.5.
+The Microsoft Graph Beta .NET Client Library targets .NetStandard 1.1 and .Net Framework 4.5.
 
 ## Installation via NuGet
 
@@ -15,11 +17,11 @@ To install the client library via NuGet:
 * Search for `Microsoft.Graph.Beta` in the NuGet Library, or
 * Type `Install-Package Microsoft.Graph.Beta` into the Package Manager Console.
 
-## Using this alongside the v1.0 library
+## Using the beta client along with the v1.0 library
 
-You'll have an extra step if you are going to use this package alongside the Microsoft.Graph v1.0 package.
+Both the v1.0 and beta Microsoft Graph endpoints share the same namespace. This results in both the v1.0 and beta generated libraries sharing the same namespace. You can use the beta library by itself with no changes to your environment. If you plan to use the beta endpoint in addition to the v1.0 endpoint, you'l have a couple integration steps you'll need to follow to enable a beta client to be used alongside the v1.0 client which is obtained with the `Microsoft.Graph` (v1.0) NuGet package.
 
-If your project uses a <Reference> to reference this library, you'll need to specify the dll alias like this:
+If your project (.csproj) uses a Reference element to reference the Microsoft.Graph.Beta library, you'll need to specify the DLL alias within the <Aliases> element. We suggest that you use the BetaLib alias, although any alias will do:
   
 ```
 <Reference Include="Microsoft.Graph.Beta, Version=0.1.0.0, Culture=neutral>
@@ -29,7 +31,7 @@ If your project uses a <Reference> to reference this library, you'll need to spe
 </Reference>
 ```
 
-If your project uses a PackageReference to reference this library, you'll need to specify the dll alias like this (this is a workaround): 
+If your project (.csproj) uses a PackageReference element to reference the Microsoft.Graph.Beta library, you'll need to specify the DLL alias within the <Aliases> element. Again, we suggest that you use the BetaLib alias, although any alias will do:
 
 ```
   <Target Name="ChangeAliasesOfStrongNameAssemblies" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
@@ -41,100 +43,25 @@ If your project uses a PackageReference to reference this library, you'll need t
   </Target>
 ```
 
-> The project reference approach will be updated and is on the NuGet [backlog](https://github.com/NuGet/Home/issues/4989#issuecomment-311042085).
+> The project reference approach to aliasing DLLs will be updated and is on the NuGet [backlog](https://github.com/NuGet/Home/issues/4989#issuecomment-311042085).
 
-Now, you set the extern alias directive (above all using directives) to get access to the Microsoft.Graph.Beta models : 
+Now, you set the `extern alias` directive (above all using directives) to get access to the Microsoft.Graph.Beta library. We suggest that you alias the namespace to `Beta`: 
 
 ```
 extern alias BetaLib;
 using Beta = BetaLib.Microsoft.Graph;
 ```
 
-You can now reference the beta objects like this:
+You can now reference the Microsoft.Graph.Beta objects like this:
 
 ```
 var contact = new Beta.Contact();
 Beta.GraphServiceClient betaClient = new Beta.GraphServiceClient();
 ```
+
 ## Getting started
 
-### 1. Register your application
-
-Register your application to use Microsoft Graph API using one of the following
-supported authentication portals:
-
-* [Microsoft Application Registration Portal](https://apps.dev.microsoft.com):
-  Register a new application that works with Microsoft Account and/or
-  organizational accounts using the unified V2 Authentication Endpoint.
-* [Microsoft Azure Active Directory](https://manage.windowsazure.com): Register
-  a new application in your tenant's Active Directory to support work or school
-  users for your tenant or multiple tenants.
-
-### 2. Authenticate for the Microsoft Graph service
-
-The Microsoft Graph .NET Client Library does not include any default authentication implementations.
-Instead, the user will want to authenticate with the library of their choice, or against the OAuth
-endpoint directly, and built-in **DelegateAuthenticationProvider** class to authenticate each request.
-For more information on `DelegateAuthenticationProvider`, see the [library overview](docs/overview.md)
-
-The recommended library for authenticating against AAD is [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet).
-
-For an example of authenticating a UWP app using the V2 Authentication Endpoint, see the [Microsoft Graph UWP Connect Library](https://github.com/OfficeDev/Microsoft-Graph-UWP-Connect-Library).
-
-### 3. Create a Microsoft Graph client object with an authentication provider
-
-An instance of the **GraphServiceClient** class handles building requests,
-sending them to Microsoft Graph API, and processing the responses. To create a
-new instance of this class, you need to provide an instance of
-`IAuthenticationProvider` which can authenticate requests to Microsoft Graph.
-
-For more information on initializing a client instance, see the [library overview](docs/overview.md)
-
-### 4. Make requests to the graph
-
-Once you have completed authentication and have a GraphServiceClient, you can
-begin to make calls to the service. The requests in the SDK follow the format
-of the Microsoft Graph API's RESTful syntax.
-
-For example, to retrieve a user's default drive:
-
-```csharp
-var drive = await graphClient.Me.Drive.Request().GetAsync();
-```
-
-`GetAsync` will return a `Drive` object on success and throw a
-`ServiceException` on error.
-
-To get the current user's root folder of their default drive:
-
-```csharp
-var rootItem = await graphClient.Me.Drive.Root.Request().GetAsync();
-```
-
-`GetAsync` will return a `DriveItem` object on success and throw a
-`ServiceException` on error.
-
-For a general overview of how the SDK is designed, see [overview](docs/overview.md).
-
-The following sample applications are also available:
-* [Microsoft Graph UWP Connect Sample](https://github.com/microsoftgraph/uwp-csharp-connect-sample)
-* [Microsoft Graph UWP Snippets Sample](https://github.com/microsoftgraph/uwp-csharp-snippets-sample)
-* [Microsoft Graph MeetingBot sample for UWP](https://github.com/microsoftgraph/uwp-csharp-meetingbot-sample)
-* [Microsoft Graph Connect Sample for ASP.NET 4.6](https://github.com/microsoftgraph/aspnet-connect-sample)
-* [Microsoft Graph Snippets Sample for ASP.NET 4.6](https://github.com/microsoftgraph/aspnet-snippets-sample)
-* [Microsoft Graph SDK Snippets Library for Xamarin.Forms](https://github.com/microsoftgraph/xamarin-csharp-snippets-sample)
-* [Microsoft Graph Connect Sample for Xamarin Forms](https://github.com/microsoftgraph/xamarin-csharp-connect-sample)
-* [Microsoft Graph Meeting Manager Sample for Xamarin.Forms](https://github.com/microsoftgraph/xamarin-csharp-meetingmanager-sample)
-* [Microsoft Graph Property Manager Sample for Xamarin Native](https://github.com/microsoftgraph/xamarin-csharp-propertymanager-sample)
-
-## Documentation and resources
-
-* [Overview](docs/overview.md)
-* [Collections](docs/collections.md)
-* [Errors](docs/errors.md)
-* [Headers](docs/headers.md)
-* [Microsoft Graph API](https://graph.microsoft.io)
-* [Release notes](https://github.com/microsoftgraph/msgraph-sdk-dotnet/releases)
+Please see [msgraph-sdk-dotnet](https://github.com/microsoftgraph/msgraph-sdk-dotnet) for information on getting started with this library.
 
 ## Notes
 
@@ -144,13 +71,13 @@ Install System.Runtime.InteropServices.RuntimeInformation before you install Mic
 
 ## Issues
 
-To view or log issues, see [issues](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues).
+To view or log issues, see [issues](https://github.com/microsoftgraph/msgraph-sdk-dotnet-beta/issues).
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## Other resources
 
-* NuGet Package: [https://www.nuget.org/packages/Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph)
+* NuGet Package: [https://www.nuget.org/packages/Microsoft.Graph.Beta](https://www.nuget.org/packages/Microsoft.Graph)
 
 ## Building library locally
 
