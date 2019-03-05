@@ -1,3 +1,5 @@
+[![Build status](https://o365exchange.visualstudio.com/O365%20Sandbox/_apis/build/status/Microsoft%20Graph/PR-msgraph-validate-dotnet-beta)](https://o365exchange.visualstudio.com/O365%20Sandbox/_build/latest?definitionId=2547)
+
 # Microsoft Graph Beta .NET Client Library
 
 <!--
