@@ -20,8 +20,6 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
     </PackageReleaseNotes>
-  </PropertyGroup>
-  <PropertyGroup>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>0.1.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an 
