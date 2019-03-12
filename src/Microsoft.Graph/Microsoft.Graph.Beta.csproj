@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
@@ -19,13 +19,14 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-    </PackageReleaseNotes>
+	</PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>0.1.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an 
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate 
     which commit was used to generate the preview build. -->
-    <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease).$(BUILD_BUILDID)</VersionSuffix>
+    <!-- $(Prerelease).$(BUILD_BUILDID) -->
+    <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease)</VersionSuffix>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.Beta.xml</DocumentationFile>
