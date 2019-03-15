@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
+    <Description>Microsoft Graph beta client library allows you to target the Microsoft Graph /beta endpoint. You can call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
     <Copyright>&#169; Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Beta Client Library</AssemblyTitle>
     <Authors>Microsoft</Authors>
@@ -8,7 +8,7 @@
     <PreserveCompilationContext>false</PreserveCompilationContext>
     <AssemblyName>Microsoft.Graph.Beta</AssemblyName>
     <PackageId>Microsoft.Graph.Beta</PackageId>
-    <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
+    <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Beta;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
     <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -19,7 +19,7 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-	</PackageReleaseNotes>
+    </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>0.1.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an 
