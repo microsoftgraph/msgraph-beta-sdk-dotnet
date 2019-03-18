@@ -10,8 +10,9 @@
     <PackageId>Microsoft.Graph.Beta</PackageId>
     <PackageTags>Microsoft Office365;Graph;GraphServiceClient;Beta;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK</PackageTags>
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
-    <PackageLicenseUrl>http://aka.ms/devservicesagreement</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet</RepositoryUrl>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.1' ">1.6.0</NetStandardImplicitPackageVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <SignAssembly>false</SignAssembly>
