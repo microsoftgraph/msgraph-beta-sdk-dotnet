@@ -27,7 +27,8 @@
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
     <!-- $(Prerelease).$(BUILD_BUILDID) -->
-    <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease)</VersionSuffix>
+    <!-- <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease)</VersionSuffix> -->
+    <VersionSuffix>preview</VersionSuffix>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.Beta.xml</DocumentationFile>
