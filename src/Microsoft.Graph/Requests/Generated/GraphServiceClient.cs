@@ -23,14 +23,14 @@ namespace Microsoft.Graph
         public GraphServiceClient(
             IAuthenticationProvider authenticationProvider,
             IHttpProvider httpProvider = null)
-            : this("https://graph.microsoft.com/v1.0", authenticationProvider, httpProvider)
+            : this("https://graph.microsoft.com/beta", authenticationProvider, httpProvider)
         {
         }
 
         /// <summary>
         /// Instantiates a new GraphServiceClient.
         /// </summary>
-        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/v1.0".</param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta".</param>
         /// <param name="authenticationProvider">The <see cref="IAuthenticationProvider"/> for authenticating request messages.</param>
         /// <param name="httpProvider">The <see cref="IHttpProvider"/> for sending requests.</param>
         public GraphServiceClient(
@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             : base(baseUrl, authenticationProvider, httpProvider)
         {
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceSchemaExtensions request builder.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
                 return new GraphServiceSchemaExtensionsCollectionRequestBuilder(this.BaseUrl + "/schemaExtensions", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDirectoryObjectsCollectionRequestBuilder(this.BaseUrl + "/directoryObjects", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceApplications request builder.
         /// </summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph
                 return new GraphServiceApplicationsCollectionRequestBuilder(this.BaseUrl + "/applications", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAdministrativeUnits request builder.
         /// </summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAdministrativeUnitsCollectionRequestBuilder(this.BaseUrl + "/administrativeUnits", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAllowedDataLocations request builder.
         /// </summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAllowedDataLocationsCollectionRequestBuilder(this.BaseUrl + "/allowedDataLocations", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAppRoleAssignments request builder.
         /// </summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAppRoleAssignmentsCollectionRequestBuilder(this.BaseUrl + "/appRoleAssignments", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceContacts request builder.
         /// </summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
                 return new GraphServiceContactsCollectionRequestBuilder(this.BaseUrl + "/contacts", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDevices request builder.
         /// </summary>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDevicesCollectionRequestBuilder(this.BaseUrl + "/devices", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDomains request builder.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDomainsCollectionRequestBuilder(this.BaseUrl + "/domains", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDomainDnsRecords request builder.
         /// </summary>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDomainDnsRecordsCollectionRequestBuilder(this.BaseUrl + "/domainDnsRecords", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGroups request builder.
         /// </summary>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGroupsCollectionRequestBuilder(this.BaseUrl + "/groups", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDirectoryRoles request builder.
         /// </summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDirectoryRolesCollectionRequestBuilder(this.BaseUrl + "/directoryRoles", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDirectoryRoleTemplates request builder.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDirectoryRoleTemplatesCollectionRequestBuilder(this.BaseUrl + "/directoryRoleTemplates", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDirectorySettingTemplates request builder.
         /// </summary>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDirectorySettingTemplatesCollectionRequestBuilder(this.BaseUrl + "/directorySettingTemplates", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceOrganization request builder.
         /// </summary>
@@ -205,7 +205,7 @@ namespace Microsoft.Graph
                 return new GraphServiceOrganizationCollectionRequestBuilder(this.BaseUrl + "/organization", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceOauth2PermissionGrants request builder.
         /// </summary>
@@ -216,7 +216,7 @@ namespace Microsoft.Graph
                 return new GraphServiceOauth2PermissionGrantsCollectionRequestBuilder(this.BaseUrl + "/oauth2PermissionGrants", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceScopedRoleMemberships request builder.
         /// </summary>
@@ -227,7 +227,7 @@ namespace Microsoft.Graph
                 return new GraphServiceScopedRoleMembershipsCollectionRequestBuilder(this.BaseUrl + "/scopedRoleMemberships", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceServicePrincipals request builder.
         /// </summary>
@@ -238,7 +238,7 @@ namespace Microsoft.Graph
                 return new GraphServiceServicePrincipalsCollectionRequestBuilder(this.BaseUrl + "/servicePrincipals", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceSettings request builder.
         /// </summary>
@@ -249,7 +249,7 @@ namespace Microsoft.Graph
                 return new GraphServiceSettingsCollectionRequestBuilder(this.BaseUrl + "/settings", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceSubscribedSkus request builder.
         /// </summary>
@@ -260,7 +260,7 @@ namespace Microsoft.Graph
                 return new GraphServiceSubscribedSkusCollectionRequestBuilder(this.BaseUrl + "/subscribedSkus", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceUsers request builder.
         /// </summary>
@@ -271,7 +271,7 @@ namespace Microsoft.Graph
                 return new GraphServiceUsersCollectionRequestBuilder(this.BaseUrl + "/users", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePolicies request builder.
         /// </summary>
@@ -282,7 +282,7 @@ namespace Microsoft.Graph
                 return new GraphServicePoliciesCollectionRequestBuilder(this.BaseUrl + "/policies", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
@@ -293,7 +293,7 @@ namespace Microsoft.Graph
                 return new GraphServiceContractsCollectionRequestBuilder(this.BaseUrl + "/contracts", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceWorkbooks request builder.
         /// </summary>
@@ -304,7 +304,7 @@ namespace Microsoft.Graph
                 return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDrives request builder.
         /// </summary>
@@ -315,7 +315,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDrivesCollectionRequestBuilder(this.BaseUrl + "/drives", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceShares request builder.
         /// </summary>
@@ -326,7 +326,7 @@ namespace Microsoft.Graph
                 return new GraphServiceSharesCollectionRequestBuilder(this.BaseUrl + "/shares", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceSites request builder.
         /// </summary>
@@ -337,7 +337,7 @@ namespace Microsoft.Graph
                 return new GraphServiceSitesCollectionRequestBuilder(this.BaseUrl + "/sites", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
@@ -348,7 +348,7 @@ namespace Microsoft.Graph
                 return new GraphServiceSubscriptionsCollectionRequestBuilder(this.BaseUrl + "/subscriptions", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceIdentityRiskEvents request builder.
         /// </summary>
@@ -359,7 +359,7 @@ namespace Microsoft.Graph
                 return new GraphServiceIdentityRiskEventsCollectionRequestBuilder(this.BaseUrl + "/identityRiskEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceImpossibleTravelRiskEvents request builder.
         /// </summary>
@@ -370,7 +370,7 @@ namespace Microsoft.Graph
                 return new GraphServiceImpossibleTravelRiskEventsCollectionRequestBuilder(this.BaseUrl + "/impossibleTravelRiskEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceLeakedCredentialsRiskEvents request builder.
         /// </summary>
@@ -381,7 +381,7 @@ namespace Microsoft.Graph
                 return new GraphServiceLeakedCredentialsRiskEventsCollectionRequestBuilder(this.BaseUrl + "/leakedCredentialsRiskEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAnonymousIpRiskEvents request builder.
         /// </summary>
@@ -392,7 +392,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAnonymousIpRiskEventsCollectionRequestBuilder(this.BaseUrl + "/anonymousIpRiskEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceSuspiciousIpRiskEvents request builder.
         /// </summary>
@@ -403,7 +403,7 @@ namespace Microsoft.Graph
                 return new GraphServiceSuspiciousIpRiskEventsCollectionRequestBuilder(this.BaseUrl + "/suspiciousIpRiskEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceUnfamiliarLocationRiskEvents request builder.
         /// </summary>
@@ -414,7 +414,7 @@ namespace Microsoft.Graph
                 return new GraphServiceUnfamiliarLocationRiskEventsCollectionRequestBuilder(this.BaseUrl + "/unfamiliarLocationRiskEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceMalwareRiskEvents request builder.
         /// </summary>
@@ -425,7 +425,7 @@ namespace Microsoft.Graph
                 return new GraphServiceMalwareRiskEventsCollectionRequestBuilder(this.BaseUrl + "/malwareRiskEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceRiskyUsers request builder.
         /// </summary>
@@ -436,7 +436,7 @@ namespace Microsoft.Graph
                 return new GraphServiceRiskyUsersCollectionRequestBuilder(this.BaseUrl + "/riskyUsers", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrivilegedRoles request builder.
         /// </summary>
@@ -447,7 +447,7 @@ namespace Microsoft.Graph
                 return new GraphServicePrivilegedRolesCollectionRequestBuilder(this.BaseUrl + "/privilegedRoles", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrivilegedRoleAssignments request builder.
         /// </summary>
@@ -458,7 +458,7 @@ namespace Microsoft.Graph
                 return new GraphServicePrivilegedRoleAssignmentsCollectionRequestBuilder(this.BaseUrl + "/privilegedRoleAssignments", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrivilegedOperationEvents request builder.
         /// </summary>
@@ -469,7 +469,7 @@ namespace Microsoft.Graph
                 return new GraphServicePrivilegedOperationEventsCollectionRequestBuilder(this.BaseUrl + "/privilegedOperationEvents", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrivilegedSignupStatus request builder.
         /// </summary>
@@ -480,7 +480,7 @@ namespace Microsoft.Graph
                 return new GraphServicePrivilegedSignupStatusCollectionRequestBuilder(this.BaseUrl + "/privilegedSignupStatus", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrivilegedApproval request builder.
         /// </summary>
@@ -491,7 +491,7 @@ namespace Microsoft.Graph
                 return new GraphServicePrivilegedApprovalCollectionRequestBuilder(this.BaseUrl + "/privilegedApproval", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrivilegedRoleAssignmentRequests request builder.
         /// </summary>
@@ -502,7 +502,7 @@ namespace Microsoft.Graph
                 return new GraphServicePrivilegedRoleAssignmentRequestsCollectionRequestBuilder(this.BaseUrl + "/privilegedRoleAssignmentRequests", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceInvitations request builder.
         /// </summary>
@@ -513,7 +513,7 @@ namespace Microsoft.Graph
                 return new GraphServiceInvitationsCollectionRequestBuilder(this.BaseUrl + "/invitations", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceCommands request builder.
         /// </summary>
@@ -524,7 +524,7 @@ namespace Microsoft.Graph
                 return new GraphServiceCommandsCollectionRequestBuilder(this.BaseUrl + "/commands", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePayloadResponse request builder.
         /// </summary>
@@ -535,7 +535,7 @@ namespace Microsoft.Graph
                 return new GraphServicePayloadResponseCollectionRequestBuilder(this.BaseUrl + "/payloadResponse", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceTeams request builder.
         /// </summary>
@@ -546,7 +546,7 @@ namespace Microsoft.Graph
                 return new GraphServiceTeamsCollectionRequestBuilder(this.BaseUrl + "/teams", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceTeamsTemplates request builder.
         /// </summary>
@@ -557,7 +557,7 @@ namespace Microsoft.Graph
                 return new GraphServiceTeamsTemplatesCollectionRequestBuilder(this.BaseUrl + "/teamsTemplates", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGroupLifecyclePolicies request builder.
         /// </summary>
@@ -568,7 +568,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGroupLifecyclePoliciesCollectionRequestBuilder(this.BaseUrl + "/groupLifecyclePolicies", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
         /// </summary>
@@ -579,7 +579,7 @@ namespace Microsoft.Graph
                 return new GraphServiceIdentityProvidersCollectionRequestBuilder(this.BaseUrl + "/identityProviders", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceTrustFrameworkPolicies request builder.
         /// </summary>
@@ -590,7 +590,7 @@ namespace Microsoft.Graph
                 return new GraphServiceTrustFrameworkPoliciesCollectionRequestBuilder(this.BaseUrl + "/trustFrameworkPolicies", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceFunctions request builder.
         /// </summary>
@@ -601,7 +601,7 @@ namespace Microsoft.Graph
                 return new GraphServiceFunctionsCollectionRequestBuilder(this.BaseUrl + "/functions", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceFilterOperators request builder.
         /// </summary>
@@ -612,7 +612,7 @@ namespace Microsoft.Graph
                 return new GraphServiceFilterOperatorsCollectionRequestBuilder(this.BaseUrl + "/filterOperators", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
@@ -623,7 +623,7 @@ namespace Microsoft.Graph
                 return new GraphServiceDataPolicyOperationsCollectionRequestBuilder(this.BaseUrl + "/dataPolicyOperations", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceChats request builder.
         /// </summary>
@@ -634,7 +634,7 @@ namespace Microsoft.Graph
                 return new GraphServiceChatsCollectionRequestBuilder(this.BaseUrl + "/chats", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAgreements request builder.
         /// </summary>
@@ -645,7 +645,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAgreementsCollectionRequestBuilder(this.BaseUrl + "/agreements", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAgreementAcceptances request builder.
         /// </summary>
@@ -656,7 +656,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAgreementAcceptancesCollectionRequestBuilder(this.BaseUrl + "/agreementAcceptances", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceBookingBusinesses request builder.
         /// </summary>
@@ -667,7 +667,7 @@ namespace Microsoft.Graph
                 return new GraphServiceBookingBusinessesCollectionRequestBuilder(this.BaseUrl + "/bookingBusinesses", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceBookingCurrencies request builder.
         /// </summary>
@@ -678,7 +678,7 @@ namespace Microsoft.Graph
                 return new GraphServiceBookingCurrenciesCollectionRequestBuilder(this.BaseUrl + "/bookingCurrencies", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrivilegedAccess request builder.
         /// </summary>
@@ -689,7 +689,7 @@ namespace Microsoft.Graph
                 return new GraphServicePrivilegedAccessCollectionRequestBuilder(this.BaseUrl + "/privilegedAccess", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGovernanceResources request builder.
         /// </summary>
@@ -700,7 +700,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGovernanceResourcesCollectionRequestBuilder(this.BaseUrl + "/governanceResources", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGovernanceSubjects request builder.
         /// </summary>
@@ -711,7 +711,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGovernanceSubjectsCollectionRequestBuilder(this.BaseUrl + "/governanceSubjects", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleDefinitions request builder.
         /// </summary>
@@ -722,7 +722,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGovernanceRoleDefinitionsCollectionRequestBuilder(this.BaseUrl + "/governanceRoleDefinitions", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleAssignments request builder.
         /// </summary>
@@ -733,7 +733,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGovernanceRoleAssignmentsCollectionRequestBuilder(this.BaseUrl + "/governanceRoleAssignments", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleAssignmentRequests request builder.
         /// </summary>
@@ -744,7 +744,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGovernanceRoleAssignmentRequestsCollectionRequestBuilder(this.BaseUrl + "/governanceRoleAssignmentRequests", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceGovernanceRoleSettings request builder.
         /// </summary>
@@ -755,7 +755,7 @@ namespace Microsoft.Graph
                 return new GraphServiceGovernanceRoleSettingsCollectionRequestBuilder(this.BaseUrl + "/governanceRoleSettings", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAccessReviews request builder.
         /// </summary>
@@ -766,7 +766,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAccessReviewsCollectionRequestBuilder(this.BaseUrl + "/accessReviews", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceBusinessFlowTemplates request builder.
         /// </summary>
@@ -777,7 +777,7 @@ namespace Microsoft.Graph
                 return new GraphServiceBusinessFlowTemplatesCollectionRequestBuilder(this.BaseUrl + "/businessFlowTemplates", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAccessReviewDecisions request builder.
         /// </summary>
@@ -788,7 +788,7 @@ namespace Microsoft.Graph
                 return new GraphServiceAccessReviewDecisionsCollectionRequestBuilder(this.BaseUrl + "/accessReviewDecisions", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePrograms request builder.
         /// </summary>
@@ -799,7 +799,7 @@ namespace Microsoft.Graph
                 return new GraphServiceProgramsCollectionRequestBuilder(this.BaseUrl + "/programs", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceProgramControls request builder.
         /// </summary>
@@ -810,7 +810,7 @@ namespace Microsoft.Graph
                 return new GraphServiceProgramControlsCollectionRequestBuilder(this.BaseUrl + "/programControls", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceProgramControlTypes request builder.
         /// </summary>
@@ -821,7 +821,7 @@ namespace Microsoft.Graph
                 return new GraphServiceProgramControlTypesCollectionRequestBuilder(this.BaseUrl + "/programControlTypes", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceApp request builder.
         /// </summary>
@@ -832,7 +832,7 @@ namespace Microsoft.Graph
                 return new CommsApplicationRequestBuilder(this.BaseUrl + "/app", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
@@ -843,7 +843,7 @@ namespace Microsoft.Graph
                 return new UserRequestBuilder(this.BaseUrl + "/me", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDirectory request builder.
         /// </summary>
@@ -854,7 +854,7 @@ namespace Microsoft.Graph
                 return new DirectoryRequestBuilder(this.BaseUrl + "/directory", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDrive request builder.
         /// </summary>
@@ -865,7 +865,7 @@ namespace Microsoft.Graph
                 return new DriveRequestBuilder(this.BaseUrl + "/drive", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServicePlanner request builder.
         /// </summary>
@@ -876,7 +876,7 @@ namespace Microsoft.Graph
                 return new PlannerRequestBuilder(this.BaseUrl + "/planner", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
@@ -887,7 +887,7 @@ namespace Microsoft.Graph
                 return new AuditLogRootRequestBuilder(this.BaseUrl + "/auditLogs", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceReports request builder.
         /// </summary>
@@ -898,7 +898,7 @@ namespace Microsoft.Graph
                 return new ReportRootRequestBuilder(this.BaseUrl + "/reports", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
         /// </summary>
@@ -909,7 +909,7 @@ namespace Microsoft.Graph
                 return new DeviceManagementRequestBuilder(this.BaseUrl + "/deviceManagement", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
@@ -920,7 +920,7 @@ namespace Microsoft.Graph
                 return new DeviceAppManagementRequestBuilder(this.BaseUrl + "/deviceAppManagement", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceAppCatalogs request builder.
         /// </summary>
@@ -931,7 +931,7 @@ namespace Microsoft.Graph
                 return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceTrustFramework request builder.
         /// </summary>
@@ -942,7 +942,7 @@ namespace Microsoft.Graph
                 return new TrustFrameworkRequestBuilder(this.BaseUrl + "/trustFramework", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceEducation request builder.
         /// </summary>
@@ -953,7 +953,7 @@ namespace Microsoft.Graph
                 return new EducationRootRequestBuilder(this.BaseUrl + "/education", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceDataClassification request builder.
         /// </summary>
@@ -964,7 +964,7 @@ namespace Microsoft.Graph
                 return new DataClassificationServiceRequestBuilder(this.BaseUrl + "/dataClassification", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
@@ -975,7 +975,7 @@ namespace Microsoft.Graph
                 return new SecurityRequestBuilder(this.BaseUrl + "/Security", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceOfficeConfiguration request builder.
         /// </summary>
@@ -986,7 +986,7 @@ namespace Microsoft.Graph
                 return new OfficeConfigurationRequestBuilder(this.BaseUrl + "/officeConfiguration", this);
             }
         }
-    
+
         /// <summary>
         /// Gets the GraphServiceFinancials request builder.
         /// </summary>
@@ -997,6 +997,6 @@ namespace Microsoft.Graph
                 return new FinancialsRequestBuilder(this.BaseUrl + "/financials", this);
             }
         }
-    
+
     }
 }
