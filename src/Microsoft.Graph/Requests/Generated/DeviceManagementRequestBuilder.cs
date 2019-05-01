@@ -817,6 +817,54 @@ namespace Microsoft.Graph
                 return new DeviceManagementGroupPolicyDefinitionFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyDefinitionFiles"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Intents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentsCollectionRequestBuilder Intents
+        {
+            get
+            {
+                return new DeviceManagementIntentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("intents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SettingDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementSettingDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementSettingDefinitionsCollectionRequestBuilder SettingDefinitions
+        {
+            get
+            {
+                return new DeviceManagementSettingDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("settingDefinitions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Templates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplatesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTemplatesCollectionRequestBuilder Templates
+        {
+            get
+            {
+                return new DeviceManagementTemplatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("templates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Categories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementCategoriesCollectionRequestBuilder Categories
+        {
+            get
+            {
+                return new DeviceManagementCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for DeviceManagementSendCustomNotificationToCompanyPortal.

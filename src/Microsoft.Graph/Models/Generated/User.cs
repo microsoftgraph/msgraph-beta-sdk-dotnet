@@ -336,6 +336,12 @@ namespace Microsoft.Graph
         public bool? ShowInAddressList { get; set; }
     
         /// <summary>
+        /// Gets or sets sign in sessions valid from date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInSessionsValidFromDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? SignInSessionsValidFromDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets state.
         /// The state or province in the user's address. Supports $filter.
         /// </summary>

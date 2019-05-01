@@ -124,6 +124,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "submissions", Required = Newtonsoft.Json.Required.Default)]
         public IEducationAssignmentSubmissionsCollectionPage Submissions { get; set; }
     
+        /// <summary>
+        /// Gets or sets categories.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationAssignmentCategoriesCollectionPage Categories { get; set; }
+    
     }
 }
 

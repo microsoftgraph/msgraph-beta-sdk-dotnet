@@ -60,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
         IEducationClassAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
+        IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories { get; }
     
     }
 }

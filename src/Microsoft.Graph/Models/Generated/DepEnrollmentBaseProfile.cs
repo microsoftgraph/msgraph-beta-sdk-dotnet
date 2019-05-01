@@ -156,6 +156,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyPaneDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? PrivacyPaneDisabled { get; set; }
     
+        /// <summary>
+        /// Gets or sets device name template.
+        /// Sets a literal or name pattern.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceNameTemplate", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceNameTemplate { get; set; }
+    
     }
 }
 

@@ -342,6 +342,12 @@ namespace Microsoft.Graph
         IUserInvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens();
 
         /// <summary>
+        /// Gets the request builder for UserRevokeSignInSessions.
+        /// </summary>
+        /// <returns>The <see cref="IUserRevokeSignInSessionsRequestBuilder"/>.</returns>
+        IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions();
+
+        /// <summary>
         /// Gets the request builder for UserSendMail.
         /// </summary>
         /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>

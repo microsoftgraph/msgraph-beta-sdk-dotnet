@@ -73,17 +73,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom subject alternative names.
-        /// Custom Subject Alterantive Name Settings. This collection can contain a maximum of 500 elements.
+        /// Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSubjectAlternativeNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject alternative name type.
-        /// Certificate Subject Alternative Name Type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameType", Required = Newtonsoft.Json.Required.Default)]
-        public SubjectAlternativeNameType? SubjectAlternativeNameType { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.

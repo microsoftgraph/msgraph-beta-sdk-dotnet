@@ -58,6 +58,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCapable", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsCapable { get; set; }
     
+        /// <summary>
+        /// Gets or sets is mfa registered.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMfaRegistered", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsMfaRegistered { get; set; }
+    
     }
 }
 

@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         public string ProductKey { get; set; }
     
         /// <summary>
+        /// Gets or sets import id.
+        /// The Import Id of the Windows autopilot device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importId", Required = Newtonsoft.Json.Required.Default)]
+        public string ImportId { get; set; }
+    
+        /// <summary>
         /// Gets or sets hardware identifier.
         /// Hardware Blob of the Windows autopilot device.
         /// </summary>

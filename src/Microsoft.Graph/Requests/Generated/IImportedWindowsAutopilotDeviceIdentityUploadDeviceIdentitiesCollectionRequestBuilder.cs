@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IImportedWindowsAutopilotDeviceIdentityRequestBuilder"/>.</returns>
         IImportedWindowsAutopilotDeviceIdentityRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for ImportedWindowsAutopilotDeviceIdentityImport.
+        /// </summary>
+        /// <returns>The <see cref="IImportedWindowsAutopilotDeviceIdentityImportRequestBuilder"/>.</returns>
+        IImportedWindowsAutopilotDeviceIdentityImportRequestBuilder Import(
+            IEnumerable<ImportedWindowsAutopilotDeviceIdentity> importedWindowsAutopilotDeviceIdentities = null);
     }
 }

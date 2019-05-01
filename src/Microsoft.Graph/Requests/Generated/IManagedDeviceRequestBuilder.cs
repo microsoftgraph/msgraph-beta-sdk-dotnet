@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IWindowsProtectionStateRequestBuilder WindowsProtectionState { get; }
 
         /// <summary>
+        /// Gets the request builder for Users.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceUsersCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceUsersCollectionRequestBuilder Users { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
@@ -66,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder"/>.</returns>
         IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder ManagedDeviceMobileAppConfigurationStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for SecurityBaselineStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates { get; }
     
         /// <summary>
         /// Gets the request builder for ManagedDeviceEnableLostMode.

@@ -45,10 +45,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets order identifier.
-        /// Order Identifier of the Windows autopilot device.
+        /// Order Identifier of the Windows autopilot device - Deprecated
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string OrderIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group tag.
+        /// Group Tag of the Windows autopilot device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupTag", Required = Newtonsoft.Json.Required.Default)]
+        public string GroupTag { get; set; }
     
         /// <summary>
         /// Gets or sets purchase order identifier.

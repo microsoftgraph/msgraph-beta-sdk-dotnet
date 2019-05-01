@@ -86,6 +86,13 @@ namespace Microsoft.Graph
         public IEnumerable<Win32LobAppDetection> DetectionRules { get; set; }
     
         /// <summary>
+        /// Gets or sets requirement rules.
+        /// The requirement rules to detect Win32 Line of Business (LoB) app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requirementRules", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Win32LobAppRequirement> RequirementRules { get; set; }
+    
+        /// <summary>
         /// Gets or sets install experience.
         /// The install experience for this app.
         /// </summary>

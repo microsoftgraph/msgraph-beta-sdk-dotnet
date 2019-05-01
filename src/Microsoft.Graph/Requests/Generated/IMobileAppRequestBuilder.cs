@@ -60,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMobileAppUserStatusesCollectionRequestBuilder"/>.</returns>
         IMobileAppUserStatusesCollectionRequestBuilder UserStatuses { get; }
+
+        /// <summary>
+        /// Gets the request builder for Relationships.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppRelationshipsCollectionRequestBuilder"/>.</returns>
+        IMobileAppRelationshipsCollectionRequestBuilder Relationships { get; }
     
         /// <summary>
         /// Gets the request builder for MobileAppAssign.
@@ -67,6 +73,21 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IMobileAppAssignRequestBuilder"/>.</returns>
         IMobileAppAssignRequestBuilder Assign(
             IEnumerable<MobileAppAssignment> mobileAppAssignments = null);
+
+        /// <summary>
+        /// Gets the request builder for MobileAppUpdateRelationships.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppUpdateRelationshipsRequestBuilder"/>.</returns>
+        IMobileAppUpdateRelationshipsRequestBuilder UpdateRelationships(
+            IEnumerable<MobileAppRelationship> relationships = null);
+
+        /// <summary>
+        /// Gets the request builder for MobileAppGetRelatedAppStates.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppGetRelatedAppStatesRequestBuilder"/>.</returns>
+        IMobileAppGetRelatedAppStatesRequestBuilder GetRelatedAppStates(
+            string userPrincipalName = null,
+            string deviceId = null);
     
     }
 }

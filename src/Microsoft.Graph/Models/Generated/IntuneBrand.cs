@@ -116,10 +116,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets landingPageCustomizedImage.
-        /// Customized image displayed in Compnay Portal app landing page
+        /// Customized image displayed in Company Portal app landing page
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "landingPageCustomizedImage", Required = Newtonsoft.Json.Required.Default)]
         public MimeContent LandingPageCustomizedImage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets customPrivacyMessage.
+        /// Custom privacy message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customPrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomPrivacyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets showDisplayNameNextToLogo.

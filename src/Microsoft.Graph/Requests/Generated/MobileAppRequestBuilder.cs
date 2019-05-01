@@ -109,6 +109,18 @@ namespace Microsoft.Graph
                 return new MobileAppUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Relationships.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppRelationshipsCollectionRequestBuilder"/>.</returns>
+        public IMobileAppRelationshipsCollectionRequestBuilder Relationships
+        {
+            get
+            {
+                return new MobileAppRelationshipsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("relationships"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for MobileAppAssign.
@@ -121,6 +133,34 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
                 this.Client,
                 mobileAppAssignments);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MobileAppUpdateRelationships.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppUpdateRelationshipsRequestBuilder"/>.</returns>
+        public IMobileAppUpdateRelationshipsRequestBuilder UpdateRelationships(
+            IEnumerable<MobileAppRelationship> relationships = null)
+        {
+            return new MobileAppUpdateRelationshipsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateRelationships"),
+                this.Client,
+                relationships);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MobileAppGetRelatedAppStates.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppGetRelatedAppStatesRequestBuilder"/>.</returns>
+        public IMobileAppGetRelatedAppStatesRequestBuilder GetRelatedAppStates(
+            string userPrincipalName = null,
+            string deviceId = null)
+        {
+            return new MobileAppGetRelatedAppStatesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRelatedAppStates"),
+                this.Client,
+                userPrincipalName,
+                deviceId);
         }
     
     }

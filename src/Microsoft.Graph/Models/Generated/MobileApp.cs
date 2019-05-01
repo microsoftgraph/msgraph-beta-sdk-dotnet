@@ -143,6 +143,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
+        /// Gets or sets dependent app count.
+        /// The total number of dependencies the child app has.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependentAppCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DependentAppCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets categories.
         /// The list of categories for this app.
         /// </summary>
@@ -176,6 +183,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IMobileAppUserStatusesCollectionPage UserStatuses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets relationships.
+        /// List of relationships for this mobile app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationships", Required = Newtonsoft.Json.Required.Default)]
+        public IMobileAppRelationshipsCollectionPage Relationships { get; set; }
     
     }
 }

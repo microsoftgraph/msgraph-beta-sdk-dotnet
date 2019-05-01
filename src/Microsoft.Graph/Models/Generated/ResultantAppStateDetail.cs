@@ -25,9 +25,34 @@ namespace Microsoft.Graph
         NoAdditionalDetails = 0,
 	
         /// <summary>
+        /// Dependency Failed To Install
+        /// </summary>
+        DependencyFailedToInstall = 1,
+	
+        /// <summary>
+        /// Dependency With Requirements Not Met
+        /// </summary>
+        DependencyWithRequirementsNotMet = 2,
+	
+        /// <summary>
+        /// Dependency Pending Reboot
+        /// </summary>
+        DependencyPendingReboot = 3,
+	
+        /// <summary>
+        /// Dependency With Auto Install Disabled
+        /// </summary>
+        DependencyWithAutoInstallDisabled = 4,
+	
+        /// <summary>
         /// See Install Error Code
         /// </summary>
         SeeInstallErrorCode = 2000,
+	
+        /// <summary>
+        /// Auto Install Disabled
+        /// </summary>
+        AutoInstallDisabled = 3000,
 	
         /// <summary>
         /// See Uninstall Error Code
@@ -38,6 +63,26 @@ namespace Microsoft.Graph
         /// Pending Reboot
         /// </summary>
         PendingReboot = 5000,
+	
+        /// <summary>
+        /// Installing Dependencies
+        /// </summary>
+        InstallingDependencies = 5001,
+	
+        /// <summary>
+        /// Power Shell Script Requirement Not Met
+        /// </summary>
+        PowerShellScriptRequirementNotMet = -1013,
+	
+        /// <summary>
+        /// Registry Requirement Not Met
+        /// </summary>
+        RegistryRequirementNotMet = -1012,
+	
+        /// <summary>
+        /// File System Requirement Not Met
+        /// </summary>
+        FileSystemRequirementNotMet = -1011,
 	
         /// <summary>
         /// Platform Not Applicable

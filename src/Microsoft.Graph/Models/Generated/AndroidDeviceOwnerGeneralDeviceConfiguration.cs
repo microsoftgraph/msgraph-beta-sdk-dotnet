@@ -142,6 +142,20 @@ namespace Microsoft.Graph
         public bool? KioskModeVirtualHomeButtonEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode bluetooth configuration enabled.
+        /// Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBluetoothConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeBluetoothConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode wi fi configuration enabled.
+        /// Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeWiFiConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeWiFiConfigurationEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets microphone force mute.
         /// Indicates whether or not to block unmuting the microphone on the device.
         /// </summary>
@@ -191,6 +205,48 @@ namespace Microsoft.Graph
         public Int32? PasswordMinimumLength { get; set; }
     
         /// <summary>
+        /// Gets or sets password minimum letter characters.
+        /// Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumLetterCharacters", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumLetterCharacters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minimum lower case characters.
+        /// Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumLowerCaseCharacters", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumLowerCaseCharacters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minimum non letter characters.
+        /// Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumNonLetterCharacters", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumNonLetterCharacters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minimum numeric characters.
+        /// Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumNumericCharacters", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumNumericCharacters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minimum symbol characters.
+        /// Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumSymbolCharacters", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumSymbolCharacters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minimum upper case characters.
+        /// Indicates the minimum number of upper caseletter characters required for device password. Valid values 1 to 16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumUpperCaseCharacters", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumUpperCaseCharacters { get; set; }
+    
+        /// <summary>
         /// Gets or sets password minutes of inactivity before screen timeout.
         /// Milliseconds of inactivity before the screen times out.
         /// </summary>
@@ -217,6 +273,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSignInFailureCountBeforeFactoryReset", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
+    
+        /// <summary>
+        /// Gets or sets play store mode.
+        /// Indicates the Play Store mode of the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "playStoreMode", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerPlayStoreMode? PlayStoreMode { get; set; }
     
         /// <summary>
         /// Gets or sets safe boot blocked.

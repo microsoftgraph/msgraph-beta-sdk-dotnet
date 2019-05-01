@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         SizeInMB = 5,
 	
+        /// <summary>
+        /// Does Not Exist
+        /// </summary>
+        DoesNotExist = 6,
+	
     }
 }

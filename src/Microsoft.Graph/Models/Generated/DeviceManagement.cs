@@ -568,6 +568,34 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyDefinitionFiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementGroupPolicyDefinitionFilesCollectionPage GroupPolicyDefinitionFiles { get; set; }
     
+        /// <summary>
+        /// Gets or sets intents.
+        /// The device management intents
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intents", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementIntentsCollectionPage Intents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting definitions.
+        /// The device management intent setting definitions
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementSettingDefinitionsCollectionPage SettingDefinitions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets templates.
+        /// The available templates
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templates", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementTemplatesCollectionPage Templates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets categories.
+        /// The available categories
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementCategoriesCollectionPage Categories { get; set; }
+    
     }
 }
 

@@ -55,9 +55,34 @@ namespace Microsoft.Graph
         AppNotificationCode = 6,
 	
         /// <summary>
+        /// App Notification And Code
+        /// </summary>
+        AppNotificationAndCode = 7,
+	
+        /// <summary>
+        /// App Password
+        /// </summary>
+        AppPassword = 8,
+	
+        /// <summary>
+        /// Fido
+        /// </summary>
+        Fido = 9,
+	
+        /// <summary>
+        /// Alternate Mobile Phone
+        /// </summary>
+        AlternateMobilePhone = 10,
+	
+        /// <summary>
+        /// Mobile Phone And SMS
+        /// </summary>
+        MobilePhoneAndSMS = 11,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 7,
+        UnknownFutureValue = 12,
 	
     }
 }

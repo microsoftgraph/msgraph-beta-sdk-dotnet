@@ -29,5 +29,11 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.educationAssignmentIndividualRecipient";
         }
 
+        /// <summary>
+        /// Gets or sets recipients.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Recipients { get; set; }
+    
     }
 }

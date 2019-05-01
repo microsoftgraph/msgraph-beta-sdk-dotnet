@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>
         IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder CredentialUserRegistrationDetails { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserCredentialUsageDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootUserCredentialUsageDetailsCollectionRequestBuilder"/>.</returns>
+        IReportRootUserCredentialUsageDetailsCollectionRequestBuilder UserCredentialUsageDetails { get; }
     
         /// <summary>
         /// Gets the request builder for ReportRootGetAzureADLicenseUsage.

@@ -414,6 +414,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyDefinitionFilesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementGroupPolicyDefinitionFilesCollectionRequestBuilder GroupPolicyDefinitionFiles { get; }
+
+        /// <summary>
+        /// Gets the request builder for Intents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementIntentsCollectionRequestBuilder Intents { get; }
+
+        /// <summary>
+        /// Gets the request builder for SettingDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementSettingDefinitionsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementSettingDefinitionsCollectionRequestBuilder SettingDefinitions { get; }
+
+        /// <summary>
+        /// Gets the request builder for Templates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplatesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementTemplatesCollectionRequestBuilder Templates { get; }
+
+        /// <summary>
+        /// Gets the request builder for Categories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementCategoriesCollectionRequestBuilder Categories { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceManagementSendCustomNotificationToCompanyPortal.

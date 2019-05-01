@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ImportedWindowsAutopilotDeviceIdentityImport.
+        /// </summary>
+        /// <returns>The <see cref="IImportedWindowsAutopilotDeviceIdentityImportRequestBuilder"/>.</returns>
+        public IImportedWindowsAutopilotDeviceIdentityImportRequestBuilder Import(
+            IEnumerable<ImportedWindowsAutopilotDeviceIdentity> importedWindowsAutopilotDeviceIdentities = null)
+        {
+            return new ImportedWindowsAutopilotDeviceIdentityImportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.import"),
+                this.Client,
+                importedWindowsAutopilotDeviceIdentities);
+        }
     }
 }

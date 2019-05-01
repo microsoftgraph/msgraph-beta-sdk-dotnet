@@ -50,13 +50,6 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameFormatString", Required = Newtonsoft.Json.Required.Default)]
         public string SubjectAlternativeNameFormatString { get; set; }
     
-        /// <summary>
-        /// Gets or sets subject alternative name type.
-        /// Certificate Subject Alternative Name Type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameType", Required = Newtonsoft.Json.Required.Default)]
-        public SubjectAlternativeNameType? SubjectAlternativeNameType { get; set; }
-    
     }
 }
 

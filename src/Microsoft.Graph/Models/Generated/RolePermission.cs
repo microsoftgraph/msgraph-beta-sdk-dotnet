@@ -25,7 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actions.
-        /// Allowed Actions
+        /// Allowed Actions - Deprecated
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Actions { get; set; }

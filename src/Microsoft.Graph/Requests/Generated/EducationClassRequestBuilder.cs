@@ -109,6 +109,18 @@ namespace Microsoft.Graph
                 return new EducationClassAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
+        public IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories
+        {
+            get
+            {
+                return new EducationClassAssignmentCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentCategories"), this.Client);
+            }
+        }
     
     }
 }

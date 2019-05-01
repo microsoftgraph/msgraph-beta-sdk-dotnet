@@ -232,13 +232,6 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationManagerComplianceRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? ConfigurationManagerComplianceRequired { get; set; }
     
-        /// <summary>
-        /// Gets or sets tpm required.
-        /// Require Trusted Platform Module(TPM) to be present.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tpmRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? TpmRequired { get; set; }
-    
     }
 }
 

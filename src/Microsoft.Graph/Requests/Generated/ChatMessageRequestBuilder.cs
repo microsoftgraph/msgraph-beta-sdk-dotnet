@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new ChatMessageRepliesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("replies"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for HostedImages.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageHostedImagesCollectionRequestBuilder"/>.</returns>
+        public IChatMessageHostedImagesCollectionRequestBuilder HostedImages
+        {
+            get
+            {
+                return new ChatMessageHostedImagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hostedImages"), this.Client);
+            }
+        }
     
         
     

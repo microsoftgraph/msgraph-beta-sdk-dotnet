@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public IEnumerable<ExtendedKeyUsage> ExtendedKeyUsages { get; set; }
     
         /// <summary>
+        /// Gets or sets subject alternative name type.
+        /// Certificate Subject Alternative Name Type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameType", Required = Newtonsoft.Json.Required.Default)]
+        public SubjectAlternativeNameType? SubjectAlternativeNameType { get; set; }
+    
+        /// <summary>
         /// Gets or sets root certificate.
         /// Trusted Root Certificate.
         /// </summary>

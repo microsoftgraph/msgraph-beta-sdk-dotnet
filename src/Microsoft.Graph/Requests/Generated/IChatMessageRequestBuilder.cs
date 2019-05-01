@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChatMessageRepliesCollectionRequestBuilder"/>.</returns>
         IChatMessageRepliesCollectionRequestBuilder Replies { get; }
+
+        /// <summary>
+        /// Gets the request builder for HostedImages.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageHostedImagesCollectionRequestBuilder"/>.</returns>
+        IChatMessageHostedImagesCollectionRequestBuilder HostedImages { get; }
     
         
     

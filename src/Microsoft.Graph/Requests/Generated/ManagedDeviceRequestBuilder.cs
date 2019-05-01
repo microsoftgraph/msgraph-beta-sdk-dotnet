@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Users.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceUsersCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceUsersCollectionRequestBuilder Users
+        {
+            get
+            {
+                return new ManagedDeviceUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("users"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
@@ -119,6 +131,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceMobileAppConfigurationStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SecurityBaselineStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates
+        {
+            get
+            {
+                return new ManagedDeviceSecurityBaselineStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityBaselineStates"), this.Client);
             }
         }
     

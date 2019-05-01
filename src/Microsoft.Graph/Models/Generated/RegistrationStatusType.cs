@@ -35,9 +35,14 @@ namespace Microsoft.Graph
         Capable = 2,
 	
         /// <summary>
+        /// Mfa Registered
+        /// </summary>
+        MfaRegistered = 3,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 3,
+        UnknownFutureValue = 4,
 	
     }
 }

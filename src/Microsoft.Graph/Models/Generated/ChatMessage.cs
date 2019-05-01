@@ -124,6 +124,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replies", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessageRepliesCollectionPage Replies { get; set; }
     
+        /// <summary>
+        /// Gets or sets hosted images.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedImages", Required = Newtonsoft.Json.Required.Default)]
+        public IChatMessageHostedImagesCollectionPage HostedImages { get; set; }
+    
     }
 }
 

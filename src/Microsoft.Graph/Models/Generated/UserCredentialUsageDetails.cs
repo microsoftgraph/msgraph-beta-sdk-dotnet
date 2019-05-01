@@ -58,6 +58,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureReason", Required = Newtonsoft.Json.Required.Default)]
         public string FailureReason { get; set; }
     
+        /// <summary>
+        /// Gets or sets event date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EventDateTime { get; set; }
+    
     }
 }
 

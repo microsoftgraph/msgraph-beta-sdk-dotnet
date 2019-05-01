@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new ReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("credentialUserRegistrationDetails"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for UserCredentialUsageDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootUserCredentialUsageDetailsCollectionRequestBuilder"/>.</returns>
+        public IReportRootUserCredentialUsageDetailsCollectionRequestBuilder UserCredentialUsageDetails
+        {
+            get
+            {
+                return new ReportRootUserCredentialUsageDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userCredentialUsageDetails"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for ReportRootGetAzureADLicenseUsage.

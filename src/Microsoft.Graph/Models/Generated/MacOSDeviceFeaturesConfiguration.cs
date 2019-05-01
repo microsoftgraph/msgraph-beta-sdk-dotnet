@@ -22,6 +22,132 @@ namespace Microsoft.Graph
     public partial class MacOSDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     
+        /// <summary>
+        /// Gets or sets auto launch items.
+        /// List of applications, files, folders, and other items to launch when the user logs in. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoLaunchItems", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MacOSLaunchItem> AutoLaunchItems { get; set; }
+    
+        /// <summary>
+        /// Gets or sets admin show host info.
+        /// Whether to show admin host information on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminShowHostInfo", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AdminShowHostInfo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets login window text.
+        /// Custom text to be displayed on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginWindowText", Required = Newtonsoft.Json.Required.Default)]
+        public string LoginWindowText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authorized users list hidden.
+        /// Whether to show the name and password dialog or a list of users on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedUsersListHidden", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AuthorizedUsersListHidden { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authorized users list hide local users.
+        /// Whether to show only network and system users in the authorized users list on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedUsersListHideLocalUsers", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AuthorizedUsersListHideLocalUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authorized users list hide mobile accounts.
+        /// Whether to hide mobile users in the authorized users list on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedUsersListHideMobileAccounts", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AuthorizedUsersListHideMobileAccounts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authorized users list include network users.
+        /// Whether to show network users in the authorized users list on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedUsersListIncludeNetworkUsers", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AuthorizedUsersListIncludeNetworkUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authorized users list hide admin users.
+        /// Whether to hide admin users in the authorized users list on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedUsersListHideAdminUsers", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AuthorizedUsersListHideAdminUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authorized users list show other managed users.
+        /// Whether to show other users in the authorized users list on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedUsersListShowOtherManagedUsers", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AuthorizedUsersListShowOtherManagedUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shut down disabled.
+        /// Whether to hide the Shut Down button item on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shutDownDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShutDownDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restart disabled.
+        /// Whether to hide the Restart button item on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RestartDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sleep disabled.
+        /// Whether to hide the Sleep menu item on the login window.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sleepDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SleepDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets console access disabled.
+        /// Whether the Other user will disregard use of the `&amp;gt;console&amp;gt; special user name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "consoleAccessDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ConsoleAccessDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shut down disabled while logged in.
+        /// Whether the Shut Down menu item on the login window will be disabled while the user is logged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shutDownDisabledWhileLoggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShutDownDisabledWhileLoggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restart disabled while logged in.
+        /// Whether the Restart menu item on the login window will be disabled while the user is logged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartDisabledWhileLoggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RestartDisabledWhileLoggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power off disabled while logged in.
+        /// Whether the Power Off menu item on the login window will be disabled while the user is logged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerOffDisabledWhileLoggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PowerOffDisabledWhileLoggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets log out disabled while logged in.
+        /// Whether the Log Out menu item on the login window will be disabled while the user is logged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logOutDisabledWhileLoggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LogOutDisabledWhileLoggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets screen lock disable immediate.
+        /// Whether to disable the immediate screen lock functions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenLockDisableImmediate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ScreenLockDisableImmediate { get; set; }
+    
     }
 }
 
