@@ -14,30 +14,22 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface IPermissionRequestBuilder.
+    /// The interface IConversationMemberRequestBuilder.
     /// </summary>
-    public partial interface IPermissionRequestBuilder : IEntityRequestBuilder
+    public partial interface IConversationMemberRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IPermissionRequest Request();
+        new IConversationMemberRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IPermissionRequest Request(IEnumerable<Option> options);
-    
-        /// <summary>
-        /// Gets the request builder for PermissionGrant.
-        /// </summary>
-        /// <returns>The <see cref="IPermissionGrantRequestBuilder"/>.</returns>
-        IPermissionGrantRequestBuilder Grant(
-            IEnumerable<string> roles = null,
-            IEnumerable<DriveRecipient> recipients = null);
+        new IConversationMemberRequest Request(IEnumerable<Option> options);
     
     }
 }

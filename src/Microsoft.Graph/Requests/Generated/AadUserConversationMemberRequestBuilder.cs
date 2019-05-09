@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type ChatMessageHostedImageRequestBuilder.
+    /// The type AadUserConversationMemberRequestBuilder.
     /// </summary>
-    public partial class ChatMessageHostedImageRequestBuilder : EntityRequestBuilder, IChatMessageHostedImageRequestBuilder
+    public partial class AadUserConversationMemberRequestBuilder : ConversationMemberRequestBuilder, IAadUserConversationMemberRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new ChatMessageHostedImageRequestBuilder.
+        /// Constructs a new AadUserConversationMemberRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public ChatMessageHostedImageRequestBuilder(
+        public AadUserConversationMemberRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IChatMessageHostedImageRequest Request()
+        public new IAadUserConversationMemberRequest Request()
         {
             return this.Request(null);
         }
@@ -45,9 +45,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IChatMessageHostedImageRequest Request(IEnumerable<Option> options)
+        public new IAadUserConversationMemberRequest Request(IEnumerable<Option> options)
         {
-            return new ChatMessageHostedImageRequest(this.RequestUrl, this.Client, options);
+            return new AadUserConversationMemberRequest(this.RequestUrl, this.Client, options);
         }
     
     }
