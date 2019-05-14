@@ -1,3 +1,11 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+<#
+.Synopsis
+    Increment the minor version string.
+#>
+
 $project = ".\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"
 
 [xml]$xmlDoc = Get-Content $project
@@ -13,7 +21,7 @@ $majorVersion = $versionObj.Major.ToString()
 $minorVersion = ($versionObj.Minor + 1).ToString()
 $patchVersion = $versionObj.Build.ToString()
 
-# increment minor version. 
+# increment minor version.
 $updatedVersionPrefixString = "{0}.{1}.{2}" -f $majorVersion, $minorVersion, $patchVersion
 $xmlDoc.Project.PropertyGroup[0].VersionPrefix = $updatedVersionPrefixString
 
