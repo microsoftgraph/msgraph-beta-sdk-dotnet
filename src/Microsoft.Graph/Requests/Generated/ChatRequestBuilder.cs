@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IChatMembersCollectionRequestBuilder"/>.</returns>
+        public IChatMembersCollectionRequestBuilder Members
+        {
+            get
+            {
+                return new ChatMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IChatMessagesCollectionRequestBuilder"/>.</returns>

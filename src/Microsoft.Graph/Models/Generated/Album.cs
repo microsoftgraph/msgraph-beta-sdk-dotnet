@@ -16,26 +16,18 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type ComplianceInformation.
+    /// The type Album.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class ComplianceInformation
+    public partial class Album
     {
 
         /// <summary>
-        /// Gets or sets certificationControls.
-        /// Collection of the certification controls associated with certification
+        /// Gets or sets coverImageItemId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationControls", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<CertificationControl> CertificationControls { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificationName.
-        /// Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationName", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificationName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coverImageItemId", Required = Newtonsoft.Json.Required.Default)]
+        public string CoverImageItemId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

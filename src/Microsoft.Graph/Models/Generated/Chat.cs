@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public IChatMembersCollectionPage Members { get; set; }
+    
+        /// <summary>
         /// Gets or sets messages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]

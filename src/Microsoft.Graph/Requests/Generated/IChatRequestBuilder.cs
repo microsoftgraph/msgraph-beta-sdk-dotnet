@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IChatRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IChatMembersCollectionRequestBuilder"/>.</returns>
+        IChatMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IChatMessagesCollectionRequestBuilder"/>.</returns>

@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         public Audio Audio { get; set; }
     
         /// <summary>
+        /// Gets or sets bundle.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundle", Required = Newtonsoft.Json.Required.Default)]
+        public Bundle Bundle { get; set; }
+    
+        /// <summary>
         /// Gets or sets content.
         /// The content stream, if the item represents a file.
         /// </summary>

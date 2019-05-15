@@ -63,6 +63,12 @@ namespace Microsoft.Graph
         public IDriveActivitiesCollectionPage Activities { get; set; }
     
         /// <summary>
+        /// Gets or sets bundles.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundles", Required = Newtonsoft.Json.Required.Default)]
+        public IDriveBundlesCollectionPage Bundles { get; set; }
+    
+        /// <summary>
         /// Gets or sets following.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "following", Required = Newtonsoft.Json.Required.Default)]

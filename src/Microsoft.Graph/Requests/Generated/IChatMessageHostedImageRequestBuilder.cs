@@ -31,11 +31,5 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IChatMessageHostedImageRequest Request(IEnumerable<Option> options);
     
-        /// <summary>
-        /// Gets the request builder for Content.
-        /// </summary>
-        /// <returns>The <see cref="IChatMessageHostedImageContentRequestBuilder"/>.</returns>
-        IChatMessageHostedImageContentRequestBuilder Content { get; }
-    
     }
 }

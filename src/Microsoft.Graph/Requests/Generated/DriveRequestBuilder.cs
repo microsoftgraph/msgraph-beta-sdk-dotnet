@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Bundles.
+        /// </summary>
+        /// <returns>The <see cref="IDriveBundlesCollectionRequestBuilder"/>.</returns>
+        public IDriveBundlesCollectionRequestBuilder Bundles
+        {
+            get
+            {
+                return new DriveBundlesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("bundles"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Following.
         /// </summary>
         /// <returns>The <see cref="IDriveFollowingCollectionRequestBuilder"/>.</returns>
