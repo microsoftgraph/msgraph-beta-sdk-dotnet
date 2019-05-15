@@ -1,3 +1,11 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+<#
+.Synopsis
+    Sets the package release notes based on the results of the git status call.
+#>
+
 [array]$changes = git status --porcelain
 
 $changeLog = "`r`n"
@@ -30,7 +38,7 @@ $project = ".\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"
 
 [xml]$xmlDoc = Get-Content $project
 
-# Assumption: VersionPrefix is set in the first property group.
+# Assumption: PackageReleaseNotes is set in the first property group.
 $xmlDoc.Project.PropertyGroup[0].PackageReleaseNotes = $changeLog
 
 $fullFileName = $PWD.ToString() + "\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"
