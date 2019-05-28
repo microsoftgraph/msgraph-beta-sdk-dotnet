@@ -13,21 +13,26 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum MobileAppDependecyType.
+    /// The enum EmailCertificateType.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-    public enum MobileAppDependecyType
+    public enum EmailCertificateType
     {
     
         /// <summary>
-        /// Detect
+        /// None
         /// </summary>
-        Detect = 0,
+        None = 0,
 	
         /// <summary>
-        /// Auto Install
+        /// Certificate
         /// </summary>
-        AutoInstall = 1,
+        Certificate = 1,
+	
+        /// <summary>
+        /// Derived Credential
+        /// </summary>
+        DerivedCredential = 2,
 	
     }
 }

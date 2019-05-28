@@ -102,6 +102,12 @@ namespace Microsoft.Graph
             string deviceName = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateFileVaultKey.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
+        IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey();
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceRetire.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceRetireRequestBuilder"/>.</returns>
@@ -229,6 +235,12 @@ namespace Microsoft.Graph
         IManagedDeviceOverrideComplianceStateRequestBuilder OverrideComplianceState(
             AdministratorConfiguredDeviceComplianceState complianceState,
             string remediationUrl = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetFileVaultKey.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetFileVaultKeyRequestBuilder"/>.</returns>
+        IManagedDeviceGetFileVaultKeyRequestBuilder GetFileVaultKey();
     
     }
 }

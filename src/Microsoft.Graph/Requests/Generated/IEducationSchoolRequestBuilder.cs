@@ -49,5 +49,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAdministrativeUnitWithReferenceRequestBuilder"/>.</returns>
         IAdministrativeUnitWithReferenceRequestBuilder AdministrativeUnit { get; }
     
+        
+    
     }
 }

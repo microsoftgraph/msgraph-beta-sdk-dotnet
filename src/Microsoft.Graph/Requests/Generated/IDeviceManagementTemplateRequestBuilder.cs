@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTemplateCategoriesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementTemplateCategoriesCollectionRequestBuilder Categories { get; }
+
+        /// <summary>
+        /// Gets the request builder for MigratableTo.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateMigratableToCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementTemplateMigratableToCollectionRequestBuilder MigratableTo { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceManagementTemplateCreateInstance.

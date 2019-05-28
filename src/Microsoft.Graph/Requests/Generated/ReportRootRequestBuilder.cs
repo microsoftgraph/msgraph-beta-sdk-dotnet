@@ -161,19 +161,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetUserCredentialUsageDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetUserCredentialUsageDetailsRequestBuilder"/>.</returns>
-        public IReportRootGetUserCredentialUsageDetailsRequestBuilder GetUserCredentialUsageDetails(
-            string period)
-        {
-            return new ReportRootGetUserCredentialUsageDetailsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getUserCredentialUsageDetails"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>

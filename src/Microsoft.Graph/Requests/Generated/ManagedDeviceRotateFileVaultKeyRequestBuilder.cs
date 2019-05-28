@@ -14,23 +14,20 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type ReportRootGetUserCredentialUsageDetailsRequestBuilder.
+    /// The type ManagedDeviceRotateFileVaultKeyRequestBuilder.
     /// </summary>
-    public partial class ReportRootGetUserCredentialUsageDetailsRequestBuilder : BaseFunctionMethodRequestBuilder<IReportRootGetUserCredentialUsageDetailsRequest>, IReportRootGetUserCredentialUsageDetailsRequestBuilder
+    public partial class ManagedDeviceRotateFileVaultKeyRequestBuilder : BaseActionMethodRequestBuilder<IManagedDeviceRotateFileVaultKeyRequest>, IManagedDeviceRotateFileVaultKeyRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="ReportRootGetUserCredentialUsageDetailsRequestBuilder"/>.
+        /// Constructs a new <see cref="ManagedDeviceRotateFileVaultKeyRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="period">A period parameter for the OData method call.</param>
-        public ReportRootGetUserCredentialUsageDetailsRequestBuilder(
+        public ManagedDeviceRotateFileVaultKeyRequestBuilder(
             string requestUrl,
-            IBaseClient client,
-            string period)
+            IBaseClient client)
             : base(requestUrl, client)
         {
-            this.SetParameter("period", period, false);
         }
 
         /// <summary>
@@ -39,9 +36,9 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override IReportRootGetUserCredentialUsageDetailsRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override IManagedDeviceRotateFileVaultKeyRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new ReportRootGetUserCredentialUsageDetailsRequest(functionUrl, this.Client, options);
+            var request = new ManagedDeviceRotateFileVaultKeyRequest(functionUrl, this.Client, options);
 
             return request;
         }

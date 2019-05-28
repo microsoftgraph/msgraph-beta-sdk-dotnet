@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets newName.
+        /// The new name of the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newName", Required = Newtonsoft.Json.Required.Default)]
         public string NewName { get; set; }
     
         /// <summary>
         /// Gets or sets oldName.
+        /// The previous name of the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oldName", Required = Newtonsoft.Json.Required.Default)]
         public string OldName { get; set; }

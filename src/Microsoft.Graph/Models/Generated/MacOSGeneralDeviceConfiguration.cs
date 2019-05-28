@@ -302,6 +302,55 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? ContentCachingBlocked { get; set; }
     
+        /// <summary>
+        /// Gets or sets i cloud block photo library.
+        /// Indicates whether or not to block iCloud Photo Library.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudBlockPhotoLibrary", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ICloudBlockPhotoLibrary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets screen capture blocked.
+        /// Indicates whether or not to block the user from taking Screenshots.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ScreenCaptureBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classroom app block remote screen observation.
+        /// Indicates whether or not to allow remote screen observation by Classroom app. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classroomAppBlockRemoteScreenObservation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ClassroomAppBlockRemoteScreenObservation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classroom app force unprompted screen observation.
+        /// Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classroomAppForceUnpromptedScreenObservation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ClassroomAppForceUnpromptedScreenObservation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classroom force automatically join classes.
+        /// Indicates whether or not to automatically give permission to the teacher's requests, without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classroomForceAutomaticallyJoinClasses", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ClassroomForceAutomaticallyJoinClasses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classroom force request permission to leave classes.
+        /// Indicates whether a student enrolled in an unmanaged course via Classroom will be required to request permission from the teacher when attempting to leave the course. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classroomForceRequestPermissionToLeaveClasses", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ClassroomForceRequestPermissionToLeaveClasses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classroom force unprompted app and device lock.
+        /// Indicates whether or not to allow the teacher to lock apps or the device without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classroomForceUnpromptedAppAndDeviceLock", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ClassroomForceUnpromptedAppAndDeviceLock { get; set; }
+    
     }
 }
 

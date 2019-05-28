@@ -31,12 +31,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets observedDateTime.
+        /// When the activity was observed to take place.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "observedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ObservedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets recordedDateTime.
+        /// When the observation was recorded on the service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RecordedDateTime { get; set; }

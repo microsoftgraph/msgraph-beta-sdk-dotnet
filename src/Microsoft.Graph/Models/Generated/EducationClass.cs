@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         public EducationTerm Term { get; set; }
     
         /// <summary>
+        /// Gets or sets course.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "course", Required = Newtonsoft.Json.Required.Default)]
+        public EducationCourse Course { get; set; }
+    
+        /// <summary>
         /// Gets or sets schools.
         /// All schools that this class is associated with. Nullable.
         /// </summary>

@@ -13,10 +13,10 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum AuthMethodsType.
+    /// The enum UsageAuthMethod.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-    public enum AuthMethodsType
+    public enum UsageAuthMethod
     {
     
         /// <summary>
@@ -30,9 +30,9 @@ namespace Microsoft.Graph
         MobileSMS = 1,
 	
         /// <summary>
-        /// Mobile Phone
+        /// Mobile Call
         /// </summary>
-        MobilePhone = 2,
+        MobileCall = 2,
 	
         /// <summary>
         /// Office Phone
@@ -50,39 +50,29 @@ namespace Microsoft.Graph
         AppNotification = 5,
 	
         /// <summary>
-        /// App Notification Code
+        /// App Code
         /// </summary>
-        AppNotificationCode = 6,
+        AppCode = 6,
 	
         /// <summary>
-        /// App Notification And Code
+        /// Alternate Mobile Call
         /// </summary>
-        AppNotificationAndCode = 7,
-	
-        /// <summary>
-        /// App Password
-        /// </summary>
-        AppPassword = 8,
+        AlternateMobileCall = 7,
 	
         /// <summary>
         /// Fido
         /// </summary>
-        Fido = 9,
+        Fido = 8,
 	
         /// <summary>
-        /// Alternate Mobile Phone
+        /// App Password
         /// </summary>
-        AlternateMobilePhone = 10,
-	
-        /// <summary>
-        /// Mobile Phone And SMS
-        /// </summary>
-        MobilePhoneAndSMS = 11,
+        AppPassword = 9,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 12,
+        UnknownFutureValue = 10,
 	
     }
 }

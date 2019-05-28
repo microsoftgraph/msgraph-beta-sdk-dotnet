@@ -29,6 +29,18 @@ namespace Microsoft.Graph
         public ManagedDeviceRemoteAction ActionName { get; set; }
     
         /// <summary>
+        /// Gets or sets KeepEnrollmentData.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keepEnrollmentData", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KeepEnrollmentData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets KeepUserData.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keepUserData", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KeepUserData { get; set; }
+    
+        /// <summary>
         /// Gets or sets DeviceIds.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceIds", Required = Newtonsoft.Json.Required.Default)]

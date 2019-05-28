@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISecurityBaselineTemplateDeviceStatesCollectionRequestBuilder"/>.</returns>
         ISecurityBaselineTemplateDeviceStatesCollectionRequestBuilder DeviceStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for CategoryDeviceStateSummaries.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder"/>.</returns>
+        ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder CategoryDeviceStateSummaries { get; }
     
     }
 }

@@ -25,6 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets newVersion.
+        /// The name of the new version that was created by this action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newVersion", Required = Newtonsoft.Json.Required.Default)]
         public string NewVersion { get; set; }

@@ -108,6 +108,13 @@ namespace Microsoft.Graph
         public bool? EnableWhiteGlove { get; set; }
     
         /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// Scope tags for the profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets assigned devices.
         /// The list of assigned devices for the profile.
         /// </summary>

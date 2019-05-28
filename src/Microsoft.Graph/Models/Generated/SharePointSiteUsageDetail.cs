@@ -47,6 +47,12 @@ namespace Microsoft.Graph
         public string OwnerDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets owner principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string OwnerPrincipalName { get; set; }
+    
+        /// <summary>
         /// Gets or sets is deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]

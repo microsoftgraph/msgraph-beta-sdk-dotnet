@@ -87,6 +87,14 @@ namespace Microsoft.Graph
             IEnumerable<DeviceManagementSettingInstance> settings = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementIntentMigrateToTemplate.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentMigrateToTemplateRequestBuilder"/>.</returns>
+        IDeviceManagementIntentMigrateToTemplateRequestBuilder MigrateToTemplate(
+            bool preserveCustomValues,
+            string newTemplateId = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementIntentAssign.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>

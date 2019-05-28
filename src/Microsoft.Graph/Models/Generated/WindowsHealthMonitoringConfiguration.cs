@@ -31,10 +31,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets config device health monitoring scope.
-        /// Sepcifies set of events collected from the device where health monitoring is enabled
+        /// Specifies set of events collected from the device where health monitoring is enabled
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configDeviceHealthMonitoringScope", Required = Newtonsoft.Json.Required.Default)]
         public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope { get; set; }
+    
+        /// <summary>
+        /// Gets or sets config device health monitoring custom scope.
+        /// Specifies custom set of events collected from the device where health monitoring is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configDeviceHealthMonitoringCustomScope", Required = Newtonsoft.Json.Required.Default)]
+        public string ConfigDeviceHealthMonitoringCustomScope { get; set; }
     
     }
 }

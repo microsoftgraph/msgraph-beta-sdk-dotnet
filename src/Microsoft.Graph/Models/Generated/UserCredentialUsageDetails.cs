@@ -50,7 +50,7 @@ namespace Microsoft.Graph
         /// Gets or sets auth method.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
-        public AuthMethodsType? AuthMethod { get; set; }
+        public UsageAuthMethod? AuthMethod { get; set; }
     
         /// <summary>
         /// Gets or sets failure reason.

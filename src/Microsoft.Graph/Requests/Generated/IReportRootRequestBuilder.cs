@@ -90,13 +90,6 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetUserCredentialUsageDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetUserCredentialUsageDetailsRequestBuilder"/>.</returns>
-        IReportRootGetUserCredentialUsageDetailsRequestBuilder GetUserCredentialUsageDetails(
-            string period);
-
-        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>

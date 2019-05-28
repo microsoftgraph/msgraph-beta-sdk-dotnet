@@ -119,6 +119,12 @@ namespace Microsoft.Graph
         public string Locale { get; set; }
     
         /// <summary>
+        /// Gets or sets web url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string WebUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets replies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replies", Required = Newtonsoft.Json.Required.Default)]

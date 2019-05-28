@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
+        /// The name of the item that was deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets objectType.
+        /// File or Folder, depending on the type of the deleted item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectType", Required = Newtonsoft.Json.Required.Default)]
         public string ObjectType { get; set; }

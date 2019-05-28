@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStates", Required = Newtonsoft.Json.Required.Default)]
         public ISecurityBaselineTemplateDeviceStatesCollectionPage DeviceStates { get; set; }
     
+        /// <summary>
+        /// Gets or sets category device state summaries.
+        /// The security baseline per category device state summary
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryDeviceStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        public ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage CategoryDeviceStateSummaries { get; set; }
+    
     }
 }
 
