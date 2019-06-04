@@ -42,6 +42,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>
         IManagedDeviceExecuteActionRequestBuilder ExecuteAction(
             ManagedDeviceRemoteAction actionName,
+            bool? keepEnrollmentData = null,
+            bool? keepUserData = null,
             IEnumerable<string> deviceIds = null);
     }
 }

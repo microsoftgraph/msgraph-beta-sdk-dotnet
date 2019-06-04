@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="applicationToUpdate">The Application to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Application.</returns>
         public async System.Threading.Tasks.Task<Application> UpdateAsync(Application applicationToUpdate, CancellationToken cancellationToken)
         {
+			if (applicationToUpdate.AdditionalData != null)
+			{
+				if (applicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					applicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, applicationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (applicationToUpdate.AdditionalData != null)
+            {
+                if (applicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    applicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, applicationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Application>(applicationToUpdate, cancellationToken).ConfigureAwait(false);

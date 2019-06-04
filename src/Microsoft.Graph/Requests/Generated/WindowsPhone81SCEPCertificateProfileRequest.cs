@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81SCEPCertificateProfileToUpdate">The WindowsPhone81SCEPCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81SCEPCertificateProfile.</returns>
         public async System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> UpdateAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsPhone81SCEPCertificateProfileToUpdate.AdditionalData != null)
+			{
+				if (windowsPhone81SCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhone81SCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81SCEPCertificateProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsPhone81SCEPCertificateProfileToUpdate.AdditionalData != null)
+            {
+                if (windowsPhone81SCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhone81SCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81SCEPCertificateProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsPhone81SCEPCertificateProfile>(windowsPhone81SCEPCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);

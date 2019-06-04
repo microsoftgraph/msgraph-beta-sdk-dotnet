@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidManagedStoreAppConfigurationToUpdate">The AndroidManagedStoreAppConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidManagedStoreAppConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidManagedStoreAppConfiguration> UpdateAsync(AndroidManagedStoreAppConfiguration androidManagedStoreAppConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidManagedStoreAppConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidManagedStoreAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidManagedStoreAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidManagedStoreAppConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidManagedStoreAppConfigurationToUpdate.AdditionalData != null)
+            {
+                if (androidManagedStoreAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidManagedStoreAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidManagedStoreAppConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidManagedStoreAppConfiguration>(androidManagedStoreAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="emailAppUsageVersionsUserCountsToUpdate">The EmailAppUsageVersionsUserCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailAppUsageVersionsUserCounts.</returns>
         public async System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> UpdateAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (emailAppUsageVersionsUserCountsToUpdate.AdditionalData != null)
+			{
+				if (emailAppUsageVersionsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					emailAppUsageVersionsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAppUsageVersionsUserCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (emailAppUsageVersionsUserCountsToUpdate.AdditionalData != null)
+            {
+                if (emailAppUsageVersionsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    emailAppUsageVersionsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAppUsageVersionsUserCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EmailAppUsageVersionsUserCounts>(emailAppUsageVersionsUserCountsToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="governanceRoleSettingToUpdate">The GovernanceRoleSetting to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GovernanceRoleSetting.</returns>
         public async System.Threading.Tasks.Task<GovernanceRoleSetting> UpdateAsync(GovernanceRoleSetting governanceRoleSettingToUpdate, CancellationToken cancellationToken)
         {
+			if (governanceRoleSettingToUpdate.AdditionalData != null)
+			{
+				if (governanceRoleSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					governanceRoleSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, governanceRoleSettingToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (governanceRoleSettingToUpdate.AdditionalData != null)
+            {
+                if (governanceRoleSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    governanceRoleSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, governanceRoleSettingToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GovernanceRoleSetting>(governanceRoleSettingToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mailboxUsageMailboxCountsToUpdate">The MailboxUsageMailboxCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailboxUsageMailboxCounts.</returns>
         public async System.Threading.Tasks.Task<MailboxUsageMailboxCounts> UpdateAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (mailboxUsageMailboxCountsToUpdate.AdditionalData != null)
+			{
+				if (mailboxUsageMailboxCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mailboxUsageMailboxCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageMailboxCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mailboxUsageMailboxCountsToUpdate.AdditionalData != null)
+            {
+                if (mailboxUsageMailboxCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mailboxUsageMailboxCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageMailboxCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MailboxUsageMailboxCounts>(mailboxUsageMailboxCountsToUpdate, cancellationToken).ConfigureAwait(false);

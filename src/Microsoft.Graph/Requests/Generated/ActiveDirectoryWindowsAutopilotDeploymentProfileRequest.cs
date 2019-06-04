@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToUpdate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
         public async System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> UpdateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.AdditionalData != null)
+			{
+				if (activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.AdditionalData != null)
+            {
+                if (activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, activeDirectoryWindowsAutopilotDeploymentProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ActiveDirectoryWindowsAutopilotDeploymentProfile>(activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, cancellationToken).ConfigureAwait(false);

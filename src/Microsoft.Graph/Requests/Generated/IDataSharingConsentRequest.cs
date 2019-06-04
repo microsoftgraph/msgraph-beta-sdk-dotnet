@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="dataSharingConsentToUpdate">The DataSharingConsent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataSharingConsent.</returns>
         System.Threading.Tasks.Task<DataSharingConsent> UpdateAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken);
 

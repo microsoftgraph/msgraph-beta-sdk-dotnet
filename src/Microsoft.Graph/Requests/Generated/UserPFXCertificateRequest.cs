@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userPFXCertificateToUpdate">The UserPFXCertificate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserPFXCertificate.</returns>
         public async System.Threading.Tasks.Task<UserPFXCertificate> UpdateAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken)
         {
+			if (userPFXCertificateToUpdate.AdditionalData != null)
+			{
+				if (userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userPFXCertificateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (userPFXCertificateToUpdate.AdditionalData != null)
+            {
+                if (userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userPFXCertificateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserPFXCertificate>(userPFXCertificateToUpdate, cancellationToken).ConfigureAwait(false);

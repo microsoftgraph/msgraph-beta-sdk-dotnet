@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="easEmailProfileConfigurationBaseToUpdate">The EasEmailProfileConfigurationBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EasEmailProfileConfigurationBase.</returns>
         public async System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> UpdateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToUpdate, CancellationToken cancellationToken)
         {
+			if (easEmailProfileConfigurationBaseToUpdate.AdditionalData != null)
+			{
+				if (easEmailProfileConfigurationBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					easEmailProfileConfigurationBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, easEmailProfileConfigurationBaseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (easEmailProfileConfigurationBaseToUpdate.AdditionalData != null)
+            {
+                if (easEmailProfileConfigurationBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    easEmailProfileConfigurationBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, easEmailProfileConfigurationBaseToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EasEmailProfileConfigurationBase>(easEmailProfileConfigurationBaseToUpdate, cancellationToken).ConfigureAwait(false);

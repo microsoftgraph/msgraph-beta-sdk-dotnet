@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIosCertificateProfileWithReferenceRequestBuilder"/>.</returns>
         IIosCertificateProfileWithReferenceRequestBuilder SmimeEncryptionCertificate { get; }
+
+        /// <summary>
+        /// Gets the request builder for DerivedCredentialSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
     
     }
 }

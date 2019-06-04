@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosPkcsCertificateProfile.</returns>
         public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> UpdateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (iosPkcsCertificateProfileToUpdate.AdditionalData != null)
+			{
+				if (iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosPkcsCertificateProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosPkcsCertificateProfileToUpdate.AdditionalData != null)
+            {
+                if (iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosPkcsCertificateProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosPkcsCertificateProfile>(iosPkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);

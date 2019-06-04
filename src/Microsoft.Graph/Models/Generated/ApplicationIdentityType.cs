@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         Office365Connector = 3,
 	
+        /// <summary>
+        /// Outgoing Webhook
+        /// </summary>
+        OutgoingWebhook = 4,
+	
     }
 }

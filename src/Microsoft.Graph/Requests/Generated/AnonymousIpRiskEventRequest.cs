@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="anonymousIpRiskEventToUpdate">The AnonymousIpRiskEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AnonymousIpRiskEvent.</returns>
         public async System.Threading.Tasks.Task<AnonymousIpRiskEvent> UpdateAsync(AnonymousIpRiskEvent anonymousIpRiskEventToUpdate, CancellationToken cancellationToken)
         {
+			if (anonymousIpRiskEventToUpdate.AdditionalData != null)
+			{
+				if (anonymousIpRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					anonymousIpRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, anonymousIpRiskEventToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (anonymousIpRiskEventToUpdate.AdditionalData != null)
+            {
+                if (anonymousIpRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    anonymousIpRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, anonymousIpRiskEventToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AnonymousIpRiskEvent>(anonymousIpRiskEventToUpdate, cancellationToken).ConfigureAwait(false);

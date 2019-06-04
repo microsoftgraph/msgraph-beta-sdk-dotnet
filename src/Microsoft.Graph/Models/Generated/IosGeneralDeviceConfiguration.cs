@@ -527,6 +527,13 @@ namespace Microsoft.Graph
         public bool? KioskModeAllowAutoLock { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode block auto lock.
+        /// Indicates whether or not to block device auto lock while in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBlockAutoLock", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeBlockAutoLock { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode allow color inversion settings.
         /// Indicates whether or not to allow access to the Color Inversion Settings while in kiosk mode.
         /// </summary>
@@ -541,11 +548,25 @@ namespace Microsoft.Graph
         public bool? KioskModeAllowRingerSwitch { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode block ringer switch.
+        /// Indicates whether or not to block use of the ringer switch while in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBlockRingerSwitch", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeBlockRingerSwitch { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode allow screen rotation.
         /// Indicates whether or not to allow screen rotation while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowScreenRotation", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowScreenRotation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode block screen rotation.
+        /// Indicates whether or not to block screen rotation while in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBlockScreenRotation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeBlockScreenRotation { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow sleep button.
@@ -555,11 +576,25 @@ namespace Microsoft.Graph
         public bool? KioskModeAllowSleepButton { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode block sleep button.
+        /// Indicates whether or not to block use of the sleep button while in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBlockSleepButton", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeBlockSleepButton { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode allow touchscreen.
         /// Indicates whether or not to allow use of the touchscreen while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowTouchscreen", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowTouchscreen { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode block touchscreen.
+        /// Indicates whether or not to block use of the touchscreen while in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBlockTouchscreen", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeBlockTouchscreen { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow voice over settings.
@@ -1141,6 +1176,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactsAllowUnmanagedToManagedRead", Required = Newtonsoft.Json.Required.Default)]
         public bool? ContactsAllowUnmanagedToManagedRead { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cellular block personal hotspot modification.
+        /// Indicates whether or not to block the user from modifying the personal hotspot setting (iOS 12.2 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularBlockPersonalHotspotModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CellularBlockPersonalHotspotModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets siri disable server logging.
+        /// Indicates whether or not server-side Siri logging is disabled (iOS 12.2 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siriDisableServerLogging", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SiriDisableServerLogging { get; set; }
     
     }
 }

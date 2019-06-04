@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10NetworkBoundaryConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> UpdateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10NetworkBoundaryConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10NetworkBoundaryConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10NetworkBoundaryConfiguration>(windows10NetworkBoundaryConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="classificationJobResponseToUpdate">The ClassificationJobResponse to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ClassificationJobResponse.</returns>
         public async System.Threading.Tasks.Task<ClassificationJobResponse> UpdateAsync(ClassificationJobResponse classificationJobResponseToUpdate, CancellationToken cancellationToken)
         {
+			if (classificationJobResponseToUpdate.AdditionalData != null)
+			{
+				if (classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, classificationJobResponseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (classificationJobResponseToUpdate.AdditionalData != null)
+            {
+                if (classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    classificationJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, classificationJobResponseToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ClassificationJobResponse>(classificationJobResponseToUpdate, cancellationToken).ConfigureAwait(false);

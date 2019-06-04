@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosCertificateProfileBaseToUpdate">The IosCertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosCertificateProfileBase.</returns>
         System.Threading.Tasks.Task<IosCertificateProfileBase> UpdateAsync(IosCertificateProfileBase iosCertificateProfileBaseToUpdate, CancellationToken cancellationToken);
 

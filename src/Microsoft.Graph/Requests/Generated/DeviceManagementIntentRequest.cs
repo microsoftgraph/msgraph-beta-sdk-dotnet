@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementIntentToUpdate">The DeviceManagementIntent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntent.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementIntent> UpdateAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceManagementIntentToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementIntentToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementIntent>(deviceManagementIntentToUpdate, cancellationToken).ConfigureAwait(false);

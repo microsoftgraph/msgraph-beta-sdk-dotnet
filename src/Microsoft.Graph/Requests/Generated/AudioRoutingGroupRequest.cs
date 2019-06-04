@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="audioRoutingGroupToUpdate">The AudioRoutingGroup to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AudioRoutingGroup.</returns>
         public async System.Threading.Tasks.Task<AudioRoutingGroup> UpdateAsync(AudioRoutingGroup audioRoutingGroupToUpdate, CancellationToken cancellationToken)
         {
+			if (audioRoutingGroupToUpdate.AdditionalData != null)
+			{
+				if (audioRoutingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					audioRoutingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, audioRoutingGroupToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (audioRoutingGroupToUpdate.AdditionalData != null)
+            {
+                if (audioRoutingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    audioRoutingGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, audioRoutingGroupToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AudioRoutingGroup>(audioRoutingGroupToUpdate, cancellationToken).ConfigureAwait(false);

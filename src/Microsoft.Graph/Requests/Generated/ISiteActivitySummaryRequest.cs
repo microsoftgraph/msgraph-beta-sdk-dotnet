@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="siteActivitySummaryToUpdate">The SiteActivitySummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SiteActivitySummary.</returns>
         System.Threading.Tasks.Task<SiteActivitySummary> UpdateAsync(SiteActivitySummary siteActivitySummaryToUpdate, CancellationToken cancellationToken);
 

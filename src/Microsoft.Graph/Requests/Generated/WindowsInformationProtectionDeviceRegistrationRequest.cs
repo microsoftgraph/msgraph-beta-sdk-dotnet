@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToUpdate">The WindowsInformationProtectionDeviceRegistration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtectionDeviceRegistration.</returns>
         public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> UpdateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData != null)
+			{
+				if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionDeviceRegistrationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData != null)
+            {
+                if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionDeviceRegistrationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToUpdate, cancellationToken).ConfigureAwait(false);

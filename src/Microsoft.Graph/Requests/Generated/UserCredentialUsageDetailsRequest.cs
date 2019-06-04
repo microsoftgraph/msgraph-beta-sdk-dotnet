@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userCredentialUsageDetailsToUpdate">The UserCredentialUsageDetails to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserCredentialUsageDetails.</returns>
         public async System.Threading.Tasks.Task<UserCredentialUsageDetails> UpdateAsync(UserCredentialUsageDetails userCredentialUsageDetailsToUpdate, CancellationToken cancellationToken)
         {
+			if (userCredentialUsageDetailsToUpdate.AdditionalData != null)
+			{
+				if (userCredentialUsageDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userCredentialUsageDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userCredentialUsageDetailsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (userCredentialUsageDetailsToUpdate.AdditionalData != null)
+            {
+                if (userCredentialUsageDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    userCredentialUsageDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userCredentialUsageDetailsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserCredentialUsageDetails>(userCredentialUsageDetailsToUpdate, cancellationToken).ConfigureAwait(false);

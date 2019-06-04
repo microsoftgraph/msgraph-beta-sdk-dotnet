@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSLobAppToUpdate">The MacOSLobApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSLobApp.</returns>
         public async System.Threading.Tasks.Task<MacOSLobApp> UpdateAsync(MacOSLobApp macOSLobAppToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSLobAppToUpdate.AdditionalData != null)
+			{
+				if (macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSLobAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSLobAppToUpdate.AdditionalData != null)
+            {
+                if (macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSLobAppToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSLobApp>(macOSLobAppToUpdate, cancellationToken).ConfigureAwait(false);

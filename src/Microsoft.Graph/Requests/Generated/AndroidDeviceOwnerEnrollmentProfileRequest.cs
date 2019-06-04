@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerEnrollmentProfile.</returns>
         public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData != null)
+			{
+				if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerEnrollmentProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData != null)
+            {
+                if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerEnrollmentProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);

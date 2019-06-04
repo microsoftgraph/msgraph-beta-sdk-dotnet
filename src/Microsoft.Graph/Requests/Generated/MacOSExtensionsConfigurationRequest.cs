@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSExtensionsConfigurationToUpdate">The MacOSExtensionsConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSExtensionsConfiguration.</returns>
         public async System.Threading.Tasks.Task<MacOSExtensionsConfiguration> UpdateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSExtensionsConfigurationToUpdate.AdditionalData != null)
+			{
+				if (macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSExtensionsConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSExtensionsConfigurationToUpdate.AdditionalData != null)
+            {
+                if (macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSExtensionsConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSExtensionsConfiguration>(macOSExtensionsConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

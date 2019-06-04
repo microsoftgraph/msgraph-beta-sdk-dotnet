@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgedAccountsReceivable.</returns>
         System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken);
 

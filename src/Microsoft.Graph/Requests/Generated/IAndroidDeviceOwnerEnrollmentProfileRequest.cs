@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerEnrollmentProfile.</returns>
         System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken);
 

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="circularGeofenceManagementConditionToUpdate">The CircularGeofenceManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CircularGeofenceManagementCondition.</returns>
         public async System.Threading.Tasks.Task<CircularGeofenceManagementCondition> UpdateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate, CancellationToken cancellationToken)
         {
+			if (circularGeofenceManagementConditionToUpdate.AdditionalData != null)
+			{
+				if (circularGeofenceManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					circularGeofenceManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, circularGeofenceManagementConditionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (circularGeofenceManagementConditionToUpdate.AdditionalData != null)
+            {
+                if (circularGeofenceManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    circularGeofenceManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, circularGeofenceManagementConditionToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CircularGeofenceManagementCondition>(circularGeofenceManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);

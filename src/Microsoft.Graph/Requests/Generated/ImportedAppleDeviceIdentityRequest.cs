@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="importedAppleDeviceIdentityToUpdate">The ImportedAppleDeviceIdentity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImportedAppleDeviceIdentity.</returns>
         public async System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> UpdateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToUpdate, CancellationToken cancellationToken)
         {
+			if (importedAppleDeviceIdentityToUpdate.AdditionalData != null)
+			{
+				if (importedAppleDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					importedAppleDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedAppleDeviceIdentityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (importedAppleDeviceIdentityToUpdate.AdditionalData != null)
+            {
+                if (importedAppleDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    importedAppleDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedAppleDeviceIdentityToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ImportedAppleDeviceIdentity>(importedAppleDeviceIdentityToUpdate, cancellationToken).ConfigureAwait(false);

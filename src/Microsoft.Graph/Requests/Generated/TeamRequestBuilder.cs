@@ -133,6 +133,18 @@ namespace Microsoft.Graph
                 return new TeamOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Group.
+        /// </summary>
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        public IGroupWithReferenceRequestBuilder Group
+        {
+            get
+            {
+                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for TeamClone.

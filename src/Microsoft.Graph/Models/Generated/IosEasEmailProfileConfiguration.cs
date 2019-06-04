@@ -149,6 +149,20 @@ namespace Microsoft.Graph
         public bool? UseOAuth { get; set; }
     
         /// <summary>
+        /// Gets or sets signing certificate type.
+        /// Signing Certificate type for this Email profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signingCertificateType", Required = Newtonsoft.Json.Required.Default)]
+        public EmailCertificateType? SigningCertificateType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets encryption certificate type.
+        /// Encryption Certificate type for this Email profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificateType", Required = Newtonsoft.Json.Required.Default)]
+        public EmailCertificateType? EncryptionCertificateType { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate.
         /// </summary>
@@ -168,6 +182,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeEncryptionCertificate", Required = Newtonsoft.Json.Required.Default)]
         public IosCertificateProfile SmimeEncryptionCertificate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets derived credential settings.
+        /// Tenant level settings for the Derived Credentials to be used for authentication.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
     }
 }

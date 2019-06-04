@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="networkIPv6ConfigurationManagementConditionToUpdate">The NetworkIPv6ConfigurationManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated NetworkIPv6ConfigurationManagementCondition.</returns>
         public async System.Threading.Tasks.Task<NetworkIPv6ConfigurationManagementCondition> UpdateAsync(NetworkIPv6ConfigurationManagementCondition networkIPv6ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken)
         {
+			if (networkIPv6ConfigurationManagementConditionToUpdate.AdditionalData != null)
+			{
+				if (networkIPv6ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					networkIPv6ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv6ConfigurationManagementConditionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (networkIPv6ConfigurationManagementConditionToUpdate.AdditionalData != null)
+            {
+                if (networkIPv6ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    networkIPv6ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv6ConfigurationManagementConditionToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<NetworkIPv6ConfigurationManagementCondition>(networkIPv6ConfigurationManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);

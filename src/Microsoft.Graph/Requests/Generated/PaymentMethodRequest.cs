@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="paymentMethodToUpdate">The PaymentMethod to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PaymentMethod.</returns>
         public async System.Threading.Tasks.Task<PaymentMethod> UpdateAsync(PaymentMethod paymentMethodToUpdate, CancellationToken cancellationToken)
         {
+			if (paymentMethodToUpdate.AdditionalData != null)
+			{
+				if (paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, paymentMethodToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (paymentMethodToUpdate.AdditionalData != null)
+            {
+                if (paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, paymentMethodToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PaymentMethod>(paymentMethodToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidOmaCpConfigurationToUpdate">The AndroidOmaCpConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidOmaCpConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidOmaCpConfiguration> UpdateAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidOmaCpConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidOmaCpConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidOmaCpConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidOmaCpConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidOmaCpConfigurationToUpdate.AdditionalData != null)
+            {
+                if (androidOmaCpConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidOmaCpConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidOmaCpConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidOmaCpConfiguration>(androidOmaCpConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

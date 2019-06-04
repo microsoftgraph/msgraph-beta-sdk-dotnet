@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnsupportedDeviceConfiguration.</returns>
         public async System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> UpdateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (unsupportedDeviceConfigurationToUpdate.AdditionalData != null)
+			{
+				if (unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unsupportedDeviceConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (unsupportedDeviceConfigurationToUpdate.AdditionalData != null)
+            {
+                if (unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unsupportedDeviceConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnsupportedDeviceConfiguration>(unsupportedDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

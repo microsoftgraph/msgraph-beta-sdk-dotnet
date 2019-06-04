@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="chatThreadToUpdate">The ChatThread to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ChatThread.</returns>
         System.Threading.Tasks.Task<ChatThread> UpdateAsync(ChatThread chatThreadToUpdate, CancellationToken cancellationToken);
 

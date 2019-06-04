@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EnrollmentCompletionPageConfigurationToUpdate">The Windows10EnrollmentCompletionPageConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EnrollmentCompletionPageConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfiguration> UpdateAsync(Windows10EnrollmentCompletionPageConfiguration windows10EnrollmentCompletionPageConfigurationToUpdate, CancellationToken cancellationToken);
 

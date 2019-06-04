@@ -64,6 +64,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ImportedWindowsAutopilotDeviceIdentityState State { get; set; }
     
+        /// <summary>
+        /// Gets or sets assigned user principal name.
+        /// UPN of the user the device will be assigned
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string AssignedUserPrincipalName { get; set; }
+    
     }
 }
 

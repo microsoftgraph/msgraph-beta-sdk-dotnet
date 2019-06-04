@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10NetworkBoundaryConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> UpdateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken);
 

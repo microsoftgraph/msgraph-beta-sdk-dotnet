@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="bookingNamedEntityToUpdate">The BookingNamedEntity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingNamedEntity.</returns>
         public async System.Threading.Tasks.Task<BookingNamedEntity> UpdateAsync(BookingNamedEntity bookingNamedEntityToUpdate, CancellationToken cancellationToken)
         {
+			if (bookingNamedEntityToUpdate.AdditionalData != null)
+			{
+				if (bookingNamedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					bookingNamedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingNamedEntityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (bookingNamedEntityToUpdate.AdditionalData != null)
+            {
+                if (bookingNamedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    bookingNamedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingNamedEntityToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<BookingNamedEntity>(bookingNamedEntityToUpdate, cancellationToken).ConfigureAwait(false);

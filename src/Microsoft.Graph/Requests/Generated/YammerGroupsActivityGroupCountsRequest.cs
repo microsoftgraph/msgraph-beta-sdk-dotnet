@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="yammerGroupsActivityGroupCountsToUpdate">The YammerGroupsActivityGroupCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerGroupsActivityGroupCounts.</returns>
         public async System.Threading.Tasks.Task<YammerGroupsActivityGroupCounts> UpdateAsync(YammerGroupsActivityGroupCounts yammerGroupsActivityGroupCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData != null)
+			{
+				if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerGroupsActivityGroupCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData != null)
+            {
+                if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerGroupsActivityGroupCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<YammerGroupsActivityGroupCounts>(yammerGroupsActivityGroupCountsToUpdate, cancellationToken).ConfigureAwait(false);

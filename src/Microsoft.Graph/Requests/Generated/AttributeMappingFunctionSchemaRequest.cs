@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="attributeMappingFunctionSchemaToUpdate">The AttributeMappingFunctionSchema to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AttributeMappingFunctionSchema.</returns>
         public async System.Threading.Tasks.Task<AttributeMappingFunctionSchema> UpdateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToUpdate, CancellationToken cancellationToken)
         {
+			if (attributeMappingFunctionSchemaToUpdate.AdditionalData != null)
+			{
+				if (attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, attributeMappingFunctionSchemaToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (attributeMappingFunctionSchemaToUpdate.AdditionalData != null)
+            {
+                if (attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    attributeMappingFunctionSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, attributeMappingFunctionSchemaToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AttributeMappingFunctionSchema>(attributeMappingFunctionSchemaToUpdate, cancellationToken).ConfigureAwait(false);

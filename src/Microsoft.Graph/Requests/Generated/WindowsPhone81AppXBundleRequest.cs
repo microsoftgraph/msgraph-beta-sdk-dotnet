@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81AppXBundleToUpdate">The WindowsPhone81AppXBundle to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81AppXBundle.</returns>
         public async System.Threading.Tasks.Task<WindowsPhone81AppXBundle> UpdateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsPhone81AppXBundleToUpdate.AdditionalData != null)
+			{
+				if (windowsPhone81AppXBundleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhone81AppXBundleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81AppXBundleToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsPhone81AppXBundleToUpdate.AdditionalData != null)
+            {
+                if (windowsPhone81AppXBundleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhone81AppXBundleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81AppXBundleToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsPhone81AppXBundle>(windowsPhone81AppXBundleToUpdate, cancellationToken).ConfigureAwait(false);

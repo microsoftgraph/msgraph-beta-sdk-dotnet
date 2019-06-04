@@ -24,15 +24,21 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="actionName">A actionName parameter for the OData method call.</param>
+        /// <param name="keepEnrollmentData">A keepEnrollmentData parameter for the OData method call.</param>
+        /// <param name="keepUserData">A keepUserData parameter for the OData method call.</param>
         /// <param name="deviceIds">A deviceIds parameter for the OData method call.</param>
         public ManagedDeviceExecuteActionRequestBuilder(
             string requestUrl,
             IBaseClient client,
             ManagedDeviceRemoteAction actionName,
+            bool? keepEnrollmentData,
+            bool? keepUserData,
             IEnumerable<string> deviceIds)
             : base(requestUrl, client)
         {
             this.SetParameter("actionName", actionName, false);
+            this.SetParameter("keepEnrollmentData", keepEnrollmentData, true);
+            this.SetParameter("keepUserData", keepUserData, true);
             this.SetParameter("deviceIds", deviceIds, true);
         }
 
@@ -49,6 +55,16 @@ namespace Microsoft.Graph
             if (this.HasParameter("actionName"))
             {
                 request.RequestBody.ActionName = this.GetParameter<ManagedDeviceRemoteAction>("actionName");
+            }
+
+            if (this.HasParameter("keepEnrollmentData"))
+            {
+                request.RequestBody.KeepEnrollmentData = this.GetParameter<bool?>("keepEnrollmentData");
+            }
+
+            if (this.HasParameter("keepUserData"))
+            {
+                request.RequestBody.KeepUserData = this.GetParameter<bool?>("keepUserData");
             }
 
             if (this.HasParameter("deviceIds"))

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsManagedDeviceToUpdate">The WindowsManagedDevice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsManagedDevice.</returns>
         public async System.Threading.Tasks.Task<WindowsManagedDevice> UpdateAsync(WindowsManagedDevice windowsManagedDeviceToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsManagedDeviceToUpdate.AdditionalData != null)
+			{
+				if (windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagedDeviceToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsManagedDeviceToUpdate.AdditionalData != null)
+            {
+                if (windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagedDeviceToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsManagedDevice>(windowsManagedDeviceToUpdate, cancellationToken).ConfigureAwait(false);

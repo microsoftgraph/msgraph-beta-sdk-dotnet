@@ -149,13 +149,6 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed { get; set; }
     
         /// <summary>
-        /// Gets or sets third party keyboards blocked.
-        /// Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thirdPartyKeyboardsBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ThirdPartyKeyboardsBlocked { get; set; }
-    
-        /// <summary>
         /// Gets or sets filter open in to only managed apps.
         /// Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)
         /// </summary>
@@ -203,6 +196,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidSafetyNetAppsVerificationFailed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom browser protocol.
+        /// A custom browser protocol to open weblink on iOS. (iOS only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserProtocol", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserProtocol { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom browser package id.
+        /// Unique identifier of a custom browser to open weblink on Android. (Android only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserPackageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom browser display name.
+        /// Friendly name of the preferred custom browser to open weblink on Android. (Android only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

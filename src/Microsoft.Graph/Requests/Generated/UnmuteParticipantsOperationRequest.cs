@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="unmuteParticipantsOperationToUpdate">The UnmuteParticipantsOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnmuteParticipantsOperation.</returns>
         public async System.Threading.Tasks.Task<UnmuteParticipantsOperation> UpdateAsync(UnmuteParticipantsOperation unmuteParticipantsOperationToUpdate, CancellationToken cancellationToken)
         {
+			if (unmuteParticipantsOperationToUpdate.AdditionalData != null)
+			{
+				if (unmuteParticipantsOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					unmuteParticipantsOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unmuteParticipantsOperationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (unmuteParticipantsOperationToUpdate.AdditionalData != null)
+            {
+                if (unmuteParticipantsOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    unmuteParticipantsOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unmuteParticipantsOperationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnmuteParticipantsOperation>(unmuteParticipantsOperationToUpdate, cancellationToken).ConfigureAwait(false);

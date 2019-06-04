@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppInstallSummaryToUpdate">The MobileAppInstallSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppInstallSummary.</returns>
         System.Threading.Tasks.Task<MobileAppInstallSummary> UpdateAsync(MobileAppInstallSummary mobileAppInstallSummaryToUpdate, CancellationToken cancellationToken);
 

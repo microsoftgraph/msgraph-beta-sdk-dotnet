@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="emailAppUsageUserDetailToUpdate">The EmailAppUsageUserDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailAppUsageUserDetail.</returns>
         public async System.Threading.Tasks.Task<EmailAppUsageUserDetail> UpdateAsync(EmailAppUsageUserDetail emailAppUsageUserDetailToUpdate, CancellationToken cancellationToken)
         {
+			if (emailAppUsageUserDetailToUpdate.AdditionalData != null)
+			{
+				if (emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAppUsageUserDetailToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (emailAppUsageUserDetailToUpdate.AdditionalData != null)
+            {
+                if (emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    emailAppUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailAppUsageUserDetailToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EmailAppUsageUserDetail>(emailAppUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);

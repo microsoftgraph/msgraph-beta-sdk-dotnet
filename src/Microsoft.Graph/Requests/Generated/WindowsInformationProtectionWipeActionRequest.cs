@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtectionWipeAction.</returns>
         public async System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> UpdateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsInformationProtectionWipeActionToUpdate.AdditionalData != null)
+			{
+				if (windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionWipeActionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsInformationProtectionWipeActionToUpdate.AdditionalData != null)
+            {
+                if (windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionWipeActionToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeActionToUpdate, cancellationToken).ConfigureAwait(false);

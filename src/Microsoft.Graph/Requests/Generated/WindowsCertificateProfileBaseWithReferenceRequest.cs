@@ -95,9 +95,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsCertificateProfileBaseToUpdate">The WindowsCertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsCertificateProfileBase.</returns>
         public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> UpdateAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsCertificateProfileBaseToUpdate.AdditionalData != null)
+			{
+				if (windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsCertificateProfileBaseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsCertificateProfileBaseToUpdate.AdditionalData != null)
+            {
+                if (windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsCertificateProfileBaseToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsCertificateProfileBase>(windowsCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);

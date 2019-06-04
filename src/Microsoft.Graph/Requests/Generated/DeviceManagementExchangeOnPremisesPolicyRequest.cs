@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementExchangeOnPremisesPolicy.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> UpdateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeOnPremisesPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeOnPremisesPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(deviceManagementExchangeOnPremisesPolicyToUpdate, cancellationToken).ConfigureAwait(false);

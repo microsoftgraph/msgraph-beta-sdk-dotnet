@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="emailActivitySummaryToUpdate">The EmailActivitySummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailActivitySummary.</returns>
         public async System.Threading.Tasks.Task<EmailActivitySummary> UpdateAsync(EmailActivitySummary emailActivitySummaryToUpdate, CancellationToken cancellationToken)
         {
+			if (emailActivitySummaryToUpdate.AdditionalData != null)
+			{
+				if (emailActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					emailActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailActivitySummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (emailActivitySummaryToUpdate.AdditionalData != null)
+            {
+                if (emailActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    emailActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailActivitySummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EmailActivitySummary>(emailActivitySummaryToUpdate, cancellationToken).ConfigureAwait(false);

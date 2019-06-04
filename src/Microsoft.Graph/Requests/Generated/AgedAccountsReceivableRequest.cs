@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgedAccountsReceivable.</returns>
         public async System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken)
         {
+			if (agedAccountsReceivableToUpdate.AdditionalData != null)
+			{
+				if (agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agedAccountsReceivableToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (agedAccountsReceivableToUpdate.AdditionalData != null)
+            {
+                if (agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agedAccountsReceivableToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AgedAccountsReceivable>(agedAccountsReceivableToUpdate, cancellationToken).ConfigureAwait(false);

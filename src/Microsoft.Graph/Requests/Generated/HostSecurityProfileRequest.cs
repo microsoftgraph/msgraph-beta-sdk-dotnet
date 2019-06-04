@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="hostSecurityProfileToUpdate">The HostSecurityProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated HostSecurityProfile.</returns>
         public async System.Threading.Tasks.Task<HostSecurityProfile> UpdateAsync(HostSecurityProfile hostSecurityProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (hostSecurityProfileToUpdate.AdditionalData != null)
+			{
+				if (hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, hostSecurityProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (hostSecurityProfileToUpdate.AdditionalData != null)
+            {
+                if (hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    hostSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, hostSecurityProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<HostSecurityProfile>(hostSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);

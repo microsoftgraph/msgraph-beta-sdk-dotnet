@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="yammerDeviceUsageUserCountsToUpdate">The YammerDeviceUsageUserCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerDeviceUsageUserCounts.</returns>
         public async System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> UpdateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (yammerDeviceUsageUserCountsToUpdate.AdditionalData != null)
+			{
+				if (yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerDeviceUsageUserCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (yammerDeviceUsageUserCountsToUpdate.AdditionalData != null)
+            {
+                if (yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerDeviceUsageUserCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<YammerDeviceUsageUserCounts>(yammerDeviceUsageUserCountsToUpdate, cancellationToken).ConfigureAwait(false);

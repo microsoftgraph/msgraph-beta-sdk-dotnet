@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="privilegedSignupStatusToUpdate">The PrivilegedSignupStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedSignupStatus.</returns>
         public async System.Threading.Tasks.Task<PrivilegedSignupStatus> UpdateAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken)
         {
+			if (privilegedSignupStatusToUpdate.AdditionalData != null)
+			{
+				if (privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedSignupStatusToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (privilegedSignupStatusToUpdate.AdditionalData != null)
+            {
+                if (privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedSignupStatusToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PrivilegedSignupStatus>(privilegedSignupStatusToUpdate, cancellationToken).ConfigureAwait(false);

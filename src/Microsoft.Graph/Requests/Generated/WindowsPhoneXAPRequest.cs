@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhoneXAPToUpdate">The WindowsPhoneXAP to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhoneXAP.</returns>
         public async System.Threading.Tasks.Task<WindowsPhoneXAP> UpdateAsync(WindowsPhoneXAP windowsPhoneXAPToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsPhoneXAPToUpdate.AdditionalData != null)
+			{
+				if (windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhoneXAPToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsPhoneXAPToUpdate.AdditionalData != null)
+            {
+                if (windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhoneXAPToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhoneXAPToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsPhoneXAP>(windowsPhoneXAPToUpdate, cancellationToken).ConfigureAwait(false);

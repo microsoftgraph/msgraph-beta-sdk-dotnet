@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosWiFiConfigurationToUpdate">The IosWiFiConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosWiFiConfiguration.</returns>
         public async System.Threading.Tasks.Task<IosWiFiConfiguration> UpdateAsync(IosWiFiConfiguration iosWiFiConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (iosWiFiConfigurationToUpdate.AdditionalData != null)
+			{
+				if (iosWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosWiFiConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosWiFiConfigurationToUpdate.AdditionalData != null)
+            {
+                if (iosWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosWiFiConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosWiFiConfiguration>(iosWiFiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

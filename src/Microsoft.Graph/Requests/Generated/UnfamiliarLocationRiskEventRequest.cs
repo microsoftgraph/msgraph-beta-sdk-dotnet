@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="unfamiliarLocationRiskEventToUpdate">The UnfamiliarLocationRiskEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnfamiliarLocationRiskEvent.</returns>
         public async System.Threading.Tasks.Task<UnfamiliarLocationRiskEvent> UpdateAsync(UnfamiliarLocationRiskEvent unfamiliarLocationRiskEventToUpdate, CancellationToken cancellationToken)
         {
+			if (unfamiliarLocationRiskEventToUpdate.AdditionalData != null)
+			{
+				if (unfamiliarLocationRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					unfamiliarLocationRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unfamiliarLocationRiskEventToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (unfamiliarLocationRiskEventToUpdate.AdditionalData != null)
+            {
+                if (unfamiliarLocationRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    unfamiliarLocationRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unfamiliarLocationRiskEventToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnfamiliarLocationRiskEvent>(unfamiliarLocationRiskEventToUpdate, cancellationToken).ConfigureAwait(false);

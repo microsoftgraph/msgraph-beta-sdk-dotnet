@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="chatMessageToUpdate">The ChatMessage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ChatMessage.</returns>
         public async System.Threading.Tasks.Task<ChatMessage> UpdateAsync(ChatMessage chatMessageToUpdate, CancellationToken cancellationToken)
         {
+			if (chatMessageToUpdate.AdditionalData != null)
+			{
+				if (chatMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					chatMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, chatMessageToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (chatMessageToUpdate.AdditionalData != null)
+            {
+                if (chatMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    chatMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, chatMessageToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ChatMessage>(chatMessageToUpdate, cancellationToken).ConfigureAwait(false);
@@ -223,17 +250,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (chatMessageToInitialize.HostedImages != null && chatMessageToInitialize.HostedImages.CurrentPage != null)
+                if (chatMessageToInitialize.HostedContents != null && chatMessageToInitialize.HostedContents.CurrentPage != null)
                 {
-                    chatMessageToInitialize.HostedImages.AdditionalData = chatMessageToInitialize.AdditionalData;
+                    chatMessageToInitialize.HostedContents.AdditionalData = chatMessageToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    chatMessageToInitialize.AdditionalData.TryGetValue("hostedImages@odata.nextLink", out nextPageLink);
+                    chatMessageToInitialize.AdditionalData.TryGetValue("hostedContents@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        chatMessageToInitialize.HostedImages.InitializeNextPageRequest(
+                        chatMessageToInitialize.HostedContents.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

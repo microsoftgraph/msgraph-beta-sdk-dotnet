@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationLongDecimalTextBoxToUpdate">The GroupPolicyPresentationLongDecimalTextBox to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationLongDecimalTextBox.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> UpdateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken cancellationToken)
         {
+			if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData != null)
+			{
+				if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationLongDecimalTextBoxToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData != null)
+            {
+                if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationLongDecimalTextBoxToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationLongDecimalTextBox>(groupPolicyPresentationLongDecimalTextBoxToUpdate, cancellationToken).ConfigureAwait(false);

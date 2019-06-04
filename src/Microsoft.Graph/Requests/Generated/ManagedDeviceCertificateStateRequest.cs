@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceCertificateStateToUpdate">The ManagedDeviceCertificateState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceCertificateState.</returns>
         public async System.Threading.Tasks.Task<ManagedDeviceCertificateState> UpdateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToUpdate, CancellationToken cancellationToken)
         {
+			if (managedDeviceCertificateStateToUpdate.AdditionalData != null)
+			{
+				if (managedDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceCertificateStateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (managedDeviceCertificateStateToUpdate.AdditionalData != null)
+            {
+                if (managedDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceCertificateStateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedDeviceCertificateState>(managedDeviceCertificateStateToUpdate, cancellationToken).ConfigureAwait(false);

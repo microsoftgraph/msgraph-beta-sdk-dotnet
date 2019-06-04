@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyDefinitionFileToUpdate">The GroupPolicyDefinitionFile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyDefinitionFile.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyDefinitionFile> UpdateAsync(GroupPolicyDefinitionFile groupPolicyDefinitionFileToUpdate, CancellationToken cancellationToken)
         {
+			if (groupPolicyDefinitionFileToUpdate.AdditionalData != null)
+			{
+				if (groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyDefinitionFileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupPolicyDefinitionFileToUpdate.AdditionalData != null)
+            {
+                if (groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupPolicyDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyDefinitionFileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyDefinitionFile>(groupPolicyDefinitionFileToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="domainSecurityProfileToUpdate">The DomainSecurityProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DomainSecurityProfile.</returns>
         public async System.Threading.Tasks.Task<DomainSecurityProfile> UpdateAsync(DomainSecurityProfile domainSecurityProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (domainSecurityProfileToUpdate.AdditionalData != null)
+			{
+				if (domainSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					domainSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainSecurityProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (domainSecurityProfileToUpdate.AdditionalData != null)
+            {
+                if (domainSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    domainSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainSecurityProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DomainSecurityProfile>(domainSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);

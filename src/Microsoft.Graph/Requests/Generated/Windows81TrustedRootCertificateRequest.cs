@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows81TrustedRootCertificateToUpdate">The Windows81TrustedRootCertificate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81TrustedRootCertificate.</returns>
         public async System.Threading.Tasks.Task<Windows81TrustedRootCertificate> UpdateAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificateToUpdate, CancellationToken cancellationToken)
         {
+			if (windows81TrustedRootCertificateToUpdate.AdditionalData != null)
+			{
+				if (windows81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81TrustedRootCertificateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows81TrustedRootCertificateToUpdate.AdditionalData != null)
+            {
+                if (windows81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81TrustedRootCertificateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows81TrustedRootCertificate>(windows81TrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);

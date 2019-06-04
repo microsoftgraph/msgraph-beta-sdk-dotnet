@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsDeviceUsageUserDetail.</returns>
         public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> UpdateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken)
         {
+			if (teamsDeviceUsageUserDetailToUpdate.AdditionalData != null)
+			{
+				if (teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsDeviceUsageUserDetailToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (teamsDeviceUsageUserDetailToUpdate.AdditionalData != null)
+            {
+                if (teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsDeviceUsageUserDetailToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TeamsDeviceUsageUserDetail>(teamsDeviceUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);

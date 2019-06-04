@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWiFiConfigurationToUpdate">The AndroidWiFiConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWiFiConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidWiFiConfiguration> UpdateAsync(AndroidWiFiConfiguration androidWiFiConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidWiFiConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWiFiConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidWiFiConfigurationToUpdate.AdditionalData != null)
+            {
+                if (androidWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWiFiConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidWiFiConfiguration>(androidWiFiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

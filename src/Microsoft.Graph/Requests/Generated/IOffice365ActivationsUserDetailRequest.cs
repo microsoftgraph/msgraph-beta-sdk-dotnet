@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="office365ActivationsUserDetailToUpdate">The Office365ActivationsUserDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365ActivationsUserDetail.</returns>
         System.Threading.Tasks.Task<Office365ActivationsUserDetail> UpdateAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToUpdate, CancellationToken cancellationToken);
 

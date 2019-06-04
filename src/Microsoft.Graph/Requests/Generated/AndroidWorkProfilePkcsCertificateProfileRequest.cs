@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfilePkcsCertificateProfileToUpdate">The AndroidWorkProfilePkcsCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfilePkcsCertificateProfile.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfilePkcsCertificateProfile> UpdateAsync(AndroidWorkProfilePkcsCertificateProfile androidWorkProfilePkcsCertificateProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (androidWorkProfilePkcsCertificateProfileToUpdate.AdditionalData != null)
+			{
+				if (androidWorkProfilePkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidWorkProfilePkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfilePkcsCertificateProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidWorkProfilePkcsCertificateProfileToUpdate.AdditionalData != null)
+            {
+                if (androidWorkProfilePkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidWorkProfilePkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfilePkcsCertificateProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidWorkProfilePkcsCertificateProfile>(androidWorkProfilePkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);

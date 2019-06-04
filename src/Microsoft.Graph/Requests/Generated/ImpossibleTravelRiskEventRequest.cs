@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="impossibleTravelRiskEventToUpdate">The ImpossibleTravelRiskEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImpossibleTravelRiskEvent.</returns>
         public async System.Threading.Tasks.Task<ImpossibleTravelRiskEvent> UpdateAsync(ImpossibleTravelRiskEvent impossibleTravelRiskEventToUpdate, CancellationToken cancellationToken)
         {
+			if (impossibleTravelRiskEventToUpdate.AdditionalData != null)
+			{
+				if (impossibleTravelRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					impossibleTravelRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, impossibleTravelRiskEventToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (impossibleTravelRiskEventToUpdate.AdditionalData != null)
+            {
+                if (impossibleTravelRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    impossibleTravelRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, impossibleTravelRiskEventToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ImpossibleTravelRiskEvent>(impossibleTravelRiskEventToUpdate, cancellationToken).ConfigureAwait(false);

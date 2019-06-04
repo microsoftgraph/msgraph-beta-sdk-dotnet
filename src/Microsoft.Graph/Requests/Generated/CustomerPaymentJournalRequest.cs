@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="customerPaymentJournalToUpdate">The CustomerPaymentJournal to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CustomerPaymentJournal.</returns>
         public async System.Threading.Tasks.Task<CustomerPaymentJournal> UpdateAsync(CustomerPaymentJournal customerPaymentJournalToUpdate, CancellationToken cancellationToken)
         {
+			if (customerPaymentJournalToUpdate.AdditionalData != null)
+			{
+				if (customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentJournalToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (customerPaymentJournalToUpdate.AdditionalData != null)
+            {
+                if (customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentJournalToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CustomerPaymentJournal>(customerPaymentJournalToUpdate, cancellationToken).ConfigureAwait(false);

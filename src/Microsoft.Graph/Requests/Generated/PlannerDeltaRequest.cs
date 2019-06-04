@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerDeltaToUpdate">The PlannerDelta to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerDelta.</returns>
         public async System.Threading.Tasks.Task<PlannerDelta> UpdateAsync(PlannerDelta plannerDeltaToUpdate, CancellationToken cancellationToken)
         {
+			if (plannerDeltaToUpdate.AdditionalData != null)
+			{
+				if (plannerDeltaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					plannerDeltaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerDeltaToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (plannerDeltaToUpdate.AdditionalData != null)
+            {
+                if (plannerDeltaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    plannerDeltaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerDeltaToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PlannerDelta>(plannerDeltaToUpdate, cancellationToken).ConfigureAwait(false);

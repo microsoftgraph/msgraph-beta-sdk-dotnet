@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets from.
+        /// The name of the location the item was moved from.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
         public string From { get; set; }
     
         /// <summary>
         /// Gets or sets to.
+        /// The name of the location the item was moved to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "to", Required = Newtonsoft.Json.Required.Default)]
         public string To { get; set; }

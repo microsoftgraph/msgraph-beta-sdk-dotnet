@@ -372,6 +372,11 @@ namespace Microsoft.Graph
         IGraphServiceProgramControlTypesCollectionRequestBuilder ProgramControlTypes { get; }
     
         /// <summary>
+        /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
+        /// </summary>
+        IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceApp request builder.
         /// </summary>
         ICommsApplicationRequestBuilder App { get; }

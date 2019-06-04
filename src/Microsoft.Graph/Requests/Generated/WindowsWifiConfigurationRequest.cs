@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsWifiConfigurationToUpdate">The WindowsWifiConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsWifiConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsWifiConfiguration> UpdateAsync(WindowsWifiConfiguration windowsWifiConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsWifiConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsWifiConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsWifiConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsWifiConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsWifiConfiguration>(windowsWifiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

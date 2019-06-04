@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IEducationSchoolRequestBuilder"/>.</returns>
         IEducationSchoolRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for EducationSchoolDelta.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSchoolDeltaRequestBuilder"/>.</returns>
+        IEducationSchoolDeltaRequestBuilder Delta();
     }
 }

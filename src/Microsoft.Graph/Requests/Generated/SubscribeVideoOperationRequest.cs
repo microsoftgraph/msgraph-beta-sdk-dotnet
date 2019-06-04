@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="subscribeVideoOperationToUpdate">The SubscribeVideoOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SubscribeVideoOperation.</returns>
         public async System.Threading.Tasks.Task<SubscribeVideoOperation> UpdateAsync(SubscribeVideoOperation subscribeVideoOperationToUpdate, CancellationToken cancellationToken)
         {
+			if (subscribeVideoOperationToUpdate.AdditionalData != null)
+			{
+				if (subscribeVideoOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					subscribeVideoOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscribeVideoOperationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (subscribeVideoOperationToUpdate.AdditionalData != null)
+            {
+                if (subscribeVideoOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    subscribeVideoOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscribeVideoOperationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SubscribeVideoOperation>(subscribeVideoOperationToUpdate, cancellationToken).ConfigureAwait(false);

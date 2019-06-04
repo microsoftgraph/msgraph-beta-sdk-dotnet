@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="customerPaymentToUpdate">The CustomerPayment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CustomerPayment.</returns>
         public async System.Threading.Tasks.Task<CustomerPayment> UpdateAsync(CustomerPayment customerPaymentToUpdate, CancellationToken cancellationToken)
         {
+			if (customerPaymentToUpdate.AdditionalData != null)
+			{
+				if (customerPaymentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					customerPaymentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (customerPaymentToUpdate.AdditionalData != null)
+            {
+                if (customerPaymentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    customerPaymentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CustomerPayment>(customerPaymentToUpdate, cancellationToken).ConfigureAwait(false);

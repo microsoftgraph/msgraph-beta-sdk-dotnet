@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceConfigurationUserStateSummaryToUpdate">The DeviceConfigurationUserStateSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationUserStateSummary.</returns>
         public async System.Threading.Tasks.Task<DeviceConfigurationUserStateSummary> UpdateAsync(DeviceConfigurationUserStateSummary deviceConfigurationUserStateSummaryToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceConfigurationUserStateSummaryToUpdate.AdditionalData != null)
+			{
+				if (deviceConfigurationUserStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceConfigurationUserStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationUserStateSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceConfigurationUserStateSummaryToUpdate.AdditionalData != null)
+            {
+                if (deviceConfigurationUserStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceConfigurationUserStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationUserStateSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceConfigurationUserStateSummary>(deviceConfigurationUserStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);

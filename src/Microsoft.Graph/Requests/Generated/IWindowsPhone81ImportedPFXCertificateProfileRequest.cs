@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81ImportedPFXCertificateProfileToUpdate">The WindowsPhone81ImportedPFXCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81ImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<WindowsPhone81ImportedPFXCertificateProfile> UpdateAsync(WindowsPhone81ImportedPFXCertificateProfile windowsPhone81ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken);
 

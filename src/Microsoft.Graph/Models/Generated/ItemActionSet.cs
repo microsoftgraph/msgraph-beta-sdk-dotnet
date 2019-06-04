@@ -25,60 +25,70 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets comment.
+        /// A comment was added to the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comment", Required = Newtonsoft.Json.Required.Default)]
         public CommentAction Comment { get; set; }
     
         /// <summary>
         /// Gets or sets create.
+        /// An item was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "create", Required = Newtonsoft.Json.Required.Default)]
         public CreateAction Create { get; set; }
     
         /// <summary>
         /// Gets or sets delete.
+        /// An item was deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delete", Required = Newtonsoft.Json.Required.Default)]
         public DeleteAction Delete { get; set; }
     
         /// <summary>
         /// Gets or sets edit.
+        /// An item was edited.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edit", Required = Newtonsoft.Json.Required.Default)]
         public EditAction Edit { get; set; }
     
         /// <summary>
         /// Gets or sets mention.
+        /// A user was mentioned in the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mention", Required = Newtonsoft.Json.Required.Default)]
         public MentionAction Mention { get; set; }
     
         /// <summary>
         /// Gets or sets move.
+        /// An item was moved.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "move", Required = Newtonsoft.Json.Required.Default)]
         public MoveAction Move { get; set; }
     
         /// <summary>
         /// Gets or sets rename.
+        /// An item was renamed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rename", Required = Newtonsoft.Json.Required.Default)]
         public RenameAction Rename { get; set; }
     
         /// <summary>
         /// Gets or sets restore.
+        /// An item was restored.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restore", Required = Newtonsoft.Json.Required.Default)]
         public RestoreAction Restore { get; set; }
     
         /// <summary>
         /// Gets or sets share.
+        /// An item was shared.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "share", Required = Newtonsoft.Json.Required.Default)]
         public ShareAction Share { get; set; }
     
         /// <summary>
         /// Gets or sets version.
+        /// An item was versioned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public VersionAction Version { get; set; }

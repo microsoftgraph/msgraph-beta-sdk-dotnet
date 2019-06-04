@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsKioskConfigurationToUpdate">The WindowsKioskConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsKioskConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsKioskConfiguration> UpdateAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsKioskConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsKioskConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsKioskConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsKioskConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsKioskConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsKioskConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsKioskConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsKioskConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsKioskConfiguration>(windowsKioskConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

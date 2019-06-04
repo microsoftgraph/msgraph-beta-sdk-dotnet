@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsAutopilotDeviceIdentityToUpdate">The WindowsAutopilotDeviceIdentity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAutopilotDeviceIdentity.</returns>
         public async System.Threading.Tasks.Task<WindowsAutopilotDeviceIdentity> UpdateAsync(WindowsAutopilotDeviceIdentity windowsAutopilotDeviceIdentityToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsAutopilotDeviceIdentityToUpdate.AdditionalData != null)
+			{
+				if (windowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotDeviceIdentityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsAutopilotDeviceIdentityToUpdate.AdditionalData != null)
+            {
+                if (windowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotDeviceIdentityToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsAutopilotDeviceIdentity>(windowsAutopilotDeviceIdentityToUpdate, cancellationToken).ConfigureAwait(false);

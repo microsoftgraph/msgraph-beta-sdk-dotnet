@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows81WifiImportConfigurationToUpdate">The Windows81WifiImportConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81WifiImportConfiguration.</returns>
         System.Threading.Tasks.Task<Windows81WifiImportConfiguration> UpdateAsync(Windows81WifiImportConfiguration windows81WifiImportConfigurationToUpdate, CancellationToken cancellationToken);
 

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="agreementAcceptanceToUpdate">The AgreementAcceptance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgreementAcceptance.</returns>
         public async System.Threading.Tasks.Task<AgreementAcceptance> UpdateAsync(AgreementAcceptance agreementAcceptanceToUpdate, CancellationToken cancellationToken)
         {
+			if (agreementAcceptanceToUpdate.AdditionalData != null)
+			{
+				if (agreementAcceptanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					agreementAcceptanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementAcceptanceToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (agreementAcceptanceToUpdate.AdditionalData != null)
+            {
+                if (agreementAcceptanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    agreementAcceptanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementAcceptanceToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AgreementAcceptance>(agreementAcceptanceToUpdate, cancellationToken).ConfigureAwait(false);

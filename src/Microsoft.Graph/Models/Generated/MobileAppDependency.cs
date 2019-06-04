@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         /// The type of dependency relationship between the parent and child apps.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependencyType", Required = Newtonsoft.Json.Required.Default)]
-        public MobileAppDependecyType? DependencyType { get; set; }
+        public MobileAppDependencyType? DependencyType { get; set; }
     
         /// <summary>
         /// Gets or sets dependent app count.

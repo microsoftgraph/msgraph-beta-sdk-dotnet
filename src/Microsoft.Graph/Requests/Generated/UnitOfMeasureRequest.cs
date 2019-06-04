@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="unitOfMeasureToUpdate">The UnitOfMeasure to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnitOfMeasure.</returns>
         public async System.Threading.Tasks.Task<UnitOfMeasure> UpdateAsync(UnitOfMeasure unitOfMeasureToUpdate, CancellationToken cancellationToken)
         {
+			if (unitOfMeasureToUpdate.AdditionalData != null)
+			{
+				if (unitOfMeasureToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					unitOfMeasureToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unitOfMeasureToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (unitOfMeasureToUpdate.AdditionalData != null)
+            {
+                if (unitOfMeasureToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    unitOfMeasureToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unitOfMeasureToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnitOfMeasure>(unitOfMeasureToUpdate, cancellationToken).ConfigureAwait(false);

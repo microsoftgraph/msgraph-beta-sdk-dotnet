@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81AppXToUpdate">The WindowsPhone81AppX to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81AppX.</returns>
         System.Threading.Tasks.Task<WindowsPhone81AppX> UpdateAsync(WindowsPhone81AppX windowsPhone81AppXToUpdate, CancellationToken cancellationToken);
 

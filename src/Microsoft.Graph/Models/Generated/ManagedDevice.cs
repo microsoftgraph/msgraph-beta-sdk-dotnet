@@ -401,6 +401,13 @@ namespace Microsoft.Graph
         public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState { get; set; }
     
         /// <summary>
+        /// Gets or sets retire after date time.
+        /// Indicates the time after when a device will be auto retired because of scheduled action.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "retireAfterDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RetireAfterDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets users logged on.
         /// Indicates the last logged on users of a device
         /// </summary>

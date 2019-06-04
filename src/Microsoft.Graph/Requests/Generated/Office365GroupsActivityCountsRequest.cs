@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="office365GroupsActivityCountsToUpdate">The Office365GroupsActivityCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365GroupsActivityCounts.</returns>
         public async System.Threading.Tasks.Task<Office365GroupsActivityCounts> UpdateAsync(Office365GroupsActivityCounts office365GroupsActivityCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (office365GroupsActivityCountsToUpdate.AdditionalData != null)
+			{
+				if (office365GroupsActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					office365GroupsActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365GroupsActivityCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (office365GroupsActivityCountsToUpdate.AdditionalData != null)
+            {
+                if (office365GroupsActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    office365GroupsActivityCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365GroupsActivityCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Office365GroupsActivityCounts>(office365GroupsActivityCountsToUpdate, cancellationToken).ConfigureAwait(false);

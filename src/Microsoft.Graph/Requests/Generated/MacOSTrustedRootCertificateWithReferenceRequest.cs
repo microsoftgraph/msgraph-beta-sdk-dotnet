@@ -95,9 +95,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSTrustedRootCertificateToUpdate">The MacOSTrustedRootCertificate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSTrustedRootCertificate.</returns>
         public async System.Threading.Tasks.Task<MacOSTrustedRootCertificate> UpdateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSTrustedRootCertificateToUpdate.AdditionalData != null)
+			{
+				if (macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSTrustedRootCertificateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSTrustedRootCertificateToUpdate.AdditionalData != null)
+            {
+                if (macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSTrustedRootCertificateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSTrustedRootCertificate>(macOSTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);

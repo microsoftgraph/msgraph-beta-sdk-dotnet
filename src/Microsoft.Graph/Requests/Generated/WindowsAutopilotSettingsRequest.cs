@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsAutopilotSettingsToUpdate">The WindowsAutopilotSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAutopilotSettings.</returns>
         public async System.Threading.Tasks.Task<WindowsAutopilotSettings> UpdateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsAutopilotSettingsToUpdate.AdditionalData != null)
+			{
+				if (windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotSettingsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsAutopilotSettingsToUpdate.AdditionalData != null)
+            {
+                if (windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotSettingsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsAutopilotSettings>(windowsAutopilotSettingsToUpdate, cancellationToken).ConfigureAwait(false);

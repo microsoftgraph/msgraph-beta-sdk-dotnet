@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidForWorkEasEmailProfileBaseToUpdate">The AndroidForWorkEasEmailProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkEasEmailProfileBase.</returns>
         public async System.Threading.Tasks.Task<AndroidForWorkEasEmailProfileBase> UpdateAsync(AndroidForWorkEasEmailProfileBase androidForWorkEasEmailProfileBaseToUpdate, CancellationToken cancellationToken)
         {
+			if (androidForWorkEasEmailProfileBaseToUpdate.AdditionalData != null)
+			{
+				if (androidForWorkEasEmailProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidForWorkEasEmailProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkEasEmailProfileBaseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidForWorkEasEmailProfileBaseToUpdate.AdditionalData != null)
+            {
+                if (androidForWorkEasEmailProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidForWorkEasEmailProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkEasEmailProfileBaseToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidForWorkEasEmailProfileBase>(androidForWorkEasEmailProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
