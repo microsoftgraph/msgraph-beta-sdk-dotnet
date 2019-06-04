@@ -1,0 +1,60 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+        - .github/*
+        - .vs/*
+        - pipelines/*
+        - scripts/*
+        - tests/*
+        - .gitignore
+        - CONTRIBUTING.md
+        - LICENSE.txt
+        - Microsoft.Graph.Beta.sln
+        - README.md
+        - THIRD PARTY NOTICES
+
+pool:
+  name: Hosted VS2017
+  demands:
+  - msbuild
+  - vstest
+
+steps:
+- checkout: self
+  clean: true
+  fetchDepth: 1
+
+- task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+  displayName: 'Run CredScan'
+  inputs:
+    debugMode: false
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    vstsFeed: '/f887743a-88c6-4716-b4aa-50761b543a15'
+
+- task: MSBuild@1
+  displayName: 'Build solution to run unit test'
+  inputs:
+    configuration: debug
+    clean: true
+
+- task: VSTest@2
+  displayName: 'Run enabled tests'
+
+- task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+  displayName: 'Graph Client Tooling pipeline fail notification'
+  inputs:
+    addressType: serviceEndpoint
+    serviceEndpointName: 'microsoftgraph pipeline status'
+    title: '$(Build.DefinitionName) failure notification'
+    text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
+  condition: failed()
+  enabled: true
