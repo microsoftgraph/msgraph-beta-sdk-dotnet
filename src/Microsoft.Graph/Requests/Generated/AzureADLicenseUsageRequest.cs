@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AzureADLicenseUsage.</returns>
         public async System.Threading.Tasks.Task<AzureADLicenseUsage> UpdateAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken)
         {
+			if (azureADLicenseUsageToUpdate.AdditionalData != null)
+			{
+				if (azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADLicenseUsageToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (azureADLicenseUsageToUpdate.AdditionalData != null)
+            {
+                if (azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADLicenseUsageToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AzureADLicenseUsage>(azureADLicenseUsageToUpdate, cancellationToken).ConfigureAwait(false);

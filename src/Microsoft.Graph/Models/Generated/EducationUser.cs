@@ -230,6 +230,12 @@ namespace Microsoft.Graph
         public string UserType { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises info.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesInfo", Required = Newtonsoft.Json.Required.Default)]
+        public EducationOnPremisesInfo OnPremisesInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets schools.
         /// Schools to which the user belongs. Nullable.
         /// </summary>
@@ -242,6 +248,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classes", Required = Newtonsoft.Json.Required.Default)]
         public IEducationUserClassesCollectionWithReferencesPage Classes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets taught classes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taughtClasses", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationUserTaughtClassesCollectionWithReferencesPage TaughtClasses { get; set; }
     
         /// <summary>
         /// Gets or sets user.

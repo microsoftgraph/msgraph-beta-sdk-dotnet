@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosLobAppProvisioningConfigurationToUpdate">The IosLobAppProvisioningConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosLobAppProvisioningConfiguration.</returns>
         public async System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> UpdateAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (iosLobAppProvisioningConfigurationToUpdate.AdditionalData != null)
+			{
+				if (iosLobAppProvisioningConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosLobAppProvisioningConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosLobAppProvisioningConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosLobAppProvisioningConfigurationToUpdate.AdditionalData != null)
+            {
+                if (iosLobAppProvisioningConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosLobAppProvisioningConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosLobAppProvisioningConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosLobAppProvisioningConfiguration>(iosLobAppProvisioningConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

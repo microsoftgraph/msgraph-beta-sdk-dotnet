@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppInstallSummaryToUpdate">The MobileAppInstallSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppInstallSummary.</returns>
         public async System.Threading.Tasks.Task<MobileAppInstallSummary> UpdateAsync(MobileAppInstallSummary mobileAppInstallSummaryToUpdate, CancellationToken cancellationToken)
         {
+			if (mobileAppInstallSummaryToUpdate.AdditionalData != null)
+			{
+				if (mobileAppInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppInstallSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mobileAppInstallSummaryToUpdate.AdditionalData != null)
+            {
+                if (mobileAppInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileAppInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppInstallSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppInstallSummary>(mobileAppInstallSummaryToUpdate, cancellationToken).ConfigureAwait(false);

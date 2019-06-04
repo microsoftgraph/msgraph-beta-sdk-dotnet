@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="intuneBrandingProfileToUpdate">The IntuneBrandingProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IntuneBrandingProfile.</returns>
         public async System.Threading.Tasks.Task<IntuneBrandingProfile> UpdateAsync(IntuneBrandingProfile intuneBrandingProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (intuneBrandingProfileToUpdate.AdditionalData != null)
+			{
+				if (intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, intuneBrandingProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (intuneBrandingProfileToUpdate.AdditionalData != null)
+            {
+                if (intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    intuneBrandingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, intuneBrandingProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IntuneBrandingProfile>(intuneBrandingProfileToUpdate, cancellationToken).ConfigureAwait(false);

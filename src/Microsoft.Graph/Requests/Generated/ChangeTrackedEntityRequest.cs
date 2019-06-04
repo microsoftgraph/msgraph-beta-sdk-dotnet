@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="changeTrackedEntityToUpdate">The ChangeTrackedEntity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ChangeTrackedEntity.</returns>
         public async System.Threading.Tasks.Task<ChangeTrackedEntity> UpdateAsync(ChangeTrackedEntity changeTrackedEntityToUpdate, CancellationToken cancellationToken)
         {
+			if (changeTrackedEntityToUpdate.AdditionalData != null)
+			{
+				if (changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, changeTrackedEntityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (changeTrackedEntityToUpdate.AdditionalData != null)
+            {
+                if (changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, changeTrackedEntityToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ChangeTrackedEntity>(changeTrackedEntityToUpdate, cancellationToken).ConfigureAwait(false);

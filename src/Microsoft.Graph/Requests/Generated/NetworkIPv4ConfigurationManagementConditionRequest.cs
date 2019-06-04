@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated NetworkIPv4ConfigurationManagementCondition.</returns>
         public async System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> UpdateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken)
         {
+			if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData != null)
+			{
+				if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv4ConfigurationManagementConditionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData != null)
+            {
+                if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv4ConfigurationManagementConditionToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<NetworkIPv4ConfigurationManagementCondition>(networkIPv4ConfigurationManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);

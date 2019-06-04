@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToUpdate">The MobileAppProvisioningConfigGroupAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppProvisioningConfigGroupAssignment.</returns>
         public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> UpdateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData != null)
+			{
+				if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppProvisioningConfigGroupAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData != null)
+            {
+                if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppProvisioningConfigGroupAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);

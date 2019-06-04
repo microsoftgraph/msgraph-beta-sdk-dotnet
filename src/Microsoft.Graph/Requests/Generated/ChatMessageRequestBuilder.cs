@@ -63,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for HostedImages.
+        /// Gets the request builder for HostedContents.
         /// </summary>
-        /// <returns>The <see cref="IChatMessageHostedImagesCollectionRequestBuilder"/>.</returns>
-        public IChatMessageHostedImagesCollectionRequestBuilder HostedImages
+        /// <returns>The <see cref="IChatMessageHostedContentsCollectionRequestBuilder"/>.</returns>
+        public IChatMessageHostedContentsCollectionRequestBuilder HostedContents
         {
             get
             {
-                return new ChatMessageHostedImagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hostedImages"), this.Client);
+                return new ChatMessageHostedContentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hostedContents"), this.Client);
             }
         }
     

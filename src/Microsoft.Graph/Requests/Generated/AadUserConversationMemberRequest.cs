@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AadUserConversationMember.</returns>
         public async System.Threading.Tasks.Task<AadUserConversationMember> UpdateAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken)
         {
+			if (aadUserConversationMemberToUpdate.AdditionalData != null)
+			{
+				if (aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, aadUserConversationMemberToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (aadUserConversationMemberToUpdate.AdditionalData != null)
+            {
+                if (aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    aadUserConversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, aadUserConversationMemberToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AadUserConversationMember>(aadUserConversationMemberToUpdate, cancellationToken).ConfigureAwait(false);

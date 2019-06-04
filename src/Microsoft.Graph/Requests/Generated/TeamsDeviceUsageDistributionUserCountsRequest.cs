@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsDeviceUsageDistributionUserCountsToUpdate">The TeamsDeviceUsageDistributionUserCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsDeviceUsageDistributionUserCounts.</returns>
         public async System.Threading.Tasks.Task<TeamsDeviceUsageDistributionUserCounts> UpdateAsync(TeamsDeviceUsageDistributionUserCounts teamsDeviceUsageDistributionUserCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (teamsDeviceUsageDistributionUserCountsToUpdate.AdditionalData != null)
+			{
+				if (teamsDeviceUsageDistributionUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamsDeviceUsageDistributionUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsDeviceUsageDistributionUserCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (teamsDeviceUsageDistributionUserCountsToUpdate.AdditionalData != null)
+            {
+                if (teamsDeviceUsageDistributionUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    teamsDeviceUsageDistributionUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsDeviceUsageDistributionUserCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TeamsDeviceUsageDistributionUserCounts>(teamsDeviceUsageDistributionUserCountsToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="locatedRiskEventToUpdate">The LocatedRiskEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LocatedRiskEvent.</returns>
         public async System.Threading.Tasks.Task<LocatedRiskEvent> UpdateAsync(LocatedRiskEvent locatedRiskEventToUpdate, CancellationToken cancellationToken)
         {
+			if (locatedRiskEventToUpdate.AdditionalData != null)
+			{
+				if (locatedRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					locatedRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, locatedRiskEventToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (locatedRiskEventToUpdate.AdditionalData != null)
+            {
+                if (locatedRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    locatedRiskEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, locatedRiskEventToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<LocatedRiskEvent>(locatedRiskEventToUpdate, cancellationToken).ConfigureAwait(false);

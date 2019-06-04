@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new SecurityBaselineTemplateDeviceStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStates"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for CategoryDeviceStateSummaries.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder"/>.</returns>
+        public ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder CategoryDeviceStateSummaries
+        {
+            get
+            {
+                return new SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categoryDeviceStateSummaries"), this.Client);
+            }
+        }
     
     }
 }

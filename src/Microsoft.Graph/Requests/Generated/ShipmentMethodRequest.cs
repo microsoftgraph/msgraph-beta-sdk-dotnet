@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="shipmentMethodToUpdate">The ShipmentMethod to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ShipmentMethod.</returns>
         public async System.Threading.Tasks.Task<ShipmentMethod> UpdateAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken)
         {
+			if (shipmentMethodToUpdate.AdditionalData != null)
+			{
+				if (shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shipmentMethodToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (shipmentMethodToUpdate.AdditionalData != null)
+            {
+                if (shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shipmentMethodToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ShipmentMethod>(shipmentMethodToUpdate, cancellationToken).ConfigureAwait(false);

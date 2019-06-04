@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsProtectionState.</returns>
         public async System.Threading.Tasks.Task<WindowsProtectionState> UpdateAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsProtectionStateToUpdate.AdditionalData != null)
+			{
+				if (windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsProtectionStateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsProtectionStateToUpdate.AdditionalData != null)
+            {
+                if (windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsProtectionStateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsProtectionState>(windowsProtectionStateToUpdate, cancellationToken).ConfigureAwait(false);

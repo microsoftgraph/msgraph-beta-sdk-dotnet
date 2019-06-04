@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sideLoadingKeyToUpdate">The SideLoadingKey to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SideLoadingKey.</returns>
         public async System.Threading.Tasks.Task<SideLoadingKey> UpdateAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken)
         {
+			if (sideLoadingKeyToUpdate.AdditionalData != null)
+			{
+				if (sideLoadingKeyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sideLoadingKeyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sideLoadingKeyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (sideLoadingKeyToUpdate.AdditionalData != null)
+            {
+                if (sideLoadingKeyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    sideLoadingKeyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sideLoadingKeyToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SideLoadingKey>(sideLoadingKeyToUpdate, cancellationToken).ConfigureAwait(false);

@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="locationManagementConditionToUpdate">The LocationManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LocationManagementCondition.</returns>
         System.Threading.Tasks.Task<LocationManagementCondition> UpdateAsync(LocationManagementCondition locationManagementConditionToUpdate, CancellationToken cancellationToken);
 

@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="office365ActivationCountsToUpdate">The Office365ActivationCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365ActivationCounts.</returns>
         System.Threading.Tasks.Task<Office365ActivationCounts> UpdateAsync(Office365ActivationCounts office365ActivationCountsToUpdate, CancellationToken cancellationToken);
 

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="securityBaselineSettingStateToUpdate">The SecurityBaselineSettingState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityBaselineSettingState.</returns>
         public async System.Threading.Tasks.Task<SecurityBaselineSettingState> UpdateAsync(SecurityBaselineSettingState securityBaselineSettingStateToUpdate, CancellationToken cancellationToken)
         {
+			if (securityBaselineSettingStateToUpdate.AdditionalData != null)
+			{
+				if (securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineSettingStateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (securityBaselineSettingStateToUpdate.AdditionalData != null)
+            {
+                if (securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineSettingStateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SecurityBaselineSettingState>(securityBaselineSettingStateToUpdate, cancellationToken).ConfigureAwait(false);

@@ -23,14 +23,14 @@ namespace Microsoft.Graph
         public GraphServiceClient(
             IAuthenticationProvider authenticationProvider,
             IHttpProvider httpProvider = null)
-            : this("https://graph.microsoft.com/beta", authenticationProvider, httpProvider)
+            : this("https://graph.microsoft.com/v1.0", authenticationProvider, httpProvider)
         {
         }
 
         /// <summary>
         /// Instantiates a new GraphServiceClient.
         /// </summary>
-        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta".</param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/v1.0".</param>
         /// <param name="authenticationProvider">The <see cref="IAuthenticationProvider"/> for authenticating request messages.</param>
         /// <param name="httpProvider">The <see cref="IHttpProvider"/> for sending requests.</param>
         public GraphServiceClient(
@@ -819,6 +819,17 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceProgramControlTypesCollectionRequestBuilder(this.BaseUrl + "/programControlTypes", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
+        /// </summary>
+        public IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles
+        {
+            get
+            {
+                return new GraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder(this.BaseUrl + "/onPremisesPublishingProfiles", this);
             }
         }
     

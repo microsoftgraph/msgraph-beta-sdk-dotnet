@@ -25,18 +25,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isReply.
+        /// If true, this activity was a reply to an existing comment thread.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReply", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsReply { get; set; }
     
         /// <summary>
         /// Gets or sets parentAuthor.
+        /// The identity of the user who started the comment thread.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentAuthor", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet ParentAuthor { get; set; }
     
         /// <summary>
         /// Gets or sets participants.
+        /// The identities of the users participating in this comment thread.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IdentitySet> Participants { get; set; }

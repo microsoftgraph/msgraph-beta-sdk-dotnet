@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidForWorkImportedPFXCertificateProfileToUpdate">The AndroidForWorkImportedPFXCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkImportedPFXCertificateProfile.</returns>
         public async System.Threading.Tasks.Task<AndroidForWorkImportedPFXCertificateProfile> UpdateAsync(AndroidForWorkImportedPFXCertificateProfile androidForWorkImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData != null)
+			{
+				if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkImportedPFXCertificateProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData != null)
+            {
+                if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkImportedPFXCertificateProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidForWorkImportedPFXCertificateProfile>(androidForWorkImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="trustFrameworkToUpdate">The TrustFramework to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TrustFramework.</returns>
         public async System.Threading.Tasks.Task<TrustFramework> UpdateAsync(TrustFramework trustFrameworkToUpdate, CancellationToken cancellationToken)
         {
+			if (trustFrameworkToUpdate.AdditionalData != null)
+			{
+				if (trustFrameworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					trustFrameworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, trustFrameworkToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (trustFrameworkToUpdate.AdditionalData != null)
+            {
+                if (trustFrameworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    trustFrameworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, trustFrameworkToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TrustFramework>(trustFrameworkToUpdate, cancellationToken).ConfigureAwait(false);

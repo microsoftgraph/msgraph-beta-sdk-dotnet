@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         Certificate = 1,
 	
+        /// <summary>
+        /// Derived Credential
+        /// </summary>
+        DerivedCredential = 2,
+	
     }
 }

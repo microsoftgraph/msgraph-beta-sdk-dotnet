@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementIntentSettingCategoryToUpdate">The DeviceManagementIntentSettingCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntentSettingCategory.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> UpdateAsync(DeviceManagementIntentSettingCategory deviceManagementIntentSettingCategoryToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentSettingCategoryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementIntentSettingCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentSettingCategoryToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementIntentSettingCategory>(deviceManagementIntentSettingCategoryToUpdate, cancellationToken).ConfigureAwait(false);

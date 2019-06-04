@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="businessFlowTemplateToUpdate">The BusinessFlowTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BusinessFlowTemplate.</returns>
         public async System.Threading.Tasks.Task<BusinessFlowTemplate> UpdateAsync(BusinessFlowTemplate businessFlowTemplateToUpdate, CancellationToken cancellationToken)
         {
+			if (businessFlowTemplateToUpdate.AdditionalData != null)
+			{
+				if (businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, businessFlowTemplateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (businessFlowTemplateToUpdate.AdditionalData != null)
+            {
+                if (businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, businessFlowTemplateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<BusinessFlowTemplate>(businessFlowTemplateToUpdate, cancellationToken).ConfigureAwait(false);

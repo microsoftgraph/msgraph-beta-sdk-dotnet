@@ -25,6 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets recipients.
+        /// The identities the item was shared with in this action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IdentitySet> Recipients { get; set; }

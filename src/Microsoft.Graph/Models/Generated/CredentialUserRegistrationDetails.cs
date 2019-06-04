@@ -38,7 +38,7 @@ namespace Microsoft.Graph
         /// Gets or sets auth methods.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethods", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AuthMethodsType> AuthMethods { get; set; }
+        public IEnumerable<RegistrationAuthMethod> AuthMethods { get; set; }
     
         /// <summary>
         /// Gets or sets is registered.

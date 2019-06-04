@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationComboBoxToUpdate">The GroupPolicyPresentationComboBox to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationComboBox.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> UpdateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate, CancellationToken cancellationToken)
         {
+			if (groupPolicyPresentationComboBoxToUpdate.AdditionalData != null)
+			{
+				if (groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationComboBoxToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupPolicyPresentationComboBoxToUpdate.AdditionalData != null)
+            {
+                if (groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupPolicyPresentationComboBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationComboBoxToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationComboBox>(groupPolicyPresentationComboBoxToUpdate, cancellationToken).ConfigureAwait(false);

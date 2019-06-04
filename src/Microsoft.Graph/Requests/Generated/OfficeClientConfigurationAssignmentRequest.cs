@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="officeClientConfigurationAssignmentToUpdate">The OfficeClientConfigurationAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OfficeClientConfigurationAssignment.</returns>
         public async System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> UpdateAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (officeClientConfigurationAssignmentToUpdate.AdditionalData != null)
+			{
+				if (officeClientConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					officeClientConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, officeClientConfigurationAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (officeClientConfigurationAssignmentToUpdate.AdditionalData != null)
+            {
+                if (officeClientConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    officeClientConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, officeClientConfigurationAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OfficeClientConfigurationAssignment>(officeClientConfigurationAssignmentToUpdate, cancellationToken).ConfigureAwait(false);

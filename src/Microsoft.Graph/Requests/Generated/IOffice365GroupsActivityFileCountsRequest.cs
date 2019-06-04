@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="office365GroupsActivityFileCountsToUpdate">The Office365GroupsActivityFileCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365GroupsActivityFileCounts.</returns>
         System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> UpdateAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken);
 

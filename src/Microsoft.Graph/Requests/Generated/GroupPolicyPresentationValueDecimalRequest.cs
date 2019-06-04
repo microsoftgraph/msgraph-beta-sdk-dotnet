@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationValueDecimal.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> UpdateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken)
         {
+			if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData != null)
+			{
+				if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationValueDecimalToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData != null)
+            {
+                if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationValueDecimalToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationValueDecimal>(groupPolicyPresentationValueDecimalToUpdate, cancellationToken).ConfigureAwait(false);

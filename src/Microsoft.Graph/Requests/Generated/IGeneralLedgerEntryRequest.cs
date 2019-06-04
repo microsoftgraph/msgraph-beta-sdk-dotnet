@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="generalLedgerEntryToUpdate">The GeneralLedgerEntry to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GeneralLedgerEntry.</returns>
         System.Threading.Tasks.Task<GeneralLedgerEntry> UpdateAsync(GeneralLedgerEntry generalLedgerEntryToUpdate, CancellationToken cancellationToken);
 

@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         WpaPersonal = 2,
 	
+        /// <summary>
+        /// Wpa Enterprise
+        /// </summary>
+        WpaEnterprise = 4,
+	
     }
 }

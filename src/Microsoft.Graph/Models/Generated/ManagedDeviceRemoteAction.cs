@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         SignatureUpdate = 4,
 	
+        /// <summary>
+        /// Wipe
+        /// </summary>
+        Wipe = 5,
+	
     }
 }

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="depEnrollmentBaseProfileToUpdate">The DepEnrollmentBaseProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DepEnrollmentBaseProfile.</returns>
         public async System.Threading.Tasks.Task<DepEnrollmentBaseProfile> UpdateAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken)
         {
+			if (depEnrollmentBaseProfileToUpdate.AdditionalData != null)
+			{
+				if (depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depEnrollmentBaseProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (depEnrollmentBaseProfileToUpdate.AdditionalData != null)
+            {
+                if (depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depEnrollmentBaseProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DepEnrollmentBaseProfile>(depEnrollmentBaseProfileToUpdate, cancellationToken).ConfigureAwait(false);

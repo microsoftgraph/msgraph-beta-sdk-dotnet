@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidForWorkVpnConfigurationToUpdate">The AndroidForWorkVpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkVpnConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> UpdateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidForWorkVpnConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidForWorkVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidForWorkVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkVpnConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidForWorkVpnConfigurationToUpdate.AdditionalData != null)
+            {
+                if (androidForWorkVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidForWorkVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkVpnConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidForWorkVpnConfiguration>(androidForWorkVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

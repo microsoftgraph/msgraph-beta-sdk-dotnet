@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="office365ActivationsUserDetailToUpdate">The Office365ActivationsUserDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365ActivationsUserDetail.</returns>
         public async System.Threading.Tasks.Task<Office365ActivationsUserDetail> UpdateAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToUpdate, CancellationToken cancellationToken)
         {
+			if (office365ActivationsUserDetailToUpdate.AdditionalData != null)
+			{
+				if (office365ActivationsUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					office365ActivationsUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ActivationsUserDetailToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (office365ActivationsUserDetailToUpdate.AdditionalData != null)
+            {
+                if (office365ActivationsUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    office365ActivationsUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ActivationsUserDetailToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Office365ActivationsUserDetail>(office365ActivationsUserDetailToUpdate, cancellationToken).ConfigureAwait(false);

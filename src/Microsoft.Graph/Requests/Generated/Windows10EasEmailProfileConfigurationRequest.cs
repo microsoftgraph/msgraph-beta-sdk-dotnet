@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EasEmailProfileConfigurationToUpdate">The Windows10EasEmailProfileConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EasEmailProfileConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> UpdateAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows10EasEmailProfileConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10EasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10EasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10EasEmailProfileConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows10EasEmailProfileConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windows10EasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows10EasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10EasEmailProfileConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10EasEmailProfileConfiguration>(windows10EasEmailProfileConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

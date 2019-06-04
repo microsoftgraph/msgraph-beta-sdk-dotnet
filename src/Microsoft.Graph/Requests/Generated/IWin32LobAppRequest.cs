@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="win32LobAppToUpdate">The Win32LobApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Win32LobApp.</returns>
         System.Threading.Tasks.Task<Win32LobApp> UpdateAsync(Win32LobApp win32LobAppToUpdate, CancellationToken cancellationToken);
 

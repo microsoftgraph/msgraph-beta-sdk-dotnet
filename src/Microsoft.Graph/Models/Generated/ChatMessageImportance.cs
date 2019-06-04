@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         High = 1,
 	
+        /// <summary>
+        /// Urgent
+        /// </summary>
+        Urgent = 2,
+	
     }
 }

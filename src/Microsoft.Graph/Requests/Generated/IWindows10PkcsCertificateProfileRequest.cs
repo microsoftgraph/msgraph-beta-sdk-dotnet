@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10PkcsCertificateProfile.</returns>
         System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> UpdateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken);
 

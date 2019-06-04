@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="embeddedSIMActivationCodePoolAssignmentToUpdate">The EmbeddedSIMActivationCodePoolAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmbeddedSIMActivationCodePoolAssignment.</returns>
         public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePoolAssignment> UpdateAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignmentToUpdate, CancellationToken cancellationToken)
         {
+			if (embeddedSIMActivationCodePoolAssignmentToUpdate.AdditionalData != null)
+			{
+				if (embeddedSIMActivationCodePoolAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					embeddedSIMActivationCodePoolAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMActivationCodePoolAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (embeddedSIMActivationCodePoolAssignmentToUpdate.AdditionalData != null)
+            {
+                if (embeddedSIMActivationCodePoolAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    embeddedSIMActivationCodePoolAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMActivationCodePoolAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EmbeddedSIMActivationCodePoolAssignment>(embeddedSIMActivationCodePoolAssignmentToUpdate, cancellationToken).ConfigureAwait(false);

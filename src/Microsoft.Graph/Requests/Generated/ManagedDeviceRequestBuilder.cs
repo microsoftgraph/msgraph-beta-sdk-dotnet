@@ -188,6 +188,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateFileVaultKey.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
+        public IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey()
+        {
+            return new ManagedDeviceRotateFileVaultKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rotateFileVaultKey"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceRetire.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceRetireRequestBuilder"/>.</returns>
@@ -423,6 +434,17 @@ namespace Microsoft.Graph
                 this.Client,
                 complianceState,
                 remediationUrl);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetFileVaultKey.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetFileVaultKeyRequestBuilder"/>.</returns>
+        public IManagedDeviceGetFileVaultKeyRequestBuilder GetFileVaultKey()
+        {
+            return new ManagedDeviceGetFileVaultKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFileVaultKey"),
+                this.Client);
         }
     
     }

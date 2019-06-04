@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="skypeForBusinessDeviceUsageUserCountsToUpdate">The SkypeForBusinessDeviceUsageUserCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SkypeForBusinessDeviceUsageUserCounts.</returns>
         public async System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserCounts> UpdateAsync(SkypeForBusinessDeviceUsageUserCounts skypeForBusinessDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (skypeForBusinessDeviceUsageUserCountsToUpdate.AdditionalData != null)
+			{
+				if (skypeForBusinessDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					skypeForBusinessDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessDeviceUsageUserCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (skypeForBusinessDeviceUsageUserCountsToUpdate.AdditionalData != null)
+            {
+                if (skypeForBusinessDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    skypeForBusinessDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessDeviceUsageUserCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SkypeForBusinessDeviceUsageUserCounts>(skypeForBusinessDeviceUsageUserCountsToUpdate, cancellationToken).ConfigureAwait(false);

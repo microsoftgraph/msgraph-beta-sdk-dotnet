@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="jobResponseBaseToUpdate">The JobResponseBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated JobResponseBase.</returns>
         public async System.Threading.Tasks.Task<JobResponseBase> UpdateAsync(JobResponseBase jobResponseBaseToUpdate, CancellationToken cancellationToken)
         {
+			if (jobResponseBaseToUpdate.AdditionalData != null)
+			{
+				if (jobResponseBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					jobResponseBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, jobResponseBaseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (jobResponseBaseToUpdate.AdditionalData != null)
+            {
+                if (jobResponseBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    jobResponseBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, jobResponseBaseToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<JobResponseBase>(jobResponseBaseToUpdate, cancellationToken).ConfigureAwait(false);

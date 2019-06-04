@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="evaluateLabelJobResponseToUpdate">The EvaluateLabelJobResponse to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EvaluateLabelJobResponse.</returns>
         public async System.Threading.Tasks.Task<EvaluateLabelJobResponse> UpdateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToUpdate, CancellationToken cancellationToken)
         {
+			if (evaluateLabelJobResponseToUpdate.AdditionalData != null)
+			{
+				if (evaluateLabelJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					evaluateLabelJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, evaluateLabelJobResponseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (evaluateLabelJobResponseToUpdate.AdditionalData != null)
+            {
+                if (evaluateLabelJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    evaluateLabelJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, evaluateLabelJobResponseToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EvaluateLabelJobResponse>(evaluateLabelJobResponseToUpdate, cancellationToken).ConfigureAwait(false);

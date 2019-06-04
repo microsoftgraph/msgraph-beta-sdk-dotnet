@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81SCEPCertificateProfileToUpdate">The WindowsPhone81SCEPCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81SCEPCertificateProfile.</returns>
         System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> UpdateAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken);
 

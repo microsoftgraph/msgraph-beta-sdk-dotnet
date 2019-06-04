@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         AndroidWorkProfile = 7,
 	
+        /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = 8,
+	
     }
 }

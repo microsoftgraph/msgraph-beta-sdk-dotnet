@@ -160,6 +160,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementIntentMigrateToTemplate.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentMigrateToTemplateRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentMigrateToTemplateRequestBuilder MigrateToTemplate(
+            bool preserveCustomValues,
+            string newTemplateId = null)
+        {
+            return new DeviceManagementIntentMigrateToTemplateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.migrateToTemplate"),
+                this.Client,
+                preserveCustomValues,
+                newTemplateId);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementIntentAssign.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>

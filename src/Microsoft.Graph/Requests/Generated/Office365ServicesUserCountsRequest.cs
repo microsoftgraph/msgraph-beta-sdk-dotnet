@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="office365ServicesUserCountsToUpdate">The Office365ServicesUserCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365ServicesUserCounts.</returns>
         public async System.Threading.Tasks.Task<Office365ServicesUserCounts> UpdateAsync(Office365ServicesUserCounts office365ServicesUserCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (office365ServicesUserCountsToUpdate.AdditionalData != null)
+			{
+				if (office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ServicesUserCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (office365ServicesUserCountsToUpdate.AdditionalData != null)
+            {
+                if (office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    office365ServicesUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ServicesUserCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Office365ServicesUserCounts>(office365ServicesUserCountsToUpdate, cancellationToken).ConfigureAwait(false);

@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileVpnConfigurationToUpdate">The AndroidWorkProfileVpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileVpnConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileVpnConfiguration> UpdateAsync(AndroidWorkProfileVpnConfiguration androidWorkProfileVpnConfigurationToUpdate, CancellationToken cancellationToken);
 

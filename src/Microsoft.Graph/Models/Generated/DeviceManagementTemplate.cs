@@ -37,6 +37,27 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets version info.
+        /// The template's version information
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionInfo", Required = Newtonsoft.Json.Required.Default)]
+        public string VersionInfo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is deprecated.
+        /// The template is deprecated or not. Intents cannot be created from a deprecated template.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeprecated", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDeprecated { get; set; }
+    
+        /// <summary>
+        /// Gets or sets intent count.
+        /// Number of Intents created from this template.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intentCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IntentCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets settings.
         /// Collection of all settings this template has
         /// </summary>
@@ -49,6 +70,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementTemplateCategoriesCollectionPage Categories { get; set; }
+    
+        /// <summary>
+        /// Gets or sets migratable to.
+        /// Collection of templates this template can migrate to
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migratableTo", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementTemplateMigratableToCollectionPage MigratableTo { get; set; }
     
     }
 }

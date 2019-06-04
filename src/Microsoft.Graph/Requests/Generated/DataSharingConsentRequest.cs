@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="dataSharingConsentToUpdate">The DataSharingConsent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataSharingConsent.</returns>
         public async System.Threading.Tasks.Task<DataSharingConsent> UpdateAsync(DataSharingConsent dataSharingConsentToUpdate, CancellationToken cancellationToken)
         {
+			if (dataSharingConsentToUpdate.AdditionalData != null)
+			{
+				if (dataSharingConsentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					dataSharingConsentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataSharingConsentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (dataSharingConsentToUpdate.AdditionalData != null)
+            {
+                if (dataSharingConsentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    dataSharingConsentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataSharingConsentToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DataSharingConsent>(dataSharingConsentToUpdate, cancellationToken).ConfigureAwait(false);

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate">The SkypeForBusinessPeerToPeerActivityMinuteCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SkypeForBusinessPeerToPeerActivityMinuteCounts.</returns>
         public async System.Threading.Tasks.Task<SkypeForBusinessPeerToPeerActivityMinuteCounts> UpdateAsync(SkypeForBusinessPeerToPeerActivityMinuteCounts skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.AdditionalData != null)
+			{
+				if (skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.AdditionalData != null)
+            {
+                if (skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SkypeForBusinessPeerToPeerActivityMinuteCounts>(skypeForBusinessPeerToPeerActivityMinuteCountsToUpdate, cancellationToken).ConfigureAwait(false);

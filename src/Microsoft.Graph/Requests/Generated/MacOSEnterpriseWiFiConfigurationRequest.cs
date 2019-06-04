@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSEnterpriseWiFiConfigurationToUpdate">The MacOSEnterpriseWiFiConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSEnterpriseWiFiConfiguration.</returns>
         public async System.Threading.Tasks.Task<MacOSEnterpriseWiFiConfiguration> UpdateAsync(MacOSEnterpriseWiFiConfiguration macOSEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (macOSEnterpriseWiFiConfigurationToUpdate.AdditionalData != null)
+			{
+				if (macOSEnterpriseWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSEnterpriseWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSEnterpriseWiFiConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSEnterpriseWiFiConfigurationToUpdate.AdditionalData != null)
+            {
+                if (macOSEnterpriseWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSEnterpriseWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSEnterpriseWiFiConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSEnterpriseWiFiConfiguration>(macOSEnterpriseWiFiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

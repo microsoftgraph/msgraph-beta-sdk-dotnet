@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
         ITeamOwnersCollectionWithReferencesRequestBuilder Owners { get; }
+
+        /// <summary>
+        /// Gets the request builder for Group.
+        /// </summary>
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        IGroupWithReferenceRequestBuilder Group { get; }
     
         /// <summary>
         /// Gets the request builder for TeamClone.

@@ -25,6 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mentionees.
+        /// The identities of the users mentioned in this action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentionees", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IdentitySet> Mentionees { get; set; }

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="riskyUserHistoryItemToUpdate">The RiskyUserHistoryItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RiskyUserHistoryItem.</returns>
         public async System.Threading.Tasks.Task<RiskyUserHistoryItem> UpdateAsync(RiskyUserHistoryItem riskyUserHistoryItemToUpdate, CancellationToken cancellationToken)
         {
+			if (riskyUserHistoryItemToUpdate.AdditionalData != null)
+			{
+				if (riskyUserHistoryItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					riskyUserHistoryItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserHistoryItemToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (riskyUserHistoryItemToUpdate.AdditionalData != null)
+            {
+                if (riskyUserHistoryItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    riskyUserHistoryItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserHistoryItemToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RiskyUserHistoryItem>(riskyUserHistoryItemToUpdate, cancellationToken).ConfigureAwait(false);

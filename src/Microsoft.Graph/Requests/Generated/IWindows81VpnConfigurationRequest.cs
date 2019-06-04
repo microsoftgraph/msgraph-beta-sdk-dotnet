@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows81VpnConfigurationToUpdate">The Windows81VpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81VpnConfiguration.</returns>
         System.Threading.Tasks.Task<Windows81VpnConfiguration> UpdateAsync(Windows81VpnConfiguration windows81VpnConfigurationToUpdate, CancellationToken cancellationToken);
 

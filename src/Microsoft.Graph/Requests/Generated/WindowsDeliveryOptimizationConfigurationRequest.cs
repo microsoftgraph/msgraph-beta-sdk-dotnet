@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDeliveryOptimizationConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> UpdateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDeliveryOptimizationConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDeliveryOptimizationConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsDeliveryOptimizationConfiguration>(windowsDeliveryOptimizationConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

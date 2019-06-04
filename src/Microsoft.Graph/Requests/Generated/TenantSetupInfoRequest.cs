@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="tenantSetupInfoToUpdate">The TenantSetupInfo to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TenantSetupInfo.</returns>
         public async System.Threading.Tasks.Task<TenantSetupInfo> UpdateAsync(TenantSetupInfo tenantSetupInfoToUpdate, CancellationToken cancellationToken)
         {
+			if (tenantSetupInfoToUpdate.AdditionalData != null)
+			{
+				if (tenantSetupInfoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					tenantSetupInfoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tenantSetupInfoToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (tenantSetupInfoToUpdate.AdditionalData != null)
+            {
+                if (tenantSetupInfoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    tenantSetupInfoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tenantSetupInfoToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TenantSetupInfo>(tenantSetupInfoToUpdate, cancellationToken).ConfigureAwait(false);

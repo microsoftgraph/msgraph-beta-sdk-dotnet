@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="remoteActionAuditToUpdate">The RemoteActionAudit to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RemoteActionAudit.</returns>
         System.Threading.Tasks.Task<RemoteActionAudit> UpdateAsync(RemoteActionAudit remoteActionAuditToUpdate, CancellationToken cancellationToken);
 

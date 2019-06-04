@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="timeOffReasonToUpdate">The TimeOffReason to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TimeOffReason.</returns>
         public async System.Threading.Tasks.Task<TimeOffReason> UpdateAsync(TimeOffReason timeOffReasonToUpdate, CancellationToken cancellationToken)
         {
+			if (timeOffReasonToUpdate.AdditionalData != null)
+			{
+				if (timeOffReasonToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					timeOffReasonToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, timeOffReasonToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (timeOffReasonToUpdate.AdditionalData != null)
+            {
+                if (timeOffReasonToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    timeOffReasonToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, timeOffReasonToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TimeOffReason>(timeOffReasonToUpdate, cancellationToken).ConfigureAwait(false);

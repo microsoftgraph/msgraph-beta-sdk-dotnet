@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="participantToUpdate">The Participant to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Participant.</returns>
         System.Threading.Tasks.Task<Participant> UpdateAsync(Participant participantToUpdate, CancellationToken cancellationToken);
 

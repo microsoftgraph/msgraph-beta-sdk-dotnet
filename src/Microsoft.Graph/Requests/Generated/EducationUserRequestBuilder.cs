@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TaughtClasses.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder TaughtClasses
+        {
+            get
+            {
+                return new EducationUserTaughtClassesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("taughtClasses"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for User.
         /// </summary>
         /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
@@ -97,6 +109,8 @@ namespace Microsoft.Graph
                 return new EducationUserAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
+    
+        
     
     }
 }

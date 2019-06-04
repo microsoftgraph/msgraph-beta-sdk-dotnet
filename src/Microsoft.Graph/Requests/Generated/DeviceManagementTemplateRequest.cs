@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementTemplateToUpdate">The DeviceManagementTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementTemplate.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementTemplate> UpdateAsync(DeviceManagementTemplate deviceManagementTemplateToUpdate, CancellationToken cancellationToken)
         {
+			if (deviceManagementTemplateToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementTemplateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementTemplateToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementTemplateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementTemplate>(deviceManagementTemplateToUpdate, cancellationToken).ConfigureAwait(false);
@@ -234,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementTemplateToInitialize.Categories.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementTemplateToInitialize.MigratableTo != null && deviceManagementTemplateToInitialize.MigratableTo.CurrentPage != null)
+                {
+                    deviceManagementTemplateToInitialize.MigratableTo.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("migratableTo@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

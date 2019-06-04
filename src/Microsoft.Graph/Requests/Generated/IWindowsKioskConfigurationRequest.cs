@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsKioskConfigurationToUpdate">The WindowsKioskConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsKioskConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsKioskConfiguration> UpdateAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate, CancellationToken cancellationToken);
 

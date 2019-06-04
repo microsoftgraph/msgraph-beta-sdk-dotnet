@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for EducationClassDelta.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassDeltaRequestBuilder"/>.</returns>
+        public IEducationClassDeltaRequestBuilder Delta()
+        {
+            return new EducationClassDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

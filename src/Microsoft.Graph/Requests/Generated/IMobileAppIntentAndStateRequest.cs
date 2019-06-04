@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppIntentAndState.</returns>
         System.Threading.Tasks.Task<MobileAppIntentAndState> UpdateAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken);
 

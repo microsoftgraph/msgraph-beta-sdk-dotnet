@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppAppAssignedDeviceLicenseToUpdate">The IosVppAppAssignedDeviceLicense to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppAppAssignedDeviceLicense.</returns>
         public async System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> UpdateAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken)
         {
+			if (iosVppAppAssignedDeviceLicenseToUpdate.AdditionalData != null)
+			{
+				if (iosVppAppAssignedDeviceLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosVppAppAssignedDeviceLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppAppAssignedDeviceLicenseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosVppAppAssignedDeviceLicenseToUpdate.AdditionalData != null)
+            {
+                if (iosVppAppAssignedDeviceLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosVppAppAssignedDeviceLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppAppAssignedDeviceLicenseToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosVppAppAssignedDeviceLicense>(iosVppAppAssignedDeviceLicenseToUpdate, cancellationToken).ConfigureAwait(false);

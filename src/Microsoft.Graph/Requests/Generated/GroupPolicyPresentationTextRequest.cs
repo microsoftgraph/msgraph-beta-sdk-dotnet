@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationTextToUpdate">The GroupPolicyPresentationText to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationText.</returns>
         public async System.Threading.Tasks.Task<GroupPolicyPresentationText> UpdateAsync(GroupPolicyPresentationText groupPolicyPresentationTextToUpdate, CancellationToken cancellationToken)
         {
+			if (groupPolicyPresentationTextToUpdate.AdditionalData != null)
+			{
+				if (groupPolicyPresentationTextToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupPolicyPresentationTextToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationTextToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupPolicyPresentationTextToUpdate.AdditionalData != null)
+            {
+                if (groupPolicyPresentationTextToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupPolicyPresentationTextToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationTextToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationText>(groupPolicyPresentationTextToUpdate, cancellationToken).ConfigureAwait(false);

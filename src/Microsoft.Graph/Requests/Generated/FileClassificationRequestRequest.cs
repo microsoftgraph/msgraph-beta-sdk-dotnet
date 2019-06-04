@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="fileClassificationRequestObjectToUpdate">The FileClassificationRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FileClassificationRequestObject.</returns>
         public async System.Threading.Tasks.Task<FileClassificationRequestObject> UpdateAsync(FileClassificationRequestObject fileClassificationRequestObjectToUpdate, CancellationToken cancellationToken)
         {
+			if (fileClassificationRequestObjectToUpdate.AdditionalData != null)
+			{
+				if (fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileClassificationRequestObjectToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (fileClassificationRequestObjectToUpdate.AdditionalData != null)
+            {
+                if (fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    fileClassificationRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileClassificationRequestObjectToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<FileClassificationRequestObject>(fileClassificationRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);

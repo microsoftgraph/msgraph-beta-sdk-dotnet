@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsHealthMonitoringConfigurationToUpdate">The WindowsHealthMonitoringConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsHealthMonitoringConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> UpdateAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsHealthMonitoringConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsHealthMonitoringConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsHealthMonitoringConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsHealthMonitoringConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsHealthMonitoringConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsHealthMonitoringConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsHealthMonitoringConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsHealthMonitoringConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsHealthMonitoringConfiguration>(windowsHealthMonitoringConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

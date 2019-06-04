@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="privilegedApprovalToUpdate">The PrivilegedApproval to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedApproval.</returns>
         System.Threading.Tasks.Task<PrivilegedApproval> UpdateAsync(PrivilegedApproval privilegedApprovalToUpdate, CancellationToken cancellationToken);
 

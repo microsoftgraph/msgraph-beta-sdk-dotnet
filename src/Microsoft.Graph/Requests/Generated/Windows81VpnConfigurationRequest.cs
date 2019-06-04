@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows81VpnConfigurationToUpdate">The Windows81VpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows81VpnConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows81VpnConfiguration> UpdateAsync(Windows81VpnConfiguration windows81VpnConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windows81VpnConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81VpnConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows81VpnConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows81VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81VpnConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows81VpnConfiguration>(windows81VpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

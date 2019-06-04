@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="officeClientConfigurationToUpdate">The OfficeClientConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OfficeClientConfiguration.</returns>
         public async System.Threading.Tasks.Task<OfficeClientConfiguration> UpdateAsync(OfficeClientConfiguration officeClientConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (officeClientConfigurationToUpdate.AdditionalData != null)
+			{
+				if (officeClientConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					officeClientConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, officeClientConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (officeClientConfigurationToUpdate.AdditionalData != null)
+            {
+                if (officeClientConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    officeClientConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, officeClientConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OfficeClientConfiguration>(officeClientConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

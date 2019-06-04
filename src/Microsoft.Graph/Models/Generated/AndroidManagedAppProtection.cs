@@ -121,6 +121,20 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed { get; set; }
     
         /// <summary>
+        /// Gets or sets custom browser package id.
+        /// Unique identifier of a custom browser to open weblink on Android.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserPackageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom browser display name.
+        /// Friendly name of the preferred custom browser to open weblink on Android.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomBrowserDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>

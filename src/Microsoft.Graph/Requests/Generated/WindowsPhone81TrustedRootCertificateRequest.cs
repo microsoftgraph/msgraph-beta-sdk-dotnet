@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81TrustedRootCertificateToUpdate">The WindowsPhone81TrustedRootCertificate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81TrustedRootCertificate.</returns>
         public async System.Threading.Tasks.Task<WindowsPhone81TrustedRootCertificate> UpdateAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData != null)
+			{
+				if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81TrustedRootCertificateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData != null)
+            {
+                if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81TrustedRootCertificateToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsPhone81TrustedRootCertificate>(windowsPhone81TrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);

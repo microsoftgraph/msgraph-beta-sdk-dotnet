@@ -119,16 +119,22 @@ namespace Microsoft.Graph
         public string Locale { get; set; }
     
         /// <summary>
+        /// Gets or sets web url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string WebUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets replies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replies", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessageRepliesCollectionPage Replies { get; set; }
     
         /// <summary>
-        /// Gets or sets hosted images.
+        /// Gets or sets hosted contents.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedImages", Required = Newtonsoft.Json.Required.Default)]
-        public IChatMessageHostedImagesCollectionPage HostedImages { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostedContents", Required = Newtonsoft.Json.Required.Default)]
+        public IChatMessageHostedContentsCollectionPage HostedContents { get; set; }
     
     }
 }

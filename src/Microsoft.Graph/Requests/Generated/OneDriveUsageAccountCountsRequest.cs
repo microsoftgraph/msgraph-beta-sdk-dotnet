@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="oneDriveUsageAccountCountsToUpdate">The OneDriveUsageAccountCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OneDriveUsageAccountCounts.</returns>
         public async System.Threading.Tasks.Task<OneDriveUsageAccountCounts> UpdateAsync(OneDriveUsageAccountCounts oneDriveUsageAccountCountsToUpdate, CancellationToken cancellationToken)
         {
+			if (oneDriveUsageAccountCountsToUpdate.AdditionalData != null)
+			{
+				if (oneDriveUsageAccountCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					oneDriveUsageAccountCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oneDriveUsageAccountCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (oneDriveUsageAccountCountsToUpdate.AdditionalData != null)
+            {
+                if (oneDriveUsageAccountCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    oneDriveUsageAccountCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oneDriveUsageAccountCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OneDriveUsageAccountCounts>(oneDriveUsageAccountCountsToUpdate, cancellationToken).ConfigureAwait(false);

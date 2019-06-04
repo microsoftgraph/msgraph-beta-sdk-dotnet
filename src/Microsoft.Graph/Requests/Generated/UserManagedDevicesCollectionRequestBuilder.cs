@@ -66,12 +66,16 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>
         public IManagedDeviceExecuteActionRequestBuilder ExecuteAction(
             ManagedDeviceRemoteAction actionName,
+            bool? keepEnrollmentData = null,
+            bool? keepUserData = null,
             IEnumerable<string> deviceIds = null)
         {
             return new ManagedDeviceExecuteActionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.executeAction"),
                 this.Client,
                 actionName,
+                keepEnrollmentData,
+                keepUserData,
                 deviceIds);
         }
     }

@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsDomainJoinConfigurationToUpdate">The WindowsDomainJoinConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDomainJoinConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> UpdateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (windowsDomainJoinConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsDomainJoinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsDomainJoinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDomainJoinConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsDomainJoinConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsDomainJoinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsDomainJoinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDomainJoinConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsDomainJoinConfiguration>(windowsDomainJoinConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

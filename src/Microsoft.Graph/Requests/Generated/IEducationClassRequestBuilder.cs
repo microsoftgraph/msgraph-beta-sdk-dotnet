@@ -67,5 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
         IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories { get; }
     
+        
+    
     }
 }

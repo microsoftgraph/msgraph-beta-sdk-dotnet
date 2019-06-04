@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="securityActionToUpdate">The SecurityAction to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityAction.</returns>
         System.Threading.Tasks.Task<SecurityAction> UpdateAsync(SecurityAction securityActionToUpdate, CancellationToken cancellationToken);
 

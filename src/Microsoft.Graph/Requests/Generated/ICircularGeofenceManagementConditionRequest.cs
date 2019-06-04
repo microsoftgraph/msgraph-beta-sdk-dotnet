@@ -71,6 +71,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="circularGeofenceManagementConditionToUpdate">The CircularGeofenceManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CircularGeofenceManagementCondition.</returns>
         System.Threading.Tasks.Task<CircularGeofenceManagementCondition> UpdateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToUpdate, CancellationToken cancellationToken);
 

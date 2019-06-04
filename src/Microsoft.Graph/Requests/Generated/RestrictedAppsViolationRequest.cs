@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="restrictedAppsViolationToUpdate">The RestrictedAppsViolation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RestrictedAppsViolation.</returns>
         public async System.Threading.Tasks.Task<RestrictedAppsViolation> UpdateAsync(RestrictedAppsViolation restrictedAppsViolationToUpdate, CancellationToken cancellationToken)
         {
+			if (restrictedAppsViolationToUpdate.AdditionalData != null)
+			{
+				if (restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, restrictedAppsViolationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (restrictedAppsViolationToUpdate.AdditionalData != null)
+            {
+                if (restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, restrictedAppsViolationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RestrictedAppsViolation>(restrictedAppsViolationToUpdate, cancellationToken).ConfigureAwait(false);

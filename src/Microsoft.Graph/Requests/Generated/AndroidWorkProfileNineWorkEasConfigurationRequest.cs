@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileNineWorkEasConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> UpdateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken)
         {
+			if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileNineWorkEasConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData != null)
+            {
+                if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileNineWorkEasConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidWorkProfileNineWorkEasConfiguration>(androidWorkProfileNineWorkEasConfigurationToUpdate, cancellationToken).ConfigureAwait(false);

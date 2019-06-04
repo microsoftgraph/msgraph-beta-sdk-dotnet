@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new DeviceManagementTemplateCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for MigratableTo.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateMigratableToCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTemplateMigratableToCollectionRequestBuilder MigratableTo
+        {
+            get
+            {
+                return new DeviceManagementTemplateMigratableToCollectionRequestBuilder(this.AppendSegmentToRequestUrl("migratableTo"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for DeviceManagementTemplateCreateInstance.

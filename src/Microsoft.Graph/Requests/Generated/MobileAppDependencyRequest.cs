@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppDependencyToUpdate">The MobileAppDependency to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppDependency.</returns>
         public async System.Threading.Tasks.Task<MobileAppDependency> UpdateAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken)
         {
+			if (mobileAppDependencyToUpdate.AdditionalData != null)
+			{
+				if (mobileAppDependencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppDependencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppDependencyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mobileAppDependencyToUpdate.AdditionalData != null)
+            {
+                if (mobileAppDependencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileAppDependencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppDependencyToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppDependency>(mobileAppDependencyToUpdate, cancellationToken).ConfigureAwait(false);

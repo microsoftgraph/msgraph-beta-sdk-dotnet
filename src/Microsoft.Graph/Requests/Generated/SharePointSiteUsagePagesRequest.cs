@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sharePointSiteUsagePagesToUpdate">The SharePointSiteUsagePages to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharePointSiteUsagePages.</returns>
         public async System.Threading.Tasks.Task<SharePointSiteUsagePages> UpdateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToUpdate, CancellationToken cancellationToken)
         {
+			if (sharePointSiteUsagePagesToUpdate.AdditionalData != null)
+			{
+				if (sharePointSiteUsagePagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sharePointSiteUsagePagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointSiteUsagePagesToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (sharePointSiteUsagePagesToUpdate.AdditionalData != null)
+            {
+                if (sharePointSiteUsagePagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    sharePointSiteUsagePagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointSiteUsagePagesToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SharePointSiteUsagePages>(sharePointSiteUsagePagesToUpdate, cancellationToken).ConfigureAwait(false);

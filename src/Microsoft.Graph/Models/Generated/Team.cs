@@ -138,6 +138,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
         public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
     
+        /// <summary>
+        /// Gets or sets group.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        public Group Group { get; set; }
+    
     }
 }
 

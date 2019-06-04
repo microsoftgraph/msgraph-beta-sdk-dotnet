@@ -117,9 +117,36 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="yammerActivityUserDetailToUpdate">The YammerActivityUserDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerActivityUserDetail.</returns>
         public async System.Threading.Tasks.Task<YammerActivityUserDetail> UpdateAsync(YammerActivityUserDetail yammerActivityUserDetailToUpdate, CancellationToken cancellationToken)
         {
+			if (yammerActivityUserDetailToUpdate.AdditionalData != null)
+			{
+				if (yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivityUserDetailToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (yammerActivityUserDetailToUpdate.AdditionalData != null)
+            {
+                if (yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivityUserDetailToUpdate.GetType().Name)
+                        });
+                }
+            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<YammerActivityUserDetail>(yammerActivityUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
