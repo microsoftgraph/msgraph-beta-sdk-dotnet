@@ -14,34 +14,28 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface IDirectoryRequestBuilder.
+    /// The interface IFeatureRolloutPolicyRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryRequestBuilder : IEntityRequestBuilder
+    public partial interface IFeatureRolloutPolicyRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IDirectoryRequest Request();
+        new IFeatureRolloutPolicyRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IDirectoryRequest Request(IEnumerable<Option> options);
+        new IFeatureRolloutPolicyRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for DeletedItems.
+        /// Gets the request builder for AppliesTo.
         /// </summary>
-        /// <returns>The <see cref="IDirectoryDeletedItemsCollectionRequestBuilder"/>.</returns>
-        IDirectoryDeletedItemsCollectionRequestBuilder DeletedItems { get; }
-
-        /// <summary>
-        /// Gets the request builder for FeatureRolloutPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>
-        IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder FeatureRolloutPolicies { get; }
+        /// <returns>The <see cref="IFeatureRolloutPolicyAppliesToCollectionRequestBuilder"/>.</returns>
+        IFeatureRolloutPolicyAppliesToCollectionRequestBuilder AppliesTo { get; }
     
     }
 }

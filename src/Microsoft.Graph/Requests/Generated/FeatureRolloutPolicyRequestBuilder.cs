@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type DirectoryRequestBuilder.
+    /// The type FeatureRolloutPolicyRequestBuilder.
     /// </summary>
-    public partial class DirectoryRequestBuilder : EntityRequestBuilder, IDirectoryRequestBuilder
+    public partial class FeatureRolloutPolicyRequestBuilder : EntityRequestBuilder, IFeatureRolloutPolicyRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new DirectoryRequestBuilder.
+        /// Constructs a new FeatureRolloutPolicyRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public DirectoryRequestBuilder(
+        public FeatureRolloutPolicyRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IDirectoryRequest Request()
+        public new IFeatureRolloutPolicyRequest Request()
         {
             return this.Request(null);
         }
@@ -45,32 +45,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IDirectoryRequest Request(IEnumerable<Option> options)
+        public new IFeatureRolloutPolicyRequest Request(IEnumerable<Option> options)
         {
-            return new DirectoryRequest(this.RequestUrl, this.Client, options);
+            return new FeatureRolloutPolicyRequest(this.RequestUrl, this.Client, options);
         }
     
         /// <summary>
-        /// Gets the request builder for DeletedItems.
+        /// Gets the request builder for AppliesTo.
         /// </summary>
-        /// <returns>The <see cref="IDirectoryDeletedItemsCollectionRequestBuilder"/>.</returns>
-        public IDirectoryDeletedItemsCollectionRequestBuilder DeletedItems
+        /// <returns>The <see cref="IFeatureRolloutPolicyAppliesToCollectionRequestBuilder"/>.</returns>
+        public IFeatureRolloutPolicyAppliesToCollectionRequestBuilder AppliesTo
         {
             get
             {
-                return new DirectoryDeletedItemsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deletedItems"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for FeatureRolloutPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder FeatureRolloutPolicies
-        {
-            get
-            {
-                return new DirectoryFeatureRolloutPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("featureRolloutPolicies"), this.Client);
+                return new FeatureRolloutPolicyAppliesToCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appliesTo"), this.Client);
             }
         }
     

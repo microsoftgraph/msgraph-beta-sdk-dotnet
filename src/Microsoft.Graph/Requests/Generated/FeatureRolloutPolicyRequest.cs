@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type DirectoryRequest.
+    /// The type FeatureRolloutPolicyRequest.
     /// </summary>
-    public partial class DirectoryRequest : BaseRequest, IDirectoryRequest
+    public partial class FeatureRolloutPolicyRequest : BaseRequest, IFeatureRolloutPolicyRequest
     {
         /// <summary>
-        /// Constructs a new DirectoryRequest.
+        /// Constructs a new FeatureRolloutPolicyRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public DirectoryRequest(
+        public FeatureRolloutPolicyRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,32 +36,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified Directory using POST.
+        /// Creates the specified FeatureRolloutPolicy using POST.
         /// </summary>
-        /// <param name="directoryToCreate">The Directory to create.</param>
-        /// <returns>The created Directory.</returns>
-        public System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate)
+        /// <param name="featureRolloutPolicyToCreate">The FeatureRolloutPolicy to create.</param>
+        /// <returns>The created FeatureRolloutPolicy.</returns>
+        public System.Threading.Tasks.Task<FeatureRolloutPolicy> CreateAsync(FeatureRolloutPolicy featureRolloutPolicyToCreate)
         {
-            return this.CreateAsync(directoryToCreate, CancellationToken.None);
+            return this.CreateAsync(featureRolloutPolicyToCreate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Creates the specified Directory using POST.
+        /// Creates the specified FeatureRolloutPolicy using POST.
         /// </summary>
-        /// <param name="directoryToCreate">The Directory to create.</param>
+        /// <param name="featureRolloutPolicyToCreate">The FeatureRolloutPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Directory.</returns>
-        public async System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate, CancellationToken cancellationToken)
+        /// <returns>The created FeatureRolloutPolicy.</returns>
+        public async System.Threading.Tasks.Task<FeatureRolloutPolicy> CreateAsync(FeatureRolloutPolicy featureRolloutPolicyToCreate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            var newEntity = await this.SendAsync<Directory>(directoryToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<FeatureRolloutPolicy>(featureRolloutPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Directory.
+        /// Deletes the specified FeatureRolloutPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
         public System.Threading.Tasks.Task DeleteAsync()
@@ -70,86 +70,86 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Deletes the specified Directory.
+        /// Deletes the specified FeatureRolloutPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
         {
             this.Method = "DELETE";
-            await this.SendAsync<Directory>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<FeatureRolloutPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Directory.
+        /// Gets the specified FeatureRolloutPolicy.
         /// </summary>
-        /// <returns>The Directory.</returns>
-        public System.Threading.Tasks.Task<Directory> GetAsync()
+        /// <returns>The FeatureRolloutPolicy.</returns>
+        public System.Threading.Tasks.Task<FeatureRolloutPolicy> GetAsync()
         {
             return this.GetAsync(CancellationToken.None);
         }
 
         /// <summary>
-        /// Gets the specified Directory.
+        /// Gets the specified FeatureRolloutPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Directory.</returns>
-        public async System.Threading.Tasks.Task<Directory> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The FeatureRolloutPolicy.</returns>
+        public async System.Threading.Tasks.Task<FeatureRolloutPolicy> GetAsync(CancellationToken cancellationToken)
         {
             this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<Directory>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<FeatureRolloutPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Directory using PATCH.
+        /// Updates the specified FeatureRolloutPolicy using PATCH.
         /// </summary>
-        /// <param name="directoryToUpdate">The Directory to update.</param>
-        /// <returns>The updated Directory.</returns>
-        public System.Threading.Tasks.Task<Directory> UpdateAsync(Directory directoryToUpdate)
+        /// <param name="featureRolloutPolicyToUpdate">The FeatureRolloutPolicy to update.</param>
+        /// <returns>The updated FeatureRolloutPolicy.</returns>
+        public System.Threading.Tasks.Task<FeatureRolloutPolicy> UpdateAsync(FeatureRolloutPolicy featureRolloutPolicyToUpdate)
         {
-            return this.UpdateAsync(directoryToUpdate, CancellationToken.None);
+            return this.UpdateAsync(featureRolloutPolicyToUpdate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Updates the specified Directory using PATCH.
+        /// Updates the specified FeatureRolloutPolicy using PATCH.
         /// </summary>
-        /// <param name="directoryToUpdate">The Directory to update.</param>
+        /// <param name="featureRolloutPolicyToUpdate">The FeatureRolloutPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated Directory.</returns>
-        public async System.Threading.Tasks.Task<Directory> UpdateAsync(Directory directoryToUpdate, CancellationToken cancellationToken)
+        /// <returns>The updated FeatureRolloutPolicy.</returns>
+        public async System.Threading.Tasks.Task<FeatureRolloutPolicy> UpdateAsync(FeatureRolloutPolicy featureRolloutPolicyToUpdate, CancellationToken cancellationToken)
         {
-			if (directoryToUpdate.AdditionalData != null)
+			if (featureRolloutPolicyToUpdate.AdditionalData != null)
 			{
-				if (directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				if (featureRolloutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					featureRolloutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
 				{
 					throw new ClientException(
 						new Error
 						{
 							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryToUpdate.GetType().Name)
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, featureRolloutPolicyToUpdate.GetType().Name)
 						});
 				}
 			}
-            if (directoryToUpdate.AdditionalData != null)
+            if (featureRolloutPolicyToUpdate.AdditionalData != null)
             {
-                if (directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                if (featureRolloutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    featureRolloutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
                 {
                     throw new ClientException(
                         new Error
                         {
                             Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryToUpdate.GetType().Name)
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, featureRolloutPolicyToUpdate.GetType().Name)
                         });
                 }
             }
             this.ContentType = "application/json";
             this.Method = "PATCH";
-            var updatedEntity = await this.SendAsync<Directory>(directoryToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<FeatureRolloutPolicy>(featureRolloutPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
@@ -159,7 +159,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Expand(string value)
+        public IFeatureRolloutPolicyRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Expand(Expression<Func<Directory, object>> expandExpression)
+        public IFeatureRolloutPolicyRequest Expand(Expression<Func<FeatureRolloutPolicy, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -194,7 +194,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Select(string value)
+        public IFeatureRolloutPolicyRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -205,7 +205,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Select(Expression<Func<Directory, object>> selectExpression)
+        public IFeatureRolloutPolicyRequest Select(Expression<Func<FeatureRolloutPolicy, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -227,40 +227,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="directoryToInitialize">The <see cref="Directory"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Directory directoryToInitialize)
+        /// <param name="featureRolloutPolicyToInitialize">The <see cref="FeatureRolloutPolicy"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(FeatureRolloutPolicy featureRolloutPolicyToInitialize)
         {
 
-            if (directoryToInitialize != null && directoryToInitialize.AdditionalData != null)
+            if (featureRolloutPolicyToInitialize != null && featureRolloutPolicyToInitialize.AdditionalData != null)
             {
 
-                if (directoryToInitialize.DeletedItems != null && directoryToInitialize.DeletedItems.CurrentPage != null)
+                if (featureRolloutPolicyToInitialize.AppliesTo != null && featureRolloutPolicyToInitialize.AppliesTo.CurrentPage != null)
                 {
-                    directoryToInitialize.DeletedItems.AdditionalData = directoryToInitialize.AdditionalData;
+                    featureRolloutPolicyToInitialize.AppliesTo.AdditionalData = featureRolloutPolicyToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("deletedItems@odata.nextLink", out nextPageLink);
+                    featureRolloutPolicyToInitialize.AdditionalData.TryGetValue("appliesTo@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        directoryToInitialize.DeletedItems.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (directoryToInitialize.FeatureRolloutPolicies != null && directoryToInitialize.FeatureRolloutPolicies.CurrentPage != null)
-                {
-                    directoryToInitialize.FeatureRolloutPolicies.AdditionalData = directoryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("featureRolloutPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        directoryToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(
+                        featureRolloutPolicyToInitialize.AppliesTo.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
