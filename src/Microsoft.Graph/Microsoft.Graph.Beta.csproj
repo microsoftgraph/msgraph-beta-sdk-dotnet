@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Microsoft Graph beta client library allows you to target the Microsoft Graph /beta endpoint. You can call Office 365, Azure AD and other Microsoft services through a single unified developer experience.</Description>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Beta Client Library</AssemblyTitle>
     <Authors>Microsoft</Authors>
-    <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard1.3;net45</TargetFrameworks>
     <PreserveCompilationContext>false</PreserveCompilationContext>
     <AssemblyName>Microsoft.Graph.Beta</AssemblyName>
     <PackageId>Microsoft.Graph.Beta</PackageId>
@@ -13,7 +13,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <RepositoryUrl>https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet</RepositoryUrl>
-    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.1' ">1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.3' ">1.6.0</NetStandardImplicitPackageVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <SignAssembly>false</SignAssembly>
     <DelaySign>false</DelaySign>
