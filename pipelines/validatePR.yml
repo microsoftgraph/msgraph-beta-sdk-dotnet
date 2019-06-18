@@ -1,23 +1,24 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pr:
   branches:
     include:
-    - master
+      - master
   paths:
     exclude:
-        - .github/*
-        - .vs/*
-        - pipelines/*
-        - scripts/*
-        - tests/*
-        - .gitignore
-        - CONTRIBUTING.md
-        - LICENSE.txt
-        - Microsoft.Graph.Beta.sln
-        - README.md
-        - THIRD PARTY NOTICES
+      - .github/*
+      - .vs/*
+      - pipelines/*
+      - scripts/*
+      - tests/*
+      - .gitignore
+      - CONTRIBUTING.md
+      - LICENSE.txt
+      - Microsoft.Graph.Beta.sln
+      - README.md
+      - THIRD PARTY NOTICES
 
 pool:
   name: Hosted VS2017
@@ -56,5 +57,5 @@ steps:
     serviceEndpointName: 'microsoftgraph pipeline status'
     title: '$(Build.DefinitionName) failure notification'
     text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
-  condition: failed()
+  condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
   enabled: true
