@@ -49,5 +49,25 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 5,
 	
+        /// <summary>
+        /// Report Only Success
+        /// </summary>
+        ReportOnlySuccess = 6,
+	
+        /// <summary>
+        /// Report Only Failure
+        /// </summary>
+        ReportOnlyFailure = 7,
+	
+        /// <summary>
+        /// Report Only Not Applied
+        /// </summary>
+        ReportOnlyNotApplied = 8,
+	
+        /// <summary>
+        /// Report Only Interrupted
+        /// </summary>
+        ReportOnlyInterrupted = 9,
+	
     }
 }

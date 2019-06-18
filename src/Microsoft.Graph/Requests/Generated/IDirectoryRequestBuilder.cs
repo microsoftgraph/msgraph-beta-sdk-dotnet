@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDirectoryDeletedItemsCollectionRequestBuilder"/>.</returns>
         IDirectoryDeletedItemsCollectionRequestBuilder DeletedItems { get; }
+
+        /// <summary>
+        /// Gets the request builder for FeatureRolloutPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>
+        IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder FeatureRolloutPolicies { get; }
     
     }
 }

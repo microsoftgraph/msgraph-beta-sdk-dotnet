@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new DirectoryDeletedItemsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deletedItems"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for FeatureRolloutPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder FeatureRolloutPolicies
+        {
+            get
+            {
+                return new DirectoryFeatureRolloutPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("featureRolloutPolicies"), this.Client);
+            }
+        }
     
     }
 }

@@ -23,39 +23,10 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as '2014-01-01T00:00:00Z'.
+        /// Gets or sets alternate sign in name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user display name.
-        /// Display name of the user that initiated the sign-in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user principal name.
-        /// User principal name of the user that initiated the sign-in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user id.
-        /// ID of the user that initiated the sign-in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app id.
-        /// Unique GUID representing the app ID in the Azure Active Directory.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
-        public string AppId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternateSignInName", Required = Newtonsoft.Json.Required.Default)]
+        public string AlternateSignInName { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
@@ -65,18 +36,41 @@ namespace Microsoft.Graph
         public string AppDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets ip address.
-        /// IP address of the client used to sign in.
+        /// Gets or sets app id.
+        /// Unique GUID representing the app ID in the Azure Active Directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string IpAddress { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        public string AppId { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
-        /// Sign-in status. Possible values include Success and Failure.
+        /// Gets or sets applied conditional access policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public SignInStatus Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedConditionalAccessPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AuthenticationDetail> AuthenticationDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication methods used.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodsUsed", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AuthenticationMethodsUsed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication processing details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationProcessingDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValue> AuthenticationProcessingDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication requirement policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationRequirementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AuthenticationRequirementPolicy> AuthenticationRequirementPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets client app used.
@@ -86,11 +80,46 @@ namespace Microsoft.Graph
         public string ClientAppUsed { get; set; }
     
         /// <summary>
+        /// Gets or sets conditional access status.
+        /// Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessStatus", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessStatus? ConditionalAccessStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets correlation id.
+        /// The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
+        public string CorrelationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as '2014-01-01T00:00:00Z'.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets device detail.
         /// Device information from where the sign-in occurred; includes device ID, operating system, and browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDetail", Required = Newtonsoft.Json.Required.Default)]
         public DeviceDetail DeviceDetail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is interactive.
+        /// Indicates if a sign-in is interactive or not.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInteractive", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsInteractive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ip address.
+        /// IP address of the client used to sign in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string IpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets location.
@@ -106,61 +135,16 @@ namespace Microsoft.Graph
         public MfaDetail MfaDetail { get; set; }
     
         /// <summary>
-        /// Gets or sets correlation id.
-        /// The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
+        /// Gets or sets network location details.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
-        public string CorrelationId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets conditional access status.
-        /// Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessStatus", Required = Newtonsoft.Json.Required.Default)]
-        public ConditionalAccessStatus? ConditionalAccessStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets applied conditional access policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedConditionalAccessPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkLocationDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<NetworkLocationDetail> NetworkLocationDetails { get; set; }
     
         /// <summary>
         /// Gets or sets original request id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalRequestId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? OriginalRequestId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is interactive.
-        /// Indicates if a sign-in is interactive or not.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInteractive", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsInteractive { get; set; }
-    
-        /// <summary>
-        /// Gets or sets token issuer name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuerName", Required = Newtonsoft.Json.Required.Default)]
-        public string TokenIssuerName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets token issuer type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuerType", Required = Newtonsoft.Json.Required.Default)]
-        public TokenIssuerType? TokenIssuerType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets authentication processing details.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationProcessingDetails", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<KeyValue> AuthenticationProcessingDetails { get; set; }
-    
-        /// <summary>
-        /// Gets or sets network location details.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkLocationDetails", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<NetworkLocationDetail> NetworkLocationDetails { get; set; }
     
         /// <summary>
         /// Gets or sets processing time in milliseconds.
@@ -174,6 +158,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskDetail", Required = Newtonsoft.Json.Required.Default)]
         public RiskDetail? RiskDetail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets risk event types.
+        /// Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RiskEventType> RiskEventTypes { get; set; }
     
         /// <summary>
         /// Gets or sets risk level aggregated.
@@ -197,13 +188,6 @@ namespace Microsoft.Graph
         public RiskState? RiskState { get; set; }
     
         /// <summary>
-        /// Gets or sets risk event types.
-        /// Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RiskEventType> RiskEventTypes { get; set; }
-    
-        /// <summary>
         /// Gets or sets resource display name.
         /// Name of the resource the user signed into.
         /// </summary>
@@ -218,10 +202,44 @@ namespace Microsoft.Graph
         public string ResourceId { get; set; }
     
         /// <summary>
-        /// Gets or sets authentication methods used.
+        /// Gets or sets status.
+        /// Sign-in status. Possible values include Success and Failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodsUsed", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AuthenticationMethodsUsed { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public SignInStatus Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token issuer name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuerName", Required = Newtonsoft.Json.Required.Default)]
+        public string TokenIssuerName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token issuer type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuerType", Required = Newtonsoft.Json.Required.Default)]
+        public TokenIssuerType? TokenIssuerType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user display name.
+        /// Display name of the user that initiated the sign-in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// ID of the user that initiated the sign-in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// User principal name of the user that initiated the sign-in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }
