@@ -3,6 +3,7 @@
 
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pr:
+  autoCancel: true # indicates whether additional pushes to a PR should cancel in-progress runs for the same PR.
   branches:
     include:
       - master
@@ -19,6 +20,8 @@ pr:
       - Microsoft.Graph.Beta.sln
       - README.md
       - THIRD PARTY NOTICES
+
+trigger: none # will disable CI builds entirely
 
 pool:
   name: Hosted VS2017
