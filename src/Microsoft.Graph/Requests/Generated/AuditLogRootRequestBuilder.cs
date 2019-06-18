@@ -85,6 +85,18 @@ namespace Microsoft.Graph
                 return new AuditLogRootRestrictedSignInsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("restrictedSignIns"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DirectoryProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootDirectoryProvisioningCollectionRequestBuilder"/>.</returns>
+        public IAuditLogRootDirectoryProvisioningCollectionRequestBuilder DirectoryProvisioning
+        {
+            get
+            {
+                return new AuditLogRootDirectoryProvisioningCollectionRequestBuilder(this.AppendSegmentToRequestUrl("directoryProvisioning"), this.Client);
+            }
+        }
     
     }
 }
