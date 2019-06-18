@@ -5,20 +5,20 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pr:
   branches:
     include:
-    - master
+      master
   paths:
     exclude:
-        - .github/*
-        - .vs/*
-        - pipelines/*
-        - scripts/*
-        - tests/*
-        - .gitignore
-        - CONTRIBUTING.md
-        - LICENSE.txt
-        - Microsoft.Graph.Beta.sln
-        - README.md
-        - THIRD PARTY NOTICES
+      .github/*
+      .vs/*
+      pipelines/*
+      scripts/*
+      tests/*
+      .gitignore
+      CONTRIBUTING.md
+      LICENSE.txt
+      Microsoft.Graph.Beta.sln
+      README.md
+      THIRD PARTY NOTICES
 
 pool:
   name: Hosted VS2017
