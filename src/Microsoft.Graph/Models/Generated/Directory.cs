@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItems", Required = Newtonsoft.Json.Required.Default)]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }
     
+        /// <summary>
+        /// Gets or sets feature rollout policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureRolloutPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IDirectoryFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
+    
     }
 }
 

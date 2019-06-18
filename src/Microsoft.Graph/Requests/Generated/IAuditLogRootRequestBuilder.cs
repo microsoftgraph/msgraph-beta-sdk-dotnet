@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
         IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns { get; }
+
+        /// <summary>
+        /// Gets the request builder for DirectoryProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootDirectoryProvisioningCollectionRequestBuilder"/>.</returns>
+        IAuditLogRootDirectoryProvisioningCollectionRequestBuilder DirectoryProvisioning { get; }
     
     }
 }

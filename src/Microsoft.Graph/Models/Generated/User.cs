@@ -337,6 +337,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in sessions valid from date time.
+        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInSessionsValidFromDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SignInSessionsValidFromDateTime { get; set; }
@@ -514,7 +515,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license details.
-        /// A collection of this user's license details. Nullable.
+        /// A collection of this user's license details. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
         public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
