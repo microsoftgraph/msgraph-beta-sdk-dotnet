@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhone81TrustedRootCertificateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhone81TrustedRootCertificate using PUT.
+        /// Creates the specified WindowsPhone81TrustedRootCertificate using POST.
         /// </summary>
         /// <param name="windowsPhone81TrustedRootCertificateToCreate">The WindowsPhone81TrustedRootCertificate to create.</param>
         /// <returns>The created WindowsPhone81TrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<WindowsPhone81TrustedRootCertificate> CreateAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81TrustedRootCertificate using PUT.
+        /// Creates the specified WindowsPhone81TrustedRootCertificate using POST.
         /// </summary>
         /// <param name="windowsPhone81TrustedRootCertificateToCreate">The WindowsPhone81TrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

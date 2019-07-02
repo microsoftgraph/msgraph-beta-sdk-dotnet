@@ -1081,10 +1081,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device guard enable secure boot with dma.
-        /// Specifies whether Platform Security Level is enabled at next reboot.
+        /// This property will be deprecated in May 2019 and will be replaced with property DeviceGuardSecureBootWithDMA. Specifies whether Platform Security Level is enabled at next reboot.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardEnableSecureBootWithDMA", Required = Newtonsoft.Json.Required.Default)]
         public bool? DeviceGuardEnableSecureBootWithDMA { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device guard secure boot with dma.
+        /// Specifies whether Platform Security Level is enabled at next reboot.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardSecureBootWithDMA", Required = Newtonsoft.Json.Required.Default)]
+        public SecureBootWithDMAType? DeviceGuardSecureBootWithDMA { get; set; }
     
         /// <summary>
         /// Gets or sets device guard launch system guard.

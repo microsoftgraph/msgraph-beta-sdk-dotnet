@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMuteParticipantOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MuteParticipantOperation using PUT.
+        /// Creates the specified MuteParticipantOperation using POST.
         /// </summary>
         /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
         /// <returns>The created MuteParticipantOperation.</returns>
         System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate);        /// <summary>
-        /// Creates the specified MuteParticipantOperation using PUT.
+        /// Creates the specified MuteParticipantOperation using POST.
         /// </summary>
         /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

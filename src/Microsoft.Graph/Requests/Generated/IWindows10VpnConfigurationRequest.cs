@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10VpnConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10VpnConfiguration using PUT.
+        /// Creates the specified Windows10VpnConfiguration using POST.
         /// </summary>
         /// <param name="windows10VpnConfigurationToCreate">The Windows10VpnConfiguration to create.</param>
         /// <returns>The created Windows10VpnConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10VpnConfiguration> CreateAsync(Windows10VpnConfiguration windows10VpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10VpnConfiguration using PUT.
+        /// Creates the specified Windows10VpnConfiguration using POST.
         /// </summary>
         /// <param name="windows10VpnConfigurationToCreate">The Windows10VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

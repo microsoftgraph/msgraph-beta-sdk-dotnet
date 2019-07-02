@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPictureRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Picture using PUT.
+        /// Creates the specified Picture using POST.
         /// </summary>
         /// <param name="pictureToCreate">The Picture to create.</param>
         /// <returns>The created Picture.</returns>
         System.Threading.Tasks.Task<Picture> CreateAsync(Picture pictureToCreate);        /// <summary>
-        /// Creates the specified Picture using PUT.
+        /// Creates the specified Picture using POST.
         /// </summary>
         /// <param name="pictureToCreate">The Picture to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

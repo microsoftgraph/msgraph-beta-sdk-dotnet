@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIpSecurityProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IpSecurityProfile using PUT.
+        /// Creates the specified IpSecurityProfile using POST.
         /// </summary>
         /// <param name="ipSecurityProfileToCreate">The IpSecurityProfile to create.</param>
         /// <returns>The created IpSecurityProfile.</returns>
         System.Threading.Tasks.Task<IpSecurityProfile> CreateAsync(IpSecurityProfile ipSecurityProfileToCreate);        /// <summary>
-        /// Creates the specified IpSecurityProfile using PUT.
+        /// Creates the specified IpSecurityProfile using POST.
         /// </summary>
         /// <param name="ipSecurityProfileToCreate">The IpSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

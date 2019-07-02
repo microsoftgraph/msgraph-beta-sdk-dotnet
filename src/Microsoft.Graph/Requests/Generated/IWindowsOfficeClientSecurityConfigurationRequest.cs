@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsOfficeClientSecurityConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsOfficeClientSecurityConfiguration using PUT.
+        /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
         /// <returns>The created WindowsOfficeClientSecurityConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> CreateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsOfficeClientSecurityConfiguration using PUT.
+        /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

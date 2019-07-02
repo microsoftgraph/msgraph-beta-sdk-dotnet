@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface INetworkManagementConditionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified NetworkManagementCondition using PUT.
+        /// Creates the specified NetworkManagementCondition using POST.
         /// </summary>
         /// <param name="networkManagementConditionToCreate">The NetworkManagementCondition to create.</param>
         /// <returns>The created NetworkManagementCondition.</returns>
         System.Threading.Tasks.Task<NetworkManagementCondition> CreateAsync(NetworkManagementCondition networkManagementConditionToCreate);        /// <summary>
-        /// Creates the specified NetworkManagementCondition using PUT.
+        /// Creates the specified NetworkManagementCondition using POST.
         /// </summary>
         /// <param name="networkManagementConditionToCreate">The NetworkManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

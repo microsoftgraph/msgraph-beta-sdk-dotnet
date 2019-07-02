@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DepIOSEnrollmentProfile> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified DepIOSEnrollmentProfile using PUT.
+        /// Creates the specified DepIOSEnrollmentProfile using POST.
         /// </summary>
         /// <param name="depIOSEnrollmentProfileToCreate">The DepIOSEnrollmentProfile to create.</param>
         /// <returns>The created DepIOSEnrollmentProfile.</returns>
         System.Threading.Tasks.Task<DepIOSEnrollmentProfile> CreateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate);        /// <summary>
-        /// Creates the specified DepIOSEnrollmentProfile using PUT.
+        /// Creates the specified DepIOSEnrollmentProfile using POST.
         /// </summary>
         /// <param name="depIOSEnrollmentProfileToCreate">The DepIOSEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

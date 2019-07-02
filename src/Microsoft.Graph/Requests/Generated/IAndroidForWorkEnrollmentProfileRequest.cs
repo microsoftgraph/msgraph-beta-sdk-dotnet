@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidForWorkEnrollmentProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidForWorkEnrollmentProfile using PUT.
+        /// Creates the specified AndroidForWorkEnrollmentProfile using POST.
         /// </summary>
         /// <param name="androidForWorkEnrollmentProfileToCreate">The AndroidForWorkEnrollmentProfile to create.</param>
         /// <returns>The created AndroidForWorkEnrollmentProfile.</returns>
         System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> CreateAsync(AndroidForWorkEnrollmentProfile androidForWorkEnrollmentProfileToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkEnrollmentProfile using PUT.
+        /// Creates the specified AndroidForWorkEnrollmentProfile using POST.
         /// </summary>
         /// <param name="androidForWorkEnrollmentProfileToCreate">The AndroidForWorkEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

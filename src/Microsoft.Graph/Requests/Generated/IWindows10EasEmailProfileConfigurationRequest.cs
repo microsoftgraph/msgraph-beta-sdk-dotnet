@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10EasEmailProfileConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10EasEmailProfileConfiguration using PUT.
+        /// Creates the specified Windows10EasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="windows10EasEmailProfileConfigurationToCreate">The Windows10EasEmailProfileConfiguration to create.</param>
         /// <returns>The created Windows10EasEmailProfileConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EasEmailProfileConfiguration> CreateAsync(Windows10EasEmailProfileConfiguration windows10EasEmailProfileConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10EasEmailProfileConfiguration using PUT.
+        /// Creates the specified Windows10EasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="windows10EasEmailProfileConfigurationToCreate">The Windows10EasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

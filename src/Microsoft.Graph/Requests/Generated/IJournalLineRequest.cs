@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IJournalLineRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified JournalLine using PUT.
+        /// Creates the specified JournalLine using POST.
         /// </summary>
         /// <param name="journalLineToCreate">The JournalLine to create.</param>
         /// <returns>The created JournalLine.</returns>
         System.Threading.Tasks.Task<JournalLine> CreateAsync(JournalLine journalLineToCreate);        /// <summary>
-        /// Creates the specified JournalLine using PUT.
+        /// Creates the specified JournalLine using POST.
         /// </summary>
         /// <param name="journalLineToCreate">The JournalLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

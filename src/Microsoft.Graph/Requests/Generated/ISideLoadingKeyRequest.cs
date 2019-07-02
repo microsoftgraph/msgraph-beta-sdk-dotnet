@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISideLoadingKeyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SideLoadingKey using PUT.
+        /// Creates the specified SideLoadingKey using POST.
         /// </summary>
         /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
         /// <returns>The created SideLoadingKey.</returns>
         System.Threading.Tasks.Task<SideLoadingKey> CreateAsync(SideLoadingKey sideLoadingKeyToCreate);        /// <summary>
-        /// Creates the specified SideLoadingKey using PUT.
+        /// Creates the specified SideLoadingKey using POST.
         /// </summary>
         /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

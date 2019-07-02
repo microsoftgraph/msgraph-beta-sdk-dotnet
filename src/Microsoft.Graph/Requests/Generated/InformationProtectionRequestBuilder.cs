@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new InformationProtectionSensitivityLabelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sensitivityLabels"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for SensitivityPolicySettings.
+        /// </summary>
+        /// <returns>The <see cref="ISensitivityPolicySettingsRequestBuilder"/>.</returns>
+        public ISensitivityPolicySettingsRequestBuilder SensitivityPolicySettings
+        {
+            get
+            {
+                return new SensitivityPolicySettingsRequestBuilder(this.AppendSegmentToRequestUrl("sensitivityPolicySettings"), this.Client);
+            }
+        }
     
     }
 }

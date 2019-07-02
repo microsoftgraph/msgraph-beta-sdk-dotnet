@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IInformationProtectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified InformationProtection using PUT.
+        /// Creates the specified InformationProtection using POST.
         /// </summary>
         /// <param name="informationProtectionToCreate">The InformationProtection to create.</param>
         /// <returns>The created InformationProtection.</returns>
         System.Threading.Tasks.Task<InformationProtection> CreateAsync(InformationProtection informationProtectionToCreate);        /// <summary>
-        /// Creates the specified InformationProtection using PUT.
+        /// Creates the specified InformationProtection using POST.
         /// </summary>
         /// <param name="informationProtectionToCreate">The InformationProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

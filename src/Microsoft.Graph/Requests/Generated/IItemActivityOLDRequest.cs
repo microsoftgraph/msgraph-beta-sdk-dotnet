@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IItemActivityOLDRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ItemActivityOLD using PUT.
+        /// Creates the specified ItemActivityOLD using POST.
         /// </summary>
         /// <param name="itemActivityOLDToCreate">The ItemActivityOLD to create.</param>
         /// <returns>The created ItemActivityOLD.</returns>
         System.Threading.Tasks.Task<ItemActivityOLD> CreateAsync(ItemActivityOLD itemActivityOLDToCreate);        /// <summary>
-        /// Creates the specified ItemActivityOLD using PUT.
+        /// Creates the specified ItemActivityOLD using POST.
         /// </summary>
         /// <param name="itemActivityOLDToCreate">The ItemActivityOLD to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

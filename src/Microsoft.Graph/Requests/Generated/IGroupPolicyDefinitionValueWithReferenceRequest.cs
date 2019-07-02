@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GroupPolicyDefinitionValue> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified GroupPolicyDefinitionValue using PUT.
+        /// Creates the specified GroupPolicyDefinitionValue using POST.
         /// </summary>
         /// <param name="groupPolicyDefinitionValueToCreate">The GroupPolicyDefinitionValue to create.</param>
         /// <returns>The created GroupPolicyDefinitionValue.</returns>
         System.Threading.Tasks.Task<GroupPolicyDefinitionValue> CreateAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValueToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyDefinitionValue using PUT.
+        /// Creates the specified GroupPolicyDefinitionValue using POST.
         /// </summary>
         /// <param name="groupPolicyDefinitionValueToCreate">The GroupPolicyDefinitionValue to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

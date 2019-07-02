@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPublishedResourceRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PublishedResource using PUT.
+        /// Creates the specified PublishedResource using POST.
         /// </summary>
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <returns>The created PublishedResource.</returns>
         System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate);        /// <summary>
-        /// Creates the specified PublishedResource using PUT.
+        /// Creates the specified PublishedResource using POST.
         /// </summary>
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

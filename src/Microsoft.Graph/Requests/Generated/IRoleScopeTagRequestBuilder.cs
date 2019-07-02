@@ -31,5 +31,18 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IRoleScopeTagRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagAssignmentsCollectionRequestBuilder"/>.</returns>
+        IRoleScopeTagAssignmentsCollectionRequestBuilder Assignments { get; }
+    
+        /// <summary>
+        /// Gets the request builder for RoleScopeTagAssign.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagAssignRequestBuilder"/>.</returns>
+        IRoleScopeTagAssignRequestBuilder Assign(
+            IEnumerable<RoleScopeTagAutoAssignment> assignments = null);
+    
     }
 }

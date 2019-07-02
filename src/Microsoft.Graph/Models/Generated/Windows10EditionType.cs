@@ -84,5 +84,40 @@ namespace Microsoft.Graph
         /// </summary>
         NotConfigured = 12,
 	
+        /// <summary>
+        /// Windows10Home
+        /// </summary>
+        Windows10Home = 13,
+	
+        /// <summary>
+        /// Windows10Home China
+        /// </summary>
+        Windows10HomeChina = 14,
+	
+        /// <summary>
+        /// Windows10Home N
+        /// </summary>
+        Windows10HomeN = 15,
+	
+        /// <summary>
+        /// Windows10Home Single Language
+        /// </summary>
+        Windows10HomeSingleLanguage = 16,
+	
+        /// <summary>
+        /// Windows10Mobile
+        /// </summary>
+        Windows10Mobile = 17,
+	
+        /// <summary>
+        /// Windows10Io TCore
+        /// </summary>
+        Windows10IoTCore = 18,
+	
+        /// <summary>
+        /// Windows10Io TCore Commercial
+        /// </summary>
+        Windows10IoTCoreCommercial = 19,
+	
     }
 }

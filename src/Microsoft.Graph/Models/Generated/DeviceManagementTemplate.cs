@@ -58,6 +58,20 @@ namespace Microsoft.Graph
         public Int32? IntentCount { get; set; }
     
         /// <summary>
+        /// Gets or sets template type.
+        /// The template's type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementTemplateType? TemplateType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets published date time.
+        /// When the template was published
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? PublishedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets settings.
         /// Collection of all settings this template has
         /// </summary>

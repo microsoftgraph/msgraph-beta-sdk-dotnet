@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IYammerActivityUserDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified YammerActivityUserDetail using PUT.
+        /// Creates the specified YammerActivityUserDetail using POST.
         /// </summary>
         /// <param name="yammerActivityUserDetailToCreate">The YammerActivityUserDetail to create.</param>
         /// <returns>The created YammerActivityUserDetail.</returns>
         System.Threading.Tasks.Task<YammerActivityUserDetail> CreateAsync(YammerActivityUserDetail yammerActivityUserDetailToCreate);        /// <summary>
-        /// Creates the specified YammerActivityUserDetail using PUT.
+        /// Creates the specified YammerActivityUserDetail using POST.
         /// </summary>
         /// <param name="yammerActivityUserDetailToCreate">The YammerActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

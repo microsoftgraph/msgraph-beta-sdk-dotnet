@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// Gets or sets result.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "result", Required = Newtonsoft.Json.Required.Default)]
-        public EvaluateLabelResult Result { get; set; }
+        public EvaluateLabelJobResultGroup Result { get; set; }
     
     }
 }

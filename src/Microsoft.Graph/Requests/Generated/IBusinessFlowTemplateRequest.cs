@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IBusinessFlowTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified BusinessFlowTemplate using PUT.
+        /// Creates the specified BusinessFlowTemplate using POST.
         /// </summary>
         /// <param name="businessFlowTemplateToCreate">The BusinessFlowTemplate to create.</param>
         /// <returns>The created BusinessFlowTemplate.</returns>
         System.Threading.Tasks.Task<BusinessFlowTemplate> CreateAsync(BusinessFlowTemplate businessFlowTemplateToCreate);        /// <summary>
-        /// Creates the specified BusinessFlowTemplate using PUT.
+        /// Creates the specified BusinessFlowTemplate using POST.
         /// </summary>
         /// <param name="businessFlowTemplateToCreate">The BusinessFlowTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

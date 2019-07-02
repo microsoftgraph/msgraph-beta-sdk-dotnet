@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharePointSiteUsageFileCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharePointSiteUsageFileCounts using PUT.
+        /// Creates the specified SharePointSiteUsageFileCounts using POST.
         /// </summary>
         /// <param name="sharePointSiteUsageFileCountsToCreate">The SharePointSiteUsageFileCounts to create.</param>
         /// <returns>The created SharePointSiteUsageFileCounts.</returns>
         System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> CreateAsync(SharePointSiteUsageFileCounts sharePointSiteUsageFileCountsToCreate);        /// <summary>
-        /// Creates the specified SharePointSiteUsageFileCounts using PUT.
+        /// Creates the specified SharePointSiteUsageFileCounts using POST.
         /// </summary>
         /// <param name="sharePointSiteUsageFileCountsToCreate">The SharePointSiteUsageFileCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

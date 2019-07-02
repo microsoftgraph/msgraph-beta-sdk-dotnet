@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IFileClassificationRequestRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified FileClassificationRequestObject using PUT.
+        /// Creates the specified FileClassificationRequestObject using POST.
         /// </summary>
         /// <param name="fileClassificationRequestObjectToCreate">The FileClassificationRequestObject to create.</param>
         /// <returns>The created FileClassificationRequestObject.</returns>
         System.Threading.Tasks.Task<FileClassificationRequestObject> CreateAsync(FileClassificationRequestObject fileClassificationRequestObjectToCreate);        /// <summary>
-        /// Creates the specified FileClassificationRequestObject using PUT.
+        /// Creates the specified FileClassificationRequestObject using POST.
         /// </summary>
         /// <param name="fileClassificationRequestObjectToCreate">The FileClassificationRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

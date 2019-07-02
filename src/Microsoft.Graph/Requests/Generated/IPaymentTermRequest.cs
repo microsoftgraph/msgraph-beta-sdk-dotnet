@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPaymentTermRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PaymentTerm using PUT.
+        /// Creates the specified PaymentTerm using POST.
         /// </summary>
         /// <param name="paymentTermToCreate">The PaymentTerm to create.</param>
         /// <returns>The created PaymentTerm.</returns>
         System.Threading.Tasks.Task<PaymentTerm> CreateAsync(PaymentTerm paymentTermToCreate);        /// <summary>
-        /// Creates the specified PaymentTerm using PUT.
+        /// Creates the specified PaymentTerm using POST.
         /// </summary>
         /// <param name="paymentTermToCreate">The PaymentTerm to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

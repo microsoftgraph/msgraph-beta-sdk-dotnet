@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISiteActivitySummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SiteActivitySummary using PUT.
+        /// Creates the specified SiteActivitySummary using POST.
         /// </summary>
         /// <param name="siteActivitySummaryToCreate">The SiteActivitySummary to create.</param>
         /// <returns>The created SiteActivitySummary.</returns>
         System.Threading.Tasks.Task<SiteActivitySummary> CreateAsync(SiteActivitySummary siteActivitySummaryToCreate);        /// <summary>
-        /// Creates the specified SiteActivitySummary using PUT.
+        /// Creates the specified SiteActivitySummary using POST.
         /// </summary>
         /// <param name="siteActivitySummaryToCreate">The SiteActivitySummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

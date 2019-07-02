@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidDeviceComplianceLocalActionBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidDeviceComplianceLocalActionBase using PUT.
+        /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionBase.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate);        /// <summary>
-        /// Creates the specified AndroidDeviceComplianceLocalActionBase using PUT.
+        /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGovernanceSubjectRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GovernanceSubject using PUT.
+        /// Creates the specified GovernanceSubject using POST.
         /// </summary>
         /// <param name="governanceSubjectToCreate">The GovernanceSubject to create.</param>
         /// <returns>The created GovernanceSubject.</returns>
         System.Threading.Tasks.Task<GovernanceSubject> CreateAsync(GovernanceSubject governanceSubjectToCreate);        /// <summary>
-        /// Creates the specified GovernanceSubject using PUT.
+        /// Creates the specified GovernanceSubject using POST.
         /// </summary>
         /// <param name="governanceSubjectToCreate">The GovernanceSubject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

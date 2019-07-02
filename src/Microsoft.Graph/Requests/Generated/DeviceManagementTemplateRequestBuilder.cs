@@ -102,6 +102,19 @@ namespace Microsoft.Graph
                 description,
                 settingsDelta);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementTemplateCompare.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateCompareRequestBuilder"/>.</returns>
+        public IDeviceManagementTemplateCompareRequestBuilder Compare(
+            string templateId = null)
+        {
+            return new DeviceManagementTemplateCompareRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.compare"),
+                this.Client,
+                templateId);
+        }
     
     }
 }

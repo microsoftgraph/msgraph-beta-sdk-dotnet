@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAuditEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AuditEvent using PUT.
+        /// Creates the specified AuditEvent using POST.
         /// </summary>
         /// <param name="auditEventToCreate">The AuditEvent to create.</param>
         /// <returns>The created AuditEvent.</returns>
         System.Threading.Tasks.Task<AuditEvent> CreateAsync(AuditEvent auditEventToCreate);        /// <summary>
-        /// Creates the specified AuditEvent using PUT.
+        /// Creates the specified AuditEvent using POST.
         /// </summary>
         /// <param name="auditEventToCreate">The AuditEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IChatMessageHostedContentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ChatMessageHostedContent using PUT.
+        /// Creates the specified ChatMessageHostedContent using POST.
         /// </summary>
         /// <param name="chatMessageHostedContentToCreate">The ChatMessageHostedContent to create.</param>
         /// <returns>The created ChatMessageHostedContent.</returns>
         System.Threading.Tasks.Task<ChatMessageHostedContent> CreateAsync(ChatMessageHostedContent chatMessageHostedContentToCreate);        /// <summary>
-        /// Creates the specified ChatMessageHostedContent using PUT.
+        /// Creates the specified ChatMessageHostedContent using POST.
         /// </summary>
         /// <param name="chatMessageHostedContentToCreate">The ChatMessageHostedContent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

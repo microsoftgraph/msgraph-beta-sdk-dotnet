@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceCompliancePolicyGroupAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceCompliancePolicyGroupAssignment using PUT.
+        /// Creates the specified DeviceCompliancePolicyGroupAssignment using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyGroupAssignmentToCreate">The DeviceCompliancePolicyGroupAssignment to create.</param>
         /// <returns>The created DeviceCompliancePolicyGroupAssignment.</returns>
         System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> CreateAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceCompliancePolicyGroupAssignment using PUT.
+        /// Creates the specified DeviceCompliancePolicyGroupAssignment using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyGroupAssignmentToCreate">The DeviceCompliancePolicyGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

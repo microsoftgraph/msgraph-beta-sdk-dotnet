@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhone81AppXBundleRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhone81AppXBundle using PUT.
+        /// Creates the specified WindowsPhone81AppXBundle using POST.
         /// </summary>
         /// <param name="windowsPhone81AppXBundleToCreate">The WindowsPhone81AppXBundle to create.</param>
         /// <returns>The created WindowsPhone81AppXBundle.</returns>
         System.Threading.Tasks.Task<WindowsPhone81AppXBundle> CreateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81AppXBundle using PUT.
+        /// Creates the specified WindowsPhone81AppXBundle using POST.
         /// </summary>
         /// <param name="windowsPhone81AppXBundleToCreate">The WindowsPhone81AppXBundle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

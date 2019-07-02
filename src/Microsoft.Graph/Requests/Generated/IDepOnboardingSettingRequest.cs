@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDepOnboardingSettingRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DepOnboardingSetting using PUT.
+        /// Creates the specified DepOnboardingSetting using POST.
         /// </summary>
         /// <param name="depOnboardingSettingToCreate">The DepOnboardingSetting to create.</param>
         /// <returns>The created DepOnboardingSetting.</returns>
         System.Threading.Tasks.Task<DepOnboardingSetting> CreateAsync(DepOnboardingSetting depOnboardingSettingToCreate);        /// <summary>
-        /// Creates the specified DepOnboardingSetting using PUT.
+        /// Creates the specified DepOnboardingSetting using POST.
         /// </summary>
         /// <param name="depOnboardingSettingToCreate">The DepOnboardingSetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

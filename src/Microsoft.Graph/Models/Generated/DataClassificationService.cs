@@ -35,6 +35,24 @@ namespace Microsoft.Graph
         public IDataClassificationServiceJobsCollectionPage Jobs { get; set; }
     
         /// <summary>
+        /// Gets or sets classify file jobs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyFileJobs", Required = Newtonsoft.Json.Required.Default)]
+        public IDataClassificationServiceClassifyFileJobsCollectionPage ClassifyFileJobs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classify text jobs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyTextJobs", Required = Newtonsoft.Json.Required.Default)]
+        public IDataClassificationServiceClassifyTextJobsCollectionPage ClassifyTextJobs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets evaluate label jobs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluateLabelJobs", Required = Newtonsoft.Json.Required.Default)]
+        public IDataClassificationServiceEvaluateLabelJobsCollectionPage EvaluateLabelJobs { get; set; }
+    
+        /// <summary>
         /// Gets or sets classify text.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyText", Required = Newtonsoft.Json.Required.Default)]

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosVppAppAssignedDeviceLicenseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosVppAppAssignedDeviceLicense using PUT.
+        /// Creates the specified IosVppAppAssignedDeviceLicense using POST.
         /// </summary>
         /// <param name="iosVppAppAssignedDeviceLicenseToCreate">The IosVppAppAssignedDeviceLicense to create.</param>
         /// <returns>The created IosVppAppAssignedDeviceLicense.</returns>
         System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> CreateAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToCreate);        /// <summary>
-        /// Creates the specified IosVppAppAssignedDeviceLicense using PUT.
+        /// Creates the specified IosVppAppAssignedDeviceLicense using POST.
         /// </summary>
         /// <param name="iosVppAppAssignedDeviceLicenseToCreate">The IosVppAppAssignedDeviceLicense to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

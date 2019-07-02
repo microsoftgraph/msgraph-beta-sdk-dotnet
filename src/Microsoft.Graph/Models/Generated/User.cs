@@ -155,6 +155,12 @@ namespace Microsoft.Graph
         public string JobTitle { get; set; }
     
         /// <summary>
+        /// Gets or sets last password change date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastPasswordChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets legal age group classification.
         /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.)
         /// </summary>

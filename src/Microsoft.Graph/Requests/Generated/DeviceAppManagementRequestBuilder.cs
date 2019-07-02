@@ -313,6 +313,18 @@ namespace Microsoft.Graph
                 return new DeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBookCategories"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceAppManagementTasks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder DeviceAppManagementTasks
+        {
+            get
+            {
+                return new DeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceAppManagementTasks"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for DeviceAppManagementSyncMicrosoftStoreForBusinessApps.

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppTroubleshootingEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppTroubleshootingEvent using PUT.
+        /// Creates the specified MobileAppTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
         /// <returns>The created MobileAppTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> CreateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate);        /// <summary>
-        /// Creates the specified MobileAppTroubleshootingEvent using PUT.
+        /// Creates the specified MobileAppTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

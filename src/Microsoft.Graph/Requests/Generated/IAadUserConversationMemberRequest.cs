@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAadUserConversationMemberRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AadUserConversationMember using PUT.
+        /// Creates the specified AadUserConversationMember using POST.
         /// </summary>
         /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
         /// <returns>The created AadUserConversationMember.</returns>
         System.Threading.Tasks.Task<AadUserConversationMember> CreateAsync(AadUserConversationMember aadUserConversationMemberToCreate);        /// <summary>
-        /// Creates the specified AadUserConversationMember using PUT.
+        /// Creates the specified AadUserConversationMember using POST.
         /// </summary>
         /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDataSharingConsentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DataSharingConsent using PUT.
+        /// Creates the specified DataSharingConsent using POST.
         /// </summary>
         /// <param name="dataSharingConsentToCreate">The DataSharingConsent to create.</param>
         /// <returns>The created DataSharingConsent.</returns>
         System.Threading.Tasks.Task<DataSharingConsent> CreateAsync(DataSharingConsent dataSharingConsentToCreate);        /// <summary>
-        /// Creates the specified DataSharingConsent using PUT.
+        /// Creates the specified DataSharingConsent using POST.
         /// </summary>
         /// <param name="dataSharingConsentToCreate">The DataSharingConsent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

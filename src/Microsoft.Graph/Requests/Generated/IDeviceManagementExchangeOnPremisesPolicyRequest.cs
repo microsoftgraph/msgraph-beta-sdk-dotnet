@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementExchangeOnPremisesPolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using PUT.
+        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
         /// <returns>The created DeviceManagementExchangeOnPremisesPolicy.</returns>
         System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> CreateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using PUT.
+        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

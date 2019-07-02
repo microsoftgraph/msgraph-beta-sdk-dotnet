@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEducationAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EducationAssignment using PUT.
+        /// Creates the specified EducationAssignment using POST.
         /// </summary>
         /// <param name="educationAssignmentToCreate">The EducationAssignment to create.</param>
         /// <returns>The created EducationAssignment.</returns>
         System.Threading.Tasks.Task<EducationAssignment> CreateAsync(EducationAssignment educationAssignmentToCreate);        /// <summary>
-        /// Creates the specified EducationAssignment using PUT.
+        /// Creates the specified EducationAssignment using POST.
         /// </summary>
         /// <param name="educationAssignmentToCreate">The EducationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

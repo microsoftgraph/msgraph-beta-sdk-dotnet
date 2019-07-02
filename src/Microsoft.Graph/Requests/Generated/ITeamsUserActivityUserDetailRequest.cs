@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITeamsUserActivityUserDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TeamsUserActivityUserDetail using PUT.
+        /// Creates the specified TeamsUserActivityUserDetail using POST.
         /// </summary>
         /// <param name="teamsUserActivityUserDetailToCreate">The TeamsUserActivityUserDetail to create.</param>
         /// <returns>The created TeamsUserActivityUserDetail.</returns>
         System.Threading.Tasks.Task<TeamsUserActivityUserDetail> CreateAsync(TeamsUserActivityUserDetail teamsUserActivityUserDetailToCreate);        /// <summary>
-        /// Creates the specified TeamsUserActivityUserDetail using PUT.
+        /// Creates the specified TeamsUserActivityUserDetail using POST.
         /// </summary>
         /// <param name="teamsUserActivityUserDetailToCreate">The TeamsUserActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

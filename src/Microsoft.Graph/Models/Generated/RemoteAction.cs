@@ -114,5 +114,15 @@ namespace Microsoft.Graph
         /// </summary>
         ShutDown = 18,
 	
+        /// <summary>
+        /// Rotate File Vault Key
+        /// </summary>
+        RotateFileVaultKey = 20,
+	
+        /// <summary>
+        /// Get File Vault Key
+        /// </summary>
+        GetFileVaultKey = 21,
+	
     }
 }

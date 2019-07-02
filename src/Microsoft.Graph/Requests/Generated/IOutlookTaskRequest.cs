@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOutlookTaskRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OutlookTask using PUT.
+        /// Creates the specified OutlookTask using POST.
         /// </summary>
         /// <param name="outlookTaskToCreate">The OutlookTask to create.</param>
         /// <returns>The created OutlookTask.</returns>
         System.Threading.Tasks.Task<OutlookTask> CreateAsync(OutlookTask outlookTaskToCreate);        /// <summary>
-        /// Creates the specified OutlookTask using PUT.
+        /// Creates the specified OutlookTask using POST.
         /// </summary>
         /// <param name="outlookTaskToCreate">The OutlookTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

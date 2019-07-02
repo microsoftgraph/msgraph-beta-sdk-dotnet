@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsKioskConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsKioskConfiguration using PUT.
+        /// Creates the specified WindowsKioskConfiguration using POST.
         /// </summary>
         /// <param name="windowsKioskConfigurationToCreate">The WindowsKioskConfiguration to create.</param>
         /// <returns>The created WindowsKioskConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsKioskConfiguration> CreateAsync(WindowsKioskConfiguration windowsKioskConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsKioskConfiguration using PUT.
+        /// Creates the specified WindowsKioskConfiguration using POST.
         /// </summary>
         /// <param name="windowsKioskConfigurationToCreate">The WindowsKioskConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

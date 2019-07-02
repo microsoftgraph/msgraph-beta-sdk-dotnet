@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AppRoleAssignment> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified AppRoleAssignment using PUT.
+        /// Creates the specified AppRoleAssignment using POST.
         /// </summary>
         /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
         /// <returns>The created AppRoleAssignment.</returns>
         System.Threading.Tasks.Task<AppRoleAssignment> CreateAsync(AppRoleAssignment appRoleAssignmentToCreate);        /// <summary>
-        /// Creates the specified AppRoleAssignment using PUT.
+        /// Creates the specified AppRoleAssignment using POST.
         /// </summary>
         /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

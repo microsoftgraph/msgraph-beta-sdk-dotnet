@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10CertificateProfileBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10CertificateProfileBase using PUT.
+        /// Creates the specified Windows10CertificateProfileBase using POST.
         /// </summary>
         /// <param name="windows10CertificateProfileBaseToCreate">The Windows10CertificateProfileBase to create.</param>
         /// <returns>The created Windows10CertificateProfileBase.</returns>
         System.Threading.Tasks.Task<Windows10CertificateProfileBase> CreateAsync(Windows10CertificateProfileBase windows10CertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified Windows10CertificateProfileBase using PUT.
+        /// Creates the specified Windows10CertificateProfileBase using POST.
         /// </summary>
         /// <param name="windows10CertificateProfileBaseToCreate">The Windows10CertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

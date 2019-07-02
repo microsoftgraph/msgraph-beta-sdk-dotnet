@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IProgramControlRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ProgramControl using PUT.
+        /// Creates the specified ProgramControl using POST.
         /// </summary>
         /// <param name="programControlToCreate">The ProgramControl to create.</param>
         /// <returns>The created ProgramControl.</returns>
         System.Threading.Tasks.Task<ProgramControl> CreateAsync(ProgramControl programControlToCreate);        /// <summary>
-        /// Creates the specified ProgramControl using PUT.
+        /// Creates the specified ProgramControl using POST.
         /// </summary>
         /// <param name="programControlToCreate">The ProgramControl to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsUpdateStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsUpdateState using PUT.
+        /// Creates the specified WindowsUpdateState using POST.
         /// </summary>
         /// <param name="windowsUpdateStateToCreate">The WindowsUpdateState to create.</param>
         /// <returns>The created WindowsUpdateState.</returns>
         System.Threading.Tasks.Task<WindowsUpdateState> CreateAsync(WindowsUpdateState windowsUpdateStateToCreate);        /// <summary>
-        /// Creates the specified WindowsUpdateState using PUT.
+        /// Creates the specified WindowsUpdateState using POST.
         /// </summary>
         /// <param name="windowsUpdateStateToCreate">The WindowsUpdateState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

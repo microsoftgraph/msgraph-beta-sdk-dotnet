@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidDeviceComplianceLocalActionLockDeviceRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidDeviceComplianceLocalActionLockDevice using PUT.
+        /// Creates the specified AndroidDeviceComplianceLocalActionLockDevice using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionLockDeviceToCreate">The AndroidDeviceComplianceLocalActionLockDevice to create.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionLockDevice.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDevice> CreateAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToCreate);        /// <summary>
-        /// Creates the specified AndroidDeviceComplianceLocalActionLockDevice using PUT.
+        /// Creates the specified AndroidDeviceComplianceLocalActionLockDevice using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionLockDeviceToCreate">The AndroidDeviceComplianceLocalActionLockDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

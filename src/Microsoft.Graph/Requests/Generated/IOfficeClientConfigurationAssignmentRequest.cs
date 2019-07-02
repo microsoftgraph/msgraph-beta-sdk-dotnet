@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOfficeClientConfigurationAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OfficeClientConfigurationAssignment using PUT.
+        /// Creates the specified OfficeClientConfigurationAssignment using POST.
         /// </summary>
         /// <param name="officeClientConfigurationAssignmentToCreate">The OfficeClientConfigurationAssignment to create.</param>
         /// <returns>The created OfficeClientConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> CreateAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignmentToCreate);        /// <summary>
-        /// Creates the specified OfficeClientConfigurationAssignment using PUT.
+        /// Creates the specified OfficeClientConfigurationAssignment using POST.
         /// </summary>
         /// <param name="officeClientConfigurationAssignmentToCreate">The OfficeClientConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

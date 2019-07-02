@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOutlookTaskGroupRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OutlookTaskGroup using PUT.
+        /// Creates the specified OutlookTaskGroup using POST.
         /// </summary>
         /// <param name="outlookTaskGroupToCreate">The OutlookTaskGroup to create.</param>
         /// <returns>The created OutlookTaskGroup.</returns>
         System.Threading.Tasks.Task<OutlookTaskGroup> CreateAsync(OutlookTaskGroup outlookTaskGroupToCreate);        /// <summary>
-        /// Creates the specified OutlookTaskGroup using PUT.
+        /// Creates the specified OutlookTaskGroup using POST.
         /// </summary>
         /// <param name="outlookTaskGroupToCreate">The OutlookTaskGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

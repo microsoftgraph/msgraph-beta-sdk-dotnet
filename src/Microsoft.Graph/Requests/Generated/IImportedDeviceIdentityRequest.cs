@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IImportedDeviceIdentityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ImportedDeviceIdentity using PUT.
+        /// Creates the specified ImportedDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
         /// <returns>The created ImportedDeviceIdentity.</returns>
         System.Threading.Tasks.Task<ImportedDeviceIdentity> CreateAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate);        /// <summary>
-        /// Creates the specified ImportedDeviceIdentity using PUT.
+        /// Creates the specified ImportedDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

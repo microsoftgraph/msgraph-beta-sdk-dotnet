@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified WindowsAutopilotDeploymentProfile using PUT.
+        /// Creates the specified WindowsAutopilotDeploymentProfile using POST.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfileToCreate">The WindowsAutopilotDeploymentProfile to create.</param>
         /// <returns>The created WindowsAutopilotDeploymentProfile.</returns>
         System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> CreateAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfileToCreate);        /// <summary>
-        /// Creates the specified WindowsAutopilotDeploymentProfile using PUT.
+        /// Creates the specified WindowsAutopilotDeploymentProfile using POST.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfileToCreate">The WindowsAutopilotDeploymentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

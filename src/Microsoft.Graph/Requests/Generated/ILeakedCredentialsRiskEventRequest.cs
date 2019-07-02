@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ILeakedCredentialsRiskEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified LeakedCredentialsRiskEvent using PUT.
+        /// Creates the specified LeakedCredentialsRiskEvent using POST.
         /// </summary>
         /// <param name="leakedCredentialsRiskEventToCreate">The LeakedCredentialsRiskEvent to create.</param>
         /// <returns>The created LeakedCredentialsRiskEvent.</returns>
         System.Threading.Tasks.Task<LeakedCredentialsRiskEvent> CreateAsync(LeakedCredentialsRiskEvent leakedCredentialsRiskEventToCreate);        /// <summary>
-        /// Creates the specified LeakedCredentialsRiskEvent using PUT.
+        /// Creates the specified LeakedCredentialsRiskEvent using POST.
         /// </summary>
         /// <param name="leakedCredentialsRiskEventToCreate">The LeakedCredentialsRiskEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

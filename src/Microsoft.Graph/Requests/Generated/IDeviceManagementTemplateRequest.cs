@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementTemplate using PUT.
+        /// Creates the specified DeviceManagementTemplate using POST.
         /// </summary>
         /// <param name="deviceManagementTemplateToCreate">The DeviceManagementTemplate to create.</param>
         /// <returns>The created DeviceManagementTemplate.</returns>
         System.Threading.Tasks.Task<DeviceManagementTemplate> CreateAsync(DeviceManagementTemplate deviceManagementTemplateToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementTemplate using PUT.
+        /// Creates the specified DeviceManagementTemplate using POST.
         /// </summary>
         /// <param name="deviceManagementTemplateToCreate">The DeviceManagementTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

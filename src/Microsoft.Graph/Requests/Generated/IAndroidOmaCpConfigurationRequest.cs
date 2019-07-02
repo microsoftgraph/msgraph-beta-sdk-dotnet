@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidOmaCpConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidOmaCpConfiguration using PUT.
+        /// Creates the specified AndroidOmaCpConfiguration using POST.
         /// </summary>
         /// <param name="androidOmaCpConfigurationToCreate">The AndroidOmaCpConfiguration to create.</param>
         /// <returns>The created AndroidOmaCpConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidOmaCpConfiguration> CreateAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidOmaCpConfiguration using PUT.
+        /// Creates the specified AndroidOmaCpConfiguration using POST.
         /// </summary>
         /// <param name="androidOmaCpConfigurationToCreate">The AndroidOmaCpConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

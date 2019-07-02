@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharePointSiteUsageDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharePointSiteUsageDetail using PUT.
+        /// Creates the specified SharePointSiteUsageDetail using POST.
         /// </summary>
         /// <param name="sharePointSiteUsageDetailToCreate">The SharePointSiteUsageDetail to create.</param>
         /// <returns>The created SharePointSiteUsageDetail.</returns>
         System.Threading.Tasks.Task<SharePointSiteUsageDetail> CreateAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToCreate);        /// <summary>
-        /// Creates the specified SharePointSiteUsageDetail using PUT.
+        /// Creates the specified SharePointSiteUsageDetail using POST.
         /// </summary>
         /// <param name="sharePointSiteUsageDetailToCreate">The SharePointSiteUsageDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

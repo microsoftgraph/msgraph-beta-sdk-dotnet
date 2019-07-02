@@ -106,6 +106,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enhancedBiometricsState", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? EnhancedBiometricsState { get; set; }
     
+        /// <summary>
+        /// Gets or sets security key for sign in.
+        /// Security key for Sign In provides the capacity for remotely turning ON/OFF Windows Hello Sercurity Keyl Not configured will honor configurations done on the clinet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityKeyForSignIn", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? SecurityKeyForSignIn { get; set; }
+    
     }
 }
 

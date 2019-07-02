@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IShipmentMethodRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ShipmentMethod using PUT.
+        /// Creates the specified ShipmentMethod using POST.
         /// </summary>
         /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
         /// <returns>The created ShipmentMethod.</returns>
         System.Threading.Tasks.Task<ShipmentMethod> CreateAsync(ShipmentMethod shipmentMethodToCreate);        /// <summary>
-        /// Creates the specified ShipmentMethod using PUT.
+        /// Creates the specified ShipmentMethod using POST.
         /// </summary>
         /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

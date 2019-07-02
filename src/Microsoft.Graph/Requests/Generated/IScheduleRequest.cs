@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IScheduleRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Schedule using PUT.
+        /// Creates the specified Schedule using POST.
         /// </summary>
         /// <param name="scheduleToCreate">The Schedule to create.</param>
         /// <returns>The created Schedule.</returns>
         System.Threading.Tasks.Task<Schedule> CreateAsync(Schedule scheduleToCreate);        /// <summary>
-        /// Creates the specified Schedule using PUT.
+        /// Creates the specified Schedule using POST.
         /// </summary>
         /// <param name="scheduleToCreate">The Schedule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementIntentDeviceStateSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementIntentDeviceStateSummary using PUT.
+        /// Creates the specified DeviceManagementIntentDeviceStateSummary using POST.
         /// </summary>
         /// <param name="deviceManagementIntentDeviceStateSummaryToCreate">The DeviceManagementIntentDeviceStateSummary to create.</param>
         /// <returns>The created DeviceManagementIntentDeviceStateSummary.</returns>
         System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> CreateAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementIntentDeviceStateSummary using PUT.
+        /// Creates the specified DeviceManagementIntentDeviceStateSummary using POST.
         /// </summary>
         /// <param name="deviceManagementIntentDeviceStateSummaryToCreate">The DeviceManagementIntentDeviceStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

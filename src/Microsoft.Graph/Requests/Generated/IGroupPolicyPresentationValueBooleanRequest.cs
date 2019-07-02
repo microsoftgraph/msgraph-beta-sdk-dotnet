@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupPolicyPresentationValueBooleanRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueBoolean using PUT.
+        /// Creates the specified GroupPolicyPresentationValueBoolean using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationValueBooleanToCreate">The GroupPolicyPresentationValueBoolean to create.</param>
         /// <returns>The created GroupPolicyPresentationValueBoolean.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> CreateAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueBoolean using PUT.
+        /// Creates the specified GroupPolicyPresentationValueBoolean using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationValueBooleanToCreate">The GroupPolicyPresentationValueBoolean to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

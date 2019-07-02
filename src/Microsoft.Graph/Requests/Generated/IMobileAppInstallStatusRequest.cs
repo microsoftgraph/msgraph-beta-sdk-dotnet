@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppInstallStatusRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppInstallStatus using PUT.
+        /// Creates the specified MobileAppInstallStatus using POST.
         /// </summary>
         /// <param name="mobileAppInstallStatusToCreate">The MobileAppInstallStatus to create.</param>
         /// <returns>The created MobileAppInstallStatus.</returns>
         System.Threading.Tasks.Task<MobileAppInstallStatus> CreateAsync(MobileAppInstallStatus mobileAppInstallStatusToCreate);        /// <summary>
-        /// Creates the specified MobileAppInstallStatus using PUT.
+        /// Creates the specified MobileAppInstallStatus using POST.
         /// </summary>
         /// <param name="mobileAppInstallStatusToCreate">The MobileAppInstallStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

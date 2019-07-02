@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface INotificationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Notification using PUT.
+        /// Creates the specified Notification using POST.
         /// </summary>
         /// <param name="notificationToCreate">The Notification to create.</param>
         /// <returns>The created Notification.</returns>
         System.Threading.Tasks.Task<Notification> CreateAsync(Notification notificationToCreate);        /// <summary>
-        /// Creates the specified Notification using PUT.
+        /// Creates the specified Notification using POST.
         /// </summary>
         /// <param name="notificationToCreate">The Notification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

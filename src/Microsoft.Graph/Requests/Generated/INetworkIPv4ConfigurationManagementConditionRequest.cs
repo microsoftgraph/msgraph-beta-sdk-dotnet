@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface INetworkIPv4ConfigurationManagementConditionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using PUT.
+        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
         /// <returns>The created NetworkIPv4ConfigurationManagementCondition.</returns>
         System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> CreateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate);        /// <summary>
-        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using PUT.
+        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

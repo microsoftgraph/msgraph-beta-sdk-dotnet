@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagementCondition> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified ManagementCondition using PUT.
+        /// Creates the specified ManagementCondition using POST.
         /// </summary>
         /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
         /// <returns>The created ManagementCondition.</returns>
         System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate);        /// <summary>
-        /// Creates the specified ManagementCondition using PUT.
+        /// Creates the specified ManagementCondition using POST.
         /// </summary>
         /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

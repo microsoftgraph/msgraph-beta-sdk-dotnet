@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IosTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified IosTrustedRootCertificate using PUT.
+        /// Creates the specified IosTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="iosTrustedRootCertificateToCreate">The IosTrustedRootCertificate to create.</param>
         /// <returns>The created IosTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<IosTrustedRootCertificate> CreateAsync(IosTrustedRootCertificate iosTrustedRootCertificateToCreate);        /// <summary>
-        /// Creates the specified IosTrustedRootCertificate using PUT.
+        /// Creates the specified IosTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="iosTrustedRootCertificateToCreate">The IosTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

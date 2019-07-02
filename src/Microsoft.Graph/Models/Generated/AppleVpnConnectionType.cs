@@ -89,5 +89,10 @@ namespace Microsoft.Graph
         /// </summary>
         PaloAltoGlobalProtectV2 = 13,
 	
+        /// <summary>
+        /// Ik Ev2
+        /// </summary>
+        IkEv2 = 14,
+	
     }
 }

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharePointSiteUsagePagesRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharePointSiteUsagePages using PUT.
+        /// Creates the specified SharePointSiteUsagePages using POST.
         /// </summary>
         /// <param name="sharePointSiteUsagePagesToCreate">The SharePointSiteUsagePages to create.</param>
         /// <returns>The created SharePointSiteUsagePages.</returns>
         System.Threading.Tasks.Task<SharePointSiteUsagePages> CreateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToCreate);        /// <summary>
-        /// Creates the specified SharePointSiteUsagePages using PUT.
+        /// Creates the specified SharePointSiteUsagePages using POST.
         /// </summary>
         /// <param name="sharePointSiteUsagePagesToCreate">The SharePointSiteUsagePages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

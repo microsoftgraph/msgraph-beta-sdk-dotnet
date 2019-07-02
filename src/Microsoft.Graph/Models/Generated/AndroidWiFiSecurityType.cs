@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         WpaEnterprise = 1,
 	
+        /// <summary>
+        /// Wpa2Enterprise
+        /// </summary>
+        Wpa2Enterprise = 2,
+	
     }
 }

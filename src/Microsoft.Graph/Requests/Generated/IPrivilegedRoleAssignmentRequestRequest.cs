@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPrivilegedRoleAssignmentRequestRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PrivilegedRoleAssignmentRequestObject using PUT.
+        /// Creates the specified PrivilegedRoleAssignmentRequestObject using POST.
         /// </summary>
         /// <param name="privilegedRoleAssignmentRequestObjectToCreate">The PrivilegedRoleAssignmentRequestObject to create.</param>
         /// <returns>The created PrivilegedRoleAssignmentRequestObject.</returns>
         System.Threading.Tasks.Task<PrivilegedRoleAssignmentRequestObject> CreateAsync(PrivilegedRoleAssignmentRequestObject privilegedRoleAssignmentRequestObjectToCreate);        /// <summary>
-        /// Creates the specified PrivilegedRoleAssignmentRequestObject using PUT.
+        /// Creates the specified PrivilegedRoleAssignmentRequestObject using POST.
         /// </summary>
         /// <param name="privilegedRoleAssignmentRequestObjectToCreate">The PrivilegedRoleAssignmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

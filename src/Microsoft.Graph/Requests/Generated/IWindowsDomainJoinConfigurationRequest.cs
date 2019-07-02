@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsDomainJoinConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsDomainJoinConfiguration using PUT.
+        /// Creates the specified WindowsDomainJoinConfiguration using POST.
         /// </summary>
         /// <param name="windowsDomainJoinConfigurationToCreate">The WindowsDomainJoinConfiguration to create.</param>
         /// <returns>The created WindowsDomainJoinConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> CreateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsDomainJoinConfiguration using PUT.
+        /// Creates the specified WindowsDomainJoinConfiguration using POST.
         /// </summary>
         /// <param name="windowsDomainJoinConfigurationToCreate">The WindowsDomainJoinConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

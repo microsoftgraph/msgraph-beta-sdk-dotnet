@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagedEBookCategory> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified ManagedEBookCategory using PUT.
+        /// Creates the specified ManagedEBookCategory using POST.
         /// </summary>
         /// <param name="managedEBookCategoryToCreate">The ManagedEBookCategory to create.</param>
         /// <returns>The created ManagedEBookCategory.</returns>
         System.Threading.Tasks.Task<ManagedEBookCategory> CreateAsync(ManagedEBookCategory managedEBookCategoryToCreate);        /// <summary>
-        /// Creates the specified ManagedEBookCategory using PUT.
+        /// Creates the specified ManagedEBookCategory using POST.
         /// </summary>
         /// <param name="managedEBookCategoryToCreate">The ManagedEBookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

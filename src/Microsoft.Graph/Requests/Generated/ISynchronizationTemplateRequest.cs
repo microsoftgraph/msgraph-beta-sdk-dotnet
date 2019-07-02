@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISynchronizationTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SynchronizationTemplate using PUT.
+        /// Creates the specified SynchronizationTemplate using POST.
         /// </summary>
         /// <param name="synchronizationTemplateToCreate">The SynchronizationTemplate to create.</param>
         /// <returns>The created SynchronizationTemplate.</returns>
         System.Threading.Tasks.Task<SynchronizationTemplate> CreateAsync(SynchronizationTemplate synchronizationTemplateToCreate);        /// <summary>
-        /// Creates the specified SynchronizationTemplate using PUT.
+        /// Creates the specified SynchronizationTemplate using POST.
         /// </summary>
         /// <param name="synchronizationTemplateToCreate">The SynchronizationTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

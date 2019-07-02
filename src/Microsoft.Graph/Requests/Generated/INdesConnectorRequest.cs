@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface INdesConnectorRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified NdesConnector using PUT.
+        /// Creates the specified NdesConnector using POST.
         /// </summary>
         /// <param name="ndesConnectorToCreate">The NdesConnector to create.</param>
         /// <returns>The created NdesConnector.</returns>
         System.Threading.Tasks.Task<NdesConnector> CreateAsync(NdesConnector ndesConnectorToCreate);        /// <summary>
-        /// Creates the specified NdesConnector using PUT.
+        /// Creates the specified NdesConnector using POST.
         /// </summary>
         /// <param name="ndesConnectorToCreate">The NdesConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -186,6 +186,19 @@ namespace Microsoft.Graph
                 this.Client,
                 assignments);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementIntentCompare.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentCompareRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentCompareRequestBuilder Compare(
+            string templateId = null)
+        {
+            return new DeviceManagementIntentCompareRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.compare"),
+                this.Client,
+                templateId);
+        }
     
     }
 }

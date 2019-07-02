@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOffice365GroupsActivityCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Office365GroupsActivityCounts using PUT.
+        /// Creates the specified Office365GroupsActivityCounts using POST.
         /// </summary>
         /// <param name="office365GroupsActivityCountsToCreate">The Office365GroupsActivityCounts to create.</param>
         /// <returns>The created Office365GroupsActivityCounts.</returns>
         System.Threading.Tasks.Task<Office365GroupsActivityCounts> CreateAsync(Office365GroupsActivityCounts office365GroupsActivityCountsToCreate);        /// <summary>
-        /// Creates the specified Office365GroupsActivityCounts using PUT.
+        /// Creates the specified Office365GroupsActivityCounts using POST.
         /// </summary>
         /// <param name="office365GroupsActivityCountsToCreate">The Office365GroupsActivityCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

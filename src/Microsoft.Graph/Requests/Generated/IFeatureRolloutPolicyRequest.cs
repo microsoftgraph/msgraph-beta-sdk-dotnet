@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IFeatureRolloutPolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified FeatureRolloutPolicy using PUT.
+        /// Creates the specified FeatureRolloutPolicy using POST.
         /// </summary>
         /// <param name="featureRolloutPolicyToCreate">The FeatureRolloutPolicy to create.</param>
         /// <returns>The created FeatureRolloutPolicy.</returns>
         System.Threading.Tasks.Task<FeatureRolloutPolicy> CreateAsync(FeatureRolloutPolicy featureRolloutPolicyToCreate);        /// <summary>
-        /// Creates the specified FeatureRolloutPolicy using PUT.
+        /// Creates the specified FeatureRolloutPolicy using POST.
         /// </summary>
         /// <param name="featureRolloutPolicyToCreate">The FeatureRolloutPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

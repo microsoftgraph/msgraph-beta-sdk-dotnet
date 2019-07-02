@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsWifiConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsWifiConfiguration using PUT.
+        /// Creates the specified WindowsWifiConfiguration using POST.
         /// </summary>
         /// <param name="windowsWifiConfigurationToCreate">The WindowsWifiConfiguration to create.</param>
         /// <returns>The created WindowsWifiConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsWifiConfiguration> CreateAsync(WindowsWifiConfiguration windowsWifiConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsWifiConfiguration using PUT.
+        /// Creates the specified WindowsWifiConfiguration using POST.
         /// </summary>
         /// <param name="windowsWifiConfigurationToCreate">The WindowsWifiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUpdateMetadataOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UpdateMetadataOperation using PUT.
+        /// Creates the specified UpdateMetadataOperation using POST.
         /// </summary>
         /// <param name="updateMetadataOperationToCreate">The UpdateMetadataOperation to create.</param>
         /// <returns>The created UpdateMetadataOperation.</returns>
         System.Threading.Tasks.Task<UpdateMetadataOperation> CreateAsync(UpdateMetadataOperation updateMetadataOperationToCreate);        /// <summary>
-        /// Creates the specified UpdateMetadataOperation using PUT.
+        /// Creates the specified UpdateMetadataOperation using POST.
         /// </summary>
         /// <param name="updateMetadataOperationToCreate">The UpdateMetadataOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

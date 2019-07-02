@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsOfficeClientConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsOfficeClientConfiguration using PUT.
+        /// Creates the specified WindowsOfficeClientConfiguration using POST.
         /// </summary>
         /// <param name="windowsOfficeClientConfigurationToCreate">The WindowsOfficeClientConfiguration to create.</param>
         /// <returns>The created WindowsOfficeClientConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsOfficeClientConfiguration> CreateAsync(WindowsOfficeClientConfiguration windowsOfficeClientConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsOfficeClientConfiguration using PUT.
+        /// Creates the specified WindowsOfficeClientConfiguration using POST.
         /// </summary>
         /// <param name="windowsOfficeClientConfigurationToCreate">The WindowsOfficeClientConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEmailActivitySummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EmailActivitySummary using PUT.
+        /// Creates the specified EmailActivitySummary using POST.
         /// </summary>
         /// <param name="emailActivitySummaryToCreate">The EmailActivitySummary to create.</param>
         /// <returns>The created EmailActivitySummary.</returns>
         System.Threading.Tasks.Task<EmailActivitySummary> CreateAsync(EmailActivitySummary emailActivitySummaryToCreate);        /// <summary>
-        /// Creates the specified EmailActivitySummary using PUT.
+        /// Creates the specified EmailActivitySummary using POST.
         /// </summary>
         /// <param name="emailActivitySummaryToCreate">The EmailActivitySummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

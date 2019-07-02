@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IBookingPersonRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified BookingPerson using PUT.
+        /// Creates the specified BookingPerson using POST.
         /// </summary>
         /// <param name="bookingPersonToCreate">The BookingPerson to create.</param>
         /// <returns>The created BookingPerson.</returns>
         System.Threading.Tasks.Task<BookingPerson> CreateAsync(BookingPerson bookingPersonToCreate);        /// <summary>
-        /// Creates the specified BookingPerson using PUT.
+        /// Creates the specified BookingPerson using POST.
         /// </summary>
         /// <param name="bookingPersonToCreate">The BookingPerson to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

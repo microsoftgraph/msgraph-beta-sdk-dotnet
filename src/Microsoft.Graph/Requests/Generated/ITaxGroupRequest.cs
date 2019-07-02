@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITaxGroupRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TaxGroup using PUT.
+        /// Creates the specified TaxGroup using POST.
         /// </summary>
         /// <param name="taxGroupToCreate">The TaxGroup to create.</param>
         /// <returns>The created TaxGroup.</returns>
         System.Threading.Tasks.Task<TaxGroup> CreateAsync(TaxGroup taxGroupToCreate);        /// <summary>
-        /// Creates the specified TaxGroup using PUT.
+        /// Creates the specified TaxGroup using POST.
         /// </summary>
         /// <param name="taxGroupToCreate">The TaxGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

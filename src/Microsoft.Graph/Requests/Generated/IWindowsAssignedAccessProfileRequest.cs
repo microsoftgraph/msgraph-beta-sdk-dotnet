@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsAssignedAccessProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsAssignedAccessProfile using PUT.
+        /// Creates the specified WindowsAssignedAccessProfile using POST.
         /// </summary>
         /// <param name="windowsAssignedAccessProfileToCreate">The WindowsAssignedAccessProfile to create.</param>
         /// <returns>The created WindowsAssignedAccessProfile.</returns>
         System.Threading.Tasks.Task<WindowsAssignedAccessProfile> CreateAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToCreate);        /// <summary>
-        /// Creates the specified WindowsAssignedAccessProfile using PUT.
+        /// Creates the specified WindowsAssignedAccessProfile using POST.
         /// </summary>
         /// <param name="windowsAssignedAccessProfileToCreate">The WindowsAssignedAccessProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

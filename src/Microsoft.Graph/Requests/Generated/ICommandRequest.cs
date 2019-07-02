@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICommandRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Command using PUT.
+        /// Creates the specified Command using POST.
         /// </summary>
         /// <param name="commandToCreate">The Command to create.</param>
         /// <returns>The created Command.</returns>
         System.Threading.Tasks.Task<Command> CreateAsync(Command commandToCreate);        /// <summary>
-        /// Creates the specified Command using PUT.
+        /// Creates the specified Command using POST.
         /// </summary>
         /// <param name="commandToCreate">The Command to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

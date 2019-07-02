@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISuspiciousIpRiskEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SuspiciousIpRiskEvent using PUT.
+        /// Creates the specified SuspiciousIpRiskEvent using POST.
         /// </summary>
         /// <param name="suspiciousIpRiskEventToCreate">The SuspiciousIpRiskEvent to create.</param>
         /// <returns>The created SuspiciousIpRiskEvent.</returns>
         System.Threading.Tasks.Task<SuspiciousIpRiskEvent> CreateAsync(SuspiciousIpRiskEvent suspiciousIpRiskEventToCreate);        /// <summary>
-        /// Creates the specified SuspiciousIpRiskEvent using PUT.
+        /// Creates the specified SuspiciousIpRiskEvent using POST.
         /// </summary>
         /// <param name="suspiciousIpRiskEventToCreate">The SuspiciousIpRiskEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

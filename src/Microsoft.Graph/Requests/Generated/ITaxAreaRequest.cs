@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITaxAreaRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TaxArea using PUT.
+        /// Creates the specified TaxArea using POST.
         /// </summary>
         /// <param name="taxAreaToCreate">The TaxArea to create.</param>
         /// <returns>The created TaxArea.</returns>
         System.Threading.Tasks.Task<TaxArea> CreateAsync(TaxArea taxAreaToCreate);        /// <summary>
-        /// Creates the specified TaxArea using PUT.
+        /// Creates the specified TaxArea using POST.
         /// </summary>
         /// <param name="taxAreaToCreate">The TaxArea to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

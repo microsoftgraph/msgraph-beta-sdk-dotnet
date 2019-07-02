@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserCredentialUsageDetailsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UserCredentialUsageDetails using PUT.
+        /// Creates the specified UserCredentialUsageDetails using POST.
         /// </summary>
         /// <param name="userCredentialUsageDetailsToCreate">The UserCredentialUsageDetails to create.</param>
         /// <returns>The created UserCredentialUsageDetails.</returns>
         System.Threading.Tasks.Task<UserCredentialUsageDetails> CreateAsync(UserCredentialUsageDetails userCredentialUsageDetailsToCreate);        /// <summary>
-        /// Creates the specified UserCredentialUsageDetails using PUT.
+        /// Creates the specified UserCredentialUsageDetails using POST.
         /// </summary>
         /// <param name="userCredentialUsageDetailsToCreate">The UserCredentialUsageDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

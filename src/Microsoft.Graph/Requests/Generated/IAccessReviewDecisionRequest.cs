@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAccessReviewDecisionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AccessReviewDecision using PUT.
+        /// Creates the specified AccessReviewDecision using POST.
         /// </summary>
         /// <param name="accessReviewDecisionToCreate">The AccessReviewDecision to create.</param>
         /// <returns>The created AccessReviewDecision.</returns>
         System.Threading.Tasks.Task<AccessReviewDecision> CreateAsync(AccessReviewDecision accessReviewDecisionToCreate);        /// <summary>
-        /// Creates the specified AccessReviewDecision using PUT.
+        /// Creates the specified AccessReviewDecision using POST.
         /// </summary>
         /// <param name="accessReviewDecisionToCreate">The AccessReviewDecision to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

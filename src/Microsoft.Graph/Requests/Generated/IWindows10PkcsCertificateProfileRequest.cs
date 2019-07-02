@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10PkcsCertificateProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10PkcsCertificateProfile using PUT.
+        /// Creates the specified Windows10PkcsCertificateProfile using POST.
         /// </summary>
         /// <param name="windows10PkcsCertificateProfileToCreate">The Windows10PkcsCertificateProfile to create.</param>
         /// <returns>The created Windows10PkcsCertificateProfile.</returns>
         System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> CreateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified Windows10PkcsCertificateProfile using PUT.
+        /// Creates the specified Windows10PkcsCertificateProfile using POST.
         /// </summary>
         /// <param name="windows10PkcsCertificateProfileToCreate">The Windows10PkcsCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

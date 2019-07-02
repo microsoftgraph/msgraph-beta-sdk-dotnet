@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidForWorkEasEmailProfileBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidForWorkEasEmailProfileBase using PUT.
+        /// Creates the specified AndroidForWorkEasEmailProfileBase using POST.
         /// </summary>
         /// <param name="androidForWorkEasEmailProfileBaseToCreate">The AndroidForWorkEasEmailProfileBase to create.</param>
         /// <returns>The created AndroidForWorkEasEmailProfileBase.</returns>
         System.Threading.Tasks.Task<AndroidForWorkEasEmailProfileBase> CreateAsync(AndroidForWorkEasEmailProfileBase androidForWorkEasEmailProfileBaseToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkEasEmailProfileBase using PUT.
+        /// Creates the specified AndroidForWorkEasEmailProfileBase using POST.
         /// </summary>
         /// <param name="androidForWorkEasEmailProfileBaseToCreate">The AndroidForWorkEasEmailProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidImportedPFXCertificateProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidImportedPFXCertificateProfile using PUT.
+        /// Creates the specified AndroidImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="androidImportedPFXCertificateProfileToCreate">The AndroidImportedPFXCertificateProfile to create.</param>
         /// <returns>The created AndroidImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<AndroidImportedPFXCertificateProfile> CreateAsync(AndroidImportedPFXCertificateProfile androidImportedPFXCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified AndroidImportedPFXCertificateProfile using PUT.
+        /// Creates the specified AndroidImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="androidImportedPFXCertificateProfileToCreate">The AndroidImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

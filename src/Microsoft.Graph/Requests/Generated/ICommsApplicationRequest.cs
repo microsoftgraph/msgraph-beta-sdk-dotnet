@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICommsApplicationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CommsApplication using PUT.
+        /// Creates the specified CommsApplication using POST.
         /// </summary>
         /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
         /// <returns>The created CommsApplication.</returns>
         System.Threading.Tasks.Task<CommsApplication> CreateAsync(CommsApplication commsApplicationToCreate);        /// <summary>
-        /// Creates the specified CommsApplication using PUT.
+        /// Creates the specified CommsApplication using POST.
         /// </summary>
         /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsManagementAppHealthStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsManagementAppHealthState using PUT.
+        /// Creates the specified WindowsManagementAppHealthState using POST.
         /// </summary>
         /// <param name="windowsManagementAppHealthStateToCreate">The WindowsManagementAppHealthState to create.</param>
         /// <returns>The created WindowsManagementAppHealthState.</returns>
         System.Threading.Tasks.Task<WindowsManagementAppHealthState> CreateAsync(WindowsManagementAppHealthState windowsManagementAppHealthStateToCreate);        /// <summary>
-        /// Creates the specified WindowsManagementAppHealthState using PUT.
+        /// Creates the specified WindowsManagementAppHealthState using POST.
         /// </summary>
         /// <param name="windowsManagementAppHealthStateToCreate">The WindowsManagementAppHealthState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

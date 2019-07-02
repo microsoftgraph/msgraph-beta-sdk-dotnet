@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICallRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Call using PUT.
+        /// Creates the specified Call using POST.
         /// </summary>
         /// <param name="callToCreate">The Call to create.</param>
         /// <returns>The created Call.</returns>
         System.Threading.Tasks.Task<Call> CreateAsync(Call callToCreate);        /// <summary>
-        /// Creates the specified Call using PUT.
+        /// Creates the specified Call using POST.
         /// </summary>
         /// <param name="callToCreate">The Call to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedDeviceMobileAppConfigurationStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedDeviceMobileAppConfigurationState using PUT.
+        /// Creates the specified ManagedDeviceMobileAppConfigurationState using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationStateToCreate">The ManagedDeviceMobileAppConfigurationState to create.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationState.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationState> CreateAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToCreate);        /// <summary>
-        /// Creates the specified ManagedDeviceMobileAppConfigurationState using PUT.
+        /// Creates the specified ManagedDeviceMobileAppConfigurationState using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationStateToCreate">The ManagedDeviceMobileAppConfigurationState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

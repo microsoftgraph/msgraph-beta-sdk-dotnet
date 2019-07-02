@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITiIndicatorRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TiIndicator using PUT.
+        /// Creates the specified TiIndicator using POST.
         /// </summary>
         /// <param name="tiIndicatorToCreate">The TiIndicator to create.</param>
         /// <returns>The created TiIndicator.</returns>
         System.Threading.Tasks.Task<TiIndicator> CreateAsync(TiIndicator tiIndicatorToCreate);        /// <summary>
-        /// Creates the specified TiIndicator using PUT.
+        /// Creates the specified TiIndicator using POST.
         /// </summary>
         /// <param name="tiIndicatorToCreate">The TiIndicator to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

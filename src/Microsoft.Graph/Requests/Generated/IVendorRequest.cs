@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IVendorRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Vendor using PUT.
+        /// Creates the specified Vendor using POST.
         /// </summary>
         /// <param name="vendorToCreate">The Vendor to create.</param>
         /// <returns>The created Vendor.</returns>
         System.Threading.Tasks.Task<Vendor> CreateAsync(Vendor vendorToCreate);        /// <summary>
-        /// Creates the specified Vendor using PUT.
+        /// Creates the specified Vendor using POST.
         /// </summary>
         /// <param name="vendorToCreate">The Vendor to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

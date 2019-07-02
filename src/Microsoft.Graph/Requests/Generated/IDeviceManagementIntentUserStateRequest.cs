@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementIntentUserStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementIntentUserState using PUT.
+        /// Creates the specified DeviceManagementIntentUserState using POST.
         /// </summary>
         /// <param name="deviceManagementIntentUserStateToCreate">The DeviceManagementIntentUserState to create.</param>
         /// <returns>The created DeviceManagementIntentUserState.</returns>
         System.Threading.Tasks.Task<DeviceManagementIntentUserState> CreateAsync(DeviceManagementIntentUserState deviceManagementIntentUserStateToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementIntentUserState using PUT.
+        /// Creates the specified DeviceManagementIntentUserState using POST.
         /// </summary>
         /// <param name="deviceManagementIntentUserStateToCreate">The DeviceManagementIntentUserState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

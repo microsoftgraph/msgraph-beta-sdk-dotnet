@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMailboxUsageStorageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MailboxUsageStorage using PUT.
+        /// Creates the specified MailboxUsageStorage using POST.
         /// </summary>
         /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
         /// <returns>The created MailboxUsageStorage.</returns>
         System.Threading.Tasks.Task<MailboxUsageStorage> CreateAsync(MailboxUsageStorage mailboxUsageStorageToCreate);        /// <summary>
-        /// Creates the specified MailboxUsageStorage using PUT.
+        /// Creates the specified MailboxUsageStorage using POST.
         /// </summary>
         /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

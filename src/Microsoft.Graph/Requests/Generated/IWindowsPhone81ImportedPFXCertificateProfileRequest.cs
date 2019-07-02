@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhone81ImportedPFXCertificateProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhone81ImportedPFXCertificateProfile using PUT.
+        /// Creates the specified WindowsPhone81ImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="windowsPhone81ImportedPFXCertificateProfileToCreate">The WindowsPhone81ImportedPFXCertificateProfile to create.</param>
         /// <returns>The created WindowsPhone81ImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<WindowsPhone81ImportedPFXCertificateProfile> CreateAsync(WindowsPhone81ImportedPFXCertificateProfile windowsPhone81ImportedPFXCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81ImportedPFXCertificateProfile using PUT.
+        /// Creates the specified WindowsPhone81ImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="windowsPhone81ImportedPFXCertificateProfileToCreate">The WindowsPhone81ImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionSensitivityLabelsCollectionRequestBuilder"/>.</returns>
         IInformationProtectionSensitivityLabelsCollectionRequestBuilder SensitivityLabels { get; }
+
+        /// <summary>
+        /// Gets the request builder for SensitivityPolicySettings.
+        /// </summary>
+        /// <returns>The <see cref="ISensitivityPolicySettingsRequestBuilder"/>.</returns>
+        ISensitivityPolicySettingsRequestBuilder SensitivityPolicySettings { get; }
     
     }
 }

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IServicePrincipalRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ServicePrincipal using PUT.
+        /// Creates the specified ServicePrincipal using POST.
         /// </summary>
         /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
         /// <returns>The created ServicePrincipal.</returns>
         System.Threading.Tasks.Task<ServicePrincipal> CreateAsync(ServicePrincipal servicePrincipalToCreate);        /// <summary>
-        /// Creates the specified ServicePrincipal using PUT.
+        /// Creates the specified ServicePrincipal using POST.
         /// </summary>
         /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

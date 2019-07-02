@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEducationSynchronizationProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EducationSynchronizationProfile using PUT.
+        /// Creates the specified EducationSynchronizationProfile using POST.
         /// </summary>
         /// <param name="educationSynchronizationProfileToCreate">The EducationSynchronizationProfile to create.</param>
         /// <returns>The created EducationSynchronizationProfile.</returns>
         System.Threading.Tasks.Task<EducationSynchronizationProfile> CreateAsync(EducationSynchronizationProfile educationSynchronizationProfileToCreate);        /// <summary>
-        /// Creates the specified EducationSynchronizationProfile using PUT.
+        /// Creates the specified EducationSynchronizationProfile using POST.
         /// </summary>
         /// <param name="educationSynchronizationProfileToCreate">The EducationSynchronizationProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

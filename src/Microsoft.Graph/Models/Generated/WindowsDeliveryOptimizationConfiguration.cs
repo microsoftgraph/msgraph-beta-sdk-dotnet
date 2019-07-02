@@ -101,7 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximum cache age in days.
-        /// Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-49710). Valid values 0 to 49710
+        /// Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-3650). Valid values 0 to 3650
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumCacheAgeInDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaximumCacheAgeInDays { get; set; }

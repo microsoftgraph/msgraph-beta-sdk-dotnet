@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IFileSecurityProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified FileSecurityProfile using PUT.
+        /// Creates the specified FileSecurityProfile using POST.
         /// </summary>
         /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
         /// <returns>The created FileSecurityProfile.</returns>
         System.Threading.Tasks.Task<FileSecurityProfile> CreateAsync(FileSecurityProfile fileSecurityProfileToCreate);        /// <summary>
-        /// Creates the specified FileSecurityProfile using PUT.
+        /// Creates the specified FileSecurityProfile using POST.
         /// </summary>
         /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

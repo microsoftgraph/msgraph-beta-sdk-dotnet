@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AdministrativeUnit> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified AdministrativeUnit using PUT.
+        /// Creates the specified AdministrativeUnit using POST.
         /// </summary>
         /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
         /// <returns>The created AdministrativeUnit.</returns>
         System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate);        /// <summary>
-        /// Creates the specified AdministrativeUnit using PUT.
+        /// Creates the specified AdministrativeUnit using POST.
         /// </summary>
         /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

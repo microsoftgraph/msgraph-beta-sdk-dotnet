@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOneDriveUsageAccountDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OneDriveUsageAccountDetail using PUT.
+        /// Creates the specified OneDriveUsageAccountDetail using POST.
         /// </summary>
         /// <param name="oneDriveUsageAccountDetailToCreate">The OneDriveUsageAccountDetail to create.</param>
         /// <returns>The created OneDriveUsageAccountDetail.</returns>
         System.Threading.Tasks.Task<OneDriveUsageAccountDetail> CreateAsync(OneDriveUsageAccountDetail oneDriveUsageAccountDetailToCreate);        /// <summary>
-        /// Creates the specified OneDriveUsageAccountDetail using PUT.
+        /// Creates the specified OneDriveUsageAccountDetail using POST.
         /// </summary>
         /// <param name="oneDriveUsageAccountDetailToCreate">The OneDriveUsageAccountDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

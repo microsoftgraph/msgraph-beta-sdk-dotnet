@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMentionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Mention using PUT.
+        /// Creates the specified Mention using POST.
         /// </summary>
         /// <param name="mentionToCreate">The Mention to create.</param>
         /// <returns>The created Mention.</returns>
         System.Threading.Tasks.Task<Mention> CreateAsync(Mention mentionToCreate);        /// <summary>
-        /// Creates the specified Mention using PUT.
+        /// Creates the specified Mention using POST.
         /// </summary>
         /// <param name="mentionToCreate">The Mention to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISecurityBaselineTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SecurityBaselineTemplate using PUT.
+        /// Creates the specified SecurityBaselineTemplate using POST.
         /// </summary>
         /// <param name="securityBaselineTemplateToCreate">The SecurityBaselineTemplate to create.</param>
         /// <returns>The created SecurityBaselineTemplate.</returns>
         System.Threading.Tasks.Task<SecurityBaselineTemplate> CreateAsync(SecurityBaselineTemplate securityBaselineTemplateToCreate);        /// <summary>
-        /// Creates the specified SecurityBaselineTemplate using PUT.
+        /// Creates the specified SecurityBaselineTemplate using POST.
         /// </summary>
         /// <param name="securityBaselineTemplateToCreate">The SecurityBaselineTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidForWorkTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified AndroidForWorkTrustedRootCertificate using PUT.
+        /// Creates the specified AndroidForWorkTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidForWorkTrustedRootCertificateToCreate">The AndroidForWorkTrustedRootCertificate to create.</param>
         /// <returns>The created AndroidForWorkTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<AndroidForWorkTrustedRootCertificate> CreateAsync(AndroidForWorkTrustedRootCertificate androidForWorkTrustedRootCertificateToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkTrustedRootCertificate using PUT.
+        /// Creates the specified AndroidForWorkTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidForWorkTrustedRootCertificateToCreate">The AndroidForWorkTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

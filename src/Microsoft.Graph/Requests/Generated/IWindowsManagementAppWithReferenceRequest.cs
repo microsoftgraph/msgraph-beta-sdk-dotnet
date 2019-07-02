@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsManagementApp> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified WindowsManagementApp using PUT.
+        /// Creates the specified WindowsManagementApp using POST.
         /// </summary>
         /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
         /// <returns>The created WindowsManagementApp.</returns>
         System.Threading.Tasks.Task<WindowsManagementApp> CreateAsync(WindowsManagementApp windowsManagementAppToCreate);        /// <summary>
-        /// Creates the specified WindowsManagementApp using PUT.
+        /// Creates the specified WindowsManagementApp using POST.
         /// </summary>
         /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

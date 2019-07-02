@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISecurityBaselineCategoryStateSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SecurityBaselineCategoryStateSummary using PUT.
+        /// Creates the specified SecurityBaselineCategoryStateSummary using POST.
         /// </summary>
         /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
         /// <returns>The created SecurityBaselineCategoryStateSummary.</returns>
         System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> CreateAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate);        /// <summary>
-        /// Creates the specified SecurityBaselineCategoryStateSummary using PUT.
+        /// Creates the specified SecurityBaselineCategoryStateSummary using POST.
         /// </summary>
         /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -73,6 +73,20 @@ namespace Microsoft.Graph
         public bool? V10_1803 { get; set; }
     
         /// <summary>
+        /// Gets or sets v10_1809.
+        /// Windows 10 1809 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1809", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V10_1809 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets v10_1903.
+        /// Windows 10 1903 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1903", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V10_1903 { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

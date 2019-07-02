@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhone81VpnConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhone81VpnConfiguration using PUT.
+        /// Creates the specified WindowsPhone81VpnConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhone81VpnConfigurationToCreate">The WindowsPhone81VpnConfiguration to create.</param>
         /// <returns>The created WindowsPhone81VpnConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsPhone81VpnConfiguration> CreateAsync(WindowsPhone81VpnConfiguration windowsPhone81VpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81VpnConfiguration using PUT.
+        /// Creates the specified WindowsPhone81VpnConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhone81VpnConfigurationToCreate">The WindowsPhone81VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOsVppAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOsVppApp using PUT.
+        /// Creates the specified MacOsVppApp using POST.
         /// </summary>
         /// <param name="macOsVppAppToCreate">The MacOsVppApp to create.</param>
         /// <returns>The created MacOsVppApp.</returns>
         System.Threading.Tasks.Task<MacOsVppApp> CreateAsync(MacOsVppApp macOsVppAppToCreate);        /// <summary>
-        /// Creates the specified MacOsVppApp using PUT.
+        /// Creates the specified MacOsVppApp using POST.
         /// </summary>
         /// <param name="macOsVppAppToCreate">The MacOsVppApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICountryRegionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CountryRegion using PUT.
+        /// Creates the specified CountryRegion using POST.
         /// </summary>
         /// <param name="countryRegionToCreate">The CountryRegion to create.</param>
         /// <returns>The created CountryRegion.</returns>
         System.Threading.Tasks.Task<CountryRegion> CreateAsync(CountryRegion countryRegionToCreate);        /// <summary>
-        /// Creates the specified CountryRegion using PUT.
+        /// Creates the specified CountryRegion using POST.
         /// </summary>
         /// <param name="countryRegionToCreate">The CountryRegion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

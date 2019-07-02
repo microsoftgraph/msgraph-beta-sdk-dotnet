@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IImportedWindowsAutopilotDeviceIdentityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using PUT.
+        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
         /// <returns>The created ImportedWindowsAutopilotDeviceIdentity.</returns>
         System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> CreateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate);        /// <summary>
-        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using PUT.
+        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

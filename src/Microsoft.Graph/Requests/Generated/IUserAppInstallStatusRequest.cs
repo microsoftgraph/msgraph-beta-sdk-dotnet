@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserAppInstallStatusRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UserAppInstallStatus using PUT.
+        /// Creates the specified UserAppInstallStatus using POST.
         /// </summary>
         /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
         /// <returns>The created UserAppInstallStatus.</returns>
         System.Threading.Tasks.Task<UserAppInstallStatus> CreateAsync(UserAppInstallStatus userAppInstallStatusToCreate);        /// <summary>
-        /// Creates the specified UserAppInstallStatus using PUT.
+        /// Creates the specified UserAppInstallStatus using POST.
         /// </summary>
         /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

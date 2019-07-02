@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISchedulingGroupRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SchedulingGroup using PUT.
+        /// Creates the specified SchedulingGroup using POST.
         /// </summary>
         /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
         /// <returns>The created SchedulingGroup.</returns>
         System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate);        /// <summary>
-        /// Creates the specified SchedulingGroup using PUT.
+        /// Creates the specified SchedulingGroup using POST.
         /// </summary>
         /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

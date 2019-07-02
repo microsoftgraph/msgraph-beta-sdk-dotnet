@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEvaluateLabelJobResponseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EvaluateLabelJobResponse using PUT.
+        /// Creates the specified EvaluateLabelJobResponse using POST.
         /// </summary>
         /// <param name="evaluateLabelJobResponseToCreate">The EvaluateLabelJobResponse to create.</param>
         /// <returns>The created EvaluateLabelJobResponse.</returns>
         System.Threading.Tasks.Task<EvaluateLabelJobResponse> CreateAsync(EvaluateLabelJobResponse evaluateLabelJobResponseToCreate);        /// <summary>
-        /// Creates the specified EvaluateLabelJobResponse using PUT.
+        /// Creates the specified EvaluateLabelJobResponse using POST.
         /// </summary>
         /// <param name="evaluateLabelJobResponseToCreate">The EvaluateLabelJobResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

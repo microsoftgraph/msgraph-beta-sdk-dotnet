@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWin32LobAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Win32LobApp using PUT.
+        /// Creates the specified Win32LobApp using POST.
         /// </summary>
         /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
         /// <returns>The created Win32LobApp.</returns>
         System.Threading.Tasks.Task<Win32LobApp> CreateAsync(Win32LobApp win32LobAppToCreate);        /// <summary>
-        /// Creates the specified Win32LobApp using PUT.
+        /// Creates the specified Win32LobApp using POST.
         /// </summary>
         /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

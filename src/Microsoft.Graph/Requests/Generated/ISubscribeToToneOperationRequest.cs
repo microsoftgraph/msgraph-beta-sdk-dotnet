@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISubscribeToToneOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SubscribeToToneOperation using PUT.
+        /// Creates the specified SubscribeToToneOperation using POST.
         /// </summary>
         /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
         /// <returns>The created SubscribeToToneOperation.</returns>
         System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate);        /// <summary>
-        /// Creates the specified SubscribeToToneOperation using PUT.
+        /// Creates the specified SubscribeToToneOperation using POST.
         /// </summary>
         /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

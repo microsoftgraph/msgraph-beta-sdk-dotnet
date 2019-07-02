@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IBookingNamedEntityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified BookingNamedEntity using PUT.
+        /// Creates the specified BookingNamedEntity using POST.
         /// </summary>
         /// <param name="bookingNamedEntityToCreate">The BookingNamedEntity to create.</param>
         /// <returns>The created BookingNamedEntity.</returns>
         System.Threading.Tasks.Task<BookingNamedEntity> CreateAsync(BookingNamedEntity bookingNamedEntityToCreate);        /// <summary>
-        /// Creates the specified BookingNamedEntity using PUT.
+        /// Creates the specified BookingNamedEntity using POST.
         /// </summary>
         /// <param name="bookingNamedEntityToCreate">The BookingNamedEntity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

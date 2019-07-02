@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEducationCategoryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EducationCategory using PUT.
+        /// Creates the specified EducationCategory using POST.
         /// </summary>
         /// <param name="educationCategoryToCreate">The EducationCategory to create.</param>
         /// <returns>The created EducationCategory.</returns>
         System.Threading.Tasks.Task<EducationCategory> CreateAsync(EducationCategory educationCategoryToCreate);        /// <summary>
-        /// Creates the specified EducationCategory using PUT.
+        /// Creates the specified EducationCategory using POST.
         /// </summary>
         /// <param name="educationCategoryToCreate">The EducationCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

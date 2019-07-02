@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPlayPromptOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PlayPromptOperation using PUT.
+        /// Creates the specified PlayPromptOperation using POST.
         /// </summary>
         /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
         /// <returns>The created PlayPromptOperation.</returns>
         System.Threading.Tasks.Task<PlayPromptOperation> CreateAsync(PlayPromptOperation playPromptOperationToCreate);        /// <summary>
-        /// Creates the specified PlayPromptOperation using PUT.
+        /// Creates the specified PlayPromptOperation using POST.
         /// </summary>
         /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

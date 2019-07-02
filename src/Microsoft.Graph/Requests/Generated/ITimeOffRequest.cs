@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITimeOffRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TimeOff using PUT.
+        /// Creates the specified TimeOff using POST.
         /// </summary>
         /// <param name="timeOffToCreate">The TimeOff to create.</param>
         /// <returns>The created TimeOff.</returns>
         System.Threading.Tasks.Task<TimeOff> CreateAsync(TimeOff timeOffToCreate);        /// <summary>
-        /// Creates the specified TimeOff using PUT.
+        /// Creates the specified TimeOff using POST.
         /// </summary>
         /// <param name="timeOffToCreate">The TimeOff to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

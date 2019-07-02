@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPrivilegedOperationEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PrivilegedOperationEvent using PUT.
+        /// Creates the specified PrivilegedOperationEvent using POST.
         /// </summary>
         /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
         /// <returns>The created PrivilegedOperationEvent.</returns>
         System.Threading.Tasks.Task<PrivilegedOperationEvent> CreateAsync(PrivilegedOperationEvent privilegedOperationEventToCreate);        /// <summary>
-        /// Creates the specified PrivilegedOperationEvent using PUT.
+        /// Creates the specified PrivilegedOperationEvent using POST.
         /// </summary>
         /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITermsAndConditionsGroupAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TermsAndConditionsGroupAssignment using PUT.
+        /// Creates the specified TermsAndConditionsGroupAssignment using POST.
         /// </summary>
         /// <param name="termsAndConditionsGroupAssignmentToCreate">The TermsAndConditionsGroupAssignment to create.</param>
         /// <returns>The created TermsAndConditionsGroupAssignment.</returns>
         System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> CreateAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToCreate);        /// <summary>
-        /// Creates the specified TermsAndConditionsGroupAssignment using PUT.
+        /// Creates the specified TermsAndConditionsGroupAssignment using POST.
         /// </summary>
         /// <param name="termsAndConditionsGroupAssignmentToCreate">The TermsAndConditionsGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

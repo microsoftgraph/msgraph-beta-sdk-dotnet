@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDimensionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Dimension using PUT.
+        /// Creates the specified Dimension using POST.
         /// </summary>
         /// <param name="dimensionToCreate">The Dimension to create.</param>
         /// <returns>The created Dimension.</returns>
         System.Threading.Tasks.Task<Dimension> CreateAsync(Dimension dimensionToCreate);        /// <summary>
-        /// Creates the specified Dimension using PUT.
+        /// Creates the specified Dimension using POST.
         /// </summary>
         /// <param name="dimensionToCreate">The Dimension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidForWorkVpnConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidForWorkVpnConfiguration using PUT.
+        /// Creates the specified AndroidForWorkVpnConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkVpnConfigurationToCreate">The AndroidForWorkVpnConfiguration to create.</param>
         /// <returns>The created AndroidForWorkVpnConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> CreateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkVpnConfiguration using PUT.
+        /// Creates the specified AndroidForWorkVpnConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkVpnConfigurationToCreate">The AndroidForWorkVpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

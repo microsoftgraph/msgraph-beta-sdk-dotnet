@@ -36,5 +36,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Value { get; set; }
     
+        /// <summary>
+        /// Gets or sets isReadOnly.
+        /// By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReadOnly", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsReadOnly { get; set; }
+    
     }
 }

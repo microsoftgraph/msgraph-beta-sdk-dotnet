@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISynchronizationSchemaRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SynchronizationSchema using PUT.
+        /// Creates the specified SynchronizationSchema using POST.
         /// </summary>
         /// <param name="synchronizationSchemaToCreate">The SynchronizationSchema to create.</param>
         /// <returns>The created SynchronizationSchema.</returns>
         System.Threading.Tasks.Task<SynchronizationSchema> CreateAsync(SynchronizationSchema synchronizationSchemaToCreate);        /// <summary>
-        /// Creates the specified SynchronizationSchema using PUT.
+        /// Creates the specified SynchronizationSchema using POST.
         /// </summary>
         /// <param name="synchronizationSchemaToCreate">The SynchronizationSchema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

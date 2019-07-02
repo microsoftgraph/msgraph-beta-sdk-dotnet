@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsIdentityProtectionConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsIdentityProtectionConfiguration using PUT.
+        /// Creates the specified WindowsIdentityProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
         /// <returns>The created WindowsIdentityProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> CreateAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsIdentityProtectionConfiguration using PUT.
+        /// Creates the specified WindowsIdentityProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

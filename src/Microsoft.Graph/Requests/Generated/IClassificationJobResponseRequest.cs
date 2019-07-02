@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IClassificationJobResponseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ClassificationJobResponse using PUT.
+        /// Creates the specified ClassificationJobResponse using POST.
         /// </summary>
         /// <param name="classificationJobResponseToCreate">The ClassificationJobResponse to create.</param>
         /// <returns>The created ClassificationJobResponse.</returns>
         System.Threading.Tasks.Task<ClassificationJobResponse> CreateAsync(ClassificationJobResponse classificationJobResponseToCreate);        /// <summary>
-        /// Creates the specified ClassificationJobResponse using PUT.
+        /// Creates the specified ClassificationJobResponse using POST.
         /// </summary>
         /// <param name="classificationJobResponseToCreate">The ClassificationJobResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

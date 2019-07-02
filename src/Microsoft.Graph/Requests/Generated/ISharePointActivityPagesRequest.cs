@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharePointActivityPagesRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharePointActivityPages using PUT.
+        /// Creates the specified SharePointActivityPages using POST.
         /// </summary>
         /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
         /// <returns>The created SharePointActivityPages.</returns>
         System.Threading.Tasks.Task<SharePointActivityPages> CreateAsync(SharePointActivityPages sharePointActivityPagesToCreate);        /// <summary>
-        /// Creates the specified SharePointActivityPages using PUT.
+        /// Creates the specified SharePointActivityPages using POST.
         /// </summary>
         /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

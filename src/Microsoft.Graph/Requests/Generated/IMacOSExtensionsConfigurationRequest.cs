@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSExtensionsConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSExtensionsConfiguration using PUT.
+        /// Creates the specified MacOSExtensionsConfiguration using POST.
         /// </summary>
         /// <param name="macOSExtensionsConfigurationToCreate">The MacOSExtensionsConfiguration to create.</param>
         /// <returns>The created MacOSExtensionsConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSExtensionsConfiguration> CreateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToCreate);        /// <summary>
-        /// Creates the specified MacOSExtensionsConfiguration using PUT.
+        /// Creates the specified MacOSExtensionsConfiguration using POST.
         /// </summary>
         /// <param name="macOSExtensionsConfigurationToCreate">The MacOSExtensionsConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

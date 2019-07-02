@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMailboxUsageQuotaStatusMailboxCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MailboxUsageQuotaStatusMailboxCounts using PUT.
+        /// Creates the specified MailboxUsageQuotaStatusMailboxCounts using POST.
         /// </summary>
         /// <param name="mailboxUsageQuotaStatusMailboxCountsToCreate">The MailboxUsageQuotaStatusMailboxCounts to create.</param>
         /// <returns>The created MailboxUsageQuotaStatusMailboxCounts.</returns>
         System.Threading.Tasks.Task<MailboxUsageQuotaStatusMailboxCounts> CreateAsync(MailboxUsageQuotaStatusMailboxCounts mailboxUsageQuotaStatusMailboxCountsToCreate);        /// <summary>
-        /// Creates the specified MailboxUsageQuotaStatusMailboxCounts using PUT.
+        /// Creates the specified MailboxUsageQuotaStatusMailboxCounts using POST.
         /// </summary>
         /// <param name="mailboxUsageQuotaStatusMailboxCountsToCreate">The MailboxUsageQuotaStatusMailboxCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

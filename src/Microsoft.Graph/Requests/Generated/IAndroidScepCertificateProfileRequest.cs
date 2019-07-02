@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidScepCertificateProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidScepCertificateProfile using PUT.
+        /// Creates the specified AndroidScepCertificateProfile using POST.
         /// </summary>
         /// <param name="androidScepCertificateProfileToCreate">The AndroidScepCertificateProfile to create.</param>
         /// <returns>The created AndroidScepCertificateProfile.</returns>
         System.Threading.Tasks.Task<AndroidScepCertificateProfile> CreateAsync(AndroidScepCertificateProfile androidScepCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified AndroidScepCertificateProfile using PUT.
+        /// Creates the specified AndroidScepCertificateProfile using POST.
         /// </summary>
         /// <param name="androidScepCertificateProfileToCreate">The AndroidScepCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

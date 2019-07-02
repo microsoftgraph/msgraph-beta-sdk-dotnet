@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MacOSTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified MacOSTrustedRootCertificate using PUT.
+        /// Creates the specified MacOSTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="macOSTrustedRootCertificateToCreate">The MacOSTrustedRootCertificate to create.</param>
         /// <returns>The created MacOSTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<MacOSTrustedRootCertificate> CreateAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificateToCreate);        /// <summary>
-        /// Creates the specified MacOSTrustedRootCertificate using PUT.
+        /// Creates the specified MacOSTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="macOSTrustedRootCertificateToCreate">The MacOSTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

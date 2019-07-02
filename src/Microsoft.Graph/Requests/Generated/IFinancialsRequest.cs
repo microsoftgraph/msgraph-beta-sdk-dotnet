@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IFinancialsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Financials using PUT.
+        /// Creates the specified Financials using POST.
         /// </summary>
         /// <param name="financialsToCreate">The Financials to create.</param>
         /// <returns>The created Financials.</returns>
         System.Threading.Tasks.Task<Financials> CreateAsync(Financials financialsToCreate);        /// <summary>
-        /// Creates the specified Financials using PUT.
+        /// Creates the specified Financials using POST.
         /// </summary>
         /// <param name="financialsToCreate">The Financials to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

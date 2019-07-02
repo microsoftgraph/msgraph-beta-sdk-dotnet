@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidDeviceOwnerCompliancePolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using PUT.
+        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerCompliancePolicyToCreate">The AndroidDeviceOwnerCompliancePolicy to create.</param>
         /// <returns>The created AndroidDeviceOwnerCompliancePolicy.</returns>
         System.Threading.Tasks.Task<AndroidDeviceOwnerCompliancePolicy> CreateAsync(AndroidDeviceOwnerCompliancePolicy androidDeviceOwnerCompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using PUT.
+        /// Creates the specified AndroidDeviceOwnerCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerCompliancePolicyToCreate">The AndroidDeviceOwnerCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -162,6 +162,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
         IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceAppManagementTasks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder DeviceAppManagementTasks { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceAppManagementSyncMicrosoftStoreForBusinessApps.

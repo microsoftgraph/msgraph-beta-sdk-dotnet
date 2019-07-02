@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsStoreAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsStoreApp using PUT.
+        /// Creates the specified WindowsStoreApp using POST.
         /// </summary>
         /// <param name="windowsStoreAppToCreate">The WindowsStoreApp to create.</param>
         /// <returns>The created WindowsStoreApp.</returns>
         System.Threading.Tasks.Task<WindowsStoreApp> CreateAsync(WindowsStoreApp windowsStoreAppToCreate);        /// <summary>
-        /// Creates the specified WindowsStoreApp using PUT.
+        /// Creates the specified WindowsStoreApp using POST.
         /// </summary>
         /// <param name="windowsStoreAppToCreate">The WindowsStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

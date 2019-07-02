@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISitePageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SitePage using PUT.
+        /// Creates the specified SitePage using POST.
         /// </summary>
         /// <param name="sitePageToCreate">The SitePage to create.</param>
         /// <returns>The created SitePage.</returns>
         System.Threading.Tasks.Task<SitePage> CreateAsync(SitePage sitePageToCreate);        /// <summary>
-        /// Creates the specified SitePage using PUT.
+        /// Creates the specified SitePage using POST.
         /// </summary>
         /// <param name="sitePageToCreate">The SitePage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

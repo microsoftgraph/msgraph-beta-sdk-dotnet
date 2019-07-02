@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIntuneBrandingProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IntuneBrandingProfile using PUT.
+        /// Creates the specified IntuneBrandingProfile using POST.
         /// </summary>
         /// <param name="intuneBrandingProfileToCreate">The IntuneBrandingProfile to create.</param>
         /// <returns>The created IntuneBrandingProfile.</returns>
         System.Threading.Tasks.Task<IntuneBrandingProfile> CreateAsync(IntuneBrandingProfile intuneBrandingProfileToCreate);        /// <summary>
-        /// Creates the specified IntuneBrandingProfile using PUT.
+        /// Creates the specified IntuneBrandingProfile using POST.
         /// </summary>
         /// <param name="intuneBrandingProfileToCreate">The IntuneBrandingProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

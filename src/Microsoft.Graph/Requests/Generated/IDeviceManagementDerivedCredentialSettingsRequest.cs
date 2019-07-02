@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementDerivedCredentialSettingsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementDerivedCredentialSettings using PUT.
+        /// Creates the specified DeviceManagementDerivedCredentialSettings using POST.
         /// </summary>
         /// <param name="deviceManagementDerivedCredentialSettingsToCreate">The DeviceManagementDerivedCredentialSettings to create.</param>
         /// <returns>The created DeviceManagementDerivedCredentialSettings.</returns>
         System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> CreateAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementDerivedCredentialSettings using PUT.
+        /// Creates the specified DeviceManagementDerivedCredentialSettings using POST.
         /// </summary>
         /// <param name="deviceManagementDerivedCredentialSettingsToCreate">The DeviceManagementDerivedCredentialSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

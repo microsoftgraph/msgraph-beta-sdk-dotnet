@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IosCertificateProfileBase> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified IosCertificateProfileBase using PUT.
+        /// Creates the specified IosCertificateProfileBase using POST.
         /// </summary>
         /// <param name="iosCertificateProfileBaseToCreate">The IosCertificateProfileBase to create.</param>
         /// <returns>The created IosCertificateProfileBase.</returns>
         System.Threading.Tasks.Task<IosCertificateProfileBase> CreateAsync(IosCertificateProfileBase iosCertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified IosCertificateProfileBase using PUT.
+        /// Creates the specified IosCertificateProfileBase using POST.
         /// </summary>
         /// <param name="iosCertificateProfileBaseToCreate">The IosCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

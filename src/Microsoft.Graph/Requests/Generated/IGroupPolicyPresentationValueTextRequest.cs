@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupPolicyPresentationValueTextRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueText using PUT.
+        /// Creates the specified GroupPolicyPresentationValueText using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationValueTextToCreate">The GroupPolicyPresentationValueText to create.</param>
         /// <returns>The created GroupPolicyPresentationValueText.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationValueText> CreateAsync(GroupPolicyPresentationValueText groupPolicyPresentationValueTextToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueText using PUT.
+        /// Creates the specified GroupPolicyPresentationValueText using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationValueTextToCreate">The GroupPolicyPresentationValueText to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

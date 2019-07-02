@@ -44,6 +44,24 @@ namespace Microsoft.Graph
         IDataClassificationServiceJobsCollectionRequestBuilder Jobs { get; }
 
         /// <summary>
+        /// Gets the request builder for ClassifyFileJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyFileJobsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceClassifyFileJobsCollectionRequestBuilder ClassifyFileJobs { get; }
+
+        /// <summary>
+        /// Gets the request builder for ClassifyTextJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyTextJobsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceClassifyTextJobsCollectionRequestBuilder ClassifyTextJobs { get; }
+
+        /// <summary>
+        /// Gets the request builder for EvaluateLabelJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder EvaluateLabelJobs { get; }
+
+        /// <summary>
         /// Gets the request builder for ClassifyText.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>

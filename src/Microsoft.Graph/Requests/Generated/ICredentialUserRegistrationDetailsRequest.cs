@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICredentialUserRegistrationDetailsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CredentialUserRegistrationDetails using PUT.
+        /// Creates the specified CredentialUserRegistrationDetails using POST.
         /// </summary>
         /// <param name="credentialUserRegistrationDetailsToCreate">The CredentialUserRegistrationDetails to create.</param>
         /// <returns>The created CredentialUserRegistrationDetails.</returns>
         System.Threading.Tasks.Task<CredentialUserRegistrationDetails> CreateAsync(CredentialUserRegistrationDetails credentialUserRegistrationDetailsToCreate);        /// <summary>
-        /// Creates the specified CredentialUserRegistrationDetails using PUT.
+        /// Creates the specified CredentialUserRegistrationDetails using POST.
         /// </summary>
         /// <param name="credentialUserRegistrationDetailsToCreate">The CredentialUserRegistrationDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

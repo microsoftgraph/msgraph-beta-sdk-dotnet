@@ -52,6 +52,27 @@ namespace Microsoft.Graph
         public bool? SupportsScopeTags { get; set; }
     
         /// <summary>
+        /// Gets or sets device management applicability rule os edition.
+        /// The OS edition applicability for this Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleOsEdition", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEdition { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device management applicability rule os version.
+        /// The OS version applicability rule for this Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleOsVersion", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device management applicability rule device mode.
+        /// The device mode applicability rule for this Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleDeviceMode", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceMode { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.
         /// </summary>

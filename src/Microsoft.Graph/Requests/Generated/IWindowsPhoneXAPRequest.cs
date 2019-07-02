@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhoneXAPRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhoneXAP using PUT.
+        /// Creates the specified WindowsPhoneXAP using POST.
         /// </summary>
         /// <param name="windowsPhoneXAPToCreate">The WindowsPhoneXAP to create.</param>
         /// <returns>The created WindowsPhoneXAP.</returns>
         System.Threading.Tasks.Task<WindowsPhoneXAP> CreateAsync(WindowsPhoneXAP windowsPhoneXAPToCreate);        /// <summary>
-        /// Creates the specified WindowsPhoneXAP using PUT.
+        /// Creates the specified WindowsPhoneXAP using POST.
         /// </summary>
         /// <param name="windowsPhoneXAPToCreate">The WindowsPhoneXAP to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

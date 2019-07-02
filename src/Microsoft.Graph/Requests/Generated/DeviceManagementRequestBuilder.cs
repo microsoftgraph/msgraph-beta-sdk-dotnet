@@ -711,6 +711,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DomainJoinConnectors.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDomainJoinConnectorsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDomainJoinConnectorsCollectionRequestBuilder DomainJoinConnectors
+        {
+            get
+            {
+                return new DeviceManagementDomainJoinConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("domainJoinConnectors"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for WindowsInformationProtectionAppLearningSummaries.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequestBuilder"/>.</returns>

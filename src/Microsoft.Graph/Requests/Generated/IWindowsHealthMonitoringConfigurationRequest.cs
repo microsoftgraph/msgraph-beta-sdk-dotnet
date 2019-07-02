@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsHealthMonitoringConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsHealthMonitoringConfiguration using PUT.
+        /// Creates the specified WindowsHealthMonitoringConfiguration using POST.
         /// </summary>
         /// <param name="windowsHealthMonitoringConfigurationToCreate">The WindowsHealthMonitoringConfiguration to create.</param>
         /// <returns>The created WindowsHealthMonitoringConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> CreateAsync(WindowsHealthMonitoringConfiguration windowsHealthMonitoringConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsHealthMonitoringConfiguration using PUT.
+        /// Creates the specified WindowsHealthMonitoringConfiguration using POST.
         /// </summary>
         /// <param name="windowsHealthMonitoringConfigurationToCreate">The WindowsHealthMonitoringConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

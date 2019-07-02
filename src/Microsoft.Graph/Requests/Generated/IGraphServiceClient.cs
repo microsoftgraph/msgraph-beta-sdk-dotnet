@@ -192,6 +192,11 @@ namespace Microsoft.Graph
         IGraphServiceMalwareRiskEventsCollectionRequestBuilder MalwareRiskEvents { get; }
     
         /// <summary>
+        /// Gets the GraphServiceRiskDetections request builder.
+        /// </summary>
+        IGraphServiceRiskDetectionsCollectionRequestBuilder RiskDetections { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceRiskyUsers request builder.
         /// </summary>
         IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
@@ -375,6 +380,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
         /// </summary>
         IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceApplicationTemplates request builder.
+        /// </summary>
+        IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates { get; }
     
         /// <summary>
         /// Gets the GraphServiceApp request builder.

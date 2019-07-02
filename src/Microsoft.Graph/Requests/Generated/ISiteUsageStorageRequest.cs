@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISiteUsageStorageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SiteUsageStorage using PUT.
+        /// Creates the specified SiteUsageStorage using POST.
         /// </summary>
         /// <param name="siteUsageStorageToCreate">The SiteUsageStorage to create.</param>
         /// <returns>The created SiteUsageStorage.</returns>
         System.Threading.Tasks.Task<SiteUsageStorage> CreateAsync(SiteUsageStorage siteUsageStorageToCreate);        /// <summary>
-        /// Creates the specified SiteUsageStorage using PUT.
+        /// Creates the specified SiteUsageStorage using POST.
         /// </summary>
         /// <param name="siteUsageStorageToCreate">The SiteUsageStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

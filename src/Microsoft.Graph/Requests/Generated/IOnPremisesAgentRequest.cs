@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnPremisesAgentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnPremisesAgent using PUT.
+        /// Creates the specified OnPremisesAgent using POST.
         /// </summary>
         /// <param name="onPremisesAgentToCreate">The OnPremisesAgent to create.</param>
         /// <returns>The created OnPremisesAgent.</returns>
         System.Threading.Tasks.Task<OnPremisesAgent> CreateAsync(OnPremisesAgent onPremisesAgentToCreate);        /// <summary>
-        /// Creates the specified OnPremisesAgent using PUT.
+        /// Creates the specified OnPremisesAgent using POST.
         /// </summary>
         /// <param name="onPremisesAgentToCreate">The OnPremisesAgent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

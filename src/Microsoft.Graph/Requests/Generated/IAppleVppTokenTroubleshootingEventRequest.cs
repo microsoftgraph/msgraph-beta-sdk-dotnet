@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAppleVppTokenTroubleshootingEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AppleVppTokenTroubleshootingEvent using PUT.
+        /// Creates the specified AppleVppTokenTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
         /// <returns>The created AppleVppTokenTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> CreateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate);        /// <summary>
-        /// Creates the specified AppleVppTokenTroubleshootingEvent using PUT.
+        /// Creates the specified AppleVppTokenTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

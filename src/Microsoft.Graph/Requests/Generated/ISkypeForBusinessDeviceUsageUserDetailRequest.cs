@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISkypeForBusinessDeviceUsageUserDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using PUT.
+        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
         /// <returns>The created SkypeForBusinessDeviceUsageUserDetail.</returns>
         System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> CreateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate);        /// <summary>
-        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using PUT.
+        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

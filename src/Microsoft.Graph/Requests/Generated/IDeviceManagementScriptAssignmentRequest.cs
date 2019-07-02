@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementScriptAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementScriptAssignment using PUT.
+        /// Creates the specified DeviceManagementScriptAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementScriptAssignmentToCreate">The DeviceManagementScriptAssignment to create.</param>
         /// <returns>The created DeviceManagementScriptAssignment.</returns>
         System.Threading.Tasks.Task<DeviceManagementScriptAssignment> CreateAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementScriptAssignment using PUT.
+        /// Creates the specified DeviceManagementScriptAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementScriptAssignmentToCreate">The DeviceManagementScriptAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

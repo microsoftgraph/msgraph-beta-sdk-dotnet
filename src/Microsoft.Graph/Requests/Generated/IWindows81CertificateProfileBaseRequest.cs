@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows81CertificateProfileBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows81CertificateProfileBase using PUT.
+        /// Creates the specified Windows81CertificateProfileBase using POST.
         /// </summary>
         /// <param name="windows81CertificateProfileBaseToCreate">The Windows81CertificateProfileBase to create.</param>
         /// <returns>The created Windows81CertificateProfileBase.</returns>
         System.Threading.Tasks.Task<Windows81CertificateProfileBase> CreateAsync(Windows81CertificateProfileBase windows81CertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified Windows81CertificateProfileBase using PUT.
+        /// Creates the specified Windows81CertificateProfileBase using POST.
         /// </summary>
         /// <param name="windows81CertificateProfileBaseToCreate">The Windows81CertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsUniversalAppXContainedAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsUniversalAppXContainedApp using PUT.
+        /// Creates the specified WindowsUniversalAppXContainedApp using POST.
         /// </summary>
         /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
         /// <returns>The created WindowsUniversalAppXContainedApp.</returns>
         System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> CreateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate);        /// <summary>
-        /// Creates the specified WindowsUniversalAppXContainedApp using PUT.
+        /// Creates the specified WindowsUniversalAppXContainedApp using POST.
         /// </summary>
         /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

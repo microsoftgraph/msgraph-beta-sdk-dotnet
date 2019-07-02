@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosLobAppProvisioningConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosLobAppProvisioningConfiguration using PUT.
+        /// Creates the specified IosLobAppProvisioningConfiguration using POST.
         /// </summary>
         /// <param name="iosLobAppProvisioningConfigurationToCreate">The IosLobAppProvisioningConfiguration to create.</param>
         /// <returns>The created IosLobAppProvisioningConfiguration.</returns>
         System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> CreateAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosLobAppProvisioningConfiguration using PUT.
+        /// Creates the specified IosLobAppProvisioningConfiguration using POST.
         /// </summary>
         /// <param name="iosLobAppProvisioningConfigurationToCreate">The IosLobAppProvisioningConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAdvancedThreatProtectionOnboardingStateSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using PUT.
+        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingStateSummary.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> CreateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate);        /// <summary>
-        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using PUT.
+        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

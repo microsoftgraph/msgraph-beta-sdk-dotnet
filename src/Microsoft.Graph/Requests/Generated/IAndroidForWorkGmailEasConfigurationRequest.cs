@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidForWorkGmailEasConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidForWorkGmailEasConfiguration using PUT.
+        /// Creates the specified AndroidForWorkGmailEasConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkGmailEasConfigurationToCreate">The AndroidForWorkGmailEasConfiguration to create.</param>
         /// <returns>The created AndroidForWorkGmailEasConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> CreateAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkGmailEasConfiguration using PUT.
+        /// Creates the specified AndroidForWorkGmailEasConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkGmailEasConfigurationToCreate">The AndroidForWorkGmailEasConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

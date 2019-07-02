@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidManagedStoreAppConfigurationSchemaRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidManagedStoreAppConfigurationSchema using PUT.
+        /// Creates the specified AndroidManagedStoreAppConfigurationSchema using POST.
         /// </summary>
         /// <param name="androidManagedStoreAppConfigurationSchemaToCreate">The AndroidManagedStoreAppConfigurationSchema to create.</param>
         /// <returns>The created AndroidManagedStoreAppConfigurationSchema.</returns>
         System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> CreateAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchemaToCreate);        /// <summary>
-        /// Creates the specified AndroidManagedStoreAppConfigurationSchema using PUT.
+        /// Creates the specified AndroidManagedStoreAppConfigurationSchema using POST.
         /// </summary>
         /// <param name="androidManagedStoreAppConfigurationSchemaToCreate">The AndroidManagedStoreAppConfigurationSchema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

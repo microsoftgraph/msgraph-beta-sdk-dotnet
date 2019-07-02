@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRecognizeOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RecognizeOperation using PUT.
+        /// Creates the specified RecognizeOperation using POST.
         /// </summary>
         /// <param name="recognizeOperationToCreate">The RecognizeOperation to create.</param>
         /// <returns>The created RecognizeOperation.</returns>
         System.Threading.Tasks.Task<RecognizeOperation> CreateAsync(RecognizeOperation recognizeOperationToCreate);        /// <summary>
-        /// Creates the specified RecognizeOperation using PUT.
+        /// Creates the specified RecognizeOperation using POST.
         /// </summary>
         /// <param name="recognizeOperationToCreate">The RecognizeOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAgedAccountsReceivableRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AgedAccountsReceivable using PUT.
+        /// Creates the specified AgedAccountsReceivable using POST.
         /// </summary>
         /// <param name="agedAccountsReceivableToCreate">The AgedAccountsReceivable to create.</param>
         /// <returns>The created AgedAccountsReceivable.</returns>
         System.Threading.Tasks.Task<AgedAccountsReceivable> CreateAsync(AgedAccountsReceivable agedAccountsReceivableToCreate);        /// <summary>
-        /// Creates the specified AgedAccountsReceivable using PUT.
+        /// Creates the specified AgedAccountsReceivable using POST.
         /// </summary>
         /// <param name="agedAccountsReceivableToCreate">The AgedAccountsReceivable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IConfigureMixerOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ConfigureMixerOperation using PUT.
+        /// Creates the specified ConfigureMixerOperation using POST.
         /// </summary>
         /// <param name="configureMixerOperationToCreate">The ConfigureMixerOperation to create.</param>
         /// <returns>The created ConfigureMixerOperation.</returns>
         System.Threading.Tasks.Task<ConfigureMixerOperation> CreateAsync(ConfigureMixerOperation configureMixerOperationToCreate);        /// <summary>
-        /// Creates the specified ConfigureMixerOperation using PUT.
+        /// Creates the specified ConfigureMixerOperation using POST.
         /// </summary>
         /// <param name="configureMixerOperationToCreate">The ConfigureMixerOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

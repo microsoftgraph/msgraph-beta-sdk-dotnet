@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
+        /// Gets or sets displayName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
@@ -63,13 +69,19 @@ namespace Microsoft.Graph
         /// Gets or sets applicationMode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationMode", Required = Newtonsoft.Json.Required.Default)]
-        public string ApplicationMode { get; set; }
+        public ApplicationMode? ApplicationMode { get; set; }
     
         /// <summary>
         /// Gets or sets labelActions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LabelActionBase> LabelActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets priority.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

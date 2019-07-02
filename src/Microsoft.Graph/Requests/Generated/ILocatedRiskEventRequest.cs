@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ILocatedRiskEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified LocatedRiskEvent using PUT.
+        /// Creates the specified LocatedRiskEvent using POST.
         /// </summary>
         /// <param name="locatedRiskEventToCreate">The LocatedRiskEvent to create.</param>
         /// <returns>The created LocatedRiskEvent.</returns>
         System.Threading.Tasks.Task<LocatedRiskEvent> CreateAsync(LocatedRiskEvent locatedRiskEventToCreate);        /// <summary>
-        /// Creates the specified LocatedRiskEvent using PUT.
+        /// Creates the specified LocatedRiskEvent using POST.
         /// </summary>
         /// <param name="locatedRiskEventToCreate">The LocatedRiskEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

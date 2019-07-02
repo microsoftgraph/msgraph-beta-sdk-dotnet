@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserSecurityProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UserSecurityProfile using PUT.
+        /// Creates the specified UserSecurityProfile using POST.
         /// </summary>
         /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
         /// <returns>The created UserSecurityProfile.</returns>
         System.Threading.Tasks.Task<UserSecurityProfile> CreateAsync(UserSecurityProfile userSecurityProfileToCreate);        /// <summary>
-        /// Creates the specified UserSecurityProfile using PUT.
+        /// Creates the specified UserSecurityProfile using POST.
         /// </summary>
         /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
