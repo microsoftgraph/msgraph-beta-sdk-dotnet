@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IBookingCurrencyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified BookingCurrency using PUT.
+        /// Creates the specified BookingCurrency using POST.
         /// </summary>
         /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
         /// <returns>The created BookingCurrency.</returns>
         System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate);        /// <summary>
-        /// Creates the specified BookingCurrency using PUT.
+        /// Creates the specified BookingCurrency using POST.
         /// </summary>
         /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEmployeeRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Employee using PUT.
+        /// Creates the specified Employee using POST.
         /// </summary>
         /// <param name="employeeToCreate">The Employee to create.</param>
         /// <returns>The created Employee.</returns>
         System.Threading.Tasks.Task<Employee> CreateAsync(Employee employeeToCreate);        /// <summary>
-        /// Creates the specified Employee using PUT.
+        /// Creates the specified Employee using POST.
         /// </summary>
         /// <param name="employeeToCreate">The Employee to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

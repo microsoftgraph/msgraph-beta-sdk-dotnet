@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISecurityBaselineSettingStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SecurityBaselineSettingState using PUT.
+        /// Creates the specified SecurityBaselineSettingState using POST.
         /// </summary>
         /// <param name="securityBaselineSettingStateToCreate">The SecurityBaselineSettingState to create.</param>
         /// <returns>The created SecurityBaselineSettingState.</returns>
         System.Threading.Tasks.Task<SecurityBaselineSettingState> CreateAsync(SecurityBaselineSettingState securityBaselineSettingStateToCreate);        /// <summary>
-        /// Creates the specified SecurityBaselineSettingState using PUT.
+        /// Creates the specified SecurityBaselineSettingState using POST.
         /// </summary>
         /// <param name="securityBaselineSettingStateToCreate">The SecurityBaselineSettingState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -57,6 +57,13 @@ namespace Microsoft.Graph
             string displayName = null,
             string description = null,
             IEnumerable<DeviceManagementSettingInstance> settingsDelta = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementTemplateCompare.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateCompareRequestBuilder"/>.</returns>
+        IDeviceManagementTemplateCompareRequestBuilder Compare(
+            string templateId = null);
     
     }
 }

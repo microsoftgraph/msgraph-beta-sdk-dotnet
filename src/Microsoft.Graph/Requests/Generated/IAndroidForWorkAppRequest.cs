@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidForWorkAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidForWorkApp using PUT.
+        /// Creates the specified AndroidForWorkApp using POST.
         /// </summary>
         /// <param name="androidForWorkAppToCreate">The AndroidForWorkApp to create.</param>
         /// <returns>The created AndroidForWorkApp.</returns>
         System.Threading.Tasks.Task<AndroidForWorkApp> CreateAsync(AndroidForWorkApp androidForWorkAppToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkApp using PUT.
+        /// Creates the specified AndroidForWorkApp using POST.
         /// </summary>
         /// <param name="androidForWorkAppToCreate">The AndroidForWorkApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

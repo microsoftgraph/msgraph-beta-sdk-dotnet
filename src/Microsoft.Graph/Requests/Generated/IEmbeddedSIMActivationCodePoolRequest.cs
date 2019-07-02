@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEmbeddedSIMActivationCodePoolRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EmbeddedSIMActivationCodePool using PUT.
+        /// Creates the specified EmbeddedSIMActivationCodePool using POST.
         /// </summary>
         /// <param name="embeddedSIMActivationCodePoolToCreate">The EmbeddedSIMActivationCodePool to create.</param>
         /// <returns>The created EmbeddedSIMActivationCodePool.</returns>
         System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> CreateAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToCreate);        /// <summary>
-        /// Creates the specified EmbeddedSIMActivationCodePool using PUT.
+        /// Creates the specified EmbeddedSIMActivationCodePool using POST.
         /// </summary>
         /// <param name="embeddedSIMActivationCodePoolToCreate">The EmbeddedSIMActivationCodePool to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

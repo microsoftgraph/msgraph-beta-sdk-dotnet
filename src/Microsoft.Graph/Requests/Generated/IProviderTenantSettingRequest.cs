@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IProviderTenantSettingRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ProviderTenantSetting using PUT.
+        /// Creates the specified ProviderTenantSetting using POST.
         /// </summary>
         /// <param name="providerTenantSettingToCreate">The ProviderTenantSetting to create.</param>
         /// <returns>The created ProviderTenantSetting.</returns>
         System.Threading.Tasks.Task<ProviderTenantSetting> CreateAsync(ProviderTenantSetting providerTenantSettingToCreate);        /// <summary>
-        /// Creates the specified ProviderTenantSetting using PUT.
+        /// Creates the specified ProviderTenantSetting using POST.
         /// </summary>
         /// <param name="providerTenantSettingToCreate">The ProviderTenantSetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

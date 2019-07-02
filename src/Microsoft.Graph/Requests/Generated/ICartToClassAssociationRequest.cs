@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICartToClassAssociationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CartToClassAssociation using PUT.
+        /// Creates the specified CartToClassAssociation using POST.
         /// </summary>
         /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
         /// <returns>The created CartToClassAssociation.</returns>
         System.Threading.Tasks.Task<CartToClassAssociation> CreateAsync(CartToClassAssociation cartToClassAssociationToCreate);        /// <summary>
-        /// Creates the specified CartToClassAssociation using PUT.
+        /// Creates the specified CartToClassAssociation using POST.
         /// </summary>
         /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

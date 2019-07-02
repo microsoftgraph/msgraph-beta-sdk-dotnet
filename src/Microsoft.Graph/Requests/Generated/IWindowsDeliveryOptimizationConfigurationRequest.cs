@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsDeliveryOptimizationConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsDeliveryOptimizationConfiguration using PUT.
+        /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST.
         /// </summary>
         /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
         /// <returns>The created WindowsDeliveryOptimizationConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> CreateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsDeliveryOptimizationConfiguration using PUT.
+        /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST.
         /// </summary>
         /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

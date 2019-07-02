@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEasEmailProfileConfigurationBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EasEmailProfileConfigurationBase using PUT.
+        /// Creates the specified EasEmailProfileConfigurationBase using POST.
         /// </summary>
         /// <param name="easEmailProfileConfigurationBaseToCreate">The EasEmailProfileConfigurationBase to create.</param>
         /// <returns>The created EasEmailProfileConfigurationBase.</returns>
         System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> CreateAsync(EasEmailProfileConfigurationBase easEmailProfileConfigurationBaseToCreate);        /// <summary>
-        /// Creates the specified EasEmailProfileConfigurationBase using PUT.
+        /// Creates the specified EasEmailProfileConfigurationBase using POST.
         /// </summary>
         /// <param name="easEmailProfileConfigurationBaseToCreate">The EasEmailProfileConfigurationBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICancelMediaProcessingOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CancelMediaProcessingOperation using PUT.
+        /// Creates the specified CancelMediaProcessingOperation using POST.
         /// </summary>
         /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
         /// <returns>The created CancelMediaProcessingOperation.</returns>
         System.Threading.Tasks.Task<CancelMediaProcessingOperation> CreateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate);        /// <summary>
-        /// Creates the specified CancelMediaProcessingOperation using PUT.
+        /// Creates the specified CancelMediaProcessingOperation using POST.
         /// </summary>
         /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

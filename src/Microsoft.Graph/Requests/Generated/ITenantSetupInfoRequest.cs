@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITenantSetupInfoRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TenantSetupInfo using PUT.
+        /// Creates the specified TenantSetupInfo using POST.
         /// </summary>
         /// <param name="tenantSetupInfoToCreate">The TenantSetupInfo to create.</param>
         /// <returns>The created TenantSetupInfo.</returns>
         System.Threading.Tasks.Task<TenantSetupInfo> CreateAsync(TenantSetupInfo tenantSetupInfoToCreate);        /// <summary>
-        /// Creates the specified TenantSetupInfo using PUT.
+        /// Creates the specified TenantSetupInfo using POST.
         /// </summary>
         /// <param name="tenantSetupInfoToCreate">The TenantSetupInfo to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

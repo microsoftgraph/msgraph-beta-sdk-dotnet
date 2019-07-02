@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEmailActivityUserDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EmailActivityUserDetail using PUT.
+        /// Creates the specified EmailActivityUserDetail using POST.
         /// </summary>
         /// <param name="emailActivityUserDetailToCreate">The EmailActivityUserDetail to create.</param>
         /// <returns>The created EmailActivityUserDetail.</returns>
         System.Threading.Tasks.Task<EmailActivityUserDetail> CreateAsync(EmailActivityUserDetail emailActivityUserDetailToCreate);        /// <summary>
-        /// Creates the specified EmailActivityUserDetail using PUT.
+        /// Creates the specified EmailActivityUserDetail using POST.
         /// </summary>
         /// <param name="emailActivityUserDetailToCreate">The EmailActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

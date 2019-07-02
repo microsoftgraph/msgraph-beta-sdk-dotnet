@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IExtensionPropertyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ExtensionProperty using PUT.
+        /// Creates the specified ExtensionProperty using POST.
         /// </summary>
         /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
         /// <returns>The created ExtensionProperty.</returns>
         System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate);        /// <summary>
-        /// Creates the specified ExtensionProperty using PUT.
+        /// Creates the specified ExtensionProperty using POST.
         /// </summary>
         /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICredentialUsageSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CredentialUsageSummary using PUT.
+        /// Creates the specified CredentialUsageSummary using POST.
         /// </summary>
         /// <param name="credentialUsageSummaryToCreate">The CredentialUsageSummary to create.</param>
         /// <returns>The created CredentialUsageSummary.</returns>
         System.Threading.Tasks.Task<CredentialUsageSummary> CreateAsync(CredentialUsageSummary credentialUsageSummaryToCreate);        /// <summary>
-        /// Creates the specified CredentialUsageSummary using PUT.
+        /// Creates the specified CredentialUsageSummary using POST.
         /// </summary>
         /// <param name="credentialUsageSummaryToCreate">The CredentialUsageSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

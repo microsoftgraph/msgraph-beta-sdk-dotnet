@@ -506,6 +506,13 @@ namespace Microsoft.Graph
         public IDeviceManagementRemoteAssistancePartnersCollectionPage RemoteAssistancePartners { get; set; }
     
         /// <summary>
+        /// Gets or sets domain join connectors.
+        /// A list of connector objects.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainJoinConnectors", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDomainJoinConnectorsCollectionPage DomainJoinConnectors { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows information protection app learning summaries.
         /// The windows information protection app learning summaries.
         /// </summary>

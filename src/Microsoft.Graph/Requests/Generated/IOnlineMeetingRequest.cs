@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnlineMeetingRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnlineMeeting using PUT.
+        /// Creates the specified OnlineMeeting using POST.
         /// </summary>
         /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
         /// <returns>The created OnlineMeeting.</returns>
         System.Threading.Tasks.Task<OnlineMeeting> CreateAsync(OnlineMeeting onlineMeetingToCreate);        /// <summary>
-        /// Creates the specified OnlineMeeting using PUT.
+        /// Creates the specified OnlineMeeting using POST.
         /// </summary>
         /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

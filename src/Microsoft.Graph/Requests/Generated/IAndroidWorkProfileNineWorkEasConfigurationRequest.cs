@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidWorkProfileNineWorkEasConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using PUT.
+        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
         /// <returns>The created AndroidWorkProfileNineWorkEasConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> CreateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using PUT.
+        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

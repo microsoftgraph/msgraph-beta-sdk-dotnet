@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidEasEmailProfileConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidEasEmailProfileConfiguration using PUT.
+        /// Creates the specified AndroidEasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="androidEasEmailProfileConfigurationToCreate">The AndroidEasEmailProfileConfiguration to create.</param>
         /// <returns>The created AndroidEasEmailProfileConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> CreateAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidEasEmailProfileConfiguration using PUT.
+        /// Creates the specified AndroidEasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="androidEasEmailProfileConfigurationToCreate">The AndroidEasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

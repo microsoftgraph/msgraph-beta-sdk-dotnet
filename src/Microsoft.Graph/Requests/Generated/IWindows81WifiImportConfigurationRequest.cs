@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows81WifiImportConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows81WifiImportConfiguration using PUT.
+        /// Creates the specified Windows81WifiImportConfiguration using POST.
         /// </summary>
         /// <param name="windows81WifiImportConfigurationToCreate">The Windows81WifiImportConfiguration to create.</param>
         /// <returns>The created Windows81WifiImportConfiguration.</returns>
         System.Threading.Tasks.Task<Windows81WifiImportConfiguration> CreateAsync(Windows81WifiImportConfiguration windows81WifiImportConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows81WifiImportConfiguration using PUT.
+        /// Creates the specified Windows81WifiImportConfiguration using POST.
         /// </summary>
         /// <param name="windows81WifiImportConfigurationToCreate">The Windows81WifiImportConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

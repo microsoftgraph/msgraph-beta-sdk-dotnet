@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRecordOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RecordOperation using PUT.
+        /// Creates the specified RecordOperation using POST.
         /// </summary>
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <returns>The created RecordOperation.</returns>
         System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate);        /// <summary>
-        /// Creates the specified RecordOperation using PUT.
+        /// Creates the specified RecordOperation using POST.
         /// </summary>
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

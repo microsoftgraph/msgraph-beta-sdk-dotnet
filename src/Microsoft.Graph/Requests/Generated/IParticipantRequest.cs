@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IParticipantRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Participant using PUT.
+        /// Creates the specified Participant using POST.
         /// </summary>
         /// <param name="participantToCreate">The Participant to create.</param>
         /// <returns>The created Participant.</returns>
         System.Threading.Tasks.Task<Participant> CreateAsync(Participant participantToCreate);        /// <summary>
-        /// Creates the specified Participant using PUT.
+        /// Creates the specified Participant using POST.
         /// </summary>
         /// <param name="participantToCreate">The Participant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

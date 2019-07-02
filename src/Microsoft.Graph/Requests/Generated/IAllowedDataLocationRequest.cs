@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAllowedDataLocationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AllowedDataLocation using PUT.
+        /// Creates the specified AllowedDataLocation using POST.
         /// </summary>
         /// <param name="allowedDataLocationToCreate">The AllowedDataLocation to create.</param>
         /// <returns>The created AllowedDataLocation.</returns>
         System.Threading.Tasks.Task<AllowedDataLocation> CreateAsync(AllowedDataLocation allowedDataLocationToCreate);        /// <summary>
-        /// Creates the specified AllowedDataLocation using PUT.
+        /// Creates the specified AllowedDataLocation using POST.
         /// </summary>
         /// <param name="allowedDataLocationToCreate">The AllowedDataLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

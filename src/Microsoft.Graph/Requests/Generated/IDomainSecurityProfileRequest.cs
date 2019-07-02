@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDomainSecurityProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DomainSecurityProfile using PUT.
+        /// Creates the specified DomainSecurityProfile using POST.
         /// </summary>
         /// <param name="domainSecurityProfileToCreate">The DomainSecurityProfile to create.</param>
         /// <returns>The created DomainSecurityProfile.</returns>
         System.Threading.Tasks.Task<DomainSecurityProfile> CreateAsync(DomainSecurityProfile domainSecurityProfileToCreate);        /// <summary>
-        /// Creates the specified DomainSecurityProfile using PUT.
+        /// Creates the specified DomainSecurityProfile using POST.
         /// </summary>
         /// <param name="domainSecurityProfileToCreate">The DomainSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

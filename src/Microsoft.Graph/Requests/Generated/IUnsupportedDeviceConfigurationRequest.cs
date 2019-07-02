@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUnsupportedDeviceConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UnsupportedDeviceConfiguration using PUT.
+        /// Creates the specified UnsupportedDeviceConfiguration using POST.
         /// </summary>
         /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
         /// <returns>The created UnsupportedDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> CreateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate);        /// <summary>
-        /// Creates the specified UnsupportedDeviceConfiguration using PUT.
+        /// Creates the specified UnsupportedDeviceConfiguration using POST.
         /// </summary>
         /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

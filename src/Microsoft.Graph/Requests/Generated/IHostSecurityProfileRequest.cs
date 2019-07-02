@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IHostSecurityProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified HostSecurityProfile using PUT.
+        /// Creates the specified HostSecurityProfile using POST.
         /// </summary>
         /// <param name="hostSecurityProfileToCreate">The HostSecurityProfile to create.</param>
         /// <returns>The created HostSecurityProfile.</returns>
         System.Threading.Tasks.Task<HostSecurityProfile> CreateAsync(HostSecurityProfile hostSecurityProfileToCreate);        /// <summary>
-        /// Creates the specified HostSecurityProfile using PUT.
+        /// Creates the specified HostSecurityProfile using POST.
         /// </summary>
         /// <param name="hostSecurityProfileToCreate">The HostSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISkypeForBusinessParticipantActivityCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SkypeForBusinessParticipantActivityCounts using PUT.
+        /// Creates the specified SkypeForBusinessParticipantActivityCounts using POST.
         /// </summary>
         /// <param name="skypeForBusinessParticipantActivityCountsToCreate">The SkypeForBusinessParticipantActivityCounts to create.</param>
         /// <returns>The created SkypeForBusinessParticipantActivityCounts.</returns>
         System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityCounts> CreateAsync(SkypeForBusinessParticipantActivityCounts skypeForBusinessParticipantActivityCountsToCreate);        /// <summary>
-        /// Creates the specified SkypeForBusinessParticipantActivityCounts using PUT.
+        /// Creates the specified SkypeForBusinessParticipantActivityCounts using POST.
         /// </summary>
         /// <param name="skypeForBusinessParticipantActivityCountsToCreate">The SkypeForBusinessParticipantActivityCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

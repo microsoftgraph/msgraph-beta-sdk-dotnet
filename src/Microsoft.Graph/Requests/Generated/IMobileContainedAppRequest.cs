@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileContainedAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileContainedApp using PUT.
+        /// Creates the specified MobileContainedApp using POST.
         /// </summary>
         /// <param name="mobileContainedAppToCreate">The MobileContainedApp to create.</param>
         /// <returns>The created MobileContainedApp.</returns>
         System.Threading.Tasks.Task<MobileContainedApp> CreateAsync(MobileContainedApp mobileContainedAppToCreate);        /// <summary>
-        /// Creates the specified MobileContainedApp using PUT.
+        /// Creates the specified MobileContainedApp using POST.
         /// </summary>
         /// <param name="mobileContainedAppToCreate">The MobileContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

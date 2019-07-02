@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITeamsDeviceUsageUserDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TeamsDeviceUsageUserDetail using PUT.
+        /// Creates the specified TeamsDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="teamsDeviceUsageUserDetailToCreate">The TeamsDeviceUsageUserDetail to create.</param>
         /// <returns>The created TeamsDeviceUsageUserDetail.</returns>
         System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> CreateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate);        /// <summary>
-        /// Creates the specified TeamsDeviceUsageUserDetail using PUT.
+        /// Creates the specified TeamsDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="teamsDeviceUsageUserDetailToCreate">The TeamsDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

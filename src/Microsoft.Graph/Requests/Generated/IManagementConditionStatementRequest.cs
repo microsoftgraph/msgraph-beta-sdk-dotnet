@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagementConditionStatementRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagementConditionStatement using PUT.
+        /// Creates the specified ManagementConditionStatement using POST.
         /// </summary>
         /// <param name="managementConditionStatementToCreate">The ManagementConditionStatement to create.</param>
         /// <returns>The created ManagementConditionStatement.</returns>
         System.Threading.Tasks.Task<ManagementConditionStatement> CreateAsync(ManagementConditionStatement managementConditionStatementToCreate);        /// <summary>
-        /// Creates the specified ManagementConditionStatement using PUT.
+        /// Creates the specified ManagementConditionStatement using POST.
         /// </summary>
         /// <param name="managementConditionStatementToCreate">The ManagementConditionStatement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

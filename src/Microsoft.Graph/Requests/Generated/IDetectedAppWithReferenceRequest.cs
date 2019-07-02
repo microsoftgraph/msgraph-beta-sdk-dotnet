@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DetectedApp> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified DetectedApp using PUT.
+        /// Creates the specified DetectedApp using POST.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <returns>The created DetectedApp.</returns>
         System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate);        /// <summary>
-        /// Creates the specified DetectedApp using PUT.
+        /// Creates the specified DetectedApp using POST.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPolicyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Policy using PUT.
+        /// Creates the specified Policy using POST.
         /// </summary>
         /// <param name="policyToCreate">The Policy to create.</param>
         /// <returns>The created Policy.</returns>
         System.Threading.Tasks.Task<Policy> CreateAsync(Policy policyToCreate);        /// <summary>
-        /// Creates the specified Policy using PUT.
+        /// Creates the specified Policy using POST.
         /// </summary>
         /// <param name="policyToCreate">The Policy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

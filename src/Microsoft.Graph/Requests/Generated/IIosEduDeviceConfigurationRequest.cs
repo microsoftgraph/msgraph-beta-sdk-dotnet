@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosEduDeviceConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosEduDeviceConfiguration using PUT.
+        /// Creates the specified IosEduDeviceConfiguration using POST.
         /// </summary>
         /// <param name="iosEduDeviceConfigurationToCreate">The IosEduDeviceConfiguration to create.</param>
         /// <returns>The created IosEduDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<IosEduDeviceConfiguration> CreateAsync(IosEduDeviceConfiguration iosEduDeviceConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosEduDeviceConfiguration using PUT.
+        /// Creates the specified IosEduDeviceConfiguration using POST.
         /// </summary>
         /// <param name="iosEduDeviceConfigurationToCreate">The IosEduDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

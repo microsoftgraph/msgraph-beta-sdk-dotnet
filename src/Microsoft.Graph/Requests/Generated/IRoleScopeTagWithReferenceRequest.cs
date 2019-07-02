@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<RoleScopeTag> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified RoleScopeTag using PUT.
+        /// Creates the specified RoleScopeTag using POST.
         /// </summary>
         /// <param name="roleScopeTagToCreate">The RoleScopeTag to create.</param>
         /// <returns>The created RoleScopeTag.</returns>
         System.Threading.Tasks.Task<RoleScopeTag> CreateAsync(RoleScopeTag roleScopeTagToCreate);        /// <summary>
-        /// Creates the specified RoleScopeTag using PUT.
+        /// Creates the specified RoleScopeTag using POST.
         /// </summary>
         /// <param name="roleScopeTagToCreate">The RoleScopeTag to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

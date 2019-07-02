@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppIntentAndStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppIntentAndState using PUT.
+        /// Creates the specified MobileAppIntentAndState using POST.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
         /// <returns>The created MobileAppIntentAndState.</returns>
         System.Threading.Tasks.Task<MobileAppIntentAndState> CreateAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate);        /// <summary>
-        /// Creates the specified MobileAppIntentAndState using PUT.
+        /// Creates the specified MobileAppIntentAndState using POST.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

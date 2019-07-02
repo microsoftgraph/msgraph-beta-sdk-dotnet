@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUnitOfMeasureRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UnitOfMeasure using PUT.
+        /// Creates the specified UnitOfMeasure using POST.
         /// </summary>
         /// <param name="unitOfMeasureToCreate">The UnitOfMeasure to create.</param>
         /// <returns>The created UnitOfMeasure.</returns>
         System.Threading.Tasks.Task<UnitOfMeasure> CreateAsync(UnitOfMeasure unitOfMeasureToCreate);        /// <summary>
-        /// Creates the specified UnitOfMeasure using PUT.
+        /// Creates the specified UnitOfMeasure using POST.
         /// </summary>
         /// <param name="unitOfMeasureToCreate">The UnitOfMeasure to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

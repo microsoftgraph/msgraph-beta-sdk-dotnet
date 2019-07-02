@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPrivilegedSignupStatusRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PrivilegedSignupStatus using PUT.
+        /// Creates the specified PrivilegedSignupStatus using POST.
         /// </summary>
         /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
         /// <returns>The created PrivilegedSignupStatus.</returns>
         System.Threading.Tasks.Task<PrivilegedSignupStatus> CreateAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate);        /// <summary>
-        /// Creates the specified PrivilegedSignupStatus using PUT.
+        /// Creates the specified PrivilegedSignupStatus using POST.
         /// </summary>
         /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

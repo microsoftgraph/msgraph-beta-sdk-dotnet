@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IJournalRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Journal using PUT.
+        /// Creates the specified Journal using POST.
         /// </summary>
         /// <param name="journalToCreate">The Journal to create.</param>
         /// <returns>The created Journal.</returns>
         System.Threading.Tasks.Task<Journal> CreateAsync(Journal journalToCreate);        /// <summary>
-        /// Creates the specified Journal using PUT.
+        /// Creates the specified Journal using POST.
         /// </summary>
         /// <param name="journalToCreate">The Journal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>
         IOrganizationExtensionsCollectionRequestBuilder Extensions { get; }
+
+        /// <summary>
+        /// Gets the request builder for Brandings.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationBrandingsCollectionRequestBuilder"/>.</returns>
+        IOrganizationBrandingsCollectionRequestBuilder Brandings { get; }
     
         /// <summary>
         /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISynchronizationJobRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SynchronizationJob using PUT.
+        /// Creates the specified SynchronizationJob using POST.
         /// </summary>
         /// <param name="synchronizationJobToCreate">The SynchronizationJob to create.</param>
         /// <returns>The created SynchronizationJob.</returns>
         System.Threading.Tasks.Task<SynchronizationJob> CreateAsync(SynchronizationJob synchronizationJobToCreate);        /// <summary>
-        /// Creates the specified SynchronizationJob using PUT.
+        /// Creates the specified SynchronizationJob using POST.
         /// </summary>
         /// <param name="synchronizationJobToCreate">The SynchronizationJob to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

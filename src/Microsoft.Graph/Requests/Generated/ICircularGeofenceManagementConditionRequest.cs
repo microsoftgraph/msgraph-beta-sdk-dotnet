@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICircularGeofenceManagementConditionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CircularGeofenceManagementCondition using PUT.
+        /// Creates the specified CircularGeofenceManagementCondition using POST.
         /// </summary>
         /// <param name="circularGeofenceManagementConditionToCreate">The CircularGeofenceManagementCondition to create.</param>
         /// <returns>The created CircularGeofenceManagementCondition.</returns>
         System.Threading.Tasks.Task<CircularGeofenceManagementCondition> CreateAsync(CircularGeofenceManagementCondition circularGeofenceManagementConditionToCreate);        /// <summary>
-        /// Creates the specified CircularGeofenceManagementCondition using PUT.
+        /// Creates the specified CircularGeofenceManagementCondition using POST.
         /// </summary>
         /// <param name="circularGeofenceManagementConditionToCreate">The CircularGeofenceManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

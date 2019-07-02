@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAnonymousIpRiskEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AnonymousIpRiskEvent using PUT.
+        /// Creates the specified AnonymousIpRiskEvent using POST.
         /// </summary>
         /// <param name="anonymousIpRiskEventToCreate">The AnonymousIpRiskEvent to create.</param>
         /// <returns>The created AnonymousIpRiskEvent.</returns>
         System.Threading.Tasks.Task<AnonymousIpRiskEvent> CreateAsync(AnonymousIpRiskEvent anonymousIpRiskEventToCreate);        /// <summary>
-        /// Creates the specified AnonymousIpRiskEvent using PUT.
+        /// Creates the specified AnonymousIpRiskEvent using POST.
         /// </summary>
         /// <param name="anonymousIpRiskEventToCreate">The AnonymousIpRiskEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

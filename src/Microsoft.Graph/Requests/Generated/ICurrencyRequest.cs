@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICurrencyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Currency using PUT.
+        /// Creates the specified Currency using POST.
         /// </summary>
         /// <param name="currencyToCreate">The Currency to create.</param>
         /// <returns>The created Currency.</returns>
         System.Threading.Tasks.Task<Currency> CreateAsync(Currency currencyToCreate);        /// <summary>
-        /// Creates the specified Currency using PUT.
+        /// Creates the specified Currency using POST.
         /// </summary>
         /// <param name="currencyToCreate">The Currency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

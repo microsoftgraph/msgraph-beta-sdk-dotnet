@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAccountRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Account using PUT.
+        /// Creates the specified Account using POST.
         /// </summary>
         /// <param name="accountToCreate">The Account to create.</param>
         /// <returns>The created Account.</returns>
         System.Threading.Tasks.Task<Account> CreateAsync(Account accountToCreate);        /// <summary>
-        /// Creates the specified Account using PUT.
+        /// Creates the specified Account using POST.
         /// </summary>
         /// <param name="accountToCreate">The Account to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEmailAppUsageUserCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EmailAppUsageUserCounts using PUT.
+        /// Creates the specified EmailAppUsageUserCounts using POST.
         /// </summary>
         /// <param name="emailAppUsageUserCountsToCreate">The EmailAppUsageUserCounts to create.</param>
         /// <returns>The created EmailAppUsageUserCounts.</returns>
         System.Threading.Tasks.Task<EmailAppUsageUserCounts> CreateAsync(EmailAppUsageUserCounts emailAppUsageUserCountsToCreate);        /// <summary>
-        /// Creates the specified EmailAppUsageUserCounts using PUT.
+        /// Creates the specified EmailAppUsageUserCounts using POST.
         /// </summary>
         /// <param name="emailAppUsageUserCountsToCreate">The EmailAppUsageUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

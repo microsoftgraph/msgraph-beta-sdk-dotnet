@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IFilterOperatorSchemaRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified FilterOperatorSchema using PUT.
+        /// Creates the specified FilterOperatorSchema using POST.
         /// </summary>
         /// <param name="filterOperatorSchemaToCreate">The FilterOperatorSchema to create.</param>
         /// <returns>The created FilterOperatorSchema.</returns>
         System.Threading.Tasks.Task<FilterOperatorSchema> CreateAsync(FilterOperatorSchema filterOperatorSchemaToCreate);        /// <summary>
-        /// Creates the specified FilterOperatorSchema using PUT.
+        /// Creates the specified FilterOperatorSchema using POST.
         /// </summary>
         /// <param name="filterOperatorSchemaToCreate">The FilterOperatorSchema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

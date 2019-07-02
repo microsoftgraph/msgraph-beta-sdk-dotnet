@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICustomerRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Customer using PUT.
+        /// Creates the specified Customer using POST.
         /// </summary>
         /// <param name="customerToCreate">The Customer to create.</param>
         /// <returns>The created Customer.</returns>
         System.Threading.Tasks.Task<Customer> CreateAsync(Customer customerToCreate);        /// <summary>
-        /// Creates the specified Customer using PUT.
+        /// Creates the specified Customer using POST.
         /// </summary>
         /// <param name="customerToCreate">The Customer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

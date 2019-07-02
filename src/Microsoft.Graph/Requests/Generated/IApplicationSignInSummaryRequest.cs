@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IApplicationSignInSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ApplicationSignInSummary using PUT.
+        /// Creates the specified ApplicationSignInSummary using POST.
         /// </summary>
         /// <param name="applicationSignInSummaryToCreate">The ApplicationSignInSummary to create.</param>
         /// <returns>The created ApplicationSignInSummary.</returns>
         System.Threading.Tasks.Task<ApplicationSignInSummary> CreateAsync(ApplicationSignInSummary applicationSignInSummaryToCreate);        /// <summary>
-        /// Creates the specified ApplicationSignInSummary using PUT.
+        /// Creates the specified ApplicationSignInSummary using POST.
         /// </summary>
         /// <param name="applicationSignInSummaryToCreate">The ApplicationSignInSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

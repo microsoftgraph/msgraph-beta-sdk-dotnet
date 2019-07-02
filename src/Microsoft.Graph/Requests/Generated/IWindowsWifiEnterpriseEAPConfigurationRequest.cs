@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsWifiEnterpriseEAPConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using PUT.
+        /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using POST.
         /// </summary>
         /// <param name="windowsWifiEnterpriseEAPConfigurationToCreate">The WindowsWifiEnterpriseEAPConfiguration to create.</param>
         /// <returns>The created WindowsWifiEnterpriseEAPConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> CreateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using PUT.
+        /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using POST.
         /// </summary>
         /// <param name="windowsWifiEnterpriseEAPConfigurationToCreate">The WindowsWifiEnterpriseEAPConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

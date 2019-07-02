@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGovernanceRoleSettingRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GovernanceRoleSetting using PUT.
+        /// Creates the specified GovernanceRoleSetting using POST.
         /// </summary>
         /// <param name="governanceRoleSettingToCreate">The GovernanceRoleSetting to create.</param>
         /// <returns>The created GovernanceRoleSetting.</returns>
         System.Threading.Tasks.Task<GovernanceRoleSetting> CreateAsync(GovernanceRoleSetting governanceRoleSettingToCreate);        /// <summary>
-        /// Creates the specified GovernanceRoleSetting using PUT.
+        /// Creates the specified GovernanceRoleSetting using POST.
         /// </summary>
         /// <param name="governanceRoleSettingToCreate">The GovernanceRoleSetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppInstallSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppInstallSummary using PUT.
+        /// Creates the specified MobileAppInstallSummary using POST.
         /// </summary>
         /// <param name="mobileAppInstallSummaryToCreate">The MobileAppInstallSummary to create.</param>
         /// <returns>The created MobileAppInstallSummary.</returns>
         System.Threading.Tasks.Task<MobileAppInstallSummary> CreateAsync(MobileAppInstallSummary mobileAppInstallSummaryToCreate);        /// <summary>
-        /// Creates the specified MobileAppInstallSummary using PUT.
+        /// Creates the specified MobileAppInstallSummary using POST.
         /// </summary>
         /// <param name="mobileAppInstallSummaryToCreate">The MobileAppInstallSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

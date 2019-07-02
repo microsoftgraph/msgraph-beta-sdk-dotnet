@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAttributeMappingFunctionSchemaRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AttributeMappingFunctionSchema using PUT.
+        /// Creates the specified AttributeMappingFunctionSchema using POST.
         /// </summary>
         /// <param name="attributeMappingFunctionSchemaToCreate">The AttributeMappingFunctionSchema to create.</param>
         /// <returns>The created AttributeMappingFunctionSchema.</returns>
         System.Threading.Tasks.Task<AttributeMappingFunctionSchema> CreateAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchemaToCreate);        /// <summary>
-        /// Creates the specified AttributeMappingFunctionSchema using PUT.
+        /// Creates the specified AttributeMappingFunctionSchema using POST.
         /// </summary>
         /// <param name="attributeMappingFunctionSchemaToCreate">The AttributeMappingFunctionSchema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

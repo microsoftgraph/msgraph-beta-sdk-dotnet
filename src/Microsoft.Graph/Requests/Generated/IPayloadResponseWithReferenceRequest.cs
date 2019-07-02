@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PayloadResponse> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified PayloadResponse using PUT.
+        /// Creates the specified PayloadResponse using POST.
         /// </summary>
         /// <param name="payloadResponseToCreate">The PayloadResponse to create.</param>
         /// <returns>The created PayloadResponse.</returns>
         System.Threading.Tasks.Task<PayloadResponse> CreateAsync(PayloadResponse payloadResponseToCreate);        /// <summary>
-        /// Creates the specified PayloadResponse using PUT.
+        /// Creates the specified PayloadResponse using POST.
         /// </summary>
         /// <param name="payloadResponseToCreate">The PayloadResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITextClassificationRequestRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TextClassificationRequestObject using PUT.
+        /// Creates the specified TextClassificationRequestObject using POST.
         /// </summary>
         /// <param name="textClassificationRequestObjectToCreate">The TextClassificationRequestObject to create.</param>
         /// <returns>The created TextClassificationRequestObject.</returns>
         System.Threading.Tasks.Task<TextClassificationRequestObject> CreateAsync(TextClassificationRequestObject textClassificationRequestObjectToCreate);        /// <summary>
-        /// Creates the specified TextClassificationRequestObject using PUT.
+        /// Creates the specified TextClassificationRequestObject using POST.
         /// </summary>
         /// <param name="textClassificationRequestObjectToCreate">The TextClassificationRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

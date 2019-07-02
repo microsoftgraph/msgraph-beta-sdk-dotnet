@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDataClassificationServiceRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DataClassificationService using PUT.
+        /// Creates the specified DataClassificationService using POST.
         /// </summary>
         /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
         /// <returns>The created DataClassificationService.</returns>
         System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate);        /// <summary>
-        /// Creates the specified DataClassificationService using PUT.
+        /// Creates the specified DataClassificationService using POST.
         /// </summary>
         /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

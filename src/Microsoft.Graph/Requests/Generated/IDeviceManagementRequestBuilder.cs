@@ -362,6 +362,12 @@ namespace Microsoft.Graph
         IDeviceManagementRemoteAssistancePartnersCollectionRequestBuilder RemoteAssistancePartners { get; }
 
         /// <summary>
+        /// Gets the request builder for DomainJoinConnectors.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDomainJoinConnectorsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDomainJoinConnectorsCollectionRequestBuilder DomainJoinConnectors { get; }
+
+        /// <summary>
         /// Gets the request builder for WindowsInformationProtectionAppLearningSummaries.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequestBuilder"/>.</returns>

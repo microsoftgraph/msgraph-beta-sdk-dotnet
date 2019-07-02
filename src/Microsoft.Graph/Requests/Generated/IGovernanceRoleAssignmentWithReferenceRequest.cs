@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GovernanceRoleAssignment> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified GovernanceRoleAssignment using PUT.
+        /// Creates the specified GovernanceRoleAssignment using POST.
         /// </summary>
         /// <param name="governanceRoleAssignmentToCreate">The GovernanceRoleAssignment to create.</param>
         /// <returns>The created GovernanceRoleAssignment.</returns>
         System.Threading.Tasks.Task<GovernanceRoleAssignment> CreateAsync(GovernanceRoleAssignment governanceRoleAssignmentToCreate);        /// <summary>
-        /// Creates the specified GovernanceRoleAssignment using PUT.
+        /// Creates the specified GovernanceRoleAssignment using POST.
         /// </summary>
         /// <param name="governanceRoleAssignmentToCreate">The GovernanceRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

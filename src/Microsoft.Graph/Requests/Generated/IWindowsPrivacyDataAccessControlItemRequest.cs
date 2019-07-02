@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPrivacyDataAccessControlItemRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPrivacyDataAccessControlItem using PUT.
+        /// Creates the specified WindowsPrivacyDataAccessControlItem using POST.
         /// </summary>
         /// <param name="windowsPrivacyDataAccessControlItemToCreate">The WindowsPrivacyDataAccessControlItem to create.</param>
         /// <returns>The created WindowsPrivacyDataAccessControlItem.</returns>
         System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> CreateAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItemToCreate);        /// <summary>
-        /// Creates the specified WindowsPrivacyDataAccessControlItem using PUT.
+        /// Creates the specified WindowsPrivacyDataAccessControlItem using POST.
         /// </summary>
         /// <param name="windowsPrivacyDataAccessControlItemToCreate">The WindowsPrivacyDataAccessControlItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

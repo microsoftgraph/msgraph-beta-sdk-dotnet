@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IProgramRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Program using PUT.
+        /// Creates the specified Program using POST.
         /// </summary>
         /// <param name="programToCreate">The Program to create.</param>
         /// <returns>The created Program.</returns>
         System.Threading.Tasks.Task<Program> CreateAsync(Program programToCreate);        /// <summary>
-        /// Creates the specified Program using PUT.
+        /// Creates the specified Program using POST.
         /// </summary>
         /// <param name="programToCreate">The Program to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

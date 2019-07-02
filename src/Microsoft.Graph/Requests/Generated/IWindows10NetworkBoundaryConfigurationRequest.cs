@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10NetworkBoundaryConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10NetworkBoundaryConfiguration using PUT.
+        /// Creates the specified Windows10NetworkBoundaryConfiguration using POST.
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToCreate">The Windows10NetworkBoundaryConfiguration to create.</param>
         /// <returns>The created Windows10NetworkBoundaryConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> CreateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10NetworkBoundaryConfiguration using PUT.
+        /// Creates the specified Windows10NetworkBoundaryConfiguration using POST.
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToCreate">The Windows10NetworkBoundaryConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

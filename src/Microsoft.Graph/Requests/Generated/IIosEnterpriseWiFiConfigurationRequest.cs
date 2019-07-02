@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosEnterpriseWiFiConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosEnterpriseWiFiConfiguration using PUT.
+        /// Creates the specified IosEnterpriseWiFiConfiguration using POST.
         /// </summary>
         /// <param name="iosEnterpriseWiFiConfigurationToCreate">The IosEnterpriseWiFiConfiguration to create.</param>
         /// <returns>The created IosEnterpriseWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<IosEnterpriseWiFiConfiguration> CreateAsync(IosEnterpriseWiFiConfiguration iosEnterpriseWiFiConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosEnterpriseWiFiConfiguration using PUT.
+        /// Creates the specified IosEnterpriseWiFiConfiguration using POST.
         /// </summary>
         /// <param name="iosEnterpriseWiFiConfigurationToCreate">The IosEnterpriseWiFiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

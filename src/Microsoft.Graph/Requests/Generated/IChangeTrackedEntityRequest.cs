@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IChangeTrackedEntityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ChangeTrackedEntity using PUT.
+        /// Creates the specified ChangeTrackedEntity using POST.
         /// </summary>
         /// <param name="changeTrackedEntityToCreate">The ChangeTrackedEntity to create.</param>
         /// <returns>The created ChangeTrackedEntity.</returns>
         System.Threading.Tasks.Task<ChangeTrackedEntity> CreateAsync(ChangeTrackedEntity changeTrackedEntityToCreate);        /// <summary>
-        /// Creates the specified ChangeTrackedEntity using PUT.
+        /// Creates the specified ChangeTrackedEntity using POST.
         /// </summary>
         /// <param name="changeTrackedEntityToCreate">The ChangeTrackedEntity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEnterpriseCodeSigningCertificateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EnterpriseCodeSigningCertificate using PUT.
+        /// Creates the specified EnterpriseCodeSigningCertificate using POST.
         /// </summary>
         /// <param name="enterpriseCodeSigningCertificateToCreate">The EnterpriseCodeSigningCertificate to create.</param>
         /// <returns>The created EnterpriseCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> CreateAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToCreate);        /// <summary>
-        /// Creates the specified EnterpriseCodeSigningCertificate using PUT.
+        /// Creates the specified EnterpriseCodeSigningCertificate using POST.
         /// </summary>
         /// <param name="enterpriseCodeSigningCertificateToCreate">The EnterpriseCodeSigningCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

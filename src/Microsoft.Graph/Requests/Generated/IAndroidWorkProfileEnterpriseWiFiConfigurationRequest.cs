@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidWorkProfileEnterpriseWiFiConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidWorkProfileEnterpriseWiFiConfiguration using PUT.
+        /// Creates the specified AndroidWorkProfileEnterpriseWiFiConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileEnterpriseWiFiConfigurationToCreate">The AndroidWorkProfileEnterpriseWiFiConfiguration to create.</param>
         /// <returns>The created AndroidWorkProfileEnterpriseWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileEnterpriseWiFiConfiguration> CreateAsync(AndroidWorkProfileEnterpriseWiFiConfiguration androidWorkProfileEnterpriseWiFiConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileEnterpriseWiFiConfiguration using PUT.
+        /// Creates the specified AndroidWorkProfileEnterpriseWiFiConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileEnterpriseWiFiConfigurationToCreate">The AndroidWorkProfileEnterpriseWiFiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -150,14 +150,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets messaging block mms.
-        /// Indicates whether or not to block the the MMS send/receive functionality on the device.
+        /// Indicates whether or not to block the MMS send/receive functionality on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockMMS", Required = Newtonsoft.Json.Required.Default)]
         public bool? MessagingBlockMMS { get; set; }
     
         /// <summary>
         /// Gets or sets messaging block rich communication services.
-        /// Indicates whether or not to block the the RCS send/receive functionality on the device.
+        /// Indicates whether or not to block the RCS send/receive functionality on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockRichCommunicationServices", Required = Newtonsoft.Json.Required.Default)]
         public bool? MessagingBlockRichCommunicationServices { get; set; }
@@ -315,6 +315,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenEnableAppInstallControl", Required = Newtonsoft.Json.Required.Default)]
         public bool? SmartScreenEnableAppInstallControl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen app install control.
+        /// Added in Windows 10, version 1703. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenAppInstallControl", Required = Newtonsoft.Json.Required.Default)]
+        public AppInstallControlType? SmartScreenAppInstallControl { get; set; }
     
         /// <summary>
         /// Gets or sets personalization desktop image url.
@@ -917,6 +924,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
         public Int32? LockScreenTimeoutInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lock screen activate apps with voice.
+        /// This policy setting specifies whether Windows apps can be activated by voice while the system is locked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenActivateAppsWithVoice", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? LockScreenActivateAppsWithVoice { get; set; }
     
         /// <summary>
         /// Gets or sets password block simple.

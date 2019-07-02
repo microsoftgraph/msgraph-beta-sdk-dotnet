@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPrivilegedAccessRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PrivilegedAccess using PUT.
+        /// Creates the specified PrivilegedAccess using POST.
         /// </summary>
         /// <param name="privilegedAccessToCreate">The PrivilegedAccess to create.</param>
         /// <returns>The created PrivilegedAccess.</returns>
         System.Threading.Tasks.Task<PrivilegedAccess> CreateAsync(PrivilegedAccess privilegedAccessToCreate);        /// <summary>
-        /// Creates the specified PrivilegedAccess using PUT.
+        /// Creates the specified PrivilegedAccess using POST.
         /// </summary>
         /// <param name="privilegedAccessToCreate">The PrivilegedAccess to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

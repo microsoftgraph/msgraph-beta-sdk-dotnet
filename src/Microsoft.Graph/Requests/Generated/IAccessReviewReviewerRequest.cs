@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAccessReviewReviewerRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AccessReviewReviewer using PUT.
+        /// Creates the specified AccessReviewReviewer using POST.
         /// </summary>
         /// <param name="accessReviewReviewerToCreate">The AccessReviewReviewer to create.</param>
         /// <returns>The created AccessReviewReviewer.</returns>
         System.Threading.Tasks.Task<AccessReviewReviewer> CreateAsync(AccessReviewReviewer accessReviewReviewerToCreate);        /// <summary>
-        /// Creates the specified AccessReviewReviewer using PUT.
+        /// Creates the specified AccessReviewReviewer using POST.
         /// </summary>
         /// <param name="accessReviewReviewerToCreate">The AccessReviewReviewer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

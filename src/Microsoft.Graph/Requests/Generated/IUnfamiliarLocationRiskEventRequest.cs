@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUnfamiliarLocationRiskEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UnfamiliarLocationRiskEvent using PUT.
+        /// Creates the specified UnfamiliarLocationRiskEvent using POST.
         /// </summary>
         /// <param name="unfamiliarLocationRiskEventToCreate">The UnfamiliarLocationRiskEvent to create.</param>
         /// <returns>The created UnfamiliarLocationRiskEvent.</returns>
         System.Threading.Tasks.Task<UnfamiliarLocationRiskEvent> CreateAsync(UnfamiliarLocationRiskEvent unfamiliarLocationRiskEventToCreate);        /// <summary>
-        /// Creates the specified UnfamiliarLocationRiskEvent using PUT.
+        /// Creates the specified UnfamiliarLocationRiskEvent using POST.
         /// </summary>
         /// <param name="unfamiliarLocationRiskEventToCreate">The UnfamiliarLocationRiskEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

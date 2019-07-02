@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEndpointRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Endpoint using PUT.
+        /// Creates the specified Endpoint using POST.
         /// </summary>
         /// <param name="endpointToCreate">The Endpoint to create.</param>
         /// <returns>The created Endpoint.</returns>
         System.Threading.Tasks.Task<Endpoint> CreateAsync(Endpoint endpointToCreate);        /// <summary>
-        /// Creates the specified Endpoint using PUT.
+        /// Creates the specified Endpoint using POST.
         /// </summary>
         /// <param name="endpointToCreate">The Endpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

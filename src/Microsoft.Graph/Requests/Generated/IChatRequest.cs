@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IChatRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Chat using PUT.
+        /// Creates the specified Chat using POST.
         /// </summary>
         /// <param name="chatToCreate">The Chat to create.</param>
         /// <returns>The created Chat.</returns>
         System.Threading.Tasks.Task<Chat> CreateAsync(Chat chatToCreate);        /// <summary>
-        /// Creates the specified Chat using PUT.
+        /// Creates the specified Chat using POST.
         /// </summary>
         /// <param name="chatToCreate">The Chat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

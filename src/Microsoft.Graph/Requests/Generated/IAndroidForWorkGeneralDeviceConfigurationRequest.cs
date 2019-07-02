@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidForWorkGeneralDeviceConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using PUT.
+        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkGeneralDeviceConfigurationToCreate">The AndroidForWorkGeneralDeviceConfiguration to create.</param>
         /// <returns>The created AndroidForWorkGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> CreateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using PUT.
+        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkGeneralDeviceConfigurationToCreate">The AndroidForWorkGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

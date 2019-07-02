@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IImportedAppleDeviceIdentityRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ImportedAppleDeviceIdentity using PUT.
+        /// Creates the specified ImportedAppleDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedAppleDeviceIdentityToCreate">The ImportedAppleDeviceIdentity to create.</param>
         /// <returns>The created ImportedAppleDeviceIdentity.</returns>
         System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> CreateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToCreate);        /// <summary>
-        /// Creates the specified ImportedAppleDeviceIdentity using PUT.
+        /// Creates the specified ImportedAppleDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedAppleDeviceIdentityToCreate">The ImportedAppleDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

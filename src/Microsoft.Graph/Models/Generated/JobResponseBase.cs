@@ -62,7 +62,7 @@ namespace Microsoft.Graph
         /// Gets or sets error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public CaasError Error { get; set; }
+        public ClassificationError Error { get; set; }
     
     }
 }

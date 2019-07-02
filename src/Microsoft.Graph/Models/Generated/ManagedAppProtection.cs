@@ -254,6 +254,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedOutboundClipboardSharingExceptionLength", Required = Newtonsoft.Json.Required.Default)]
         public Int32? AllowedOutboundClipboardSharingExceptionLength { get; set; }
     
+        /// <summary>
+        /// Gets or sets notification restriction.
+        /// Specify app notification restriction
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppNotificationRestriction? NotificationRestriction { get; set; }
+    
     }
 }
 

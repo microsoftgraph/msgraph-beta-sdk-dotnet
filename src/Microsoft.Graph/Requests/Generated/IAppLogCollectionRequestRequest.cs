@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAppLogCollectionRequestRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AppLogCollectionRequestObject using PUT.
+        /// Creates the specified AppLogCollectionRequestObject using POST.
         /// </summary>
         /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
         /// <returns>The created AppLogCollectionRequestObject.</returns>
         System.Threading.Tasks.Task<AppLogCollectionRequestObject> CreateAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate);        /// <summary>
-        /// Creates the specified AppLogCollectionRequestObject using PUT.
+        /// Creates the specified AppLogCollectionRequestObject using POST.
         /// </summary>
         /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

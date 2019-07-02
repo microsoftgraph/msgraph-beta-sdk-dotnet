@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITeamsUserActivityCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TeamsUserActivityCounts using PUT.
+        /// Creates the specified TeamsUserActivityCounts using POST.
         /// </summary>
         /// <param name="teamsUserActivityCountsToCreate">The TeamsUserActivityCounts to create.</param>
         /// <returns>The created TeamsUserActivityCounts.</returns>
         System.Threading.Tasks.Task<TeamsUserActivityCounts> CreateAsync(TeamsUserActivityCounts teamsUserActivityCountsToCreate);        /// <summary>
-        /// Creates the specified TeamsUserActivityCounts using PUT.
+        /// Creates the specified TeamsUserActivityCounts using POST.
         /// </summary>
         /// <param name="teamsUserActivityCountsToCreate">The TeamsUserActivityCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

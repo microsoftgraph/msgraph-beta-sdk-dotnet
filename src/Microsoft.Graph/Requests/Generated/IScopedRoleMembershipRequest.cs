@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IScopedRoleMembershipRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ScopedRoleMembership using PUT.
+        /// Creates the specified ScopedRoleMembership using POST.
         /// </summary>
         /// <param name="scopedRoleMembershipToCreate">The ScopedRoleMembership to create.</param>
         /// <returns>The created ScopedRoleMembership.</returns>
         System.Threading.Tasks.Task<ScopedRoleMembership> CreateAsync(ScopedRoleMembership scopedRoleMembershipToCreate);        /// <summary>
-        /// Creates the specified ScopedRoleMembership using PUT.
+        /// Creates the specified ScopedRoleMembership using POST.
         /// </summary>
         /// <param name="scopedRoleMembershipToCreate">The ScopedRoleMembership to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

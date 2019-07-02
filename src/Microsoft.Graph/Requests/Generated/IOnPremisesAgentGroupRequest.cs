@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnPremisesAgentGroupRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnPremisesAgentGroup using PUT.
+        /// Creates the specified OnPremisesAgentGroup using POST.
         /// </summary>
         /// <param name="onPremisesAgentGroupToCreate">The OnPremisesAgentGroup to create.</param>
         /// <returns>The created OnPremisesAgentGroup.</returns>
         System.Threading.Tasks.Task<OnPremisesAgentGroup> CreateAsync(OnPremisesAgentGroup onPremisesAgentGroupToCreate);        /// <summary>
-        /// Creates the specified OnPremisesAgentGroup using PUT.
+        /// Creates the specified OnPremisesAgentGroup using POST.
         /// </summary>
         /// <param name="onPremisesAgentGroupToCreate">The OnPremisesAgentGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

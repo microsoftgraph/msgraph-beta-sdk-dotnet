@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEducationSubmissionResourceRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EducationSubmissionResource using PUT.
+        /// Creates the specified EducationSubmissionResource using POST.
         /// </summary>
         /// <param name="educationSubmissionResourceToCreate">The EducationSubmissionResource to create.</param>
         /// <returns>The created EducationSubmissionResource.</returns>
         System.Threading.Tasks.Task<EducationSubmissionResource> CreateAsync(EducationSubmissionResource educationSubmissionResourceToCreate);        /// <summary>
-        /// Creates the specified EducationSubmissionResource using PUT.
+        /// Creates the specified EducationSubmissionResource using POST.
         /// </summary>
         /// <param name="educationSubmissionResourceToCreate">The EducationSubmissionResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAzureADLicenseUsageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AzureADLicenseUsage using PUT.
+        /// Creates the specified AzureADLicenseUsage using POST.
         /// </summary>
         /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
         /// <returns>The created AzureADLicenseUsage.</returns>
         System.Threading.Tasks.Task<AzureADLicenseUsage> CreateAsync(AzureADLicenseUsage azureADLicenseUsageToCreate);        /// <summary>
-        /// Creates the specified AzureADLicenseUsage using PUT.
+        /// Creates the specified AzureADLicenseUsage using POST.
         /// </summary>
         /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

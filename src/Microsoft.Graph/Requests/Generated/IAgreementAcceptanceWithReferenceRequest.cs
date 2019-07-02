@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AgreementAcceptance> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified AgreementAcceptance using PUT.
+        /// Creates the specified AgreementAcceptance using POST.
         /// </summary>
         /// <param name="agreementAcceptanceToCreate">The AgreementAcceptance to create.</param>
         /// <returns>The created AgreementAcceptance.</returns>
         System.Threading.Tasks.Task<AgreementAcceptance> CreateAsync(AgreementAcceptance agreementAcceptanceToCreate);        /// <summary>
-        /// Creates the specified AgreementAcceptance using PUT.
+        /// Creates the specified AgreementAcceptance using POST.
         /// </summary>
         /// <param name="agreementAcceptanceToCreate">The AgreementAcceptance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

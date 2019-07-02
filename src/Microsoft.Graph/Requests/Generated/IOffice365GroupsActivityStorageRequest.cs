@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOffice365GroupsActivityStorageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Office365GroupsActivityStorage using PUT.
+        /// Creates the specified Office365GroupsActivityStorage using POST.
         /// </summary>
         /// <param name="office365GroupsActivityStorageToCreate">The Office365GroupsActivityStorage to create.</param>
         /// <returns>The created Office365GroupsActivityStorage.</returns>
         System.Threading.Tasks.Task<Office365GroupsActivityStorage> CreateAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToCreate);        /// <summary>
-        /// Creates the specified Office365GroupsActivityStorage using PUT.
+        /// Creates the specified Office365GroupsActivityStorage using POST.
         /// </summary>
         /// <param name="office365GroupsActivityStorageToCreate">The Office365GroupsActivityStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

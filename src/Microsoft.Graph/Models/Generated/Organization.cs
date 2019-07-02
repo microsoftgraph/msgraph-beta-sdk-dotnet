@@ -188,6 +188,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
         public IOrganizationExtensionsCollectionPage Extensions { get; set; }
     
+        /// <summary>
+        /// Gets or sets brandings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "brandings", Required = Newtonsoft.Json.Required.Default)]
+        public IOrganizationBrandingsCollectionPage Brandings { get; set; }
+    
     }
 }
 

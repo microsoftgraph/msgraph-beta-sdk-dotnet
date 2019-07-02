@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOutlookTaskFolderRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OutlookTaskFolder using PUT.
+        /// Creates the specified OutlookTaskFolder using POST.
         /// </summary>
         /// <param name="outlookTaskFolderToCreate">The OutlookTaskFolder to create.</param>
         /// <returns>The created OutlookTaskFolder.</returns>
         System.Threading.Tasks.Task<OutlookTaskFolder> CreateAsync(OutlookTaskFolder outlookTaskFolderToCreate);        /// <summary>
-        /// Creates the specified OutlookTaskFolder using PUT.
+        /// Creates the specified OutlookTaskFolder using POST.
         /// </summary>
         /// <param name="outlookTaskFolderToCreate">The OutlookTaskFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

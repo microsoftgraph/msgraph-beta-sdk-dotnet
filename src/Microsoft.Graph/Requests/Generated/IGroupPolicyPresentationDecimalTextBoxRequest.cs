@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupPolicyPresentationDecimalTextBoxRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupPolicyPresentationDecimalTextBox using PUT.
+        /// Creates the specified GroupPolicyPresentationDecimalTextBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationDecimalTextBoxToCreate">The GroupPolicyPresentationDecimalTextBox to create.</param>
         /// <returns>The created GroupPolicyPresentationDecimalTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> CreateAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyPresentationDecimalTextBox using PUT.
+        /// Creates the specified GroupPolicyPresentationDecimalTextBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationDecimalTextBoxToCreate">The GroupPolicyPresentationDecimalTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

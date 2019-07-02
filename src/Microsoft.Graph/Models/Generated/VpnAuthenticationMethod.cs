@@ -30,6 +30,11 @@ namespace Microsoft.Graph
         UsernameAndPassword = 1,
 	
         /// <summary>
+        /// Shared Secret
+        /// </summary>
+        SharedSecret = 2,
+	
+        /// <summary>
         /// Derived Credential
         /// </summary>
         DerivedCredential = 3,

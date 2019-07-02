@@ -50,5 +50,30 @@ namespace Microsoft.Graph
             return new RoleScopeTagRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IRoleScopeTagAssignmentsCollectionRequestBuilder Assignments
+        {
+            get
+            {
+                return new RoleScopeTagAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for RoleScopeTagAssign.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagAssignRequestBuilder"/>.</returns>
+        public IRoleScopeTagAssignRequestBuilder Assign(
+            IEnumerable<RoleScopeTagAutoAssignment> assignments = null)
+        {
+            return new RoleScopeTagAssignRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
+                this.Client,
+                assignments);
+        }
+    
     }
 }

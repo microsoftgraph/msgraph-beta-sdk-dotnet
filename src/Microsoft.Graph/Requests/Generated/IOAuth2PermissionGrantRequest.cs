@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOAuth2PermissionGrantRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OAuth2PermissionGrant using PUT.
+        /// Creates the specified OAuth2PermissionGrant using POST.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
         /// <returns>The created OAuth2PermissionGrant.</returns>
         System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate);        /// <summary>
-        /// Creates the specified OAuth2PermissionGrant using PUT.
+        /// Creates the specified OAuth2PermissionGrant using POST.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

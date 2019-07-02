@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidWorkProfileCertificateProfileBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidWorkProfileCertificateProfileBase using PUT.
+        /// Creates the specified AndroidWorkProfileCertificateProfileBase using POST.
         /// </summary>
         /// <param name="androidWorkProfileCertificateProfileBaseToCreate">The AndroidWorkProfileCertificateProfileBase to create.</param>
         /// <returns>The created AndroidWorkProfileCertificateProfileBase.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileCertificateProfileBase> CreateAsync(AndroidWorkProfileCertificateProfileBase androidWorkProfileCertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileCertificateProfileBase using PUT.
+        /// Creates the specified AndroidWorkProfileCertificateProfileBase using POST.
         /// </summary>
         /// <param name="androidWorkProfileCertificateProfileBaseToCreate">The AndroidWorkProfileCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

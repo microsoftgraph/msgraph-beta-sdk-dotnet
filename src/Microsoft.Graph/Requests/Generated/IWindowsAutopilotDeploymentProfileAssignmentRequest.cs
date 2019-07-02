@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsAutopilotDeploymentProfileAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using PUT.
+        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
         /// <returns>The created WindowsAutopilotDeploymentProfileAssignment.</returns>
         System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> CreateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate);        /// <summary>
-        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using PUT.
+        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

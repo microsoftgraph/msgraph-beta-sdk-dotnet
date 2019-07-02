@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAdvancedThreatProtectionOnboardingDeviceSettingStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using PUT.
+        /// Creates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToCreate">The AdvancedThreatProtectionOnboardingDeviceSettingState to create.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> CreateAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToCreate);        /// <summary>
-        /// Creates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using PUT.
+        /// Creates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToCreate">The AdvancedThreatProtectionOnboardingDeviceSettingState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

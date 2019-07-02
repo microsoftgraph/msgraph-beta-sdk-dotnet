@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGeneralLedgerEntryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GeneralLedgerEntry using PUT.
+        /// Creates the specified GeneralLedgerEntry using POST.
         /// </summary>
         /// <param name="generalLedgerEntryToCreate">The GeneralLedgerEntry to create.</param>
         /// <returns>The created GeneralLedgerEntry.</returns>
         System.Threading.Tasks.Task<GeneralLedgerEntry> CreateAsync(GeneralLedgerEntry generalLedgerEntryToCreate);        /// <summary>
-        /// Creates the specified GeneralLedgerEntry using PUT.
+        /// Creates the specified GeneralLedgerEntry using POST.
         /// </summary>
         /// <param name="generalLedgerEntryToCreate">The GeneralLedgerEntry to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPlannerDeltaRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PlannerDelta using PUT.
+        /// Creates the specified PlannerDelta using POST.
         /// </summary>
         /// <param name="plannerDeltaToCreate">The PlannerDelta to create.</param>
         /// <returns>The created PlannerDelta.</returns>
         System.Threading.Tasks.Task<PlannerDelta> CreateAsync(PlannerDelta plannerDeltaToCreate);        /// <summary>
-        /// Creates the specified PlannerDelta using PUT.
+        /// Creates the specified PlannerDelta using POST.
         /// </summary>
         /// <param name="plannerDeltaToCreate">The PlannerDelta to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

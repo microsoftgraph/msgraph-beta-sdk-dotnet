@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSImportedPFXCertificateProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSImportedPFXCertificateProfile using PUT.
+        /// Creates the specified MacOSImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="macOSImportedPFXCertificateProfileToCreate">The MacOSImportedPFXCertificateProfile to create.</param>
         /// <returns>The created MacOSImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> CreateAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified MacOSImportedPFXCertificateProfile using PUT.
+        /// Creates the specified MacOSImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="macOSImportedPFXCertificateProfileToCreate">The MacOSImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

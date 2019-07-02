@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new ISensitivityLabelRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AssignedPolicies.
+        /// Gets the request builder for Sublabels.
         /// </summary>
-        /// <returns>The <see cref="ISensitivityLabelAssignedPoliciesCollectionRequestBuilder"/>.</returns>
-        ISensitivityLabelAssignedPoliciesCollectionRequestBuilder AssignedPolicies { get; }
+        /// <returns>The <see cref="ISensitivityLabelSublabelsCollectionRequestBuilder"/>.</returns>
+        ISensitivityLabelSublabelsCollectionRequestBuilder Sublabels { get; }
     
         
     

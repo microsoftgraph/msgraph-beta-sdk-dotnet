@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IShiftRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Shift using PUT.
+        /// Creates the specified Shift using POST.
         /// </summary>
         /// <param name="shiftToCreate">The Shift to create.</param>
         /// <returns>The created Shift.</returns>
         System.Threading.Tasks.Task<Shift> CreateAsync(Shift shiftToCreate);        /// <summary>
-        /// Creates the specified Shift using PUT.
+        /// Creates the specified Shift using POST.
         /// </summary>
         /// <param name="shiftToCreate">The Shift to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

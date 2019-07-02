@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAgreementRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Agreement using PUT.
+        /// Creates the specified Agreement using POST.
         /// </summary>
         /// <param name="agreementToCreate">The Agreement to create.</param>
         /// <returns>The created Agreement.</returns>
         System.Threading.Tasks.Task<Agreement> CreateAsync(Agreement agreementToCreate);        /// <summary>
-        /// Creates the specified Agreement using PUT.
+        /// Creates the specified Agreement using POST.
         /// </summary>
         /// <param name="agreementToCreate">The Agreement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

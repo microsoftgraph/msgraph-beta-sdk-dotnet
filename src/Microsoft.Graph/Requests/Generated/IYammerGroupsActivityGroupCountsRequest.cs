@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IYammerGroupsActivityGroupCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified YammerGroupsActivityGroupCounts using PUT.
+        /// Creates the specified YammerGroupsActivityGroupCounts using POST.
         /// </summary>
         /// <param name="yammerGroupsActivityGroupCountsToCreate">The YammerGroupsActivityGroupCounts to create.</param>
         /// <returns>The created YammerGroupsActivityGroupCounts.</returns>
         System.Threading.Tasks.Task<YammerGroupsActivityGroupCounts> CreateAsync(YammerGroupsActivityGroupCounts yammerGroupsActivityGroupCountsToCreate);        /// <summary>
-        /// Creates the specified YammerGroupsActivityGroupCounts using PUT.
+        /// Creates the specified YammerGroupsActivityGroupCounts using POST.
         /// </summary>
         /// <param name="yammerGroupsActivityGroupCountsToCreate">The YammerGroupsActivityGroupCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

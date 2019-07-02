@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDirectorySettingTemplateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DirectorySettingTemplate using PUT.
+        /// Creates the specified DirectorySettingTemplate using POST.
         /// </summary>
         /// <param name="directorySettingTemplateToCreate">The DirectorySettingTemplate to create.</param>
         /// <returns>The created DirectorySettingTemplate.</returns>
         System.Threading.Tasks.Task<DirectorySettingTemplate> CreateAsync(DirectorySettingTemplate directorySettingTemplateToCreate);        /// <summary>
-        /// Creates the specified DirectorySettingTemplate using PUT.
+        /// Creates the specified DirectorySettingTemplate using POST.
         /// </summary>
         /// <param name="directorySettingTemplateToCreate">The DirectorySettingTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

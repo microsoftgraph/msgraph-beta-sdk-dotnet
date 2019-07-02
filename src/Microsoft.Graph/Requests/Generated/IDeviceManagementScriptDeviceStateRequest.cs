@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementScriptDeviceStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementScriptDeviceState using PUT.
+        /// Creates the specified DeviceManagementScriptDeviceState using POST.
         /// </summary>
         /// <param name="deviceManagementScriptDeviceStateToCreate">The DeviceManagementScriptDeviceState to create.</param>
         /// <returns>The created DeviceManagementScriptDeviceState.</returns>
         System.Threading.Tasks.Task<DeviceManagementScriptDeviceState> CreateAsync(DeviceManagementScriptDeviceState deviceManagementScriptDeviceStateToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementScriptDeviceState using PUT.
+        /// Creates the specified DeviceManagementScriptDeviceState using POST.
         /// </summary>
         /// <param name="deviceManagementScriptDeviceStateToCreate">The DeviceManagementScriptDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

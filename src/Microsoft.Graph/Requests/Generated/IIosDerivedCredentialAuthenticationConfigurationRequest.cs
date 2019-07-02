@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosDerivedCredentialAuthenticationConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using PUT.
+        /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using POST.
         /// </summary>
         /// <param name="iosDerivedCredentialAuthenticationConfigurationToCreate">The IosDerivedCredentialAuthenticationConfiguration to create.</param>
         /// <returns>The created IosDerivedCredentialAuthenticationConfiguration.</returns>
         System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> CreateAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using PUT.
+        /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using POST.
         /// </summary>
         /// <param name="iosDerivedCredentialAuthenticationConfigurationToCreate">The IosDerivedCredentialAuthenticationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

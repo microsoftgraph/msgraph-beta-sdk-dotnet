@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGovernanceRoleAssignmentRequestRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GovernanceRoleAssignmentRequestObject using PUT.
+        /// Creates the specified GovernanceRoleAssignmentRequestObject using POST.
         /// </summary>
         /// <param name="governanceRoleAssignmentRequestObjectToCreate">The GovernanceRoleAssignmentRequestObject to create.</param>
         /// <returns>The created GovernanceRoleAssignmentRequestObject.</returns>
         System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> CreateAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToCreate);        /// <summary>
-        /// Creates the specified GovernanceRoleAssignmentRequestObject using PUT.
+        /// Creates the specified GovernanceRoleAssignmentRequestObject using POST.
         /// </summary>
         /// <param name="governanceRoleAssignmentRequestObjectToCreate">The GovernanceRoleAssignmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

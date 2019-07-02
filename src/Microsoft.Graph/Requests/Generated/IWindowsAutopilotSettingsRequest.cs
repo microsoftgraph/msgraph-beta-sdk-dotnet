@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsAutopilotSettingsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsAutopilotSettings using PUT.
+        /// Creates the specified WindowsAutopilotSettings using POST.
         /// </summary>
         /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
         /// <returns>The created WindowsAutopilotSettings.</returns>
         System.Threading.Tasks.Task<WindowsAutopilotSettings> CreateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate);        /// <summary>
-        /// Creates the specified WindowsAutopilotSettings using PUT.
+        /// Creates the specified WindowsAutopilotSettings using POST.
         /// </summary>
         /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

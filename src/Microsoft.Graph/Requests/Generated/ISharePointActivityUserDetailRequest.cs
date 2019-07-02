@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISharePointActivityUserDetailRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SharePointActivityUserDetail using PUT.
+        /// Creates the specified SharePointActivityUserDetail using POST.
         /// </summary>
         /// <param name="sharePointActivityUserDetailToCreate">The SharePointActivityUserDetail to create.</param>
         /// <returns>The created SharePointActivityUserDetail.</returns>
         System.Threading.Tasks.Task<SharePointActivityUserDetail> CreateAsync(SharePointActivityUserDetail sharePointActivityUserDetailToCreate);        /// <summary>
-        /// Creates the specified SharePointActivityUserDetail using PUT.
+        /// Creates the specified SharePointActivityUserDetail using POST.
         /// </summary>
         /// <param name="sharePointActivityUserDetailToCreate">The SharePointActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

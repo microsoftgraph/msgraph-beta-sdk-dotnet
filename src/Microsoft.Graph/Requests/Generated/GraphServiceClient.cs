@@ -427,6 +427,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceRiskDetections request builder.
+        /// </summary>
+        public IGraphServiceRiskDetectionsCollectionRequestBuilder RiskDetections
+        {
+            get
+            {
+                return new GraphServiceRiskDetectionsCollectionRequestBuilder(this.BaseUrl + "/riskDetections", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceRiskyUsers request builder.
         /// </summary>
         public IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers
@@ -830,6 +841,17 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder(this.BaseUrl + "/onPremisesPublishingProfiles", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceApplicationTemplates request builder.
+        /// </summary>
+        public IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates
+        {
+            get
+            {
+                return new GraphServiceApplicationTemplatesCollectionRequestBuilder(this.BaseUrl + "/applicationTemplates", this);
             }
         }
     

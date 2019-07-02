@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSLobAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSLobApp using PUT.
+        /// Creates the specified MacOSLobApp using POST.
         /// </summary>
         /// <param name="macOSLobAppToCreate">The MacOSLobApp to create.</param>
         /// <returns>The created MacOSLobApp.</returns>
         System.Threading.Tasks.Task<MacOSLobApp> CreateAsync(MacOSLobApp macOSLobAppToCreate);        /// <summary>
-        /// Creates the specified MacOSLobApp using PUT.
+        /// Creates the specified MacOSLobApp using POST.
         /// </summary>
         /// <param name="macOSLobAppToCreate">The MacOSLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

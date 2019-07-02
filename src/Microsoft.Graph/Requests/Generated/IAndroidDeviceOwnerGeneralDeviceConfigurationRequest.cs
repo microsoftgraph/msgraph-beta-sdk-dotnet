@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidDeviceOwnerGeneralDeviceConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidDeviceOwnerGeneralDeviceConfiguration using PUT.
+        /// Creates the specified AndroidDeviceOwnerGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerGeneralDeviceConfigurationToCreate">The AndroidDeviceOwnerGeneralDeviceConfiguration to create.</param>
         /// <returns>The created AndroidDeviceOwnerGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidDeviceOwnerGeneralDeviceConfiguration> CreateAsync(AndroidDeviceOwnerGeneralDeviceConfiguration androidDeviceOwnerGeneralDeviceConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerGeneralDeviceConfiguration using PUT.
+        /// Creates the specified AndroidDeviceOwnerGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerGeneralDeviceConfigurationToCreate">The AndroidDeviceOwnerGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

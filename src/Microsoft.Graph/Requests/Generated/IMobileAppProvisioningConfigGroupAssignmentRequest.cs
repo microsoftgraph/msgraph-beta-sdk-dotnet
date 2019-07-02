@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppProvisioningConfigGroupAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using PUT.
+        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
         /// <returns>The created MobileAppProvisioningConfigGroupAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate);        /// <summary>
-        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using PUT.
+        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

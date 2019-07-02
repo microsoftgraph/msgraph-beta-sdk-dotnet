@@ -65,10 +65,10 @@ namespace Microsoft.Graph
         public Int32? DurationInMilliseconds { get; set; }
     
         /// <summary>
-        /// Gets or sets initated by.
+        /// Gets or sets initiated by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initatedBy", Required = Newtonsoft.Json.Required.Default)]
-        public Initiator InitatedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatedBy", Required = Newtonsoft.Json.Required.Default)]
+        public Initiator InitiatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets source system.

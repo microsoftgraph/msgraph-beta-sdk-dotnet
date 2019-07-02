@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AssignedPolicies.
+        /// Gets the request builder for Sublabels.
         /// </summary>
-        /// <returns>The <see cref="ISensitivityLabelAssignedPoliciesCollectionRequestBuilder"/>.</returns>
-        public ISensitivityLabelAssignedPoliciesCollectionRequestBuilder AssignedPolicies
+        /// <returns>The <see cref="ISensitivityLabelSublabelsCollectionRequestBuilder"/>.</returns>
+        public ISensitivityLabelSublabelsCollectionRequestBuilder Sublabels
         {
             get
             {
-                return new SensitivityLabelAssignedPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignedPolicies"), this.Client);
+                return new SensitivityLabelSublabelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sublabels"), this.Client);
             }
         }
     

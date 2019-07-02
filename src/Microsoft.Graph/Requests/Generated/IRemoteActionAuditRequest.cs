@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRemoteActionAuditRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RemoteActionAudit using PUT.
+        /// Creates the specified RemoteActionAudit using POST.
         /// </summary>
         /// <param name="remoteActionAuditToCreate">The RemoteActionAudit to create.</param>
         /// <returns>The created RemoteActionAudit.</returns>
         System.Threading.Tasks.Task<RemoteActionAudit> CreateAsync(RemoteActionAudit remoteActionAuditToCreate);        /// <summary>
-        /// Creates the specified RemoteActionAudit using PUT.
+        /// Creates the specified RemoteActionAudit using POST.
         /// </summary>
         /// <param name="remoteActionAuditToCreate">The RemoteActionAudit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

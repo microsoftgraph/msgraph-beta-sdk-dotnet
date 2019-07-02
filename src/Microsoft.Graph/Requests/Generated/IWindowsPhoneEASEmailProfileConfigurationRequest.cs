@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhoneEASEmailProfileConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using PUT.
+        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhoneEASEmailProfileConfigurationToCreate">The WindowsPhoneEASEmailProfileConfiguration to create.</param>
         /// <returns>The created WindowsPhoneEASEmailProfileConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsPhoneEASEmailProfileConfiguration> CreateAsync(WindowsPhoneEASEmailProfileConfiguration windowsPhoneEASEmailProfileConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using PUT.
+        /// Creates the specified WindowsPhoneEASEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhoneEASEmailProfileConfigurationToCreate">The WindowsPhoneEASEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

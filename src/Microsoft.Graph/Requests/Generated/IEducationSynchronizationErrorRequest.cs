@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEducationSynchronizationErrorRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EducationSynchronizationError using PUT.
+        /// Creates the specified EducationSynchronizationError using POST.
         /// </summary>
         /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
         /// <returns>The created EducationSynchronizationError.</returns>
         System.Threading.Tasks.Task<EducationSynchronizationError> CreateAsync(EducationSynchronizationError educationSynchronizationErrorToCreate);        /// <summary>
-        /// Creates the specified EducationSynchronizationError using PUT.
+        /// Creates the specified EducationSynchronizationError using POST.
         /// </summary>
         /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

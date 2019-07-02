@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMobileAppDependencyRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MobileAppDependency using PUT.
+        /// Creates the specified MobileAppDependency using POST.
         /// </summary>
         /// <param name="mobileAppDependencyToCreate">The MobileAppDependency to create.</param>
         /// <returns>The created MobileAppDependency.</returns>
         System.Threading.Tasks.Task<MobileAppDependency> CreateAsync(MobileAppDependency mobileAppDependencyToCreate);        /// <summary>
-        /// Creates the specified MobileAppDependency using PUT.
+        /// Creates the specified MobileAppDependency using POST.
         /// </summary>
         /// <param name="mobileAppDependencyToCreate">The MobileAppDependency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

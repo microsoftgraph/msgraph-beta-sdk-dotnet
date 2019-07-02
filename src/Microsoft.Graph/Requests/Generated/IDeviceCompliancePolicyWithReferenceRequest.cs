@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceCompliancePolicy> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified DeviceCompliancePolicy using PUT.
+        /// Creates the specified DeviceCompliancePolicy using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyToCreate">The DeviceCompliancePolicy to create.</param>
         /// <returns>The created DeviceCompliancePolicy.</returns>
         System.Threading.Tasks.Task<DeviceCompliancePolicy> CreateAsync(DeviceCompliancePolicy deviceCompliancePolicyToCreate);        /// <summary>
-        /// Creates the specified DeviceCompliancePolicy using PUT.
+        /// Creates the specified DeviceCompliancePolicy using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyToCreate">The DeviceCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

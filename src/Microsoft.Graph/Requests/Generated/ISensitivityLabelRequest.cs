@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISensitivityLabelRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SensitivityLabel using PUT.
+        /// Creates the specified SensitivityLabel using POST.
         /// </summary>
         /// <param name="sensitivityLabelToCreate">The SensitivityLabel to create.</param>
         /// <returns>The created SensitivityLabel.</returns>
         System.Threading.Tasks.Task<SensitivityLabel> CreateAsync(SensitivityLabel sensitivityLabelToCreate);        /// <summary>
-        /// Creates the specified SensitivityLabel using PUT.
+        /// Creates the specified SensitivityLabel using POST.
         /// </summary>
         /// <param name="sensitivityLabelToCreate">The SensitivityLabel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

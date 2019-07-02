@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDepMacOSEnrollmentProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DepMacOSEnrollmentProfile using PUT.
+        /// Creates the specified DepMacOSEnrollmentProfile using POST.
         /// </summary>
         /// <param name="depMacOSEnrollmentProfileToCreate">The DepMacOSEnrollmentProfile to create.</param>
         /// <returns>The created DepMacOSEnrollmentProfile.</returns>
         System.Threading.Tasks.Task<DepMacOSEnrollmentProfile> CreateAsync(DepMacOSEnrollmentProfile depMacOSEnrollmentProfileToCreate);        /// <summary>
-        /// Creates the specified DepMacOSEnrollmentProfile using PUT.
+        /// Creates the specified DepMacOSEnrollmentProfile using POST.
         /// </summary>
         /// <param name="depMacOSEnrollmentProfileToCreate">The DepMacOSEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

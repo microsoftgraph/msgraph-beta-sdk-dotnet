@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindows10EnrollmentCompletionPageConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Windows10EnrollmentCompletionPageConfiguration using PUT.
+        /// Creates the specified Windows10EnrollmentCompletionPageConfiguration using POST.
         /// </summary>
         /// <param name="windows10EnrollmentCompletionPageConfigurationToCreate">The Windows10EnrollmentCompletionPageConfiguration to create.</param>
         /// <returns>The created Windows10EnrollmentCompletionPageConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfiguration> CreateAsync(Windows10EnrollmentCompletionPageConfiguration windows10EnrollmentCompletionPageConfigurationToCreate);        /// <summary>
-        /// Creates the specified Windows10EnrollmentCompletionPageConfiguration using PUT.
+        /// Creates the specified Windows10EnrollmentCompletionPageConfiguration using POST.
         /// </summary>
         /// <param name="windows10EnrollmentCompletionPageConfigurationToCreate">The Windows10EnrollmentCompletionPageConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

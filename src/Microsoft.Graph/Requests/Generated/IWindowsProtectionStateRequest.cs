@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsProtectionStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsProtectionState using PUT.
+        /// Creates the specified WindowsProtectionState using POST.
         /// </summary>
         /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
         /// <returns>The created WindowsProtectionState.</returns>
         System.Threading.Tasks.Task<WindowsProtectionState> CreateAsync(WindowsProtectionState windowsProtectionStateToCreate);        /// <summary>
-        /// Creates the specified WindowsProtectionState using PUT.
+        /// Creates the specified WindowsProtectionState using POST.
         /// </summary>
         /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

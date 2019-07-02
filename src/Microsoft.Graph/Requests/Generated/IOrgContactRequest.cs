@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOrgContactRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OrgContact using PUT.
+        /// Creates the specified OrgContact using POST.
         /// </summary>
         /// <param name="orgContactToCreate">The OrgContact to create.</param>
         /// <returns>The created OrgContact.</returns>
         System.Threading.Tasks.Task<OrgContact> CreateAsync(OrgContact orgContactToCreate);        /// <summary>
-        /// Creates the specified OrgContact using PUT.
+        /// Creates the specified OrgContact using POST.
         /// </summary>
         /// <param name="orgContactToCreate">The OrgContact to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

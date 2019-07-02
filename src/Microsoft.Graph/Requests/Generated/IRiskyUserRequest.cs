@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRiskyUserRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RiskyUser using PUT.
+        /// Creates the specified RiskyUser using POST.
         /// </summary>
         /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
         /// <returns>The created RiskyUser.</returns>
         System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate);        /// <summary>
-        /// Creates the specified RiskyUser using PUT.
+        /// Creates the specified RiskyUser using POST.
         /// </summary>
         /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

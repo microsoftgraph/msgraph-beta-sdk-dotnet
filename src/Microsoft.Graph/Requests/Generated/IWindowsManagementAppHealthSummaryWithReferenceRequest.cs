@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified WindowsManagementAppHealthSummary using PUT.
+        /// Creates the specified WindowsManagementAppHealthSummary using POST.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
         /// <returns>The created WindowsManagementAppHealthSummary.</returns>
         System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> CreateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate);        /// <summary>
-        /// Creates the specified WindowsManagementAppHealthSummary using PUT.
+        /// Creates the specified WindowsManagementAppHealthSummary using POST.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

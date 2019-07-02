@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceConfigurationConflictSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceConfigurationConflictSummary using PUT.
+        /// Creates the specified DeviceConfigurationConflictSummary using POST.
         /// </summary>
         /// <param name="deviceConfigurationConflictSummaryToCreate">The DeviceConfigurationConflictSummary to create.</param>
         /// <returns>The created DeviceConfigurationConflictSummary.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> CreateAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToCreate);        /// <summary>
-        /// Creates the specified DeviceConfigurationConflictSummary using PUT.
+        /// Creates the specified DeviceConfigurationConflictSummary using POST.
         /// </summary>
         /// <param name="deviceConfigurationConflictSummaryToCreate">The DeviceConfigurationConflictSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

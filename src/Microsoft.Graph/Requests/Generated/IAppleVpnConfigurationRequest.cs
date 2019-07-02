@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAppleVpnConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AppleVpnConfiguration using PUT.
+        /// Creates the specified AppleVpnConfiguration using POST.
         /// </summary>
         /// <param name="appleVpnConfigurationToCreate">The AppleVpnConfiguration to create.</param>
         /// <returns>The created AppleVpnConfiguration.</returns>
         System.Threading.Tasks.Task<AppleVpnConfiguration> CreateAsync(AppleVpnConfiguration appleVpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified AppleVpnConfiguration using PUT.
+        /// Creates the specified AppleVpnConfiguration using POST.
         /// </summary>
         /// <param name="appleVpnConfigurationToCreate">The AppleVpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

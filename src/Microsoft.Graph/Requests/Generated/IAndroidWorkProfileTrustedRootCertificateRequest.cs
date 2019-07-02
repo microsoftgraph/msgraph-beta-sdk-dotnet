@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAndroidWorkProfileTrustedRootCertificateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AndroidWorkProfileTrustedRootCertificate using PUT.
+        /// Creates the specified AndroidWorkProfileTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidWorkProfileTrustedRootCertificateToCreate">The AndroidWorkProfileTrustedRootCertificate to create.</param>
         /// <returns>The created AndroidWorkProfileTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> CreateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileTrustedRootCertificate using PUT.
+        /// Creates the specified AndroidWorkProfileTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidWorkProfileTrustedRootCertificateToCreate">The AndroidWorkProfileTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

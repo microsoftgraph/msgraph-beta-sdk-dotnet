@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOffice365ActivationsUserCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Office365ActivationsUserCounts using PUT.
+        /// Creates the specified Office365ActivationsUserCounts using POST.
         /// </summary>
         /// <param name="office365ActivationsUserCountsToCreate">The Office365ActivationsUserCounts to create.</param>
         /// <returns>The created Office365ActivationsUserCounts.</returns>
         System.Threading.Tasks.Task<Office365ActivationsUserCounts> CreateAsync(Office365ActivationsUserCounts office365ActivationsUserCountsToCreate);        /// <summary>
-        /// Creates the specified Office365ActivationsUserCounts using PUT.
+        /// Creates the specified Office365ActivationsUserCounts using POST.
         /// </summary>
         /// <param name="office365ActivationsUserCountsToCreate">The Office365ActivationsUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

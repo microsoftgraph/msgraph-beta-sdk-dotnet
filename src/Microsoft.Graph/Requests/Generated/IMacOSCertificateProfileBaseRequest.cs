@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSCertificateProfileBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSCertificateProfileBase using PUT.
+        /// Creates the specified MacOSCertificateProfileBase using POST.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
         /// <returns>The created MacOSCertificateProfileBase.</returns>
         System.Threading.Tasks.Task<MacOSCertificateProfileBase> CreateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified MacOSCertificateProfileBase using PUT.
+        /// Creates the specified MacOSCertificateProfileBase using POST.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -34,12 +34,12 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TeamsTemplate> GetAsync(CancellationToken cancellationToken);
 
 		/// <summary>
-        /// Creates the specified TeamsTemplate using PUT.
+        /// Creates the specified TeamsTemplate using POST.
         /// </summary>
         /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
         /// <returns>The created TeamsTemplate.</returns>
         System.Threading.Tasks.Task<TeamsTemplate> CreateAsync(TeamsTemplate teamsTemplateToCreate);        /// <summary>
-        /// Creates the specified TeamsTemplate using PUT.
+        /// Creates the specified TeamsTemplate using POST.
         /// </summary>
         /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

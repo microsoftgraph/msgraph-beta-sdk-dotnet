@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsPhone81CertificateProfileBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsPhone81CertificateProfileBase using PUT.
+        /// Creates the specified WindowsPhone81CertificateProfileBase using POST.
         /// </summary>
         /// <param name="windowsPhone81CertificateProfileBaseToCreate">The WindowsPhone81CertificateProfileBase to create.</param>
         /// <returns>The created WindowsPhone81CertificateProfileBase.</returns>
         System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> CreateAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81CertificateProfileBase using PUT.
+        /// Creates the specified WindowsPhone81CertificateProfileBase using POST.
         /// </summary>
         /// <param name="windowsPhone81CertificateProfileBaseToCreate">The WindowsPhone81CertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

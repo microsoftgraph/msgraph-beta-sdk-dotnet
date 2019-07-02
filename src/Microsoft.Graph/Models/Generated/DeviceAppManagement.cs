@@ -211,6 +211,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBookCategories", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementManagedEBookCategoriesCollectionPage ManagedEBookCategories { get; set; }
     
+        /// <summary>
+        /// Gets or sets device app management tasks.
+        /// Device app management tasks.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAppManagementTasks", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementDeviceAppManagementTasksCollectionPage DeviceAppManagementTasks { get; set; }
+    
     }
 }
 

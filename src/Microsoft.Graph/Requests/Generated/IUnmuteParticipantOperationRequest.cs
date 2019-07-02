@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUnmuteParticipantOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UnmuteParticipantOperation using PUT.
+        /// Creates the specified UnmuteParticipantOperation using POST.
         /// </summary>
         /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
         /// <returns>The created UnmuteParticipantOperation.</returns>
         System.Threading.Tasks.Task<UnmuteParticipantOperation> CreateAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate);        /// <summary>
-        /// Creates the specified UnmuteParticipantOperation using PUT.
+        /// Creates the specified UnmuteParticipantOperation using POST.
         /// </summary>
         /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

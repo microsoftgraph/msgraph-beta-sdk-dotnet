@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISubscribeVideoOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SubscribeVideoOperation using PUT.
+        /// Creates the specified SubscribeVideoOperation using POST.
         /// </summary>
         /// <param name="subscribeVideoOperationToCreate">The SubscribeVideoOperation to create.</param>
         /// <returns>The created SubscribeVideoOperation.</returns>
         System.Threading.Tasks.Task<SubscribeVideoOperation> CreateAsync(SubscribeVideoOperation subscribeVideoOperationToCreate);        /// <summary>
-        /// Creates the specified SubscribeVideoOperation using PUT.
+        /// Creates the specified SubscribeVideoOperation using POST.
         /// </summary>
         /// <param name="subscribeVideoOperationToCreate">The SubscribeVideoOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

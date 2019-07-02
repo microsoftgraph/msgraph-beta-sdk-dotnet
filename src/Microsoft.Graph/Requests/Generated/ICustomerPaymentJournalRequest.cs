@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICustomerPaymentJournalRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CustomerPaymentJournal using PUT.
+        /// Creates the specified CustomerPaymentJournal using POST.
         /// </summary>
         /// <param name="customerPaymentJournalToCreate">The CustomerPaymentJournal to create.</param>
         /// <returns>The created CustomerPaymentJournal.</returns>
         System.Threading.Tasks.Task<CustomerPaymentJournal> CreateAsync(CustomerPaymentJournal customerPaymentJournalToCreate);        /// <summary>
-        /// Creates the specified CustomerPaymentJournal using PUT.
+        /// Creates the specified CustomerPaymentJournal using POST.
         /// </summary>
         /// <param name="customerPaymentJournalToCreate">The CustomerPaymentJournal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

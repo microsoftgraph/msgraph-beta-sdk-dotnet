@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICloudAppSecurityProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CloudAppSecurityProfile using PUT.
+        /// Creates the specified CloudAppSecurityProfile using POST.
         /// </summary>
         /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
         /// <returns>The created CloudAppSecurityProfile.</returns>
         System.Threading.Tasks.Task<CloudAppSecurityProfile> CreateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate);        /// <summary>
-        /// Creates the specified CloudAppSecurityProfile using PUT.
+        /// Creates the specified CloudAppSecurityProfile using POST.
         /// </summary>
         /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

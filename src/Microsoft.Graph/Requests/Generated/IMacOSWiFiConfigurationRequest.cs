@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSWiFiConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSWiFiConfiguration using PUT.
+        /// Creates the specified MacOSWiFiConfiguration using POST.
         /// </summary>
         /// <param name="macOSWiFiConfigurationToCreate">The MacOSWiFiConfiguration to create.</param>
         /// <returns>The created MacOSWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSWiFiConfiguration> CreateAsync(MacOSWiFiConfiguration macOSWiFiConfigurationToCreate);        /// <summary>
-        /// Creates the specified MacOSWiFiConfiguration using PUT.
+        /// Creates the specified MacOSWiFiConfiguration using POST.
         /// </summary>
         /// <param name="macOSWiFiConfigurationToCreate">The MacOSWiFiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

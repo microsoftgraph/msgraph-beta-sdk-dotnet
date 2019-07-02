@@ -28,6 +28,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabels", Required = Newtonsoft.Json.Required.Default)]
         public IInformationProtectionSensitivityLabelsCollectionPage SensitivityLabels { get; set; }
     
+        /// <summary>
+        /// Gets or sets sensitivity policy settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityPolicySettings", Required = Newtonsoft.Json.Required.Default)]
+        public SensitivityPolicySettings SensitivityPolicySettings { get; set; }
+    
     }
 }
 

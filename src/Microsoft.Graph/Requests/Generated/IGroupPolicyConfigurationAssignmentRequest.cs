@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupPolicyConfigurationAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupPolicyConfigurationAssignment using PUT.
+        /// Creates the specified GroupPolicyConfigurationAssignment using POST.
         /// </summary>
         /// <param name="groupPolicyConfigurationAssignmentToCreate">The GroupPolicyConfigurationAssignment to create.</param>
         /// <returns>The created GroupPolicyConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<GroupPolicyConfigurationAssignment> CreateAsync(GroupPolicyConfigurationAssignment groupPolicyConfigurationAssignmentToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyConfigurationAssignment using PUT.
+        /// Creates the specified GroupPolicyConfigurationAssignment using POST.
         /// </summary>
         /// <param name="groupPolicyConfigurationAssignmentToCreate">The GroupPolicyConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

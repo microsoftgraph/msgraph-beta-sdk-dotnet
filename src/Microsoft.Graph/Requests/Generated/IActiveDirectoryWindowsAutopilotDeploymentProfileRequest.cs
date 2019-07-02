@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IActiveDirectoryWindowsAutopilotDeploymentProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using PUT.
+        /// Creates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using POST.
         /// </summary>
         /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToCreate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to create.</param>
         /// <returns>The created ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
         System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> CreateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate);        /// <summary>
-        /// Creates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using PUT.
+        /// Creates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using POST.
         /// </summary>
         /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToCreate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

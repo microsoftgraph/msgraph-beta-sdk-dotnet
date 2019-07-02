@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISensitiveTypeRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SensitiveType using PUT.
+        /// Creates the specified SensitiveType using POST.
         /// </summary>
         /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
         /// <returns>The created SensitiveType.</returns>
         System.Threading.Tasks.Task<SensitiveType> CreateAsync(SensitiveType sensitiveTypeToCreate);        /// <summary>
-        /// Creates the specified SensitiveType using PUT.
+        /// Creates the specified SensitiveType using POST.
         /// </summary>
         /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

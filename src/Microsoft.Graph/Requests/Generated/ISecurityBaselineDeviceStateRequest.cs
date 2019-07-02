@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISecurityBaselineDeviceStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SecurityBaselineDeviceState using PUT.
+        /// Creates the specified SecurityBaselineDeviceState using POST.
         /// </summary>
         /// <param name="securityBaselineDeviceStateToCreate">The SecurityBaselineDeviceState to create.</param>
         /// <returns>The created SecurityBaselineDeviceState.</returns>
         System.Threading.Tasks.Task<SecurityBaselineDeviceState> CreateAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToCreate);        /// <summary>
-        /// Creates the specified SecurityBaselineDeviceState using PUT.
+        /// Creates the specified SecurityBaselineDeviceState using POST.
         /// </summary>
         /// <param name="securityBaselineDeviceStateToCreate">The SecurityBaselineDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

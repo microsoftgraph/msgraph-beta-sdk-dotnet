@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ITrustFrameworkRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified TrustFramework using PUT.
+        /// Creates the specified TrustFramework using POST.
         /// </summary>
         /// <param name="trustFrameworkToCreate">The TrustFramework to create.</param>
         /// <returns>The created TrustFramework.</returns>
         System.Threading.Tasks.Task<TrustFramework> CreateAsync(TrustFramework trustFrameworkToCreate);        /// <summary>
-        /// Creates the specified TrustFramework using PUT.
+        /// Creates the specified TrustFramework using POST.
         /// </summary>
         /// <param name="trustFrameworkToCreate">The TrustFramework to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsInformationProtectionDeviceRegistrationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsInformationProtectionDeviceRegistration using PUT.
+        /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
         /// <returns>The created WindowsInformationProtectionDeviceRegistration.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate);        /// <summary>
-        /// Creates the specified WindowsInformationProtectionDeviceRegistration using PUT.
+        /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

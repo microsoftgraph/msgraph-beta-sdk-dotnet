@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosEasEmailProfileConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosEasEmailProfileConfiguration using PUT.
+        /// Creates the specified IosEasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
         /// <returns>The created IosEasEmailProfileConfiguration.</returns>
         System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> CreateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate);        /// <summary>
-        /// Creates the specified IosEasEmailProfileConfiguration using PUT.
+        /// Creates the specified IosEasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

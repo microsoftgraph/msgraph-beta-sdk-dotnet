@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAgedAccountsPayableRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AgedAccountsPayable using PUT.
+        /// Creates the specified AgedAccountsPayable using POST.
         /// </summary>
         /// <param name="agedAccountsPayableToCreate">The AgedAccountsPayable to create.</param>
         /// <returns>The created AgedAccountsPayable.</returns>
         System.Threading.Tasks.Task<AgedAccountsPayable> CreateAsync(AgedAccountsPayable agedAccountsPayableToCreate);        /// <summary>
-        /// Creates the specified AgedAccountsPayable using PUT.
+        /// Creates the specified AgedAccountsPayable using POST.
         /// </summary>
         /// <param name="agedAccountsPayableToCreate">The AgedAccountsPayable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

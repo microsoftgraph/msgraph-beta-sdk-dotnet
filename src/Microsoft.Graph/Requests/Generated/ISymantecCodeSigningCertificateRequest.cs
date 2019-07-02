@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ISymantecCodeSigningCertificateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified SymantecCodeSigningCertificate using PUT.
+        /// Creates the specified SymantecCodeSigningCertificate using POST.
         /// </summary>
         /// <param name="symantecCodeSigningCertificateToCreate">The SymantecCodeSigningCertificate to create.</param>
         /// <returns>The created SymantecCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<SymantecCodeSigningCertificate> CreateAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToCreate);        /// <summary>
-        /// Creates the specified SymantecCodeSigningCertificate using PUT.
+        /// Creates the specified SymantecCodeSigningCertificate using POST.
         /// </summary>
         /// <param name="symantecCodeSigningCertificateToCreate">The SymantecCodeSigningCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

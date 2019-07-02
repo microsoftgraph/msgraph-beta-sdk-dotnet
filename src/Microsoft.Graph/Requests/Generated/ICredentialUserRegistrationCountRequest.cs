@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICredentialUserRegistrationCountRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CredentialUserRegistrationCount using PUT.
+        /// Creates the specified CredentialUserRegistrationCount using POST.
         /// </summary>
         /// <param name="credentialUserRegistrationCountToCreate">The CredentialUserRegistrationCount to create.</param>
         /// <returns>The created CredentialUserRegistrationCount.</returns>
         System.Threading.Tasks.Task<CredentialUserRegistrationCount> CreateAsync(CredentialUserRegistrationCount credentialUserRegistrationCountToCreate);        /// <summary>
-        /// Creates the specified CredentialUserRegistrationCount using PUT.
+        /// Creates the specified CredentialUserRegistrationCount using POST.
         /// </summary>
         /// <param name="credentialUserRegistrationCountToCreate">The CredentialUserRegistrationCount to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

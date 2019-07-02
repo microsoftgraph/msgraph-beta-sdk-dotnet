@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IWindowsInformationProtectionWipeActionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified WindowsInformationProtectionWipeAction using PUT.
+        /// Creates the specified WindowsInformationProtectionWipeAction using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
         /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> CreateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate);        /// <summary>
-        /// Creates the specified WindowsInformationProtectionWipeAction using PUT.
+        /// Creates the specified WindowsInformationProtectionWipeAction using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

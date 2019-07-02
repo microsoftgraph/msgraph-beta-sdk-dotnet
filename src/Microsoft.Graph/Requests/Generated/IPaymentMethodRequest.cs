@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPaymentMethodRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PaymentMethod using PUT.
+        /// Creates the specified PaymentMethod using POST.
         /// </summary>
         /// <param name="paymentMethodToCreate">The PaymentMethod to create.</param>
         /// <returns>The created PaymentMethod.</returns>
         System.Threading.Tasks.Task<PaymentMethod> CreateAsync(PaymentMethod paymentMethodToCreate);        /// <summary>
-        /// Creates the specified PaymentMethod using PUT.
+        /// Creates the specified PaymentMethod using POST.
         /// </summary>
         /// <param name="paymentMethodToCreate">The PaymentMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

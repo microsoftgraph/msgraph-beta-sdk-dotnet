@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupPolicyPresentationComboBoxRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupPolicyPresentationComboBox using PUT.
+        /// Creates the specified GroupPolicyPresentationComboBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
         /// <returns>The created GroupPolicyPresentationComboBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> CreateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyPresentationComboBox using PUT.
+        /// Creates the specified GroupPolicyPresentationComboBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

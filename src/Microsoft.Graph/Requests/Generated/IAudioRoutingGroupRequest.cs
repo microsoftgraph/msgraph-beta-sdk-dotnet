@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAudioRoutingGroupRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AudioRoutingGroup using PUT.
+        /// Creates the specified AudioRoutingGroup using POST.
         /// </summary>
         /// <param name="audioRoutingGroupToCreate">The AudioRoutingGroup to create.</param>
         /// <returns>The created AudioRoutingGroup.</returns>
         System.Threading.Tasks.Task<AudioRoutingGroup> CreateAsync(AudioRoutingGroup audioRoutingGroupToCreate);        /// <summary>
-        /// Creates the specified AudioRoutingGroup using PUT.
+        /// Creates the specified AudioRoutingGroup using POST.
         /// </summary>
         /// <param name="audioRoutingGroupToCreate">The AudioRoutingGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

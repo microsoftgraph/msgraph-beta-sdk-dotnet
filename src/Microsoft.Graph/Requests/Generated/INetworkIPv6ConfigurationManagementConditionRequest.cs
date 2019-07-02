@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface INetworkIPv6ConfigurationManagementConditionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified NetworkIPv6ConfigurationManagementCondition using PUT.
+        /// Creates the specified NetworkIPv6ConfigurationManagementCondition using POST.
         /// </summary>
         /// <param name="networkIPv6ConfigurationManagementConditionToCreate">The NetworkIPv6ConfigurationManagementCondition to create.</param>
         /// <returns>The created NetworkIPv6ConfigurationManagementCondition.</returns>
         System.Threading.Tasks.Task<NetworkIPv6ConfigurationManagementCondition> CreateAsync(NetworkIPv6ConfigurationManagementCondition networkIPv6ConfigurationManagementConditionToCreate);        /// <summary>
-        /// Creates the specified NetworkIPv6ConfigurationManagementCondition using PUT.
+        /// Creates the specified NetworkIPv6ConfigurationManagementCondition using POST.
         /// </summary>
         /// <param name="networkIPv6ConfigurationManagementConditionToCreate">The NetworkIPv6ConfigurationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

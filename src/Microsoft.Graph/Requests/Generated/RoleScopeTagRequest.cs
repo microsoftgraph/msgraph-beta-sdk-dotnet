@@ -231,6 +231,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RoleScopeTag roleScopeTagToInitialize)
         {
 
+            if (roleScopeTagToInitialize != null && roleScopeTagToInitialize.AdditionalData != null)
+            {
+
+                if (roleScopeTagToInitialize.Assignments != null && roleScopeTagToInitialize.Assignments.CurrentPage != null)
+                {
+                    roleScopeTagToInitialize.Assignments.AdditionalData = roleScopeTagToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    roleScopeTagToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        roleScopeTagToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

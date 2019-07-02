@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRiskyUserHistoryItemRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RiskyUserHistoryItem using PUT.
+        /// Creates the specified RiskyUserHistoryItem using POST.
         /// </summary>
         /// <param name="riskyUserHistoryItemToCreate">The RiskyUserHistoryItem to create.</param>
         /// <returns>The created RiskyUserHistoryItem.</returns>
         System.Threading.Tasks.Task<RiskyUserHistoryItem> CreateAsync(RiskyUserHistoryItem riskyUserHistoryItemToCreate);        /// <summary>
-        /// Creates the specified RiskyUserHistoryItem using PUT.
+        /// Creates the specified RiskyUserHistoryItem using POST.
         /// </summary>
         /// <param name="riskyUserHistoryItemToCreate">The RiskyUserHistoryItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

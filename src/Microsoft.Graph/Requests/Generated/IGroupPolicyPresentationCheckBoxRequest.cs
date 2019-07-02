@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IGroupPolicyPresentationCheckBoxRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified GroupPolicyPresentationCheckBox using PUT.
+        /// Creates the specified GroupPolicyPresentationCheckBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
         /// <returns>The created GroupPolicyPresentationCheckBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> CreateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate);        /// <summary>
-        /// Creates the specified GroupPolicyPresentationCheckBox using PUT.
+        /// Creates the specified GroupPolicyPresentationCheckBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

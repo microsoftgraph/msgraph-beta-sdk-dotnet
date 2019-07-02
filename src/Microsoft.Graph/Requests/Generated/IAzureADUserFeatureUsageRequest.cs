@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IAzureADUserFeatureUsageRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified AzureADUserFeatureUsage using PUT.
+        /// Creates the specified AzureADUserFeatureUsage using POST.
         /// </summary>
         /// <param name="azureADUserFeatureUsageToCreate">The AzureADUserFeatureUsage to create.</param>
         /// <returns>The created AzureADUserFeatureUsage.</returns>
         System.Threading.Tasks.Task<AzureADUserFeatureUsage> CreateAsync(AzureADUserFeatureUsage azureADUserFeatureUsageToCreate);        /// <summary>
-        /// Creates the specified AzureADUserFeatureUsage using PUT.
+        /// Creates the specified AzureADUserFeatureUsage using POST.
         /// </summary>
         /// <param name="azureADUserFeatureUsageToCreate">The AzureADUserFeatureUsage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

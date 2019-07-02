@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IItemCategoryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ItemCategory using PUT.
+        /// Creates the specified ItemCategory using POST.
         /// </summary>
         /// <param name="itemCategoryToCreate">The ItemCategory to create.</param>
         /// <returns>The created ItemCategory.</returns>
         System.Threading.Tasks.Task<ItemCategory> CreateAsync(ItemCategory itemCategoryToCreate);        /// <summary>
-        /// Creates the specified ItemCategory using PUT.
+        /// Creates the specified ItemCategory using POST.
         /// </summary>
         /// <param name="itemCategoryToCreate">The ItemCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

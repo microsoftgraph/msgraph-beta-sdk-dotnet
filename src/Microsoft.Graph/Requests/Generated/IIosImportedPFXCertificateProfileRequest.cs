@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIosImportedPFXCertificateProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IosImportedPFXCertificateProfile using PUT.
+        /// Creates the specified IosImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="iosImportedPFXCertificateProfileToCreate">The IosImportedPFXCertificateProfile to create.</param>
         /// <returns>The created IosImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> CreateAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified IosImportedPFXCertificateProfile using PUT.
+        /// Creates the specified IosImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="iosImportedPFXCertificateProfileToCreate">The IosImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
+        /// <summary>
+        /// Gets or sets assignments.
+        /// The list of assignments for this Role Scope Tag.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public IRoleScopeTagAssignmentsCollectionPage Assignments { get; set; }
+    
     }
 }
 

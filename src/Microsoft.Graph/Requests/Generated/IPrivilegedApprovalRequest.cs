@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IPrivilegedApprovalRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified PrivilegedApproval using PUT.
+        /// Creates the specified PrivilegedApproval using POST.
         /// </summary>
         /// <param name="privilegedApprovalToCreate">The PrivilegedApproval to create.</param>
         /// <returns>The created PrivilegedApproval.</returns>
         System.Threading.Tasks.Task<PrivilegedApproval> CreateAsync(PrivilegedApproval privilegedApprovalToCreate);        /// <summary>
-        /// Creates the specified PrivilegedApproval using PUT.
+        /// Creates the specified PrivilegedApproval using POST.
         /// </summary>
         /// <param name="privilegedApprovalToCreate">The PrivilegedApproval to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

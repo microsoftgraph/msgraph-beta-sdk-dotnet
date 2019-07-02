@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IMacOSEndpointProtectionConfigurationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified MacOSEndpointProtectionConfiguration using PUT.
+        /// Creates the specified MacOSEndpointProtectionConfiguration using POST.
         /// </summary>
         /// <param name="macOSEndpointProtectionConfigurationToCreate">The MacOSEndpointProtectionConfiguration to create.</param>
         /// <returns>The created MacOSEndpointProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSEndpointProtectionConfiguration> CreateAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToCreate);        /// <summary>
-        /// Creates the specified MacOSEndpointProtectionConfiguration using PUT.
+        /// Creates the specified MacOSEndpointProtectionConfiguration using POST.
         /// </summary>
         /// <param name="macOSEndpointProtectionConfigurationToCreate">The MacOSEndpointProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

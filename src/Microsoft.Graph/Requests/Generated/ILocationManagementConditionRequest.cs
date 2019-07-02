@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ILocationManagementConditionRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified LocationManagementCondition using PUT.
+        /// Creates the specified LocationManagementCondition using POST.
         /// </summary>
         /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
         /// <returns>The created LocationManagementCondition.</returns>
         System.Threading.Tasks.Task<LocationManagementCondition> CreateAsync(LocationManagementCondition locationManagementConditionToCreate);        /// <summary>
-        /// Creates the specified LocationManagementCondition using PUT.
+        /// Creates the specified LocationManagementCondition using POST.
         /// </summary>
         /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

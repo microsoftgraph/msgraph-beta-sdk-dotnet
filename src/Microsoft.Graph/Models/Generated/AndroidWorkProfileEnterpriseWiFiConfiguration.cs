@@ -24,7 +24,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets eap type.
-        /// Indicates the type of EAP protocol set on the the Wi-Fi endpoint (router).
+        /// Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidEapType? EapType { get; set; }

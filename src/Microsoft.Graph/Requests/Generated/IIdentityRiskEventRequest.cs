@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IIdentityRiskEventRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified IdentityRiskEvent using PUT.
+        /// Creates the specified IdentityRiskEvent using POST.
         /// </summary>
         /// <param name="identityRiskEventToCreate">The IdentityRiskEvent to create.</param>
         /// <returns>The created IdentityRiskEvent.</returns>
         System.Threading.Tasks.Task<IdentityRiskEvent> CreateAsync(IdentityRiskEvent identityRiskEventToCreate);        /// <summary>
-        /// Creates the specified IdentityRiskEvent using PUT.
+        /// Creates the specified IdentityRiskEvent using POST.
         /// </summary>
         /// <param name="identityRiskEventToCreate">The IdentityRiskEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IRestrictedAppsViolationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified RestrictedAppsViolation using PUT.
+        /// Creates the specified RestrictedAppsViolation using POST.
         /// </summary>
         /// <param name="restrictedAppsViolationToCreate">The RestrictedAppsViolation to create.</param>
         /// <returns>The created RestrictedAppsViolation.</returns>
         System.Threading.Tasks.Task<RestrictedAppsViolation> CreateAsync(RestrictedAppsViolation restrictedAppsViolationToCreate);        /// <summary>
-        /// Creates the specified RestrictedAppsViolation using PUT.
+        /// Creates the specified RestrictedAppsViolation using POST.
         /// </summary>
         /// <param name="restrictedAppsViolationToCreate">The RestrictedAppsViolation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

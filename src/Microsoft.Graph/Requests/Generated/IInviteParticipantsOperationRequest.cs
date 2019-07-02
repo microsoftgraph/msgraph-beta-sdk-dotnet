@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IInviteParticipantsOperationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified InviteParticipantsOperation using PUT.
+        /// Creates the specified InviteParticipantsOperation using POST.
         /// </summary>
         /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
         /// <returns>The created InviteParticipantsOperation.</returns>
         System.Threading.Tasks.Task<InviteParticipantsOperation> CreateAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate);        /// <summary>
-        /// Creates the specified InviteParticipantsOperation using PUT.
+        /// Creates the specified InviteParticipantsOperation using POST.
         /// </summary>
         /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

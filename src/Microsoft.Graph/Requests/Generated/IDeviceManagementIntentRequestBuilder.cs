@@ -100,6 +100,13 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>
         IDeviceManagementIntentAssignRequestBuilder Assign(
             IEnumerable<DeviceManagementIntentAssignment> assignments = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementIntentCompare.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentCompareRequestBuilder"/>.</returns>
+        IDeviceManagementIntentCompareRequestBuilder Compare(
+            string templateId = null);
     
     }
 }

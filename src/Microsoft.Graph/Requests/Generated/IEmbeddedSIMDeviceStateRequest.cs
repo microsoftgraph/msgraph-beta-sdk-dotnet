@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IEmbeddedSIMDeviceStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified EmbeddedSIMDeviceState using PUT.
+        /// Creates the specified EmbeddedSIMDeviceState using POST.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
         /// <returns>The created EmbeddedSIMDeviceState.</returns>
         System.Threading.Tasks.Task<EmbeddedSIMDeviceState> CreateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate);        /// <summary>
-        /// Creates the specified EmbeddedSIMDeviceState using PUT.
+        /// Creates the specified EmbeddedSIMDeviceState using POST.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

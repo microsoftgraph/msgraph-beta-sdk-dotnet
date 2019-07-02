@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface ICompanyInformationRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified CompanyInformation using PUT.
+        /// Creates the specified CompanyInformation using POST.
         /// </summary>
         /// <param name="companyInformationToCreate">The CompanyInformation to create.</param>
         /// <returns>The created CompanyInformation.</returns>
         System.Threading.Tasks.Task<CompanyInformation> CreateAsync(CompanyInformation companyInformationToCreate);        /// <summary>
-        /// Creates the specified CompanyInformation using PUT.
+        /// Creates the specified CompanyInformation using POST.
         /// </summary>
         /// <param name="companyInformationToCreate">The CompanyInformation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

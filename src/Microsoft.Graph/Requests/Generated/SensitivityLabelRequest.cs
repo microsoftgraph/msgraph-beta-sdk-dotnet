@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (sensitivityLabelToInitialize != null && sensitivityLabelToInitialize.AdditionalData != null)
             {
 
-                if (sensitivityLabelToInitialize.AssignedPolicies != null && sensitivityLabelToInitialize.AssignedPolicies.CurrentPage != null)
+                if (sensitivityLabelToInitialize.Sublabels != null && sensitivityLabelToInitialize.Sublabels.CurrentPage != null)
                 {
-                    sensitivityLabelToInitialize.AssignedPolicies.AdditionalData = sensitivityLabelToInitialize.AdditionalData;
+                    sensitivityLabelToInitialize.Sublabels.AdditionalData = sensitivityLabelToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    sensitivityLabelToInitialize.AdditionalData.TryGetValue("assignedPolicies@odata.nextLink", out nextPageLink);
+                    sensitivityLabelToInitialize.AdditionalData.TryGetValue("sublabels@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        sensitivityLabelToInitialize.AssignedPolicies.InitializeNextPageRequest(
+                        sensitivityLabelToInitialize.Sublabels.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

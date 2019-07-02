@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOfficeSuiteAppRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OfficeSuiteApp using PUT.
+        /// Creates the specified OfficeSuiteApp using POST.
         /// </summary>
         /// <param name="officeSuiteAppToCreate">The OfficeSuiteApp to create.</param>
         /// <returns>The created OfficeSuiteApp.</returns>
         System.Threading.Tasks.Task<OfficeSuiteApp> CreateAsync(OfficeSuiteApp officeSuiteAppToCreate);        /// <summary>
-        /// Creates the specified OfficeSuiteApp using PUT.
+        /// Creates the specified OfficeSuiteApp using POST.
         /// </summary>
         /// <param name="officeSuiteAppToCreate">The OfficeSuiteApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

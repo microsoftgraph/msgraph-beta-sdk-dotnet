@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedDeviceCertificateStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedDeviceCertificateState using PUT.
+        /// Creates the specified ManagedDeviceCertificateState using POST.
         /// </summary>
         /// <param name="managedDeviceCertificateStateToCreate">The ManagedDeviceCertificateState to create.</param>
         /// <returns>The created ManagedDeviceCertificateState.</returns>
         System.Threading.Tasks.Task<ManagedDeviceCertificateState> CreateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToCreate);        /// <summary>
-        /// Creates the specified ManagedDeviceCertificateState using PUT.
+        /// Creates the specified ManagedDeviceCertificateState using POST.
         /// </summary>
         /// <param name="managedDeviceCertificateStateToCreate">The ManagedDeviceCertificateState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IProvisioningObjectSummaryRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ProvisioningObjectSummary using PUT.
+        /// Creates the specified ProvisioningObjectSummary using POST.
         /// </summary>
         /// <param name="provisioningObjectSummaryToCreate">The ProvisioningObjectSummary to create.</param>
         /// <returns>The created ProvisioningObjectSummary.</returns>
         System.Threading.Tasks.Task<ProvisioningObjectSummary> CreateAsync(ProvisioningObjectSummary provisioningObjectSummaryToCreate);        /// <summary>
-        /// Creates the specified ProvisioningObjectSummary using PUT.
+        /// Creates the specified ProvisioningObjectSummary using POST.
         /// </summary>
         /// <param name="provisioningObjectSummaryToCreate">The ProvisioningObjectSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

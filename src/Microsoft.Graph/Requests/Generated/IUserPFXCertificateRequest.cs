@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IUserPFXCertificateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified UserPFXCertificate using PUT.
+        /// Creates the specified UserPFXCertificate using POST.
         /// </summary>
         /// <param name="userPFXCertificateToCreate">The UserPFXCertificate to create.</param>
         /// <returns>The created UserPFXCertificate.</returns>
         System.Threading.Tasks.Task<UserPFXCertificate> CreateAsync(UserPFXCertificate userPFXCertificateToCreate);        /// <summary>
-        /// Creates the specified UserPFXCertificate using PUT.
+        /// Creates the specified UserPFXCertificate using POST.
         /// </summary>
         /// <param name="userPFXCertificateToCreate">The UserPFXCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

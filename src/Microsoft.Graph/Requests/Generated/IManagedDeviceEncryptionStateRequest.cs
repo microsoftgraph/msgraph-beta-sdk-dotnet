@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IManagedDeviceEncryptionStateRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ManagedDeviceEncryptionState using PUT.
+        /// Creates the specified ManagedDeviceEncryptionState using POST.
         /// </summary>
         /// <param name="managedDeviceEncryptionStateToCreate">The ManagedDeviceEncryptionState to create.</param>
         /// <returns>The created ManagedDeviceEncryptionState.</returns>
         System.Threading.Tasks.Task<ManagedDeviceEncryptionState> CreateAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToCreate);        /// <summary>
-        /// Creates the specified ManagedDeviceEncryptionState using PUT.
+        /// Creates the specified ManagedDeviceEncryptionState using POST.
         /// </summary>
         /// <param name="managedDeviceEncryptionStateToCreate">The ManagedDeviceEncryptionState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

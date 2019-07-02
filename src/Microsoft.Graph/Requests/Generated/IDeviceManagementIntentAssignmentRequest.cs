@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IDeviceManagementIntentAssignmentRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified DeviceManagementIntentAssignment using PUT.
+        /// Creates the specified DeviceManagementIntentAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
         /// <returns>The created DeviceManagementIntentAssignment.</returns>
         System.Threading.Tasks.Task<DeviceManagementIntentAssignment> CreateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementIntentAssignment using PUT.
+        /// Creates the specified DeviceManagementIntentAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

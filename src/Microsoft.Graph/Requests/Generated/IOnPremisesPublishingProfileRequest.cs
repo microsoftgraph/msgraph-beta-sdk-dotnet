@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOnPremisesPublishingProfileRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OnPremisesPublishingProfile using PUT.
+        /// Creates the specified OnPremisesPublishingProfile using POST.
         /// </summary>
         /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
         /// <returns>The created OnPremisesPublishingProfile.</returns>
         System.Threading.Tasks.Task<OnPremisesPublishingProfile> CreateAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate);        /// <summary>
-        /// Creates the specified OnPremisesPublishingProfile using PUT.
+        /// Creates the specified OnPremisesPublishingProfile using POST.
         /// </summary>
         /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>

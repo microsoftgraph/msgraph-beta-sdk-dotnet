@@ -21,12 +21,12 @@ namespace Microsoft.Graph
     public partial interface IOneDriveUsageFileCountsRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified OneDriveUsageFileCounts using PUT.
+        /// Creates the specified OneDriveUsageFileCounts using POST.
         /// </summary>
         /// <param name="oneDriveUsageFileCountsToCreate">The OneDriveUsageFileCounts to create.</param>
         /// <returns>The created OneDriveUsageFileCounts.</returns>
         System.Threading.Tasks.Task<OneDriveUsageFileCounts> CreateAsync(OneDriveUsageFileCounts oneDriveUsageFileCountsToCreate);        /// <summary>
-        /// Creates the specified OneDriveUsageFileCounts using PUT.
+        /// Creates the specified OneDriveUsageFileCounts using POST.
         /// </summary>
         /// <param name="oneDriveUsageFileCountsToCreate">The OneDriveUsageFileCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
