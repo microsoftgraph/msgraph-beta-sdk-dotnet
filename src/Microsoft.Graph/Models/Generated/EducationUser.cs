@@ -23,18 +23,18 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets primary role.
-        /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher. Supports $filter.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryRole", Required = Newtonsoft.Json.Required.Default)]
-        public EducationUserRole? PrimaryRole { get; set; }
-    
-        /// <summary>
         /// Gets or sets related contacts.
         /// Set of contacts related to the user.  This optional property must be specified in a $select clause and can only be retrieved for an individual user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relatedContacts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RelatedContact> RelatedContacts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets primary role.
+        /// Default role for a user. The user's role might be different in an individual class. The possible values are: student, teacher. Supports $filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryRole", Required = Newtonsoft.Json.Required.Default)]
+        public EducationUserRole? PrimaryRole { get; set; }
     
         /// <summary>
         /// Gets or sets middle name.
@@ -236,11 +236,11 @@ namespace Microsoft.Graph
         public EducationOnPremisesInfo OnPremisesInfo { get; set; }
     
         /// <summary>
-        /// Gets or sets schools.
-        /// Schools to which the user belongs. Nullable.
+        /// Gets or sets assignments.
+        /// List of assignments for the user. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationUserSchoolsCollectionWithReferencesPage Schools { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets classes.
@@ -256,18 +256,18 @@ namespace Microsoft.Graph
         public IEducationUserTaughtClassesCollectionWithReferencesPage TaughtClasses { get; set; }
     
         /// <summary>
+        /// Gets or sets schools.
+        /// Schools to which the user belongs. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationUserSchoolsCollectionWithReferencesPage Schools { get; set; }
+    
+        /// <summary>
         /// Gets or sets user.
         /// The directory user corresponding to this user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
         public User User { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assignments.
-        /// List of assignments for the user. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
     
     }
 }

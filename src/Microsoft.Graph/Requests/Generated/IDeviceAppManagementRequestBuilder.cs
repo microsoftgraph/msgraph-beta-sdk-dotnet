@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IDeviceAppManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for WindowsManagementApp.
+        /// Gets the request builder for ManagedEBooks.
         /// </summary>
-        /// <returns>The <see cref="IWindowsManagementAppWithReferenceRequestBuilder"/>.</returns>
-        IWindowsManagementAppWithReferenceRequestBuilder WindowsManagementApp { get; }
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks { get; }
 
         /// <summary>
         /// Gets the request builder for MobileApps.
@@ -74,6 +74,12 @@ namespace Microsoft.Graph
         IDeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder MobileAppConfigurations { get; }
 
         /// <summary>
+        /// Gets the request builder for ManagedEBookCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories { get; }
+
+        /// <summary>
         /// Gets the request builder for SideLoadingKeys.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder"/>.</returns>
@@ -84,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementVppTokensCollectionRequestBuilder"/>.</returns>
         IDeviceAppManagementVppTokensCollectionRequestBuilder VppTokens { get; }
+
+        /// <summary>
+        /// Gets the request builder for WindowsManagementApp.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsManagementAppWithReferenceRequestBuilder"/>.</returns>
+        IWindowsManagementAppWithReferenceRequestBuilder WindowsManagementApp { get; }
 
         /// <summary>
         /// Gets the request builder for ManagedAppPolicies.
@@ -150,18 +162,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionRequestBuilder"/>.</returns>
         IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionRequestBuilder WindowsInformationProtectionWipeActions { get; }
-
-        /// <summary>
-        /// Gets the request builder for ManagedEBooks.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks { get; }
-
-        /// <summary>
-        /// Gets the request builder for ManagedEBookCategories.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceAppManagementTasks.

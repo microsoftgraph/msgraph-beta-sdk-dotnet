@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
-        public IGroupExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new GroupExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AppRoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -327,6 +315,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
+        public IGroupExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new GroupExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupLifecyclePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IGroupGroupLifecyclePoliciesCollectionRequestBuilder"/>.</returns>
+        public IGroupGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies
+        {
+            get
+            {
+                return new GroupGroupLifecyclePoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupLifecyclePolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Planner.
         /// </summary>
         /// <returns>The <see cref="IPlannerGroupRequestBuilder"/>.</returns>
@@ -371,18 +383,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupChannelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("channels"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for GroupLifecyclePolicies.
-        /// </summary>
-        /// <returns>The <see cref="IGroupGroupLifecyclePoliciesCollectionRequestBuilder"/>.</returns>
-        public IGroupGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies
-        {
-            get
-            {
-                return new GroupGroupLifecyclePoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupLifecyclePolicies"), this.Client);
             }
         }
     

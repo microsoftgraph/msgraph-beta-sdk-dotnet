@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>
-        public IOrganizationExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new OrganizationExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Brandings.
         /// </summary>
         /// <returns>The <see cref="IOrganizationBrandingsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new OrganizationBrandingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("brandings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>
+        public IOrganizationExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new OrganizationExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
     

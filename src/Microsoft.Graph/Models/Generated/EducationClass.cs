@@ -92,11 +92,16 @@ namespace Microsoft.Graph
         public EducationCourse Course { get; set; }
     
         /// <summary>
-        /// Gets or sets schools.
-        /// All schools that this class is associated with. Nullable.
+        /// Gets or sets assignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationClassSchoolsCollectionWithReferencesPage Schools { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment categories.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentCategories", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
     
         /// <summary>
         /// Gets or sets members.
@@ -113,23 +118,18 @@ namespace Microsoft.Graph
         public IEducationClassTeachersCollectionWithReferencesPage Teachers { get; set; }
     
         /// <summary>
+        /// Gets or sets schools.
+        /// All schools that this class is associated with. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationClassSchoolsCollectionWithReferencesPage Schools { get; set; }
+    
+        /// <summary>
         /// Gets or sets group.
         /// The directory group corresponding to this class.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
         public Group Group { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assignments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assignment categories.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentCategories", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
     
     }
 }

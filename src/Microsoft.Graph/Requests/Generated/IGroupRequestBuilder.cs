@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IGroupRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
-        IGroupExtensionsCollectionRequestBuilder Extensions { get; }
-
-        /// <summary>
         /// Gets the request builder for AppRoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -170,6 +164,18 @@ namespace Microsoft.Graph
         IGroupSitesCollectionRequestBuilder Sites { get; }
 
         /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
+        IGroupExtensionsCollectionRequestBuilder Extensions { get; }
+
+        /// <summary>
+        /// Gets the request builder for GroupLifecyclePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IGroupGroupLifecyclePoliciesCollectionRequestBuilder"/>.</returns>
+        IGroupGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for Planner.
         /// </summary>
         /// <returns>The <see cref="IPlannerGroupRequestBuilder"/>.</returns>
@@ -192,12 +198,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupChannelsCollectionRequestBuilder"/>.</returns>
         IGroupChannelsCollectionRequestBuilder Channels { get; }
-
-        /// <summary>
-        /// Gets the request builder for GroupLifecyclePolicies.
-        /// </summary>
-        /// <returns>The <see cref="IGroupGroupLifecyclePoliciesCollectionRequestBuilder"/>.</returns>
-        IGroupGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
     
         /// <summary>
         /// Gets the request builder for GroupValidateProperties.

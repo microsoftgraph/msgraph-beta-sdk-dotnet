@@ -16,17 +16,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type GraphServiceTrustFrameworkPoliciesCollectionRequest.
+    /// The type ChatInstalledAppsCollectionRequest.
     /// </summary>
-    public partial class GraphServiceTrustFrameworkPoliciesCollectionRequest : BaseRequest, IGraphServiceTrustFrameworkPoliciesCollectionRequest
+    public partial class ChatInstalledAppsCollectionRequest : BaseRequest, IChatInstalledAppsCollectionRequest
     {
         /// <summary>
-        /// Constructs a new GraphServiceTrustFrameworkPoliciesCollectionRequest.
+        /// Constructs a new ChatInstalledAppsCollectionRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public GraphServiceTrustFrameworkPoliciesCollectionRequest(
+        public ChatInstalledAppsCollectionRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -35,33 +35,33 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified TrustFrameworkPolicy to the collection via POST.
+        /// Adds the specified TeamsAppInstallation to the collection via POST.
         /// </summary>
-        /// <param name="trustFrameworkPolicy">The TrustFrameworkPolicy to add.</param>
-        /// <returns>The created TrustFrameworkPolicy.</returns>
-        public System.Threading.Tasks.Task<TrustFrameworkPolicy> AddAsync(TrustFrameworkPolicy trustFrameworkPolicy)
+        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
+        /// <returns>The created TeamsAppInstallation.</returns>
+        public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation)
         {
-            return this.AddAsync(trustFrameworkPolicy, CancellationToken.None);
+            return this.AddAsync(teamsAppInstallation, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified TrustFrameworkPolicy to the collection via POST.
+        /// Adds the specified TeamsAppInstallation to the collection via POST.
         /// </summary>
-        /// <param name="trustFrameworkPolicy">The TrustFrameworkPolicy to add.</param>
+        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TrustFrameworkPolicy.</returns>
-        public System.Threading.Tasks.Task<TrustFrameworkPolicy> AddAsync(TrustFrameworkPolicy trustFrameworkPolicy, CancellationToken cancellationToken)
+        /// <returns>The created TeamsAppInstallation.</returns>
+        public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<TrustFrameworkPolicy>(trustFrameworkPolicy, cancellationToken);
+            return this.SendAsync<TeamsAppInstallation>(teamsAppInstallation, cancellationToken);
         }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceTrustFrameworkPoliciesCollectionPage> GetAsync()
+        public System.Threading.Tasks.Task<IChatInstalledAppsCollectionPage> GetAsync()
         {
             return this.GetAsync(CancellationToken.None);
         }
@@ -71,10 +71,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceTrustFrameworkPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IChatInstalledAppsCollectionPage> GetAsync(CancellationToken cancellationToken)
         {
             this.Method = "GET";
-            var response = await this.SendAsync<GraphServiceTrustFrameworkPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            var response = await this.SendAsync<ChatInstalledAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
                 if (response.AdditionalData != null)
@@ -106,7 +106,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Expand(string value)
+        public IChatInstalledAppsCollectionRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Expand(Expression<Func<TrustFrameworkPolicy, object>> expandExpression)
+        public IChatInstalledAppsCollectionRequest Expand(Expression<Func<TeamsAppInstallation, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -141,7 +141,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Select(string value)
+        public IChatInstalledAppsCollectionRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Select(Expression<Func<TrustFrameworkPolicy, object>> selectExpression)
+        public IChatInstalledAppsCollectionRequest Select(Expression<Func<TeamsAppInstallation, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -176,7 +176,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The top value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Top(int value)
+        public IChatInstalledAppsCollectionRequest Top(int value)
         {
             this.QueryOptions.Add(new QueryOption("$top", value.ToString()));
             return this;
@@ -187,7 +187,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The filter value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Filter(string value)
+        public IChatInstalledAppsCollectionRequest Filter(string value)
         {
             this.QueryOptions.Add(new QueryOption("$filter", value));
             return this;
@@ -198,7 +198,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The skip value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Skip(int value)
+        public IChatInstalledAppsCollectionRequest Skip(int value)
         {
             this.QueryOptions.Add(new QueryOption("$skip", value.ToString()));
             return this;
@@ -209,7 +209,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The orderby value.</param>
         /// <returns>The request object to send.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest OrderBy(string value)
+        public IChatInstalledAppsCollectionRequest OrderBy(string value)
         {
             this.QueryOptions.Add(new QueryOption("$orderby", value));
             return this;

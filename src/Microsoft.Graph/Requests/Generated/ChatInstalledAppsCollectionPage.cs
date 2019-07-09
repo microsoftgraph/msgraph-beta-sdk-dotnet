@@ -12,14 +12,14 @@ namespace Microsoft.Graph
     using System;
 
     /// <summary>
-    /// The type UserJoinedTeamsCollectionPage.
+    /// The type ChatInstalledAppsCollectionPage.
     /// </summary>
-    public partial class UserJoinedTeamsCollectionPage : CollectionPage<Group>, IUserJoinedTeamsCollectionPage
+    public partial class ChatInstalledAppsCollectionPage : CollectionPage<TeamsAppInstallation>, IChatInstalledAppsCollectionPage
     {
         /// <summary>
-        /// Gets the next page <see cref="IUserJoinedTeamsCollectionRequest"/> instance.
+        /// Gets the next page <see cref="IChatInstalledAppsCollectionRequest"/> instance.
         /// </summary>
-        public IUserJoinedTeamsCollectionRequest NextPageRequest { get; private set; }
+        public IChatInstalledAppsCollectionRequest NextPageRequest { get; private set; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.
@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             if (!string.IsNullOrEmpty(nextPageLinkString))
             {
-                this.NextPageRequest = new UserJoinedTeamsCollectionRequest(
+                this.NextPageRequest = new ChatInstalledAppsCollectionRequest(
                     nextPageLinkString,
                     client,
                     null);

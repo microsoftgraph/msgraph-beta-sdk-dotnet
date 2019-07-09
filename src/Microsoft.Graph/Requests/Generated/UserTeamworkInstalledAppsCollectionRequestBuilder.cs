@@ -12,16 +12,16 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The type UserJoinedTeamsCollectionRequestBuilder.
+    /// The type UserTeamworkInstalledAppsCollectionRequestBuilder.
     /// </summary>
-    public partial class UserJoinedTeamsCollectionRequestBuilder : BaseRequestBuilder, IUserJoinedTeamsCollectionRequestBuilder
+    public partial class UserTeamworkInstalledAppsCollectionRequestBuilder : BaseRequestBuilder, IUserTeamworkInstalledAppsCollectionRequestBuilder
     {
         /// <summary>
-        /// Constructs a new UserJoinedTeamsCollectionRequestBuilder.
+        /// Constructs a new UserTeamworkInstalledAppsCollectionRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public UserJoinedTeamsCollectionRequestBuilder(
+        public UserTeamworkInstalledAppsCollectionRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -32,7 +32,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IUserJoinedTeamsCollectionRequest Request()
+        public IUserTeamworkInstalledAppsCollectionRequest Request()
         {
             return this.Request(null);
         }
@@ -42,33 +42,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IUserJoinedTeamsCollectionRequest Request(IEnumerable<Option> options)
+        public IUserTeamworkInstalledAppsCollectionRequest Request(IEnumerable<Option> options)
         {
-            return new UserJoinedTeamsCollectionRequest(this.RequestUrl, this.Client, options);
+            return new UserTeamworkInstalledAppsCollectionRequest(this.RequestUrl, this.Client, options);
         }
 
         /// <summary>
-        /// Gets an <see cref="IGroupRequestBuilder"/> for the specified UserGroup.
+        /// Gets an <see cref="ITeamsAppInstallationRequestBuilder"/> for the specified UserTeamworkTeamsAppInstallation.
         /// </summary>
-        /// <param name="id">The ID for the UserGroup.</param>
-        /// <returns>The <see cref="IGroupRequestBuilder"/>.</returns>
-        public IGroupRequestBuilder this[string id]
+        /// <param name="id">The ID for the UserTeamworkTeamsAppInstallation.</param>
+        /// <returns>The <see cref="ITeamsAppInstallationRequestBuilder"/>.</returns>
+        public ITeamsAppInstallationRequestBuilder this[string id]
         {
             get
             {
-                return new GroupRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new TeamsAppInstallationRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 
-        /// <summary>
-        /// Gets the request builder for GroupDelta.
-        /// </summary>
-        /// <returns>The <see cref="IGroupDeltaRequestBuilder"/>.</returns>
-        public IGroupDeltaRequestBuilder Delta()
-        {
-            return new GroupDeltaRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
-                this.Client);
-        }
+        
     }
 }

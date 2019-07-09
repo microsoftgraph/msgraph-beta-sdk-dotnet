@@ -14,15 +14,15 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The interface IGraphServiceTrustFrameworkPoliciesCollectionPage.
+    /// The interface IUserTeamworkInstalledAppsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GraphServiceTrustFrameworkPoliciesCollectionPage>))]
-    public interface IGraphServiceTrustFrameworkPoliciesCollectionPage : ICollectionPage<TrustFrameworkPolicy>
+    [JsonConverter(typeof(InterfaceConverter<UserTeamworkInstalledAppsCollectionPage>))]
+    public interface IUserTeamworkInstalledAppsCollectionPage : ICollectionPage<TeamsAppInstallation>
     {
         /// <summary>
-        /// Gets the next page <see cref="IGraphServiceTrustFrameworkPoliciesCollectionRequest"/> instance.
+        /// Gets the next page <see cref="IUserTeamworkInstalledAppsCollectionRequest"/> instance.
         /// </summary>
-        IGraphServiceTrustFrameworkPoliciesCollectionRequest NextPageRequest { get; }
+        IUserTeamworkInstalledAppsCollectionRequest NextPageRequest { get; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.

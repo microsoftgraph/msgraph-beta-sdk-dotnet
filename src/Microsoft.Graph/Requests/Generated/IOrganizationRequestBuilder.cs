@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IOrganizationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>
-        IOrganizationExtensionsCollectionRequestBuilder Extensions { get; }
-
-        /// <summary>
         /// Gets the request builder for Brandings.
         /// </summary>
         /// <returns>The <see cref="IOrganizationBrandingsCollectionRequestBuilder"/>.</returns>
         IOrganizationBrandingsCollectionRequestBuilder Brandings { get; }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>
+        IOrganizationExtensionsCollectionRequestBuilder Extensions { get; }
     
         /// <summary>
         /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.

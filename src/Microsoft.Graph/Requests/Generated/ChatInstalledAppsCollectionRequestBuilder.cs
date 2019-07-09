@@ -12,16 +12,16 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The type GraphServiceTrustFrameworkPoliciesCollectionRequestBuilder.
+    /// The type ChatInstalledAppsCollectionRequestBuilder.
     /// </summary>
-    public partial class GraphServiceTrustFrameworkPoliciesCollectionRequestBuilder : BaseRequestBuilder, IGraphServiceTrustFrameworkPoliciesCollectionRequestBuilder
+    public partial class ChatInstalledAppsCollectionRequestBuilder : BaseRequestBuilder, IChatInstalledAppsCollectionRequestBuilder
     {
         /// <summary>
-        /// Constructs a new GraphServiceTrustFrameworkPoliciesCollectionRequestBuilder.
+        /// Constructs a new ChatInstalledAppsCollectionRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public GraphServiceTrustFrameworkPoliciesCollectionRequestBuilder(
+        public ChatInstalledAppsCollectionRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -32,7 +32,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Request()
+        public IChatInstalledAppsCollectionRequest Request()
         {
             return this.Request(null);
         }
@@ -42,21 +42,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequest Request(IEnumerable<Option> options)
+        public IChatInstalledAppsCollectionRequest Request(IEnumerable<Option> options)
         {
-            return new GraphServiceTrustFrameworkPoliciesCollectionRequest(this.RequestUrl, this.Client, options);
+            return new ChatInstalledAppsCollectionRequest(this.RequestUrl, this.Client, options);
         }
 
         /// <summary>
-        /// Gets an <see cref="ITrustFrameworkPolicyRequestBuilder"/> for the specified GraphServiceTrustFrameworkPolicy.
+        /// Gets an <see cref="ITeamsAppInstallationRequestBuilder"/> for the specified ChatTeamsAppInstallation.
         /// </summary>
-        /// <param name="id">The ID for the GraphServiceTrustFrameworkPolicy.</param>
-        /// <returns>The <see cref="ITrustFrameworkPolicyRequestBuilder"/>.</returns>
-        public ITrustFrameworkPolicyRequestBuilder this[string id]
+        /// <param name="id">The ID for the ChatTeamsAppInstallation.</param>
+        /// <returns>The <see cref="ITeamsAppInstallationRequestBuilder"/>.</returns>
+        public ITeamsAppInstallationRequestBuilder this[string id]
         {
             get
             {
-                return new TrustFrameworkPolicyRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new TeamsAppInstallationRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

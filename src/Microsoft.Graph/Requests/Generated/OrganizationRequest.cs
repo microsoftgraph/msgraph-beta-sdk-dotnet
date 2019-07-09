@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (organizationToInitialize != null && organizationToInitialize.AdditionalData != null)
             {
 
-                if (organizationToInitialize.Extensions != null && organizationToInitialize.Extensions.CurrentPage != null)
-                {
-                    organizationToInitialize.Extensions.AdditionalData = organizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        organizationToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (organizationToInitialize.Brandings != null && organizationToInitialize.Brandings.CurrentPage != null)
                 {
                     organizationToInitialize.Brandings.AdditionalData = organizationToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         organizationToInitialize.Brandings.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (organizationToInitialize.Extensions != null && organizationToInitialize.Extensions.CurrentPage != null)
+                {
+                    organizationToInitialize.Extensions.AdditionalData = organizationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    organizationToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        organizationToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

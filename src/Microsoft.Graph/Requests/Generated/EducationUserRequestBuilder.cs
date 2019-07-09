@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Schools.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools
+        /// <returns>The <see cref="IEducationUserAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IEducationUserAssignmentsCollectionRequestBuilder Assignments
         {
             get
             {
-                return new EducationUserSchoolsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("schools"), this.Client);
+                return new EducationUserAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
 
@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Schools.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools
+        {
+            get
+            {
+                return new EducationUserSchoolsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("schools"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for User.
         /// </summary>
         /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
@@ -95,18 +107,6 @@ namespace Microsoft.Graph
             get
             {
                 return new UserWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("user"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Assignments.
-        /// </summary>
-        /// <returns>The <see cref="IEducationUserAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IEducationUserAssignmentsCollectionRequestBuilder Assignments
-        {
-            get
-            {
-                return new EducationUserAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
     

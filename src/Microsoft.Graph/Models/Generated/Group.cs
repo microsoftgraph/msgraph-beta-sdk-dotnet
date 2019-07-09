@@ -263,13 +263,6 @@ namespace Microsoft.Graph
         public bool? IsArchived { get; set; }
     
         /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the group. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupExtensionsCollectionPage Extensions { get; set; }
-    
-        /// <summary>
         /// Gets or sets app role assignments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
@@ -420,6 +413,20 @@ namespace Microsoft.Graph
         public IGroupSitesCollectionPage Sites { get; set; }
     
         /// <summary>
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the group. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupExtensionsCollectionPage Extensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group lifecycle policies.
+        /// The collection of lifecycle policies for this group. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupLifecyclePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupGroupLifecyclePoliciesCollectionPage GroupLifecyclePolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets planner.
         /// Entry-point to Planner resource that might exist for a Unified Group.
         /// </summary>
@@ -444,13 +451,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channels", Required = Newtonsoft.Json.Required.Default)]
         public IGroupChannelsCollectionPage Channels { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group lifecycle policies.
-        /// The collection of lifecycle policies for this group. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupLifecyclePolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupGroupLifecyclePoliciesCollectionPage GroupLifecyclePolicies { get; set; }
     
     }
 }

@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new AadUserConversationMemberRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for User.
+        /// </summary>
+        /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
+        public IUserWithReferenceRequestBuilder User
+        {
+            get
+            {
+                return new UserWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("user"), this.Client);
+            }
+        }
+    
     }
 }
