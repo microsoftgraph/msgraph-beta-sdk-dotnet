@@ -20,39 +20,244 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Method Succeded
+        /// None
         /// </summary>
-        MethodSucceded = 0,
+        None = 0,
+	
+        /// <summary>
+        /// Require Mfa In Cloud
+        /// </summary>
+        RequireMfaInCloud = 1,
+	
+        /// <summary>
+        /// Require Mfa At Ext Id P
+        /// </summary>
+        RequireMfaAtExtIdP = 2,
+	
+        /// <summary>
+        /// Mfa Done In Cloud
+        /// </summary>
+        MfaDoneInCloud = 3,
+	
+        /// <summary>
+        /// Mfa Done At Ext Id P
+        /// </summary>
+        MfaDoneAtExtIdP = 4,
+	
+        /// <summary>
+        /// Mfa From Session Token_Deprecated
+        /// </summary>
+        MfaFromSessionToken_Deprecated = 5,
+	
+        /// <summary>
+        /// Mfa From Blob Grant_Deprecated
+        /// </summary>
+        MfaFromBlobGrant_Deprecated = 6,
+	
+        /// <summary>
+        /// Mfa From Access Token_Deprecated
+        /// </summary>
+        MfaFromAccessToken_Deprecated = 7,
+	
+        /// <summary>
+        /// Mfa From Flow Token_Deprecated
+        /// </summary>
+        MfaFromFlowToken_Deprecated = 8,
+	
+        /// <summary>
+        /// Skip Mfa Due To Icn
+        /// </summary>
+        SkipMfaDueToIcn = 9,
+	
+        /// <summary>
+        /// Skip Mfa Due To IP
+        /// </summary>
+        SkipMfaDueToIP = 10,
+	
+        /// <summary>
+        /// Skip Mfa Due To Ngc
+        /// </summary>
+        SkipMfaDueToNgc = 11,
+	
+        /// <summary>
+        /// Skip Mfa Due To Registered Device
+        /// </summary>
+        SkipMfaDueToRegisteredDevice = 12,
+	
+        /// <summary>
+        /// Skip Mfa Due To Remembered Device
+        /// </summary>
+        SkipMfaDueToRememberedDevice = 13,
+	
+        /// <summary>
+        /// Skip Mfa Due To App Password
+        /// </summary>
+        SkipMfaDueToAppPassword = 14,
+	
+        /// <summary>
+        /// Skip Mfa During Windows Broker Logon
+        /// </summary>
+        SkipMfaDuringWindowsBrokerLogon = 15,
+	
+        /// <summary>
+        /// Skip Mfa During Proof Up
+        /// </summary>
+        SkipMfaDuringProofUp = 16,
+	
+        /// <summary>
+        /// Mfa Expired
+        /// </summary>
+        MfaExpired = 17,
+	
+        /// <summary>
+        /// Skip Mfa Due To Fido UVFlag
+        /// </summary>
+        SkipMfaDueToFidoUVFlag = 18,
+	
+        /// <summary>
+        /// Skip Mfa Due To Wia Or Wia Or MFa For Drs Flow
+        /// </summary>
+        SkipMfaDueToWiaOrWiaOrMFaForDrsFlow = 19,
+	
+        /// <summary>
+        /// Skip Mfa Due To Wia
+        /// </summary>
+        SkipMfaDueToWia = 20,
+	
+        /// <summary>
+        /// Skip Mfa Due To Wia For Drs Flow
+        /// </summary>
+        SkipMfaDueToWiaForDrsFlow = 21,
+	
+        /// <summary>
+        /// Mfa From Credential
+        /// </summary>
+        MfaFromCredential = 22,
+	
+        /// <summary>
+        /// Success
+        /// </summary>
+        Success = 23,
+	
+        /// <summary>
+        /// Authentication Pending
+        /// </summary>
+        AuthenticationPending = 24,
+	
+        /// <summary>
+        /// Invalid Session
+        /// </summary>
+        InvalidSession = 25,
+	
+        /// <summary>
+        /// User Voice Auth Failed Call Went To Voicemail
+        /// </summary>
+        UserVoiceAuthFailedCallWentToVoicemail = 26,
+	
+        /// <summary>
+        /// Sms Auth Failed Wrong Code Entered
+        /// </summary>
+        SmsAuthFailedWrongCodeEntered = 27,
+	
+        /// <summary>
+        /// User Auth Failed Duplicate Request
+        /// </summary>
+        UserAuthFailedDuplicateRequest = 28,
+	
+        /// <summary>
+        /// User Voice Auth Failed Phone Hung Up
+        /// </summary>
+        UserVoiceAuthFailedPhoneHungUp = 29,
+	
+        /// <summary>
+        /// Oath Code Incorrect
+        /// </summary>
+        OathCodeIncorrect = 30,
+	
+        /// <summary>
+        /// User Voice Auth Failed Phone Unreachable
+        /// </summary>
+        UserVoiceAuthFailedPhoneUnreachable = 31,
+	
+        /// <summary>
+        /// Sms Auth Failed Max Allowed Code Retry Reached
+        /// </summary>
+        SmsAuthFailedMaxAllowedCodeRetryReached = 32,
+	
+        /// <summary>
+        /// Phone App Denied
+        /// </summary>
+        PhoneAppDenied = 33,
+	
+        /// <summary>
+        /// Internal Error
+        /// </summary>
+        InternalError = 34,
+	
+        /// <summary>
+        /// Phone App Notification Failed
+        /// </summary>
+        PhoneAppNotificationFailed = 35,
+	
+        /// <summary>
+        /// Authentication Method Failed
+        /// </summary>
+        AuthenticationMethodFailed = 36,
+	
+        /// <summary>
+        /// Phone App All Devices Blocked
+        /// </summary>
+        PhoneAppAllDevicesBlocked = 37,
+	
+        /// <summary>
+        /// Proof Data Not Found
+        /// </summary>
+        ProofDataNotFound = 38,
+	
+        /// <summary>
+        /// Invalid Format
+        /// </summary>
+        InvalidFormat = 39,
+	
+        /// <summary>
+        /// Phone App No Response
+        /// </summary>
+        PhoneAppNoResponse = 40,
+	
+        /// <summary>
+        /// Pin Entered
+        /// </summary>
+        PinEntered = 41,
 	
         /// <summary>
         /// User Is Blocked
         /// </summary>
-        UserIsBlocked = 1,
+        UserIsBlocked = 42,
 	
         /// <summary>
-        /// Fraud Code Entered
+        /// Oath Code Duplicate
         /// </summary>
-        FraudCodeEntered = 2,
+        OathCodeDuplicate = 43,
 	
         /// <summary>
-        /// No Phone Input
+        /// Authentication Method Not Configured
         /// </summary>
-        NoPhoneInput = 3,
+        AuthenticationMethodNotConfigured = 44,
 	
         /// <summary>
-        /// Phone Unreachable
+        /// User Not Found
         /// </summary>
-        PhoneUnreachable = 4,
+        UserNotFound = 45,
 	
         /// <summary>
-        /// Claim In Token
+        /// Sms Sent
         /// </summary>
-        ClaimInToken = 5,
+        SmsSent = 46,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 6,
+        UnknownFutureValue = 47,
 	
     }
 }

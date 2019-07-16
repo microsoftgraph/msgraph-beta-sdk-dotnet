@@ -90,6 +90,13 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetRelyingPartyDetailedSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetRelyingPartyDetailedSummaryRequestBuilder"/>.</returns>
+        IReportRootGetRelyingPartyDetailedSummaryRequestBuilder GetRelyingPartyDetailedSummary(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>

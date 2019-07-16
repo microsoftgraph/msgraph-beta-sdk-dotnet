@@ -533,12 +533,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
-        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
-        public IUserJoinedTeamsCollectionRequestBuilder JoinedTeams
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams
         {
             get
             {
-                return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+                return new UserJoinedTeamsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Teamwork.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
+        public IUserTeamworkRequestBuilder Teamwork
+        {
+            get
+            {
+                return new UserTeamworkRequestBuilder(this.AppendSegmentToRequestUrl("teamwork"), this.Client);
             }
         }
 
@@ -623,6 +635,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserNotificationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("notifications"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Analytics.
+        /// </summary>
+        /// <returns>The <see cref="IUserAnalyticsRequestBuilder"/>.</returns>
+        public IUserAnalyticsRequestBuilder Analytics
+        {
+            get
+            {
+                return new UserAnalyticsRequestBuilder(this.AppendSegmentToRequestUrl("analytics"), this.Client);
             }
         }
     

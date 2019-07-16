@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "explicitValue", Required = Newtonsoft.Json.Required.Default)]
         public bool? ExplicitValue { get; set; }
     
+        /// <summary>
+        /// Gets or sets value prefix.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valuePrefix", Required = Newtonsoft.Json.Required.Default)]
+        public string ValuePrefix { get; set; }
+    
     }
 }
 

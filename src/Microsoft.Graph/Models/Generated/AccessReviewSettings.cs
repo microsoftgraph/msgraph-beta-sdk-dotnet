@@ -78,6 +78,12 @@ namespace Microsoft.Graph
         public bool? AccessRecommendationsEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets applyDeniedDecisionsSettings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyDeniedDecisionsSettings", Required = Newtonsoft.Json.Required.Default)]
+        public AccessReviewDenyActionSettings ApplyDeniedDecisionsSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

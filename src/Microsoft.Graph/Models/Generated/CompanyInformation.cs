@@ -89,12 +89,6 @@ namespace Microsoft.Graph
         public Stream Picture { get; set; }
     
         /// <summary>
-        /// Gets or sets business profile id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessProfileId", Required = Newtonsoft.Json.Required.Default)]
-        public string BusinessProfileId { get; set; }
-    
-        /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]

@@ -92,13 +92,6 @@ namespace Microsoft.Graph
         public EducationCourse Course { get; set; }
     
         /// <summary>
-        /// Gets or sets schools.
-        /// All schools that this class is associated with. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationClassSchoolsCollectionWithReferencesPage Schools { get; set; }
-    
-        /// <summary>
         /// Gets or sets members.
         /// All users in the class. Nullable.
         /// </summary>
@@ -111,6 +104,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teachers", Required = Newtonsoft.Json.Required.Default)]
         public IEducationClassTeachersCollectionWithReferencesPage Teachers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets schools.
+        /// All schools that this class is associated with. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationClassSchoolsCollectionWithReferencesPage Schools { get; set; }
     
         /// <summary>
         /// Gets or sets group.

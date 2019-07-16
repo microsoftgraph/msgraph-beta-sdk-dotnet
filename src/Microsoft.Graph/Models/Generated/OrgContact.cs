@@ -23,28 +23,16 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets business phones.
+        /// Gets or sets addresses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessPhones", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> BusinessPhones { get; set; }
-    
-        /// <summary>
-        /// Gets or sets city.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
-        public string City { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addresses", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PhysicalOfficeAddress> Addresses { get; set; }
     
         /// <summary>
         /// Gets or sets company name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyName", Required = Newtonsoft.Json.Required.Default)]
         public string CompanyName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets country.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "country", Required = Newtonsoft.Json.Required.Default)]
-        public string Country { get; set; }
     
         /// <summary>
         /// Gets or sets department.
@@ -83,12 +71,6 @@ namespace Microsoft.Graph
         public string MailNickname { get; set; }
     
         /// <summary>
-        /// Gets or sets mobile phone.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobilePhone", Required = Newtonsoft.Json.Required.Default)]
-        public string MobilePhone { get; set; }
-    
-        /// <summary>
         /// Gets or sets on premises sync enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSyncEnabled", Required = Newtonsoft.Json.Required.Default)]
@@ -107,34 +89,16 @@ namespace Microsoft.Graph
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
-        /// Gets or sets office location.
+        /// Gets or sets phones.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string OfficeLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets postal code.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postalCode", Required = Newtonsoft.Json.Required.Default)]
-        public string PostalCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phones", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Phone> Phones { get; set; }
     
         /// <summary>
         /// Gets or sets proxy addresses.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ProxyAddresses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public string State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets street address.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "streetAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string StreetAddress { get; set; }
     
         /// <summary>
         /// Gets or sets surname.

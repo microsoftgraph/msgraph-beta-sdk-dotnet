@@ -767,7 +767,13 @@ namespace Microsoft.Graph
         /// Gets or sets joined teams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
-        public IUserJoinedTeamsCollectionPage JoinedTeams { get; set; }
+        public IUserJoinedTeamsCollectionWithReferencesPage JoinedTeams { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teamwork.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
+        public UserTeamwork Teamwork { get; set; }
     
         /// <summary>
         /// Gets or sets device management troubleshooting events.
@@ -813,6 +819,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifications", Required = Newtonsoft.Json.Required.Default)]
         public IUserNotificationsCollectionPage Notifications { get; set; }
+    
+        /// <summary>
+        /// Gets or sets analytics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "analytics", Required = Newtonsoft.Json.Required.Default)]
+        public UserAnalytics Analytics { get; set; }
     
     }
 }

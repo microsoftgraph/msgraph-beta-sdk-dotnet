@@ -99,6 +99,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SalesInvoices.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesInvoicesCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesInvoicesCollectionRequestBuilder SalesInvoices
+        {
+            get
+            {
+                return new CompanySalesInvoicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesInvoices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoiceLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesInvoiceLinesCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesInvoiceLinesCollectionRequestBuilder SalesInvoiceLines
+        {
+            get
+            {
+                return new CompanySalesInvoiceLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesInvoiceLines"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CustomerPaymentJournals.
         /// </summary>
         /// <returns>The <see cref="ICompanyCustomerPaymentJournalsCollectionRequestBuilder"/>.</returns>
@@ -291,6 +315,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SalesOrders.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesOrdersCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesOrdersCollectionRequestBuilder SalesOrders
+        {
+            get
+            {
+                return new CompanySalesOrdersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesOrders"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesOrderLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesOrderLinesCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesOrderLinesCollectionRequestBuilder SalesOrderLines
+        {
+            get
+            {
+                return new CompanySalesOrderLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesOrderLines"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UnitsOfMeasure.
         /// </summary>
         /// <returns>The <see cref="ICompanyUnitsOfMeasureCollectionRequestBuilder"/>.</returns>
@@ -335,6 +383,78 @@ namespace Microsoft.Graph
             get
             {
                 return new CompanyTaxAreasCollectionRequestBuilder(this.AppendSegmentToRequestUrl("taxAreas"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesQuotes.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesQuotesCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesQuotesCollectionRequestBuilder SalesQuotes
+        {
+            get
+            {
+                return new CompanySalesQuotesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesQuotes"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesQuoteLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesQuoteLinesCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesQuoteLinesCollectionRequestBuilder SalesQuoteLines
+        {
+            get
+            {
+                return new CompanySalesQuoteLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesQuoteLines"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesCreditMemos.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesCreditMemosCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesCreditMemosCollectionRequestBuilder SalesCreditMemos
+        {
+            get
+            {
+                return new CompanySalesCreditMemosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesCreditMemos"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesCreditMemoLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesCreditMemoLinesCollectionRequestBuilder"/>.</returns>
+        public ICompanySalesCreditMemoLinesCollectionRequestBuilder SalesCreditMemoLines
+        {
+            get
+            {
+                return new CompanySalesCreditMemoLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesCreditMemoLines"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PurchaseInvoices.
+        /// </summary>
+        /// <returns>The <see cref="ICompanyPurchaseInvoicesCollectionRequestBuilder"/>.</returns>
+        public ICompanyPurchaseInvoicesCollectionRequestBuilder PurchaseInvoices
+        {
+            get
+            {
+                return new CompanyPurchaseInvoicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("purchaseInvoices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PurchaseInvoiceLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanyPurchaseInvoiceLinesCollectionRequestBuilder"/>.</returns>
+        public ICompanyPurchaseInvoiceLinesCollectionRequestBuilder PurchaseInvoiceLines
+        {
+            get
+            {
+                return new CompanyPurchaseInvoiceLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("purchaseInvoiceLines"), this.Client);
             }
         }
 

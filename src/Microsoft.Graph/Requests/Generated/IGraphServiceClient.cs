@@ -267,11 +267,6 @@ namespace Microsoft.Graph
         IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
     
         /// <summary>
-        /// Gets the GraphServiceTrustFrameworkPolicies request builder.
-        /// </summary>
-        IGraphServiceTrustFrameworkPoliciesCollectionRequestBuilder TrustFrameworkPolicies { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceFunctions request builder.
         /// </summary>
         IGraphServiceFunctionsCollectionRequestBuilder Functions { get; }
@@ -387,6 +382,11 @@ namespace Microsoft.Graph
         IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates { get; }
     
         /// <summary>
+        /// Gets the GraphServiceActivitystatistics request builder.
+        /// </summary>
+        IGraphServiceActivitystatisticsCollectionRequestBuilder Activitystatistics { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceApp request builder.
         /// </summary>
         ICommsApplicationRequestBuilder App { get; }
@@ -452,6 +452,11 @@ namespace Microsoft.Graph
         IDataClassificationServiceRequestBuilder DataClassification { get; }
     
         /// <summary>
+        /// Gets the GraphServiceTeamwork request builder.
+        /// </summary>
+        ITeamworkRequestBuilder Teamwork { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         ISecurityRequestBuilder Security { get; }
@@ -465,6 +470,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceFinancials request builder.
         /// </summary>
         IFinancialsRequestBuilder Financials { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceSearch request builder.
+        /// </summary>
+        ISearchRequestBuilder Search { get; }
     
     }
 }

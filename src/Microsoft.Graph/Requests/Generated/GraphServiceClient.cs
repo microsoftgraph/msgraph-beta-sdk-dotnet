@@ -592,17 +592,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceTrustFrameworkPolicies request builder.
-        /// </summary>
-        public IGraphServiceTrustFrameworkPoliciesCollectionRequestBuilder TrustFrameworkPolicies
-        {
-            get
-            {
-                return new GraphServiceTrustFrameworkPoliciesCollectionRequestBuilder(this.BaseUrl + "/trustFrameworkPolicies", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceFunctions request builder.
         /// </summary>
         public IGraphServiceFunctionsCollectionRequestBuilder Functions
@@ -856,6 +845,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceActivitystatistics request builder.
+        /// </summary>
+        public IGraphServiceActivitystatisticsCollectionRequestBuilder Activitystatistics
+        {
+            get
+            {
+                return new GraphServiceActivitystatisticsCollectionRequestBuilder(this.BaseUrl + "/activitystatistics", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceApp request builder.
         /// </summary>
         public ICommsApplicationRequestBuilder App
@@ -999,6 +999,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTeamwork request builder.
+        /// </summary>
+        public ITeamworkRequestBuilder Teamwork
+        {
+            get
+            {
+                return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         public ISecurityRequestBuilder Security
@@ -1028,6 +1039,17 @@ namespace Microsoft.Graph
             get
             {
                 return new FinancialsRequestBuilder(this.BaseUrl + "/financials", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceSearch request builder.
+        /// </summary>
+        public ISearchRequestBuilder Search
+        {
+            get
+            {
+                return new SearchRequestBuilder(this.BaseUrl + "/search", this);
             }
         }
     

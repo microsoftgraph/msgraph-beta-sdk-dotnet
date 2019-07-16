@@ -35,6 +35,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets internal id.
+        /// A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internalId", Required = Newtonsoft.Json.Required.Default)]
+        public string InternalId { get; set; }
+    
+        /// <summary>
         /// Gets or sets classification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
@@ -88,6 +95,12 @@ namespace Microsoft.Graph
         public TeamFunSettings FunSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets discovery settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverySettings", Required = Newtonsoft.Json.Required.Default)]
+        public TeamDiscoverySettings DiscoverySettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets is archived.
         /// Whether this team is in read-only mode.
         /// </summary>
@@ -137,6 +150,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
         public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
+    
+        /// <summary>
+        /// Gets or sets primary channel.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryChannel", Required = Newtonsoft.Json.Required.Default)]
+        public Channel PrimaryChannel { get; set; }
     
         /// <summary>
         /// Gets or sets group.

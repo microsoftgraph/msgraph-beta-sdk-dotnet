@@ -161,6 +161,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetRelyingPartyDetailedSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetRelyingPartyDetailedSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetRelyingPartyDetailedSummaryRequestBuilder GetRelyingPartyDetailedSummary(
+            string period)
+        {
+            return new ReportRootGetRelyingPartyDetailedSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRelyingPartyDetailedSummary"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>

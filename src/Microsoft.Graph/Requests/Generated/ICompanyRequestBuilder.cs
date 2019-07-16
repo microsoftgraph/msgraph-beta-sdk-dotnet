@@ -56,6 +56,18 @@ namespace Microsoft.Graph
         ICompanyCompanyInformationCollectionRequestBuilder CompanyInformation { get; }
 
         /// <summary>
+        /// Gets the request builder for SalesInvoices.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesInvoicesCollectionRequestBuilder"/>.</returns>
+        ICompanySalesInvoicesCollectionRequestBuilder SalesInvoices { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoiceLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesInvoiceLinesCollectionRequestBuilder"/>.</returns>
+        ICompanySalesInvoiceLinesCollectionRequestBuilder SalesInvoiceLines { get; }
+
+        /// <summary>
         /// Gets the request builder for CustomerPaymentJournals.
         /// </summary>
         /// <returns>The <see cref="ICompanyCustomerPaymentJournalsCollectionRequestBuilder"/>.</returns>
@@ -152,6 +164,18 @@ namespace Microsoft.Graph
         ICompanyCountriesRegionsCollectionRequestBuilder CountriesRegions { get; }
 
         /// <summary>
+        /// Gets the request builder for SalesOrders.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesOrdersCollectionRequestBuilder"/>.</returns>
+        ICompanySalesOrdersCollectionRequestBuilder SalesOrders { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesOrderLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesOrderLinesCollectionRequestBuilder"/>.</returns>
+        ICompanySalesOrderLinesCollectionRequestBuilder SalesOrderLines { get; }
+
+        /// <summary>
         /// Gets the request builder for UnitsOfMeasure.
         /// </summary>
         /// <returns>The <see cref="ICompanyUnitsOfMeasureCollectionRequestBuilder"/>.</returns>
@@ -174,6 +198,42 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICompanyTaxAreasCollectionRequestBuilder"/>.</returns>
         ICompanyTaxAreasCollectionRequestBuilder TaxAreas { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesQuotes.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesQuotesCollectionRequestBuilder"/>.</returns>
+        ICompanySalesQuotesCollectionRequestBuilder SalesQuotes { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesQuoteLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesQuoteLinesCollectionRequestBuilder"/>.</returns>
+        ICompanySalesQuoteLinesCollectionRequestBuilder SalesQuoteLines { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesCreditMemos.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesCreditMemosCollectionRequestBuilder"/>.</returns>
+        ICompanySalesCreditMemosCollectionRequestBuilder SalesCreditMemos { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesCreditMemoLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanySalesCreditMemoLinesCollectionRequestBuilder"/>.</returns>
+        ICompanySalesCreditMemoLinesCollectionRequestBuilder SalesCreditMemoLines { get; }
+
+        /// <summary>
+        /// Gets the request builder for PurchaseInvoices.
+        /// </summary>
+        /// <returns>The <see cref="ICompanyPurchaseInvoicesCollectionRequestBuilder"/>.</returns>
+        ICompanyPurchaseInvoicesCollectionRequestBuilder PurchaseInvoices { get; }
+
+        /// <summary>
+        /// Gets the request builder for PurchaseInvoiceLines.
+        /// </summary>
+        /// <returns>The <see cref="ICompanyPurchaseInvoiceLinesCollectionRequestBuilder"/>.</returns>
+        ICompanyPurchaseInvoiceLinesCollectionRequestBuilder PurchaseInvoiceLines { get; }
 
         /// <summary>
         /// Gets the request builder for Picture.

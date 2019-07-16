@@ -65,6 +65,13 @@ namespace Microsoft.Graph
         public GroupPolicyType? PolicyType { get; set; }
     
         /// <summary>
+        /// Gets or sets revision.
+        /// The revision version associated with the file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "revision", Required = Newtonsoft.Json.Required.Default)]
+        public string Revision { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.
         /// </summary>
