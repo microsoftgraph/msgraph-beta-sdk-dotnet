@@ -64,5 +64,10 @@ namespace Microsoft.Graph
         /// </summary>
         Saturday = 8,
 	
+        /// <summary>
+        /// No Scheduled Scan
+        /// </summary>
+        NoScheduledScan = 9,
+	
     }
 }

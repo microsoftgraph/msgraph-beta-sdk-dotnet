@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public string Browser { get; set; }
     
         /// <summary>
+        /// Gets or sets browserId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserId", Required = Newtonsoft.Json.Required.Default)]
+        public string BrowserId { get; set; }
+    
+        /// <summary>
         /// Gets or sets isCompliant.
         /// Indicates whether the device is compliant.
         /// </summary>

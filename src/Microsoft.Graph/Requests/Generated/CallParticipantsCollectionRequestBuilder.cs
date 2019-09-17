@@ -61,21 +61,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ParticipantConfigureMixer.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantConfigureMixerRequestBuilder"/>.</returns>
-        public IParticipantConfigureMixerRequestBuilder ConfigureMixer(
-            IEnumerable<ParticipantMixerLevel> participantMixerLevels,
-            string clientContext = null)
-        {
-            return new ParticipantConfigureMixerRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.configureMixer"),
-                this.Client,
-                participantMixerLevels,
-                clientContext);
-        }
-
-        /// <summary>
         /// Gets the request builder for ParticipantInvite.
         /// </summary>
         /// <returns>The <see cref="IParticipantInviteRequestBuilder"/>.</returns>
@@ -100,21 +85,6 @@ namespace Microsoft.Graph
         {
             return new ParticipantMuteAllRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.muteAll"),
-                this.Client,
-                participants,
-                clientContext);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ParticipantUnmuteAll.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantUnmuteAllRequestBuilder"/>.</returns>
-        public IParticipantUnmuteAllRequestBuilder UnmuteAll(
-            IEnumerable<string> participants = null,
-            string clientContext = null)
-        {
-            return new ParticipantUnmuteAllRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.unmuteAll"),
                 this.Client,
                 participants,
                 clientContext);

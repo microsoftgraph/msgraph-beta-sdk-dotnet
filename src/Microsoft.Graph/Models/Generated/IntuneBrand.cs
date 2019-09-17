@@ -129,6 +129,20 @@ namespace Microsoft.Graph
         public string CustomPrivacyMessage { get; set; }
     
         /// <summary>
+        /// Gets or sets isRemoveDeviceDisabled.
+        /// Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemoveDeviceDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRemoveDeviceDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isFactoryResetDisabled.
+        /// Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFactoryResetDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFactoryResetDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets showDisplayNameNextToLogo.
         /// Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
         /// </summary>

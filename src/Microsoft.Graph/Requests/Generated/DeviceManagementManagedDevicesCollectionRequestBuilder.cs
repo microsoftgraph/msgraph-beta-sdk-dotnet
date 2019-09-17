@@ -68,7 +68,9 @@ namespace Microsoft.Graph
             ManagedDeviceRemoteAction actionName,
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
-            IEnumerable<string> deviceIds = null)
+            IEnumerable<string> deviceIds = null,
+            string notificationTitle = null,
+            string notificationBody = null)
         {
             return new ManagedDeviceExecuteActionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.executeAction"),
@@ -76,7 +78,9 @@ namespace Microsoft.Graph
                 actionName,
                 keepEnrollmentData,
                 keepUserData,
-                deviceIds);
+                deviceIds,
+                notificationTitle,
+                notificationBody);
         }
     }
 }

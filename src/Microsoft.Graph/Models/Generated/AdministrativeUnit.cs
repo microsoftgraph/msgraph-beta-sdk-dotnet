@@ -41,12 +41,6 @@ namespace Microsoft.Graph
         public string Visibility { get; set; }
     
         /// <summary>
-        /// Gets or sets extensions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IAdministrativeUnitExtensionsCollectionPage Extensions { get; set; }
-    
-        /// <summary>
         /// Gets or sets members.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
@@ -57,6 +51,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopedRoleMembers", Required = Newtonsoft.Json.Required.Default)]
         public IAdministrativeUnitScopedRoleMembersCollectionPage ScopedRoleMembers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IAdministrativeUnitExtensionsCollectionPage Extensions { get; set; }
     
     }
 }

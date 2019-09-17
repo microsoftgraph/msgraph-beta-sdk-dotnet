@@ -492,11 +492,39 @@ namespace Microsoft.Graph
         public ConfigurationManagerClientHealthState ConfigurationManagerClientHealthState { get; set; }
     
         /// <summary>
+        /// Gets or sets configuration manager client information.
+        /// Configuration manager client information, valid only for devices managed, duel-managed or tri-managed by ConfigMgr Agent
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationManagerClientInformation", Required = Newtonsoft.Json.Required.Default)]
+        public ConfigurationManagerClientInformation ConfigurationManagerClientInformation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security baseline states.
+        /// Security baseline states for this device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityBaselineStates", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedDeviceSecurityBaselineStatesCollectionPage SecurityBaselineStates { get; set; }
+    
+        /// <summary>
         /// Gets or sets device configuration states.
         /// Device configuration states for this device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationStates", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceDeviceConfigurationStatesCollectionPage DeviceConfigurationStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device compliance policy states.
+        /// Device compliance policy states for this device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyStates", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed device mobile app configuration states.
+        /// Managed device mobile app configuration states for this device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceMobileAppConfigurationStates", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionPage ManagedDeviceMobileAppConfigurationStates { get; set; }
     
         /// <summary>
         /// Gets or sets detected apps.
@@ -525,27 +553,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceUsersCollectionPage Users { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device compliance policy states.
-        /// Device compliance policy states for this device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyStates", Required = Newtonsoft.Json.Required.Default)]
-        public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed device mobile app configuration states.
-        /// Managed device mobile app configuration states for this device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceMobileAppConfigurationStates", Required = Newtonsoft.Json.Required.Default)]
-        public IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionPage ManagedDeviceMobileAppConfigurationStates { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security baseline states.
-        /// Security baseline states for this device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityBaselineStates", Required = Newtonsoft.Json.Required.Default)]
-        public IManagedDeviceSecurityBaselineStatesCollectionPage SecurityBaselineStates { get; set; }
     
     }
 }

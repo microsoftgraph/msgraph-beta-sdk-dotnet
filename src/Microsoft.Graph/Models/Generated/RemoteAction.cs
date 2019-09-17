@@ -124,5 +124,10 @@ namespace Microsoft.Graph
         /// </summary>
         GetFileVaultKey = 21,
 	
+        /// <summary>
+        /// Set Device Name
+        /// </summary>
+        SetDeviceName = 22,
+	
     }
 }

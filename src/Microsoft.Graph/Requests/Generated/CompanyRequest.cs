@@ -298,6 +298,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (companyToInitialize.SalesInvoices != null && companyToInitialize.SalesInvoices.CurrentPage != null)
+                {
+                    companyToInitialize.SalesInvoices.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesInvoices@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesInvoices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.SalesInvoiceLines != null && companyToInitialize.SalesInvoiceLines.CurrentPage != null)
+                {
+                    companyToInitialize.SalesInvoiceLines.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesInvoiceLines@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesInvoiceLines.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (companyToInitialize.CustomerPaymentJournals != null && companyToInitialize.CustomerPaymentJournals.CurrentPage != null)
                 {
                     companyToInitialize.CustomerPaymentJournals.AdditionalData = companyToInitialize.AdditionalData;
@@ -554,6 +586,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (companyToInitialize.SalesOrders != null && companyToInitialize.SalesOrders.CurrentPage != null)
+                {
+                    companyToInitialize.SalesOrders.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesOrders@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesOrders.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.SalesOrderLines != null && companyToInitialize.SalesOrderLines.CurrentPage != null)
+                {
+                    companyToInitialize.SalesOrderLines.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesOrderLines@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesOrderLines.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (companyToInitialize.UnitsOfMeasure != null && companyToInitialize.UnitsOfMeasure.CurrentPage != null)
                 {
                     companyToInitialize.UnitsOfMeasure.AdditionalData = companyToInitialize.AdditionalData;
@@ -613,6 +677,102 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         companyToInitialize.TaxAreas.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.SalesQuotes != null && companyToInitialize.SalesQuotes.CurrentPage != null)
+                {
+                    companyToInitialize.SalesQuotes.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesQuotes@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesQuotes.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.SalesQuoteLines != null && companyToInitialize.SalesQuoteLines.CurrentPage != null)
+                {
+                    companyToInitialize.SalesQuoteLines.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesQuoteLines@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesQuoteLines.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.SalesCreditMemos != null && companyToInitialize.SalesCreditMemos.CurrentPage != null)
+                {
+                    companyToInitialize.SalesCreditMemos.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesCreditMemos@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesCreditMemos.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.SalesCreditMemoLines != null && companyToInitialize.SalesCreditMemoLines.CurrentPage != null)
+                {
+                    companyToInitialize.SalesCreditMemoLines.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("salesCreditMemoLines@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.SalesCreditMemoLines.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.PurchaseInvoices != null && companyToInitialize.PurchaseInvoices.CurrentPage != null)
+                {
+                    companyToInitialize.PurchaseInvoices.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("purchaseInvoices@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.PurchaseInvoices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (companyToInitialize.PurchaseInvoiceLines != null && companyToInitialize.PurchaseInvoiceLines.CurrentPage != null)
+                {
+                    companyToInitialize.PurchaseInvoiceLines.AdditionalData = companyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    companyToInitialize.AdditionalData.TryGetValue("purchaseInvoiceLines@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        companyToInitialize.PurchaseInvoiceLines.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

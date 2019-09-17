@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IAdministrativeUnitRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IAdministrativeUnitExtensionsCollectionRequestBuilder"/>.</returns>
-        IAdministrativeUnitExtensionsCollectionRequestBuilder Extensions { get; }
-
-        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IAdministrativeUnitMembersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -48,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAdministrativeUnitScopedRoleMembersCollectionRequestBuilder"/>.</returns>
         IAdministrativeUnitScopedRoleMembersCollectionRequestBuilder ScopedRoleMembers { get; }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitExtensionsCollectionRequestBuilder"/>.</returns>
+        IAdministrativeUnitExtensionsCollectionRequestBuilder Extensions { get; }
     
         
     

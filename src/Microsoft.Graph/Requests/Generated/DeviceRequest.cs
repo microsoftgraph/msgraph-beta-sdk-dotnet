@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (deviceToInitialize != null && deviceToInitialize.AdditionalData != null)
             {
 
-                if (deviceToInitialize.Extensions != null && deviceToInitialize.Extensions.CurrentPage != null)
-                {
-                    deviceToInitialize.Extensions.AdditionalData = deviceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceToInitialize.MemberOf != null && deviceToInitialize.MemberOf.CurrentPage != null)
                 {
                     deviceToInitialize.MemberOf.AdditionalData = deviceToInitialize.AdditionalData;
@@ -309,6 +293,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceToInitialize.Extensions != null && deviceToInitialize.Extensions.CurrentPage != null)
+                {
+                    deviceToInitialize.Extensions.AdditionalData = deviceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -37,11 +37,5 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
         IImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder DeviceIdentities { get; }
     
-        /// <summary>
-        /// Gets the request builder for ImportedWindowsAutopilotDeviceIdentityUploadAutopilotDeviceStream.
-        /// </summary>
-        /// <returns>The <see cref="IImportedWindowsAutopilotDeviceIdentityUploadAutopilotDeviceStreamRequestBuilder"/>.</returns>
-        IImportedWindowsAutopilotDeviceIdentityUploadAutopilotDeviceStreamRequestBuilder AutopilotDeviceStream();
-    
     }
 }

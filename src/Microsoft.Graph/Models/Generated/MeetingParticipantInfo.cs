@@ -36,12 +36,6 @@ namespace Microsoft.Graph
         public string Upn { get; set; }
     
         /// <summary>
-        /// Gets or sets sipProxyAddress.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sipProxyAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string SipProxyAddress { get; set; }
-    
-        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

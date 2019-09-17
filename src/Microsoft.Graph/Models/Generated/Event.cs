@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets start.
-        /// The date, time, and time zone that the event starts.
+        /// The date, time, and time zone that the event starts. By default, the start time is in UTC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone Start { get; set; }
@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets end.
-        /// The date, time, and time zone that the event ends.
+        /// The date, time, and time zone that the event ends. By default, the end time is in UTC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone End { get; set; }
@@ -212,7 +212,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets web link.
-        /// The URL to open the event in Outlook Web App.The event will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.
+        /// The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webLink", Required = Newtonsoft.Json.Required.Default)]
         public string WebLink { get; set; }
@@ -223,27 +223,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingUrl", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineMeetingUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets calendar.
-        /// The calendar that contains the event. Navigation property. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendar", Required = Newtonsoft.Json.Required.Default)]
-        public Calendar Calendar { get; set; }
-    
-        /// <summary>
-        /// Gets or sets instances.
-        /// The instances of the event. Navigation property. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
-        public IEventInstancesCollectionPage Instances { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the event. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IEventExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.
@@ -265,6 +244,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IEventMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets calendar.
+        /// The calendar that contains the event. Navigation property. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendar", Required = Newtonsoft.Json.Required.Default)]
+        public Calendar Calendar { get; set; }
+    
+        /// <summary>
+        /// Gets or sets instances.
+        /// The instances of the event. Navigation property. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
+        public IEventInstancesCollectionPage Instances { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the event. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IEventExtensionsCollectionPage Extensions { get; set; }
     
     }
 }

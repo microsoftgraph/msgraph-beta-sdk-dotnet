@@ -56,7 +56,8 @@ namespace Microsoft.Graph
         IDeviceManagementTemplateCreateInstanceRequestBuilder CreateInstance(
             string displayName = null,
             string description = null,
-            IEnumerable<DeviceManagementSettingInstance> settingsDelta = null);
+            IEnumerable<DeviceManagementSettingInstance> settingsDelta = null,
+            IEnumerable<string> roleScopeTagIds = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementTemplateCompare.

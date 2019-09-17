@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         Wipe = 5,
 	
+        /// <summary>
+        /// Custom Text Notification
+        /// </summary>
+        CustomTextNotification = 6,
+	
     }
 }

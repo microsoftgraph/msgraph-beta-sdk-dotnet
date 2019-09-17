@@ -185,13 +185,6 @@ namespace Microsoft.Graph
         public string Platform { get; set; }
     
         /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the device. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceExtensionsCollectionPage Extensions { get; set; }
-    
-        /// <summary>
         /// Gets or sets member of.
         /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
         /// </summary>
@@ -217,6 +210,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the device. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
         /// Gets or sets commands.

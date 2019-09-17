@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IDeviceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceExtensionsCollectionRequestBuilder"/>.</returns>
-        IDeviceExtensionsCollectionRequestBuilder Extensions { get; }
-
-        /// <summary>
         /// Gets the request builder for MemberOf.
         /// </summary>
         /// <returns>The <see cref="IDeviceMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -60,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
         IDeviceTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceExtensionsCollectionRequestBuilder"/>.</returns>
+        IDeviceExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
         /// Gets the request builder for Commands.

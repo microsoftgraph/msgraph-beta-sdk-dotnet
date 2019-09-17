@@ -17,9 +17,39 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets the GraphServiceSchemaExtensions request builder.
+        /// Gets the GraphServiceInvitations request builder.
         /// </summary>
-        IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions { get; }
+        IGraphServiceInvitationsCollectionRequestBuilder Invitations { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceUsers request builder.
+        /// </summary>
+        IGraphServiceUsersCollectionRequestBuilder Users { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceActivitystatistics request builder.
+        /// </summary>
+        IGraphServiceActivitystatisticsCollectionRequestBuilder Activitystatistics { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceApplicationTemplates request builder.
+        /// </summary>
+        IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceBookingBusinesses request builder.
+        /// </summary>
+        IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceBookingCurrencies request builder.
+        /// </summary>
+        IGraphServiceBookingCurrenciesCollectionRequestBuilder BookingCurrencies { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityProviders request builder.
+        /// </summary>
+        IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
     
         /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
@@ -30,6 +60,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceApplications request builder.
         /// </summary>
         IGraphServiceApplicationsCollectionRequestBuilder Applications { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePermissionGrants request builder.
+        /// </summary>
+        IGraphServicePermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
     
         /// <summary>
         /// Gets the GraphServiceAdministrativeUnits request builder.
@@ -45,6 +80,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceAppRoleAssignments request builder.
         /// </summary>
         IGraphServiceAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceCertificateBasedAuthConfiguration request builder.
+        /// </summary>
+        IGraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration { get; }
     
         /// <summary>
         /// Gets the GraphServiceContacts request builder.
@@ -117,11 +157,6 @@ namespace Microsoft.Graph
         IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus { get; }
     
         /// <summary>
-        /// Gets the GraphServiceUsers request builder.
-        /// </summary>
-        IGraphServiceUsersCollectionRequestBuilder Users { get; }
-    
-        /// <summary>
         /// Gets the GraphServicePolicies request builder.
         /// </summary>
         IGraphServicePoliciesCollectionRequestBuilder Policies { get; }
@@ -135,6 +170,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceWorkbooks request builder.
         /// </summary>
         IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePlaces request builder.
+        /// </summary>
+        IGraphServicePlacesCollectionRequestBuilder Places { get; }
     
         /// <summary>
         /// Gets the GraphServiceDrives request builder.
@@ -152,9 +192,79 @@ namespace Microsoft.Graph
         IGraphServiceSitesCollectionRequestBuilder Sites { get; }
     
         /// <summary>
-        /// Gets the GraphServiceSubscriptions request builder.
+        /// Gets the GraphServiceSchemaExtensions request builder.
         /// </summary>
-        IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions { get; }
+        IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
+        /// </summary>
+        IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceGroupLifecyclePolicies request builder.
+        /// </summary>
+        IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceFunctions request builder.
+        /// </summary>
+        IGraphServiceFunctionsCollectionRequestBuilder Functions { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceFilterOperators request builder.
+        /// </summary>
+        IGraphServiceFilterOperatorsCollectionRequestBuilder FilterOperators { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDirectories request builder.
+        /// </summary>
+        IGraphServiceDirectoriesCollectionRequestBuilder Directories { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessReviews request builder.
+        /// </summary>
+        IGraphServiceAccessReviewsCollectionRequestBuilder AccessReviews { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceBusinessFlowTemplates request builder.
+        /// </summary>
+        IGraphServiceBusinessFlowTemplatesCollectionRequestBuilder BusinessFlowTemplates { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessReviewDecisions request builder.
+        /// </summary>
+        IGraphServiceAccessReviewDecisionsCollectionRequestBuilder AccessReviewDecisions { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePrograms request builder.
+        /// </summary>
+        IGraphServiceProgramsCollectionRequestBuilder Programs { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceProgramControls request builder.
+        /// </summary>
+        IGraphServiceProgramControlsCollectionRequestBuilder ProgramControls { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceProgramControlTypes request builder.
+        /// </summary>
+        IGraphServiceProgramControlTypesCollectionRequestBuilder ProgramControlTypes { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceApprovalWorkflowProviders request builder.
+        /// </summary>
+        IGraphServiceApprovalWorkflowProvidersCollectionRequestBuilder ApprovalWorkflowProviders { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAgreements request builder.
+        /// </summary>
+        IGraphServiceAgreementsCollectionRequestBuilder Agreements { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAgreementAcceptances request builder.
+        /// </summary>
+        IGraphServiceAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances { get; }
     
         /// <summary>
         /// Gets the GraphServiceIdentityRiskEvents request builder.
@@ -202,116 +312,6 @@ namespace Microsoft.Graph
         IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
     
         /// <summary>
-        /// Gets the GraphServicePrivilegedRoles request builder.
-        /// </summary>
-        IGraphServicePrivilegedRolesCollectionRequestBuilder PrivilegedRoles { get; }
-    
-        /// <summary>
-        /// Gets the GraphServicePrivilegedRoleAssignments request builder.
-        /// </summary>
-        IGraphServicePrivilegedRoleAssignmentsCollectionRequestBuilder PrivilegedRoleAssignments { get; }
-    
-        /// <summary>
-        /// Gets the GraphServicePrivilegedOperationEvents request builder.
-        /// </summary>
-        IGraphServicePrivilegedOperationEventsCollectionRequestBuilder PrivilegedOperationEvents { get; }
-    
-        /// <summary>
-        /// Gets the GraphServicePrivilegedSignupStatus request builder.
-        /// </summary>
-        IGraphServicePrivilegedSignupStatusCollectionRequestBuilder PrivilegedSignupStatus { get; }
-    
-        /// <summary>
-        /// Gets the GraphServicePrivilegedApproval request builder.
-        /// </summary>
-        IGraphServicePrivilegedApprovalCollectionRequestBuilder PrivilegedApproval { get; }
-    
-        /// <summary>
-        /// Gets the GraphServicePrivilegedRoleAssignmentRequests request builder.
-        /// </summary>
-        IGraphServicePrivilegedRoleAssignmentRequestsCollectionRequestBuilder PrivilegedRoleAssignmentRequests { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceInvitations request builder.
-        /// </summary>
-        IGraphServiceInvitationsCollectionRequestBuilder Invitations { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceCommands request builder.
-        /// </summary>
-        IGraphServiceCommandsCollectionRequestBuilder Commands { get; }
-    
-        /// <summary>
-        /// Gets the GraphServicePayloadResponse request builder.
-        /// </summary>
-        IGraphServicePayloadResponseCollectionRequestBuilder PayloadResponse { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceTeams request builder.
-        /// </summary>
-        IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceTeamsTemplates request builder.
-        /// </summary>
-        IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceGroupLifecyclePolicies request builder.
-        /// </summary>
-        IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceIdentityProviders request builder.
-        /// </summary>
-        IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceTrustFrameworkPolicies request builder.
-        /// </summary>
-        IGraphServiceTrustFrameworkPoliciesCollectionRequestBuilder TrustFrameworkPolicies { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceFunctions request builder.
-        /// </summary>
-        IGraphServiceFunctionsCollectionRequestBuilder Functions { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceFilterOperators request builder.
-        /// </summary>
-        IGraphServiceFilterOperatorsCollectionRequestBuilder FilterOperators { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceDataPolicyOperations request builder.
-        /// </summary>
-        IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceChats request builder.
-        /// </summary>
-        IGraphServiceChatsCollectionRequestBuilder Chats { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAgreements request builder.
-        /// </summary>
-        IGraphServiceAgreementsCollectionRequestBuilder Agreements { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAgreementAcceptances request builder.
-        /// </summary>
-        IGraphServiceAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceBookingBusinesses request builder.
-        /// </summary>
-        IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceBookingCurrencies request builder.
-        /// </summary>
-        IGraphServiceBookingCurrenciesCollectionRequestBuilder BookingCurrencies { get; }
-    
-        /// <summary>
         /// Gets the GraphServicePrivilegedAccess request builder.
         /// </summary>
         IGraphServicePrivilegedAccessCollectionRequestBuilder PrivilegedAccess { get; }
@@ -347,69 +347,69 @@ namespace Microsoft.Graph
         IGraphServiceGovernanceRoleSettingsCollectionRequestBuilder GovernanceRoleSettings { get; }
     
         /// <summary>
-        /// Gets the GraphServiceAccessReviews request builder.
+        /// Gets the GraphServicePrivilegedRoles request builder.
         /// </summary>
-        IGraphServiceAccessReviewsCollectionRequestBuilder AccessReviews { get; }
+        IGraphServicePrivilegedRolesCollectionRequestBuilder PrivilegedRoles { get; }
     
         /// <summary>
-        /// Gets the GraphServiceBusinessFlowTemplates request builder.
+        /// Gets the GraphServicePrivilegedRoleAssignments request builder.
         /// </summary>
-        IGraphServiceBusinessFlowTemplatesCollectionRequestBuilder BusinessFlowTemplates { get; }
+        IGraphServicePrivilegedRoleAssignmentsCollectionRequestBuilder PrivilegedRoleAssignments { get; }
     
         /// <summary>
-        /// Gets the GraphServiceAccessReviewDecisions request builder.
+        /// Gets the GraphServicePrivilegedOperationEvents request builder.
         /// </summary>
-        IGraphServiceAccessReviewDecisionsCollectionRequestBuilder AccessReviewDecisions { get; }
+        IGraphServicePrivilegedOperationEventsCollectionRequestBuilder PrivilegedOperationEvents { get; }
     
         /// <summary>
-        /// Gets the GraphServicePrograms request builder.
+        /// Gets the GraphServicePrivilegedSignupStatus request builder.
         /// </summary>
-        IGraphServiceProgramsCollectionRequestBuilder Programs { get; }
+        IGraphServicePrivilegedSignupStatusCollectionRequestBuilder PrivilegedSignupStatus { get; }
     
         /// <summary>
-        /// Gets the GraphServiceProgramControls request builder.
+        /// Gets the GraphServicePrivilegedApproval request builder.
         /// </summary>
-        IGraphServiceProgramControlsCollectionRequestBuilder ProgramControls { get; }
+        IGraphServicePrivilegedApprovalCollectionRequestBuilder PrivilegedApproval { get; }
     
         /// <summary>
-        /// Gets the GraphServiceProgramControlTypes request builder.
+        /// Gets the GraphServicePrivilegedRoleAssignmentRequests request builder.
         /// </summary>
-        IGraphServiceProgramControlTypesCollectionRequestBuilder ProgramControlTypes { get; }
+        IGraphServicePrivilegedRoleAssignmentRequestsCollectionRequestBuilder PrivilegedRoleAssignmentRequests { get; }
     
         /// <summary>
-        /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
+        /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
-        IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles { get; }
+        IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations { get; }
     
         /// <summary>
-        /// Gets the GraphServiceApplicationTemplates request builder.
+        /// Gets the GraphServiceCommands request builder.
         /// </summary>
-        IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates { get; }
+        IGraphServiceCommandsCollectionRequestBuilder Commands { get; }
     
         /// <summary>
-        /// Gets the GraphServiceApp request builder.
+        /// Gets the GraphServicePayloadResponse request builder.
         /// </summary>
-        ICommsApplicationRequestBuilder App { get; }
+        IGraphServicePayloadResponseCollectionRequestBuilder PayloadResponse { get; }
     
         /// <summary>
-        /// Gets the GraphServiceMe request builder.
+        /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
-        IUserRequestBuilder Me { get; }
+        IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions { get; }
     
         /// <summary>
-        /// Gets the GraphServiceDirectory request builder.
+        /// Gets the GraphServiceTeams request builder.
         /// </summary>
-        IDirectoryRequestBuilder Directory { get; }
+        IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
     
         /// <summary>
-        /// Gets the GraphServiceDrive request builder.
+        /// Gets the GraphServiceTeamsTemplates request builder.
         /// </summary>
-        IDriveRequestBuilder Drive { get; }
+        IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates { get; }
     
         /// <summary>
-        /// Gets the GraphServicePlanner request builder.
+        /// Gets the GraphServiceChats request builder.
         /// </summary>
-        IPlannerRequestBuilder Planner { get; }
+        IGraphServiceChatsCollectionRequestBuilder Chats { get; }
     
         /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
@@ -422,6 +422,41 @@ namespace Microsoft.Graph
         IReportRootRequestBuilder Reports { get; }
     
         /// <summary>
+        /// Gets the GraphServiceTrustFramework request builder.
+        /// </summary>
+        ITrustFrameworkRequestBuilder TrustFramework { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDataClassification request builder.
+        /// </summary>
+        IDataClassificationServiceRequestBuilder DataClassification { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceMe request builder.
+        /// </summary>
+        IUserRequestBuilder Me { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceRoleManagement request builder.
+        /// </summary>
+        IRoleManagementRequestBuilder RoleManagement { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDirectory request builder.
+        /// </summary>
+        IDirectoryRequestBuilder Directory { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceEducation request builder.
+        /// </summary>
+        IEducationRootRequestBuilder Education { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceDrive request builder.
+        /// </summary>
+        IDriveRequestBuilder Drive { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
         /// </summary>
         IDeviceManagementRequestBuilder DeviceManagement { get; }
@@ -432,31 +467,6 @@ namespace Microsoft.Graph
         IDeviceAppManagementRequestBuilder DeviceAppManagement { get; }
     
         /// <summary>
-        /// Gets the GraphServiceAppCatalogs request builder.
-        /// </summary>
-        IAppCatalogsRequestBuilder AppCatalogs { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceTrustFramework request builder.
-        /// </summary>
-        ITrustFrameworkRequestBuilder TrustFramework { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceEducation request builder.
-        /// </summary>
-        IEducationRootRequestBuilder Education { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceDataClassification request builder.
-        /// </summary>
-        IDataClassificationServiceRequestBuilder DataClassification { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceSecurity request builder.
-        /// </summary>
-        ISecurityRequestBuilder Security { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceOfficeConfiguration request builder.
         /// </summary>
         IOfficeConfigurationRequestBuilder OfficeConfiguration { get; }
@@ -465,6 +475,31 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceFinancials request builder.
         /// </summary>
         IFinancialsRequestBuilder Financials { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePlanner request builder.
+        /// </summary>
+        IPlannerRequestBuilder Planner { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceSecurity request builder.
+        /// </summary>
+        ISecurityRequestBuilder Security { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceApp request builder.
+        /// </summary>
+        ICommsApplicationRequestBuilder App { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppCatalogs request builder.
+        /// </summary>
+        IAppCatalogsRequestBuilder AppCatalogs { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceTeamwork request builder.
+        /// </summary>
+        ITeamworkRequestBuilder Teamwork { get; }
     
     }
 }

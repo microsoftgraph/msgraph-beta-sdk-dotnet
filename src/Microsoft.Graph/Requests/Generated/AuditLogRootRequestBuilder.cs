@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new AuditLogRootDirectoryProvisioningCollectionRequestBuilder(this.AppendSegmentToRequestUrl("directoryProvisioning"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Provisioning.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootProvisioningCollectionRequestBuilder"/>.</returns>
+        public IAuditLogRootProvisioningCollectionRequestBuilder Provisioning
+        {
+            get
+            {
+                return new AuditLogRootProvisioningCollectionRequestBuilder(this.AppendSegmentToRequestUrl("provisioning"), this.Client);
+            }
+        }
     
     }
 }

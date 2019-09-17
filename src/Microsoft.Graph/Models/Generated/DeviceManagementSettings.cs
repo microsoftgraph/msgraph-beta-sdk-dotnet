@@ -73,6 +73,13 @@ namespace Microsoft.Graph
         public string DerivedCredentialUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets androidDeviceAdministratorEnrollmentEnabled.
+        /// The property to determine if Android device administrator enrollment is enabled for this account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceAdministratorEnrollmentEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AndroidDeviceAdministratorEnrollmentEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

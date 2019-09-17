@@ -37,24 +37,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified Participant to the collection via POST.
         /// </summary>
-        /// <param name="Participant">The Participant to add.</param>
+        /// <param name="participant">The Participant to add.</param>
         /// <returns>The created Participant.</returns>
-        public System.Threading.Tasks.Task<Participant> AddAsync(Participant Participant)
+        public System.Threading.Tasks.Task<Participant> AddAsync(Participant participant)
         {
-            return this.AddAsync(Participant, CancellationToken.None);
+            return this.AddAsync(participant, CancellationToken.None);
         }
 
         /// <summary>
         /// Adds the specified Participant to the collection via POST.
         /// </summary>
-        /// <param name="Participant">The Participant to add.</param>
+        /// <param name="participant">The Participant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Participant.</returns>
-        public System.Threading.Tasks.Task<Participant> AddAsync(Participant Participant, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Participant> AddAsync(Participant participant, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<Participant>(Participant, cancellationToken);
+            return this.SendAsync<Participant>(participant, cancellationToken);
         }
 
         /// <summary>

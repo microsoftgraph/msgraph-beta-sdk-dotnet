@@ -23,16 +23,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="all">A all parameter for the OData method call.</param>
         /// <param name="clientContext">A clientContext parameter for the OData method call.</param>
         public CallCancelMediaProcessingRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            bool? all,
             string clientContext)
             : base(requestUrl, client)
         {
-            this.SetParameter("all", all, true);
             this.SetParameter("clientContext", clientContext, true);
         }
 
@@ -45,11 +42,6 @@ namespace Microsoft.Graph
         protected override ICallCancelMediaProcessingRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new CallCancelMediaProcessingRequest(functionUrl, this.Client, options);
-
-            if (this.HasParameter("all"))
-            {
-                request.RequestBody.All = this.GetParameter<bool?>("all");
-            }
 
             if (this.HasParameter("clientContext"))
             {

@@ -37,23 +37,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IParticipantMuteRequestBuilder"/>.</returns>
         IParticipantMuteRequestBuilder Mute(
             string clientContext = null);
-
-        /// <summary>
-        /// Gets the request builder for ParticipantSubscribeVideo.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantSubscribeVideoRequestBuilder"/>.</returns>
-        IParticipantSubscribeVideoRequestBuilder SubscribeVideo(
-            VideoResolutionFormat videoResolution,
-            Modality modality,
-            Int64 socketId,
-            string clientContext = null);
-
-        /// <summary>
-        /// Gets the request builder for ParticipantUnmute.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantUnmuteRequestBuilder"/>.</returns>
-        IParticipantUnmuteRequestBuilder Unmute(
-            string clientContext = null);
     
     }
 }

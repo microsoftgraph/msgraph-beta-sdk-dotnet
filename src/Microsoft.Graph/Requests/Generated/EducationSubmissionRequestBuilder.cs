@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new EducationSubmissionSubmittedResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("submittedResources"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Outcomes.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionOutcomesCollectionRequestBuilder"/>.</returns>
+        public IEducationSubmissionOutcomesCollectionRequestBuilder Outcomes
+        {
+            get
+            {
+                return new EducationSubmissionOutcomesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("outcomes"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for EducationSubmissionReturn.

@@ -32,10 +32,16 @@ namespace Microsoft.Graph
         new IEducationUserRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Schools.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
+        /// <returns>The <see cref="IEducationUserAssignmentsCollectionRequestBuilder"/>.</returns>
+        IEducationUserAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for Rubrics.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserRubricsCollectionRequestBuilder"/>.</returns>
+        IEducationUserRubricsCollectionRequestBuilder Rubrics { get; }
 
         /// <summary>
         /// Gets the request builder for Classes.
@@ -50,16 +56,16 @@ namespace Microsoft.Graph
         IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder TaughtClasses { get; }
 
         /// <summary>
+        /// Gets the request builder for Schools.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
+
+        /// <summary>
         /// Gets the request builder for User.
         /// </summary>
         /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
         IUserWithReferenceRequestBuilder User { get; }
-
-        /// <summary>
-        /// Gets the request builder for Assignments.
-        /// </summary>
-        /// <returns>The <see cref="IEducationUserAssignmentsCollectionRequestBuilder"/>.</returns>
-        IEducationUserAssignmentsCollectionRequestBuilder Assignments { get; }
     
         
     

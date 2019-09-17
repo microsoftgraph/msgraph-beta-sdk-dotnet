@@ -231,6 +231,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SynchronizationSchema synchronizationSchemaToInitialize)
         {
 
+            if (synchronizationSchemaToInitialize != null && synchronizationSchemaToInitialize.AdditionalData != null)
+            {
+
+                if (synchronizationSchemaToInitialize.Directories != null && synchronizationSchemaToInitialize.Directories.CurrentPage != null)
+                {
+                    synchronizationSchemaToInitialize.Directories.AdditionalData = synchronizationSchemaToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    synchronizationSchemaToInitialize.AdditionalData.TryGetValue("directories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        synchronizationSchemaToInitialize.Directories.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

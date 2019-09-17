@@ -24,17 +24,17 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified Participant to the collection via POST.
         /// </summary>
-        /// <param name="Participant">The Participant to add.</param>
+        /// <param name="participant">The Participant to add.</param>
         /// <returns>The created Participant.</returns>
-        System.Threading.Tasks.Task<Participant> AddAsync(Participant Participant);
+        System.Threading.Tasks.Task<Participant> AddAsync(Participant participant);
 
         /// <summary>
         /// Adds the specified Participant to the collection via POST.
         /// </summary>
-        /// <param name="Participant">The Participant to add.</param>
+        /// <param name="participant">The Participant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Participant.</returns>
-        System.Threading.Tasks.Task<Participant> AddAsync(Participant Participant, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Participant> AddAsync(Participant participant, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>

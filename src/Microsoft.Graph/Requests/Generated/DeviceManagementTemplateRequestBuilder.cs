@@ -93,14 +93,16 @@ namespace Microsoft.Graph
         public IDeviceManagementTemplateCreateInstanceRequestBuilder CreateInstance(
             string displayName = null,
             string description = null,
-            IEnumerable<DeviceManagementSettingInstance> settingsDelta = null)
+            IEnumerable<DeviceManagementSettingInstance> settingsDelta = null,
+            IEnumerable<string> roleScopeTagIds = null)
         {
             return new DeviceManagementTemplateCreateInstanceRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createInstance"),
                 this.Client,
                 displayName,
                 description,
-                settingsDelta);
+                settingsDelta,
+                roleScopeTagIds);
         }
 
         /// <summary>

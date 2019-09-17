@@ -34,14 +34,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AppRoleAssignedTo.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalAppRoleAssignedToCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalAppRoleAssignedToCollectionWithReferencesRequestBuilder AppRoleAssignedTo { get; }
+        /// <returns>The <see cref="IServicePrincipalAppRoleAssignedToCollectionRequestBuilder"/>.</returns>
+        IServicePrincipalAppRoleAssignedToCollectionRequestBuilder AppRoleAssignedTo { get; }
 
         /// <summary>
         /// Gets the request builder for AppRoleAssignments.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalAppRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalAppRoleAssignmentsCollectionWithReferencesRequestBuilder AppRoleAssignments { get; }
+        /// <returns>The <see cref="IServicePrincipalAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        IServicePrincipalAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
 
         /// <summary>
         /// Gets the request builder for Oauth2PermissionGrants.

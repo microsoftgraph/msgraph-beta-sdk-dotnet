@@ -63,7 +63,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallCancelMediaProcessingRequestBuilder"/>.</returns>
         ICallCancelMediaProcessingRequestBuilder CancelMediaProcessing(
-            bool? all = null,
             string clientContext = null);
 
         /// <summary>
@@ -86,20 +85,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICallPlayPromptRequestBuilder"/>.</returns>
         ICallPlayPromptRequestBuilder PlayPrompt(
             IEnumerable<Prompt> prompts,
-            string clientContext = null);
-
-        /// <summary>
-        /// Gets the request builder for CallRecognize.
-        /// </summary>
-        /// <returns>The <see cref="ICallRecognizeRequestBuilder"/>.</returns>
-        ICallRecognizeRequestBuilder Recognize(
-            IEnumerable<Prompt> prompts = null,
-            bool? bargeInAllowed = null,
-            string culture = null,
-            Int32? initialSilenceTimeoutInSeconds = null,
-            Int32? interDigitTimeoutInSeconds = null,
-            IEnumerable<RecognitionOption> choices = null,
-            CollectDigits collectDigits = null,
+            bool? loop = null,
             string clientContext = null);
 
         /// <summary>
@@ -126,14 +112,16 @@ namespace Microsoft.Graph
             CallDisposition? targetDisposition = null,
             Int32? timeout = null,
             bool? maskCallee = null,
-            bool? maskCaller = null);
+            bool? maskCaller = null,
+            string callbackUri = null);
 
         /// <summary>
         /// Gets the request builder for CallReject.
         /// </summary>
         /// <returns>The <see cref="ICallRejectRequestBuilder"/>.</returns>
         ICallRejectRequestBuilder Reject(
-            RejectReason? reason = null);
+            RejectReason? reason = null,
+            string callbackUri = null);
 
         /// <summary>
         /// Gets the request builder for CallSubscribeToTone.
@@ -147,23 +135,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallTransferRequestBuilder"/>.</returns>
         ICallTransferRequestBuilder Transfer(
-            InvitationParticipantInfo transferTarget = null,
-            IdentitySet target = null,
-            string replacesCallId = null);
+            InvitationParticipantInfo transferTarget = null);
 
         /// <summary>
         /// Gets the request builder for CallUnmute.
         /// </summary>
         /// <returns>The <see cref="ICallUnmuteRequestBuilder"/>.</returns>
         ICallUnmuteRequestBuilder Unmute(
-            string clientContext = null);
-
-        /// <summary>
-        /// Gets the request builder for CallUpdateMetadata.
-        /// </summary>
-        /// <returns>The <see cref="ICallUpdateMetadataRequestBuilder"/>.</returns>
-        ICallUpdateMetadataRequestBuilder UpdateMetadata(
-            string metadata = null,
             string clientContext = null);
     
     }

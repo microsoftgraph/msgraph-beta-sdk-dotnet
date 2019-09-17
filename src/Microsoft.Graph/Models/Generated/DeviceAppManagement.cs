@@ -58,11 +58,11 @@ namespace Microsoft.Graph
         public MicrosoftStoreForBusinessPortalSelectionOptions? MicrosoftStoreForBusinessPortalSelection { get; set; }
     
         /// <summary>
-        /// Gets or sets windows management app.
-        /// Windows management app.
+        /// Gets or sets managed ebooks.
+        /// The Managed eBook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsManagementApp", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsManagementApp WindowsManagementApp { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
     
         /// <summary>
         /// Gets or sets mobile apps.
@@ -107,6 +107,13 @@ namespace Microsoft.Graph
         public IDeviceAppManagementMobileAppConfigurationsCollectionPage MobileAppConfigurations { get; set; }
     
         /// <summary>
+        /// Gets or sets managed ebook categories.
+        /// The mobile eBook categories.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBookCategories", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementManagedEBookCategoriesCollectionPage ManagedEBookCategories { get; set; }
+    
+        /// <summary>
         /// Gets or sets side loading keys.
         /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
         /// </summary>
@@ -119,6 +126,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokens", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementVppTokensCollectionPage VppTokens { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows management app.
+        /// Windows management app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsManagementApp", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsManagementApp WindowsManagementApp { get; set; }
     
         /// <summary>
         /// Gets or sets managed app policies.
@@ -196,20 +210,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionWipeActions", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage WindowsInformationProtectionWipeActions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed ebooks.
-        /// The Managed eBook.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed ebook categories.
-        /// The mobile eBook categories.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBookCategories", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceAppManagementManagedEBookCategoriesCollectionPage ManagedEBookCategories { get; set; }
     
         /// <summary>
         /// Gets or sets device app management tasks.

@@ -46,5 +46,17 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> DeviceIds { get; set; }
     
+        /// <summary>
+        /// Gets or sets NotificationTitle.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationTitle", Required = Newtonsoft.Json.Required.Default)]
+        public string NotificationTitle { get; set; }
+    
+        /// <summary>
+        /// Gets or sets NotificationBody.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationBody", Required = Newtonsoft.Json.Required.Default)]
+        public string NotificationBody { get; set; }
+    
     }
 }

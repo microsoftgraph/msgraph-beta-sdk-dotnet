@@ -144,7 +144,7 @@ namespace Microsoft.Graph
         /// Gets or sets original request id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalRequestId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? OriginalRequestId { get; set; }
+        public string OriginalRequestId { get; set; }
     
         /// <summary>
         /// Gets or sets processing time in milliseconds.
@@ -202,6 +202,18 @@ namespace Microsoft.Graph
         public string ResourceId { get; set; }
     
         /// <summary>
+        /// Gets or sets service principal id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ServicePrincipalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string ServicePrincipalName { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// Sign-in status. Possible values include Success and Failure.
         /// </summary>
@@ -219,6 +231,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuerType", Required = Newtonsoft.Json.Required.Default)]
         public TokenIssuerType? TokenIssuerType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user agent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAgent", Required = Newtonsoft.Json.Required.Default)]
+        public string UserAgent { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.

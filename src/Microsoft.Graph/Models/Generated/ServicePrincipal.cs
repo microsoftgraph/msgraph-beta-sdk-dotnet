@@ -71,12 +71,6 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets error url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ErrorUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets homepage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homepage", Required = Newtonsoft.Json.Required.Default)]
@@ -146,13 +140,13 @@ namespace Microsoft.Graph
         /// Gets or sets app role assigned to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignedTo", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalAppRoleAssignedToCollectionWithReferencesPage AppRoleAssignedTo { get; set; }
+        public IServicePrincipalAppRoleAssignedToCollectionPage AppRoleAssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets app role assignments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalAppRoleAssignmentsCollectionWithReferencesPage AppRoleAssignments { get; set; }
+        public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission grants.

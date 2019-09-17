@@ -351,6 +351,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classroomForceUnpromptedAppAndDeviceLock", Required = Newtonsoft.Json.Required.Default)]
         public bool? ClassroomForceUnpromptedAppAndDeviceLock { get; set; }
     
+        /// <summary>
+        /// Gets or sets i cloud block activity continuation.
+        /// Indicates whether or not to block the user from continuing work that they started on a MacOS device on another iOS or MacOS device (MacOS 10.15 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudBlockActivityContinuation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ICloudBlockActivityContinuation { get; set; }
+    
     }
 }
 

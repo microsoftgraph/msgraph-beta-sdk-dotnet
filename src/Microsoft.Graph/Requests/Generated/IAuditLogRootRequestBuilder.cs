@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootDirectoryProvisioningCollectionRequestBuilder"/>.</returns>
         IAuditLogRootDirectoryProvisioningCollectionRequestBuilder DirectoryProvisioning { get; }
+
+        /// <summary>
+        /// Gets the request builder for Provisioning.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootProvisioningCollectionRequestBuilder"/>.</returns>
+        IAuditLogRootProvisioningCollectionRequestBuilder Provisioning { get; }
     
     }
 }

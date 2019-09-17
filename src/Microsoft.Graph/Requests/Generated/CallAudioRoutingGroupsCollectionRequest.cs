@@ -37,24 +37,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified AudioRoutingGroup to the collection via POST.
         /// </summary>
-        /// <param name="AudioRoutingGroup">The AudioRoutingGroup to add.</param>
+        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
         /// <returns>The created AudioRoutingGroup.</returns>
-        public System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup AudioRoutingGroup)
+        public System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup)
         {
-            return this.AddAsync(AudioRoutingGroup, CancellationToken.None);
+            return this.AddAsync(audioRoutingGroup, CancellationToken.None);
         }
 
         /// <summary>
         /// Adds the specified AudioRoutingGroup to the collection via POST.
         /// </summary>
-        /// <param name="AudioRoutingGroup">The AudioRoutingGroup to add.</param>
+        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AudioRoutingGroup.</returns>
-        public System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup AudioRoutingGroup, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<AudioRoutingGroup>(AudioRoutingGroup, cancellationToken);
+            return this.SendAsync<AudioRoutingGroup>(audioRoutingGroup, cancellationToken);
         }
 
         /// <summary>

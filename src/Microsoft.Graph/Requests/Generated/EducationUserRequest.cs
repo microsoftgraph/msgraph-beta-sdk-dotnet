@@ -234,17 +234,33 @@ namespace Microsoft.Graph
             if (educationUserToInitialize != null && educationUserToInitialize.AdditionalData != null)
             {
 
-                if (educationUserToInitialize.Schools != null && educationUserToInitialize.Schools.CurrentPage != null)
+                if (educationUserToInitialize.Assignments != null && educationUserToInitialize.Assignments.CurrentPage != null)
                 {
-                    educationUserToInitialize.Schools.AdditionalData = educationUserToInitialize.AdditionalData;
+                    educationUserToInitialize.Assignments.AdditionalData = educationUserToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
+                    educationUserToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        educationUserToInitialize.Schools.InitializeNextPageRequest(
+                        educationUserToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (educationUserToInitialize.Rubrics != null && educationUserToInitialize.Rubrics.CurrentPage != null)
+                {
+                    educationUserToInitialize.Rubrics.AdditionalData = educationUserToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    educationUserToInitialize.AdditionalData.TryGetValue("rubrics@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        educationUserToInitialize.Rubrics.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -282,17 +298,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (educationUserToInitialize.Assignments != null && educationUserToInitialize.Assignments.CurrentPage != null)
+                if (educationUserToInitialize.Schools != null && educationUserToInitialize.Schools.CurrentPage != null)
                 {
-                    educationUserToInitialize.Assignments.AdditionalData = educationUserToInitialize.AdditionalData;
+                    educationUserToInitialize.Schools.AdditionalData = educationUserToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    educationUserToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
+                    educationUserToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        educationUserToInitialize.Assignments.InitializeNextPageRequest(
+                        educationUserToInitialize.Schools.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

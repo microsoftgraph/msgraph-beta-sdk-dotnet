@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionSubmittedResourcesCollectionRequestBuilder"/>.</returns>
         IEducationSubmissionSubmittedResourcesCollectionRequestBuilder SubmittedResources { get; }
+
+        /// <summary>
+        /// Gets the request builder for Outcomes.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionOutcomesCollectionRequestBuilder"/>.</returns>
+        IEducationSubmissionOutcomesCollectionRequestBuilder Outcomes { get; }
     
         /// <summary>
         /// Gets the request builder for EducationSubmissionReturn.

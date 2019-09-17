@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (dataClassificationServiceToInitialize != null && dataClassificationServiceToInitialize.AdditionalData != null)
             {
 
+                if (dataClassificationServiceToInitialize.ExactMatchDataStores != null && dataClassificationServiceToInitialize.ExactMatchDataStores.CurrentPage != null)
+                {
+                    dataClassificationServiceToInitialize.ExactMatchDataStores.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchDataStores@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (dataClassificationServiceToInitialize.SensitiveTypes != null && dataClassificationServiceToInitialize.SensitiveTypes.CurrentPage != null)
                 {
                     dataClassificationServiceToInitialize.SensitiveTypes.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
@@ -357,6 +373,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (dataClassificationServiceToInitialize.ExactMatchUploadAgents != null && dataClassificationServiceToInitialize.ExactMatchUploadAgents.CurrentPage != null)
+                {
+                    dataClassificationServiceToInitialize.ExactMatchUploadAgents.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchUploadAgents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

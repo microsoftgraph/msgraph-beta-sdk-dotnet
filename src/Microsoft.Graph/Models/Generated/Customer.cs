@@ -125,24 +125,6 @@ namespace Microsoft.Graph
         public string Blocked { get; set; }
     
         /// <summary>
-        /// Gets or sets balance.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balance", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? Balance { get; set; }
-    
-        /// <summary>
-        /// Gets or sets overdue amount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overdueAmount", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? OverdueAmount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total sales excluding tax.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalSalesExcludingTax", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? TotalSalesExcludingTax { get; set; }
-    
-        /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]

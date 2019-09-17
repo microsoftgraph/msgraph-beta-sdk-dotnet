@@ -298,6 +298,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (scheduleToInitialize.SwapShiftsChangeRequests != null && scheduleToInitialize.SwapShiftsChangeRequests.CurrentPage != null)
+                {
+                    scheduleToInitialize.SwapShiftsChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("swapShiftsChangeRequests@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (scheduleToInitialize.TimeOffRequests != null && scheduleToInitialize.TimeOffRequests.CurrentPage != null)
+                {
+                    scheduleToInitialize.TimeOffRequests.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("timeOffRequests@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.TimeOffRequests.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
             }
 
 

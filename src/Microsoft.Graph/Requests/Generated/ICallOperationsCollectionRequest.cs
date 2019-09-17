@@ -24,17 +24,17 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified CommsOperation to the collection via POST.
         /// </summary>
-        /// <param name="CommsOperation">The CommsOperation to add.</param>
+        /// <param name="commsOperation">The CommsOperation to add.</param>
         /// <returns>The created CommsOperation.</returns>
-        System.Threading.Tasks.Task<CommsOperation> AddAsync(CommsOperation CommsOperation);
+        System.Threading.Tasks.Task<CommsOperation> AddAsync(CommsOperation commsOperation);
 
         /// <summary>
         /// Adds the specified CommsOperation to the collection via POST.
         /// </summary>
-        /// <param name="CommsOperation">The CommsOperation to add.</param>
+        /// <param name="commsOperation">The CommsOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CommsOperation.</returns>
-        System.Threading.Tasks.Task<CommsOperation> AddAsync(CommsOperation CommsOperation, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CommsOperation> AddAsync(CommsOperation commsOperation, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>

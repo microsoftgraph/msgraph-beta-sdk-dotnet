@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IWindowsManagementAppRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for HealthSummary.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsManagementAppHealthSummaryWithReferenceRequestBuilder"/>.</returns>
-        IWindowsManagementAppHealthSummaryWithReferenceRequestBuilder HealthSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for HealthStates.
         /// </summary>
         /// <returns>The <see cref="IWindowsManagementAppHealthStatesCollectionRequestBuilder"/>.</returns>

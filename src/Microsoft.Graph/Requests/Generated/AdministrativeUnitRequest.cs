@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (administrativeUnitToInitialize != null && administrativeUnitToInitialize.AdditionalData != null)
             {
 
-                if (administrativeUnitToInitialize.Extensions != null && administrativeUnitToInitialize.Extensions.CurrentPage != null)
-                {
-                    administrativeUnitToInitialize.Extensions.AdditionalData = administrativeUnitToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    administrativeUnitToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        administrativeUnitToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (administrativeUnitToInitialize.Members != null && administrativeUnitToInitialize.Members.CurrentPage != null)
                 {
                     administrativeUnitToInitialize.Members.AdditionalData = administrativeUnitToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         administrativeUnitToInitialize.ScopedRoleMembers.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (administrativeUnitToInitialize.Extensions != null && administrativeUnitToInitialize.Extensions.CurrentPage != null)
+                {
+                    administrativeUnitToInitialize.Extensions.AdditionalData = administrativeUnitToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    administrativeUnitToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        administrativeUnitToInitialize.Extensions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

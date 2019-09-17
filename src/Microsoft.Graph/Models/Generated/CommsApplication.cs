@@ -23,16 +23,16 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets online meetings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
-        public ICommsApplicationOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
-    
-        /// <summary>
         /// Gets or sets calls.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calls", Required = Newtonsoft.Json.Required.Default)]
         public ICommsApplicationCallsCollectionPage Calls { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meetings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
+        public ICommsApplicationOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
     
     }
 }

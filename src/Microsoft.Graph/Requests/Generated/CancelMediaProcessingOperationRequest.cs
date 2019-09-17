@@ -227,8 +227,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="CancelMediaProcessingOperationToInitialize">The <see cref="CancelMediaProcessingOperation"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(CancelMediaProcessingOperation CancelMediaProcessingOperationToInitialize)
+        /// <param name="cancelMediaProcessingOperationToInitialize">The <see cref="CancelMediaProcessingOperation"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(CancelMediaProcessingOperation cancelMediaProcessingOperationToInitialize)
         {
 
         }

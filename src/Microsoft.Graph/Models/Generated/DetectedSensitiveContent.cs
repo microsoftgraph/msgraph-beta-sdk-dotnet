@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         public Int32? Confidence { get; set; }
     
         /// <summary>
+        /// Gets or sets recommendedConfidence.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedConfidence", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RecommendedConfidence { get; set; }
+    
+        /// <summary>
         /// Gets or sets matches.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]

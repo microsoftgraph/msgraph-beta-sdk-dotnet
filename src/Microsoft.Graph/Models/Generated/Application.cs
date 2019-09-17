@@ -101,12 +101,6 @@ namespace Microsoft.Graph
         public OptionalClaims OptionalClaims { get; set; }
     
         /// <summary>
-        /// Gets or sets org restrictions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orgRestrictions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Guid> OrgRestrictions { get; set; }
-    
-        /// <summary>
         /// Gets or sets parental control settings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentalControlSettings", Required = Newtonsoft.Json.Required.Default)]

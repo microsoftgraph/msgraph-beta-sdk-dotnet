@@ -60,6 +60,28 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for RoleScopeTagGetRoleScopeTagsById.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagGetRoleScopeTagsByIdRequestBuilder"/>.</returns>
+        public IRoleScopeTagGetRoleScopeTagsByIdRequestBuilder GetRoleScopeTagsById(
+            IEnumerable<string> roleScopeTagIds = null)
+        {
+            return new RoleScopeTagGetRoleScopeTagsByIdRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRoleScopeTagsById"),
+                this.Client,
+                roleScopeTagIds);
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleScopeTagHasCustomRoleScopeTag.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagHasCustomRoleScopeTagRequestBuilder"/>.</returns>
+        public IRoleScopeTagHasCustomRoleScopeTagRequestBuilder HasCustomRoleScopeTag()
+        {
+            return new RoleScopeTagHasCustomRoleScopeTagRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasCustomRoleScopeTag"),
+                this.Client);
+        }
     }
 }

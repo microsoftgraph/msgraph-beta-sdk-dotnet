@@ -24,6 +24,20 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets index.
+        /// Unique index the application uses to maintain nested schema items
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "index", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Index { get; set; }
+    
+        /// <summary>
+        /// Gets or sets parentIndex.
+        /// Index of parent schema item to track nested schema items
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentIndex", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ParentIndex { get; set; }
+    
+        /// <summary>
         /// Gets or sets schemaItemKey.
         /// Unique key the application uses to identify the item
         /// </summary>

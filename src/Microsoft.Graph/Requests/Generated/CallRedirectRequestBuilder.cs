@@ -28,6 +28,7 @@ namespace Microsoft.Graph
         /// <param name="timeout">A timeout parameter for the OData method call.</param>
         /// <param name="maskCallee">A maskCallee parameter for the OData method call.</param>
         /// <param name="maskCaller">A maskCaller parameter for the OData method call.</param>
+        /// <param name="callbackUri">A callbackUri parameter for the OData method call.</param>
         public CallRedirectRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -35,7 +36,8 @@ namespace Microsoft.Graph
             CallDisposition? targetDisposition,
             Int32? timeout,
             bool? maskCallee,
-            bool? maskCaller)
+            bool? maskCaller,
+            string callbackUri)
             : base(requestUrl, client)
         {
             this.SetParameter("targets", targets, false);
@@ -43,6 +45,7 @@ namespace Microsoft.Graph
             this.SetParameter("timeout", timeout, true);
             this.SetParameter("maskCallee", maskCallee, true);
             this.SetParameter("maskCaller", maskCaller, true);
+            this.SetParameter("callbackUri", callbackUri, true);
         }
 
         /// <summary>
@@ -78,6 +81,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("maskCaller"))
             {
                 request.RequestBody.MaskCaller = this.GetParameter<bool?>("maskCaller");
+            }
+
+            if (this.HasParameter("callbackUri"))
+            {
+                request.RequestBody.CallbackUri = this.GetParameter<string>("callbackUri");
             }
 
             return request;

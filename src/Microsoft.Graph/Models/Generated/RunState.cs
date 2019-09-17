@@ -34,5 +34,15 @@ namespace Microsoft.Graph
         /// </summary>
         Fail = 2,
 	
+        /// <summary>
+        /// Error
+        /// </summary>
+        Error = 3,
+	
+        /// <summary>
+        /// Pending
+        /// </summary>
+        Pending = 4,
+	
     }
 }

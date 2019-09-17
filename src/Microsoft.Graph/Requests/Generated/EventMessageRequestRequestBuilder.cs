@@ -55,14 +55,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestAcceptRequestBuilder"/>.</returns>
         public IEventMessageRequestAcceptRequestBuilder Accept(
-            string Comment = null,
-            bool? SendResponse = null)
+            bool? SendResponse = null,
+            string Comment = null)
         {
             return new EventMessageRequestAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.accept"),
                 this.Client,
-                Comment,
-                SendResponse);
+                SendResponse,
+                Comment);
         }
 
         /// <summary>
@@ -70,14 +70,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestDeclineRequestBuilder"/>.</returns>
         public IEventMessageRequestDeclineRequestBuilder Decline(
-            string Comment = null,
-            bool? SendResponse = null)
+            bool? SendResponse = null,
+            string Comment = null)
         {
             return new EventMessageRequestDeclineRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
                 this.Client,
-                Comment,
-                SendResponse);
+                SendResponse,
+                Comment);
         }
 
         /// <summary>
@@ -85,14 +85,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestTentativelyAcceptRequestBuilder"/>.</returns>
         public IEventMessageRequestTentativelyAcceptRequestBuilder TentativelyAccept(
-            string Comment = null,
-            bool? SendResponse = null)
+            bool? SendResponse = null,
+            string Comment = null)
         {
             return new EventMessageRequestTentativelyAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.tentativelyAccept"),
                 this.Client,
-                Comment,
-                SendResponse);
+                SendResponse,
+                Comment);
         }
     
     }

@@ -86,6 +86,13 @@ namespace Microsoft.Graph
         public AdvancedBitLockerState? AdvancedBitLockerStates { get; set; }
     
         /// <summary>
+        /// Gets or sets file vault states.
+        /// FileVault State
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultStates", Required = Newtonsoft.Json.Required.Default)]
+        public FileVaultState? FileVaultStates { get; set; }
+    
+        /// <summary>
         /// Gets or sets policy details.
         /// Policy Details
         /// </summary>

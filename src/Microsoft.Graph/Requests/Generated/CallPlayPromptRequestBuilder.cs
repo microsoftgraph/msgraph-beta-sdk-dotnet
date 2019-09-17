@@ -24,15 +24,18 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="prompts">A prompts parameter for the OData method call.</param>
+        /// <param name="loop">A loop parameter for the OData method call.</param>
         /// <param name="clientContext">A clientContext parameter for the OData method call.</param>
         public CallPlayPromptRequestBuilder(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Prompt> prompts,
+            bool? loop,
             string clientContext)
             : base(requestUrl, client)
         {
             this.SetParameter("prompts", prompts, false);
+            this.SetParameter("loop", loop, true);
             this.SetParameter("clientContext", clientContext, true);
         }
 
@@ -49,6 +52,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("prompts"))
             {
                 request.RequestBody.Prompts = this.GetParameter<IEnumerable<Prompt>>("prompts");
+            }
+
+            if (this.HasParameter("loop"))
+            {
+                request.RequestBody.Loop = this.GetParameter<bool?>("loop");
             }
 
             if (this.HasParameter("clientContext"))

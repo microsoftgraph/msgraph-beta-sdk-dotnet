@@ -227,56 +227,56 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="CallToInitialize">The <see cref="Call"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Call CallToInitialize)
+        /// <param name="callToInitialize">The <see cref="Call"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(Call callToInitialize)
         {
 
-            if (CallToInitialize != null && CallToInitialize.AdditionalData != null)
+            if (callToInitialize != null && callToInitialize.AdditionalData != null)
             {
 
-                if (CallToInitialize.Participants != null && CallToInitialize.Participants.CurrentPage != null)
+                if (callToInitialize.Participants != null && callToInitialize.Participants.CurrentPage != null)
                 {
-                    CallToInitialize.Participants.AdditionalData = CallToInitialize.AdditionalData;
+                    callToInitialize.Participants.AdditionalData = callToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    CallToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out nextPageLink);
+                    callToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        CallToInitialize.Participants.InitializeNextPageRequest(
+                        callToInitialize.Participants.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
                 }
 
-                if (CallToInitialize.AudioRoutingGroups != null && CallToInitialize.AudioRoutingGroups.CurrentPage != null)
+                if (callToInitialize.AudioRoutingGroups != null && callToInitialize.AudioRoutingGroups.CurrentPage != null)
                 {
-                    CallToInitialize.AudioRoutingGroups.AdditionalData = CallToInitialize.AdditionalData;
+                    callToInitialize.AudioRoutingGroups.AdditionalData = callToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    CallToInitialize.AdditionalData.TryGetValue("audioRoutingGroups@odata.nextLink", out nextPageLink);
+                    callToInitialize.AdditionalData.TryGetValue("audioRoutingGroups@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        CallToInitialize.AudioRoutingGroups.InitializeNextPageRequest(
+                        callToInitialize.AudioRoutingGroups.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
                 }
 
-                if (CallToInitialize.Operations != null && CallToInitialize.Operations.CurrentPage != null)
+                if (callToInitialize.Operations != null && callToInitialize.Operations.CurrentPage != null)
                 {
-                    CallToInitialize.Operations.AdditionalData = CallToInitialize.AdditionalData;
+                    callToInitialize.Operations.AdditionalData = callToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    CallToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
+                    callToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        CallToInitialize.Operations.InitializeNextPageRequest(
+                        callToInitialize.Operations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

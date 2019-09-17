@@ -28,5 +28,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
         public RejectReason? Reason { get; set; }
     
+        /// <summary>
+        /// Gets or sets CallbackUri.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callbackUri", Required = Newtonsoft.Json.Required.Default)]
+        public string CallbackUri { get; set; }
+    
     }
 }

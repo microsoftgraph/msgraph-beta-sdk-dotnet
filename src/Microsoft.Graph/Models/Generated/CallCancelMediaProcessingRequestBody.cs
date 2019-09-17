@@ -23,12 +23,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets All.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "all", Required = Newtonsoft.Json.Required.Default)]
-        public bool? All { get; set; }
-    
-        /// <summary>
         /// Gets or sets ClientContext.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientContext", Required = Newtonsoft.Json.Required.Default)]

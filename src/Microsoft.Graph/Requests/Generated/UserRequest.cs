@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (userToInitialize != null && userToInitialize.AdditionalData != null)
             {
 
-                if (userToInitialize.Extensions != null && userToInitialize.Extensions.CurrentPage != null)
-                {
-                    userToInitialize.Extensions.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (userToInitialize.AppRoleAssignments != null && userToInitialize.AppRoleAssignments.CurrentPage != null)
                 {
                     userToInitialize.AppRoleAssignments.AdditionalData = userToInitialize.AdditionalData;
@@ -405,22 +389,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.TransitiveMemberOf.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (userToInitialize.Activities != null && userToInitialize.Activities.CurrentPage != null)
-                {
-                    userToInitialize.Activities.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.Activities.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -634,17 +602,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (userToInitialize.ManagedDevices != null && userToInitialize.ManagedDevices.CurrentPage != null)
+                if (userToInitialize.Extensions != null && userToInitialize.Extensions.CurrentPage != null)
                 {
-                    userToInitialize.ManagedDevices.AdditionalData = userToInitialize.AdditionalData;
+                    userToInitialize.Extensions.AdditionalData = userToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out nextPageLink);
+                    userToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        userToInitialize.ManagedDevices.InitializeNextPageRequest(
+                        userToInitialize.Extensions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.AgreementAcceptances != null && userToInitialize.AgreementAcceptances.CurrentPage != null)
+                {
+                    userToInitialize.AgreementAcceptances.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.AgreementAcceptances.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -661,6 +645,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.ManagedDevices != null && userToInitialize.ManagedDevices.CurrentPage != null)
+                {
+                    userToInitialize.ManagedDevices.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("managedDevices@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.ManagedDevices.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -693,38 +693,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.WindowsInformationProtectionDeviceRegistrations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (userToInitialize.Devices != null && userToInitialize.Devices.CurrentPage != null)
-                {
-                    userToInitialize.Devices.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("devices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.Devices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (userToInitialize.JoinedTeams != null && userToInitialize.JoinedTeams.CurrentPage != null)
-                {
-                    userToInitialize.JoinedTeams.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("joinedTeams@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.JoinedTeams.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -778,38 +746,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (userToInitialize.Chats != null && userToInitialize.Chats.CurrentPage != null)
-                {
-                    userToInitialize.Chats.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("chats@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.Chats.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (userToInitialize.AgreementAcceptances != null && userToInitialize.AgreementAcceptances.CurrentPage != null)
-                {
-                    userToInitialize.AgreementAcceptances.AdditionalData = userToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userToInitialize.AdditionalData.TryGetValue("agreementAcceptances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userToInitialize.AgreementAcceptances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (userToInitialize.Notifications != null && userToInitialize.Notifications.CurrentPage != null)
                 {
                     userToInitialize.Notifications.AdditionalData = userToInitialize.AdditionalData;
@@ -821,6 +757,70 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userToInitialize.Notifications.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.Activities != null && userToInitialize.Activities.CurrentPage != null)
+                {
+                    userToInitialize.Activities.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("activities@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.Activities.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.Devices != null && userToInitialize.Devices.CurrentPage != null)
+                {
+                    userToInitialize.Devices.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("devices@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.Devices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.JoinedTeams != null && userToInitialize.JoinedTeams.CurrentPage != null)
+                {
+                    userToInitialize.JoinedTeams.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("joinedTeams@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.JoinedTeams.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.Chats != null && userToInitialize.Chats.CurrentPage != null)
+                {
+                    userToInitialize.Chats.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("chats@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.Chats.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

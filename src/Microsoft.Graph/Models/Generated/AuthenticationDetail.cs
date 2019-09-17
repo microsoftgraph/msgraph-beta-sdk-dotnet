@@ -33,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets authenticationMethod.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
-        public AuthenticationMethod? AuthenticationMethod { get; set; }
+        public string AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationMethodDetail.
@@ -51,13 +51,13 @@ namespace Microsoft.Graph
         /// Gets or sets authenticationStepResultDetail.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepResultDetail", Required = Newtonsoft.Json.Required.Default)]
-        public AuthenticationStepResultDetail? AuthenticationStepResultDetail { get; set; }
+        public string AuthenticationStepResultDetail { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepRequirement.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepRequirement", Required = Newtonsoft.Json.Required.Default)]
-        public AuthenticationStepRequirement? AuthenticationStepRequirement { get; set; }
+        public string AuthenticationStepRequirement { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

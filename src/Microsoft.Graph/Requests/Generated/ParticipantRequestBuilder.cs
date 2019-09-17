@@ -62,38 +62,6 @@ namespace Microsoft.Graph
                 this.Client,
                 clientContext);
         }
-
-        /// <summary>
-        /// Gets the request builder for ParticipantSubscribeVideo.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantSubscribeVideoRequestBuilder"/>.</returns>
-        public IParticipantSubscribeVideoRequestBuilder SubscribeVideo(
-            VideoResolutionFormat videoResolution,
-            Modality modality,
-            Int64 socketId,
-            string clientContext = null)
-        {
-            return new ParticipantSubscribeVideoRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.subscribeVideo"),
-                this.Client,
-                videoResolution,
-                modality,
-                socketId,
-                clientContext);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ParticipantUnmute.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantUnmuteRequestBuilder"/>.</returns>
-        public IParticipantUnmuteRequestBuilder Unmute(
-            string clientContext = null)
-        {
-            return new ParticipantUnmuteRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.unmute"),
-                this.Client,
-                clientContext);
-        }
     
     }
 }

@@ -43,5 +43,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnConfigurationId", Required = Newtonsoft.Json.Required.Default)]
         public string VpnConfigurationId { get; set; }
     
+        /// <summary>
+        /// Gets or sets uninstallOnDeviceRemoval.
+        /// Whether or not to uninstall the app when device is removed from Intune.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallOnDeviceRemoval", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UninstallOnDeviceRemoval { get; set; }
+    
     }
 }

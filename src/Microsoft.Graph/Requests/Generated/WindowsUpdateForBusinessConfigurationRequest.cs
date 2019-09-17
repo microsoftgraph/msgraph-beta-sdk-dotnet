@@ -231,6 +231,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToInitialize)
         {
 
+            if (windowsUpdateForBusinessConfigurationToInitialize != null && windowsUpdateForBusinessConfigurationToInitialize.AdditionalData != null)
+            {
+
+                if (windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates != null && windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.CurrentPage != null)
+                {
+                    windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.AdditionalData = windowsUpdateForBusinessConfigurationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    windowsUpdateForBusinessConfigurationToInitialize.AdditionalData.TryGetValue("deviceUpdateStates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

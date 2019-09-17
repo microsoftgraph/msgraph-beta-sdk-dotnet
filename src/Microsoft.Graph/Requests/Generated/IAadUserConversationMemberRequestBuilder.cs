@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAadUserConversationMemberRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for User.
+        /// </summary>
+        /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
+        IUserWithReferenceRequestBuilder User { get; }
+    
     }
 }

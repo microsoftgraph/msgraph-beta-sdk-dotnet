@@ -54,6 +54,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IScheduleSchedulingGroupsCollectionRequestBuilder"/>.</returns>
         IScheduleSchedulingGroupsCollectionRequestBuilder SchedulingGroups { get; }
+
+        /// <summary>
+        /// Gets the request builder for SwapShiftsChangeRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder"/>.</returns>
+        IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests { get; }
+
+        /// <summary>
+        /// Gets the request builder for TimeOffRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimeOffRequestsCollectionRequestBuilder"/>.</returns>
+        IScheduleTimeOffRequestsCollectionRequestBuilder TimeOffRequests { get; }
     
         /// <summary>
         /// Gets the request builder for ScheduleShare.

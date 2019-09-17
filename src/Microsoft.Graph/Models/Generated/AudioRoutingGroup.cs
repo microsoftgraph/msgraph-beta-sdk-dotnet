@@ -23,12 +23,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets owner.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
-        public string Owner { get; set; }
-    
-        /// <summary>
         /// Gets or sets routing mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingMode", Required = Newtonsoft.Json.Required.Default)]

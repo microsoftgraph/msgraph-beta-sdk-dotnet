@@ -114,6 +114,41 @@ namespace Microsoft.Graph
         public bool? FactoryResetBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode screen saver configuration enabled.
+        /// Whether or not to enable screen saver mode or not in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeScreenSaverConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode screen saver image url.
+        /// URL for an image that will be the device's screen saver in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverImageUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string KioskModeScreenSaverImageUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode screen saver display time in seconds.
+        /// The number of seconds that the device will display the screen saver for in Kiosk Mode. Valid values 0 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverDisplayTimeInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? KioskModeScreenSaverDisplayTimeInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode screen saver start delay in seconds.
+        /// The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverStartDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? KioskModeScreenSaverStartDelayInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode screen saver detect media disabled.
+        /// Whether or not the device screen should show the screen saver if audio/video is playing in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverDetectMediaDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeScreenSaverDetectMediaDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode apps.
         /// A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
         /// </summary>
@@ -142,6 +177,13 @@ namespace Microsoft.Graph
         public bool? KioskModeVirtualHomeButtonEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode virtual home button type.
+        /// Indicates whether the virtual home button is a swipe up home button or a floating home button.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeVirtualHomeButtonType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerVirtualHomeButtonType? KioskModeVirtualHomeButtonType { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode bluetooth configuration enabled.
         /// Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.
         /// </summary>
@@ -154,6 +196,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeWiFiConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeWiFiConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode flashlight configuration enabled.
+        /// Whether or not to allow a user to use the flashlight in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeFlashlightConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeFlashlightConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode media volume configuration enabled.
+        /// Whether or not to allow a user to change the media volume in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeMediaVolumeConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeMediaVolumeConfigurationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets microphone force mute.

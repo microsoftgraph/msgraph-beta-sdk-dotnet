@@ -24,17 +24,17 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified Call to the collection via POST.
         /// </summary>
-        /// <param name="Call">The Call to add.</param>
+        /// <param name="call">The Call to add.</param>
         /// <returns>The created Call.</returns>
-        System.Threading.Tasks.Task<Call> AddAsync(Call Call);
+        System.Threading.Tasks.Task<Call> AddAsync(Call call);
 
         /// <summary>
         /// Adds the specified Call to the collection via POST.
         /// </summary>
-        /// <param name="Call">The Call to add.</param>
+        /// <param name="call">The Call to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Call.</returns>
-        System.Threading.Tasks.Task<Call> AddAsync(Call Call, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Call> AddAsync(Call call, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>

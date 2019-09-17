@@ -37,24 +37,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified OnlineMeeting to the collection via POST.
         /// </summary>
-        /// <param name="OnlineMeeting">The OnlineMeeting to add.</param>
+        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
         /// <returns>The created OnlineMeeting.</returns>
-        public System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting OnlineMeeting)
+        public System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting)
         {
-            return this.AddAsync(OnlineMeeting, CancellationToken.None);
+            return this.AddAsync(onlineMeeting, CancellationToken.None);
         }
 
         /// <summary>
         /// Adds the specified OnlineMeeting to the collection via POST.
         /// </summary>
-        /// <param name="OnlineMeeting">The OnlineMeeting to add.</param>
+        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnlineMeeting.</returns>
-        public System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting OnlineMeeting, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<OnlineMeeting>(OnlineMeeting, cancellationToken);
+            return this.SendAsync<OnlineMeeting>(onlineMeeting, cancellationToken);
         }
 
         /// <summary>

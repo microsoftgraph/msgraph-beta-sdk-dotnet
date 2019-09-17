@@ -78,6 +78,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionState", Required = Newtonsoft.Json.Required.Default)]
         public ActionState? ActionState { get; set; }
     
+        /// <summary>
+        /// Gets or sets managed device id.
+        /// Action target.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedDeviceId { get; set; }
+    
     }
 }
 

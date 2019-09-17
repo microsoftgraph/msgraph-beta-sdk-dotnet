@@ -39,5 +39,15 @@ namespace Microsoft.Graph
         /// </summary>
         DisableForwarding = 3,
 	
+        /// <summary>
+        /// Prefer Skype For Business
+        /// </summary>
+        PreferSkypeForBusiness = 4,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
+	
     }
 }

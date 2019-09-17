@@ -44,5 +44,15 @@ namespace Microsoft.Graph
         /// </summary>
         Unknown = 8,
 	
+        /// <summary>
+        /// Quarantined On Demand
+        /// </summary>
+        QuarantinedOnDemand = 16,
+	
+        /// <summary>
+        /// Too Many Deletes
+        /// </summary>
+        TooManyDeletes = 32,
+	
     }
 }

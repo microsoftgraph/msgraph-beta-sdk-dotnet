@@ -120,6 +120,27 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnPeerCaching", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? VpnPeerCaching { get; set; }
     
+        /// <summary>
+        /// Gets or sets cache server host names.
+        /// Specifies cache servers host names.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerHostNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> CacheServerHostNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cache server foreground download fallback to http delay in seconds.
+        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.â€‹
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerForegroundDownloadFallbackToHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CacheServerForegroundDownloadFallbackToHttpDelayInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cache server background download fallback to http delay in seconds.
+        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds { get; set; }
+    
     }
 }
 

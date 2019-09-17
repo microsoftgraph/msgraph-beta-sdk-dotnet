@@ -23,12 +23,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets directories.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directories", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DirectoryDefinition> Directories { get; set; }
-    
-        /// <summary>
         /// Gets or sets synchronization rules.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationRules", Required = Newtonsoft.Json.Required.Default)]
@@ -39,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public string Version { get; set; }
+    
+        /// <summary>
+        /// Gets or sets directories.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directories", Required = Newtonsoft.Json.Required.Default)]
+        public ISynchronizationSchemaDirectoriesCollectionPage Directories { get; set; }
     
     }
 }

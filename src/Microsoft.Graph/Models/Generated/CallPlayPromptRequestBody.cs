@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public IEnumerable<Prompt> Prompts { get; set; }
     
         /// <summary>
+        /// Gets or sets Loop.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loop", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Loop { get; set; }
+    
+        /// <summary>
         /// Gets or sets ClientContext.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientContext", Required = Newtonsoft.Json.Required.Default)]

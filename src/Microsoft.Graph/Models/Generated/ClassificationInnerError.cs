@@ -24,6 +24,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets errorDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ErrorDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]

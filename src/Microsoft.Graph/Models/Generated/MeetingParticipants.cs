@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         public IEnumerable<MeetingParticipantInfo> Attendees { get; set; }
     
         /// <summary>
+        /// Gets or sets producers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "producers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MeetingParticipantInfo> Producers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contributors.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributors", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MeetingParticipantInfo> Contributors { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

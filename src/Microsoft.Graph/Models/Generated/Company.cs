@@ -71,6 +71,18 @@ namespace Microsoft.Graph
         public ICompanyCompanyInformationCollectionPage CompanyInformation { get; set; }
     
         /// <summary>
+        /// Gets or sets sales invoices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesInvoices", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesInvoicesCollectionPage SalesInvoices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sales invoice lines.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesInvoiceLines", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesInvoiceLinesCollectionPage SalesInvoiceLines { get; set; }
+    
+        /// <summary>
         /// Gets or sets customer payment journals.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerPaymentJournals", Required = Newtonsoft.Json.Required.Default)]
@@ -167,6 +179,18 @@ namespace Microsoft.Graph
         public ICompanyCountriesRegionsCollectionPage CountriesRegions { get; set; }
     
         /// <summary>
+        /// Gets or sets sales orders.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesOrders", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesOrdersCollectionPage SalesOrders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sales order lines.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesOrderLines", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesOrderLinesCollectionPage SalesOrderLines { get; set; }
+    
+        /// <summary>
         /// Gets or sets units of measure.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unitsOfMeasure", Required = Newtonsoft.Json.Required.Default)]
@@ -189,6 +213,42 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxAreas", Required = Newtonsoft.Json.Required.Default)]
         public ICompanyTaxAreasCollectionPage TaxAreas { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sales quotes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesQuotes", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesQuotesCollectionPage SalesQuotes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sales quote lines.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesQuoteLines", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesQuoteLinesCollectionPage SalesQuoteLines { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sales credit memos.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesCreditMemos", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesCreditMemosCollectionPage SalesCreditMemos { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sales credit memo lines.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesCreditMemoLines", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanySalesCreditMemoLinesCollectionPage SalesCreditMemoLines { get; set; }
+    
+        /// <summary>
+        /// Gets or sets purchase invoices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchaseInvoices", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanyPurchaseInvoicesCollectionPage PurchaseInvoices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets purchase invoice lines.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchaseInvoiceLines", Required = Newtonsoft.Json.Required.Default)]
+        public ICompanyPurchaseInvoiceLinesCollectionPage PurchaseInvoiceLines { get; set; }
     
         /// <summary>
         /// Gets or sets picture.
