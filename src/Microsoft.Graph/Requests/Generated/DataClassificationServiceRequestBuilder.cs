@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ExactMatchDataStores.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceExactMatchDataStoresCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceExactMatchDataStoresCollectionRequestBuilder ExactMatchDataStores
+        {
+            get
+            {
+                return new DataClassificationServiceExactMatchDataStoresCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exactMatchDataStores"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SensitiveTypes.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>
@@ -143,6 +155,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DataClassificationServiceSensitivityLabelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sensitivityLabels"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ExactMatchUploadAgents.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder ExactMatchUploadAgents
+        {
+            get
+            {
+                return new DataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exactMatchUploadAgents"), this.Client);
             }
         }
     

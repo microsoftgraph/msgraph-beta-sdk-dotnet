@@ -32,10 +32,16 @@ namespace Microsoft.Graph
         new IEducationClassRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Schools.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IEducationClassSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IEducationClassSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
+        /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
+        IEducationClassAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
+        IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories { get; }
 
         /// <summary>
         /// Gets the request builder for Members.
@@ -50,22 +56,16 @@ namespace Microsoft.Graph
         IEducationClassTeachersCollectionWithReferencesRequestBuilder Teachers { get; }
 
         /// <summary>
+        /// Gets the request builder for Schools.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IEducationClassSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
+
+        /// <summary>
         /// Gets the request builder for Group.
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
         IGroupWithReferenceRequestBuilder Group { get; }
-
-        /// <summary>
-        /// Gets the request builder for Assignments.
-        /// </summary>
-        /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
-        IEducationClassAssignmentsCollectionRequestBuilder Assignments { get; }
-
-        /// <summary>
-        /// Gets the request builder for AssignmentCategories.
-        /// </summary>
-        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
-        IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories { get; }
     
         
     

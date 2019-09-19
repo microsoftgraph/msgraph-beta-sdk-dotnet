@@ -395,7 +395,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i cloud block activity continuation.
-        /// Indicates whether or not to block  the the user from continuing work they started on iOS device to another iOS or macOS device.
+        /// Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudBlockActivityContinuation", Required = Newtonsoft.Json.Required.Default)]
         public bool? ICloudBlockActivityContinuation { get; set; }
@@ -1046,7 +1046,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets keychain block cloud sync.
-        /// Indicates whether or not iCloud keychain synchronization is blocked.
+        /// Indicates whether or not iCloud keychain synchronization is blocked. Requires a supervised device for iOS 13 and later.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keychainBlockCloudSync", Required = Newtonsoft.Json.Required.Default)]
         public bool? KeychainBlockCloudSync { get; set; }
@@ -1190,6 +1190,41 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siriDisableServerLogging", Required = Newtonsoft.Json.Required.Default)]
         public bool? SiriDisableServerLogging { get; set; }
+    
+        /// <summary>
+        /// Gets or sets continuous path keyboard blocked.
+        /// Indicates whether or not to block the continuous path keyboard when the device is supervised (iOS 13 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "continuousPathKeyboardBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContinuousPathKeyboardBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets find my device in find my app blocked.
+        /// Indicates whether or not to block Find My Device when the device is supervised (iOS 13 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "findMyDeviceInFindMyAppBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FindMyDeviceInFindMyAppBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets find my friends in find my app blocked.
+        /// Indicates whether or not to block Find My Friends when the device is supervised (iOS 13 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "findMyFriendsInFindMyAppBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FindMyFriendsInFindMyAppBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wi fi block power modification.
+        /// Indicates whether or not to block WiFi power modification when the device is supervised (iOS 13 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlockPowerModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WiFiBlockPowerModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets i tunes blocked.
+        /// Indicates whether or not to block the iTunes app. Requires a supervised device for iOS 13 and later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iTunesBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ITunesBlocked { get; set; }
     
     }
 }

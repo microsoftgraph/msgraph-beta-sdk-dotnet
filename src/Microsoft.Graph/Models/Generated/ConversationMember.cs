@@ -22,14 +22,6 @@ namespace Microsoft.Graph
     public partial class ConversationMember : Entity
     {
     
-		///<summary>
-		/// The internal ConversationMember constructor
-		///</summary>
-        protected internal ConversationMember()
-        {
-            // Don't allow initialization of abstract entity types
-        }
-    
         /// <summary>
         /// Gets or sets roles.
         /// </summary>

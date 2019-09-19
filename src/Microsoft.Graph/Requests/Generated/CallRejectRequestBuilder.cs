@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="reason">A reason parameter for the OData method call.</param>
+        /// <param name="callbackUri">A callbackUri parameter for the OData method call.</param>
         public CallRejectRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            RejectReason? reason)
+            RejectReason? reason,
+            string callbackUri)
             : base(requestUrl, client)
         {
             this.SetParameter("reason", reason, true);
+            this.SetParameter("callbackUri", callbackUri, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("reason"))
             {
                 request.RequestBody.Reason = this.GetParameter<RejectReason?>("reason");
+            }
+
+            if (this.HasParameter("callbackUri"))
+            {
+                request.RequestBody.CallbackUri = this.GetParameter<string>("callbackUri");
             }
 
             return request;

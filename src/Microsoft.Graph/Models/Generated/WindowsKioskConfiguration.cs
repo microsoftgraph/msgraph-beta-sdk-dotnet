@@ -85,6 +85,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskEnablePublicBrowsing", Required = Newtonsoft.Json.Required.Default)]
         public bool? EdgeKioskEnablePublicBrowsing { get; set; }
     
+        /// <summary>
+        /// Gets or sets windows kiosk force update schedule.
+        /// force update schedule for Kiosk devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsKioskForceUpdateSchedule", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsKioskForceUpdateSchedule WindowsKioskForceUpdateSchedule { get; set; }
+    
     }
 }
 

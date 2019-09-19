@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IAdministrativeUnitExtensionsCollectionRequestBuilder"/>.</returns>
-        public IAdministrativeUnitExtensionsCollectionRequestBuilder Extensions
-        {
-            get
-            {
-                return new AdministrativeUnitExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IAdministrativeUnitMembersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AdministrativeUnitScopedRoleMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scopedRoleMembers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitExtensionsCollectionRequestBuilder"/>.</returns>
+        public IAdministrativeUnitExtensionsCollectionRequestBuilder Extensions
+        {
+            get
+            {
+                return new AdministrativeUnitExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
     

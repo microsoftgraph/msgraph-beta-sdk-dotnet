@@ -227,8 +227,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="SubscribeToToneOperationToInitialize">The <see cref="SubscribeToToneOperation"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(SubscribeToToneOperation SubscribeToToneOperationToInitialize)
+        /// <param name="subscribeToToneOperationToInitialize">The <see cref="SubscribeToToneOperation"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(SubscribeToToneOperation subscribeToToneOperationToInitialize)
         {
 
         }

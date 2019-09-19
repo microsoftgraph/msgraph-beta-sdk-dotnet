@@ -32,10 +32,28 @@ namespace Microsoft.Graph
         new IManagedDeviceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for SecurityBaselineStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceConfigurationStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder"/>.</returns>
         IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder DeviceConfigurationStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceMobileAppConfigurationStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder ManagedDeviceMobileAppConfigurationStates { get; }
 
         /// <summary>
         /// Gets the request builder for DetectedApps.
@@ -60,25 +78,15 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceUsersCollectionRequestBuilder"/>.</returns>
         IManagedDeviceUsersCollectionRequestBuilder Users { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates { get; }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceMobileAppConfigurationStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder ManagedDeviceMobileAppConfigurationStates { get; }
-
-        /// <summary>
-        /// Gets the request builder for SecurityBaselineStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates { get; }
     
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceOverrideComplianceState.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
+        IManagedDeviceOverrideComplianceStateRequestBuilder OverrideComplianceState(
+            AdministratorConfiguredDeviceComplianceState complianceState,
+            string remediationUrl = null);
+
         /// <summary>
         /// Gets the request builder for ManagedDeviceEnableLostMode.
         /// </summary>
@@ -229,12 +237,12 @@ namespace Microsoft.Graph
         IManagedDeviceRevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceOverrideComplianceState.
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
-        IManagedDeviceOverrideComplianceStateRequestBuilder OverrideComplianceState(
-            AdministratorConfiguredDeviceComplianceState complianceState,
-            string remediationUrl = null);
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceGetFileVaultKey.

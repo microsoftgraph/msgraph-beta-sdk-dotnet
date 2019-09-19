@@ -28,17 +28,5 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transferTarget", Required = Newtonsoft.Json.Required.Default)]
         public InvitationParticipantInfo TransferTarget { get; set; }
     
-        /// <summary>
-        /// Gets or sets Target.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet Target { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ReplacesCallId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replacesCallId", Required = Newtonsoft.Json.Required.Default)]
-        public string ReplacesCallId { get; set; }
-    
     }
 }

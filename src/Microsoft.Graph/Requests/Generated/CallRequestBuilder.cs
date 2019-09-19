@@ -108,13 +108,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallCancelMediaProcessingRequestBuilder"/>.</returns>
         public ICallCancelMediaProcessingRequestBuilder CancelMediaProcessing(
-            bool? all = null,
             string clientContext = null)
         {
             return new CallCancelMediaProcessingRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.cancelMediaProcessing"),
                 this.Client,
-                all,
                 clientContext);
         }
 
@@ -150,39 +148,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICallPlayPromptRequestBuilder"/>.</returns>
         public ICallPlayPromptRequestBuilder PlayPrompt(
             IEnumerable<Prompt> prompts,
+            bool? loop = null,
             string clientContext = null)
         {
             return new CallPlayPromptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.playPrompt"),
                 this.Client,
                 prompts,
-                clientContext);
-        }
-
-        /// <summary>
-        /// Gets the request builder for CallRecognize.
-        /// </summary>
-        /// <returns>The <see cref="ICallRecognizeRequestBuilder"/>.</returns>
-        public ICallRecognizeRequestBuilder Recognize(
-            IEnumerable<Prompt> prompts = null,
-            bool? bargeInAllowed = null,
-            string culture = null,
-            Int32? initialSilenceTimeoutInSeconds = null,
-            Int32? interDigitTimeoutInSeconds = null,
-            IEnumerable<RecognitionOption> choices = null,
-            CollectDigits collectDigits = null,
-            string clientContext = null)
-        {
-            return new CallRecognizeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.recognize"),
-                this.Client,
-                prompts,
-                bargeInAllowed,
-                culture,
-                initialSilenceTimeoutInSeconds,
-                interDigitTimeoutInSeconds,
-                choices,
-                collectDigits,
+                loop,
                 clientContext);
         }
 
@@ -224,7 +197,8 @@ namespace Microsoft.Graph
             CallDisposition? targetDisposition = null,
             Int32? timeout = null,
             bool? maskCallee = null,
-            bool? maskCaller = null)
+            bool? maskCaller = null,
+            string callbackUri = null)
         {
             return new CallRedirectRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.redirect"),
@@ -233,7 +207,8 @@ namespace Microsoft.Graph
                 targetDisposition,
                 timeout,
                 maskCallee,
-                maskCaller);
+                maskCaller,
+                callbackUri);
         }
 
         /// <summary>
@@ -241,12 +216,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallRejectRequestBuilder"/>.</returns>
         public ICallRejectRequestBuilder Reject(
-            RejectReason? reason = null)
+            RejectReason? reason = null,
+            string callbackUri = null)
         {
             return new CallRejectRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.reject"),
                 this.Client,
-                reason);
+                reason,
+                callbackUri);
         }
 
         /// <summary>
@@ -267,16 +244,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallTransferRequestBuilder"/>.</returns>
         public ICallTransferRequestBuilder Transfer(
-            InvitationParticipantInfo transferTarget = null,
-            IdentitySet target = null,
-            string replacesCallId = null)
+            InvitationParticipantInfo transferTarget = null)
         {
             return new CallTransferRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.transfer"),
                 this.Client,
-                transferTarget,
-                target,
-                replacesCallId);
+                transferTarget);
         }
 
         /// <summary>
@@ -289,21 +262,6 @@ namespace Microsoft.Graph
             return new CallUnmuteRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.unmute"),
                 this.Client,
-                clientContext);
-        }
-
-        /// <summary>
-        /// Gets the request builder for CallUpdateMetadata.
-        /// </summary>
-        /// <returns>The <see cref="ICallUpdateMetadataRequestBuilder"/>.</returns>
-        public ICallUpdateMetadataRequestBuilder UpdateMetadata(
-            string metadata = null,
-            string clientContext = null)
-        {
-            return new CallUpdateMetadataRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.updateMetadata"),
-                this.Client,
-                metadata,
                 clientContext);
         }
     

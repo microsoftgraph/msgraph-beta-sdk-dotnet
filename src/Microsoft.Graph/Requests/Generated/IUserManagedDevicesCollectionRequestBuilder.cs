@@ -44,6 +44,8 @@ namespace Microsoft.Graph
             ManagedDeviceRemoteAction actionName,
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
-            IEnumerable<string> deviceIds = null);
+            IEnumerable<string> deviceIds = null,
+            string notificationTitle = null,
+            string notificationBody = null);
     }
 }

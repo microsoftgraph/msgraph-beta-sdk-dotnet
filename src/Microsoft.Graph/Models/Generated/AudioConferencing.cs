@@ -24,6 +24,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets conferenceId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conferenceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ConferenceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets tollNumber.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollNumber", Required = Newtonsoft.Json.Required.Default)]
@@ -34,18 +40,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollFreeNumber", Required = Newtonsoft.Json.Required.Default)]
         public string TollFreeNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets participantPasscode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participantPasscode", Required = Newtonsoft.Json.Required.Default)]
-        public string ParticipantPasscode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets leaderPasscode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "leaderPasscode", Required = Newtonsoft.Json.Required.Default)]
-        public string LeaderPasscode { get; set; }
     
         /// <summary>
         /// Gets or sets dialinUrl.

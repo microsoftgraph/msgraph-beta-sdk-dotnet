@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         public string WebUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets membership type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipType", Required = Newtonsoft.Json.Required.Default)]
+        public ChannelMembershipType? MembershipType { get; set; }
+    
+        /// <summary>
         /// Gets or sets messages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
@@ -74,6 +80,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]
         public IChannelTabsCollectionPage Tabs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public IChannelMembersCollectionPage Members { get; set; }
     
     }
 }

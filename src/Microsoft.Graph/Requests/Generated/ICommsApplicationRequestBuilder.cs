@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new ICommsApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for OnlineMeetings.
-        /// </summary>
-        /// <returns>The <see cref="ICommsApplicationOnlineMeetingsCollectionRequestBuilder"/>.</returns>
-        ICommsApplicationOnlineMeetingsCollectionRequestBuilder OnlineMeetings { get; }
-
-        /// <summary>
         /// Gets the request builder for Calls.
         /// </summary>
         /// <returns>The <see cref="ICommsApplicationCallsCollectionRequestBuilder"/>.</returns>
         ICommsApplicationCallsCollectionRequestBuilder Calls { get; }
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetings.
+        /// </summary>
+        /// <returns>The <see cref="ICommsApplicationOnlineMeetingsCollectionRequestBuilder"/>.</returns>
+        ICommsApplicationOnlineMeetingsCollectionRequestBuilder OnlineMeetings { get; }
     
     }
 }

@@ -24,17 +24,17 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified AudioRoutingGroup to the collection via POST.
         /// </summary>
-        /// <param name="AudioRoutingGroup">The AudioRoutingGroup to add.</param>
+        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
         /// <returns>The created AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup AudioRoutingGroup);
+        System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup);
 
         /// <summary>
         /// Adds the specified AudioRoutingGroup to the collection via POST.
         /// </summary>
-        /// <param name="AudioRoutingGroup">The AudioRoutingGroup to add.</param>
+        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AudioRoutingGroup.</returns>
-        System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup AudioRoutingGroup, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AudioRoutingGroup> AddAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>

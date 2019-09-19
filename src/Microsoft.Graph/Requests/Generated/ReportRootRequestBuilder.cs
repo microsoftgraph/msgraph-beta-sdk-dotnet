@@ -161,6 +161,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetRelyingPartyDetailedSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetRelyingPartyDetailedSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetRelyingPartyDetailedSummaryRequestBuilder GetRelyingPartyDetailedSummary(
+            string period)
+        {
+            return new ReportRootGetRelyingPartyDetailedSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRelyingPartyDetailedSummary"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>
@@ -180,6 +193,109 @@ namespace Microsoft.Graph
             return new ReportRootDeviceConfigurationDeviceActivityRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.deviceConfigurationDeviceActivity"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails()
+        {
+            return new ReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentFailureDetails"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null)
+        {
+            return new ReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentFailureDetails"),
+                this.Client,
+                skip,
+                top,
+                filter,
+                skipToken);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureTrends.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder ManagedDeviceEnrollmentFailureTrends()
+        {
+            return new ReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentFailureTrends"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures()
+        {
+            return new ReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentTopFailures"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures(
+            string period = null)
+        {
+            return new ReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentTopFailures"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder ManagedDeviceEnrollmentAbandonmentSummary(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null)
+        {
+            return new ReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentSummary"),
+                this.Client,
+                skip,
+                top,
+                filter,
+                skipToken);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder ManagedDeviceEnrollmentAbandonmentDetails(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null)
+        {
+            return new ReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentDetails"),
+                this.Client,
+                skip,
+                top,
+                filter,
+                skipToken);
         }
 
         /// <summary>
@@ -1266,109 +1382,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getTenantSecureScores"),
                 this.Client,
                 period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails()
-        {
-            return new ReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentFailureDetails"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null)
-        {
-            return new ReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentFailureDetails"),
-                this.Client,
-                skip,
-                top,
-                filter,
-                skipToken);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureTrends.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder ManagedDeviceEnrollmentFailureTrends()
-        {
-            return new ReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentFailureTrends"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures()
-        {
-            return new ReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentTopFailures"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures(
-            string period = null)
-        {
-            return new ReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentTopFailures"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder ManagedDeviceEnrollmentAbandonmentSummary(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null)
-        {
-            return new ReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentSummary"),
-                this.Client,
-                skip,
-                top,
-                filter,
-                skipToken);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder ManagedDeviceEnrollmentAbandonmentDetails(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null)
-        {
-            return new ReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentDetails"),
-                this.Client,
-                skip,
-                top,
-                filter,
-                skipToken);
         }
     
     }

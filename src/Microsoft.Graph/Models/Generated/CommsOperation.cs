@@ -47,10 +47,10 @@ namespace Microsoft.Graph
         public string ClientContext { get; set; }
     
         /// <summary>
-        /// Gets or sets error info.
+        /// Gets or sets result info.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorInfo", Required = Newtonsoft.Json.Required.Default)]
-        public ResultInfo ErrorInfo { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultInfo", Required = Newtonsoft.Json.Required.Default)]
+        public ResultInfo ResultInfo { get; set; }
     
     }
 }

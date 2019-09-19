@@ -24,13 +24,6 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets user.
-        /// Optional. The user associated with this action.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
-        public Identity User { get; set; }
-    
-        /// <summary>
         /// Gets or sets application.
         /// Optional. The application associated with this action.
         /// </summary>
@@ -43,6 +36,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "device", Required = Newtonsoft.Json.Required.Default)]
         public Identity Device { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user.
+        /// Optional. The user associated with this action.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
+        public Identity User { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

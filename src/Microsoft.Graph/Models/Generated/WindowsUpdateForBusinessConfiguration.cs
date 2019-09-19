@@ -198,6 +198,34 @@ namespace Microsoft.Graph
         public Int32? EngagedRestartTransitionScheduleInDays { get; set; }
     
         /// <summary>
+        /// Gets or sets deadline for feature updates in days.
+        /// Number of days before feature updates are installed automatically with valid range from 2 to 30 days
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deadlineForFeatureUpdatesInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeadlineForFeatureUpdatesInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deadline for quality updates in days.
+        /// Number of days before quality updates are installed automatically with valid range from 2 to 30 days
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deadlineForQualityUpdatesInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeadlineForQualityUpdatesInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deadline grace period in days.
+        /// Number of days after deadline  until restarts occur automatically with valid range from 0 to 7 days
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deadlineGracePeriodInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeadlineGracePeriodInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets postpone reboot until after deadline.
+        /// Specifies if the device should wait until deadline for rebooting outside of active hours
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postponeRebootUntilAfterDeadline", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PostponeRebootUntilAfterDeadline { get; set; }
+    
+        /// <summary>
         /// Gets or sets auto restart notification dismissal.
         /// Specify the method by which the auto-restart required notification is dismissed
         /// </summary>
@@ -238,6 +266,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateNotificationLevel", Required = Newtonsoft.Json.Required.Default)]
         public WindowsUpdateNotificationDisplayOption? UpdateNotificationLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device update states.
+        /// Windows update for business configuration device states.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceUpdateStates", Required = Newtonsoft.Json.Required.Default)]
+        public IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionPage DeviceUpdateStates { get; set; }
     
     }
 }

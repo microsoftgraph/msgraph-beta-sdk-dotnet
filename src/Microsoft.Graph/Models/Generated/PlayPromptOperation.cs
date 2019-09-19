@@ -23,16 +23,10 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets prompts.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prompts", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Prompt> Prompts { get; set; }
-    
-        /// <summary>
         /// Gets or sets completion reason.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionReason", Required = Newtonsoft.Json.Required.Default)]
-        public CompletionReason? CompletionReason { get; set; }
+        public PlayPromptCompletionReason? CompletionReason { get; set; }
     
     }
 }

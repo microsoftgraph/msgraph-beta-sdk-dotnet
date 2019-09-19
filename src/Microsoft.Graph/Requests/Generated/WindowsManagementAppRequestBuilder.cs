@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for HealthSummary.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsManagementAppHealthSummaryWithReferenceRequestBuilder"/>.</returns>
-        public IWindowsManagementAppHealthSummaryWithReferenceRequestBuilder HealthSummary
-        {
-            get
-            {
-                return new WindowsManagementAppHealthSummaryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("healthSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for HealthStates.
         /// </summary>
         /// <returns>The <see cref="IWindowsManagementAppHealthStatesCollectionRequestBuilder"/>.</returns>

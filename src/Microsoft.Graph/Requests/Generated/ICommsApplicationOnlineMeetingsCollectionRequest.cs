@@ -24,17 +24,17 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified OnlineMeeting to the collection via POST.
         /// </summary>
-        /// <param name="OnlineMeeting">The OnlineMeeting to add.</param>
+        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
         /// <returns>The created OnlineMeeting.</returns>
-        System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting OnlineMeeting);
+        System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting);
 
         /// <summary>
         /// Adds the specified OnlineMeeting to the collection via POST.
         /// </summary>
-        /// <param name="OnlineMeeting">The OnlineMeeting to add.</param>
+        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnlineMeeting.</returns>
-        System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting OnlineMeeting, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>

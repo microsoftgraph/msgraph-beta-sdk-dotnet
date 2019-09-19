@@ -90,6 +90,13 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetRelyingPartyDetailedSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetRelyingPartyDetailedSummaryRequestBuilder"/>.</returns>
+        IReportRootGetRelyingPartyDetailedSummaryRequestBuilder GetRelyingPartyDetailedSummary(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationUserActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationUserActivityRequestBuilder"/>.</returns>
@@ -100,6 +107,61 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
         IReportRootDeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureTrends.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder ManagedDeviceEnrollmentFailureTrends();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures(
+            string period = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder ManagedDeviceEnrollmentAbandonmentSummary(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentDetails.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder"/>.</returns>
+        IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder ManagedDeviceEnrollmentAbandonmentDetails(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null);
 
         /// <summary>
         /// Gets the request builder for ReportRootGetOffice365ActivationsUserDetail.
@@ -685,61 +747,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IReportRootGetTenantSecureScoresRequestBuilder"/>.</returns>
         IReportRootGetTenantSecureScoresRequestBuilder GetTenantSecureScores(
             Int32 period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
-        IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails();
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder"/>.</returns>
-        IReportRootManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentFailureTrends.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder"/>.</returns>
-        IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder ManagedDeviceEnrollmentFailureTrends();
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
-        IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures();
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentTopFailures.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder"/>.</returns>
-        IReportRootManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures(
-            string period = null);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder"/>.</returns>
-        IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder ManagedDeviceEnrollmentAbandonmentSummary(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder"/>.</returns>
-        IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder ManagedDeviceEnrollmentAbandonmentDetails(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null);
     
     }
 }

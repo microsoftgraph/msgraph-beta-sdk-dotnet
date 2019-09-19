@@ -85,6 +85,18 @@ namespace Microsoft.Graph
                 return new EducationAssignmentCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Rubric.
+        /// </summary>
+        /// <returns>The <see cref="IEducationRubricRequestBuilder"/>.</returns>
+        public IEducationRubricRequestBuilder Rubric
+        {
+            get
+            {
+                return new EducationRubricRequestBuilder(this.AppendSegmentToRequestUrl("rubric"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for EducationAssignmentPublish.

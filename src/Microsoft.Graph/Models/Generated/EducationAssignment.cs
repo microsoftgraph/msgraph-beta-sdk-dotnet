@@ -130,6 +130,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
         public IEducationAssignmentCategoriesCollectionPage Categories { get; set; }
     
+        /// <summary>
+        /// Gets or sets rubric.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubric", Required = Newtonsoft.Json.Required.Default)]
+        public EducationRubric Rubric { get; set; }
+    
     }
 }
 

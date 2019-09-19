@@ -20,24 +20,14 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Qn A
+        /// Question And Answer
         /// </summary>
-        QnA = 0,
+        QuestionAndAnswer = 0,
 	
         /// <summary>
-        /// Video On Demand
+        /// Unknown Future Value
         /// </summary>
-        VideoOnDemand = 1,
-	
-        /// <summary>
-        /// Yammer
-        /// </summary>
-        Yammer = 2,
-	
-        /// <summary>
-        /// Video Interop
-        /// </summary>
-        VideoInterop = 3,
+        UnknownFutureValue = 1,
 	
     }
 }

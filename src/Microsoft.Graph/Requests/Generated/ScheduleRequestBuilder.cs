@@ -97,6 +97,30 @@ namespace Microsoft.Graph
                 return new ScheduleSchedulingGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("schedulingGroups"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for SwapShiftsChangeRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder"/>.</returns>
+        public IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests
+        {
+            get
+            {
+                return new ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("swapShiftsChangeRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TimeOffRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimeOffRequestsCollectionRequestBuilder"/>.</returns>
+        public IScheduleTimeOffRequestsCollectionRequestBuilder TimeOffRequests
+        {
+            get
+            {
+                return new ScheduleTimeOffRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("timeOffRequests"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for ScheduleShare.

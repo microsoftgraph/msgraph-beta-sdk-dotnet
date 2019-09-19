@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets is built in.
+        /// Description of the Role Scope Tag.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBuiltIn { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// The list of assignments for this Role Scope Tag.
         /// </summary>

@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Brandings.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationBrandingsCollectionRequestBuilder"/>.</returns>
+        public IOrganizationBrandingsCollectionRequestBuilder Brandings
+        {
+            get
+            {
+                return new OrganizationBrandingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("brandings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CertificateBasedAuthConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder CertificateBasedAuthConfiguration
+        {
+            get
+            {
+                return new OrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("certificateBasedAuthConfiguration"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>
@@ -63,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Brandings.
+        /// Gets the request builder for InformationProtection.
         /// </summary>
-        /// <returns>The <see cref="IOrganizationBrandingsCollectionRequestBuilder"/>.</returns>
-        public IOrganizationBrandingsCollectionRequestBuilder Brandings
+        /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>
+        public IInformationProtectionRequestBuilder InformationProtection
         {
             get
             {
-                return new OrganizationBrandingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("brandings"), this.Client);
+                return new InformationProtectionRequestBuilder(this.AppendSegmentToRequestUrl("informationProtection"), this.Client);
             }
         }
     

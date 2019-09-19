@@ -23,34 +23,34 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets creation time.
+        /// Gets or sets creation date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreationTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets start time.
+        /// Gets or sets start date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets end time.
+        /// Gets or sets end date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets canceled time.
+        /// Gets or sets canceled date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canceledTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CanceledTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canceledDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CanceledDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets expiration time.
+        /// Gets or sets expiration date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets entry exit announcement.
@@ -95,6 +95,12 @@ namespace Microsoft.Graph
         public AccessLevel? AccessLevel { get; set; }
     
         /// <summary>
+        /// Gets or sets capabilities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MeetingCapabilities> Capabilities { get; set; }
+    
+        /// <summary>
         /// Gets or sets audio conferencing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioConferencing", Required = Newtonsoft.Json.Required.Default)]
@@ -107,10 +113,10 @@ namespace Microsoft.Graph
         public ChatInfo ChatInfo { get; set; }
     
         /// <summary>
-        /// Gets or sets meeting info.
+        /// Gets or sets video teleconference id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingInfo", Required = Newtonsoft.Json.Required.Default)]
-        public MeetingInfo MeetingInfo { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoTeleconferenceId", Required = Newtonsoft.Json.Required.Default)]
+        public string VideoTeleconferenceId { get; set; }
     
     }
 }

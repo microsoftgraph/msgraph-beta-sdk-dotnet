@@ -62,16 +62,5 @@ namespace Microsoft.Graph
             }
         }
     
-        /// <summary>
-        /// Gets the request builder for ImportedWindowsAutopilotDeviceIdentityUploadAutopilotDeviceStream.
-        /// </summary>
-        /// <returns>The <see cref="IImportedWindowsAutopilotDeviceIdentityUploadAutopilotDeviceStreamRequestBuilder"/>.</returns>
-        public IImportedWindowsAutopilotDeviceIdentityUploadAutopilotDeviceStreamRequestBuilder AutopilotDeviceStream()
-        {
-            return new ImportedWindowsAutopilotDeviceIdentityUploadAutopilotDeviceStreamRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.autopilotDeviceStream"),
-                this.Client);
-        }
-    
     }
 }

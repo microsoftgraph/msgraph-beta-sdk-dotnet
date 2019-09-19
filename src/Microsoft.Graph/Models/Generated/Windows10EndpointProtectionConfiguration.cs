@@ -66,10 +66,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user rights local log on.
-        /// This user right determines which users can log on to the computer. States NotConfigured, Allowed and Blocked are all supported 
+        /// This user right determines which users can log on to the computer. States NotConfigured, Allowed are supported 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsLocalLogOn", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementUserRightsSetting UserRightsLocalLogOn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user rights deny local log on.
+        /// This user right determines which users cannot log on to the computer. States NotConfigured, Blocked are supported 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsDenyLocalLogOn", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementUserRightsSetting UserRightsDenyLocalLogOn { get; set; }
     
         /// <summary>
         /// Gets or sets user rights backup data.
@@ -231,13 +238,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsTakeOwnership", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementUserRightsSetting UserRightsTakeOwnership { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user rights register process as service.
-        /// This security setting determines which service accounts are prevented from registering a process as a service. Note: This security setting does not apply to the System, Local Service, or Network Service accounts. Only state Blocked is supported.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsRegisterProcessAsService", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementUserRightsSetting UserRightsRegisterProcessAsService { get; set; }
     
         /// <summary>
         /// Gets or sets xbox services enable xbox game save task.
@@ -744,6 +744,13 @@ namespace Microsoft.Graph
         public DefenderSecurityCenterITContactDisplayType? DefenderSecurityCenterITContactDisplay { get; set; }
     
         /// <summary>
+        /// Gets or sets windows defender tamper protection.
+        /// Configure windows defender TamperProtection settings
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsDefenderTamperProtection", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsDefenderTamperProtectionOptions? WindowsDefenderTamperProtection { get; set; }
+    
+        /// <summary>
         /// Gets or sets firewall block stateful ftp.
         /// Blocks stateful FTP connections to the device
         /// </summary>
@@ -1109,7 +1116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets smart screen block override for files.
-        /// Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
+        /// Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious files.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockOverrideForFiles", Required = Newtonsoft.Json.Required.Default)]
         public bool? SmartScreenBlockOverrideForFiles { get; set; }

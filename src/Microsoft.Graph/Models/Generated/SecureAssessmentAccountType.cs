@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         LocalAccount = 2,
 	
+        /// <summary>
+        /// Local Guest Account
+        /// </summary>
+        LocalGuestAccount = 3,
+	
     }
 }

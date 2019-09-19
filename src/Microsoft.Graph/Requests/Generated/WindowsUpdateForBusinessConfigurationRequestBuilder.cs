@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DeviceUpdateStates.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionRequestBuilder"/>.</returns>
+        public IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionRequestBuilder DeviceUpdateStates
+        {
+            get
+            {
+                return new WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceUpdateStates"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for WindowsUpdateForBusinessConfigurationExtendFeatureUpdatesPause.
         /// </summary>
         /// <returns>The <see cref="IWindowsUpdateForBusinessConfigurationExtendFeatureUpdatesPauseRequestBuilder"/>.</returns>

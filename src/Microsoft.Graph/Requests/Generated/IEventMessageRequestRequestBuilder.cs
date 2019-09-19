@@ -36,24 +36,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestAcceptRequestBuilder"/>.</returns>
         IEventMessageRequestAcceptRequestBuilder Accept(
-            string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventMessageRequestDecline.
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestDeclineRequestBuilder"/>.</returns>
         IEventMessageRequestDeclineRequestBuilder Decline(
-            string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventMessageRequestTentativelyAccept.
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestTentativelyAcceptRequestBuilder"/>.</returns>
         IEventMessageRequestTentativelyAcceptRequestBuilder TentativelyAccept(
-            string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            string Comment = null);
     
     }
 }

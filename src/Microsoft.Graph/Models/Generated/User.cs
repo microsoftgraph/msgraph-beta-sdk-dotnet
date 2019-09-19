@@ -23,6 +23,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets sign in activity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInActivity", Required = Newtonsoft.Json.Required.Default)]
+        public SignInActivity SignInActivity { get; set; }
+    
+        /// <summary>
         /// Gets or sets account enabled.
         /// true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
         /// </summary>
@@ -410,6 +416,19 @@ namespace Microsoft.Graph
         public MailboxSettings MailboxSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets identity user risk.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityUserRisk", Required = Newtonsoft.Json.Required.Default)]
+        public IdentityUserRisk IdentityUserRisk { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device enrollment limit.
+        /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentLimit", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeviceEnrollmentLimit { get; set; }
+    
+        /// <summary>
         /// Gets or sets about me.
         /// A freeform text entry field for the user to describe themselves.
         /// </summary>
@@ -480,30 +499,22 @@ namespace Microsoft.Graph
         public IEnumerable<string> Skills { get; set; }
     
         /// <summary>
-        /// Gets or sets identity user risk.
+        /// Gets or sets analytics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityUserRisk", Required = Newtonsoft.Json.Required.Default)]
-        public IdentityUserRisk IdentityUserRisk { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "analytics", Required = Newtonsoft.Json.Required.Default)]
+        public UserAnalytics Analytics { get; set; }
     
         /// <summary>
-        /// Gets or sets device enrollment limit.
-        /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
+        /// Gets or sets information protection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentLimit", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeviceEnrollmentLimit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the user. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IUserExtensionsCollectionPage Extensions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "informationProtection", Required = Newtonsoft.Json.Required.Default)]
+        public InformationProtection InformationProtection { get; set; }
     
         /// <summary>
         /// Gets or sets app role assignments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IUserAppRoleAssignmentsCollectionWithReferencesPage AppRoleAssignments { get; set; }
+        public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets created objects.
@@ -572,13 +583,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
         public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
-    
-        /// <summary>
-        /// Gets or sets activities.
-        /// The user's activities across devices. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
-        public IUserActivitiesCollectionPage Activities { get; set; }
     
         /// <summary>
         /// Gets or sets outlook.
@@ -704,37 +708,17 @@ namespace Microsoft.Graph
         public IUserFollowedSitesCollectionWithReferencesPage FollowedSites { get; set; }
     
         /// <summary>
-        /// Gets or sets insights.
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
-        public OfficeGraphInsights Insights { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IUserExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
-        /// Gets or sets settings.
+        /// Gets or sets agreement acceptances.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
-        public UserSettings Settings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets planner.
-        /// Entry-point to the Planner resource that might exist for a user. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planner", Required = Newtonsoft.Json.Required.Default)]
-        public PlannerUser Planner { get; set; }
-    
-        /// <summary>
-        /// Gets or sets onenote.
-        /// Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
-        public Onenote Onenote { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed devices.
-        /// The managed devices associated with the user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
-        public IUserManagedDevicesCollectionPage ManagedDevices { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementAcceptances", Required = Newtonsoft.Json.Required.Default)]
+        public IUserAgreementAcceptancesCollectionWithReferencesPage AgreementAcceptances { get; set; }
     
         /// <summary>
         /// Gets or sets device enrollment configurations.
@@ -742,6 +726,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentConfigurations", Required = Newtonsoft.Json.Required.Default)]
         public IUserDeviceEnrollmentConfigurationsCollectionPage DeviceEnrollmentConfigurations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed devices.
+        /// The managed devices associated with the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IUserManagedDevicesCollectionPage ManagedDevices { get; set; }
     
         /// <summary>
         /// Gets or sets managed app registrations.
@@ -756,18 +747,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionDeviceRegistrations", Required = Newtonsoft.Json.Required.Default)]
         public IUserWindowsInformationProtectionDeviceRegistrationsCollectionWithReferencesPage WindowsInformationProtectionDeviceRegistrations { get; set; }
-    
-        /// <summary>
-        /// Gets or sets devices.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devices", Required = Newtonsoft.Json.Required.Default)]
-        public IUserDevicesCollectionPage Devices { get; set; }
-    
-        /// <summary>
-        /// Gets or sets joined teams.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
-        public IUserJoinedTeamsCollectionPage JoinedTeams { get; set; }
     
         /// <summary>
         /// Gets or sets device management troubleshooting events.
@@ -791,28 +770,67 @@ namespace Microsoft.Graph
         public IUserMobileAppTroubleshootingEventsCollectionPage MobileAppTroubleshootingEvents { get; set; }
     
         /// <summary>
-        /// Gets or sets information protection.
+        /// Gets or sets notifications.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "informationProtection", Required = Newtonsoft.Json.Required.Default)]
-        public InformationProtection InformationProtection { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifications", Required = Newtonsoft.Json.Required.Default)]
+        public IUserNotificationsCollectionPage Notifications { get; set; }
+    
+        /// <summary>
+        /// Gets or sets planner.
+        /// Entry-point to the Planner resource that might exist for a user. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planner", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerUser Planner { get; set; }
+    
+        /// <summary>
+        /// Gets or sets insights.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
+        public OfficeGraphInsights Insights { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public UserSettings Settings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onenote.
+        /// Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
+        public Onenote Onenote { get; set; }
+    
+        /// <summary>
+        /// Gets or sets activities.
+        /// The user's activities across devices. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
+        public IUserActivitiesCollectionPage Activities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devices", Required = Newtonsoft.Json.Required.Default)]
+        public IUserDevicesCollectionPage Devices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets joined teams.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
+        public IUserJoinedTeamsCollectionWithReferencesPage JoinedTeams { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teamwork.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
+        public UserTeamwork Teamwork { get; set; }
     
         /// <summary>
         /// Gets or sets chats.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chats", Required = Newtonsoft.Json.Required.Default)]
         public IUserChatsCollectionPage Chats { get; set; }
-    
-        /// <summary>
-        /// Gets or sets agreement acceptances.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementAcceptances", Required = Newtonsoft.Json.Required.Default)]
-        public IUserAgreementAcceptancesCollectionWithReferencesPage AgreementAcceptances { get; set; }
-    
-        /// <summary>
-        /// Gets or sets notifications.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifications", Required = Newtonsoft.Json.Required.Default)]
-        public IUserNotificationsCollectionPage Notifications { get; set; }
     
     }
 }

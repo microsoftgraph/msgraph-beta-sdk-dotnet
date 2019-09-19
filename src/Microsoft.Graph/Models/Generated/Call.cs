@@ -29,10 +29,16 @@ namespace Microsoft.Graph
         public CallState? State { get; set; }
     
         /// <summary>
-        /// Gets or sets error.
+        /// Gets or sets media state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public ResultInfo Error { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaState", Required = Newtonsoft.Json.Required.Default)]
+        public CallMediaState MediaState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets result info.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultInfo", Required = Newtonsoft.Json.Required.Default)]
+        public ResultInfo ResultInfo { get; set; }
     
         /// <summary>
         /// Gets or sets termination reason.
@@ -47,10 +53,10 @@ namespace Microsoft.Graph
         public CallDirection? Direction { get; set; }
     
         /// <summary>
-        /// Gets or sets ringning timeout in seconds.
+        /// Gets or sets ringing timeout in seconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ringningTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RingningTimeoutInSeconds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ringingTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RingingTimeoutInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets subject.

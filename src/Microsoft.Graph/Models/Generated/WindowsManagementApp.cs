@@ -30,13 +30,6 @@ namespace Microsoft.Graph
         public string AvailableVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets health summary.
-        /// Health summary for Windows management app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthSummary", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsManagementAppHealthSummary HealthSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets health states.
         /// The list of health states for installed Windows management app.
         /// </summary>

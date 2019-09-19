@@ -25,9 +25,9 @@ namespace Microsoft.Graph
         MeetNow = 0,
 	
         /// <summary>
-        /// Calendar
+        /// Scheduled
         /// </summary>
-        Calendar = 1,
+        Scheduled = 1,
 	
         /// <summary>
         /// Recurring

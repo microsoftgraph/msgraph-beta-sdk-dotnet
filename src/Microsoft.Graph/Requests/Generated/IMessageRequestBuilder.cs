@@ -32,18 +32,6 @@ namespace Microsoft.Graph
         new IMessageRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Attachments.
-        /// </summary>
-        /// <returns>The <see cref="IMessageAttachmentsCollectionRequestBuilder"/>.</returns>
-        IMessageAttachmentsCollectionRequestBuilder Attachments { get; }
-
-        /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IMessageExtensionsCollectionRequestBuilder"/>.</returns>
-        IMessageExtensionsCollectionRequestBuilder Extensions { get; }
-
-        /// <summary>
         /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
         /// <returns>The <see cref="IMessageSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
@@ -56,25 +44,23 @@ namespace Microsoft.Graph
         IMessageMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
 
         /// <summary>
+        /// Gets the request builder for Attachments.
+        /// </summary>
+        /// <returns>The <see cref="IMessageAttachmentsCollectionRequestBuilder"/>.</returns>
+        IMessageAttachmentsCollectionRequestBuilder Attachments { get; }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IMessageExtensionsCollectionRequestBuilder"/>.</returns>
+        IMessageExtensionsCollectionRequestBuilder Extensions { get; }
+
+        /// <summary>
         /// Gets the request builder for Mentions.
         /// </summary>
         /// <returns>The <see cref="IMessageMentionsCollectionRequestBuilder"/>.</returns>
         IMessageMentionsCollectionRequestBuilder Mentions { get; }
     
-        /// <summary>
-        /// Gets the request builder for MessageCopy.
-        /// </summary>
-        /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
-        IMessageCopyRequestBuilder Copy(
-            string DestinationId = null);
-
-        /// <summary>
-        /// Gets the request builder for MessageMove.
-        /// </summary>
-        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
-        IMessageMoveRequestBuilder Move(
-            string DestinationId = null);
-
         /// <summary>
         /// Gets the request builder for MessageCreateReply.
         /// </summary>
@@ -96,9 +82,29 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMessageCreateForwardRequestBuilder"/>.</returns>
         IMessageCreateForwardRequestBuilder CreateForward(
+            IEnumerable<Recipient> ToRecipients = null,
             Message Message = null,
-            string Comment = null,
-            IEnumerable<Recipient> ToRecipients = null);
+            string Comment = null);
+
+        /// <summary>
+        /// Gets the request builder for MessageSend.
+        /// </summary>
+        /// <returns>The <see cref="IMessageSendRequestBuilder"/>.</returns>
+        IMessageSendRequestBuilder Send();
+
+        /// <summary>
+        /// Gets the request builder for MessageCopy.
+        /// </summary>
+        /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
+        IMessageCopyRequestBuilder Copy(
+            string DestinationId);
+
+        /// <summary>
+        /// Gets the request builder for MessageMove.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
+        IMessageMoveRequestBuilder Move(
+            string DestinationId);
 
         /// <summary>
         /// Gets the request builder for MessageReply.
@@ -121,15 +127,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
         IMessageForwardRequestBuilder Forward(
+            IEnumerable<Recipient> ToRecipients = null,
             Message Message = null,
-            string Comment = null,
-            IEnumerable<Recipient> ToRecipients = null);
-
-        /// <summary>
-        /// Gets the request builder for MessageSend.
-        /// </summary>
-        /// <returns>The <see cref="IMessageSendRequestBuilder"/>.</returns>
-        IMessageSendRequestBuilder Send();
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for MessageUnsubscribe.

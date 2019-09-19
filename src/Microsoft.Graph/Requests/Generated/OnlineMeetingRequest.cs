@@ -227,8 +227,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="OnlineMeetingToInitialize">The <see cref="OnlineMeeting"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(OnlineMeeting OnlineMeetingToInitialize)
+        /// <param name="onlineMeetingToInitialize">The <see cref="OnlineMeeting"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(OnlineMeeting onlineMeetingToInitialize)
         {
 
         }

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Policy.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionPolicyRequestBuilder"/>.</returns>
+        public IInformationProtectionPolicyRequestBuilder Policy
+        {
+            get
+            {
+                return new InformationProtectionPolicyRequestBuilder(this.AppendSegmentToRequestUrl("policy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SensitivityLabels.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionSensitivityLabelsCollectionRequestBuilder"/>.</returns>

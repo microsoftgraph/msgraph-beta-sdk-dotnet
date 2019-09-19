@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public AutoAdmittedUsersType? AutoAdmittedUsers { get; set; }
     
         /// <summary>
+        /// Gets or sets allowAnonymousUsersToStartMeeting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAnonymousUsersToStartMeeting", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAnonymousUsersToStartMeeting { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

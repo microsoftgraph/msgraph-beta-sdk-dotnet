@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         public AdminConsentState? ShareAPNSData { get; set; }
     
         /// <summary>
+        /// Gets or sets shareUserExperienceAnalyticsData.
+        /// Gets or sets the admin consent for sharing User experience analytics data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shareUserExperienceAnalyticsData", Required = Newtonsoft.Json.Required.Default)]
+        public AdminConsentState? ShareUserExperienceAnalyticsData { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

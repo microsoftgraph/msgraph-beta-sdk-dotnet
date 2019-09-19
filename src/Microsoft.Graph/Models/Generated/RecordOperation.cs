@@ -23,58 +23,16 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets prompts.
+        /// Gets or sets recording location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prompts", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Prompt> Prompts { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string RecordingLocation { get; set; }
     
         /// <summary>
-        /// Gets or sets barge in allowed.
+        /// Gets or sets recording access token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bargeInAllowed", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BargeInAllowed { get; set; }
-    
-        /// <summary>
-        /// Gets or sets initial silence timeout in seconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initialSilenceTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? InitialSilenceTimeoutInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets max silence timeout in seconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxSilenceTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MaxSilenceTimeoutInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets max record duration in seconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxRecordDurationInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MaxRecordDurationInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets play beep.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "playBeep", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PlayBeep { get; set; }
-    
-        /// <summary>
-        /// Gets or sets stream while recording.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "streamWhileRecording", Required = Newtonsoft.Json.Required.Default)]
-        public bool? StreamWhileRecording { get; set; }
-    
-        /// <summary>
-        /// Gets or sets stop tones.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stopTones", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> StopTones { get; set; }
-    
-        /// <summary>
-        /// Gets or sets record resource location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordResourceLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string RecordResourceLocation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingAccessToken", Required = Newtonsoft.Json.Required.Default)]
+        public string RecordingAccessToken { get; set; }
     
         /// <summary>
         /// Gets or sets completion reason.

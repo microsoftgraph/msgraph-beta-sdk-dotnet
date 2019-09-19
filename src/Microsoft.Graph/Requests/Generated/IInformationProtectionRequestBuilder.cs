@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IInformationProtectionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Policy.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionPolicyRequestBuilder"/>.</returns>
+        IInformationProtectionPolicyRequestBuilder Policy { get; }
+
+        /// <summary>
         /// Gets the request builder for SensitivityLabels.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionSensitivityLabelsCollectionRequestBuilder"/>.</returns>

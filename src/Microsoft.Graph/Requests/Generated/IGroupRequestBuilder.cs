@@ -32,16 +32,10 @@ namespace Microsoft.Graph
         new IGroupRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Extensions.
-        /// </summary>
-        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
-        IGroupExtensionsCollectionRequestBuilder Extensions { get; }
-
-        /// <summary>
         /// Gets the request builder for AppRoleAssignments.
         /// </summary>
-        /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IGroupAppRoleAssignmentsCollectionWithReferencesRequestBuilder AppRoleAssignments { get; }
+        /// <returns>The <see cref="IGroupAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        IGroupAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
 
         /// <summary>
         /// Gets the request builder for Members.
@@ -98,6 +92,36 @@ namespace Microsoft.Graph
         IGroupEndpointsCollectionRequestBuilder Endpoints { get; }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        IGroupPermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
+
+        /// <summary>
+        /// Gets the request builder for Conversations.
+        /// </summary>
+        /// <returns>The <see cref="IGroupConversationsCollectionRequestBuilder"/>.</returns>
+        IGroupConversationsCollectionRequestBuilder Conversations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
+        IGroupPhotosCollectionRequestBuilder Photos { get; }
+
+        /// <summary>
+        /// Gets the request builder for AcceptedSenders.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAcceptedSendersCollectionRequestBuilder"/>.</returns>
+        IGroupAcceptedSendersCollectionRequestBuilder AcceptedSenders { get; }
+
+        /// <summary>
+        /// Gets the request builder for RejectedSenders.
+        /// </summary>
+        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
+        IGroupRejectedSendersCollectionRequestBuilder RejectedSenders { get; }
+
+        /// <summary>
         /// Gets the request builder for Threads.
         /// </summary>
         /// <returns>The <see cref="IGroupThreadsCollectionRequestBuilder"/>.</returns>
@@ -122,34 +146,10 @@ namespace Microsoft.Graph
         IGroupEventsCollectionRequestBuilder Events { get; }
 
         /// <summary>
-        /// Gets the request builder for Conversations.
-        /// </summary>
-        /// <returns>The <see cref="IGroupConversationsCollectionRequestBuilder"/>.</returns>
-        IGroupConversationsCollectionRequestBuilder Conversations { get; }
-
-        /// <summary>
         /// Gets the request builder for Photo.
         /// </summary>
         /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
         IProfilePhotoRequestBuilder Photo { get; }
-
-        /// <summary>
-        /// Gets the request builder for Photos.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
-        IGroupPhotosCollectionRequestBuilder Photos { get; }
-
-        /// <summary>
-        /// Gets the request builder for AcceptedSenders.
-        /// </summary>
-        /// <returns>The <see cref="IGroupAcceptedSendersCollectionRequestBuilder"/>.</returns>
-        IGroupAcceptedSendersCollectionRequestBuilder AcceptedSenders { get; }
-
-        /// <summary>
-        /// Gets the request builder for RejectedSenders.
-        /// </summary>
-        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
-        IGroupRejectedSendersCollectionRequestBuilder RejectedSenders { get; }
 
         /// <summary>
         /// Gets the request builder for Drive.
@@ -168,6 +168,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupSitesCollectionRequestBuilder"/>.</returns>
         IGroupSitesCollectionRequestBuilder Sites { get; }
+
+        /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
+        IGroupExtensionsCollectionRequestBuilder Extensions { get; }
+
+        /// <summary>
+        /// Gets the request builder for GroupLifecyclePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IGroupGroupLifecyclePoliciesCollectionRequestBuilder"/>.</returns>
+        IGroupGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
 
         /// <summary>
         /// Gets the request builder for Planner.
@@ -192,12 +204,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupChannelsCollectionRequestBuilder"/>.</returns>
         IGroupChannelsCollectionRequestBuilder Channels { get; }
-
-        /// <summary>
-        /// Gets the request builder for GroupLifecyclePolicies.
-        /// </summary>
-        /// <returns>The <see cref="IGroupGroupLifecyclePoliciesCollectionRequestBuilder"/>.</returns>
-        IGroupGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
     
         /// <summary>
         /// Gets the request builder for GroupValidateProperties.
@@ -207,6 +213,23 @@ namespace Microsoft.Graph
             string displayName = null,
             string mailNickname = null,
             Guid? onBehalfOfUserId = null);
+
+        /// <summary>
+        /// Gets the request builder for GroupGrantResourceSpecificConsent.
+        /// </summary>
+        /// <returns>The <see cref="IGroupGrantResourceSpecificConsentRequestBuilder"/>.</returns>
+        IGroupGrantResourceSpecificConsentRequestBuilder GrantResourceSpecificConsent(
+            bool checkOnly,
+            string clientAppId,
+            IEnumerable<InstanceResourceAccess> permissionSets,
+            IEnumerable<string> tags = null);
+
+        /// <summary>
+        /// Gets the request builder for GroupRevokeResourceSpecificConsent.
+        /// </summary>
+        /// <returns>The <see cref="IGroupRevokeResourceSpecificConsentRequestBuilder"/>.</returns>
+        IGroupRevokeResourceSpecificConsentRequestBuilder RevokeResourceSpecificConsent(
+            string clientAppId);
 
         /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.

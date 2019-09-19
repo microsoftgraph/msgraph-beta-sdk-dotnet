@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ISynchronizationSchemaRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Directories.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationSchemaDirectoriesCollectionRequestBuilder"/>.</returns>
+        ISynchronizationSchemaDirectoriesCollectionRequestBuilder Directories { get; }
+    
+        /// <summary>
         /// Gets the request builder for SynchronizationSchemaParseExpression.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationSchemaParseExpressionRequestBuilder"/>.</returns>

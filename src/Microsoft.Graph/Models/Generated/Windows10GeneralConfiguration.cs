@@ -30,6 +30,76 @@ namespace Microsoft.Graph
         public bool? TaskManagerBlockEndTask { get; set; }
     
         /// <summary>
+        /// Gets or sets energy saver on battery threshold percentage.
+        /// This setting allows you to specify battery charge level at which Energy Saver is turned on. While on battery, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "energySaverOnBatteryThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EnergySaverOnBatteryThresholdPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets energy saver plugged in threshold percentage.
+        /// This setting allows you to specify battery charge level at which Energy Saver is turned on. While plugged in, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "energySaverPluggedInThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EnergySaverPluggedInThresholdPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power lid close action on battery.
+        /// This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while on battery.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerLidCloseActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerLidCloseActionOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power lid close action plugged in.
+        /// This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while plugged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerLidCloseActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerLidCloseActionPluggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power button action on battery.
+        /// This setting specifies the action that Windows takes when a user presses the Power button while on battery.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerButtonActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerButtonActionOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power button action plugged in.
+        /// This setting specifies the action that Windows takes when a user presses the Power button while plugged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerButtonActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerButtonActionPluggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power sleep button action on battery.
+        /// This setting specifies the action that Windows takes when a user presses the Sleep button while on battery.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerSleepButtonActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerSleepButtonActionOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power sleep button action plugged in.
+        /// This setting specifies the action that Windows takes when a user presses the Sleep button while plugged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerSleepButtonActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerSleepButtonActionPluggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power hybrid sleep on battery.
+        /// This setting allows you to turn off hybrid sleep while on battery. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerHybridSleepOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? PowerHybridSleepOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power hybrid sleep plugged in.
+        /// This setting allows you to turn off hybrid sleep while plugged in. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerHybridSleepPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? PowerHybridSleepPluggedIn { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows10apps force update schedule.
         /// Windows 10 force update schedule for Apps.
         /// </summary>

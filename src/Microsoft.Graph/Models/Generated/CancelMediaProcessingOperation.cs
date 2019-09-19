@@ -22,12 +22,6 @@ namespace Microsoft.Graph
     public partial class CancelMediaProcessingOperation : CommsOperation
     {
     
-        /// <summary>
-        /// Gets or sets all.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "all", Required = Newtonsoft.Json.Required.Default)]
-        public bool? All { get; set; }
-    
     }
 }
 

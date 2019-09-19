@@ -234,17 +234,33 @@ namespace Microsoft.Graph
             if (educationClassToInitialize != null && educationClassToInitialize.AdditionalData != null)
             {
 
-                if (educationClassToInitialize.Schools != null && educationClassToInitialize.Schools.CurrentPage != null)
+                if (educationClassToInitialize.Assignments != null && educationClassToInitialize.Assignments.CurrentPage != null)
                 {
-                    educationClassToInitialize.Schools.AdditionalData = educationClassToInitialize.AdditionalData;
+                    educationClassToInitialize.Assignments.AdditionalData = educationClassToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    educationClassToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
+                    educationClassToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        educationClassToInitialize.Schools.InitializeNextPageRequest(
+                        educationClassToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (educationClassToInitialize.AssignmentCategories != null && educationClassToInitialize.AssignmentCategories.CurrentPage != null)
+                {
+                    educationClassToInitialize.AssignmentCategories.AdditionalData = educationClassToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    educationClassToInitialize.AdditionalData.TryGetValue("assignmentCategories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        educationClassToInitialize.AssignmentCategories.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -282,33 +298,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (educationClassToInitialize.Assignments != null && educationClassToInitialize.Assignments.CurrentPage != null)
+                if (educationClassToInitialize.Schools != null && educationClassToInitialize.Schools.CurrentPage != null)
                 {
-                    educationClassToInitialize.Assignments.AdditionalData = educationClassToInitialize.AdditionalData;
+                    educationClassToInitialize.Schools.AdditionalData = educationClassToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    educationClassToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
+                    educationClassToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        educationClassToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (educationClassToInitialize.AssignmentCategories != null && educationClassToInitialize.AssignmentCategories.CurrentPage != null)
-                {
-                    educationClassToInitialize.AssignmentCategories.AdditionalData = educationClassToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationClassToInitialize.AdditionalData.TryGetValue("assignmentCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationClassToInitialize.AssignmentCategories.InitializeNextPageRequest(
+                        educationClassToInitialize.Schools.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

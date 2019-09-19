@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IWindowsUpdateForBusinessConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for DeviceUpdateStates.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionRequestBuilder"/>.</returns>
+        IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionRequestBuilder DeviceUpdateStates { get; }
+    
+        /// <summary>
         /// Gets the request builder for WindowsUpdateForBusinessConfigurationExtendFeatureUpdatesPause.
         /// </summary>
         /// <returns>The <see cref="IWindowsUpdateForBusinessConfigurationExtendFeatureUpdatesPauseRequestBuilder"/>.</returns>

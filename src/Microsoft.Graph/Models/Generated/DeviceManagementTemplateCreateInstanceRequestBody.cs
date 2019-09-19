@@ -40,5 +40,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsDelta", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeviceManagementSettingInstance> SettingsDelta { get; set; }
     
+        /// <summary>
+        /// Gets or sets RoleScopeTagIds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
     }
 }

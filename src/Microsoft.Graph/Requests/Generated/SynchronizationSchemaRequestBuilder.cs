@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Directories.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationSchemaDirectoriesCollectionRequestBuilder"/>.</returns>
+        public ISynchronizationSchemaDirectoriesCollectionRequestBuilder Directories
+        {
+            get
+            {
+                return new SynchronizationSchemaDirectoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("directories"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for SynchronizationSchemaParseExpression.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationSchemaParseExpressionRequestBuilder"/>.</returns>

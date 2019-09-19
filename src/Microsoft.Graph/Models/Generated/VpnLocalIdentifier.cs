@@ -24,5 +24,15 @@ namespace Microsoft.Graph
         /// </summary>
         DeviceFQDN = 0,
 	
+        /// <summary>
+        /// Empty
+        /// </summary>
+        Empty = 1,
+	
+        /// <summary>
+        /// Client Certificate Subject Name
+        /// </summary>
+        ClientCertificateSubjectName = 2,
+	
     }
 }

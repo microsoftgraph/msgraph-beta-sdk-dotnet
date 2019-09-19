@@ -27,19 +27,25 @@ namespace Microsoft.Graph
         /// <param name="keepEnrollmentData">A keepEnrollmentData parameter for the OData method call.</param>
         /// <param name="keepUserData">A keepUserData parameter for the OData method call.</param>
         /// <param name="deviceIds">A deviceIds parameter for the OData method call.</param>
+        /// <param name="notificationTitle">A notificationTitle parameter for the OData method call.</param>
+        /// <param name="notificationBody">A notificationBody parameter for the OData method call.</param>
         public ManagedDeviceExecuteActionRequestBuilder(
             string requestUrl,
             IBaseClient client,
             ManagedDeviceRemoteAction actionName,
             bool? keepEnrollmentData,
             bool? keepUserData,
-            IEnumerable<string> deviceIds)
+            IEnumerable<string> deviceIds,
+            string notificationTitle,
+            string notificationBody)
             : base(requestUrl, client)
         {
             this.SetParameter("actionName", actionName, false);
             this.SetParameter("keepEnrollmentData", keepEnrollmentData, true);
             this.SetParameter("keepUserData", keepUserData, true);
             this.SetParameter("deviceIds", deviceIds, true);
+            this.SetParameter("notificationTitle", notificationTitle, true);
+            this.SetParameter("notificationBody", notificationBody, true);
         }
 
         /// <summary>
@@ -70,6 +76,16 @@ namespace Microsoft.Graph
             if (this.HasParameter("deviceIds"))
             {
                 request.RequestBody.DeviceIds = this.GetParameter<IEnumerable<string>>("deviceIds");
+            }
+
+            if (this.HasParameter("notificationTitle"))
+            {
+                request.RequestBody.NotificationTitle = this.GetParameter<string>("notificationTitle");
+            }
+
+            if (this.HasParameter("notificationBody"))
+            {
+                request.RequestBody.NotificationBody = this.GetParameter<string>("notificationBody");
             }
 
             return request;

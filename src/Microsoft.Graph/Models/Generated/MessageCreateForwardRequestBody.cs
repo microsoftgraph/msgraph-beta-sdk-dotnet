@@ -23,6 +23,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets ToRecipients.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ToRecipients", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Recipient> ToRecipients { get; set; }
+    
+        /// <summary>
         /// Gets or sets Message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Message", Required = Newtonsoft.Json.Required.Default)]
@@ -33,12 +39,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Comment", Required = Newtonsoft.Json.Required.Default)]
         public string Comment { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ToRecipients.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ToRecipients", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Recipient> ToRecipients { get; set; }
     
     }
 }

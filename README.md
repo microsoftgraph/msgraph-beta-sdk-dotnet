@@ -1,4 +1,6 @@
-[![Build status](https://o365exchange.visualstudio.com/O365%20Sandbox/_apis/build/status/Microsoft%20Graph/PR-msgraph-validate-dotnet-beta)](https://o365exchange.visualstudio.com/O365%20Sandbox/_build/latest?definitionId=2547)
+[![Build Status](https://o365exchange.visualstudio.com/O365%20Sandbox/_apis/build/status/Microsoft%20Graph/.Net/msgraph-beta-sdk-dotnet.preview.build?branchName=master)](https://o365exchange.visualstudio.com/O365%20Sandbox/_build/latest?definitionId=2634&branchName=master)
+
+[![nuget](https://img.shields.io/nuget/v/Microsoft.Graph.Beta.svg)](https://www.nuget.org/packages/Microsoft.Graph.Beta/)
 
 # Microsoft Graph Beta .NET Client Library
 

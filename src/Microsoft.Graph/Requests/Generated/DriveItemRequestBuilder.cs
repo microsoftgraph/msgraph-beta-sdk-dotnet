@@ -261,6 +261,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DriveItemUnfollow.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemUnfollowRequestBuilder"/>.</returns>
+        public IDriveItemUnfollowRequestBuilder Unfollow()
+        {
+            return new DriveItemUnfollowRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unfollow"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemInvite.
         /// </summary>
         /// <returns>The <see cref="IDriveItemInviteRequestBuilder"/>.</returns>
@@ -304,6 +315,21 @@ namespace Microsoft.Graph
                 allowEdit,
                 page,
                 zoom);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        public IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null)
+        {
+            return new DriveItemRestoreRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
+                this.Client,
+                parentReference,
+                name);
         }
 
         /// <summary>

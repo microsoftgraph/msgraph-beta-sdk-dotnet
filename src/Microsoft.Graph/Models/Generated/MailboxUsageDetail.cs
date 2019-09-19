@@ -77,6 +77,18 @@ namespace Microsoft.Graph
         public Int64? StorageUsedInBytes { get; set; }
     
         /// <summary>
+        /// Gets or sets deleted item count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItemCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? DeletedItemCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deleted item size in bytes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItemSizeInBytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? DeletedItemSizeInBytes { get; set; }
+    
+        /// <summary>
         /// Gets or sets issue warning quota in bytes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueWarningQuotaInBytes", Required = Newtonsoft.Json.Required.Default)]

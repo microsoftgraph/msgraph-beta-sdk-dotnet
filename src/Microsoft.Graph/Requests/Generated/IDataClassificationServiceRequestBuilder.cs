@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDataClassificationServiceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ExactMatchDataStores.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceExactMatchDataStoresCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceExactMatchDataStoresCollectionRequestBuilder ExactMatchDataStores { get; }
+
+        /// <summary>
         /// Gets the request builder for SensitiveTypes.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>
@@ -78,6 +84,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceSensitivityLabelsCollectionRequestBuilder"/>.</returns>
         IDataClassificationServiceSensitivityLabelsCollectionRequestBuilder SensitivityLabels { get; }
+
+        /// <summary>
+        /// Gets the request builder for ExactMatchUploadAgents.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder ExactMatchUploadAgents { get; }
     
     }
 }

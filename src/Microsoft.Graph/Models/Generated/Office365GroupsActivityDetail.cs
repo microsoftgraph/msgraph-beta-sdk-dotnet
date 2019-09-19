@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
+        /// Gets or sets group id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupId", Required = Newtonsoft.Json.Required.Default)]
+        public string GroupId { get; set; }
+    
+        /// <summary>
         /// Gets or sets group display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupDisplayName", Required = Newtonsoft.Json.Required.Default)]

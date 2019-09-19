@@ -37,24 +37,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Adds the specified Call to the collection via POST.
         /// </summary>
-        /// <param name="Call">The Call to add.</param>
+        /// <param name="call">The Call to add.</param>
         /// <returns>The created Call.</returns>
-        public System.Threading.Tasks.Task<Call> AddAsync(Call Call)
+        public System.Threading.Tasks.Task<Call> AddAsync(Call call)
         {
-            return this.AddAsync(Call, CancellationToken.None);
+            return this.AddAsync(call, CancellationToken.None);
         }
 
         /// <summary>
         /// Adds the specified Call to the collection via POST.
         /// </summary>
-        /// <param name="Call">The Call to add.</param>
+        /// <param name="call">The Call to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Call.</returns>
-        public System.Threading.Tasks.Task<Call> AddAsync(Call Call, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Call> AddAsync(Call call, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<Call>(Call, cancellationToken);
+            return this.SendAsync<Call>(call, cancellationToken);
         }
 
         /// <summary>

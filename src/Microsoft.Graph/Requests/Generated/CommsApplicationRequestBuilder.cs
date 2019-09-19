@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for OnlineMeetings.
-        /// </summary>
-        /// <returns>The <see cref="ICommsApplicationOnlineMeetingsCollectionRequestBuilder"/>.</returns>
-        public ICommsApplicationOnlineMeetingsCollectionRequestBuilder OnlineMeetings
-        {
-            get
-            {
-                return new CommsApplicationOnlineMeetingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("onlineMeetings"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Calls.
         /// </summary>
         /// <returns>The <see cref="ICommsApplicationCallsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new CommsApplicationCallsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calls"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetings.
+        /// </summary>
+        /// <returns>The <see cref="ICommsApplicationOnlineMeetingsCollectionRequestBuilder"/>.</returns>
+        public ICommsApplicationOnlineMeetingsCollectionRequestBuilder OnlineMeetings
+        {
+            get
+            {
+                return new CommsApplicationOnlineMeetingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("onlineMeetings"), this.Client);
             }
         }
     

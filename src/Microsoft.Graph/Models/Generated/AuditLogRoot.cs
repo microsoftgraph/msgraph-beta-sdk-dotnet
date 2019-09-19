@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryProvisioning", Required = Newtonsoft.Json.Required.Default)]
         public IAuditLogRootDirectoryProvisioningCollectionPage DirectoryProvisioning { get; set; }
     
+        /// <summary>
+        /// Gets or sets provisioning.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioning", Required = Newtonsoft.Json.Required.Default)]
+        public IAuditLogRootProvisioningCollectionPage Provisioning { get; set; }
+    
     }
 }
 

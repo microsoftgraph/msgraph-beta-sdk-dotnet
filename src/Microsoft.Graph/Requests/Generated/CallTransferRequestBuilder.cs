@@ -24,19 +24,13 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="transferTarget">A transferTarget parameter for the OData method call.</param>
-        /// <param name="target">A target parameter for the OData method call.</param>
-        /// <param name="replacesCallId">A replacesCallId parameter for the OData method call.</param>
         public CallTransferRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            InvitationParticipantInfo transferTarget,
-            IdentitySet target,
-            string replacesCallId)
+            InvitationParticipantInfo transferTarget)
             : base(requestUrl, client)
         {
             this.SetParameter("transferTarget", transferTarget, true);
-            this.SetParameter("target", target, true);
-            this.SetParameter("replacesCallId", replacesCallId, true);
         }
 
         /// <summary>
@@ -52,16 +46,6 @@ namespace Microsoft.Graph
             if (this.HasParameter("transferTarget"))
             {
                 request.RequestBody.TransferTarget = this.GetParameter<InvitationParticipantInfo>("transferTarget");
-            }
-
-            if (this.HasParameter("target"))
-            {
-                request.RequestBody.Target = this.GetParameter<IdentitySet>("target");
-            }
-
-            if (this.HasParameter("replacesCallId"))
-            {
-                request.RequestBody.ReplacesCallId = this.GetParameter<string>("replacesCallId");
             }
 
             return request;

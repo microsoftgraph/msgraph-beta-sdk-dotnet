@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (chatToInitialize != null && chatToInitialize.AdditionalData != null)
             {
 
+                if (chatToInitialize.InstalledApps != null && chatToInitialize.InstalledApps.CurrentPage != null)
+                {
+                    chatToInitialize.InstalledApps.AdditionalData = chatToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    chatToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        chatToInitialize.InstalledApps.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (chatToInitialize.Members != null && chatToInitialize.Members.CurrentPage != null)
                 {
                     chatToInitialize.Members.AdditionalData = chatToInitialize.AdditionalData;

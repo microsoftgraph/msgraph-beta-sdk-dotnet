@@ -26,17 +26,20 @@ namespace Microsoft.Graph
         /// <param name="displayName">A displayName parameter for the OData method call.</param>
         /// <param name="description">A description parameter for the OData method call.</param>
         /// <param name="settingsDelta">A settingsDelta parameter for the OData method call.</param>
+        /// <param name="roleScopeTagIds">A roleScopeTagIds parameter for the OData method call.</param>
         public DeviceManagementTemplateCreateInstanceRequestBuilder(
             string requestUrl,
             IBaseClient client,
             string displayName,
             string description,
-            IEnumerable<DeviceManagementSettingInstance> settingsDelta)
+            IEnumerable<DeviceManagementSettingInstance> settingsDelta,
+            IEnumerable<string> roleScopeTagIds)
             : base(requestUrl, client)
         {
             this.SetParameter("displayName", displayName, true);
             this.SetParameter("description", description, true);
             this.SetParameter("settingsDelta", settingsDelta, true);
+            this.SetParameter("roleScopeTagIds", roleScopeTagIds, true);
         }
 
         /// <summary>
@@ -62,6 +65,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("settingsDelta"))
             {
                 request.RequestBody.SettingsDelta = this.GetParameter<IEnumerable<DeviceManagementSettingInstance>>("settingsDelta");
+            }
+
+            if (this.HasParameter("roleScopeTagIds"))
+            {
+                request.RequestBody.RoleScopeTagIds = this.GetParameter<IEnumerable<string>>("roleScopeTagIds");
             }
 
             return request;

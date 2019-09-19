@@ -247,13 +247,6 @@ namespace Microsoft.Graph
         public FollowupFlag Flag { get; set; }
     
         /// <summary>
-        /// Gets or sets extensions.
-        /// The collection of open extensions defined for the contact. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
-        public IContactExtensionsCollectionPage Extensions { get; set; }
-    
-        /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the contact. Read-only. Nullable.
         /// </summary>
@@ -273,6 +266,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
         public ProfilePhoto Photo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extensions.
+        /// The collection of open extensions defined for the contact. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        public IContactExtensionsCollectionPage Extensions { get; set; }
     
     }
 }

@@ -47,6 +47,12 @@ namespace Microsoft.Graph
         public string ProvisionStatusCode { get; set; }
     
         /// <summary>
+        /// Gets or sets workforce integration ids.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workforceIntegrationIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> WorkforceIntegrationIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets shifts.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shifts", Required = Newtonsoft.Json.Required.Default)]
@@ -69,6 +75,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingGroups", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleSchedulingGroupsCollectionPage SchedulingGroups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets swap shifts change requests.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "swapShiftsChangeRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IScheduleSwapShiftsChangeRequestsCollectionPage SwapShiftsChangeRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets time off requests.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeOffRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IScheduleTimeOffRequestsCollectionPage TimeOffRequests { get; set; }
     
     }
 }

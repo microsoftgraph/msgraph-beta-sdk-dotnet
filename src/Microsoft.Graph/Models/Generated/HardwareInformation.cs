@@ -178,6 +178,13 @@ namespace Microsoft.Graph
         public DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState { get; set; }
     
         /// <summary>
+        /// Gets or sets osBuildNumber.
+        /// Operating System Build Number on Android device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osBuildNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string OsBuildNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

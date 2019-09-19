@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for SecurityBaselineStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates
+        {
+            get
+            {
+                return new ManagedDeviceSecurityBaselineStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityBaselineStates"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceConfigurationStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder"/>.</returns>
@@ -59,6 +71,30 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurationStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates
+        {
+            get
+            {
+                return new ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicyStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceMobileAppConfigurationStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder ManagedDeviceMobileAppConfigurationStates
+        {
+            get
+            {
+                return new ManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceMobileAppConfigurationStates"), this.Client);
             }
         }
 
@@ -109,43 +145,22 @@ namespace Microsoft.Graph
                 return new ManagedDeviceUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("users"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates
-        {
-            get
-            {
-                return new ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicyStates"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceMobileAppConfigurationStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder ManagedDeviceMobileAppConfigurationStates
-        {
-            get
-            {
-                return new ManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceMobileAppConfigurationStates"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SecurityBaselineStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates
-        {
-            get
-            {
-                return new ManagedDeviceSecurityBaselineStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityBaselineStates"), this.Client);
-            }
-        }
     
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceOverrideComplianceState.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
+        public IManagedDeviceOverrideComplianceStateRequestBuilder OverrideComplianceState(
+            AdministratorConfiguredDeviceComplianceState complianceState,
+            string remediationUrl = null)
+        {
+            return new ManagedDeviceOverrideComplianceStateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.overrideComplianceState"),
+                this.Client,
+                complianceState,
+                remediationUrl);
+        }
+
         /// <summary>
         /// Gets the request builder for ManagedDeviceEnableLostMode.
         /// </summary>
@@ -422,18 +437,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceOverrideComplianceState.
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
-        public IManagedDeviceOverrideComplianceStateRequestBuilder OverrideComplianceState(
-            AdministratorConfiguredDeviceComplianceState complianceState,
-            string remediationUrl = null)
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        public IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody)
         {
-            return new ManagedDeviceOverrideComplianceStateRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.overrideComplianceState"),
+            return new ManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
                 this.Client,
-                complianceState,
-                remediationUrl);
+                notificationTitle,
+                notificationBody);
         }
 
         /// <summary>

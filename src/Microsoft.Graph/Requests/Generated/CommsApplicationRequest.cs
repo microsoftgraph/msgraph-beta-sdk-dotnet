@@ -227,40 +227,40 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="CommsApplicationToInitialize">The <see cref="CommsApplication"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(CommsApplication CommsApplicationToInitialize)
+        /// <param name="commsApplicationToInitialize">The <see cref="CommsApplication"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(CommsApplication commsApplicationToInitialize)
         {
 
-            if (CommsApplicationToInitialize != null && CommsApplicationToInitialize.AdditionalData != null)
+            if (commsApplicationToInitialize != null && commsApplicationToInitialize.AdditionalData != null)
             {
 
-                if (CommsApplicationToInitialize.OnlineMeetings != null && CommsApplicationToInitialize.OnlineMeetings.CurrentPage != null)
+                if (commsApplicationToInitialize.Calls != null && commsApplicationToInitialize.Calls.CurrentPage != null)
                 {
-                    CommsApplicationToInitialize.OnlineMeetings.AdditionalData = CommsApplicationToInitialize.AdditionalData;
+                    commsApplicationToInitialize.Calls.AdditionalData = commsApplicationToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    CommsApplicationToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
+                    commsApplicationToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        CommsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(
+                        commsApplicationToInitialize.Calls.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
                 }
 
-                if (CommsApplicationToInitialize.Calls != null && CommsApplicationToInitialize.Calls.CurrentPage != null)
+                if (commsApplicationToInitialize.OnlineMeetings != null && commsApplicationToInitialize.OnlineMeetings.CurrentPage != null)
                 {
-                    CommsApplicationToInitialize.Calls.AdditionalData = CommsApplicationToInitialize.AdditionalData;
+                    commsApplicationToInitialize.OnlineMeetings.AdditionalData = commsApplicationToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    CommsApplicationToInitialize.AdditionalData.TryGetValue("calls@odata.nextLink", out nextPageLink);
+                    commsApplicationToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        CommsApplicationToInitialize.Calls.InitializeNextPageRequest(
+                        commsApplicationToInitialize.OnlineMeetings.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

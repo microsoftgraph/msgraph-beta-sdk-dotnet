@@ -30,16 +30,16 @@ namespace Microsoft.Graph
         public string Code { get; set; }
     
         /// <summary>
-        /// Gets or sets subCode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subCode", Required = Newtonsoft.Json.Required.Default)]
-        public string SubCode { get; set; }
-    
-        /// <summary>
         /// Gets or sets message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subCode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subCode", Required = Newtonsoft.Json.Required.Default)]
+        public string SubCode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

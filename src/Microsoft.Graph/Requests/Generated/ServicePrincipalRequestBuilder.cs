@@ -53,24 +53,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AppRoleAssignedTo.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalAppRoleAssignedToCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalAppRoleAssignedToCollectionWithReferencesRequestBuilder AppRoleAssignedTo
+        /// <returns>The <see cref="IServicePrincipalAppRoleAssignedToCollectionRequestBuilder"/>.</returns>
+        public IServicePrincipalAppRoleAssignedToCollectionRequestBuilder AppRoleAssignedTo
         {
             get
             {
-                return new ServicePrincipalAppRoleAssignedToCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignedTo"), this.Client);
+                return new ServicePrincipalAppRoleAssignedToCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignedTo"), this.Client);
             }
         }
 
         /// <summary>
         /// Gets the request builder for AppRoleAssignments.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalAppRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalAppRoleAssignmentsCollectionWithReferencesRequestBuilder AppRoleAssignments
+        /// <returns>The <see cref="IServicePrincipalAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IServicePrincipalAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments
         {
             get
             {
-                return new ServicePrincipalAppRoleAssignmentsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignments"), this.Client);
+                return new ServicePrincipalAppRoleAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignments"), this.Client);
             }
         }
 

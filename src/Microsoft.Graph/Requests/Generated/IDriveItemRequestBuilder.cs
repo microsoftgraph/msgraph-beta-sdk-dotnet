@@ -140,6 +140,12 @@ namespace Microsoft.Graph
         IDriveItemFollowRequestBuilder Follow();
 
         /// <summary>
+        /// Gets the request builder for DriveItemUnfollow.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemUnfollowRequestBuilder"/>.</returns>
+        IDriveItemUnfollowRequestBuilder Unfollow();
+
+        /// <summary>
         /// Gets the request builder for DriveItemInvite.
         /// </summary>
         /// <returns>The <see cref="IDriveItemInviteRequestBuilder"/>.</returns>
@@ -162,6 +168,14 @@ namespace Microsoft.Graph
             bool? allowEdit = null,
             string page = null,
             double? zoom = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemValidatePermission.

@@ -227,8 +227,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="AudioRoutingGroupToInitialize">The <see cref="AudioRoutingGroup"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(AudioRoutingGroup AudioRoutingGroupToInitialize)
+        /// <param name="audioRoutingGroupToInitialize">The <see cref="AudioRoutingGroup"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(AudioRoutingGroup audioRoutingGroupToInitialize)
         {
 
         }

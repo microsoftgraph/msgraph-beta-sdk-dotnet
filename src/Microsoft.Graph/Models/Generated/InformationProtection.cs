@@ -23,6 +23,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
+        public InformationProtectionPolicy Policy { get; set; }
+    
+        /// <summary>
         /// Gets or sets sensitivity labels.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabels", Required = Newtonsoft.Json.Required.Default)]

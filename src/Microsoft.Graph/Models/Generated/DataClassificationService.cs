@@ -23,6 +23,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets exact match data stores.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exactMatchDataStores", Required = Newtonsoft.Json.Required.Default)]
+        public IDataClassificationServiceExactMatchDataStoresCollectionPage ExactMatchDataStores { get; set; }
+    
+        /// <summary>
         /// Gets or sets sensitive types.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
@@ -69,6 +75,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabels", Required = Newtonsoft.Json.Required.Default)]
         public IDataClassificationServiceSensitivityLabelsCollectionPage SensitivityLabels { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exact match upload agents.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exactMatchUploadAgents", Required = Newtonsoft.Json.Required.Default)]
+        public IDataClassificationServiceExactMatchUploadAgentsCollectionPage ExactMatchUploadAgents { get; set; }
     
     }
 }

@@ -36,6 +36,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IRoleScopeTagRequestBuilder"/>.</returns>
         IRoleScopeTagRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for RoleScopeTagGetRoleScopeTagsById.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagGetRoleScopeTagsByIdRequestBuilder"/>.</returns>
+        IRoleScopeTagGetRoleScopeTagsByIdRequestBuilder GetRoleScopeTagsById(
+            IEnumerable<string> roleScopeTagIds = null);
+
+        /// <summary>
+        /// Gets the request builder for RoleScopeTagHasCustomRoleScopeTag.
+        /// </summary>
+        /// <returns>The <see cref="IRoleScopeTagHasCustomRoleScopeTagRequestBuilder"/>.</returns>
+        IRoleScopeTagHasCustomRoleScopeTagRequestBuilder HasCustomRoleScopeTag();
     }
 }

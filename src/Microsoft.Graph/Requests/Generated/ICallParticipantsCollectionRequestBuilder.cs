@@ -37,14 +37,6 @@ namespace Microsoft.Graph
         IParticipantRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for ParticipantConfigureMixer.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantConfigureMixerRequestBuilder"/>.</returns>
-        IParticipantConfigureMixerRequestBuilder ConfigureMixer(
-            IEnumerable<ParticipantMixerLevel> participantMixerLevels,
-            string clientContext = null);
-
-        /// <summary>
         /// Gets the request builder for ParticipantInvite.
         /// </summary>
         /// <returns>The <see cref="IParticipantInviteRequestBuilder"/>.</returns>
@@ -57,14 +49,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IParticipantMuteAllRequestBuilder"/>.</returns>
         IParticipantMuteAllRequestBuilder MuteAll(
-            IEnumerable<string> participants = null,
-            string clientContext = null);
-
-        /// <summary>
-        /// Gets the request builder for ParticipantUnmuteAll.
-        /// </summary>
-        /// <returns>The <see cref="IParticipantUnmuteAllRequestBuilder"/>.</returns>
-        IParticipantUnmuteAllRequestBuilder UnmuteAll(
             IEnumerable<string> participants = null,
             string clientContext = null);
     }

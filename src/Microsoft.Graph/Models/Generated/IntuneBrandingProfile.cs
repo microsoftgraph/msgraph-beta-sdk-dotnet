@@ -163,6 +163,20 @@ namespace Microsoft.Graph
         public string CustomPrivacyMessage { get; set; }
     
         /// <summary>
+        /// Gets or sets is remove device disabled.
+        /// Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemoveDeviceDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRemoveDeviceDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is factory reset disabled.
+        /// Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFactoryResetDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFactoryResetDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the branding profile
         /// </summary>

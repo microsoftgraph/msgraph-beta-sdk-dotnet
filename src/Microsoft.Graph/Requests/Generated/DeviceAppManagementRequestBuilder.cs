@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for WindowsManagementApp.
+        /// Gets the request builder for ManagedEBooks.
         /// </summary>
-        /// <returns>The <see cref="IWindowsManagementAppWithReferenceRequestBuilder"/>.</returns>
-        public IWindowsManagementAppWithReferenceRequestBuilder WindowsManagementApp
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks
         {
             get
             {
-                return new WindowsManagementAppWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("windowsManagementApp"), this.Client);
+                return new DeviceAppManagementManagedEBooksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBooks"), this.Client);
             }
         }
 
@@ -135,6 +135,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedEBookCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories
+        {
+            get
+            {
+                return new DeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBookCategories"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SideLoadingKeys.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder"/>.</returns>
@@ -155,6 +167,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceAppManagementVppTokensCollectionRequestBuilder(this.AppendSegmentToRequestUrl("vppTokens"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsManagementApp.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsManagementAppWithReferenceRequestBuilder"/>.</returns>
+        public IWindowsManagementAppWithReferenceRequestBuilder WindowsManagementApp
+        {
+            get
+            {
+                return new WindowsManagementAppWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("windowsManagementApp"), this.Client);
             }
         }
 
@@ -287,30 +311,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionWipeActions"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedEBooks.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks
-        {
-            get
-            {
-                return new DeviceAppManagementManagedEBooksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBooks"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedEBookCategories.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories
-        {
-            get
-            {
-                return new DeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBookCategories"), this.Client);
             }
         }
 

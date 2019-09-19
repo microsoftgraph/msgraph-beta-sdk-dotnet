@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// </summary>
         public ServiceHostedMediaConfig()
         {
-            this.ODataType = "microsoft.graph.ServiceHostedMediaConfig";
+            this.ODataType = "microsoft.graph.serviceHostedMediaConfig";
         }
 
         /// <summary>

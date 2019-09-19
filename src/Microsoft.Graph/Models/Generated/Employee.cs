@@ -113,6 +113,12 @@ namespace Microsoft.Graph
         public Date BirthDate { get; set; }
     
         /// <summary>
+        /// Gets or sets statistics group code.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statisticsGroupCode", Required = Newtonsoft.Json.Required.Default)]
+        public string StatisticsGroupCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
