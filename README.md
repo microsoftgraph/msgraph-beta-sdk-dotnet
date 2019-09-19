@@ -1,6 +1,4 @@
-[![Build Status](https://o365exchange.visualstudio.com/O365%20Sandbox/_apis/build/status/Microsoft%20Graph/.Net/msgraph-beta-sdk-dotnet.preview.build?branchName=master)](https://o365exchange.visualstudio.com/O365%20Sandbox/_build/latest?definitionId=2634&branchName=master)
-
-[![nuget](https://img.shields.io/nuget/v/Microsoft.Graph.Beta.svg)](https://www.nuget.org/packages/Microsoft.Graph.Beta/)
+[![Build Status](https://o365exchange.visualstudio.com/O365%20Sandbox/_apis/build/status/Microsoft%20Graph/.Net/msgraph-beta-sdk-dotnet.preview.build?branchName=master)](https://o365exchange.visualstudio.com/O365%20Sandbox/_build/latest?definitionId=2634&branchName=master)  [![nuget](https://img.shields.io/nuget/v/Microsoft.Graph.Beta.svg)](https://www.nuget.org/packages/Microsoft.Graph.Beta/)
 
 # Microsoft Graph Beta .NET Client Library
 
@@ -26,7 +24,7 @@ To install the client library via NuGet:
 Both the v1.0 and beta Microsoft Graph endpoints share the same namespace. This results in both the v1.0 and beta generated libraries sharing the same namespace. You can use the beta library by itself with no changes to your environment. If you plan to use the beta endpoint in addition to the v1.0 endpoint, you'l have a couple integration steps you'll need to follow to enable a beta client to be used alongside the v1.0 client which is obtained with the `Microsoft.Graph` (v1.0) NuGet package.
 
 If your project (.csproj) uses a Reference element to reference the Microsoft.Graph.Beta library, you'll need to specify the DLL alias within the <Aliases> element. We suggest that you use the BetaLib alias, although any alias will do:
-  
+
 ```
 <Reference Include="Microsoft.Graph.Beta, Version=0.1.0.0, Culture=neutral>
       <SpecificVersion>False</SpecificVersion>
@@ -49,7 +47,7 @@ If your project (.csproj) uses a PackageReference element to reference the Micro
 
 > The project reference approach to aliasing DLLs will be updated and is on the NuGet [backlog](https://github.com/NuGet/Home/issues/4989#issuecomment-311042085).
 
-Now, you set the `extern alias` directive (above all using directives) to get access to the Microsoft.Graph.Beta library. We suggest that you alias the namespace to `Beta`: 
+Now, you set the `extern alias` directive (above all using directives) to get access to the Microsoft.Graph.Beta library. We suggest that you alias the namespace to `Beta`:
 
 ```
 extern alias BetaLib;
