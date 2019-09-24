@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeploymentProfileHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder"/>.</returns>
+        public IWindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new WindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
     }
 }

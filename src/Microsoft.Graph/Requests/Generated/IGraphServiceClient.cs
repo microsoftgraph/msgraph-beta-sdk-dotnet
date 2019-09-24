@@ -432,6 +432,11 @@ namespace Microsoft.Graph
         IDataClassificationServiceRequestBuilder DataClassification { get; }
     
         /// <summary>
+        /// Gets the GraphServiceInformationProtection request builder.
+        /// </summary>
+        IInformationProtectionRequestBuilder InformationProtection { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
         IUserRequestBuilder Me { get; }

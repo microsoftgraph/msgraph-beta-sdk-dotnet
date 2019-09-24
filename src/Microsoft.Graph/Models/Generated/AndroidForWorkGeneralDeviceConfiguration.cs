@@ -274,6 +274,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnEnableAlwaysOnLockdownMode", Required = Newtonsoft.Json.Required.Default)]
         public bool? VpnEnableAlwaysOnLockdownMode { get; set; }
     
+        /// <summary>
+        /// Gets or sets work profile allow widgets.
+        /// Allow widgets from work profile apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileAllowWidgets", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WorkProfileAllowWidgets { get; set; }
+    
     }
 }
 

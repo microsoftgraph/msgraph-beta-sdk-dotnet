@@ -499,6 +499,13 @@ namespace Microsoft.Graph
         public IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionPage ImportedWindowsAutopilotDeviceIdentities { get; set; }
     
         /// <summary>
+        /// Gets or sets apple user initiated enrollment profiles.
+        /// Apple user initiated enrollment profiles
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleUserInitiatedEnrollmentProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage AppleUserInitiatedEnrollmentProfiles { get; set; }
+    
+        /// <summary>
         /// Gets or sets management conditions.
         /// The management conditions associated with device management of the company.
         /// </summary>
@@ -602,6 +609,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingEvents", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementTroubleshootingEventsCollectionPage TroubleshootingEvents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets autopilot events.
+        /// The list of autopilot events for the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autopilotEvents", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementAutopilotEventsCollectionPage AutopilotEvents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows feature update profiles.
+        /// A collection of windows feature update profiles
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsFeatureUpdateProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementWindowsFeatureUpdateProfilesCollectionPage WindowsFeatureUpdateProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection app learning summaries.

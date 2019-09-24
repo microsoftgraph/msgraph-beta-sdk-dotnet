@@ -23,6 +23,34 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets device threat protection enabled.
+        /// Require that devices have enabled device threat protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceThreatProtectionEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device threat protection required security level.
+        /// Require Mobile Threat Protection minimum risk level to report noncompliance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security require safety net attestation basic integrity.
+        /// Require the device to pass the SafetyNet basic integrity check.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireSafetyNetAttestationBasicIntegrity", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityRequireSafetyNetAttestationBasicIntegrity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security require safety net attestation certified device.
+        /// Require the device to pass the SafetyNet certified device check.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireSafetyNetAttestationCertifiedDevice", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityRequireSafetyNetAttestationCertifiedDevice { get; set; }
+    
+        /// <summary>
         /// Gets or sets os minimum version.
         /// Minimum Android version.
         /// </summary>

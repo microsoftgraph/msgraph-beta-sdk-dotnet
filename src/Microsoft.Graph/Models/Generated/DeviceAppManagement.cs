@@ -114,6 +114,13 @@ namespace Microsoft.Graph
         public IDeviceAppManagementManagedEBookCategoriesCollectionPage ManagedEBookCategories { get; set; }
     
         /// <summary>
+        /// Gets or sets policy sets.
+        /// The PolicySet of Policies and Applications
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policySets", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementPolicySetsCollectionPage PolicySets { get; set; }
+    
+        /// <summary>
         /// Gets or sets side loading keys.
         /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
         /// </summary>

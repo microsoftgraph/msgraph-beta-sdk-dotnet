@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITargetedManagedAppConfigurationRequestBuilder"/>.</returns>
         ITargetedManagedAppConfigurationRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for TargetedManagedAppConfigurationHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="ITargetedManagedAppConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
+        ITargetedManagedAppConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
     }
 }

@@ -320,16 +320,16 @@ namespace Microsoft.Graph
         IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams { get; }
 
         /// <summary>
-        /// Gets the request builder for Teamwork.
-        /// </summary>
-        /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
-        IUserTeamworkRequestBuilder Teamwork { get; }
-
-        /// <summary>
         /// Gets the request builder for Chats.
         /// </summary>
         /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
         IUserChatsCollectionRequestBuilder Chats { get; }
+
+        /// <summary>
+        /// Gets the request builder for Teamwork.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
+        IUserTeamworkRequestBuilder Teamwork { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.

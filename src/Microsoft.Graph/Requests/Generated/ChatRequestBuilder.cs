@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for InstalledApps.
-        /// </summary>
-        /// <returns>The <see cref="IChatInstalledAppsCollectionRequestBuilder"/>.</returns>
-        public IChatInstalledAppsCollectionRequestBuilder InstalledApps
-        {
-            get
-            {
-                return new ChatInstalledAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("installedApps"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IChatMembersCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ChatMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for InstalledApps.
+        /// </summary>
+        /// <returns>The <see cref="IChatInstalledAppsCollectionRequestBuilder"/>.</returns>
+        public IChatInstalledAppsCollectionRequestBuilder InstalledApps
+        {
+            get
+            {
+                return new ChatInstalledAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("installedApps"), this.Client);
             }
         }
     

@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceConfigurationHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
+        public IDeviceConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new DeviceConfigurationHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceConfigurationGetTargetedUsersAndDevices.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationGetTargetedUsersAndDevicesRequestBuilder"/>.</returns>

@@ -140,6 +140,12 @@ namespace Microsoft.Graph
         public string GivenName { get; set; }
     
         /// <summary>
+        /// Gets or sets identities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ObjectIdentity> Identities { get; set; }
+    
+        /// <summary>
         /// Gets or sets im addresses.
         /// The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only.
         /// </summary>
@@ -821,16 +827,16 @@ namespace Microsoft.Graph
         public IUserJoinedTeamsCollectionWithReferencesPage JoinedTeams { get; set; }
     
         /// <summary>
-        /// Gets or sets teamwork.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
-        public UserTeamwork Teamwork { get; set; }
-    
-        /// <summary>
         /// Gets or sets chats.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chats", Required = Newtonsoft.Json.Required.Default)]
         public IUserChatsCollectionPage Chats { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teamwork.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
+        public UserTeamwork Teamwork { get; set; }
     
     }
 }

@@ -69,5 +69,20 @@ namespace Microsoft.Graph
         /// </summary>
         WindowsCoManagement = 9,
 	
+        /// <summary>
+        /// Apple User Enrollment
+        /// </summary>
+        AppleUserEnrollment = 11,
+	
+        /// <summary>
+        /// Apple User Enrollment With Service Account
+        /// </summary>
+        AppleUserEnrollmentWithServiceAccount = 12,
+	
+        /// <summary>
+        /// Apple User Enrollment With Azure AD
+        /// </summary>
+        AppleUserEnrollmentWithAzureAD = 13,
+	
     }
 }

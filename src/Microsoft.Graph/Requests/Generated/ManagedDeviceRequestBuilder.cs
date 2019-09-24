@@ -437,6 +437,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateBitLockerKeys.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateBitLockerKeysRequestBuilder"/>.</returns>
+        public IManagedDeviceRotateBitLockerKeysRequestBuilder RotateBitLockerKeys()
+        {
+            return new ManagedDeviceRotateBitLockerKeysRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rotateBitLockerKeys"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
@@ -449,6 +460,19 @@ namespace Microsoft.Graph
                 this.Client,
                 notificationTitle,
                 notificationBody);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceTriggerConfigurationManagerAction.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceTriggerConfigurationManagerActionRequestBuilder"/>.</returns>
+        public IManagedDeviceTriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction(
+            ConfigurationManagerAction configurationManagerAction)
+        {
+            return new ManagedDeviceTriggerConfigurationManagerActionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.triggerConfigurationManagerAction"),
+                this.Client,
+                configurationManagerAction);
         }
 
         /// <summary>

@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         IChannelChatThreadsCollectionRequestBuilder ChatThreads { get; }
 
         /// <summary>
-        /// Gets the request builder for Tabs.
-        /// </summary>
-        /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
-        IChannelTabsCollectionRequestBuilder Tabs { get; }
-
-        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IChannelMembersCollectionRequestBuilder"/>.</returns>
         IChannelMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tabs.
+        /// </summary>
+        /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
+        IChannelTabsCollectionRequestBuilder Tabs { get; }
     
     }
 }

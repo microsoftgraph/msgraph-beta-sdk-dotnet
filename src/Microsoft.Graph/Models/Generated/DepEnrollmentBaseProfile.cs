@@ -157,6 +157,13 @@ namespace Microsoft.Graph
         public bool? PrivacyPaneDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets screen time screen disabled.
+        /// Indicates if screen timeout setup is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenTimeScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ScreenTimeScreenDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets device name template.
         /// Sets a literal or name pattern.
         /// </summary>

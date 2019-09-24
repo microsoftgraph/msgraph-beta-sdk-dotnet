@@ -29,6 +29,20 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
+        /// <summary>
+        /// Gets or sets source.
+        /// The assignment source for the device configuration, direct or parcel/policySet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentSource? Source { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source id.
+        /// The identifier of the source of the assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceId { get; set; }
+    
     }
 }
 

@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Tabs.
-        /// </summary>
-        /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
-        public IChannelTabsCollectionRequestBuilder Tabs
-        {
-            get
-            {
-                return new ChannelTabsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tabs"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IChannelMembersCollectionRequestBuilder"/>.</returns>
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ChannelMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Tabs.
+        /// </summary>
+        /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
+        public IChannelTabsCollectionRequestBuilder Tabs
+        {
+            get
+            {
+                return new ChannelTabsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tabs"), this.Client);
             }
         }
     

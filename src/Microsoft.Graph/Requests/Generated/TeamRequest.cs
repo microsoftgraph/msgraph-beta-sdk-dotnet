@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (teamToInitialize != null && teamToInitialize.AdditionalData != null)
             {
 
-                if (teamToInitialize.Channels != null && teamToInitialize.Channels.CurrentPage != null)
-                {
-                    teamToInitialize.Channels.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("channels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.Channels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (teamToInitialize.Apps != null && teamToInitialize.Apps.CurrentPage != null)
                 {
                     teamToInitialize.Apps.AdditionalData = teamToInitialize.AdditionalData;
@@ -266,17 +250,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (teamToInitialize.InstalledApps != null && teamToInitialize.InstalledApps.CurrentPage != null)
+                if (teamToInitialize.Channels != null && teamToInitialize.Channels.CurrentPage != null)
                 {
-                    teamToInitialize.InstalledApps.AdditionalData = teamToInitialize.AdditionalData;
+                    teamToInitialize.Channels.AdditionalData = teamToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
+                    teamToInitialize.AdditionalData.TryGetValue("channels@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        teamToInitialize.InstalledApps.InitializeNextPageRequest(
+                        teamToInitialize.Channels.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -309,6 +293,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         teamToInitialize.Owners.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (teamToInitialize.InstalledApps != null && teamToInitialize.InstalledApps.CurrentPage != null)
+                {
+                    teamToInitialize.InstalledApps.AdditionalData = teamToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    teamToInitialize.AdditionalData.TryGetValue("installedApps@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        teamToInitialize.InstalledApps.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

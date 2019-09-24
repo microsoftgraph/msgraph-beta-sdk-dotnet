@@ -1261,6 +1261,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRemovableDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
         public BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy { get; set; }
     
+        /// <summary>
+        /// Gets or sets bit locker recovery password rotation.
+        /// This setting initiates a client-driven recovery password rotation after an OS drive recovery (either by using bootmgr or WinRE).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRecoveryPasswordRotation", Required = Newtonsoft.Json.Required.Default)]
+        public BitLockerRecoveryPasswordRotationType? BitLockerRecoveryPasswordRotation { get; set; }
+    
     }
 }
 

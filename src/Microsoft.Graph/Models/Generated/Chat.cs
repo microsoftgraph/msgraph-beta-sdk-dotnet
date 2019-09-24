@@ -41,12 +41,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets installed apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
-        public IChatInstalledAppsCollectionPage InstalledApps { get; set; }
-    
-        /// <summary>
         /// Gets or sets members.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
@@ -57,6 +51,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessagesCollectionPage Messages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets installed apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IChatInstalledAppsCollectionPage InstalledApps { get; set; }
     
     }
 }

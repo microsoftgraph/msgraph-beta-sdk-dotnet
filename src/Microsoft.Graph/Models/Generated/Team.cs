@@ -108,10 +108,10 @@ namespace Microsoft.Graph
         public bool? IsArchived { get; set; }
     
         /// <summary>
-        /// Gets or sets schedule.
+        /// Gets or sets apps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
-        public Schedule Schedule { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apps", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamAppsCollectionPage Apps { get; set; }
     
         /// <summary>
         /// Gets or sets template.
@@ -125,19 +125,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channels", Required = Newtonsoft.Json.Required.Default)]
         public ITeamChannelsCollectionPage Channels { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apps", Required = Newtonsoft.Json.Required.Default)]
-        public ITeamAppsCollectionPage Apps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets installed apps.
-        /// The apps installed in this team.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
-        public ITeamInstalledAppsCollectionPage InstalledApps { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
@@ -162,6 +149,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
         public Group Group { get; set; }
+    
+        /// <summary>
+        /// Gets or sets installed apps.
+        /// The apps installed in this team.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamInstalledAppsCollectionPage InstalledApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets schedule.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        public Schedule Schedule { get; set; }
     
     }
 }

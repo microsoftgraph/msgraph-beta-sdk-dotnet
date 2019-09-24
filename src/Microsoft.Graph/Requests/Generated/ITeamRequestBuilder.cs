@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new ITeamRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Schedule.
+        /// Gets the request builder for Apps.
         /// </summary>
-        /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>
-        IScheduleRequestBuilder Schedule { get; }
+        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
+        ITeamAppsCollectionRequestBuilder Apps { get; }
 
         /// <summary>
         /// Gets the request builder for Template.
@@ -48,18 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
         ITeamChannelsCollectionRequestBuilder Channels { get; }
-
-        /// <summary>
-        /// Gets the request builder for Apps.
-        /// </summary>
-        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
-        ITeamAppsCollectionRequestBuilder Apps { get; }
-
-        /// <summary>
-        /// Gets the request builder for InstalledApps.
-        /// </summary>
-        /// <returns>The <see cref="ITeamInstalledAppsCollectionRequestBuilder"/>.</returns>
-        ITeamInstalledAppsCollectionRequestBuilder InstalledApps { get; }
 
         /// <summary>
         /// Gets the request builder for Operations.
@@ -84,6 +72,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
         IGroupWithReferenceRequestBuilder Group { get; }
+
+        /// <summary>
+        /// Gets the request builder for InstalledApps.
+        /// </summary>
+        /// <returns>The <see cref="ITeamInstalledAppsCollectionRequestBuilder"/>.</returns>
+        ITeamInstalledAppsCollectionRequestBuilder InstalledApps { get; }
+
+        /// <summary>
+        /// Gets the request builder for Schedule.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>
+        IScheduleRequestBuilder Schedule { get; }
     
         /// <summary>
         /// Gets the request builder for TeamClone.

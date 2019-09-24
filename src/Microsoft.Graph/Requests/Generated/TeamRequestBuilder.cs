@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Schedule.
+        /// Gets the request builder for Apps.
         /// </summary>
-        /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>
-        public IScheduleRequestBuilder Schedule
+        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
+        public ITeamAppsCollectionRequestBuilder Apps
         {
             get
             {
-                return new ScheduleRequestBuilder(this.AppendSegmentToRequestUrl("schedule"), this.Client);
+                return new TeamAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("apps"), this.Client);
             }
         }
 
@@ -83,30 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamChannelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("channels"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Apps.
-        /// </summary>
-        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
-        public ITeamAppsCollectionRequestBuilder Apps
-        {
-            get
-            {
-                return new TeamAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("apps"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for InstalledApps.
-        /// </summary>
-        /// <returns>The <see cref="ITeamInstalledAppsCollectionRequestBuilder"/>.</returns>
-        public ITeamInstalledAppsCollectionRequestBuilder InstalledApps
-        {
-            get
-            {
-                return new TeamInstalledAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("installedApps"), this.Client);
             }
         }
 
@@ -155,6 +131,30 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for InstalledApps.
+        /// </summary>
+        /// <returns>The <see cref="ITeamInstalledAppsCollectionRequestBuilder"/>.</returns>
+        public ITeamInstalledAppsCollectionRequestBuilder InstalledApps
+        {
+            get
+            {
+                return new TeamInstalledAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("installedApps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Schedule.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>
+        public IScheduleRequestBuilder Schedule
+        {
+            get
+            {
+                return new ScheduleRequestBuilder(this.AppendSegmentToRequestUrl("schedule"), this.Client);
             }
         }
     

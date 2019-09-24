@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         public SynchronizationStatus Status { get; set; }
     
         /// <summary>
+        /// Gets or sets synchronization job settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationJobSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> SynchronizationJobSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets schema.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]

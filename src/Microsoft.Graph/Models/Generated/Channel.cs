@@ -75,17 +75,17 @@ namespace Microsoft.Graph
         public IChannelChatThreadsCollectionPage ChatThreads { get; set; }
     
         /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public IChannelMembersCollectionPage Members { get; set; }
+    
+        /// <summary>
         /// Gets or sets tabs.
         /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]
         public IChannelTabsCollectionPage Tabs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets members.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
-        public IChannelMembersCollectionPage Members { get; set; }
     
     }
 }

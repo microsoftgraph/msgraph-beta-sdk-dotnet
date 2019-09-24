@@ -627,18 +627,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Teamwork.
-        /// </summary>
-        /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
-        public IUserTeamworkRequestBuilder Teamwork
-        {
-            get
-            {
-                return new UserTeamworkRequestBuilder(this.AppendSegmentToRequestUrl("teamwork"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Chats.
         /// </summary>
         /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
@@ -647,6 +635,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserChatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("chats"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Teamwork.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
+        public IUserTeamworkRequestBuilder Teamwork
+        {
+            get
+            {
+                return new UserTeamworkRequestBuilder(this.AppendSegmentToRequestUrl("teamwork"), this.Client);
             }
         }
     

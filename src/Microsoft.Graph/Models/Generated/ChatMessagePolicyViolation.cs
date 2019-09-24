@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         /// Gets or sets dlpAction.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dlpAction", Required = Newtonsoft.Json.Required.Default)]
-        public ChatMessagePolicyViolationDlpActionType? DlpAction { get; set; }
+        public ChatMessagePolicyViolationDlpActionTypes? DlpAction { get; set; }
     
         /// <summary>
         /// Gets or sets justificationText.
@@ -45,13 +45,13 @@ namespace Microsoft.Graph
         /// Gets or sets userAction.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAction", Required = Newtonsoft.Json.Required.Default)]
-        public ChatMessagePolicyViolationUserActionType? UserAction { get; set; }
+        public ChatMessagePolicyViolationUserActionTypes? UserAction { get; set; }
     
         /// <summary>
         /// Gets or sets verdictDetails.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verdictDetails", Required = Newtonsoft.Json.Required.Default)]
-        public ChatMessagePolicyViolationVerdictDetailsType? VerdictDetails { get; set; }
+        public ChatMessagePolicyViolationVerdictDetailsTypes? VerdictDetails { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

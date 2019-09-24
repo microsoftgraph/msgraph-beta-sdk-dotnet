@@ -43,5 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IManagedAppPolicyDeploymentSummaryRequestBuilder"/>.</returns>
         IManagedAppPolicyDeploymentSummaryRequestBuilder DeploymentSummary { get; }
     
+        
+    
     }
 }
