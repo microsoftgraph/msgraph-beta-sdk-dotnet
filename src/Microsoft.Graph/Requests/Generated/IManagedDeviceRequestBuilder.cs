@@ -237,12 +237,25 @@ namespace Microsoft.Graph
         IManagedDeviceRevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses();
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateBitLockerKeys.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateBitLockerKeysRequestBuilder"/>.</returns>
+        IManagedDeviceRotateBitLockerKeysRequestBuilder RotateBitLockerKeys();
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
         IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
             string notificationTitle,
             string notificationBody);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceTriggerConfigurationManagerAction.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceTriggerConfigurationManagerActionRequestBuilder"/>.</returns>
+        IManagedDeviceTriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction(
+            ConfigurationManagerAction configurationManagerAction);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceGetFileVaultKey.

@@ -21,6 +21,11 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Force Deletes
+        /// </summary>
+        ForceDeletes = 32,
+	
+        /// <summary>
         /// Full
         /// </summary>
         Full = 15,

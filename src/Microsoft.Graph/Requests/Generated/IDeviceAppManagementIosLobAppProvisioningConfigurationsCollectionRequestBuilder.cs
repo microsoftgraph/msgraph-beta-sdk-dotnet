@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IIosLobAppProvisioningConfigurationRequestBuilder"/>.</returns>
         IIosLobAppProvisioningConfigurationRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for IosLobAppProvisioningConfigurationHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IIosLobAppProvisioningConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
+        IIosLobAppProvisioningConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
     }
 }

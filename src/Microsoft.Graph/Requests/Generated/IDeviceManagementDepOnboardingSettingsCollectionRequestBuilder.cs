@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDepOnboardingSettingRequestBuilder"/>.</returns>
         IDepOnboardingSettingRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DepOnboardingSettingGetExpiringVppTokenCount.
+        /// </summary>
+        /// <returns>The <see cref="IDepOnboardingSettingGetExpiringVppTokenCountRequestBuilder"/>.</returns>
+        IDepOnboardingSettingGetExpiringVppTokenCountRequestBuilder GetExpiringVppTokenCount(
+            string expiringBeforeDateTime = null);
     }
 }

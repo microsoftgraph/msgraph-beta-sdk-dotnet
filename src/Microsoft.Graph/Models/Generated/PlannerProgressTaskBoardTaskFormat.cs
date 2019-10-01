@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Planner Progress Task Board Task Format.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerProgressTaskBoardTaskFormat : Entity
+    public partial class PlannerProgressTaskBoardTaskFormat : PlannerDelta
     {
     
         /// <summary>

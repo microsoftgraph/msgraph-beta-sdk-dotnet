@@ -140,6 +140,12 @@ namespace Microsoft.Graph
         public string GivenName { get; set; }
     
         /// <summary>
+        /// Gets or sets identities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ObjectIdentity> Identities { get; set; }
+    
+        /// <summary>
         /// Gets or sets im addresses.
         /// The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only.
         /// </summary>
@@ -813,6 +819,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devices", Required = Newtonsoft.Json.Required.Default)]
         public IUserDevicesCollectionPage Devices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meetings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
+        public IUserOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets presence.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presence", Required = Newtonsoft.Json.Required.Default)]
+        public Presence Presence { get; set; }
     
         /// <summary>
         /// Gets or sets joined teams.

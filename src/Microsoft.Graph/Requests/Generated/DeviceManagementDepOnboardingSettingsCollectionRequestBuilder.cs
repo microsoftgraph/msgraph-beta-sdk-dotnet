@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DepOnboardingSettingGetExpiringVppTokenCount.
+        /// </summary>
+        /// <returns>The <see cref="IDepOnboardingSettingGetExpiringVppTokenCountRequestBuilder"/>.</returns>
+        public IDepOnboardingSettingGetExpiringVppTokenCountRequestBuilder GetExpiringVppTokenCount(
+            string expiringBeforeDateTime = null)
+        {
+            return new DepOnboardingSettingGetExpiringVppTokenCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getExpiringVppTokenCount"),
+                this.Client,
+                expiringBeforeDateTime);
+        }
     }
 }

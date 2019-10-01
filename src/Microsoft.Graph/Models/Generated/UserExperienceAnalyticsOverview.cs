@@ -23,27 +23,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets overall score.
-        /// The user experience analytics overall score.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overallScore", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? OverallScore { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device boot performance overall score.
-        /// The user experience analytics device boot performance overall score.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceBootPerformanceOverallScore", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeviceBootPerformanceOverallScore { get; set; }
-    
-        /// <summary>
-        /// Gets or sets best practices overall score.
-        /// The user experience analytics best practices overall score.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bestPracticesOverallScore", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? BestPracticesOverallScore { get; set; }
-    
-        /// <summary>
         /// Gets or sets insights.
         /// The user experience analytics insights.
         /// </summary>

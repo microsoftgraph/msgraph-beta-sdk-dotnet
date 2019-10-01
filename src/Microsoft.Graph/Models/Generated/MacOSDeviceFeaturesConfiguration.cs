@@ -148,6 +148,20 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenLockDisableImmediate", Required = Newtonsoft.Json.Required.Default)]
         public bool? ScreenLockDisableImmediate { get; set; }
     
+        /// <summary>
+        /// Gets or sets associated domains.
+        /// Gets or sets a list that maps apps to their associated domains. The key should match the app's ID, and the value should be a string in the form of "service:domain" where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "associatedDomains", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> AssociatedDomains { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single sign on extension.
+        /// Gets or sets a single sign-on extension profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        public SingleSignOnExtension SingleSignOnExtension { get; set; }
+    
     }
 }
 

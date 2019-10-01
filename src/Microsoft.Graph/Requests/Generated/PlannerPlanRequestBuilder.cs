@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PlannerPlanRequestBuilder.
     /// </summary>
-    public partial class PlannerPlanRequestBuilder : EntityRequestBuilder, IPlannerPlanRequestBuilder
+    public partial class PlannerPlanRequestBuilder : PlannerDeltaRequestBuilder, IPlannerPlanRequestBuilder
     {
 
         /// <summary>

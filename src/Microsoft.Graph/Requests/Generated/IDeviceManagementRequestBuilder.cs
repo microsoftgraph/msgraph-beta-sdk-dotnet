@@ -356,6 +356,12 @@ namespace Microsoft.Graph
         IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder ImportedWindowsAutopilotDeviceIdentities { get; }
 
         /// <summary>
+        /// Gets the request builder for AppleUserInitiatedEnrollmentProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder AppleUserInitiatedEnrollmentProfiles { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagementConditions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementManagementConditionsCollectionRequestBuilder"/>.</returns>
@@ -444,6 +450,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementTroubleshootingEventsCollectionRequestBuilder TroubleshootingEvents { get; }
+
+        /// <summary>
+        /// Gets the request builder for AutopilotEvents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAutopilotEventsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAutopilotEventsCollectionRequestBuilder AutopilotEvents { get; }
+
+        /// <summary>
+        /// Gets the request builder for WindowsFeatureUpdateProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder WindowsFeatureUpdateProfiles { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsInformationProtectionAppLearningSummaries.

@@ -597,6 +597,20 @@ namespace Microsoft.Graph
         public bool? KioskModeBlockTouchscreen { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode enable voice control.
+        /// Indicates whether or not to enable voice control in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeEnableVoiceControl", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeEnableVoiceControl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode allow voice control modification.
+        /// Indicates whether or not to allow the user to toggle voice control in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowVoiceControlModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeAllowVoiceControlModification { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode allow voice over settings.
         /// Indicates whether or not to allow access to the voice over settings while in kiosk mode.
         /// </summary>

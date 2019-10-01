@@ -314,6 +314,18 @@ namespace Microsoft.Graph
         IUserDevicesCollectionRequestBuilder Devices { get; }
 
         /// <summary>
+        /// Gets the request builder for OnlineMeetings.
+        /// </summary>
+        /// <returns>The <see cref="IUserOnlineMeetingsCollectionRequestBuilder"/>.</returns>
+        IUserOnlineMeetingsCollectionRequestBuilder OnlineMeetings { get; }
+
+        /// <summary>
+        /// Gets the request builder for Presence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceWithReferenceRequestBuilder"/>.</returns>
+        IPresenceWithReferenceRequestBuilder Presence { get; }
+
+        /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>

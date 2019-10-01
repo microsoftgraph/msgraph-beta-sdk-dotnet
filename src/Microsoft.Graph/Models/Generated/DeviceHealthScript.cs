@@ -34,12 +34,6 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptContent", Required = Newtonsoft.Json.Required.Default)]
         public byte[] RemediationScriptContent { get; set; }
     
-        /// <summary>
-        /// Gets or sets run remediation script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runRemediationScript", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RunRemediationScript { get; set; }
-    
     }
 }
 

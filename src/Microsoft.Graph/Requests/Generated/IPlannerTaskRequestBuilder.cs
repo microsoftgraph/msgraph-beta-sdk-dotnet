@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPlannerTaskRequestBuilder.
     /// </summary>
-    public partial interface IPlannerTaskRequestBuilder : IEntityRequestBuilder
+    public partial interface IPlannerTaskRequestBuilder : IPlannerDeltaRequestBuilder
     {
         /// <summary>
         /// Builds the request.

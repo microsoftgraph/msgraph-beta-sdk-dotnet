@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hardware information.
-        /// The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc.
+        /// The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hardwareInformation", Required = Newtonsoft.Json.Required.Default)]
         public HardwareInformation HardwareInformation { get; set; }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets management state.
-        /// Management state of the device.
+        /// Management state of the device. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementState", Required = Newtonsoft.Json.Required.Default)]
         public ManagementState? ManagementState { get; set; }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets chassis type.
-        /// Chassis type of the device.
+        /// Chassis type of the device. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chassisType", Required = Newtonsoft.Json.Required.Default)]
         public ChassisType? ChassisType { get; set; }
@@ -101,7 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device type.
-        /// Platform of the device.
+        /// Platform of the device. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceType? DeviceType { get; set; }
@@ -157,7 +157,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets aad registered.
-        /// Whether the device is Azure Active Directory registered.
+        /// Whether the device is Azure Active Directory registered. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aadRegistered", Required = Newtonsoft.Json.Required.Default)]
         public bool? AadRegistered { get; set; }
@@ -178,7 +178,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lost mode state.
-        /// Indicates if Lost mode is enabled or disabled
+        /// Indicates if Lost mode is enabled or disabled. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lostModeState", Required = Newtonsoft.Json.Required.Default)]
         public LostModeState? LostModeState { get; set; }
@@ -199,7 +199,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets azure active directory device id.
-        /// The unique identifier for the Azure Active Directory device. Read only.
+        /// The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureActiveDirectoryDeviceId", Required = Newtonsoft.Json.Required.Default)]
         public string AzureActiveDirectoryDeviceId { get; set; }
@@ -402,56 +402,56 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets retire after date time.
-        /// Indicates the time after when a device will be auto retired because of scheduled action.
+        /// Indicates the time after when a device will be auto retired because of scheduled action. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "retireAfterDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RetireAfterDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets users logged on.
-        /// Indicates the last logged on users of a device
+        /// Indicates the last logged on users of a device. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usersLoggedOn", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LoggedOnUser> UsersLoggedOn { get; set; }
     
         /// <summary>
         /// Gets or sets prefer mdm over group policy applied date time.
-        /// Reports the DateTime the preferMdmOverGroupPolicy setting was set.  When set, the Intune MDM settings will override Group Policy settings if there is a conflict. Read Only.
+        /// Reports the DateTime the preferMdmOverGroupPolicy setting was set.  When set, the Intune MDM settings will override Group Policy settings if there is a conflict. Read Only. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferMdmOverGroupPolicyAppliedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? PreferMdmOverGroupPolicyAppliedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets autopilot enrolled.
-        /// Reports if the managed device is enrolled via auto-pilot.
+        /// Reports if the managed device is enrolled via auto-pilot. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autopilotEnrolled", Required = Newtonsoft.Json.Required.Default)]
         public bool? AutopilotEnrolled { get; set; }
     
         /// <summary>
         /// Gets or sets require user enrollment approval.
-        /// Reports if the managed iOS device is user approval enrollment.
+        /// Reports if the managed iOS device is user approval enrollment. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireUserEnrollmentApproval", Required = Newtonsoft.Json.Required.Default)]
         public bool? RequireUserEnrollmentApproval { get; set; }
     
         /// <summary>
         /// Gets or sets management certificate expiration date.
-        /// Reports device management certificate expiration date
+        /// Reports device management certificate expiration date. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementCertificateExpirationDate", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ManagementCertificateExpirationDate { get; set; }
     
         /// <summary>
         /// Gets or sets iccid.
-        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number.
+        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iccid", Required = Newtonsoft.Json.Required.Default)]
         public string Iccid { get; set; }
     
         /// <summary>
         /// Gets or sets udid.
-        /// Unique Device Identifier for iOS and macOS devices.
+        /// Unique Device Identifier for iOS and macOS devices. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "udid", Required = Newtonsoft.Json.Required.Default)]
         public string Udid { get; set; }
@@ -465,14 +465,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets windows active malware count.
-        /// Count of active malware for this windows device
+        /// Count of active malware for this windows device. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsActiveMalwareCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WindowsActiveMalwareCount { get; set; }
     
         /// <summary>
         /// Gets or sets windows remediated malware count.
-        /// Count of remediated malware for this windows device
+        /// Count of remediated malware for this windows device. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsRemediatedMalwareCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? WindowsRemediatedMalwareCount { get; set; }

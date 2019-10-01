@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PlannerProgressTaskBoardTaskFormatRequestBuilder.
     /// </summary>
-    public partial class PlannerProgressTaskBoardTaskFormatRequestBuilder : EntityRequestBuilder, IPlannerProgressTaskBoardTaskFormatRequestBuilder
+    public partial class PlannerProgressTaskBoardTaskFormatRequestBuilder : PlannerDeltaRequestBuilder, IPlannerProgressTaskBoardTaskFormatRequestBuilder
     {
 
         /// <summary>

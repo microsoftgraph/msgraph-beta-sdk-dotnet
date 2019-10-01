@@ -58,6 +58,20 @@ namespace Microsoft.Graph
         public string AppStoreUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets is private.
+        /// Indicates whether the app is only available to a given enterprise's users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPrivate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsPrivate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is system app.
+        /// Indicates whether the app is a preinstalled system app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSystemApp", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsSystemApp { get; set; }
+    
+        /// <summary>
         /// Gets or sets supports oem config.
         /// Whether this app supports OEMConfig policy.
         /// </summary>

@@ -78,6 +78,12 @@ namespace Microsoft.Graph
         public bool? HasMembersWithLicenseErrors { get; set; }
     
         /// <summary>
+        /// Gets or sets is assignable to role.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssignableToRole", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsAssignableToRole { get; set; }
+    
+        /// <summary>
         /// Gets or sets license processing state.
         /// Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
         /// </summary>

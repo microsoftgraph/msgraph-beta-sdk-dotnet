@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Planner Bucket Task Board Task Format.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerBucketTaskBoardTaskFormat : Entity
+    public partial class PlannerBucketTaskBoardTaskFormat : PlannerDelta
     {
     
         /// <summary>
