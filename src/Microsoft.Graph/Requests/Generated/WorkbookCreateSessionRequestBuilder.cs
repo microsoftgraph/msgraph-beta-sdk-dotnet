@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="persistChanges">A persistChanges parameter for the OData method call.</param>
+        /// <param name="commitExplicitly">A commitExplicitly parameter for the OData method call.</param>
         public WorkbookCreateSessionRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            bool persistChanges)
+            bool persistChanges,
+            bool? commitExplicitly)
             : base(requestUrl, client)
         {
             this.SetParameter("persistChanges", persistChanges, false);
+            this.SetParameter("commitExplicitly", commitExplicitly, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("persistChanges"))
             {
                 request.RequestBody.PersistChanges = this.GetParameter<bool>("persistChanges");
+            }
+
+            if (this.HasParameter("commitExplicitly"))
+            {
+                request.RequestBody.CommitExplicitly = this.GetParameter<bool?>("commitExplicitly");
             }
 
             return request;

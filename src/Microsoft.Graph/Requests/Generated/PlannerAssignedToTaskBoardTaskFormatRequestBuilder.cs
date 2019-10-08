@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PlannerAssignedToTaskBoardTaskFormatRequestBuilder.
     /// </summary>
-    public partial class PlannerAssignedToTaskBoardTaskFormatRequestBuilder : EntityRequestBuilder, IPlannerAssignedToTaskBoardTaskFormatRequestBuilder
+    public partial class PlannerAssignedToTaskBoardTaskFormatRequestBuilder : PlannerDeltaRequestBuilder, IPlannerAssignedToTaskBoardTaskFormatRequestBuilder
     {
 
         /// <summary>

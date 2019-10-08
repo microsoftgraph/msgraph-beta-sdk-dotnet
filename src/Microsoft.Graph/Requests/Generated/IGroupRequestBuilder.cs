@@ -232,6 +232,14 @@ namespace Microsoft.Graph
             string clientAppId);
 
         /// <summary>
+        /// Gets the request builder for GroupAssignLicense.
+        /// </summary>
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses);
+
+        /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.
         /// </summary>
         /// <returns>The <see cref="IGroupSubscribeByMailRequestBuilder"/>.</returns>

@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         public ChangeType? ChangeType { get; set; }
     
         /// <summary>
-        /// Gets or sets resource.
+        /// Gets or sets resourceUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
-        public string Resource { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

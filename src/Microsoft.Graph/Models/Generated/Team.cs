@@ -114,6 +114,12 @@ namespace Microsoft.Graph
         public Schedule Schedule { get; set; }
     
         /// <summary>
+        /// Gets or sets photo.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
+        public ProfilePhoto Photo { get; set; }
+    
+        /// <summary>
         /// Gets or sets template.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template", Required = Newtonsoft.Json.Required.Default)]

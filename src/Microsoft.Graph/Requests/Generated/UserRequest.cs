@@ -794,6 +794,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (userToInitialize.OnlineMeetings != null && userToInitialize.OnlineMeetings.CurrentPage != null)
+                {
+                    userToInitialize.OnlineMeetings.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("onlineMeetings@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.OnlineMeetings.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (userToInitialize.JoinedTeams != null && userToInitialize.JoinedTeams.CurrentPage != null)
                 {
                     userToInitialize.JoinedTeams.AdditionalData = userToInitialize.AdditionalData;

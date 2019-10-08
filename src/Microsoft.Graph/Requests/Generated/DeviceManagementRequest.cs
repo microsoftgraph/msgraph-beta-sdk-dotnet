@@ -890,6 +890,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles != null && deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("appleUserInitiatedEnrollmentProfiles@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.ManagementConditions != null && deviceManagementToInitialize.ManagementConditions.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ManagementConditions.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1125,6 +1141,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.AutopilotEvents != null && deviceManagementToInitialize.AutopilotEvents.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.AutopilotEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("autopilotEvents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.AutopilotEvents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.WindowsFeatureUpdateProfiles != null && deviceManagementToInitialize.WindowsFeatureUpdateProfiles.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.WindowsFeatureUpdateProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsFeatureUpdateProfiles@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.WindowsFeatureUpdateProfiles.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

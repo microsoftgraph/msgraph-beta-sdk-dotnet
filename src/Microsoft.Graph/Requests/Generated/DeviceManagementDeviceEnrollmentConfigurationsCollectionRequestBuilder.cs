@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurationHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceEnrollmentConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
+        public IDeviceEnrollmentConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new DeviceEnrollmentConfigurationHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
     }
 }

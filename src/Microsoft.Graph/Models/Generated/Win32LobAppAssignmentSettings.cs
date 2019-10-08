@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets notifications.
-        /// The notification status this app assignment.
+        /// The notification status for this app assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifications", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppNotification? Notifications { get; set; }

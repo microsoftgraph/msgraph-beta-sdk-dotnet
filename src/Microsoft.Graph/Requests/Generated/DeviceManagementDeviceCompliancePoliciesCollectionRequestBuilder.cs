@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyHasPayloadLinksRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new DeviceCompliancePolicyHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>

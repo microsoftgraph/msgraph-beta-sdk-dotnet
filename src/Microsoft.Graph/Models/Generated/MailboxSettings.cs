@@ -60,12 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets dateFormat.
+        /// The date format for the user's mailbox.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dateFormat", Required = Newtonsoft.Json.Required.Default)]
         public string DateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets timeFormat.
+        /// The time format for the user's mailbox.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeFormat", Required = Newtonsoft.Json.Required.Default)]
         public string TimeFormat { get; set; }

@@ -955,6 +955,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceInformationProtection request builder.
+        /// </summary>
+        public IInformationProtectionRequestBuilder InformationProtection
+        {
+            get
+            {
+                return new InformationProtectionRequestBuilder(this.BaseUrl + "/informationProtection", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
         public IUserRequestBuilder Me
@@ -1083,6 +1094,17 @@ namespace Microsoft.Graph
             get
             {
                 return new CommsApplicationRequestBuilder(this.BaseUrl + "/app", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        public ICloudCommunicationsRequestBuilder Communications
+        {
+            get
+            {
+                return new CloudCommunicationsRequestBuilder(this.BaseUrl + "/communications", this);
             }
         }
     

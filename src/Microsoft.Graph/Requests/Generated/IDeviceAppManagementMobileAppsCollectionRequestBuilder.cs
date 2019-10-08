@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         IMobileAppRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for MobileAppHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppHasPayloadLinksRequestBuilder"/>.</returns>
+        IMobileAppHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
+
+        /// <summary>
         /// Gets the request builder for MobileAppGetMobileAppCount.
         /// </summary>
         /// <returns>The <see cref="IMobileAppGetMobileAppCountRequestBuilder"/>.</returns>

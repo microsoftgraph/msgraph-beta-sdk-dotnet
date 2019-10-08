@@ -20,9 +20,9 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// File
+        /// Default
         /// </summary>
-        File = 0,
+        Default = 0,
 	
         /// <summary>
         /// Email

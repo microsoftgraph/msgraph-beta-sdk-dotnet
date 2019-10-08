@@ -38,11 +38,18 @@ namespace Microsoft.Graph
         public string InsightId { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
+        /// Gets or sets values.
         /// The value of the user experience analytics insight.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<UserExperienceAnalyticsInsightValue> Value { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<UserExperienceAnalyticsInsightValue> Values { get; set; }
+    
+        /// <summary>
+        /// Gets or sets severity.
+        /// The value of the user experience analytics insight.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsInsightSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

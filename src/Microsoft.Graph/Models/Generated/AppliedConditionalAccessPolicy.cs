@@ -52,6 +52,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> EnforcedSessionControls { get; set; }
     
         /// <summary>
+        /// Gets or sets conditionsSatisfied.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
+    
+        /// <summary>
+        /// Gets or sets conditionsNotSatisfied.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsNotSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
+    
+        /// <summary>
         /// Gets or sets result.
         /// Indicates the result of the CA policy that was triggered. Possible values are:successfailurenotApplied - Policy isn't applied because policy conditions were not met.notEnabled - This is due to the policy in disabled state.
         /// </summary>

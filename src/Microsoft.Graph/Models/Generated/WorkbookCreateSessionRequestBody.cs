@@ -28,5 +28,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistChanges", Required = Newtonsoft.Json.Required.Default)]
         public bool PersistChanges { get; set; }
     
+        /// <summary>
+        /// Gets or sets CommitExplicitly.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "commitExplicitly", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CommitExplicitly { get; set; }
+    
     }
 }

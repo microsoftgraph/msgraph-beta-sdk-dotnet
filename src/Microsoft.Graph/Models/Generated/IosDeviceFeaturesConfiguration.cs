@@ -86,6 +86,13 @@ namespace Microsoft.Graph
         public MimeContent WallpaperImage { get; set; }
     
         /// <summary>
+        /// Gets or sets single sign on extension.
+        /// Gets or sets a single sign-on extension profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        public SingleSignOnExtension SingleSignOnExtension { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity certificate for client authentication.
         /// Identity Certificate for the renewal of Kerberos ticket used in single sign-on settings.
         /// </summary>

@@ -100,13 +100,6 @@ namespace Microsoft.Graph
         public bool? OnBoardingScreenDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets screen time screen disabled.
-        /// Indicates if screen timeout setup is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenTimeScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ScreenTimeScreenDisabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets sim setup screen disabled.
         /// Indicates if the SIMSetup screen is disabled
         /// </summary>
@@ -126,6 +119,41 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "watchMigrationScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? WatchMigrationScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets appearance screen disabled.
+        /// Indicates if Apperance screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appearanceScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppearanceScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets express language screen disabled.
+        /// Indicates if Express Language screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressLanguageScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExpressLanguageScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets preferred language screen disabled.
+        /// Indicates if Preferred language screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguageScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PreferredLanguageScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device to device migration disabled.
+        /// Indicates if Device To Device Migration is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceToDeviceMigrationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceToDeviceMigrationDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets welcome screen disabled.
+        /// Indicates if Weclome screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomeScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WelcomeScreenDisabled { get; set; }
     
     }
 }

@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories { get; }
 
         /// <summary>
+        /// Gets the request builder for PolicySets.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementPolicySetsCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementPolicySetsCollectionRequestBuilder PolicySets { get; }
+
+        /// <summary>
         /// Gets the request builder for SideLoadingKeys.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder"/>.</returns>

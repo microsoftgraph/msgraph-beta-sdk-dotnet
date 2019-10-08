@@ -42,12 +42,6 @@ namespace Microsoft.Graph
         public DowngradeJustification DowngradeJustification { get; set; }
     
         /// <summary>
-        /// Gets or sets actionSource.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionSource", Required = Newtonsoft.Json.Required.Default)]
-        public ActionSource? ActionSource { get; set; }
-    
-        /// <summary>
         /// Gets or sets extendedProperties.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extendedProperties", Required = Newtonsoft.Json.Required.Default)]

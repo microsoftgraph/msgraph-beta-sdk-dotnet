@@ -37,36 +37,5 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IInformationProtectionPolicyLabelsCollectionRequestBuilder"/>.</returns>
         IInformationProtectionPolicyLabelsCollectionRequestBuilder Labels { get; }
     
-        /// <summary>
-        /// Gets the request builder for InformationProtectionPolicyExtractLabel.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionPolicyExtractLabelRequestBuilder"/>.</returns>
-        IInformationProtectionPolicyExtractLabelRequestBuilder ExtractLabel(
-            ContentInfo contentInfo);
-
-        /// <summary>
-        /// Gets the request builder for InformationProtectionPolicyApplyLabel.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionPolicyApplyLabelRequestBuilder"/>.</returns>
-        IInformationProtectionPolicyApplyLabelRequestBuilder ApplyLabel(
-            ContentInfo contentInfo,
-            LabelingOptions labelingOptions);
-
-        /// <summary>
-        /// Gets the request builder for InformationProtectionPolicyRemoveLabel.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionPolicyRemoveLabelRequestBuilder"/>.</returns>
-        IInformationProtectionPolicyRemoveLabelRequestBuilder RemoveLabel(
-            ContentInfo contentInfo,
-            DowngradeJustification downgradeJustification = null);
-
-        /// <summary>
-        /// Gets the request builder for InformationProtectionPolicyApplyLabelFromClassification.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionPolicyApplyLabelFromClassificationRequestBuilder"/>.</returns>
-        IInformationProtectionPolicyApplyLabelFromClassificationRequestBuilder ApplyLabelFromClassification(
-            ContentInfo contentInfo,
-            IEnumerable<DetectedSensitiveContent> classificationResults);
-    
     }
 }

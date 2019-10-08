@@ -699,6 +699,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AppleUserInitiatedEnrollmentProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder AppleUserInitiatedEnrollmentProfiles
+        {
+            get
+            {
+                return new DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appleUserInitiatedEnrollmentProfiles"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagementConditions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementManagementConditionsCollectionRequestBuilder"/>.</returns>
@@ -875,6 +887,30 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("troubleshootingEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AutopilotEvents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAutopilotEventsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementAutopilotEventsCollectionRequestBuilder AutopilotEvents
+        {
+            get
+            {
+                return new DeviceManagementAutopilotEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("autopilotEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsFeatureUpdateProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder WindowsFeatureUpdateProfiles
+        {
+            get
+            {
+                return new DeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsFeatureUpdateProfiles"), this.Client);
             }
         }
 

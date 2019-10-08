@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for MdmWindowsInformationProtectionPolicyHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IMdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder"/>.</returns>
+        public IMdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new MdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
     }
 }

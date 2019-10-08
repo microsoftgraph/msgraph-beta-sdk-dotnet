@@ -22,5 +22,11 @@ namespace Microsoft.Graph
     public partial class InsightValueDouble : UserExperienceAnalyticsInsightValue
     {
 
+        /// <summary>
+        /// Gets or sets value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        public double? Value { get; set; }
+    
     }
 }

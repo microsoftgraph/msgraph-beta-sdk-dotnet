@@ -127,12 +127,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookCreateSessionRequestBuilder"/>.</returns>
         public IWorkbookCreateSessionRequestBuilder CreateSession(
-            bool persistChanges)
+            bool persistChanges,
+            bool? commitExplicitly = null)
         {
             return new WorkbookCreateSessionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createSession"),
                 this.Client,
-                persistChanges);
+                persistChanges,
+                commitExplicitly);
         }
 
         /// <summary>

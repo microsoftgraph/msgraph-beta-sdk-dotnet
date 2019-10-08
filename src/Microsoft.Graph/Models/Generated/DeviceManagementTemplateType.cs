@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         Custom = 4,
 	
+        /// <summary>
+        /// Security Template
+        /// </summary>
+        SecurityTemplate = 5,
+	
     }
 }

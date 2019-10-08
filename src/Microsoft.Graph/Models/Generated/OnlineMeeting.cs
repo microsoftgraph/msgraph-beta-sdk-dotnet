@@ -83,10 +83,10 @@ namespace Microsoft.Graph
         public MeetingParticipants Participants { get; set; }
     
         /// <summary>
-        /// Gets or sets meeting type.
+        /// Gets or sets is broadcast.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingType", Required = Newtonsoft.Json.Required.Default)]
-        public MeetingType? MeetingType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBroadcast", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBroadcast { get; set; }
     
         /// <summary>
         /// Gets or sets access level.

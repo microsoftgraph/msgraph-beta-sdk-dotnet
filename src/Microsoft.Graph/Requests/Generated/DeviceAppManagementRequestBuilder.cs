@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PolicySets.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementPolicySetsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementPolicySetsCollectionRequestBuilder PolicySets
+        {
+            get
+            {
+                return new DeviceAppManagementPolicySetsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policySets"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SideLoadingKeys.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder"/>.</returns>

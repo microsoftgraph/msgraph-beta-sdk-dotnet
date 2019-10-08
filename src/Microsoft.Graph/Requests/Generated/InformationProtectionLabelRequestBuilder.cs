@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new InformationProtectionLabelRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

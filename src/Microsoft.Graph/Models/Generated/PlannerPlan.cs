@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Planner Plan.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerPlan : Entity
+    public partial class PlannerPlan : PlannerDelta
     {
     
         /// <summary>

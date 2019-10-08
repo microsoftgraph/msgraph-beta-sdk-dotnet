@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementScriptRequestBuilder"/>.</returns>
         IDeviceManagementScriptRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceManagementScriptHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementScriptHasPayloadLinksRequestBuilder"/>.</returns>
+        IDeviceManagementScriptHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
     }
 }

@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         public EducationItemBody Instructions { get; set; }
     
         /// <summary>
+        /// Gets or sets close date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CloseDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets due date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]

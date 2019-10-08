@@ -35,14 +35,9 @@ namespace Microsoft.Graph
         Recommended = 2,
 	
         /// <summary>
-        /// Policy Default
+        /// Default
         /// </summary>
-        PolicyDefault = 3,
-	
-        /// <summary>
-        /// Mandatory
-        /// </summary>
-        Mandatory = 4,
+        Default = 3,
 	
     }
 }

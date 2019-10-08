@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         IDeviceCompliancePolicyRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyHasPayloadLinksRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
