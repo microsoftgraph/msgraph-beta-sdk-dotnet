@@ -2,43 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <IsPackable>false</IsPackable>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
     <AssemblyName>Microsoft.Graph.DotnetCore.Test</AssemblyName>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-    <RuntimeFrameworkVersion>2.1.4</RuntimeFrameworkVersion>
-    <Version>1.0.0</Version>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Requests\Functional\Resources\hamilton.PNG" />
-    <None Remove="Requests\Functional\Resources\textfile.txt" />
+    <EmbeddedResource Include="Requests\Functional\Resources\excelTestResource.xlsx" />
+    <EmbeddedResource Include="Requests\Functional\Resources\hamilton.PNG" />
+    <EmbeddedResource Include="Requests\Functional\Resources\textfile.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Requests\Functional\Resources\hamilton.PNG" />
-    <Content Include="Requests\Functional\Resources\textfile.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="1.*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
-    <ProjectReference Include="..\..\src\Microsoft.Graph\Microsoft.Graph.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mocks\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,18 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resource1.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resource1.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resource1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
 </Project>

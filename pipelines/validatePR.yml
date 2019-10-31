@@ -36,10 +36,16 @@ steps:
   inputs:
     debugMode: false
 
-- task: NuGetCommand@2
-  displayName: 'NuGet restore'
+# - task: NuGetCommand@2
+#   displayName: 'NuGet restore'
+#   inputs:
+#     vstsFeed: '/f887743a-88c6-4716-b4aa-50761b543a15'
+
+- task: DotNetCoreCLI@2
   inputs:
-    vstsFeed: '/f887743a-88c6-4716-b4aa-50761b543a15'
+    command: 'restore'
+    projects: '**/*.csproj'
+    feedsToUse: 'select'
 
 - task: MSBuild@1
   displayName: 'Build solution to run unit test'
