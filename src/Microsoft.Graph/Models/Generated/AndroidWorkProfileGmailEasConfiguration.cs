@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileGmailEasConfiguration : AndroidWorkProfileEasEmailProfileBase
     {
     
+		///<summary>
+		/// The AndroidWorkProfileGmailEasConfiguration constructor
+		///</summary>
+        public AndroidWorkProfileGmailEasConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidWorkProfileGmailEasConfiguration";
+        }
+	
     }
 }
 

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSExtensionsConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The MacOSExtensionsConfiguration constructor
+		///</summary>
+        public MacOSExtensionsConfiguration()
+        {
+            this.ODataType = "microsoft.graph.macOSExtensionsConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets kernel extension overrides allowed.
         /// If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.

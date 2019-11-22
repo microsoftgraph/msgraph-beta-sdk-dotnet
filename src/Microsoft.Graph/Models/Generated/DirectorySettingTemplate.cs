@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DirectorySettingTemplate : DirectoryObject
     {
     
+		///<summary>
+		/// The DirectorySettingTemplate constructor
+		///</summary>
+        public DirectorySettingTemplate()
+        {
+            this.ODataType = "microsoft.graph.directorySettingTemplate";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

@@ -50,5 +50,82 @@ namespace Microsoft.Graph
             return new TrustFrameworkKeySetRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetGenerateKey.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetGenerateKeyRequestBuilder"/>.</returns>
+        public ITrustFrameworkKeySetGenerateKeyRequestBuilder GenerateKey(
+            string use = null,
+            string kty = null,
+            Int64? nbf = null,
+            Int64? exp = null)
+        {
+            return new TrustFrameworkKeySetGenerateKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.generateKey"),
+                this.Client,
+                use,
+                kty,
+                nbf,
+                exp);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadSecret.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadSecretRequestBuilder"/>.</returns>
+        public ITrustFrameworkKeySetUploadSecretRequestBuilder UploadSecret(
+            string use = null,
+            string k = null,
+            Int64? nbf = null,
+            Int64? exp = null)
+        {
+            return new TrustFrameworkKeySetUploadSecretRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.uploadSecret"),
+                this.Client,
+                use,
+                k,
+                nbf,
+                exp);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadCertificate.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadCertificateRequestBuilder"/>.</returns>
+        public ITrustFrameworkKeySetUploadCertificateRequestBuilder UploadCertificate(
+            string key = null)
+        {
+            return new TrustFrameworkKeySetUploadCertificateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.uploadCertificate"),
+                this.Client,
+                key);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadPkcs12.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadPkcs12RequestBuilder"/>.</returns>
+        public ITrustFrameworkKeySetUploadPkcs12RequestBuilder UploadPkcs12(
+            string key = null,
+            string password = null)
+        {
+            return new TrustFrameworkKeySetUploadPkcs12RequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.uploadPkcs12"),
+                this.Client,
+                key,
+                password);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetGetActiveKey.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetGetActiveKeyRequestBuilder"/>.</returns>
+        public ITrustFrameworkKeySetGetActiveKeyRequestBuilder GetActiveKey()
+        {
+            return new TrustFrameworkKeySetGetActiveKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActiveKey"),
+                this.Client);
+        }
+    
     }
 }

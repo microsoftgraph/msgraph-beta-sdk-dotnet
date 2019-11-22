@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskActiveDirectoryGroup : WindowsKioskUser
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsKioskActiveDirectoryGroup"/> class.
+        /// </summary>
+        public WindowsKioskActiveDirectoryGroup()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskActiveDirectoryGroup";
+        }
 
         /// <summary>
         /// Gets or sets groupName.

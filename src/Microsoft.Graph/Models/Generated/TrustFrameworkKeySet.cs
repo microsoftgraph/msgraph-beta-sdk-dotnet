@@ -22,6 +22,20 @@ namespace Microsoft.Graph
     public partial class TrustFrameworkKeySet : Entity
     {
     
+		///<summary>
+		/// The TrustFrameworkKeySet constructor
+		///</summary>
+        public TrustFrameworkKeySet()
+        {
+            this.ODataType = "microsoft.graph.trustFrameworkKeySet";
+        }
+	
+        /// <summary>
+        /// Gets or sets keys.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keys", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<TrustFrameworkKey> Keys { get; set; }
+    
     }
 }
 

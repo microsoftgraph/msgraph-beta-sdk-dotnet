@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AzureADWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile
     {
     
+		///<summary>
+		/// The AzureADWindowsAutopilotDeploymentProfile constructor
+		///</summary>
+        public AzureADWindowsAutopilotDeploymentProfile()
+        {
+            this.ODataType = "microsoft.graph.azureADWindowsAutopilotDeploymentProfile";
+        }
+	
     }
 }
 

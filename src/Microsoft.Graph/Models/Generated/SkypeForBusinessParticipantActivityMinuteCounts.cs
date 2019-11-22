@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SkypeForBusinessParticipantActivityMinuteCounts : Entity
     {
     
+		///<summary>
+		/// The SkypeForBusinessParticipantActivityMinuteCounts constructor
+		///</summary>
+        public SkypeForBusinessParticipantActivityMinuteCounts()
+        {
+            this.ODataType = "microsoft.graph.skypeForBusinessParticipantActivityMinuteCounts";
+        }
+	
         /// <summary>
         /// Gets or sets audiovideo.
         /// </summary>

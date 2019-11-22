@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UnifiedRoleAssignment : Entity
     {
     
+		///<summary>
+		/// The UnifiedRoleAssignment constructor
+		///</summary>
+        public UnifiedRoleAssignment()
+        {
+            this.ODataType = "microsoft.graph.unifiedRoleAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets principal id.
         /// </summary>
@@ -39,6 +47,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
         public string RoleDefinitionId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets principal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principal", Required = Newtonsoft.Json.Required.Default)]
+        public DirectoryObject Principal { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        public UnifiedRoleDefinition RoleDefinition { get; set; }
     
     }
 }

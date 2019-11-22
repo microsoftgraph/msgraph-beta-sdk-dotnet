@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SynchronizationProgress
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SynchronizationProgress"/> class.
+        /// </summary>
+        public SynchronizationProgress()
+        {
+            this.ODataType = "microsoft.graph.synchronizationProgress";
+        }
 
         /// <summary>
         /// Gets or sets completedUnits.

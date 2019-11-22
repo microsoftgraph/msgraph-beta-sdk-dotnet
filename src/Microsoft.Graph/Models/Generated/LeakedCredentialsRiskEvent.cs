@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class LeakedCredentialsRiskEvent : IdentityRiskEvent
     {
     
+		///<summary>
+		/// The LeakedCredentialsRiskEvent constructor
+		///</summary>
+        public LeakedCredentialsRiskEvent()
+        {
+            this.ODataType = "microsoft.graph.leakedCredentialsRiskEvent";
+        }
+	
     }
 }
 

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ClassificationInnerError
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassificationInnerError"/> class.
+        /// </summary>
+        public ClassificationInnerError()
+        {
+            this.ODataType = "microsoft.graph.classificationInnerError";
+        }
 
         /// <summary>
         /// Gets or sets errorDateTime.

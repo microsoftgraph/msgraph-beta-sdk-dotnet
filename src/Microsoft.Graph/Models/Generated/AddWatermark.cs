@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddWatermark : MarkContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddWatermark"/> class.
+        /// </summary>
+        public AddWatermark()
+        {
+            this.ODataType = "microsoft.graph.addWatermark";
+        }
 
         /// <summary>
         /// Gets or sets orientation.

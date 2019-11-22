@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AppRoleAssignment : Entity
     {
     
+		///<summary>
+		/// The AppRoleAssignment constructor
+		///</summary>
+        public AppRoleAssignment()
+        {
+            this.ODataType = "microsoft.graph.appRoleAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets app role id.
         /// </summary>

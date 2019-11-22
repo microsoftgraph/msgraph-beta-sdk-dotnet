@@ -29,5 +29,20 @@ namespace Microsoft.Graph
         /// </summary>
         Voicemail = 1,
 	
+        /// <summary>
+        /// Skype For Business
+        /// </summary>
+        SkypeForBusiness = 2,
+	
+        /// <summary>
+        /// Skype For Business Voip Phone
+        /// </summary>
+        SkypeForBusinessVoipPhone = 3,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
+	
     }
 }

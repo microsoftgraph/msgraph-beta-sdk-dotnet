@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class EducationSynchronizationLicenseAssignment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EducationSynchronizationLicenseAssignment"/> class.
+        /// </summary>
+        public EducationSynchronizationLicenseAssignment()
+        {
+            this.ODataType = "microsoft.graph.educationSynchronizationLicenseAssignment";
+        }
 
         /// <summary>
         /// Gets or sets appliesTo.

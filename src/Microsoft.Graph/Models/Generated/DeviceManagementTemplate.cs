@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementTemplate : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementTemplate constructor
+		///</summary>
+        public DeviceManagementTemplate()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementTemplate";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The template's display name
@@ -63,6 +71,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementTemplateType? TemplateType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets platform type.
+        /// The template's platform.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformType", Required = Newtonsoft.Json.Required.Default)]
+        public PolicyPlatformType? PlatformType { get; set; }
     
         /// <summary>
         /// Gets or sets published date time.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceOwnerGeneralDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidDeviceOwnerGeneralDeviceConfiguration constructor
+		///</summary>
+        public AndroidDeviceOwnerGeneralDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets accounts block modification.
         /// Indicates whether or not adding or removing accounts is disabled.
@@ -112,6 +120,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryResetBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? FactoryResetBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets global proxy.
+        /// Proxy is set up directly with host, port and excluded hosts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "globalProxy", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerGlobalProxy GlobalProxy { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode screen saver configuration enabled.

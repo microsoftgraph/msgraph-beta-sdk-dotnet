@@ -19,9 +19,17 @@ namespace Microsoft.Graph
     /// The type Resource Specific Permission Grant.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class ResourceSpecificPermissionGrant : Entity
+    public partial class ResourceSpecificPermissionGrant : DirectoryObject
     {
     
+		///<summary>
+		/// The ResourceSpecificPermissionGrant constructor
+		///</summary>
+        public ResourceSpecificPermissionGrant()
+        {
+            this.ODataType = "microsoft.graph.resourceSpecificPermissionGrant";
+        }
+	
         /// <summary>
         /// Gets or sets client id.
         /// </summary>

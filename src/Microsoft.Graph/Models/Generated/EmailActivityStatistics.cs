@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EmailActivityStatistics : ActivityStatistics
     {
     
+		///<summary>
+		/// The EmailActivityStatistics constructor
+		///</summary>
+        public EmailActivityStatistics()
+        {
+            this.ODataType = "microsoft.graph.emailActivityStatistics";
+        }
+	
         /// <summary>
         /// Gets or sets after hours.
         /// </summary>

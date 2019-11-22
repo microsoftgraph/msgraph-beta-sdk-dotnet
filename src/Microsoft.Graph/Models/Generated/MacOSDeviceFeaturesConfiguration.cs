@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     
+		///<summary>
+		/// The MacOSDeviceFeaturesConfiguration constructor
+		///</summary>
+        public MacOSDeviceFeaturesConfiguration()
+        {
+            this.ODataType = "microsoft.graph.macOSDeviceFeaturesConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets auto launch items.
         /// List of applications, files, folders, and other items to launch when the user logs in. This collection can contain a maximum of 500 elements.
@@ -147,6 +155,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenLockDisableImmediate", Required = Newtonsoft.Json.Required.Default)]
         public bool? ScreenLockDisableImmediate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets associated domains.
+        /// Gets or sets a list that maps apps to their associated domains. The key should match the app's ID, and the value should be a string in the form of "service:domain" where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "associatedDomains", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> AssociatedDomains { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single sign on extension.
+        /// Gets or sets a single sign-on extension profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        public SingleSignOnExtension SingleSignOnExtension { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single sign on extension pkinit certificate.
+        /// PKINIT Certificate for the authentication with single sign-on extensions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtensionPkinitCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSCertificateProfileBase SingleSignOnExtensionPkinitCertificate { get; set; }
     
     }
 }

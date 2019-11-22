@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SensitivityPolicySettings : Entity
     {
     
+		///<summary>
+		/// The SensitivityPolicySettings constructor
+		///</summary>
+        public SensitivityPolicySettings()
+        {
+            this.ODataType = "microsoft.graph.sensitivityPolicySettings";
+        }
+	
         /// <summary>
         /// Gets or sets is mandatory.
         /// </summary>

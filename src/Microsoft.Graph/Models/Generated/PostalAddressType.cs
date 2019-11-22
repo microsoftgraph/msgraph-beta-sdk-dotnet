@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PostalAddressType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostalAddressType"/> class.
+        /// </summary>
+        public PostalAddressType()
+        {
+            this.ODataType = "microsoft.graph.postalAddressType";
+        }
 
         /// <summary>
         /// Gets or sets street.

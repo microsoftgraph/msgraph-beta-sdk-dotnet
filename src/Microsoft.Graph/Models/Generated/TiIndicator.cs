@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TiIndicator : Entity
     {
     
+		///<summary>
+		/// The TiIndicator constructor
+		///</summary>
+        public TiIndicator()
+        {
+            this.ODataType = "microsoft.graph.tiIndicator";
+        }
+	
         /// <summary>
         /// Gets or sets action.
         /// </summary>

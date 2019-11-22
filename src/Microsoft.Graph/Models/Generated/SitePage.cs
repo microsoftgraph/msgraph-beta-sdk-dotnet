@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SitePage : BaseItem
     {
     
+		///<summary>
+		/// The SitePage constructor
+		///</summary>
+        public SitePage()
+        {
+            this.ODataType = "microsoft.graph.sitePage";
+        }
+	
         /// <summary>
         /// Gets or sets title.
         /// </summary>

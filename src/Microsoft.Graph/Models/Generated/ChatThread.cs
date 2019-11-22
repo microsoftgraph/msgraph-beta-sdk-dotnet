@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ChatThread : Entity
     {
     
+		///<summary>
+		/// The ChatThread constructor
+		///</summary>
+        public ChatThread()
+        {
+            this.ODataType = "microsoft.graph.chatThread";
+        }
+	
         /// <summary>
         /// Gets or sets root message.
         /// </summary>

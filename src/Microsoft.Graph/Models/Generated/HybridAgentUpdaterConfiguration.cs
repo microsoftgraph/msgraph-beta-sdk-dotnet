@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class HybridAgentUpdaterConfiguration
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HybridAgentUpdaterConfiguration"/> class.
+        /// </summary>
+        public HybridAgentUpdaterConfiguration()
+        {
+            this.ODataType = "microsoft.graph.hybridAgentUpdaterConfiguration";
+        }
 
         /// <summary>
         /// Gets or sets deferUpdateDateTime.

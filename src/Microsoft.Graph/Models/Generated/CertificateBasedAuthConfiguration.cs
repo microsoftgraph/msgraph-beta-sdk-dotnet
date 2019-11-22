@@ -22,8 +22,17 @@ namespace Microsoft.Graph
     public partial class CertificateBasedAuthConfiguration : Entity
     {
     
+		///<summary>
+		/// The CertificateBasedAuthConfiguration constructor
+		///</summary>
+        public CertificateBasedAuthConfiguration()
+        {
+            this.ODataType = "microsoft.graph.certificateBasedAuthConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets certificate authorities.
+        /// Collection of certificate authorities which creates a trusted certificate chain.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateAuthorities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CertificateAuthority> CertificateAuthorities { get; set; }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81StoreApp : MobileApp
     {
     
+		///<summary>
+		/// The WindowsPhone81StoreApp constructor
+		///</summary>
+        public WindowsPhone81StoreApp()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81StoreApp";
+        }
+	
         /// <summary>
         /// Gets or sets app store url.
         /// The Windows Phone 8.1 app store URL.

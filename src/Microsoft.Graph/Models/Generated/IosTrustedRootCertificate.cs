@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosTrustedRootCertificate : DeviceConfiguration
     {
     
+		///<summary>
+		/// The IosTrustedRootCertificate constructor
+		///</summary>
+        public IosTrustedRootCertificate()
+        {
+            this.ODataType = "microsoft.graph.iosTrustedRootCertificate";
+        }
+	
         /// <summary>
         /// Gets or sets trusted root certificate.
         /// Trusted Root Certificate.

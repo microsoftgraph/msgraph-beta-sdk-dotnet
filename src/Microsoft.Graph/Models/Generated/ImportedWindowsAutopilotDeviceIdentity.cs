@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ImportedWindowsAutopilotDeviceIdentity : Entity
     {
     
+		///<summary>
+		/// The ImportedWindowsAutopilotDeviceIdentity constructor
+		///</summary>
+        public ImportedWindowsAutopilotDeviceIdentity()
+        {
+            this.ODataType = "microsoft.graph.importedWindowsAutopilotDeviceIdentity";
+        }
+	
         /// <summary>
         /// Gets or sets order identifier.
         /// Order Id of the Windows autopilot device.

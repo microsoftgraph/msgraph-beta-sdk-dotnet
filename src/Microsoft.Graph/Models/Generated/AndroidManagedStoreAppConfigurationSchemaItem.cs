@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AndroidManagedStoreAppConfigurationSchemaItem
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AndroidManagedStoreAppConfigurationSchemaItem"/> class.
+        /// </summary>
+        public AndroidManagedStoreAppConfigurationSchemaItem()
+        {
+            this.ODataType = "microsoft.graph.androidManagedStoreAppConfigurationSchemaItem";
+        }
 
         /// <summary>
         /// Gets or sets index.

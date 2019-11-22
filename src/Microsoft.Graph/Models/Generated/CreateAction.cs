@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CreateAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAction"/> class.
+        /// </summary>
+        public CreateAction()
+        {
+            this.ODataType = "microsoft.graph.createAction";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MentionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MentionAction"/> class.
+        /// </summary>
+        public MentionAction()
+        {
+            this.ODataType = "microsoft.graph.mentionAction";
+        }
 
         /// <summary>
         /// Gets or sets mentionees.

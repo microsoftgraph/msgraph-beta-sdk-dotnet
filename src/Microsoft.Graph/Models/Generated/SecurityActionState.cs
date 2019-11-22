@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SecurityActionState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityActionState"/> class.
+        /// </summary>
+        public SecurityActionState()
+        {
+            this.ODataType = "microsoft.graph.securityActionState";
+        }
 
         /// <summary>
         /// Gets or sets appId.

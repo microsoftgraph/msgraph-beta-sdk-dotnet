@@ -74,5 +74,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for JournalPost.
+        /// </summary>
+        /// <returns>The <see cref="IJournalPostRequestBuilder"/>.</returns>
+        public IJournalPostRequestBuilder Post()
+        {
+            return new JournalPostRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.post"),
+                this.Client);
+        }
+    
     }
 }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IdentityRiskEvent : Entity
     {
     
+		///<summary>
+		/// The IdentityRiskEvent constructor
+		///</summary>
+        public IdentityRiskEvent()
+        {
+            this.ODataType = "microsoft.graph.identityRiskEvent";
+        }
+	
         /// <summary>
         /// Gets or sets user display name.
         /// </summary>

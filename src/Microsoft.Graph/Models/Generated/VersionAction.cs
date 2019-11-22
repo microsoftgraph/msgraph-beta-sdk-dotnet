@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class VersionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VersionAction"/> class.
+        /// </summary>
+        public VersionAction()
+        {
+            this.ODataType = "microsoft.graph.versionAction";
+        }
 
         /// <summary>
         /// Gets or sets newVersion.

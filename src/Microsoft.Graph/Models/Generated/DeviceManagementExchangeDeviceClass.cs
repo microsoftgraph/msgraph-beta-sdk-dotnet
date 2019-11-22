@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceManagementExchangeDeviceClass
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceManagementExchangeDeviceClass"/> class.
+        /// </summary>
+        public DeviceManagementExchangeDeviceClass()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementExchangeDeviceClass";
+        }
 
         /// <summary>
         /// Gets or sets name.

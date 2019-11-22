@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWiFiConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidWiFiConfiguration constructor
+		///</summary>
+        public AndroidWiFiConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidWiFiConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets network name.
         /// Network Name

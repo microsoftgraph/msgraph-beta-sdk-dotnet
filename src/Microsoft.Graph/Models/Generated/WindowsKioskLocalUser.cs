@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskLocalUser : WindowsKioskUser
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsKioskLocalUser"/> class.
+        /// </summary>
+        public WindowsKioskLocalUser()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskLocalUser";
+        }
 
         /// <summary>
         /// Gets or sets userName.

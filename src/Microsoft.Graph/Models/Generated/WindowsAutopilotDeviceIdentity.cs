@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsAutopilotDeviceIdentity : Entity
     {
     
+		///<summary>
+		/// The WindowsAutopilotDeviceIdentity constructor
+		///</summary>
+        public WindowsAutopilotDeviceIdentity()
+        {
+            this.ODataType = "microsoft.graph.windowsAutopilotDeviceIdentity";
+        }
+	
         /// <summary>
         /// Gets or sets deployment profile assignment status.
         /// Profile assignment status of the Windows autopilot device.

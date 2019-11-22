@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceManagementApplicabilityRuleOsEdition
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceManagementApplicabilityRuleOsEdition"/> class.
+        /// </summary>
+        public DeviceManagementApplicabilityRuleOsEdition()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementApplicabilityRuleOsEdition";
+        }
 
         /// <summary>
         /// Gets or sets osEditionTypes.

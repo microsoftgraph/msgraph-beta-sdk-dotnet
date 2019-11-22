@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceOperatingSystemSummary
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceOperatingSystemSummary"/> class.
+        /// </summary>
+        public DeviceOperatingSystemSummary()
+        {
+            this.ODataType = "microsoft.graph.deviceOperatingSystemSummary";
+        }
 
         /// <summary>
         /// Gets or sets androidCount.
@@ -64,6 +71,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UnknownCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets androidDedicatedCount.
+        /// Number of dedicated Android devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDedicatedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AndroidDedicatedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets androidDeviceAdminCount.
+        /// Number of device admin Android devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceAdminCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AndroidDeviceAdminCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets androidFullyManagedCount.
+        /// Number of fully managed Android devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidFullyManagedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AndroidFullyManagedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets androidWorkProfileCount.
+        /// Number of work profile Android devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidWorkProfileCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AndroidWorkProfileCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

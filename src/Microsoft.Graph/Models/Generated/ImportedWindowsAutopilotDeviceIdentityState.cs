@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ImportedWindowsAutopilotDeviceIdentityState
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImportedWindowsAutopilotDeviceIdentityState"/> class.
+        /// </summary>
+        public ImportedWindowsAutopilotDeviceIdentityState()
+        {
+            this.ODataType = "microsoft.graph.importedWindowsAutopilotDeviceIdentityState";
+        }
 
         /// <summary>
         /// Gets or sets deviceImportStatus.

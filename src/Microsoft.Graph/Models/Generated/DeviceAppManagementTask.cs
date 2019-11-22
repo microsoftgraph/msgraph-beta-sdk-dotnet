@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceAppManagementTask : Entity
     {
     
+		///<summary>
+		/// The DeviceAppManagementTask constructor
+		///</summary>
+        public DeviceAppManagementTask()
+        {
+            this.ODataType = "microsoft.graph.deviceAppManagementTask";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The name.

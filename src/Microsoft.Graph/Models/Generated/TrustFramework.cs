@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TrustFramework : Entity
     {
     
+		///<summary>
+		/// The TrustFramework constructor
+		///</summary>
+        public TrustFramework()
+        {
+            this.ODataType = "microsoft.graph.trustFramework";
+        }
+	
         /// <summary>
         /// Gets or sets policies.
         /// </summary>

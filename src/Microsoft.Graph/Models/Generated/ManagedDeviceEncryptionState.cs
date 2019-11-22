@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceEncryptionState : Entity
     {
     
+		///<summary>
+		/// The ManagedDeviceEncryptionState constructor
+		///</summary>
+        public ManagedDeviceEncryptionState()
+        {
+            this.ODataType = "microsoft.graph.managedDeviceEncryptionState";
+        }
+	
         /// <summary>
         /// Gets or sets user principal name.
         /// User name

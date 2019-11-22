@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MeetingParticipants
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MeetingParticipants"/> class.
+        /// </summary>
+        public MeetingParticipants()
+        {
+            this.ODataType = "microsoft.graph.meetingParticipants";
+        }
 
         /// <summary>
         /// Gets or sets organizer.

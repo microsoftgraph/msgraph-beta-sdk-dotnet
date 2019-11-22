@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AudioRoutingGroup : Entity
     {
     
+		///<summary>
+		/// The AudioRoutingGroup constructor
+		///</summary>
+        public AudioRoutingGroup()
+        {
+            this.ODataType = "microsoft.graph.audioRoutingGroup";
+        }
+	
         /// <summary>
         /// Gets or sets routing mode.
         /// </summary>

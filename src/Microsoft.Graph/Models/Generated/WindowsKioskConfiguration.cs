@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsKioskConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsKioskConfiguration constructor
+		///</summary>
+        public WindowsKioskConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets kiosk profiles.
         /// This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.

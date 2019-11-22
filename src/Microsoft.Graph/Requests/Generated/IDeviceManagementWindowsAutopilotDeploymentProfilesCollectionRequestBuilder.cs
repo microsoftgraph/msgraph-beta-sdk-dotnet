@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWindowsAutopilotDeploymentProfileRequestBuilder"/>.</returns>
         IWindowsAutopilotDeploymentProfileRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeploymentProfileHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder"/>.</returns>
+        IWindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
     }
 }

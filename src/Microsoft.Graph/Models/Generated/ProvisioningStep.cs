@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ProvisioningStep
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProvisioningStep"/> class.
+        /// </summary>
+        public ProvisioningStep()
+        {
+            this.ODataType = "microsoft.graph.provisioningStep";
+        }
 
         /// <summary>
         /// Gets or sets name.

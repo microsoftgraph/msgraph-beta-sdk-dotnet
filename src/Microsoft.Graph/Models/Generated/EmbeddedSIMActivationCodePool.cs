@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EmbeddedSIMActivationCodePool : Entity
     {
     
+		///<summary>
+		/// The EmbeddedSIMActivationCodePool constructor
+		///</summary>
+        public EmbeddedSIMActivationCodePool()
+        {
+            this.ODataType = "microsoft.graph.embeddedSIMActivationCodePool";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The admin defined name of the embedded SIM activation code pool.

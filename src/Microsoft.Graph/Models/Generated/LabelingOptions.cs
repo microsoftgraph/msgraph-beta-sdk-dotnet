@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LabelingOptions
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelingOptions"/> class.
+        /// </summary>
+        public LabelingOptions()
+        {
+            this.ODataType = "microsoft.graph.labelingOptions";
+        }
 
         /// <summary>
         /// Gets or sets labelId.
@@ -40,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downgradeJustification", Required = Newtonsoft.Json.Required.Default)]
         public DowngradeJustification DowngradeJustification { get; set; }
-    
-        /// <summary>
-        /// Gets or sets actionSource.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionSource", Required = Newtonsoft.Json.Required.Default)]
-        public ActionSource? ActionSource { get; set; }
     
         /// <summary>
         /// Gets or sets extendedProperties.

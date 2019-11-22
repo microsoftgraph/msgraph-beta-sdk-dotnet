@@ -19,9 +19,17 @@ namespace Microsoft.Graph
     /// The type Planner Progress Task Board Task Format.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerProgressTaskBoardTaskFormat : Entity
+    public partial class PlannerProgressTaskBoardTaskFormat : PlannerDelta
     {
     
+		///<summary>
+		/// The PlannerProgressTaskBoardTaskFormat constructor
+		///</summary>
+        public PlannerProgressTaskBoardTaskFormat()
+        {
+            this.ODataType = "microsoft.graph.plannerProgressTaskBoardTaskFormat";
+        }
+	
         /// <summary>
         /// Gets or sets order hint.
         /// Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.

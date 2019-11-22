@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Notification : Entity
     {
     
+		///<summary>
+		/// The Notification constructor
+		///</summary>
+        public Notification()
+        {
+            this.ODataType = "microsoft.graph.notification";
+        }
+	
         /// <summary>
         /// Gets or sets target host name.
         /// </summary>

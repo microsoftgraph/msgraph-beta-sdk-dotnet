@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ServicePrincipal : DirectoryObject
     {
     
+		///<summary>
+		/// The ServicePrincipal constructor
+		///</summary>
+        public ServicePrincipal()
+        {
+            this.ODataType = "microsoft.graph.servicePrincipal";
+        }
+	
         /// <summary>
         /// Gets or sets account enabled.
         /// </summary>
@@ -45,6 +53,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
         public string AppId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application template id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        public string ApplicationTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets app owner organization id.
@@ -83,16 +97,28 @@ namespace Microsoft.Graph
         public IEnumerable<KeyCredential> KeyCredentials { get; set; }
     
         /// <summary>
+        /// Gets or sets info.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "info", Required = Newtonsoft.Json.Required.Default)]
+        public InformationalUrl Info { get; set; }
+    
+        /// <summary>
         /// Gets or sets logout url.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logoutUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LogoutUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets oauth2permissions.
+        /// Gets or sets notification email addresses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oauth2Permissions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<OAuth2Permission> Oauth2Permissions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationEmailAddresses", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> NotificationEmailAddresses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets published permission scopes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedPermissionScopes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PermissionScope> PublishedPermissionScopes { get; set; }
     
         /// <summary>
         /// Gets or sets password credentials.

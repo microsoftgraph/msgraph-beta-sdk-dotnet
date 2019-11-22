@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceCompliancePolicyGroupAssignment : Entity
     {
     
+		///<summary>
+		/// The DeviceCompliancePolicyGroupAssignment constructor
+		///</summary>
+        public DeviceCompliancePolicyGroupAssignment()
+        {
+            this.ODataType = "microsoft.graph.deviceCompliancePolicyGroupAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target group id.
         /// The Id of the AAD group we are targeting the device compliance policy to.

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows10VpnProxyServer : VpnProxyServer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Windows10VpnProxyServer"/> class.
+        /// </summary>
+        public Windows10VpnProxyServer()
+        {
+            this.ODataType = "microsoft.graph.windows10VpnProxyServer";
+        }
 
         /// <summary>
         /// Gets or sets bypassProxyServerForLocalAddress.

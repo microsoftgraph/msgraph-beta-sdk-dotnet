@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MobileAppTroubleshootingAppTargetHistory : MobileAppTroubleshootingHistoryItem
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MobileAppTroubleshootingAppTargetHistory"/> class.
+        /// </summary>
+        public MobileAppTroubleshootingAppTargetHistory()
+        {
+            this.ODataType = "microsoft.graph.mobileAppTroubleshootingAppTargetHistory";
+        }
 
         /// <summary>
         /// Gets or sets securityGroupId.

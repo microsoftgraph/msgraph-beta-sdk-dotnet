@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MetadataAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MetadataAction"/> class.
+        /// </summary>
+        public MetadataAction()
+        {
+            this.ODataType = "microsoft.graph.metadataAction";
+        }
 
         /// <summary>
         /// Gets or sets metadataToRemove.

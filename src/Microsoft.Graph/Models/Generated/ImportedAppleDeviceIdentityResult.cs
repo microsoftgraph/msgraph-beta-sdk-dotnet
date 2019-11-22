@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity
     {
     
+		///<summary>
+		/// The ImportedAppleDeviceIdentityResult constructor
+		///</summary>
+        public ImportedAppleDeviceIdentityResult()
+        {
+            this.ODataType = "microsoft.graph.importedAppleDeviceIdentityResult";
+        }
+	
         /// <summary>
         /// Gets or sets status.
         /// Status of imported device identity

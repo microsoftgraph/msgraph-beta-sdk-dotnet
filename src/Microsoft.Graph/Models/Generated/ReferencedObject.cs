@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ReferencedObject
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferencedObject"/> class.
+        /// </summary>
+        public ReferencedObject()
+        {
+            this.ODataType = "microsoft.graph.referencedObject";
+        }
 
         /// <summary>
         /// Gets or sets referencedObjectName.

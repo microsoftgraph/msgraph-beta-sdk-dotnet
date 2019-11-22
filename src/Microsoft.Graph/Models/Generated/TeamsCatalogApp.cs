@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TeamsCatalogApp : Entity
     {
     
+		///<summary>
+		/// The TeamsCatalogApp constructor
+		///</summary>
+        public TeamsCatalogApp()
+        {
+            this.ODataType = "microsoft.graph.teamsCatalogApp";
+        }
+	
         /// <summary>
         /// Gets or sets external id.
         /// </summary>

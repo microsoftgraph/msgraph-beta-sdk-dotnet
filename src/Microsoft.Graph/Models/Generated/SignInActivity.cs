@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SignInActivity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignInActivity"/> class.
+        /// </summary>
+        public SignInActivity()
+        {
+            this.ODataType = "microsoft.graph.signInActivity";
+        }
 
         /// <summary>
         /// Gets or sets lastSignInDateTime.

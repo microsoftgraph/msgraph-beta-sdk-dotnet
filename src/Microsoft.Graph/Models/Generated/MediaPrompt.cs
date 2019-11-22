@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MediaPrompt : Prompt
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MediaPrompt"/> class.
+        /// </summary>
+        public MediaPrompt()
+        {
+            this.ODataType = "microsoft.graph.mediaPrompt";
+        }
 
         /// <summary>
         /// Gets or sets mediaInfo.

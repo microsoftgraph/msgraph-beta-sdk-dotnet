@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GovernanceRoleSetting : Entity
     {
     
+		///<summary>
+		/// The GovernanceRoleSetting constructor
+		///</summary>
+        public GovernanceRoleSetting()
+        {
+            this.ODataType = "microsoft.graph.governanceRoleSetting";
+        }
+	
         /// <summary>
         /// Gets or sets resource id.
         /// </summary>

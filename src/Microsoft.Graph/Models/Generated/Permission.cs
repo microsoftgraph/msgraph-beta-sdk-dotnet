@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Permission : Entity
     {
     
+		///<summary>
+		/// The Permission constructor
+		///</summary>
+        public Permission()
+        {
+            this.ODataType = "microsoft.graph.permission";
+        }
+	
         /// <summary>
         /// Gets or sets expiration date time.
         /// </summary>

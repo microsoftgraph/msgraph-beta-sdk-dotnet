@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PublishedResource : Entity
     {
     
+		///<summary>
+		/// The PublishedResource constructor
+		///</summary>
+        public PublishedResource()
+        {
+            this.ODataType = "microsoft.graph.publishedResource";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

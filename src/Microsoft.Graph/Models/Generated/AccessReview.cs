@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AccessReview : Entity
     {
     
+		///<summary>
+		/// The AccessReview constructor
+		///</summary>
+        public AccessReview()
+        {
+            this.ODataType = "microsoft.graph.accessReview";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ChatMessageBody
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageBody"/> class.
+        /// </summary>
+        public ChatMessageBody()
+        {
+            this.ODataType = "microsoft.graph.chatMessageBody";
+        }
 
         /// <summary>
         /// Gets or sets content.

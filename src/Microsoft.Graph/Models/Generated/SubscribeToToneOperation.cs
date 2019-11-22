@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SubscribeToToneOperation : CommsOperation
     {
     
+		///<summary>
+		/// The SubscribeToToneOperation constructor
+		///</summary>
+        public SubscribeToToneOperation()
+        {
+            this.ODataType = "microsoft.graph.subscribeToToneOperation";
+        }
+	
     }
 }
 

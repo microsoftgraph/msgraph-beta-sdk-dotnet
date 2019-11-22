@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAndroidManagedAppProtectionRequestBuilder"/>.</returns>
         IAndroidManagedAppProtectionRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for AndroidManagedAppProtectionHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidManagedAppProtectionHasPayloadLinksRequestBuilder"/>.</returns>
+        IAndroidManagedAppProtectionHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
     }
 }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSEndpointProtectionConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The MacOSEndpointProtectionConfiguration constructor
+		///</summary>
+        public MacOSEndpointProtectionConfiguration()
+        {
+            this.ODataType = "microsoft.graph.macOSEndpointProtectionConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets gatekeeper allowed app source.
         /// System and Privacy setting that determines which download locations apps can be run from on a macOS device.

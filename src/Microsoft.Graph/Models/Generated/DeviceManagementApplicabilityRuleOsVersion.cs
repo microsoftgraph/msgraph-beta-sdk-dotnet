@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceManagementApplicabilityRuleOsVersion
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceManagementApplicabilityRuleOsVersion"/> class.
+        /// </summary>
+        public DeviceManagementApplicabilityRuleOsVersion()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementApplicabilityRuleOsVersion";
+        }
 
         /// <summary>
         /// Gets or sets minOSVersion.

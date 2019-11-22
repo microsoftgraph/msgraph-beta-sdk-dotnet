@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CustomSubjectAlternativeName
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomSubjectAlternativeName"/> class.
+        /// </summary>
+        public CustomSubjectAlternativeName()
+        {
+            this.ODataType = "microsoft.graph.customSubjectAlternativeName";
+        }
 
         /// <summary>
         /// Gets or sets sanType.

@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         LowSecurityBiometric = 7,
 	
+        /// <summary>
+        /// Custom Password
+        /// </summary>
+        CustomPassword = 8,
+	
     }
 }

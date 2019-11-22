@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskAzureADGroup : WindowsKioskUser
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsKioskAzureADGroup"/> class.
+        /// </summary>
+        public WindowsKioskAzureADGroup()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskAzureADGroup";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

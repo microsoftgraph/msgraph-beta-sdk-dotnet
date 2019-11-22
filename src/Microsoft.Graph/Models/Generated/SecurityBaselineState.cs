@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SecurityBaselineState : Entity
     {
     
+		///<summary>
+		/// The SecurityBaselineState constructor
+		///</summary>
+        public SecurityBaselineState()
+        {
+            this.ODataType = "microsoft.graph.securityBaselineState";
+        }
+	
         /// <summary>
         /// Gets or sets security baseline template id.
         /// The security baseline template id

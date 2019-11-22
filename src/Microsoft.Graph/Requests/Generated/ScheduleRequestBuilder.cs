@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for OpenShifts.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleOpenShiftsCollectionRequestBuilder"/>.</returns>
+        public IScheduleOpenShiftsCollectionRequestBuilder OpenShifts
+        {
+            get
+            {
+                return new ScheduleOpenShiftsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("openShifts"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TimesOff.
         /// </summary>
         /// <returns>The <see cref="IScheduleTimesOffCollectionRequestBuilder"/>.</returns>
@@ -107,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("swapShiftsChangeRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OpenShiftChangeRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleOpenShiftChangeRequestsCollectionRequestBuilder"/>.</returns>
+        public IScheduleOpenShiftChangeRequestsCollectionRequestBuilder OpenShiftChangeRequests
+        {
+            get
+            {
+                return new ScheduleOpenShiftChangeRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("openShiftChangeRequests"), this.Client);
             }
         }
 

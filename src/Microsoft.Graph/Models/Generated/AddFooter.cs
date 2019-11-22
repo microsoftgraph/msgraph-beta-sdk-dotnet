@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddFooter : MarkContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddFooter"/> class.
+        /// </summary>
+        public AddFooter()
+        {
+            this.ODataType = "microsoft.graph.addFooter";
+        }
 
         /// <summary>
         /// Gets or sets margin.

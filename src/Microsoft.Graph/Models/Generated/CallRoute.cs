@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CallRoute
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CallRoute"/> class.
+        /// </summary>
+        public CallRoute()
+        {
+            this.ODataType = "microsoft.graph.callRoute";
+        }
 
         /// <summary>
         /// Gets or sets routingType.

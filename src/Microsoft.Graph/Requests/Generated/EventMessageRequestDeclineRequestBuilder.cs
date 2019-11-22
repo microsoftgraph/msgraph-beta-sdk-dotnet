@@ -23,15 +23,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="ProposedNewTime">A ProposedNewTime parameter for the OData method call.</param>
         /// <param name="SendResponse">A SendResponse parameter for the OData method call.</param>
         /// <param name="Comment">A Comment parameter for the OData method call.</param>
         public EventMessageRequestDeclineRequestBuilder(
             string requestUrl,
             IBaseClient client,
+            TimeSlot ProposedNewTime,
             bool? SendResponse,
             string Comment)
             : base(requestUrl, client)
         {
+            this.SetParameter("proposedNewTime", ProposedNewTime, true);
             this.SetParameter("sendResponse", SendResponse, true);
             this.SetParameter("comment", Comment, true);
         }
@@ -45,6 +48,11 @@ namespace Microsoft.Graph
         protected override IEventMessageRequestDeclineRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new EventMessageRequestDeclineRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("proposedNewTime"))
+            {
+                request.RequestBody.ProposedNewTime = this.GetParameter<TimeSlot>("proposedNewTime");
+            }
 
             if (this.HasParameter("sendResponse"))
             {

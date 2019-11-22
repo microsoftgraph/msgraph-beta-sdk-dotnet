@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AnonymousIpRiskEvent : LocatedRiskEvent
     {
     
+		///<summary>
+		/// The AnonymousIpRiskEvent constructor
+		///</summary>
+        public AnonymousIpRiskEvent()
+        {
+            this.ODataType = "microsoft.graph.anonymousIpRiskEvent";
+        }
+	
     }
 }
 

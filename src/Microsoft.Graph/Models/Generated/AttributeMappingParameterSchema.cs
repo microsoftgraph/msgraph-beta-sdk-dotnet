@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AttributeMappingParameterSchema
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AttributeMappingParameterSchema"/> class.
+        /// </summary>
+        public AttributeMappingParameterSchema()
+        {
+            this.ODataType = "microsoft.graph.attributeMappingParameterSchema";
+        }
 
         /// <summary>
         /// Gets or sets allowMultipleOccurrences.

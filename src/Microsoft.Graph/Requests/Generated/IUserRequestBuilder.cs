@@ -302,6 +302,12 @@ namespace Microsoft.Graph
         IOnenoteRequestBuilder Onenote { get; }
 
         /// <summary>
+        /// Gets the request builder for Profile.
+        /// </summary>
+        /// <returns>The <see cref="IProfileRequestBuilder"/>.</returns>
+        IProfileRequestBuilder Profile { get; }
+
+        /// <summary>
         /// Gets the request builder for Activities.
         /// </summary>
         /// <returns>The <see cref="IUserActivitiesCollectionRequestBuilder"/>.</returns>
@@ -312,6 +318,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserDevicesCollectionRequestBuilder"/>.</returns>
         IUserDevicesCollectionRequestBuilder Devices { get; }
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetings.
+        /// </summary>
+        /// <returns>The <see cref="IUserOnlineMeetingsCollectionRequestBuilder"/>.</returns>
+        IUserOnlineMeetingsCollectionRequestBuilder OnlineMeetings { get; }
+
+        /// <summary>
+        /// Gets the request builder for Presence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceRequestBuilder"/>.</returns>
+        IPresenceRequestBuilder Presence { get; }
 
         /// <summary>
         /// Gets the request builder for JoinedTeams.
@@ -358,6 +376,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserRevokeSignInSessionsRequestBuilder"/>.</returns>
         IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions();
+
+        /// <summary>
+        /// Gets the request builder for UserReprocessLicenseAssignment.
+        /// </summary>
+        /// <returns>The <see cref="IUserReprocessLicenseAssignmentRequestBuilder"/>.</returns>
+        IUserReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment();
 
         /// <summary>
         /// Gets the request builder for UserFindMeetingTimes.

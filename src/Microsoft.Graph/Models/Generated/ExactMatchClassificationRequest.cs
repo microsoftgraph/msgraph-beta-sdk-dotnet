@@ -20,8 +20,15 @@ namespace Microsoft.Graph
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class ExactMatchClassificationRequest
+    public partial class ExactMatchClassificationRequestObject
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExactMatchClassificationRequestObject"/> class.
+        /// </summary>
+        public ExactMatchClassificationRequestObject()
+        {
+            this.ODataType = "microsoft.graph.exactMatchClassificationRequest";
+        }
 
         /// <summary>
         /// Gets or sets sensitiveTypeIds.

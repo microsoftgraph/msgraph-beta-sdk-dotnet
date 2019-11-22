@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         IDeviceConfigurationRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceConfigurationHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
+        IDeviceConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceConfigurationGetTargetedUsersAndDevices.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationGetTargetedUsersAndDevicesRequestBuilder"/>.</returns>

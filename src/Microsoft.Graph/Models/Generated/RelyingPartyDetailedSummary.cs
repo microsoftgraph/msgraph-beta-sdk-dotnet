@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RelyingPartyDetailedSummary : Entity
     {
     
+		///<summary>
+		/// The RelyingPartyDetailedSummary constructor
+		///</summary>
+        public RelyingPartyDetailedSummary()
+        {
+            this.ODataType = "microsoft.graph.relyingPartyDetailedSummary";
+        }
+	
         /// <summary>
         /// Gets or sets relying party id.
         /// </summary>

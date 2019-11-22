@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RoleScopeTagAutoAssignment : Entity
     {
     
+		///<summary>
+		/// The RoleScopeTagAutoAssignment constructor
+		///</summary>
+        public RoleScopeTagAutoAssignment()
+        {
+            this.ODataType = "microsoft.graph.roleScopeTagAutoAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target.
         /// The auto-assignment target for the specific Role Scope Tag.

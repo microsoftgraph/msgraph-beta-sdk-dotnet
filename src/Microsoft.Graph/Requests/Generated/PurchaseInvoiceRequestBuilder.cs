@@ -86,5 +86,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for PurchaseInvoicePost.
+        /// </summary>
+        /// <returns>The <see cref="IPurchaseInvoicePostRequestBuilder"/>.</returns>
+        public IPurchaseInvoicePostRequestBuilder Post()
+        {
+            return new PurchaseInvoicePostRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.post"),
+                this.Client);
+        }
+    
     }
 }

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SynchronizationError
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SynchronizationError"/> class.
+        /// </summary>
+        public SynchronizationError()
+        {
+            this.ODataType = "microsoft.graph.synchronizationError";
+        }
 
         /// <summary>
         /// Gets or sets code.

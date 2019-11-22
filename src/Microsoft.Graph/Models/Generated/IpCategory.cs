@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IpCategory
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IpCategory"/> class.
+        /// </summary>
+        public IpCategory()
+        {
+            this.ODataType = "microsoft.graph.ipCategory";
+        }
 
         /// <summary>
         /// Gets or sets description.

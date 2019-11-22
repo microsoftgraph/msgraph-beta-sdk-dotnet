@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MailboxUsageQuotaStatusMailboxCounts : Entity
     {
     
+		///<summary>
+		/// The MailboxUsageQuotaStatusMailboxCounts constructor
+		///</summary>
+        public MailboxUsageQuotaStatusMailboxCounts()
+        {
+            this.ODataType = "microsoft.graph.mailboxUsageQuotaStatusMailboxCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

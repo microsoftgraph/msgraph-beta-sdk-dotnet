@@ -48,6 +48,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISensitivityPolicySettingsRequestBuilder"/>.</returns>
         ISensitivityPolicySettingsRequestBuilder SensitivityPolicySettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for DataLossPreventionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder"/>.</returns>
+        IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder DataLossPreventionPolicies { get; }
+    
+        /// <summary>
+        /// Gets the request builder for InformationProtectionEvaluateLabelsAndPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder"/>.</returns>
+        IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder EvaluateLabelsAndPolicies(
+            EvaluateSensitivityLabelsRequestObject evaluateSensitivityLabels = null,
+            DlpEvaluatePoliciesRequestObject evaluateDataLossPreventionPolicies = null,
+            TextClassificationRequestObject classifyText = null);
     
     }
 }

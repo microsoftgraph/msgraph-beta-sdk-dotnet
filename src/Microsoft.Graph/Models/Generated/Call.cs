@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Call : Entity
     {
     
+		///<summary>
+		/// The Call constructor
+		///</summary>
+        public Call()
+        {
+            this.ODataType = "microsoft.graph.call";
+        }
+	
         /// <summary>
         /// Gets or sets state.
         /// </summary>
@@ -86,7 +94,7 @@ namespace Microsoft.Graph
         /// Gets or sets targets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targets", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ParticipantInfo> Targets { get; set; }
+        public IEnumerable<InvitationParticipantInfo> Targets { get; set; }
     
         /// <summary>
         /// Gets or sets answered by.
@@ -153,6 +161,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toneInfo", Required = Newtonsoft.Json.Required.Default)]
         public ToneInfo ToneInfo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incoming context.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incomingContext", Required = Newtonsoft.Json.Required.Default)]
+        public IncomingContext IncomingContext { get; set; }
     
         /// <summary>
         /// Gets or sets participants.

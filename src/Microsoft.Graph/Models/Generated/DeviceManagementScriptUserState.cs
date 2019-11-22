@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScriptUserState : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementScriptUserState constructor
+		///</summary>
+        public DeviceManagementScriptUserState()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementScriptUserState";
+        }
+	
         /// <summary>
         /// Gets or sets success device count.
         /// Success device count for specific user.

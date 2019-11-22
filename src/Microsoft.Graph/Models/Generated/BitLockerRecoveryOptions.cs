@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class BitLockerRecoveryOptions
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BitLockerRecoveryOptions"/> class.
+        /// </summary>
+        public BitLockerRecoveryOptions()
+        {
+            this.ODataType = "microsoft.graph.bitLockerRecoveryOptions";
+        }
 
         /// <summary>
         /// Gets or sets blockDataRecoveryAgent.

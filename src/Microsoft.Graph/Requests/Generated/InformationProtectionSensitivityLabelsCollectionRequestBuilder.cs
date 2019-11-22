@@ -65,12 +65,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISensitivityLabelEvaluateRequestBuilder"/>.</returns>
         public ISensitivityLabelEvaluateRequestBuilder Evaluate(
-            IEnumerable<DiscoveredSensitiveType> discoveredSensitiveTypes = null)
+            IEnumerable<DiscoveredSensitiveType> discoveredSensitiveTypes = null,
+            CurrentLabel currentLabel = null)
         {
             return new SensitivityLabelEvaluateRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.evaluate"),
                 this.Client,
-                discoveredSensitiveTypes);
+                discoveredSensitiveTypes,
+                currentLabel);
         }
     }
 }

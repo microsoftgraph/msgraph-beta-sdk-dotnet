@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class VppTokenRevokeLicensesActionResult : VppTokenActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VppTokenRevokeLicensesActionResult"/> class.
+        /// </summary>
+        public VppTokenRevokeLicensesActionResult()
+        {
+            this.ODataType = "microsoft.graph.vppTokenRevokeLicensesActionResult";
+        }
 
         /// <summary>
         /// Gets or sets totalLicensesCount.

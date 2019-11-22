@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MailboxUsageDetail : Entity
     {
     
+		///<summary>
+		/// The MailboxUsageDetail constructor
+		///</summary>
+        public MailboxUsageDetail()
+        {
+            this.ODataType = "microsoft.graph.mailboxUsageDetail";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

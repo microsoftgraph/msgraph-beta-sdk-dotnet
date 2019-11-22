@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Command : Entity
     {
     
+		///<summary>
+		/// The Command constructor
+		///</summary>
+        public Command()
+        {
+            this.ODataType = "microsoft.graph.command";
+        }
+	
         /// <summary>
         /// Gets or sets status.
         /// </summary>
@@ -56,7 +64,7 @@ namespace Microsoft.Graph
         /// Gets or sets payload.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Payload", Required = Newtonsoft.Json.Required.Default)]
-        public PayloadRequest Payload { get; set; }
+        public PayloadRequestObject Payload { get; set; }
     
         /// <summary>
         /// Gets or sets permission ticket.

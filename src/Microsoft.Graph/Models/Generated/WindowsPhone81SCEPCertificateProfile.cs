@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81SCEPCertificateProfile : WindowsPhone81CertificateProfileBase
     {
     
+		///<summary>
+		/// The WindowsPhone81SCEPCertificateProfile constructor
+		///</summary>
+        public WindowsPhone81SCEPCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81SCEPCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets scep server urls.
         /// SCEP Server Url(s).

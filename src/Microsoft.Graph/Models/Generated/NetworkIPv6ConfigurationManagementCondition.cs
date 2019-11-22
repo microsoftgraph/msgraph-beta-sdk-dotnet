@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class NetworkIPv6ConfigurationManagementCondition : NetworkManagementCondition
     {
     
+		///<summary>
+		/// The NetworkIPv6ConfigurationManagementCondition constructor
+		///</summary>
+        public NetworkIPv6ConfigurationManagementCondition()
+        {
+            this.ODataType = "microsoft.graph.networkIPv6ConfigurationManagementCondition";
+        }
+	
         /// <summary>
         /// Gets or sets ip v6prefix.
         /// The IPv6 subnet to be connected to. e.g. 2001:db8::/32

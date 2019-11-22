@@ -9,6 +9,7 @@
 
 namespace Microsoft.Graph
 {
+    using System.Net.Http;
 
     /// <summary>
     /// The type GraphServiceClient.
@@ -23,14 +24,14 @@ namespace Microsoft.Graph
         public GraphServiceClient(
             IAuthenticationProvider authenticationProvider,
             IHttpProvider httpProvider = null)
-            : this("https://graph.microsoft.com/beta", authenticationProvider, httpProvider)
+            : this("https://graph.microsoft.com/v1.0", authenticationProvider, httpProvider)
         {
         }
 
         /// <summary>
         /// Instantiates a new GraphServiceClient.
         /// </summary>
-        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta".</param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/v1.0".</param>
         /// <param name="authenticationProvider">The <see cref="IAuthenticationProvider"/> for authenticating request messages.</param>
         /// <param name="httpProvider">The <see cref="IHttpProvider"/> for sending requests.</param>
         public GraphServiceClient(
@@ -38,6 +39,17 @@ namespace Microsoft.Graph
             IAuthenticationProvider authenticationProvider,
             IHttpProvider httpProvider = null)
             : base(baseUrl, authenticationProvider, httpProvider)
+        {
+        }
+
+        /// <summary>
+        /// Instantiates a new GraphServiceClient.
+        /// </summary>
+        /// <param name="httpClient">The <see cref="HttpClient"/> to use for making requests to Microsoft Graph. Use the <see cref="GraphClientFactory"/>
+        /// to get a pre-configured HttpClient that is optimized for use with the Microsoft Graph service API. </param>
+        public GraphServiceClient(
+            HttpClient httpClient)
+            : base("https://graph.microsoft.com/v1.0", httpClient)
         {
         }
     
@@ -493,6 +505,105 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceAccessPackageCatalogs request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs
+        {
+            get
+            {
+                return new GraphServiceAccessPackageCatalogsCollectionRequestBuilder(this.BaseUrl + "/accessPackageCatalogs", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackageResources request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageResourcesCollectionRequestBuilder AccessPackageResources
+        {
+            get
+            {
+                return new GraphServiceAccessPackageResourcesCollectionRequestBuilder(this.BaseUrl + "/accessPackageResources", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackageResourceRequests request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageResourceRequestsCollectionRequestBuilder AccessPackageResourceRequests
+        {
+            get
+            {
+                return new GraphServiceAccessPackageResourceRequestsCollectionRequestBuilder(this.BaseUrl + "/accessPackageResourceRequests", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackageResourceRoleScopes request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes
+        {
+            get
+            {
+                return new GraphServiceAccessPackageResourceRoleScopesCollectionRequestBuilder(this.BaseUrl + "/accessPackageResourceRoleScopes", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackages request builder.
+        /// </summary>
+        public IGraphServiceAccessPackagesCollectionRequestBuilder AccessPackages
+        {
+            get
+            {
+                return new GraphServiceAccessPackagesCollectionRequestBuilder(this.BaseUrl + "/accessPackages", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackageAssignmentPolicies request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageAssignmentPoliciesCollectionRequestBuilder AccessPackageAssignmentPolicies
+        {
+            get
+            {
+                return new GraphServiceAccessPackageAssignmentPoliciesCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignmentPolicies", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackageAssignments request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments
+        {
+            get
+            {
+                return new GraphServiceAccessPackageAssignmentsCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignments", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackageAssignmentRequests request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageAssignmentRequestsCollectionRequestBuilder AccessPackageAssignmentRequests
+        {
+            get
+            {
+                return new GraphServiceAccessPackageAssignmentRequestsCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignmentRequests", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAccessPackageAssignmentResourceRoles request builder.
+        /// </summary>
+        public IGraphServiceAccessPackageAssignmentResourceRolesCollectionRequestBuilder AccessPackageAssignmentResourceRoles
+        {
+            get
+            {
+                return new GraphServiceAccessPackageAssignmentResourceRolesCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignmentResourceRoles", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceAccessReviews request builder.
         /// </summary>
         public IGraphServiceAccessReviewsCollectionRequestBuilder AccessReviews
@@ -878,6 +989,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceConnections request builder.
+        /// </summary>
+        public IGraphServiceConnectionsCollectionRequestBuilder Connections
+        {
+            get
+            {
+                return new GraphServiceConnectionsCollectionRequestBuilder(this.BaseUrl + "/connections", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceTeams request builder.
         /// </summary>
         public IGraphServiceTeamsCollectionRequestBuilder Teams
@@ -933,6 +1055,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceIdentity request builder.
+        /// </summary>
+        public IIdentityContainerRequestBuilder Identity
+        {
+            get
+            {
+                return new IdentityContainerRequestBuilder(this.BaseUrl + "/identity", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceTrustFramework request builder.
         /// </summary>
         public ITrustFrameworkRequestBuilder TrustFramework
@@ -951,6 +1084,17 @@ namespace Microsoft.Graph
             get
             {
                 return new DataClassificationServiceRequestBuilder(this.BaseUrl + "/dataClassification", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceInformationProtection request builder.
+        /// </summary>
+        public IInformationProtectionRequestBuilder InformationProtection
+        {
+            get
+            {
+                return new InformationProtectionRequestBuilder(this.BaseUrl + "/informationProtection", this);
             }
         }
     
@@ -1010,6 +1154,39 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceIdentityGovernance request builder.
+        /// </summary>
+        public IIdentityGovernanceRequestBuilder IdentityGovernance
+        {
+            get
+            {
+                return new IdentityGovernanceRequestBuilder(this.BaseUrl + "/identityGovernance", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceEntitlementManagement request builder.
+        /// </summary>
+        public IEntitlementManagementRequestBuilder EntitlementManagement
+        {
+            get
+            {
+                return new EntitlementManagementRequestBuilder(this.BaseUrl + "/entitlementManagement", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceConditionalAccess request builder.
+        /// </summary>
+        public IConditionalAccessRootRequestBuilder ConditionalAccess
+        {
+            get
+            {
+                return new ConditionalAccessRootRequestBuilder(this.BaseUrl + "/conditionalAccess", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
         /// </summary>
         public IDeviceManagementRequestBuilder DeviceManagement
@@ -1039,6 +1216,17 @@ namespace Microsoft.Graph
             get
             {
                 return new OfficeConfigurationRequestBuilder(this.BaseUrl + "/officeConfiguration", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceSearch request builder.
+        /// </summary>
+        public ISearchRequestBuilder Search
+        {
+            get
+            {
+                return new SearchRequestBuilder(this.BaseUrl + "/search", this);
             }
         }
     
@@ -1083,6 +1271,28 @@ namespace Microsoft.Graph
             get
             {
                 return new CommsApplicationRequestBuilder(this.BaseUrl + "/app", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        public ICloudCommunicationsRequestBuilder Communications
+        {
+            get
+            {
+                return new CloudCommunicationsRequestBuilder(this.BaseUrl + "/communications", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceExternal request builder.
+        /// </summary>
+        public IExternalRequestBuilder External
+        {
+            get
+            {
+                return new ExternalRequestBuilder(this.BaseUrl + "/external", this);
             }
         }
     

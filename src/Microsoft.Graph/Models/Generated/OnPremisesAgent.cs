@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OnPremisesAgent : Entity
     {
     
+		///<summary>
+		/// The OnPremisesAgent constructor
+		///</summary>
+        public OnPremisesAgent()
+        {
+            this.ODataType = "microsoft.graph.onPremisesAgent";
+        }
+	
         /// <summary>
         /// Gets or sets machine name.
         /// </summary>

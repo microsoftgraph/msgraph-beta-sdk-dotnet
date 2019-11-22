@@ -70,12 +70,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestDeclineRequestBuilder"/>.</returns>
         public IEventMessageRequestDeclineRequestBuilder Decline(
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
             string Comment = null)
         {
             return new EventMessageRequestDeclineRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
                 this.Client,
+                ProposedNewTime,
                 SendResponse,
                 Comment);
         }
@@ -85,12 +87,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestTentativelyAcceptRequestBuilder"/>.</returns>
         public IEventMessageRequestTentativelyAcceptRequestBuilder TentativelyAccept(
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
             string Comment = null)
         {
             return new EventMessageRequestTentativelyAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.tentativelyAccept"),
                 this.Client,
+                ProposedNewTime,
                 SendResponse,
                 Comment);
         }

@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new MacOSDeviceFeaturesConfigurationRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for SingleSignOnExtensionPkinitCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        public IMacOSCertificateProfileBaseWithReferenceRequestBuilder SingleSignOnExtensionPkinitCertificate
+        {
+            get
+            {
+                return new MacOSCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("singleSignOnExtensionPkinitCertificate"), this.Client);
+            }
+        }
+    
     }
 }

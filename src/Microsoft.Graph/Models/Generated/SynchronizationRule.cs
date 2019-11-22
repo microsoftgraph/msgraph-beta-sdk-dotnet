@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SynchronizationRule
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SynchronizationRule"/> class.
+        /// </summary>
+        public SynchronizationRule()
+        {
+            this.ODataType = "microsoft.graph.synchronizationRule";
+        }
 
         /// <summary>
         /// Gets or sets editable.

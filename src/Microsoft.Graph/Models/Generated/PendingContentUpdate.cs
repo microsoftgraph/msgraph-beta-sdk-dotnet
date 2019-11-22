@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PendingContentUpdate
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingContentUpdate"/> class.
+        /// </summary>
+        public PendingContentUpdate()
+        {
+            this.ODataType = "microsoft.graph.pendingContentUpdate";
+        }
 
         /// <summary>
         /// Gets or sets queuedDateTime.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TermsAndConditions : Entity
     {
     
+		///<summary>
+		/// The TermsAndConditions constructor
+		///</summary>
+        public TermsAndConditions()
+        {
+            this.ODataType = "microsoft.graph.termsAndConditions";
+        }
+	
         /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.
@@ -84,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Version { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of Scope Tags for this Entity instance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets group assignments.

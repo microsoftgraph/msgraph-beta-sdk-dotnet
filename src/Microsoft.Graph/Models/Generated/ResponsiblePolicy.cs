@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ResponsiblePolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResponsiblePolicy"/> class.
+        /// </summary>
+        public ResponsiblePolicy()
+        {
+            this.ODataType = "microsoft.graph.responsiblePolicy";
+        }
 
         /// <summary>
         /// Gets or sets id.

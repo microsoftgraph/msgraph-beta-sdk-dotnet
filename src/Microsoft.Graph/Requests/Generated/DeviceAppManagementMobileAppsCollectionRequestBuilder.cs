@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MobileAppHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppHasPayloadLinksRequestBuilder"/>.</returns>
+        public IMobileAppHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new MobileAppHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
+
+        /// <summary>
         /// Gets the request builder for MobileAppGetMobileAppCount.
         /// </summary>
         /// <returns>The <see cref="IMobileAppGetMobileAppCountRequestBuilder"/>.</returns>

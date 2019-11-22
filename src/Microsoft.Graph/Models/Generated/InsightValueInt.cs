@@ -21,6 +21,19 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class InsightValueInt : UserExperienceAnalyticsInsightValue
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InsightValueInt"/> class.
+        /// </summary>
+        public InsightValueInt()
+        {
+            this.ODataType = "microsoft.graph.insightValueInt";
+        }
 
+        /// <summary>
+        /// Gets or sets value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Value { get; set; }
+    
     }
 }

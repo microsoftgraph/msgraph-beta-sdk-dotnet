@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SideLoadingKey : Entity
     {
     
+		///<summary>
+		/// The SideLoadingKey constructor
+		///</summary>
+        public SideLoadingKey()
+        {
+            this.ODataType = "microsoft.graph.sideLoadingKey";
+        }
+	
         /// <summary>
         /// Gets or sets value.
         /// Side Loading Key Value, it is 5x5 value, seperated by hiphens.

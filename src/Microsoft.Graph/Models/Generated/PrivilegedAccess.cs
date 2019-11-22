@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PrivilegedAccess : Entity
     {
     
+		///<summary>
+		/// The PrivilegedAccess constructor
+		///</summary>
+        public PrivilegedAccess()
+        {
+            this.ODataType = "microsoft.graph.privilegedAccess";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

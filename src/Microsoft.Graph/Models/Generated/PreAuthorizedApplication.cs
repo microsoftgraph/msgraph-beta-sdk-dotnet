@@ -22,9 +22,17 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PreAuthorizedApplication
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PreAuthorizedApplication"/> class.
+        /// </summary>
+        public PreAuthorizedApplication()
+        {
+            this.ODataType = "microsoft.graph.preAuthorizedApplication";
+        }
 
         /// <summary>
         /// Gets or sets appId.
+        /// The unique identifier for the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
         public string AppId { get; set; }

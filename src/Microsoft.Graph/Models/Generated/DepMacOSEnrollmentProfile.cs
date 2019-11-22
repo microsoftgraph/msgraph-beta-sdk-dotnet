@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile
     {
     
+		///<summary>
+		/// The DepMacOSEnrollmentProfile constructor
+		///</summary>
+        public DepMacOSEnrollmentProfile()
+        {
+            this.ODataType = "microsoft.graph.depMacOSEnrollmentProfile";
+        }
+	
         /// <summary>
         /// Gets or sets registration disabled.
         /// Indicates if registration is disabled

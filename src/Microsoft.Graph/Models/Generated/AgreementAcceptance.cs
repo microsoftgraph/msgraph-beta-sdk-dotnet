@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AgreementAcceptance : Entity
     {
     
+		///<summary>
+		/// The AgreementAcceptance constructor
+		///</summary>
+        public AgreementAcceptance()
+        {
+            this.ODataType = "microsoft.graph.agreementAcceptance";
+        }
+	
         /// <summary>
         /// Gets or sets agreement id.
         /// </summary>

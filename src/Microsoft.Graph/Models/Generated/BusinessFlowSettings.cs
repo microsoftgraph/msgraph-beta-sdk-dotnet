@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class BusinessFlowSettings : AccessReviewSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BusinessFlowSettings"/> class.
+        /// </summary>
+        public BusinessFlowSettings()
+        {
+            this.ODataType = "microsoft.graph.businessFlowSettings";
+        }
 
         /// <summary>
         /// Gets or sets durationInDays.

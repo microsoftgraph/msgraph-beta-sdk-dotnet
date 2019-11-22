@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ChatActivityStatistics : ActivityStatistics
     {
     
+		///<summary>
+		/// The ChatActivityStatistics constructor
+		///</summary>
+        public ChatActivityStatistics()
+        {
+            this.ODataType = "microsoft.graph.chatActivityStatistics";
+        }
+	
         /// <summary>
         /// Gets or sets after hours.
         /// </summary>

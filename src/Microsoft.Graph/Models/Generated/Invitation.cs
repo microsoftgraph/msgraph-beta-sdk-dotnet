@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Invitation : Entity
     {
     
+		///<summary>
+		/// The Invitation constructor
+		///</summary>
+        public Invitation()
+        {
+            this.ODataType = "microsoft.graph.invitation";
+        }
+	
         /// <summary>
         /// Gets or sets invited user display name.
         /// The display name of the user being invited.
@@ -77,6 +85,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public string Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reset redemption.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resetRedemption", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ResetRedemption { get; set; }
     
         /// <summary>
         /// Gets or sets invited user.

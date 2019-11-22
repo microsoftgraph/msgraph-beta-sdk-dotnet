@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ImportedDeviceIdentity : Entity
     {
     
+		///<summary>
+		/// The ImportedDeviceIdentity constructor
+		///</summary>
+        public ImportedDeviceIdentity()
+        {
+            this.ODataType = "microsoft.graph.importedDeviceIdentity";
+        }
+	
         /// <summary>
         /// Gets or sets imported device identifier.
         /// Imported Device Identifier

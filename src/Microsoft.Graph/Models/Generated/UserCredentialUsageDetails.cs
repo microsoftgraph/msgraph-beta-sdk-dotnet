@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UserCredentialUsageDetails : Entity
     {
     
+		///<summary>
+		/// The UserCredentialUsageDetails constructor
+		///</summary>
+        public UserCredentialUsageDetails()
+        {
+            this.ODataType = "microsoft.graph.userCredentialUsageDetails";
+        }
+	
         /// <summary>
         /// Gets or sets feature.
         /// </summary>

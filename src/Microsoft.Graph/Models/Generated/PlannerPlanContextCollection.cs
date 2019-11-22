@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PlannerPlanContextCollection
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlannerPlanContextCollection"/> class.
+        /// </summary>
+        public PlannerPlanContextCollection()
+        {
+            this.ODataType = "microsoft.graph.plannerPlanContextCollection";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

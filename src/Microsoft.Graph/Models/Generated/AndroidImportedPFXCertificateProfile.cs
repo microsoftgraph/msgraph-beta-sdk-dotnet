@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidImportedPFXCertificateProfile : AndroidCertificateProfileBase
     {
     
+		///<summary>
+		/// The AndroidImportedPFXCertificateProfile constructor
+		///</summary>
+        public AndroidImportedPFXCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.androidImportedPFXCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets intended purpose.
         /// </summary>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class HostSecurityProfile : Entity
     {
     
+		///<summary>
+		/// The HostSecurityProfile constructor
+		///</summary>
+        public HostSecurityProfile()
+        {
+            this.ODataType = "microsoft.graph.hostSecurityProfile";
+        }
+	
         /// <summary>
         /// Gets or sets azure subscription id.
         /// </summary>

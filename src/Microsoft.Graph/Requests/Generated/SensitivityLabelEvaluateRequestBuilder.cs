@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="discoveredSensitiveTypes">A discoveredSensitiveTypes parameter for the OData method call.</param>
+        /// <param name="currentLabel">A currentLabel parameter for the OData method call.</param>
         public SensitivityLabelEvaluateRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            IEnumerable<DiscoveredSensitiveType> discoveredSensitiveTypes)
+            IEnumerable<DiscoveredSensitiveType> discoveredSensitiveTypes,
+            CurrentLabel currentLabel)
             : base(requestUrl, client)
         {
             this.SetParameter("discoveredSensitiveTypes", discoveredSensitiveTypes, true);
+            this.SetParameter("currentLabel", currentLabel, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("discoveredSensitiveTypes"))
             {
                 request.RequestBody.DiscoveredSensitiveTypes = this.GetParameter<IEnumerable<DiscoveredSensitiveType>>("discoveredSensitiveTypes");
+            }
+
+            if (this.HasParameter("currentLabel"))
+            {
+                request.RequestBody.CurrentLabel = this.GetParameter<CurrentLabel>("currentLabel");
             }
 
             return request;

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AudioConferencing
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AudioConferencing"/> class.
+        /// </summary>
+        public AudioConferencing()
+        {
+            this.ODataType = "microsoft.graph.audioConferencing";
+        }
 
         /// <summary>
         /// Gets or sets conferenceId.

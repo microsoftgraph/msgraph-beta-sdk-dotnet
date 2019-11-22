@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class CloudAppSecurityProfile : Entity
     {
     
+		///<summary>
+		/// The CloudAppSecurityProfile constructor
+		///</summary>
+        public CloudAppSecurityProfile()
+        {
+            this.ODataType = "microsoft.graph.cloudAppSecurityProfile";
+        }
+	
         /// <summary>
         /// Gets or sets azure subscription id.
         /// </summary>

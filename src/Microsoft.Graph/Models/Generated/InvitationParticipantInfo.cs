@@ -19,9 +19,23 @@ namespace Microsoft.Graph
     /// The type InvitationParticipantInfo.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class InvitationParticipantInfo : ParticipantInfo
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class InvitationParticipantInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvitationParticipantInfo"/> class.
+        /// </summary>
+        public InvitationParticipantInfo()
+        {
+            this.ODataType = "microsoft.graph.invitationParticipantInfo";
+        }
 
+        /// <summary>
+        /// Gets or sets identity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet Identity { get; set; }
+    
         /// <summary>
         /// Gets or sets endpointType.
         /// </summary>
@@ -33,6 +47,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replacesCallId", Required = Newtonsoft.Json.Required.Default)]
         public string ReplacesCallId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
+
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
     
     }
 }

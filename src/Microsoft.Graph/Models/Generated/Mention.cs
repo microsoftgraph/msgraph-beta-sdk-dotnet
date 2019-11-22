@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Mention : Entity
     {
     
+		///<summary>
+		/// The Mention constructor
+		///</summary>
+        public Mention()
+        {
+            this.ODataType = "microsoft.graph.mention";
+        }
+	
         /// <summary>
         /// Gets or sets mentioned.
         /// </summary>

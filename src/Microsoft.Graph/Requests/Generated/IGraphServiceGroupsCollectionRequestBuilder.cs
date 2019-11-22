@@ -37,6 +37,14 @@ namespace Microsoft.Graph
         IGroupRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for GroupEvaluateDynamicMembership.
+        /// </summary>
+        /// <returns>The <see cref="IGroupEvaluateDynamicMembershipRequestBuilder"/>.</returns>
+        IGroupEvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership(
+            string memberId = null,
+            string membershipRule = null);
+
+        /// <summary>
         /// Gets the request builder for GroupDelta.
         /// </summary>
         /// <returns>The <see cref="IGroupDeltaRequestBuilder"/>.</returns>

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddContentHeaderAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddContentHeaderAction"/> class.
+        /// </summary>
+        public AddContentHeaderAction()
+        {
+            this.ODataType = "microsoft.graph.addContentHeaderAction";
+        }
 
         /// <summary>
         /// Gets or sets uiElementName.

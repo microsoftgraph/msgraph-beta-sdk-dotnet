@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SecurityAction : Entity
     {
     
+		///<summary>
+		/// The SecurityAction constructor
+		///</summary>
+        public SecurityAction()
+        {
+            this.ODataType = "microsoft.graph.securityAction";
+        }
+	
         /// <summary>
         /// Gets or sets action reason.
         /// </summary>

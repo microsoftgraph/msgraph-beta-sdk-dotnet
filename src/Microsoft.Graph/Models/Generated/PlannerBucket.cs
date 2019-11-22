@@ -19,9 +19,17 @@ namespace Microsoft.Graph
     /// The type Planner Bucket.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerBucket : Entity
+    public partial class PlannerBucket : PlannerDelta
     {
     
+		///<summary>
+		/// The PlannerBucket constructor
+		///</summary>
+        public PlannerBucket()
+        {
+            this.ODataType = "microsoft.graph.plannerBucket";
+        }
+	
         /// <summary>
         /// Gets or sets name.
         /// Name of the bucket.

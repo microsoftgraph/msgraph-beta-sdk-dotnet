@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Win32LobAppInstallExperience
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Win32LobAppInstallExperience"/> class.
+        /// </summary>
+        public Win32LobAppInstallExperience()
+        {
+            this.ODataType = "microsoft.graph.win32LobAppInstallExperience";
+        }
 
         /// <summary>
         /// Gets or sets runAsAccount.
@@ -29,6 +36,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
         public RunAsAccountType? RunAsAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceRestartBehavior.
+        /// Device restart behavior.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRestartBehavior", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppRestartBehavior? DeviceRestartBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

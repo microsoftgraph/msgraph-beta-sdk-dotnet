@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10NetworkBoundaryConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10NetworkBoundaryConfiguration constructor
+		///</summary>
+        public Windows10NetworkBoundaryConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10NetworkBoundaryConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets windows network isolation policy.
         /// Windows Network Isolation Policy

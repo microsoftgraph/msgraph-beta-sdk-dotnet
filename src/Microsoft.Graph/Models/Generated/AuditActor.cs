@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AuditActor
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditActor"/> class.
+        /// </summary>
+        public AuditActor()
+        {
+            this.ODataType = "microsoft.graph.auditActor";
+        }
 
         /// <summary>
         /// Gets or sets type.
@@ -78,6 +85,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scopeTags.
+        /// List of user scope tags when the audit was performed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeTags", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ScopeTagInfo> ScopeTags { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

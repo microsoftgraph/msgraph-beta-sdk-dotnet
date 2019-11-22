@@ -21,24 +21,37 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ApplyLabelAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplyLabelAction"/> class.
+        /// </summary>
+        public ApplyLabelAction()
+        {
+            this.ODataType = "microsoft.graph.applyLabelAction";
+        }
 
         /// <summary>
-        /// Gets or sets labelId.
+        /// Gets or sets label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelId", Required = Newtonsoft.Json.Required.Default)]
-        public string LabelId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        public LabelDetails Label { get; set; }
     
         /// <summary>
-        /// Gets or sets classificationIds.
+        /// Gets or sets responsibleSensitiveTypeIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Guid> ClassificationIds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsibleSensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Guid> ResponsibleSensitiveTypeIds { get; set; }
     
         /// <summary>
         /// Gets or sets actions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<InformationProtectionAction> Actions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets actionSource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionSource", Required = Newtonsoft.Json.Required.Default)]
+        public ActionSource? ActionSource { get; set; }
     
     }
 }

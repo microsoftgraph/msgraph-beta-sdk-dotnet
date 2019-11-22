@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceConfigurationTargetedUserAndDevice
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceConfigurationTargetedUserAndDevice"/> class.
+        /// </summary>
+        public DeviceConfigurationTargetedUserAndDevice()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationTargetedUserAndDevice";
+        }
 
         /// <summary>
         /// Gets or sets deviceId.

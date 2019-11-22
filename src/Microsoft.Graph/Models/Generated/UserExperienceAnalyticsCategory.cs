@@ -22,20 +22,14 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsCategory : Entity
     {
     
-        /// <summary>
-        /// Gets or sets display name.
-        /// The name of the user experience analytics category.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets overall score.
-        /// The overall score of the user experience analytics category.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overallScore", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? OverallScore { get; set; }
-    
+		///<summary>
+		/// The UserExperienceAnalyticsCategory constructor
+		///</summary>
+        public UserExperienceAnalyticsCategory()
+        {
+            this.ODataType = "microsoft.graph.userExperienceAnalyticsCategory";
+        }
+	
         /// <summary>
         /// Gets or sets insights.
         /// The insights for the user experience analytics category.

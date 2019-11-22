@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MacOSLobChildApp
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MacOSLobChildApp"/> class.
+        /// </summary>
+        public MacOSLobChildApp()
+        {
+            this.ODataType = "microsoft.graph.macOSLobChildApp";
+        }
 
         /// <summary>
         /// Gets or sets bundleId.

@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IMdmWindowsInformationProtectionPolicyRequestBuilder"/>.</returns>
         IMdmWindowsInformationProtectionPolicyRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for MdmWindowsInformationProtectionPolicyHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IMdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder"/>.</returns>
+        IMdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null);
     }
 }

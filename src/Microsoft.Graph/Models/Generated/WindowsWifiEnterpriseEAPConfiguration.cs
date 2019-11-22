@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsWifiEnterpriseEAPConfiguration : WindowsWifiConfiguration
     {
     
+		///<summary>
+		/// The WindowsWifiEnterpriseEAPConfiguration constructor
+		///</summary>
+        public WindowsWifiEnterpriseEAPConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsWifiEnterpriseEAPConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets network single sign on.
         /// Specify the network single sign on type.

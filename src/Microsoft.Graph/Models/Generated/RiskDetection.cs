@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RiskDetection : Entity
     {
     
+		///<summary>
+		/// The RiskDetection constructor
+		///</summary>
+        public RiskDetection()
+        {
+            this.ODataType = "microsoft.graph.riskDetection";
+        }
+	
         /// <summary>
         /// Gets or sets request id.
         /// </summary>

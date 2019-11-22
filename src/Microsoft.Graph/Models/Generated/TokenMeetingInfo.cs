@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TokenMeetingInfo : MeetingInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenMeetingInfo"/> class.
+        /// </summary>
+        public TokenMeetingInfo()
+        {
+            this.ODataType = "microsoft.graph.tokenMeetingInfo";
+        }
 
         /// <summary>
         /// Gets or sets token.

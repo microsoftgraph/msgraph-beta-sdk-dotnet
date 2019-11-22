@@ -28,5 +28,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveredSensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
     
+        /// <summary>
+        /// Gets or sets CurrentLabel.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentLabel", Required = Newtonsoft.Json.Required.Default)]
+        public CurrentLabel CurrentLabel { get; set; }
+    
     }
 }

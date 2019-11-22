@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ProgramControl : Entity
     {
     
+		///<summary>
+		/// The ProgramControl constructor
+		///</summary>
+        public ProgramControl()
+        {
+            this.ODataType = "microsoft.graph.programControl";
+        }
+	
         /// <summary>
         /// Gets or sets control id.
         /// </summary>

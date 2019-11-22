@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagementConditionStatement : Entity
     {
     
+		///<summary>
+		/// The ManagementConditionStatement constructor
+		///</summary>
+        public ManagementConditionStatement()
+        {
+            this.ODataType = "microsoft.graph.managementConditionStatement";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The admin defined name of the management condition statement.

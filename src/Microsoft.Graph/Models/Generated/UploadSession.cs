@@ -22,7 +22,21 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UploadSession
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadSession"/> class.
+        /// </summary>
+        public UploadSession()
+        {
+            this.ODataType = "microsoft.graph.uploadSession";
+        }
 
+        /// <summary>
+        /// Gets or sets uploadUrl.
+        /// The URL endpoint that accepts PUT requests for byte ranges of the file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string UploadUrl { get; set; }
+    
         /// <summary>
         /// Gets or sets expirationDateTime.
         /// The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
@@ -36,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nextExpectedRanges", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> NextExpectedRanges { get; set; }
-    
-        /// <summary>
-        /// Gets or sets uploadUrl.
-        /// The URL endpoint that accepts PUT requests for byte ranges of the file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string UploadUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

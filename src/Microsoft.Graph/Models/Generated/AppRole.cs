@@ -22,45 +22,59 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AppRole
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppRole"/> class.
+        /// </summary>
+        public AppRole()
+        {
+            this.ODataType = "microsoft.graph.appRole";
+        }
 
         /// <summary>
         /// Gets or sets allowedMemberTypes.
+        /// Specifies whether this app role definition can be assigned to users and groups by setting to 'User', or to other applications (that are accessing this application in daemon service scenarios) by setting to 'Application', or to both.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedMemberTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AllowedMemberTypes { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Permission help text that appears in the admin app assignment and consent experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name for the permission that appears in the admin consent and app assignment experiences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets id.
+        /// Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
+        /// When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets origin.
+        /// Read-only. Specifies if the app role is defined on the Application object . Must not be included in any POST or PATCH requests.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "origin", Required = Newtonsoft.Json.Required.Default)]
         public string Origin { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// Specifies the value which will be included in the roles claim in authentication and access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % &amp; ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public string Value { get; set; }

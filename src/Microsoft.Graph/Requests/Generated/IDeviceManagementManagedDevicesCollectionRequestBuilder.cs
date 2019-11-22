@@ -46,6 +46,7 @@ namespace Microsoft.Graph
             bool? keepUserData = null,
             IEnumerable<string> deviceIds = null,
             string notificationTitle = null,
-            string notificationBody = null);
+            string notificationBody = null,
+            string deviceName = null);
     }
 }

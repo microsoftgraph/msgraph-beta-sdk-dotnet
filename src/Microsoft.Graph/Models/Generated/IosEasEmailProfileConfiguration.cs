@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     
+		///<summary>
+		/// The IosEasEmailProfileConfiguration constructor
+		///</summary>
+        public IosEasEmailProfileConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosEasEmailProfileConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets account name.
         /// Account name.

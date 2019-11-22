@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class JustifyAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JustifyAction"/> class.
+        /// </summary>
+        public JustifyAction()
+        {
+            this.ODataType = "microsoft.graph.justifyAction";
+        }
 
     }
 }

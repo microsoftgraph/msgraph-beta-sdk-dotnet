@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Office365GroupsActivityCounts : Entity
     {
     
+		///<summary>
+		/// The Office365GroupsActivityCounts constructor
+		///</summary>
+        public Office365GroupsActivityCounts()
+        {
+            this.ODataType = "microsoft.graph.office365GroupsActivityCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

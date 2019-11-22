@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfilePkcsCertificateProfile : AndroidWorkProfileCertificateProfileBase
     {
     
+		///<summary>
+		/// The AndroidWorkProfilePkcsCertificateProfile constructor
+		///</summary>
+        public AndroidWorkProfilePkcsCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.androidWorkProfilePkcsCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets certification authority.
         /// PKCS Certification Authority

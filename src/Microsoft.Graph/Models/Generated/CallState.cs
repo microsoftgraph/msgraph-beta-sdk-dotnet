@@ -69,5 +69,10 @@ namespace Microsoft.Graph
         /// </summary>
         Terminated = 9,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 10,
+	
     }
 }

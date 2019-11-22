@@ -22,12 +22,25 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ParticipantInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParticipantInfo"/> class.
+        /// </summary>
+        public ParticipantInfo()
+        {
+            this.ODataType = "microsoft.graph.participantInfo";
+        }
 
         /// <summary>
         /// Gets or sets identity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Identity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets endpointType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointType", Required = Newtonsoft.Json.Required.Default)]
+        public EndpointType? EndpointType { get; set; }
     
         /// <summary>
         /// Gets or sets region.
@@ -40,6 +53,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageId", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets countryCode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryCode", Required = Newtonsoft.Json.Required.Default)]
+        public string CountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

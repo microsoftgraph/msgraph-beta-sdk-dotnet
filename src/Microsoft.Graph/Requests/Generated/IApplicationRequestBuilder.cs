@@ -68,11 +68,35 @@ namespace Microsoft.Graph
         IApplicationLogoRequestBuilder Logo { get; }
     
         /// <summary>
+        /// Gets the request builder for ApplicationAddKey.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationAddKeyRequestBuilder"/>.</returns>
+        IApplicationAddKeyRequestBuilder AddKey(
+            KeyCredential keyCredential,
+            string proof,
+            PasswordCredential passwordCredential = null);
+
+        /// <summary>
         /// Gets the request builder for ApplicationAddPassword.
         /// </summary>
         /// <returns>The <see cref="IApplicationAddPasswordRequestBuilder"/>.</returns>
         IApplicationAddPasswordRequestBuilder AddPassword(
             PasswordCredential passwordCredential = null);
+
+        /// <summary>
+        /// Gets the request builder for ApplicationRemoveKey.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationRemoveKeyRequestBuilder"/>.</returns>
+        IApplicationRemoveKeyRequestBuilder RemoveKey(
+            Guid keyId,
+            string proof);
+
+        /// <summary>
+        /// Gets the request builder for ApplicationRemovePassword.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationRemovePasswordRequestBuilder"/>.</returns>
+        IApplicationRemovePasswordRequestBuilder RemovePassword(
+            Guid keyId);
     
     }
 }

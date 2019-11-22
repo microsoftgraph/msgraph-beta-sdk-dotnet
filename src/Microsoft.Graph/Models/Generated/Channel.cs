@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Channel : Entity
     {
     
+		///<summary>
+		/// The Channel constructor
+		///</summary>
+        public Channel()
+        {
+            this.ODataType = "microsoft.graph.channel";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Channel name as it will appear to the user in Microsoft Teams.
@@ -86,6 +94,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public IChannelMembersCollectionPage Members { get; set; }
+    
+        /// <summary>
+        /// Gets or sets files folder.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filesFolder", Required = Newtonsoft.Json.Required.Default)]
+        public DriveItem FilesFolder { get; set; }
     
     }
 }

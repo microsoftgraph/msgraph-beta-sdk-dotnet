@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RankedEmailAddress
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RankedEmailAddress"/> class.
+        /// </summary>
+        public RankedEmailAddress()
+        {
+            this.ODataType = "microsoft.graph.rankedEmailAddress";
+        }
 
         /// <summary>
         /// Gets or sets address.

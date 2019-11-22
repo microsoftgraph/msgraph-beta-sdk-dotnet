@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RemoveContentHeaderAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveContentHeaderAction"/> class.
+        /// </summary>
+        public RemoveContentHeaderAction()
+        {
+            this.ODataType = "microsoft.graph.removeContentHeaderAction";
+        }
 
         /// <summary>
         /// Gets or sets uiElementNames.

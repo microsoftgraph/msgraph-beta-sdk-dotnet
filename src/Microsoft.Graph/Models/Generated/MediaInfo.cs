@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MediaInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MediaInfo"/> class.
+        /// </summary>
+        public MediaInfo()
+        {
+            this.ODataType = "microsoft.graph.mediaInfo";
+        }
 
         /// <summary>
         /// Gets or sets uri.

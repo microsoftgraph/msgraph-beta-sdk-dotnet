@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DomainSecurityProfile : Entity
     {
     
+		///<summary>
+		/// The DomainSecurityProfile constructor
+		///</summary>
+        public DomainSecurityProfile()
+        {
+            this.ODataType = "microsoft.graph.domainSecurityProfile";
+        }
+	
         /// <summary>
         /// Gets or sets activity group names.
         /// </summary>

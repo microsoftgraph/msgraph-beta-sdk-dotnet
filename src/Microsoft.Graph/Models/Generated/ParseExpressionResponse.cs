@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ParseExpressionResponse
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParseExpressionResponse"/> class.
+        /// </summary>
+        public ParseExpressionResponse()
+        {
+            this.ODataType = "microsoft.graph.parseExpressionResponse";
+        }
 
         /// <summary>
         /// Gets or sets error.

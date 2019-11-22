@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSTrustedRootCertificate : DeviceConfiguration
     {
     
+		///<summary>
+		/// The MacOSTrustedRootCertificate constructor
+		///</summary>
+        public MacOSTrustedRootCertificate()
+        {
+            this.ODataType = "microsoft.graph.macOSTrustedRootCertificate";
+        }
+	
         /// <summary>
         /// Gets or sets trusted root certificate.
         /// Trusted Root Certificate.

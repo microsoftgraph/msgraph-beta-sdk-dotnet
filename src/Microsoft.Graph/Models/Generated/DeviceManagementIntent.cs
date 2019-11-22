@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntent : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementIntent constructor
+		///</summary>
+        public DeviceManagementIntent()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementIntent";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The user given display name

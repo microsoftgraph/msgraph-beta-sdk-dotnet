@@ -32,6 +32,14 @@ namespace Microsoft.Graph
         new IAndroidManagedStoreAccountEnterpriseSettingsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsApproveApps.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder"/>.</returns>
+        IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder ApproveApps(
+            bool approveAllPermissions,
+            IEnumerable<string> packageIds = null);
+
+        /// <summary>
         /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrl.
         /// </summary>
         /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder"/>.</returns>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class InviteParticipantsOperation : CommsOperation
     {
     
+		///<summary>
+		/// The InviteParticipantsOperation constructor
+		///</summary>
+        public InviteParticipantsOperation()
+        {
+            this.ODataType = "microsoft.graph.inviteParticipantsOperation";
+        }
+	
         /// <summary>
         /// Gets or sets participants.
         /// </summary>

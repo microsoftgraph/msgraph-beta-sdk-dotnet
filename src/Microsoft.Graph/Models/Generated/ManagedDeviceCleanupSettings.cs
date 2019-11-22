@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ManagedDeviceCleanupSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagedDeviceCleanupSettings"/> class.
+        /// </summary>
+        public ManagedDeviceCleanupSettings()
+        {
+            this.ODataType = "microsoft.graph.managedDeviceCleanupSettings";
+        }
 
         /// <summary>
         /// Gets or sets deviceInactivityBeforeRetirementInDays.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SalesCreditMemoLine : Entity
     {
     
+		///<summary>
+		/// The SalesCreditMemoLine constructor
+		///</summary>
+        public SalesCreditMemoLine()
+        {
+            this.ODataType = "microsoft.graph.salesCreditMemoLine";
+        }
+	
         /// <summary>
         /// Gets or sets document id.
         /// </summary>

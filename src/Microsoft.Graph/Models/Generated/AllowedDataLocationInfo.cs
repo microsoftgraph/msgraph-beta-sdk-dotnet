@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AllowedDataLocationInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AllowedDataLocationInfo"/> class.
+        /// </summary>
+        public AllowedDataLocationInfo()
+        {
+            this.ODataType = "microsoft.graph.allowedDataLocationInfo";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RestrictedAppsViolation : Entity
     {
     
+		///<summary>
+		/// The RestrictedAppsViolation constructor
+		///</summary>
+        public RestrictedAppsViolation()
+        {
+            this.ODataType = "microsoft.graph.restrictedAppsViolation";
+        }
+	
         /// <summary>
         /// Gets or sets user id.
         /// User unique identifier, must be Guid

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ProtectAdhocAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectAdhocAction"/> class.
+        /// </summary>
+        public ProtectAdhocAction()
+        {
+            this.ODataType = "microsoft.graph.protectAdhocAction";
+        }
 
     }
 }

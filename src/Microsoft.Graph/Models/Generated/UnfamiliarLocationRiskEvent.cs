@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UnfamiliarLocationRiskEvent : LocatedRiskEvent
     {
     
+		///<summary>
+		/// The UnfamiliarLocationRiskEvent constructor
+		///</summary>
+        public UnfamiliarLocationRiskEvent()
+        {
+            this.ODataType = "microsoft.graph.unfamiliarLocationRiskEvent";
+        }
+	
     }
 }
 

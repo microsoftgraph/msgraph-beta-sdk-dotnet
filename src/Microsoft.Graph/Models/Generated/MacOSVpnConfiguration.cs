@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSVpnConfiguration : AppleVpnConfiguration
     {
     
+		///<summary>
+		/// The MacOSVpnConfiguration constructor
+		///</summary>
+        public MacOSVpnConfiguration()
+        {
+            this.ODataType = "microsoft.graph.macOSVpnConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskAutologon : WindowsKioskUser
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsKioskAutologon"/> class.
+        /// </summary>
+        public WindowsKioskAutologon()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskAutologon";
+        }
 
     }
 }

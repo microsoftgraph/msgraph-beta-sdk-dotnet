@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class CircularGeofenceManagementCondition : LocationManagementCondition
     {
     
+		///<summary>
+		/// The CircularGeofenceManagementCondition constructor
+		///</summary>
+        public CircularGeofenceManagementCondition()
+        {
+            this.ODataType = "microsoft.graph.circularGeofenceManagementCondition";
+        }
+	
         /// <summary>
         /// Gets or sets latitude.
         /// Latitude in degrees, between -90 and +90 inclusive.

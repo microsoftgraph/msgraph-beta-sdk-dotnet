@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         SameEnterprise = 3,
 	
+        /// <summary>
+        /// Same Enterprise And Federated
+        /// </summary>
+        SameEnterpriseAndFederated = 4,
+	
     }
 }

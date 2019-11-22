@@ -135,13 +135,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallTransferRequestBuilder"/>.</returns>
         ICallTransferRequestBuilder Transfer(
-            InvitationParticipantInfo transferTarget = null);
+            InvitationParticipantInfo transferTarget);
 
         /// <summary>
         /// Gets the request builder for CallUnmute.
         /// </summary>
         /// <returns>The <see cref="ICallUnmuteRequestBuilder"/>.</returns>
         ICallUnmuteRequestBuilder Unmute(
+            string clientContext = null);
+
+        /// <summary>
+        /// Gets the request builder for CallUpdateRecordingStatus.
+        /// </summary>
+        /// <returns>The <see cref="ICallUpdateRecordingStatusRequestBuilder"/>.</returns>
+        ICallUpdateRecordingStatusRequestBuilder UpdateRecordingStatus(
+            RecordingStatus status,
             string clientContext = null);
     
     }

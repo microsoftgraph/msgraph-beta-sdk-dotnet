@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AndroidEnrollmentCompanyCode
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AndroidEnrollmentCompanyCode"/> class.
+        /// </summary>
+        public AndroidEnrollmentCompanyCode()
+        {
+            this.ODataType = "microsoft.graph.androidEnrollmentCompanyCode";
+        }
 
         /// <summary>
         /// Gets or sets enrollmentToken.

@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for TargetedManagedAppConfigurationHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="ITargetedManagedAppConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
+        public ITargetedManagedAppConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new TargetedManagedAppConfigurationHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
     }
 }

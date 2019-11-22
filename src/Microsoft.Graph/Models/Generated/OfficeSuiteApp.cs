@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OfficeSuiteApp : MobileApp
     {
     
+		///<summary>
+		/// The OfficeSuiteApp constructor
+		///</summary>
+        public OfficeSuiteApp()
+        {
+            this.ODataType = "microsoft.graph.officeSuiteApp";
+        }
+	
         /// <summary>
         /// Gets or sets auto accept eula.
         /// The value to accept the EULA automatically on the enduser's device.

@@ -29,6 +29,7 @@ namespace Microsoft.Graph
         /// <param name="deviceIds">A deviceIds parameter for the OData method call.</param>
         /// <param name="notificationTitle">A notificationTitle parameter for the OData method call.</param>
         /// <param name="notificationBody">A notificationBody parameter for the OData method call.</param>
+        /// <param name="deviceName">A deviceName parameter for the OData method call.</param>
         public ManagedDeviceExecuteActionRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -37,7 +38,8 @@ namespace Microsoft.Graph
             bool? keepUserData,
             IEnumerable<string> deviceIds,
             string notificationTitle,
-            string notificationBody)
+            string notificationBody,
+            string deviceName)
             : base(requestUrl, client)
         {
             this.SetParameter("actionName", actionName, false);
@@ -46,6 +48,7 @@ namespace Microsoft.Graph
             this.SetParameter("deviceIds", deviceIds, true);
             this.SetParameter("notificationTitle", notificationTitle, true);
             this.SetParameter("notificationBody", notificationBody, true);
+            this.SetParameter("deviceName", deviceName, true);
         }
 
         /// <summary>
@@ -86,6 +89,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("notificationBody"))
             {
                 request.RequestBody.NotificationBody = this.GetParameter<string>("notificationBody");
+            }
+
+            if (this.HasParameter("deviceName"))
+            {
+                request.RequestBody.DeviceName = this.GetParameter<string>("deviceName");
             }
 
             return request;

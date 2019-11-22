@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class EducationSynchronizationCustomization
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EducationSynchronizationCustomization"/> class.
+        /// </summary>
+        public EducationSynchronizationCustomization()
+        {
+            this.ODataType = "microsoft.graph.educationSynchronizationCustomization";
+        }
 
         /// <summary>
         /// Gets or sets optionalPropertiesToSync.

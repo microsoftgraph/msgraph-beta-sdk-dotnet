@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RevokeAppleVppLicensesActionResult : DeviceActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RevokeAppleVppLicensesActionResult"/> class.
+        /// </summary>
+        public RevokeAppleVppLicensesActionResult()
+        {
+            this.ODataType = "microsoft.graph.revokeAppleVppLicensesActionResult";
+        }
 
         /// <summary>
         /// Gets or sets totalLicensesCount.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntentDeviceState : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementIntentDeviceState constructor
+		///</summary>
+        public DeviceManagementIntentDeviceState()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementIntentDeviceState";
+        }
+	
         /// <summary>
         /// Gets or sets user principal name.
         /// The user principal name that is being reported on a device

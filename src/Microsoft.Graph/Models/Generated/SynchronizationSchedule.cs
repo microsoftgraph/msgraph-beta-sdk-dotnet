@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SynchronizationSchedule
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SynchronizationSchedule"/> class.
+        /// </summary>
+        public SynchronizationSchedule()
+        {
+            this.ODataType = "microsoft.graph.synchronizationSchedule";
+        }
 
         /// <summary>
         /// Gets or sets expiration.

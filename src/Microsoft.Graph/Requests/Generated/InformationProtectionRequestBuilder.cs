@@ -85,6 +85,35 @@ namespace Microsoft.Graph
                 return new SensitivityPolicySettingsRequestBuilder(this.AppendSegmentToRequestUrl("sensitivityPolicySettings"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DataLossPreventionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder"/>.</returns>
+        public IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder DataLossPreventionPolicies
+        {
+            get
+            {
+                return new InformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dataLossPreventionPolicies"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for InformationProtectionEvaluateLabelsAndPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder"/>.</returns>
+        public IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder EvaluateLabelsAndPolicies(
+            EvaluateSensitivityLabelsRequestObject evaluateSensitivityLabels = null,
+            DlpEvaluatePoliciesRequestObject evaluateDataLossPreventionPolicies = null,
+            TextClassificationRequestObject classifyText = null)
+        {
+            return new InformationProtectionEvaluateLabelsAndPoliciesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.evaluateLabelsAndPolicies"),
+                this.Client,
+                evaluateSensitivityLabels,
+                evaluateDataLossPreventionPolicies,
+                classifyText);
+        }
     
     }
 }

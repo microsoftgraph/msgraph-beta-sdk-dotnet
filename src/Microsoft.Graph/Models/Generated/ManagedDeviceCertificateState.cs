@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ManagedDeviceCertificateState : Entity
     {
     
+		///<summary>
+		/// The ManagedDeviceCertificateState constructor
+		///</summary>
+        public ManagedDeviceCertificateState()
+        {
+            this.ODataType = "microsoft.graph.managedDeviceCertificateState";
+        }
+	
         /// <summary>
         /// Gets or sets device platform.
         /// Device platform

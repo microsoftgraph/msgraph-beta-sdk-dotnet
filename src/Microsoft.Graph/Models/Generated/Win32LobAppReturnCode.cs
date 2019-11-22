@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Win32LobAppReturnCode
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Win32LobAppReturnCode"/> class.
+        /// </summary>
+        public Win32LobAppReturnCode()
+        {
+            this.ODataType = "microsoft.graph.win32LobAppReturnCode";
+        }
 
         /// <summary>
         /// Gets or sets returnCode.

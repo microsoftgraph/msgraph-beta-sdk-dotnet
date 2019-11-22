@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationRubric : Entity
     {
     
+		///<summary>
+		/// The EducationRubric constructor
+		///</summary>
+        public EducationRubric()
+        {
+            this.ODataType = "microsoft.graph.educationRubric";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

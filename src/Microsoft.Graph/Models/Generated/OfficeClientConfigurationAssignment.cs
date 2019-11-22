@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OfficeClientConfigurationAssignment : Entity
     {
     
+		///<summary>
+		/// The OfficeClientConfigurationAssignment constructor
+		///</summary>
+        public OfficeClientConfigurationAssignment()
+        {
+            this.ODataType = "microsoft.graph.officeClientConfigurationAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target.
         /// </summary>

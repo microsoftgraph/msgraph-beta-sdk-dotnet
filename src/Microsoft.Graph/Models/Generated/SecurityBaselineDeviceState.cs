@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SecurityBaselineDeviceState : Entity
     {
     
+		///<summary>
+		/// The SecurityBaselineDeviceState constructor
+		///</summary>
+        public SecurityBaselineDeviceState()
+        {
+            this.ODataType = "microsoft.graph.securityBaselineDeviceState";
+        }
+	
         /// <summary>
         /// Gets or sets managed device id.
         /// Intune device id

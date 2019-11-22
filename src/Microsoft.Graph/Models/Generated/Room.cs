@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Room : Place
     {
     
+		///<summary>
+		/// The Room constructor
+		///</summary>
+        public Room()
+        {
+            this.ODataType = "microsoft.graph.room";
+        }
+	
         /// <summary>
         /// Gets or sets email address.
         /// </summary>
@@ -93,6 +101,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Tags { get; set; }
+    
+        /// <summary>
+        /// Gets or sets floor label.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "floorLabel", Required = Newtonsoft.Json.Required.Default)]
+        public string FloorLabel { get; set; }
     
     }
 }

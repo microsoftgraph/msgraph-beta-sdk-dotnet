@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationMultiTextBox : GroupPolicyPresentation
     {
     
+		///<summary>
+		/// The GroupPolicyPresentationMultiTextBox constructor
+		///</summary>
+        public GroupPolicyPresentationMultiTextBox()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyPresentationMultiTextBox";
+        }
+	
         /// <summary>
         /// Gets or sets required.
         /// Requirement to enter a value in the text box. Default value is false.

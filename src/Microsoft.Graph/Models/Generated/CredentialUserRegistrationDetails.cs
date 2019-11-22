@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class CredentialUserRegistrationDetails : Entity
     {
     
+		///<summary>
+		/// The CredentialUserRegistrationDetails constructor
+		///</summary>
+        public CredentialUserRegistrationDetails()
+        {
+            this.ODataType = "microsoft.graph.credentialUserRegistrationDetails";
+        }
+	
         /// <summary>
         /// Gets or sets user principal name.
         /// </summary>

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ManagedDeviceModelsAndManufacturers
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagedDeviceModelsAndManufacturers"/> class.
+        /// </summary>
+        public ManagedDeviceModelsAndManufacturers()
+        {
+            this.ODataType = "microsoft.graph.managedDeviceModelsAndManufacturers";
+        }
 
         /// <summary>
         /// Gets or sets deviceModels.

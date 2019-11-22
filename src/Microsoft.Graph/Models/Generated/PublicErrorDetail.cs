@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PublicErrorDetail
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicErrorDetail"/> class.
+        /// </summary>
+        public PublicErrorDetail()
+        {
+            this.ODataType = "microsoft.graph.publicErrorDetail";
+        }
 
         /// <summary>
         /// Gets or sets code.

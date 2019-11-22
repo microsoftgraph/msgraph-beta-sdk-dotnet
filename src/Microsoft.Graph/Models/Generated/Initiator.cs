@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Initiator
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Initiator"/> class.
+        /// </summary>
+        public Initiator()
+        {
+            this.ODataType = "microsoft.graph.initiator";
+        }
 
         /// <summary>
         /// Gets or sets id.

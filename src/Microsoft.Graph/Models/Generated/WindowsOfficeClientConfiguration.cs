@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsOfficeClientConfiguration : OfficeClientConfiguration
     {
     
+		///<summary>
+		/// The WindowsOfficeClientConfiguration constructor
+		///</summary>
+        public WindowsOfficeClientConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsOfficeClientConfiguration";
+        }
+	
     }
 }
 

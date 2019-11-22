@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OAuth2PermissionGrant : Entity
     {
     
+		///<summary>
+		/// The OAuth2PermissionGrant constructor
+		///</summary>
+        public OAuth2PermissionGrant()
+        {
+            this.ODataType = "microsoft.graph.oAuth2PermissionGrant";
+        }
+	
         /// <summary>
         /// Gets or sets client id.
         /// </summary>

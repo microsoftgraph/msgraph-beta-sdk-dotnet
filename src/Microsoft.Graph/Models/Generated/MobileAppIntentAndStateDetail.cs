@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MobileAppIntentAndStateDetail
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MobileAppIntentAndStateDetail"/> class.
+        /// </summary>
+        public MobileAppIntentAndStateDetail()
+        {
+            this.ODataType = "microsoft.graph.mobileAppIntentAndStateDetail";
+        }
 
         /// <summary>
         /// Gets or sets applicationId.

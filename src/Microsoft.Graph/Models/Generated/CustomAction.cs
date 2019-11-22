@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CustomAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomAction"/> class.
+        /// </summary>
+        public CustomAction()
+        {
+            this.ODataType = "microsoft.graph.customAction";
+        }
 
         /// <summary>
         /// Gets or sets name.

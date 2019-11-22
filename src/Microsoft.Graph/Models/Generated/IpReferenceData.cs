@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IpReferenceData
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IpReferenceData"/> class.
+        /// </summary>
+        public IpReferenceData()
+        {
+            this.ODataType = "microsoft.graph.ipReferenceData";
+        }
 
         /// <summary>
         /// Gets or sets asn.

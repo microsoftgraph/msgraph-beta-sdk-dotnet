@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Schedule : Entity
     {
     
+		///<summary>
+		/// The Schedule constructor
+		///</summary>
+        public Schedule()
+        {
+            this.ODataType = "microsoft.graph.schedule";
+        }
+	
         /// <summary>
         /// Gets or sets enabled.
         /// </summary>
@@ -59,6 +67,12 @@ namespace Microsoft.Graph
         public IScheduleShiftsCollectionPage Shifts { get; set; }
     
         /// <summary>
+        /// Gets or sets open shifts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "openShifts", Required = Newtonsoft.Json.Required.Default)]
+        public IScheduleOpenShiftsCollectionPage OpenShifts { get; set; }
+    
+        /// <summary>
         /// Gets or sets times off.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timesOff", Required = Newtonsoft.Json.Required.Default)]
@@ -81,6 +95,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "swapShiftsChangeRequests", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleSwapShiftsChangeRequestsCollectionPage SwapShiftsChangeRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets open shift change requests.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "openShiftChangeRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IScheduleOpenShiftChangeRequestsCollectionPage OpenShiftChangeRequests { get; set; }
     
         /// <summary>
         /// Gets or sets time off requests.

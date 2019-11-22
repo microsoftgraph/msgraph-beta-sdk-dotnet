@@ -22,6 +22,20 @@ namespace Microsoft.Graph
     public partial class SynchronizationSchema : Entity
     {
     
+		///<summary>
+		/// The SynchronizationSchema constructor
+		///</summary>
+        public SynchronizationSchema()
+        {
+            this.ODataType = "microsoft.graph.synchronizationSchema";
+        }
+	
+        /// <summary>
+        /// Gets or sets provisioning task identifier.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningTaskIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string ProvisioningTaskIdentifier { get; set; }
+    
         /// <summary>
         /// Gets or sets synchronization rules.
         /// </summary>

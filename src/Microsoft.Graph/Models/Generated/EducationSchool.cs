@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationSchool : EducationOrganization
     {
     
+		///<summary>
+		/// The EducationSchool constructor
+		///</summary>
+        public EducationSchool()
+        {
+            this.ODataType = "microsoft.graph.educationSchool";
+        }
+	
         /// <summary>
         /// Gets or sets principal email.
         /// Email address of the principal.
@@ -80,7 +88,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fax.
-        /// Fax number of school.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fax", Required = Newtonsoft.Json.Required.Default)]
         public string Fax { get; set; }

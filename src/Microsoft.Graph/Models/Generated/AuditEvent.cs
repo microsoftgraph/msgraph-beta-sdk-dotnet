@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AuditEvent : Entity
     {
     
+		///<summary>
+		/// The AuditEvent constructor
+		///</summary>
+        public AuditEvent()
+        {
+            this.ODataType = "microsoft.graph.auditEvent";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Event display name.

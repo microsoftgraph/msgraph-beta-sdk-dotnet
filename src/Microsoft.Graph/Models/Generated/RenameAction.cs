@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RenameAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenameAction"/> class.
+        /// </summary>
+        public RenameAction()
+        {
+            this.ODataType = "microsoft.graph.renameAction";
+        }
 
         /// <summary>
         /// Gets or sets newName.

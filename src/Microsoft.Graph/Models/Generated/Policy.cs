@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Policy : DirectoryObject
     {
     
+		///<summary>
+		/// The Policy constructor
+		///</summary>
+        public Policy()
+        {
+            this.ODataType = "microsoft.graph.policy";
+        }
+	
         /// <summary>
         /// Gets or sets alternative identifier.
         /// </summary>

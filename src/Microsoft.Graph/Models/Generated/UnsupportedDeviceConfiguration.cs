@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UnsupportedDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The UnsupportedDeviceConfiguration constructor
+		///</summary>
+        public UnsupportedDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.unsupportedDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets original entity type name.
         /// The type of entity that would be returned otherwise.

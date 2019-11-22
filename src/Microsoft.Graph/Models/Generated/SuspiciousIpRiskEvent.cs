@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SuspiciousIpRiskEvent : LocatedRiskEvent
     {
     
+		///<summary>
+		/// The SuspiciousIpRiskEvent constructor
+		///</summary>
+        public SuspiciousIpRiskEvent()
+        {
+            this.ODataType = "microsoft.graph.suspiciousIpRiskEvent";
+        }
+	
     }
 }
 

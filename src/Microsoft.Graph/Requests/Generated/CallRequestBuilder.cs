@@ -244,7 +244,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallTransferRequestBuilder"/>.</returns>
         public ICallTransferRequestBuilder Transfer(
-            InvitationParticipantInfo transferTarget = null)
+            InvitationParticipantInfo transferTarget)
         {
             return new CallTransferRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.transfer"),
@@ -262,6 +262,21 @@ namespace Microsoft.Graph
             return new CallUnmuteRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.unmute"),
                 this.Client,
+                clientContext);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CallUpdateRecordingStatus.
+        /// </summary>
+        /// <returns>The <see cref="ICallUpdateRecordingStatusRequestBuilder"/>.</returns>
+        public ICallUpdateRecordingStatusRequestBuilder UpdateRecordingStatus(
+            RecordingStatus status,
+            string clientContext = null)
+        {
+            return new CallUpdateRecordingStatusRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateRecordingStatus"),
+                this.Client,
+                status,
                 clientContext);
         }
     

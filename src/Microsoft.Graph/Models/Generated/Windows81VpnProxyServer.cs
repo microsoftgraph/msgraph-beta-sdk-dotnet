@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows81VpnProxyServer : VpnProxyServer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Windows81VpnProxyServer"/> class.
+        /// </summary>
+        public Windows81VpnProxyServer()
+        {
+            this.ODataType = "microsoft.graph.windows81VpnProxyServer";
+        }
 
         /// <summary>
         /// Gets or sets automaticallyDetectProxySettings.

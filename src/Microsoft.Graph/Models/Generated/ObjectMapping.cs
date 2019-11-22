@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ObjectMapping
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectMapping"/> class.
+        /// </summary>
+        public ObjectMapping()
+        {
+            this.ODataType = "microsoft.graph.objectMapping";
+        }
 
         /// <summary>
         /// Gets or sets attributeMappings.

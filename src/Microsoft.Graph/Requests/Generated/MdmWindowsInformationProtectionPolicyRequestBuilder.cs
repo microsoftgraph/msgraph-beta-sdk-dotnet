@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new MdmWindowsInformationProtectionPolicyRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (scheduleToInitialize.OpenShifts != null && scheduleToInitialize.OpenShifts.CurrentPage != null)
+                {
+                    scheduleToInitialize.OpenShifts.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("openShifts@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.OpenShifts.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (scheduleToInitialize.TimesOff != null && scheduleToInitialize.TimesOff.CurrentPage != null)
                 {
                     scheduleToInitialize.TimesOff.AdditionalData = scheduleToInitialize.AdditionalData;
@@ -309,6 +325,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         scheduleToInitialize.SwapShiftsChangeRequests.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (scheduleToInitialize.OpenShiftChangeRequests != null && scheduleToInitialize.OpenShiftChangeRequests.CurrentPage != null)
+                {
+                    scheduleToInitialize.OpenShiftChangeRequests.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("openShiftChangeRequests@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.OpenShiftChangeRequests.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Endpoint : DirectoryObject
     {
     
+		///<summary>
+		/// The Endpoint constructor
+		///</summary>
+        public Endpoint()
+        {
+            this.ODataType = "microsoft.graph.endpoint";
+        }
+	
         /// <summary>
         /// Gets or sets capability.
         /// </summary>

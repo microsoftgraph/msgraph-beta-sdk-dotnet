@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Contact : OutlookItem
     {
     
+		///<summary>
+		/// The Contact constructor
+		///</summary>
+        public Contact()
+        {
+            this.ODataType = "microsoft.graph.contact";
+        }
+	
         /// <summary>
         /// Gets or sets parent folder id.
         /// The ID of the contact's parent folder.

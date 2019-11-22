@@ -42,12 +42,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Prefer Skype For Business
         /// </summary>
-        PreferSkypeForBusiness = 4,
+        PreferSkypeForBusiness = 5,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 5,
+        UnknownFutureValue = 6,
 	
     }
 }

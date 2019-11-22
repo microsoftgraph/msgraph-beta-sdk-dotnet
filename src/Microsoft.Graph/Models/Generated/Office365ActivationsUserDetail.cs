@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Office365ActivationsUserDetail : Entity
     {
     
+		///<summary>
+		/// The Office365ActivationsUserDetail constructor
+		///</summary>
+        public Office365ActivationsUserDetail()
+        {
+            this.ODataType = "microsoft.graph.office365ActivationsUserDetail";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

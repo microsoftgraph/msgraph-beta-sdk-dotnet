@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ChatMessageReaction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageReaction"/> class.
+        /// </summary>
+        public ChatMessageReaction()
+        {
+            this.ODataType = "microsoft.graph.chatMessageReaction";
+        }
 
         /// <summary>
         /// Gets or sets reactionType.

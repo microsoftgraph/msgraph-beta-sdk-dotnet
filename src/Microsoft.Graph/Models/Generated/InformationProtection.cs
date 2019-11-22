@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class InformationProtection : Entity
     {
     
+		///<summary>
+		/// The InformationProtection constructor
+		///</summary>
+        public InformationProtection()
+        {
+            this.ODataType = "microsoft.graph.informationProtection";
+        }
+	
         /// <summary>
         /// Gets or sets policy.
         /// </summary>
@@ -39,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityPolicySettings", Required = Newtonsoft.Json.Required.Default)]
         public SensitivityPolicySettings SensitivityPolicySettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets data loss prevention policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLossPreventionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IInformationProtectionDataLossPreventionPoliciesCollectionPage DataLossPreventionPolicies { get; set; }
     
     }
 }

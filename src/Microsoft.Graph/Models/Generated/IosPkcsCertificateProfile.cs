@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosPkcsCertificateProfile : IosCertificateProfileBase
     {
     
+		///<summary>
+		/// The IosPkcsCertificateProfile constructor
+		///</summary>
+        public IosPkcsCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.iosPkcsCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets certification authority.
         /// PKCS Certification Authority.

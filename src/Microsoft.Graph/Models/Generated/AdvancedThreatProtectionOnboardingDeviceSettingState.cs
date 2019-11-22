@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AdvancedThreatProtectionOnboardingDeviceSettingState : Entity
     {
     
+		///<summary>
+		/// The AdvancedThreatProtectionOnboardingDeviceSettingState constructor
+		///</summary>
+        public AdvancedThreatProtectionOnboardingDeviceSettingState()
+        {
+            this.ODataType = "microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState";
+        }
+	
         /// <summary>
         /// Gets or sets platform type.
         /// Device platform type

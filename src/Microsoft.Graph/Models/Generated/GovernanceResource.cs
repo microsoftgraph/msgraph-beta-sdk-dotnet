@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GovernanceResource : Entity
     {
     
+		///<summary>
+		/// The GovernanceResource constructor
+		///</summary>
+        public GovernanceResource()
+        {
+            this.ODataType = "microsoft.graph.governanceResource";
+        }
+	
         /// <summary>
         /// Gets or sets external id.
         /// </summary>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IpSecurityProfile : Entity
     {
     
+		///<summary>
+		/// The IpSecurityProfile constructor
+		///</summary>
+        public IpSecurityProfile()
+        {
+            this.ODataType = "microsoft.graph.ipSecurityProfile";
+        }
+	
         /// <summary>
         /// Gets or sets activity group names.
         /// </summary>

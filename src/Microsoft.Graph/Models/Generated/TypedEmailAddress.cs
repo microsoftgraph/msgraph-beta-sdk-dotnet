@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TypedEmailAddress : EmailAddress
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TypedEmailAddress"/> class.
+        /// </summary>
+        public TypedEmailAddress()
+        {
+            this.ODataType = "microsoft.graph.typedEmailAddress";
+        }
 
         /// <summary>
         /// Gets or sets type.

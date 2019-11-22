@@ -31,10 +31,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets notifications.
-        /// The notification status this app assignment.
+        /// The notification status for this app assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifications", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppNotification? Notifications { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restartSettings.
+        /// The reboot settings to apply for this app assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartSettings", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppRestartSettings RestartSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets installTimeSettings.
+        /// The install time settings to apply for this app assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installTimeSettings", Required = Newtonsoft.Json.Required.Default)]
+        public MobileAppInstallTimeSettings InstallTimeSettings { get; set; }
     
     }
 }

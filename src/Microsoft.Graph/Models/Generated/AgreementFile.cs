@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AgreementFile : Entity
     {
     
+		///<summary>
+		/// The AgreementFile constructor
+		///</summary>
+        public AgreementFile()
+        {
+            this.ODataType = "microsoft.graph.agreementFile";
+        }
+	
         /// <summary>
         /// Gets or sets language.
         /// </summary>

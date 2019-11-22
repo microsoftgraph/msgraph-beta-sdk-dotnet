@@ -49,5 +49,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
         ICurrencyRequestBuilder Currency { get; }
     
+        /// <summary>
+        /// Gets the request builder for PurchaseInvoicePost.
+        /// </summary>
+        /// <returns>The <see cref="IPurchaseInvoicePostRequestBuilder"/>.</returns>
+        IPurchaseInvoicePostRequestBuilder Post();
+    
     }
 }

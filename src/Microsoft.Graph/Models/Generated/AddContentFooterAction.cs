@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddContentFooterAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddContentFooterAction"/> class.
+        /// </summary>
+        public AddContentFooterAction()
+        {
+            this.ODataType = "microsoft.graph.addContentFooterAction";
+        }
 
         /// <summary>
         /// Gets or sets uiElementName.

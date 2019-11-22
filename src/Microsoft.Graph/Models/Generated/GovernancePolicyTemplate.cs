@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GovernancePolicyTemplate : Entity
     {
     
+		///<summary>
+		/// The GovernancePolicyTemplate constructor
+		///</summary>
+        public GovernancePolicyTemplate()
+        {
+            this.ODataType = "microsoft.graph.governancePolicyTemplate";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

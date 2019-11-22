@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class EvaluateLabelJobResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EvaluateLabelJobResult"/> class.
+        /// </summary>
+        public EvaluateLabelJobResult()
+        {
+            this.ODataType = "microsoft.graph.evaluateLabelJobResult";
+        }
 
         /// <summary>
         /// Gets or sets sensitivityLabel.

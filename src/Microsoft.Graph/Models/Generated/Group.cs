@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Group : DirectoryObject
     {
     
+		///<summary>
+		/// The Group constructor
+		///</summary>
+        public Group()
+        {
+            this.ODataType = "microsoft.graph.group";
+        }
+	
         /// <summary>
         /// Gets or sets assigned labels.
         /// </summary>
@@ -78,6 +86,12 @@ namespace Microsoft.Graph
         public bool? HasMembersWithLicenseErrors { get; set; }
     
         /// <summary>
+        /// Gets or sets is assignable to role.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssignableToRole", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsAssignableToRole { get; set; }
+    
+        /// <summary>
         /// Gets or sets license processing state.
         /// Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
         /// </summary>
@@ -106,6 +120,12 @@ namespace Microsoft.Graph
         public string MailNickname { get; set; }
     
         /// <summary>
+        /// Gets or sets mdm app id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string MdmAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets membership rule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRule", Required = Newtonsoft.Json.Required.Default)]
@@ -118,6 +138,13 @@ namespace Microsoft.Graph
         public string MembershipRuleProcessingState { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises domain name.
+        /// Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesDomainName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesDomainName { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises last sync date time.
         /// Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only. Supports $filter.
         /// </summary>
@@ -125,11 +152,25 @@ namespace Microsoft.Graph
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises net bios name.
+        /// Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesNetBiosName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesNetBiosName { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises provisioning errors.
         /// Errors when using Microsoft synchronization product during provisioning. Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesProvisioningErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises sam account name.
+        /// Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesSamAccountName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnPremisesSamAccountName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises security identifier.
@@ -190,6 +231,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SecurityEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security identifier.
+        /// Security identifier of the group, used in Windows scenarios. Returned by default.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string SecurityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets theme.
@@ -255,6 +303,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unseenMessagesCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UnseenMessagesCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hide from outlook clients.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromOutlookClients", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideFromOutlookClients { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hide from address lists.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideFromAddressLists", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideFromAddressLists { get; set; }
     
         /// <summary>
         /// Gets or sets is archived.

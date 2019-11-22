@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration
     {
     
+		///<summary>
+		/// The Windows10EnrollmentCompletionPageConfiguration constructor
+		///</summary>
+        public Windows10EnrollmentCompletionPageConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10EnrollmentCompletionPageConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets show installation progress.
         /// Show or hide installation progress to user
@@ -77,6 +85,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selectedMobileAppIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> SelectedMobileAppIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets track install progress for autopilot only.
+        /// Only show installation progress for Autopilot enrollment scenarios
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trackInstallProgressForAutopilotOnly", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TrackInstallProgressForAutopilotOnly { get; set; }
+    
+        /// <summary>
+        /// Gets or sets disable user status tracking after first user.
+        /// Only show installation progress for first user post enrollment
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableUserStatusTrackingAfterFirstUser", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableUserStatusTrackingAfterFirstUser { get; set; }
     
     }
 }

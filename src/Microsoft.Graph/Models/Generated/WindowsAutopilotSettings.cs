@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsAutopilotSettings : Entity
     {
     
+		///<summary>
+		/// The WindowsAutopilotSettings constructor
+		///</summary>
+        public WindowsAutopilotSettings()
+        {
+            this.ODataType = "microsoft.graph.windowsAutopilotSettings";
+        }
+	
         /// <summary>
         /// Gets or sets last sync date time.
         /// Last data sync date time with DDS service.

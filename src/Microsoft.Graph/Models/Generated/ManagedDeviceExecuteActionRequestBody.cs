@@ -58,5 +58,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationBody", Required = Newtonsoft.Json.Required.Default)]
         public string NotificationBody { get; set; }
     
+        /// <summary>
+        /// Gets or sets DeviceName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
+    
     }
 }

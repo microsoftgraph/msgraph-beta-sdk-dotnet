@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ManagementCertificateWithThumbprint
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagementCertificateWithThumbprint"/> class.
+        /// </summary>
+        public ManagementCertificateWithThumbprint()
+        {
+            this.ODataType = "microsoft.graph.managementCertificateWithThumbprint";
+        }
 
         /// <summary>
         /// Gets or sets thumbprint.

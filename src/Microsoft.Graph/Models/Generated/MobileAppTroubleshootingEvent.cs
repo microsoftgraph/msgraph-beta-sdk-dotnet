@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     
+		///<summary>
+		/// The MobileAppTroubleshootingEvent constructor
+		///</summary>
+        public MobileAppTroubleshootingEvent()
+        {
+            this.ODataType = "microsoft.graph.mobileAppTroubleshootingEvent";
+        }
+	
         /// <summary>
         /// Gets or sets managed device identifier.
         /// Device identifier created or collected by Intune.

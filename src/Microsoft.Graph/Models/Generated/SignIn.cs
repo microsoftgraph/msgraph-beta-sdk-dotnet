@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SignIn : Entity
     {
     
+		///<summary>
+		/// The SignIn constructor
+		///</summary>
+        public SignIn()
+        {
+            this.ODataType = "microsoft.graph.signIn";
+        }
+	
         /// <summary>
         /// Gets or sets alternate sign in name.
         /// </summary>

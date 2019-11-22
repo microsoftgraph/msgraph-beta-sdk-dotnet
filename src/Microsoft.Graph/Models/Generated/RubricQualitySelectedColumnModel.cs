@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RubricQualitySelectedColumnModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RubricQualitySelectedColumnModel"/> class.
+        /// </summary>
+        public RubricQualitySelectedColumnModel()
+        {
+            this.ODataType = "microsoft.graph.rubricQualitySelectedColumnModel";
+        }
 
         /// <summary>
         /// Gets or sets qualityId.

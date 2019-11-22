@@ -23,6 +23,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets ProposedNewTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ProposedNewTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeSlot ProposedNewTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets SendResponse.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "SendResponse", Required = Newtonsoft.Json.Required.Default)]

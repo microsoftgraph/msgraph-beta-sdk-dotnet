@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ApplicationSignInDetailedSummary : Entity
     {
     
+		///<summary>
+		/// The ApplicationSignInDetailedSummary constructor
+		///</summary>
+        public ApplicationSignInDetailedSummary()
+        {
+            this.ODataType = "microsoft.graph.applicationSignInDetailedSummary";
+        }
+	
         /// <summary>
         /// Gets or sets app id.
         /// </summary>

@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for IosManagedAppProtectionHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IIosManagedAppProtectionHasPayloadLinksRequestBuilder"/>.</returns>
+        public IIosManagedAppProtectionHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new IosManagedAppProtectionHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
     }
 }

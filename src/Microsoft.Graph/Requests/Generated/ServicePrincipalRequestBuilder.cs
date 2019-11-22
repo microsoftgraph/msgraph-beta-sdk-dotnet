@@ -182,7 +182,61 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalCreatePasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        public IServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder CreatePasswordSingleSignOnCredentials(
+            string id,
+            IEnumerable<Credential> credentials)
+        {
+            return new ServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createPasswordSingleSignOnCredentials"),
+                this.Client,
+                id,
+                credentials);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalGetPasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        public IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials(
+            string id)
+        {
+            return new ServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPasswordSingleSignOnCredentials"),
+                this.Client,
+                id);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalDeletePasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        public IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials(
+            string id)
+        {
+            return new ServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.deletePasswordSingleSignOnCredentials"),
+                this.Client,
+                id);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalUpdatePasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalUpdatePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        public IServicePrincipalUpdatePasswordSingleSignOnCredentialsRequestBuilder UpdatePasswordSingleSignOnCredentials(
+            string id,
+            IEnumerable<Credential> credentials)
+        {
+            return new ServicePrincipalUpdatePasswordSingleSignOnCredentialsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updatePasswordSingleSignOnCredentials"),
+                this.Client,
+                id,
+                credentials);
+        }
     
     }
 }

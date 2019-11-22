@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81TrustedRootCertificate : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsPhone81TrustedRootCertificate constructor
+		///</summary>
+        public WindowsPhone81TrustedRootCertificate()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81TrustedRootCertificate";
+        }
+	
         /// <summary>
         /// Gets or sets trusted root certificate.
         /// Trusted Root Certificate

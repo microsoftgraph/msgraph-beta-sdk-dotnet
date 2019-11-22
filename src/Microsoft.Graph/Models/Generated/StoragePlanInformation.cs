@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class StoragePlanInformation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StoragePlanInformation"/> class.
+        /// </summary>
+        public StoragePlanInformation()
+        {
+            this.ODataType = "microsoft.graph.storagePlanInformation";
+        }
 
         /// <summary>
         /// Gets or sets upgradeAvailable.

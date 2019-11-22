@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EmbeddedSIMActivationCodePoolAssignment : Entity
     {
     
+		///<summary>
+		/// The EmbeddedSIMActivationCodePoolAssignment constructor
+		///</summary>
+        public EmbeddedSIMActivationCodePoolAssignment()
+        {
+            this.ODataType = "microsoft.graph.embeddedSIMActivationCodePoolAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target.
         /// The type of groups targeted by the embedded SIM activation code pool.

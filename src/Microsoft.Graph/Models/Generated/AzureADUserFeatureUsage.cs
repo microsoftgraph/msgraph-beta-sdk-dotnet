@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AzureADUserFeatureUsage : Entity
     {
     
+		///<summary>
+		/// The AzureADUserFeatureUsage constructor
+		///</summary>
+        public AzureADUserFeatureUsage()
+        {
+            this.ODataType = "microsoft.graph.azureADUserFeatureUsage";
+        }
+	
         /// <summary>
         /// Gets or sets last updated date time.
         /// </summary>

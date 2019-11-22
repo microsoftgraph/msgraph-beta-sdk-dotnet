@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class OutOfBoxExperienceSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OutOfBoxExperienceSettings"/> class.
+        /// </summary>
+        public OutOfBoxExperienceSettings()
+        {
+            this.ODataType = "microsoft.graph.outOfBoxExperienceSettings";
+        }
 
         /// <summary>
         /// Gets or sets hidePrivacySettings.

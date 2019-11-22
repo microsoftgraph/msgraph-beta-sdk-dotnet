@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Chat : Entity
     {
     
+		///<summary>
+		/// The Chat constructor
+		///</summary>
+        public Chat()
+        {
+            this.ODataType = "microsoft.graph.chat";
+        }
+	
         /// <summary>
         /// Gets or sets topic.
         /// </summary>

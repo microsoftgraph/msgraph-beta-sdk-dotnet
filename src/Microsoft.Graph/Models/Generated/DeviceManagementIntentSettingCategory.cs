@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory
     {
     
+		///<summary>
+		/// The DeviceManagementIntentSettingCategory constructor
+		///</summary>
+        public DeviceManagementIntentSettingCategory()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementIntentSettingCategory";
+        }
+	
         /// <summary>
         /// Gets or sets settings.
         /// The settings this category contains

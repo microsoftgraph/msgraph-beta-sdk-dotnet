@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DirectorySetting : Entity
     {
     
+		///<summary>
+		/// The DirectorySetting constructor
+		///</summary>
+        public DirectorySetting()
+        {
+            this.ODataType = "microsoft.graph.directorySetting";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

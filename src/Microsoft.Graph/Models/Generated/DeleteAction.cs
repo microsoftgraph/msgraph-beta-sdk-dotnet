@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeleteAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteAction"/> class.
+        /// </summary>
+        public DeleteAction()
+        {
+            this.ODataType = "microsoft.graph.deleteAction";
+        }
 
         /// <summary>
         /// Gets or sets name.

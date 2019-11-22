@@ -22,9 +22,17 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PublicClientApplication
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicClientApplication"/> class.
+        /// </summary>
+        public PublicClientApplication()
+        {
+            this.ODataType = "microsoft.graph.publicClientApplication";
+        }
 
         /// <summary>
         /// Gets or sets redirectUris.
+        /// Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectUris", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> RedirectUris { get; set; }

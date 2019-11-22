@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ClassificationError : ClassifcationErrorBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassificationError"/> class.
+        /// </summary>
+        public ClassificationError()
+        {
+            this.ODataType = "microsoft.graph.classificationError";
+        }
 
         /// <summary>
         /// Gets or sets details.

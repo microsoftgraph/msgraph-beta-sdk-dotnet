@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationConflictSummary : Entity
     {
     
+		///<summary>
+		/// The DeviceConfigurationConflictSummary constructor
+		///</summary>
+        public DeviceConfigurationConflictSummary()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationConflictSummary";
+        }
+	
         /// <summary>
         /// Gets or sets conflicting device configurations.
         /// The set of policies in conflict with the given setting

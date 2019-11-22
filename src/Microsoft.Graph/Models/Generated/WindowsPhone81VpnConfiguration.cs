@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81VpnConfiguration : Windows81VpnConfiguration
     {
     
+		///<summary>
+		/// The WindowsPhone81VpnConfiguration constructor
+		///</summary>
+        public WindowsPhone81VpnConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81VpnConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets bypass vpn on company wifi.
         /// Bypass VPN on company Wi-Fi.

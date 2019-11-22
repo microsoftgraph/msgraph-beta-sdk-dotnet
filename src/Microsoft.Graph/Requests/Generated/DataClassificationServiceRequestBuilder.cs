@@ -123,6 +123,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for EvaluateDlpPoliciesJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceEvaluateDlpPoliciesJobsCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceEvaluateDlpPoliciesJobsCollectionRequestBuilder EvaluateDlpPoliciesJobs
+        {
+            get
+            {
+                return new DataClassificationServiceEvaluateDlpPoliciesJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("evaluateDlpPoliciesJobs"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for LabelsAndPoliciesEvaluationJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder LabelsAndPoliciesEvaluationJobs
+        {
+            get
+            {
+                return new DataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("labelsAndPoliciesEvaluationJobs"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ClassifyText.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>

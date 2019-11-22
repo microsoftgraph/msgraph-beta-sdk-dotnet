@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementDomainJoinConnector : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementDomainJoinConnector constructor
+		///</summary>
+        public DeviceManagementDomainJoinConnector()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementDomainJoinConnector";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The connector display name.

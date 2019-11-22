@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MobileAppAssignment : Entity
     {
     
+		///<summary>
+		/// The MobileAppAssignment constructor
+		///</summary>
+        public MobileAppAssignment()
+        {
+            this.ODataType = "microsoft.graph.mobileAppAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets intent.
         /// The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
@@ -42,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppAssignmentSettings Settings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source.
+        /// The resource type which is the source for the assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentSource? Source { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source id.
+        /// The identifier of the source of the assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceId { get; set; }
     
     }
 }

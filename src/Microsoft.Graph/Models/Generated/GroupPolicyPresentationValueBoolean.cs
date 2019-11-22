@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationValueBoolean : GroupPolicyPresentationValue
     {
     
+		///<summary>
+		/// The GroupPolicyPresentationValueBoolean constructor
+		///</summary>
+        public GroupPolicyPresentationValueBoolean()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyPresentationValueBoolean";
+        }
+	
         /// <summary>
         /// Gets or sets value.
         /// An boolean value for the associated presentation.

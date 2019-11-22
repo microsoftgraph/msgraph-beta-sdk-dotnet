@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class FocusActivityStatistics : ActivityStatistics
     {
     
+		///<summary>
+		/// The FocusActivityStatistics constructor
+		///</summary>
+        public FocusActivityStatistics()
+        {
+            this.ODataType = "microsoft.graph.focusActivityStatistics";
+        }
+	
     }
 }
 

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class VppTokenActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VppTokenActionResult"/> class.
+        /// </summary>
+        public VppTokenActionResult()
+        {
+            this.ODataType = "microsoft.graph.vppTokenActionResult";
+        }
 
         /// <summary>
         /// Gets or sets actionName.

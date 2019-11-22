@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class BitLockerSystemDrivePolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BitLockerSystemDrivePolicy"/> class.
+        /// </summary>
+        public BitLockerSystemDrivePolicy()
+        {
+            this.ODataType = "microsoft.graph.bitLockerSystemDrivePolicy";
+        }
 
         /// <summary>
         /// Gets or sets encryptionMethod.

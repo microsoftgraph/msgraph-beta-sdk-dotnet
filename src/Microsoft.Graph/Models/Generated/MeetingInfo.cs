@@ -20,7 +20,7 @@ namespace Microsoft.Graph
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class MeetingInfo
+    public abstract partial class MeetingInfo
     {
 
         /// <summary>

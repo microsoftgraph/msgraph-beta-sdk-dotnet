@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10GeneralConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10GeneralConfiguration constructor
+		///</summary>
+        public Windows10GeneralConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10GeneralConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets task manager block end task.
         /// Specify whether non-administrators can use Task Manager to end tasks.

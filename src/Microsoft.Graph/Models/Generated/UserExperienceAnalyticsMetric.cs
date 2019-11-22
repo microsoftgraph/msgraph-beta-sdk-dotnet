@@ -22,13 +22,14 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsMetric : Entity
     {
     
-        /// <summary>
-        /// Gets or sets display name.
-        /// The name of the user experience analytics metric.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
+		///<summary>
+		/// The UserExperienceAnalyticsMetric constructor
+		///</summary>
+        public UserExperienceAnalyticsMetric()
+        {
+            this.ODataType = "microsoft.graph.userExperienceAnalyticsMetric";
+        }
+	
         /// <summary>
         /// Gets or sets value.
         /// The value of the user experience analytics metric.

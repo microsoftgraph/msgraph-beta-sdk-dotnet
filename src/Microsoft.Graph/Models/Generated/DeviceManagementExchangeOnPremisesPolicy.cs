@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementExchangeOnPremisesPolicy : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementExchangeOnPremisesPolicy constructor
+		///</summary>
+        public DeviceManagementExchangeOnPremisesPolicy()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementExchangeOnPremisesPolicy";
+        }
+	
         /// <summary>
         /// Gets or sets notification content.
         /// Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.

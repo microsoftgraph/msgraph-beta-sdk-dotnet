@@ -22,15 +22,24 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ResourceAccess
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourceAccess"/> class.
+        /// </summary>
+        public ResourceAccess()
+        {
+            this.ODataType = "microsoft.graph.resourceAccess";
+        }
 
         /// <summary>
         /// Gets or sets id.
+        /// The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are 'scope' or 'role'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

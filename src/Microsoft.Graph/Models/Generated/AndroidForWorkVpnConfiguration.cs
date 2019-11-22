@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkVpnConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidForWorkVpnConfiguration constructor
+		///</summary>
+        public AndroidForWorkVpnConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidForWorkVpnConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets connection name.
         /// Connection name displayed to the user.

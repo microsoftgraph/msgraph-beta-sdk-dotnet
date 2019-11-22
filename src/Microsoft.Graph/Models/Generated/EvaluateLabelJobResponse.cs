@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EvaluateLabelJobResponse : JobResponseBase
     {
     
+		///<summary>
+		/// The EvaluateLabelJobResponse constructor
+		///</summary>
+        public EvaluateLabelJobResponse()
+        {
+            this.ODataType = "microsoft.graph.evaluateLabelJobResponse";
+        }
+	
         /// <summary>
         /// Gets or sets result.
         /// </summary>

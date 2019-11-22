@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DataStoreField
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataStoreField"/> class.
+        /// </summary>
+        public DataStoreField()
+        {
+            this.ODataType = "microsoft.graph.dataStoreField";
+        }
 
         /// <summary>
         /// Gets or sets name.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WebPart
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebPart"/> class.
+        /// </summary>
+        public WebPart()
+        {
+            this.ODataType = "microsoft.graph.webPart";
+        }
 
         /// <summary>
         /// Gets or sets type.

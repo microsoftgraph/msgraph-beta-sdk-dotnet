@@ -22,27 +22,14 @@ namespace Microsoft.Graph
     public partial class UserExperienceAnalyticsOverview : Entity
     {
     
-        /// <summary>
-        /// Gets or sets overall score.
-        /// The user experience analytics overall score.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overallScore", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? OverallScore { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device boot performance overall score.
-        /// The user experience analytics device boot performance overall score.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceBootPerformanceOverallScore", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeviceBootPerformanceOverallScore { get; set; }
-    
-        /// <summary>
-        /// Gets or sets best practices overall score.
-        /// The user experience analytics best practices overall score.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bestPracticesOverallScore", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? BestPracticesOverallScore { get; set; }
-    
+		///<summary>
+		/// The UserExperienceAnalyticsOverview constructor
+		///</summary>
+        public UserExperienceAnalyticsOverview()
+        {
+            this.ODataType = "microsoft.graph.userExperienceAnalyticsOverview";
+        }
+	
         /// <summary>
         /// Gets or sets insights.
         /// The user experience analytics insights.

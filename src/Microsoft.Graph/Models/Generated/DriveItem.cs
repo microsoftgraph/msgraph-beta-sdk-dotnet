@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DriveItem : BaseItem
     {
     
+		///<summary>
+		/// The DriveItem constructor
+		///</summary>
+        public DriveItem()
+        {
+            this.ODataType = "microsoft.graph.driveItem";
+        }
+	
         /// <summary>
         /// Gets or sets audio.
         /// Audio metadata, if the item is an audio file. Read-only.
@@ -243,6 +251,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versions", Required = Newtonsoft.Json.Required.Default)]
         public IDriveItemVersionsCollectionPage Versions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets document.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "document", Required = Newtonsoft.Json.Required.Default)]
+        public Document Document { get; set; }
     
     }
 }

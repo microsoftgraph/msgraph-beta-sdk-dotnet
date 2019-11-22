@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IntuneBrandingProfile : Entity
     {
     
+		///<summary>
+		/// The IntuneBrandingProfile constructor
+		///</summary>
+        public IntuneBrandingProfile()
+        {
+            this.ODataType = "microsoft.graph.intuneBrandingProfile";
+        }
+	
         /// <summary>
         /// Gets or sets profile name.
         /// Name of the profile

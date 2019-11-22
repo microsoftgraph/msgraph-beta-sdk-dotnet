@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionWipeAction : Entity
     {
     
+		///<summary>
+		/// The WindowsInformationProtectionWipeAction constructor
+		///</summary>
+        public WindowsInformationProtectionWipeAction()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionWipeAction";
+        }
+	
         /// <summary>
         /// Gets or sets status.
         /// Wipe action status.

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class BinaryManagementConditionExpression : ManagementConditionExpressionModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BinaryManagementConditionExpression"/> class.
+        /// </summary>
+        public BinaryManagementConditionExpression()
+        {
+            this.ODataType = "microsoft.graph.binaryManagementConditionExpression";
+        }
 
         /// <summary>
         /// Gets or sets operator.

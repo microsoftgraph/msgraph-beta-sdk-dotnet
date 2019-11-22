@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DailySchedule : RunSchedule
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DailySchedule"/> class.
+        /// </summary>
+        public DailySchedule()
+        {
+            this.ODataType = "microsoft.graph.dailySchedule";
+        }
 
         /// <summary>
         /// Gets or sets interval.

@@ -181,12 +181,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
         public IEventDeclineRequestBuilder Decline(
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
             string Comment = null)
         {
             return new EventDeclineRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
                 this.Client,
+                ProposedNewTime,
                 SendResponse,
                 Comment);
         }
@@ -196,12 +198,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
         public IEventTentativelyAcceptRequestBuilder TentativelyAccept(
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
             string Comment = null)
         {
             return new EventTentativelyAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.tentativelyAccept"),
                 this.Client,
+                ProposedNewTime,
                 SendResponse,
                 Comment);
         }

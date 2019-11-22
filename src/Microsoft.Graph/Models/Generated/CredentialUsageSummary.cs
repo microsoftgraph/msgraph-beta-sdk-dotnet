@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class CredentialUsageSummary : Entity
     {
     
+		///<summary>
+		/// The CredentialUsageSummary constructor
+		///</summary>
+        public CredentialUsageSummary()
+        {
+            this.ODataType = "microsoft.graph.credentialUsageSummary";
+        }
+	
         /// <summary>
         /// Gets or sets feature.
         /// </summary>

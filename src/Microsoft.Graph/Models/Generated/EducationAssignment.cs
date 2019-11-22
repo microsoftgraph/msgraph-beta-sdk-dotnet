@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationAssignment : Entity
     {
     
+		///<summary>
+		/// The EducationAssignment constructor
+		///</summary>
+        public EducationAssignment()
+        {
+            this.ODataType = "microsoft.graph.educationAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets class id.
         /// </summary>
@@ -39,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instructions", Required = Newtonsoft.Json.Required.Default)]
         public EducationItemBody Instructions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets close date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CloseDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets due date time.

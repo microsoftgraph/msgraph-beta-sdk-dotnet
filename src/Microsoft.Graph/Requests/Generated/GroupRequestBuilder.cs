@@ -399,6 +399,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for GroupEvaluateDynamicMembership.
+        /// </summary>
+        /// <returns>The <see cref="IGroupEvaluateDynamicMembershipRequestBuilder"/>.</returns>
+        public IGroupEvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership(
+            string memberId = null)
+        {
+            return new GroupEvaluateDynamicMembershipRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.evaluateDynamicMembership"),
+                this.Client,
+                memberId);
+        }
+
+        /// <summary>
         /// Gets the request builder for GroupValidateProperties.
         /// </summary>
         /// <returns>The <see cref="IGroupValidatePropertiesRequestBuilder"/>.</returns>
@@ -416,35 +429,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for GroupGrantResourceSpecificConsent.
+        /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
         /// </summary>
-        /// <returns>The <see cref="IGroupGrantResourceSpecificConsentRequestBuilder"/>.</returns>
-        public IGroupGrantResourceSpecificConsentRequestBuilder GrantResourceSpecificConsent(
-            bool checkOnly,
-            string clientAppId,
-            IEnumerable<InstanceResourceAccess> permissionSets,
-            IEnumerable<string> tags = null)
+        /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>
+        public IGroupCheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp()
         {
-            return new GroupGrantResourceSpecificConsentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.grantResourceSpecificConsent"),
-                this.Client,
-                checkOnly,
-                clientAppId,
-                permissionSets,
-                tags);
+            return new GroupCheckGrantedPermissionsForAppRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.checkGrantedPermissionsForApp"),
+                this.Client);
         }
 
         /// <summary>
-        /// Gets the request builder for GroupRevokeResourceSpecificConsent.
+        /// Gets the request builder for GroupAssignLicense.
         /// </summary>
-        /// <returns>The <see cref="IGroupRevokeResourceSpecificConsentRequestBuilder"/>.</returns>
-        public IGroupRevokeResourceSpecificConsentRequestBuilder RevokeResourceSpecificConsent(
-            string clientAppId)
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        public IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses)
         {
-            return new GroupRevokeResourceSpecificConsentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.revokeResourceSpecificConsent"),
+            return new GroupAssignLicenseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assignLicense"),
                 this.Client,
-                clientAppId);
+                addLicenses,
+                removeLicenses);
         }
 
         /// <summary>

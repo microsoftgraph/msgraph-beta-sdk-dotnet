@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class BookingCustomer : BookingPerson
     {
     
+		///<summary>
+		/// The BookingCustomer constructor
+		///</summary>
+        public BookingCustomer()
+        {
+            this.ODataType = "microsoft.graph.bookingCustomer";
+        }
+	
     }
 }
 

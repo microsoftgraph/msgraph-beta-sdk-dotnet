@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DomainRegistrant
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DomainRegistrant"/> class.
+        /// </summary>
+        public DomainRegistrant()
+        {
+            this.ODataType = "microsoft.graph.domainRegistrant";
+        }
 
         /// <summary>
         /// Gets or sets countryOrRegionCode.

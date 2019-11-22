@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class TeamDiscoverySettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamDiscoverySettings"/> class.
+        /// </summary>
+        public TeamDiscoverySettings()
+        {
+            this.ODataType = "microsoft.graph.teamDiscoverySettings";
+        }
 
         /// <summary>
         /// Gets or sets showInTeamsSearchAndSuggestions.

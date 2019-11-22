@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Dimension : Entity
     {
     
+		///<summary>
+		/// The Dimension constructor
+		///</summary>
+        public Dimension()
+        {
+            this.ODataType = "microsoft.graph.dimension";
+        }
+	
         /// <summary>
         /// Gets or sets code.
         /// </summary>

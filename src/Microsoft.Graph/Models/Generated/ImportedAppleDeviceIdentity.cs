@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ImportedAppleDeviceIdentity : Entity
     {
     
+		///<summary>
+		/// The ImportedAppleDeviceIdentity constructor
+		///</summary>
+        public ImportedAppleDeviceIdentity()
+        {
+            this.ODataType = "microsoft.graph.importedAppleDeviceIdentity";
+        }
+	
         /// <summary>
         /// Gets or sets serial number.
         /// Device serial number
@@ -56,6 +64,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverySource", Required = Newtonsoft.Json.Required.Default)]
         public DiscoverySource? DiscoverySource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is deleted.
+        /// Indicates if the device is deleted from Apple Business Manager
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.

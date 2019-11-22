@@ -22,23 +22,19 @@ namespace Microsoft.Graph
     public partial class CommsOperation : Entity
     {
     
+		///<summary>
+		/// The CommsOperation constructor
+		///</summary>
+        public CommsOperation()
+        {
+            this.ODataType = "microsoft.graph.commsOperation";
+        }
+	
         /// <summary>
         /// Gets or sets status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public OperationStatus? Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last action date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActionDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets client context.

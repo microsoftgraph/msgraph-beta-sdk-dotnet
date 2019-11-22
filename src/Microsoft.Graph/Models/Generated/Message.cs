@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Message : OutlookItem
     {
     
+		///<summary>
+		/// The Message constructor
+		///</summary>
+        public Message()
+        {
+            this.ODataType = "microsoft.graph.message";
+        }
+	
         /// <summary>
         /// Gets or sets received date time.
         /// The date and time the message was received.

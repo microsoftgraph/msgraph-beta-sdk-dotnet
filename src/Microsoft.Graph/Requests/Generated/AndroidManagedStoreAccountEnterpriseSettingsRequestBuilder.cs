@@ -51,6 +51,21 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsApproveApps.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder"/>.</returns>
+        public IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder ApproveApps(
+            bool approveAllPermissions,
+            IEnumerable<string> packageIds = null)
+        {
+            return new AndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.approveApps"),
+                this.Client,
+                approveAllPermissions,
+                packageIds);
+        }
+
+        /// <summary>
         /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrl.
         /// </summary>
         /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder"/>.</returns>
