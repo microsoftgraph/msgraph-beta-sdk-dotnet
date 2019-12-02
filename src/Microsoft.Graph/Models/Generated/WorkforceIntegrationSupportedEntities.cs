@@ -35,5 +35,20 @@ namespace Microsoft.Graph
         /// </summary>
         SwapRequest = 2,
 	
+        /// <summary>
+        /// User Shift Preferences
+        /// </summary>
+        UserShiftPreferences = 8,
+	
+        /// <summary>
+        /// Open Shift
+        /// </summary>
+        OpenShift = 16,
+	
+        /// <summary>
+        /// Open Shift Request
+        /// </summary>
+        OpenShiftRequest = 32,
+	
     }
 }

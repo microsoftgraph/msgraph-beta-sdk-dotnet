@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileGeneralDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidWorkProfileGeneralDeviceConfiguration constructor
+		///</summary>
+        public AndroidWorkProfileGeneralDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidWorkProfileGeneralDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets password block fingerprint unlock.
         /// Indicates whether or not to block fingerprint unlock.
@@ -273,6 +281,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnEnableAlwaysOnLockdownMode", Required = Newtonsoft.Json.Required.Default)]
         public bool? VpnEnableAlwaysOnLockdownMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets work profile allow widgets.
+        /// Allow widgets from work profile apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileAllowWidgets", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WorkProfileAllowWidgets { get; set; }
+    
+        /// <summary>
+        /// Gets or sets work profile block personal app installs from unknown sources.
+        /// Prevent app installations from unknown sources in the personal profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileBlockPersonalAppInstallsFromUnknownSources", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WorkProfileBlockPersonalAppInstallsFromUnknownSources { get; set; }
     
     }
 }

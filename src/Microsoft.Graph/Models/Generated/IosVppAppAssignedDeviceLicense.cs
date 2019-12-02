@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosVppAppAssignedDeviceLicense : IosVppAppAssignedLicense
     {
     
+		///<summary>
+		/// The IosVppAppAssignedDeviceLicense constructor
+		///</summary>
+        public IosVppAppAssignedDeviceLicense()
+        {
+            this.ODataType = "microsoft.graph.iosVppAppAssignedDeviceLicense";
+        }
+	
         /// <summary>
         /// Gets or sets managed device id.
         /// The managed device ID.

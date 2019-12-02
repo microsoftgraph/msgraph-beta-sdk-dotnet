@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceManagementSettingComparison
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceManagementSettingComparison"/> class.
+        /// </summary>
+        public DeviceManagementSettingComparison()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementSettingComparison";
+        }
 
         /// <summary>
         /// Gets or sets id.

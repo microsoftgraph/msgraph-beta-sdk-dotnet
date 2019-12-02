@@ -261,6 +261,27 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationRestriction", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppNotificationRestriction? NotificationRestriction { get; set; }
     
+        /// <summary>
+        /// Gets or sets previous pin block count.
+        /// Requires a pin to be unique from the number specified in this property.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previousPinBlockCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PreviousPinBlockCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum allowed device threat level.
+        /// Maximum allowed device threat level, as reported by the MTD app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAllowedDeviceThreatLevel", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppDeviceThreatLevel? MaximumAllowedDeviceThreatLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobile threat defense remediation action.
+        /// Determines what action to take if the mobile threat defense threat threshold isn't met. Warn isn't a supported value for this property
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileThreatDefenseRemediationAction", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction { get; set; }
+    
     }
 }
 

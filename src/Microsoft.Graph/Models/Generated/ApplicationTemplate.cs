@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ApplicationTemplate : Entity
     {
     
+		///<summary>
+		/// The ApplicationTemplate constructor
+		///</summary>
+        public ApplicationTemplate()
+        {
+            this.ODataType = "microsoft.graph.applicationTemplate";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

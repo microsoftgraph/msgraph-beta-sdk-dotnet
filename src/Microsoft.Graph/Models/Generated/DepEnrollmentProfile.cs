@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DepEnrollmentProfile : EnrollmentProfile
     {
     
+		///<summary>
+		/// The DepEnrollmentProfile constructor
+		///</summary>
+        public DepEnrollmentProfile()
+        {
+            this.ODataType = "microsoft.graph.depEnrollmentProfile";
+        }
+	
         /// <summary>
         /// Gets or sets is default.
         /// Indicates if this is the default profile

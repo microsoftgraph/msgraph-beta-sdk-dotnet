@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IMacOSDeviceFeaturesConfigurationRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for SingleSignOnExtensionPkinitCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        IMacOSCertificateProfileBaseWithReferenceRequestBuilder SingleSignOnExtensionPkinitCertificate { get; }
+    
     }
 }

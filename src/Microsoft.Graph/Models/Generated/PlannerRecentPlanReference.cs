@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PlannerRecentPlanReference
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlannerRecentPlanReference"/> class.
+        /// </summary>
+        public PlannerRecentPlanReference()
+        {
+            this.ODataType = "microsoft.graph.plannerRecentPlanReference";
+        }
 
         /// <summary>
         /// Gets or sets lastAccessedDateTime.

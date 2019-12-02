@@ -31,5 +31,17 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IUnifiedRoleAssignmentRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Principal.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        IDirectoryObjectWithReferenceRequestBuilder Principal { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
+        IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition { get; }
+    
     }
 }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MobileAppIntentAndState : Entity
     {
     
+		///<summary>
+		/// The MobileAppIntentAndState constructor
+		///</summary>
+        public MobileAppIntentAndState()
+        {
+            this.ODataType = "microsoft.graph.mobileAppIntentAndState";
+        }
+	
         /// <summary>
         /// Gets or sets managed device identifier.
         /// Device identifier created or collected by Intune.

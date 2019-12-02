@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Calendar : Entity
     {
     
+		///<summary>
+		/// The Calendar constructor
+		///</summary>
+        public Calendar()
+        {
+            this.ODataType = "microsoft.graph.calendar";
+        }
+	
         /// <summary>
         /// Gets or sets name.
         /// The calendar name.
@@ -96,6 +104,30 @@ namespace Microsoft.Graph
         public EmailAddress Owner { get; set; }
     
         /// <summary>
+        /// Gets or sets allowed online meeting providers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedOnlineMeetingProviders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OnlineMeetingProviderType> AllowedOnlineMeetingProviders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default online meeting provider.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultOnlineMeetingProvider", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingProviderType? DefaultOnlineMeetingProvider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is tallying responses.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTallyingResponses", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsTallyingResponses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is removable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemovable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRemovable { get; set; }
+    
+        /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
         /// </summary>
@@ -108,6 +140,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public ICalendarMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets calendar permissions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarPermissions", Required = Newtonsoft.Json.Required.Default)]
+        public ICalendarCalendarPermissionsCollectionPage CalendarPermissions { get; set; }
     
         /// <summary>
         /// Gets or sets events.

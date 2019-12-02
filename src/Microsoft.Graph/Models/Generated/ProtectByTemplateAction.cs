@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ProtectByTemplateAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectByTemplateAction"/> class.
+        /// </summary>
+        public ProtectByTemplateAction()
+        {
+            this.ODataType = "microsoft.graph.protectByTemplateAction";
+        }
 
         /// <summary>
         /// Gets or sets templateId.

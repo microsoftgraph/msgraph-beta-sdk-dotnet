@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SensitiveContentLocation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SensitiveContentLocation"/> class.
+        /// </summary>
+        public SensitiveContentLocation()
+        {
+            this.ODataType = "microsoft.graph.sensitiveContentLocation";
+        }
 
         /// <summary>
         /// Gets or sets idMatch.

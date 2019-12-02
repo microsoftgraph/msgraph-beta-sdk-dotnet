@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class GeolocationColumn
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GeolocationColumn"/> class.
+        /// </summary>
+        public GeolocationColumn()
+        {
+            this.ODataType = "microsoft.graph.geolocationColumn";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

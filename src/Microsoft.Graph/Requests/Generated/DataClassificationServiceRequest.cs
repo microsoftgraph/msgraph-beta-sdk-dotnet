@@ -330,6 +330,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs != null && dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.CurrentPage != null)
+                {
+                    dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateDlpPoliciesJobs@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs != null && dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.CurrentPage != null)
+                {
+                    dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("labelsAndPoliciesEvaluationJobs@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (dataClassificationServiceToInitialize.ClassifyText != null && dataClassificationServiceToInitialize.ClassifyText.CurrentPage != null)
                 {
                     dataClassificationServiceToInitialize.ClassifyText.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;

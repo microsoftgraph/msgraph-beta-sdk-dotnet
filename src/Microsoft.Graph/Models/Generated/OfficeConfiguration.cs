@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OfficeConfiguration : Entity
     {
     
+		///<summary>
+		/// The OfficeConfiguration constructor
+		///</summary>
+        public OfficeConfiguration()
+        {
+            this.ODataType = "microsoft.graph.officeConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets tenant checkin statuses.
         /// </summary>

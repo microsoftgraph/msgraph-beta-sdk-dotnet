@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChannelMembersCollectionRequestBuilder"/>.</returns>
         IChannelMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
+        /// Gets the request builder for FilesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
+        IDriveItemRequestBuilder FilesFolder { get; }
     
     }
 }

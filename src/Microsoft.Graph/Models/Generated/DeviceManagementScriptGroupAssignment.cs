@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScriptGroupAssignment : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementScriptGroupAssignment constructor
+		///</summary>
+        public DeviceManagementScriptGroupAssignment()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementScriptGroupAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target group id.
         /// The Id of the Azure Active Directory group we are targeting the script to.

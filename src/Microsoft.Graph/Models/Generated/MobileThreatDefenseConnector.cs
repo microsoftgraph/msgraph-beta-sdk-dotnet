@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MobileThreatDefenseConnector : Entity
     {
     
+		///<summary>
+		/// The MobileThreatDefenseConnector constructor
+		///</summary>
+        public MobileThreatDefenseConnector()
+        {
+            this.ODataType = "microsoft.graph.mobileThreatDefenseConnector";
+        }
+	
         /// <summary>
         /// Gets or sets last heartbeat date time.
         /// DateTime of last Heartbeat recieved from the Data Sync Partner
@@ -35,6 +43,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
         public MobileThreatPartnerTenantState? PartnerState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets android mobile application management enabled.
+        /// For Android, set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidMobileApplicationManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AndroidMobileApplicationManagementEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ios mobile application management enabled.
+        /// For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosMobileApplicationManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IosMobileApplicationManagementEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets android enabled.

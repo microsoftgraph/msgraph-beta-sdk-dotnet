@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MfaDetail
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MfaDetail"/> class.
+        /// </summary>
+        public MfaDetail()
+        {
+            this.ODataType = "microsoft.graph.mfaDetail";
+        }
 
         /// <summary>
         /// Gets or sets authMethod.

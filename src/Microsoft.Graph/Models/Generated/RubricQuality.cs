@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RubricQuality
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RubricQuality"/> class.
+        /// </summary>
+        public RubricQuality()
+        {
+            this.ODataType = "microsoft.graph.rubricQuality";
+        }
 
         /// <summary>
         /// Gets or sets qualityId.

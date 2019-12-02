@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceManagementUserRightsLocalUserOrGroup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceManagementUserRightsLocalUserOrGroup"/> class.
+        /// </summary>
+        public DeviceManagementUserRightsLocalUserOrGroup()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementUserRightsLocalUserOrGroup";
+        }
 
         /// <summary>
         /// Gets or sets name.

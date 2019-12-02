@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IScheduleShiftsCollectionRequestBuilder Shifts { get; }
 
         /// <summary>
+        /// Gets the request builder for OpenShifts.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleOpenShiftsCollectionRequestBuilder"/>.</returns>
+        IScheduleOpenShiftsCollectionRequestBuilder OpenShifts { get; }
+
+        /// <summary>
         /// Gets the request builder for TimesOff.
         /// </summary>
         /// <returns>The <see cref="IScheduleTimesOffCollectionRequestBuilder"/>.</returns>
@@ -60,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder"/>.</returns>
         IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests { get; }
+
+        /// <summary>
+        /// Gets the request builder for OpenShiftChangeRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleOpenShiftChangeRequestsCollectionRequestBuilder"/>.</returns>
+        IScheduleOpenShiftChangeRequestsCollectionRequestBuilder OpenShiftChangeRequests { get; }
 
         /// <summary>
         /// Gets the request builder for TimeOffRequests.

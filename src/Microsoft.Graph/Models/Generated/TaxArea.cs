@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TaxArea : Entity
     {
     
+		///<summary>
+		/// The TaxArea constructor
+		///</summary>
+        public TaxArea()
+        {
+            this.ODataType = "microsoft.graph.taxArea";
+        }
+	
         /// <summary>
         /// Gets or sets code.
         /// </summary>

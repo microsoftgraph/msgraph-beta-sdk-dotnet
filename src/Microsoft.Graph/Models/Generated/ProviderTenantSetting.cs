@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ProviderTenantSetting : Entity
     {
     
+		///<summary>
+		/// The ProviderTenantSetting constructor
+		///</summary>
+        public ProviderTenantSetting()
+        {
+            this.ODataType = "microsoft.graph.providerTenantSetting";
+        }
+	
         /// <summary>
         /// Gets or sets azure tenant id.
         /// </summary>

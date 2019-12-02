@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        public IProfilePhotoRequestBuilder Photo
+        {
+            get
+            {
+                return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Template.
         /// </summary>
         /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>

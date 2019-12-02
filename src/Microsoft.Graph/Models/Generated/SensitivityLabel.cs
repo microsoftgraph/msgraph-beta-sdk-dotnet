@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SensitivityLabel : Entity
     {
     
+		///<summary>
+		/// The SensitivityLabel constructor
+		///</summary>
+        public SensitivityLabel()
+        {
+            this.ODataType = "microsoft.graph.sensitivityLabel";
+        }
+	
         /// <summary>
         /// Gets or sets name.
         /// </summary>
@@ -81,6 +89,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Priority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets auto labeling.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoLabeling", Required = Newtonsoft.Json.Required.Default)]
+        public AutoLabeling AutoLabeling { get; set; }
     
         /// <summary>
         /// Gets or sets sublabels.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ConversationMember : Entity
     {
     
+		///<summary>
+		/// The ConversationMember constructor
+		///</summary>
+        public ConversationMember()
+        {
+            this.ODataType = "microsoft.graph.conversationMember";
+        }
+	
         /// <summary>
         /// Gets or sets roles.
         /// </summary>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosEducationDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The IosEducationDeviceConfiguration constructor
+		///</summary>
+        public IosEducationDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosEducationDeviceConfiguration";
+        }
+	
     }
 }
 

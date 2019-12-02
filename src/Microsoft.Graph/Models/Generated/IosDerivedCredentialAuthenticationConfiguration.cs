@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The IosDerivedCredentialAuthenticationConfiguration constructor
+		///</summary>
+        public IosDerivedCredentialAuthenticationConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosDerivedCredentialAuthenticationConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets derived credential settings.
         /// Tenant level settings for the Derived Credentials to be used for authentication.

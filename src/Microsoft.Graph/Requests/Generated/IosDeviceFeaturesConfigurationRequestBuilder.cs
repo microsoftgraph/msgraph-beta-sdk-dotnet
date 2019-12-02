@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new IosCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificateForClientAuthentication"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for SingleSignOnExtensionPkinitCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IIosCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        public IIosCertificateProfileBaseWithReferenceRequestBuilder SingleSignOnExtensionPkinitCertificate
+        {
+            get
+            {
+                return new IosCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("singleSignOnExtensionPkinitCertificate"), this.Client);
+            }
+        }
     
     }
 }

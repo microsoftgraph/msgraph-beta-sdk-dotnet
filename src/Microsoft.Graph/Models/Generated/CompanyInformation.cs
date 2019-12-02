@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class CompanyInformation : Entity
     {
     
+		///<summary>
+		/// The CompanyInformation constructor
+		///</summary>
+        public CompanyInformation()
+        {
+            this.ODataType = "microsoft.graph.companyInformation";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

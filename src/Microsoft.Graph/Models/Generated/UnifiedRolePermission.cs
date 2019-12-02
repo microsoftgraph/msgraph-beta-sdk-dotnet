@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UnifiedRolePermission
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnifiedRolePermission"/> class.
+        /// </summary>
+        public UnifiedRolePermission()
+        {
+            this.ODataType = "microsoft.graph.unifiedRolePermission";
+        }
 
         /// <summary>
         /// Gets or sets allowedResourceActions.

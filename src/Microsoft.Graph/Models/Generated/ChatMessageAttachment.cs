@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ChatMessageAttachment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageAttachment"/> class.
+        /// </summary>
+        public ChatMessageAttachment()
+        {
+            this.ODataType = "microsoft.graph.chatMessageAttachment";
+        }
 
         /// <summary>
         /// Gets or sets id.

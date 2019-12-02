@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TaxGroup : Entity
     {
     
+		///<summary>
+		/// The TaxGroup constructor
+		///</summary>
+        public TaxGroup()
+        {
+            this.ODataType = "microsoft.graph.taxGroup";
+        }
+	
         /// <summary>
         /// Gets or sets code.
         /// </summary>

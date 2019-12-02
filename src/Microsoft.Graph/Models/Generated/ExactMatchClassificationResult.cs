@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ExactMatchClassificationResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExactMatchClassificationResult"/> class.
+        /// </summary>
+        public ExactMatchClassificationResult()
+        {
+            this.ODataType = "microsoft.graph.exactMatchClassificationResult";
+        }
 
         /// <summary>
         /// Gets or sets classification.

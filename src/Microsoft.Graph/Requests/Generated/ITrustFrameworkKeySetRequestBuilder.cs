@@ -31,5 +31,46 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ITrustFrameworkKeySetRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetGenerateKey.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetGenerateKeyRequestBuilder"/>.</returns>
+        ITrustFrameworkKeySetGenerateKeyRequestBuilder GenerateKey(
+            string use = null,
+            string kty = null,
+            Int64? nbf = null,
+            Int64? exp = null);
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadSecret.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadSecretRequestBuilder"/>.</returns>
+        ITrustFrameworkKeySetUploadSecretRequestBuilder UploadSecret(
+            string use = null,
+            string k = null,
+            Int64? nbf = null,
+            Int64? exp = null);
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadCertificate.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadCertificateRequestBuilder"/>.</returns>
+        ITrustFrameworkKeySetUploadCertificateRequestBuilder UploadCertificate(
+            string key = null);
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadPkcs12.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadPkcs12RequestBuilder"/>.</returns>
+        ITrustFrameworkKeySetUploadPkcs12RequestBuilder UploadPkcs12(
+            string key = null,
+            string password = null);
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetGetActiveKey.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetGetActiveKeyRequestBuilder"/>.</returns>
+        ITrustFrameworkKeySetGetActiveKeyRequestBuilder GetActiveKey();
+    
     }
 }

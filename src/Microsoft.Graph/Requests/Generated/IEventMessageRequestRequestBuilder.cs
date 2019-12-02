@@ -44,6 +44,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestDeclineRequestBuilder"/>.</returns>
         IEventMessageRequestDeclineRequestBuilder Decline(
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
             string Comment = null);
 
@@ -52,6 +53,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventMessageRequestTentativelyAcceptRequestBuilder"/>.</returns>
         IEventMessageRequestTentativelyAcceptRequestBuilder TentativelyAccept(
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
             string Comment = null);
     

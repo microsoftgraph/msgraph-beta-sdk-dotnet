@@ -260,6 +260,12 @@ namespace Microsoft.Graph
         IDeviceManagementDeviceManagementScriptsCollectionRequestBuilder DeviceManagementScripts { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceHealthScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceHealthScriptsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceHealthScriptsCollectionRequestBuilder DeviceHealthScripts { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverview.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
@@ -298,8 +304,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsOverview.
         /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsOverviewWithReferenceRequestBuilder"/>.</returns>
-        IUserExperienceAnalyticsOverviewWithReferenceRequestBuilder UserExperienceAnalyticsOverview { get; }
+        /// <returns>The <see cref="IUserExperienceAnalyticsOverviewRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsOverviewRequestBuilder UserExperienceAnalyticsOverview { get; }
 
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsBaselines.
@@ -312,6 +318,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsCategoriesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserExperienceAnalyticsCategoriesCollectionRequestBuilder UserExperienceAnalyticsCategories { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDevicePerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequestBuilder UserExperienceAnalyticsDevicePerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsRegressionSummary.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsRegressionSummaryRequestBuilder UserExperienceAnalyticsRegressionSummary { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceStartupHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupHistory { get; }
 
         /// <summary>
         /// Gets the request builder for DerivedCredentials.
@@ -356,6 +380,12 @@ namespace Microsoft.Graph
         IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder ImportedWindowsAutopilotDeviceIdentities { get; }
 
         /// <summary>
+        /// Gets the request builder for AppleUserInitiatedEnrollmentProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder AppleUserInitiatedEnrollmentProfiles { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagementConditions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementManagementConditionsCollectionRequestBuilder"/>.</returns>
@@ -366,6 +396,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementManagementConditionStatementsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementManagementConditionStatementsCollectionRequestBuilder ManagementConditionStatements { get; }
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyMigrationReports.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyMigrationReportsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementGroupPolicyMigrationReportsCollectionRequestBuilder GroupPolicyMigrationReports { get; }
 
         /// <summary>
         /// Gets the request builder for GroupPolicyConfigurations.
@@ -428,6 +464,12 @@ namespace Microsoft.Graph
         IDeviceManagementRemoteAssistancePartnersCollectionRequestBuilder RemoteAssistancePartners { get; }
 
         /// <summary>
+        /// Gets the request builder for Reports.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
+        IDeviceManagementReportsRequestBuilder Reports { get; }
+
+        /// <summary>
         /// Gets the request builder for TelecomExpenseManagementPartners.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder"/>.</returns>
@@ -444,6 +486,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementTroubleshootingEventsCollectionRequestBuilder TroubleshootingEvents { get; }
+
+        /// <summary>
+        /// Gets the request builder for AutopilotEvents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAutopilotEventsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAutopilotEventsCollectionRequestBuilder AutopilotEvents { get; }
+
+        /// <summary>
+        /// Gets the request builder for WindowsFeatureUpdateProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder WindowsFeatureUpdateProfiles { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsInformationProtectionAppLearningSummaries.

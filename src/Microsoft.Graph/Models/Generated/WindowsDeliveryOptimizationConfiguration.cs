@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsDeliveryOptimizationConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsDeliveryOptimizationConfiguration constructor
+		///</summary>
+        public WindowsDeliveryOptimizationConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsDeliveryOptimizationConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets delivery optimization mode.
         /// Specifies the download method that delivery optimization can use to manage network bandwidth consumption for large content distribution scenarios.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScriptRunSummary : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementScriptRunSummary constructor
+		///</summary>
+        public DeviceManagementScriptRunSummary()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementScriptRunSummary";
+        }
+	
         /// <summary>
         /// Gets or sets success device count.
         /// Success device count.
@@ -35,27 +43,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets compliant device count.
-        /// Compliant device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CompliantDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets not compliant device count.
-        /// Not Compliant device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notCompliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NotCompliantDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pending device count.
-        /// Pending device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PendingDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets success user count.

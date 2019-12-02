@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ItemActionSet
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ItemActionSet"/> class.
+        /// </summary>
+        public ItemActionSet()
+        {
+            this.ODataType = "microsoft.graph.itemActionSet";
+        }
 
         /// <summary>
         /// Gets or sets comment.

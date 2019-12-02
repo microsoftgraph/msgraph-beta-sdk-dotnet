@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class FileSecurityProfile : Entity
     {
     
+		///<summary>
+		/// The FileSecurityProfile constructor
+		///</summary>
+        public FileSecurityProfile()
+        {
+            this.ODataType = "microsoft.graph.fileSecurityProfile";
+        }
+	
         /// <summary>
         /// Gets or sets activity group names.
         /// </summary>

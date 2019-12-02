@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidManagedStoreAppConfigurationSchema : Entity
     {
     
+		///<summary>
+		/// The AndroidManagedStoreAppConfigurationSchema constructor
+		///</summary>
+        public AndroidManagedStoreAppConfigurationSchema()
+        {
+            this.ODataType = "microsoft.graph.androidManagedStoreAppConfigurationSchema";
+        }
+	
         /// <summary>
         /// Gets or sets example json.
         /// UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app

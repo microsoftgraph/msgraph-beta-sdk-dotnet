@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidEasEmailProfileConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidEasEmailProfileConfiguration constructor
+		///</summary>
+        public AndroidEasEmailProfileConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidEasEmailProfileConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets account name.
         /// Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.

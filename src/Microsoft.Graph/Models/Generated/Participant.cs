@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Participant : Entity
     {
     
+		///<summary>
+		/// The Participant constructor
+		///</summary>
+        public Participant()
+        {
+            this.ODataType = "microsoft.graph.participant";
+        }
+	
         /// <summary>
         /// Gets or sets info.
         /// </summary>

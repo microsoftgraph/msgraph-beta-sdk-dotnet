@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AllowedDataLocation : Entity
     {
     
+		///<summary>
+		/// The AllowedDataLocation constructor
+		///</summary>
+        public AllowedDataLocation()
+        {
+            this.ODataType = "microsoft.graph.allowedDataLocation";
+        }
+	
         /// <summary>
         /// Gets or sets app id.
         /// </summary>

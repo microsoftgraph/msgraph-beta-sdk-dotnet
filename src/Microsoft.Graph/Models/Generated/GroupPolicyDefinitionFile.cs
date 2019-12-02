@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyDefinitionFile : Entity
     {
     
+		///<summary>
+		/// The GroupPolicyDefinitionFile constructor
+		///</summary>
+        public GroupPolicyDefinitionFile()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyDefinitionFile";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The localized friendly name of the ADMX file.

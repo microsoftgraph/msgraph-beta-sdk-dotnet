@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class StringKeyObjectValuePair
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StringKeyObjectValuePair"/> class.
+        /// </summary>
+        public StringKeyObjectValuePair()
+        {
+            this.ODataType = "microsoft.graph.stringKeyObjectValuePair";
+        }
 
         /// <summary>
         /// Gets or sets key.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileScepCertificateProfile : AndroidWorkProfileCertificateProfileBase
     {
     
+		///<summary>
+		/// The AndroidWorkProfileScepCertificateProfile constructor
+		///</summary>
+        public AndroidWorkProfileScepCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.androidWorkProfileScepCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets scep server urls.
         /// SCEP Server Url(s)

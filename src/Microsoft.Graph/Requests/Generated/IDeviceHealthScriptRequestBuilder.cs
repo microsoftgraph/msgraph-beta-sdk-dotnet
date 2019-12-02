@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceHealthScriptRequestBuilder.
     /// </summary>
-    public partial interface IDeviceHealthScriptRequestBuilder : IDeviceManagementScriptRequestBuilder
+    public partial interface IDeviceHealthScriptRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -30,6 +30,31 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         new IDeviceHealthScriptRequest Request(IEnumerable<Option> options);
+    
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptAssignmentsCollectionRequestBuilder"/>.</returns>
+        IDeviceHealthScriptAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptRunSummaryRequestBuilder"/>.</returns>
+        IDeviceHealthScriptRunSummaryRequestBuilder RunSummary { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceRunStates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
+        IDeviceHealthScriptDeviceRunStatesCollectionRequestBuilder DeviceRunStates { get; }
+    
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptAssign.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptAssignRequestBuilder"/>.</returns>
+        IDeviceHealthScriptAssignRequestBuilder Assign(
+            IEnumerable<DeviceHealthScriptAssignment> deviceHealthScriptAssignments = null);
     
     }
 }

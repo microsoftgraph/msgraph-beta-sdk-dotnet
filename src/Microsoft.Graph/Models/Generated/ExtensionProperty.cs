@@ -22,32 +22,45 @@ namespace Microsoft.Graph
     public partial class ExtensionProperty : DirectoryObject
     {
     
+		///<summary>
+		/// The ExtensionProperty constructor
+		///</summary>
+        public ExtensionProperty()
+        {
+            this.ODataType = "microsoft.graph.extensionProperty";
+        }
+	
         /// <summary>
         /// Gets or sets app display name.
+        /// Display name of the application object on which this extension property is defined. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Name of the extension property. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets data type.
+        /// Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataType", Required = Newtonsoft.Json.Required.Default)]
         public string DataType { get; set; }
     
         /// <summary>
         /// Gets or sets is synced from on premises.
+        /// Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSyncedFromOnPremises", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSyncedFromOnPremises { get; set; }
     
         /// <summary>
         /// Gets or sets target objects.
+        /// Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetObjects", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> TargetObjects { get; set; }

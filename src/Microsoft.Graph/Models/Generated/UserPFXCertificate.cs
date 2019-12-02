@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UserPFXCertificate : Entity
     {
     
+		///<summary>
+		/// The UserPFXCertificate constructor
+		///</summary>
+        public UserPFXCertificate()
+        {
+            this.ODataType = "microsoft.graph.userPFXCertificate";
+        }
+	
         /// <summary>
         /// Gets or sets thumbprint.
         /// SHA-1 thumbprint of the PFX certificate.

@@ -206,6 +206,13 @@ namespace Microsoft.Graph
         IGroupChannelsCollectionRequestBuilder Channels { get; }
     
         /// <summary>
+        /// Gets the request builder for GroupEvaluateDynamicMembership.
+        /// </summary>
+        /// <returns>The <see cref="IGroupEvaluateDynamicMembershipRequestBuilder"/>.</returns>
+        IGroupEvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership(
+            string memberId = null);
+
+        /// <summary>
         /// Gets the request builder for GroupValidateProperties.
         /// </summary>
         /// <returns>The <see cref="IGroupValidatePropertiesRequestBuilder"/>.</returns>
@@ -215,21 +222,18 @@ namespace Microsoft.Graph
             Guid? onBehalfOfUserId = null);
 
         /// <summary>
-        /// Gets the request builder for GroupGrantResourceSpecificConsent.
+        /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
         /// </summary>
-        /// <returns>The <see cref="IGroupGrantResourceSpecificConsentRequestBuilder"/>.</returns>
-        IGroupGrantResourceSpecificConsentRequestBuilder GrantResourceSpecificConsent(
-            bool checkOnly,
-            string clientAppId,
-            IEnumerable<InstanceResourceAccess> permissionSets,
-            IEnumerable<string> tags = null);
+        /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>
+        IGroupCheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp();
 
         /// <summary>
-        /// Gets the request builder for GroupRevokeResourceSpecificConsent.
+        /// Gets the request builder for GroupAssignLicense.
         /// </summary>
-        /// <returns>The <see cref="IGroupRevokeResourceSpecificConsentRequestBuilder"/>.</returns>
-        IGroupRevokeResourceSpecificConsentRequestBuilder RevokeResourceSpecificConsent(
-            string clientAppId);
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses);
 
         /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosEduDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The IosEduDeviceConfiguration constructor
+		///</summary>
+        public IosEduDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosEduDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets teacher certificate settings.
         /// The Trusted Root and PFX certificates for Teacher

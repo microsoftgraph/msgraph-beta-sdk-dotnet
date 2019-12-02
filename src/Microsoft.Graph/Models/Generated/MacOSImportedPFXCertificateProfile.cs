@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSImportedPFXCertificateProfile : MacOSCertificateProfileBase
     {
     
+		///<summary>
+		/// The MacOSImportedPFXCertificateProfile constructor
+		///</summary>
+        public MacOSImportedPFXCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.macOSImportedPFXCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets intended purpose.
         /// </summary>

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class IdentityUserRisk
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IdentityUserRisk"/> class.
+        /// </summary>
+        public IdentityUserRisk()
+        {
+            this.ODataType = "microsoft.graph.identityUserRisk";
+        }
 
         /// <summary>
         /// Gets or sets level.

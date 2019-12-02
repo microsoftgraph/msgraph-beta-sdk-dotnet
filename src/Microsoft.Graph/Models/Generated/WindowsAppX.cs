@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsAppX : MobileLobApp
     {
     
+		///<summary>
+		/// The WindowsAppX constructor
+		///</summary>
+        public WindowsAppX()
+        {
+            this.ODataType = "microsoft.graph.windowsAppX";
+        }
+	
         /// <summary>
         /// Gets or sets applicable architectures.
         /// The Windows architecture(s) for which this app can run on.

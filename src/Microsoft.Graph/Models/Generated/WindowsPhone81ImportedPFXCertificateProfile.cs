@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81ImportedPFXCertificateProfile : WindowsCertificateProfileBase
     {
     
+		///<summary>
+		/// The WindowsPhone81ImportedPFXCertificateProfile constructor
+		///</summary>
+        public WindowsPhone81ImportedPFXCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81ImportedPFXCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets intended purpose.
         /// </summary>

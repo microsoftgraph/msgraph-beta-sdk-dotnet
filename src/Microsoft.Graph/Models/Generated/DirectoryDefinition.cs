@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DirectoryDefinition : Entity
     {
     
+		///<summary>
+		/// The DirectoryDefinition constructor
+		///</summary>
+        public DirectoryDefinition()
+        {
+            this.ODataType = "microsoft.graph.directoryDefinition";
+        }
+	
         /// <summary>
         /// Gets or sets discovery date time.
         /// </summary>

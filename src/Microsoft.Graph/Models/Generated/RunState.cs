@@ -35,14 +35,19 @@ namespace Microsoft.Graph
         Fail = 2,
 	
         /// <summary>
-        /// Error
+        /// Script Error
         /// </summary>
-        Error = 3,
+        ScriptError = 3,
 	
         /// <summary>
         /// Pending
         /// </summary>
         Pending = 4,
+	
+        /// <summary>
+        /// Not Applicable
+        /// </summary>
+        NotApplicable = 5,
 	
     }
 }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ExactMatchUploadAgent : Entity
     {
     
+		///<summary>
+		/// The ExactMatchUploadAgent constructor
+		///</summary>
+        public ExactMatchUploadAgent()
+        {
+            this.ODataType = "microsoft.graph.exactMatchUploadAgent";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// </summary>

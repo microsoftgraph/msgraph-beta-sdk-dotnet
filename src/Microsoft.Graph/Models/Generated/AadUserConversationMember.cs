@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AadUserConversationMember : ConversationMember
     {
     
+		///<summary>
+		/// The AadUserConversationMember constructor
+		///</summary>
+        public AadUserConversationMember()
+        {
+            this.ODataType = "microsoft.graph.aadUserConversationMember";
+        }
+	
         /// <summary>
         /// Gets or sets user id.
         /// </summary>

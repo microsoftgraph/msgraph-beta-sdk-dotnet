@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SymantecCodeSigningCertificate : Entity
     {
     
+		///<summary>
+		/// The SymantecCodeSigningCertificate constructor
+		///</summary>
+        public SymantecCodeSigningCertificate()
+        {
+            this.ODataType = "microsoft.graph.symantecCodeSigningCertificate";
+        }
+	
         /// <summary>
         /// Gets or sets content.
         /// The Windows Symantec Code-Signing Certificate in the raw data format.

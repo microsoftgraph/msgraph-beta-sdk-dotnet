@@ -157,6 +157,18 @@ namespace Microsoft.Graph
                 return new DriveItemVersionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("versions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Document.
+        /// </summary>
+        /// <returns>The <see cref="IDocumentRequestBuilder"/>.</returns>
+        public IDocumentRequestBuilder Document
+        {
+            get
+            {
+                return new DocumentRequestBuilder(this.AppendSegmentToRequestUrl("document"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for Content.

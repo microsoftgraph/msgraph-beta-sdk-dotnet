@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScript : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementScript constructor
+		///</summary>
+        public DeviceManagementScript()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementScript";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Name of the device management script.
@@ -37,13 +45,6 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets run schedule.
-        /// The interval for script to run. If not defined the script will run once
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSchedule", Required = Newtonsoft.Json.Required.Default)]
-        public RunSchedule RunSchedule { get; set; }
-    
-        /// <summary>
         /// Gets or sets script content.
         /// The script content.
         /// </summary>
@@ -52,14 +53,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time the device management script was created.
+        /// The date and time the device management script was created. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// The date and time the device management script was last modified.
+        /// The date and time the device management script was last modified. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }

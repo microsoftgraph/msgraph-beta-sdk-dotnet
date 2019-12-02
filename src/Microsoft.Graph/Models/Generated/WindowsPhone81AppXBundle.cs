@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhone81AppXBundle : WindowsPhone81AppX
     {
     
+		///<summary>
+		/// The WindowsPhone81AppXBundle constructor
+		///</summary>
+        public WindowsPhone81AppXBundle()
+        {
+            this.ODataType = "microsoft.graph.windowsPhone81AppXBundle";
+        }
+	
         /// <summary>
         /// Gets or sets app xpackage information list.
         /// The list of AppX Package Information.

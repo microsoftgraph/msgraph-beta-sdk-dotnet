@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class User : DirectoryObject
     {
     
+		///<summary>
+		/// The User constructor
+		///</summary>
+        public User()
+        {
+            this.ODataType = "microsoft.graph.user";
+        }
+	
         /// <summary>
         /// Gets or sets sign in activity.
         /// </summary>
@@ -140,6 +148,12 @@ namespace Microsoft.Graph
         public string GivenName { get; set; }
     
         /// <summary>
+        /// Gets or sets identities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ObjectIdentity> Identities { get; set; }
+    
+        /// <summary>
         /// Gets or sets im addresses.
         /// The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only.
         /// </summary>
@@ -162,6 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last password change date time.
+        /// The time when this Azure AD user last changed their password. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastPasswordChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
@@ -802,6 +817,12 @@ namespace Microsoft.Graph
         public Onenote Onenote { get; set; }
     
         /// <summary>
+        /// Gets or sets profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profile", Required = Newtonsoft.Json.Required.Default)]
+        public Profile Profile { get; set; }
+    
+        /// <summary>
         /// Gets or sets activities.
         /// The user's activities across devices. Read-only. Nullable.
         /// </summary>
@@ -813,6 +834,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devices", Required = Newtonsoft.Json.Required.Default)]
         public IUserDevicesCollectionPage Devices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meetings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
+        public IUserOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets presence.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presence", Required = Newtonsoft.Json.Required.Default)]
+        public Presence Presence { get; set; }
     
         /// <summary>
         /// Gets or sets joined teams.

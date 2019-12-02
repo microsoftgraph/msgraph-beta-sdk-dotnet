@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RiskUserActivity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RiskUserActivity"/> class.
+        /// </summary>
+        public RiskUserActivity()
+        {
+            this.ODataType = "microsoft.graph.riskUserActivity";
+        }
 
         /// <summary>
         /// Gets or sets eventTypes.

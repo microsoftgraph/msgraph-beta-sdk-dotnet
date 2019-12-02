@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosLobAppProvisioningConfiguration : Entity
     {
     
+		///<summary>
+		/// The IosLobAppProvisioningConfiguration constructor
+		///</summary>
+        public IosLobAppProvisioningConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosLobAppProvisioningConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets expiration date time.
         /// Optional profile expiration date and time.

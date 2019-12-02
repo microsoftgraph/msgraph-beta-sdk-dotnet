@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementScriptDeviceState : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementScriptDeviceState constructor
+		///</summary>
+        public DeviceManagementScriptDeviceState()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementScriptDeviceState";
+        }
+	
         /// <summary>
         /// Gets or sets run state.
         /// State of latest run of the device management script.
@@ -56,34 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDescription", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorDescription { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last sync date time.
-        /// The latest time that Intune Managment Extension syncs to Intune.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastSyncDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pre remediation detection script output.
-        /// Output of the detection script before remediation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preRemediationDetectionScriptOutput", Required = Newtonsoft.Json.Required.Default)]
-        public string PreRemediationDetectionScriptOutput { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remediation script error.
-        /// Error output of the remediation script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptError", Required = Newtonsoft.Json.Required.Default)]
-        public string RemediationScriptError { get; set; }
-    
-        /// <summary>
-        /// Gets or sets post remediation detection script output.
-        /// Detection script output after remediation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postRemediationDetectionScriptOutput", Required = Newtonsoft.Json.Required.Default)]
-        public string PostRemediationDetectionScriptOutput { get; set; }
     
         /// <summary>
         /// Gets or sets managed device.

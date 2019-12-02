@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WorkbookTableColumn : Entity
     {
     
+		///<summary>
+		/// The WorkbookTableColumn constructor
+		///</summary>
+        public WorkbookTableColumn()
+        {
+            this.ODataType = "microsoft.graph.workbookTableColumn";
+        }
+	
         /// <summary>
         /// Gets or sets index.
         /// Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.

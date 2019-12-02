@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSEnterpriseWiFiConfiguration : MacOSWiFiConfiguration
     {
     
+		///<summary>
+		/// The MacOSEnterpriseWiFiConfiguration constructor
+		///</summary>
+        public MacOSEnterpriseWiFiConfiguration()
+        {
+            this.ODataType = "microsoft.graph.macOSEnterpriseWiFiConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets eap type.
         /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).

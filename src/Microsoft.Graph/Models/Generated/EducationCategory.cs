@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationCategory : Entity
     {
     
+		///<summary>
+		/// The EducationCategory constructor
+		///</summary>
+        public EducationCategory()
+        {
+            this.ODataType = "microsoft.graph.educationCategory";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

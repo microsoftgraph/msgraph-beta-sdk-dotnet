@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LearnedLocationModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LearnedLocationModel"/> class.
+        /// </summary>
+        public LearnedLocationModel()
+        {
+            this.ODataType = "microsoft.graph.learnedLocationModel";
+        }
 
         /// <summary>
         /// Gets or sets address.

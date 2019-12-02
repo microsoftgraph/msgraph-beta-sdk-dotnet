@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOsVppAppAssignedLicense : Entity
     {
     
+		///<summary>
+		/// The MacOsVppAppAssignedLicense constructor
+		///</summary>
+        public MacOsVppAppAssignedLicense()
+        {
+            this.ODataType = "microsoft.graph.macOsVppAppAssignedLicense";
+        }
+	
         /// <summary>
         /// Gets or sets user email address.
         /// The user email address.

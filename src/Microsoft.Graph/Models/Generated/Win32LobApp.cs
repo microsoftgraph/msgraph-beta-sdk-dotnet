@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Win32LobApp : MobileLobApp
     {
     
+		///<summary>
+		/// The Win32LobApp constructor
+		///</summary>
+        public Win32LobApp()
+        {
+            this.ODataType = "microsoft.graph.win32LobApp";
+        }
+	
         /// <summary>
         /// Gets or sets install command line.
         /// The command line to install this app

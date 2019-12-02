@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UnmuteParticipantOperation : CommsOperation
     {
     
+		///<summary>
+		/// The UnmuteParticipantOperation constructor
+		///</summary>
+        public UnmuteParticipantOperation()
+        {
+            this.ODataType = "microsoft.graph.unmuteParticipantOperation";
+        }
+	
     }
 }
 

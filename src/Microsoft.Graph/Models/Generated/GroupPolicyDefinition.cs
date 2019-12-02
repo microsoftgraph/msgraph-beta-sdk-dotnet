@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyDefinition : Entity
     {
     
+		///<summary>
+		/// The GroupPolicyDefinition constructor
+		///</summary>
+        public GroupPolicyDefinition()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyDefinition";
+        }
+	
         /// <summary>
         /// Gets or sets class type.
         /// Identifies the type of groups the policy can be applied to.

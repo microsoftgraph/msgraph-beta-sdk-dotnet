@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Organization : DirectoryObject
     {
     
+		///<summary>
+		/// The Organization constructor
+		///</summary>
+        public Organization()
+        {
+            this.ODataType = "microsoft.graph.organization";
+        }
+	
         /// <summary>
         /// Gets or sets assigned plans.
         /// The collection of service plans associated with the tenant. Not nullable.
@@ -189,6 +197,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate based auth configuration.
+        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateBasedAuthConfiguration", Required = Newtonsoft.Json.Required.Default)]
         public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage CertificateBasedAuthConfiguration { get; set; }
@@ -199,12 +208,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
         public IOrganizationExtensionsCollectionPage Extensions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets information protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "informationProtection", Required = Newtonsoft.Json.Required.Default)]
-        public InformationProtection InformationProtection { get; set; }
     
     }
 }

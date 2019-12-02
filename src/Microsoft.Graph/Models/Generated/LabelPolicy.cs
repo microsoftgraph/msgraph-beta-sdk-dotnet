@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LabelPolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelPolicy"/> class.
+        /// </summary>
+        public LabelPolicy()
+        {
+            this.ODataType = "microsoft.graph.labelPolicy";
+        }
 
         /// <summary>
         /// Gets or sets id.

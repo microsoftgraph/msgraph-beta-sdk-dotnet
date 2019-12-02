@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ClassificationJobResponse : JobResponseBase
     {
     
+		///<summary>
+		/// The ClassificationJobResponse constructor
+		///</summary>
+        public ClassificationJobResponse()
+        {
+            this.ODataType = "microsoft.graph.classificationJobResponse";
+        }
+	
         /// <summary>
         /// Gets or sets result.
         /// </summary>

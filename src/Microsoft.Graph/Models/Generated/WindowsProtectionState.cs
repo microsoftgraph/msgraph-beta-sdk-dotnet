@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsProtectionState : Entity
     {
     
+		///<summary>
+		/// The WindowsProtectionState constructor
+		///</summary>
+        public WindowsProtectionState()
+        {
+            this.ODataType = "microsoft.graph.windowsProtectionState";
+        }
+	
         /// <summary>
         /// Gets or sets malware protection enabled.
         /// Anti malware is enabled or not

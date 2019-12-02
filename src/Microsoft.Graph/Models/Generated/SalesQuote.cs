@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SalesQuote : Entity
     {
     
+		///<summary>
+		/// The SalesQuote constructor
+		///</summary>
+        public SalesQuote()
+        {
+            this.ODataType = "microsoft.graph.salesQuote";
+        }
+	
         /// <summary>
         /// Gets or sets number.
         /// </summary>

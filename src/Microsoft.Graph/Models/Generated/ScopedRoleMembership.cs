@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ScopedRoleMembership : Entity
     {
     
+		///<summary>
+		/// The ScopedRoleMembership constructor
+		///</summary>
+        public ScopedRoleMembership()
+        {
+            this.ODataType = "microsoft.graph.scopedRoleMembership";
+        }
+	
         /// <summary>
         /// Gets or sets role id.
         /// </summary>

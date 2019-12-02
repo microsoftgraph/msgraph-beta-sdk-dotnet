@@ -22,39 +22,52 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CertificateAuthority
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CertificateAuthority"/> class.
+        /// </summary>
+        public CertificateAuthority()
+        {
+            this.ODataType = "microsoft.graph.certificateAuthority";
+        }
 
         /// <summary>
         /// Gets or sets isRootAuthority.
+        /// Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRootAuthority", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsRootAuthority { get; set; }
     
         /// <summary>
         /// Gets or sets certificateRevocationListUrl.
+        /// The URL of the certificate revocation list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateRevocationListUrl", Required = Newtonsoft.Json.Required.Default)]
         public string CertificateRevocationListUrl { get; set; }
     
         /// <summary>
         /// Gets or sets deltaCertificateRevocationListUrl.
+        /// The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deltaCertificateRevocationListUrl", Required = Newtonsoft.Json.Required.Default)]
         public string DeltaCertificateRevocationListUrl { get; set; }
     
         /// <summary>
         /// Gets or sets certificate.
+        /// Required. The base64 encoded string representing the public certificate.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
         public byte[] Certificate { get; set; }
     
         /// <summary>
         /// Gets or sets issuer.
+        /// The issuer of the certificate, calculated from the certificate value. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuer", Required = Newtonsoft.Json.Required.Default)]
         public string Issuer { get; set; }
     
         /// <summary>
         /// Gets or sets issuerSki.
+        /// The subject key identifier of the certificate, calculated from the certificate value. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerSki", Required = Newtonsoft.Json.Required.Default)]
         public string IssuerSki { get; set; }

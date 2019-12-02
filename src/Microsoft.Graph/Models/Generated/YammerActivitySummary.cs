@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class YammerActivitySummary : Entity
     {
     
+		///<summary>
+		/// The YammerActivitySummary constructor
+		///</summary>
+        public YammerActivitySummary()
+        {
+            this.ODataType = "microsoft.graph.yammerActivitySummary";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

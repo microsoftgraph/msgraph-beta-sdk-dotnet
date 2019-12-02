@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class BookingStaffMember : BookingPerson
     {
     
+		///<summary>
+		/// The BookingStaffMember constructor
+		///</summary>
+        public BookingStaffMember()
+        {
+            this.ODataType = "microsoft.graph.bookingStaffMember";
+        }
+	
         /// <summary>
         /// Gets or sets availability is affected by personal calendar.
         /// </summary>

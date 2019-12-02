@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPrivacyDataAccessControlItem : Entity
     {
     
+		///<summary>
+		/// The WindowsPrivacyDataAccessControlItem constructor
+		///</summary>
+        public WindowsPrivacyDataAccessControlItem()
+        {
+            this.ODataType = "microsoft.graph.windowsPrivacyDataAccessControlItem";
+        }
+	
         /// <summary>
         /// Gets or sets access level.
         /// This indicates an access level for the privacy data category to which the specified application will be given to.

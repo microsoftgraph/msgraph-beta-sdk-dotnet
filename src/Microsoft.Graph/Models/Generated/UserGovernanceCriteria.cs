@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserGovernanceCriteria : GovernanceCriteria
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserGovernanceCriteria"/> class.
+        /// </summary>
+        public UserGovernanceCriteria()
+        {
+            this.ODataType = "microsoft.graph.userGovernanceCriteria";
+        }
 
         /// <summary>
         /// Gets or sets userId.

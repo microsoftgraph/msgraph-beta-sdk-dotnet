@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10PFXImportCertificateProfile : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10PFXImportCertificateProfile constructor
+		///</summary>
+        public Windows10PFXImportCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.windows10PFXImportCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets key storage provider.
         /// </summary>

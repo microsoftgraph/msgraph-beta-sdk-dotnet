@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MailFolder : Entity
     {
     
+		///<summary>
+		/// The MailFolder constructor
+		///</summary>
+        public MailFolder()
+        {
+            this.ODataType = "microsoft.graph.mailFolder";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The mailFolder's display name.

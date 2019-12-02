@@ -19,9 +19,17 @@ namespace Microsoft.Graph
     /// The type Planner User.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerUser : Entity
+    public partial class PlannerUser : PlannerDelta
     {
     
+		///<summary>
+		/// The PlannerUser constructor
+		///</summary>
+        public PlannerUser()
+        {
+            this.ODataType = "microsoft.graph.plannerUser";
+        }
+	
         /// <summary>
         /// Gets or sets favorite plan references.
         /// </summary>

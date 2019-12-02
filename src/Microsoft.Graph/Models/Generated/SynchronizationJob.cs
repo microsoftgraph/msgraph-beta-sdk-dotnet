@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SynchronizationJob : Entity
     {
     
+		///<summary>
+		/// The SynchronizationJob constructor
+		///</summary>
+        public SynchronizationJob()
+        {
+            this.ODataType = "microsoft.graph.synchronizationJob";
+        }
+	
         /// <summary>
         /// Gets or sets template id.
         /// </summary>
@@ -39,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationStatus Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets synchronization job settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationJobSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> SynchronizationJobSettings { get; set; }
     
         /// <summary>
         /// Gets or sets schema.

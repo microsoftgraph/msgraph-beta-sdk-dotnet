@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidWorkProfileEnterpriseWiFiConfiguration : AndroidWorkProfileWiFiConfiguration
     {
     
+		///<summary>
+		/// The AndroidWorkProfileEnterpriseWiFiConfiguration constructor
+		///</summary>
+        public AndroidWorkProfileEnterpriseWiFiConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidWorkProfileEnterpriseWiFiConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets eap type.
         /// Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).

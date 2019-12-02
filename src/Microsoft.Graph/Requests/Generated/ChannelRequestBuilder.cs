@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new ChannelMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for FilesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
+        public IDriveItemRequestBuilder FilesFolder
+        {
+            get
+            {
+                return new DriveItemRequestBuilder(this.AppendSegmentToRequestUrl("filesFolder"), this.Client);
+            }
+        }
     
     }
 }

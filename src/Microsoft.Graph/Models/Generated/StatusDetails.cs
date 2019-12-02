@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class StatusDetails : StatusBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StatusDetails"/> class.
+        /// </summary>
+        public StatusDetails()
+        {
+            this.ODataType = "microsoft.graph.statusDetails";
+        }
 
         /// <summary>
         /// Gets or sets errorCode.

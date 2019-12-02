@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EncryptWithTemplate : EncryptContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EncryptWithTemplate"/> class.
+        /// </summary>
+        public EncryptWithTemplate()
+        {
+            this.ODataType = "microsoft.graph.encryptWithTemplate";
+        }
 
         /// <summary>
         /// Gets or sets templateId.

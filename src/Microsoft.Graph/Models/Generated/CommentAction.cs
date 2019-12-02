@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CommentAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommentAction"/> class.
+        /// </summary>
+        public CommentAction()
+        {
+            this.ODataType = "microsoft.graph.commentAction";
+        }
 
         /// <summary>
         /// Gets or sets isReply.

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MobileAppTroubleshootingDeviceCheckinHistory : MobileAppTroubleshootingHistoryItem
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MobileAppTroubleshootingDeviceCheckinHistory"/> class.
+        /// </summary>
+        public MobileAppTroubleshootingDeviceCheckinHistory()
+        {
+            this.ODataType = "microsoft.graph.mobileAppTroubleshootingDeviceCheckinHistory";
+        }
 
     }
 }

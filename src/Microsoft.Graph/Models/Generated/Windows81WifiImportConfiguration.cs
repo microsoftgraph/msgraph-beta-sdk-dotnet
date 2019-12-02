@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows81WifiImportConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows81WifiImportConfiguration constructor
+		///</summary>
+        public Windows81WifiImportConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows81WifiImportConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets payload file name.
         /// Payload file name (*.xml).

@@ -54,5 +54,15 @@ namespace Microsoft.Graph
         /// </summary>
         CustomTextNotification = 6,
 	
+        /// <summary>
+        /// Reboot Now
+        /// </summary>
+        RebootNow = 7,
+	
+        /// <summary>
+        /// Set Device Name
+        /// </summary>
+        SetDeviceName = 8,
+	
     }
 }

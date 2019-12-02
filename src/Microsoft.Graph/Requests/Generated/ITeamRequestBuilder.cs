@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IScheduleRequestBuilder Schedule { get; }
 
         /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        IProfilePhotoRequestBuilder Photo { get; }
+
+        /// <summary>
         /// Gets the request builder for Template.
         /// </summary>
         /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsIdentityProtectionConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsIdentityProtectionConfiguration constructor
+		///</summary>
+        public WindowsIdentityProtectionConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsIdentityProtectionConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets use security key for signin.
         /// Boolean value used to enable the Windows Hello security key as a logon credential.

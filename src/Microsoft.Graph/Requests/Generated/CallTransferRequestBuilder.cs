@@ -30,7 +30,7 @@ namespace Microsoft.Graph
             InvitationParticipantInfo transferTarget)
             : base(requestUrl, client)
         {
-            this.SetParameter("transferTarget", transferTarget, true);
+            this.SetParameter("transferTarget", transferTarget, false);
         }
 
         /// <summary>

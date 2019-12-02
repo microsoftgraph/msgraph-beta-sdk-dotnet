@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsAssignedAccessProfile : Entity
     {
     
+		///<summary>
+		/// The WindowsAssignedAccessProfile constructor
+		///</summary>
+        public WindowsAssignedAccessProfile()
+        {
+            this.ODataType = "microsoft.graph.windowsAssignedAccessProfile";
+        }
+	
         /// <summary>
         /// Gets or sets profile name.
         /// This is a friendly nameÂ used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.

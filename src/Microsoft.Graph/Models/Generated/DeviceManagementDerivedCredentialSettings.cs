@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementDerivedCredentialSettings : Entity
     {
     
+		///<summary>
+		/// The DeviceManagementDerivedCredentialSettings constructor
+		///</summary>
+        public DeviceManagementDerivedCredentialSettings()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementDerivedCredentialSettings";
+        }
+	
         /// <summary>
         /// Gets or sets help url.
         /// The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.

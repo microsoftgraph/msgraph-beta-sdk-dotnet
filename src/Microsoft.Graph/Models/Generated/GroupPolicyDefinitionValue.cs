@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyDefinitionValue : Entity
     {
     
+		///<summary>
+		/// The GroupPolicyDefinitionValue constructor
+		///</summary>
+        public GroupPolicyDefinitionValue()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyDefinitionValue";
+        }
+	
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time the object was created.

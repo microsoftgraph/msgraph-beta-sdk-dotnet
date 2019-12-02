@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PrivilegedApproval : Entity
     {
     
+		///<summary>
+		/// The PrivilegedApproval constructor
+		///</summary>
+        public PrivilegedApproval()
+        {
+            this.ODataType = "microsoft.graph.privilegedApproval";
+        }
+	
         /// <summary>
         /// Gets or sets user id.
         /// </summary>

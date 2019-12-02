@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EncryptWithUserDefinedRights : EncryptContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EncryptWithUserDefinedRights"/> class.
+        /// </summary>
+        public EncryptWithUserDefinedRights()
+        {
+            this.ODataType = "microsoft.graph.encryptWithUserDefinedRights";
+        }
 
         /// <summary>
         /// Gets or sets decryptionRightsManagementTemplateId.

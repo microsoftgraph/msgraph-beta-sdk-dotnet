@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosImportedPFXCertificateProfile : IosCertificateProfile
     {
     
+		///<summary>
+		/// The IosImportedPFXCertificateProfile constructor
+		///</summary>
+        public IosImportedPFXCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.iosImportedPFXCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets intended purpose.
         /// </summary>

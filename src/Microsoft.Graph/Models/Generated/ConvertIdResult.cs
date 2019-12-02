@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ConvertIdResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConvertIdResult"/> class.
+        /// </summary>
+        public ConvertIdResult()
+        {
+            this.ODataType = "microsoft.graph.convertIdResult";
+        }
 
         /// <summary>
         /// Gets or sets sourceId.

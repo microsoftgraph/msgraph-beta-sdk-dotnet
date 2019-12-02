@@ -19,9 +19,17 @@ namespace Microsoft.Graph
     /// The type Planner Plan.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerPlan : Entity
+    public partial class PlannerPlan : PlannerDelta
     {
     
+		///<summary>
+		/// The PlannerPlan constructor
+		///</summary>
+        public PlannerPlan()
+        {
+            this.ODataType = "microsoft.graph.plannerPlan";
+        }
+	
         /// <summary>
         /// Gets or sets created by.
         /// Read-only. The user who created the plan.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TimeOff : ChangeTrackedEntity
     {
     
+		///<summary>
+		/// The TimeOff constructor
+		///</summary>
+        public TimeOff()
+        {
+            this.ODataType = "microsoft.graph.timeOff";
+        }
+	
         /// <summary>
         /// Gets or sets shared time off.
         /// </summary>

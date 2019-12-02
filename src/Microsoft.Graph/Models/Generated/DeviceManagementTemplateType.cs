@@ -44,5 +44,20 @@ namespace Microsoft.Graph
         /// </summary>
         Custom = 4,
 	
+        /// <summary>
+        /// Security Template
+        /// </summary>
+        SecurityTemplate = 5,
+	
+        /// <summary>
+        /// Microsoft Edge Security Baseline
+        /// </summary>
+        MicrosoftEdgeSecurityBaseline = 6,
+	
+        /// <summary>
+        /// Microsoft Office365Pro Plus Security Baseline
+        /// </summary>
+        MicrosoftOffice365ProPlusSecurityBaseline = 7,
+	
     }
 }

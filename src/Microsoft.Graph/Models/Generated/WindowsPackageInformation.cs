@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsPackageInformation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsPackageInformation"/> class.
+        /// </summary>
+        public WindowsPackageInformation()
+        {
+            this.ODataType = "microsoft.graph.windowsPackageInformation";
+        }
 
         /// <summary>
         /// Gets or sets applicableArchitecture.

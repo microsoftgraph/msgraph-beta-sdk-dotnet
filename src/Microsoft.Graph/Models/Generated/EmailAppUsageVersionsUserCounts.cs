@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EmailAppUsageVersionsUserCounts : Entity
     {
     
+		///<summary>
+		/// The EmailAppUsageVersionsUserCounts constructor
+		///</summary>
+        public EmailAppUsageVersionsUserCounts()
+        {
+            this.ODataType = "microsoft.graph.emailAppUsageVersionsUserCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

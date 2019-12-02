@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10PkcsCertificateProfile : Windows10CertificateProfileBase
     {
     
+		///<summary>
+		/// The Windows10PkcsCertificateProfile constructor
+		///</summary>
+        public Windows10PkcsCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.windows10PkcsCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets certification authority.
         /// PKCS Certification Authority

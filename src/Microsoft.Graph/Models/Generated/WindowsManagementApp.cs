@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsManagementApp : Entity
     {
     
+		///<summary>
+		/// The WindowsManagementApp constructor
+		///</summary>
+        public WindowsManagementApp()
+        {
+            this.ODataType = "microsoft.graph.windowsManagementApp";
+        }
+	
         /// <summary>
         /// Gets or sets available version.
         /// Windows management app available version.

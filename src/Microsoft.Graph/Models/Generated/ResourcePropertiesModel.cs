@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ResourcePropertiesModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourcePropertiesModel"/> class.
+        /// </summary>
+        public ResourcePropertiesModel()
+        {
+            this.ODataType = "microsoft.graph.resourcePropertiesModel";
+        }
 
         /// <summary>
         /// Gets or sets name.

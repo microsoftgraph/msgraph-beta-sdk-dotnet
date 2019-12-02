@@ -157,11 +157,25 @@ namespace Microsoft.Graph
         public bool? PrivacyPaneDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets screen time screen disabled.
+        /// Indicates if screen timeout setup is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenTimeScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ScreenTimeScreenDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets device name template.
         /// Sets a literal or name pattern.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceNameTemplate", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceNameTemplate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configuration web url.
+        /// URL for setup assistant login
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationWebUrl", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ConfigurationWebUrl { get; set; }
     
     }
 }

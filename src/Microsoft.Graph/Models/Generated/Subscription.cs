@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Subscription : Entity
     {
     
+		///<summary>
+		/// The Subscription constructor
+		///</summary>
+        public Subscription()
+        {
+            this.ODataType = "microsoft.graph.subscription";
+        }
+	
         /// <summary>
         /// Gets or sets resource.
         /// Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/).
@@ -78,10 +86,28 @@ namespace Microsoft.Graph
         public bool? IncludeProperties { get; set; }
     
         /// <summary>
+        /// Gets or sets include resource data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeResourceData", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IncludeResourceData { get; set; }
+    
+        /// <summary>
         /// Gets or sets lifecycle notification url.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifecycleNotificationUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LifecycleNotificationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets encryption certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public string EncryptionCertificate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets encryption certificate id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificateId", Required = Newtonsoft.Json.Required.Default)]
+        public string EncryptionCertificateId { get; set; }
     
     }
 }

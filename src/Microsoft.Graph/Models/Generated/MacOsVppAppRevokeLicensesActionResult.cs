@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MacOsVppAppRevokeLicensesActionResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MacOsVppAppRevokeLicensesActionResult"/> class.
+        /// </summary>
+        public MacOsVppAppRevokeLicensesActionResult()
+        {
+            this.ODataType = "microsoft.graph.macOsVppAppRevokeLicensesActionResult";
+        }
 
         /// <summary>
         /// Gets or sets userId.

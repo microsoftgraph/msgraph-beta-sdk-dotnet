@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SecurityBaselineStateSummary : Entity
     {
     
+		///<summary>
+		/// The SecurityBaselineStateSummary constructor
+		///</summary>
+        public SecurityBaselineStateSummary()
+        {
+            this.ODataType = "microsoft.graph.securityBaselineStateSummary";
+        }
+	
         /// <summary>
         /// Gets or sets secure count.
         /// Number of secure devices

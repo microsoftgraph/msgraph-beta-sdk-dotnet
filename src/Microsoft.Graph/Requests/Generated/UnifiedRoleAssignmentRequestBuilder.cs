@@ -50,5 +50,29 @@ namespace Microsoft.Graph
             return new UnifiedRoleAssignmentRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Principal.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        public IDirectoryObjectWithReferenceRequestBuilder Principal
+        {
+            get
+            {
+                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("principal"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
+        public IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition
+        {
+            get
+            {
+                return new UnifiedRoleDefinitionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinition"), this.Client);
+            }
+        }
+    
     }
 }

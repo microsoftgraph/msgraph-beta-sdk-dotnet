@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class YammerDeviceUsageUserDetail : Entity
     {
     
+		///<summary>
+		/// The YammerDeviceUsageUserDetail constructor
+		///</summary>
+        public YammerDeviceUsageUserDetail()
+        {
+            this.ODataType = "microsoft.graph.yammerDeviceUsageUserDetail";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

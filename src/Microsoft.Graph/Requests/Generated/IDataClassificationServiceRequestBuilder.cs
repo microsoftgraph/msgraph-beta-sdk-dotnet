@@ -68,6 +68,18 @@ namespace Microsoft.Graph
         IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder EvaluateLabelJobs { get; }
 
         /// <summary>
+        /// Gets the request builder for EvaluateDlpPoliciesJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceEvaluateDlpPoliciesJobsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceEvaluateDlpPoliciesJobsCollectionRequestBuilder EvaluateDlpPoliciesJobs { get; }
+
+        /// <summary>
+        /// Gets the request builder for LabelsAndPoliciesEvaluationJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder LabelsAndPoliciesEvaluationJobs { get; }
+
+        /// <summary>
         /// Gets the request builder for ClassifyText.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>

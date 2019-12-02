@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SharedAppleDeviceUser
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedAppleDeviceUser"/> class.
+        /// </summary>
+        public SharedAppleDeviceUser()
+        {
+            this.ODataType = "microsoft.graph.sharedAppleDeviceUser";
+        }
 
         /// <summary>
         /// Gets or sets userPrincipalName.

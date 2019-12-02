@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class WindowsEnrollmentStatusScreenSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsEnrollmentStatusScreenSettings"/> class.
+        /// </summary>
+        public WindowsEnrollmentStatusScreenSettings()
+        {
+            this.ODataType = "microsoft.graph.windowsEnrollmentStatusScreenSettings";
+        }
 
         /// <summary>
         /// Gets or sets hideInstallationProgress.

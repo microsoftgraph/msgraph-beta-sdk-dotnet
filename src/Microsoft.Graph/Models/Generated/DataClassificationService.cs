@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DataClassificationService : Entity
     {
     
+		///<summary>
+		/// The DataClassificationService constructor
+		///</summary>
+        public DataClassificationService()
+        {
+            this.ODataType = "microsoft.graph.dataClassificationService";
+        }
+	
         /// <summary>
         /// Gets or sets exact match data stores.
         /// </summary>
@@ -57,6 +65,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluateLabelJobs", Required = Newtonsoft.Json.Required.Default)]
         public IDataClassificationServiceEvaluateLabelJobsCollectionPage EvaluateLabelJobs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets evaluate dlp policies jobs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluateDlpPoliciesJobs", Required = Newtonsoft.Json.Required.Default)]
+        public IDataClassificationServiceEvaluateDlpPoliciesJobsCollectionPage EvaluateDlpPoliciesJobs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets labels and policies evaluation jobs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelsAndPoliciesEvaluationJobs", Required = Newtonsoft.Json.Required.Default)]
+        public IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionPage LabelsAndPoliciesEvaluationJobs { get; set; }
     
         /// <summary>
         /// Gets or sets classify text.

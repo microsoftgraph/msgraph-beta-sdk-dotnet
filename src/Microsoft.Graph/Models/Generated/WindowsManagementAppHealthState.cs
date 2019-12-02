@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsManagementAppHealthState : Entity
     {
     
+		///<summary>
+		/// The WindowsManagementAppHealthState constructor
+		///</summary>
+        public WindowsManagementAppHealthState()
+        {
+            this.ODataType = "microsoft.graph.windowsManagementAppHealthState";
+        }
+	
         /// <summary>
         /// Gets or sets health state.
         /// Windows management app health state.

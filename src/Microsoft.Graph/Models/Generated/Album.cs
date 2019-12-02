@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Album
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Album"/> class.
+        /// </summary>
+        public Album()
+        {
+            this.ODataType = "microsoft.graph.album";
+        }
 
         /// <summary>
         /// Gets or sets coverImageItemId.

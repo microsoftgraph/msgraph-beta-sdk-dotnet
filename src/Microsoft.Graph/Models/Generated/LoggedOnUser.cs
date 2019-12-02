@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LoggedOnUser
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoggedOnUser"/> class.
+        /// </summary>
+        public LoggedOnUser()
+        {
+            this.ODataType = "microsoft.graph.loggedOnUser";
+        }
 
         /// <summary>
         /// Gets or sets userId.

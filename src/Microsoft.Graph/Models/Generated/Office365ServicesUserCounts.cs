@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Office365ServicesUserCounts : Entity
     {
     
+		///<summary>
+		/// The Office365ServicesUserCounts constructor
+		///</summary>
+        public Office365ServicesUserCounts()
+        {
+            this.ODataType = "microsoft.graph.office365ServicesUserCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

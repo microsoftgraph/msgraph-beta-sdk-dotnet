@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsKioskSingleUWPApp"/> class.
+        /// </summary>
+        public WindowsKioskSingleUWPApp()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskSingleUWPApp";
+        }
 
         /// <summary>
         /// Gets or sets uwpApp.

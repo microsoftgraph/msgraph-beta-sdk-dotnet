@@ -22,6 +22,21 @@ namespace Microsoft.Graph
     public partial class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile
     {
     
+		///<summary>
+		/// The ActiveDirectoryWindowsAutopilotDeploymentProfile constructor
+		///</summary>
+        public ActiveDirectoryWindowsAutopilotDeploymentProfile()
+        {
+            this.ODataType = "microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile";
+        }
+	
+        /// <summary>
+        /// Gets or sets hybrid azure adjoin skip connectivity check.
+        /// The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hybridAzureADJoinSkipConnectivityCheck", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HybridAzureADJoinSkipConnectivityCheck { get; set; }
+    
         /// <summary>
         /// Gets or sets domain join configuration.
         /// Configuration to join Active Directory domain

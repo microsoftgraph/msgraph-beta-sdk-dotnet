@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MailboxSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MailboxSettings"/> class.
+        /// </summary>
+        public MailboxSettings()
+        {
+            this.ODataType = "microsoft.graph.mailboxSettings";
+        }
 
         /// <summary>
         /// Gets or sets automaticRepliesSetting.
@@ -52,6 +59,12 @@ namespace Microsoft.Graph
         public LocaleInfo Language { get; set; }
     
         /// <summary>
+        /// Gets or sets delegateMeetingMessageDeliveryOptions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegateMeetingMessageDeliveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        public DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets workingHours.
         /// The days of the week and hours in a specific time zone that the user works.
         /// </summary>
@@ -60,12 +73,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets dateFormat.
+        /// The date format for the user's mailbox.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dateFormat", Required = Newtonsoft.Json.Required.Default)]
         public string DateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets timeFormat.
+        /// The time format for the user's mailbox.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeFormat", Required = Newtonsoft.Json.Required.Default)]
         public string TimeFormat { get; set; }

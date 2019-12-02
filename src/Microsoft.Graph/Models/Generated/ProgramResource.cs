@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ProgramResource : Identity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProgramResource"/> class.
+        /// </summary>
+        public ProgramResource()
+        {
+            this.ODataType = "microsoft.graph.programResource";
+        }
 
         /// <summary>
         /// Gets or sets type.

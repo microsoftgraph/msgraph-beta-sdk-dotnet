@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SkypeForBusinessActivityCounts : Entity
     {
     
+		///<summary>
+		/// The SkypeForBusinessActivityCounts constructor
+		///</summary>
+        public SkypeForBusinessActivityCounts()
+        {
+            this.ODataType = "microsoft.graph.skypeForBusinessActivityCounts";
+        }
+	
         /// <summary>
         /// Gets or sets peer to peer.
         /// </summary>

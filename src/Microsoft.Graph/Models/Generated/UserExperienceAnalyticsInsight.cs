@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UserExperienceAnalyticsInsight
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserExperienceAnalyticsInsight"/> class.
+        /// </summary>
+        public UserExperienceAnalyticsInsight()
+        {
+            this.ODataType = "microsoft.graph.userExperienceAnalyticsInsight";
+        }
 
         /// <summary>
         /// Gets or sets userExperienceAnalyticsMetricId.
@@ -38,11 +45,18 @@ namespace Microsoft.Graph
         public string InsightId { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
+        /// Gets or sets values.
         /// The value of the user experience analytics insight.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<UserExperienceAnalyticsInsightValue> Value { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<UserExperienceAnalyticsInsightValue> Values { get; set; }
+    
+        /// <summary>
+        /// Gets or sets severity.
+        /// The value of the user experience analytics insight.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsInsightSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

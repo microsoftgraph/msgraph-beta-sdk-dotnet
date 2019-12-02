@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DetectedSensitiveContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DetectedSensitiveContent"/> class.
+        /// </summary>
+        public DetectedSensitiveContent()
+        {
+            this.ODataType = "microsoft.graph.detectedSensitiveContent";
+        }
 
         /// <summary>
         /// Gets or sets id.

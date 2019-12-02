@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MobileAppProvisioningConfigGroupAssignment : Entity
     {
     
+		///<summary>
+		/// The MobileAppProvisioningConfigGroupAssignment constructor
+		///</summary>
+        public MobileAppProvisioningConfigGroupAssignment()
+        {
+            this.ODataType = "microsoft.graph.mobileAppProvisioningConfigGroupAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target group id.
         /// The ID of the AAD group in which the app provisioning configuration is being targeted.

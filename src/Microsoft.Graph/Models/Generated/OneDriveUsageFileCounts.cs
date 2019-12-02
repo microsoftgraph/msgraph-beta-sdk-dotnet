@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OneDriveUsageFileCounts : Entity
     {
     
+		///<summary>
+		/// The OneDriveUsageFileCounts constructor
+		///</summary>
+        public OneDriveUsageFileCounts()
+        {
+            this.ODataType = "microsoft.graph.oneDriveUsageFileCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

@@ -22,12 +22,19 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RecordingInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecordingInfo"/> class.
+        /// </summary>
+        public RecordingInfo()
+        {
+            this.ODataType = "microsoft.graph.recordingInfo";
+        }
 
         /// <summary>
-        /// Gets or sets status.
+        /// Gets or sets recordingStatus.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public RecordingStatus? Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingStatus", Required = Newtonsoft.Json.Required.Default)]
+        public RecordingStatus? RecordingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets initiatedBy.

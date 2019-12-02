@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RoleMembershipGovernanceCriteria : GovernanceCriteria
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoleMembershipGovernanceCriteria"/> class.
+        /// </summary>
+        public RoleMembershipGovernanceCriteria()
+        {
+            this.ODataType = "microsoft.graph.roleMembershipGovernanceCriteria";
+        }
 
         /// <summary>
         /// Gets or sets roleId.

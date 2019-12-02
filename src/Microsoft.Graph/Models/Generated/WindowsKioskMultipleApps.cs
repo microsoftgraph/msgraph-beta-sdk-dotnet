@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskMultipleApps : WindowsKioskAppConfiguration
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsKioskMultipleApps"/> class.
+        /// </summary>
+        public WindowsKioskMultipleApps()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskMultipleApps";
+        }
 
         /// <summary>
         /// Gets or sets apps.

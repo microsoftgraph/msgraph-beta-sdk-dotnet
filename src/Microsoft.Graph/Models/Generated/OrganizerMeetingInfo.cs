@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OrganizerMeetingInfo : MeetingInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizerMeetingInfo"/> class.
+        /// </summary>
+        public OrganizerMeetingInfo()
+        {
+            this.ODataType = "microsoft.graph.organizerMeetingInfo";
+        }
 
         /// <summary>
         /// Gets or sets organizer.

@@ -41,6 +41,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISensitivityLabelEvaluateRequestBuilder"/>.</returns>
         ISensitivityLabelEvaluateRequestBuilder Evaluate(
-            IEnumerable<DiscoveredSensitiveType> discoveredSensitiveTypes = null);
+            IEnumerable<DiscoveredSensitiveType> discoveredSensitiveTypes = null,
+            CurrentLabel currentLabel = null);
     }
 }

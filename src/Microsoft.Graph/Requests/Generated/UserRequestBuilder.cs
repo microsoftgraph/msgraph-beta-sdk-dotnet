@@ -591,6 +591,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Profile.
+        /// </summary>
+        /// <returns>The <see cref="IProfileRequestBuilder"/>.</returns>
+        public IProfileRequestBuilder Profile
+        {
+            get
+            {
+                return new ProfileRequestBuilder(this.AppendSegmentToRequestUrl("profile"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Activities.
         /// </summary>
         /// <returns>The <see cref="IUserActivitiesCollectionRequestBuilder"/>.</returns>
@@ -611,6 +623,30 @@ namespace Microsoft.Graph
             get
             {
                 return new UserDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("devices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetings.
+        /// </summary>
+        /// <returns>The <see cref="IUserOnlineMeetingsCollectionRequestBuilder"/>.</returns>
+        public IUserOnlineMeetingsCollectionRequestBuilder OnlineMeetings
+        {
+            get
+            {
+                return new UserOnlineMeetingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("onlineMeetings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Presence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceRequestBuilder"/>.</returns>
+        public IPresenceRequestBuilder Presence
+        {
+            get
+            {
+                return new PresenceRequestBuilder(this.AppendSegmentToRequestUrl("presence"), this.Client);
             }
         }
 
@@ -699,6 +735,17 @@ namespace Microsoft.Graph
         {
             return new UserRevokeSignInSessionsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.revokeSignInSessions"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserReprocessLicenseAssignment.
+        /// </summary>
+        /// <returns>The <see cref="IUserReprocessLicenseAssignmentRequestBuilder"/>.</returns>
+        public IUserReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment()
+        {
+            return new UserReprocessLicenseAssignmentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reprocessLicenseAssignment"),
                 this.Client);
         }
 

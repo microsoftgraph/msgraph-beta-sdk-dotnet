@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RecordOperation : CommsOperation
     {
     
+		///<summary>
+		/// The RecordOperation constructor
+		///</summary>
+        public RecordOperation()
+        {
+            this.ODataType = "microsoft.graph.recordOperation";
+        }
+	
         /// <summary>
         /// Gets or sets recording location.
         /// </summary>

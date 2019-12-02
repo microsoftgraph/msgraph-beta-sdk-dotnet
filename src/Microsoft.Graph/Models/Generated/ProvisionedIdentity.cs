@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ProvisionedIdentity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProvisionedIdentity"/> class.
+        /// </summary>
+        public ProvisionedIdentity()
+        {
+            this.ODataType = "microsoft.graph.provisionedIdentity";
+        }
 
         /// <summary>
         /// Gets or sets id.

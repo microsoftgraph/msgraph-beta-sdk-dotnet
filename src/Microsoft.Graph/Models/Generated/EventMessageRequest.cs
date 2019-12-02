@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EventMessageRequestObject : EventMessage
     {
     
+		///<summary>
+		/// The EventMessageRequest constructor
+		///</summary>
+        public EventMessageRequestObject()
+        {
+            this.ODataType = "microsoft.graph.eventMessageRequest";
+        }
+	
         /// <summary>
         /// Gets or sets previous location.
         /// </summary>
@@ -45,6 +53,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseRequested", Required = Newtonsoft.Json.Required.Default)]
         public bool? ResponseRequested { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow new time proposals.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowNewTimeProposals { get; set; }
     
     }
 }

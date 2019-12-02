@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         Inactive = 1,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 2,
+	
     }
 }

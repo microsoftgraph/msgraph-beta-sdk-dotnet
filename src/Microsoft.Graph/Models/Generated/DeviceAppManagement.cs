@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceAppManagement : Entity
     {
     
+		///<summary>
+		/// The DeviceAppManagement constructor
+		///</summary>
+        public DeviceAppManagement()
+        {
+            this.ODataType = "microsoft.graph.deviceAppManagement";
+        }
+	
         /// <summary>
         /// Gets or sets microsoft store for business last successful sync date time.
         /// The last time the apps from the Microsoft Store for Business were synced successfully for the account.
@@ -112,6 +120,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBookCategories", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementManagedEBookCategoriesCollectionPage ManagedEBookCategories { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policy sets.
+        /// The PolicySet of Policies and Applications
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policySets", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementPolicySetsCollectionPage PolicySets { get; set; }
     
         /// <summary>
         /// Gets or sets side loading keys.
@@ -217,6 +232,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAppManagementTasks", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceAppManagementDeviceAppManagementTasksCollectionPage DeviceAppManagementTasks { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wdac supplemental policies.
+        /// The collection of Windows Defender Application Control Supplemental Policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wdacSupplementalPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceAppManagementWdacSupplementalPoliciesCollectionPage WdacSupplementalPolicies { get; set; }
     
     }
 }

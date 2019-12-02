@@ -22,24 +22,31 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ResultInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResultInfo"/> class.
+        /// </summary>
+        public ResultInfo()
+        {
+            this.ODataType = "microsoft.graph.ResultInfo";
+        }
 
         /// <summary>
         /// Gets or sets code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
-        public string Code { get; set; }
+        public Int32? Code { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subcode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subcode", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Subcode { get; set; }
     
         /// <summary>
         /// Gets or sets message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subCode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subCode", Required = Newtonsoft.Json.Required.Default)]
-        public string SubCode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

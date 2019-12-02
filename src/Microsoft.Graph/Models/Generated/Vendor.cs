@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Vendor : Entity
     {
     
+		///<summary>
+		/// The Vendor constructor
+		///</summary>
+        public Vendor()
+        {
+            this.ODataType = "microsoft.graph.vendor";
+        }
+	
         /// <summary>
         /// Gets or sets number.
         /// </summary>

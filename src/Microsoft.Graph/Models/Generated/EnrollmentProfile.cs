@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EnrollmentProfile : Entity
     {
     
+		///<summary>
+		/// The EnrollmentProfile constructor
+		///</summary>
+        public EnrollmentProfile()
+        {
+            this.ODataType = "microsoft.graph.enrollmentProfile";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// Name of the profile

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AttributeMappingFunctionSchema : Entity
     {
     
+		///<summary>
+		/// The AttributeMappingFunctionSchema constructor
+		///</summary>
+        public AttributeMappingFunctionSchema()
+        {
+            this.ODataType = "microsoft.graph.attributeMappingFunctionSchema";
+        }
+	
         /// <summary>
         /// Gets or sets parameters.
         /// </summary>

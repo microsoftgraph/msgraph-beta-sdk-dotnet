@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class OperatingSystemVersionRange
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OperatingSystemVersionRange"/> class.
+        /// </summary>
+        public OperatingSystemVersionRange()
+        {
+            this.ODataType = "microsoft.graph.operatingSystemVersionRange";
+        }
 
         /// <summary>
         /// Gets or sets description.

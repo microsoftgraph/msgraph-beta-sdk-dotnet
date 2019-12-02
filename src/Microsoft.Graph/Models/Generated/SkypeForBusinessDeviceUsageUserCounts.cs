@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SkypeForBusinessDeviceUsageUserCounts : Entity
     {
     
+		///<summary>
+		/// The SkypeForBusinessDeviceUsageUserCounts constructor
+		///</summary>
+        public SkypeForBusinessDeviceUsageUserCounts()
+        {
+            this.ODataType = "microsoft.graph.skypeForBusinessDeviceUsageUserCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

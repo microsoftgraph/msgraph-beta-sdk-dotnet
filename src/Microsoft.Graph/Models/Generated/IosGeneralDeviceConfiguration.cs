@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosGeneralDeviceConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The IosGeneralDeviceConfiguration constructor
+		///</summary>
+        public IosGeneralDeviceConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosGeneralDeviceConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets account block modification.
         /// Indicates whether or not to allow account modification when the device is in supervised mode.
@@ -597,6 +605,20 @@ namespace Microsoft.Graph
         public bool? KioskModeBlockTouchscreen { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode enable voice control.
+        /// Indicates whether or not to enable voice control in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeEnableVoiceControl", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeEnableVoiceControl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode allow voice control modification.
+        /// Indicates whether or not to allow the user to toggle voice control in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowVoiceControlModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeAllowVoiceControlModification { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode allow voice over settings.
         /// Indicates whether or not to allow access to the voice over settings while in kiosk mode.
         /// </summary>
@@ -1108,6 +1130,27 @@ namespace Microsoft.Graph
         public bool? AirPrintBlockiBeaconDiscovery { get; set; }
     
         /// <summary>
+        /// Gets or sets files network drive access blocked.
+        /// Indicates if devices can access files or other resources on a network server using the Server Message Block (SMB) protocol. Available for devices running iOS and iPadOS, versions 13.0 and later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filesNetworkDriveAccessBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FilesNetworkDriveAccessBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets files usb drive access blocked.
+        /// Indicates if sevices with access can connect to and open files on a USB drive. Available for devices running iOS and iPadOS, versions 13.0 and later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filesUsbDriveAccessBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FilesUsbDriveAccessBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifi power on forced.
+        /// Indicates whether or not Wi-Fi remains on, even when device is in airplane mode. Available for devices running iOS and iPadOS, versions 13.0 and later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiPowerOnForced", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WifiPowerOnForced { get; set; }
+    
+        /// <summary>
         /// Gets or sets block system app removal.
         /// Indicates whether or not the removal of system apps from the device is blocked on a supervised device (iOS 11.0 and later).
         /// </summary>
@@ -1211,13 +1254,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "findMyFriendsInFindMyAppBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? FindMyFriendsInFindMyAppBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wi fi block power modification.
-        /// Indicates whether or not to block WiFi power modification when the device is supervised (iOS 13 or later).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlockPowerModification", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WiFiBlockPowerModification { get; set; }
     
         /// <summary>
         /// Gets or sets i tunes blocked.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RubricCriterion
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RubricCriterion"/> class.
+        /// </summary>
+        public RubricCriterion()
+        {
+            this.ODataType = "microsoft.graph.rubricCriterion";
+        }
 
         /// <summary>
         /// Gets or sets description.

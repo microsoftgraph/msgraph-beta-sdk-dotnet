@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OutlookTask : OutlookItem
     {
     
+		///<summary>
+		/// The OutlookTask constructor
+		///</summary>
+        public OutlookTask()
+        {
+            this.ODataType = "microsoft.graph.outlookTask";
+        }
+	
         /// <summary>
         /// Gets or sets assigned to.
         /// </summary>

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddHeader : MarkContent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddHeader"/> class.
+        /// </summary>
+        public AddHeader()
+        {
+            this.ODataType = "microsoft.graph.addHeader";
+        }
 
         /// <summary>
         /// Gets or sets margin.

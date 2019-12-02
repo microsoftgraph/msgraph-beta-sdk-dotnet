@@ -43,5 +43,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IJournalJournalLinesCollectionRequestBuilder"/>.</returns>
         IJournalJournalLinesCollectionRequestBuilder JournalLines { get; }
     
+        /// <summary>
+        /// Gets the request builder for JournalPost.
+        /// </summary>
+        /// <returns>The <see cref="IJournalPostRequestBuilder"/>.</returns>
+        IJournalPostRequestBuilder Post();
+    
     }
 }

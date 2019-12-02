@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceAndAppManagementAssignedRoleDetails
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceAndAppManagementAssignedRoleDetails"/> class.
+        /// </summary>
+        public DeviceAndAppManagementAssignedRoleDetails()
+        {
+            this.ODataType = "microsoft.graph.deviceAndAppManagementAssignedRoleDetails";
+        }
 
         /// <summary>
         /// Gets or sets roleDefinitionIds.

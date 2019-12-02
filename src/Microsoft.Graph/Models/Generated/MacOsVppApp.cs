@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOsVppApp : MobileApp
     {
     
+		///<summary>
+		/// The MacOsVppApp constructor
+		///</summary>
+        public MacOsVppApp()
+        {
+            this.ODataType = "microsoft.graph.macOsVppApp";
+        }
+	
         /// <summary>
         /// Gets or sets used license count.
         /// The number of VPP licenses in use.

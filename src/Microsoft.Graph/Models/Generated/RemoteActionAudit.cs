@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RemoteActionAudit : Entity
     {
     
+		///<summary>
+		/// The RemoteActionAudit constructor
+		///</summary>
+        public RemoteActionAudit()
+        {
+            this.ODataType = "microsoft.graph.remoteActionAudit";
+        }
+	
         /// <summary>
         /// Gets or sets device display name.
         /// Intune device name.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RubricLevel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RubricLevel"/> class.
+        /// </summary>
+        public RubricLevel()
+        {
+            this.ODataType = "microsoft.graph.rubricLevel";
+        }
 
         /// <summary>
         /// Gets or sets levelId.

@@ -115,6 +115,11 @@ namespace Microsoft.Graph
         ShutDown = 18,
 	
         /// <summary>
+        /// Rotate Bit Locker Keys
+        /// </summary>
+        RotateBitLockerKeys = 19,
+	
+        /// <summary>
         /// Rotate File Vault Key
         /// </summary>
         RotateFileVaultKey = 20,

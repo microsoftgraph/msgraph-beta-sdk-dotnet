@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TextClassificationRequestObject : Entity
     {
     
+		///<summary>
+		/// The TextClassificationRequest constructor
+		///</summary>
+        public TextClassificationRequestObject()
+        {
+            this.ODataType = "microsoft.graph.textClassificationRequest";
+        }
+	
         /// <summary>
         /// Gets or sets text.
         /// </summary>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidManagedStoreAccountEnterpriseSettings : Entity
     {
     
+		///<summary>
+		/// The AndroidManagedStoreAccountEnterpriseSettings constructor
+		///</summary>
+        public AndroidManagedStoreAccountEnterpriseSettings()
+        {
+            this.ODataType = "microsoft.graph.androidManagedStoreAccountEnterpriseSettings";
+        }
+	
         /// <summary>
         /// Gets or sets bind status.
         /// Bind status of the tenant with the Google EMM API

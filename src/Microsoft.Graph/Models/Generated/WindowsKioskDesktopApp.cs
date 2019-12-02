@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsKioskDesktopApp : WindowsKioskAppBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsKioskDesktopApp"/> class.
+        /// </summary>
+        public WindowsKioskDesktopApp()
+        {
+            this.ODataType = "microsoft.graph.windowsKioskDesktopApp";
+        }
 
         /// <summary>
         /// Gets or sets path.

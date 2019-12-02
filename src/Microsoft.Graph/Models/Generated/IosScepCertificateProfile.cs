@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosScepCertificateProfile : IosCertificateProfileBase
     {
     
+		///<summary>
+		/// The IosScepCertificateProfile constructor
+		///</summary>
+        public IosScepCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.iosScepCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets scep server urls.
         /// SCEP Server Url(s).

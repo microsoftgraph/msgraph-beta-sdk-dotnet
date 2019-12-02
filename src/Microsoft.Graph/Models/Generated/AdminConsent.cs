@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AdminConsent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdminConsent"/> class.
+        /// </summary>
+        public AdminConsent()
+        {
+            this.ODataType = "microsoft.graph.adminConsent";
+        }
 
         /// <summary>
         /// Gets or sets shareAPNSData.

@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Attendee : AttendeeBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Attendee"/> class.
+        /// </summary>
+        public Attendee()
+        {
+            this.ODataType = "microsoft.graph.attendee";
+        }
 
         /// <summary>
         /// Gets or sets status.
@@ -28,6 +35,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public ResponseStatus Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets proposedNewTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proposedNewTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeSlot ProposedNewTime { get; set; }
     
     }
 }

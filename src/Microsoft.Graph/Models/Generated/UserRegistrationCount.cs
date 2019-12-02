@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UserRegistrationCount
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserRegistrationCount"/> class.
+        /// </summary>
+        public UserRegistrationCount()
+        {
+            this.ODataType = "microsoft.graph.userRegistrationCount";
+        }
 
         /// <summary>
         /// Gets or sets registrationStatus.

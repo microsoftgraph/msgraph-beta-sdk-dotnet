@@ -22,15 +22,24 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ImplicitGrantSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImplicitGrantSettings"/> class.
+        /// </summary>
+        public ImplicitGrantSettings()
+        {
+            this.ODataType = "microsoft.graph.implicitGrantSettings";
+        }
 
         /// <summary>
         /// Gets or sets enableIdTokenIssuance.
+        /// Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableIdTokenIssuance", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnableIdTokenIssuance { get; set; }
     
         /// <summary>
         /// Gets or sets enableAccessTokenIssuance.
+        /// Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableAccessTokenIssuance", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnableAccessTokenIssuance { get; set; }

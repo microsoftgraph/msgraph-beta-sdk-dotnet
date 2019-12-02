@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class BookingWorkHours
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BookingWorkHours"/> class.
+        /// </summary>
+        public BookingWorkHours()
+        {
+            this.ODataType = "microsoft.graph.bookingWorkHours";
+        }
 
         /// <summary>
         /// Gets or sets day.

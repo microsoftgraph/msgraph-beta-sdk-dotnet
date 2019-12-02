@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for IosLobAppProvisioningConfigurationHasPayloadLinks.
+        /// </summary>
+        /// <returns>The <see cref="IIosLobAppProvisioningConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
+        public IIosLobAppProvisioningConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
+            IEnumerable<string> payloadIds = null)
+        {
+            return new IosLobAppProvisioningConfigurationHasPayloadLinksRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hasPayloadLinks"),
+                this.Client,
+                payloadIds);
+        }
     }
 }

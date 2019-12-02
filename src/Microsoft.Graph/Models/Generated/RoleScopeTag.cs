@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RoleScopeTag : Entity
     {
     
+		///<summary>
+		/// The RoleScopeTag constructor
+		///</summary>
+        public RoleScopeTag()
+        {
+            this.ODataType = "microsoft.graph.roleScopeTag";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The display or friendly name of the Role Scope Tag.

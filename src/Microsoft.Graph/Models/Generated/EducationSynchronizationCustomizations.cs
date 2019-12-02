@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationSynchronizationCustomizations : EducationSynchronizationCustomizationsBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EducationSynchronizationCustomizations"/> class.
+        /// </summary>
+        public EducationSynchronizationCustomizations()
+        {
+            this.ODataType = "microsoft.graph.educationSynchronizationCustomizations";
+        }
 
         /// <summary>
         /// Gets or sets school.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MeetingCapability
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MeetingCapability"/> class.
+        /// </summary>
+        public MeetingCapability()
+        {
+            this.ODataType = "microsoft.graph.meetingCapability";
+        }
 
         /// <summary>
         /// Gets or sets allowAnonymousUsersToDialOut.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EmbeddedSIMDeviceState : Entity
     {
     
+		///<summary>
+		/// The EmbeddedSIMDeviceState constructor
+		///</summary>
+        public EmbeddedSIMDeviceState()
+        {
+            this.ODataType = "microsoft.graph.embeddedSIMDeviceState";
+        }
+	
         /// <summary>
         /// Gets or sets created date time.
         /// The time the embedded SIM device status was created. Generated service side.

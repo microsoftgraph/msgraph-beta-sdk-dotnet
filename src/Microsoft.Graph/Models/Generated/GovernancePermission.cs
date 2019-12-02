@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class GovernancePermission
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GovernancePermission"/> class.
+        /// </summary>
+        public GovernancePermission()
+        {
+            this.ODataType = "microsoft.graph.governancePermission";
+        }
 
         /// <summary>
         /// Gets or sets accessLevel.

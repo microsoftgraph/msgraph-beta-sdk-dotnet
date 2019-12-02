@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RemoveContentFooterAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveContentFooterAction"/> class.
+        /// </summary>
+        public RemoveContentFooterAction()
+        {
+            this.ODataType = "microsoft.graph.removeContentFooterAction";
+        }
 
         /// <summary>
         /// Gets or sets uiElementNames.

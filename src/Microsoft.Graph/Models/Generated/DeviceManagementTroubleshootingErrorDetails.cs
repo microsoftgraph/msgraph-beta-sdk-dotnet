@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class DeviceManagementTroubleshootingErrorDetails
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeviceManagementTroubleshootingErrorDetails"/> class.
+        /// </summary>
+        public DeviceManagementTroubleshootingErrorDetails()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementTroubleshootingErrorDetails";
+        }
 
         /// <summary>
         /// Gets or sets context.

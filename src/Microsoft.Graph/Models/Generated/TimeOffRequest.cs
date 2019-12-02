@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TimeOffRequestObject : ScheduleChangeRequestObject
     {
     
+		///<summary>
+		/// The TimeOffRequest constructor
+		///</summary>
+        public TimeOffRequestObject()
+        {
+            this.ODataType = "microsoft.graph.timeOffRequest";
+        }
+	
         /// <summary>
         /// Gets or sets start date time.
         /// </summary>

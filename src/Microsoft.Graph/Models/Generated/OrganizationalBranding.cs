@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class OrganizationalBranding : Entity
     {
     
+		///<summary>
+		/// The OrganizationalBranding constructor
+		///</summary>
+        public OrganizationalBranding()
+        {
+            this.ODataType = "microsoft.graph.organizationalBranding";
+        }
+	
         /// <summary>
         /// Gets or sets background color.
         /// </summary>

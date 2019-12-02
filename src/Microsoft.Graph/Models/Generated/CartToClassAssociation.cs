@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class CartToClassAssociation : Entity
     {
     
+		///<summary>
+		/// The CartToClassAssociation constructor
+		///</summary>
+        public CartToClassAssociation()
+        {
+            this.ODataType = "microsoft.graph.cartToClassAssociation";
+        }
+	
         /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.

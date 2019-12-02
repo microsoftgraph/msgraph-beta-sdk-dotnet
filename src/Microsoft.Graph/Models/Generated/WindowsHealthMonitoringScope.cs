@@ -35,5 +35,10 @@ namespace Microsoft.Graph
         /// </summary>
         BootPerformance = 2,
 	
+        /// <summary>
+        /// User Experience Analytics
+        /// </summary>
+        UserExperienceAnalytics = 4,
+	
     }
 }

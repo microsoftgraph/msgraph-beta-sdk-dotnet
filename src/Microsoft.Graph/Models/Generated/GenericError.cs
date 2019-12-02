@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class GenericError
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenericError"/> class.
+        /// </summary>
+        public GenericError()
+        {
+            this.ODataType = "microsoft.graph.genericError";
+        }
 
         /// <summary>
         /// Gets or sets message.

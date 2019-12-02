@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceManagementBooleanSettingInstance : DeviceManagementSettingInstance
     {
     
+		///<summary>
+		/// The DeviceManagementBooleanSettingInstance constructor
+		///</summary>
+        public DeviceManagementBooleanSettingInstance()
+        {
+            this.ODataType = "microsoft.graph.deviceManagementBooleanSettingInstance";
+        }
+	
         /// <summary>
         /// Gets or sets value.
         /// The boolean value

@@ -20,9 +20,9 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Recording Capable
+        /// Unknown
         /// </summary>
-        RecordingCapable = 0,
+        Unknown = 0,
 	
         /// <summary>
         /// Not Recording
@@ -30,9 +30,19 @@ namespace Microsoft.Graph
         NotRecording = 1,
 	
         /// <summary>
-        /// Started Recording
+        /// Recording
         /// </summary>
-        StartedRecording = 2,
+        Recording = 2,
+	
+        /// <summary>
+        /// Failed
+        /// </summary>
+        Failed = 3,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
 	
     }
 }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsInformationProtectionDeviceRegistration : Entity
     {
     
+		///<summary>
+		/// The WindowsInformationProtectionDeviceRegistration constructor
+		///</summary>
+        public WindowsInformationProtectionDeviceRegistration()
+        {
+            this.ODataType = "microsoft.graph.windowsInformationProtectionDeviceRegistration";
+        }
+	
         /// <summary>
         /// Gets or sets user id.
         /// UserId associated with this device registration record.

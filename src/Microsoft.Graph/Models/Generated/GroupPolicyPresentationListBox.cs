@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationListBox : GroupPolicyPresentation
     {
     
+		///<summary>
+		/// The GroupPolicyPresentationListBox constructor
+		///</summary>
+        public GroupPolicyPresentationListBox()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyPresentationListBox";
+        }
+	
         /// <summary>
         /// Gets or sets explicit value.
         /// If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.

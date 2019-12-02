@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MatchLocation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MatchLocation"/> class.
+        /// </summary>
+        public MatchLocation()
+        {
+            this.ODataType = "microsoft.graph.matchLocation";
+        }
 
         /// <summary>
         /// Gets or sets length.

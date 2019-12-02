@@ -70,7 +70,8 @@ namespace Microsoft.Graph
             bool? keepUserData = null,
             IEnumerable<string> deviceIds = null,
             string notificationTitle = null,
-            string notificationBody = null)
+            string notificationBody = null,
+            string deviceName = null)
         {
             return new ManagedDeviceExecuteActionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.executeAction"),
@@ -80,7 +81,8 @@ namespace Microsoft.Graph
                 keepUserData,
                 deviceIds,
                 notificationTitle,
-                notificationBody);
+                notificationBody,
+                deviceName);
         }
     }
 }

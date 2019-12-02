@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ExactMatchLookupJob : ExactMatchJobBase
     {
     
+		///<summary>
+		/// The ExactMatchLookupJob constructor
+		///</summary>
+        public ExactMatchLookupJob()
+        {
+            this.ODataType = "microsoft.graph.exactMatchLookupJob";
+        }
+	
         /// <summary>
         /// Gets or sets state.
         /// </summary>

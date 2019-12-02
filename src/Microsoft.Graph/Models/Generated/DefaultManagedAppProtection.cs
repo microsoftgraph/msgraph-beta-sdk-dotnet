@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DefaultManagedAppProtection : ManagedAppProtection
     {
     
+		///<summary>
+		/// The DefaultManagedAppProtection constructor
+		///</summary>
+        public DefaultManagedAppProtection()
+        {
+            this.ODataType = "microsoft.graph.defaultManagedAppProtection";
+        }
+	
         /// <summary>
         /// Gets or sets app data encryption type.
         /// Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
@@ -217,6 +225,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string CustomBrowserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum required company portal version.
+        /// Minimum version of the Company portal that must be installed on the device or app access will be blocked
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredCompanyPortalVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumRequiredCompanyPortalVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum warning company portal version.
+        /// Minimum version of the Company portal that must be installed on the device or the user will receive a warning
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumWarningCompanyPortalVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumWarningCompanyPortalVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum wipe company portal version.
+        /// Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumWipeCompanyPortalVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumWipeCompanyPortalVersion { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

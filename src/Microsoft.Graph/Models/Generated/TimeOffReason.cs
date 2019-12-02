@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TimeOffReason : ChangeTrackedEntity
     {
     
+		///<summary>
+		/// The TimeOffReason constructor
+		///</summary>
+        public TimeOffReason()
+        {
+            this.ODataType = "microsoft.graph.timeOffReason";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MobileAppSupportedDeviceType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MobileAppSupportedDeviceType"/> class.
+        /// </summary>
+        public MobileAppSupportedDeviceType()
+        {
+            this.ODataType = "microsoft.graph.mobileAppSupportedDeviceType";
+        }
 
         /// <summary>
         /// Gets or sets type.

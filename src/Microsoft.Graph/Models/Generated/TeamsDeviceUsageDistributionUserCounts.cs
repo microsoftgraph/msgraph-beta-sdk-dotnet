@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TeamsDeviceUsageDistributionUserCounts : Entity
     {
     
+		///<summary>
+		/// The TeamsDeviceUsageDistributionUserCounts constructor
+		///</summary>
+        public TeamsDeviceUsageDistributionUserCounts()
+        {
+            this.ODataType = "microsoft.graph.teamsDeviceUsageDistributionUserCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

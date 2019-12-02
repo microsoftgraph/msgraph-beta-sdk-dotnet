@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class OpeningHoursSpecification
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpeningHoursSpecification"/> class.
+        /// </summary>
+        public OpeningHoursSpecification()
+        {
+            this.ODataType = "microsoft.graph.openingHoursSpecification";
+        }
 
         /// <summary>
         /// Gets or sets dayOfWeek.

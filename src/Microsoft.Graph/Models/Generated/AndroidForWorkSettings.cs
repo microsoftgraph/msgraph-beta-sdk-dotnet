@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidForWorkSettings : Entity
     {
     
+		///<summary>
+		/// The AndroidForWorkSettings constructor
+		///</summary>
+        public AndroidForWorkSettings()
+        {
+            this.ODataType = "microsoft.graph.androidForWorkSettings";
+        }
+	
         /// <summary>
         /// Gets or sets bind status.
         /// Bind status of the tenant with the Google EMM API

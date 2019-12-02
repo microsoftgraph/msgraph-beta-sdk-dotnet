@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsWifiConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The WindowsWifiConfiguration constructor
+		///</summary>
+        public WindowsWifiConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsWifiConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets pre shared key.
         /// This is the pre-shared key for WPA Personal Wi-Fi network.

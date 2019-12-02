@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : EducationSynchronizationConnectionSettings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EducationSynchronizationOAuth2ClientCredentialsConnectionSettings"/> class.
+        /// </summary>
+        public EducationSynchronizationOAuth2ClientCredentialsConnectionSettings()
+        {
+            this.ODataType = "microsoft.graph.educationSynchronizationOAuth2ClientCredentialsConnectionSettings";
+        }
 
         /// <summary>
         /// Gets or sets tokenUrl.

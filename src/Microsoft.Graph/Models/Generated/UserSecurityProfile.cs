@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class UserSecurityProfile : Entity
     {
     
+		///<summary>
+		/// The UserSecurityProfile constructor
+		///</summary>
+        public UserSecurityProfile()
+        {
+            this.ODataType = "microsoft.graph.userSecurityProfile";
+        }
+	
         /// <summary>
         /// Gets or sets accounts.
         /// </summary>

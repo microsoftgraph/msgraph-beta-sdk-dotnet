@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class BookingSchedulingPolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BookingSchedulingPolicy"/> class.
+        /// </summary>
+        public BookingSchedulingPolicy()
+        {
+            this.ODataType = "microsoft.graph.bookingSchedulingPolicy";
+        }
 
         /// <summary>
         /// Gets or sets timeSlotInterval.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class OfficeClientCheckinStatus
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OfficeClientCheckinStatus"/> class.
+        /// </summary>
+        public OfficeClientCheckinStatus()
+        {
+            this.ODataType = "microsoft.graph.officeClientCheckinStatus";
+        }
 
         /// <summary>
         /// Gets or sets userPrincipalName.

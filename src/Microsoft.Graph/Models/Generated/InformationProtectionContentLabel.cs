@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class InformationProtectionContentLabel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InformationProtectionContentLabel"/> class.
+        /// </summary>
+        public InformationProtectionContentLabel()
+        {
+            this.ODataType = "microsoft.graph.informationProtectionContentLabel";
+        }
 
         /// <summary>
         /// Gets or sets creationDateTime.

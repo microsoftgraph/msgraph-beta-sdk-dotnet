@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class MacOSWiFiConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The MacOSWiFiConfiguration constructor
+		///</summary>
+        public MacOSWiFiConfiguration()
+        {
+            this.ODataType = "microsoft.graph.macOSWiFiConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets network name.
         /// Network Name

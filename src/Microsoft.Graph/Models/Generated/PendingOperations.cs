@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class PendingOperations
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingOperations"/> class.
+        /// </summary>
+        public PendingOperations()
+        {
+            this.ODataType = "microsoft.graph.pendingOperations";
+        }
 
         /// <summary>
         /// Gets or sets pendingContentUpdate.

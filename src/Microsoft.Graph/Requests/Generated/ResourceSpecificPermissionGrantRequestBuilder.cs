@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ResourceSpecificPermissionGrantRequestBuilder.
     /// </summary>
-    public partial class ResourceSpecificPermissionGrantRequestBuilder : EntityRequestBuilder, IResourceSpecificPermissionGrantRequestBuilder
+    public partial class ResourceSpecificPermissionGrantRequestBuilder : DirectoryObjectRequestBuilder, IResourceSpecificPermissionGrantRequestBuilder
     {
 
         /// <summary>

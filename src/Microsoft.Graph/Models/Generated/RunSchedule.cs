@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class RunSchedule
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunSchedule"/> class.
+        /// </summary>
+        public RunSchedule()
+        {
+            this.ODataType = "microsoft.graph.runSchedule";
+        }
 
         /// <summary>
         /// Gets or sets additional data.

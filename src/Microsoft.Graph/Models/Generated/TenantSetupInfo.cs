@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class TenantSetupInfo : Entity
     {
     
+		///<summary>
+		/// The TenantSetupInfo constructor
+		///</summary>
+        public TenantSetupInfo()
+        {
+            this.ODataType = "microsoft.graph.tenantSetupInfo";
+        }
+	
         /// <summary>
         /// Gets or sets user roles actions.
         /// </summary>

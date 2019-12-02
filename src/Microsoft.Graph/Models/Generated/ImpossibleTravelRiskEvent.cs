@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ImpossibleTravelRiskEvent : LocatedRiskEvent
     {
     
+		///<summary>
+		/// The ImpossibleTravelRiskEvent constructor
+		///</summary>
+        public ImpossibleTravelRiskEvent()
+        {
+            this.ODataType = "microsoft.graph.impossibleTravelRiskEvent";
+        }
+	
         /// <summary>
         /// Gets or sets user agent.
         /// </summary>

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class SynchronizationJobRestartCriteria
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SynchronizationJobRestartCriteria"/> class.
+        /// </summary>
+        public SynchronizationJobRestartCriteria()
+        {
+            this.ODataType = "microsoft.graph.synchronizationJobRestartCriteria";
+        }
 
         /// <summary>
         /// Gets or sets resetScope.

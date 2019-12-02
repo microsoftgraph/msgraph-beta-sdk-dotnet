@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class CertificateConnectorSetting
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CertificateConnectorSetting"/> class.
+        /// </summary>
+        public CertificateConnectorSetting()
+        {
+            this.ODataType = "microsoft.graph.certificateConnectorSetting";
+        }
 
         /// <summary>
         /// Gets or sets status.

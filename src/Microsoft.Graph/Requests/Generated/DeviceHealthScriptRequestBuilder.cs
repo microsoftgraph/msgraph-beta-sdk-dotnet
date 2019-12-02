@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealthScriptRequestBuilder.
     /// </summary>
-    public partial class DeviceHealthScriptRequestBuilder : DeviceManagementScriptRequestBuilder, IDeviceHealthScriptRequestBuilder
+    public partial class DeviceHealthScriptRequestBuilder : EntityRequestBuilder, IDeviceHealthScriptRequestBuilder
     {
 
         /// <summary>
@@ -48,6 +48,55 @@ namespace Microsoft.Graph
         public new IDeviceHealthScriptRequest Request(IEnumerable<Option> options)
         {
             return new DeviceHealthScriptRequest(this.RequestUrl, this.Client, options);
+        }
+    
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptAssignmentsCollectionRequestBuilder Assignments
+        {
+            get
+            {
+                return new DeviceHealthScriptAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptRunSummaryRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptRunSummaryRequestBuilder RunSummary
+        {
+            get
+            {
+                return new DeviceHealthScriptRunSummaryRequestBuilder(this.AppendSegmentToRequestUrl("runSummary"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceRunStates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptDeviceRunStatesCollectionRequestBuilder DeviceRunStates
+        {
+            get
+            {
+                return new DeviceHealthScriptDeviceRunStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceRunStates"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptAssign.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptAssignRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptAssignRequestBuilder Assign(
+            IEnumerable<DeviceHealthScriptAssignment> deviceHealthScriptAssignments = null)
+        {
+            return new DeviceHealthScriptAssignRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
+                this.Client,
+                deviceHealthScriptAssignments);
         }
     
     }

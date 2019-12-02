@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationGroupAssignment : Entity
     {
     
+		///<summary>
+		/// The DeviceConfigurationGroupAssignment constructor
+		///</summary>
+        public DeviceConfigurationGroupAssignment()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationGroupAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target group id.
         /// The Id of the AAD group we are targeting the device configuration to.

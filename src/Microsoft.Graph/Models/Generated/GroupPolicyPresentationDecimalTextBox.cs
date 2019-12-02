@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationDecimalTextBox : GroupPolicyPresentation
     {
     
+		///<summary>
+		/// The GroupPolicyPresentationDecimalTextBox constructor
+		///</summary>
+        public GroupPolicyPresentationDecimalTextBox()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyPresentationDecimalTextBox";
+        }
+	
         /// <summary>
         /// Gets or sets default value.
         /// An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.

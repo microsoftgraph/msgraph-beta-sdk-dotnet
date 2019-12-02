@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class ExactMatchDataStore : Entity
     {
     
+		///<summary>
+		/// The ExactMatchDataStore constructor
+		///</summary>
+        public ExactMatchDataStore()
+        {
+            this.ODataType = "microsoft.graph.exactMatchDataStore";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>

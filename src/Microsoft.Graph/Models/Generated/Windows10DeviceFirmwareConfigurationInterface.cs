@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10DeviceFirmwareConfigurationInterface constructor
+		///</summary>
+        public Windows10DeviceFirmwareConfigurationInterface()
+        {
+            this.ODataType = "microsoft.graph.windows10DeviceFirmwareConfigurationInterface";
+        }
+	
         /// <summary>
         /// Gets or sets change uefi settings permission.
         /// Defines the permission level granted to users to change UEFI settings.

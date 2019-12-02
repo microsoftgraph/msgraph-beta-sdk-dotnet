@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationValueList : GroupPolicyPresentationValue
     {
     
+		///<summary>
+		/// The GroupPolicyPresentationValueList constructor
+		///</summary>
+        public GroupPolicyPresentationValueList()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyPresentationValueList";
+        }
+	
         /// <summary>
         /// Gets or sets values.
         /// A list of pairs for the associated presentation.

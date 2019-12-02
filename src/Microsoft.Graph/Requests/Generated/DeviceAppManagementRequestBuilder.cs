@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PolicySets.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementPolicySetsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementPolicySetsCollectionRequestBuilder PolicySets
+        {
+            get
+            {
+                return new DeviceAppManagementPolicySetsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policySets"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SideLoadingKeys.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder"/>.</returns>
@@ -323,6 +335,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceAppManagementTasks"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WdacSupplementalPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementWdacSupplementalPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementWdacSupplementalPoliciesCollectionRequestBuilder WdacSupplementalPolicies
+        {
+            get
+            {
+                return new DeviceAppManagementWdacSupplementalPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("wdacSupplementalPolicies"), this.Client);
             }
         }
     

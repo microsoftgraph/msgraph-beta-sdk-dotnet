@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ExtendedPlacePropertiesModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedPlacePropertiesModel"/> class.
+        /// </summary>
+        public ExtendedPlacePropertiesModel()
+        {
+            this.ODataType = "microsoft.graph.extendedPlacePropertiesModel";
+        }
 
         /// <summary>
         /// Gets or sets priceRange.

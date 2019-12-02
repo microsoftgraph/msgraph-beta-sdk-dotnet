@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class VpnProxyServer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VpnProxyServer"/> class.
+        /// </summary>
+        public VpnProxyServer()
+        {
+            this.ODataType = "microsoft.graph.vpnProxyServer";
+        }
 
         /// <summary>
         /// Gets or sets automaticConfigurationScriptUrl.

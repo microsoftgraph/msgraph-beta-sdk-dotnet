@@ -22,33 +22,45 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class InformationalUrl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InformationalUrl"/> class.
+        /// </summary>
+        public InformationalUrl()
+        {
+            this.ODataType = "microsoft.graph.informationalUrl";
+        }
 
         /// <summary>
         /// Gets or sets logoUrl.
+        /// CDN URL to the application's logo, Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logoUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LogoUrl { get; set; }
     
         /// <summary>
         /// Gets or sets marketingUrl.
+        /// Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "marketingUrl", Required = Newtonsoft.Json.Required.Default)]
         public string MarketingUrl { get; set; }
     
         /// <summary>
         /// Gets or sets privacyStatementUrl.
+        /// Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyStatementUrl", Required = Newtonsoft.Json.Required.Default)]
         public string PrivacyStatementUrl { get; set; }
     
         /// <summary>
         /// Gets or sets supportUrl.
+        /// Link to the application's support page. For example, https://www.contoso.com/app/support
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportUrl", Required = Newtonsoft.Json.Required.Default)]
         public string SupportUrl { get; set; }
     
         /// <summary>
         /// Gets or sets termsOfServiceUrl.
+        /// Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsOfServiceUrl", Required = Newtonsoft.Json.Required.Default)]
         public string TermsOfServiceUrl { get; set; }

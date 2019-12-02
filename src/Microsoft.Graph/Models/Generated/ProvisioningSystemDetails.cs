@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ProvisioningSystemDetails
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProvisioningSystemDetails"/> class.
+        /// </summary>
+        public ProvisioningSystemDetails()
+        {
+            this.ODataType = "microsoft.graph.provisioningSystemDetails";
+        }
 
         /// <summary>
         /// Gets or sets id.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationLongDecimalTextBox : GroupPolicyPresentation
     {
     
+		///<summary>
+		/// The GroupPolicyPresentationLongDecimalTextBox constructor
+		///</summary>
+        public GroupPolicyPresentationLongDecimalTextBox()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyPresentationLongDecimalTextBox";
+        }
+	
         /// <summary>
         /// Gets or sets default value.
         /// An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.

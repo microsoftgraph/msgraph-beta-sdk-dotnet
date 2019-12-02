@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class UnsupportedDeviceConfigurationDetail
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnsupportedDeviceConfigurationDetail"/> class.
+        /// </summary>
+        public UnsupportedDeviceConfigurationDetail()
+        {
+            this.ODataType = "microsoft.graph.unsupportedDeviceConfigurationDetail";
+        }
 
         /// <summary>
         /// Gets or sets message.

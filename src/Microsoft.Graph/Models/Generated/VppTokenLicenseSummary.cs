@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class VppTokenLicenseSummary
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VppTokenLicenseSummary"/> class.
+        /// </summary>
+        public VppTokenLicenseSummary()
+        {
+            this.ODataType = "microsoft.graph.vppTokenLicenseSummary";
+        }
 
         /// <summary>
         /// Gets or sets vppTokenId.

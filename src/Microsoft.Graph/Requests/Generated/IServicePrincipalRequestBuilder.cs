@@ -97,7 +97,35 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISynchronizationRequestBuilder"/>.</returns>
         ISynchronizationRequestBuilder Synchronization { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalCreatePasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        IServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder CreatePasswordSingleSignOnCredentials(
+            string id,
+            IEnumerable<Credential> credentials);
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalGetPasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials(
+            string id);
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalDeletePasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials(
+            string id);
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalUpdatePasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalUpdatePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        IServicePrincipalUpdatePasswordSingleSignOnCredentialsRequestBuilder UpdatePasswordSingleSignOnCredentials(
+            string id,
+            IEnumerable<Credential> credentials);
     
     }
 }

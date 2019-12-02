@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddWatermarkAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddWatermarkAction"/> class.
+        /// </summary>
+        public AddWatermarkAction()
+        {
+            this.ODataType = "microsoft.graph.addWatermarkAction";
+        }
 
         /// <summary>
         /// Gets or sets uiElementName.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsOfficeClientSecurityConfiguration : OfficeClientConfiguration
     {
     
+		///<summary>
+		/// The WindowsOfficeClientSecurityConfiguration constructor
+		///</summary>
+        public WindowsOfficeClientSecurityConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windowsOfficeClientSecurityConfiguration";
+        }
+	
     }
 }
 

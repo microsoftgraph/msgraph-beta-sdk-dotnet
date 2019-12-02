@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AndroidForWorkAppConfigurationSchemaItem
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AndroidForWorkAppConfigurationSchemaItem"/> class.
+        /// </summary>
+        public AndroidForWorkAppConfigurationSchemaItem()
+        {
+            this.ODataType = "microsoft.graph.androidForWorkAppConfigurationSchemaItem";
+        }
 
         /// <summary>
         /// Gets or sets schemaItemKey.

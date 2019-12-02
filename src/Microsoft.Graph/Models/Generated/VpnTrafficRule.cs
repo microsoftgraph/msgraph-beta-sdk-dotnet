@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class VpnTrafficRule
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VpnTrafficRule"/> class.
+        /// </summary>
+        public VpnTrafficRule()
+        {
+            this.ODataType = "microsoft.graph.vpnTrafficRule";
+        }
 
         /// <summary>
         /// Gets or sets name.

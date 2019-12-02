@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RemoveProtectionAction : InformationProtectionAction
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveProtectionAction"/> class.
+        /// </summary>
+        public RemoveProtectionAction()
+        {
+            this.ODataType = "microsoft.graph.removeProtectionAction";
+        }
 
     }
 }

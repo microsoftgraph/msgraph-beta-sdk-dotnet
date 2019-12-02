@@ -22,12 +22,34 @@ namespace Microsoft.Graph
     public partial class WindowsAutopilotDeploymentProfileAssignment : Entity
     {
     
+		///<summary>
+		/// The WindowsAutopilotDeploymentProfileAssignment constructor
+		///</summary>
+        public WindowsAutopilotDeploymentProfileAssignment()
+        {
+            this.ODataType = "microsoft.graph.windowsAutopilotDeploymentProfileAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for the Windows Autopilot deployment profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source.
+        /// Type of resource used for deployment to a group, direct or parcel/policySet
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentSource? Source { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source id.
+        /// Identifier for resource used for deployment to a group
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceId { get; set; }
     
     }
 }

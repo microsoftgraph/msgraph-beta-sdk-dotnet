@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10ImportedPFXCertificateProfile : WindowsCertificateProfileBase
     {
     
+		///<summary>
+		/// The Windows10ImportedPFXCertificateProfile constructor
+		///</summary>
+        public Windows10ImportedPFXCertificateProfile()
+        {
+            this.ODataType = "microsoft.graph.windows10ImportedPFXCertificateProfile";
+        }
+	
         /// <summary>
         /// Gets or sets intended purpose.
         /// </summary>

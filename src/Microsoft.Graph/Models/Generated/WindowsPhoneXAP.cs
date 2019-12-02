@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class WindowsPhoneXAP : MobileLobApp
     {
     
+		///<summary>
+		/// The WindowsPhoneXAP constructor
+		///</summary>
+        public WindowsPhoneXAP()
+        {
+            this.ODataType = "microsoft.graph.windowsPhoneXAP";
+        }
+	
         /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.

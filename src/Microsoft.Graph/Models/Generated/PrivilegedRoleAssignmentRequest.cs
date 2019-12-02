@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class PrivilegedRoleAssignmentRequestObject : Entity
     {
     
+		///<summary>
+		/// The PrivilegedRoleAssignmentRequest constructor
+		///</summary>
+        public PrivilegedRoleAssignmentRequestObject()
+        {
+            this.ODataType = "microsoft.graph.privilegedRoleAssignmentRequest";
+        }
+	
         /// <summary>
         /// Gets or sets schedule.
         /// </summary>

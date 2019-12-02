@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Event : OutlookItem
     {
     
+		///<summary>
+		/// The Event constructor
+		///</summary>
+        public Event()
+        {
+            this.ODataType = "microsoft.graph.event";
+        }
+	
         /// <summary>
         /// Gets or sets original start time zone.
         /// The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
@@ -223,6 +231,30 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingUrl", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineMeetingUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is online meeting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOnlineMeeting", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsOnlineMeeting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting provider.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingProvider", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingProviderType? OnlineMeetingProvider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeeting", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingInfo OnlineMeeting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow new time proposals.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowNewTimeProposals { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.

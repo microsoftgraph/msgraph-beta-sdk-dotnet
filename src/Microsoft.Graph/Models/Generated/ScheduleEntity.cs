@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ScheduleEntity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScheduleEntity"/> class.
+        /// </summary>
+        public ScheduleEntity()
+        {
+            this.ODataType = "microsoft.graph.scheduleEntity";
+        }
 
         /// <summary>
         /// Gets or sets startDateTime.

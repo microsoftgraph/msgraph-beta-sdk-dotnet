@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationSubmissionResource : Entity
     {
     
+		///<summary>
+		/// The EducationSubmissionResource constructor
+		///</summary>
+        public EducationSubmissionResource()
+        {
+            this.ODataType = "microsoft.graph.educationSubmissionResource";
+        }
+	
         /// <summary>
         /// Gets or sets resource.
         /// </summary>

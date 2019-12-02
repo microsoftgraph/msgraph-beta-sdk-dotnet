@@ -61,5 +61,35 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IShipmentMethodRequestBuilder"/>.</returns>
         IShipmentMethodRequestBuilder ShipmentMethod { get; }
     
+        /// <summary>
+        /// Gets the request builder for SalesInvoiceCancelAndSend.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoiceCancelAndSendRequestBuilder"/>.</returns>
+        ISalesInvoiceCancelAndSendRequestBuilder CancelAndSend();
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoiceCancel.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoiceCancelRequestBuilder"/>.</returns>
+        ISalesInvoiceCancelRequestBuilder Cancel();
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoicePostAndSend.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoicePostAndSendRequestBuilder"/>.</returns>
+        ISalesInvoicePostAndSendRequestBuilder PostAndSend();
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoicePost.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoicePostRequestBuilder"/>.</returns>
+        ISalesInvoicePostRequestBuilder Post();
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoiceSend.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoiceSendRequestBuilder"/>.</returns>
+        ISalesInvoiceSendRequestBuilder Send();
+    
     }
 }

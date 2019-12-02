@@ -36,6 +36,35 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IInformationProtectionLabelRequestBuilder"/>.</returns>
         IInformationProtectionLabelRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for InformationProtectionLabelExtractLabel.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionLabelExtractLabelRequestBuilder"/>.</returns>
+        IInformationProtectionLabelExtractLabelRequestBuilder ExtractLabel(
+            ContentInfo contentInfo);
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionLabelEvaluateApplication.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionLabelEvaluateApplicationRequestBuilder"/>.</returns>
+        IInformationProtectionLabelEvaluateApplicationRequestBuilder EvaluateApplication(
+            ContentInfo contentInfo,
+            LabelingOptions labelingOptions);
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionLabelEvaluateRemoval.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionLabelEvaluateRemovalRequestBuilder"/>.</returns>
+        IInformationProtectionLabelEvaluateRemovalRequestBuilder EvaluateRemoval(
+            ContentInfo contentInfo,
+            DowngradeJustification downgradeJustification = null);
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionLabelEvaluateClassificationResults.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder"/>.</returns>
+        IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder EvaluateClassificationResults(
+            ContentInfo contentInfo,
+            IEnumerable<ClassificationResult> classificationResults);
     }
 }

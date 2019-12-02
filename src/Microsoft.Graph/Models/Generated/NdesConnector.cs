@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class NdesConnector : Entity
     {
     
+		///<summary>
+		/// The NdesConnector constructor
+		///</summary>
+        public NdesConnector()
+        {
+            this.ODataType = "microsoft.graph.ndesConnector";
+        }
+	
         /// <summary>
         /// Gets or sets last connection date time.
         /// Last connection time for the Ndes Connector

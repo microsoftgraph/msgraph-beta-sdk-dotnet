@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10EndpointProtectionConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The Windows10EndpointProtectionConfiguration constructor
+		///</summary>
+        public Windows10EndpointProtectionConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10EndpointProtectionConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets dma guard device enumeration policy.
         /// This policy is intended to provide additional security against external DMA capable devices. It allows for more control over the enumeration of external DMA capable devices incompatible with DMA Remapping/device memory isolation and sandboxing. This policy only takes effect when Kernel DMA Protection is supported and enabled by the system firmware. Kernel DMA Protection is a platform feature that cannot be controlled via policy or by end user. It has to be supported by the system at the time of manufacturing. To check if the system supports Kernel DMA Protection, please check the Kernel DMA Protection field in the Summary page of MSINFO32.exe.
@@ -1260,6 +1268,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRemovableDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
         public BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker recovery password rotation.
+        /// This setting initiates a client-driven recovery password rotation after an OS drive recovery (either by using bootmgr or WinRE).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRecoveryPasswordRotation", Required = Newtonsoft.Json.Required.Default)]
+        public BitLockerRecoveryPasswordRotationType? BitLockerRecoveryPasswordRotation { get; set; }
     
     }
 }

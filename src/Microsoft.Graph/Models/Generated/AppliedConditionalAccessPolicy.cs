@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AppliedConditionalAccessPolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppliedConditionalAccessPolicy"/> class.
+        /// </summary>
+        public AppliedConditionalAccessPolicy()
+        {
+            this.ODataType = "microsoft.graph.appliedConditionalAccessPolicy";
+        }
 
         /// <summary>
         /// Gets or sets id.
@@ -50,6 +57,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedSessionControls", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EnforcedSessionControls { get; set; }
+    
+        /// <summary>
+        /// Gets or sets conditionsSatisfied.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
+    
+        /// <summary>
+        /// Gets or sets conditionsNotSatisfied.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsNotSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets result.

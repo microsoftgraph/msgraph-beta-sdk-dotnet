@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SecurityBaselineCategoryStateSummary : SecurityBaselineStateSummary
     {
     
+		///<summary>
+		/// The SecurityBaselineCategoryStateSummary constructor
+		///</summary>
+        public SecurityBaselineCategoryStateSummary()
+        {
+            this.ODataType = "microsoft.graph.securityBaselineCategoryStateSummary";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// The category name

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Shift : ChangeTrackedEntity
     {
     
+		///<summary>
+		/// The Shift constructor
+		///</summary>
+        public Shift()
+        {
+            this.ODataType = "microsoft.graph.shift";
+        }
+	
         /// <summary>
         /// Gets or sets shared shift.
         /// </summary>

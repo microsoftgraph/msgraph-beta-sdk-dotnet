@@ -22,12 +22,34 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationAssignment : Entity
     {
     
+		///<summary>
+		/// The DeviceConfigurationAssignment constructor
+		///</summary>
+        public DeviceConfigurationAssignment()
+        {
+            this.ODataType = "microsoft.graph.deviceConfigurationAssignment";
+        }
+	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for the device configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source.
+        /// The assignment source for the device configuration, direct or parcel/policySet. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentSource? Source { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source id.
+        /// The identifier of the source of the assignment. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceId { get; set; }
     
     }
 }

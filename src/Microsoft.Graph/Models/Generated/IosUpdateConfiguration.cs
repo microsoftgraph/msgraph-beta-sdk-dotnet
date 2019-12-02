@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosUpdateConfiguration : DeviceConfiguration
     {
     
+		///<summary>
+		/// The IosUpdateConfiguration constructor
+		///</summary>
+        public IosUpdateConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosUpdateConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets is enabled.
         /// Is setting enabled in UI

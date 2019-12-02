@@ -123,6 +123,23 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ApplicationAddKey.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationAddKeyRequestBuilder"/>.</returns>
+        public IApplicationAddKeyRequestBuilder AddKey(
+            KeyCredential keyCredential,
+            string proof,
+            PasswordCredential passwordCredential = null)
+        {
+            return new ApplicationAddKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.addKey"),
+                this.Client,
+                keyCredential,
+                proof,
+                passwordCredential);
+        }
+
+        /// <summary>
         /// Gets the request builder for ApplicationAddPassword.
         /// </summary>
         /// <returns>The <see cref="IApplicationAddPasswordRequestBuilder"/>.</returns>
@@ -133,6 +150,34 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.addPassword"),
                 this.Client,
                 passwordCredential);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ApplicationRemoveKey.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationRemoveKeyRequestBuilder"/>.</returns>
+        public IApplicationRemoveKeyRequestBuilder RemoveKey(
+            Guid keyId,
+            string proof)
+        {
+            return new ApplicationRemoveKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.removeKey"),
+                this.Client,
+                keyId,
+                proof);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ApplicationRemovePassword.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationRemovePasswordRequestBuilder"/>.</returns>
+        public IApplicationRemovePasswordRequestBuilder RemovePassword(
+            Guid keyId)
+        {
+            return new ApplicationRemovePasswordRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.removePassword"),
+                this.Client,
+                keyId);
         }
     
     }

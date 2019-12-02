@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class MacOSFirewallApplication
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MacOSFirewallApplication"/> class.
+        /// </summary>
+        public MacOSFirewallApplication()
+        {
+            this.ODataType = "microsoft.graph.macOSFirewallApplication";
+        }
 
         /// <summary>
         /// Gets or sets bundleId.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows10VpnConfiguration : WindowsVpnConfiguration
     {
     
+		///<summary>
+		/// The Windows10VpnConfiguration constructor
+		///</summary>
+        public Windows10VpnConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows10VpnConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets profile target.
         /// Profile target type.

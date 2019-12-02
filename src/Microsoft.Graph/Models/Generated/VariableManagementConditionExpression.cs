@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class VariableManagementConditionExpression : ManagementConditionExpressionModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VariableManagementConditionExpression"/> class.
+        /// </summary>
+        public VariableManagementConditionExpression()
+        {
+            this.ODataType = "microsoft.graph.variableManagementConditionExpression";
+        }
 
         /// <summary>
         /// Gets or sets managementConditionId.

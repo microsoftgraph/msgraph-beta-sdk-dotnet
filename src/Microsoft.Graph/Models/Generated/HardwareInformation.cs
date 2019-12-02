@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class HardwareInformation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HardwareInformation"/> class.
+        /// </summary>
+        public HardwareInformation()
+        {
+            this.ODataType = "microsoft.graph.hardwareInformation";
+        }
 
         /// <summary>
         /// Gets or sets serialNumber.

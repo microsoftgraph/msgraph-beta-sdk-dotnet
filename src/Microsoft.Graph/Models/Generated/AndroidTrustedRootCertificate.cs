@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidTrustedRootCertificate : DeviceConfiguration
     {
     
+		///<summary>
+		/// The AndroidTrustedRootCertificate constructor
+		///</summary>
+        public AndroidTrustedRootCertificate()
+        {
+            this.ODataType = "microsoft.graph.androidTrustedRootCertificate";
+        }
+	
         /// <summary>
         /// Gets or sets trusted root certificate.
         /// Trusted Root Certificate

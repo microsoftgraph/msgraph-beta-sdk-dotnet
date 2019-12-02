@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class RiskyUserHistoryItem : RiskyUser
     {
     
+		///<summary>
+		/// The RiskyUserHistoryItem constructor
+		///</summary>
+        public RiskyUserHistoryItem()
+        {
+            this.ODataType = "microsoft.graph.riskyUserHistoryItem";
+        }
+	
         /// <summary>
         /// Gets or sets user id.
         /// </summary>

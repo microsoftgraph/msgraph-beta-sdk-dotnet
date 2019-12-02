@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Bundle
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Bundle"/> class.
+        /// </summary>
+        public Bundle()
+        {
+            this.ODataType = "microsoft.graph.bundle";
+        }
 
         /// <summary>
         /// Gets or sets childCount.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SharePointSiteUsageSiteCounts : Entity
     {
     
+		///<summary>
+		/// The SharePointSiteUsageSiteCounts constructor
+		///</summary>
+        public SharePointSiteUsageSiteCounts()
+        {
+            this.ODataType = "microsoft.graph.sharePointSiteUsageSiteCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

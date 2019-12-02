@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class LabelDetails
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelDetails"/> class.
+        /// </summary>
+        public LabelDetails()
+        {
+            this.ODataType = "microsoft.graph.labelDetails";
+        }
 
         /// <summary>
         /// Gets or sets id.

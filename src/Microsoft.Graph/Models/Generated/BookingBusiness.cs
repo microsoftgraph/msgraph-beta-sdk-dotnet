@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class BookingBusiness : BookingNamedEntity
     {
     
+		///<summary>
+		/// The BookingBusiness constructor
+		///</summary>
+        public BookingBusiness()
+        {
+            this.ODataType = "microsoft.graph.bookingBusiness";
+        }
+	
         /// <summary>
         /// Gets or sets business type.
         /// </summary>

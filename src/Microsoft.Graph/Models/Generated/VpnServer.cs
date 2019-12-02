@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class VpnServer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VpnServer"/> class.
+        /// </summary>
+        public VpnServer()
+        {
+            this.ODataType = "microsoft.graph.vpnServer";
+        }
 
         /// <summary>
         /// Gets or sets description.

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationUser : Entity
     {
     
+		///<summary>
+		/// The EducationUser constructor
+		///</summary>
+        public EducationUser()
+        {
+            this.ODataType = "microsoft.graph.educationUser";
+        }
+	
         /// <summary>
         /// Gets or sets related contacts.
         /// Set of contacts related to the user.  This optional property must be specified in a $select clause and can only be retrieved for an individual user.

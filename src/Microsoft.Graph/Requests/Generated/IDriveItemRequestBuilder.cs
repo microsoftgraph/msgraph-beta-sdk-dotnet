@@ -84,6 +84,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemVersionsCollectionRequestBuilder"/>.</returns>
         IDriveItemVersionsCollectionRequestBuilder Versions { get; }
+
+        /// <summary>
+        /// Gets the request builder for Document.
+        /// </summary>
+        /// <returns>The <see cref="IDocumentRequestBuilder"/>.</returns>
+        IDocumentRequestBuilder Document { get; }
     
         /// <summary>
         /// Gets the request builder for Content.

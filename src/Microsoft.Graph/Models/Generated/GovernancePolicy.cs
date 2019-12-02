@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class GovernancePolicy
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GovernancePolicy"/> class.
+        /// </summary>
+        public GovernancePolicy()
+        {
+            this.ODataType = "microsoft.graph.governancePolicy";
+        }
 
         /// <summary>
         /// Gets or sets decisionMakerCriteria.

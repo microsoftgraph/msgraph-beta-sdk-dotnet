@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Team : Entity
     {
     
+		///<summary>
+		/// The Team constructor
+		///</summary>
+        public Team()
+        {
+            this.ODataType = "microsoft.graph.team";
+        }
+	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
@@ -112,6 +120,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
         public Schedule Schedule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photo.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
+        public ProfilePhoto Photo { get; set; }
     
         /// <summary>
         /// Gets or sets template.

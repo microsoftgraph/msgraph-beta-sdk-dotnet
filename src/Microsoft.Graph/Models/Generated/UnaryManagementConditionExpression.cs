@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnaryManagementConditionExpression : ManagementConditionExpressionModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnaryManagementConditionExpression"/> class.
+        /// </summary>
+        public UnaryManagementConditionExpression()
+        {
+            this.ODataType = "microsoft.graph.unaryManagementConditionExpression";
+        }
 
         /// <summary>
         /// Gets or sets operator.

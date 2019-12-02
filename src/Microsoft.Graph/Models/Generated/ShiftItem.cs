@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ShiftItem : ScheduleEntity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShiftItem"/> class.
+        /// </summary>
+        public ShiftItem()
+        {
+            this.ODataType = "microsoft.graph.shiftItem";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

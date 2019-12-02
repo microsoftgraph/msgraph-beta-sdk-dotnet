@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         Data = 4,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
+	
     }
 }

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class GroupPolicyPresentationDropdownList : GroupPolicyPresentation
     {
     
+		///<summary>
+		/// The GroupPolicyPresentationDropdownList constructor
+		///</summary>
+        public GroupPolicyPresentationDropdownList()
+        {
+            this.ODataType = "microsoft.graph.groupPolicyPresentationDropdownList";
+        }
+	
         /// <summary>
         /// Gets or sets default item.
         /// Localized string value identifying the default choice of the list of items.

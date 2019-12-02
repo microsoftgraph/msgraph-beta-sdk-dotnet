@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class SharePointActivityUserCounts : Entity
     {
     
+		///<summary>
+		/// The SharePointActivityUserCounts constructor
+		///</summary>
+        public SharePointActivityUserCounts()
+        {
+            this.ODataType = "microsoft.graph.sharePointActivityUserCounts";
+        }
+	
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>

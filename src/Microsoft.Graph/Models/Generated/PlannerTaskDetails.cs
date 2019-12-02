@@ -19,9 +19,17 @@ namespace Microsoft.Graph
     /// The type Planner Task Details.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PlannerTaskDetails : Entity
+    public partial class PlannerTaskDetails : PlannerDelta
     {
     
+		///<summary>
+		/// The PlannerTaskDetails constructor
+		///</summary>
+        public PlannerTaskDetails()
+        {
+            this.ODataType = "microsoft.graph.plannerTaskDetails";
+        }
+	
         /// <summary>
         /// Gets or sets description.
         /// Description of the task

@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIosCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
         IIosCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
+
+        /// <summary>
+        /// Gets the request builder for SingleSignOnExtensionPkinitCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IIosCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        IIosCertificateProfileBaseWithReferenceRequestBuilder SingleSignOnExtensionPkinitCertificate { get; }
     
     }
 }

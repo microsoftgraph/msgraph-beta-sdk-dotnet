@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPlannerProgressTaskBoardTaskFormatRequestBuilder.
     /// </summary>
-    public partial interface IPlannerProgressTaskBoardTaskFormatRequestBuilder : IEntityRequestBuilder
+    public partial interface IPlannerProgressTaskBoardTaskFormatRequestBuilder : IPlannerDeltaRequestBuilder
     {
         /// <summary>
         /// Builds the request.

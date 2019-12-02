@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IResourceSpecificPermissionGrantRequestBuilder.
     /// </summary>
-    public partial interface IResourceSpecificPermissionGrantRequestBuilder : IEntityRequestBuilder
+    public partial interface IResourceSpecificPermissionGrantRequestBuilder : IDirectoryObjectRequestBuilder
     {
         /// <summary>
         /// Builds the request.

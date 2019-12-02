@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class Windows81VpnConfiguration : WindowsVpnConfiguration
     {
     
+		///<summary>
+		/// The Windows81VpnConfiguration constructor
+		///</summary>
+        public Windows81VpnConfiguration()
+        {
+            this.ODataType = "microsoft.graph.windows81VpnConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets apply only to windows81.
         /// Value indicating whether this policy only applies to Windows 8.1. This property is read-only.

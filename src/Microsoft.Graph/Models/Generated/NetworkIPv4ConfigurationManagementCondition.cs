@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class NetworkIPv4ConfigurationManagementCondition : NetworkManagementCondition
     {
     
+		///<summary>
+		/// The NetworkIPv4ConfigurationManagementCondition constructor
+		///</summary>
+        public NetworkIPv4ConfigurationManagementCondition()
+        {
+            this.ODataType = "microsoft.graph.networkIPv4ConfigurationManagementCondition";
+        }
+	
         /// <summary>
         /// Gets or sets ip v4prefix.
         /// The IPv4 subnet to be connected to. e.g. 10.0.0.0/8

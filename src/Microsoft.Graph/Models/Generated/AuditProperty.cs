@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class AuditProperty
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditProperty"/> class.
+        /// </summary>
+        public AuditProperty()
+        {
+            this.ODataType = "microsoft.graph.auditProperty";
+        }
 
         /// <summary>
         /// Gets or sets displayName.

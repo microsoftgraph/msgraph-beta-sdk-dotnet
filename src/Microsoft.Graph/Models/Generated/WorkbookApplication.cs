@@ -22,8 +22,17 @@ namespace Microsoft.Graph
     public partial class WorkbookApplication : Entity
     {
     
+		///<summary>
+		/// The WorkbookApplication constructor
+		///</summary>
+        public WorkbookApplication()
+        {
+            this.ODataType = "microsoft.graph.workbookApplication";
+        }
+	
         /// <summary>
         /// Gets or sets calculation mode.
+        /// Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calculationMode", Required = Newtonsoft.Json.Required.Default)]
         public string CalculationMode { get; set; }

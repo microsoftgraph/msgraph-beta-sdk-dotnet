@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class ToneInfo
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToneInfo"/> class.
+        /// </summary>
+        public ToneInfo()
+        {
+            this.ODataType = "microsoft.graph.toneInfo";
+        }
 
         /// <summary>
         /// Gets or sets sequenceId.

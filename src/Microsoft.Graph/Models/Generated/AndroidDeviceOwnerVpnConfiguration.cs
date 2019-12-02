@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AndroidDeviceOwnerVpnConfiguration : VpnConfiguration
     {
     
+		///<summary>
+		/// The AndroidDeviceOwnerVpnConfiguration constructor
+		///</summary>
+        public AndroidDeviceOwnerVpnConfiguration()
+        {
+            this.ODataType = "microsoft.graph.androidDeviceOwnerVpnConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets connection type.
         /// Connection type.

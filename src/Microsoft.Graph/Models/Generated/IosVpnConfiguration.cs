@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class IosVpnConfiguration : AppleVpnConfiguration
     {
     
+		///<summary>
+		/// The IosVpnConfiguration constructor
+		///</summary>
+        public IosVpnConfiguration()
+        {
+            this.ODataType = "microsoft.graph.iosVpnConfiguration";
+        }
+	
         /// <summary>
         /// Gets or sets provider type.
         /// Provider type for per-app VPN.

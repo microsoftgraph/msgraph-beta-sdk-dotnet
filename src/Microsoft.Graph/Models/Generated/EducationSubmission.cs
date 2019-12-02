@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class EducationSubmission : Entity
     {
     
+		///<summary>
+		/// The EducationSubmission constructor
+		///</summary>
+        public EducationSubmission()
+        {
+            this.ODataType = "microsoft.graph.educationSubmission";
+        }
+	
         /// <summary>
         /// Gets or sets recipient.
         /// </summary>
@@ -81,18 +89,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReturnedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets grade.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grade", Required = Newtonsoft.Json.Required.Default)]
-        public EducationAssignmentGrade Grade { get; set; }
-    
-        /// <summary>
-        /// Gets or sets feedback.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
-        public EducationFeedback Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets resources folder url.

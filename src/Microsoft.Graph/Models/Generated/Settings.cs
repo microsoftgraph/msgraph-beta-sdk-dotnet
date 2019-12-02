@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class Settings
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Settings"/> class.
+        /// </summary>
+        public Settings()
+        {
+            this.ODataType = "microsoft.graph.settings";
+        }
 
         /// <summary>
         /// Gets or sets hasLicense.

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter))]
     public partial class InstanceResourceAccess
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InstanceResourceAccess"/> class.
+        /// </summary>
+        public InstanceResourceAccess()
+        {
+            this.ODataType = "microsoft.graph.instanceResourceAccess";
+        }
 
         /// <summary>
         /// Gets or sets resourceAppId.

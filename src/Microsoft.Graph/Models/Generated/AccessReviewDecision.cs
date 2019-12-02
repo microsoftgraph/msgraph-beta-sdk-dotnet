@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class AccessReviewDecision : Entity
     {
     
+		///<summary>
+		/// The AccessReviewDecision constructor
+		///</summary>
+        public AccessReviewDecision()
+        {
+            this.ODataType = "microsoft.graph.accessReviewDecision";
+        }
+	
         /// <summary>
         /// Gets or sets access review id.
         /// </summary>

@@ -22,6 +22,14 @@ namespace Microsoft.Graph
     public partial class InformationProtectionPolicy : Entity
     {
     
+		///<summary>
+		/// The InformationProtectionPolicy constructor
+		///</summary>
+        public InformationProtectionPolicy()
+        {
+            this.ODataType = "microsoft.graph.informationProtectionPolicy";
+        }
+	
         /// <summary>
         /// Gets or sets labels.
         /// </summary>
