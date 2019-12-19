@@ -87,64 +87,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetDeviceNoncomplianceReports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNoncomplianceReportsRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetDeviceNoncomplianceReportsRequestBuilder GetDeviceNoncomplianceReports(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetDeviceNoncomplianceReportsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceNoncomplianceReports"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetPolicyNoncomplianceReports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNoncomplianceReportsRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetPolicyNoncomplianceReportsRequestBuilder GetPolicyNoncomplianceReports(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetPolicyNoncomplianceReportsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getPolicyNoncomplianceReports"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>
@@ -190,6 +132,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetPolicyNonComplianceReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getPolicyNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceMetadata.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPolicyNonComplianceMetadata"),
                 this.Client,
                 name,
                 select,

@@ -218,6 +218,12 @@ namespace Microsoft.Graph
         IDeviceManagementDeviceManagementPartnersCollectionRequestBuilder DeviceManagementPartners { get; }
 
         /// <summary>
+        /// Gets the request builder for ComplianceManagementPartners.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder ComplianceManagementPartners { get; }
+
+        /// <summary>
         /// Gets the request builder for Intents.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentsCollectionRequestBuilder"/>.</returns>
@@ -258,6 +264,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDeviceManagementScriptsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementDeviceManagementScriptsCollectionRequestBuilder DeviceManagementScripts { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceShellScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceShellScriptsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceShellScriptsCollectionRequestBuilder DeviceShellScripts { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceHealthScripts.

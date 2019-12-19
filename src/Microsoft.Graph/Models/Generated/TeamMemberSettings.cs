@@ -38,17 +38,18 @@ namespace Microsoft.Graph
         public bool? AllowCreateUpdateChannels { get; set; }
     
         /// <summary>
+        /// Gets or sets allowCreatePrivateChannels.
+        /// If set to true, members can add and update private channels.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCreatePrivateChannels", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowCreatePrivateChannels { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowDeleteChannels.
         /// If set to true, members can delete channels.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeleteChannels", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowDeleteChannels { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowCreatePrivateChannels.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCreatePrivateChannels", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowCreatePrivateChannels { get; set; }
     
         /// <summary>
         /// Gets or sets allowAddRemoveApps.

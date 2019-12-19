@@ -100,6 +100,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime { get; set; }
     
+        /// <summary>
+        /// Gets or sets groups requiring partner enrollment.
+        /// User groups that specifies whether enrollment is through partner.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupsRequiringPartnerEnrollment", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment { get; set; }
+    
     }
 }
 

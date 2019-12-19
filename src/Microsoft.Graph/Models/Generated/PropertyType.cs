@@ -45,22 +45,22 @@ namespace Microsoft.Graph
         Boolean = 4,
 	
         /// <summary>
-        /// Collection(String)
+        /// String Collection
         /// </summary>
         StringCollection = 5,
-
+	
         /// <summary>
-        /// Collection(Int64)
+        /// Int64Collection
         /// </summary>
         Int64Collection = 6,
-
+	
         /// <summary>
-        /// Collection(Double)
+        /// Double Collection
         /// </summary>
         DoubleCollection = 7,
-
+	
         /// <summary>
-        /// Collection(Date Time)
+        /// Date Time Collection
         /// </summary>
         DateTimeCollection = 8,
 	

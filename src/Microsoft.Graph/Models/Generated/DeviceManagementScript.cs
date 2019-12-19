@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets enforce signature check.
+        /// Indicate whether the script signature needs be checked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceSignatureCheck", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnforceSignatureCheck { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run as32bit.
+        /// A value indicating whether the PowerShell script should run as 32-bit
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RunAs32Bit { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Name of the device management script.
         /// </summary>
@@ -73,13 +87,6 @@ namespace Microsoft.Graph
         public RunAsAccountType? RunAsAccount { get; set; }
     
         /// <summary>
-        /// Gets or sets enforce signature check.
-        /// Indicate whether the script signature needs be checked.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceSignatureCheck", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnforceSignatureCheck { get; set; }
-    
-        /// <summary>
         /// Gets or sets file name.
         /// Script file name.
         /// </summary>
@@ -92,13 +99,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets run as32bit.
-        /// A value indicating whether the PowerShell script should run as 32-bit
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RunAs32Bit { get; set; }
     
         /// <summary>
         /// Gets or sets group assignments.

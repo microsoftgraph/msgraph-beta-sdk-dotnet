@@ -1276,6 +1276,230 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRecoveryPasswordRotation", Required = Newtonsoft.Json.Required.Default)]
         public BitLockerRecoveryPasswordRotationType? BitLockerRecoveryPasswordRotation { get; set; }
     
+        /// <summary>
+        /// Gets or sets defender disable scan archive files.
+        /// Allows or disallows scanning of archives.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanArchiveFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable behavior monitoring.
+        /// Allows or disallows Windows Defender Behavior Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableBehaviorMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable cloud protection.
+        /// To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCloudProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCloudProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender enable scan incoming mail.
+        /// Allows or disallows scanning of email.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableScanIncomingMail", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderEnableScanIncomingMail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender enable scan mapped network drives during full scan.
+        /// Allows or disallows a full scan of mapped network drives.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableScanMappedNetworkDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderEnableScanMappedNetworkDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan removable drives during full scan.
+        /// Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanRemovableDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan downloads.
+        /// Allows or disallows Windows Defender IOAVP Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanDownloads", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanDownloads { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable intrusion prevention system.
+        /// Allows or disallows Windows Defender Intrusion Prevention functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableIntrusionPreventionSystem", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableIntrusionPreventionSystem { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable on access protection.
+        /// Allows or disallows Windows Defender On Access Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableOnAccessProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable real time monitoring.
+        /// Allows or disallows Windows Defender Realtime Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableRealTimeMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan network files.
+        /// Allows or disallows a scanning of network files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanNetworkFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan scripts loaded in internet explorer.
+        /// Allows or disallows Windows Defender Script Scanning functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanScriptsLoadedInInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender block end user access.
+        /// Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderBlockEndUserAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan max cpu percentage.
+        /// Represents the average CPU load factor for the Windows Defender scan (in percent). The default value is 50. Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMaxCpuPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderScanMaxCpuPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender check for signatures before running scan.
+        /// This policy setting allows you to manage whether a check for new virus and spyware definitions will occur before running a scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCheckForSignaturesBeforeRunningScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderCheckForSignaturesBeforeRunningScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender cloud block level.
+        /// Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the "Join Microsoft MAPS" setting enabled in order to function.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCloudBlockLevel", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderCloudBlockLevelType? DefenderCloudBlockLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender cloud extended timeout in seconds.
+        /// Added in Windows 10, version 1709. This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe. Value type is integer, range is 0 - 50. This feature depends on three other MAPS settings the must all be enabled- "Configure the 'Block at First Sight' feature; "Join Microsoft MAPS"; "Send file samples when further analysis is required". Valid values 0 to 50
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCloudExtendedTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderCloudExtendedTimeoutInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender days before deleting quarantined malware.
+        /// Time period (in days) that quarantine items will be stored on the system. Valid values 0 to 90
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDaysBeforeDeletingQuarantinedMalware", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderDaysBeforeDeletingQuarantinedMalware { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable catchup full scan.
+        /// This policy setting allows you to configure catch-up scans for scheduled full scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCatchupFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable catchup quick scan.
+        /// This policy setting allows you to configure catch-up scans for scheduled quick scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupQuickScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCatchupQuickScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender enable low cpu priority.
+        /// This policy setting allows you to enable or disable low CPU priority for scheduled scans.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableLowCpuPriority", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderEnableLowCpuPriority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender file extensions to exclude.
+        /// File extensions to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFileExtensionsToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderFileExtensionsToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender files and folders to exclude.
+        /// Files and folder to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFilesAndFoldersToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderFilesAndFoldersToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender processes to exclude.
+        /// Processes to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessesToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderProcessesToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender potentially unwanted app action.
+        /// Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderPotentiallyUnwantedAppAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan direction.
+        /// Controls which sets of files should be monitored.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanDirection", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderRealtimeScanDirection? DefenderScanDirection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan type.
+        /// Selects whether to perform a quick scan or full scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderScanType? DefenderScanType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled quick scan time.
+        /// Selects the time of day that the Windows Defender quick scan should run. For example, a value of 0=12:00AM, a value of 60=1:00AM, a value of 120=2:00, and so on, up to a value of 1380=11:00PM. The default value is 120
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledQuickScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledQuickScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled scan day.
+        /// Selects the day that the Windows Defender scan should run.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanDay", Required = Newtonsoft.Json.Required.Default)]
+        public WeeklySchedule? DefenderScheduledScanDay { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled scan time.
+        /// Selects the time of day that the Windows Defender scan should run.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender submit samples consent type.
+        /// Checks for the user consent level in Windows Defender to send data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSubmitSamplesConsentType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender detected malware actions.
+        /// Allows an administrator to specify any valid threat severity levels and the corresponding default action ID to take.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDetectedMalwareActions", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderDetectedMalwareActions DefenderDetectedMalwareActions { get; set; }
+    
     }
 }
 

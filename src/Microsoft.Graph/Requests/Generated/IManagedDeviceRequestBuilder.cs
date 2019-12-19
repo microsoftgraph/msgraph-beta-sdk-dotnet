@@ -128,7 +128,8 @@ namespace Microsoft.Graph
         IManagedDeviceWipeRequestBuilder Wipe(
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
-            string macOsUnlockCode = null);
+            string macOsUnlockCode = null,
+            bool? useProtectedWipe = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceResetPasscode.

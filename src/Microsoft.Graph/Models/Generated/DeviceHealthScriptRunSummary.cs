@@ -93,6 +93,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastScriptRunDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastScriptRunDateTime { get; set; }
     
+        /// <summary>
+        /// Gets or sets issue remediated cumulative device count.
+        /// Number of devices that were remediated over the last 30 days
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueRemediatedCumulativeDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IssueRemediatedCumulativeDeviceCount { get; set; }
+    
     }
 }
 

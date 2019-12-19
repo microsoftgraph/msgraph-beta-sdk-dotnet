@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets identity.
+        /// The identitySet associated with this invitation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Identity { get; set; }
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets replacesCallId.
+        /// Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replacesCallId", Required = Newtonsoft.Json.Required.Default)]
         public string ReplacesCallId { get; set; }

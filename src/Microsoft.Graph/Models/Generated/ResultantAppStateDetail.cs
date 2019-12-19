@@ -70,6 +70,11 @@ namespace Microsoft.Graph
         InstallingDependencies = 5001,
 	
         /// <summary>
+        /// Content Downloaded
+        /// </summary>
+        ContentDownloaded = 5002,
+	
+        /// <summary>
         /// Power Shell Script Requirement Not Met
         /// </summary>
         PowerShellScriptRequirementNotMet = -1013,

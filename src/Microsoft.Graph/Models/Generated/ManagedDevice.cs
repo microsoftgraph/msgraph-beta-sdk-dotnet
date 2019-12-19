@@ -507,6 +507,27 @@ namespace Microsoft.Graph
         public ConfigurationManagerClientInformation ConfigurationManagerClientInformation { get; set; }
     
         /// <summary>
+        /// Gets or sets ethernet mac address.
+        /// Ethernet MAC. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ethernetMacAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string EthernetMacAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets physical memory in bytes.
+        /// Total Memory in Bytes. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "physicalMemoryInBytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PhysicalMemoryInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets processor architecture.
+        /// Processor architecture. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processorArchitecture", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedDeviceArchitecture? ProcessorArchitecture { get; set; }
+    
+        /// <summary>
         /// Gets or sets security baseline states.
         /// Security baseline states for this device.
         /// </summary>

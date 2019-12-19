@@ -164,6 +164,34 @@ namespace Microsoft.Graph
         public string MinimumWipeCompanyPortalVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets keyboards restricted.
+        /// Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyboardsRestricted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KeyboardsRestricted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets approved keyboards.
+        /// If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvedKeyboards", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> ApprovedKeyboards { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowed android device models.
+        /// List of device models allowed, as a string, for the managed app to work.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedAndroidDeviceModels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AllowedAndroidDeviceModels { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app action if android device model not allowed.
+        /// Defines a managed app behavior, either block or wipe, if the specified device model is not allowed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidDeviceModelNotAllowed", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppRemediationAction? AppActionIfAndroidDeviceModelNotAllowed { get; set; }
+    
+        /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>

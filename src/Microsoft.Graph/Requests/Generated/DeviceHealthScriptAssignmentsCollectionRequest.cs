@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified DeviceManagementScriptAssignment to the collection via POST.
+        /// Adds the specified DeviceHealthScriptAssignment to the collection via POST.
         /// </summary>
-        /// <param name="deviceManagementScriptAssignment">The DeviceManagementScriptAssignment to add.</param>
-        /// <returns>The created DeviceManagementScriptAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementScriptAssignment> AddAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment)
+        /// <param name="deviceHealthScriptAssignment">The DeviceHealthScriptAssignment to add.</param>
+        /// <returns>The created DeviceHealthScriptAssignment.</returns>
+        public System.Threading.Tasks.Task<DeviceHealthScriptAssignment> AddAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignment)
         {
-            return this.AddAsync(deviceManagementScriptAssignment, CancellationToken.None);
+            return this.AddAsync(deviceHealthScriptAssignment, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified DeviceManagementScriptAssignment to the collection via POST.
+        /// Adds the specified DeviceHealthScriptAssignment to the collection via POST.
         /// </summary>
-        /// <param name="deviceManagementScriptAssignment">The DeviceManagementScriptAssignment to add.</param>
+        /// <param name="deviceHealthScriptAssignment">The DeviceHealthScriptAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementScriptAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementScriptAssignment> AddAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment, CancellationToken cancellationToken)
+        /// <returns>The created DeviceHealthScriptAssignment.</returns>
+        public System.Threading.Tasks.Task<DeviceHealthScriptAssignment> AddAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignment, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<DeviceManagementScriptAssignment>(deviceManagementScriptAssignment, cancellationToken);
+            return this.SendAsync<DeviceHealthScriptAssignment>(deviceHealthScriptAssignment, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IDeviceHealthScriptAssignmentsCollectionRequest Expand(Expression<Func<DeviceManagementScriptAssignment, object>> expandExpression)
+        public IDeviceHealthScriptAssignmentsCollectionRequest Expand(Expression<Func<DeviceHealthScriptAssignment, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IDeviceHealthScriptAssignmentsCollectionRequest Select(Expression<Func<DeviceManagementScriptAssignment, object>> selectExpression)
+        public IDeviceHealthScriptAssignmentsCollectionRequest Select(Expression<Func<DeviceHealthScriptAssignment, object>> selectExpression)
         {
             if (selectExpression == null)
             {

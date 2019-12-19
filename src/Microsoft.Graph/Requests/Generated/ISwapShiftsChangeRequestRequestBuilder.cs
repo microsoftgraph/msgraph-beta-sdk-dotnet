@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISwapShiftsChangeRequestRequestBuilder.
     /// </summary>
-    public partial interface ISwapShiftsChangeRequestRequestBuilder : IShiftChangeRequestRequestBuilder
+    public partial interface ISwapShiftsChangeRequestRequestBuilder : IOfferShiftRequestRequestBuilder
     {
         /// <summary>
         /// Builds the request.

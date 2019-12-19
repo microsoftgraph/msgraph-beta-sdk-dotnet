@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new AndroidWorkProfilePkcsCertificateProfileRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCertificateStates.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidWorkProfilePkcsCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder"/>.</returns>
+        public IAndroidWorkProfilePkcsCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder ManagedDeviceCertificateStates
+        {
+            get
+            {
+                return new AndroidWorkProfilePkcsCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceCertificateStates"), this.Client);
+            }
+        }
+    
     }
 }

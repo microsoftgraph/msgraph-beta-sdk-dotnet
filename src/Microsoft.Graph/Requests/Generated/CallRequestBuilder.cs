@@ -130,6 +130,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CallKeepAlive.
+        /// </summary>
+        /// <returns>The <see cref="ICallKeepAliveRequestBuilder"/>.</returns>
+        public ICallKeepAliveRequestBuilder KeepAlive()
+        {
+            return new CallKeepAliveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.keepAlive"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CallMute.
         /// </summary>
         /// <returns>The <see cref="ICallMuteRequestBuilder"/>.</returns>
@@ -176,6 +187,35 @@ namespace Microsoft.Graph
         {
             return new CallRecordRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.record"),
+                this.Client,
+                prompts,
+                bargeInAllowed,
+                initialSilenceTimeoutInSeconds,
+                maxSilenceTimeoutInSeconds,
+                maxRecordDurationInSeconds,
+                playBeep,
+                streamWhileRecording,
+                stopTones,
+                clientContext);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CallRecordResponse.
+        /// </summary>
+        /// <returns>The <see cref="ICallRecordResponseRequestBuilder"/>.</returns>
+        public ICallRecordResponseRequestBuilder RecordResponse(
+            IEnumerable<Prompt> prompts = null,
+            bool? bargeInAllowed = null,
+            Int32? initialSilenceTimeoutInSeconds = null,
+            Int32? maxSilenceTimeoutInSeconds = null,
+            Int32? maxRecordDurationInSeconds = null,
+            bool? playBeep = null,
+            bool? streamWhileRecording = null,
+            IEnumerable<string> stopTones = null,
+            string clientContext = null)
+        {
+            return new CallRecordResponseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.recordResponse"),
                 this.Client,
                 prompts,
                 bargeInAllowed,

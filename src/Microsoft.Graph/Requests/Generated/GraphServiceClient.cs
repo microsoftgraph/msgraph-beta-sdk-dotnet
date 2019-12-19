@@ -49,7 +49,7 @@ namespace Microsoft.Graph
         /// to get a pre-configured HttpClient that is optimized for use with the Microsoft Graph service API. </param>
         public GraphServiceClient(
             HttpClient httpClient)
-            : base("https://graph.microsoft.com/v1.0", httpClient)
+            : base("https://graph.microsoft.com/beta", httpClient)
         {
         }
     
@@ -1011,17 +1011,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceTeamsTemplates request builder.
-        /// </summary>
-        public IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates
-        {
-            get
-            {
-                return new GraphServiceTeamsTemplatesCollectionRequestBuilder(this.BaseUrl + "/teamsTemplates", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceChats request builder.
         /// </summary>
         public IGraphServiceChatsCollectionRequestBuilder Chats
@@ -1029,6 +1018,17 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceChatsCollectionRequestBuilder(this.BaseUrl + "/chats", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceTeamsTemplates request builder.
+        /// </summary>
+        public IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates
+        {
+            get
+            {
+                return new GraphServiceTeamsTemplatesCollectionRequestBuilder(this.BaseUrl + "/teamsTemplates", this);
             }
         }
     
@@ -1154,6 +1154,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        public ICloudCommunicationsRequestBuilder Communications
+        {
+            get
+            {
+                return new CloudCommunicationsRequestBuilder(this.BaseUrl + "/communications", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentityGovernance request builder.
         /// </summary>
         public IIdentityGovernanceRequestBuilder IdentityGovernance
@@ -1271,17 +1282,6 @@ namespace Microsoft.Graph
             get
             {
                 return new CommsApplicationRequestBuilder(this.BaseUrl + "/app", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceCommunications request builder.
-        /// </summary>
-        public ICloudCommunicationsRequestBuilder Communications
-        {
-            get
-            {
-                return new CloudCommunicationsRequestBuilder(this.BaseUrl + "/communications", this);
             }
         }
     

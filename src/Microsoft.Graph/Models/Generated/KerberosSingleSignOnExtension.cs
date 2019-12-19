@@ -162,5 +162,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockActiveDirectorySiteAutoDiscovery", Required = Newtonsoft.Json.Required.Default)]
         public bool? BlockActiveDirectorySiteAutoDiscovery { get; set; }
     
+        /// <summary>
+        /// Gets or sets passwordChangeUrl.
+        /// Gets or sets the URL that the user will be sent to when they initiate a password change.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordChangeUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PasswordChangeUrl { get; set; }
+    
     }
 }

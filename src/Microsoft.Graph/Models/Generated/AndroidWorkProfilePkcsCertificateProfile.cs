@@ -58,6 +58,34 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameFormatString", Required = Newtonsoft.Json.Required.Default)]
         public string SubjectAlternativeNameFormatString { get; set; }
     
+        /// <summary>
+        /// Gets or sets subject name format string.
+        /// Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectNameFormatString { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate store.
+        /// Target store certificate
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateStore? CertificateStore { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom subject alternative names.
+        /// Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSubjectAlternativeNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed device certificate states.
+        /// Certificate state for devices
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCertificateStates", Required = Newtonsoft.Json.Required.Default)]
+        public IAndroidWorkProfilePkcsCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }
+    
     }
 }
 

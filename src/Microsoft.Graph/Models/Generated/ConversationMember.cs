@@ -23,13 +23,13 @@ namespace Microsoft.Graph
     {
     
 		///<summary>
-		/// The ConversationMember constructor
+		/// The internal ConversationMember constructor
 		///</summary>
-        public ConversationMember()
+        protected internal ConversationMember()
         {
-            this.ODataType = "microsoft.graph.conversationMember";
+            // Don't allow initialization of abstract entity types
         }
-	
+    
         /// <summary>
         /// Gets or sets roles.
         /// </summary>

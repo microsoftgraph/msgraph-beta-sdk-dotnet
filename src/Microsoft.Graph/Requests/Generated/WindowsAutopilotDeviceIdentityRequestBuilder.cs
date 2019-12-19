@@ -101,6 +101,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentityUpdateDeviceProperties.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder"/>.</returns>
+        public IWindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder UpdateDeviceProperties(
+            string userPrincipalName = null,
+            string addressableUserName = null,
+            string groupTag = null,
+            string displayName = null)
+        {
+            return new WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateDeviceProperties"),
+                this.Client,
+                userPrincipalName,
+                addressableUserName,
+                groupTag,
+                displayName);
+        }
+
+        /// <summary>
         /// Gets the request builder for WindowsAutopilotDeviceIdentityAssignResourceAccountToDevice.
         /// </summary>
         /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder"/>.</returns>

@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets identity.
+        /// The identitySet associated with this participant. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Identity { get; set; }
@@ -44,12 +45,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets region.
+        /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
         public string Region { get; set; }
     
         /// <summary>
         /// Gets or sets languageId.
+        /// The language culture string. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageId", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageId { get; set; }

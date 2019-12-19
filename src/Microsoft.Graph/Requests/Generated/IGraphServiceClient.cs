@@ -452,14 +452,14 @@ namespace Microsoft.Graph
         IGraphServiceTeamsCollectionRequestBuilder Teams { get; }
     
         /// <summary>
-        /// Gets the GraphServiceTeamsTemplates request builder.
-        /// </summary>
-        IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceChats request builder.
         /// </summary>
         IGraphServiceChatsCollectionRequestBuilder Chats { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceTeamsTemplates request builder.
+        /// </summary>
+        IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates { get; }
     
         /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
@@ -517,6 +517,11 @@ namespace Microsoft.Graph
         IDriveRequestBuilder Drive { get; }
     
         /// <summary>
+        /// Gets the GraphServiceCommunications request builder.
+        /// </summary>
+        ICloudCommunicationsRequestBuilder Communications { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentityGovernance request builder.
         /// </summary>
         IIdentityGovernanceRequestBuilder IdentityGovernance { get; }
@@ -570,11 +575,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceApp request builder.
         /// </summary>
         ICommsApplicationRequestBuilder App { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceCommunications request builder.
-        /// </summary>
-        ICloudCommunicationsRequestBuilder Communications { get; }
     
         /// <summary>
         /// Gets the GraphServiceExternal request builder.

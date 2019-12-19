@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }
     
         /// <summary>
+        /// Gets or sets advanced threat protection required security level.
+        /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel { get; set; }
+    
+        /// <summary>
         /// Gets or sets security require safety net attestation basic integrity.
         /// Require the device to pass the SafetyNet basic integrity check.
         /// </summary>

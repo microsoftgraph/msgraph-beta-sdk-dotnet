@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder"/>.</returns>
         IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder DataLossPreventionPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for ThreatAssessmentRequests.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder"/>.</returns>
+        IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder ThreatAssessmentRequests { get; }
     
         /// <summary>
         /// Gets the request builder for InformationProtectionEvaluateLabelsAndPolicies.

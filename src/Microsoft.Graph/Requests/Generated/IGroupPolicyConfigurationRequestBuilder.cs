@@ -49,6 +49,15 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IGroupPolicyConfigurationAssignRequestBuilder"/>.</returns>
         IGroupPolicyConfigurationAssignRequestBuilder Assign(
             IEnumerable<GroupPolicyConfigurationAssignment> assignments = null);
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyConfigurationUpdateDefinitionValues.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder"/>.</returns>
+        IGroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder UpdateDefinitionValues(
+            IEnumerable<GroupPolicyDefinitionValue> added = null,
+            IEnumerable<GroupPolicyDefinitionValue> updated = null,
+            IEnumerable<string> deletedIds = null);
     
     }
 }

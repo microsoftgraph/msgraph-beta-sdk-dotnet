@@ -74,6 +74,12 @@ namespace Microsoft.Graph
         IScheduleOpenShiftChangeRequestsCollectionRequestBuilder OpenShiftChangeRequests { get; }
 
         /// <summary>
+        /// Gets the request builder for OfferShiftRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleOfferShiftRequestsCollectionRequestBuilder"/>.</returns>
+        IScheduleOfferShiftRequestsCollectionRequestBuilder OfferShiftRequests { get; }
+
+        /// <summary>
         /// Gets the request builder for TimeOffRequests.
         /// </summary>
         /// <returns>The <see cref="IScheduleTimeOffRequestsCollectionRequestBuilder"/>.</returns>

@@ -61,6 +61,36 @@ namespace Microsoft.Graph
         public IEnumerable<string> WorkforceIntegrationIds { get; set; }
     
         /// <summary>
+        /// Gets or sets time clock enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeClockEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TimeClockEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets open shifts enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "openShiftsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OpenShiftsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets swap shifts requests enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "swapShiftsRequestsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SwapShiftsRequestsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets offer shift requests enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offerShiftRequestsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OfferShiftRequestsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets time off requests enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeOffRequestsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TimeOffRequestsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets shifts.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shifts", Required = Newtonsoft.Json.Required.Default)]
@@ -101,6 +131,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "openShiftChangeRequests", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleOpenShiftChangeRequestsCollectionPage OpenShiftChangeRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets offer shift requests.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offerShiftRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IScheduleOfferShiftRequestsCollectionPage OfferShiftRequests { get; set; }
     
         /// <summary>
         /// Gets or sets time off requests.

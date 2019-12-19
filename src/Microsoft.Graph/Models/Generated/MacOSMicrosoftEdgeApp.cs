@@ -30,6 +30,13 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.macOSMicrosoftEdgeApp";
         }
 	
+        /// <summary>
+        /// Gets or sets channel.
+        /// The channel to install on target devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channel", Required = Newtonsoft.Json.Required.Default)]
+        public MicrosoftEdgeChannel? Channel { get; set; }
+    
     }
 }
 

@@ -34,5 +34,25 @@ namespace Microsoft.Graph
         /// </summary>
         Account = 2,
 	
+        /// <summary>
+        /// Security Options
+        /// </summary>
+        SecurityOptions = 3,
+	
+        /// <summary>
+        /// User Rights Assignment
+        /// </summary>
+        UserRightsAssignment = 4,
+	
+        /// <summary>
+        /// Audit Setting
+        /// </summary>
+        AuditSetting = 5,
+	
+        /// <summary>
+        /// Windows Firewall Settings
+        /// </summary>
+        WindowsFirewallSettings = 6,
+	
     }
 }

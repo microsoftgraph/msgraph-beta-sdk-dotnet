@@ -570,22 +570,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (groupToInitialize.Channels != null && groupToInitialize.Channels.CurrentPage != null)
-                {
-                    groupToInitialize.Channels.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("channels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Channels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
             }
 
 

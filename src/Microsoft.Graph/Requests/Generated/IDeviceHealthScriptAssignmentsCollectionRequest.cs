@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified DeviceManagementScriptAssignment to the collection via POST.
+        /// Adds the specified DeviceHealthScriptAssignment to the collection via POST.
         /// </summary>
-        /// <param name="deviceManagementScriptAssignment">The DeviceManagementScriptAssignment to add.</param>
-        /// <returns>The created DeviceManagementScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> AddAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment);
+        /// <param name="deviceHealthScriptAssignment">The DeviceHealthScriptAssignment to add.</param>
+        /// <returns>The created DeviceHealthScriptAssignment.</returns>
+        System.Threading.Tasks.Task<DeviceHealthScriptAssignment> AddAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignment);
 
         /// <summary>
-        /// Adds the specified DeviceManagementScriptAssignment to the collection via POST.
+        /// Adds the specified DeviceHealthScriptAssignment to the collection via POST.
         /// </summary>
-        /// <param name="deviceManagementScriptAssignment">The DeviceManagementScriptAssignment to add.</param>
+        /// <param name="deviceHealthScriptAssignment">The DeviceHealthScriptAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> AddAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment, CancellationToken cancellationToken);
+        /// <returns>The created DeviceHealthScriptAssignment.</returns>
+        System.Threading.Tasks.Task<DeviceHealthScriptAssignment> AddAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignment, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IDeviceHealthScriptAssignmentsCollectionRequest Expand(Expression<Func<DeviceManagementScriptAssignment, object>> expandExpression);
+        IDeviceHealthScriptAssignmentsCollectionRequest Expand(Expression<Func<DeviceHealthScriptAssignment, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IDeviceHealthScriptAssignmentsCollectionRequest Select(Expression<Func<DeviceManagementScriptAssignment, object>> selectExpression);
+        IDeviceHealthScriptAssignmentsCollectionRequest Select(Expression<Func<DeviceHealthScriptAssignment, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

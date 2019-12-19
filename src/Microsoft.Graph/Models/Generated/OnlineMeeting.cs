@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets creation date time.
+        /// The meeting creation time in UTC. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// The meeting start time in UTC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
+        /// The meeting end time in UTC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? EndDateTime { get; set; }
@@ -74,6 +77,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subject.
+        /// The subject of the online meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
         public string Subject { get; set; }
@@ -86,6 +90,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets participants.
+        /// The participants associated with the online meeting.  This includes the organizer and the attendees.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
         public MeetingParticipants Participants { get; set; }
@@ -110,18 +115,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets audio conferencing.
+        /// The phone access (dial-in) information for an online meeting. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioConferencing", Required = Newtonsoft.Json.Required.Default)]
         public AudioConferencing AudioConferencing { get; set; }
     
         /// <summary>
         /// Gets or sets chat info.
+        /// The chat information associated with this online meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatInfo", Required = Newtonsoft.Json.Required.Default)]
         public ChatInfo ChatInfo { get; set; }
     
         /// <summary>
         /// Gets or sets video teleconference id.
+        /// The videio teleconferencing ID. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoTeleconferenceId", Required = Newtonsoft.Json.Required.Default)]
         public string VideoTeleconferenceId { get; set; }

@@ -136,6 +136,13 @@ namespace Microsoft.Graph
         public bool? IsMdmSupported { get; set; }
     
         /// <summary>
+        /// Gets or sets mdm supported state.
+        /// Indicates if the setting is supported in Mdm or not
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmSupportedState", Required = Newtonsoft.Json.Required.Default)]
+        public MdmSupportedState? MdmSupportedState { get; set; }
+    
+        /// <summary>
         /// Gets or sets setting scope.
         /// The scope of the setting
         /// </summary>

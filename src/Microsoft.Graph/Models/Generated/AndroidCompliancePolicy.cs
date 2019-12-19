@@ -115,11 +115,25 @@ namespace Microsoft.Graph
         public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }
     
         /// <summary>
+        /// Gets or sets advanced threat protection required security level.
+        /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel { get; set; }
+    
+        /// <summary>
         /// Gets or sets security block jailbroken devices.
         /// Devices must not be jailbroken or rooted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityBlockJailbrokenDevices", Required = Newtonsoft.Json.Required.Default)]
         public bool? SecurityBlockJailbrokenDevices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security block device administrator managed devices.
+        /// Block device administrator managed devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityBlockDeviceAdministratorManagedDevices", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityBlockDeviceAdministratorManagedDevices { get; set; }
     
         /// <summary>
         /// Gets or sets os minimum version.

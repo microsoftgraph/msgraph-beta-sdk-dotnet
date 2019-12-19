@@ -231,14 +231,16 @@ namespace Microsoft.Graph
         public IManagedDeviceWipeRequestBuilder Wipe(
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
-            string macOsUnlockCode = null)
+            string macOsUnlockCode = null,
+            bool? useProtectedWipe = null)
         {
             return new ManagedDeviceWipeRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.wipe"),
                 this.Client,
                 keepEnrollmentData,
                 keepUserData,
-                macOsUnlockCode);
+                macOsUnlockCode,
+                useProtectedWipe);
         }
 
         /// <summary>

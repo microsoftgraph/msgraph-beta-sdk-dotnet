@@ -77,12 +77,6 @@ namespace Microsoft.Graph
         public IChannelMessagesCollectionPage Messages { get; set; }
     
         /// <summary>
-        /// Gets or sets chat threads.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatThreads", Required = Newtonsoft.Json.Required.Default)]
-        public IChannelChatThreadsCollectionPage ChatThreads { get; set; }
-    
-        /// <summary>
         /// Gets or sets tabs.
         /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>

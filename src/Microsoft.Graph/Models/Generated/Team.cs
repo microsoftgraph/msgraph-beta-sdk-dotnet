@@ -122,10 +122,10 @@ namespace Microsoft.Graph
         public Schedule Schedule { get; set; }
     
         /// <summary>
-        /// Gets or sets photo.
+        /// Gets or sets group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
-        public ProfilePhoto Photo { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        public Group Group { get; set; }
     
         /// <summary>
         /// Gets or sets template.
@@ -134,11 +134,29 @@ namespace Microsoft.Graph
         public TeamsTemplate Template { get; set; }
     
         /// <summary>
+        /// Gets or sets photo.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
+        public ProfilePhoto Photo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets owners.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
+    
+        /// <summary>
         /// Gets or sets channels.
         /// The collection of channels &amp; messages associated with the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channels", Required = Newtonsoft.Json.Required.Default)]
         public ITeamChannelsCollectionPage Channels { get; set; }
+    
+        /// <summary>
+        /// Gets or sets primary channel.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryChannel", Required = Newtonsoft.Json.Required.Default)]
+        public Channel PrimaryChannel { get; set; }
     
         /// <summary>
         /// Gets or sets apps.
@@ -158,24 +176,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public ITeamOperationsCollectionPage Operations { get; set; }
-    
-        /// <summary>
-        /// Gets or sets owners.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
-        public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
-    
-        /// <summary>
-        /// Gets or sets primary channel.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryChannel", Required = Newtonsoft.Json.Required.Default)]
-        public Channel PrimaryChannel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
-        public Group Group { get; set; }
     
     }
 }

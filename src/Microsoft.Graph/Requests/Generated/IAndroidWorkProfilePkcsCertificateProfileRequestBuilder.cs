@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAndroidWorkProfilePkcsCertificateProfileRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCertificateStates.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidWorkProfilePkcsCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder"/>.</returns>
+        IAndroidWorkProfilePkcsCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder ManagedDeviceCertificateStates { get; }
+    
     }
 }

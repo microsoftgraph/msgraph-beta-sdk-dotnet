@@ -385,18 +385,6 @@ namespace Microsoft.Graph
                 return new TeamRequestBuilder(this.AppendSegmentToRequestUrl("team"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for Channels.
-        /// </summary>
-        /// <returns>The <see cref="IGroupChannelsCollectionRequestBuilder"/>.</returns>
-        public IGroupChannelsCollectionRequestBuilder Channels
-        {
-            get
-            {
-                return new GroupChannelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("channels"), this.Client);
-            }
-        }
     
         /// <summary>
         /// Gets the request builder for GroupEvaluateDynamicMembership.

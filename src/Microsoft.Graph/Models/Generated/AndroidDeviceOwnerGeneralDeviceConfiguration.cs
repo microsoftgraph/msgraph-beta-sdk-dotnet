@@ -94,6 +94,13 @@ namespace Microsoft.Graph
         public bool? CellularBlockWiFiTethering { get; set; }
     
         /// <summary>
+        /// Gets or sets certificate credential configuration disabled.
+        /// Indicates whether or not to block users from any certificate credential configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateCredentialConfigurationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CertificateCredentialConfigurationDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets data roaming blocked.
         /// Indicates whether or not to block a user from data roaming.
         /// </summary>
@@ -127,6 +134,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "globalProxy", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerGlobalProxy GlobalProxy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets google accounts blocked.
+        /// Indicates whether or not google accounts will be blocked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "googleAccountsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? GoogleAccountsBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode screen saver configuration enabled.
