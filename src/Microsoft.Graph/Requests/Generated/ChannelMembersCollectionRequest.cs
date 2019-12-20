@@ -54,6 +54,7 @@ namespace Microsoft.Graph
         {
             this.ContentType = "application/json";
             this.Method = "POST";
+            conversationMember.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(conversationMember.GetType().FullName));
             return this.SendAsync<ConversationMember>(conversationMember, cancellationToken);
         }
 

@@ -50,5 +50,15 @@ namespace Microsoft.Graph
         /// </summary>
         OpenShiftRequest = 32,
 	
+        /// <summary>
+        /// Offer Shift Request
+        /// </summary>
+        OfferShiftRequest = 64,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 1024,
+	
     }
 }

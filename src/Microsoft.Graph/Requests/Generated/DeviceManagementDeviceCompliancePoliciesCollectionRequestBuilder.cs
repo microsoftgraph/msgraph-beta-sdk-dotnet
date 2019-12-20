@@ -74,6 +74,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyGetDevicesScheduledToRetire.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder GetDevicesScheduledToRetire()
+        {
+            return new DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicesScheduledToRetire"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicySetScheduledRetireState.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder SetScheduledRetireState(
+            ScheduledRetireState state,
+            IEnumerable<string> managedDeviceIds = null)
+        {
+            return new DeviceCompliancePolicySetScheduledRetireStateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setScheduledRetireState"),
+                this.Client,
+                state,
+                managedDeviceIds);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>

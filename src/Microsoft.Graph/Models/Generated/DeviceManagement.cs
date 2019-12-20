@@ -353,6 +353,13 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceManagementPartnersCollectionPage DeviceManagementPartners { get; set; }
     
         /// <summary>
+        /// Gets or sets compliance management partners.
+        /// The list of Compliance Management Partners configured by the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceManagementPartners", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementComplianceManagementPartnersCollectionPage ComplianceManagementPartners { get; set; }
+    
+        /// <summary>
         /// Gets or sets intents.
         /// The device management intents
         /// </summary>
@@ -400,6 +407,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementScripts", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementDeviceManagementScriptsCollectionPage DeviceManagementScripts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device shell scripts.
+        /// The list of device shell scripts associated with the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceShellScripts", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceShellScriptsCollectionPage DeviceShellScripts { get; set; }
     
         /// <summary>
         /// Gets or sets device health scripts.

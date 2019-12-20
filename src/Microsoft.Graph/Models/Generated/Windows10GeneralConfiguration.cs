@@ -1977,6 +1977,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> AppManagementPackageFamilyNamesToLaunchAfterLogOn { get; set; }
     
         /// <summary>
+        /// Gets or sets uninstall built in apps.
+        /// Indicates whether or not to uninstall a fixed list of built-in Windows apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallBuiltInApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UninstallBuiltInApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets privacy access controls.
         /// Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category.
         /// </summary>

@@ -52,13 +52,6 @@ namespace Microsoft.Graph
         public IEnumerable<string> Select { get; set; }
     
         /// <summary>
-        /// Gets or sets order by.
-        /// Ordering of columns in the report
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderBy", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> OrderBy { get; set; }
-    
-        /// <summary>
         /// Gets or sets format.
         /// Format of the exported report
         /// </summary>

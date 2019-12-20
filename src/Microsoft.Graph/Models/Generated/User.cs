@@ -107,6 +107,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets creation type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationType", Required = Newtonsoft.Json.Required.Default)]
+        public string CreationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets department.
         /// The name for the department in which the user works. Supports $filter.
         /// </summary>
@@ -799,6 +805,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insights.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
         public OfficeGraphInsights Insights { get; set; }
@@ -848,22 +855,22 @@ namespace Microsoft.Graph
         public Presence Presence { get; set; }
     
         /// <summary>
+        /// Gets or sets chats.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chats", Required = Newtonsoft.Json.Required.Default)]
+        public IUserChatsCollectionPage Chats { get; set; }
+    
+        /// <summary>
         /// Gets or sets joined teams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
-        public IUserJoinedTeamsCollectionWithReferencesPage JoinedTeams { get; set; }
+        public IUserJoinedTeamsCollectionPage JoinedTeams { get; set; }
     
         /// <summary>
         /// Gets or sets teamwork.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
         public UserTeamwork Teamwork { get; set; }
-    
-        /// <summary>
-        /// Gets or sets chats.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chats", Required = Newtonsoft.Json.Required.Default)]
-        public IUserChatsCollectionPage Chats { get; set; }
     
     }
 }

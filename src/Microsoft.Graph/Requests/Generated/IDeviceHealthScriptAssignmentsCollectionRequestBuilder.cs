@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IDeviceHealthScriptAssignmentsCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IDeviceManagementScriptAssignmentRequestBuilder"/> for the specified DeviceManagementScriptAssignment.
+        /// Gets an <see cref="IDeviceHealthScriptAssignmentRequestBuilder"/> for the specified DeviceHealthScriptAssignment.
         /// </summary>
-        /// <param name="id">The ID for the DeviceManagementScriptAssignment.</param>
-        /// <returns>The <see cref="IDeviceManagementScriptAssignmentRequestBuilder"/>.</returns>
-        IDeviceManagementScriptAssignmentRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the DeviceHealthScriptAssignment.</param>
+        /// <returns>The <see cref="IDeviceHealthScriptAssignmentRequestBuilder"/>.</returns>
+        IDeviceHealthScriptAssignmentRequestBuilder this[string id] { get; }
 
         
     }

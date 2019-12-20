@@ -58,6 +58,16 @@ namespace Microsoft.Graph
         IWindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequestBuilder UnassignUserFromDevice();
 
         /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentityUpdateDeviceProperties.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder"/>.</returns>
+        IWindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder UpdateDeviceProperties(
+            string userPrincipalName = null,
+            string addressableUserName = null,
+            string groupTag = null,
+            string displayName = null);
+
+        /// <summary>
         /// Gets the request builder for WindowsAutopilotDeviceIdentityAssignResourceAccountToDevice.
         /// </summary>
         /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder"/>.</returns>

@@ -1228,13 +1228,6 @@ namespace Microsoft.Graph
         public bool? CellularBlockPersonalHotspotModification { get; set; }
     
         /// <summary>
-        /// Gets or sets siri disable server logging.
-        /// Indicates whether or not server-side Siri logging is disabled (iOS 12.2 or later).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siriDisableServerLogging", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SiriDisableServerLogging { get; set; }
-    
-        /// <summary>
         /// Gets or sets continuous path keyboard blocked.
         /// Indicates whether or not to block the continuous path keyboard when the device is supervised (iOS 13 or later).
         /// </summary>

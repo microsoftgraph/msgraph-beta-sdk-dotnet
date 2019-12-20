@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SwapShiftsChangeRequestRequestBuilder.
     /// </summary>
-    public partial class SwapShiftsChangeRequestRequestBuilder : ShiftChangeRequestRequestBuilder, ISwapShiftsChangeRequestRequestBuilder
+    public partial class SwapShiftsChangeRequestRequestBuilder : OfferShiftRequestRequestBuilder, ISwapShiftsChangeRequestRequestBuilder
     {
 
         /// <summary>

@@ -50,36 +50,6 @@ namespace Microsoft.Graph
         IDeviceManagementReportsReportSchedulesCollectionRequestBuilder ReportSchedules { get; }
     
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetDeviceNoncomplianceReports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNoncomplianceReportsRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetDeviceNoncomplianceReportsRequestBuilder GetDeviceNoncomplianceReports(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetPolicyNoncomplianceReports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNoncomplianceReportsRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetPolicyNoncomplianceReportsRequestBuilder GetPolicyNoncomplianceReports(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>
@@ -99,6 +69,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetPolicyNonComplianceReportRequestBuilder GetPolicyNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceMetadata.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,

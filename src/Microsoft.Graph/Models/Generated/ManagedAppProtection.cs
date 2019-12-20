@@ -269,6 +269,13 @@ namespace Microsoft.Graph
         public Int32? PreviousPinBlockCount { get; set; }
     
         /// <summary>
+        /// Gets or sets managed browser.
+        /// Indicates in which managed browser(s) that internet links should be opened.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedBrowser", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedBrowserType? ManagedBrowser { get; set; }
+    
+        /// <summary>
         /// Gets or sets maximum allowed device threat level.
         /// Maximum allowed device threat level, as reported by the MTD app
         /// </summary>
@@ -281,6 +288,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileThreatDefenseRemediationAction", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets block data ingestion into organization documents.
+        /// Indicates whether a user can bring data into org documents.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockDataIngestionIntoOrganizationDocuments", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BlockDataIngestionIntoOrganizationDocuments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowed data ingestion locations.
+        /// Data storage locations where a user may store managed data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedDataIngestionLocations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ManagedAppDataIngestionLocation> AllowedDataIngestionLocations { get; set; }
     
     }
 }

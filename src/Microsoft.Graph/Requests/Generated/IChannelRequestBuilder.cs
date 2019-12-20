@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         IChannelMessagesCollectionRequestBuilder Messages { get; }
 
         /// <summary>
-        /// Gets the request builder for ChatThreads.
-        /// </summary>
-        /// <returns>The <see cref="IChannelChatThreadsCollectionRequestBuilder"/>.</returns>
-        IChannelChatThreadsCollectionRequestBuilder ChatThreads { get; }
-
-        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>

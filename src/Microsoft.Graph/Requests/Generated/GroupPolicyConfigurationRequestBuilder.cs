@@ -86,6 +86,23 @@ namespace Microsoft.Graph
                 this.Client,
                 assignments);
         }
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyConfigurationUpdateDefinitionValues.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder"/>.</returns>
+        public IGroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder UpdateDefinitionValues(
+            IEnumerable<GroupPolicyDefinitionValue> added = null,
+            IEnumerable<GroupPolicyDefinitionValue> updated = null,
+            IEnumerable<string> deletedIds = null)
+        {
+            return new GroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateDefinitionValues"),
+                this.Client,
+                added,
+                updated,
+                deletedIds);
+        }
     
     }
 }

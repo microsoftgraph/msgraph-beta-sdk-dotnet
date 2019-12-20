@@ -651,14 +651,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for JoinedTeams.
+        /// Gets the request builder for Chats.
         /// </summary>
-        /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams
+        /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
+        public IUserChatsCollectionRequestBuilder Chats
         {
             get
             {
-                return new UserJoinedTeamsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+                return new UserChatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("chats"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for JoinedTeams.
+        /// </summary>
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
+        public IUserJoinedTeamsCollectionRequestBuilder JoinedTeams
+        {
+            get
+            {
+                return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
             }
         }
 
@@ -671,18 +683,6 @@ namespace Microsoft.Graph
             get
             {
                 return new UserTeamworkRequestBuilder(this.AppendSegmentToRequestUrl("teamwork"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Chats.
-        /// </summary>
-        /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
-        public IUserChatsCollectionRequestBuilder Chats
-        {
-            get
-            {
-                return new UserChatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("chats"), this.Client);
             }
         }
     

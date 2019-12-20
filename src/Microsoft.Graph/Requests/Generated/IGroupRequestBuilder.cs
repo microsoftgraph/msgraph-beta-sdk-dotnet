@@ -198,12 +198,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamRequestBuilder"/>.</returns>
         ITeamRequestBuilder Team { get; }
-
-        /// <summary>
-        /// Gets the request builder for Channels.
-        /// </summary>
-        /// <returns>The <see cref="IGroupChannelsCollectionRequestBuilder"/>.</returns>
-        IGroupChannelsCollectionRequestBuilder Channels { get; }
     
         /// <summary>
         /// Gets the request builder for GroupEvaluateDynamicMembership.

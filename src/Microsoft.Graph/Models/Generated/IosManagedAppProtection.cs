@@ -87,6 +87,13 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed { get; set; }
     
         /// <summary>
+        /// Gets or sets third party keyboards blocked.
+        /// Defines if third party keyboards are allowed while accessing a managed app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thirdPartyKeyboardsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ThirdPartyKeyboardsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets filter open in to only managed apps.
         /// Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
         /// </summary>

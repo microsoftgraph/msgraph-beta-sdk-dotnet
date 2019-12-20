@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Swap Shifts Change Request.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class SwapShiftsChangeRequestObject : ShiftChangeRequestObject
+    public partial class SwapShiftsChangeRequestObject : OfferShiftRequestObject
     {
     
 		///<summary>

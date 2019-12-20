@@ -87,11 +87,11 @@ namespace Microsoft.Graph
         public string UserId { get; set; }
     
         /// <summary>
-        /// Gets or sets scopeTags.
+        /// Gets or sets userRoleScopeTags.
         /// List of user scope tags when the audit was performed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeTags", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ScopeTagInfo> ScopeTags { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRoleScopeTags", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RoleScopeTagInfo> UserRoleScopeTags { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (teamToInitialize != null && teamToInitialize.AdditionalData != null)
             {
 
+                if (teamToInitialize.Owners != null && teamToInitialize.Owners.CurrentPage != null)
+                {
+                    teamToInitialize.Owners.AdditionalData = teamToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    teamToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        teamToInitialize.Owners.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (teamToInitialize.Channels != null && teamToInitialize.Channels.CurrentPage != null)
                 {
                     teamToInitialize.Channels.AdditionalData = teamToInitialize.AdditionalData;
@@ -293,22 +309,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         teamToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (teamToInitialize.Owners != null && teamToInitialize.Owners.CurrentPage != null)
-                {
-                    teamToInitialize.Owners.AdditionalData = teamToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    teamToInitialize.AdditionalData.TryGetValue("owners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        teamToInitialize.Owners.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

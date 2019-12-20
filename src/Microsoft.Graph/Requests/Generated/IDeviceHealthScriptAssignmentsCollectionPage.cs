@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IDeviceHealthScriptAssignmentsCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<DeviceHealthScriptAssignmentsCollectionPage>))]
-    public interface IDeviceHealthScriptAssignmentsCollectionPage : ICollectionPage<DeviceManagementScriptAssignment>
+    public interface IDeviceHealthScriptAssignmentsCollectionPage : ICollectionPage<DeviceHealthScriptAssignment>
     {
         /// <summary>
         /// Gets the next page <see cref="IDeviceHealthScriptAssignmentsCollectionRequest"/> instance.

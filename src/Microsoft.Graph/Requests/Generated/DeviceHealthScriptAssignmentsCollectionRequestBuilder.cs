@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IDeviceManagementScriptAssignmentRequestBuilder"/> for the specified DeviceHealthScriptDeviceManagementScriptAssignment.
+        /// Gets an <see cref="IDeviceHealthScriptAssignmentRequestBuilder"/> for the specified DeviceHealthScriptDeviceHealthScriptAssignment.
         /// </summary>
-        /// <param name="id">The ID for the DeviceHealthScriptDeviceManagementScriptAssignment.</param>
-        /// <returns>The <see cref="IDeviceManagementScriptAssignmentRequestBuilder"/>.</returns>
-        public IDeviceManagementScriptAssignmentRequestBuilder this[string id]
+        /// <param name="id">The ID for the DeviceHealthScriptDeviceHealthScriptAssignment.</param>
+        /// <returns>The <see cref="IDeviceHealthScriptAssignmentRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptAssignmentRequestBuilder this[string id]
         {
             get
             {
-                return new DeviceManagementScriptAssignmentRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new DeviceHealthScriptAssignmentRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

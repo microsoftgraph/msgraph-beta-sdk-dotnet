@@ -80,6 +80,20 @@ namespace Microsoft.Graph
         public UserEmailSource? EmailAddressSource { get; set; }
     
         /// <summary>
+        /// Gets or sets eas services.
+        /// Exchange data to sync.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "easServices", Required = Newtonsoft.Json.Required.Default)]
+        public EasServices? EasServices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets eas services user override enabled.
+        /// Allow users to change sync settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "easServicesUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EasServicesUserOverrideEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets host name.
         /// Exchange location that (URL) that the native mail app connects to.
         /// </summary>

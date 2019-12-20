@@ -250,22 +250,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (channelToInitialize.ChatThreads != null && channelToInitialize.ChatThreads.CurrentPage != null)
-                {
-                    channelToInitialize.ChatThreads.AdditionalData = channelToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    channelToInitialize.AdditionalData.TryGetValue("chatThreads@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        channelToInitialize.ChatThreads.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (channelToInitialize.Tabs != null && channelToInitialize.Tabs.CurrentPage != null)
                 {
                     channelToInitialize.Tabs.AdditionalData = channelToInitialize.AdditionalData;

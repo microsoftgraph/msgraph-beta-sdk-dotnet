@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLossPreventionPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IInformationProtectionDataLossPreventionPoliciesCollectionPage DataLossPreventionPolicies { get; set; }
     
+        /// <summary>
+        /// Gets or sets threat assessment requests.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threatAssessmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IInformationProtectionThreatAssessmentRequestsCollectionPage ThreatAssessmentRequests { get; set; }
+    
     }
 }
 

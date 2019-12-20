@@ -423,6 +423,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ComplianceManagementPartners.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder ComplianceManagementPartners
+        {
+            get
+            {
+                return new DeviceManagementComplianceManagementPartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("complianceManagementPartners"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Intents.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentsCollectionRequestBuilder"/>.</returns>
@@ -503,6 +515,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementDeviceManagementScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceManagementScripts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceShellScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceShellScriptsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceShellScriptsCollectionRequestBuilder DeviceShellScripts
+        {
+            get
+            {
+                return new DeviceManagementDeviceShellScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceShellScripts"), this.Client);
             }
         }
 

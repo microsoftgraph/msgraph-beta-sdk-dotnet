@@ -135,6 +135,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for OfferShiftRequests.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleOfferShiftRequestsCollectionRequestBuilder"/>.</returns>
+        public IScheduleOfferShiftRequestsCollectionRequestBuilder OfferShiftRequests
+        {
+            get
+            {
+                return new ScheduleOfferShiftRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("offerShiftRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TimeOffRequests.
         /// </summary>
         /// <returns>The <see cref="IScheduleTimeOffRequestsCollectionRequestBuilder"/>.</returns>

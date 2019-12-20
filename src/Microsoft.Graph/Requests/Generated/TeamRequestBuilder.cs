@@ -63,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Photo.
+        /// Gets the request builder for Group.
         /// </summary>
-        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
-        public IProfilePhotoRequestBuilder Photo
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        public IGroupWithReferenceRequestBuilder Group
         {
             get
             {
-                return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
+                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
             }
         }
 
@@ -87,6 +87,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        public IProfilePhotoRequestBuilder Photo
+        {
+            get
+            {
+                return new ProfilePhotoRequestBuilder(this.AppendSegmentToRequestUrl("photo"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="ITeamOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ITeamOwnersCollectionWithReferencesRequestBuilder Owners
+        {
+            get
+            {
+                return new TeamOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -95,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamChannelsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("channels"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PrimaryChannel.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
+        public IChannelRequestBuilder PrimaryChannel
+        {
+            get
+            {
+                return new ChannelRequestBuilder(this.AppendSegmentToRequestUrl("primaryChannel"), this.Client);
             }
         }
 
@@ -133,42 +169,6 @@ namespace Microsoft.Graph
                 return new TeamOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for Owners.
-        /// </summary>
-        /// <returns>The <see cref="ITeamOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public ITeamOwnersCollectionWithReferencesRequestBuilder Owners
-        {
-            get
-            {
-                return new TeamOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for PrimaryChannel.
-        /// </summary>
-        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
-        public IChannelRequestBuilder PrimaryChannel
-        {
-            get
-            {
-                return new ChannelRequestBuilder(this.AppendSegmentToRequestUrl("primaryChannel"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Group.
-        /// </summary>
-        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
-        public IGroupWithReferenceRequestBuilder Group
-        {
-            get
-            {
-                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
-            }
-        }
     
         /// <summary>
         /// Gets the request builder for TeamClone.
@@ -198,7 +198,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
         public ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null)
+            bool shouldSetSpoSiteReadOnlyForMembers)
         {
             return new TeamArchiveRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.archive"),

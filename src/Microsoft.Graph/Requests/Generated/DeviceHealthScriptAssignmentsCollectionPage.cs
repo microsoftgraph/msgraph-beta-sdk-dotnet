@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealthScriptAssignmentsCollectionPage.
     /// </summary>
-    public partial class DeviceHealthScriptAssignmentsCollectionPage : CollectionPage<DeviceManagementScriptAssignment>, IDeviceHealthScriptAssignmentsCollectionPage
+    public partial class DeviceHealthScriptAssignmentsCollectionPage : CollectionPage<DeviceHealthScriptAssignment>, IDeviceHealthScriptAssignmentsCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IDeviceHealthScriptAssignmentsCollectionRequest"/> instance.

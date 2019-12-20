@@ -164,6 +164,13 @@ namespace Microsoft.Graph
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
+        /// Gets or sets display name.
+        /// Display Name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets deployment profile.
         /// Deployment profile currently assigned to the Windows autopilot device.
         /// </summary>

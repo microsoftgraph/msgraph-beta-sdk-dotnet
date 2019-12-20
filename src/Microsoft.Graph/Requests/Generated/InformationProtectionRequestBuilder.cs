@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new InformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dataLossPreventionPolicies"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for ThreatAssessmentRequests.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder"/>.</returns>
+        public IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder ThreatAssessmentRequests
+        {
+            get
+            {
+                return new InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("threatAssessmentRequests"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for InformationProtectionEvaluateLabelsAndPolicies.

@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> SensitiveTypeIds { get; set; }
     
+        /// <summary>
+        /// Gets or sets scopes to run.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopesToRun", Required = Newtonsoft.Json.Required.Default)]
+        public SensitiveTypeScope? ScopesToRun { get; set; }
+    
     }
 }
 

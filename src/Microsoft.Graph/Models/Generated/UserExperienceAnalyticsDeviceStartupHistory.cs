@@ -100,6 +100,20 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFirstLogin", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsFirstLogin { get; set; }
     
+        /// <summary>
+        /// Gets or sets is feature update.
+        /// The user experience analytics device boot record is a feature update.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFeatureUpdate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFeatureUpdate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operating system version.
+        /// The user experience analytics device boot record's operating system version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OperatingSystemVersion { get; set; }
+    
     }
 }
 

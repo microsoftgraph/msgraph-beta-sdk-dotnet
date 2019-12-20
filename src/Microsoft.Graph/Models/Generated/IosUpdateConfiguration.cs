@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public TimeOfDay ActiveHoursEnd { get; set; }
     
         /// <summary>
+        /// Gets or sets desired os version.
+        /// If left unspecified, devices will update to the latest version of the OS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "desiredOsVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string DesiredOsVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets scheduled install days.
         /// Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
         /// </summary>

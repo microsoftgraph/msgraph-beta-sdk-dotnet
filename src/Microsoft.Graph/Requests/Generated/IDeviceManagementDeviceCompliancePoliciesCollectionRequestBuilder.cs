@@ -44,6 +44,20 @@ namespace Microsoft.Graph
             IEnumerable<string> payloadIds = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyGetDevicesScheduledToRetire.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder GetDevicesScheduledToRetire();
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicySetScheduledRetireState.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder SetScheduledRetireState(
+            ScheduledRetireState state,
+            IEnumerable<string> managedDeviceIds = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
