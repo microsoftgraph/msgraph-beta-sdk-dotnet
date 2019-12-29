@@ -1,0 +1,38 @@
+page_type: sample
+products:
+  - office-excel
+  - office-365
+  - office-outlook
+  - office-onedrive
+  - office-onenote
+  - office-planner
+  - office-sp
+  - ms-graph
+languages:
+  - csharp
+extensions:
+  contentType: sdks
+  technologies:
+    - Microsoft Graph
+    - Microsoft identity platform
+  services:
+    - Bookings
+    - Dynamics 365 Business Central
+    - Education
+    - Excel
+    - Groups
+    - Insights
+    - Intune
+    - Microsoft identity platform
+    - Office 365
+    - Outlook
+    - OneDrive
+    - OneNote
+    - Planner
+    - Reports
+    - Security
+    - SharePoint
+    - Users
+  createdDate: '8/22/2016 2:14:13 PM'
+title: Microsoft Graph Beta .NET Client Library
+description: The Microsoft Graph Client Beta Library for .NET supports the Microsoft Graph /beta (preview) endpoint.
