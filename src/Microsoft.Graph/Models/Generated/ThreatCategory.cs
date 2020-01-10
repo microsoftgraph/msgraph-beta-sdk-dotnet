@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Undefined
+        /// </summary>
+        Undefined = 0,
+	
+        /// <summary>
         /// Spam
         /// </summary>
         Spam = 1,
