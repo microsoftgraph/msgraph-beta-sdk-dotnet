@@ -781,14 +781,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets defender potentially unwanted app action.
-        /// Gets or sets Defenderâ€™s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
+        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
         public DefenderPotentiallyUnwantedAppAction? DefenderPotentiallyUnwantedAppAction { get; set; }
     
         /// <summary>
         /// Gets or sets defender potentially unwanted app action setting.
-        /// Gets or sets Defenderâ€™s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
+        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppActionSetting", Required = Newtonsoft.Json.Required.Default)]
         public DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting { get; set; }
@@ -1103,7 +1103,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets privacy disable launch experience.
-        /// This policy prevents the privacy experience from launching during user logon for new and upgraded users.â€‹
+        /// This policy prevents the privacy experience from launching during user logon for new and upgraded users.???
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyDisableLaunchExperience", Required = Newtonsoft.Json.Required.Default)]
         public bool? PrivacyDisableLaunchExperience { get; set; }
@@ -1971,7 +1971,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app management package family names to launch after log on.
-        /// List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.â€‹
+        /// List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.???
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementPackageFamilyNamesToLaunchAfterLogOn", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AppManagementPackageFamilyNamesToLaunchAfterLogOn { get; set; }

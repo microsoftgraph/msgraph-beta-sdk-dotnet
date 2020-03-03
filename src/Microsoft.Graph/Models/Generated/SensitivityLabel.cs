@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         public AutoLabeling AutoLabeling { get; set; }
     
         /// <summary>
+        /// Gets or sets applicable to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableTo", Required = Newtonsoft.Json.Required.Default)]
+        public SensitivityLabelTarget? ApplicableTo { get; set; }
+    
+        /// <summary>
         /// Gets or sets sublabels.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sublabels", Required = Newtonsoft.Json.Required.Default)]

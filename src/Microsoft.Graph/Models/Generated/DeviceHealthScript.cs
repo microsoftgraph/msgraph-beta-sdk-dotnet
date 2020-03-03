@@ -115,6 +115,20 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
+        /// Gets or sets is global script.
+        /// Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isGlobalScript", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsGlobalScript { get; set; }
+    
+        /// <summary>
+        /// Gets or sets highest available version.
+        /// Highest available version for a Microsoft Proprietary script
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highestAvailableVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string HighestAvailableVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the device health script
         /// </summary>

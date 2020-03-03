@@ -166,14 +166,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
         public IEventAcceptRequestBuilder Accept(
-            bool? SendResponse = null,
-            string Comment = null)
+            string Comment = null,
+            bool? SendResponse = null)
         {
             return new EventAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.accept"),
                 this.Client,
-                SendResponse,
-                Comment);
+                Comment,
+                SendResponse);
         }
 
         /// <summary>
@@ -181,16 +181,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
         public IEventDeclineRequestBuilder Decline(
-            TimeSlot ProposedNewTime = null,
-            bool? SendResponse = null,
-            string Comment = null)
+            string Comment = null,
+            bool? SendResponse = null)
         {
             return new EventDeclineRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
                 this.Client,
-                ProposedNewTime,
-                SendResponse,
-                Comment);
+                Comment,
+                SendResponse);
         }
 
         /// <summary>
@@ -198,16 +196,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
         public IEventTentativelyAcceptRequestBuilder TentativelyAccept(
-            TimeSlot ProposedNewTime = null,
-            bool? SendResponse = null,
-            string Comment = null)
+            string Comment = null,
+            bool? SendResponse = null)
         {
             return new EventTentativelyAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.tentativelyAccept"),
                 this.Client,
-                ProposedNewTime,
-                SendResponse,
-                Comment);
+                Comment,
+                SendResponse);
         }
 
         /// <summary>

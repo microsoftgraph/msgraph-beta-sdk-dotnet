@@ -39,5 +39,15 @@ namespace Microsoft.Graph
         /// </summary>
         FederatedUser = 3,
 	
+        /// <summary>
+        /// Personal Microsoft Account User
+        /// </summary>
+        PersonalMicrosoftAccountUser = 4,
+	
+        /// <summary>
+        /// Skype User
+        /// </summary>
+        SkypeUser = 5,
+	
     }
 }

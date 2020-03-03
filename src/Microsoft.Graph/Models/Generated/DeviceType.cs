@@ -115,6 +115,11 @@ namespace Microsoft.Graph
         AndroidEnterprise = 18,
 	
         /// <summary>
+        /// Windows10x
+        /// </summary>
+        Windows10x = 19,
+	
+        /// <summary>
         /// Blackberry
         /// </summary>
         Blackberry = 100,

@@ -87,6 +87,13 @@ namespace Microsoft.Graph
         public Int32? CoreLoginTimeInMs { get; set; }
     
         /// <summary>
+        /// Gets or sets responsive desktop time in ms.
+        /// The user experience analytics responsive desktop time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiveDesktopTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ResponsiveDesktopTimeInMs { get; set; }
+    
+        /// <summary>
         /// Gets or sets total login time in ms.
         /// The user experience analytics device total login time in milliseconds.
         /// </summary>

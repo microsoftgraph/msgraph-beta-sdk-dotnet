@@ -507,6 +507,27 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionPage UserExperienceAnalyticsDeviceStartupHistory { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics device startup processes.
+        /// User experience analytics device Startup Processes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsDeviceStartupProcesses", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionPage UserExperienceAnalyticsDeviceStartupProcesses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics device startup process performance.
+        /// User experience analytics device Startup Process Performance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsDeviceStartupProcessPerformance", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage UserExperienceAnalyticsDeviceStartupProcessPerformance { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics startup score history.
+        /// User experience analytics device Startup Score History
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsStartupScoreHistory", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionPage UserExperienceAnalyticsStartupScoreHistory { get; set; }
+    
+        /// <summary>
         /// Gets or sets derived credentials.
         /// Collection of Derived credential settings associated with account.
         /// </summary>

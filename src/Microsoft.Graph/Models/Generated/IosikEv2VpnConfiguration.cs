@@ -170,6 +170,20 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDefaultChildSecurityAssociationParameters", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowDefaultChildSecurityAssociationParameters { get; set; }
     
+        /// <summary>
+        /// Gets or sets always on configuration.
+        /// AlwaysOn Configuration
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public AppleVpnAlwaysOnConfiguration AlwaysOnConfiguration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enable always on configuration.
+        /// Determines if Always on VPN is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableAlwaysOnConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableAlwaysOnConfiguration { get; set; }
+    
     }
 }
 
