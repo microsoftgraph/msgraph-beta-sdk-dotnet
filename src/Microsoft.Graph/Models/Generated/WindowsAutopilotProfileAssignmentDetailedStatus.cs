@@ -29,5 +29,20 @@ namespace Microsoft.Graph
         /// </summary>
         HardwareRequirementsNotMet = 1,
 	
+        /// <summary>
+        /// Surface Hub Profile Not Supported
+        /// </summary>
+        SurfaceHubProfileNotSupported = 2,
+	
+        /// <summary>
+        /// Holo Lens Profile Not Supported
+        /// </summary>
+        HoloLensProfileNotSupported = 3,
+	
+        /// <summary>
+        /// Windows Pc Profile Not Supported
+        /// </summary>
+        WindowsPcProfileNotSupported = 4,
+	
     }
 }

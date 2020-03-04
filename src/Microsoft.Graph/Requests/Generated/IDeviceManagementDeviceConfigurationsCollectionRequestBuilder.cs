@@ -49,5 +49,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceConfigurationGetTargetedUsersAndDevicesRequestBuilder"/>.</returns>
         IDeviceConfigurationGetTargetedUsersAndDevicesRequestBuilder GetTargetedUsersAndDevices(
             IEnumerable<string> deviceConfigurationIds = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationGetIosAvailableUpdateVersions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder"/>.</returns>
+        IDeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder GetIosAvailableUpdateVersions();
     }
 }

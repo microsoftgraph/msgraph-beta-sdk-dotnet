@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downgradeSensitivityRequiresJustification", Required = Newtonsoft.Json.Required.Default)]
         public bool? DowngradeSensitivityRequiresJustification { get; set; }
     
+        /// <summary>
+        /// Gets or sets applicable to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableTo", Required = Newtonsoft.Json.Required.Default)]
+        public SensitivityLabelTarget? ApplicableTo { get; set; }
+    
     }
 }
 

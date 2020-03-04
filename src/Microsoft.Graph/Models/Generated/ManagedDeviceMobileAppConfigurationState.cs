@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets setting states.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingStates", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ManagedDeviceMobileAppConfigurationSettingState> SettingStates { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The name of the policy for this policyBase
         /// </summary>

@@ -87,6 +87,13 @@ namespace Microsoft.Graph
         public bool? ShowDisplayNameNextToLogo { get; set; }
     
         /// <summary>
+        /// Gets or sets roleScopeTagIds.
+        /// List of scope tags assigned to the default branding profile
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets contactITName.
         /// Name of the person/organization responsible for IT support.
         /// </summary>
@@ -176,6 +183,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showOfficeWebApps", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowOfficeWebApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sendDeviceOwnershipChangePushNotification.
+        /// Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendDeviceOwnershipChangePushNotification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SendDeviceOwnershipChangePushNotification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollmentAvailability.
+        /// Customized device enrollment flow displayed to the end user 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentAvailability", Required = Newtonsoft.Json.Required.Default)]
+        public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

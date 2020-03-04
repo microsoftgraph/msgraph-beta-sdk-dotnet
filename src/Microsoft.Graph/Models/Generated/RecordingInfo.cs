@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public ParticipantInfo InitiatedBy { get; set; }
     
         /// <summary>
+        /// Gets or sets initiator.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet Initiator { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

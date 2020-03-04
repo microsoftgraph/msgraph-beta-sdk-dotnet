@@ -41,5 +41,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserDeltaRequestBuilder"/>.</returns>
         IUserDeltaRequestBuilder Delta();
+
+        /// <summary>
+        /// Gets the request builder for UserGetManagedAppBlockedUsers.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetManagedAppBlockedUsersRequestBuilder"/>.</returns>
+        IUserGetManagedAppBlockedUsersRequestBuilder GetManagedAppBlockedUsers();
     }
 }

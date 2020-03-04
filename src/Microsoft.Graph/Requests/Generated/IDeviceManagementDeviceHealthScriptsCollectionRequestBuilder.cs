@@ -36,6 +36,16 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceHealthScriptRequestBuilder"/>.</returns>
         IDeviceHealthScriptRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptEnableGlobalScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptEnableGlobalScriptsRequestBuilder"/>.</returns>
+        IDeviceHealthScriptEnableGlobalScriptsRequestBuilder EnableGlobalScripts();
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptAreGlobalScriptsAvailable.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptAreGlobalScriptsAvailableRequestBuilder"/>.</returns>
+        IDeviceHealthScriptAreGlobalScriptsAvailableRequestBuilder AreGlobalScriptsAvailable();
     }
 }

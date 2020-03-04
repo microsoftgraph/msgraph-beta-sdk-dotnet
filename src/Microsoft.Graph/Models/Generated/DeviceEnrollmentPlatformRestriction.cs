@@ -59,6 +59,13 @@ namespace Microsoft.Graph
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets blockedManufacturers.
+        /// Collection of blocked Manufacturers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockedManufacturers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> BlockedManufacturers { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

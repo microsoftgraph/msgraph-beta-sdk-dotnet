@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channel", Required = Newtonsoft.Json.Required.Default)]
         public MicrosoftEdgeChannel? Channel { get; set; }
     
+        /// <summary>
+        /// Gets or sets display language locale.
+        /// The language locale to use when the Edge app displays text to the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayLanguageLocale", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayLanguageLocale { get; set; }
+    
     }
 }
 
