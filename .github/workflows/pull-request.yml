@@ -13,12 +13,12 @@ jobs:
     - name: pull-request
       uses: repo-sync/pull-request@v2
       with:
-        source_branch: ""                     # If blank, default: triggered branch
-        destination_branch: "master"          # If blank, default: master
+        #source_branch: ""                     # If blank, default: triggered branch
+        #destination_branch: "master"          # If blank, default: master
         pr_title: "Generated models and request builders using Typewriter"
         pr_body: ":crown: *An automated PR*"  # Full markdown support, requires pr_title to be set
-        pr_reviewer: "peombwa"             # Comma-separated list (no spaces)
-        pr_assignee: "ddyett"             # Comma-separated list (no spaces)
+        #pr_reviewer: "peombwa"             # Comma-separated list (no spaces)
+        #pr_assignee: "mmainer"             # Comma-separated list (no spaces)
         pr_label: "generated"                   # Comma-separated list (no spaces)
         # pr_milestone: "Milestone 1"           # Milestone name
         github_token: ${{ secrets.GITHUB_TOKEN }}
