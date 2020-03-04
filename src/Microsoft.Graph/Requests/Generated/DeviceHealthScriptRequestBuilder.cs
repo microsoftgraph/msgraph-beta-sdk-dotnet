@@ -98,6 +98,30 @@ namespace Microsoft.Graph
                 this.Client,
                 deviceHealthScriptAssignments);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptUpdateGlobalScript.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptUpdateGlobalScriptRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptUpdateGlobalScriptRequestBuilder UpdateGlobalScript(
+            string version = null)
+        {
+            return new DeviceHealthScriptUpdateGlobalScriptRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateGlobalScript"),
+                this.Client,
+                version);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetGlobalScriptHighestAvailableVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion()
+        {
+            return new DeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getGlobalScriptHighestAvailableVersion"),
+                this.Client);
+        }
     
     }
 }

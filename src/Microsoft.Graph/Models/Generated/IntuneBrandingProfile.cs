@@ -144,21 +144,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets online support site url.
-        /// URL to the company/organizationâ€™s IT helpdesk site
+        /// URL to the company/organization???s IT helpdesk site
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineSupportSiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets online support site name.
-        /// Display name of the company/organizationâ€™s IT helpdesk site
+        /// Display name of the company/organization???s IT helpdesk site
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineSupportSiteName { get; set; }
     
         /// <summary>
         /// Gets or sets privacy url.
-        /// URL to the company/organizationâ€™s privacy policy
+        /// URL to the company/organization???s privacy policy
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
         public string PrivacyUrl { get; set; }
@@ -204,6 +204,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showOfficeWebApps", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowOfficeWebApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets send device ownership change push notification.
+        /// Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendDeviceOwnershipChangePushNotification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SendDeviceOwnershipChangePushNotification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollment availability.
+        /// Customized device enrollment flow displayed to the end user 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentAvailability", Required = Newtonsoft.Json.Required.Default)]
+        public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of scope tags assigned to the branding profile
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

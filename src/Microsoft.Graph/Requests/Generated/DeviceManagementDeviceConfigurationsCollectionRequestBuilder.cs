@@ -85,5 +85,16 @@ namespace Microsoft.Graph
                 this.Client,
                 deviceConfigurationIds);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationGetIosAvailableUpdateVersions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder"/>.</returns>
+        public IDeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder GetIosAvailableUpdateVersions()
+        {
+            return new DeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getIosAvailableUpdateVersions"),
+                this.Client);
+        }
     }
 }

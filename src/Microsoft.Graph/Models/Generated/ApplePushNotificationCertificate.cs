@@ -73,6 +73,13 @@ namespace Microsoft.Graph
         public string CertificateUploadFailureReason { get; set; }
     
         /// <summary>
+        /// Gets or sets certificate serial number.
+        /// Certificate serial number. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSerialNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateSerialNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets certificate.
         /// Not yet documented
         /// </summary>

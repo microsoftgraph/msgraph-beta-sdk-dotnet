@@ -305,7 +305,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local security options administrator account name.
-        /// Define a different account name to be associated with the security identifier (SID) for the account â€œAdministratorâ€.
+        /// Define a different account name to be associated with the security identifier (SID) for the account ???Administrator???.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAdministratorAccountName", Required = Newtonsoft.Json.Required.Default)]
         public string LocalSecurityOptionsAdministratorAccountName { get; set; }
@@ -319,7 +319,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local security options guest account name.
-        /// Define a different account name to be associated with the security identifier (SID) for the account â€œGuestâ€.
+        /// Define a different account name to be associated with the security identifier (SID) for the account ???Guest???.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsGuestAccountName", Required = Newtonsoft.Json.Required.Default)]
         public string LocalSecurityOptionsGuestAccountName { get; set; }
@@ -354,14 +354,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local security options machine inactivity limit.
-        /// Define maximum minutes of inactivity on the interactive desktopâ€™s login screen until the screen saver runs. Valid values 0 to 9999
+        /// Define maximum minutes of inactivity on the interactive desktop???s login screen until the screen saver runs. Valid values 0 to 9999
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMachineInactivityLimit", Required = Newtonsoft.Json.Required.Default)]
         public Int32? LocalSecurityOptionsMachineInactivityLimit { get; set; }
     
         /// <summary>
         /// Gets or sets local security options machine inactivity limit in minutes.
-        /// Define maximum minutes of inactivity on the interactive desktopâ€™s login screen until the screen saver runs. Valid values 0 to 9999
+        /// Define maximum minutes of inactivity on the interactive desktop???s login screen until the screen saver runs. Valid values 0 to 9999
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMachineInactivityLimitInMinutes", Required = Newtonsoft.Json.Required.Default)]
         public Int32? LocalSecurityOptionsMachineInactivityLimitInMinutes { get; set; }
@@ -382,7 +382,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local security options hide username at sign in.
-        /// Do not display the username of the person signing in to this device after credentials are entered and before the deviceâ€™s desktop is shown.
+        /// Do not display the username of the person signing in to this device after credentials are entered and before the device???s desktop is shown.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsHideUsernameAtSignIn", Required = Newtonsoft.Json.Required.Default)]
         public bool? LocalSecurityOptionsHideUsernameAtSignIn { get; set; }
@@ -606,7 +606,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local security options do not store lanmanager hash value on next password change.
-        /// This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. Itâ€™s not stored by default.
+        /// This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. It???s not stored by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange", Required = Newtonsoft.Json.Required.Default)]
         public bool? LocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange { get; set; }
@@ -865,14 +865,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets defender office apps other process injection type.
-        /// Value indicating the behavior ofÂ Office applications injecting into other processes
+        /// Value indicating the behavior of??Office applications injecting into other processes
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsOtherProcessInjectionType", Required = Newtonsoft.Json.Required.Default)]
         public DefenderAttackSurfaceType? DefenderOfficeAppsOtherProcessInjectionType { get; set; }
     
         /// <summary>
         /// Gets or sets defender office apps other process injection.
-        /// Value indicating the behavior ofÂ  Office applications injecting into other processes
+        /// Value indicating the behavior of?? Office applications injecting into other processes
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsOtherProcessInjection", Required = Newtonsoft.Json.Required.Default)]
         public DefenderProtectionType? DefenderOfficeAppsOtherProcessInjection { get; set; }

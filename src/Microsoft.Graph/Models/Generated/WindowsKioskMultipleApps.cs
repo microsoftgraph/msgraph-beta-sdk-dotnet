@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets startMenuLayoutXml.
-        /// Allows admins to override the default Start layout and prevents the user from changing it.Â The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
+        /// Allows admins to override the default Start layout and prevents the user from changing it.??The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startMenuLayoutXml", Required = Newtonsoft.Json.Required.Default)]
         public byte[] StartMenuLayoutXml { get; set; }

@@ -128,6 +128,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setupFilePath", Required = Newtonsoft.Json.Required.Default)]
         public string SetupFilePath { get; set; }
     
+        /// <summary>
+        /// Gets or sets install language.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installLanguage", Required = Newtonsoft.Json.Required.Default)]
+        public string InstallLanguage { get; set; }
+    
     }
 }
 

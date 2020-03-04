@@ -46,14 +46,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for FavoritePlans.
         /// </summary>
-        /// <returns>The <see cref="IPlannerUserFavoritePlansCollectionRequestBuilder"/>.</returns>
-        IPlannerUserFavoritePlansCollectionRequestBuilder FavoritePlans { get; }
+        /// <returns>The <see cref="IPlannerUserFavoritePlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPlannerUserFavoritePlansCollectionWithReferencesRequestBuilder FavoritePlans { get; }
 
         /// <summary>
         /// Gets the request builder for RecentPlans.
         /// </summary>
-        /// <returns>The <see cref="IPlannerUserRecentPlansCollectionRequestBuilder"/>.</returns>
-        IPlannerUserRecentPlansCollectionRequestBuilder RecentPlans { get; }
+        /// <returns>The <see cref="IPlannerUserRecentPlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPlannerUserRecentPlansCollectionWithReferencesRequestBuilder RecentPlans { get; }
 
         /// <summary>
         /// Gets the request builder for All.

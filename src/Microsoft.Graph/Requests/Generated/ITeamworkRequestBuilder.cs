@@ -37,5 +37,19 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITeamworkWorkforceIntegrationsCollectionRequestBuilder"/>.</returns>
         ITeamworkWorkforceIntegrationsCollectionRequestBuilder WorkforceIntegrations { get; }
     
+        /// <summary>
+        /// Gets the request builder for TeamworkGenerateActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkGenerateActivityNotificationRequestBuilder"/>.</returns>
+        ITeamworkGenerateActivityNotificationRequestBuilder GenerateActivityNotification(
+            string about = null,
+            string activityType = null,
+            Int64? aggregationId = null,
+            string onClickWebUrl = null,
+            string previewText = null,
+            string teamsAppId = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationAudience recipient = null);
+    
     }
 }
