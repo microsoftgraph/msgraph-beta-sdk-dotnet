@@ -1,8 +1,8 @@
 # This is a basic workflow to help you get started with Actions
 
-name: "Create pull request"
+name: "create pull request"
 
-# Controls when the action will run. Triggers the workflow on push 
+# Controls when the action will run. Triggers the workflow on push
 # events but only for branches with the following branch spec: "beta/pipelinebuild/*"
 on:
   push:
@@ -24,6 +24,9 @@ jobs:
     # Create a pull request
     # https://developer.github.com/v3/pulls/#create-a-pull-request
     - name: Create PR using the GitHub REST API
+      # env:
+      #   PULL_REQUEST_URI:
+      #   CREATE_PULL_REQUEST_RESPONSE_BODY:
       run: |
         curl --request POST \
         --url https://api.github.com/repos/${{ github.repository }}/pulls \
@@ -33,13 +36,12 @@ jobs:
           "title": "Generated models and request builders using Typewriter",
           "head": "${{ github.ref }}",
           "base": "master",
-          "body": "This pull request was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_. \n\n **Important** Check for unexpected deletions or changes in this PR.",
+          "body": "This pull request was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_. \n\n **Important** Check for unexpected deletions or changes in this PR. \n\n @MIchaelMainer @peombwa @ddyett",
           "draft": false
           }'
-    
-    # Add pull request reviewers
-    # https://developer.github.com/v3/pulls/review_requests/#create-a-review-request
-    #- name: Add PR reviewers using the GitHub REST API
 
-    # Assign the pull request. Because PRs are issues.
+    # TODO: Add pull request reviewers
+    # https://developer.github.com/v3/pulls/review_requests/#create-a-review-request
+
+    # TODO: Optional. Assign the pull request. Because PRs are issues.
     # https://developer.github.com/v3/issues/assignees/#add-assignees-to-an-issue
