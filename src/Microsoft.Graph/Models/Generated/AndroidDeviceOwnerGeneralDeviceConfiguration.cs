@@ -479,18 +479,18 @@ namespace Microsoft.Graph
         public bool? VolumeBlockAdjustment { get; set; }
     
         /// <summary>
-        /// Gets or sets vpn always on package identifier.
-        /// Android app package name for app that will handle an always-on VPN connection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnAlwaysOnPackageIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string VpnAlwaysOnPackageIdentifier { get; set; }
-    
-        /// <summary>
         /// Gets or sets vpn always on lockdown mode.
         /// If an always on VPN package name is specified, whether or not to lock network traffic when that VPN is disconnected.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnAlwaysOnLockdownMode", Required = Newtonsoft.Json.Required.Default)]
         public bool? VpnAlwaysOnLockdownMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets vpn always on package identifier.
+        /// Android app package name for app that will handle an always-on VPN connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnAlwaysOnPackageIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string VpnAlwaysOnPackageIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets wifi block edit configurations.

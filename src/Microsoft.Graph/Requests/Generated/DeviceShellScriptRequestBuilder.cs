@@ -110,5 +110,20 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for DeviceShellScriptAssign.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceShellScriptAssignRequestBuilder"/>.</returns>
+        public IDeviceShellScriptAssignRequestBuilder Assign(
+            IEnumerable<DeviceManagementScriptGroupAssignment> deviceManagementScriptGroupAssignments = null,
+            IEnumerable<DeviceManagementScriptAssignment> deviceManagementScriptAssignments = null)
+        {
+            return new DeviceShellScriptAssignRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
+                this.Client,
+                deviceManagementScriptGroupAssignments,
+                deviceManagementScriptAssignments);
+        }
+    
     }
 }

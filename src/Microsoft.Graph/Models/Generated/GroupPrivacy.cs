@@ -20,14 +20,24 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Unspecified
+        /// </summary>
+        Unspecified = 0,
+	
+        /// <summary>
         /// Public
         /// </summary>
-        Public = 0,
+        Public = 1,
 	
         /// <summary>
         /// Private
         /// </summary>
-        Private = 1,
+        Private = 2,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 3,
 	
     }
 }

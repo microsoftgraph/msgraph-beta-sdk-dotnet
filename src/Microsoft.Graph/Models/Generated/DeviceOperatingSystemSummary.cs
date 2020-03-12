@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public Int32? AndroidWorkProfileCount { get; set; }
     
         /// <summary>
+        /// Gets or sets configMgrDeviceCount.
+        /// Number of ConfigMgr managed devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configMgrDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ConfigMgrDeviceCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

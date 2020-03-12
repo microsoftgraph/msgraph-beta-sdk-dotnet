@@ -1255,6 +1255,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iTunesBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? ITunesBlocked { get; set; }
     
+        /// <summary>
+        /// Gets or sets kiosk mode app type.
+        /// Type of app to run in kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAppType", Required = Newtonsoft.Json.Required.Default)]
+        public IosKioskModeAppType? KioskModeAppType { get; set; }
+    
     }
 }
 

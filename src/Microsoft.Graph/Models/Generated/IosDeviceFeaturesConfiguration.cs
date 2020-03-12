@@ -95,10 +95,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets single sign on extension.
-        /// Gets or sets a single sign-on extension profile.
+        /// Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
         public SingleSignOnExtension SingleSignOnExtension { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ios single sign on extension.
+        /// Gets or sets a single sign-on extension profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosSingleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        public IosSingleSignOnExtension IosSingleSignOnExtension { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.

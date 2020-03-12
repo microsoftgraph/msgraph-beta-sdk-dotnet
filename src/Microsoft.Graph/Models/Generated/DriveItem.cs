@@ -252,12 +252,6 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versions", Required = Newtonsoft.Json.Required.Default)]
         public IDriveItemVersionsCollectionPage Versions { get; set; }
     
-        /// <summary>
-        /// Gets or sets document.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "document", Required = Newtonsoft.Json.Required.Default)]
-        public Document Document { get; set; }
-    
     }
 }
 

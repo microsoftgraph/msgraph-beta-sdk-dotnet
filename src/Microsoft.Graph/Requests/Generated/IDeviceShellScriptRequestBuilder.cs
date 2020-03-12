@@ -61,5 +61,13 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceShellScriptUserRunStatesCollectionRequestBuilder"/>.</returns>
         IDeviceShellScriptUserRunStatesCollectionRequestBuilder UserRunStates { get; }
     
+        /// <summary>
+        /// Gets the request builder for DeviceShellScriptAssign.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceShellScriptAssignRequestBuilder"/>.</returns>
+        IDeviceShellScriptAssignRequestBuilder Assign(
+            IEnumerable<DeviceManagementScriptGroupAssignment> deviceManagementScriptGroupAssignments = null,
+            IEnumerable<DeviceManagementScriptAssignment> deviceManagementScriptAssignments = null);
+    
     }
 }
