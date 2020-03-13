@@ -60,13 +60,13 @@ namespace Microsoft.Graph
         /// Gets or sets favorite plans.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "favoritePlans", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerUserFavoritePlansCollectionPage FavoritePlans { get; set; }
+        public IPlannerUserFavoritePlansCollectionWithReferencesPage FavoritePlans { get; set; }
     
         /// <summary>
         /// Gets or sets recent plans.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recentPlans", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerUserRecentPlansCollectionPage RecentPlans { get; set; }
+        public IPlannerUserRecentPlansCollectionWithReferencesPage RecentPlans { get; set; }
     
         /// <summary>
         /// Gets or sets all.

@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets has required setting.
+        /// The category contains top level required setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasRequiredSetting", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HasRequiredSetting { get; set; }
+    
+        /// <summary>
         /// Gets or sets setting definitions.
         /// The setting definitions this category contains
         /// </summary>

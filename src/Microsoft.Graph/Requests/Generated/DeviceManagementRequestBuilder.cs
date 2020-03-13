@@ -687,6 +687,42 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceStartupProcesses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupProcesses
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceStartupProcesses"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceStartupProcessPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupProcessPerformance
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceStartupProcessPerformance"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsStartupScoreHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsStartupScoreHistory
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsStartupScoreHistory"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DerivedCredentials.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDerivedCredentialsCollectionRequestBuilder"/>.</returns>

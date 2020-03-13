@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ClaimsMappingPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies
+        {
+            get
+            {
+                return new ApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("claimsMappingPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -87,14 +99,38 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Policies.
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
-        /// <returns>The <see cref="IApplicationPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IApplicationPoliciesCollectionWithReferencesRequestBuilder Policies
+        /// <returns>The <see cref="IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies
         {
             get
             {
-                return new ApplicationPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("policies"), this.Client);
+                return new ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("homeRealmDiscoveryPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TokenIssuancePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder TokenIssuancePolicies
+        {
+            get
+            {
+                return new ApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenIssuancePolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies
+        {
+            get
+            {
+                return new ApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
             }
         }
 

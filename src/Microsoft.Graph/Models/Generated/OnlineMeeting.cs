@@ -129,7 +129,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets video teleconference id.
-        /// The videio teleconferencing ID. Read-only.
+        /// The video teleconferencing ID. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "videoTeleconferenceId", Required = Newtonsoft.Json.Required.Default)]
         public string VideoTeleconferenceId { get; set; }

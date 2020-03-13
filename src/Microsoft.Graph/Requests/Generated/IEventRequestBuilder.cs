@@ -93,26 +93,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
         IEventAcceptRequestBuilder Accept(
-            bool? SendResponse = null,
-            string Comment = null);
+            string Comment = null,
+            bool? SendResponse = null);
 
         /// <summary>
         /// Gets the request builder for EventDecline.
         /// </summary>
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
         IEventDeclineRequestBuilder Decline(
-            TimeSlot ProposedNewTime = null,
-            bool? SendResponse = null,
-            string Comment = null);
+            string Comment = null,
+            bool? SendResponse = null);
 
         /// <summary>
         /// Gets the request builder for EventTentativelyAccept.
         /// </summary>
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
         IEventTentativelyAcceptRequestBuilder TentativelyAccept(
-            TimeSlot ProposedNewTime = null,
-            bool? SendResponse = null,
-            string Comment = null);
+            string Comment = null,
+            bool? SendResponse = null);
 
         /// <summary>
         /// Gets the request builder for EventCancel.
