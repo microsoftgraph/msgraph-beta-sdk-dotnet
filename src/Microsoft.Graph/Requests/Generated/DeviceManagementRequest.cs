@@ -874,6 +874,54 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceStartupProcesses@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcesses.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsDeviceStartupProcessPerformance@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsDeviceStartupProcessPerformance.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsStartupScoreHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsStartupScoreHistory.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsStartupScoreHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsStartupScoreHistory@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsStartupScoreHistory.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.DerivedCredentials != null && deviceManagementToInitialize.DerivedCredentials.CurrentPage != null)
                 {
                     deviceManagementToInitialize.DerivedCredentials.AdditionalData = deviceManagementToInitialize.AdditionalData;

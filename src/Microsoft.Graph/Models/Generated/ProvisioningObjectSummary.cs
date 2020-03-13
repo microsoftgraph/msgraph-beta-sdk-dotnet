@@ -73,6 +73,12 @@ namespace Microsoft.Graph
         public Int32? DurationInMilliseconds { get; set; }
     
         /// <summary>
+        /// Gets or sets service principal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipal", Required = Newtonsoft.Json.Required.Default)]
+        public ProvisioningServicePrincipal ServicePrincipal { get; set; }
+    
+        /// <summary>
         /// Gets or sets initiated by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatedBy", Required = Newtonsoft.Json.Required.Default)]

@@ -303,6 +303,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedDataIngestionLocations", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ManagedAppDataIngestionLocation> AllowedDataIngestionLocations { get; set; }
     
+        /// <summary>
+        /// Gets or sets app action if unable to authenticate user.
+        /// If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfUnableToAuthenticateUser", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser { get; set; }
+    
     }
 }
 

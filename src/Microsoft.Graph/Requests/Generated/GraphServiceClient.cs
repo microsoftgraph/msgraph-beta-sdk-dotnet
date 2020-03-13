@@ -362,17 +362,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServicePolicies request builder.
-        /// </summary>
-        public IGraphServicePoliciesCollectionRequestBuilder Policies
-        {
-            get
-            {
-                return new GraphServicePoliciesCollectionRequestBuilder(this.BaseUrl + "/policies", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
         public IGraphServiceContractsCollectionRequestBuilder Contracts
@@ -1095,6 +1084,17 @@ namespace Microsoft.Graph
             get
             {
                 return new InformationProtectionRequestBuilder(this.BaseUrl + "/informationProtection", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServicePolicies request builder.
+        /// </summary>
+        public IPolicyRootRequestBuilder Policies
+        {
+            get
+            {
+                return new PolicyRootRequestBuilder(this.BaseUrl + "/policies", this);
             }
         }
     

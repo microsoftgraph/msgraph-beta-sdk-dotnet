@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? OccurrenceDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets troubleshootingErrorDetails.
+        /// Object containing detailed information about the error and its remediation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingErrorDetails", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

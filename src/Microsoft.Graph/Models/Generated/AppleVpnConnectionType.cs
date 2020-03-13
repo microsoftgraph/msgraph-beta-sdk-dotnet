@@ -94,5 +94,10 @@ namespace Microsoft.Graph
         /// </summary>
         IkEv2 = 14,
 	
+        /// <summary>
+        /// Always On
+        /// </summary>
+        AlwaysOn = 15,
+	
     }
 }

@@ -154,6 +154,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets primary channel.
+        /// The general channel for the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryChannel", Required = Newtonsoft.Json.Required.Default)]
         public Channel PrimaryChannel { get; set; }
