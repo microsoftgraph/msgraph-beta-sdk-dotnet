@@ -191,6 +191,12 @@ namespace Microsoft.Graph
         public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
     
         /// <summary>
+        /// Gets or sets claims mapping policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets created on behalf of.
         /// Read-only.
         /// </summary>
@@ -205,10 +211,22 @@ namespace Microsoft.Graph
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
-        /// Gets or sets policies.
+        /// Gets or sets home realm discovery policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
-        public IApplicationPoliciesCollectionWithReferencesPage Policies { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token issuance policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token lifetime policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
     
         /// <summary>
         /// Gets or sets synchronization.

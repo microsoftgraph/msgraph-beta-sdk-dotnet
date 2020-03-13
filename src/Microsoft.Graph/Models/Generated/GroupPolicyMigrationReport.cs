@@ -121,6 +121,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicySettingMappings", Required = Newtonsoft.Json.Required.Default)]
         public IGroupPolicyMigrationReportGroupPolicySettingMappingsCollectionPage GroupPolicySettingMappings { get; set; }
     
+        /// <summary>
+        /// Gets or sets unsupported group policy extensions.
+        /// A list of unsupported group policy extensions inside the Group Policy Object.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unsupportedGroupPolicyExtensions", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage UnsupportedGroupPolicyExtensions { get; set; }
+    
     }
 }
 

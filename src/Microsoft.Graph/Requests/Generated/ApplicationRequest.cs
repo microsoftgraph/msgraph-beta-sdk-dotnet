@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (applicationToInitialize.ClaimsMappingPolicies != null && applicationToInitialize.ClaimsMappingPolicies.CurrentPage != null)
+                {
+                    applicationToInitialize.ClaimsMappingPolicies.AdditionalData = applicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    applicationToInitialize.AdditionalData.TryGetValue("claimsMappingPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        applicationToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (applicationToInitialize.Owners != null && applicationToInitialize.Owners.CurrentPage != null)
                 {
                     applicationToInitialize.Owners.AdditionalData = applicationToInitialize.AdditionalData;
@@ -266,17 +282,49 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (applicationToInitialize.Policies != null && applicationToInitialize.Policies.CurrentPage != null)
+                if (applicationToInitialize.HomeRealmDiscoveryPolicies != null && applicationToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
                 {
-                    applicationToInitialize.Policies.AdditionalData = applicationToInitialize.AdditionalData;
+                    applicationToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = applicationToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    applicationToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out nextPageLink);
+                    applicationToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        applicationToInitialize.Policies.InitializeNextPageRequest(
+                        applicationToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (applicationToInitialize.TokenIssuancePolicies != null && applicationToInitialize.TokenIssuancePolicies.CurrentPage != null)
+                {
+                    applicationToInitialize.TokenIssuancePolicies.AdditionalData = applicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    applicationToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        applicationToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (applicationToInitialize.TokenLifetimePolicies != null && applicationToInitialize.TokenLifetimePolicies.CurrentPage != null)
+                {
+                    applicationToInitialize.TokenLifetimePolicies.AdditionalData = applicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    applicationToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        applicationToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

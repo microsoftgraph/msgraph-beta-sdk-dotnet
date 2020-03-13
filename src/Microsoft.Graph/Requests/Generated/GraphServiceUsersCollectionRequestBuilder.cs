@@ -70,5 +70,16 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for UserGetManagedAppBlockedUsers.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetManagedAppBlockedUsersRequestBuilder"/>.</returns>
+        public IUserGetManagedAppBlockedUsersRequestBuilder GetManagedAppBlockedUsers()
+        {
+            return new UserGetManagedAppBlockedUsersRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getManagedAppBlockedUsers"),
+                this.Client);
+        }
     }
 }

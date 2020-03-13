@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         Purebred = 2,
 	
+        /// <summary>
+        /// XTec
+        /// </summary>
+        XTec = 3,
+	
     }
 }

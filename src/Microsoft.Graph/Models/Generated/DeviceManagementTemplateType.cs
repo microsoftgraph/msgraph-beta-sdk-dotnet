@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         MicrosoftOffice365ProPlusSecurityBaseline = 7,
 	
+        /// <summary>
+        /// Device Compliance
+        /// </summary>
+        DeviceCompliance = 8,
+	
     }
 }

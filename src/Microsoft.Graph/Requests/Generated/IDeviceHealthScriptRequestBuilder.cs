@@ -55,6 +55,19 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceHealthScriptAssignRequestBuilder"/>.</returns>
         IDeviceHealthScriptAssignRequestBuilder Assign(
             IEnumerable<DeviceHealthScriptAssignment> deviceHealthScriptAssignments = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptUpdateGlobalScript.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptUpdateGlobalScriptRequestBuilder"/>.</returns>
+        IDeviceHealthScriptUpdateGlobalScriptRequestBuilder UpdateGlobalScript(
+            string version = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetGlobalScriptHighestAvailableVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder"/>.</returns>
+        IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion();
     
     }
 }

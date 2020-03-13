@@ -443,6 +443,18 @@ namespace Microsoft.Graph
             string deviceTag = null);
 
         /// <summary>
+        /// Gets the request builder for UserWipeAndBlockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserWipeAndBlockManagedAppsRequestBuilder"/>.</returns>
+        IUserWipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps();
+
+        /// <summary>
+        /// Gets the request builder for UserUnblockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserUnblockManagedAppsRequestBuilder"/>.</returns>
+        IUserUnblockManagedAppsRequestBuilder UnblockManagedApps();
+
+        /// <summary>
         /// Gets the request builder for UserExportPersonalData.
         /// </summary>
         /// <returns>The <see cref="IUserExportPersonalDataRequestBuilder"/>.</returns>
@@ -515,10 +527,22 @@ namespace Microsoft.Graph
         IUserGetManagedAppPoliciesRequestBuilder GetManagedAppPolicies();
 
         /// <summary>
+        /// Gets the request builder for UserIsManagedAppUserBlocked.
+        /// </summary>
+        /// <returns>The <see cref="IUserIsManagedAppUserBlockedRequestBuilder"/>.</returns>
+        IUserIsManagedAppUserBlockedRequestBuilder IsManagedAppUserBlocked();
+
+        /// <summary>
         /// Gets the request builder for UserGetManagedDevicesWithAppFailures.
         /// </summary>
         /// <returns>The <see cref="IUserGetManagedDevicesWithAppFailuresRequestBuilder"/>.</returns>
         IUserGetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures();
+
+        /// <summary>
+        /// Gets the request builder for UserGetManagedDevicesWithFailedOrPendingApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder"/>.</returns>
+        IUserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder GetManagedDevicesWithFailedOrPendingApps();
     
     }
 }

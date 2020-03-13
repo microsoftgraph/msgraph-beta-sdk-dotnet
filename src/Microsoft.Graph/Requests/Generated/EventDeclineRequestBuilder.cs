@@ -23,20 +23,17 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="ProposedNewTime">A ProposedNewTime parameter for the OData method call.</param>
-        /// <param name="SendResponse">A SendResponse parameter for the OData method call.</param>
         /// <param name="Comment">A Comment parameter for the OData method call.</param>
+        /// <param name="SendResponse">A SendResponse parameter for the OData method call.</param>
         public EventDeclineRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            TimeSlot ProposedNewTime,
-            bool? SendResponse,
-            string Comment)
+            string Comment,
+            bool? SendResponse)
             : base(requestUrl, client)
         {
-            this.SetParameter("proposedNewTime", ProposedNewTime, true);
-            this.SetParameter("sendResponse", SendResponse, true);
             this.SetParameter("comment", Comment, true);
+            this.SetParameter("sendResponse", SendResponse, true);
         }
 
         /// <summary>
@@ -49,19 +46,14 @@ namespace Microsoft.Graph
         {
             var request = new EventDeclineRequest(functionUrl, this.Client, options);
 
-            if (this.HasParameter("proposedNewTime"))
+            if (this.HasParameter("comment"))
             {
-                request.RequestBody.ProposedNewTime = this.GetParameter<TimeSlot>("proposedNewTime");
+                request.RequestBody.Comment = this.GetParameter<string>("comment");
             }
 
             if (this.HasParameter("sendResponse"))
             {
                 request.RequestBody.SendResponse = this.GetParameter<bool?>("sendResponse");
-            }
-
-            if (this.HasParameter("comment"))
-            {
-                request.RequestBody.Comment = this.GetParameter<string>("comment");
             }
 
             return request;

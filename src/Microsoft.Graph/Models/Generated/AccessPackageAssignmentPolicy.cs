@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
-        public string UserType { get; set; }
-    
-        /// <summary>
         /// Gets or sets access package id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageId", Required = Newtonsoft.Json.Required.Default)]
@@ -53,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets can extend.
@@ -101,6 +89,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets requestor settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorSettings", Required = Newtonsoft.Json.Required.Default)]
+        public RequestorSettings RequestorSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets request approval settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestApprovalSettings", Required = Newtonsoft.Json.Required.Default)]
+        public ApprovalSettings RequestApprovalSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets access review settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewSettings", Required = Newtonsoft.Json.Required.Default)]
+        public AssignmentReviewSettings AccessReviewSettings { get; set; }
     
         /// <summary>
         /// Gets or sets access package.
