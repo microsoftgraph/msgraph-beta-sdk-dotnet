@@ -350,6 +350,24 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupHistory { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceStartupProcesses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupProcesses { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceStartupProcessPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupProcessPerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsStartupScoreHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsStartupScoreHistory { get; }
+
+        /// <summary>
         /// Gets the request builder for DerivedCredentials.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDerivedCredentialsCollectionRequestBuilder"/>.</returns>

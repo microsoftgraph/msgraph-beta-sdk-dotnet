@@ -108,6 +108,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets creation type.
+        /// Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationType", Required = Newtonsoft.Json.Required.Default)]
         public string CreationType { get; set; }
@@ -155,6 +156,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identities.
+        /// Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ObjectIdentity> Identities { get; set; }

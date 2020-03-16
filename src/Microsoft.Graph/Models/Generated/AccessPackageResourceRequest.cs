@@ -67,16 +67,16 @@ namespace Microsoft.Graph
         public string RequestStatus { get; set; }
     
         /// <summary>
-        /// Gets or sets justification.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
-        public string Justification { get; set; }
-    
-        /// <summary>
         /// Gets or sets expiration date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets justification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource.

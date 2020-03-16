@@ -165,10 +165,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets single sign on extension.
-        /// Gets or sets a single sign-on extension profile.
+        /// Gets or sets a single sign-on extension profile. Deprecated: use MacOSSingleSignOnExtension instead.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
         public SingleSignOnExtension SingleSignOnExtension { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mac ossingle sign on extension.
+        /// Gets or sets a single sign-on extension profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSSingleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSSingleSignOnExtension MacOSSingleSignOnExtension { get; set; }
     
         /// <summary>
         /// Gets or sets single sign on extension pkinit certificate.

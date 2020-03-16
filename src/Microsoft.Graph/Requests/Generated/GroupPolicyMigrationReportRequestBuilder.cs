@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new GroupPolicyMigrationReportGroupPolicySettingMappingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicySettingMappings"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for UnsupportedGroupPolicyExtensions.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder"/>.</returns>
+        public IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder UnsupportedGroupPolicyExtensions
+        {
+            get
+            {
+                return new GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("unsupportedGroupPolicyExtensions"), this.Client);
+            }
+        }
     
         
     

@@ -60,6 +60,26 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptEnableGlobalScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptEnableGlobalScriptsRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptEnableGlobalScriptsRequestBuilder EnableGlobalScripts()
+        {
+            return new DeviceHealthScriptEnableGlobalScriptsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.enableGlobalScripts"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptAreGlobalScriptsAvailable.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptAreGlobalScriptsAvailableRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptAreGlobalScriptsAvailableRequestBuilder AreGlobalScriptsAvailable()
+        {
+            return new DeviceHealthScriptAreGlobalScriptsAvailableRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.areGlobalScriptsAvailable"),
+                this.Client);
+        }
     }
 }

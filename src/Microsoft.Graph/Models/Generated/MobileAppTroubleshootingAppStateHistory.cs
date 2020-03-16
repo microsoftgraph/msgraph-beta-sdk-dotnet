@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actionType.
-        /// AAD security group id to which it was targeted.
+        /// Action type for Intune Application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionType", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppActionType? ActionType { get; set; }

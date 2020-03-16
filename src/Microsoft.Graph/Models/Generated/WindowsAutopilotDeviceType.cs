@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         SurfaceHub2 = 1,
 	
+        /// <summary>
+        /// Holo Lens
+        /// </summary>
+        HoloLens = 2,
+	
     }
 }
