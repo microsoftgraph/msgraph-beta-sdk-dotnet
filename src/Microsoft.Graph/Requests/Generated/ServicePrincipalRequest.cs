@@ -266,6 +266,54 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (servicePrincipalToInitialize.ClaimsMappingPolicies != null && servicePrincipalToInitialize.ClaimsMappingPolicies.CurrentPage != null)
+                {
+                    servicePrincipalToInitialize.ClaimsMappingPolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("claimsMappingPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        servicePrincipalToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (servicePrincipalToInitialize.HomeRealmDiscoveryPolicies != null && servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
+                {
+                    servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        servicePrincipalToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (servicePrincipalToInitialize.Endpoints != null && servicePrincipalToInitialize.Endpoints.CurrentPage != null)
+                {
+                    servicePrincipalToInitialize.Endpoints.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("endpoints@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        servicePrincipalToInitialize.Endpoints.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (servicePrincipalToInitialize.Oauth2PermissionGrants != null && servicePrincipalToInitialize.Oauth2PermissionGrants.CurrentPage != null)
                 {
                     servicePrincipalToInitialize.Oauth2PermissionGrants.AdditionalData = servicePrincipalToInitialize.AdditionalData;
@@ -378,17 +426,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (servicePrincipalToInitialize.Policies != null && servicePrincipalToInitialize.Policies.CurrentPage != null)
+                if (servicePrincipalToInitialize.TokenIssuancePolicies != null && servicePrincipalToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
-                    servicePrincipalToInitialize.Policies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+                    servicePrincipalToInitialize.TokenIssuancePolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    servicePrincipalToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out nextPageLink);
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        servicePrincipalToInitialize.Policies.InitializeNextPageRequest(
+                        servicePrincipalToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (servicePrincipalToInitialize.TokenLifetimePolicies != null && servicePrincipalToInitialize.TokenLifetimePolicies.CurrentPage != null)
+                {
+                    servicePrincipalToInitialize.TokenLifetimePolicies.AdditionalData = servicePrincipalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    servicePrincipalToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        servicePrincipalToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

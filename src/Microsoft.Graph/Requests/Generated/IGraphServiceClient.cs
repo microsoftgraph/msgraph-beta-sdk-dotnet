@@ -157,11 +157,6 @@ namespace Microsoft.Graph
         IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus { get; }
     
         /// <summary>
-        /// Gets the GraphServicePolicies request builder.
-        /// </summary>
-        IGraphServicePoliciesCollectionRequestBuilder Policies { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
         IGraphServiceContractsCollectionRequestBuilder Contracts { get; }
@@ -490,6 +485,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceInformationProtection request builder.
         /// </summary>
         IInformationProtectionRequestBuilder InformationProtection { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePolicies request builder.
+        /// </summary>
+        IPolicyRootRequestBuilder Policies { get; }
     
         /// <summary>
         /// Gets the GraphServiceMe request builder.

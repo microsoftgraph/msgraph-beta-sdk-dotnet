@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public IEnumerable<AddIn> AddIns { get; set; }
     
         /// <summary>
+        /// Gets or sets alternative names.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AlternativeNames { get; set; }
+    
+        /// <summary>
         /// Gets or sets app display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
@@ -85,10 +91,22 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets error url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ErrorUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets homepage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homepage", Required = Newtonsoft.Json.Required.Default)]
         public string Homepage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets info.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "info", Required = Newtonsoft.Json.Required.Default)]
+        public InformationalUrl Info { get; set; }
     
         /// <summary>
         /// Gets or sets key credentials.
@@ -97,10 +115,10 @@ namespace Microsoft.Graph
         public IEnumerable<KeyCredential> KeyCredentials { get; set; }
     
         /// <summary>
-        /// Gets or sets info.
+        /// Gets or sets login url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "info", Required = Newtonsoft.Json.Required.Default)]
-        public InformationalUrl Info { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string LoginUrl { get; set; }
     
         /// <summary>
         /// Gets or sets logout url.
@@ -127,10 +145,22 @@ namespace Microsoft.Graph
         public IEnumerable<PasswordCredential> PasswordCredentials { get; set; }
     
         /// <summary>
+        /// Gets or sets preferred token signing key end date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredTokenSigningKeyEndDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? PreferredTokenSigningKeyEndDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets preferred token signing key thumbprint.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredTokenSigningKeyThumbprint", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredTokenSigningKeyThumbprint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets preferred single sign on mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredSingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
+        public string PreferredSingleSignOnMode { get; set; }
     
         /// <summary>
         /// Gets or sets publisher name.
@@ -151,16 +181,40 @@ namespace Microsoft.Graph
         public string SamlMetadataUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets saml single sign on settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "samlSingleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        public SamlSingleSignOnSettings SamlSingleSignOnSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets service principal names.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ServicePrincipalNames { get; set; }
     
         /// <summary>
+        /// Gets or sets service principal type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalType", Required = Newtonsoft.Json.Required.Default)]
+        public string ServicePrincipalType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sign in audience.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInAudience", Required = Newtonsoft.Json.Required.Default)]
+        public string SignInAudience { get; set; }
+    
+        /// <summary>
         /// Gets or sets tags.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Tags { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token encryption key id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenEncryptionKeyId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? TokenEncryptionKeyId { get; set; }
     
         /// <summary>
         /// Gets or sets app role assigned to.
@@ -173,6 +227,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets claims mapping policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets home realm discovery policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets endpoints.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpoints", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalEndpointsCollectionPage Endpoints { get; set; }
     
         /// <summary>
         /// Gets or sets oauth2permission grants.
@@ -217,10 +289,16 @@ namespace Microsoft.Graph
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
     
         /// <summary>
-        /// Gets or sets policies.
+        /// Gets or sets token issuance policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalPoliciesCollectionWithReferencesPage Policies { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token lifetime policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
     
         /// <summary>
         /// Gets or sets synchronization.

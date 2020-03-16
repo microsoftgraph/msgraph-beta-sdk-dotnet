@@ -79,5 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         Microsoft365ManagedMdm = 258,
 	
+        /// <summary>
+        /// Windows Management Cloud Api
+        /// </summary>
+        WindowsManagementCloudApi = 512,
+	
     }
 }

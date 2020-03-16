@@ -861,6 +861,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserWipeAndBlockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserWipeAndBlockManagedAppsRequestBuilder"/>.</returns>
+        public IUserWipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps()
+        {
+            return new UserWipeAndBlockManagedAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.wipeAndBlockManagedApps"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserUnblockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserUnblockManagedAppsRequestBuilder"/>.</returns>
+        public IUserUnblockManagedAppsRequestBuilder UnblockManagedApps()
+        {
+            return new UserUnblockManagedAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unblockManagedApps"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExportPersonalData.
         /// </summary>
         /// <returns>The <see cref="IUserExportPersonalDataRequestBuilder"/>.</returns>
@@ -994,6 +1016,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserIsManagedAppUserBlocked.
+        /// </summary>
+        /// <returns>The <see cref="IUserIsManagedAppUserBlockedRequestBuilder"/>.</returns>
+        public IUserIsManagedAppUserBlockedRequestBuilder IsManagedAppUserBlocked()
+        {
+            return new UserIsManagedAppUserBlockedRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.isManagedAppUserBlocked"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserGetManagedDevicesWithAppFailures.
         /// </summary>
         /// <returns>The <see cref="IUserGetManagedDevicesWithAppFailuresRequestBuilder"/>.</returns>
@@ -1001,6 +1034,17 @@ namespace Microsoft.Graph
         {
             return new UserGetManagedDevicesWithAppFailuresRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getManagedDevicesWithAppFailures"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserGetManagedDevicesWithFailedOrPendingApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder"/>.</returns>
+        public IUserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder GetManagedDevicesWithFailedOrPendingApps()
+        {
+            return new UserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getManagedDevicesWithFailedOrPendingApps"),
                 this.Client);
         }
     

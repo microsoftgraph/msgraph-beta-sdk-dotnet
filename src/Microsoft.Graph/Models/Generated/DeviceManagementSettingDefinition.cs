@@ -59,6 +59,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets placeholder text.
+        /// Placeholder text as an example of valid input
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "placeholderText", Required = Newtonsoft.Json.Required.Default)]
+        public string PlaceholderText { get; set; }
+    
+        /// <summary>
         /// Gets or sets documentation url.
         /// Url to setting documentation
         /// </summary>

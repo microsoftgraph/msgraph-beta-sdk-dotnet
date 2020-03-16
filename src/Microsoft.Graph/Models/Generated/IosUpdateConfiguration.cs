@@ -79,6 +79,20 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedSoftwareUpdateDelayInDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? EnforcedSoftwareUpdateDelayInDays { get; set; }
     
+        /// <summary>
+        /// Gets or sets update schedule type.
+        /// Update schedule type
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateScheduleType", Required = Newtonsoft.Json.Required.Default)]
+        public IosSoftwareUpdateScheduleType? UpdateScheduleType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom update time windows.
+        /// If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customUpdateTimeWindows", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<CustomUpdateTimeWindow> CustomUpdateTimeWindows { get; set; }
+    
     }
 }
 

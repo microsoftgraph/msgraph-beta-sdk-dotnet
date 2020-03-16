@@ -121,6 +121,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? DeviceCount { get; set; }
     
+        /// <summary>
+        /// Gets or sets responsive desktop time in ms.
+        /// The user experience analytics responsive desktop time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiveDesktopTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ResponsiveDesktopTimeInMs { get; set; }
+    
     }
 }
 

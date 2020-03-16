@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyMigrationReportGroupPolicySettingMappingsCollectionRequestBuilder"/>.</returns>
         IGroupPolicyMigrationReportGroupPolicySettingMappingsCollectionRequestBuilder GroupPolicySettingMappings { get; }
+
+        /// <summary>
+        /// Gets the request builder for UnsupportedGroupPolicyExtensions.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder"/>.</returns>
+        IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder UnsupportedGroupPolicyExtensions { get; }
     
         
     

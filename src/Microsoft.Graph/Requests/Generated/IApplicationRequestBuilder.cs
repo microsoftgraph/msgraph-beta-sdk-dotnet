@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
 
         /// <summary>
+        /// Gets the request builder for ClaimsMappingPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -50,10 +56,22 @@ namespace Microsoft.Graph
         IApplicationOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
-        /// Gets the request builder for Policies.
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
-        /// <returns>The <see cref="IApplicationPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IApplicationPoliciesCollectionWithReferencesRequestBuilder Policies { get; }
+        /// <returns>The <see cref="IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TokenIssuancePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationTokenIssuancePoliciesCollectionWithReferencesRequestBuilder TokenIssuancePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TokenLifetimePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
 
         /// <summary>
         /// Gets the request builder for Synchronization.
