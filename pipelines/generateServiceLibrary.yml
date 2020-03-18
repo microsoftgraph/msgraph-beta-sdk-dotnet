@@ -37,7 +37,7 @@ steps:
 - checkout: msgraph-beta-sdk-dotnet
   clean: true
   fetchDepth: 1
-  #persistCredentials: true
+  persistCredentials: true
 - checkout: msgraph-metadata
   clean: true
   fetchDepth: 1
