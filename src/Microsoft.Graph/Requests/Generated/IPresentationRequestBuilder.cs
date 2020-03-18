@@ -14,24 +14,28 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface IOnlineMeetingRequestBuilder.
+    /// The interface IPresentationRequestBuilder.
     /// </summary>
-    public partial interface IOnlineMeetingRequestBuilder : IEntityRequestBuilder
+    public partial interface IPresentationRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IOnlineMeetingRequest Request();
+        new IPresentationRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IOnlineMeetingRequest Request(IEnumerable<Option> options);
+        new IPresentationRequest Request(IEnumerable<Option> options);
     
-        
+        /// <summary>
+        /// Gets the request builder for Comments.
+        /// </summary>
+        /// <returns>The <see cref="IPresentationCommentsCollectionRequestBuilder"/>.</returns>
+        IPresentationCommentsCollectionRequestBuilder Comments { get; }
     
     }
 }

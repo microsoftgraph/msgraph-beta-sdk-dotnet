@@ -182,6 +182,12 @@ namespace Microsoft.Graph
         public ToneInfo ToneInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets call chain id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callChainId", Required = Newtonsoft.Json.Required.Default)]
+        public string CallChainId { get; set; }
+    
+        /// <summary>
         /// Gets or sets incoming context.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incomingContext", Required = Newtonsoft.Json.Required.Default)]

@@ -73,6 +73,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets directory size quota.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directorySizeQuota", Required = Newtonsoft.Json.Required.Default)]
+        public DirectorySizeQuota DirectorySizeQuota { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display name for the tenant.
         /// </summary>

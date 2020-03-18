@@ -16,26 +16,25 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type Url Assessment Request.
+    /// The type Presentation.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class UrlAssessmentRequestObject : ThreatAssessmentRequestObject
+    public partial class Presentation : Entity
     {
     
 		///<summary>
-		/// The UrlAssessmentRequest constructor
+		/// The Presentation constructor
 		///</summary>
-        public UrlAssessmentRequestObject()
+        public Presentation()
         {
-            this.ODataType = "microsoft.graph.urlAssessmentRequest";
+            this.ODataType = "microsoft.graph.presentation";
         }
 	
         /// <summary>
-        /// Gets or sets url.
-        /// The URL string.
+        /// Gets or sets comments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
-        public string Url { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comments", Required = Newtonsoft.Json.Required.Default)]
+        public IPresentationCommentsCollectionPage Comments { get; set; }
     
     }
 }
