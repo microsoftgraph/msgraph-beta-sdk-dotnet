@@ -162,7 +162,7 @@ steps:
       Write-Host "Added and commited generated files." -ForegroundColor Green
 
 - task: PowerShell@2
-  displayName: 'Push updates'
+  displayName: 'Git: push updates'
   inputs:
     targetType: inline
     workingDirectory: '$(Build.SourcesDirectory)/msgraph-beta-sdk-dotnet'
