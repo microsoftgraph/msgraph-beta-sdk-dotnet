@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supports", Required = Newtonsoft.Json.Required.Default)]
         public WorkforceIntegrationSupportedEntities? Supports { get; set; }
     
+        /// <summary>
+        /// Gets or sets supported entities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedEntities", Required = Newtonsoft.Json.Required.Default)]
+        public WorkforceIntegrationSupportedEntities? SupportedEntities { get; set; }
+    
     }
 }
 

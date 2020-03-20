@@ -12,35 +12,30 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The interface ICommsApplicationCallsCollectionRequestBuilder.
+    /// The interface IPresentationCommentsCollectionRequestBuilder.
     /// </summary>
-    public partial interface ICommsApplicationCallsCollectionRequestBuilder : IBaseRequestBuilder
+    public partial interface IPresentationCommentsCollectionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        ICommsApplicationCallsCollectionRequest Request();
+        IPresentationCommentsCollectionRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        ICommsApplicationCallsCollectionRequest Request(IEnumerable<Option> options);
+        IPresentationCommentsCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="ICallRequestBuilder"/> for the specified Call.
+        /// Gets an <see cref="IDocumentCommentRequestBuilder"/> for the specified DocumentComment.
         /// </summary>
-        /// <param name="id">The ID for the Call.</param>
-        /// <returns>The <see cref="ICallRequestBuilder"/>.</returns>
-        ICallRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the DocumentComment.</param>
+        /// <returns>The <see cref="IDocumentCommentRequestBuilder"/>.</returns>
+        IDocumentCommentRequestBuilder this[string id] { get; }
 
-        /// <summary>
-        /// Gets the request builder for CallLogTeleconferenceDeviceQuality.
-        /// </summary>
-        /// <returns>The <see cref="ICallLogTeleconferenceDeviceQualityRequestBuilder"/>.</returns>
-        ICallLogTeleconferenceDeviceQualityRequestBuilder LogTeleconferenceDeviceQuality(
-            TeleconferenceDeviceQuality quality);
+        
     }
 }

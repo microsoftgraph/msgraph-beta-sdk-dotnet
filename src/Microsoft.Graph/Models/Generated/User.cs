@@ -359,6 +359,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets refresh tokens valid from date time.
+        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "refreshTokensValidFromDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RefreshTokensValidFromDateTime { get; set; }
