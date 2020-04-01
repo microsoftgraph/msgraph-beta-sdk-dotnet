@@ -375,11 +375,17 @@ namespace Microsoft.Graph
         /// Gets the request builder for DriveItemGetActivitiesByInterval.
         /// </summary>
         /// <returns>The <see cref="IDriveItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
-        public IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval()
+        public IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime = null,
+            string endDateTime = null,
+            string interval = null)
         {
             return new DriveItemGetActivitiesByIntervalRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
-                this.Client);
+                this.Client,
+                startDateTime,
+                endDateTime,
+                interval);
         }
 
         /// <summary>

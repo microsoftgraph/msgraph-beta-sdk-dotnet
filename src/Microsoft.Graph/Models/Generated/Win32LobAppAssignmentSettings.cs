@@ -50,5 +50,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installTimeSettings", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppInstallTimeSettings InstallTimeSettings { get; set; }
     
+        /// <summary>
+        /// Gets or sets deliveryOptimizationPriority.
+        /// The delivery optimization priority for this app assignment. This setting is not supported in National Cloud environments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deliveryOptimizationPriority", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority { get; set; }
+    
     }
 }

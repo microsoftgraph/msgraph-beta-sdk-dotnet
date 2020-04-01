@@ -87,6 +87,13 @@ namespace Microsoft.Graph
         public bool? AndroidDeviceAdministratorEnrollmentEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets ignoreDevicesForUnsupportedSettingsEnabled.
+        /// The property to determine whether to ignore unsupported compliance settings on certian models of devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ignoreDevicesForUnsupportedSettingsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IgnoreDevicesForUnsupportedSettingsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

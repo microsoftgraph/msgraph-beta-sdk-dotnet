@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string ClientIdentifier { get; set; }
     
         /// <summary>
+        /// Gets or sets isBlocked.
+        /// Configuration Manager Client blocked status from SCCM
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

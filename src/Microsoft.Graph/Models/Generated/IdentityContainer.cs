@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets conditional access.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccess", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessRoot ConditionalAccess { get; set; }
+    
+        /// <summary>
         /// Gets or sets user flows.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlows", Required = Newtonsoft.Json.Required.Default)]

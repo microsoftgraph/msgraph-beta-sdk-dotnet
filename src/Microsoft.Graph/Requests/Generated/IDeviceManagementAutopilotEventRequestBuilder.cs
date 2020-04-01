@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IDeviceManagementAutopilotEventRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for PolicyStatusDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAutopilotEventPolicyStatusDetailsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAutopilotEventPolicyStatusDetailsCollectionRequestBuilder PolicyStatusDetails { get; }
+    
     }
 }

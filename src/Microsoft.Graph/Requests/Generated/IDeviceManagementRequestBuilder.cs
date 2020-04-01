@@ -440,6 +440,12 @@ namespace Microsoft.Graph
         IDeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder GroupPolicyConfigurations { get; }
 
         /// <summary>
+        /// Gets the request builder for GroupPolicyCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder GroupPolicyCategories { get; }
+
+        /// <summary>
         /// Gets the request builder for GroupPolicyDefinitions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder"/>.</returns>

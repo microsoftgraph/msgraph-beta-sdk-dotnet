@@ -1098,6 +1098,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.GroupPolicyCategories != null && deviceManagementToInitialize.GroupPolicyCategories.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.GroupPolicyCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyCategories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.GroupPolicyCategories.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.GroupPolicyDefinitions != null && deviceManagementToInitialize.GroupPolicyDefinitions.CurrentPage != null)
                 {
                     deviceManagementToInitialize.GroupPolicyDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;

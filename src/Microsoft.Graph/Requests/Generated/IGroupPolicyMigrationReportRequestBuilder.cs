@@ -43,7 +43,5 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder"/>.</returns>
         IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder UnsupportedGroupPolicyExtensions { get; }
     
-        
-    
     }
 }

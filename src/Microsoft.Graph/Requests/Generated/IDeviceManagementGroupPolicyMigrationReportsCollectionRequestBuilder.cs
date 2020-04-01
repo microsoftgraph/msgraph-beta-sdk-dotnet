@@ -36,11 +36,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IGroupPolicyMigrationReportRequestBuilder"/>.</returns>
         IGroupPolicyMigrationReportRequestBuilder this[string id] { get; }
 
-        /// <summary>
-        /// Gets the request builder for GroupPolicyMigrationReportCreateMigrationReport.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyMigrationReportCreateMigrationReportRequestBuilder"/>.</returns>
-        IGroupPolicyMigrationReportCreateMigrationReportRequestBuilder CreateMigrationReport(
-            GroupPolicyObjectFile groupPolicyObjectFile = null);
+        
     }
 }

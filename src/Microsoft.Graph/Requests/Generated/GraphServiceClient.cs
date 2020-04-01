@@ -1264,6 +1264,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServicePrint request builder.
+        /// </summary>
+        public IPrintRequestBuilder Print
+        {
+            get
+            {
+                return new PrintRequestBuilder(this.BaseUrl + "/print", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         public ISecurityRequestBuilder Security

@@ -99,6 +99,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DepOnboardingSettingGenerateEncryptionPublicKey.
+        /// </summary>
+        /// <returns>The <see cref="IDepOnboardingSettingGenerateEncryptionPublicKeyRequestBuilder"/>.</returns>
+        public IDepOnboardingSettingGenerateEncryptionPublicKeyRequestBuilder GenerateEncryptionPublicKey()
+        {
+            return new DepOnboardingSettingGenerateEncryptionPublicKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.generateEncryptionPublicKey"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DepOnboardingSettingUploadDepToken.
         /// </summary>
         /// <returns>The <see cref="IDepOnboardingSettingUploadDepTokenRequestBuilder"/>.</returns>

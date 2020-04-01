@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new DeviceManagementAutopilotEventRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for PolicyStatusDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAutopilotEventPolicyStatusDetailsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementAutopilotEventPolicyStatusDetailsCollectionRequestBuilder PolicyStatusDetails
+        {
+            get
+            {
+                return new DeviceManagementAutopilotEventPolicyStatusDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policyStatusDetails"), this.Client);
+            }
+        }
+    
     }
 }

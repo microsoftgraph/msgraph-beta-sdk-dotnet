@@ -60,17 +60,6 @@ namespace Microsoft.Graph
             }
         }
 
-        /// <summary>
-        /// Gets the request builder for GroupPolicyMigrationReportCreateMigrationReport.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyMigrationReportCreateMigrationReportRequestBuilder"/>.</returns>
-        public IGroupPolicyMigrationReportCreateMigrationReportRequestBuilder CreateMigrationReport(
-            GroupPolicyObjectFile groupPolicyObjectFile = null)
-        {
-            return new GroupPolicyMigrationReportCreateMigrationReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.createMigrationReport"),
-                this.Client,
-                groupPolicyObjectFile);
-        }
+        
     }
 }

@@ -282,6 +282,70 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (reportRootToInitialize.DailyPrintUsageSummariesByUser != null && reportRootToInitialize.DailyPrintUsageSummariesByUser.CurrentPage != null)
+                {
+                    reportRootToInitialize.DailyPrintUsageSummariesByUser.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByUser@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.DailyPrintUsageSummariesByUser.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (reportRootToInitialize.MonthlyPrintUsageSummariesByUser != null && reportRootToInitialize.MonthlyPrintUsageSummariesByUser.CurrentPage != null)
+                {
+                    reportRootToInitialize.MonthlyPrintUsageSummariesByUser.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByUser@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.MonthlyPrintUsageSummariesByUser.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (reportRootToInitialize.DailyPrintUsageSummariesByPrinter != null && reportRootToInitialize.DailyPrintUsageSummariesByPrinter.CurrentPage != null)
+                {
+                    reportRootToInitialize.DailyPrintUsageSummariesByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageSummariesByPrinter@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.DailyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter != null && reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.CurrentPage != null)
+                {
+                    reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageSummariesByPrinter@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        reportRootToInitialize.MonthlyPrintUsageSummariesByPrinter.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
             }
 
 

@@ -867,6 +867,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for GroupPolicyCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder GroupPolicyCategories
+        {
+            get
+            {
+                return new DeviceManagementGroupPolicyCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyCategories"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for GroupPolicyDefinitions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder"/>.</returns>
