@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRequestBuilder"/>.</returns>
         IRbacApplicationRequestBuilder Directory { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagement.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationMultipleRequestBuilder"/>.</returns>
+        IRbacApplicationMultipleRequestBuilder DeviceManagement { get; }
     
     }
 }

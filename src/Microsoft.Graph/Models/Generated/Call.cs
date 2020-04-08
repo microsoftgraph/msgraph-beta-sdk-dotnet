@@ -86,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets call routes.
+        /// The routing information on how the call was retargeted. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRoutes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CallRoute> CallRoutes { get; set; }
@@ -183,6 +184,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets call chain id.
+        /// A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callChainId", Required = Newtonsoft.Json.Required.Default)]
         public string CallChainId { get; set; }

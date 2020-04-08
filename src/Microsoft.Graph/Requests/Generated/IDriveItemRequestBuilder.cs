@@ -202,7 +202,10 @@ namespace Microsoft.Graph
         /// Gets the request builder for DriveItemGetActivitiesByInterval.
         /// </summary>
         /// <returns>The <see cref="IDriveItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
-        IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval();
+        IDriveItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime = null,
+            string endDateTime = null,
+            string interval = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemSearch.

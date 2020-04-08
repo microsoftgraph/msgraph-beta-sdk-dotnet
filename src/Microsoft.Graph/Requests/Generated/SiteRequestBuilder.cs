@@ -174,11 +174,17 @@ namespace Microsoft.Graph
         /// Gets the request builder for SiteGetActivitiesByInterval.
         /// </summary>
         /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
-        public ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval()
+        public ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime = null,
+            string endDateTime = null,
+            string interval = null)
         {
             return new SiteGetActivitiesByIntervalRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
-                this.Client);
+                this.Client,
+                startDateTime,
+                endDateTime,
+                interval);
         }
 
         /// <summary>

@@ -51,6 +51,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequest.
+        /// </summary>
+        /// <returns>The <see cref="IApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder"/>.</returns>
+        public IApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder GenerateApplePushNotificationCertificateSigningRequest()
+        {
+            return new ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.generateApplePushNotificationCertificateSigningRequest"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequest.
         /// </summary>
         /// <returns>The <see cref="IApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder"/>.</returns>

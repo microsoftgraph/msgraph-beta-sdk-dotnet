@@ -231,6 +231,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToInitialize)
         {
 
+            if (deviceManagementAutopilotEventToInitialize != null && deviceManagementAutopilotEventToInitialize.AdditionalData != null)
+            {
+
+                if (deviceManagementAutopilotEventToInitialize.PolicyStatusDetails != null && deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.CurrentPage != null)
+                {
+                    deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.AdditionalData = deviceManagementAutopilotEventToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementAutopilotEventToInitialize.AdditionalData.TryGetValue("policyStatusDetails@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementAutopilotEventToInitialize.PolicyStatusDetails.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

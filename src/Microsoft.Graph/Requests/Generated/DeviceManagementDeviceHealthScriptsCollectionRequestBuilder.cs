@@ -81,5 +81,16 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.areGlobalScriptsAvailable"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetRemediationSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetRemediationSummaryRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptGetRemediationSummaryRequestBuilder GetRemediationSummary()
+        {
+            return new DeviceHealthScriptGetRemediationSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRemediationSummary"),
+                this.Client);
+        }
     }
 }

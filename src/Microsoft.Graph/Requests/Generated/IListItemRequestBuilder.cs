@@ -65,7 +65,10 @@ namespace Microsoft.Graph
         /// Gets the request builder for ListItemGetActivitiesByInterval.
         /// </summary>
         /// <returns>The <see cref="IListItemGetActivitiesByIntervalRequestBuilder"/>.</returns>
-        IListItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval();
+        IListItemGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime = null,
+            string endDateTime = null,
+            string interval = null);
     
     }
 }

@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new RbacApplicationRequestBuilder(this.AppendSegmentToRequestUrl("directory"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagement.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationMultipleRequestBuilder"/>.</returns>
+        public IRbacApplicationMultipleRequestBuilder DeviceManagement
+        {
+            get
+            {
+                return new RbacApplicationMultipleRequestBuilder(this.AppendSegmentToRequestUrl("deviceManagement"), this.Client);
+            }
+        }
     
     }
 }

@@ -135,6 +135,69 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultPersonalRecoveryKeyRotationInMonths", Required = Newtonsoft.Json.Required.Default)]
         public Int32? FileVaultPersonalRecoveryKeyRotationInMonths { get; set; }
     
+        /// <summary>
+        /// Gets or sets file vault hide personal recovery key.
+        /// Optional. A hidden personal recovery key does not appear on the user's screen during FileVault encryption, reducing the risk of it ending up in the wrong hands.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultHidePersonalRecoveryKey", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FileVaultHidePersonalRecoveryKey { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection real time.
+        /// Determines whether or not to enable real-time protection for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionRealTime", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? AdvancedThreatProtectionRealTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection cloud delivered.
+        /// Determines whether or not to enable cloud-delivered protection for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionCloudDelivered", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? AdvancedThreatProtectionCloudDelivered { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection automatic sample submission.
+        /// Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionAutomaticSampleSubmission", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? AdvancedThreatProtectionAutomaticSampleSubmission { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection diagnostic data collection.
+        /// Determines whether or not to enable diagnostic and usage data collection for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionDiagnosticDataCollection", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? AdvancedThreatProtectionDiagnosticDataCollection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection excluded folders.
+        /// A list of paths to folders to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedFolders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AdvancedThreatProtectionExcludedFolders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection excluded files.
+        /// A list of paths to files to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedFiles", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AdvancedThreatProtectionExcludedFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection excluded extensions.
+        /// A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedExtensions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AdvancedThreatProtectionExcludedExtensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets advanced threat protection excluded processes.
+        /// A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionExcludedProcesses", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AdvancedThreatProtectionExcludedProcesses { get; set; }
+    
     }
 }
 

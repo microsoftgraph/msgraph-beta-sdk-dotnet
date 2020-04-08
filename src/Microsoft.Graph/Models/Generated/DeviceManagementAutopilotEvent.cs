@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets device id.
+        /// Device id associated with the object
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets event date time.
         /// Time when the event occurred .
         /// </summary>
@@ -183,6 +190,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentFailureDetails", Required = Newtonsoft.Json.Required.Default)]
         public string EnrollmentFailureDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policy status details.
+        /// Policy and application status details for this device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyStatusDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementAutopilotEventPolicyStatusDetailsCollectionPage PolicyStatusDetails { get; set; }
     
     }
 }

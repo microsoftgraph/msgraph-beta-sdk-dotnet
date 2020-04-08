@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         public EmailAddress Owner { get; set; }
     
         /// <summary>
+        /// Gets or sets calendar group id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarGroupId", Required = Newtonsoft.Json.Required.Default)]
+        public string CalendarGroupId { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowed online meeting providers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedOnlineMeetingProviders", Required = Newtonsoft.Json.Required.Default)]

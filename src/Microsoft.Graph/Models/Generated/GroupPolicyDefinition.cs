@@ -73,6 +73,13 @@ namespace Microsoft.Graph
         public GroupPolicyType? PolicyType { get; set; }
     
         /// <summary>
+        /// Gets or sets group policy category id.
+        /// The category id of the parent category
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyCategoryId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? GroupPolicyCategoryId { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.
         /// </summary>
@@ -85,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionFile", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyDefinitionFile DefinitionFile { get; set; }
+    
+        /// <summary>
+        /// Gets or sets category.
+        /// The group policy category associated with the definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyCategory Category { get; set; }
     
         /// <summary>
         /// Gets or sets presentations.

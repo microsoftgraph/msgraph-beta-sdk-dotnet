@@ -843,6 +843,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for GroupPolicyObjectFiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder GroupPolicyObjectFiles
+        {
+            get
+            {
+                return new DeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyObjectFiles"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for GroupPolicyMigrationReports.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyMigrationReportsCollectionRequestBuilder"/>.</returns>
@@ -863,6 +875,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyConfigurations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder GroupPolicyCategories
+        {
+            get
+            {
+                return new DeviceManagementGroupPolicyCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyCategories"), this.Client);
             }
         }
 

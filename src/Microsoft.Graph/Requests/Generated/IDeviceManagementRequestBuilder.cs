@@ -428,6 +428,12 @@ namespace Microsoft.Graph
         IDeviceManagementManagementConditionStatementsCollectionRequestBuilder ManagementConditionStatements { get; }
 
         /// <summary>
+        /// Gets the request builder for GroupPolicyObjectFiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder GroupPolicyObjectFiles { get; }
+
+        /// <summary>
         /// Gets the request builder for GroupPolicyMigrationReports.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyMigrationReportsCollectionRequestBuilder"/>.</returns>
@@ -438,6 +444,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder GroupPolicyConfigurations { get; }
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementGroupPolicyCategoriesCollectionRequestBuilder GroupPolicyCategories { get; }
 
         /// <summary>
         /// Gets the request builder for GroupPolicyDefinitions.

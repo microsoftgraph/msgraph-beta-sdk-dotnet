@@ -1066,6 +1066,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.GroupPolicyObjectFiles != null && deviceManagementToInitialize.GroupPolicyObjectFiles.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.GroupPolicyObjectFiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyObjectFiles@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.GroupPolicyObjectFiles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.GroupPolicyMigrationReports != null && deviceManagementToInitialize.GroupPolicyMigrationReports.CurrentPage != null)
                 {
                     deviceManagementToInitialize.GroupPolicyMigrationReports.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1093,6 +1109,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.GroupPolicyConfigurations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.GroupPolicyCategories != null && deviceManagementToInitialize.GroupPolicyCategories.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.GroupPolicyCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyCategories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.GroupPolicyCategories.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

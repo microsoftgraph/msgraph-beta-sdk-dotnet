@@ -47,5 +47,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceHealthScriptAreGlobalScriptsAvailableRequestBuilder"/>.</returns>
         IDeviceHealthScriptAreGlobalScriptsAvailableRequestBuilder AreGlobalScriptsAvailable();
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetRemediationSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetRemediationSummaryRequestBuilder"/>.</returns>
+        IDeviceHealthScriptGetRemediationSummaryRequestBuilder GetRemediationSummary();
     }
 }

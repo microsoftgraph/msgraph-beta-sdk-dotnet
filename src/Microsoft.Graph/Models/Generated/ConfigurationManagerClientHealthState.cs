@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lastSyncDateTime.
-        /// Datetime fo last sync with configuration manager management point.
+        /// Datetime for last sync with configuration manager management point.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }

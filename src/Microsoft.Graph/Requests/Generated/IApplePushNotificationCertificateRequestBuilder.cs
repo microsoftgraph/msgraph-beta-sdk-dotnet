@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IApplePushNotificationCertificateRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequest.
+        /// </summary>
+        /// <returns>The <see cref="IApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder"/>.</returns>
+        IApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder GenerateApplePushNotificationCertificateSigningRequest();
+
+        /// <summary>
         /// Gets the request builder for ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequest.
         /// </summary>
         /// <returns>The <see cref="IApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder"/>.</returns>

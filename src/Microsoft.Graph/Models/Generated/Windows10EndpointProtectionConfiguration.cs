@@ -1284,6 +1284,13 @@ namespace Microsoft.Graph
         public bool? DefenderDisableScanArchiveFiles { get; set; }
     
         /// <summary>
+        /// Gets or sets defender allow scan archive files.
+        /// Allows or disallows scanning of archives.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanArchiveFiles { get; set; }
+    
+        /// <summary>
         /// Gets or sets defender disable behavior monitoring.
         /// Allows or disallows Windows Defender Behavior Monitoring functionality.
         /// </summary>
@@ -1291,11 +1298,25 @@ namespace Microsoft.Graph
         public bool? DefenderDisableBehaviorMonitoring { get; set; }
     
         /// <summary>
+        /// Gets or sets defender allow behavior monitoring.
+        /// Allows or disallows Windows Defender Behavior Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowBehaviorMonitoring { get; set; }
+    
+        /// <summary>
         /// Gets or sets defender disable cloud protection.
         /// To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCloudProtection", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefenderDisableCloudProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow cloud protection.
+        /// To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowCloudProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowCloudProtection { get; set; }
     
         /// <summary>
         /// Gets or sets defender enable scan incoming mail.
@@ -1319,11 +1340,25 @@ namespace Microsoft.Graph
         public bool? DefenderDisableScanRemovableDrivesDuringFullScan { get; set; }
     
         /// <summary>
+        /// Gets or sets defender allow scan removable drives during full scan.
+        /// Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanRemovableDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
         /// Gets or sets defender disable scan downloads.
         /// Allows or disallows Windows Defender IOAVP Protection functionality.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanDownloads", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefenderDisableScanDownloads { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow scan downloads.
+        /// Allows or disallows Windows Defender IOAVP Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanDownloads", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanDownloads { get; set; }
     
         /// <summary>
         /// Gets or sets defender disable intrusion prevention system.
@@ -1333,11 +1368,25 @@ namespace Microsoft.Graph
         public bool? DefenderDisableIntrusionPreventionSystem { get; set; }
     
         /// <summary>
+        /// Gets or sets defender allow intrusion prevention system.
+        /// Allows or disallows Windows Defender Intrusion Prevention functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowIntrusionPreventionSystem", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowIntrusionPreventionSystem { get; set; }
+    
+        /// <summary>
         /// Gets or sets defender disable on access protection.
         /// Allows or disallows Windows Defender On Access Protection functionality.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefenderDisableOnAccessProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow on access protection.
+        /// Allows or disallows Windows Defender On Access Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowOnAccessProtection { get; set; }
     
         /// <summary>
         /// Gets or sets defender disable real time monitoring.
@@ -1347,11 +1396,25 @@ namespace Microsoft.Graph
         public bool? DefenderDisableRealTimeMonitoring { get; set; }
     
         /// <summary>
+        /// Gets or sets defender allow real time monitoring.
+        /// Allows or disallows Windows Defender Realtime Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowRealTimeMonitoring { get; set; }
+    
+        /// <summary>
         /// Gets or sets defender disable scan network files.
         /// Allows or disallows a scanning of network files.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefenderDisableScanNetworkFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow scan network files.
+        /// Allows or disallows a scanning of network files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanNetworkFiles { get; set; }
     
         /// <summary>
         /// Gets or sets defender disable scan scripts loaded in internet explorer.
@@ -1361,11 +1424,25 @@ namespace Microsoft.Graph
         public bool? DefenderDisableScanScriptsLoadedInInternetExplorer { get; set; }
     
         /// <summary>
+        /// Gets or sets defender allow scan scripts loaded in internet explorer.
+        /// Allows or disallows Windows Defender Script Scanning functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanScriptsLoadedInInternetExplorer { get; set; }
+    
+        /// <summary>
         /// Gets or sets defender block end user access.
         /// Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefenderBlockEndUserAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow end user access.
+        /// Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowEndUserAccess { get; set; }
     
         /// <summary>
         /// Gets or sets defender scan max cpu percentage.
@@ -1485,6 +1562,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay DefenderScheduledScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender signature update interval in hours.
+        /// Specifies the interval (in hours) that will be used to check for signatures, so instead of using the ScheduleDay and ScheduleTime the check for new signatures will be set according to the interval. Valid values 0 to 24
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSignatureUpdateIntervalInHours", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderSignatureUpdateIntervalInHours { get; set; }
     
         /// <summary>
         /// Gets or sets defender submit samples consent type.
