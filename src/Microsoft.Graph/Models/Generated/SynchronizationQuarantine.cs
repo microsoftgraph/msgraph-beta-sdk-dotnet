@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public QuarantineReason? Reason { get; set; }
     
         /// <summary>
+        /// Gets or sets error.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public SynchronizationError Error { get; set; }
+    
+        /// <summary>
         /// Gets or sets seriesBegan.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "seriesBegan", Required = Newtonsoft.Json.Required.Default)]

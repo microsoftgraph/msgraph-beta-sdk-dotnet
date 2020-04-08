@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets transaction id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transactionId", Required = Newtonsoft.Json.Required.Default)]
+        public string TransactionId { get; set; }
+    
+        /// <summary>
         /// Gets or sets original start time zone.
         /// The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
         /// </summary>
@@ -255,6 +261,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowNewTimeProposals { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is draft.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDraft", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDraft { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.

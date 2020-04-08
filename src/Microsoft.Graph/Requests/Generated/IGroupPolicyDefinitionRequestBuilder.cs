@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile { get; }
 
         /// <summary>
+        /// Gets the request builder for Category.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
+        IGroupPolicyCategoryWithReferenceRequestBuilder Category { get; }
+
+        /// <summary>
         /// Gets the request builder for Presentations.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyDefinitionPresentationsCollectionRequestBuilder"/>.</returns>

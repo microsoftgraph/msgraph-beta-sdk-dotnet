@@ -332,6 +332,13 @@ namespace Microsoft.Graph
         public bool? SearchBlockWebResults { get; set; }
     
         /// <summary>
+        /// Gets or sets find my files.
+        /// Controls if the user can configure search to Find My Files mode, which searches files in secondary hard drives and also outside of the user profile. Find My Files does not allow users to search files or locations to which they do not have access.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "findMyFiles", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? FindMyFiles { get; set; }
+    
+        /// <summary>
         /// Gets or sets security block azure adjoined devices auto encryption.
         /// Specify whether to allow automatic device encryption during OOBE when the device is Azure AD joined (desktop only).
         /// </summary>
@@ -1128,6 +1135,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyBlockActivityFeed", Required = Newtonsoft.Json.Required.Default)]
         public bool? PrivacyBlockActivityFeed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets activate apps with voice.
+        /// Specifies if Windows apps can be activated by voice.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activateAppsWithVoice", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? ActivateAppsWithVoice { get; set; }
     
         /// <summary>
         /// Gets or sets start block unpinning apps from taskbar.
@@ -1982,6 +1996,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallBuiltInApps", Required = Newtonsoft.Json.Required.Default)]
         public bool? UninstallBuiltInApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configure time zone.
+        /// Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configureTimeZone", Required = Newtonsoft.Json.Required.Default)]
+        public string ConfigureTimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets privacy access controls.

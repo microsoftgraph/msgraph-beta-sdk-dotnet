@@ -129,13 +129,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? AccountMoveCompletionDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets group policy object files.
-        /// A list of Group Policy Object files uploaded.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectFiles", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<GroupPolicyObjectFile> GroupPolicyObjectFiles { get; set; }
-    
-        /// <summary>
         /// Gets or sets audit events.
         /// The Audit Events
         /// </summary>
@@ -598,6 +591,13 @@ namespace Microsoft.Graph
         public IDeviceManagementManagementConditionStatementsCollectionPage ManagementConditionStatements { get; set; }
     
         /// <summary>
+        /// Gets or sets group policy object files.
+        /// A list of Group Policy Object files uploaded.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectFiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementGroupPolicyObjectFilesCollectionPage GroupPolicyObjectFiles { get; set; }
+    
+        /// <summary>
         /// Gets or sets group policy migration reports.
         /// A list of Group Policy migration reports.
         /// </summary>
@@ -610,6 +610,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyConfigurations", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementGroupPolicyConfigurationsCollectionPage GroupPolicyConfigurations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group policy categories.
+        /// The available group policy categories for this account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyCategories", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementGroupPolicyCategoriesCollectionPage GroupPolicyCategories { get; set; }
     
         /// <summary>
         /// Gets or sets group policy definitions.

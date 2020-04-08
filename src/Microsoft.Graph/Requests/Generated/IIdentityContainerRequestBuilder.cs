@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IIdentityContainerRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ConditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IConditionalAccessRootRequestBuilder"/>.</returns>
+        IConditionalAccessRootRequestBuilder ConditionalAccess { get; }
+
+        /// <summary>
         /// Gets the request builder for UserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>

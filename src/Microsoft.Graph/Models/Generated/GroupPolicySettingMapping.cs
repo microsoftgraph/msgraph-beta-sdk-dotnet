@@ -156,6 +156,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingUriList", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> IntuneSettingUriList { get; set; }
     
+        /// <summary>
+        /// Gets or sets intune setting definition id.
+        /// The Intune Setting Definition Id
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string IntuneSettingDefinitionId { get; set; }
+    
     }
 }
 

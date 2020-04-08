@@ -567,6 +567,11 @@ namespace Microsoft.Graph
         IPlannerRequestBuilder Planner { get; }
     
         /// <summary>
+        /// Gets the GraphServicePrint request builder.
+        /// </summary>
+        IPrintRequestBuilder Print { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceSecurity request builder.
         /// </summary>
         ISecurityRequestBuilder Security { get; }

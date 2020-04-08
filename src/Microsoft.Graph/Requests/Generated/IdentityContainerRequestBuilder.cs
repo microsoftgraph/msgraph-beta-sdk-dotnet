@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ConditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IConditionalAccessRootRequestBuilder"/>.</returns>
+        public IConditionalAccessRootRequestBuilder ConditionalAccess
+        {
+            get
+            {
+                return new ConditionalAccessRootRequestBuilder(this.AppendSegmentToRequestUrl("conditionalAccess"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>

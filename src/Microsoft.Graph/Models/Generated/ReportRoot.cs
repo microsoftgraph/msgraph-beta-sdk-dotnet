@@ -48,6 +48,30 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userCredentialUsageDetails", Required = Newtonsoft.Json.Required.Default)]
         public IReportRootUserCredentialUsageDetailsCollectionPage UserCredentialUsageDetails { get; set; }
     
+        /// <summary>
+        /// Gets or sets daily print usage summaries by user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageSummariesByUser", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootDailyPrintUsageSummariesByUserCollectionPage DailyPrintUsageSummariesByUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage summaries by user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageSummariesByUser", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootMonthlyPrintUsageSummariesByUserCollectionPage MonthlyPrintUsageSummariesByUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets daily print usage summaries by printer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageSummariesByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootDailyPrintUsageSummariesByPrinterCollectionPage DailyPrintUsageSummariesByPrinter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage summaries by printer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageSummariesByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage MonthlyPrintUsageSummariesByPrinter { get; set; }
+    
     }
 }
 

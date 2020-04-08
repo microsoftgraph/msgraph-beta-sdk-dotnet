@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directory", Required = Newtonsoft.Json.Required.Default)]
         public RbacApplication Directory { get; set; }
     
+        /// <summary>
+        /// Gets or sets device management.
+        /// The RbacApplication for Device Management
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagement", Required = Newtonsoft.Json.Required.Default)]
+        public RbacApplicationMultiple DeviceManagement { get; set; }
+    
     }
 }
 

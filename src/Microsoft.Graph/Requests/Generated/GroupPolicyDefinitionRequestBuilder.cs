@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Category.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IGroupPolicyCategoryWithReferenceRequestBuilder Category
+        {
+            get
+            {
+                return new GroupPolicyCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("category"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Presentations.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyDefinitionPresentationsCollectionRequestBuilder"/>.</returns>

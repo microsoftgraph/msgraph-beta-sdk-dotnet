@@ -75,6 +75,12 @@ namespace Microsoft.Graph
         public IEnumerable<KeyValue> AuthenticationProcessingDetails { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication requirement.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationRequirement", Required = Newtonsoft.Json.Required.Default)]
+        public string AuthenticationRequirement { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication requirement policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationRequirementPolicies", Required = Newtonsoft.Json.Required.Default)]
@@ -173,6 +179,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RiskEventType> RiskEventTypes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets risk event types_v2.
+        /// The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes_v2", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RiskEventTypes_v2 { get; set; }
     
         /// <summary>
         /// Gets or sets risk level aggregated.
