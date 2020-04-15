@@ -60,6 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delegateMeetingMessageDeliveryOptions.
+        /// If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegateMeetingMessageDeliveryOptions", Required = Newtonsoft.Json.Required.Default)]
         public DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions { get; set; }

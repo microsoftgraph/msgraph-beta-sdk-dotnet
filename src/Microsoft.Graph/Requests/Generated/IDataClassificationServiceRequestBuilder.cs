@@ -103,5 +103,15 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder"/>.</returns>
         IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder ExactMatchUploadAgents { get; }
     
+        /// <summary>
+        /// Gets the request builder for DataClassificationServiceClassifyExactMatches.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyExactMatchesRequestBuilder"/>.</returns>
+        IDataClassificationServiceClassifyExactMatchesRequestBuilder ClassifyExactMatches(
+            IEnumerable<ContentClassification> contentClassifications,
+            string text = null,
+            string timeoutInMs = null,
+            IEnumerable<string> sensitiveTypeIds = null);
+    
     }
 }

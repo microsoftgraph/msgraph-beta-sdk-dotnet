@@ -32,12 +32,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets definition.
+        /// A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definition", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Definition { get; set; }
     
         /// <summary>
         /// Gets or sets is organization default.
+        /// If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOrganizationDefault", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsOrganizationDefault { get; set; }

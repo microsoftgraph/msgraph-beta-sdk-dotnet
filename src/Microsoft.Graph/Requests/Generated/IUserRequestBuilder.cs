@@ -332,6 +332,12 @@ namespace Microsoft.Graph
         IPresenceRequestBuilder Presence { get; }
 
         /// <summary>
+        /// Gets the request builder for Authentication.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationRequestBuilder"/>.</returns>
+        IAuthenticationRequestBuilder Authentication { get; }
+
+        /// <summary>
         /// Gets the request builder for Chats.
         /// </summary>
         /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>

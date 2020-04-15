@@ -16,92 +16,92 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The interface IExternalFileRequest.
+    /// The interface ISmsAuthenticationMethodRequest.
     /// </summary>
-    public partial interface IExternalFileRequest : IBaseRequest
+    public partial interface ISmsAuthenticationMethodRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified ExternalFile using POST.
+        /// Creates the specified SmsAuthenticationMethod using POST.
         /// </summary>
-        /// <param name="externalFileToCreate">The ExternalFile to create.</param>
-        /// <returns>The created ExternalFile.</returns>
-        System.Threading.Tasks.Task<ExternalFile> CreateAsync(ExternalFile externalFileToCreate);        /// <summary>
-        /// Creates the specified ExternalFile using POST.
+        /// <param name="smsAuthenticationMethodToCreate">The SmsAuthenticationMethod to create.</param>
+        /// <returns>The created SmsAuthenticationMethod.</returns>
+        System.Threading.Tasks.Task<SmsAuthenticationMethod> CreateAsync(SmsAuthenticationMethod smsAuthenticationMethodToCreate);        /// <summary>
+        /// Creates the specified SmsAuthenticationMethod using POST.
         /// </summary>
-        /// <param name="externalFileToCreate">The ExternalFile to create.</param>
+        /// <param name="smsAuthenticationMethodToCreate">The SmsAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ExternalFile.</returns>
-        System.Threading.Tasks.Task<ExternalFile> CreateAsync(ExternalFile externalFileToCreate, CancellationToken cancellationToken);
+        /// <returns>The created SmsAuthenticationMethod.</returns>
+        System.Threading.Tasks.Task<SmsAuthenticationMethod> CreateAsync(SmsAuthenticationMethod smsAuthenticationMethodToCreate, CancellationToken cancellationToken);
 
         /// <summary>
-        /// Deletes the specified ExternalFile.
+        /// Deletes the specified SmsAuthenticationMethod.
         /// </summary>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync();
 
         /// <summary>
-        /// Deletes the specified ExternalFile.
+        /// Deletes the specified SmsAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
-        /// Gets the specified ExternalFile.
+        /// Gets the specified SmsAuthenticationMethod.
         /// </summary>
-        /// <returns>The ExternalFile.</returns>
-        System.Threading.Tasks.Task<ExternalFile> GetAsync();
+        /// <returns>The SmsAuthenticationMethod.</returns>
+        System.Threading.Tasks.Task<SmsAuthenticationMethod> GetAsync();
 
         /// <summary>
-        /// Gets the specified ExternalFile.
+        /// Gets the specified SmsAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The ExternalFile.</returns>
-        System.Threading.Tasks.Task<ExternalFile> GetAsync(CancellationToken cancellationToken);
+        /// <returns>The SmsAuthenticationMethod.</returns>
+        System.Threading.Tasks.Task<SmsAuthenticationMethod> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
-        /// Updates the specified ExternalFile using PATCH.
+        /// Updates the specified SmsAuthenticationMethod using PATCH.
         /// </summary>
-        /// <param name="externalFileToUpdate">The ExternalFile to update.</param>
-        /// <returns>The updated ExternalFile.</returns>
-        System.Threading.Tasks.Task<ExternalFile> UpdateAsync(ExternalFile externalFileToUpdate);
+        /// <param name="smsAuthenticationMethodToUpdate">The SmsAuthenticationMethod to update.</param>
+        /// <returns>The updated SmsAuthenticationMethod.</returns>
+        System.Threading.Tasks.Task<SmsAuthenticationMethod> UpdateAsync(SmsAuthenticationMethod smsAuthenticationMethodToUpdate);
 
         /// <summary>
-        /// Updates the specified ExternalFile using PATCH.
+        /// Updates the specified SmsAuthenticationMethod using PATCH.
         /// </summary>
-        /// <param name="externalFileToUpdate">The ExternalFile to update.</param>
+        /// <param name="smsAuthenticationMethodToUpdate">The SmsAuthenticationMethod to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated ExternalFile.</returns>
-        System.Threading.Tasks.Task<ExternalFile> UpdateAsync(ExternalFile externalFileToUpdate, CancellationToken cancellationToken);
+        /// <returns>The updated SmsAuthenticationMethod.</returns>
+        System.Threading.Tasks.Task<SmsAuthenticationMethod> UpdateAsync(SmsAuthenticationMethod smsAuthenticationMethodToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        IExternalFileRequest Expand(string value);
+        ISmsAuthenticationMethodRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IExternalFileRequest Expand(Expression<Func<ExternalFile, object>> expandExpression);
+        ISmsAuthenticationMethodRequest Expand(Expression<Func<SmsAuthenticationMethod, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        IExternalFileRequest Select(string value);
+        ISmsAuthenticationMethodRequest Select(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IExternalFileRequest Select(Expression<Func<ExternalFile, object>> selectExpression);
+        ISmsAuthenticationMethodRequest Select(Expression<Func<SmsAuthenticationMethod, object>> selectExpression);
 
     }
 }

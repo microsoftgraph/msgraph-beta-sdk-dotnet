@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type ExternalFileRequest.
+    /// The type SmsAuthenticationMethodRequest.
     /// </summary>
-    public partial class ExternalFileRequest : BaseRequest, IExternalFileRequest
+    public partial class SmsAuthenticationMethodRequest : BaseRequest, ISmsAuthenticationMethodRequest
     {
         /// <summary>
-        /// Constructs a new ExternalFileRequest.
+        /// Constructs a new SmsAuthenticationMethodRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public ExternalFileRequest(
+        public SmsAuthenticationMethodRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,32 +36,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified ExternalFile using POST.
+        /// Creates the specified SmsAuthenticationMethod using POST.
         /// </summary>
-        /// <param name="externalFileToCreate">The ExternalFile to create.</param>
-        /// <returns>The created ExternalFile.</returns>
-        public System.Threading.Tasks.Task<ExternalFile> CreateAsync(ExternalFile externalFileToCreate)
+        /// <param name="smsAuthenticationMethodToCreate">The SmsAuthenticationMethod to create.</param>
+        /// <returns>The created SmsAuthenticationMethod.</returns>
+        public System.Threading.Tasks.Task<SmsAuthenticationMethod> CreateAsync(SmsAuthenticationMethod smsAuthenticationMethodToCreate)
         {
-            return this.CreateAsync(externalFileToCreate, CancellationToken.None);
+            return this.CreateAsync(smsAuthenticationMethodToCreate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Creates the specified ExternalFile using POST.
+        /// Creates the specified SmsAuthenticationMethod using POST.
         /// </summary>
-        /// <param name="externalFileToCreate">The ExternalFile to create.</param>
+        /// <param name="smsAuthenticationMethodToCreate">The SmsAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ExternalFile.</returns>
-        public async System.Threading.Tasks.Task<ExternalFile> CreateAsync(ExternalFile externalFileToCreate, CancellationToken cancellationToken)
+        /// <returns>The created SmsAuthenticationMethod.</returns>
+        public async System.Threading.Tasks.Task<SmsAuthenticationMethod> CreateAsync(SmsAuthenticationMethod smsAuthenticationMethodToCreate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            var newEntity = await this.SendAsync<ExternalFile>(externalFileToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<SmsAuthenticationMethod>(smsAuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ExternalFile.
+        /// Deletes the specified SmsAuthenticationMethod.
         /// </summary>
         /// <returns>The task to await.</returns>
         public System.Threading.Tasks.Task DeleteAsync()
@@ -70,86 +70,86 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Deletes the specified ExternalFile.
+        /// Deletes the specified SmsAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
         {
             this.Method = "DELETE";
-            await this.SendAsync<ExternalFile>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<SmsAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ExternalFile.
+        /// Gets the specified SmsAuthenticationMethod.
         /// </summary>
-        /// <returns>The ExternalFile.</returns>
-        public System.Threading.Tasks.Task<ExternalFile> GetAsync()
+        /// <returns>The SmsAuthenticationMethod.</returns>
+        public System.Threading.Tasks.Task<SmsAuthenticationMethod> GetAsync()
         {
             return this.GetAsync(CancellationToken.None);
         }
 
         /// <summary>
-        /// Gets the specified ExternalFile.
+        /// Gets the specified SmsAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The ExternalFile.</returns>
-        public async System.Threading.Tasks.Task<ExternalFile> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The SmsAuthenticationMethod.</returns>
+        public async System.Threading.Tasks.Task<SmsAuthenticationMethod> GetAsync(CancellationToken cancellationToken)
         {
             this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<ExternalFile>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<SmsAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ExternalFile using PATCH.
+        /// Updates the specified SmsAuthenticationMethod using PATCH.
         /// </summary>
-        /// <param name="externalFileToUpdate">The ExternalFile to update.</param>
-        /// <returns>The updated ExternalFile.</returns>
-        public System.Threading.Tasks.Task<ExternalFile> UpdateAsync(ExternalFile externalFileToUpdate)
+        /// <param name="smsAuthenticationMethodToUpdate">The SmsAuthenticationMethod to update.</param>
+        /// <returns>The updated SmsAuthenticationMethod.</returns>
+        public System.Threading.Tasks.Task<SmsAuthenticationMethod> UpdateAsync(SmsAuthenticationMethod smsAuthenticationMethodToUpdate)
         {
-            return this.UpdateAsync(externalFileToUpdate, CancellationToken.None);
+            return this.UpdateAsync(smsAuthenticationMethodToUpdate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Updates the specified ExternalFile using PATCH.
+        /// Updates the specified SmsAuthenticationMethod using PATCH.
         /// </summary>
-        /// <param name="externalFileToUpdate">The ExternalFile to update.</param>
+        /// <param name="smsAuthenticationMethodToUpdate">The SmsAuthenticationMethod to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated ExternalFile.</returns>
-        public async System.Threading.Tasks.Task<ExternalFile> UpdateAsync(ExternalFile externalFileToUpdate, CancellationToken cancellationToken)
+        /// <returns>The updated SmsAuthenticationMethod.</returns>
+        public async System.Threading.Tasks.Task<SmsAuthenticationMethod> UpdateAsync(SmsAuthenticationMethod smsAuthenticationMethodToUpdate, CancellationToken cancellationToken)
         {
-			if (externalFileToUpdate.AdditionalData != null)
+			if (smsAuthenticationMethodToUpdate.AdditionalData != null)
 			{
-				if (externalFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					externalFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				if (smsAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					smsAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
 				{
 					throw new ClientException(
 						new Error
 						{
 							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalFileToUpdate.GetType().Name)
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, smsAuthenticationMethodToUpdate.GetType().Name)
 						});
 				}
 			}
-            if (externalFileToUpdate.AdditionalData != null)
+            if (smsAuthenticationMethodToUpdate.AdditionalData != null)
             {
-                if (externalFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    externalFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                if (smsAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    smsAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
                 {
                     throw new ClientException(
                         new Error
                         {
                             Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalFileToUpdate.GetType().Name)
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, smsAuthenticationMethodToUpdate.GetType().Name)
                         });
                 }
             }
             this.ContentType = "application/json";
             this.Method = "PATCH";
-            var updatedEntity = await this.SendAsync<ExternalFile>(externalFileToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<SmsAuthenticationMethod>(smsAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
@@ -159,7 +159,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IExternalFileRequest Expand(string value)
+        public ISmsAuthenticationMethodRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IExternalFileRequest Expand(Expression<Func<ExternalFile, object>> expandExpression)
+        public ISmsAuthenticationMethodRequest Expand(Expression<Func<SmsAuthenticationMethod, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -194,7 +194,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IExternalFileRequest Select(string value)
+        public ISmsAuthenticationMethodRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -205,7 +205,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IExternalFileRequest Select(Expression<Func<ExternalFile, object>> selectExpression)
+        public ISmsAuthenticationMethodRequest Select(Expression<Func<SmsAuthenticationMethod, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -227,8 +227,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="externalFileToInitialize">The <see cref="ExternalFile"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(ExternalFile externalFileToInitialize)
+        /// <param name="smsAuthenticationMethodToInitialize">The <see cref="SmsAuthenticationMethod"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(SmsAuthenticationMethod smsAuthenticationMethodToInitialize)
         {
 
         }

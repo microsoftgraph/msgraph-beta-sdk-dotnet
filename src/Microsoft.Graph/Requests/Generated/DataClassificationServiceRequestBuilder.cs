@@ -194,5 +194,24 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for DataClassificationServiceClassifyExactMatches.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyExactMatchesRequestBuilder"/>.</returns>
+        public IDataClassificationServiceClassifyExactMatchesRequestBuilder ClassifyExactMatches(
+            IEnumerable<ContentClassification> contentClassifications,
+            string text = null,
+            string timeoutInMs = null,
+            IEnumerable<string> sensitiveTypeIds = null)
+        {
+            return new DataClassificationServiceClassifyExactMatchesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.classifyExactMatches"),
+                this.Client,
+                contentClassifications,
+                text,
+                timeoutInMs,
+                sensitiveTypeIds);
+        }
+    
     }
 }

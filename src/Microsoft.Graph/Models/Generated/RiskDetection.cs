@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public string CorrelationId { get; set; }
     
         /// <summary>
+        /// Gets or sets risk event type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventType", Required = Newtonsoft.Json.Required.Default)]
+        public string RiskEventType { get; set; }
+    
+        /// <summary>
         /// Gets or sets risk type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskType", Required = Newtonsoft.Json.Required.Default)]
