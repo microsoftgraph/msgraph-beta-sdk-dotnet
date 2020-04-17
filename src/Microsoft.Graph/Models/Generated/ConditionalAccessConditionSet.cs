@@ -73,6 +73,12 @@ namespace Microsoft.Graph
         public ConditionalAccessDeviceStates DeviceStates { get; set; }
     
         /// <summary>
+        /// Gets or sets devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devices", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessDevices Devices { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

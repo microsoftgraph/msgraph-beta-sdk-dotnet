@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// Gets or sets content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public string Content { get; set; }
+        public ExternalItemContent Content { get; set; }
     
         /// <summary>
         /// Gets or sets acl.

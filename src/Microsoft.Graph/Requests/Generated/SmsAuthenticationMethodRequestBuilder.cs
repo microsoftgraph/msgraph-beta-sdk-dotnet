@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type ExternalFileRequestBuilder.
+    /// The type SmsAuthenticationMethodRequestBuilder.
     /// </summary>
-    public partial class ExternalFileRequestBuilder : ExternalItemRequestBuilder, IExternalFileRequestBuilder
+    public partial class SmsAuthenticationMethodRequestBuilder : AuthenticationMethodRequestBuilder, ISmsAuthenticationMethodRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new ExternalFileRequestBuilder.
+        /// Constructs a new SmsAuthenticationMethodRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public ExternalFileRequestBuilder(
+        public SmsAuthenticationMethodRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IExternalFileRequest Request()
+        public new ISmsAuthenticationMethodRequest Request()
         {
             return this.Request(null);
         }
@@ -45,9 +45,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IExternalFileRequest Request(IEnumerable<Option> options)
+        public new ISmsAuthenticationMethodRequest Request(IEnumerable<Option> options)
         {
-            return new ExternalFileRequest(this.RequestUrl, this.Client, options);
+            return new SmsAuthenticationMethodRequest(this.RequestUrl, this.Client, options);
         }
     
     }

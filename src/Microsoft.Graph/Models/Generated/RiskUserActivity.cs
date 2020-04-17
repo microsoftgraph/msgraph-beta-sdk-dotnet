@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public IEnumerable<RiskEventType> EventTypes { get; set; }
     
         /// <summary>
+        /// Gets or sets riskEventTypes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RiskEventTypes { get; set; }
+    
+        /// <summary>
         /// Gets or sets detail.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]

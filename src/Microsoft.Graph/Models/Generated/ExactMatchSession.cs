@@ -115,6 +115,12 @@ namespace Microsoft.Graph
         public Int32? RemainingJobCount { get; set; }
     
         /// <summary>
+        /// Gets or sets salt.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salt", Required = Newtonsoft.Json.Required.Default)]
+        public string Salt { get; set; }
+    
+        /// <summary>
         /// Gets or sets upload agent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadAgent", Required = Newtonsoft.Json.Required.Default)]

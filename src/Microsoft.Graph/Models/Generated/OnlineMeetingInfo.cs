@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets joinUrl.
+        /// The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinUrl", Required = Newtonsoft.Json.Required.Default)]
         public string JoinUrl { get; set; }
     
         /// <summary>
         /// Gets or sets conferenceId.
+        /// The ID of the conference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conferenceId", Required = Newtonsoft.Json.Required.Default)]
         public string ConferenceId { get; set; }
     
         /// <summary>
         /// Gets or sets tollNumber.
+        /// The toll number that can be used to join the conference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollNumber", Required = Newtonsoft.Json.Required.Default)]
         public string TollNumber { get; set; }
     
         /// <summary>
         /// Gets or sets tollFreeNumbers.
+        /// The toll free numbers that can be used to join the conference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tollFreeNumbers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> TollFreeNumbers { get; set; }
     
         /// <summary>
         /// Gets or sets quickDial.
+        /// The pre-formatted quickdial for this call.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quickDial", Required = Newtonsoft.Json.Required.Default)]
         public string QuickDial { get; set; }
     
         /// <summary>
         /// Gets or sets phones.
+        /// All of the phone numbers associated with this conference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phones", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Phone> Phones { get; set; }

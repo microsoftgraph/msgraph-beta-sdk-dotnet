@@ -858,6 +858,12 @@ namespace Microsoft.Graph
         public Presence Presence { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authentication", Required = Newtonsoft.Json.Required.Default)]
+        public Authentication Authentication { get; set; }
+    
+        /// <summary>
         /// Gets or sets chats.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chats", Required = Newtonsoft.Json.Required.Default)]
