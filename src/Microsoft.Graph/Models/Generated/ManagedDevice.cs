@@ -528,6 +528,13 @@ namespace Microsoft.Graph
         public ManagedDeviceArchitecture? ProcessorArchitecture { get; set; }
     
         /// <summary>
+        /// Gets or sets specification version.
+        /// Specification version. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specificationVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string SpecificationVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets security baseline states.
         /// Security baseline states for this device.
         /// </summary>

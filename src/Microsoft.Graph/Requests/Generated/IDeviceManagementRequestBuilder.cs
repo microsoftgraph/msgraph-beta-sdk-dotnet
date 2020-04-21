@@ -362,10 +362,10 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRequestBuilder UserExperienceAnalyticsDeviceStartupProcessPerformance { get; }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsStartupScoreHistory.
+        /// Gets the request builder for UserExperienceAnalyticsScoreHistory.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsStartupScoreHistory { get; }
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory { get; }
 
         /// <summary>
         /// Gets the request builder for DerivedCredentials.
@@ -462,6 +462,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyDefinitionFilesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementGroupPolicyDefinitionFilesCollectionRequestBuilder GroupPolicyDefinitionFiles { get; }
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyUploadedDefinitionFiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder GroupPolicyUploadedDefinitionFiles { get; }
 
         /// <summary>
         /// Gets the request builder for NotificationMessageTemplates.

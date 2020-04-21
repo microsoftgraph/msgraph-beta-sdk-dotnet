@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder"/>.</returns>
         IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion();
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetRemediationHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetRemediationHistoryRequestBuilder"/>.</returns>
+        IDeviceHealthScriptGetRemediationHistoryRequestBuilder GetRemediationHistory();
     
     }
 }

@@ -711,14 +711,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsStartupScoreHistory.
+        /// Gets the request builder for UserExperienceAnalyticsScoreHistory.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsStartupScoreHistory
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory
         {
             get
             {
-                return new DeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsStartupScoreHistory"), this.Client);
+                return new DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsScoreHistory"), this.Client);
             }
         }
 
@@ -911,6 +911,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementGroupPolicyDefinitionFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyDefinitionFiles"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyUploadedDefinitionFiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder GroupPolicyUploadedDefinitionFiles
+        {
+            get
+            {
+                return new DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyUploadedDefinitionFiles"), this.Client);
             }
         }
 

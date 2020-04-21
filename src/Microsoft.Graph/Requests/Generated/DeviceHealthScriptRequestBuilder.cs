@@ -122,6 +122,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getGlobalScriptHighestAvailableVersion"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetRemediationHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetRemediationHistoryRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptGetRemediationHistoryRequestBuilder GetRemediationHistory()
+        {
+            return new DeviceHealthScriptGetRemediationHistoryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRemediationHistory"),
+                this.Client);
+        }
     
     }
 }

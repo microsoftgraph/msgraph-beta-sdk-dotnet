@@ -63,30 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for SmsMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationSmsMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationSmsMethodsCollectionRequestBuilder SmsMethods
-        {
-            get
-            {
-                return new AuthenticationSmsMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("smsMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for VoiceMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationVoiceMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationVoiceMethodsCollectionRequestBuilder VoiceMethods
-        {
-            get
-            {
-                return new AuthenticationVoiceMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("voiceMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for PhoneMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationPhoneMethodsCollectionRequestBuilder"/>.</returns>

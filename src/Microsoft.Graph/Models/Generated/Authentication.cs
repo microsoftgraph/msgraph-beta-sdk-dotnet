@@ -37,18 +37,6 @@ namespace Microsoft.Graph
         public IAuthenticationMethodsCollectionPage Methods { get; set; }
     
         /// <summary>
-        /// Gets or sets sms methods.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smsMethods", Required = Newtonsoft.Json.Required.Default)]
-        public IAuthenticationSmsMethodsCollectionPage SmsMethods { get; set; }
-    
-        /// <summary>
-        /// Gets or sets voice methods.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "voiceMethods", Required = Newtonsoft.Json.Required.Default)]
-        public IAuthenticationVoiceMethodsCollectionPage VoiceMethods { get; set; }
-    
-        /// <summary>
         /// Gets or sets phone methods.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneMethods", Required = Newtonsoft.Json.Required.Default)]

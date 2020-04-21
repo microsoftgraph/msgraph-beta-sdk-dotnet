@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new AndroidDeviceOwnerCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificate"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DerivedCredentialSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        public IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings
+        {
+            get
+            {
+                return new DeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentialSettings"), this.Client);
+            }
+        }
     
     }
 }

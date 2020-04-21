@@ -95,6 +95,21 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder GetPolicyNonComplianceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetSettingNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder"/>.</returns>
@@ -135,6 +150,36 @@ namespace Microsoft.Graph
             IEnumerable<string> orderBy = null,
             Int32? skip = null,
             Int32? top = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsUpdateAlertSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsUpdateAlertsPerPolicyPerDeviceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
     
     }
 }

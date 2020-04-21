@@ -79,5 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         AppleUserEnrollmentWithServiceAccount = 12,
 	
+        /// <summary>
+        /// Azure Ad Join Using Azure Vm Extension
+        /// </summary>
+        AzureAdJoinUsingAzureVmExtension = 14,
+	
     }
 }

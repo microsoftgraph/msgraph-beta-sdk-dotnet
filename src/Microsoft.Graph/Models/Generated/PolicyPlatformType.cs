@@ -60,6 +60,11 @@ namespace Microsoft.Graph
         AndroidWorkProfile = 7,
 	
         /// <summary>
+        /// Windows10XProfile
+        /// </summary>
+        Windows10XProfile = 8,
+	
+        /// <summary>
         /// All
         /// </summary>
         All = 100,

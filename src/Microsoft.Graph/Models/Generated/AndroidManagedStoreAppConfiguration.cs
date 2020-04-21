@@ -58,6 +58,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appSupportsOemConfig", Required = Newtonsoft.Json.Required.Default)]
         public bool? AppSupportsOemConfig { get; set; }
     
+        /// <summary>
+        /// Gets or sets profile applicability.
+        /// Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileApplicability", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidProfileApplicability? ProfileApplicability { get; set; }
+    
     }
 }
 
