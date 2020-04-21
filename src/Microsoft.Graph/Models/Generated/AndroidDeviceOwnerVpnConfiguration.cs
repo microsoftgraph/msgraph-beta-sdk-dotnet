@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate { get; set; }
     
+        /// <summary>
+        /// Gets or sets derived credential settings.
+        /// Tenant level settings for the Derived Credentials to be used for authentication.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
+    
     }
 }
 

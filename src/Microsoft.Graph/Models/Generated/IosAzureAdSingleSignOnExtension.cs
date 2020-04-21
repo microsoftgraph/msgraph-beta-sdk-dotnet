@@ -29,5 +29,19 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.iosAzureAdSingleSignOnExtension";
         }
 
+        /// <summary>
+        /// Gets or sets enableSharedDeviceMode.
+        /// Enables or disables shared device mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSharedDeviceMode", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableSharedDeviceMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configurations.
+        /// Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyTypedValuePair> Configurations { get; set; }
+    
     }
 }

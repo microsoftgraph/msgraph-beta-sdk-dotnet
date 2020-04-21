@@ -250,38 +250,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (authenticationToInitialize.SmsMethods != null && authenticationToInitialize.SmsMethods.CurrentPage != null)
-                {
-                    authenticationToInitialize.SmsMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("smsMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.SmsMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (authenticationToInitialize.VoiceMethods != null && authenticationToInitialize.VoiceMethods.CurrentPage != null)
-                {
-                    authenticationToInitialize.VoiceMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("voiceMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.VoiceMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (authenticationToInitialize.PhoneMethods != null && authenticationToInitialize.PhoneMethods.CurrentPage != null)
                 {
                     authenticationToInitialize.PhoneMethods.AdditionalData = authenticationToInitialize.AdditionalData;

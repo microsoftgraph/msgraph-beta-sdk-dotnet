@@ -80,6 +80,13 @@ namespace Microsoft.Graph
         public bool? IsSystemApp { get; set; }
     
         /// <summary>
+        /// Gets or sets app tracks.
+        /// The tracks that are visible to this enterprise.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appTracks", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AndroidManagedStoreAppTrack> AppTracks { get; set; }
+    
+        /// <summary>
         /// Gets or sets supports oem config.
         /// Whether this app supports OEMConfig policy.
         /// </summary>

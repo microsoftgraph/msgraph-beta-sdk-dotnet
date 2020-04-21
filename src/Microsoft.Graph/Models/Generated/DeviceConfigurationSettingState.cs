@@ -115,6 +115,13 @@ namespace Microsoft.Graph
         public string CurrentValue { get; set; }
     
         /// <summary>
+        /// Gets or sets settingInstanceId.
+        /// SettingInstanceId
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingInstanceId", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingInstanceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

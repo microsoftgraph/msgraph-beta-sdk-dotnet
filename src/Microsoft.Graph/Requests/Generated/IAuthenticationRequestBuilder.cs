@@ -38,18 +38,6 @@ namespace Microsoft.Graph
         IAuthenticationMethodsCollectionRequestBuilder Methods { get; }
 
         /// <summary>
-        /// Gets the request builder for SmsMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationSmsMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationSmsMethodsCollectionRequestBuilder SmsMethods { get; }
-
-        /// <summary>
-        /// Gets the request builder for VoiceMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationVoiceMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationVoiceMethodsCollectionRequestBuilder VoiceMethods { get; }
-
-        /// <summary>
         /// Gets the request builder for PhoneMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationPhoneMethodsCollectionRequestBuilder"/>.</returns>

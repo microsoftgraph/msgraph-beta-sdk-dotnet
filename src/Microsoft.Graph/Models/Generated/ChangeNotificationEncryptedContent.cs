@@ -34,19 +34,19 @@ namespace Microsoft.Graph
         /// Gets or sets data.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "data", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] Data { get; set; }
+        public string Data { get; set; }
     
         /// <summary>
         /// Gets or sets dataSignature.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSignature", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] DataSignature { get; set; }
+        public string DataSignature { get; set; }
     
         /// <summary>
         /// Gets or sets dataKey.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataKey", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] DataKey { get; set; }
+        public string DataKey { get; set; }
     
         /// <summary>
         /// Gets or sets encryptionCertificateId.

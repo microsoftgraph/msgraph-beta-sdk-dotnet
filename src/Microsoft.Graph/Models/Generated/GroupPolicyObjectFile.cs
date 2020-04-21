@@ -31,6 +31,34 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets group policy object id.
+        /// The Group Policy Object GUID from GPO Xml content
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? GroupPolicyObjectId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ou distinguished name.
+        /// The distinguished name of the OU.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ouDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
+        public string OuDistinguishedName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// The date and time at which the GroupPolicy was first uploaded.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// The date and time at which the GroupPolicyObjectFile was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets content.
         /// The Group Policy Object file content.
         /// </summary>

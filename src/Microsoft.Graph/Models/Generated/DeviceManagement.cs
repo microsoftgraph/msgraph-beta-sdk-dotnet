@@ -514,11 +514,11 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage UserExperienceAnalyticsDeviceStartupProcessPerformance { get; set; }
     
         /// <summary>
-        /// Gets or sets user experience analytics startup score history.
+        /// Gets or sets user experience analytics score history.
         /// User experience analytics device Startup Score History
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsStartupScoreHistory", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementUserExperienceAnalyticsStartupScoreHistoryCollectionPage UserExperienceAnalyticsStartupScoreHistory { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsScoreHistory", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage UserExperienceAnalyticsScoreHistory { get; set; }
     
         /// <summary>
         /// Gets or sets derived credentials.
@@ -631,6 +631,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyDefinitionFiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementGroupPolicyDefinitionFilesCollectionPage GroupPolicyDefinitionFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group policy uploaded definition files.
+        /// The available group policy uploaded definition files for this account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyUploadedDefinitionFiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionPage GroupPolicyUploadedDefinitionFiles { get; set; }
     
         /// <summary>
         /// Gets or sets notification message templates.
