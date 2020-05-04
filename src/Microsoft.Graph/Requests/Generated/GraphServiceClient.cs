@@ -131,6 +131,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceCases request builder.
+        /// </summary>
+        public IGraphServiceCasesCollectionRequestBuilder Cases
+        {
+            get
+            {
+                return new GraphServiceCasesCollectionRequestBuilder(this.BaseUrl + "/cases", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         public IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
@@ -1062,6 +1073,17 @@ namespace Microsoft.Graph
             get
             {
                 return new TrustFrameworkRequestBuilder(this.BaseUrl + "/trustFramework", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceCompliance request builder.
+        /// </summary>
+        public IComplianceRequestBuilder Compliance
+        {
+            get
+            {
+                return new ComplianceRequestBuilder(this.BaseUrl + "/compliance", this);
             }
         }
     

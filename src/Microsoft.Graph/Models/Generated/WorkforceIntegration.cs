@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedEntities", Required = Newtonsoft.Json.Required.Default)]
         public WorkforceIntegrationSupportedEntities? SupportedEntities { get; set; }
     
+        /// <summary>
+        /// Gets or sets eligibility filtering enabled entities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eligibilityFilteringEnabledEntities", Required = Newtonsoft.Json.Required.Default)]
+        public EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities { get; set; }
+    
     }
 }
 

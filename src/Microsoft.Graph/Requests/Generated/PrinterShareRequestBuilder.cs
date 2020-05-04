@@ -61,6 +61,30 @@ namespace Microsoft.Graph
                 return new PrinterWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("printer"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for AllowedUsers.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterShareAllowedUsersCollectionRequestBuilder"/>.</returns>
+        public IPrinterShareAllowedUsersCollectionRequestBuilder AllowedUsers
+        {
+            get
+            {
+                return new PrinterShareAllowedUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedUsers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AllowedGroups.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
+        public IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups
+        {
+            get
+            {
+                return new PrinterShareAllowedGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedGroups"), this.Client);
+            }
+        }
     
     }
 }

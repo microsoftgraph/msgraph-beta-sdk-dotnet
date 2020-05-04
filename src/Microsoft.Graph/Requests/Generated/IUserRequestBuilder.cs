@@ -224,6 +224,18 @@ namespace Microsoft.Graph
         IUserExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
+        /// Gets the request builder for Approvals.
+        /// </summary>
+        /// <returns>The <see cref="IUserApprovalsCollectionRequestBuilder"/>.</returns>
+        IUserApprovalsCollectionRequestBuilder Approvals { get; }
+
+        /// <summary>
+        /// Gets the request builder for AppConsentRequestsForApproval.
+        /// </summary>
+        /// <returns>The <see cref="IUserAppConsentRequestsForApprovalCollectionRequestBuilder"/>.</returns>
+        IUserAppConsentRequestsForApprovalCollectionRequestBuilder AppConsentRequestsForApproval { get; }
+
+        /// <summary>
         /// Gets the request builder for AgreementAcceptances.
         /// </summary>
         /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>

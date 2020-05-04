@@ -44,18 +44,6 @@ namespace Microsoft.Graph
         IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder PolicyTemplates { get; }
 
         /// <summary>
-        /// Gets the request builder for Requests.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalWorkflowProviderRequestsCollectionRequestBuilder"/>.</returns>
-        IApprovalWorkflowProviderRequestsCollectionRequestBuilder Requests { get; }
-
-        /// <summary>
-        /// Gets the request builder for RequestsAwaitingMyDecision.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalWorkflowProviderRequestsAwaitingMyDecisionCollectionRequestBuilder"/>.</returns>
-        IApprovalWorkflowProviderRequestsAwaitingMyDecisionCollectionRequestBuilder RequestsAwaitingMyDecision { get; }
-
-        /// <summary>
         /// Gets the request builder for BusinessFlowsWithRequestsAwaitingMyDecision.
         /// </summary>
         /// <returns>The <see cref="IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionRequestBuilder"/>.</returns>

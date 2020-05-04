@@ -61,6 +61,12 @@ namespace Microsoft.Graph
         public IPolicyRootTokenLifetimePoliciesCollectionPage TokenLifetimePolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets admin consent request policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminConsentRequestPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public AdminConsentRequestPolicy AdminConsentRequestPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity security defaults enforcement policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySecurityDefaultsEnforcementPolicy", Required = Newtonsoft.Json.Required.Default)]
