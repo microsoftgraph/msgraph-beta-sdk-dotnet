@@ -435,6 +435,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Approvals.
+        /// </summary>
+        /// <returns>The <see cref="IUserApprovalsCollectionRequestBuilder"/>.</returns>
+        public IUserApprovalsCollectionRequestBuilder Approvals
+        {
+            get
+            {
+                return new UserApprovalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("approvals"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AppConsentRequestsForApproval.
+        /// </summary>
+        /// <returns>The <see cref="IUserAppConsentRequestsForApprovalCollectionRequestBuilder"/>.</returns>
+        public IUserAppConsentRequestsForApprovalCollectionRequestBuilder AppConsentRequestsForApproval
+        {
+            get
+            {
+                return new UserAppConsentRequestsForApprovalCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appConsentRequestsForApproval"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AgreementAcceptances.
         /// </summary>
         /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>
