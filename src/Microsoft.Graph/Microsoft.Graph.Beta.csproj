@@ -39,7 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Graph.Core" Version="[1.19.0,2)" />
-    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.5.1" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netnet461' ">
     <Reference Include="System" />
