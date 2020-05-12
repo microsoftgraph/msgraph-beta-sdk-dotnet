@@ -32,16 +32,10 @@ namespace Microsoft.Graph
         new IRequestRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Decisions.
+        /// Gets the request builder for Approval.
         /// </summary>
-        /// <returns>The <see cref="IRequestDecisionsCollectionRequestBuilder"/>.</returns>
-        IRequestDecisionsCollectionRequestBuilder Decisions { get; }
-
-        /// <summary>
-        /// Gets the request builder for MyDecisions.
-        /// </summary>
-        /// <returns>The <see cref="IRequestMyDecisionsCollectionRequestBuilder"/>.</returns>
-        IRequestMyDecisionsCollectionRequestBuilder MyDecisions { get; }
+        /// <returns>The <see cref="IApprovalRequestBuilder"/>.</returns>
+        IApprovalRequestBuilder Approval { get; }
     
         /// <summary>
         /// Gets the request builder for RequestStop.

@@ -61,6 +61,30 @@ namespace Microsoft.Graph
         public bool? IsQueryable { get; set; }
     
         /// <summary>
+        /// Gets or sets isContent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isContent", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsContent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isRefinable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRefinable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRefinable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets aliases.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aliases", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Aliases { get; set; }
+    
+        /// <summary>
+        /// Gets or sets labels.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Label> Labels { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

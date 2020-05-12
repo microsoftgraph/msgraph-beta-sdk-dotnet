@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         IPolicyRootTokenLifetimePoliciesCollectionRequestBuilder TokenLifetimePolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for AdminConsentRequestPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAdminConsentRequestPolicyRequestBuilder"/>.</returns>
+        IAdminConsentRequestPolicyRequestBuilder AdminConsentRequestPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for IdentitySecurityDefaultsEnforcementPolicy.
         /// </summary>
         /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>

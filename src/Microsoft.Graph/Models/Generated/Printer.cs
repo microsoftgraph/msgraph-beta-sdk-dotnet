@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Printer.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class Printer : Entity
+    public partial class Printer : PrinterBase
     {
     
 		///<summary>
@@ -31,34 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets manufacturer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
-        public string Manufacturer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets model.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
-        public string Model { get; set; }
-    
-        /// <summary>
         /// Gets or sets registered date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RegisteredDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets is shared.
@@ -73,18 +49,6 @@ namespace Microsoft.Graph
         public bool? AcceptingJobs { get; set; }
     
         /// <summary>
-        /// Gets or sets location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterLocation Location { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaults.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaults", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterDefaults Defaults { get; set; }
-    
-        /// <summary>
         /// Gets or sets allowed users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUsers", Required = Newtonsoft.Json.Required.Default)]
@@ -95,12 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedGroups", Required = Newtonsoft.Json.Required.Default)]
         public IPrinterAllowedGroupsCollectionPage AllowedGroups { get; set; }
-    
-        /// <summary>
-        /// Gets or sets jobs.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobs", Required = Newtonsoft.Json.Required.Default)]
-        public IPrinterJobsCollectionPage Jobs { get; set; }
     
         /// <summary>
         /// Gets or sets share.

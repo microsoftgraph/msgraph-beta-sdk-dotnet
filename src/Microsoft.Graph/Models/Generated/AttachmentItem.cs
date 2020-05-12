@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attachmentType.
+        /// The type of attachment. Possible values are: file, item, reference. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachmentType", Required = Newtonsoft.Json.Required.Default)]
         public AttachmentType? AttachmentType { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets size.
+        /// The length of the attachment in bytes. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Size { get; set; }
     
         /// <summary>
         /// Gets or sets contentType.
+        /// The nature of the data in the attachment. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
         public string ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets isInline.
+        /// true if the attachment is an inline attachment; otherwise, false. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInline", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsInline { get; set; }

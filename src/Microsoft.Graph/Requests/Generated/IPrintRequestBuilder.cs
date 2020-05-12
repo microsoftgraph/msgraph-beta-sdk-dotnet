@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IPrintConnectorsCollectionRequestBuilder Connectors { get; }
 
         /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
+        IPrintSharesCollectionRequestBuilder Shares { get; }
+
+        /// <summary>
         /// Gets the request builder for PrinterShares.
         /// </summary>
         /// <returns>The <see cref="IPrintPrinterSharesCollectionRequestBuilder"/>.</returns>

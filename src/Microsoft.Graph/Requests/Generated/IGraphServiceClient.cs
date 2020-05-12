@@ -52,6 +52,11 @@ namespace Microsoft.Graph
         IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
     
         /// <summary>
+        /// Gets the GraphServiceCases request builder.
+        /// </summary>
+        IGraphServiceCasesCollectionRequestBuilder Cases { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }
@@ -475,6 +480,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceTrustFramework request builder.
         /// </summary>
         ITrustFrameworkRequestBuilder TrustFramework { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceCompliance request builder.
+        /// </summary>
+        IComplianceRequestBuilder Compliance { get; }
     
         /// <summary>
         /// Gets the GraphServiceDataClassification request builder.

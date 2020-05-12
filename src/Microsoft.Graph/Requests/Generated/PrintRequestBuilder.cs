@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
+        public IPrintSharesCollectionRequestBuilder Shares
+        {
+            get
+            {
+                return new PrintSharesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("shares"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for PrinterShares.
         /// </summary>
         /// <returns>The <see cref="IPrintPrinterSharesCollectionRequestBuilder"/>.</returns>

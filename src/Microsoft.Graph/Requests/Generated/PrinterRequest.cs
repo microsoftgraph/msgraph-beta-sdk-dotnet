@@ -266,22 +266,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (printerToInitialize.Jobs != null && printerToInitialize.Jobs.CurrentPage != null)
-                {
-                    printerToInitialize.Jobs.AdditionalData = printerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (printerToInitialize.Connectors != null && printerToInitialize.Connectors.CurrentPage != null)
                 {
                     printerToInitialize.Connectors.AdditionalData = printerToInitialize.AdditionalData;

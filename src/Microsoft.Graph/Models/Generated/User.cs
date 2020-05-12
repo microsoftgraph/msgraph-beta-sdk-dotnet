@@ -739,6 +739,18 @@ namespace Microsoft.Graph
         public IUserExtensionsCollectionPage Extensions { get; set; }
     
         /// <summary>
+        /// Gets or sets approvals.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvals", Required = Newtonsoft.Json.Required.Default)]
+        public IUserApprovalsCollectionPage Approvals { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app consent requests for approval.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConsentRequestsForApproval", Required = Newtonsoft.Json.Required.Default)]
+        public IUserAppConsentRequestsForApprovalCollectionPage AppConsentRequestsForApproval { get; set; }
+    
+        /// <summary>
         /// Gets or sets agreement acceptances.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementAcceptances", Required = Newtonsoft.Json.Required.Default)]

@@ -51,26 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Decisions.
+        /// Gets the request builder for Approval.
         /// </summary>
-        /// <returns>The <see cref="IRequestDecisionsCollectionRequestBuilder"/>.</returns>
-        public IRequestDecisionsCollectionRequestBuilder Decisions
+        /// <returns>The <see cref="IApprovalRequestBuilder"/>.</returns>
+        public IApprovalRequestBuilder Approval
         {
             get
             {
-                return new RequestDecisionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("decisions"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MyDecisions.
-        /// </summary>
-        /// <returns>The <see cref="IRequestMyDecisionsCollectionRequestBuilder"/>.</returns>
-        public IRequestMyDecisionsCollectionRequestBuilder MyDecisions
-        {
-            get
-            {
-                return new RequestMyDecisionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("myDecisions"), this.Client);
+                return new ApprovalRequestBuilder(this.AppendSegmentToRequestUrl("approval"), this.Client);
             }
         }
     

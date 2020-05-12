@@ -49,18 +49,6 @@ namespace Microsoft.Graph
         public IApprovalWorkflowProviderPolicyTemplatesCollectionPage PolicyTemplates { get; set; }
     
         /// <summary>
-        /// Gets or sets requests.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requests", Required = Newtonsoft.Json.Required.Default)]
-        public IApprovalWorkflowProviderRequestsCollectionPage Requests { get; set; }
-    
-        /// <summary>
-        /// Gets or sets requests awaiting my decision.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestsAwaitingMyDecision", Required = Newtonsoft.Json.Required.Default)]
-        public IApprovalWorkflowProviderRequestsAwaitingMyDecisionCollectionPage RequestsAwaitingMyDecision { get; set; }
-    
-        /// <summary>
         /// Gets or sets business flows with requests awaiting my decision.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessFlowsWithRequestsAwaitingMyDecision", Required = Newtonsoft.Json.Required.Default)]
