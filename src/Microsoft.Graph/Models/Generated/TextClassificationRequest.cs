@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public string Text { get; set; }
     
         /// <summary>
+        /// Gets or sets file extension.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileExtension", Required = Newtonsoft.Json.Required.Default)]
+        public string FileExtension { get; set; }
+    
+        /// <summary>
         /// Gets or sets sensitive type ids.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]

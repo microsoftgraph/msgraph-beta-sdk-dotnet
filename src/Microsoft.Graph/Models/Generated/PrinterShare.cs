@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Printer Share.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PrinterShare : Entity
+    public partial class PrinterShare : PrinterBase
     {
     
 		///<summary>
@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +41,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printer", Required = Newtonsoft.Json.Required.Default)]
         public Printer Printer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowed users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUsers", Required = Newtonsoft.Json.Required.Default)]
+        public IPrinterShareAllowedUsersCollectionPage AllowedUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowed groups.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedGroups", Required = Newtonsoft.Json.Required.Default)]
+        public IPrinterShareAllowedGroupsCollectionPage AllowedGroups { get; set; }
     
     }
 }

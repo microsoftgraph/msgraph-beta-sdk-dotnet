@@ -111,6 +111,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AdminConsentRequestPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAdminConsentRequestPolicyRequestBuilder"/>.</returns>
+        public IAdminConsentRequestPolicyRequestBuilder AdminConsentRequestPolicy
+        {
+            get
+            {
+                return new AdminConsentRequestPolicyRequestBuilder(this.AppendSegmentToRequestUrl("adminConsentRequestPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for IdentitySecurityDefaultsEnforcementPolicy.
         /// </summary>
         /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>

@@ -75,30 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Requests.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalWorkflowProviderRequestsCollectionRequestBuilder"/>.</returns>
-        public IApprovalWorkflowProviderRequestsCollectionRequestBuilder Requests
-        {
-            get
-            {
-                return new ApprovalWorkflowProviderRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("requests"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for RequestsAwaitingMyDecision.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalWorkflowProviderRequestsAwaitingMyDecisionCollectionRequestBuilder"/>.</returns>
-        public IApprovalWorkflowProviderRequestsAwaitingMyDecisionCollectionRequestBuilder RequestsAwaitingMyDecision
-        {
-            get
-            {
-                return new ApprovalWorkflowProviderRequestsAwaitingMyDecisionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("requestsAwaitingMyDecision"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for BusinessFlowsWithRequestsAwaitingMyDecision.
         /// </summary>
         /// <returns>The <see cref="IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionRequestBuilder"/>.</returns>

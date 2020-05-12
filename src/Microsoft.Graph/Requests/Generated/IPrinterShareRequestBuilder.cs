@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrinterShareRequestBuilder.
     /// </summary>
-    public partial interface IPrinterShareRequestBuilder : IEntityRequestBuilder
+    public partial interface IPrinterShareRequestBuilder : IPrinterBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrinterWithReferenceRequestBuilder"/>.</returns>
         IPrinterWithReferenceRequestBuilder Printer { get; }
+
+        /// <summary>
+        /// Gets the request builder for AllowedUsers.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterShareAllowedUsersCollectionRequestBuilder"/>.</returns>
+        IPrinterShareAllowedUsersCollectionRequestBuilder AllowedUsers { get; }
+
+        /// <summary>
+        /// Gets the request builder for AllowedGroups.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
+        IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups { get; }
     
     }
 }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets timeOffReasonId.
+        /// ID of the timeOffReason for this timeOffItem. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeOffReasonId", Required = Newtonsoft.Json.Required.Default)]
         public string TimeOffReasonId { get; set; }

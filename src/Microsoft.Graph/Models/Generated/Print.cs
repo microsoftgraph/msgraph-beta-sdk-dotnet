@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         public IPrintConnectorsCollectionPage Connectors { get; set; }
     
         /// <summary>
+        /// Gets or sets shares.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shares", Required = Newtonsoft.Json.Required.Default)]
+        public IPrintSharesCollectionPage Shares { get; set; }
+    
+        /// <summary>
         /// Gets or sets printer shares.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerShares", Required = Newtonsoft.Json.Required.Default)]
