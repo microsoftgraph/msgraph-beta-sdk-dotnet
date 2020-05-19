@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public string TeamsAppId { get; set; }
     
         /// <summary>
+        /// Gets or sets azure adapp id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureADAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string AzureADAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The name of the app provided by the app developer.
         /// </summary>

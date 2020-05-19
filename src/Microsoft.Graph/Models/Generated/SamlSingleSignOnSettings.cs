@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets relayState.
+        /// The relative URI the service provider would redirect to after completion of the single sign-on flow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relayState", Required = Newtonsoft.Json.Required.Default)]
         public string RelayState { get; set; }

@@ -73,6 +73,13 @@ namespace Microsoft.Graph
         public Int32? Version { get; set; }
     
         /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// Optional role scope tags for the enrollment restrictions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the device configuration profile.
         /// </summary>

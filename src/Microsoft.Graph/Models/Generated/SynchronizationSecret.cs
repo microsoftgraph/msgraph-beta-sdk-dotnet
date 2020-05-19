@@ -170,6 +170,26 @@ namespace Microsoft.Graph
         SyncNotificationSettings = 37,
 	
         /// <summary>
+        /// Skip Out Of Scope Deletions
+        /// </summary>
+        SkipOutOfScopeDeletions = 40,
+	
+        /// <summary>
+        /// Oauth2Authorization Code
+        /// </summary>
+        Oauth2AuthorizationCode = 62,
+	
+        /// <summary>
+        /// Oauth2Redirect Uri
+        /// </summary>
+        Oauth2RedirectUri = 63,
+	
+        /// <summary>
+        /// Application Template Identifier
+        /// </summary>
+        ApplicationTemplateIdentifier = 64,
+	
+        /// <summary>
         /// Server
         /// </summary>
         Server = 70,

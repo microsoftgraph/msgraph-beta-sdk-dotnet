@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         Disabled = 1,
 	
+        /// <summary>
+        /// Paused
+        /// </summary>
+        Paused = 2,
+	
     }
 }

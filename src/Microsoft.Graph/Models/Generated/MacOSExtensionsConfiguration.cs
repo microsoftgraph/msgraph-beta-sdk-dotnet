@@ -51,6 +51,34 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kernelExtensionsAllowed", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MacOSKernelExtension> KernelExtensionsAllowed { get; set; }
     
+        /// <summary>
+        /// Gets or sets system extensions block override.
+        /// Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsBlockOverride", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SystemExtensionsBlockOverride { get; set; }
+    
+        /// <summary>
+        /// Gets or sets system extensions allowed team identifiers.
+        /// Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsAllowedTeamIdentifiers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SystemExtensionsAllowedTeamIdentifiers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets system extensions allowed.
+        /// Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsAllowed", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MacOSSystemExtension> SystemExtensionsAllowed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets system extensions allowed types.
+        /// Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsAllowedTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes { get; set; }
+    
     }
 }
 

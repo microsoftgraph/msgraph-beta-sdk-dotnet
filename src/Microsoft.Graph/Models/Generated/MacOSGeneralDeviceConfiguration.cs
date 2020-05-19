@@ -366,6 +366,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudBlockActivityContinuation", Required = Newtonsoft.Json.Required.Default)]
         public bool? ICloudBlockActivityContinuation { get; set; }
     
+        /// <summary>
+        /// Gets or sets privacy access controls.
+        /// List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyAccessControls", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MacOSPrivacyAccessControlItem> PrivacyAccessControls { get; set; }
+    
     }
 }
 
