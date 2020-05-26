@@ -21,29 +21,9 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Force Deletes
+        /// None
         /// </summary>
-        ForceDeletes = 32,
-	
-        /// <summary>
-        /// Full
-        /// </summary>
-        Full = 15,
-	
-        /// <summary>
-        /// Quarantine State
-        /// </summary>
-        QuarantineState = 8,
-	
-        /// <summary>
-        /// Watermark
-        /// </summary>
-        Watermark = 4,
-	
-        /// <summary>
-        /// Escrows
-        /// </summary>
-        Escrows = 2,
+        None = 0,
 	
         /// <summary>
         /// Connector Data Store
@@ -51,9 +31,29 @@ namespace Microsoft.Graph
         ConnectorDataStore = 1,
 	
         /// <summary>
-        /// None
+        /// Escrows
         /// </summary>
-        None = 0,
+        Escrows = 2,
+	
+        /// <summary>
+        /// Watermark
+        /// </summary>
+        Watermark = 4,
+	
+        /// <summary>
+        /// Quarantine State
+        /// </summary>
+        QuarantineState = 8,
+	
+        /// <summary>
+        /// Full
+        /// </summary>
+        Full = 15,
+	
+        /// <summary>
+        /// Force Deletes
+        /// </summary>
+        ForceDeletes = 32,
 	
     }
 }

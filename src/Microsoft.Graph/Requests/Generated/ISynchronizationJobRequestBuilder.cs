@@ -56,15 +56,6 @@ namespace Microsoft.Graph
         ISynchronizationJobStopRequestBuilder Stop();
 
         /// <summary>
-        /// Gets the request builder for SynchronizationJobApply.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobApplyRequestBuilder"/>.</returns>
-        ISynchronizationJobApplyRequestBuilder Apply(
-            string objectId,
-            string typeName,
-            string ruleId = null);
-
-        /// <summary>
         /// Gets the request builder for SynchronizationJobRestart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobRestartRequestBuilder"/>.</returns>

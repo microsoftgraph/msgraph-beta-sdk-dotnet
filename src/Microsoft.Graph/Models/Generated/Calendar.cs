@@ -52,7 +52,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is default calendar.
-        /// True if this is the default calendar where new events are created by default, false otherwise.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultCalendar", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefaultCalendar { get; set; }

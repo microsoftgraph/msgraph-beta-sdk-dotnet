@@ -49,7 +49,7 @@ namespace Microsoft.Graph
         /// Script run schedule for the target group
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSchedule", Required = Newtonsoft.Json.Required.Default)]
-        public RunSchedule RunSchedule { get; set; }
+        public DeviceHealthScriptRunSchedule RunSchedule { get; set; }
     
     }
 }

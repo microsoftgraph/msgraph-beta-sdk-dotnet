@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new WindowsCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificateForClientAuthentication"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificateForClientValidation.
+        /// </summary>
+        /// <returns>The <see cref="IWindows81TrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        public IWindows81TrustedRootCertificateWithReferenceRequestBuilder RootCertificateForClientValidation
+        {
+            get
+            {
+                return new Windows81TrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForClientValidation"), this.Client);
+            }
+        }
     
     }
 }

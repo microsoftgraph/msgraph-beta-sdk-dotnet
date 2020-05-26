@@ -84,5 +84,20 @@ namespace Microsoft.Graph
         /// </summary>
         AzureAdJoinUsingAzureVmExtension = 14,
 	
+        /// <summary>
+        /// Android Enterprise Dedicated Device
+        /// </summary>
+        AndroidEnterpriseDedicatedDevice = 15,
+	
+        /// <summary>
+        /// Android Enterprise Fully Managed
+        /// </summary>
+        AndroidEnterpriseFullyManaged = 16,
+	
+        /// <summary>
+        /// Android Enterprise Corporate Work Profile
+        /// </summary>
+        AndroidEnterpriseCorporateWorkProfile = 17,
+	
     }
 }

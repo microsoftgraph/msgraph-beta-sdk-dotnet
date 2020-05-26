@@ -494,17 +494,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDirectories request builder.
-        /// </summary>
-        public IGraphServiceDirectoriesCollectionRequestBuilder Directories
-        {
-            get
-            {
-                return new GraphServiceDirectoriesCollectionRequestBuilder(this.BaseUrl + "/directories", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceAccessPackageCatalogs request builder.
         /// </summary>
         public IGraphServiceAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs
@@ -699,83 +688,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceAgreementAcceptancesCollectionRequestBuilder(this.BaseUrl + "/agreementAcceptances", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceIdentityRiskEvents request builder.
-        /// </summary>
-        public IGraphServiceIdentityRiskEventsCollectionRequestBuilder IdentityRiskEvents
-        {
-            get
-            {
-                return new GraphServiceIdentityRiskEventsCollectionRequestBuilder(this.BaseUrl + "/identityRiskEvents", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceImpossibleTravelRiskEvents request builder.
-        /// </summary>
-        public IGraphServiceImpossibleTravelRiskEventsCollectionRequestBuilder ImpossibleTravelRiskEvents
-        {
-            get
-            {
-                return new GraphServiceImpossibleTravelRiskEventsCollectionRequestBuilder(this.BaseUrl + "/impossibleTravelRiskEvents", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceLeakedCredentialsRiskEvents request builder.
-        /// </summary>
-        public IGraphServiceLeakedCredentialsRiskEventsCollectionRequestBuilder LeakedCredentialsRiskEvents
-        {
-            get
-            {
-                return new GraphServiceLeakedCredentialsRiskEventsCollectionRequestBuilder(this.BaseUrl + "/leakedCredentialsRiskEvents", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAnonymousIpRiskEvents request builder.
-        /// </summary>
-        public IGraphServiceAnonymousIpRiskEventsCollectionRequestBuilder AnonymousIpRiskEvents
-        {
-            get
-            {
-                return new GraphServiceAnonymousIpRiskEventsCollectionRequestBuilder(this.BaseUrl + "/anonymousIpRiskEvents", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceSuspiciousIpRiskEvents request builder.
-        /// </summary>
-        public IGraphServiceSuspiciousIpRiskEventsCollectionRequestBuilder SuspiciousIpRiskEvents
-        {
-            get
-            {
-                return new GraphServiceSuspiciousIpRiskEventsCollectionRequestBuilder(this.BaseUrl + "/suspiciousIpRiskEvents", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceUnfamiliarLocationRiskEvents request builder.
-        /// </summary>
-        public IGraphServiceUnfamiliarLocationRiskEventsCollectionRequestBuilder UnfamiliarLocationRiskEvents
-        {
-            get
-            {
-                return new GraphServiceUnfamiliarLocationRiskEventsCollectionRequestBuilder(this.BaseUrl + "/unfamiliarLocationRiskEvents", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceMalwareRiskEvents request builder.
-        /// </summary>
-        public IGraphServiceMalwareRiskEventsCollectionRequestBuilder MalwareRiskEvents
-        {
-            get
-            {
-                return new GraphServiceMalwareRiskEventsCollectionRequestBuilder(this.BaseUrl + "/malwareRiskEvents", this);
             }
         }
     
@@ -1216,6 +1128,17 @@ namespace Microsoft.Graph
             get
             {
                 return new ConditionalAccessRootRequestBuilder(this.BaseUrl + "/conditionalAccess", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceIdentityProtectionNotificationPolicy request builder.
+        /// </summary>
+        public IIdentityProtectionNotificationPolicyRequestBuilder IdentityProtectionNotificationPolicy
+        {
+            get
+            {
+                return new IdentityProtectionNotificationPolicyRequestBuilder(this.BaseUrl + "/identityProtectionNotificationPolicy", this);
             }
         }
     

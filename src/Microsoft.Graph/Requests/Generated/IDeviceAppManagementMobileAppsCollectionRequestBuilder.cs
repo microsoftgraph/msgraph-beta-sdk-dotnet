@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         IMobileAppRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for MobileAppValidateXml.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppValidateXmlRequestBuilder"/>.</returns>
+        IMobileAppValidateXmlRequestBuilder ValidateXml(
+            byte[] officeConfigurationXml);
+
+        /// <summary>
         /// Gets the request builder for MobileAppHasPayloadLinks.
         /// </summary>
         /// <returns>The <see cref="IMobileAppHasPayloadLinksRequestBuilder"/>.</returns>

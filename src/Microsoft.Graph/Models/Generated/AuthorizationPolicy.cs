@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guestUserRoleId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? GuestUserRoleId { get; set; }
     
+        /// <summary>
+        /// Gets or sets permission grant policy ids assigned to default user role.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrantPolicyIdsAssignedToDefaultUserRole", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> PermissionGrantPolicyIdsAssignedToDefaultUserRole { get; set; }
+    
     }
 }
 

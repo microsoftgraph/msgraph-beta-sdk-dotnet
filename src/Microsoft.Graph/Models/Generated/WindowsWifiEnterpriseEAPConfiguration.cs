@@ -135,6 +135,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificateForClientAuthentication", Required = Newtonsoft.Json.Required.Default)]
         public WindowsCertificateProfileBase IdentityCertificateForClientAuthentication { get; set; }
     
+        /// <summary>
+        /// Gets or sets root certificate for client validation.
+        /// Specify root certificate for client validation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificateForClientValidation", Required = Newtonsoft.Json.Required.Default)]
+        public Windows81TrustedRootCertificate RootCertificateForClientValidation { get; set; }
+    
     }
 }
 

@@ -440,12 +440,6 @@ namespace Microsoft.Graph
         public MailboxSettings MailboxSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets identity user risk.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityUserRisk", Required = Newtonsoft.Json.Required.Default)]
-        public IdentityUserRisk IdentityUserRisk { get; set; }
-    
-        /// <summary>
         /// Gets or sets device enrollment limit.
         /// The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
         /// </summary>
