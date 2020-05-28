@@ -6,9 +6,14 @@
     Increment the minor version string.
 #>
 
-$project = ".\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"
+$fullFileName = $PWD.ToString() + "\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"
 
-[xml]$xmlDoc = Get-Content $project
+# Read .csproj file as UTF-8
+$xmlDoc = New-Object -TypeName XML
+$utf8Encoding = (New-Object System.Text.UTF8Encoding($false))
+$streamReader = New-Object System.IO.StreamReader($fullFileName, $utf8Encoding, $false)
+$xmlDoc.Load($streamReader)
+$streamReader.Close()
 
 # Assumption: VersionPrefix is set in the first property group.
 $versionPrefixString = $xmlDoc.Project.PropertyGroup[0].VersionPrefix
@@ -25,5 +30,4 @@ $patchVersion = $versionObj.Build.ToString()
 $updatedVersionPrefixString = "{0}.{1}.{2}" -f $majorVersion, $minorVersion, $patchVersion
 $xmlDoc.Project.PropertyGroup[0].VersionPrefix = $updatedVersionPrefixString
 
-$fullFileName = $PWD.ToString() + "\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"
 $xmlDoc.Save($fullFileName)
