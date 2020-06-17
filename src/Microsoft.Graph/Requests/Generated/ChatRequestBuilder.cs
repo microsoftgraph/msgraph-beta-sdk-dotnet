@@ -86,7 +86,28 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for ChatSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="IChatSendActivityNotificationRequestBuilder"/>.</returns>
+        public IChatSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationRecipient recipient = null)
+        {
+            return new ChatSendActivityNotificationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendActivityNotification"),
+                this.Client,
+                topic,
+                activityType,
+                chainId,
+                previewText,
+                templateParameters,
+                recipient);
+        }
     
     }
 }

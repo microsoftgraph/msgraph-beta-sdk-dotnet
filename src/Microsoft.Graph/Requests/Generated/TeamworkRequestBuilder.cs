@@ -62,32 +62,5 @@ namespace Microsoft.Graph
             }
         }
     
-        /// <summary>
-        /// Gets the request builder for TeamworkGenerateActivityNotification.
-        /// </summary>
-        /// <returns>The <see cref="ITeamworkGenerateActivityNotificationRequestBuilder"/>.</returns>
-        public ITeamworkGenerateActivityNotificationRequestBuilder GenerateActivityNotification(
-            string about = null,
-            string activityType = null,
-            Int64? aggregationId = null,
-            string onClickWebUrl = null,
-            string previewText = null,
-            string teamsAppId = null,
-            IEnumerable<KeyValuePair> templateParameters = null,
-            TeamworkNotificationAudience recipient = null)
-        {
-            return new TeamworkGenerateActivityNotificationRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.generateActivityNotification"),
-                this.Client,
-                about,
-                activityType,
-                aggregationId,
-                onClickWebUrl,
-                previewText,
-                teamsAppId,
-                templateParameters,
-                recipient);
-        }
-    
     }
 }

@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
         public ICloudCommunicationsOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
     
+        /// <summary>
+        /// Gets or sets presences.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presences", Required = Newtonsoft.Json.Required.Default)]
+        public ICloudCommunicationsPresencesCollectionPage Presences { get; set; }
+    
     }
 }
 

@@ -135,6 +135,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ConnectorGroup.
+        /// </summary>
+        /// <returns>The <see cref="IConnectorGroupWithReferenceRequestBuilder"/>.</returns>
+        public IConnectorGroupWithReferenceRequestBuilder ConnectorGroup
+        {
+            get
+            {
+                return new ConnectorGroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("connectorGroup"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Synchronization.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationRequestBuilder"/>.</returns>

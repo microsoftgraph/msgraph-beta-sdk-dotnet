@@ -72,6 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets messages.
+        /// A collection of all the messages in the channel. A navigation property. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
         public IChannelMessagesCollectionPage Messages { get; set; }
@@ -91,6 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets files folder.
+        /// Metadata for the location where the channel's files are stored.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filesFolder", Required = Newtonsoft.Json.Required.Default)]
         public DriveItem FilesFolder { get; set; }

@@ -142,6 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets join information.
+        /// The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinInformation", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody JoinInformation { get; set; }

@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sequenceNumber.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequenceNumber", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SequenceNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets subscriptionId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionId", Required = Newtonsoft.Json.Required.Default)]

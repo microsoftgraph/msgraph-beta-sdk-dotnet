@@ -85,6 +85,30 @@ namespace Microsoft.Graph
                 return new OnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("publishedResources"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Connectors.
+        /// </summary>
+        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorsCollectionRequestBuilder"/>.</returns>
+        public IOnPremisesPublishingProfileConnectorsCollectionRequestBuilder Connectors
+        {
+            get
+            {
+                return new OnPremisesPublishingProfileConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("connectors"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ConnectorGroups.
+        /// </summary>
+        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder"/>.</returns>
+        public IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder ConnectorGroups
+        {
+            get
+            {
+                return new OnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("connectorGroups"), this.Client);
+            }
+        }
     
     }
 }

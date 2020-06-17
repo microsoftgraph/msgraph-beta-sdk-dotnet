@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         public string ExternalId { get; set; }
     
         /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
         /// </summary>

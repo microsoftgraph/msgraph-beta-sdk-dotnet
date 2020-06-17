@@ -80,6 +80,13 @@ namespace Microsoft.Graph
         public PolicyPlatformType? PlatformType { get; set; }
     
         /// <summary>
+        /// Gets or sets template subtype.
+        /// The template's subtype.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateSubtype", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementTemplateSubtype? TemplateSubtype { get; set; }
+    
+        /// <summary>
         /// Gets or sets published date time.
         /// When the template was published
         /// </summary>

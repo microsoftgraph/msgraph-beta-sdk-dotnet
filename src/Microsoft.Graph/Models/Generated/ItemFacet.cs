@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet LastModifiedBy { get; set; }
     
+        /// <summary>
+        /// Gets or sets source.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        public PersonDataSource Source { get; set; }
+    
     }
 }
 

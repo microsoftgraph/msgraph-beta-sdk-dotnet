@@ -101,6 +101,20 @@ namespace Microsoft.Graph
         public bool? CertificateCredentialConfigurationDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft launcher configuration enabled.
+        /// Indicates whether or not to you want configure Microsoft Launcher.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftLauncherConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollment profile.
+        /// Indicates which enrollment profile you want to configure.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentProfile", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile { get; set; }
+    
+        /// <summary>
         /// Gets or sets data roaming blocked.
         /// Indicates whether or not to block a user from data roaming.
         /// </summary>

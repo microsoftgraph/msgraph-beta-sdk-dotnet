@@ -114,5 +114,35 @@ namespace Microsoft.Graph
         /// </summary>
         StapleDualBottom = 31,
 	
+        /// <summary>
+        /// Stitch Edge
+        /// </summary>
+        StitchEdge = 32,
+	
+        /// <summary>
+        /// Stitch Left Edge
+        /// </summary>
+        StitchLeftEdge = 33,
+	
+        /// <summary>
+        /// Stitch Top Edge
+        /// </summary>
+        StitchTopEdge = 34,
+	
+        /// <summary>
+        /// Stitch Right Edge
+        /// </summary>
+        StitchRightEdge = 35,
+	
+        /// <summary>
+        /// Stitch Bottom Edge
+        /// </summary>
+        StitchBottomEdge = 36,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 37,
+	
     }
 }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner state.
-        /// Partner state of this tenant
+        /// Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementPartnerTenantState? PartnerState { get; set; }

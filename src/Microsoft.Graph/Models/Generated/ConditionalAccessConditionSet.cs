@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public IEnumerable<RiskLevel> SignInRiskLevels { get; set; }
     
         /// <summary>
+        /// Gets or sets userRiskLevels.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRiskLevels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RiskLevel> UserRiskLevels { get; set; }
+    
+        /// <summary>
         /// Gets or sets platforms.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
