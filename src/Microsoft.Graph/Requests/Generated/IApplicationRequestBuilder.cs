@@ -74,6 +74,12 @@ namespace Microsoft.Graph
         IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for ConnectorGroup.
+        /// </summary>
+        /// <returns>The <see cref="IConnectorGroupWithReferenceRequestBuilder"/>.</returns>
+        IConnectorGroupWithReferenceRequestBuilder ConnectorGroup { get; }
+
+        /// <summary>
         /// Gets the request builder for Synchronization.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationRequestBuilder"/>.</returns>

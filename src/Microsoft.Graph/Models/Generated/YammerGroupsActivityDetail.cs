@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         public Int64? LikedCount { get; set; }
     
         /// <summary>
+        /// Gets or sets network display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string NetworkDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets report period.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]

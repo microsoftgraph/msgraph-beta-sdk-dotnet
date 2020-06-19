@@ -87,6 +87,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets extension attributes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionAttributes", Required = Newtonsoft.Json.Required.Default)]
+        public OnPremisesExtensionAttributes ExtensionAttributes { get; set; }
+    
+        /// <summary>
         /// Gets or sets is compliant.
         /// true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.
         /// </summary>

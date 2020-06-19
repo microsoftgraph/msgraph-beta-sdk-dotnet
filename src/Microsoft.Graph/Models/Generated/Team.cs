@@ -146,6 +146,12 @@ namespace Microsoft.Graph
         public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamMembersCollectionPage Members { get; set; }
+    
+        /// <summary>
         /// Gets or sets channels.
         /// The collection of channels &amp; messages associated with the team.
         /// </summary>
@@ -158,12 +164,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryChannel", Required = Newtonsoft.Json.Required.Default)]
         public Channel PrimaryChannel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apps", Required = Newtonsoft.Json.Required.Default)]
-        public ITeamAppsCollectionPage Apps { get; set; }
     
         /// <summary>
         /// Gets or sets installed apps.

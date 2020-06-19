@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         Allowed = 2,
 	
+        /// <summary>
+        /// Not Configured
+        /// </summary>
+        NotConfigured = 3,
+	
     }
 }

@@ -175,6 +175,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementIntentCreateCopy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentCreateCopyRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentCreateCopyRequestBuilder CreateCopy(
+            string displayName = null)
+        {
+            return new DeviceManagementIntentCreateCopyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createCopy"),
+                this.Client,
+                displayName);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementIntentAssign.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>

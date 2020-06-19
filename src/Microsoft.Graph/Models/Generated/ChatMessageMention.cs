@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
+        /// Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding &amp;lt;at id='{index}'&amp;gt; tag in the message body.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Id { get; set; }
     
         /// <summary>
         /// Gets or sets mentionText.
+        /// String used to represent the mention. For example, a user's display name, a team name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentionText", Required = Newtonsoft.Json.Required.Default)]
         public string MentionText { get; set; }
     
         /// <summary>
         /// Gets or sets mentioned.
+        /// The entity (user, application, team, or channel) that was mentioned.  If it was a channel or team that was @mentioned, the identitySet contains a conversation property giving the ID of the team/channel, and a conversationIdentityType property that represents either the team or channel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentioned", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Mentioned { get; set; }

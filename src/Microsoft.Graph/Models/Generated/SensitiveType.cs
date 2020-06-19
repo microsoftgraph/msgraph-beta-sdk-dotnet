@@ -72,6 +72,18 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
         public SensitiveTypeScope? Scope { get; set; }
     
+        /// <summary>
+        /// Gets or sets sensitive type source.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeSource", Required = Newtonsoft.Json.Required.Default)]
+        public SensitiveTypeSource? SensitiveTypeSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classification method.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationMethod", Required = Newtonsoft.Json.Required.Default)]
+        public ClassificationMethod? ClassificationMethod { get; set; }
+    
     }
 }
 

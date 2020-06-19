@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICloudCommunicationsOnlineMeetingsCollectionRequestBuilder"/>.</returns>
         ICloudCommunicationsOnlineMeetingsCollectionRequestBuilder OnlineMeetings { get; }
+
+        /// <summary>
+        /// Gets the request builder for Presences.
+        /// </summary>
+        /// <returns>The <see cref="ICloudCommunicationsPresencesCollectionRequestBuilder"/>.</returns>
+        ICloudCommunicationsPresencesCollectionRequestBuilder Presences { get; }
     
         /// <summary>
         /// Gets the request builder for CloudCommunicationsGetPresencesByUserId.

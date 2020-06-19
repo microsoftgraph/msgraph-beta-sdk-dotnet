@@ -96,23 +96,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for SynchronizationJobApply.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobApplyRequestBuilder"/>.</returns>
-        public ISynchronizationJobApplyRequestBuilder Apply(
-            string objectId,
-            string typeName,
-            string ruleId = null)
-        {
-            return new SynchronizationJobApplyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.apply"),
-                this.Client,
-                objectId,
-                typeName,
-                ruleId);
-        }
-
-        /// <summary>
         /// Gets the request builder for SynchronizationJobRestart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobRestartRequestBuilder"/>.</returns>

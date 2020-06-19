@@ -48,6 +48,24 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proficiency", Required = Newtonsoft.Json.Required.Default)]
         public LanguageProficiencyLevel? Proficiency { get; set; }
     
+        /// <summary>
+        /// Gets or sets spoken.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spoken", Required = Newtonsoft.Json.Required.Default)]
+        public LanguageProficiencyLevel? Spoken { get; set; }
+    
+        /// <summary>
+        /// Gets or sets written.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "written", Required = Newtonsoft.Json.Required.Default)]
+        public LanguageProficiencyLevel? Written { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reading.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reading", Required = Newtonsoft.Json.Required.Default)]
+        public LanguageProficiencyLevel? Reading { get; set; }
+    
     }
 }
 

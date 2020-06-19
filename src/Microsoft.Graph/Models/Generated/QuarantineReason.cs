@@ -54,5 +54,10 @@ namespace Microsoft.Graph
         /// </summary>
         TooManyDeletes = 32,
 	
+        /// <summary>
+        /// Ingestion Interrupted
+        /// </summary>
+        IngestionInterrupted = 64,
+	
     }
 }

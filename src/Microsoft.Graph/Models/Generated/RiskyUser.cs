@@ -37,12 +37,6 @@ namespace Microsoft.Graph
         public bool? IsDeleted { get; set; }
     
         /// <summary>
-        /// Gets or sets is guest.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isGuest", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsGuest { get; set; }
-    
-        /// <summary>
         /// Gets or sets is processing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isProcessing", Required = Newtonsoft.Json.Required.Default)]

@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         ITeamOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
+        ITeamMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -72,12 +78,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
         IChannelRequestBuilder PrimaryChannel { get; }
-
-        /// <summary>
-        /// Gets the request builder for Apps.
-        /// </summary>
-        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
-        ITeamAppsCollectionRequestBuilder Apps { get; }
 
         /// <summary>
         /// Gets the request builder for InstalledApps.
@@ -91,6 +91,18 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITeamOperationsCollectionRequestBuilder"/>.</returns>
         ITeamOperationsCollectionRequestBuilder Operations { get; }
     
+        /// <summary>
+        /// Gets the request builder for TeamSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="ITeamSendActivityNotificationRequestBuilder"/>.</returns>
+        ITeamSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationRecipient recipient = null);
+
         /// <summary>
         /// Gets the request builder for TeamClone.
         /// </summary>

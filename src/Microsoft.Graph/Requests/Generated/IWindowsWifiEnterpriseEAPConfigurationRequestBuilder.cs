@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWindowsCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
         IWindowsCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificateForClientValidation.
+        /// </summary>
+        /// <returns>The <see cref="IWindows81TrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IWindows81TrustedRootCertificateWithReferenceRequestBuilder RootCertificateForClientValidation { get; }
     
     }
 }

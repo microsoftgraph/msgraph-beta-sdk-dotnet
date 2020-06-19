@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public string TeamsAppId { get; set; }
     
         /// <summary>
+        /// Gets or sets azure adapp id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureADAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string AzureADAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The name of the app provided by the app developer.
         /// </summary>
@@ -50,6 +56,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public string Version { get; set; }
+    
+        /// <summary>
+        /// Gets or sets publishing state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingState", Required = Newtonsoft.Json.Required.Default)]
+        public TeamsAppPublishingState? PublishingState { get; set; }
     
     }
 }

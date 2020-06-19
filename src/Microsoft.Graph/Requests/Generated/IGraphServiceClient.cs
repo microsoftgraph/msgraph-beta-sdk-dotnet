@@ -202,6 +202,16 @@ namespace Microsoft.Graph
         IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles { get; }
     
         /// <summary>
+        /// Gets the GraphServiceConnectors request builder.
+        /// </summary>
+        IGraphServiceConnectorsCollectionRequestBuilder Connectors { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceConnectorGroups request builder.
+        /// </summary>
+        IGraphServiceConnectorGroupsCollectionRequestBuilder ConnectorGroups { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceGroupLifecyclePolicies request builder.
         /// </summary>
         IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
@@ -215,11 +225,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceFilterOperators request builder.
         /// </summary>
         IGraphServiceFilterOperatorsCollectionRequestBuilder FilterOperators { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceDirectories request builder.
-        /// </summary>
-        IGraphServiceDirectoriesCollectionRequestBuilder Directories { get; }
     
         /// <summary>
         /// Gets the GraphServiceAccessPackageCatalogs request builder.
@@ -310,41 +315,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceAgreementAcceptances request builder.
         /// </summary>
         IGraphServiceAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceIdentityRiskEvents request builder.
-        /// </summary>
-        IGraphServiceIdentityRiskEventsCollectionRequestBuilder IdentityRiskEvents { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceImpossibleTravelRiskEvents request builder.
-        /// </summary>
-        IGraphServiceImpossibleTravelRiskEventsCollectionRequestBuilder ImpossibleTravelRiskEvents { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceLeakedCredentialsRiskEvents request builder.
-        /// </summary>
-        IGraphServiceLeakedCredentialsRiskEventsCollectionRequestBuilder LeakedCredentialsRiskEvents { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAnonymousIpRiskEvents request builder.
-        /// </summary>
-        IGraphServiceAnonymousIpRiskEventsCollectionRequestBuilder AnonymousIpRiskEvents { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceSuspiciousIpRiskEvents request builder.
-        /// </summary>
-        IGraphServiceSuspiciousIpRiskEventsCollectionRequestBuilder SuspiciousIpRiskEvents { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceUnfamiliarLocationRiskEvents request builder.
-        /// </summary>
-        IGraphServiceUnfamiliarLocationRiskEventsCollectionRequestBuilder UnfamiliarLocationRiskEvents { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceMalwareRiskEvents request builder.
-        /// </summary>
-        IGraphServiceMalwareRiskEventsCollectionRequestBuilder MalwareRiskEvents { get; }
     
         /// <summary>
         /// Gets the GraphServiceRiskDetections request builder.
@@ -542,9 +512,9 @@ namespace Microsoft.Graph
         IEntitlementManagementRequestBuilder EntitlementManagement { get; }
     
         /// <summary>
-        /// Gets the GraphServiceConditionalAccess request builder.
+        /// Gets the GraphServiceIdentityProtectionNotificationPolicy request builder.
         /// </summary>
-        IConditionalAccessRootRequestBuilder ConditionalAccess { get; }
+        IIdentityProtectionNotificationPolicyRequestBuilder IdentityProtectionNotificationPolicy { get; }
     
         /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
