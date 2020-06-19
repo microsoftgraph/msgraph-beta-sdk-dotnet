@@ -48,6 +48,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder"/>.</returns>
         IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder PublishedResources { get; }
+
+        /// <summary>
+        /// Gets the request builder for Connectors.
+        /// </summary>
+        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorsCollectionRequestBuilder"/>.</returns>
+        IOnPremisesPublishingProfileConnectorsCollectionRequestBuilder Connectors { get; }
+
+        /// <summary>
+        /// Gets the request builder for ConnectorGroups.
+        /// </summary>
+        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder"/>.</returns>
+        IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder ConnectorGroups { get; }
     
     }
 }

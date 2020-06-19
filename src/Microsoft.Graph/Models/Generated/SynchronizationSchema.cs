@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets provisioning task identifier.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningTaskIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string ProvisioningTaskIdentifier { get; set; }
-    
-        /// <summary>
         /// Gets or sets synchronization rules.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationRules", Required = Newtonsoft.Json.Required.Default)]

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for RegionalAndLanguageSettings.
+        /// </summary>
+        /// <returns>The <see cref="IRegionalAndLanguageSettingsRequestBuilder"/>.</returns>
+        public IRegionalAndLanguageSettingsRequestBuilder RegionalAndLanguageSettings
+        {
+            get
+            {
+                return new RegionalAndLanguageSettingsRequestBuilder(this.AppendSegmentToRequestUrl("regionalAndLanguageSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ShiftPreferences.
         /// </summary>
         /// <returns>The <see cref="IShiftPreferencesRequestBuilder"/>.</returns>

@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public string DeviceCompliancePolicyId { get; set; }
     
         /// <summary>
+        /// Gets or sets roleScopeTagIds.
+        /// List of Scope Tags for this Entity instance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

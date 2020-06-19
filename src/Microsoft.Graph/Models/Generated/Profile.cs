@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public IProfileAccountCollectionPage Account { get; set; }
     
         /// <summary>
+        /// Gets or sets addresses.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addresses", Required = Newtonsoft.Json.Required.Default)]
+        public IProfileAddressesCollectionPage Addresses { get; set; }
+    
+        /// <summary>
         /// Gets or sets anniversaries.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "anniversaries", Required = Newtonsoft.Json.Required.Default)]
@@ -89,6 +95,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "projects", Required = Newtonsoft.Json.Required.Default)]
         public IProfileProjectsCollectionPage Projects { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        public IProfileNotesCollectionPage Notes { get; set; }
     
         /// <summary>
         /// Gets or sets skills.

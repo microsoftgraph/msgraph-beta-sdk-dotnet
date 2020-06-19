@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AuthenticationFlowsPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationFlowsPolicyRequestBuilder"/>.</returns>
+        public IAuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy
+        {
+            get
+            {
+                return new AuthenticationFlowsPolicyRequestBuilder(this.AppendSegmentToRequestUrl("authenticationFlowsPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>

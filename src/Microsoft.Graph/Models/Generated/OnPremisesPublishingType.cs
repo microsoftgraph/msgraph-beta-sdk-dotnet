@@ -20,9 +20,9 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// App Proxy
+        /// Application Proxy
         /// </summary>
-        AppProxy = 0,
+        ApplicationProxy = 0,
 	
         /// <summary>
         /// Exchange Online

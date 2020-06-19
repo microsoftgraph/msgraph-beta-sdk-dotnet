@@ -20,24 +20,9 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Date Time
+        /// String
         /// </summary>
-        DateTime = 5,
-	
-        /// <summary>
-        /// Boolean
-        /// </summary>
-        Boolean = 4,
-	
-        /// <summary>
-        /// Binary
-        /// </summary>
-        Binary = 3,
-	
-        /// <summary>
-        /// Reference
-        /// </summary>
-        Reference = 2,
+        @String = 0,
 	
         /// <summary>
         /// Integer
@@ -45,9 +30,24 @@ namespace Microsoft.Graph
         Integer = 1,
 	
         /// <summary>
-        /// String
+        /// Reference
         /// </summary>
-        @String = 0,
+        Reference = 2,
+	
+        /// <summary>
+        /// Binary
+        /// </summary>
+        Binary = 3,
+	
+        /// <summary>
+        /// Boolean
+        /// </summary>
+        Boolean = 4,
+	
+        /// <summary>
+        /// Date Time
+        /// </summary>
+        DateTime = 5,
 	
     }
 }

@@ -64,5 +64,10 @@ namespace Microsoft.Graph
         /// </summary>
         SetDeviceName = 8,
 	
+        /// <summary>
+        /// Sync Device
+        /// </summary>
+        SyncDevice = 9,
+	
     }
 }

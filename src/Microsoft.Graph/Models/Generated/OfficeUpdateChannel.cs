@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         FirstReleaseDeferred = 4,
 	
+        /// <summary>
+        /// Monthly Enterprise
+        /// </summary>
+        MonthlyEnterprise = 5,
+	
     }
 }

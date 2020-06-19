@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IChangeTrackedEntityRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for ChangeTrackedEntityStageForDeletion.
+        /// </summary>
+        /// <returns>The <see cref="IChangeTrackedEntityStageForDeletionRequestBuilder"/>.</returns>
+        IChangeTrackedEntityStageForDeletionRequestBuilder StageForDeletion();
+    
     }
 }

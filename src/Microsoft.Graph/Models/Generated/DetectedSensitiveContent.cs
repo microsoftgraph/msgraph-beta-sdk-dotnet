@@ -19,8 +19,7 @@ namespace Microsoft.Graph
     /// The type DetectedSensitiveContent.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class DetectedSensitiveContent
+    public partial class DetectedSensitiveContent : DetectedSensitiveContentBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DetectedSensitiveContent"/> class.
@@ -31,52 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
+        /// Gets or sets scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets displayName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets uniqueCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UniqueCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets confidence.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Confidence { get; set; }
-    
-        /// <summary>
-        /// Gets or sets recommendedConfidence.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedConfidence", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RecommendedConfidence { get; set; }
-    
-        /// <summary>
-        /// Gets or sets matches.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SensitiveContentLocation> Matches { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        public SensitiveTypeScope? Scope { get; set; }
     
     }
 }

@@ -111,6 +111,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
+        public ITeamMembersCollectionRequestBuilder Members
+        {
+            get
+            {
+                return new TeamMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -131,18 +143,6 @@ namespace Microsoft.Graph
             get
             {
                 return new ChannelRequestBuilder(this.AppendSegmentToRequestUrl("primaryChannel"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Apps.
-        /// </summary>
-        /// <returns>The <see cref="ITeamAppsCollectionRequestBuilder"/>.</returns>
-        public ITeamAppsCollectionRequestBuilder Apps
-        {
-            get
-            {
-                return new TeamAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("apps"), this.Client);
             }
         }
 
@@ -170,6 +170,29 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for TeamSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="ITeamSendActivityNotificationRequestBuilder"/>.</returns>
+        public ITeamSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationRecipient recipient = null)
+        {
+            return new TeamSendActivityNotificationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendActivityNotification"),
+                this.Client,
+                topic,
+                activityType,
+                chainId,
+                previewText,
+                templateParameters,
+                recipient);
+        }
+
         /// <summary>
         /// Gets the request builder for TeamClone.
         /// </summary>

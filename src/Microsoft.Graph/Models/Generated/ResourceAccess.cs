@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are 'scope' or 'role'.
+        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

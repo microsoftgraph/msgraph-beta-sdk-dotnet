@@ -62,5 +62,26 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for UserTeamworkSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkSendActivityNotificationRequestBuilder"/>.</returns>
+        public IUserTeamworkSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null)
+        {
+            return new UserTeamworkSendActivityNotificationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendActivityNotification"),
+                this.Client,
+                topic,
+                activityType,
+                chainId,
+                previewText,
+                templateParameters);
+        }
+    
     }
 }

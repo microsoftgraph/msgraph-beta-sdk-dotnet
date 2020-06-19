@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets template id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
-        public string TemplateId { get; set; }
-    
-        /// <summary>
         /// Gets or sets schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationStatus Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets template id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets synchronization job settings.

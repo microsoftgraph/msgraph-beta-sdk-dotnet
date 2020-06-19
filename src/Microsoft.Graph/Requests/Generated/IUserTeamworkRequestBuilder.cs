@@ -37,5 +37,16 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IUserTeamworkInstalledAppsCollectionRequestBuilder"/>.</returns>
         IUserTeamworkInstalledAppsCollectionRequestBuilder InstalledApps { get; }
     
+        /// <summary>
+        /// Gets the request builder for UserTeamworkSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkSendActivityNotificationRequestBuilder"/>.</returns>
+        IUserTeamworkSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null);
+    
     }
 }

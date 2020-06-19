@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         All = 5,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 6,
+	
     }
 }

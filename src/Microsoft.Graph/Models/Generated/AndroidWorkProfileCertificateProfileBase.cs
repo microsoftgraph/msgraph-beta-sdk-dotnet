@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Android Work Profile Certificate Profile Base.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class AndroidWorkProfileCertificateProfileBase : DeviceConfiguration
+    public partial class AndroidWorkProfileCertificateProfileBase : FeatureFlightedConfiguration
     {
     
 		///<summary>

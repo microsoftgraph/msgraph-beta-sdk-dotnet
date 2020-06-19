@@ -415,12 +415,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external user state.
+        /// For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq 'PendingAcceptance'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalUserState", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalUserState { get; set; }
     
         /// <summary>
         /// Gets or sets external user state change date time.
+        /// Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalUserStateChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalUserStateChangeDateTime { get; set; }
@@ -438,12 +440,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailboxSettings", Required = Newtonsoft.Json.Required.Default)]
         public MailboxSettings MailboxSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets identity user risk.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityUserRisk", Required = Newtonsoft.Json.Required.Default)]
-        public IdentityUserRisk IdentityUserRisk { get; set; }
     
         /// <summary>
         /// Gets or sets device enrollment limit.
