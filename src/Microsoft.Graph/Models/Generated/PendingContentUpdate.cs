@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets queuedDateTime.
+        /// Date and time the pending binary operation was queued in UTC time. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queuedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? QueuedDateTime { get; set; }

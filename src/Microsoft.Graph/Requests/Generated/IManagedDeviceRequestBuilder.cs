@@ -78,6 +78,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceUsersCollectionRequestBuilder"/>.</returns>
         IManagedDeviceUsersCollectionRequestBuilder Users { get; }
+
+        /// <summary>
+        /// Gets the request builder for LogCollectionRequests.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceLogCollectionRequestsCollectionRequestBuilder LogCollectionRequests { get; }
     
         /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
@@ -114,6 +120,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
         IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCreateDeviceLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder"/>.</returns>
+        IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest(
+            DeviceLogCollectionRequestObject templateType = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceRetire.
@@ -257,6 +270,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IManagedDeviceTriggerConfigurationManagerActionRequestBuilder"/>.</returns>
         IManagedDeviceTriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction(
             ConfigurationManagerAction configurationManagerAction);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetNonCompliantSettings.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetNonCompliantSettingsRequestBuilder"/>.</returns>
+        IManagedDeviceGetNonCompliantSettingsRequestBuilder GetNonCompliantSettings();
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceGetFileVaultKey.

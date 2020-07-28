@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
 
         /// <summary>
-        /// Gets the request builder for ClaimsMappingPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies { get; }
-
-        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>

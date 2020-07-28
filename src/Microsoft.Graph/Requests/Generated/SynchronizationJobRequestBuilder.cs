@@ -74,6 +74,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SynchronizationJobProvisionOnDemand.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobProvisionOnDemandRequestBuilder"/>.</returns>
+        public ISynchronizationJobProvisionOnDemandRequestBuilder ProvisionOnDemand(
+            IEnumerable<SynchronizationJobApplicationParameters> parameters = null)
+        {
+            return new SynchronizationJobProvisionOnDemandRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.provisionOnDemand"),
+                this.Client,
+                parameters);
+        }
+
+        /// <summary>
         /// Gets the request builder for SynchronizationJobStart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>

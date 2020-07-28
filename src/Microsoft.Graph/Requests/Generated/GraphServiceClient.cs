@@ -131,17 +131,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceCases request builder.
-        /// </summary>
-        public IGraphServiceCasesCollectionRequestBuilder Cases
-        {
-            get
-            {
-                return new GraphServiceCasesCollectionRequestBuilder(this.BaseUrl + "/cases", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         public IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
@@ -512,105 +501,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceFilterOperatorsCollectionRequestBuilder(this.BaseUrl + "/filterOperators", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageCatalogs request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs
-        {
-            get
-            {
-                return new GraphServiceAccessPackageCatalogsCollectionRequestBuilder(this.BaseUrl + "/accessPackageCatalogs", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageResources request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageResourcesCollectionRequestBuilder AccessPackageResources
-        {
-            get
-            {
-                return new GraphServiceAccessPackageResourcesCollectionRequestBuilder(this.BaseUrl + "/accessPackageResources", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageResourceRequests request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageResourceRequestsCollectionRequestBuilder AccessPackageResourceRequests
-        {
-            get
-            {
-                return new GraphServiceAccessPackageResourceRequestsCollectionRequestBuilder(this.BaseUrl + "/accessPackageResourceRequests", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageResourceRoleScopes request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes
-        {
-            get
-            {
-                return new GraphServiceAccessPackageResourceRoleScopesCollectionRequestBuilder(this.BaseUrl + "/accessPackageResourceRoleScopes", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackages request builder.
-        /// </summary>
-        public IGraphServiceAccessPackagesCollectionRequestBuilder AccessPackages
-        {
-            get
-            {
-                return new GraphServiceAccessPackagesCollectionRequestBuilder(this.BaseUrl + "/accessPackages", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignmentPolicies request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageAssignmentPoliciesCollectionRequestBuilder AccessPackageAssignmentPolicies
-        {
-            get
-            {
-                return new GraphServiceAccessPackageAssignmentPoliciesCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignmentPolicies", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignments request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments
-        {
-            get
-            {
-                return new GraphServiceAccessPackageAssignmentsCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignments", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignmentRequests request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageAssignmentRequestsCollectionRequestBuilder AccessPackageAssignmentRequests
-        {
-            get
-            {
-                return new GraphServiceAccessPackageAssignmentRequestsCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignmentRequests", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignmentResourceRoles request builder.
-        /// </summary>
-        public IGraphServiceAccessPackageAssignmentResourceRolesCollectionRequestBuilder AccessPackageAssignmentResourceRoles
-        {
-            get
-            {
-                return new GraphServiceAccessPackageAssignmentResourceRolesCollectionRequestBuilder(this.BaseUrl + "/accessPackageAssignmentResourceRoles", this);
             }
         }
     
@@ -989,6 +879,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceBitlocker request builder.
+        /// </summary>
+        public IBitlockerRequestBuilder Bitlocker
+        {
+            get
+            {
+                return new BitlockerRequestBuilder(this.BaseUrl + "/bitlocker", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentity request builder.
         /// </summary>
         public IIdentityContainerRequestBuilder Identity
@@ -1132,24 +1033,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceEntitlementManagement request builder.
+        /// Gets the GraphServiceIdentityProtection request builder.
         /// </summary>
-        public IEntitlementManagementRequestBuilder EntitlementManagement
+        public IIdentityProtectionRootRequestBuilder IdentityProtection
         {
             get
             {
-                return new EntitlementManagementRequestBuilder(this.BaseUrl + "/entitlementManagement", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceIdentityProtectionNotificationPolicy request builder.
-        /// </summary>
-        public IIdentityProtectionNotificationPolicyRequestBuilder IdentityProtectionNotificationPolicy
-        {
-            get
-            {
-                return new IdentityProtectionNotificationPolicyRequestBuilder(this.BaseUrl + "/identityProtectionNotificationPolicy", this);
+                return new IdentityProtectionRootRequestBuilder(this.BaseUrl + "/identityProtection", this);
             }
         }
     
@@ -1264,17 +1154,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceAppCatalogs request builder.
-        /// </summary>
-        public IAppCatalogsRequestBuilder AppCatalogs
-        {
-            get
-            {
-                return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceTeamwork request builder.
         /// </summary>
         public ITeamworkRequestBuilder Teamwork
@@ -1282,6 +1161,17 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppCatalogs request builder.
+        /// </summary>
+        public IAppCatalogsRequestBuilder AppCatalogs
+        {
+            get
+            {
+                return new AppCatalogsRequestBuilder(this.BaseUrl + "/appCatalogs", this);
             }
         }
     

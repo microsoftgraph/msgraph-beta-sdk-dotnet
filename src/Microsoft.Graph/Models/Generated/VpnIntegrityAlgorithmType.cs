@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         Sha2_512 = 4,
 	
+        /// <summary>
+        /// Md5
+        /// </summary>
+        Md5 = 5,
+	
     }
 }

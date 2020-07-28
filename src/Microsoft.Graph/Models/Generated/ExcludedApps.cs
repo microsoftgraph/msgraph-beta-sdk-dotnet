@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public bool? Access { get; set; }
     
         /// <summary>
+        /// Gets or sets bing.
+        /// The value for if Microsoft Search as default should be excluded or not.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Bing { get; set; }
+    
+        /// <summary>
         /// Gets or sets excel.
         /// The value for if MS Office Excel should be excluded or not.
         /// </summary>

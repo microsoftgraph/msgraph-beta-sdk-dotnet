@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IAuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceRegistrationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>
+        IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>
@@ -72,6 +78,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAdminConsentRequestPolicyRequestBuilder"/>.</returns>
         IAdminConsentRequestPolicyRequestBuilder AdminConsentRequestPolicy { get; }
+
+        /// <summary>
+        /// Gets the request builder for DirectoryRoleAccessReviewPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryRoleAccessReviewPolicyRequestBuilder"/>.</returns>
+        IDirectoryRoleAccessReviewPolicyRequestBuilder DirectoryRoleAccessReviewPolicy { get; }
 
         /// <summary>
         /// Gets the request builder for IdentitySecurityDefaultsEnforcementPolicy.

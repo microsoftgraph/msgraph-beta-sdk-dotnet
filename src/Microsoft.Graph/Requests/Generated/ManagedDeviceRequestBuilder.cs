@@ -145,6 +145,18 @@ namespace Microsoft.Graph
                 return new ManagedDeviceUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("users"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for LogCollectionRequests.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceLogCollectionRequestsCollectionRequestBuilder LogCollectionRequests
+        {
+            get
+            {
+                return new ManagedDeviceLogCollectionRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("logCollectionRequests"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
@@ -211,6 +223,19 @@ namespace Microsoft.Graph
             return new ManagedDeviceRotateFileVaultKeyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.rotateFileVaultKey"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCreateDeviceLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder"/>.</returns>
+        public IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest(
+            DeviceLogCollectionRequestObject templateType = null)
+        {
+            return new ManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createDeviceLogCollectionRequest"),
+                this.Client,
+                templateType);
         }
 
         /// <summary>
@@ -475,6 +500,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.triggerConfigurationManagerAction"),
                 this.Client,
                 configurationManagerAction);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetNonCompliantSettings.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetNonCompliantSettingsRequestBuilder"/>.</returns>
+        public IManagedDeviceGetNonCompliantSettingsRequestBuilder GetNonCompliantSettings()
+        {
+            return new ManagedDeviceGetNonCompliantSettingsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getNonCompliantSettings"),
+                this.Client);
         }
 
         /// <summary>

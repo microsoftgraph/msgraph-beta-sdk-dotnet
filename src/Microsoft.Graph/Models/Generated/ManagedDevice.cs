@@ -604,6 +604,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceUsersCollectionPage Users { get; set; }
     
+        /// <summary>
+        /// Gets or sets log collection requests.
+        /// List of log collection requests
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logCollectionRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedDeviceLogCollectionRequestsCollectionPage LogCollectionRequests { get; set; }
+    
     }
 }
 

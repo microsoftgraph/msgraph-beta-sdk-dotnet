@@ -231,6 +231,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MacOSEnterpriseWiFiConfiguration macOSEnterpriseWiFiConfigurationToInitialize)
         {
 
+            if (macOSEnterpriseWiFiConfigurationToInitialize != null && macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData != null)
+            {
+
+                if (macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation != null && macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.CurrentPage != null)
+                {
+                    macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.AdditionalData = macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    macOSEnterpriseWiFiConfigurationToInitialize.AdditionalData.TryGetValue("rootCertificatesForServerValidation@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        macOSEnterpriseWiFiConfigurationToInitialize.RootCertificatesForServerValidation.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

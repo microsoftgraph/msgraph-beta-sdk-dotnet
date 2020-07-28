@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> ExcludeList { get; set; }
     
         /// <summary>
+        /// Gets or sets targeted mobile apps.
+        /// Targeted mobile apps. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> TargetedMobileApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>

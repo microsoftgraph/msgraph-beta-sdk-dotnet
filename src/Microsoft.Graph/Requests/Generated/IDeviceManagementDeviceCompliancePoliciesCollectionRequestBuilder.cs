@@ -44,6 +44,13 @@ namespace Microsoft.Graph
             IEnumerable<string> payloadIds = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyValidateComplianceScript.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder ValidateComplianceScript(
+            DeviceCompliancePolicyScript deviceCompliancePolicyScript = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyGetDevicesScheduledToRetire.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.</returns>

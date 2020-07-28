@@ -87,6 +87,35 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetActiveMalwareReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetActiveMalwareReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetActiveMalwareReportRequestBuilder GetActiveMalwareReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetActiveMalwareReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActiveMalwareReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>
@@ -219,6 +248,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetSettingNonComplianceReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getSettingNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetReportFilters.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetReportFiltersRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetReportFiltersRequestBuilder GetReportFilters(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetReportFiltersRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getReportFilters"),
                 this.Client,
                 name,
                 select,

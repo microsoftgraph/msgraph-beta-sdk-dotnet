@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IIdentityProviderRequestBuilder"/>.</returns>
         IIdentityProviderRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for IdentityProviderAvailableProviderTypes.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityProviderAvailableProviderTypesRequestBuilder"/>.</returns>
+        IIdentityProviderAvailableProviderTypesRequestBuilder AvailableProviderTypes();
     }
 }

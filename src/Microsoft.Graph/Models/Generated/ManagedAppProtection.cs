@@ -310,6 +310,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfUnableToAuthenticateUser", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser { get; set; }
     
+        /// <summary>
+        /// Gets or sets dialer restriction level.
+        /// The classes of dialer apps that are allowed to click-to-open a phone number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dialerRestrictionLevel", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppPhoneNumberRedirectLevel? DialerRestrictionLevel { get; set; }
+    
     }
 }
 

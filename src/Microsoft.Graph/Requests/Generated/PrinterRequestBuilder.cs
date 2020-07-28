@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new PrinterConnectorsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("connectors"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for TaskTriggers.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterTaskTriggersCollectionRequestBuilder"/>.</returns>
+        public IPrinterTaskTriggersCollectionRequestBuilder TaskTriggers
+        {
+            get
+            {
+                return new PrinterTaskTriggersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("taskTriggers"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for PrinterResetDefaults.

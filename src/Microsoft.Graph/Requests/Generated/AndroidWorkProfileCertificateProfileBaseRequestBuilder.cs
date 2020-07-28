@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidWorkProfileCertificateProfileBaseRequestBuilder.
     /// </summary>
-    public partial class AndroidWorkProfileCertificateProfileBaseRequestBuilder : FeatureFlightedConfigurationRequestBuilder, IAndroidWorkProfileCertificateProfileBaseRequestBuilder
+    public partial class AndroidWorkProfileCertificateProfileBaseRequestBuilder : DeviceConfigurationRequestBuilder, IAndroidWorkProfileCertificateProfileBaseRequestBuilder
     {
 
         /// <summary>

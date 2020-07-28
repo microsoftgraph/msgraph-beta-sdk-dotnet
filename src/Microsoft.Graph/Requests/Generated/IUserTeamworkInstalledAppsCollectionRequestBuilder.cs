@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IUserTeamworkInstalledAppsCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="ITeamsAppInstallationRequestBuilder"/> for the specified TeamsAppInstallation.
+        /// Gets an <see cref="IUserScopeTeamsAppInstallationRequestBuilder"/> for the specified UserScopeTeamsAppInstallation.
         /// </summary>
-        /// <param name="id">The ID for the TeamsAppInstallation.</param>
-        /// <returns>The <see cref="ITeamsAppInstallationRequestBuilder"/>.</returns>
-        ITeamsAppInstallationRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the UserScopeTeamsAppInstallation.</param>
+        /// <returns>The <see cref="IUserScopeTeamsAppInstallationRequestBuilder"/>.</returns>
+        IUserScopeTeamsAppInstallationRequestBuilder this[string id] { get; }
 
         
     }

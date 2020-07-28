@@ -152,6 +152,12 @@ namespace Microsoft.Graph
         public MeetingInfo MeetingInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets transcription info.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transcriptionInfo", Required = Newtonsoft.Json.Required.Default)]
+        public TranscriptionInfo TranscriptionInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets meeting capability.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingCapability", Required = Newtonsoft.Json.Required.Default)]

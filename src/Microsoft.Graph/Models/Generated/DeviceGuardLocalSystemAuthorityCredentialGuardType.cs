@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         EnableWithoutUEFILock = 2,
 	
+        /// <summary>
+        /// Disable
+        /// </summary>
+        Disable = 3,
+	
     }
 }

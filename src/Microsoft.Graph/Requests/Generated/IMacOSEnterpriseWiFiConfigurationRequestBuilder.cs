@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IMacOSTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation { get; }
 
         /// <summary>
+        /// Gets the request builder for RootCertificatesForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
+        IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation { get; }
+
+        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>

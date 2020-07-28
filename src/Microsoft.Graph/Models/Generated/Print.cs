@@ -72,6 +72,18 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reports", Required = Newtonsoft.Json.Required.Default)]
         public IPrintReportsCollectionPage Reports { get; set; }
     
+        /// <summary>
+        /// Gets or sets operations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        public IPrintOperationsCollectionPage Operations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets task definitions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        public IPrintTaskDefinitionsCollectionPage TaskDefinitions { get; set; }
+    
     }
 }
 

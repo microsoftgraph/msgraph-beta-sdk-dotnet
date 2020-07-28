@@ -99,5 +99,10 @@ namespace Microsoft.Graph
         /// </summary>
         AlwaysOn = 15,
 	
+        /// <summary>
+        /// Microsoft Tunnel
+        /// </summary>
+        MicrosoftTunnel = 16,
+	
     }
 }

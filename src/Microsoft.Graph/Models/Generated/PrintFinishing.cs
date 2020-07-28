@@ -50,9 +50,9 @@ namespace Microsoft.Graph
         SaddleStitch = 8,
 	
         /// <summary>
-        /// Edge Stitch
+        /// Stitch Edge
         /// </summary>
-        EdgeStitch = 9,
+        StitchEdge = 9,
 	
         /// <summary>
         /// Staple Top Left
@@ -75,24 +75,24 @@ namespace Microsoft.Graph
         StapleBottomRight = 23,
 	
         /// <summary>
-        /// Edge Stitch Left
+        /// Stitch Left Edge
         /// </summary>
-        EdgeStitchLeft = 24,
+        StitchLeftEdge = 24,
 	
         /// <summary>
-        /// Edge Stitch Top
+        /// Stitch Top Edge
         /// </summary>
-        EdgeStitchTop = 25,
+        StitchTopEdge = 25,
 	
         /// <summary>
-        /// Edge Stitch Right
+        /// Stitch Right Edge
         /// </summary>
-        EdgeStitchRight = 26,
+        StitchRightEdge = 26,
 	
         /// <summary>
-        /// Edge Stitch Bottom
+        /// Stitch Bottom Edge
         /// </summary>
-        EdgeStitchBottom = 27,
+        StitchBottomEdge = 27,
 	
         /// <summary>
         /// Staple Dual Left
@@ -115,34 +115,9 @@ namespace Microsoft.Graph
         StapleDualBottom = 31,
 	
         /// <summary>
-        /// Stitch Edge
-        /// </summary>
-        StitchEdge = 32,
-	
-        /// <summary>
-        /// Stitch Left Edge
-        /// </summary>
-        StitchLeftEdge = 33,
-	
-        /// <summary>
-        /// Stitch Top Edge
-        /// </summary>
-        StitchTopEdge = 34,
-	
-        /// <summary>
-        /// Stitch Right Edge
-        /// </summary>
-        StitchRightEdge = 35,
-	
-        /// <summary>
-        /// Stitch Bottom Edge
-        /// </summary>
-        StitchBottomEdge = 36,
-	
-        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 37,
+        UnknownFutureValue = 32,
 	
     }
 }

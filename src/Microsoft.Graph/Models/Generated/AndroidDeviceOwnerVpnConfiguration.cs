@@ -38,6 +38,34 @@ namespace Microsoft.Graph
         public AndroidVpnConnectionType? ConnectionType { get; set; }
     
         /// <summary>
+        /// Gets or sets proxy server.
+        /// Proxy server.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyServer", Required = Newtonsoft.Json.Required.Default)]
+        public VpnProxyServer ProxyServer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targeted package ids.
+        /// Targeted App package IDs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedPackageIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TargetedPackageIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets always on.
+        /// Whether or not to enable always-on VPN connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AlwaysOn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets always on lockdown.
+        /// If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnLockdown", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AlwaysOnLockdown { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>

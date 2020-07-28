@@ -37,5 +37,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IEdiscoveryCaseReviewSetsCollectionRequestBuilder"/>.</returns>
         IEdiscoveryCaseReviewSetsCollectionRequestBuilder ReviewSets { get; }
     
+        /// <summary>
+        /// Gets the request builder for EdiscoveryCaseClose.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCaseCloseRequestBuilder"/>.</returns>
+        IEdiscoveryCaseCloseRequestBuilder Close();
+
+        /// <summary>
+        /// Gets the request builder for EdiscoveryCaseReopen.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCaseReopenRequestBuilder"/>.</returns>
+        IEdiscoveryCaseReopenRequestBuilder Reopen();
+    
     }
 }

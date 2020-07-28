@@ -169,8 +169,14 @@ namespace Microsoft.Graph
         public IEnumerable<string> ImAddresses { get; set; }
     
         /// <summary>
+        /// Gets or sets info catalogs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "infoCatalogs", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> InfoCatalogs { get; set; }
+    
+        /// <summary>
         /// Gets or sets is resource account.
-        /// true if the user is a resource account; otherwise, false. Null value should be considered false.
+        /// Do not use – reserved for future use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isResourceAccount", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsResourceAccount { get; set; }
@@ -233,7 +239,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises extension attributes.
-        /// Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, this set of properties is mastered on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update.
+        /// Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesExtensionAttributes", Required = Newtonsoft.Json.Required.Default)]
         public OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
@@ -747,6 +753,12 @@ namespace Microsoft.Graph
         public IUserAppConsentRequestsForApprovalCollectionPage AppConsentRequestsForApproval { get; set; }
     
         /// <summary>
+        /// Gets or sets pending access review instances.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingAccessReviewInstances", Required = Newtonsoft.Json.Required.Default)]
+        public IUserPendingAccessReviewInstancesCollectionPage PendingAccessReviewInstances { get; set; }
+    
+        /// <summary>
         /// Gets or sets agreement acceptances.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementAcceptances", Required = Newtonsoft.Json.Required.Default)]
@@ -819,7 +831,7 @@ namespace Microsoft.Graph
         /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
-        public OfficeGraphInsights Insights { get; set; }
+        public ItemInsights Insights { get; set; }
     
         /// <summary>
         /// Gets or sets settings.

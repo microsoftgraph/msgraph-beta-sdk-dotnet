@@ -209,12 +209,6 @@ namespace Microsoft.Graph
         public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
     
         /// <summary>
-        /// Gets or sets claims mapping policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IApplicationClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
-    
-        /// <summary>
         /// Gets or sets created on behalf of.
         /// Read-only.
         /// </summary>

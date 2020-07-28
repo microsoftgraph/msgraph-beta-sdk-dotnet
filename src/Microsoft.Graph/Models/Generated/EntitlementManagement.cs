@@ -84,6 +84,18 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentResourceRoles", Required = Newtonsoft.Json.Required.Default)]
         public IEntitlementManagementAccessPackageAssignmentResourceRolesCollectionPage AccessPackageAssignmentResourceRoles { get; set; }
     
+        /// <summary>
+        /// Gets or sets settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public EntitlementManagementSettings Settings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets connected organizations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganizations", Required = Newtonsoft.Json.Required.Default)]
+        public IEntitlementManagementConnectedOrganizationsCollectionPage ConnectedOrganizations { get; set; }
+    
     }
 }
 

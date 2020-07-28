@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         ISynchronizationJobPauseRequestBuilder Pause();
 
         /// <summary>
+        /// Gets the request builder for SynchronizationJobProvisionOnDemand.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobProvisionOnDemandRequestBuilder"/>.</returns>
+        ISynchronizationJobProvisionOnDemandRequestBuilder ProvisionOnDemand(
+            IEnumerable<SynchronizationJobApplicationParameters> parameters = null);
+
+        /// <summary>
         /// Gets the request builder for SynchronizationJobStart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>

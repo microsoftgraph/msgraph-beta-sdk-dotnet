@@ -60,6 +60,29 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for PrinterCreate.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterCreateRequestBuilder"/>.</returns>
+        public IPrinterCreateRequestBuilder Create(
+            string displayName,
+            string manufacturer,
+            string model,
+            PrintCertificateSigningRequestObject certificateSigningRequest,
+            string physicalDeviceId = null,
+            bool? hasPhysicalDevice = null,
+            string connectorId = null)
+        {
+            return new PrinterCreateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.create"),
+                this.Client,
+                displayName,
+                manufacturer,
+                model,
+                certificateSigningRequest,
+                physicalDeviceId,
+                hasPhysicalDevice,
+                connectorId);
+        }
     }
 }

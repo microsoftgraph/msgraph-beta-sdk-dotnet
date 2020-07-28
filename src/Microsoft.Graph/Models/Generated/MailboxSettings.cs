@@ -87,6 +87,12 @@ namespace Microsoft.Graph
         public string TimeFormat { get; set; }
     
         /// <summary>
+        /// Gets or sets userPurpose.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPurpose", Required = Newtonsoft.Json.Required.Default)]
+        public UserPurpose UserPurpose { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

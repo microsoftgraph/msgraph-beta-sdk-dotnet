@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified AgreementFile to the collection via POST.
+        /// Adds the specified AgreementFileLocalization to the collection via POST.
         /// </summary>
-        /// <param name="agreementFile">The AgreementFile to add.</param>
-        /// <returns>The created AgreementFile.</returns>
-        System.Threading.Tasks.Task<AgreementFile> AddAsync(AgreementFile agreementFile);
+        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
+        /// <returns>The created AgreementFileLocalization.</returns>
+        System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization);
 
         /// <summary>
-        /// Adds the specified AgreementFile to the collection via POST.
+        /// Adds the specified AgreementFileLocalization to the collection via POST.
         /// </summary>
-        /// <param name="agreementFile">The AgreementFile to add.</param>
+        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AgreementFile.</returns>
-        System.Threading.Tasks.Task<AgreementFile> AddAsync(AgreementFile agreementFile, CancellationToken cancellationToken);
+        /// <returns>The created AgreementFileLocalization.</returns>
+        System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IAgreementFilesCollectionRequest Expand(Expression<Func<AgreementFile, object>> expandExpression);
+        IAgreementFilesCollectionRequest Expand(Expression<Func<AgreementFileLocalization, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IAgreementFilesCollectionRequest Select(Expression<Func<AgreementFile, object>> selectExpression);
+        IAgreementFilesCollectionRequest Select(Expression<Func<AgreementFileLocalization, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

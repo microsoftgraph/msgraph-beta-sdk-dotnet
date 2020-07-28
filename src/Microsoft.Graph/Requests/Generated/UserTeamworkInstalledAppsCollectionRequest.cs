@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified TeamsAppInstallation to the collection via POST.
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST.
         /// </summary>
-        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
-        /// <returns>The created TeamsAppInstallation.</returns>
-        public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation)
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
+        /// <returns>The created UserScopeTeamsAppInstallation.</returns>
+        public System.Threading.Tasks.Task<UserScopeTeamsAppInstallation> AddAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation)
         {
-            return this.AddAsync(teamsAppInstallation, CancellationToken.None);
+            return this.AddAsync(userScopeTeamsAppInstallation, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified TeamsAppInstallation to the collection via POST.
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST.
         /// </summary>
-        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TeamsAppInstallation.</returns>
-        public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken)
+        /// <returns>The created UserScopeTeamsAppInstallation.</returns>
+        public System.Threading.Tasks.Task<UserScopeTeamsAppInstallation> AddAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<TeamsAppInstallation>(teamsAppInstallation, cancellationToken);
+            return this.SendAsync<UserScopeTeamsAppInstallation>(userScopeTeamsAppInstallation, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IUserTeamworkInstalledAppsCollectionRequest Expand(Expression<Func<TeamsAppInstallation, object>> expandExpression)
+        public IUserTeamworkInstalledAppsCollectionRequest Expand(Expression<Func<UserScopeTeamsAppInstallation, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IUserTeamworkInstalledAppsCollectionRequest Select(Expression<Func<TeamsAppInstallation, object>> selectExpression)
+        public IUserTeamworkInstalledAppsCollectionRequest Select(Expression<Func<UserScopeTeamsAppInstallation, object>> selectExpression)
         {
             if (selectExpression == null)
             {

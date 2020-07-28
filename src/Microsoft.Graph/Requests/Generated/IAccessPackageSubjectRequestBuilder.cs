@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAccessPackageSubjectRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for ConnectedOrganization.
+        /// </summary>
+        /// <returns>The <see cref="IConnectedOrganizationWithReferenceRequestBuilder"/>.</returns>
+        IConnectedOrganizationWithReferenceRequestBuilder ConnectedOrganization { get; }
+    
     }
 }
