@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrintJobDocumentsCollectionRequestBuilder"/>.</returns>
         IPrintJobDocumentsCollectionRequestBuilder Documents { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tasks.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobTasksCollectionRequestBuilder"/>.</returns>
+        IPrintJobTasksCollectionRequestBuilder Tasks { get; }
     
         /// <summary>
         /// Gets the request builder for PrintJobCancelPrintJob.
@@ -48,6 +54,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrintJobStartPrintJobRequestBuilder"/>.</returns>
         IPrintJobStartPrintJobRequestBuilder StartPrintJob();
+
+        /// <summary>
+        /// Gets the request builder for PrintJobRedirect.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobRedirectRequestBuilder"/>.</returns>
+        IPrintJobRedirectRequestBuilder Redirect(
+            string destinationPrinterId = null);
     
     }
 }

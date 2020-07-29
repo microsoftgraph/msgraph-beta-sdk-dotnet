@@ -223,6 +223,12 @@ namespace Microsoft.Graph
         public string ResourceId { get; set; }
     
         /// <summary>
+        /// Gets or sets resource tenant id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceTenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceTenantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets service principal id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalId", Required = Newtonsoft.Json.Required.Default)]
@@ -233,6 +239,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sign in event types.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInEventTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SignInEventTypes { get; set; }
     
         /// <summary>
         /// Gets or sets status.

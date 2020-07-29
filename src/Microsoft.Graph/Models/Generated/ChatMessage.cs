@@ -101,6 +101,18 @@ namespace Microsoft.Graph
         public string Summary { get; set; }
     
         /// <summary>
+        /// Gets or sets chat id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatId", Required = Newtonsoft.Json.Required.Default)]
+        public string ChatId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets channel identity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channelIdentity", Required = Newtonsoft.Json.Required.Default)]
+        public ChannelIdentity ChannelIdentity { get; set; }
+    
+        /// <summary>
         /// Gets or sets attachments.
         /// Attached files. Attachments are currently read-only – sending attachments is not supported.
         /// </summary>

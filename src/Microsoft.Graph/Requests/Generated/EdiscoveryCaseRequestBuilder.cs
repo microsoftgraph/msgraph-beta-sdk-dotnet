@@ -62,5 +62,27 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for EdiscoveryCaseClose.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCaseCloseRequestBuilder"/>.</returns>
+        public IEdiscoveryCaseCloseRequestBuilder Close()
+        {
+            return new EdiscoveryCaseCloseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.close"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EdiscoveryCaseReopen.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCaseReopenRequestBuilder"/>.</returns>
+        public IEdiscoveryCaseReopenRequestBuilder Reopen()
+        {
+            return new EdiscoveryCaseReopenRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reopen"),
+                this.Client);
+        }
+    
     }
 }

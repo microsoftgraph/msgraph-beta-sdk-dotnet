@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified TeamsAppInstallation to the collection via POST.
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST.
         /// </summary>
-        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
-        /// <returns>The created TeamsAppInstallation.</returns>
-        System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation);
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
+        /// <returns>The created UserScopeTeamsAppInstallation.</returns>
+        System.Threading.Tasks.Task<UserScopeTeamsAppInstallation> AddAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation);
 
         /// <summary>
-        /// Adds the specified TeamsAppInstallation to the collection via POST.
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST.
         /// </summary>
-        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TeamsAppInstallation.</returns>
-        System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken);
+        /// <returns>The created UserScopeTeamsAppInstallation.</returns>
+        System.Threading.Tasks.Task<UserScopeTeamsAppInstallation> AddAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IUserTeamworkInstalledAppsCollectionRequest Expand(Expression<Func<TeamsAppInstallation, object>> expandExpression);
+        IUserTeamworkInstalledAppsCollectionRequest Expand(Expression<Func<UserScopeTeamsAppInstallation, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IUserTeamworkInstalledAppsCollectionRequest Select(Expression<Func<TeamsAppInstallation, object>> selectExpression);
+        IUserTeamworkInstalledAppsCollectionRequest Select(Expression<Func<UserScopeTeamsAppInstallation, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

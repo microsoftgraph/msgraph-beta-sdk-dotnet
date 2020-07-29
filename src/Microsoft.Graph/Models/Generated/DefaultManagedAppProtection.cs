@@ -269,6 +269,27 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceModelNotAllowed { get; set; }
     
         /// <summary>
+        /// Gets or sets custom dialer app protocol.
+        /// Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppProtocol", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDialerAppProtocol { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom dialer app package id.
+        /// PackageId of a custom dialer app to click-to-open a phone number on Android.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppPackageId", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDialerAppPackageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom dialer app display name.
+        /// Friendly name of a custom dialer app to click-to-open a phone number on Android.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDialerAppDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>

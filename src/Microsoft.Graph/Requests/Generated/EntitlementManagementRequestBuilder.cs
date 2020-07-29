@@ -157,6 +157,30 @@ namespace Microsoft.Graph
                 return new EntitlementManagementAccessPackageAssignmentResourceRolesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignmentResourceRoles"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementSettingsRequestBuilder"/>.</returns>
+        public IEntitlementManagementSettingsRequestBuilder Settings
+        {
+            get
+            {
+                return new EntitlementManagementSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ConnectedOrganizations.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementConnectedOrganizationsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementConnectedOrganizationsCollectionRequestBuilder ConnectedOrganizations
+        {
+            get
+            {
+                return new EntitlementManagementConnectedOrganizationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("connectedOrganizations"), this.Client);
+            }
+        }
     
     }
 }

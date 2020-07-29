@@ -67,6 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets storagePlanInformation.
+        /// Information about the drive's storage quota plans. Only in Personal OneDrive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storagePlanInformation", Required = Newtonsoft.Json.Required.Default)]
         public StoragePlanInformation StoragePlanInformation { get; set; }

@@ -30,39 +30,29 @@ namespace Microsoft.Graph
         Browser = 1,
 	
         /// <summary>
-        /// Modern
-        /// </summary>
-        Modern = 2,
-	
-        /// <summary>
         /// Mobile Apps And Desktop Clients
         /// </summary>
-        MobileAppsAndDesktopClients = 3,
+        MobileAppsAndDesktopClients = 2,
 	
         /// <summary>
         /// Exchange Active Sync
         /// </summary>
-        ExchangeActiveSync = 4,
+        ExchangeActiveSync = 3,
 	
         /// <summary>
         /// Eas Supported
         /// </summary>
-        EasSupported = 5,
-	
-        /// <summary>
-        /// Eas Unsupported
-        /// </summary>
-        EasUnsupported = 6,
+        EasSupported = 4,
 	
         /// <summary>
         /// Other
         /// </summary>
-        Other = 7,
+        Other = 5,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 8,
+        UnknownFutureValue = 6,
 	
     }
 }

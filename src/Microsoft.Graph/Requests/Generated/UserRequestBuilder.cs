@@ -459,6 +459,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PendingAccessReviewInstances.
+        /// </summary>
+        /// <returns>The <see cref="IUserPendingAccessReviewInstancesCollectionRequestBuilder"/>.</returns>
+        public IUserPendingAccessReviewInstancesCollectionRequestBuilder PendingAccessReviewInstances
+        {
+            get
+            {
+                return new UserPendingAccessReviewInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("pendingAccessReviewInstances"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AgreementAcceptances.
         /// </summary>
         /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -581,12 +593,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Insights.
         /// </summary>
-        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
-        public IOfficeGraphInsightsRequestBuilder Insights
+        /// <returns>The <see cref="IItemInsightsRequestBuilder"/>.</returns>
+        public IItemInsightsRequestBuilder Insights
         {
             get
             {
-                return new OfficeGraphInsightsRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
+                return new ItemInsightsRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
             }
         }
 

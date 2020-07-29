@@ -85,6 +85,18 @@ namespace Microsoft.Graph
                 return new OrganizationExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationSettingsRequestBuilder"/>.</returns>
+        public IOrganizationSettingsRequestBuilder Settings
+        {
+            get
+            {
+                return new OrganizationSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.

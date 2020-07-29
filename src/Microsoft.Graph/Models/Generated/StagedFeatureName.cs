@@ -35,9 +35,14 @@ namespace Microsoft.Graph
         PasswordHashSync = 2,
 	
         /// <summary>
+        /// Email As Alternate Id
+        /// </summary>
+        EmailAsAlternateId = 3,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 3,
+        UnknownFutureValue = 4,
 	
     }
 }

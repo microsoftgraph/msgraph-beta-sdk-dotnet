@@ -330,6 +330,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (printToInitialize.Operations != null && printToInitialize.Operations.CurrentPage != null)
+                {
+                    printToInitialize.Operations.AdditionalData = printToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    printToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        printToInitialize.Operations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (printToInitialize.TaskDefinitions != null && printToInitialize.TaskDefinitions.CurrentPage != null)
+                {
+                    printToInitialize.TaskDefinitions.AdditionalData = printToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    printToInitialize.AdditionalData.TryGetValue("taskDefinitions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        printToInitialize.TaskDefinitions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
             }
 
 

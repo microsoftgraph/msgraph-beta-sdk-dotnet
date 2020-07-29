@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// Gets or sets mediaType.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaType", Required = Newtonsoft.Json.Required.Default)]
-        public PrintMediaType? MediaType { get; set; }
+        public string MediaType { get; set; }
     
         /// <summary>
         /// Gets or sets mediaSize.

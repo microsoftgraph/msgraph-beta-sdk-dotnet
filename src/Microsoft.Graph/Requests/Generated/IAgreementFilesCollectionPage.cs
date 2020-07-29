@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IAgreementFilesCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<AgreementFilesCollectionPage>))]
-    public interface IAgreementFilesCollectionPage : ICollectionPage<AgreementFile>
+    public interface IAgreementFilesCollectionPage : ICollectionPage<AgreementFileLocalization>
     {
         /// <summary>
         /// Gets the next page <see cref="IAgreementFilesCollectionRequest"/> instance.

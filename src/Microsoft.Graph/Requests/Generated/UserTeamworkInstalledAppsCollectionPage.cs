@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserTeamworkInstalledAppsCollectionPage.
     /// </summary>
-    public partial class UserTeamworkInstalledAppsCollectionPage : CollectionPage<TeamsAppInstallation>, IUserTeamworkInstalledAppsCollectionPage
+    public partial class UserTeamworkInstalledAppsCollectionPage : CollectionPage<UserScopeTeamsAppInstallation>, IUserTeamworkInstalledAppsCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IUserTeamworkInstalledAppsCollectionRequest"/> instance.

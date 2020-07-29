@@ -52,11 +52,6 @@ namespace Microsoft.Graph
         IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
     
         /// <summary>
-        /// Gets the GraphServiceCases request builder.
-        /// </summary>
-        IGraphServiceCasesCollectionRequestBuilder Cases { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }
@@ -225,51 +220,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceFilterOperators request builder.
         /// </summary>
         IGraphServiceFilterOperatorsCollectionRequestBuilder FilterOperators { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageCatalogs request builder.
-        /// </summary>
-        IGraphServiceAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageResources request builder.
-        /// </summary>
-        IGraphServiceAccessPackageResourcesCollectionRequestBuilder AccessPackageResources { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageResourceRequests request builder.
-        /// </summary>
-        IGraphServiceAccessPackageResourceRequestsCollectionRequestBuilder AccessPackageResourceRequests { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageResourceRoleScopes request builder.
-        /// </summary>
-        IGraphServiceAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackages request builder.
-        /// </summary>
-        IGraphServiceAccessPackagesCollectionRequestBuilder AccessPackages { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignmentPolicies request builder.
-        /// </summary>
-        IGraphServiceAccessPackageAssignmentPoliciesCollectionRequestBuilder AccessPackageAssignmentPolicies { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignments request builder.
-        /// </summary>
-        IGraphServiceAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignmentRequests request builder.
-        /// </summary>
-        IGraphServiceAccessPackageAssignmentRequestsCollectionRequestBuilder AccessPackageAssignmentRequests { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceAccessPackageAssignmentResourceRoles request builder.
-        /// </summary>
-        IGraphServiceAccessPackageAssignmentResourceRolesCollectionRequestBuilder AccessPackageAssignmentResourceRoles { get; }
     
         /// <summary>
         /// Gets the GraphServiceAccessReviews request builder.
@@ -442,6 +392,11 @@ namespace Microsoft.Graph
         IReportRootRequestBuilder Reports { get; }
     
         /// <summary>
+        /// Gets the GraphServiceBitlocker request builder.
+        /// </summary>
+        IBitlockerRequestBuilder Bitlocker { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentity request builder.
         /// </summary>
         IIdentityContainerRequestBuilder Identity { get; }
@@ -507,14 +462,9 @@ namespace Microsoft.Graph
         IIdentityGovernanceRequestBuilder IdentityGovernance { get; }
     
         /// <summary>
-        /// Gets the GraphServiceEntitlementManagement request builder.
+        /// Gets the GraphServiceIdentityProtection request builder.
         /// </summary>
-        IEntitlementManagementRequestBuilder EntitlementManagement { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceIdentityProtectionNotificationPolicy request builder.
-        /// </summary>
-        IIdentityProtectionNotificationPolicyRequestBuilder IdentityProtectionNotificationPolicy { get; }
+        IIdentityProtectionRootRequestBuilder IdentityProtection { get; }
     
         /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
@@ -567,14 +517,14 @@ namespace Microsoft.Graph
         IExternalRequestBuilder External { get; }
     
         /// <summary>
-        /// Gets the GraphServiceAppCatalogs request builder.
-        /// </summary>
-        IAppCatalogsRequestBuilder AppCatalogs { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceTeamwork request builder.
         /// </summary>
         ITeamworkRequestBuilder Teamwork { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAppCatalogs request builder.
+        /// </summary>
+        IAppCatalogsRequestBuilder AppCatalogs { get; }
     
     }
 }

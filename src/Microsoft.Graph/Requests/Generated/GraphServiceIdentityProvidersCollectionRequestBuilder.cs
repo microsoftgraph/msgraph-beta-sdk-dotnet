@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for IdentityProviderAvailableProviderTypes.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityProviderAvailableProviderTypesRequestBuilder"/>.</returns>
+        public IIdentityProviderAvailableProviderTypesRequestBuilder AvailableProviderTypes()
+        {
+            return new IdentityProviderAvailableProviderTypesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.availableProviderTypes"),
+                this.Client);
+        }
     }
 }

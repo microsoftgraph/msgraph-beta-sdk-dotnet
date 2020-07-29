@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         CustomEapXml = 2,
 	
+        /// <summary>
+        /// Derived Credential
+        /// </summary>
+        DerivedCredential = 3,
+	
     }
 }

@@ -74,6 +74,12 @@ namespace Microsoft.Graph
         IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles { get; }
 
         /// <summary>
+        /// Gets the request builder for AssignmentFilters.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAssignmentFiltersCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAssignmentFiltersCollectionRequestBuilder AssignmentFilters { get; }
+
+        /// <summary>
         /// Gets the request builder for TermsAndConditions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTermsAndConditionsCollectionRequestBuilder"/>.</returns>
@@ -278,6 +284,12 @@ namespace Microsoft.Graph
         IDeviceManagementDeviceHealthScriptsCollectionRequestBuilder DeviceHealthScripts { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceComplianceScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder DeviceComplianceScripts { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverview.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
@@ -366,6 +378,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory { get; }
+
+        /// <summary>
+        /// Gets the request builder for ComanagedDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComanagedDevicesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementComanagedDevicesCollectionRequestBuilder ComanagedDevices { get; }
+
+        /// <summary>
+        /// Gets the request builder for ComanagementEligibleDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder ComanagementEligibleDevices { get; }
 
         /// <summary>
         /// Gets the request builder for DerivedCredentials.
@@ -572,6 +596,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserPfxCertificatesCollectionRequestBuilder UserPfxCertificates { get; }
     
         /// <summary>
+        /// Gets the request builder for DeviceManagementEnableUnlicensedAdminstrators.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder"/>.</returns>
+        IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators();
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementEnableLegacyPcManagement.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEnableLegacyPcManagementRequestBuilder"/>.</returns>
@@ -598,6 +628,18 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryRequestBuilder"/>.</returns>
         IDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryRequestBuilder VerifyWindowsEnrollmentAutoDiscovery(
             string domainName = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetComanagedDevicesSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetComanagedDevicesSummaryRequestBuilder"/>.</returns>
+        IDeviceManagementGetComanagedDevicesSummaryRequestBuilder GetComanagedDevicesSummary();
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetComanagementEligibleDevicesSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder"/>.</returns>
+        IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary();
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetEffectivePermissions.

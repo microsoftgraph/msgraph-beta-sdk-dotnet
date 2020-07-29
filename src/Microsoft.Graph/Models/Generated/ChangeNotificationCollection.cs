@@ -38,6 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets value.
+        /// The set of notifications being sent to the notification URL. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ChangeNotification> Value { get; set; }

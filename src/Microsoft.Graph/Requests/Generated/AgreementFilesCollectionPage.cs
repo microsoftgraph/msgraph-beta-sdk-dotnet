@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AgreementFilesCollectionPage.
     /// </summary>
-    public partial class AgreementFilesCollectionPage : CollectionPage<AgreementFile>, IAgreementFilesCollectionPage
+    public partial class AgreementFilesCollectionPage : CollectionPage<AgreementFileLocalization>, IAgreementFilesCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IAgreementFilesCollectionRequest"/> instance.

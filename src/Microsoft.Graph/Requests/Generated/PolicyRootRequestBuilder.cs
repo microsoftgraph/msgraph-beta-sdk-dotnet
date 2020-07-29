@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceRegistrationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>
+        public IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
+        {
+            get
+            {
+                return new DeviceRegistrationPolicyRequestBuilder(this.AppendSegmentToRequestUrl("deviceRegistrationPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>
@@ -131,6 +143,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AdminConsentRequestPolicyRequestBuilder(this.AppendSegmentToRequestUrl("adminConsentRequestPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DirectoryRoleAccessReviewPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryRoleAccessReviewPolicyRequestBuilder"/>.</returns>
+        public IDirectoryRoleAccessReviewPolicyRequestBuilder DirectoryRoleAccessReviewPolicy
+        {
+            get
+            {
+                return new DirectoryRoleAccessReviewPolicyRequestBuilder(this.AppendSegmentToRequestUrl("directoryRoleAccessReviewPolicy"), this.Client);
             }
         }
 

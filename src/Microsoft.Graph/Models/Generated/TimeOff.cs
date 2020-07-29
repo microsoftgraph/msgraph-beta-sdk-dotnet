@@ -51,6 +51,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }
     
+        /// <summary>
+        /// Gets or sets is staged for deletion.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isStagedForDeletion", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsStagedForDeletion { get; set; }
+    
     }
 }
 

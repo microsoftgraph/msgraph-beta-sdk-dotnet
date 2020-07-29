@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrinterConnectorsCollectionWithReferencesRequestBuilder"/>.</returns>
         IPrinterConnectorsCollectionWithReferencesRequestBuilder Connectors { get; }
+
+        /// <summary>
+        /// Gets the request builder for TaskTriggers.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterTaskTriggersCollectionRequestBuilder"/>.</returns>
+        IPrinterTaskTriggersCollectionRequestBuilder TaskTriggers { get; }
     
         /// <summary>
         /// Gets the request builder for PrinterResetDefaults.

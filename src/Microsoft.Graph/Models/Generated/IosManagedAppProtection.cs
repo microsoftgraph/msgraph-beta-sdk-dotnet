@@ -122,6 +122,13 @@ namespace Microsoft.Graph
         public string CustomBrowserProtocol { get; set; }
     
         /// <summary>
+        /// Gets or sets custom dialer app protocol.
+        /// Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppProtocol", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDialerAppProtocol { get; set; }
+    
+        /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>

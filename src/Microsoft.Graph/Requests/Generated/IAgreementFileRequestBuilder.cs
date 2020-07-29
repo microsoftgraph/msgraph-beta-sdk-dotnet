@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAgreementFileRequestBuilder.
     /// </summary>
-    public partial interface IAgreementFileRequestBuilder : IEntityRequestBuilder
+    public partial interface IAgreementFileRequestBuilder : IAgreementFilePropertiesRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         new IAgreementFileRequest Request(IEnumerable<Option> options);
+    
+        /// <summary>
+        /// Gets the request builder for Localizations.
+        /// </summary>
+        /// <returns>The <see cref="IAgreementFileLocalizationsCollectionRequestBuilder"/>.</returns>
+        IAgreementFileLocalizationsCollectionRequestBuilder Localizations { get; }
     
     }
 }

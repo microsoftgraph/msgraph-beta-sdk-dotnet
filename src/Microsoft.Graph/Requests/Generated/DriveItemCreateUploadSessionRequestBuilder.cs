@@ -24,16 +24,13 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="item">A item parameter for the OData method call.</param>
-        /// <param name="deferCommit">A deferCommit parameter for the OData method call.</param>
         public DriveItemCreateUploadSessionRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            DriveItemUploadableProperties item,
-            bool? deferCommit)
+            DriveItemUploadableProperties item)
             : base(requestUrl, client)
         {
             this.SetParameter("item", item, true);
-            this.SetParameter("deferCommit", deferCommit, true);
         }
 
         /// <summary>
@@ -49,11 +46,6 @@ namespace Microsoft.Graph
             if (this.HasParameter("item"))
             {
                 request.RequestBody.Item = this.GetParameter<DriveItemUploadableProperties>("item");
-            }
-
-            if (this.HasParameter("deferCommit"))
-            {
-                request.RequestBody.DeferCommit = this.GetParameter<bool?>("deferCommit");
             }
 
             return request;

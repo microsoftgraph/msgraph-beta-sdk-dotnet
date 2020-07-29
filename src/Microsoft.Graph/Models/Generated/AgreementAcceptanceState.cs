@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         Declined = 3,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
+	
     }
 }

@@ -73,6 +73,13 @@ namespace Microsoft.Graph
         public bool? LegacyPcManangementEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets unlicensed adminstrators enabled.
+        /// When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unlicensedAdminstratorsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UnlicensedAdminstratorsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets intune brand.
         /// intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
         /// </summary>
@@ -129,6 +136,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? AccountMoveCompletionDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics settings.
+        /// User experience analytics device settings
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsSettings", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsSettings UserExperienceAnalyticsSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets audit events.
         /// The Audit Events
         /// </summary>
@@ -176,6 +190,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceOwnerEnrollmentProfiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage AndroidDeviceOwnerEnrollmentProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment filters.
+        /// The list of assignment filters
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentFilters", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementAssignmentFiltersCollectionPage AssignmentFilters { get; set; }
     
         /// <summary>
         /// Gets or sets terms and conditions.
@@ -416,6 +437,13 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceHealthScriptsCollectionPage DeviceHealthScripts { get; set; }
     
         /// <summary>
+        /// Gets or sets device compliance scripts.
+        /// The list of device compliance scripts associated with the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceScripts", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceComplianceScriptsCollectionPage DeviceComplianceScripts { get; set; }
+    
+        /// <summary>
         /// Gets or sets managed device overview.
         /// Device overview
         /// </summary>
@@ -519,6 +547,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsScoreHistory", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage UserExperienceAnalyticsScoreHistory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets comanaged devices.
+        /// The list of co-managed devices report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comanagedDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementComanagedDevicesCollectionPage ComanagedDevices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets comanagement eligible devices.
+        /// The list of co-management eligible devices report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comanagementEligibleDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementComanagementEligibleDevicesCollectionPage ComanagementEligibleDevices { get; set; }
     
         /// <summary>
         /// Gets or sets derived credentials.

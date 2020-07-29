@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectors", Required = Newtonsoft.Json.Required.Default)]
         public IPrinterConnectorsCollectionWithReferencesPage Connectors { get; set; }
     
+        /// <summary>
+        /// Gets or sets task triggers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskTriggers", Required = Newtonsoft.Json.Required.Default)]
+        public IPrinterTaskTriggersCollectionPage TaskTriggers { get; set; }
+    
     }
 }
 

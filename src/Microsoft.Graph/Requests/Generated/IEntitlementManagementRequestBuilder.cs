@@ -84,6 +84,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentResourceRolesCollectionRequestBuilder"/>.</returns>
         IEntitlementManagementAccessPackageAssignmentResourceRolesCollectionRequestBuilder AccessPackageAssignmentResourceRoles { get; }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementSettingsRequestBuilder"/>.</returns>
+        IEntitlementManagementSettingsRequestBuilder Settings { get; }
+
+        /// <summary>
+        /// Gets the request builder for ConnectedOrganizations.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementConnectedOrganizationsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementConnectedOrganizationsCollectionRequestBuilder ConnectedOrganizations { get; }
     
     }
 }

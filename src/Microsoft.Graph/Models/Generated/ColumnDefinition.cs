@@ -102,6 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets geolocation.
+        /// This column stores a geolocation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geolocation", Required = Newtonsoft.Json.Required.Default)]
         public GeolocationColumn Geolocation { get; set; }

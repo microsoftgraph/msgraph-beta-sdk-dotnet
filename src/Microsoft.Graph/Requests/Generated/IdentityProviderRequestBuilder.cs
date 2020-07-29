@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new IdentityProviderRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

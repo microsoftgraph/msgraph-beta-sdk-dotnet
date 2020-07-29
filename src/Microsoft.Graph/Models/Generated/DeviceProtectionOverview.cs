@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public Int32? CriticalFailuresDeviceCount { get; set; }
     
         /// <summary>
+        /// Gets or sets pendingQuickScanDeviceCount.
+        /// Pending quick scan device count. Valid values -2147483648 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingQuickScanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PendingQuickScanDeviceCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

@@ -34,19 +34,19 @@ namespace Microsoft.Graph
         /// Gets or sets pageRanges.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageRanges", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrintPageRange> PageRanges { get; set; }
+        public IEnumerable<IntegerRange> PageRanges { get; set; }
     
         /// <summary>
-        /// Gets or sets printQuality.
+        /// Gets or sets quality.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printQuality", Required = Newtonsoft.Json.Required.Default)]
-        public PrintQuality? PrintQuality { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quality", Required = Newtonsoft.Json.Required.Default)]
+        public PrintQuality? Quality { get; set; }
     
         /// <summary>
-        /// Gets or sets printResolutionInDpi.
+        /// Gets or sets dpi.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printResolutionInDpi", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PrintResolutionInDpi { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dpi", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Dpi { get; set; }
     
         /// <summary>
         /// Gets or sets feedDirection.
@@ -61,10 +61,10 @@ namespace Microsoft.Graph
         public PrintOrientation? Orientation { get; set; }
     
         /// <summary>
-        /// Gets or sets duplexConfiguration.
+        /// Gets or sets duplexMode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duplexConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public PrintDuplexConfiguration? DuplexConfiguration { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duplexMode", Required = Newtonsoft.Json.Required.Default)]
+        public PrintDuplexMode? DuplexMode { get; set; }
     
         /// <summary>
         /// Gets or sets copies.
@@ -73,10 +73,76 @@ namespace Microsoft.Graph
         public Int32? Copies { get; set; }
     
         /// <summary>
-        /// Gets or sets colorConfiguration.
+        /// Gets or sets colorMode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public PrintColorConfiguration? ColorConfiguration { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorMode", Required = Newtonsoft.Json.Required.Default)]
+        public PrintColorMode? ColorMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets inputBin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputBin", Required = Newtonsoft.Json.Required.Default)]
+        public string InputBin { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outputBin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputBin", Required = Newtonsoft.Json.Required.Default)]
+        public string OutputBin { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mediaSize.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaSize", Required = Newtonsoft.Json.Required.Default)]
+        public string MediaSize { get; set; }
+    
+        /// <summary>
+        /// Gets or sets margin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "margin", Required = Newtonsoft.Json.Required.Default)]
+        public PrintMargin Margin { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mediaType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaType", Required = Newtonsoft.Json.Required.Default)]
+        public string MediaType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets finishings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finishings", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintFinishing> Finishings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pagesPerSheet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pagesPerSheet", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PagesPerSheet { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multipageLayout.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multipageLayout", Required = Newtonsoft.Json.Required.Default)]
+        public PrintMultipageLayout? MultipageLayout { get; set; }
+    
+        /// <summary>
+        /// Gets or sets collate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Collate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scaling.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scaling", Required = Newtonsoft.Json.Required.Default)]
+        public PrintScaling? Scaling { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fitPdfToPage.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fitPdfToPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FitPdfToPage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

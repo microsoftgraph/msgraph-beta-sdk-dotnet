@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         DerivedCredential = 3,
 	
+        /// <summary>
+        /// Azure AD
+        /// </summary>
+        AzureAD = 4,
+	
     }
 }

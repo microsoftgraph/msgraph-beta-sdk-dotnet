@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         Citrix = 5,
 	
+        /// <summary>
+        /// Microsoft Tunnel
+        /// </summary>
+        MicrosoftTunnel = 7,
+	
     }
 }

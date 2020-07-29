@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidWorkProfileCertificateProfileBaseRequestBuilder.
     /// </summary>
-    public partial interface IAndroidWorkProfileCertificateProfileBaseRequestBuilder : IFeatureFlightedConfigurationRequestBuilder
+    public partial interface IAndroidWorkProfileCertificateProfileBaseRequestBuilder : IDeviceConfigurationRequestBuilder
     {
         /// <summary>
         /// Builds the request.

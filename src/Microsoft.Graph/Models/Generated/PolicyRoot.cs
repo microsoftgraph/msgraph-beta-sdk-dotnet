@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public AuthenticationFlowsPolicy AuthenticationFlowsPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets device registration policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegistrationPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceRegistrationPolicy DeviceRegistrationPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets activity based timeout policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityBasedTimeoutPolicies", Required = Newtonsoft.Json.Required.Default)]
@@ -71,6 +77,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminConsentRequestPolicy", Required = Newtonsoft.Json.Required.Default)]
         public AdminConsentRequestPolicy AdminConsentRequestPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets directory role access review policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryRoleAccessReviewPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public DirectoryRoleAccessReviewPolicy DirectoryRoleAccessReviewPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets identity security defaults enforcement policy.

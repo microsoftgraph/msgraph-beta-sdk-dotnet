@@ -185,6 +185,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> TrustedNetworkDomains { get; set; }
     
         /// <summary>
+        /// Gets or sets cryptography suite.
+        /// Cryptography Suite security settings for IKEv2 VPN in Windows10 and above 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cryptographySuite", Required = Newtonsoft.Json.Required.Default)]
+        public CryptographySuite CryptographySuite { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>
