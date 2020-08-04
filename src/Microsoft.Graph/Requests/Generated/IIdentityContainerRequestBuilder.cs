@@ -42,6 +42,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>
         IIdentityContainerUserFlowsCollectionRequestBuilder UserFlows { get; }
+
+        /// <summary>
+        /// Gets the request builder for B2cUserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerB2cUserFlowsCollectionRequestBuilder B2cUserFlows { get; }
+
+        /// <summary>
+        /// Gets the request builder for B2xUserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerB2xUserFlowsCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerB2xUserFlowsCollectionRequestBuilder B2xUserFlows { get; }
     
     }
 }

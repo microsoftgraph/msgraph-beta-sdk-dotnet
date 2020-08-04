@@ -42,6 +42,18 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlows", Required = Newtonsoft.Json.Required.Default)]
         public IIdentityContainerUserFlowsCollectionPage UserFlows { get; set; }
     
+        /// <summary>
+        /// Gets or sets b2c user flows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2cUserFlows", Required = Newtonsoft.Json.Required.Default)]
+        public IIdentityContainerB2cUserFlowsCollectionPage B2cUserFlows { get; set; }
+    
+        /// <summary>
+        /// Gets or sets b2x user flows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2xUserFlows", Required = Newtonsoft.Json.Required.Default)]
+        public IIdentityContainerB2xUserFlowsCollectionPage B2xUserFlows { get; set; }
+    
     }
 }
 

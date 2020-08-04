@@ -73,6 +73,30 @@ namespace Microsoft.Graph
                 return new IdentityContainerUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userFlows"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for B2cUserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerB2cUserFlowsCollectionRequestBuilder B2cUserFlows
+        {
+            get
+            {
+                return new IdentityContainerB2cUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("b2cUserFlows"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for B2xUserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerB2xUserFlowsCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerB2xUserFlowsCollectionRequestBuilder B2xUserFlows
+        {
+            get
+            {
+                return new IdentityContainerB2xUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("b2xUserFlows"), this.Client);
+            }
+        }
     
     }
 }

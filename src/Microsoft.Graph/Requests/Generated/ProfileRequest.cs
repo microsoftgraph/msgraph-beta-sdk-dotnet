@@ -282,6 +282,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (profileToInitialize.Awards != null && profileToInitialize.Awards.CurrentPage != null)
+                {
+                    profileToInitialize.Awards.AdditionalData = profileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    profileToInitialize.AdditionalData.TryGetValue("awards@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        profileToInitialize.Awards.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (profileToInitialize.Certifications != null && profileToInitialize.Certifications.CurrentPage != null)
+                {
+                    profileToInitialize.Certifications.AdditionalData = profileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    profileToInitialize.AdditionalData.TryGetValue("certifications@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        profileToInitialize.Certifications.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (profileToInitialize.EducationalActivities != null && profileToInitialize.EducationalActivities.CurrentPage != null)
                 {
                     profileToInitialize.EducationalActivities.AdditionalData = profileToInitialize.AdditionalData;
@@ -362,6 +394,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (profileToInitialize.Notes != null && profileToInitialize.Notes.CurrentPage != null)
+                {
+                    profileToInitialize.Notes.AdditionalData = profileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    profileToInitialize.AdditionalData.TryGetValue("notes@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        profileToInitialize.Notes.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (profileToInitialize.Patents != null && profileToInitialize.Patents.CurrentPage != null)
+                {
+                    profileToInitialize.Patents.AdditionalData = profileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    profileToInitialize.AdditionalData.TryGetValue("patents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        profileToInitialize.Patents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (profileToInitialize.Phones != null && profileToInitialize.Phones.CurrentPage != null)
                 {
                     profileToInitialize.Phones.AdditionalData = profileToInitialize.AdditionalData;
@@ -410,17 +474,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (profileToInitialize.Notes != null && profileToInitialize.Notes.CurrentPage != null)
+                if (profileToInitialize.Publications != null && profileToInitialize.Publications.CurrentPage != null)
                 {
-                    profileToInitialize.Notes.AdditionalData = profileToInitialize.AdditionalData;
+                    profileToInitialize.Publications.AdditionalData = profileToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    profileToInitialize.AdditionalData.TryGetValue("notes@odata.nextLink", out nextPageLink);
+                    profileToInitialize.AdditionalData.TryGetValue("publications@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        profileToInitialize.Notes.InitializeNextPageRequest(
+                        profileToInitialize.Publications.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         public string DefaultValue { get; set; }
     
         /// <summary>
+        /// Gets or sets flowNullValues.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flowNullValues", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FlowNullValues { get; set; }
+    
+        /// <summary>
         /// Gets or sets metadata.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
