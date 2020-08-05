@@ -50,6 +50,21 @@ namespace Microsoft.Graph
         IDeviceManagementReportsReportSchedulesCollectionRequestBuilder ReportSchedules { get; }
     
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetActiveMalwareReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetActiveMalwareReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetActiveMalwareReportRequestBuilder GetActiveMalwareReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>
@@ -114,6 +129,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetReportFilters.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetReportFiltersRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetReportFiltersRequestBuilder GetReportFilters(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,

@@ -49,5 +49,15 @@ namespace Microsoft.Graph
         /// </summary>
         Aes256Gcm = 5,
 	
+        /// <summary>
+        /// Aes192
+        /// </summary>
+        Aes192 = 6,
+	
+        /// <summary>
+        /// Aes192Gcm
+        /// </summary>
+        Aes192Gcm = 7,
+	
     }
 }

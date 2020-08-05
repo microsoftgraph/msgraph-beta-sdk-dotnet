@@ -64,5 +64,10 @@ namespace Microsoft.Graph
         /// </summary>
         DeviceCompliance = 8,
 	
+        /// <summary>
+        /// Device Configuration For Office365
+        /// </summary>
+        DeviceConfigurationForOffice365 = 9,
+	
     }
 }

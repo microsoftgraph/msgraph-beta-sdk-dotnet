@@ -31,28 +31,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets name.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets mime type.
+        /// Gets or sets content type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mimeType", Required = Newtonsoft.Json.Required.Default)]
-        public string MimeType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        public string ContentType { get; set; }
     
         /// <summary>
-        /// Gets or sets size in bytes.
+        /// Gets or sets size.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sizeInBytes", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SizeInBytes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Size { get; set; }
     
         /// <summary>
-        /// Gets or sets document configuration.
+        /// Gets or sets configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterDocumentConfiguration DocumentConfiguration { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        public PrinterDocumentConfiguration Configuration { get; set; }
     
     }
 }

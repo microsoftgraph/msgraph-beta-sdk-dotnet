@@ -618,6 +618,54 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (userToInitialize.Approvals != null && userToInitialize.Approvals.CurrentPage != null)
+                {
+                    userToInitialize.Approvals.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("approvals@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.Approvals.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.AppConsentRequestsForApproval != null && userToInitialize.AppConsentRequestsForApproval.CurrentPage != null)
+                {
+                    userToInitialize.AppConsentRequestsForApproval.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("appConsentRequestsForApproval@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.AppConsentRequestsForApproval.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userToInitialize.PendingAccessReviewInstances != null && userToInitialize.PendingAccessReviewInstances.CurrentPage != null)
+                {
+                    userToInitialize.PendingAccessReviewInstances.AdditionalData = userToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userToInitialize.AdditionalData.TryGetValue("pendingAccessReviewInstances@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userToInitialize.PendingAccessReviewInstances.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (userToInitialize.AgreementAcceptances != null && userToInitialize.AgreementAcceptances.CurrentPage != null)
                 {
                     userToInitialize.AgreementAcceptances.AdditionalData = userToInitialize.AdditionalData;

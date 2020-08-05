@@ -74,6 +74,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SynchronizationJobProvisionOnDemand.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobProvisionOnDemandRequestBuilder"/>.</returns>
+        public ISynchronizationJobProvisionOnDemandRequestBuilder ProvisionOnDemand(
+            IEnumerable<SynchronizationJobApplicationParameters> parameters = null)
+        {
+            return new SynchronizationJobProvisionOnDemandRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.provisionOnDemand"),
+                this.Client,
+                parameters);
+        }
+
+        /// <summary>
         /// Gets the request builder for SynchronizationJobStart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
@@ -93,23 +106,6 @@ namespace Microsoft.Graph
             return new SynchronizationJobStopRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
                 this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobApply.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobApplyRequestBuilder"/>.</returns>
-        public ISynchronizationJobApplyRequestBuilder Apply(
-            string objectId,
-            string typeName,
-            string ruleId = null)
-        {
-            return new SynchronizationJobApplyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.apply"),
-                this.Client,
-                objectId,
-                typeName,
-                ruleId);
         }
 
         /// <summary>

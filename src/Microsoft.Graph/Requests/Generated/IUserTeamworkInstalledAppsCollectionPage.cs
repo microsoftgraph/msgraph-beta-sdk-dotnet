@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IUserTeamworkInstalledAppsCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<UserTeamworkInstalledAppsCollectionPage>))]
-    public interface IUserTeamworkInstalledAppsCollectionPage : ICollectionPage<TeamsAppInstallation>
+    public interface IUserTeamworkInstalledAppsCollectionPage : ICollectionPage<UserScopeTeamsAppInstallation>
     {
         /// <summary>
         /// Gets the next page <see cref="IUserTeamworkInstalledAppsCollectionRequest"/> instance.

@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets regional and language settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "regionalAndLanguageSettings", Required = Newtonsoft.Json.Required.Default)]
+        public RegionalAndLanguageSettings RegionalAndLanguageSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets shift preferences.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shiftPreferences", Required = Newtonsoft.Json.Required.Default)]

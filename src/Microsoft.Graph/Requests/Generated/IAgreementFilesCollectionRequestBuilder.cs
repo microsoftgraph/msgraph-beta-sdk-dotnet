@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IAgreementFilesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IAgreementFileRequestBuilder"/> for the specified AgreementFile.
+        /// Gets an <see cref="IAgreementFileLocalizationRequestBuilder"/> for the specified AgreementFileLocalization.
         /// </summary>
-        /// <param name="id">The ID for the AgreementFile.</param>
-        /// <returns>The <see cref="IAgreementFileRequestBuilder"/>.</returns>
-        IAgreementFileRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the AgreementFileLocalization.</param>
+        /// <returns>The <see cref="IAgreementFileLocalizationRequestBuilder"/>.</returns>
+        IAgreementFileLocalizationRequestBuilder this[string id] { get; }
 
         
     }

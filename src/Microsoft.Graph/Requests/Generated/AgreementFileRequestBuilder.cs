@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AgreementFileRequestBuilder.
     /// </summary>
-    public partial class AgreementFileRequestBuilder : EntityRequestBuilder, IAgreementFileRequestBuilder
+    public partial class AgreementFileRequestBuilder : AgreementFilePropertiesRequestBuilder, IAgreementFileRequestBuilder
     {
 
         /// <summary>
@@ -48,6 +48,18 @@ namespace Microsoft.Graph
         public new IAgreementFileRequest Request(IEnumerable<Option> options)
         {
             return new AgreementFileRequest(this.RequestUrl, this.Client, options);
+        }
+    
+        /// <summary>
+        /// Gets the request builder for Localizations.
+        /// </summary>
+        /// <returns>The <see cref="IAgreementFileLocalizationsCollectionRequestBuilder"/>.</returns>
+        public IAgreementFileLocalizationsCollectionRequestBuilder Localizations
+        {
+            get
+            {
+                return new AgreementFileLocalizationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("localizations"), this.Client);
+            }
         }
     
     }

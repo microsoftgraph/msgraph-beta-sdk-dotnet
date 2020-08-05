@@ -94,6 +94,13 @@ namespace Microsoft.Graph
         public bool? IgnoreDevicesForUnsupportedSettingsEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets enableLogCollection.
+        /// Determines whether the log collection feature should be available for use.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableLogCollection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableLogCollection { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

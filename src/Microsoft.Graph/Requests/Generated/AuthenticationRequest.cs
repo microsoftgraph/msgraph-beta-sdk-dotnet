@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (authenticationToInitialize.SecurityQuestionMethods != null && authenticationToInitialize.SecurityQuestionMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.SecurityQuestionMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("securityQuestionMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.SecurityQuestionMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (authenticationToInitialize.PhoneMethods != null && authenticationToInitialize.PhoneMethods.CurrentPage != null)
                 {
                     authenticationToInitialize.PhoneMethods.AdditionalData = authenticationToInitialize.AdditionalData;
@@ -293,6 +309,102 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         authenticationToInitialize.Operations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.EmailMethods != null && authenticationToInitialize.EmailMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.EmailMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("emailMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.EmailMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.OathMethods != null && authenticationToInitialize.OathMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.OathMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("oathMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.OathMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.MicrosoftAuthenticatorMethods != null && authenticationToInitialize.MicrosoftAuthenticatorMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods != null && authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("passwordlessMicrosoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.PasswordlessMicrosoftAuthenticatorMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.Fido2Methods != null && authenticationToInitialize.Fido2Methods.CurrentPage != null)
+                {
+                    authenticationToInitialize.Fido2Methods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("fido2Methods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.TemporaryAccessPassMethods != null && authenticationToInitialize.TemporaryAccessPassMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.TemporaryAccessPassMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("temporaryAccessPassMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.TemporaryAccessPassMethods.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

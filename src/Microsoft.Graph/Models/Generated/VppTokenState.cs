@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         AssignedToExternalMDM = 4,
 	
+        /// <summary>
+        /// Duplicate Location Id
+        /// </summary>
+        DuplicateLocationId = 5,
+	
     }
 }

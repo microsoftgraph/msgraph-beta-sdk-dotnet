@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ClaimsMappingPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies
-        {
-            get
-            {
-                return new ApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("claimsMappingPolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -131,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ConnectorGroup.
+        /// </summary>
+        /// <returns>The <see cref="IConnectorGroupWithReferenceRequestBuilder"/>.</returns>
+        public IConnectorGroupWithReferenceRequestBuilder ConnectorGroup
+        {
+            get
+            {
+                return new ConnectorGroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("connectorGroup"), this.Client);
             }
         }
 

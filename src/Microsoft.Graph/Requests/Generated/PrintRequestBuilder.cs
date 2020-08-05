@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
+        public IPrintSharesCollectionRequestBuilder Shares
+        {
+            get
+            {
+                return new PrintSharesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("shares"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for PrinterShares.
         /// </summary>
         /// <returns>The <see cref="IPrintPrinterSharesCollectionRequestBuilder"/>.</returns>
@@ -107,6 +119,30 @@ namespace Microsoft.Graph
             get
             {
                 return new PrintReportsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IPrintOperationsCollectionRequestBuilder"/>.</returns>
+        public IPrintOperationsCollectionRequestBuilder Operations
+        {
+            get
+            {
+                return new PrintOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TaskDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IPrintTaskDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IPrintTaskDefinitionsCollectionRequestBuilder TaskDefinitions
+        {
+            get
+            {
+                return new PrintTaskDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("taskDefinitions"), this.Client);
             }
         }
     

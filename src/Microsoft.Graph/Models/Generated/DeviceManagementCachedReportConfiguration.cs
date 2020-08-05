@@ -59,6 +59,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> OrderBy { get; set; }
     
         /// <summary>
+        /// Gets or sets metadata.
+        /// Caller-managed metadata associated with the report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
+        public string Metadata { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// Status of the cached report
         /// </summary>

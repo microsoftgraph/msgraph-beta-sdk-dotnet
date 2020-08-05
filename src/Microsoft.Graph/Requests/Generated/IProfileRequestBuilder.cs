@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IProfileAccountCollectionRequestBuilder Account { get; }
 
         /// <summary>
+        /// Gets the request builder for Addresses.
+        /// </summary>
+        /// <returns>The <see cref="IProfileAddressesCollectionRequestBuilder"/>.</returns>
+        IProfileAddressesCollectionRequestBuilder Addresses { get; }
+
+        /// <summary>
         /// Gets the request builder for Anniversaries.
         /// </summary>
         /// <returns>The <see cref="IProfileAnniversariesCollectionRequestBuilder"/>.</returns>
@@ -90,6 +96,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IProfileProjectsCollectionRequestBuilder"/>.</returns>
         IProfileProjectsCollectionRequestBuilder Projects { get; }
+
+        /// <summary>
+        /// Gets the request builder for Notes.
+        /// </summary>
+        /// <returns>The <see cref="IProfileNotesCollectionRequestBuilder"/>.</returns>
+        IProfileNotesCollectionRequestBuilder Notes { get; }
 
         /// <summary>
         /// Gets the request builder for Skills.

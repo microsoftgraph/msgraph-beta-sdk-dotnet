@@ -192,6 +192,13 @@ namespace Microsoft.Graph
         public string OsBuildNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets operatingSystemProductType.
+        /// Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemProductType", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? OperatingSystemProductType { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for RootCertificatesForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
+        public IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation
+        {
+            get
+            {
+                return new MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificatesForServerValidation"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>

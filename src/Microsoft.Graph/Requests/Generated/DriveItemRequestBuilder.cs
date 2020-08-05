@@ -239,14 +239,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
         public IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
-            DriveItemUploadableProperties item = null,
-            bool? deferCommit = null)
+            DriveItemUploadableProperties item = null)
         {
             return new DriveItemCreateUploadSessionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
                 this.Client,
-                item,
-                deferCommit);
+                item);
         }
 
         /// <summary>

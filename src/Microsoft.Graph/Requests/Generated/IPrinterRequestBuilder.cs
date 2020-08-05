@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrinterRequestBuilder.
     /// </summary>
-    public partial interface IPrinterRequestBuilder : IEntityRequestBuilder
+    public partial interface IPrinterRequestBuilder : IPrinterBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -44,12 +44,6 @@ namespace Microsoft.Graph
         IPrinterAllowedGroupsCollectionRequestBuilder AllowedGroups { get; }
 
         /// <summary>
-        /// Gets the request builder for Jobs.
-        /// </summary>
-        /// <returns>The <see cref="IPrinterJobsCollectionRequestBuilder"/>.</returns>
-        IPrinterJobsCollectionRequestBuilder Jobs { get; }
-
-        /// <summary>
         /// Gets the request builder for Share.
         /// </summary>
         /// <returns>The <see cref="IPrinterShareWithReferenceRequestBuilder"/>.</returns>
@@ -60,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrinterConnectorsCollectionWithReferencesRequestBuilder"/>.</returns>
         IPrinterConnectorsCollectionWithReferencesRequestBuilder Connectors { get; }
+
+        /// <summary>
+        /// Gets the request builder for TaskTriggers.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterTaskTriggersCollectionRequestBuilder"/>.</returns>
+        IPrinterTaskTriggersCollectionRequestBuilder TaskTriggers { get; }
     
         /// <summary>
         /// Gets the request builder for PrinterResetDefaults.

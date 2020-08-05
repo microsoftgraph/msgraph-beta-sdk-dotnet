@@ -37,16 +37,46 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets terms expiration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsExpiration", Required = Newtonsoft.Json.Required.Default)]
+        public TermsExpiration TermsExpiration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user reaccept required frequency.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userReacceptRequiredFrequency", Required = Newtonsoft.Json.Required.Default)]
+        public Duration UserReacceptRequiredFrequency { get; set; }
+    
+        /// <summary>
         /// Gets or sets is viewing before acceptance required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isViewingBeforeAcceptanceRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsViewingBeforeAcceptanceRequired { get; set; }
     
         /// <summary>
+        /// Gets or sets is per device acceptance required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPerDeviceAcceptanceRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsPerDeviceAcceptanceRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "file", Required = Newtonsoft.Json.Required.Default)]
+        public AgreementFile File { get; set; }
+    
+        /// <summary>
         /// Gets or sets files.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "files", Required = Newtonsoft.Json.Required.Default)]
         public IAgreementFilesCollectionPage Files { get; set; }
+    
+        /// <summary>
+        /// Gets or sets acceptances.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptances", Required = Newtonsoft.Json.Required.Default)]
+        public IAgreementAcceptancesCollectionPage Acceptances { get; set; }
     
     }
 }

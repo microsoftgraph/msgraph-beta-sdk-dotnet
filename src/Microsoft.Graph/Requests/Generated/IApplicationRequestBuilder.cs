@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
 
         /// <summary>
-        /// Gets the request builder for ClaimsMappingPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IApplicationClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies { get; }
-
-        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -72,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
         IApplicationTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for ConnectorGroup.
+        /// </summary>
+        /// <returns>The <see cref="IConnectorGroupWithReferenceRequestBuilder"/>.</returns>
+        IConnectorGroupWithReferenceRequestBuilder ConnectorGroup { get; }
 
         /// <summary>
         /// Gets the request builder for Synchronization.

@@ -731,88 +731,11 @@ namespace Microsoft.Graph
         public ConfigurationUsage? CellularData { get; set; }
     
         /// <summary>
-        /// Gets or sets defender block end user access.
-        /// Whether or not to block end user access to Defender.
+        /// Gets or sets defender require real time monitoring.
+        /// Indicates whether or not to require real time monitoring.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderBlockEndUserAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender days before deleting quarantined malware.
-        /// Number of days before deleting quarantined malware. Valid values 0 to 90
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDaysBeforeDeletingQuarantinedMalware", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderDaysBeforeDeletingQuarantinedMalware { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender detected malware actions.
-        /// Gets or sets Defender’s actions to take on detected Malware per threat level.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDetectedMalwareActions", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderDetectedMalwareActions DefenderDetectedMalwareActions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender system scan schedule.
-        /// Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSystemScanSchedule", Required = Newtonsoft.Json.Required.Default)]
-        public WeeklySchedule? DefenderSystemScanSchedule { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender files and folders to exclude.
-        /// Files and folder to exclude from scans and real time protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFilesAndFoldersToExclude", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderFilesAndFoldersToExclude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender file extensions to exclude.
-        /// File extensions to exclude from scans and real time protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFileExtensionsToExclude", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderFileExtensionsToExclude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan max cpu.
-        /// Max CPU usage percentage during scan. Valid values 0 to 100
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMaxCpu", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderScanMaxCpu { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender monitor file activity.
-        /// Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderMonitorFileActivity", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderMonitorFileActivity? DefenderMonitorFileActivity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender potentially unwanted app action.
-        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderPotentiallyUnwantedAppAction? DefenderPotentiallyUnwantedAppAction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender potentially unwanted app action setting.
-        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppActionSetting", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender processes to exclude.
-        /// Processes to exclude from scans and real time protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessesToExclude", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderProcessesToExclude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender prompt for sample submission.
-        /// The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPromptForSampleSubmission", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderPromptForSampleSubmission? DefenderPromptForSampleSubmission { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderRequireRealTimeMonitoring { get; set; }
     
         /// <summary>
         /// Gets or sets defender require behavior monitoring.
@@ -822,32 +745,11 @@ namespace Microsoft.Graph
         public bool? DefenderRequireBehaviorMonitoring { get; set; }
     
         /// <summary>
-        /// Gets or sets defender require cloud protection.
-        /// Indicates whether or not to require cloud protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireCloudProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderRequireCloudProtection { get; set; }
-    
-        /// <summary>
         /// Gets or sets defender require network inspection system.
         /// Indicates whether or not to require network inspection system.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireNetworkInspectionSystem", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefenderRequireNetworkInspectionSystem { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender require real time monitoring.
-        /// Indicates whether or not to require real time monitoring.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderRequireRealTimeMonitoring { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan archive files.
-        /// Indicates whether or not to scan archive files.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanArchiveFiles { get; set; }
     
         /// <summary>
         /// Gets or sets defender scan downloads.
@@ -878,39 +780,18 @@ namespace Microsoft.Graph
         public bool? DefenderDisableCatchupFullScan { get; set; }
     
         /// <summary>
-        /// Gets or sets defender scan network files.
-        /// Indicates whether or not to scan files opened from a network folder.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanNetworkFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan incoming mail.
-        /// Indicates whether or not to scan incoming mail messages.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanIncomingMail", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanIncomingMail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan mapped network drives during full scan.
-        /// Indicates whether or not to scan mapped network drives during full scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMappedNetworkDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanMappedNetworkDrivesDuringFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan removable drives during full scan.
-        /// Indicates whether or not to scan removable drives during full scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanRemovableDrivesDuringFullScan { get; set; }
-    
-        /// <summary>
         /// Gets or sets defender scan scripts loaded in internet explorer.
         /// Indicates whether or not to scan scripts loaded in Internet Explorer browser.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefenderScanScriptsLoadedInInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender block end user access.
+        /// Whether or not to block end user access to Defender.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderBlockEndUserAccess { get; set; }
     
         /// <summary>
         /// Gets or sets defender signature update interval in hours.
@@ -920,25 +801,67 @@ namespace Microsoft.Graph
         public Int32? DefenderSignatureUpdateIntervalInHours { get; set; }
     
         /// <summary>
-        /// Gets or sets defender scan type.
-        /// The defender system scan type. Possible values are: userDefined, disabled, quick, full.
+        /// Gets or sets defender monitor file activity.
+        /// Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderScanType? DefenderScanType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderMonitorFileActivity", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderMonitorFileActivity? DefenderMonitorFileActivity { get; set; }
     
         /// <summary>
-        /// Gets or sets defender scheduled scan time.
-        /// The defender time for the system scan.
+        /// Gets or sets defender days before deleting quarantined malware.
+        /// Number of days before deleting quarantined malware. Valid values 0 to 90
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay DefenderScheduledScanTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDaysBeforeDeletingQuarantinedMalware", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderDaysBeforeDeletingQuarantinedMalware { get; set; }
     
         /// <summary>
-        /// Gets or sets defender scheduled quick scan time.
-        /// The time to perform a daily quick scan.
+        /// Gets or sets defender scan max cpu.
+        /// Max CPU usage percentage during scan. Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledQuickScanTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay DefenderScheduledQuickScanTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMaxCpu", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderScanMaxCpu { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan archive files.
+        /// Indicates whether or not to scan archive files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanArchiveFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan incoming mail.
+        /// Indicates whether or not to scan incoming mail messages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanIncomingMail", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanIncomingMail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan removable drives during full scan.
+        /// Indicates whether or not to scan removable drives during full scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanRemovableDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan mapped network drives during full scan.
+        /// Indicates whether or not to scan mapped network drives during full scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMappedNetworkDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanMappedNetworkDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan network files.
+        /// Indicates whether or not to scan files opened from a network folder.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanNetworkFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender require cloud protection.
+        /// Indicates whether or not to require cloud protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireCloudProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderRequireCloudProtection { get; set; }
     
         /// <summary>
         /// Gets or sets defender cloud block level.
@@ -962,11 +885,53 @@ namespace Microsoft.Graph
         public Int32? DefenderCloudExtendedTimeoutInSeconds { get; set; }
     
         /// <summary>
-        /// Gets or sets defender block on access protection.
-        /// Allows or disallows Windows Defender On Access Protection functionality.
+        /// Gets or sets defender prompt for sample submission.
+        /// The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderBlockOnAccessProtection { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPromptForSampleSubmission", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderPromptForSampleSubmission? DefenderPromptForSampleSubmission { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled quick scan time.
+        /// The time to perform a daily quick scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledQuickScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledQuickScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan type.
+        /// The defender system scan type. Possible values are: userDefined, disabled, quick, full.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderScanType? DefenderScanType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender system scan schedule.
+        /// Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSystemScanSchedule", Required = Newtonsoft.Json.Required.Default)]
+        public WeeklySchedule? DefenderSystemScanSchedule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled scan time.
+        /// The defender time for the system scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender potentially unwanted app action.
+        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderPotentiallyUnwantedAppAction? DefenderPotentiallyUnwantedAppAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender potentially unwanted app action setting.
+        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppActionSetting", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting { get; set; }
     
         /// <summary>
         /// Gets or sets defender submit samples consent type.
@@ -974,6 +939,41 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSubmitSamplesConsentType", Required = Newtonsoft.Json.Required.Default)]
         public DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender block on access protection.
+        /// Allows or disallows Windows Defender On Access Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderBlockOnAccessProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender detected malware actions.
+        /// Gets or sets Defender’s actions to take on detected Malware per threat level.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDetectedMalwareActions", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderDetectedMalwareActions DefenderDetectedMalwareActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender file extensions to exclude.
+        /// File extensions to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFileExtensionsToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderFileExtensionsToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender files and folders to exclude.
+        /// Files and folder to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFilesAndFoldersToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderFilesAndFoldersToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender processes to exclude.
+        /// Processes to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessesToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderProcessesToExclude { get; set; }
     
         /// <summary>
         /// Gets or sets lock screen allow timeout configuration.

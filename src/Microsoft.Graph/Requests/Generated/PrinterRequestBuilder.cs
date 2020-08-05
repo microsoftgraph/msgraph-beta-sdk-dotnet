@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrinterRequestBuilder.
     /// </summary>
-    public partial class PrinterRequestBuilder : EntityRequestBuilder, IPrinterRequestBuilder
+    public partial class PrinterRequestBuilder : PrinterBaseRequestBuilder, IPrinterRequestBuilder
     {
 
         /// <summary>
@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Jobs.
-        /// </summary>
-        /// <returns>The <see cref="IPrinterJobsCollectionRequestBuilder"/>.</returns>
-        public IPrinterJobsCollectionRequestBuilder Jobs
-        {
-            get
-            {
-                return new PrinterJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("jobs"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Share.
         /// </summary>
         /// <returns>The <see cref="IPrinterShareWithReferenceRequestBuilder"/>.</returns>
@@ -107,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PrinterConnectorsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("connectors"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TaskTriggers.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterTaskTriggersCollectionRequestBuilder"/>.</returns>
+        public IPrinterTaskTriggersCollectionRequestBuilder TaskTriggers
+        {
+            get
+            {
+                return new PrinterTaskTriggersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("taskTriggers"), this.Client);
             }
         }
     

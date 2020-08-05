@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IPrintConnectorsCollectionRequestBuilder Connectors { get; }
 
         /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
+        IPrintSharesCollectionRequestBuilder Shares { get; }
+
+        /// <summary>
         /// Gets the request builder for PrinterShares.
         /// </summary>
         /// <returns>The <see cref="IPrintPrinterSharesCollectionRequestBuilder"/>.</returns>
@@ -60,6 +66,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrintReportsCollectionRequestBuilder"/>.</returns>
         IPrintReportsCollectionRequestBuilder Reports { get; }
+
+        /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IPrintOperationsCollectionRequestBuilder"/>.</returns>
+        IPrintOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for TaskDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IPrintTaskDefinitionsCollectionRequestBuilder"/>.</returns>
+        IPrintTaskDefinitionsCollectionRequestBuilder TaskDefinitions { get; }
     
     }
 }

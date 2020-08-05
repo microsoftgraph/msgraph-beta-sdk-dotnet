@@ -130,14 +130,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom browser package id.
-        /// Unique identifier of a custom browser to open weblink on Android.
+        /// Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
         public string CustomBrowserPackageId { get; set; }
     
         /// <summary>
         /// Gets or sets custom browser display name.
-        /// Friendly name of the preferred custom browser to open weblink on Android.
+        /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string CustomBrowserDisplayName { get; set; }
@@ -190,6 +190,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidDeviceModelNotAllowed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceModelNotAllowed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom dialer app package id.
+        /// PackageId of a custom dialer app to click-to-open a phone number on Android.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppPackageId", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDialerAppPackageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom dialer app display name.
+        /// Friendly name of a custom dialer app to click-to-open a phone number on Android.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDialerAppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

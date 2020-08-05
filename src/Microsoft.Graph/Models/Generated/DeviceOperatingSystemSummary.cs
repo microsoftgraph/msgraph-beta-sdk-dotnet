@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public Int32? AndroidWorkProfileCount { get; set; }
     
         /// <summary>
+        /// Gets or sets androidCorporateWorkProfileCount.
+        /// The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidCorporateWorkProfileCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AndroidCorporateWorkProfileCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets configMgrDeviceCount.
         /// Number of ConfigMgr managed devices.
         /// </summary>

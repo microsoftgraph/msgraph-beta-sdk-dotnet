@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Addresses.
+        /// </summary>
+        /// <returns>The <see cref="IProfileAddressesCollectionRequestBuilder"/>.</returns>
+        public IProfileAddressesCollectionRequestBuilder Addresses
+        {
+            get
+            {
+                return new ProfileAddressesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("addresses"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Anniversaries.
         /// </summary>
         /// <returns>The <see cref="IProfileAnniversariesCollectionRequestBuilder"/>.</returns>
@@ -167,6 +179,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ProfileProjectsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("projects"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Notes.
+        /// </summary>
+        /// <returns>The <see cref="IProfileNotesCollectionRequestBuilder"/>.</returns>
+        public IProfileNotesCollectionRequestBuilder Notes
+        {
+            get
+            {
+                return new ProfileNotesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("notes"), this.Client);
             }
         }
 

@@ -130,8 +130,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
         IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
-            DriveItemUploadableProperties item = null,
-            bool? deferCommit = null);
+            DriveItemUploadableProperties item = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemFollow.

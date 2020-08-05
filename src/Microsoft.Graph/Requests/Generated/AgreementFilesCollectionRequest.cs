@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified AgreementFile to the collection via POST.
+        /// Adds the specified AgreementFileLocalization to the collection via POST.
         /// </summary>
-        /// <param name="agreementFile">The AgreementFile to add.</param>
-        /// <returns>The created AgreementFile.</returns>
-        public System.Threading.Tasks.Task<AgreementFile> AddAsync(AgreementFile agreementFile)
+        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
+        /// <returns>The created AgreementFileLocalization.</returns>
+        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization)
         {
-            return this.AddAsync(agreementFile, CancellationToken.None);
+            return this.AddAsync(agreementFileLocalization, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified AgreementFile to the collection via POST.
+        /// Adds the specified AgreementFileLocalization to the collection via POST.
         /// </summary>
-        /// <param name="agreementFile">The AgreementFile to add.</param>
+        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AgreementFile.</returns>
-        public System.Threading.Tasks.Task<AgreementFile> AddAsync(AgreementFile agreementFile, CancellationToken cancellationToken)
+        /// <returns>The created AgreementFileLocalization.</returns>
+        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<AgreementFile>(agreementFile, cancellationToken);
+            return this.SendAsync<AgreementFileLocalization>(agreementFileLocalization, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IAgreementFilesCollectionRequest Expand(Expression<Func<AgreementFile, object>> expandExpression)
+        public IAgreementFilesCollectionRequest Expand(Expression<Func<AgreementFileLocalization, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IAgreementFilesCollectionRequest Select(Expression<Func<AgreementFile, object>> selectExpression)
+        public IAgreementFilesCollectionRequest Select(Expression<Func<AgreementFileLocalization, object>> selectExpression)
         {
             if (selectExpression == null)
             {

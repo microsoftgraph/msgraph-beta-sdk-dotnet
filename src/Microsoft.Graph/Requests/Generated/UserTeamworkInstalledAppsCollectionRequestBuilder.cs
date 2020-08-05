@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="ITeamsAppInstallationRequestBuilder"/> for the specified UserTeamworkTeamsAppInstallation.
+        /// Gets an <see cref="IUserScopeTeamsAppInstallationRequestBuilder"/> for the specified UserTeamworkUserScopeTeamsAppInstallation.
         /// </summary>
-        /// <param name="id">The ID for the UserTeamworkTeamsAppInstallation.</param>
-        /// <returns>The <see cref="ITeamsAppInstallationRequestBuilder"/>.</returns>
-        public ITeamsAppInstallationRequestBuilder this[string id]
+        /// <param name="id">The ID for the UserTeamworkUserScopeTeamsAppInstallation.</param>
+        /// <returns>The <see cref="IUserScopeTeamsAppInstallationRequestBuilder"/>.</returns>
+        public IUserScopeTeamsAppInstallationRequestBuilder this[string id]
         {
             get
             {
-                return new TeamsAppInstallationRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new UserScopeTeamsAppInstallationRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

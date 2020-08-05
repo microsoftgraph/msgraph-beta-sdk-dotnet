@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app roles.
-        /// The collection of application roles that an application may declare. These roles can be assigned to users, groups, or service principals. Not nullable.
+        /// The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications' service principals. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AppRole> AppRoles { get; set; }
@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets is fallback public client.
@@ -112,6 +118,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logo", Required = Newtonsoft.Json.Required.Default)]
         public Stream Logo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets optional claims.
@@ -184,17 +196,17 @@ namespace Microsoft.Graph
         public WebApplication Web { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises publishing.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesPublishing", Required = Newtonsoft.Json.Required.Default)]
+        public OnPremisesPublishing OnPremisesPublishing { get; set; }
+    
+        /// <summary>
         /// Gets or sets extension properties.
         /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionProperties", Required = Newtonsoft.Json.Required.Default)]
         public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
-    
-        /// <summary>
-        /// Gets or sets claims mapping policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IApplicationClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets created on behalf of.
@@ -227,6 +239,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
         public IApplicationTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets connector group.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorGroup", Required = Newtonsoft.Json.Required.Default)]
+        public ConnectorGroup ConnectorGroup { get; set; }
     
         /// <summary>
         /// Gets or sets synchronization.

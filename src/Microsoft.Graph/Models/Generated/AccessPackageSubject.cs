@@ -72,6 +72,18 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }
     
+        /// <summary>
+        /// Gets or sets connected organization id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganizationId", Required = Newtonsoft.Json.Required.Default)]
+        public string ConnectedOrganizationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets connected organization.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganization", Required = Newtonsoft.Json.Required.Default)]
+        public ConnectedOrganization ConnectedOrganization { get; set; }
+    
     }
 }
 

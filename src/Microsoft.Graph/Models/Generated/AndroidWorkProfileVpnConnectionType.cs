@@ -54,5 +54,10 @@ namespace Microsoft.Graph
         /// </summary>
         PaloAltoGlobalProtect = 6,
 	
+        /// <summary>
+        /// Microsoft Tunnel
+        /// </summary>
+        MicrosoftTunnel = 7,
+	
     }
 }

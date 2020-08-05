@@ -1256,6 +1256,13 @@ namespace Microsoft.Graph
         public bool? ITunesBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets shared device block temporary sessions.
+        /// Indicates whether or not to block temporary sessions on Shared iPads (iOS 13.4 or later).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedDeviceBlockTemporarySessions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SharedDeviceBlockTemporarySessions { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode app type.
         /// Type of app to run in kiosk mode.
         /// </summary>

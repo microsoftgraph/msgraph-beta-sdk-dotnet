@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IAgreementFileRequestBuilder"/> for the specified AgreementAgreementFile.
+        /// Gets an <see cref="IAgreementFileLocalizationRequestBuilder"/> for the specified AgreementAgreementFileLocalization.
         /// </summary>
-        /// <param name="id">The ID for the AgreementAgreementFile.</param>
-        /// <returns>The <see cref="IAgreementFileRequestBuilder"/>.</returns>
-        public IAgreementFileRequestBuilder this[string id]
+        /// <param name="id">The ID for the AgreementAgreementFileLocalization.</param>
+        /// <returns>The <see cref="IAgreementFileLocalizationRequestBuilder"/>.</returns>
+        public IAgreementFileLocalizationRequestBuilder this[string id]
         {
             get
             {
-                return new AgreementFileRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new AgreementFileLocalizationRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

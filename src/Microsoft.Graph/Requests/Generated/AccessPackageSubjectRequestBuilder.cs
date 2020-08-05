@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new AccessPackageSubjectRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for ConnectedOrganization.
+        /// </summary>
+        /// <returns>The <see cref="IConnectedOrganizationWithReferenceRequestBuilder"/>.</returns>
+        public IConnectedOrganizationWithReferenceRequestBuilder ConnectedOrganization
+        {
+            get
+            {
+                return new ConnectedOrganizationWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("connectedOrganization"), this.Client);
+            }
+        }
+    
     }
 }

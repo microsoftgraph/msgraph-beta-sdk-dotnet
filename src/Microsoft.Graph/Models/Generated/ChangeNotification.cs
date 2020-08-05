@@ -31,37 +31,50 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets id.
+        /// Unique ID for the notification. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets subscriptionId.
+        /// The unique identifier of the subscription that generated the notification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? SubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionExpirationDateTime.
+        /// The expiration time for the subscription. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SubscriptionExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets clientState.
+        /// Value of the clientState property sent in the subscription request (if any). The maximum length is 255 characters. The client can check whether the change notification came from the service by comparing the values of the clientState property. The value of the clientState property sent with the subscription is compared with the value of the clientState property received with each change notification. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientState", Required = Newtonsoft.Json.Required.Default)]
         public string ClientState { get; set; }
     
         /// <summary>
         /// Gets or sets changeType.
+        /// Indicates the type of change that will raise the change notification. The supported values are: created, updated, deleted. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeType", Required = Newtonsoft.Json.Required.Default)]
         public ChangeType? ChangeType { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
+        /// The URI of the resource that emitted the change notification relative to https://graph.microsoft.com. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public string Resource { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The unique identifier of the tenant from which the change notification originated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? TenantId { get; set; }
@@ -80,6 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resourceData.
+        /// The content of this property depends on the type of resource being subscribed to. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceData", Required = Newtonsoft.Json.Required.Default)]
         public ResourceData ResourceData { get; set; }

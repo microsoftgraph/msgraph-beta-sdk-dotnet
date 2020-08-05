@@ -81,6 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets orientation.
+        /// The orientation value from the camera. Writable on OneDrive Personal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orientation", Required = Newtonsoft.Json.Required.Default)]
         public Int16? Orientation { get; set; }

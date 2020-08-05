@@ -16,7 +16,6 @@ namespace Microsoft.Graph
     /// The enum Win32LobAppNotification.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-	[System.Flags]
     public enum Win32LobAppNotification
     {
     

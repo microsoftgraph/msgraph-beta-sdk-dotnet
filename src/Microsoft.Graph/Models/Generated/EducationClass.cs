@@ -87,6 +87,12 @@ namespace Microsoft.Graph
         public EducationExternalSource? ExternalSource { get; set; }
     
         /// <summary>
+        /// Gets or sets external source detail.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSourceDetail", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalSourceDetail { get; set; }
+    
+        /// <summary>
         /// Gets or sets grade.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grade", Required = Newtonsoft.Json.Required.Default)]

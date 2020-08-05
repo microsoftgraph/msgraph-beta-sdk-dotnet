@@ -135,6 +135,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AssignmentFilters.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAssignmentFiltersCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementAssignmentFiltersCollectionRequestBuilder AssignmentFilters
+        {
+            get
+            {
+                return new DeviceManagementAssignmentFiltersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentFilters"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TermsAndConditions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTermsAndConditionsCollectionRequestBuilder"/>.</returns>
@@ -543,6 +555,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceComplianceScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder DeviceComplianceScripts
+        {
+            get
+            {
+                return new DeviceManagementDeviceComplianceScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceComplianceScripts"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverview.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
@@ -719,6 +743,30 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsScoreHistory"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ComanagedDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComanagedDevicesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComanagedDevicesCollectionRequestBuilder ComanagedDevices
+        {
+            get
+            {
+                return new DeviceManagementComanagedDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comanagedDevices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ComanagementEligibleDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder ComanagementEligibleDevices
+        {
+            get
+            {
+                return new DeviceManagementComanagementEligibleDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comanagementEligibleDevices"), this.Client);
             }
         }
 
@@ -1131,6 +1179,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DeviceManagementEnableUnlicensedAdminstrators.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder"/>.</returns>
+        public IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators()
+        {
+            return new DeviceManagementEnableUnlicensedAdminstratorsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.enableUnlicensedAdminstrators"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementEnableLegacyPcManagement.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEnableLegacyPcManagementRequestBuilder"/>.</returns>
@@ -1180,6 +1239,28 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.verifyWindowsEnrollmentAutoDiscovery"),
                 this.Client,
                 domainName);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetComanagedDevicesSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetComanagedDevicesSummaryRequestBuilder"/>.</returns>
+        public IDeviceManagementGetComanagedDevicesSummaryRequestBuilder GetComanagedDevicesSummary()
+        {
+            return new DeviceManagementGetComanagedDevicesSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getComanagedDevicesSummary"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetComanagementEligibleDevicesSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder"/>.</returns>
+        public IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary()
+        {
+            return new DeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getComanagementEligibleDevicesSummary"),
+                this.Client);
         }
 
         /// <summary>

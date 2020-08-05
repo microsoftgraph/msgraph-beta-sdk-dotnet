@@ -231,44 +231,6 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RequestObject requestObjectToInitialize)
         {
 
-            if (requestObjectToInitialize != null && requestObjectToInitialize.AdditionalData != null)
-            {
-
-                if (requestObjectToInitialize.Decisions != null && requestObjectToInitialize.Decisions.CurrentPage != null)
-                {
-                    requestObjectToInitialize.Decisions.AdditionalData = requestObjectToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    requestObjectToInitialize.AdditionalData.TryGetValue("decisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        requestObjectToInitialize.Decisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (requestObjectToInitialize.MyDecisions != null && requestObjectToInitialize.MyDecisions.CurrentPage != null)
-                {
-                    requestObjectToInitialize.MyDecisions.AdditionalData = requestObjectToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    requestObjectToInitialize.AdditionalData.TryGetValue("myDecisions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        requestObjectToInitialize.MyDecisions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-            }
-
-
         }
     }
 }

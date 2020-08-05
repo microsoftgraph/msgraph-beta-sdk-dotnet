@@ -24,6 +24,20 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets deviceAndAppManagementAssignmentFilterId.
+        /// The Id of the filter for the target assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAndAppManagementAssignmentFilterId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceAndAppManagementAssignmentFilterId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceAndAppManagementAssignmentFilterType.
+        /// The type of filter of the target assignment i.e. Exclude or Include.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAndAppManagementAssignmentFilterType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

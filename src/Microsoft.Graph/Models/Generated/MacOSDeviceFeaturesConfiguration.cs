@@ -178,6 +178,139 @@ namespace Microsoft.Graph
         public MacOSSingleSignOnExtension MacOSSingleSignOnExtension { get; set; }
     
         /// <summary>
+        /// Gets or sets content caching enabled.
+        /// Enables content caching and prevents it from being disabled by the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContentCachingEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching type.
+        /// Determines what type of content is allowed to be cached by Apple's content caching service.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingType", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSContentCachingType? ContentCachingType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching max size bytes.
+        /// The maximum number of bytes of disk space that will be used for the content cache. A value of 0 (default) indicates unlimited disk space. 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingMaxSizeBytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ContentCachingMaxSizeBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching data path.
+        /// The path to the directory used to store cached content. The value must be (or end with) /Library/Application Support/Apple/AssetCache/Data
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingDataPath", Required = Newtonsoft.Json.Required.Default)]
+        public string ContentCachingDataPath { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching disable connection sharing.
+        /// Disables internet connection sharing.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingDisableConnectionSharing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContentCachingDisableConnectionSharing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching force connection sharing.
+        /// Forces internet connection sharing. contentCachingDisableConnectionSharing overrides this setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingForceConnectionSharing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContentCachingForceConnectionSharing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching client policy.
+        /// Determines the method in which content caching servers will listen for clients.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingClientPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSContentCachingClientPolicy? ContentCachingClientPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching client listen ranges.
+        /// A list of custom IP ranges content caches will use to listen for clients. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingClientListenRanges", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IpRange> ContentCachingClientListenRanges { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching peer policy.
+        /// Determines the method in which content caches peer with other caches.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingPeerPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSContentCachingPeerPolicy? ContentCachingPeerPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching peer listen ranges.
+        /// A list of custom IP ranges content caches will use to listen for peer caches. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingPeerListenRanges", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IpRange> ContentCachingPeerListenRanges { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching peer filter ranges.
+        /// A list of custom IP ranges content caches will use to query for content from peers caches. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingPeerFilterRanges", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IpRange> ContentCachingPeerFilterRanges { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching parent selection policy.
+        /// Determines the method in which content caching servers will select parents if multiple are present.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingParentSelectionPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSContentCachingParentSelectionPolicy? ContentCachingParentSelectionPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching parents.
+        /// A list of IP addresses representing parent content caches.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingParents", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ContentCachingParents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching log client identities.
+        /// Enables logging of IP addresses and ports of clients that request cached content.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingLogClientIdentities", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContentCachingLogClientIdentities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching public ranges.
+        /// A list of custom IP ranges that Apple's content caching service should use to match clients to content caches. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingPublicRanges", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IpRange> ContentCachingPublicRanges { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching block deletion.
+        /// Prevents content caches from purging content to free up disk space for other apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingBlockDeletion", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContentCachingBlockDeletion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching show alerts.
+        /// Display content caching alerts as system notifications.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingShowAlerts", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContentCachingShowAlerts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching keep awake.
+        /// Prevent the device from sleeping if content caching is enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingKeepAwake", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ContentCachingKeepAwake { get; set; }
+    
+        /// <summary>
+        /// Gets or sets content caching port.
+        /// Sets the port used for content caching. If the value is 0, a random available port will be selected. Valid values 0 to 65535
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentCachingPort", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ContentCachingPort { get; set; }
+    
+        /// <summary>
         /// Gets or sets single sign on extension pkinit certificate.
         /// PKINIT Certificate for the authentication with single sign-on extensions.
         /// </summary>

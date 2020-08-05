@@ -231,6 +231,44 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PrinterShare printerShareToInitialize)
         {
 
+            if (printerShareToInitialize != null && printerShareToInitialize.AdditionalData != null)
+            {
+
+                if (printerShareToInitialize.AllowedUsers != null && printerShareToInitialize.AllowedUsers.CurrentPage != null)
+                {
+                    printerShareToInitialize.AllowedUsers.AdditionalData = printerShareToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    printerShareToInitialize.AdditionalData.TryGetValue("allowedUsers@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        printerShareToInitialize.AllowedUsers.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (printerShareToInitialize.AllowedGroups != null && printerShareToInitialize.AllowedGroups.CurrentPage != null)
+                {
+                    printerShareToInitialize.AllowedGroups.AdditionalData = printerShareToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    printerShareToInitialize.AdditionalData.TryGetValue("allowedGroups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        printerShareToInitialize.AllowedGroups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

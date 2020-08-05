@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets enrollment mode.
+        /// The enrollment mode of devices that use this enrollment profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentMode", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerEnrollmentMode? EnrollmentMode { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
         /// Date time the enrollment profile was created.
         /// </summary>

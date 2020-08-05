@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }
     
+        /// <summary>
+        /// Gets or sets collaboration tags.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collaborationTags", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> CollaborationTags { get; set; }
+    
     }
 }
 

@@ -32,14 +32,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target id.
-        /// The target child mobile app's app id.
+        /// The target mobile app's app id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
         public string TargetId { get; set; }
     
         /// <summary>
         /// Gets or sets target display name.
-        /// The target child mobile app's display name.
+        /// The target mobile app's display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TargetDisplayName { get; set; }

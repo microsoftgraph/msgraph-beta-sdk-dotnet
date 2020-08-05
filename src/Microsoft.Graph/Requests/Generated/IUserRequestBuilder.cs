@@ -224,6 +224,24 @@ namespace Microsoft.Graph
         IUserExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
+        /// Gets the request builder for Approvals.
+        /// </summary>
+        /// <returns>The <see cref="IUserApprovalsCollectionRequestBuilder"/>.</returns>
+        IUserApprovalsCollectionRequestBuilder Approvals { get; }
+
+        /// <summary>
+        /// Gets the request builder for AppConsentRequestsForApproval.
+        /// </summary>
+        /// <returns>The <see cref="IUserAppConsentRequestsForApprovalCollectionRequestBuilder"/>.</returns>
+        IUserAppConsentRequestsForApprovalCollectionRequestBuilder AppConsentRequestsForApproval { get; }
+
+        /// <summary>
+        /// Gets the request builder for PendingAccessReviewInstances.
+        /// </summary>
+        /// <returns>The <see cref="IUserPendingAccessReviewInstancesCollectionRequestBuilder"/>.</returns>
+        IUserPendingAccessReviewInstancesCollectionRequestBuilder PendingAccessReviewInstances { get; }
+
+        /// <summary>
         /// Gets the request builder for AgreementAcceptances.
         /// </summary>
         /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -286,8 +304,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Insights.
         /// </summary>
-        /// <returns>The <see cref="IOfficeGraphInsightsRequestBuilder"/>.</returns>
-        IOfficeGraphInsightsRequestBuilder Insights { get; }
+        /// <returns>The <see cref="IItemInsightsRequestBuilder"/>.</returns>
+        IItemInsightsRequestBuilder Insights { get; }
 
         /// <summary>
         /// Gets the request builder for Settings.

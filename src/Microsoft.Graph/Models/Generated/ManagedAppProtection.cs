@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed browser to open links required.
-        /// Indicates whether internet links should be opened in the managed browser app.
+        /// Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedBrowserToOpenLinksRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? ManagedBrowserToOpenLinksRequired { get; set; }
@@ -270,7 +270,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed browser.
-        /// Indicates in which managed browser(s) that internet links should be opened.
+        /// Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedBrowser", Required = Newtonsoft.Json.Required.Default)]
         public ManagedBrowserType? ManagedBrowser { get; set; }
@@ -309,6 +309,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfUnableToAuthenticateUser", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets dialer restriction level.
+        /// The classes of dialer apps that are allowed to click-to-open a phone number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dialerRestrictionLevel", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppPhoneNumberRedirectLevel? DialerRestrictionLevel { get; set; }
     
     }
 }

@@ -43,16 +43,34 @@ namespace Microsoft.Graph
         public string UserId { get; set; }
     
         /// <summary>
+        /// Gets or sets device id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device ostype.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOSType", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceOSType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device osversion.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOSVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceOSVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets agreement file id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementFileId", Required = Newtonsoft.Json.Required.Default)]
         public string AgreementFileId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets recorded date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? RecordedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.
@@ -71,6 +89,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEmail", Required = Newtonsoft.Json.Required.Default)]
         public string UserEmail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recorded date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RecordedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expiration date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.

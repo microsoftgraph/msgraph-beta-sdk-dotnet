@@ -120,6 +120,11 @@ namespace Microsoft.Graph
         Windows10x = 19,
 	
         /// <summary>
+        /// Androidn GMS
+        /// </summary>
+        AndroidnGMS = 20,
+	
+        /// <summary>
         /// Blackberry
         /// </summary>
         Blackberry = 100,

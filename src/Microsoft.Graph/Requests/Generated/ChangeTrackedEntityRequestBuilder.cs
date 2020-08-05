@@ -50,5 +50,16 @@ namespace Microsoft.Graph
             return new ChangeTrackedEntityRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for ChangeTrackedEntityStageForDeletion.
+        /// </summary>
+        /// <returns>The <see cref="IChangeTrackedEntityStageForDeletionRequestBuilder"/>.</returns>
+        public IChangeTrackedEntityStageForDeletionRequestBuilder StageForDeletion()
+        {
+            return new ChangeTrackedEntityStageForDeletionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stageForDeletion"),
+                this.Client);
+        }
+    
     }
 }

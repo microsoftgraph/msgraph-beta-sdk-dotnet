@@ -36,6 +36,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IPrinterRequestBuilder"/>.</returns>
         IPrinterRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for PrinterCreate.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterCreateRequestBuilder"/>.</returns>
+        IPrinterCreateRequestBuilder Create(
+            string displayName,
+            string manufacturer,
+            string model,
+            PrintCertificateSigningRequestObject certificateSigningRequest,
+            string physicalDeviceId = null,
+            bool? hasPhysicalDevice = null,
+            string connectorId = null);
     }
 }

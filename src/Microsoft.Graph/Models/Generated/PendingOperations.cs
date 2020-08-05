@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets pendingContentUpdate.
+        /// A property that indicates that an operation that might update the binary content of a file is pending completion.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingContentUpdate", Required = Newtonsoft.Json.Required.Default)]
         public PendingContentUpdate PendingContentUpdate { get; set; }

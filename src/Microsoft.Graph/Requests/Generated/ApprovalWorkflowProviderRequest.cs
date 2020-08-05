@@ -266,38 +266,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (approvalWorkflowProviderToInitialize.Requests != null && approvalWorkflowProviderToInitialize.Requests.CurrentPage != null)
-                {
-                    approvalWorkflowProviderToInitialize.Requests.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("requests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.Requests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (approvalWorkflowProviderToInitialize.RequestsAwaitingMyDecision != null && approvalWorkflowProviderToInitialize.RequestsAwaitingMyDecision.CurrentPage != null)
-                {
-                    approvalWorkflowProviderToInitialize.RequestsAwaitingMyDecision.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("requestsAwaitingMyDecision@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.RequestsAwaitingMyDecision.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision != null && approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.CurrentPage != null)
                 {
                     approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;

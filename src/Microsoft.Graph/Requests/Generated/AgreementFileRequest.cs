@@ -231,6 +231,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AgreementFile agreementFileToInitialize)
         {
 
+            if (agreementFileToInitialize != null && agreementFileToInitialize.AdditionalData != null)
+            {
+
+                if (agreementFileToInitialize.Localizations != null && agreementFileToInitialize.Localizations.CurrentPage != null)
+                {
+                    agreementFileToInitialize.Localizations.AdditionalData = agreementFileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    agreementFileToInitialize.AdditionalData.TryGetValue("localizations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        agreementFileToInitialize.Localizations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

@@ -129,6 +129,20 @@ namespace Microsoft.Graph
         public string HighestAvailableVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets detection script parameters.
+        /// List of ComplexType DetectionScriptParameters objects.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionScriptParameters", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceHealthScriptParameter> DetectionScriptParameters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediation script parameters.
+        /// List of ComplexType RemediationScriptParameters objects.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptParameters", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceHealthScriptParameter> RemediationScriptParameters { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the device health script
         /// </summary>

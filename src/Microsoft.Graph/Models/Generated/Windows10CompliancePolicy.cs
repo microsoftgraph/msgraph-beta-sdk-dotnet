@@ -247,6 +247,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tpmRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? TpmRequired { get; set; }
     
+        /// <summary>
+        /// Gets or sets device compliance policy script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyScript", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceCompliancePolicyScript DeviceCompliancePolicyScript { get; set; }
+    
     }
 }
 

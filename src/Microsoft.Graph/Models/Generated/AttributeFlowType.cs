@@ -34,5 +34,15 @@ namespace Microsoft.Graph
         /// </summary>
         MultiValueAddOnly = 2,
 	
+        /// <summary>
+        /// Value Add Only
+        /// </summary>
+        ValueAddOnly = 3,
+	
+        /// <summary>
+        /// Attribute Add Only
+        /// </summary>
+        AttributeAddOnly = 4,
+	
     }
 }

@@ -32,60 +32,63 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets is deleted.
+        /// Indicates whether the user is deleted. Possible values are: true, false
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
-        /// Gets or sets is guest.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isGuest", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsGuest { get; set; }
-    
-        /// <summary>
         /// Gets or sets is processing.
+        /// Indicates wehther a user's risky state is being processed by the backend
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isProcessing", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsProcessing { get; set; }
     
         /// <summary>
         /// Gets or sets risk last updated date time.
+        /// The date and time that the risky user was last updated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskLastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RiskLastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets risk level.
+        /// Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskLevel", Required = Newtonsoft.Json.Required.Default)]
         public RiskLevel? RiskLevel { get; set; }
     
         /// <summary>
         /// Gets or sets risk state.
+        /// State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskState", Required = Newtonsoft.Json.Required.Default)]
         public RiskState? RiskState { get; set; }
     
         /// <summary>
         /// Gets or sets risk detail.
+        /// Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskDetail", Required = Newtonsoft.Json.Required.Default)]
         public RiskDetail? RiskDetail { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.
+        /// Risky user display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
+        /// Risky user principal name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets history.
+        /// The activity related to user risk level change
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "history", Required = Newtonsoft.Json.Required.Default)]
         public IRiskyUserHistoryCollectionPage History { get; set; }

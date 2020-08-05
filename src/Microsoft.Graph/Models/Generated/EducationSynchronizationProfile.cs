@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets expiration date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ExpirationDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets data provider.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataProvider", Required = Newtonsoft.Json.Required.Default)]

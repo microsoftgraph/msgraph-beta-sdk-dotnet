@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (profileToInitialize.Addresses != null && profileToInitialize.Addresses.CurrentPage != null)
+                {
+                    profileToInitialize.Addresses.AdditionalData = profileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    profileToInitialize.AdditionalData.TryGetValue("addresses@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        profileToInitialize.Addresses.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (profileToInitialize.Anniversaries != null && profileToInitialize.Anniversaries.CurrentPage != null)
                 {
                     profileToInitialize.Anniversaries.AdditionalData = profileToInitialize.AdditionalData;
@@ -389,6 +405,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         profileToInitialize.Projects.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (profileToInitialize.Notes != null && profileToInitialize.Notes.CurrentPage != null)
+                {
+                    profileToInitialize.Notes.AdditionalData = profileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    profileToInitialize.AdditionalData.TryGetValue("notes@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        profileToInitialize.Notes.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

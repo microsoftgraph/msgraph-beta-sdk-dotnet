@@ -20,29 +20,39 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Browser
+        /// All
         /// </summary>
-        Browser = 0,
+        All = 0,
 	
         /// <summary>
-        /// Modern
+        /// Browser
         /// </summary>
-        Modern = 1,
+        Browser = 1,
+	
+        /// <summary>
+        /// Mobile Apps And Desktop Clients
+        /// </summary>
+        MobileAppsAndDesktopClients = 2,
+	
+        /// <summary>
+        /// Exchange Active Sync
+        /// </summary>
+        ExchangeActiveSync = 3,
 	
         /// <summary>
         /// Eas Supported
         /// </summary>
-        EasSupported = 2,
-	
-        /// <summary>
-        /// Eas Unsupported
-        /// </summary>
-        EasUnsupported = 3,
+        EasSupported = 4,
 	
         /// <summary>
         /// Other
         /// </summary>
-        Other = 4,
+        Other = 5,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 6,
 	
     }
 }

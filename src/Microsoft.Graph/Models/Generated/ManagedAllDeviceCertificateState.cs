@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public CertificateRevocationStatus? CertificateRevokeStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets certificate revoke status last change date time.
+        /// The time the revoke status was last changed
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateRevokeStatusLastChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CertificateRevokeStatusLastChangeDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets managed device display name.
         /// Device display name
         /// </summary>

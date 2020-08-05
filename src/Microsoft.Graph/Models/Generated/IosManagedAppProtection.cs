@@ -116,10 +116,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom browser protocol.
-        /// A custom browser protocol to open weblink on iOS.
+        /// A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserProtocol", Required = Newtonsoft.Json.Required.Default)]
         public string CustomBrowserProtocol { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom dialer app protocol.
+        /// Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppProtocol", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDialerAppProtocol { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

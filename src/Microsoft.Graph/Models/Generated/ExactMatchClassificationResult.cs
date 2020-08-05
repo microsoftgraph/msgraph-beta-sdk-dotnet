@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// Gets or sets classification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DetectedSensitiveContent> Classification { get; set; }
+        public IEnumerable<ExactMatchDetectedSensitiveContent> Classification { get; set; }
     
         /// <summary>
         /// Gets or sets errors.

@@ -535,6 +535,20 @@ namespace Microsoft.Graph
         public string SpecificationVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets join type.
+        /// Device join type
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinType", Required = Newtonsoft.Json.Required.Default)]
+        public JoinType? JoinType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sku family.
+        /// Device sku family
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuFamily", Required = Newtonsoft.Json.Required.Default)]
+        public string SkuFamily { get; set; }
+    
+        /// <summary>
         /// Gets or sets security baseline states.
         /// Security baseline states for this device.
         /// </summary>
@@ -589,6 +603,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
         public IManagedDeviceUsersCollectionPage Users { get; set; }
+    
+        /// <summary>
+        /// Gets or sets log collection requests.
+        /// List of log collection requests
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logCollectionRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IManagedDeviceLogCollectionRequestsCollectionPage LogCollectionRequests { get; set; }
     
     }
 }
