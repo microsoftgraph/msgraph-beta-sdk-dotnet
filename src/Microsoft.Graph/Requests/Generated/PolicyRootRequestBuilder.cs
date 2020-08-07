@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AuthorizationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAuthorizationPolicyCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootAuthorizationPolicyCollectionRequestBuilder AuthorizationPolicy
+        {
+            get
+            {
+                return new PolicyRootAuthorizationPolicyCollectionRequestBuilder(this.AppendSegmentToRequestUrl("authorizationPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ClaimsMappingPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootClaimsMappingPoliciesCollectionRequestBuilder"/>.</returns>
@@ -107,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("homeRealmDiscoveryPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PermissionGrantPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder PermissionGrantPolicies
+        {
+            get
+            {
+                return new PolicyRootPermissionGrantPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissionGrantPolicies"), this.Client);
             }
         }
 

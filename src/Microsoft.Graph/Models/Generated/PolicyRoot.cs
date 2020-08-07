@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public IPolicyRootActivityBasedTimeoutPoliciesCollectionPage ActivityBasedTimeoutPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets authorization policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizationPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootAuthorizationPolicyCollectionPage AuthorizationPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets claims mapping policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
@@ -59,6 +65,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage HomeRealmDiscoveryPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permission grant policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrantPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootPermissionGrantPoliciesCollectionPage PermissionGrantPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets token issuance policies.

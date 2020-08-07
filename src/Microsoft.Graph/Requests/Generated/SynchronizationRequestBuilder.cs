@@ -75,6 +75,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for SynchronizationAcquireAccessToken.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationAcquireAccessTokenRequestBuilder"/>.</returns>
+        public ISynchronizationAcquireAccessTokenRequestBuilder AcquireAccessToken(
+            IEnumerable<SynchronizationSecretKeyStringValuePair> credentials = null)
+        {
+            return new SynchronizationAcquireAccessTokenRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.acquireAccessToken"),
+                this.Client,
+                credentials);
+        }
+
+        /// <summary>
         /// Gets the request builder for SynchronizationPing.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationPingRequestBuilder"/>.</returns>

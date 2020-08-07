@@ -50,6 +50,18 @@ namespace Microsoft.Graph
         IProfileAnniversariesCollectionRequestBuilder Anniversaries { get; }
 
         /// <summary>
+        /// Gets the request builder for Awards.
+        /// </summary>
+        /// <returns>The <see cref="IProfileAwardsCollectionRequestBuilder"/>.</returns>
+        IProfileAwardsCollectionRequestBuilder Awards { get; }
+
+        /// <summary>
+        /// Gets the request builder for Certifications.
+        /// </summary>
+        /// <returns>The <see cref="IProfileCertificationsCollectionRequestBuilder"/>.</returns>
+        IProfileCertificationsCollectionRequestBuilder Certifications { get; }
+
+        /// <summary>
         /// Gets the request builder for EducationalActivities.
         /// </summary>
         /// <returns>The <see cref="IProfileEducationalActivitiesCollectionRequestBuilder"/>.</returns>
@@ -80,6 +92,18 @@ namespace Microsoft.Graph
         IProfileNamesCollectionRequestBuilder Names { get; }
 
         /// <summary>
+        /// Gets the request builder for Notes.
+        /// </summary>
+        /// <returns>The <see cref="IProfileNotesCollectionRequestBuilder"/>.</returns>
+        IProfileNotesCollectionRequestBuilder Notes { get; }
+
+        /// <summary>
+        /// Gets the request builder for Patents.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePatentsCollectionRequestBuilder"/>.</returns>
+        IProfilePatentsCollectionRequestBuilder Patents { get; }
+
+        /// <summary>
         /// Gets the request builder for Phones.
         /// </summary>
         /// <returns>The <see cref="IProfilePhonesCollectionRequestBuilder"/>.</returns>
@@ -98,10 +122,10 @@ namespace Microsoft.Graph
         IProfileProjectsCollectionRequestBuilder Projects { get; }
 
         /// <summary>
-        /// Gets the request builder for Notes.
+        /// Gets the request builder for Publications.
         /// </summary>
-        /// <returns>The <see cref="IProfileNotesCollectionRequestBuilder"/>.</returns>
-        IProfileNotesCollectionRequestBuilder Notes { get; }
+        /// <returns>The <see cref="IProfilePublicationsCollectionRequestBuilder"/>.</returns>
+        IProfilePublicationsCollectionRequestBuilder Publications { get; }
 
         /// <summary>
         /// Gets the request builder for Skills.

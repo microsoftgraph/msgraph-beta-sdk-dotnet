@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder ActivityBasedTimeoutPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthorizationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAuthorizationPolicyCollectionRequestBuilder"/>.</returns>
+        IPolicyRootAuthorizationPolicyCollectionRequestBuilder AuthorizationPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for ClaimsMappingPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootClaimsMappingPoliciesCollectionRequestBuilder"/>.</returns>
@@ -60,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder"/>.</returns>
         IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder HomeRealmDiscoveryPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for PermissionGrantPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder PermissionGrantPolicies { get; }
 
         /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.

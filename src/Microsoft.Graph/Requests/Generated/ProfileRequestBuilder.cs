@@ -87,6 +87,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Awards.
+        /// </summary>
+        /// <returns>The <see cref="IProfileAwardsCollectionRequestBuilder"/>.</returns>
+        public IProfileAwardsCollectionRequestBuilder Awards
+        {
+            get
+            {
+                return new ProfileAwardsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("awards"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Certifications.
+        /// </summary>
+        /// <returns>The <see cref="IProfileCertificationsCollectionRequestBuilder"/>.</returns>
+        public IProfileCertificationsCollectionRequestBuilder Certifications
+        {
+            get
+            {
+                return new ProfileCertificationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("certifications"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for EducationalActivities.
         /// </summary>
         /// <returns>The <see cref="IProfileEducationalActivitiesCollectionRequestBuilder"/>.</returns>
@@ -147,6 +171,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Notes.
+        /// </summary>
+        /// <returns>The <see cref="IProfileNotesCollectionRequestBuilder"/>.</returns>
+        public IProfileNotesCollectionRequestBuilder Notes
+        {
+            get
+            {
+                return new ProfileNotesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("notes"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Patents.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePatentsCollectionRequestBuilder"/>.</returns>
+        public IProfilePatentsCollectionRequestBuilder Patents
+        {
+            get
+            {
+                return new ProfilePatentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("patents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Phones.
         /// </summary>
         /// <returns>The <see cref="IProfilePhonesCollectionRequestBuilder"/>.</returns>
@@ -183,14 +231,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Notes.
+        /// Gets the request builder for Publications.
         /// </summary>
-        /// <returns>The <see cref="IProfileNotesCollectionRequestBuilder"/>.</returns>
-        public IProfileNotesCollectionRequestBuilder Notes
+        /// <returns>The <see cref="IProfilePublicationsCollectionRequestBuilder"/>.</returns>
+        public IProfilePublicationsCollectionRequestBuilder Publications
         {
             get
             {
-                return new ProfileNotesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("notes"), this.Client);
+                return new ProfilePublicationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("publications"), this.Client);
             }
         }
 

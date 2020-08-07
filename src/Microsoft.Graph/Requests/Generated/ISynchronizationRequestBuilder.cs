@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         ISynchronizationTemplatesCollectionRequestBuilder Templates { get; }
     
         /// <summary>
+        /// Gets the request builder for SynchronizationAcquireAccessToken.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationAcquireAccessTokenRequestBuilder"/>.</returns>
+        ISynchronizationAcquireAccessTokenRequestBuilder AcquireAccessToken(
+            IEnumerable<SynchronizationSecretKeyStringValuePair> credentials = null);
+
+        /// <summary>
         /// Gets the request builder for SynchronizationPing.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationPingRequestBuilder"/>.</returns>

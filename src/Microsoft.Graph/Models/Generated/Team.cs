@@ -116,6 +116,12 @@ namespace Microsoft.Graph
         public bool? IsArchived { get; set; }
     
         /// <summary>
+        /// Gets or sets is membership limited to owners.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMembershipLimitedToOwners", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsMembershipLimitedToOwners { get; set; }
+    
+        /// <summary>
         /// Gets or sets schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]

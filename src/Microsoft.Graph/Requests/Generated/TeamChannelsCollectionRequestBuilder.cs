@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ChannelAllMessages.
+        /// </summary>
+        /// <returns>The <see cref="IChannelAllMessagesRequestBuilder"/>.</returns>
+        public IChannelAllMessagesRequestBuilder AllMessages()
+        {
+            return new ChannelAllMessagesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.allMessages"),
+                this.Client);
+        }
     }
 }

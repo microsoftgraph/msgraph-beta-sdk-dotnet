@@ -49,6 +49,18 @@ namespace Microsoft.Graph
         public IProfileAnniversariesCollectionPage Anniversaries { get; set; }
     
         /// <summary>
+        /// Gets or sets awards.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "awards", Required = Newtonsoft.Json.Required.Default)]
+        public IProfileAwardsCollectionPage Awards { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certifications.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certifications", Required = Newtonsoft.Json.Required.Default)]
+        public IProfileCertificationsCollectionPage Certifications { get; set; }
+    
+        /// <summary>
         /// Gets or sets educational activities.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "educationalActivities", Required = Newtonsoft.Json.Required.Default)]
@@ -79,6 +91,18 @@ namespace Microsoft.Graph
         public IProfileNamesCollectionPage Names { get; set; }
     
         /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        public IProfileNotesCollectionPage Notes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets patents.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "patents", Required = Newtonsoft.Json.Required.Default)]
+        public IProfilePatentsCollectionPage Patents { get; set; }
+    
+        /// <summary>
         /// Gets or sets phones.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phones", Required = Newtonsoft.Json.Required.Default)]
@@ -97,10 +121,10 @@ namespace Microsoft.Graph
         public IProfileProjectsCollectionPage Projects { get; set; }
     
         /// <summary>
-        /// Gets or sets notes.
+        /// Gets or sets publications.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
-        public IProfileNotesCollectionPage Notes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publications", Required = Newtonsoft.Json.Required.Default)]
+        public IProfilePublicationsCollectionPage Publications { get; set; }
     
         /// <summary>
         /// Gets or sets skills.
