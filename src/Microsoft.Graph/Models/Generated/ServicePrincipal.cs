@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets password single sign on settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSingleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        public PasswordSingleSignOnSettings PasswordSingleSignOnSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets account enabled.
         /// true if the service principal account is enabled; otherwise, false.
         /// </summary>

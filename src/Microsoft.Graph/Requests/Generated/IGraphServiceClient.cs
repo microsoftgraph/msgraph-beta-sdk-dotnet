@@ -37,6 +37,11 @@ namespace Microsoft.Graph
         IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates { get; }
     
         /// <summary>
+        /// Gets the GraphServiceServicePrincipals request builder.
+        /// </summary>
+        IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceBookingBusinesses request builder.
         /// </summary>
         IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses { get; }
@@ -140,11 +145,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceScopedRoleMemberships request builder.
         /// </summary>
         IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceServicePrincipals request builder.
-        /// </summary>
-        IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals { get; }
     
         /// <summary>
         /// Gets the GraphServiceSettings request builder.

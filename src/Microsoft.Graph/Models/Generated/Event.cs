@@ -267,10 +267,28 @@ namespace Microsoft.Graph
         public bool? AllowNewTimeProposals { get; set; }
     
         /// <summary>
+        /// Gets or sets cancelled occurrences.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cancelledOccurrences", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> CancelledOccurrences { get; set; }
+    
+        /// <summary>
+        /// Gets or sets occurrence id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "occurrenceId", Required = Newtonsoft.Json.Required.Default)]
+        public string OccurrenceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets is draft.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDraft", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDraft { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exception occurrences.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exceptionOccurrences", Required = Newtonsoft.Json.Required.Default)]
+        public IEventExceptionOccurrencesCollectionPage ExceptionOccurrences { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.

@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IExternalConnectionOperationsCollectionRequestBuilder"/>.</returns>
         IExternalConnectionOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Groups.
+        /// </summary>
+        /// <returns>The <see cref="IExternalConnectionGroupsCollectionRequestBuilder"/>.</returns>
+        IExternalConnectionGroupsCollectionRequestBuilder Groups { get; }
     
     }
 }

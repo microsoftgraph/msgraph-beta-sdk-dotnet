@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
     
+        /// <summary>
+        /// Gets or sets groups.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
+        public IExternalConnectionGroupsCollectionPage Groups { get; set; }
+    
     }
 }
 

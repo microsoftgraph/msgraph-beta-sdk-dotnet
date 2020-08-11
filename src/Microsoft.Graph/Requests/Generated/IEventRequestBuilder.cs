@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IEventRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ExceptionOccurrences.
+        /// </summary>
+        /// <returns>The <see cref="IEventExceptionOccurrencesCollectionRequestBuilder"/>.</returns>
+        IEventExceptionOccurrencesCollectionRequestBuilder ExceptionOccurrences { get; }
+
+        /// <summary>
         /// Gets the request builder for Attachments.
         /// </summary>
         /// <returns>The <see cref="IEventAttachmentsCollectionRequestBuilder"/>.</returns>
