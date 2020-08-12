@@ -98,6 +98,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceServicePrincipals request builder.
+        /// </summary>
+        public IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals
+        {
+            get
+            {
+                return new GraphServiceServicePrincipalsCollectionRequestBuilder(this.BaseUrl + "/servicePrincipals", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceBookingBusinesses request builder.
         /// </summary>
         public IGraphServiceBookingBusinessesCollectionRequestBuilder BookingBusinesses
@@ -325,17 +336,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceScopedRoleMembershipsCollectionRequestBuilder(this.BaseUrl + "/scopedRoleMemberships", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceServicePrincipals request builder.
-        /// </summary>
-        public IGraphServiceServicePrincipalsCollectionRequestBuilder ServicePrincipals
-        {
-            get
-            {
-                return new GraphServiceServicePrincipalsCollectionRequestBuilder(this.BaseUrl + "/servicePrincipals", this);
             }
         }
     

@@ -16,31 +16,31 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type Chat Message Hosted Content.
+    /// The type External Group Member.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class ChatMessageHostedContent : Entity
+    public partial class ExternalGroupMember : Entity
     {
     
 		///<summary>
-		/// The ChatMessageHostedContent constructor
+		/// The ExternalGroupMember constructor
 		///</summary>
-        public ChatMessageHostedContent()
+        public ExternalGroupMember()
         {
-            this.ODataType = "microsoft.graph.chatMessageHostedContent";
+            this.ODataType = "microsoft.graph.externalGroupMember";
         }
 	
         /// <summary>
-        /// Gets or sets content bytes.
+        /// Gets or sets type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentBytes", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] ContentBytes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public ExternalGroupMemberType? Type { get; set; }
     
         /// <summary>
-        /// Gets or sets content type.
+        /// Gets or sets identity source.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
-        public string ContentType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySource", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySourceType? IdentitySource { get; set; }
     
     }
 }

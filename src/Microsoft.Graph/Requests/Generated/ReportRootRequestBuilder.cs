@@ -1420,6 +1420,58 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
+            Date date)
+        {
+            return new ReportRootGetM365AppUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
+            string period)
+        {
+            return new ReportRootGetM365AppUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppUserCountsRequestBuilder GetM365AppUserCounts(
+            string period)
+        {
+            return new ReportRootGetM365AppUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppPlatformUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppPlatformUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppPlatformUserCountsRequestBuilder GetM365AppPlatformUserCounts(
+            string period)
+        {
+            return new ReportRootGetM365AppPlatformUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppPlatformUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetTenantSecureScores.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetTenantSecureScoresRequestBuilder"/>.</returns>

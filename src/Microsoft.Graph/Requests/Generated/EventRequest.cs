@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (eventToInitialize != null && eventToInitialize.AdditionalData != null)
             {
 
+                if (eventToInitialize.ExceptionOccurrences != null && eventToInitialize.ExceptionOccurrences.CurrentPage != null)
+                {
+                    eventToInitialize.ExceptionOccurrences.AdditionalData = eventToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    eventToInitialize.AdditionalData.TryGetValue("exceptionOccurrences@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        eventToInitialize.ExceptionOccurrences.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (eventToInitialize.Attachments != null && eventToInitialize.Attachments.CurrentPage != null)
                 {
                     eventToInitialize.Attachments.AdditionalData = eventToInitialize.AdditionalData;

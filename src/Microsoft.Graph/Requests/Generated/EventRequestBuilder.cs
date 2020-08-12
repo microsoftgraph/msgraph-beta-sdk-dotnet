@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ExceptionOccurrences.
+        /// </summary>
+        /// <returns>The <see cref="IEventExceptionOccurrencesCollectionRequestBuilder"/>.</returns>
+        public IEventExceptionOccurrencesCollectionRequestBuilder ExceptionOccurrences
+        {
+            get
+            {
+                return new EventExceptionOccurrencesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exceptionOccurrences"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Attachments.
         /// </summary>
         /// <returns>The <see cref="IEventAttachmentsCollectionRequestBuilder"/>.</returns>
