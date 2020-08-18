@@ -59,6 +59,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? ComplianceExpirationDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets device category.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCategory", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceCategory { get; set; }
+    
+        /// <summary>
         /// Gets or sets device id.
         /// Unique identifier set by Azure Device Registration Service at the time of registration.
         /// </summary>
@@ -73,6 +79,12 @@ namespace Microsoft.Graph
         public string DeviceMetadata { get; set; }
     
         /// <summary>
+        /// Gets or sets device ownership.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOwnership", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceOwnership { get; set; }
+    
+        /// <summary>
         /// Gets or sets device version.
         /// For interal use only.
         /// </summary>
@@ -85,6 +97,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets domain name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainName", Required = Newtonsoft.Json.Required.Default)]
+        public string DomainName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollment profile name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentProfileName", Required = Newtonsoft.Json.Required.Default)]
+        public string EnrollmentProfileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollment type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentType", Required = Newtonsoft.Json.Required.Default)]
+        public string EnrollmentType { get; set; }
     
         /// <summary>
         /// Gets or sets extension attributes.
@@ -105,6 +135,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isManaged", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsManaged { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is rooted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRooted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRooted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementType", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagementType { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
@@ -147,6 +189,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileType", Required = Newtonsoft.Json.Required.Default)]
         public string ProfileType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets registration date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RegistrationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets system labels.

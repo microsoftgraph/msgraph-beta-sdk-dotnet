@@ -31,10 +31,34 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allowed to sign up email based subscriptions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToSignUpEmailBasedSubscriptions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowedToSignUpEmailBasedSubscriptions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowed to use sspr.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToUseSSPR", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowedToUseSSPR { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow email verified users to join organization.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowEmailVerifiedUsersToJoinOrganization", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowEmailVerifiedUsersToJoinOrganization { get; set; }
+    
+        /// <summary>
         /// Gets or sets block msol power shell.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockMsolPowerShell", Required = Newtonsoft.Json.Required.Default)]
         public bool? BlockMsolPowerShell { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default user role permissions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultUserRolePermissions", Required = Newtonsoft.Json.Required.Default)]
+        public DefaultUserRolePermissions DefaultUserRolePermissions { get; set; }
     
         /// <summary>
         /// Gets or sets enabled preview features.

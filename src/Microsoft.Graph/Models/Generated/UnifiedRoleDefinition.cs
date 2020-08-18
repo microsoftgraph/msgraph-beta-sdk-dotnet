@@ -78,6 +78,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public string Version { get; set; }
     
+        /// <summary>
+        /// Gets or sets inherits permissions from.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inheritsPermissionsFrom", Required = Newtonsoft.Json.Required.Default)]
+        public IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage InheritsPermissionsFrom { get; set; }
+    
     }
 }
 

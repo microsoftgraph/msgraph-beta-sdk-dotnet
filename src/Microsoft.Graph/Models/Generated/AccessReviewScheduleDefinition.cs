@@ -82,7 +82,7 @@ namespace Microsoft.Graph
         /// Gets or sets reviewers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AccessReviewScope> Reviewers { get; set; }
+        public IEnumerable<AccessReviewReviewerScope> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets settings.

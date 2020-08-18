@@ -13,16 +13,16 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The enum TranscriptionState.
+    /// The enum CallTranscriptionState.
     /// </summary>
     [JsonConverter(typeof(EnumConverter))]
-    public enum TranscriptionState
+    public enum CallTranscriptionState
     {
     
         /// <summary>
-        /// Unknown
+        /// Not Started
         /// </summary>
-        Unknown = 0,
+        NotStarted = 0,
 	
         /// <summary>
         /// Active

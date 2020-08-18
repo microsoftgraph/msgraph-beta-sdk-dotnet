@@ -16,31 +16,31 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type TranscriptionInfo.
+    /// The type CallTranscriptionInfo.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class TranscriptionInfo
+    public partial class CallTranscriptionInfo
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TranscriptionInfo"/> class.
+        /// Initializes a new instance of the <see cref="CallTranscriptionInfo"/> class.
         /// </summary>
-        public TranscriptionInfo()
+        public CallTranscriptionInfo()
         {
-            this.ODataType = "microsoft.graph.transcriptionInfo";
+            this.ODataType = "microsoft.graph.callTranscriptionInfo";
         }
 
         /// <summary>
         /// Gets or sets state.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public TranscriptionState? State { get; set; }
+        public CallTranscriptionState? State { get; set; }
     
         /// <summary>
-        /// Gets or sets stateUpdatedTime.
+        /// Gets or sets lastModifiedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stateUpdatedTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StateUpdatedTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

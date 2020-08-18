@@ -231,6 +231,28 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UnifiedRoleDefinition unifiedRoleDefinitionToInitialize)
         {
 
+            if (unifiedRoleDefinitionToInitialize != null && unifiedRoleDefinitionToInitialize.AdditionalData != null)
+            {
+
+                if (unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom != null && unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.CurrentPage != null)
+                {
+                    unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.AdditionalData = unifiedRoleDefinitionToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    unifiedRoleDefinitionToInitialize.AdditionalData.TryGetValue("inheritsPermissionsFrom@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        unifiedRoleDefinitionToInitialize.InheritsPermissionsFrom.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }
