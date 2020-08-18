@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets teams app id.
-        /// The id from the Teams App manifest.
+        /// The ID from the Teams app manifest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamsAppId { get; set; }
@@ -59,6 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publishing state.
+        /// The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingState", Required = Newtonsoft.Json.Required.Default)]
         public TeamsAppPublishingState? PublishingState { get; set; }
