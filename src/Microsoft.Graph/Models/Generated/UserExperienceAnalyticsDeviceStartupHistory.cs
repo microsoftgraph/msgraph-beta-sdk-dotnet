@@ -121,6 +121,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
         public string OperatingSystemVersion { get; set; }
     
+        /// <summary>
+        /// Gets or sets restart category.
+        /// OS restart category
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartCategory", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory { get; set; }
+    
     }
 }
 

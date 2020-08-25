@@ -31,11 +31,25 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets password block face unlock.
+        /// Indicates whether or not to block face unlock.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordBlockFaceUnlock", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordBlockFaceUnlock { get; set; }
+    
+        /// <summary>
         /// Gets or sets password block fingerprint unlock.
         /// Indicates whether or not to block fingerprint unlock.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordBlockFingerprintUnlock", Required = Newtonsoft.Json.Required.Default)]
         public bool? PasswordBlockFingerprintUnlock { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password block iris unlock.
+        /// Indicates whether or not to block iris unlock.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordBlockIrisUnlock", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordBlockIrisUnlock { get; set; }
     
         /// <summary>
         /// Gets or sets password block trust agents.
@@ -157,11 +171,25 @@ namespace Microsoft.Graph
         public AndroidWorkProfileDefaultAppPermissionPolicyType? WorkProfileDefaultAppPermissionPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets work profile password block face unlock.
+        /// Indicates whether or not to block face unlock for work profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordBlockFaceUnlock", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WorkProfilePasswordBlockFaceUnlock { get; set; }
+    
+        /// <summary>
         /// Gets or sets work profile password block fingerprint unlock.
         /// Indicates whether or not to block fingerprint unlock for work profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordBlockFingerprintUnlock", Required = Newtonsoft.Json.Required.Default)]
         public bool? WorkProfilePasswordBlockFingerprintUnlock { get; set; }
+    
+        /// <summary>
+        /// Gets or sets work profile password block iris unlock.
+        /// Indicates whether or not to block iris unlock for work profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordBlockIrisUnlock", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WorkProfilePasswordBlockIrisUnlock { get; set; }
     
         /// <summary>
         /// Gets or sets work profile password block trust agents.

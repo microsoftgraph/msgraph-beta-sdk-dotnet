@@ -549,6 +549,20 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage UserExperienceAnalyticsScoreHistory { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics metric history.
+        /// User experience analytics metric history
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsMetricHistory", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage UserExperienceAnalyticsMetricHistory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health application performance.
+        /// User experience analytics appHealth Application Performance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthApplicationPerformance", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformance { get; set; }
+    
+        /// <summary>
         /// Gets or sets comanaged devices.
         /// The list of co-managed devices report
         /// </summary>

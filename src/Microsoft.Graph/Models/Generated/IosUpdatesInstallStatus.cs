@@ -40,6 +40,16 @@ namespace Microsoft.Graph
         Unknown = 3,
 	
         /// <summary>
+        /// Mdm Client Crashed
+        /// </summary>
+        MdmClientCrashed = -2016336109,
+	
+        /// <summary>
+        /// Timeout
+        /// </summary>
+        Timeout = -2016333898,
+	
+        /// <summary>
         /// Downloading
         /// </summary>
         Downloading = -2016330712,
@@ -105,9 +115,19 @@ namespace Microsoft.Graph
         SharedDeviceUserLoggedInError = -2016330699,
 	
         /// <summary>
+        /// Update Error
+        /// </summary>
+        UpdateError = -2016330697,
+	
+        /// <summary>
         /// Device Os Higher Than Desired Os Version
         /// </summary>
         DeviceOsHigherThanDesiredOsVersion = -2016330696,
+	
+        /// <summary>
+        /// Update Scan Failed
+        /// </summary>
+        UpdateScanFailed = -2016324062,
 	
     }
 }

@@ -12,16 +12,16 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The type WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequestBuilder.
+    /// The type SecurityConfigurationTaskManagedDevicesCollectionRequestBuilder.
     /// </summary>
-    public partial class WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequestBuilder : BaseRequestBuilder, IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequestBuilder
+    public partial class SecurityConfigurationTaskManagedDevicesCollectionRequestBuilder : BaseRequestBuilder, ISecurityConfigurationTaskManagedDevicesCollectionRequestBuilder
     {
         /// <summary>
-        /// Constructs a new WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequestBuilder.
+        /// Constructs a new SecurityConfigurationTaskManagedDevicesCollectionRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequestBuilder(
+        public SecurityConfigurationTaskManagedDevicesCollectionRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -32,7 +32,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Request()
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Request()
         {
             return this.Request(null);
         }
@@ -42,21 +42,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Request(IEnumerable<Option> options)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Request(IEnumerable<Option> options)
         {
-            return new WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest(this.RequestUrl, this.Client, options);
+            return new SecurityConfigurationTaskManagedDevicesCollectionRequest(this.RequestUrl, this.Client, options);
         }
 
         /// <summary>
-        /// Gets an <see cref="IWindowsProtectionStateRequestBuilder"/> for the specified WindowsMalwareInformationWindowsProtectionState.
+        /// Gets an <see cref="IVulnerableManagedDeviceRequestBuilder"/> for the specified SecurityConfigurationTaskVulnerableManagedDevice.
         /// </summary>
-        /// <param name="id">The ID for the WindowsMalwareInformationWindowsProtectionState.</param>
-        /// <returns>The <see cref="IWindowsProtectionStateRequestBuilder"/>.</returns>
-        public IWindowsProtectionStateRequestBuilder this[string id]
+        /// <param name="id">The ID for the SecurityConfigurationTaskVulnerableManagedDevice.</param>
+        /// <returns>The <see cref="IVulnerableManagedDeviceRequestBuilder"/>.</returns>
+        public IVulnerableManagedDeviceRequestBuilder this[string id]
         {
             get
             {
-                return new WindowsProtectionStateRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new VulnerableManagedDeviceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

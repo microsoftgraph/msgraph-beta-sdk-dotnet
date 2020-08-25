@@ -87,6 +87,13 @@ namespace Microsoft.Graph
         public Int32? OfficeAppsCount { get; set; }
     
         /// <summary>
+        /// Gets or sets totalComanagedCount.
+        /// Number of Co-Managed Devices. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalComanagedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalComanagedCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

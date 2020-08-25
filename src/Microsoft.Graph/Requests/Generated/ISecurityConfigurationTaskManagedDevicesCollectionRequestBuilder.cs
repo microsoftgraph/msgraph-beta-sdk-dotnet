@@ -12,29 +12,29 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The interface IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequestBuilder.
+    /// The interface ISecurityConfigurationTaskManagedDevicesCollectionRequestBuilder.
     /// </summary>
-    public partial interface IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequestBuilder : IBaseRequestBuilder
+    public partial interface ISecurityConfigurationTaskManagedDevicesCollectionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Request();
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Request(IEnumerable<Option> options);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IWindowsProtectionStateRequestBuilder"/> for the specified WindowsProtectionState.
+        /// Gets an <see cref="IVulnerableManagedDeviceRequestBuilder"/> for the specified VulnerableManagedDevice.
         /// </summary>
-        /// <param name="id">The ID for the WindowsProtectionState.</param>
-        /// <returns>The <see cref="IWindowsProtectionStateRequestBuilder"/>.</returns>
-        IWindowsProtectionStateRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the VulnerableManagedDevice.</param>
+        /// <returns>The <see cref="IVulnerableManagedDeviceRequestBuilder"/>.</returns>
+        IVulnerableManagedDeviceRequestBuilder this[string id] { get; }
 
         
     }

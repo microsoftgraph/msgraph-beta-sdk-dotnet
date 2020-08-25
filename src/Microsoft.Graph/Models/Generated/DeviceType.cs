@@ -125,6 +125,11 @@ namespace Microsoft.Graph
         AndroidnGMS = 20,
 	
         /// <summary>
+        /// Cloud PC
+        /// </summary>
+        CloudPC = 21,
+	
+        /// <summary>
         /// Blackberry
         /// </summary>
         Blackberry = 100,

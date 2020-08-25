@@ -380,6 +380,18 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsMetricHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder UserExperienceAnalyticsMetricHistory { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance { get; }
+
+        /// <summary>
         /// Gets the request builder for ComanagedDevices.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementComanagedDevicesCollectionRequestBuilder"/>.</returns>

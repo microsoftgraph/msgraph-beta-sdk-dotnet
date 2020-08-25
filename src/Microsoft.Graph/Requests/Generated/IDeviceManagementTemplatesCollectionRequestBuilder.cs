@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementTemplateRequestBuilder"/>.</returns>
         IDeviceManagementTemplateRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceManagementTemplateImportOffice365DeviceConfigurationPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder"/>.</returns>
+        IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder ImportOffice365DeviceConfigurationPolicies();
     }
 }

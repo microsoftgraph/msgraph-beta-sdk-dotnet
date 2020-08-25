@@ -58,6 +58,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConnectionDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastConnectionDateTime { get; set; }
     
+        /// <summary>
+        /// Gets or sets onboarding request expiry date time.
+        /// When the OnboardingStatus is Onboarding, This is the date time when the onboarding request expires.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingRequestExpiryDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? OnboardingRequestExpiryDateTime { get; set; }
+    
     }
 }
 

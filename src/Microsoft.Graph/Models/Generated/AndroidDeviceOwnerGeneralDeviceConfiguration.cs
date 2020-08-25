@@ -403,7 +403,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password expiration days.
-        /// Indicates the amount of time in seconds that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
+        /// Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordExpirationDays { get; set; }
@@ -452,14 +452,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password minimum upper case characters.
-        /// Indicates the minimum number of upper caseletter characters required for device password. Valid values 1 to 16
+        /// Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumUpperCaseCharacters", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordMinimumUpperCaseCharacters { get; set; }
     
         /// <summary>
         /// Gets or sets password minutes of inactivity before screen timeout.
-        /// Milliseconds of inactivity before the screen times out.
+        /// Minutes of inactivity before the screen times out.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }

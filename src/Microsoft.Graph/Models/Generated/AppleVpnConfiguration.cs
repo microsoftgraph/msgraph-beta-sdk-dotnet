@@ -129,6 +129,13 @@ namespace Microsoft.Graph
         public IEnumerable<VpnOnDemandRule> OnDemandRules { get; set; }
     
         /// <summary>
+        /// Gets or sets provider type.
+        /// Provider type for per-app VPN.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerType", Required = Newtonsoft.Json.Required.Default)]
+        public VpnProviderType? ProviderType { get; set; }
+    
+        /// <summary>
         /// Gets or sets proxy server.
         /// Proxy Server.
         /// </summary>

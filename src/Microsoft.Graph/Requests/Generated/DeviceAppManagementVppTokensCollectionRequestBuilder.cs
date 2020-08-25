@@ -61,6 +61,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for VppTokenSyncLicenseCounts.
+        /// </summary>
+        /// <returns>The <see cref="IVppTokenSyncLicenseCountsRequestBuilder"/>.</returns>
+        public IVppTokenSyncLicenseCountsRequestBuilder SyncLicenseCounts()
+        {
+            return new VppTokenSyncLicenseCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.syncLicenseCounts"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for VppTokenGetLicensesForApp.
         /// </summary>
         /// <returns>The <see cref="IVppTokenGetLicensesForAppRequestBuilder"/>.</returns>

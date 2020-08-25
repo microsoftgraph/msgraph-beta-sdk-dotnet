@@ -122,6 +122,27 @@ namespace Microsoft.Graph
         public string OuterIdentityPrivacyTemporaryValue { get; set; }
     
         /// <summary>
+        /// Gets or sets require cryptographic binding.
+        /// Specify whether to enable cryptographic binding when EAP type is selected as PEAP.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireCryptographicBinding", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RequireCryptographicBinding { get; set; }
+    
+        /// <summary>
+        /// Gets or sets perform server validation.
+        /// Specify whether to enable verification of server's identity by validating the certificate when EAP type is selected as PEAP.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "performServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PerformServerValidation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets disable user prompt for server validation.
+        /// Specify whether to prevent the user from being prompted to authorize new servers for trusted certification authorities when EAP type is selected as PEAP.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableUserPromptForServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableUserPromptForServerValidation { get; set; }
+    
+        /// <summary>
         /// Gets or sets root certificates for server validation.
         /// Specify root certificate for server validation.
         /// </summary>

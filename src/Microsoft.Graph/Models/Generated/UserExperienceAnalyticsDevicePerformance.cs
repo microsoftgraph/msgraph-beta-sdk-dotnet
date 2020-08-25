@@ -128,6 +128,34 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiveDesktopTimeInMs", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ResponsiveDesktopTimeInMs { get; set; }
     
+        /// <summary>
+        /// Gets or sets blue screen count.
+        /// Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blueScreenCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? BlueScreenCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restart count.
+        /// Number of Restarts in the last 14 days. Valid values 0 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RestartCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets average blue screens.
+        /// Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageBlueScreens", Required = Newtonsoft.Json.Required.Default)]
+        public double? AverageBlueScreens { get; set; }
+    
+        /// <summary>
+        /// Gets or sets average restarts.
+        /// Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageRestarts", Required = Newtonsoft.Json.Required.Default)]
+        public double? AverageRestarts { get; set; }
+    
     }
 }
 

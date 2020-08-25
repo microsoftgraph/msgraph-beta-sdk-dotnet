@@ -954,6 +954,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsMetricHistory@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformance@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.ComanagedDevices != null && deviceManagementToInitialize.ComanagedDevices.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ComanagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;

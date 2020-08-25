@@ -16,92 +16,92 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The interface IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest.
+    /// The interface ISecurityConfigurationTaskManagedDevicesCollectionRequest.
     /// </summary>
-    public partial interface IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest : IBaseRequest
+    public partial interface ISecurityConfigurationTaskManagedDevicesCollectionRequest : IBaseRequest
     {
         
         /// <summary>
-        /// Adds the specified WindowsProtectionState to the collection via POST.
+        /// Adds the specified VulnerableManagedDevice to the collection via POST.
         /// </summary>
-        /// <param name="windowsProtectionState">The WindowsProtectionState to add.</param>
-        /// <returns>The created WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> AddAsync(WindowsProtectionState windowsProtectionState);
+        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
+        /// <returns>The created VulnerableManagedDevice.</returns>
+        System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice);
 
         /// <summary>
-        /// Adds the specified WindowsProtectionState to the collection via POST.
+        /// Adds the specified VulnerableManagedDevice to the collection via POST.
         /// </summary>
-        /// <param name="windowsProtectionState">The WindowsProtectionState to add.</param>
+        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsProtectionState.</returns>
-        System.Threading.Tasks.Task<WindowsProtectionState> AddAsync(WindowsProtectionState windowsProtectionState, CancellationToken cancellationToken);
+        /// <returns>The created VulnerableManagedDevice.</returns>
+        System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage> GetAsync();
+        System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Expand(string value);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Expand(Expression<Func<WindowsProtectionState, object>> expandExpression);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Expand(Expression<Func<VulnerableManagedDevice, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Select(string value);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Select(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Select(Expression<Func<WindowsProtectionState, object>> selectExpression);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Select(Expression<Func<VulnerableManagedDevice, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.
         /// </summary>
         /// <param name="value">The top value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Top(int value);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Top(int value);
 
         /// <summary>
         /// Adds the specified filter value to the request.
         /// </summary>
         /// <param name="value">The filter value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Filter(string value);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Filter(string value);
 
         /// <summary>
         /// Adds the specified skip value to the request.
         /// </summary>
         /// <param name="value">The skip value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Skip(int value);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest Skip(int value);
 
         /// <summary>
         /// Adds the specified orderby value to the request.
         /// </summary>
         /// <param name="value">The orderby value.</param>
         /// <returns>The request object to send.</returns>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest OrderBy(string value);
+        ISecurityConfigurationTaskManagedDevicesCollectionRequest OrderBy(string value);
     }
 }

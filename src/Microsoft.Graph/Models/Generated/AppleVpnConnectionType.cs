@@ -104,5 +104,10 @@ namespace Microsoft.Graph
         /// </summary>
         MicrosoftTunnel = 16,
 	
+        /// <summary>
+        /// Net Motion Mobility
+        /// </summary>
+        NetMotionMobility = 17,
+	
     }
 }
