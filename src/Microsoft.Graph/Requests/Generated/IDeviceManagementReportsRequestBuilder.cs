@@ -65,6 +65,36 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetUnhealthyDefenderAgentsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetMalwareSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder GetMalwareSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>

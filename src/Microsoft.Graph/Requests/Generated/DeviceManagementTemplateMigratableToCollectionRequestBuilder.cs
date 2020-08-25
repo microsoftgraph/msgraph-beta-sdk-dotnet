@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceManagementTemplateImportOffice365DeviceConfigurationPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder"/>.</returns>
+        public IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder ImportOffice365DeviceConfigurationPolicies()
+        {
+            return new DeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.importOffice365DeviceConfigurationPolicies"),
+                this.Client);
+        }
     }
 }

@@ -14,15 +14,15 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The interface IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage.
+    /// The interface IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage>))]
-    public interface IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage : ICollectionPage<WindowsProtectionState>
+    [JsonConverter(typeof(InterfaceConverter<DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage>))]
+    public interface IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage : ICollectionPage<UserExperienceAnalyticsMetricHistory>
     {
         /// <summary>
-        /// Gets the next page <see cref="IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest"/> instance.
+        /// Gets the next page <see cref="IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequest"/> instance.
         /// </summary>
-        IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest NextPageRequest { get; }
+        IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequest NextPageRequest { get; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.

@@ -116,6 +116,64 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetUnhealthyDefenderAgentsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getUnhealthyDefenderAgentsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetMalwareSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder GetMalwareSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetMalwareSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getMalwareSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>

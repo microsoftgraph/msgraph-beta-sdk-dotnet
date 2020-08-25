@@ -747,6 +747,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsMetricHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder UserExperienceAnalyticsMetricHistory
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsMetricHistory"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthApplicationPerformance"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ComanagedDevices.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementComanagedDevicesCollectionRequestBuilder"/>.</returns>

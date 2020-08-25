@@ -45,6 +45,21 @@ namespace Microsoft.Graph
         DependencyWithAutoInstallDisabled = 4,
 	
         /// <summary>
+        /// Ios App Store Update Failed To Install
+        /// </summary>
+        IosAppStoreUpdateFailedToInstall = 1000,
+	
+        /// <summary>
+        /// Vpp App Has Update Available
+        /// </summary>
+        VppAppHasUpdateAvailable = 1001,
+	
+        /// <summary>
+        /// User Rejected Update
+        /// </summary>
+        UserRejectedUpdate = 1002,
+	
+        /// <summary>
         /// See Install Error Code
         /// </summary>
         SeeInstallErrorCode = 2000,
@@ -53,6 +68,21 @@ namespace Microsoft.Graph
         /// Auto Install Disabled
         /// </summary>
         AutoInstallDisabled = 3000,
+	
+        /// <summary>
+        /// Managed App No Longer Present
+        /// </summary>
+        ManagedAppNoLongerPresent = 3001,
+	
+        /// <summary>
+        /// User Rejected Install
+        /// </summary>
+        UserRejectedInstall = 3002,
+	
+        /// <summary>
+        /// User Is Not Logged Into App Store
+        /// </summary>
+        UserIsNotLoggedIntoAppStore = 3003,
 	
         /// <summary>
         /// See Uninstall Error Code

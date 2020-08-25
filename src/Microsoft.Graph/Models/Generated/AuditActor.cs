@@ -94,6 +94,20 @@ namespace Microsoft.Graph
         public IEnumerable<RoleScopeTagInfo> UserRoleScopeTags { get; set; }
     
         /// <summary>
+        /// Gets or sets remoteTenantId.
+        /// Remote Tenant Id
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteTenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string RemoteTenantId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remoteUserId.
+        /// Remote User Id
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteUserId", Required = Newtonsoft.Json.Required.Default)]
+        public string RemoteUserId { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

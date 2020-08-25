@@ -116,7 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets upload state.
-        /// The upload state.
+        /// The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadState", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UploadState { get; set; }

@@ -165,10 +165,24 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom privacy message.
-        /// Text comments regarding what the admin has access to on the device
+        /// Text comments regarding what the admin doesn't have access to on the device
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customPrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
         public string CustomPrivacyMessage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom can see privacy message.
+        /// Text comments regarding what the admin has access to on the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customCanSeePrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomCanSeePrivacyMessage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom cant see privacy message.
+        /// Text comments regarding what the admin doesn't have access to on the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customCantSeePrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomCantSeePrivacyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets is remove device disabled.

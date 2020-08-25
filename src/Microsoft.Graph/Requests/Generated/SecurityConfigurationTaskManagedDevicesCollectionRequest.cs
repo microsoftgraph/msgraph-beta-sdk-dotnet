@@ -16,17 +16,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest.
+    /// The type SecurityConfigurationTaskManagedDevicesCollectionRequest.
     /// </summary>
-    public partial class WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest : BaseRequest, IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest
+    public partial class SecurityConfigurationTaskManagedDevicesCollectionRequest : BaseRequest, ISecurityConfigurationTaskManagedDevicesCollectionRequest
     {
         /// <summary>
-        /// Constructs a new WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest.
+        /// Constructs a new SecurityConfigurationTaskManagedDevicesCollectionRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public WindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest(
+        public SecurityConfigurationTaskManagedDevicesCollectionRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -35,33 +35,33 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified WindowsProtectionState to the collection via POST.
+        /// Adds the specified VulnerableManagedDevice to the collection via POST.
         /// </summary>
-        /// <param name="windowsProtectionState">The WindowsProtectionState to add.</param>
-        /// <returns>The created WindowsProtectionState.</returns>
-        public System.Threading.Tasks.Task<WindowsProtectionState> AddAsync(WindowsProtectionState windowsProtectionState)
+        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
+        /// <returns>The created VulnerableManagedDevice.</returns>
+        public System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice)
         {
-            return this.AddAsync(windowsProtectionState, CancellationToken.None);
+            return this.AddAsync(vulnerableManagedDevice, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified WindowsProtectionState to the collection via POST.
+        /// Adds the specified VulnerableManagedDevice to the collection via POST.
         /// </summary>
-        /// <param name="windowsProtectionState">The WindowsProtectionState to add.</param>
+        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsProtectionState.</returns>
-        public System.Threading.Tasks.Task<WindowsProtectionState> AddAsync(WindowsProtectionState windowsProtectionState, CancellationToken cancellationToken)
+        /// <returns>The created VulnerableManagedDevice.</returns>
+        public System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<WindowsProtectionState>(windowsProtectionState, cancellationToken);
+            return this.SendAsync<VulnerableManagedDevice>(vulnerableManagedDevice, cancellationToken);
         }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage> GetAsync()
+        public System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync()
         {
             return this.GetAsync(CancellationToken.None);
         }
@@ -71,10 +71,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync(CancellationToken cancellationToken)
         {
             this.Method = "GET";
-            var response = await this.SendAsync<WindowsMalwareInformationWindowsDevicesProtectionStateCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            var response = await this.SendAsync<SecurityConfigurationTaskManagedDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
                 if (response.AdditionalData != null)
@@ -106,7 +106,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Expand(string value)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Expand(Expression<Func<WindowsProtectionState, object>> expandExpression)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Expand(Expression<Func<VulnerableManagedDevice, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -141,7 +141,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Select(string value)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Select(Expression<Func<WindowsProtectionState, object>> selectExpression)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Select(Expression<Func<VulnerableManagedDevice, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -176,7 +176,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The top value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Top(int value)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Top(int value)
         {
             this.QueryOptions.Add(new QueryOption("$top", value.ToString()));
             return this;
@@ -187,7 +187,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The filter value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Filter(string value)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Filter(string value)
         {
             this.QueryOptions.Add(new QueryOption("$filter", value));
             return this;
@@ -198,7 +198,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The skip value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest Skip(int value)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest Skip(int value)
         {
             this.QueryOptions.Add(new QueryOption("$skip", value.ToString()));
             return this;
@@ -209,7 +209,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The orderby value.</param>
         /// <returns>The request object to send.</returns>
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionRequest OrderBy(string value)
+        public ISecurityConfigurationTaskManagedDevicesCollectionRequest OrderBy(string value)
         {
             this.QueryOptions.Add(new QueryOption("$orderby", value));
             return this;

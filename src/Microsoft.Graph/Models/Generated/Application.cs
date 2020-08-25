@@ -189,6 +189,12 @@ namespace Microsoft.Graph
         public Guid? TokenEncryptionKeyId { get; set; }
     
         /// <summary>
+        /// Gets or sets unique name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueName", Required = Newtonsoft.Json.Required.Default)]
+        public string UniqueName { get; set; }
+    
+        /// <summary>
         /// Gets or sets web.
         /// Specifies settings for a web application.
         /// </summary>

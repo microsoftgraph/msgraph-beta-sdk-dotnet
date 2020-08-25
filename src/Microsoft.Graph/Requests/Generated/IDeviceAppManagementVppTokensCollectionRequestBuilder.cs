@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         IVppTokenRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for VppTokenSyncLicenseCounts.
+        /// </summary>
+        /// <returns>The <see cref="IVppTokenSyncLicenseCountsRequestBuilder"/>.</returns>
+        IVppTokenSyncLicenseCountsRequestBuilder SyncLicenseCounts();
+
+        /// <summary>
         /// Gets the request builder for VppTokenGetLicensesForApp.
         /// </summary>
         /// <returns>The <see cref="IVppTokenGetLicensesForAppRequestBuilder"/>.</returns>

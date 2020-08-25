@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public bool? EnableSharedDeviceMode { get; set; }
     
         /// <summary>
+        /// Gets or sets bundleIdAccessControlList.
+        /// An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleIdAccessControlList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> BundleIdAccessControlList { get; set; }
+    
+        /// <summary>
         /// Gets or sets configurations.
         /// Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
         /// </summary>

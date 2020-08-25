@@ -13,16 +13,16 @@ namespace Microsoft.Graph
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The type WindowsMalwareInformationWindowsDevicesProtectionStateCollectionResponse.
+    /// The type DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public class WindowsMalwareInformationWindowsDevicesProtectionStateCollectionResponse
+    public class DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse
     {
         /// <summary>
-        /// Gets or sets the <see cref="IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage"/> value.
+        /// Gets or sets the <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage"/> value.
         /// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
-        public IWindowsMalwareInformationWindowsDevicesProtectionStateCollectionPage Value { get; set; }
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage Value { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -129,6 +129,27 @@ namespace Microsoft.Graph
         public bool? IsEncrypted { get; set; }
     
         /// <summary>
+        /// Gets or sets batterySerialNumber.
+        /// The serial number of the device???s current battery
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batterySerialNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string BatterySerialNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets batteryHealthPercentage.
+        /// The device???s current battery???s health percentage. Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batteryHealthPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? BatteryHealthPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets batteryChargeCycles.
+        /// The number of charge cycles the device???s current battery has gone through. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batteryChargeCycles", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? BatteryChargeCycles { get; set; }
+    
+        /// <summary>
         /// Gets or sets isSharedDevice.
         /// Shared iPad
         /// </summary>
