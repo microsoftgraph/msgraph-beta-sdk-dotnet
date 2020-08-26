@@ -48,7 +48,7 @@ namespace Microsoft.Graph
         {
             return new OAuth2PermissionGrantWithReferenceRequest(this.RequestUrl, this.Client, options);
         }
-        
+
         /// <summary>
         /// Gets the request builder for the reference of the oAuth2PermissionGrant.
         /// </summary>
