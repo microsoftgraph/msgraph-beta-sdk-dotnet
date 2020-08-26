@@ -48,7 +48,7 @@ namespace Microsoft.Graph
         {
             return new EducationSchoolWithReferenceRequest(this.RequestUrl, this.Client, options);
         }
-        
+
         /// <summary>
         /// Gets the request builder for the reference of the educationSchool.
         /// </summary>

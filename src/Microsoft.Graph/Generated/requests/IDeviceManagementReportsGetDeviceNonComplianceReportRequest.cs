@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Stream> PostAsync(
             CancellationToken cancellationToken,
             HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
-        
+
 
 
 

@@ -48,7 +48,7 @@ namespace Microsoft.Graph
         {
             return new WindowsPhone81TrustedRootCertificateWithReferenceRequest(this.RequestUrl, this.Client, options);
         }
-        
+
         /// <summary>
         /// Gets the request builder for the reference of the windowsPhone81TrustedRootCertificate.
         /// </summary>

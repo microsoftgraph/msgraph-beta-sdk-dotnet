@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<DriveItem> PostAsync(
             CancellationToken cancellationToken);
-        
+
 
 
 

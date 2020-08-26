@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync();
-        
+
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(
             CancellationToken cancellationToken);
-  
+
 
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PatchAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, 
             CancellationToken cancellationToken);
-          
+
 
         /// <summary>
         /// Issues the PUT request.

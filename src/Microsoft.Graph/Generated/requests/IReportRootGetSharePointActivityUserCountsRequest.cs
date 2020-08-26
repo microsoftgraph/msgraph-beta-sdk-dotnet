@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         System.Threading.Tasks.Task<IReportRootGetSharePointActivityUserCountsCollectionPage> GetAsync();
-        
+
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetSharePointActivityUserCountsCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-  
+
 
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetSharePointActivityUserCountsCollectionPage> PatchAsync(SharePointActivityUserCounts sharepointactivityusercounts, 
             CancellationToken cancellationToken);
-          
+
 
         /// <summary>
         /// Issues the PUT request.
