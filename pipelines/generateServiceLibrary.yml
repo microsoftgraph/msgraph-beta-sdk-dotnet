@@ -48,13 +48,10 @@ steps:
     targetType: inline
     script: |
       
-      $repoModelsDir = "$env:Build_SourcesDirectory\msgraph-beta-sdk-dotnet\src\Microsoft.Graph\Models\Generated\"
-      $repoRequestDir = "$env:Build_SourcesDirectory\msgraph-beta-sdk-dotnet\src\Microsoft.Graph\Requests\Generated\"
+      $repoModelsDir = "$env:Build_SourcesDirectory\msgraph-beta-sdk-dotnet\src\Microsoft.Graph\Generated\"
       Write-Host "Path to repo model directory: $repoModelsDir"
-      Write-Host "Path to repo model directory: $repoRequestDir"
       Write-Host "##vso[task.setvariable variable=repoModelsDir]$repoModelsDir"
-      Write-Host "##vso[task.setvariable variable=repoRequestDir]$repoRequestDir"
-
+      
       $outputPath = Join-Path $env:Build_SourcesDirectory "output"
       Write-Host "Path to typewriter.exe output $outputPath"
       Write-Host "##vso[task.setvariable variable=outputPath]$outputPath"
@@ -66,14 +63,6 @@ steps:
       $branchName = "beta/pipelinebuild/$env:Build_BuildId" # Match the spec in the GH Action
       Write-Host "Branch path spec for the pull request will be $branchName"
       Write-Host "##vso[task.setvariable variable=branchName]$branchName"
-
-- task: PowerShell@2
-  displayName: 'Git: checkout master'
-  inputs:
-    targetType: inline
-    workingDirectory: '$(Build.SourcesDirectory)/msgraph-beta-sdk-dotnet'
-    script: |
-      git checkout master | Write-Host
 
 - task: PowerShell@2
   displayName: 'Git: branch from master named with the build id: $(Build.BuildId)'
@@ -100,7 +89,6 @@ steps:
     targetType: inline
     script: |
       Remove-Item -Recurse $env:repoModelsDir | Write-Host
-      Remove-Item -Recurse $env:repoRequestDir | Write-Host
       Write-Host "Removed the existing generated files in the repo." -ForegroundColor Green
 
 - task: PowerShell@2
@@ -117,12 +105,9 @@ steps:
   inputs:
     targetType: inline
     script: |
-      $modelsDirectory = Join-Path $env:outputPath "\com\microsoft\graph\model\"
-      $requestsDirectory = Join-Path $env:outputPath "\com\microsoft\graph\requests\"
+      $modelsDirectory = Join-Path $env:outputPath "\com\microsoft\graph\"
       Move-Item $modelsDirectory $env:repoModelsDir
       Write-Host "Moved the models from $modelsDirectory into the local repo." -ForegroundColor Green
-      Move-Item $requestsDirectory $env:repoRequestDir
-      Write-Host "Moved the requests from $requestsDirectory into the local repo." -ForegroundColor Green
 
 - task: PowerShell@2
   displayName: 'Bump minor version'
