@@ -31,22 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user id.
+        /// Gets or sets approval duration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
-        public string RoleId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets approval type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalType", Required = Newtonsoft.Json.Required.Default)]
-        public string ApprovalType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration ApprovalDuration { get; set; }
     
         /// <summary>
         /// Gets or sets approval state.
@@ -55,16 +43,10 @@ namespace Microsoft.Graph
         public ApprovalState? ApprovalState { get; set; }
     
         /// <summary>
-        /// Gets or sets approval duration.
+        /// Gets or sets approval type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalDuration", Required = Newtonsoft.Json.Required.Default)]
-        public Duration ApprovalDuration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets requestor reason.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorReason", Required = Newtonsoft.Json.Required.Default)]
-        public string RequestorReason { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalType", Required = Newtonsoft.Json.Required.Default)]
+        public string ApprovalType { get; set; }
     
         /// <summary>
         /// Gets or sets approver reason.
@@ -73,16 +55,34 @@ namespace Microsoft.Graph
         public string ApproverReason { get; set; }
     
         /// <summary>
+        /// Gets or sets end date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets requestor reason.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorReason", Required = Newtonsoft.Json.Required.Default)]
+        public string RequestorReason { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
+        public string RoleId { get; set; }
+    
+        /// <summary>
         /// Gets or sets start date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets end date time.
+        /// Gets or sets user id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets request.

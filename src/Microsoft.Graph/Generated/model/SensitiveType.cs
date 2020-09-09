@@ -31,16 +31,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets name.
+        /// Gets or sets classification method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationMethod", Required = Newtonsoft.Json.Required.Default)]
+        public ClassificationMethod? ClassificationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets publisher name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisherName", Required = Newtonsoft.Json.Required.Default)]
+        public string PublisherName { get; set; }
     
         /// <summary>
         /// Gets or sets rule package id.
@@ -55,18 +67,6 @@ namespace Microsoft.Graph
         public string RulePackageType { get; set; }
     
         /// <summary>
-        /// Gets or sets publisher name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisherName", Required = Newtonsoft.Json.Required.Default)]
-        public string PublisherName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public string State { get; set; }
-    
-        /// <summary>
         /// Gets or sets scope.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
@@ -79,10 +79,10 @@ namespace Microsoft.Graph
         public SensitiveTypeSource? SensitiveTypeSource { get; set; }
     
         /// <summary>
-        /// Gets or sets classification method.
+        /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationMethod", Required = Newtonsoft.Json.Required.Default)]
-        public ClassificationMethod? ClassificationMethod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public string State { get; set; }
     
     }
 }

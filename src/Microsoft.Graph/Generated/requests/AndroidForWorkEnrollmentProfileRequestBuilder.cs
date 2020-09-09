@@ -51,17 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AndroidForWorkEnrollmentProfileRevokeToken.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder"/>.</returns>
-        public IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder RevokeToken()
-        {
-            return new AndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.revokeToken"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for AndroidForWorkEnrollmentProfileCreateToken.
         /// </summary>
         /// <returns>The <see cref="IAndroidForWorkEnrollmentProfileCreateTokenRequestBuilder"/>.</returns>
@@ -72,6 +61,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.createToken"),
                 this.Client,
                 tokenValidityInSeconds);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AndroidForWorkEnrollmentProfileRevokeToken.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder"/>.</returns>
+        public IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder RevokeToken()
+        {
+            return new AndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.revokeToken"),
+                this.Client);
         }
     
     }

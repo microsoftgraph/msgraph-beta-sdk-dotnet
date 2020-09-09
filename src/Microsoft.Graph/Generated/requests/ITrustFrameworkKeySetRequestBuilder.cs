@@ -42,16 +42,6 @@ namespace Microsoft.Graph
             Int64? exp = null);
 
         /// <summary>
-        /// Gets the request builder for TrustFrameworkKeySetUploadSecret.
-        /// </summary>
-        /// <returns>The <see cref="ITrustFrameworkKeySetUploadSecretRequestBuilder"/>.</returns>
-        ITrustFrameworkKeySetUploadSecretRequestBuilder UploadSecret(
-            string use = null,
-            string k = null,
-            Int64? nbf = null,
-            Int64? exp = null);
-
-        /// <summary>
         /// Gets the request builder for TrustFrameworkKeySetUploadCertificate.
         /// </summary>
         /// <returns>The <see cref="ITrustFrameworkKeySetUploadCertificateRequestBuilder"/>.</returns>
@@ -65,6 +55,16 @@ namespace Microsoft.Graph
         ITrustFrameworkKeySetUploadPkcs12RequestBuilder UploadPkcs12(
             string key = null,
             string password = null);
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadSecret.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadSecretRequestBuilder"/>.</returns>
+        ITrustFrameworkKeySetUploadSecretRequestBuilder UploadSecret(
+            string use = null,
+            string k = null,
+            Int64? nbf = null,
+            Int64? exp = null);
 
         /// <summary>
         /// Gets the request builder for TrustFrameworkKeySetGetActiveKey.

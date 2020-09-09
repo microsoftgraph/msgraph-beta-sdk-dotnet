@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets number.
+        /// Gets or sets blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
-        public string Number { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Blocked { get; set; }
     
         /// <summary>
         /// Gets or sets category.
@@ -49,22 +43,28 @@ namespace Microsoft.Graph
         public string Category { get; set; }
     
         /// <summary>
-        /// Gets or sets sub category.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subCategory", Required = Newtonsoft.Json.Required.Default)]
-        public string SubCategory { get; set; }
-    
-        /// <summary>
-        /// Gets or sets blocked.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Blocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
+        public string Number { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sub category.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subCategory", Required = Newtonsoft.Json.Required.Default)]
+        public string SubCategory { get; set; }
     
     }
 }

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (deviceManagementScriptToInitialize != null && deviceManagementScriptToInitialize.AdditionalData != null)
             {
 
-                if (deviceManagementScriptToInitialize.GroupAssignments != null && deviceManagementScriptToInitialize.GroupAssignments.CurrentPage != null)
-                {
-                    deviceManagementScriptToInitialize.GroupAssignments.AdditionalData = deviceManagementScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementScriptToInitialize.Assignments != null && deviceManagementScriptToInitialize.Assignments.CurrentPage != null)
                 {
                     deviceManagementScriptToInitialize.Assignments.AdditionalData = deviceManagementScriptToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementScriptToInitialize.GroupAssignments != null && deviceManagementScriptToInitialize.GroupAssignments.CurrentPage != null)
+                {
+                    deviceManagementScriptToInitialize.GroupAssignments.AdditionalData = deviceManagementScriptToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

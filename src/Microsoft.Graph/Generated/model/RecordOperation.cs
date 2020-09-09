@@ -31,11 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets recording location.
-        /// The location where the recording is located.
+        /// Gets or sets completion reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string RecordingLocation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionReason", Required = Newtonsoft.Json.Required.Default)]
+        public RecordCompletionReason? CompletionReason { get; set; }
     
         /// <summary>
         /// Gets or sets recording access token.
@@ -45,10 +44,11 @@ namespace Microsoft.Graph
         public string RecordingAccessToken { get; set; }
     
         /// <summary>
-        /// Gets or sets completion reason.
+        /// Gets or sets recording location.
+        /// The location where the recording is located.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionReason", Required = Newtonsoft.Json.Required.Default)]
-        public RecordCompletionReason? CompletionReason { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string RecordingLocation { get; set; }
     
     }
 }

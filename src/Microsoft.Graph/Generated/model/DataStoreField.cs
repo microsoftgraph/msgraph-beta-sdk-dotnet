@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets unique.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unique", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Unique { get; set; }
-    
-        /// <summary>
         /// Gets or sets searchable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchable", Required = Newtonsoft.Json.Required.Default)]
         public bool? Searchable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unique.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unique", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Unique { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -63,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
+        /// Gets the request builder for RoleAssignmentRequests.
         /// </summary>
-        /// <returns>The <see cref="IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        public IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder RoleDefinitions
+        /// <returns>The <see cref="IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
+        public IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests
         {
             get
             {
-                return new PrivilegedAccessRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
+                return new PrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentRequests"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RoleAssignmentRequests.
+        /// Gets the request builder for RoleDefinitions.
         /// </summary>
-        /// <returns>The <see cref="IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
-        public IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests
+        /// <returns>The <see cref="IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder RoleDefinitions
         {
             get
             {
-                return new PrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentRequests"), this.Client);
+                return new PrivilegedAccessRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
             }
         }
 

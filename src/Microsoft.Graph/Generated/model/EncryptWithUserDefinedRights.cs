@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets decryptionRightsManagementTemplateId.
+        /// Gets or sets allowAdHocPermissions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decryptionRightsManagementTemplateId", Required = Newtonsoft.Json.Required.Default)]
-        public string DecryptionRightsManagementTemplateId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAdHocPermissions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAdHocPermissions { get; set; }
     
         /// <summary>
         /// Gets or sets allowMailForwarding.
@@ -42,10 +42,10 @@ namespace Microsoft.Graph
         public bool? AllowMailForwarding { get; set; }
     
         /// <summary>
-        /// Gets or sets allowAdHocPermissions.
+        /// Gets or sets decryptionRightsManagementTemplateId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAdHocPermissions", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowAdHocPermissions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decryptionRightsManagementTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        public string DecryptionRightsManagementTemplateId { get; set; }
     
     }
 }

@@ -37,18 +37,18 @@ namespace Microsoft.Graph
         public bool? Check32BitOn64System { get; set; }
     
         /// <summary>
+        /// Gets or sets comparisonValue.
+        /// The registry comparison value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonValue", Required = Newtonsoft.Json.Required.Default)]
+        public string ComparisonValue { get; set; }
+    
+        /// <summary>
         /// Gets or sets keyPath.
         /// The full path of the registry entry containing the value to detect.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyPath", Required = Newtonsoft.Json.Required.Default)]
         public string KeyPath { get; set; }
-    
-        /// <summary>
-        /// Gets or sets valueName.
-        /// The name of the registry value to detect.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueName", Required = Newtonsoft.Json.Required.Default)]
-        public string ValueName { get; set; }
     
         /// <summary>
         /// Gets or sets operationType.
@@ -65,11 +65,11 @@ namespace Microsoft.Graph
         public Win32LobAppRuleOperator? Operator { get; set; }
     
         /// <summary>
-        /// Gets or sets comparisonValue.
-        /// The registry comparison value.
+        /// Gets or sets valueName.
+        /// The name of the registry value to detect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonValue", Required = Newtonsoft.Json.Required.Default)]
-        public string ComparisonValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueName", Required = Newtonsoft.Json.Required.Default)]
+        public string ValueName { get; set; }
     
     }
 }

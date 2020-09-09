@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IUserExperienceAnalyticsBaselineRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for DeviceBootPerformanceMetrics.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
-        IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder DeviceBootPerformanceMetrics { get; }
-
-        /// <summary>
         /// Gets the request builder for BestPracticesMetrics.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
         IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder BestPracticesMetrics { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceBootPerformanceMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder DeviceBootPerformanceMetrics { get; }
     
     }
 }

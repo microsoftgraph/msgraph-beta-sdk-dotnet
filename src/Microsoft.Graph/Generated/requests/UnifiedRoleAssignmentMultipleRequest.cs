@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (unifiedRoleAssignmentMultipleToInitialize != null && unifiedRoleAssignmentMultipleToInitialize.AdditionalData != null)
             {
 
-                if (unifiedRoleAssignmentMultipleToInitialize.Principals != null && unifiedRoleAssignmentMultipleToInitialize.Principals.CurrentPage != null)
+                if (unifiedRoleAssignmentMultipleToInitialize.AppScopes != null && unifiedRoleAssignmentMultipleToInitialize.AppScopes.CurrentPage != null)
                 {
-                    unifiedRoleAssignmentMultipleToInitialize.Principals.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
+                    unifiedRoleAssignmentMultipleToInitialize.AppScopes.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("principals@odata.nextLink", out nextPageLink);
+                    unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("appScopes@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        unifiedRoleAssignmentMultipleToInitialize.Principals.InitializeNextPageRequest(
+                        unifiedRoleAssignmentMultipleToInitialize.AppScopes.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (unifiedRoleAssignmentMultipleToInitialize.AppScopes != null && unifiedRoleAssignmentMultipleToInitialize.AppScopes.CurrentPage != null)
+                if (unifiedRoleAssignmentMultipleToInitialize.Principals != null && unifiedRoleAssignmentMultipleToInitialize.Principals.CurrentPage != null)
                 {
-                    unifiedRoleAssignmentMultipleToInitialize.AppScopes.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
+                    unifiedRoleAssignmentMultipleToInitialize.Principals.AdditionalData = unifiedRoleAssignmentMultipleToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("appScopes@odata.nextLink", out nextPageLink);
+                    unifiedRoleAssignmentMultipleToInitialize.AdditionalData.TryGetValue("principals@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        unifiedRoleAssignmentMultipleToInitialize.AppScopes.InitializeNextPageRequest(
+                        unifiedRoleAssignmentMultipleToInitialize.Principals.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

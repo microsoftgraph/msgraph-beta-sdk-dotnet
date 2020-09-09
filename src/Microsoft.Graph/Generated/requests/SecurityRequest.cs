@@ -378,6 +378,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (securityToInitialize.SecurityActions != null && securityToInitialize.SecurityActions.CurrentPage != null)
+                {
+                    securityToInitialize.SecurityActions.AdditionalData = securityToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    securityToInitialize.AdditionalData.TryGetValue("securityActions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        securityToInitialize.SecurityActions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (securityToInitialize.TiIndicators != null && securityToInitialize.TiIndicators.CurrentPage != null)
                 {
                     securityToInitialize.TiIndicators.AdditionalData = securityToInitialize.AdditionalData;
@@ -405,22 +421,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         securityToInitialize.UserSecurityProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (securityToInitialize.SecurityActions != null && securityToInitialize.SecurityActions.CurrentPage != null)
-                {
-                    securityToInitialize.SecurityActions.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("securityActions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecurityActions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets deviceImportStatus.
-        /// Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceImportStatus", Required = Newtonsoft.Json.Required.Default)]
-        public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deviceRegistrationId.
-        /// Device Registration ID for successfully added device reported by Device Directory Service(DDS).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegistrationId", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceRegistrationId { get; set; }
-    
-        /// <summary>
         /// Gets or sets deviceErrorCode.
         /// Device error code reported by Device Directory Service(DDS).
         /// </summary>
@@ -57,6 +43,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceErrorName", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceErrorName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceImportStatus.
+        /// Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceImportStatus", Required = Newtonsoft.Json.Required.Default)]
+        public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceRegistrationId.
+        /// Device Registration ID for successfully added device reported by Device Directory Service(DDS).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegistrationId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceRegistrationId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

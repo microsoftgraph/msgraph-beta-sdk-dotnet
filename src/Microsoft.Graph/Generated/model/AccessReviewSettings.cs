@@ -31,34 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets mailNotificationsEnabled.
+        /// Gets or sets accessRecommendationsEnabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MailNotificationsEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remindersEnabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remindersEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RemindersEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets justificationRequiredOnApproval.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationRequiredOnApproval", Required = Newtonsoft.Json.Required.Default)]
-        public bool? JustificationRequiredOnApproval { get; set; }
-    
-        /// <summary>
-        /// Gets or sets recurrenceSettings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceSettings", Required = Newtonsoft.Json.Required.Default)]
-        public AccessReviewRecurrenceSettings RecurrenceSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets autoReviewEnabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoReviewEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AutoReviewEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRecommendationsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AccessRecommendationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets activityDurationInDays.
@@ -67,22 +43,46 @@ namespace Microsoft.Graph
         public Int32? ActivityDurationInDays { get; set; }
     
         /// <summary>
-        /// Gets or sets autoReviewSettings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoReviewSettings", Required = Newtonsoft.Json.Required.Default)]
-        public AutoReviewSettings AutoReviewSettings { get; set; }
-    
-        /// <summary>
         /// Gets or sets autoApplyReviewResultsEnabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoApplyReviewResultsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? AutoApplyReviewResultsEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets accessRecommendationsEnabled.
+        /// Gets or sets autoReviewEnabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRecommendationsEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AccessRecommendationsEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoReviewEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AutoReviewEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets autoReviewSettings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoReviewSettings", Required = Newtonsoft.Json.Required.Default)]
+        public AutoReviewSettings AutoReviewSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets justificationRequiredOnApproval.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationRequiredOnApproval", Required = Newtonsoft.Json.Required.Default)]
+        public bool? JustificationRequiredOnApproval { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mailNotificationsEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MailNotificationsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recurrenceSettings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceSettings", Required = Newtonsoft.Json.Required.Default)]
+        public AccessReviewRecurrenceSettings RecurrenceSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remindersEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remindersEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RemindersEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

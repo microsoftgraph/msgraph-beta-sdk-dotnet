@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IDeviceConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationAssignmentsCollectionRequestBuilder"/>.</returns>
         IDeviceConfigurationAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceSettingStateSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
+        IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceStatuses.
@@ -50,28 +50,28 @@ namespace Microsoft.Graph
         IDeviceConfigurationDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
 
         /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
-        IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceStatusOverview.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationDeviceOverviewRequestBuilder"/>.</returns>
         IDeviceConfigurationDeviceOverviewRequestBuilder DeviceStatusOverview { get; }
 
         /// <summary>
+        /// Gets the request builder for GroupAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
+        IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses { get; }
+
+        /// <summary>
         /// Gets the request builder for UserStatusOverview.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationUserOverviewRequestBuilder"/>.</returns>
         IDeviceConfigurationUserOverviewRequestBuilder UserStatusOverview { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceSettingStateSummaries.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
-        IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceConfigurationAssign.
@@ -82,18 +82,18 @@ namespace Microsoft.Graph
             IEnumerable<DeviceConfigurationAssignment> assignments = null);
 
         /// <summary>
-        /// Gets the request builder for DeviceConfigurationWindowsPrivacyAccessControls.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder"/>.</returns>
-        IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder WindowsPrivacyAccessControls(
-            IEnumerable<WindowsPrivacyDataAccessControlItem> windowsPrivacyAccessControls = null);
-
-        /// <summary>
         /// Gets the request builder for DeviceConfigurationAssignedAccessMultiModeProfiles.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationAssignedAccessMultiModeProfilesRequestBuilder"/>.</returns>
         IDeviceConfigurationAssignedAccessMultiModeProfilesRequestBuilder AssignedAccessMultiModeProfiles(
             IEnumerable<WindowsAssignedAccessProfile> assignedAccessMultiModeProfiles = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationWindowsPrivacyAccessControls.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder"/>.</returns>
+        IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder WindowsPrivacyAccessControls(
+            IEnumerable<WindowsPrivacyDataAccessControlItem> windowsPrivacyAccessControls = null);
     
     }
 }

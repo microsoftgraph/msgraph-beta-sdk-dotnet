@@ -80,16 +80,16 @@ namespace Microsoft.Graph
         public string Notes { get; set; }
     
         /// <summary>
-        /// Gets or sets pre buffer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preBuffer", Required = Newtonsoft.Json.Required.Default)]
-        public Duration PreBuffer { get; set; }
-    
-        /// <summary>
         /// Gets or sets post buffer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postBuffer", Required = Newtonsoft.Json.Required.Default)]
         public Duration PostBuffer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pre buffer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preBuffer", Required = Newtonsoft.Json.Required.Default)]
+        public Duration PreBuffer { get; set; }
     
         /// <summary>
         /// Gets or sets scheduling policy.

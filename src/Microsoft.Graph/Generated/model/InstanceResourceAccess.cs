@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets resourceAppId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAppId", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceAppId { get; set; }
-    
-        /// <summary>
         /// Gets or sets permissions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ResourcePermission> Permissions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resourceAppId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceAppId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

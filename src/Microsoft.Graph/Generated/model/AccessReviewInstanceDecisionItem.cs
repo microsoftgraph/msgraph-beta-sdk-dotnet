@@ -37,30 +37,6 @@ namespace Microsoft.Graph
         public string AccessReviewId { get; set; }
     
         /// <summary>
-        /// Gets or sets reviewed by.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
-        public UserIdentity ReviewedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reviewed date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ReviewedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets decision.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decision", Required = Newtonsoft.Json.Required.Default)]
-        public string Decision { get; set; }
-    
-        /// <summary>
-        /// Gets or sets justification.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
-        public string Justification { get; set; }
-    
-        /// <summary>
         /// Gets or sets applied by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedBy", Required = Newtonsoft.Json.Required.Default)]
@@ -79,10 +55,34 @@ namespace Microsoft.Graph
         public string ApplyResult { get; set; }
     
         /// <summary>
+        /// Gets or sets decision.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decision", Required = Newtonsoft.Json.Required.Default)]
+        public string Decision { get; set; }
+    
+        /// <summary>
+        /// Gets or sets justification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        public string Justification { get; set; }
+    
+        /// <summary>
         /// Gets or sets recommendation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendation", Required = Newtonsoft.Json.Required.Default)]
         public string Recommendation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reviewed by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
+        public UserIdentity ReviewedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reviewed date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ReviewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets target.

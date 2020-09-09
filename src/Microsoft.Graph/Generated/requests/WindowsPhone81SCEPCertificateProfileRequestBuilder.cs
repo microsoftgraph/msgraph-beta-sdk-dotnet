@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RootCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsPhone81TrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        public IWindowsPhone81TrustedRootCertificateWithReferenceRequestBuilder RootCertificate
-        {
-            get
-            {
-                return new WindowsPhone81TrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificate"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceCertificateStates.
         /// </summary>
         /// <returns>The <see cref="IWindowsPhone81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new WindowsPhone81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceCertificateStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsPhone81TrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        public IWindowsPhone81TrustedRootCertificateWithReferenceRequestBuilder RootCertificate
+        {
+            get
+            {
+                return new WindowsPhone81TrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificate"), this.Client);
             }
         }
     

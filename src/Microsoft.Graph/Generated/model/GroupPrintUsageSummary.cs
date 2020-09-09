@@ -31,10 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets groupMail.
+        /// Gets or sets completedJobCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupMail", Required = Newtonsoft.Json.Required.Default)]
-        public string GroupMail { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedJobCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CompletedJobCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        public Identity Group { get; set; }
     
         /// <summary>
         /// Gets or sets groupDisplayName.
@@ -43,22 +49,16 @@ namespace Microsoft.Graph
         public string GroupDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets completedJobCount.
+        /// Gets or sets groupMail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedJobCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CompletedJobCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupMail", Required = Newtonsoft.Json.Required.Default)]
+        public string GroupMail { get; set; }
     
         /// <summary>
         /// Gets or sets incompleteJobCount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteJobCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? IncompleteJobCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
-        public Identity Group { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,16 +31,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets printerId.
+        /// Gets or sets completedJobCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerId", Required = Newtonsoft.Json.Required.Default)]
-        public string PrinterId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedJobCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CompletedJobCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incompleteJobCount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteJobCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IncompleteJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets printerDisplayName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string PrinterDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets printerId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerId", Required = Newtonsoft.Json.Required.Default)]
+        public string PrinterId { get; set; }
     
         /// <summary>
         /// Gets or sets printerManufacturer.
@@ -53,18 +65,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerModel", Required = Newtonsoft.Json.Required.Default)]
         public string PrinterModel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets completedJobCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedJobCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CompletedJobCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets incompleteJobCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteJobCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? IncompleteJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets printer.

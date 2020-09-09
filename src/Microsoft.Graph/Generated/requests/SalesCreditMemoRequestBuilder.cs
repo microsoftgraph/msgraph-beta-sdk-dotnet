@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SalesCreditMemoLines.
+        /// Gets the request builder for Currency.
         /// </summary>
-        /// <returns>The <see cref="ISalesCreditMemoSalesCreditMemoLinesCollectionRequestBuilder"/>.</returns>
-        public ISalesCreditMemoSalesCreditMemoLinesCollectionRequestBuilder SalesCreditMemoLines
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        public ICurrencyRequestBuilder Currency
         {
             get
             {
-                return new SalesCreditMemoSalesCreditMemoLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesCreditMemoLines"), this.Client);
+                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
             }
         }
 
@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        public ICurrencyRequestBuilder Currency
-        {
-            get
-            {
-                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for PaymentTerm.
         /// </summary>
         /// <returns>The <see cref="IPaymentTermRequestBuilder"/>.</returns>
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PaymentTermRequestBuilder(this.AppendSegmentToRequestUrl("paymentTerm"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesCreditMemoLines.
+        /// </summary>
+        /// <returns>The <see cref="ISalesCreditMemoSalesCreditMemoLinesCollectionRequestBuilder"/>.</returns>
+        public ISalesCreditMemoSalesCreditMemoLinesCollectionRequestBuilder SalesCreditMemoLines
+        {
+            get
+            {
+                return new SalesCreditMemoSalesCreditMemoLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesCreditMemoLines"), this.Client);
             }
         }
     

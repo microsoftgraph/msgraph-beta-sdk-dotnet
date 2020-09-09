@@ -31,60 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets thumbprint.
-        /// SHA-1 thumbprint of the PFX certificate.
+        /// Gets or sets created date time.
+        /// Date/time when this PFX certificate was imported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbprint", Required = Newtonsoft.Json.Required.Default)]
-        public string Thumbprint { get; set; }
-    
-        /// <summary>
-        /// Gets or sets intended purpose.
-        /// Certificate's intended purpose from the point-of-view of deployment.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intendedPurpose", Required = Newtonsoft.Json.Required.Default)]
-        public UserPfxIntendedPurpose? IntendedPurpose { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user principal name.
-        /// User Principal Name of the PFX certificate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets start date time.
-        /// Certificate's validity start date/time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expiration date time.
-        /// Certificate's validity expiration date/time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets provider name.
-        /// Crypto provider used to encrypt this blob.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerName", Required = Newtonsoft.Json.Required.Default)]
-        public string ProviderName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets key name.
-        /// Name of the key (within the provider) used to encrypt the blob.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyName", Required = Newtonsoft.Json.Required.Default)]
-        public string KeyName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets padding scheme.
-        /// Padding scheme used by the provider during encryption/decryption.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paddingScheme", Required = Newtonsoft.Json.Required.Default)]
-        public UserPfxPaddingScheme? PaddingScheme { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets encrypted pfx blob.
@@ -101,11 +52,25 @@ namespace Microsoft.Graph
         public string EncryptedPfxPassword { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// Date/time when this PFX certificate was imported.
+        /// Gets or sets expiration date time.
+        /// Certificate's validity expiration date/time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets intended purpose.
+        /// Certificate's intended purpose from the point-of-view of deployment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intendedPurpose", Required = Newtonsoft.Json.Required.Default)]
+        public UserPfxIntendedPurpose? IntendedPurpose { get; set; }
+    
+        /// <summary>
+        /// Gets or sets key name.
+        /// Name of the key (within the provider) used to encrypt the blob.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyName", Required = Newtonsoft.Json.Required.Default)]
+        public string KeyName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -113,6 +78,41 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets padding scheme.
+        /// Padding scheme used by the provider during encryption/decryption.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paddingScheme", Required = Newtonsoft.Json.Required.Default)]
+        public UserPfxPaddingScheme? PaddingScheme { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provider name.
+        /// Crypto provider used to encrypt this blob.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerName", Required = Newtonsoft.Json.Required.Default)]
+        public string ProviderName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets start date time.
+        /// Certificate's validity start date/time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets thumbprint.
+        /// SHA-1 thumbprint of the PFX certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbprint", Required = Newtonsoft.Json.Required.Default)]
+        public string Thumbprint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// User Principal Name of the PFX certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

@@ -47,16 +47,16 @@ namespace Microsoft.Graph
             AttributeDefinition targetAttributeDefinition = null);
 
         /// <summary>
-        /// Gets the request builder for SynchronizationSchemaFunctions.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationSchemaFunctionsRequestBuilder"/>.</returns>
-        ISynchronizationSchemaFunctionsRequestBuilder Functions();
-
-        /// <summary>
         /// Gets the request builder for SynchronizationSchemaFilterOperators.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationSchemaFilterOperatorsRequestBuilder"/>.</returns>
         ISynchronizationSchemaFilterOperatorsRequestBuilder FilterOperators();
+
+        /// <summary>
+        /// Gets the request builder for SynchronizationSchemaFunctions.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationSchemaFunctionsRequestBuilder"/>.</returns>
+        ISynchronizationSchemaFunctionsRequestBuilder Functions();
     
     }
 }

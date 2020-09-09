@@ -32,22 +32,10 @@ namespace Microsoft.Graph
         new IPostRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for InReplyTo.
+        /// Gets the request builder for Attachments.
         /// </summary>
-        /// <returns>The <see cref="IPostRequestBuilder"/>.</returns>
-        IPostRequestBuilder InReplyTo { get; }
-
-        /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IPostSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IPostSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IPostMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IPostMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+        /// <returns>The <see cref="IPostAttachmentsCollectionRequestBuilder"/>.</returns>
+        IPostAttachmentsCollectionRequestBuilder Attachments { get; }
 
         /// <summary>
         /// Gets the request builder for Extensions.
@@ -56,24 +44,29 @@ namespace Microsoft.Graph
         IPostExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
-        /// Gets the request builder for Attachments.
+        /// Gets the request builder for InReplyTo.
         /// </summary>
-        /// <returns>The <see cref="IPostAttachmentsCollectionRequestBuilder"/>.</returns>
-        IPostAttachmentsCollectionRequestBuilder Attachments { get; }
+        /// <returns>The <see cref="IPostRequestBuilder"/>.</returns>
+        IPostRequestBuilder InReplyTo { get; }
 
         /// <summary>
         /// Gets the request builder for Mentions.
         /// </summary>
         /// <returns>The <see cref="IPostMentionsCollectionRequestBuilder"/>.</returns>
         IPostMentionsCollectionRequestBuilder Mentions { get; }
-    
-        /// <summary>
-        /// Gets the request builder for PostReply.
-        /// </summary>
-        /// <returns>The <see cref="IPostReplyRequestBuilder"/>.</returns>
-        IPostReplyRequestBuilder Reply(
-            Post Post);
 
+        /// <summary>
+        /// Gets the request builder for MultiValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IPostMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IPostMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IPostSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IPostSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
+    
         /// <summary>
         /// Gets the request builder for PostForward.
         /// </summary>
@@ -81,6 +74,13 @@ namespace Microsoft.Graph
         IPostForwardRequestBuilder Forward(
             IEnumerable<Recipient> ToRecipients,
             string Comment = null);
+
+        /// <summary>
+        /// Gets the request builder for PostReply.
+        /// </summary>
+        /// <returns>The <see cref="IPostReplyRequestBuilder"/>.</returns>
+        IPostReplyRequestBuilder Reply(
+            Post Post);
     
     }
 }

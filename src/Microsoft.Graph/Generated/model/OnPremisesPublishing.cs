@@ -31,6 +31,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets alternateUrl.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternateUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string AlternateUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets applicationServerTimeout.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationServerTimeout", Required = Newtonsoft.Json.Required.Default)]
+        public string ApplicationServerTimeout { get; set; }
+    
+        /// <summary>
+        /// Gets or sets applicationType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationType", Required = Newtonsoft.Json.Required.Default)]
+        public string ApplicationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets externalAuthenticationType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalAuthenticationType", Required = Newtonsoft.Json.Required.Default)]
+        public ExternalAuthenticationType? ExternalAuthenticationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets externalUrl.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalUrl", Required = Newtonsoft.Json.Required.Default)]
@@ -43,10 +67,28 @@ namespace Microsoft.Graph
         public string InternalUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets externalAuthenticationType.
+        /// Gets or sets isHttpOnlyCookieEnabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalAuthenticationType", Required = Newtonsoft.Json.Required.Default)]
-        public ExternalAuthenticationType? ExternalAuthenticationType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHttpOnlyCookieEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsHttpOnlyCookieEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isOnPremPublishingEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOnPremPublishingEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsOnPremPublishingEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isPersistentCookieEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPersistentCookieEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsPersistentCookieEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isSecureCookieEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSecureCookieEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsSecureCookieEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isTranslateHostHeaderEnabled.
@@ -61,16 +103,22 @@ namespace Microsoft.Graph
         public bool? IsTranslateLinksInBodyEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets isOnPremPublishingEnabled.
+        /// Gets or sets singleSignOnSettings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOnPremPublishingEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsOnPremPublishingEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        public OnPremisesPublishingSingleSignOn SingleSignOnSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets applicationServerTimeout.
+        /// Gets or sets useAlternateUrlForTranslationAndRedirect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationServerTimeout", Required = Newtonsoft.Json.Required.Default)]
-        public string ApplicationServerTimeout { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useAlternateUrlForTranslationAndRedirect", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UseAlternateUrlForTranslationAndRedirect { get; set; }
+    
+        /// <summary>
+        /// Gets or sets verifiedCustomDomainCertificatesMetadata.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verifiedCustomDomainCertificatesMetadata", Required = Newtonsoft.Json.Required.Default)]
+        public VerifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets verifiedCustomDomainKeyCredential.
@@ -83,54 +131,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verifiedCustomDomainPasswordCredential", Required = Newtonsoft.Json.Required.Default)]
         public PasswordCredential VerifiedCustomDomainPasswordCredential { get; set; }
-    
-        /// <summary>
-        /// Gets or sets verifiedCustomDomainCertificatesMetadata.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "verifiedCustomDomainCertificatesMetadata", Required = Newtonsoft.Json.Required.Default)]
-        public VerifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadata { get; set; }
-    
-        /// <summary>
-        /// Gets or sets singleSignOnSettings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
-        public OnPremisesPublishingSingleSignOn SingleSignOnSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets applicationType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationType", Required = Newtonsoft.Json.Required.Default)]
-        public string ApplicationType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isHttpOnlyCookieEnabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHttpOnlyCookieEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsHttpOnlyCookieEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isSecureCookieEnabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSecureCookieEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsSecureCookieEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isPersistentCookieEnabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPersistentCookieEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsPersistentCookieEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets alternateUrl.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternateUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string AlternateUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets useAlternateUrlForTranslationAndRedirect.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useAlternateUrlForTranslationAndRedirect", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UseAlternateUrlForTranslationAndRedirect { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

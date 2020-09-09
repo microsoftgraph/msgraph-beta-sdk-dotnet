@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments
-        {
-            get
-            {
-                return new DeviceConfigurationGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceConfigurationAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceSettingStateSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
+        public IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries
+        {
+            get
+            {
+                return new DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceSettingStateSummaries"), this.Client);
             }
         }
 
@@ -87,18 +87,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
-        public IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses
-        {
-            get
-            {
-                return new DeviceConfigurationUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceStatusOverview.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationDeviceOverviewRequestBuilder"/>.</returns>
@@ -111,6 +99,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for GroupAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments
+        {
+            get
+            {
+                return new DeviceConfigurationGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationUserStatusesCollectionRequestBuilder"/>.</returns>
+        public IDeviceConfigurationUserStatusesCollectionRequestBuilder UserStatuses
+        {
+            get
+            {
+                return new DeviceConfigurationUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserStatusOverview.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationUserOverviewRequestBuilder"/>.</returns>
@@ -119,18 +131,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceConfigurationUserOverviewRequestBuilder(this.AppendSegmentToRequestUrl("userStatusOverview"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceSettingStateSummaries.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder"/>.</returns>
-        public IDeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder DeviceSettingStateSummaries
-        {
-            get
-            {
-                return new DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceSettingStateSummaries"), this.Client);
             }
         }
     
@@ -150,19 +150,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceConfigurationWindowsPrivacyAccessControls.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder"/>.</returns>
-        public IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder WindowsPrivacyAccessControls(
-            IEnumerable<WindowsPrivacyDataAccessControlItem> windowsPrivacyAccessControls = null)
-        {
-            return new DeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.windowsPrivacyAccessControls"),
-                this.Client,
-                windowsPrivacyAccessControls);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceConfigurationAssignedAccessMultiModeProfiles.
         /// </summary>
         /// <returns>The <see cref="IDeviceConfigurationAssignedAccessMultiModeProfilesRequestBuilder"/>.</returns>
@@ -173,6 +160,19 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.assignedAccessMultiModeProfiles"),
                 this.Client,
                 assignedAccessMultiModeProfiles);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationWindowsPrivacyAccessControls.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder"/>.</returns>
+        public IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder WindowsPrivacyAccessControls(
+            IEnumerable<WindowsPrivacyDataAccessControlItem> windowsPrivacyAccessControls = null)
+        {
+            return new DeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.windowsPrivacyAccessControls"),
+                this.Client,
+                windowsPrivacyAccessControls);
         }
     
     }

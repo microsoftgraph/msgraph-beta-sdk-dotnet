@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets displayName.
+        /// Gets or sets address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pronunciation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
-        public string Pronunciation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets department.
@@ -49,16 +43,22 @@ namespace Microsoft.Graph
         public string Department { get; set; }
     
         /// <summary>
+        /// Gets or sets displayName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets officeLocation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
         public string OfficeLocation { get; set; }
     
         /// <summary>
-        /// Gets or sets address.
+        /// Gets or sets pronunciation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
-        public PhysicalAddress Address { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
+        public string Pronunciation { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.

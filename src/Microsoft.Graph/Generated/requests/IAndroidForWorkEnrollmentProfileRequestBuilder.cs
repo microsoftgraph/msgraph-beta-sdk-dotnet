@@ -32,17 +32,17 @@ namespace Microsoft.Graph
         new IAndroidForWorkEnrollmentProfileRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AndroidForWorkEnrollmentProfileRevokeToken.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder"/>.</returns>
-        IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder RevokeToken();
-
-        /// <summary>
         /// Gets the request builder for AndroidForWorkEnrollmentProfileCreateToken.
         /// </summary>
         /// <returns>The <see cref="IAndroidForWorkEnrollmentProfileCreateTokenRequestBuilder"/>.</returns>
         IAndroidForWorkEnrollmentProfileCreateTokenRequestBuilder CreateToken(
             Int32 tokenValidityInSeconds);
+
+        /// <summary>
+        /// Gets the request builder for AndroidForWorkEnrollmentProfileRevokeToken.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder"/>.</returns>
+        IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder RevokeToken();
     
     }
 }

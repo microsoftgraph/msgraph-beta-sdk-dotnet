@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets requirementProvider.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requirementProvider", Required = Newtonsoft.Json.Required.Default)]
-        public RequirementProvider? RequirementProvider { get; set; }
-    
-        /// <summary>
         /// Gets or sets detail.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
         public string Detail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets requirementProvider.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requirementProvider", Required = Newtonsoft.Json.Required.Default)]
+        public RequirementProvider? RequirementProvider { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

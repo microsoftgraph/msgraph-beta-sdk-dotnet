@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets receivers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Receivers { get; set; }
+    
+        /// <summary>
         /// Gets or sets routing mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingMode", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sources", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Sources { get; set; }
-    
-        /// <summary>
-        /// Gets or sets receivers.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Receivers { get; set; }
     
     }
 }

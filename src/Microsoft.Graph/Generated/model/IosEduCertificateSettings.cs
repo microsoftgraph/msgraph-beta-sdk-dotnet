@@ -31,18 +31,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets trustedRootCertificate.
-        /// Trusted Root Certificate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedRootCertificate", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] TrustedRootCertificate { get; set; }
-    
-        /// <summary>
         /// Gets or sets certFileName.
         /// File name to display in UI.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certFileName", Required = Newtonsoft.Json.Required.Default)]
         public string CertFileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificateTemplateName.
+        /// PKCS Certificate Template Name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateTemplateName", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateTemplateName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificateValidityPeriodScale.
+        /// Scale for the Certificate Validity Period.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodScale", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateValidityPeriodScale? CertificateValidityPeriodScale { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificateValidityPeriodValue.
+        /// Value for the Certificate Validity Period.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodValue", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CertificateValidityPeriodValue { get; set; }
     
         /// <summary>
         /// Gets or sets certificationAuthority.
@@ -59,13 +73,6 @@ namespace Microsoft.Graph
         public string CertificationAuthorityName { get; set; }
     
         /// <summary>
-        /// Gets or sets certificateTemplateName.
-        /// PKCS Certificate Template Name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateTemplateName", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateTemplateName { get; set; }
-    
-        /// <summary>
         /// Gets or sets renewalThresholdPercentage.
         /// Certificate renewal threshold percentage. Valid values 1 to 99
         /// </summary>
@@ -73,18 +80,11 @@ namespace Microsoft.Graph
         public Int32? RenewalThresholdPercentage { get; set; }
     
         /// <summary>
-        /// Gets or sets certificateValidityPeriodValue.
-        /// Value for the Certificate Validity Period.
+        /// Gets or sets trustedRootCertificate.
+        /// Trusted Root Certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodValue", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CertificateValidityPeriodValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificateValidityPeriodScale.
-        /// Scale for the Certificate Validity Period.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodScale", Required = Newtonsoft.Json.Required.Default)]
-        public CertificateValidityPeriodScale? CertificateValidityPeriodScale { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedRootCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] TrustedRootCertificate { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RootCertificateForServerValidation.
-        /// </summary>
-        /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        public IMacOSTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation
-        {
-            get
-            {
-                return new MacOSTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForServerValidation"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new MacOSCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificateForClientAuthentication"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificateForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        public IMacOSTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation
+        {
+            get
+            {
+                return new MacOSTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForServerValidation"), this.Client);
             }
         }
     

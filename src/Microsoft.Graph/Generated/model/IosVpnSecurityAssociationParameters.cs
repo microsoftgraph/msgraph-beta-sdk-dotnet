@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets lifetimeInMinutes.
+        /// Lifetime (minutes)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifetimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? LifetimeInMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets securityDiffieHellmanGroup.
+        /// Diffie-Hellman Group
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityDiffieHellmanGroup", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SecurityDiffieHellmanGroup { get; set; }
+    
+        /// <summary>
         /// Gets or sets securityEncryptionAlgorithm.
         /// Encryption algorithm
         /// </summary>
@@ -43,20 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityIntegrityAlgorithm", Required = Newtonsoft.Json.Required.Default)]
         public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm { get; set; }
-    
-        /// <summary>
-        /// Gets or sets securityDiffieHellmanGroup.
-        /// Diffie-Hellman Group
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityDiffieHellmanGroup", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SecurityDiffieHellmanGroup { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lifetimeInMinutes.
-        /// Lifetime (minutes)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifetimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? LifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

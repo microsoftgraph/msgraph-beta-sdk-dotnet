@@ -31,6 +31,55 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets dataType.
+        /// The type of value this item describes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidManagedStoreAppConfigurationSchemaItemDataType? DataType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defaultBoolValue.
+        /// Default value for boolean type items, if specified by the app developer
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultBoolValue", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefaultBoolValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defaultIntValue.
+        /// Default value for integer type items, if specified by the app developer
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultIntValue", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefaultIntValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defaultStringArrayValue.
+        /// Default value for string array type items, if specified by the app developer
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultStringArrayValue", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefaultStringArrayValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defaultStringValue.
+        /// Default value for string type items, if specified by the app developer
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultStringValue", Required = Newtonsoft.Json.Required.Default)]
+        public string DefaultStringValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// Description of what the item controls within the application
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets displayName.
+        /// Human readable name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets index.
         /// Unique index the application uses to maintain nested schema items
         /// </summary>
@@ -50,55 +99,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaItemKey", Required = Newtonsoft.Json.Required.Default)]
         public string SchemaItemKey { get; set; }
-    
-        /// <summary>
-        /// Gets or sets displayName.
-        /// Human readable name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// Description of what the item controls within the application
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaultBoolValue.
-        /// Default value for boolean type items, if specified by the app developer
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultBoolValue", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefaultBoolValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaultIntValue.
-        /// Default value for integer type items, if specified by the app developer
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultIntValue", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefaultIntValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaultStringValue.
-        /// Default value for string type items, if specified by the app developer
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultStringValue", Required = Newtonsoft.Json.Required.Default)]
-        public string DefaultStringValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaultStringArrayValue.
-        /// Default value for string array type items, if specified by the app developer
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultStringArrayValue", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefaultStringArrayValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets dataType.
-        /// The type of value this item describes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataType", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidManagedStoreAppConfigurationSchemaItemDataType? DataType { get; set; }
     
         /// <summary>
         /// Gets or sets selections.

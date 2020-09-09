@@ -31,32 +31,46 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets apple id disabled.
+        /// Indicates if Apple id setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleIdDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppleIdDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets apple pay disabled.
+        /// Indicates if Apple pay setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applePayDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplePayDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets await device configured confirmation.
+        /// Indicates if the device will need to wait for configured confirmation
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "awaitDeviceConfiguredConfirmation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AwaitDeviceConfiguredConfirmation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets diagnostics disabled.
+        /// Indicates if diagnostics setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diagnosticsDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DiagnosticsDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enable shared ipad.
+        /// This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSharedIPad", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableSharedIPad { get; set; }
+    
+        /// <summary>
         /// Gets or sets is default.
         /// Indicates if this is the default profile
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefault { get; set; }
-    
-        /// <summary>
-        /// Gets or sets supervised mode enabled.
-        /// Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supervisedModeEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SupervisedModeEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets support department.
-        /// Support department information
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportDepartment", Required = Newtonsoft.Json.Required.Default)]
-        public string SupportDepartment { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pass code disabled.
-        /// Indicates if Passcode setup pane is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passCodeDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PassCodeDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets is mandatory.
@@ -66,20 +80,6 @@ namespace Microsoft.Graph
         public bool? IsMandatory { get; set; }
     
         /// <summary>
-        /// Gets or sets location disabled.
-        /// Indicates if Location service setup pane is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocationDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets support phone number.
-        /// Support phone number
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportPhoneNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string SupportPhoneNumber { get; set; }
-    
-        /// <summary>
         /// Gets or sets i tunes pairing mode.
         /// Indicates the iTunes pairing mode
         /// </summary>
@@ -87,11 +87,25 @@ namespace Microsoft.Graph
         public ITunesPairingMode? ITunesPairingMode { get; set; }
     
         /// <summary>
-        /// Gets or sets profile removal disabled.
-        /// Indicates if the profile removal option is disabled
+        /// Gets or sets location disabled.
+        /// Indicates if Location service setup pane is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileRemovalDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ProfileRemovalDisabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocationDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mac osfile vault disabled.
+        /// Indicates if Mac OS file vault is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSFileVaultDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MacOSFileVaultDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mac osregistration disabled.
+        /// Indicates if Mac OS registration is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSRegistrationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MacOSRegistrationDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets management certificates.
@@ -99,6 +113,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementCertificates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ManagementCertificateWithThumbprint> ManagementCertificates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pass code disabled.
+        /// Indicates if Passcode setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passCodeDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PassCodeDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets profile removal disabled.
+        /// Indicates if the profile removal option is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileRemovalDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ProfileRemovalDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets restore blocked.
@@ -115,11 +143,39 @@ namespace Microsoft.Graph
         public bool? RestoreFromAndroidDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets apple id disabled.
-        /// Indicates if Apple id setup pane is disabled
+        /// Gets or sets shared ipad maximum user count.
+        /// This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleIdDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AppleIdDisabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedIPadMaximumUserCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SharedIPadMaximumUserCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets siri disabled.
+        /// Indicates if siri setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siriDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SiriDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets supervised mode enabled.
+        /// Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supervisedModeEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SupervisedModeEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets support department.
+        /// Support department information
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportDepartment", Required = Newtonsoft.Json.Required.Default)]
+        public string SupportDepartment { get; set; }
+    
+        /// <summary>
+        /// Gets or sets support phone number.
+        /// Support phone number
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportPhoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string SupportPhoneNumber { get; set; }
     
         /// <summary>
         /// Gets or sets terms and conditions disabled.
@@ -136,67 +192,11 @@ namespace Microsoft.Graph
         public bool? TouchIdDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets apple pay disabled.
-        /// Indicates if Apple pay setup pane is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applePayDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplePayDisabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets zoom disabled.
         /// Indicates if zoom setup pane is disabled
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zoomDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? ZoomDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets siri disabled.
-        /// Indicates if siri setup pane is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siriDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SiriDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets diagnostics disabled.
-        /// Indicates if diagnostics setup pane is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diagnosticsDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DiagnosticsDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mac osregistration disabled.
-        /// Indicates if Mac OS registration is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSRegistrationDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MacOSRegistrationDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mac osfile vault disabled.
-        /// Indicates if Mac OS file vault is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSFileVaultDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MacOSFileVaultDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets await device configured confirmation.
-        /// Indicates if the device will need to wait for configured confirmation
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "awaitDeviceConfiguredConfirmation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AwaitDeviceConfiguredConfirmation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets shared ipad maximum user count.
-        /// This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedIPadMaximumUserCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SharedIPadMaximumUserCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enable shared ipad.
-        /// This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSharedIPad", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableSharedIPad { get; set; }
     
     }
 }

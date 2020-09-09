@@ -51,66 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Methods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationMethodsCollectionRequestBuilder Methods
-        {
-            get
-            {
-                return new AuthenticationMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("methods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SecurityQuestionMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder SecurityQuestionMethods
-        {
-            get
-            {
-                return new AuthenticationSecurityQuestionMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityQuestionMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for PhoneMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationPhoneMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationPhoneMethodsCollectionRequestBuilder PhoneMethods
-        {
-            get
-            {
-                return new AuthenticationPhoneMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("phoneMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for PasswordMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationPasswordMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationPasswordMethodsCollectionRequestBuilder PasswordMethods
-        {
-            get
-            {
-                return new AuthenticationPasswordMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("passwordMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Operations.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationOperationsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationOperationsCollectionRequestBuilder Operations
-        {
-            get
-            {
-                return new AuthenticationOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for EmailMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationEmailMethodsCollectionRequestBuilder"/>.</returns>
@@ -123,14 +63,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for OathMethods.
+        /// Gets the request builder for Fido2Methods.
         /// </summary>
-        /// <returns>The <see cref="IAuthenticationOathMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationOathMethodsCollectionRequestBuilder OathMethods
+        /// <returns>The <see cref="IAuthenticationFido2MethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationFido2MethodsCollectionRequestBuilder Fido2Methods
         {
             get
             {
-                return new AuthenticationOathMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("oathMethods"), this.Client);
+                return new AuthenticationFido2MethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("fido2Methods"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Methods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationMethodsCollectionRequestBuilder Methods
+        {
+            get
+            {
+                return new AuthenticationMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("methods"), this.Client);
             }
         }
 
@@ -147,6 +99,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for OathMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationOathMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationOathMethodsCollectionRequestBuilder OathMethods
+        {
+            get
+            {
+                return new AuthenticationOathMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("oathMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationOperationsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationOperationsCollectionRequestBuilder Operations
+        {
+            get
+            {
+                return new AuthenticationOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for PasswordlessMicrosoftAuthenticatorMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionRequestBuilder"/>.</returns>
@@ -159,14 +135,38 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Fido2Methods.
+        /// Gets the request builder for PasswordMethods.
         /// </summary>
-        /// <returns>The <see cref="IAuthenticationFido2MethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationFido2MethodsCollectionRequestBuilder Fido2Methods
+        /// <returns>The <see cref="IAuthenticationPasswordMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationPasswordMethodsCollectionRequestBuilder PasswordMethods
         {
             get
             {
-                return new AuthenticationFido2MethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("fido2Methods"), this.Client);
+                return new AuthenticationPasswordMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("passwordMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PhoneMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationPhoneMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationPhoneMethodsCollectionRequestBuilder PhoneMethods
+        {
+            get
+            {
+                return new AuthenticationPhoneMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("phoneMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SecurityQuestionMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder SecurityQuestionMethods
+        {
+            get
+            {
+                return new AuthenticationSecurityQuestionMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityQuestionMethods"), this.Client);
             }
         }
 

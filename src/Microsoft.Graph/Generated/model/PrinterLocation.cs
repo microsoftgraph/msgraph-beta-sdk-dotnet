@@ -31,6 +31,42 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets altitudeInMeters.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitudeInMeters", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AltitudeInMeters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets building.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "building", Required = Newtonsoft.Json.Required.Default)]
+        public string Building { get; set; }
+    
+        /// <summary>
+        /// Gets or sets city.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
+        public string City { get; set; }
+    
+        /// <summary>
+        /// Gets or sets countryOrRegion.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryOrRegion", Required = Newtonsoft.Json.Required.Default)]
+        public string CountryOrRegion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets floorDescription.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "floorDescription", Required = Newtonsoft.Json.Required.Default)]
+        public string FloorDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets floorNumber.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "floorNumber", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? FloorNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets latitude.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
@@ -43,28 +79,10 @@ namespace Microsoft.Graph
         public Single? Longitude { get; set; }
     
         /// <summary>
-        /// Gets or sets altitudeInMeters.
+        /// Gets or sets organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitudeInMeters", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? AltitudeInMeters { get; set; }
-    
-        /// <summary>
-        /// Gets or sets streetAddress.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "streetAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string StreetAddress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subunit.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subunit", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Subunit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets city.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
-        public string City { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organization", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Organization { get; set; }
     
         /// <summary>
         /// Gets or sets postalCode.
@@ -73,34 +91,10 @@ namespace Microsoft.Graph
         public string PostalCode { get; set; }
     
         /// <summary>
-        /// Gets or sets countryOrRegion.
+        /// Gets or sets roomDescription.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countryOrRegion", Required = Newtonsoft.Json.Required.Default)]
-        public string CountryOrRegion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets site.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "site", Required = Newtonsoft.Json.Required.Default)]
-        public string Site { get; set; }
-    
-        /// <summary>
-        /// Gets or sets building.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "building", Required = Newtonsoft.Json.Required.Default)]
-        public string Building { get; set; }
-    
-        /// <summary>
-        /// Gets or sets floorNumber.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "floorNumber", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? FloorNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets floorDescription.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "floorDescription", Required = Newtonsoft.Json.Required.Default)]
-        public string FloorDescription { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roomDescription", Required = Newtonsoft.Json.Required.Default)]
+        public string RoomDescription { get; set; }
     
         /// <summary>
         /// Gets or sets roomNumber.
@@ -109,16 +103,22 @@ namespace Microsoft.Graph
         public Int32? RoomNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets roomDescription.
+        /// Gets or sets site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roomDescription", Required = Newtonsoft.Json.Required.Default)]
-        public string RoomDescription { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "site", Required = Newtonsoft.Json.Required.Default)]
+        public string Site { get; set; }
     
         /// <summary>
-        /// Gets or sets organization.
+        /// Gets or sets stateOrProvince.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organization", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Organization { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stateOrProvince", Required = Newtonsoft.Json.Required.Default)]
+        public string StateOrProvince { get; set; }
+    
+        /// <summary>
+        /// Gets or sets streetAddress.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "streetAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string StreetAddress { get; set; }
     
         /// <summary>
         /// Gets or sets subdivision.
@@ -127,10 +127,10 @@ namespace Microsoft.Graph
         public IEnumerable<string> Subdivision { get; set; }
     
         /// <summary>
-        /// Gets or sets stateOrProvince.
+        /// Gets or sets subunit.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stateOrProvince", Required = Newtonsoft.Json.Required.Default)]
-        public string StateOrProvince { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subunit", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Subunit { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

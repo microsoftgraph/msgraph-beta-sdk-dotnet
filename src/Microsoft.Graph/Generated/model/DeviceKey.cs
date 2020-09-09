@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets keyType.
+        /// Gets or sets deviceId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyType", Required = Newtonsoft.Json.Required.Default)]
-        public string KeyType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets keyMaterial.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public byte[] KeyMaterial { get; set; }
     
         /// <summary>
-        /// Gets or sets deviceId.
+        /// Gets or sets keyType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? DeviceId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyType", Required = Newtonsoft.Json.Required.Default)]
+        public string KeyType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

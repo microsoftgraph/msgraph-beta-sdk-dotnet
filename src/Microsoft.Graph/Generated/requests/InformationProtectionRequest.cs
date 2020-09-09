@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (informationProtectionToInitialize != null && informationProtectionToInitialize.AdditionalData != null)
             {
 
-                if (informationProtectionToInitialize.SensitivityLabels != null && informationProtectionToInitialize.SensitivityLabels.CurrentPage != null)
-                {
-                    informationProtectionToInitialize.SensitivityLabels.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    informationProtectionToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        informationProtectionToInitialize.SensitivityLabels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (informationProtectionToInitialize.DataLossPreventionPolicies != null && informationProtectionToInitialize.DataLossPreventionPolicies.CurrentPage != null)
                 {
                     informationProtectionToInitialize.DataLossPreventionPolicies.AdditionalData = informationProtectionToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         informationProtectionToInitialize.DataLossPreventionPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (informationProtectionToInitialize.SensitivityLabels != null && informationProtectionToInitialize.SensitivityLabels.CurrentPage != null)
+                {
+                    informationProtectionToInitialize.SensitivityLabels.AdditionalData = informationProtectionToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    informationProtectionToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        informationProtectionToInitialize.SensitivityLabels.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

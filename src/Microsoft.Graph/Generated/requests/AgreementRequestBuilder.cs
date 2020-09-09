@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Acceptances.
+        /// </summary>
+        /// <returns>The <see cref="IAgreementAcceptancesCollectionRequestBuilder"/>.</returns>
+        public IAgreementAcceptancesCollectionRequestBuilder Acceptances
+        {
+            get
+            {
+                return new AgreementAcceptancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acceptances"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for File.
         /// </summary>
         /// <returns>The <see cref="IAgreementFileRequestBuilder"/>.</returns>
@@ -71,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new AgreementFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("files"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Acceptances.
-        /// </summary>
-        /// <returns>The <see cref="IAgreementAcceptancesCollectionRequestBuilder"/>.</returns>
-        public IAgreementAcceptancesCollectionRequestBuilder Acceptances
-        {
-            get
-            {
-                return new AgreementAcceptancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acceptances"), this.Client);
             }
         }
     

@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IDeviceComplianceScriptAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
-        /// Gets the request builder for RunSummary.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceComplianceScriptRunSummaryRequestBuilder"/>.</returns>
-        IDeviceComplianceScriptRunSummaryRequestBuilder RunSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceRunStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceComplianceScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
         IDeviceComplianceScriptDeviceRunStatesCollectionRequestBuilder DeviceRunStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceComplianceScriptRunSummaryRequestBuilder"/>.</returns>
+        IDeviceComplianceScriptRunSummaryRequestBuilder RunSummary { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceComplianceScriptAssign.

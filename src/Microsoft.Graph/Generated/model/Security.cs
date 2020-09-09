@@ -92,6 +92,12 @@ namespace Microsoft.Graph
         public ISecuritySecureScoresCollectionPage SecureScores { get; set; }
     
         /// <summary>
+        /// Gets or sets security actions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityActions", Required = Newtonsoft.Json.Required.Default)]
+        public ISecuritySecurityActionsCollectionPage SecurityActions { get; set; }
+    
+        /// <summary>
         /// Gets or sets ti indicators.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tiIndicators", Required = Newtonsoft.Json.Required.Default)]
@@ -102,12 +108,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userSecurityProfiles", Required = Newtonsoft.Json.Required.Default)]
         public ISecurityUserSecurityProfilesCollectionPage UserSecurityProfiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security actions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityActions", Required = Newtonsoft.Json.Required.Default)]
-        public ISecuritySecurityActionsCollectionPage SecurityActions { get; set; }
     
     }
 }

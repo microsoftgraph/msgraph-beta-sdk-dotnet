@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for IdentityCertificateForClientAuthentication.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        public IMacOSCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication
+        {
+            get
+            {
+                return new MacOSCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificateForClientAuthentication"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RootCertificateForServerValidation.
         /// </summary>
         /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
@@ -71,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificatesForServerValidation"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for IdentityCertificateForClientAuthentication.
-        /// </summary>
-        /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
-        public IMacOSCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication
-        {
-            get
-            {
-                return new MacOSCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificateForClientAuthentication"), this.Client);
             }
         }
     

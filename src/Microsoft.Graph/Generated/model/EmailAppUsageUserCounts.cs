@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
+        /// Gets or sets imap4app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imap4App", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Imap4App { get; set; }
     
         /// <summary>
         /// Gets or sets mail for mac.
@@ -43,16 +43,16 @@ namespace Microsoft.Graph
         public Int64? MailForMac { get; set; }
     
         /// <summary>
+        /// Gets or sets other for mobile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "otherForMobile", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OtherForMobile { get; set; }
+    
+        /// <summary>
         /// Gets or sets outlook for mac.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForMac", Required = Newtonsoft.Json.Required.Default)]
         public Int64? OutlookForMac { get; set; }
-    
-        /// <summary>
-        /// Gets or sets outlook for windows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForWindows", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? OutlookForWindows { get; set; }
     
         /// <summary>
         /// Gets or sets outlook for mobile.
@@ -61,34 +61,22 @@ namespace Microsoft.Graph
         public Int64? OutlookForMobile { get; set; }
     
         /// <summary>
-        /// Gets or sets other for mobile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "otherForMobile", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? OtherForMobile { get; set; }
-    
-        /// <summary>
         /// Gets or sets outlook for web.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForWeb", Required = Newtonsoft.Json.Required.Default)]
         public Int64? OutlookForWeb { get; set; }
     
         /// <summary>
+        /// Gets or sets outlook for windows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForWindows", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OutlookForWindows { get; set; }
+    
+        /// <summary>
         /// Gets or sets pop3app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pop3App", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Pop3App { get; set; }
-    
-        /// <summary>
-        /// Gets or sets imap4app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imap4App", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Imap4App { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smtp app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smtpApp", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SmtpApp { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
@@ -101,6 +89,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smtp app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smtpApp", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SmtpApp { get; set; }
     
     }
 }

@@ -63,26 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for SensitiveTypes.
+        /// Gets the request builder for ClassifyFile.
         /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceSensitiveTypesCollectionRequestBuilder SensitiveTypes
+        /// <returns>The <see cref="IDataClassificationServiceClassifyFileCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceClassifyFileCollectionRequestBuilder ClassifyFile
         {
             get
             {
-                return new DataClassificationServiceSensitiveTypesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sensitiveTypes"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Jobs.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceJobsCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceJobsCollectionRequestBuilder Jobs
-        {
-            get
-            {
-                return new DataClassificationServiceJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("jobs"), this.Client);
+                return new DataClassificationServiceClassifyFileCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyFile"), this.Client);
             }
         }
 
@@ -99,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ClassifyText.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceClassifyTextCollectionRequestBuilder ClassifyText
+        {
+            get
+            {
+                return new DataClassificationServiceClassifyTextCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyText"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ClassifyTextJobs.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyTextJobsCollectionRequestBuilder"/>.</returns>
@@ -107,18 +107,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DataClassificationServiceClassifyTextJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyTextJobs"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for EvaluateLabelJobs.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder EvaluateLabelJobs
-        {
-            get
-            {
-                return new DataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("evaluateLabelJobs"), this.Client);
             }
         }
 
@@ -135,6 +123,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for EvaluateLabelJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder EvaluateLabelJobs
+        {
+            get
+            {
+                return new DataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("evaluateLabelJobs"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Jobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceJobsCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceJobsCollectionRequestBuilder Jobs
+        {
+            get
+            {
+                return new DataClassificationServiceJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("jobs"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for LabelsAndPoliciesEvaluationJobs.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder"/>.</returns>
@@ -147,26 +159,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ClassifyText.
+        /// Gets the request builder for SensitiveTypes.
         /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceClassifyTextCollectionRequestBuilder ClassifyText
+        /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>
+        public IDataClassificationServiceSensitiveTypesCollectionRequestBuilder SensitiveTypes
         {
             get
             {
-                return new DataClassificationServiceClassifyTextCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyText"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ClassifyFile.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyFileCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceClassifyFileCollectionRequestBuilder ClassifyFile
-        {
-            get
-            {
-                return new DataClassificationServiceClassifyFileCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyFile"), this.Client);
+                return new DataClassificationServiceSensitiveTypesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sensitiveTypes"), this.Client);
             }
         }
 

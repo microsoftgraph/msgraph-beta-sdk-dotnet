@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets includeDeviceStates.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> IncludeDeviceStates { get; set; }
-    
-        /// <summary>
         /// Gets or sets excludeDeviceStates.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeDeviceStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includeDeviceStates.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IncludeDeviceStates { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

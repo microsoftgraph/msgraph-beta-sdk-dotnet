@@ -38,10 +38,10 @@ namespace Microsoft.Graph
         IGovernanceResourceRequestBuilder Parent { get; }
 
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
+        /// Gets the request builder for RoleAssignmentRequests.
         /// </summary>
-        /// <returns>The <see cref="IGovernanceResourceRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        IGovernanceResourceRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
+        /// <returns>The <see cref="IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
+        IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests { get; }
 
         /// <summary>
         /// Gets the request builder for RoleAssignments.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IGovernanceResourceRoleAssignmentsCollectionRequestBuilder RoleAssignments { get; }
 
         /// <summary>
-        /// Gets the request builder for RoleAssignmentRequests.
+        /// Gets the request builder for RoleDefinitions.
         /// </summary>
-        /// <returns>The <see cref="IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
-        IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests { get; }
+        /// <returns>The <see cref="IGovernanceResourceRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        IGovernanceResourceRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
 
         /// <summary>
         /// Gets the request builder for RoleSettings.

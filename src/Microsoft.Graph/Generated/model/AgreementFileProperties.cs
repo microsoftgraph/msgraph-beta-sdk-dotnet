@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets file data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileData", Required = Newtonsoft.Json.Required.Default)]
+        public AgreementFileData FileData { get; set; }
+    
+        /// <summary>
         /// Gets or sets file name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
         public string FileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets language.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
-        public string Language { get; set; }
     
         /// <summary>
         /// Gets or sets is default.
@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public bool? IsDefault { get; set; }
     
         /// <summary>
-        /// Gets or sets file data.
+        /// Gets or sets language.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileData", Required = Newtonsoft.Json.Required.Default)]
-        public AgreementFileData FileData { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
+        public string Language { get; set; }
     
     }
 }

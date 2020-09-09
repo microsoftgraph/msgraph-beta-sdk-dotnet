@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets labelId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? LabelId { get; set; }
-    
-        /// <summary>
         /// Gets or sets assignmentMethod.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentMethod", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> ExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets labelId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? LabelId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

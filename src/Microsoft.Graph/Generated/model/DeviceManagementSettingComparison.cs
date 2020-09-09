@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// The setting ID
+        /// Gets or sets comparisonResult.
+        /// Setting comparison result
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets displayName.
-        /// The setting's display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets definitionId.
-        /// The ID of the setting definition for this instance
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionId", Required = Newtonsoft.Json.Required.Default)]
-        public string DefinitionId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonResult", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementComparisonResult? ComparisonResult { get; set; }
     
         /// <summary>
         /// Gets or sets currentValueJson.
@@ -59,18 +45,32 @@ namespace Microsoft.Graph
         public string CurrentValueJson { get; set; }
     
         /// <summary>
+        /// Gets or sets definitionId.
+        /// The ID of the setting definition for this instance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string DefinitionId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets displayName.
+        /// The setting's display name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// The setting ID
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets newValueJson.
         /// JSON representation of new template setting's value
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newValueJson", Required = Newtonsoft.Json.Required.Default)]
         public string NewValueJson { get; set; }
-    
-        /// <summary>
-        /// Gets or sets comparisonResult.
-        /// Setting comparison result
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonResult", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementComparisonResult? ComparisonResult { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

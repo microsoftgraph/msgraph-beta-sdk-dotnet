@@ -63,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
+        /// Gets the request builder for RoleAssignmentRequests.
         /// </summary>
-        /// <returns>The <see cref="IGovernanceResourceRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        public IGovernanceResourceRoleDefinitionsCollectionRequestBuilder RoleDefinitions
+        /// <returns>The <see cref="IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
+        public IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests
         {
             get
             {
-                return new GovernanceResourceRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
+                return new GovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentRequests"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RoleAssignmentRequests.
+        /// Gets the request builder for RoleDefinitions.
         /// </summary>
-        /// <returns>The <see cref="IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
-        public IGovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests
+        /// <returns>The <see cref="IGovernanceResourceRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IGovernanceResourceRoleDefinitionsCollectionRequestBuilder RoleDefinitions
         {
             get
             {
-                return new GovernanceResourceRoleAssignmentRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentRequests"), this.Client);
+                return new GovernanceResourceRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
             }
         }
 

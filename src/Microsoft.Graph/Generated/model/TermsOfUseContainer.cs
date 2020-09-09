@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets agreements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreements", Required = Newtonsoft.Json.Required.Default)]
-        public ITermsOfUseContainerAgreementsCollectionPage Agreements { get; set; }
-    
-        /// <summary>
         /// Gets or sets agreement acceptances.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementAcceptances", Required = Newtonsoft.Json.Required.Default)]
         public ITermsOfUseContainerAgreementAcceptancesCollectionPage AgreementAcceptances { get; set; }
+    
+        /// <summary>
+        /// Gets or sets agreements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreements", Required = Newtonsoft.Json.Required.Default)]
+        public ITermsOfUseContainerAgreementsCollectionPage Agreements { get; set; }
     
     }
 }

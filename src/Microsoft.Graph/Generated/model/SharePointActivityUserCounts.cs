@@ -31,42 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets visited page.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visitedPage", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? VisitedPage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets viewed or edited.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewedOrEdited", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? ViewedOrEdited { get; set; }
-    
-        /// <summary>
-        /// Gets or sets synced.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synced", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Synced { get; set; }
-    
-        /// <summary>
-        /// Gets or sets shared internally.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedInternally", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SharedInternally { get; set; }
-    
-        /// <summary>
-        /// Gets or sets shared externally.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedExternally", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SharedExternally { get; set; }
-    
-        /// <summary>
         /// Gets or sets report date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
@@ -77,6 +41,42 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shared externally.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedExternally", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SharedExternally { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shared internally.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedInternally", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SharedInternally { get; set; }
+    
+        /// <summary>
+        /// Gets or sets synced.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synced", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Synced { get; set; }
+    
+        /// <summary>
+        /// Gets or sets viewed or edited.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewedOrEdited", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ViewedOrEdited { get; set; }
+    
+        /// <summary>
+        /// Gets or sets visited page.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visitedPage", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? VisitedPage { get; set; }
     
     }
 }

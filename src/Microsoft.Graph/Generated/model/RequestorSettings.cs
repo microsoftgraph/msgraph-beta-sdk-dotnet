@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets scopeType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeType", Required = Newtonsoft.Json.Required.Default)]
-        public string ScopeType { get; set; }
-    
-        /// <summary>
         /// Gets or sets acceptRequests.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptRequests", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedRequestors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UserSet> AllowedRequestors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scopeType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeType", Required = Newtonsoft.Json.Required.Default)]
+        public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

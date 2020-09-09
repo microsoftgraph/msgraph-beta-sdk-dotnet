@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets justificationMessage.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationMessage", Required = Newtonsoft.Json.Required.Default)]
-        public string JustificationMessage { get; set; }
-    
-        /// <summary>
         /// Gets or sets isDowngradeJustified.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDowngradeJustified", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDowngradeJustified { get; set; }
+    
+        /// <summary>
+        /// Gets or sets justificationMessage.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string JustificationMessage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

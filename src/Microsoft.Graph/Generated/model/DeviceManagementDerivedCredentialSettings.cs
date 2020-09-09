@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets help url.
-        /// The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "helpUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string HelpUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The display name for the profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets help url.
+        /// The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "helpUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string HelpUrl { get; set; }
     
         /// <summary>
         /// Gets or sets issuer.

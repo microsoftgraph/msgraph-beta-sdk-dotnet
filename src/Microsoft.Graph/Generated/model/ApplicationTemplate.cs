@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets categories.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Categories { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
@@ -43,28 +55,10 @@ namespace Microsoft.Graph
         public string HomePageUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets supported single sign on modes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedSingleSignOnModes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> SupportedSingleSignOnModes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets supported provisioning types.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedProvisioningTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> SupportedProvisioningTypes { get; set; }
-    
-        /// <summary>
         /// Gets or sets logo url.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logoUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LogoUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets categories.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
@@ -73,10 +67,16 @@ namespace Microsoft.Graph
         public string Publisher { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
+        /// Gets or sets supported provisioning types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedProvisioningTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SupportedProvisioningTypes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets supported single sign on modes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedSingleSignOnModes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SupportedSingleSignOnModes { get; set; }
     
     }
 }

@@ -32,22 +32,10 @@ namespace Microsoft.Graph
         new IDeviceAppManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ManagedEBooks.
+        /// Gets the request builder for ManagedEBookCategories.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks { get; }
-
-        /// <summary>
-        /// Gets the request builder for MobileApps.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementMobileAppsCollectionRequestBuilder MobileApps { get; }
-
-        /// <summary>
-        /// Gets the request builder for MobileAppCategories.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder MobileAppCategories { get; }
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories { get; }
 
         /// <summary>
         /// Gets the request builder for EnterpriseCodeSigningCertificates.
@@ -62,10 +50,10 @@ namespace Microsoft.Graph
         IDeviceAppManagementIosLobAppProvisioningConfigurationsCollectionRequestBuilder IosLobAppProvisioningConfigurations { get; }
 
         /// <summary>
-        /// Gets the request builder for SymantecCodeSigningCertificate.
+        /// Gets the request builder for MobileAppCategories.
         /// </summary>
-        /// <returns>The <see cref="ISymantecCodeSigningCertificateRequestBuilder"/>.</returns>
-        ISymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate { get; }
+        /// <returns>The <see cref="IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder MobileAppCategories { get; }
 
         /// <summary>
         /// Gets the request builder for MobileAppConfigurations.
@@ -74,10 +62,22 @@ namespace Microsoft.Graph
         IDeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder MobileAppConfigurations { get; }
 
         /// <summary>
-        /// Gets the request builder for ManagedEBookCategories.
+        /// Gets the request builder for MobileApps.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories { get; }
+        /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementMobileAppsCollectionRequestBuilder MobileApps { get; }
+
+        /// <summary>
+        /// Gets the request builder for SymantecCodeSigningCertificate.
+        /// </summary>
+        /// <returns>The <see cref="ISymantecCodeSigningCertificateRequestBuilder"/>.</returns>
+        ISymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedEBooks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks { get; }
 
         /// <summary>
         /// Gets the request builder for PolicySets.
@@ -104,18 +104,6 @@ namespace Microsoft.Graph
         IWindowsManagementAppWithReferenceRequestBuilder WindowsManagementApp { get; }
 
         /// <summary>
-        /// Gets the request builder for ManagedAppPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder ManagedAppPolicies { get; }
-
-        /// <summary>
-        /// Gets the request builder for IosManagedAppProtections.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder IosManagedAppProtections { get; }
-
-        /// <summary>
         /// Gets the request builder for AndroidManagedAppProtections.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementAndroidManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
@@ -128,22 +116,16 @@ namespace Microsoft.Graph
         IDeviceAppManagementDefaultManagedAppProtectionsCollectionRequestBuilder DefaultManagedAppProtections { get; }
 
         /// <summary>
-        /// Gets the request builder for TargetedManagedAppConfigurations.
+        /// Gets the request builder for IosManagedAppProtections.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder TargetedManagedAppConfigurations { get; }
+        /// <returns>The <see cref="IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder IosManagedAppProtections { get; }
 
         /// <summary>
-        /// Gets the request builder for MdmWindowsInformationProtectionPolicies.
+        /// Gets the request builder for ManagedAppPolicies.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder MdmWindowsInformationProtectionPolicies { get; }
-
-        /// <summary>
-        /// Gets the request builder for WindowsInformationProtectionPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder WindowsInformationProtectionPolicies { get; }
+        /// <returns>The <see cref="IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder ManagedAppPolicies { get; }
 
         /// <summary>
         /// Gets the request builder for ManagedAppRegistrations.
@@ -158,10 +140,28 @@ namespace Microsoft.Graph
         IDeviceAppManagementManagedAppStatusesCollectionRequestBuilder ManagedAppStatuses { get; }
 
         /// <summary>
+        /// Gets the request builder for MdmWindowsInformationProtectionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder MdmWindowsInformationProtectionPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TargetedManagedAppConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder TargetedManagedAppConfigurations { get; }
+
+        /// <summary>
         /// Gets the request builder for WindowsInformationProtectionDeviceRegistrations.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionRequestBuilder"/>.</returns>
         IDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionRequestBuilder WindowsInformationProtectionDeviceRegistrations { get; }
+
+        /// <summary>
+        /// Gets the request builder for WindowsInformationProtectionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder WindowsInformationProtectionPolicies { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsInformationProtectionWipeActions.

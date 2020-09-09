@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets package id.
-        /// The package identifier.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
-        public string PackageId { get; set; }
-    
-        /// <summary>
         /// Gets or sets identity name.
         /// The Identity Name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityName", Required = Newtonsoft.Json.Required.Default)]
         public string IdentityName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identity version.
+        /// The identity version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string IdentityVersion { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
         /// <summary>
-        /// Gets or sets version name.
-        /// The version name of managed Android Line of Business (LoB) app.
+        /// Gets or sets package id.
+        /// The package identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionName", Required = Newtonsoft.Json.Required.Default)]
-        public string VersionName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
+        public string PackageId { get; set; }
     
         /// <summary>
         /// Gets or sets version code.
@@ -66,11 +66,11 @@ namespace Microsoft.Graph
         public string VersionCode { get; set; }
     
         /// <summary>
-        /// Gets or sets identity version.
-        /// The identity version.
+        /// Gets or sets version name.
+        /// The version name of managed Android Line of Business (LoB) app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string IdentityVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionName", Required = Newtonsoft.Json.Required.Default)]
+        public string VersionName { get; set; }
     
     }
 }

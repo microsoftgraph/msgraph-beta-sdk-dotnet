@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets totalLicensesCount.
-        /// A count of the number of licenses that were attempted to revoke.
+        /// Gets or sets actionFailureReason.
+        /// The reason for the revoke licenses action failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalLicensesCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionFailureReason", Required = Newtonsoft.Json.Required.Default)]
+        public VppTokenActionFailureReason? ActionFailureReason { get; set; }
     
         /// <summary>
         /// Gets or sets failedLicensesCount.
@@ -44,11 +44,11 @@ namespace Microsoft.Graph
         public Int32? FailedLicensesCount { get; set; }
     
         /// <summary>
-        /// Gets or sets actionFailureReason.
-        /// The reason for the revoke licenses action failure.
+        /// Gets or sets totalLicensesCount.
+        /// A count of the number of licenses that were attempted to revoke.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionFailureReason", Required = Newtonsoft.Json.Required.Default)]
-        public VppTokenActionFailureReason? ActionFailureReason { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalLicensesCount { get; set; }
     
     }
 }

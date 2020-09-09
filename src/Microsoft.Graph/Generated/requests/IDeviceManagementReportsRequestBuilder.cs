@@ -65,21 +65,6 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetUnhealthyDefenderAgentsReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetMalwareSummaryReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder"/>.</returns>
@@ -95,10 +80,67 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetUnhealthyDefenderAgentsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCachedReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCachedReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetCachedReportRequestBuilder GetCachedReport(
+            string id = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetHistoricalReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetHistoricalReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetHistoricalReportRequestBuilder GetHistoricalReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceMetadata.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
@@ -125,40 +167,10 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceMetadata.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceSummaryReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder GetPolicyNonComplianceSummaryReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetSettingNonComplianceReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
@@ -185,37 +197,10 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetHistoricalReport.
+        /// Gets the request builder for DeviceManagementReportsGetSettingNonComplianceReport.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetHistoricalReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetHistoricalReportRequestBuilder GetHistoricalReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetCachedReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetCachedReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetCachedReportRequestBuilder GetCachedReport(
-            string id = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetWindowsUpdateAlertSummaryReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport(
+        /// <returns>The <see cref="IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
@@ -231,6 +216,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsUpdateAlertsPerPolicyPerDeviceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsUpdateAlertSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,

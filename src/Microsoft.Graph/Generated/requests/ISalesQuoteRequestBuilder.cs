@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new ISalesQuoteRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SalesQuoteLines.
+        /// Gets the request builder for Currency.
         /// </summary>
-        /// <returns>The <see cref="ISalesQuoteSalesQuoteLinesCollectionRequestBuilder"/>.</returns>
-        ISalesQuoteSalesQuoteLinesCollectionRequestBuilder SalesQuoteLines { get; }
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        ICurrencyRequestBuilder Currency { get; }
 
         /// <summary>
         /// Gets the request builder for Customer.
@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         ICustomerRequestBuilder Customer { get; }
 
         /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        ICurrencyRequestBuilder Currency { get; }
-
-        /// <summary>
         /// Gets the request builder for PaymentTerm.
         /// </summary>
         /// <returns>The <see cref="IPaymentTermRequestBuilder"/>.</returns>
         IPaymentTermRequestBuilder PaymentTerm { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesQuoteLines.
+        /// </summary>
+        /// <returns>The <see cref="ISalesQuoteSalesQuoteLinesCollectionRequestBuilder"/>.</returns>
+        ISalesQuoteSalesQuoteLinesCollectionRequestBuilder SalesQuoteLines { get; }
 
         /// <summary>
         /// Gets the request builder for ShipmentMethod.

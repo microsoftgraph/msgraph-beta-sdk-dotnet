@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets scope.
+        /// Gets or sets claims mapping.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
-        public string Scope { get; set; }
-    
-        /// <summary>
-        /// Gets or sets metadata url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadataUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string MetadataUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMapping", Required = Newtonsoft.Json.Required.Default)]
+        public ClaimsMapping ClaimsMapping { get; set; }
     
         /// <summary>
         /// Gets or sets domain hint.
@@ -49,10 +43,10 @@ namespace Microsoft.Graph
         public string DomainHint { get; set; }
     
         /// <summary>
-        /// Gets or sets response type.
+        /// Gets or sets metadata url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseType", Required = Newtonsoft.Json.Required.Default)]
-        public OpenIdConnectResponseTypes? ResponseType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadataUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string MetadataUrl { get; set; }
     
         /// <summary>
         /// Gets or sets response mode.
@@ -61,10 +55,16 @@ namespace Microsoft.Graph
         public OpenIdConnectResponseMode? ResponseMode { get; set; }
     
         /// <summary>
-        /// Gets or sets claims mapping.
+        /// Gets or sets response type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMapping", Required = Newtonsoft.Json.Required.Default)]
-        public ClaimsMapping ClaimsMapping { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseType", Required = Newtonsoft.Json.Required.Default)]
+        public OpenIdConnectResponseTypes? ResponseType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scope.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        public string Scope { get; set; }
     
     }
 }

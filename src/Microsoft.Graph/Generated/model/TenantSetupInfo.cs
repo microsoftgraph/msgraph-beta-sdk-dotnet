@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user roles actions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRolesActions", Required = Newtonsoft.Json.Required.Default)]
-        public string UserRolesActions { get; set; }
-    
-        /// <summary>
         /// Gets or sets first time setup.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstTimeSetup", Required = Newtonsoft.Json.Required.Default)]
@@ -49,16 +43,22 @@ namespace Microsoft.Graph
         public IEnumerable<string> RelevantRolesSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets setup status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setupStatus", Required = Newtonsoft.Json.Required.Default)]
+        public SetupStatus? SetupStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets skip setup.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skipSetup", Required = Newtonsoft.Json.Required.Default)]
         public bool? SkipSetup { get; set; }
     
         /// <summary>
-        /// Gets or sets setup status.
+        /// Gets or sets user roles actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setupStatus", Required = Newtonsoft.Json.Required.Default)]
-        public SetupStatus? SetupStatus { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRolesActions", Required = Newtonsoft.Json.Required.Default)]
+        public string UserRolesActions { get; set; }
     
         /// <summary>
         /// Gets or sets default roles settings.

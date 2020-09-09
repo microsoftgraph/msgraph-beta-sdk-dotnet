@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets setting name.
-        /// Name of a setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingName { get; set; }
-    
-        /// <summary>
         /// Gets or sets compliant count.
         /// Number of compliant devices
         /// </summary>
@@ -78,6 +71,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediatedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? RemediatedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting name.
+        /// Name of a setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingName { get; set; }
     
     }
 }

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new ITrustFrameworkRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Policies.
-        /// </summary>
-        /// <returns>The <see cref="ITrustFrameworkPoliciesCollectionRequestBuilder"/>.</returns>
-        ITrustFrameworkPoliciesCollectionRequestBuilder Policies { get; }
-
-        /// <summary>
         /// Gets the request builder for KeySets.
         /// </summary>
         /// <returns>The <see cref="ITrustFrameworkKeySetsCollectionRequestBuilder"/>.</returns>
         ITrustFrameworkKeySetsCollectionRequestBuilder KeySets { get; }
+
+        /// <summary>
+        /// Gets the request builder for Policies.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkPoliciesCollectionRequestBuilder"/>.</returns>
+        ITrustFrameworkPoliciesCollectionRequestBuilder Policies { get; }
     
     }
 }

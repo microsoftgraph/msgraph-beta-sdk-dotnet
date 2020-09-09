@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets autoTrigger.
+        /// Automatically connect to the VPN when the device connects to this domain: Default False.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoTrigger", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AutoTrigger { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// Name.
         /// </summary>
@@ -38,11 +45,11 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets servers.
-        /// Servers.
+        /// Gets or sets persistent.
+        /// Keep this rule active even when the VPN is not connected: Default False
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Servers { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistent", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Persistent { get; set; }
     
         /// <summary>
         /// Gets or sets proxyServerUri.
@@ -52,18 +59,11 @@ namespace Microsoft.Graph
         public string ProxyServerUri { get; set; }
     
         /// <summary>
-        /// Gets or sets autoTrigger.
-        /// Automatically connect to the VPN when the device connects to this domain: Default False.
+        /// Gets or sets servers.
+        /// Servers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoTrigger", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AutoTrigger { get; set; }
-    
-        /// <summary>
-        /// Gets or sets persistent.
-        /// Keep this rule active even when the VPN is not connected: Default False
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "persistent", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Persistent { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Servers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

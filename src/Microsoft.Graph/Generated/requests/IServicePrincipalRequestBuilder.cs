@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesRequestBuilder ClaimsMappingPolicies { get; }
 
         /// <summary>
-        /// Gets the request builder for HomeRealmDiscoveryPolicies.
+        /// Gets the request builder for CreatedObjects.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies { get; }
+        /// <returns>The <see cref="IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects { get; }
 
         /// <summary>
         /// Gets the request builder for Endpoints.
@@ -62,28 +62,10 @@ namespace Microsoft.Graph
         IServicePrincipalEndpointsCollectionRequestBuilder Endpoints { get; }
 
         /// <summary>
-        /// Gets the request builder for Oauth2PermissionGrants.
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants { get; }
-
-        /// <summary>
-        /// Gets the request builder for MemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
-
-        /// <summary>
-        /// Gets the request builder for TransitiveMemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
-
-        /// <summary>
-        /// Gets the request builder for CreatedObjects.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects { get; }
+        /// <returns>The <see cref="IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies { get; }
 
         /// <summary>
         /// Gets the request builder for LicenseDetails.
@@ -92,16 +74,28 @@ namespace Microsoft.Graph
         IServicePrincipalLicenseDetailsCollectionRequestBuilder LicenseDetails { get; }
 
         /// <summary>
-        /// Gets the request builder for Owners.
+        /// Gets the request builder for MemberOf.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
-        IServicePrincipalOwnersCollectionWithReferencesRequestBuilder Owners { get; }
+        /// <returns>The <see cref="IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
+
+        /// <summary>
+        /// Gets the request builder for Oauth2PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants { get; }
 
         /// <summary>
         /// Gets the request builder for OwnedObjects.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
         IServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder OwnedObjects { get; }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
@@ -114,6 +108,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
         IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder TokenLifetimePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
 
         /// <summary>
         /// Gets the request builder for Synchronization.
@@ -130,17 +130,17 @@ namespace Microsoft.Graph
             IEnumerable<Credential> credentials);
 
         /// <summary>
-        /// Gets the request builder for ServicePrincipalGetPasswordSingleSignOnCredentials.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
-        IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials(
-            string id);
-
-        /// <summary>
         /// Gets the request builder for ServicePrincipalDeletePasswordSingleSignOnCredentials.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
         IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials(
+            string id);
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalGetPasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials(
             string id);
 
         /// <summary>

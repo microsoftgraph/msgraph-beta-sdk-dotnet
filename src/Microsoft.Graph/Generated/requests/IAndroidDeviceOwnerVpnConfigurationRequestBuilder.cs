@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IAndroidDeviceOwnerVpnConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for IdentityCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidDeviceOwnerCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
-        IAndroidDeviceOwnerCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificate { get; }
-
-        /// <summary>
         /// Gets the request builder for DerivedCredentialSettings.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
         IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for IdentityCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidDeviceOwnerCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        IAndroidDeviceOwnerCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificate { get; }
     
     }
 }

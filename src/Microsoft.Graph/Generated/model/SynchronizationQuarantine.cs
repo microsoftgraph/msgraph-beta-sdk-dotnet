@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CurrentBegan { get; set; }
     
         /// <summary>
+        /// Gets or sets error.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public SynchronizationError Error { get; set; }
+    
+        /// <summary>
         /// Gets or sets nextAttempt.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nextAttempt", Required = Newtonsoft.Json.Required.Default)]
@@ -47,12 +53,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
         public QuarantineReason? Reason { get; set; }
-    
-        /// <summary>
-        /// Gets or sets error.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public SynchronizationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets seriesBegan.

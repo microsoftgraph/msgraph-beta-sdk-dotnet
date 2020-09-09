@@ -44,12 +44,6 @@ namespace Microsoft.Graph
         IAccessPackageAssignmentPolicyRequestBuilder AccessPackageAssignmentPolicy { get; }
 
         /// <summary>
-        /// Gets the request builder for Target.
-        /// </summary>
-        /// <returns>The <see cref="IAccessPackageSubjectRequestBuilder"/>.</returns>
-        IAccessPackageSubjectRequestBuilder Target { get; }
-
-        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentRequests.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAssignmentAccessPackageAssignmentRequestsCollectionRequestBuilder"/>.</returns>
@@ -60,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionRequestBuilder"/>.</returns>
         IAccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionRequestBuilder AccessPackageAssignmentResourceRoles { get; }
+
+        /// <summary>
+        /// Gets the request builder for Target.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageSubjectRequestBuilder"/>.</returns>
+        IAccessPackageSubjectRequestBuilder Target { get; }
     
         
     

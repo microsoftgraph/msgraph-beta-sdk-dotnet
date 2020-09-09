@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets qualityId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
-        public string QualityId { get; set; }
-    
-        /// <summary>
         /// Gets or sets feedback.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
         public EducationItemBody Feedback { get; set; }
+    
+        /// <summary>
+        /// Gets or sets qualityId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
+        public string QualityId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

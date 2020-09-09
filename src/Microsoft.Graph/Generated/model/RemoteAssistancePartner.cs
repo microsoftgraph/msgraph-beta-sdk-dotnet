@@ -38,20 +38,6 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets onboarding url.
-        /// URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string OnboardingUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets onboarding status.
-        /// TBD. Possible values are: notOnboarded, onboarding, onboarded.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
-        public RemoteAssistanceOnboardingStatus? OnboardingStatus { get; set; }
-    
-        /// <summary>
         /// Gets or sets last connection date time.
         /// Timestamp of the last request sent to Intune by the TEM partner.
         /// </summary>
@@ -64,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingRequestExpiryDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnboardingRequestExpiryDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onboarding status.
+        /// TBD. Possible values are: notOnboarded, onboarding, onboarded.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
+        public RemoteAssistanceOnboardingStatus? OnboardingStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onboarding url.
+        /// URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string OnboardingUrl { get; set; }
     
     }
 }

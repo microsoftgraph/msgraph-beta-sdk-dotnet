@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IAccessReviewRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Reviewers.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewReviewersCollectionRequestBuilder"/>.</returns>
-        IAccessReviewReviewersCollectionRequestBuilder Reviewers { get; }
-
-        /// <summary>
         /// Gets the request builder for Decisions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewDecisionsCollectionRequestBuilder"/>.</returns>
         IAccessReviewDecisionsCollectionRequestBuilder Decisions { get; }
+
+        /// <summary>
+        /// Gets the request builder for Instances.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstancesCollectionRequestBuilder"/>.</returns>
+        IAccessReviewInstancesCollectionRequestBuilder Instances { get; }
 
         /// <summary>
         /// Gets the request builder for MyDecisions.
@@ -50,22 +50,16 @@ namespace Microsoft.Graph
         IAccessReviewMyDecisionsCollectionRequestBuilder MyDecisions { get; }
 
         /// <summary>
-        /// Gets the request builder for Instances.
+        /// Gets the request builder for Reviewers.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstancesCollectionRequestBuilder"/>.</returns>
-        IAccessReviewInstancesCollectionRequestBuilder Instances { get; }
+        /// <returns>The <see cref="IAccessReviewReviewersCollectionRequestBuilder"/>.</returns>
+        IAccessReviewReviewersCollectionRequestBuilder Reviewers { get; }
     
         /// <summary>
-        /// Gets the request builder for AccessReviewStop.
+        /// Gets the request builder for AccessReviewApplyDecisions.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewStopRequestBuilder"/>.</returns>
-        IAccessReviewStopRequestBuilder Stop();
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewSendReminder.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewSendReminderRequestBuilder"/>.</returns>
-        IAccessReviewSendReminderRequestBuilder SendReminder();
+        /// <returns>The <see cref="IAccessReviewApplyDecisionsRequestBuilder"/>.</returns>
+        IAccessReviewApplyDecisionsRequestBuilder ApplyDecisions();
 
         /// <summary>
         /// Gets the request builder for AccessReviewResetDecisions.
@@ -74,10 +68,16 @@ namespace Microsoft.Graph
         IAccessReviewResetDecisionsRequestBuilder ResetDecisions();
 
         /// <summary>
-        /// Gets the request builder for AccessReviewApplyDecisions.
+        /// Gets the request builder for AccessReviewSendReminder.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewApplyDecisionsRequestBuilder"/>.</returns>
-        IAccessReviewApplyDecisionsRequestBuilder ApplyDecisions();
+        /// <returns>The <see cref="IAccessReviewSendReminderRequestBuilder"/>.</returns>
+        IAccessReviewSendReminderRequestBuilder SendReminder();
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewStop.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewStopRequestBuilder"/>.</returns>
+        IAccessReviewStopRequestBuilder Stop();
     
     }
 }

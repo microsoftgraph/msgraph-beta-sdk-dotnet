@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PolicyTemplates.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder"/>.</returns>
-        public IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder PolicyTemplates
-        {
-            get
-            {
-                return new ApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policyTemplates"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for BusinessFlowsWithRequestsAwaitingMyDecision.
         /// </summary>
         /// <returns>The <see cref="IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("businessFlowsWithRequestsAwaitingMyDecision"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PolicyTemplates.
+        /// </summary>
+        /// <returns>The <see cref="IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder"/>.</returns>
+        public IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder PolicyTemplates
+        {
+            get
+            {
+                return new ApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policyTemplates"), this.Client);
             }
         }
     

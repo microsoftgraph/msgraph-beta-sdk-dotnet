@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets minOSVersion.
-        /// Min OS version for Applicability Rule.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minOSVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string MinOSVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets maxOSVersion.
         /// Max OS version for Applicability Rule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxOSVersion", Required = Newtonsoft.Json.Required.Default)]
         public string MaxOSVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minOSVersion.
+        /// Min OS version for Applicability Rule.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minOSVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinOSVersion { get; set; }
     
         /// <summary>
         /// Gets or sets name.

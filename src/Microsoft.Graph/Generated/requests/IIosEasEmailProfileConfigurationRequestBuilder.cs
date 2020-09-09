@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IIosEasEmailProfileConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for DerivedCredentialSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for IdentityCertificate.
         /// </summary>
         /// <returns>The <see cref="IIosCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
         IIosCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificate { get; }
-
-        /// <summary>
-        /// Gets the request builder for SmimeSigningCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IIosCertificateProfileWithReferenceRequestBuilder"/>.</returns>
-        IIosCertificateProfileWithReferenceRequestBuilder SmimeSigningCertificate { get; }
 
         /// <summary>
         /// Gets the request builder for SmimeEncryptionCertificate.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IIosCertificateProfileWithReferenceRequestBuilder SmimeEncryptionCertificate { get; }
 
         /// <summary>
-        /// Gets the request builder for DerivedCredentialSettings.
+        /// Gets the request builder for SmimeSigningCertificate.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
-        IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
+        /// <returns>The <see cref="IIosCertificateProfileWithReferenceRequestBuilder"/>.</returns>
+        IIosCertificateProfileWithReferenceRequestBuilder SmimeSigningCertificate { get; }
     
     }
 }

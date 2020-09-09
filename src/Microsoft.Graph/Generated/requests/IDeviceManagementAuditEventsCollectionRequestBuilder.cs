@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         IAuditEventRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for AuditEventGetAuditCategories.
-        /// </summary>
-        /// <returns>The <see cref="IAuditEventGetAuditCategoriesRequestBuilder"/>.</returns>
-        IAuditEventGetAuditCategoriesRequestBuilder GetAuditCategories();
-
-        /// <summary>
         /// Gets the request builder for AuditEventGetAuditActivityTypes.
         /// </summary>
         /// <returns>The <see cref="IAuditEventGetAuditActivityTypesRequestBuilder"/>.</returns>
         IAuditEventGetAuditActivityTypesRequestBuilder GetAuditActivityTypes(
             string category = null);
+
+        /// <summary>
+        /// Gets the request builder for AuditEventGetAuditCategories.
+        /// </summary>
+        /// <returns>The <see cref="IAuditEventGetAuditCategoriesRequestBuilder"/>.</returns>
+        IAuditEventGetAuditCategoriesRequestBuilder GetAuditCategories();
     }
 }

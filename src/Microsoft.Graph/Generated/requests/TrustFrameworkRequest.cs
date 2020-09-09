@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (trustFrameworkToInitialize != null && trustFrameworkToInitialize.AdditionalData != null)
             {
 
-                if (trustFrameworkToInitialize.Policies != null && trustFrameworkToInitialize.Policies.CurrentPage != null)
-                {
-                    trustFrameworkToInitialize.Policies.AdditionalData = trustFrameworkToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    trustFrameworkToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        trustFrameworkToInitialize.Policies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (trustFrameworkToInitialize.KeySets != null && trustFrameworkToInitialize.KeySets.CurrentPage != null)
                 {
                     trustFrameworkToInitialize.KeySets.AdditionalData = trustFrameworkToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         trustFrameworkToInitialize.KeySets.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (trustFrameworkToInitialize.Policies != null && trustFrameworkToInitialize.Policies.CurrentPage != null)
+                {
+                    trustFrameworkToInitialize.Policies.AdditionalData = trustFrameworkToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    trustFrameworkToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        trustFrameworkToInitialize.Policies.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

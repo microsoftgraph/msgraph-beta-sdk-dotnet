@@ -31,22 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets street.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "street", Required = Newtonsoft.Json.Required.Default)]
-        public string Street { get; set; }
-    
-        /// <summary>
         /// Gets or sets city.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "city", Required = Newtonsoft.Json.Required.Default)]
         public string City { get; set; }
-    
-        /// <summary>
-        /// Gets or sets state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public string State { get; set; }
     
         /// <summary>
         /// Gets or sets countryLetterCode.
@@ -59,6 +47,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postalCode", Required = Newtonsoft.Json.Required.Default)]
         public string PostalCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public string State { get; set; }
+    
+        /// <summary>
+        /// Gets or sets street.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "street", Required = Newtonsoft.Json.Required.Default)]
+        public string Street { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

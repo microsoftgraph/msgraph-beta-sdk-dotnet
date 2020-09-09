@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets notificationTemplates.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationTemplates", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<GovernanceNotificationTemplate> NotificationTemplates { get; set; }
-    
-        /// <summary>
         /// Gets or sets enabledTemplateTypes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabledTemplateTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EnabledTemplateTypes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notificationTemplates.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationTemplates", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<GovernanceNotificationTemplate> NotificationTemplates { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

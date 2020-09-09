@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets vppTokenId.
-        /// Identifier of the VPP token.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenId", Required = Newtonsoft.Json.Required.Default)]
-        public string VppTokenId { get; set; }
-    
-        /// <summary>
         /// Gets or sets appleId.
         /// The Apple Id associated with the given Apple Volume Purchase Program Token.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleId", Required = Newtonsoft.Json.Required.Default)]
         public string AppleId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets organizationName.
-        /// The organization associated with the Apple Volume Purchase Program Token.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizationName", Required = Newtonsoft.Json.Required.Default)]
-        public string OrganizationName { get; set; }
     
         /// <summary>
         /// Gets or sets availableLicenseCount.
@@ -59,11 +45,25 @@ namespace Microsoft.Graph
         public Int32? AvailableLicenseCount { get; set; }
     
         /// <summary>
+        /// Gets or sets organizationName.
+        /// The organization associated with the Apple Volume Purchase Program Token.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizationName", Required = Newtonsoft.Json.Required.Default)]
+        public string OrganizationName { get; set; }
+    
+        /// <summary>
         /// Gets or sets usedLicenseCount.
         /// The number of VPP licenses in use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UsedLicenseCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets vppTokenId.
+        /// Identifier of the VPP token.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenId", Required = Newtonsoft.Json.Required.Default)]
+        public string VppTokenId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

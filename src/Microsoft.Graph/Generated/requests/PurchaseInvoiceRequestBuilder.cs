@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Currency.
+        /// </summary>
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        public ICurrencyRequestBuilder Currency
+        {
+            get
+            {
+                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for PurchaseInvoiceLines.
         /// </summary>
         /// <returns>The <see cref="IPurchaseInvoicePurchaseInvoiceLinesCollectionRequestBuilder"/>.</returns>
@@ -71,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new VendorRequestBuilder(this.AppendSegmentToRequestUrl("vendor"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        public ICurrencyRequestBuilder Currency
-        {
-            get
-            {
-                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
             }
         }
     

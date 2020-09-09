@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new ISalesQuoteLineRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Item.
-        /// </summary>
-        /// <returns>The <see cref="IItemRequestBuilder"/>.</returns>
-        IItemRequestBuilder Item { get; }
-
-        /// <summary>
         /// Gets the request builder for Account.
         /// </summary>
         /// <returns>The <see cref="IAccountRequestBuilder"/>.</returns>
         IAccountRequestBuilder Account { get; }
+
+        /// <summary>
+        /// Gets the request builder for Item.
+        /// </summary>
+        /// <returns>The <see cref="IItemRequestBuilder"/>.</returns>
+        IItemRequestBuilder Item { get; }
     
     }
 }

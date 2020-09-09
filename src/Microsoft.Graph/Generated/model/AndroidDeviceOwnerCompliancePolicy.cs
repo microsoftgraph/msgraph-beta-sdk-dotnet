@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets advanced threat protection required security level.
+        /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel { get; set; }
+    
+        /// <summary>
         /// Gets or sets device threat protection enabled.
         /// Require that devices have enabled device threat protection.
         /// </summary>
@@ -45,32 +52,11 @@ namespace Microsoft.Graph
         public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }
     
         /// <summary>
-        /// Gets or sets advanced threat protection required security level.
-        /// MDATP Require Mobile Threat Protection minimum risk level to report noncompliance.
+        /// Gets or sets min android security patch level.
+        /// Minimum Android security patch level.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security require safety net attestation basic integrity.
-        /// Require the device to pass the SafetyNet basic integrity check.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireSafetyNetAttestationBasicIntegrity", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SecurityRequireSafetyNetAttestationBasicIntegrity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security require safety net attestation certified device.
-        /// Require the device to pass the SafetyNet certified device check.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireSafetyNetAttestationCertifiedDevice", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SecurityRequireSafetyNetAttestationCertifiedDevice { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os minimum version.
-        /// Minimum Android version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMinimumVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minAndroidSecurityPatchLevel", Required = Newtonsoft.Json.Required.Default)]
+        public string MinAndroidSecurityPatchLevel { get; set; }
     
         /// <summary>
         /// Gets or sets os maximum version.
@@ -80,18 +66,18 @@ namespace Microsoft.Graph
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets min android security patch level.
-        /// Minimum Android security patch level.
+        /// Gets or sets os minimum version.
+        /// Minimum Android version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minAndroidSecurityPatchLevel", Required = Newtonsoft.Json.Required.Default)]
-        public string MinAndroidSecurityPatchLevel { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMinimumVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets password required.
-        /// Require a password to unlock device.
+        /// Gets or sets password expiration days.
+        /// Number of days before the password expires. Valid values 1 to 365
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordRequired { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
         /// Gets or sets password minimum length.
@@ -143,13 +129,6 @@ namespace Microsoft.Graph
         public Int32? PasswordMinimumUpperCaseCharacters { get; set; }
     
         /// <summary>
-        /// Gets or sets password required type.
-        /// Type of characters in password
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
-    
-        /// <summary>
         /// Gets or sets password minutes of inactivity before lock.
         /// Minutes of inactivity before a password is required.
         /// </summary>
@@ -157,18 +136,39 @@ namespace Microsoft.Graph
         public Int32? PasswordMinutesOfInactivityBeforeLock { get; set; }
     
         /// <summary>
-        /// Gets or sets password expiration days.
-        /// Number of days before the password expires. Valid values 1 to 365
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordExpirationDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordExpirationDays { get; set; }
-    
-        /// <summary>
         /// Gets or sets password previous password count to block.
         /// Number of previous passwords to block. Valid values 1 to 24
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPreviousPasswordCountToBlock", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordPreviousPasswordCountToBlock { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password required.
+        /// Require a password to unlock device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password required type.
+        /// Type of characters in password
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security require safety net attestation basic integrity.
+        /// Require the device to pass the SafetyNet basic integrity check.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireSafetyNetAttestationBasicIntegrity", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityRequireSafetyNetAttestationBasicIntegrity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security require safety net attestation certified device.
+        /// Require the device to pass the SafetyNet certified device check.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityRequireSafetyNetAttestationCertifiedDevice", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityRequireSafetyNetAttestationCertifiedDevice { get; set; }
     
         /// <summary>
         /// Gets or sets storage require encryption.

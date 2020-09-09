@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AllowedUsers.
-        /// </summary>
-        /// <returns>The <see cref="IPrinterAllowedUsersCollectionRequestBuilder"/>.</returns>
-        public IPrinterAllowedUsersCollectionRequestBuilder AllowedUsers
-        {
-            get
-            {
-                return new PrinterAllowedUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedUsers"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AllowedGroups.
         /// </summary>
         /// <returns>The <see cref="IPrinterAllowedGroupsCollectionRequestBuilder"/>.</returns>
@@ -75,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Share.
+        /// Gets the request builder for AllowedUsers.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareWithReferenceRequestBuilder"/>.</returns>
-        public IPrinterShareWithReferenceRequestBuilder Share
+        /// <returns>The <see cref="IPrinterAllowedUsersCollectionRequestBuilder"/>.</returns>
+        public IPrinterAllowedUsersCollectionRequestBuilder AllowedUsers
         {
             get
             {
-                return new PrinterShareWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("share"), this.Client);
+                return new PrinterAllowedUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedUsers"), this.Client);
             }
         }
 
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PrinterConnectorsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("connectors"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Share.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterShareWithReferenceRequestBuilder"/>.</returns>
+        public IPrinterShareWithReferenceRequestBuilder Share
+        {
+            get
+            {
+                return new PrinterShareWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("share"), this.Client);
             }
         }
 

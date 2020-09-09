@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string AzureStorageUri { get; set; }
     
         /// <summary>
-        /// Gets or sets is committed.
-        /// A value indicating whether the file is committed.
+        /// Gets or sets azure storage uri expiration date time.
+        /// The time the Azure storage Uri expires.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCommitted", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsCommitted { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureStorageUriExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AzureStorageUriExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -50,6 +50,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is committed.
+        /// A value indicating whether the file is committed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCommitted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsCommitted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is dependency.
+        /// Whether the content file is a dependency for the main content file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDependency", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDependency { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is framework file.
+        /// A value indicating whether the file is a framework file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFrameworkFile", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFrameworkFile { get; set; }
+    
+        /// <summary>
+        /// Gets or sets manifest.
+        /// The manifest information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manifest", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] Manifest { get; set; }
     
         /// <summary>
         /// Gets or sets name.
@@ -73,39 +101,11 @@ namespace Microsoft.Graph
         public Int64? SizeEncrypted { get; set; }
     
         /// <summary>
-        /// Gets or sets azure storage uri expiration date time.
-        /// The time the Azure storage Uri expires.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureStorageUriExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AzureStorageUriExpirationDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets manifest.
-        /// The manifest information.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manifest", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] Manifest { get; set; }
-    
-        /// <summary>
         /// Gets or sets upload state.
         /// The state of the current upload request. Possible values are: success, transientError, error, unknown, azureStorageUriRequestSuccess, azureStorageUriRequestPending, azureStorageUriRequestFailed, azureStorageUriRequestTimedOut, azureStorageUriRenewalSuccess, azureStorageUriRenewalPending, azureStorageUriRenewalFailed, azureStorageUriRenewalTimedOut, commitFileSuccess, commitFilePending, commitFileFailed, commitFileTimedOut.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadState", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppContentFileUploadState? UploadState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is framework file.
-        /// A value indicating whether the file is a framework file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFrameworkFile", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsFrameworkFile { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is dependency.
-        /// Whether the content file is a dependency for the main content file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDependency", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsDependency { get; set; }
     
     }
 }

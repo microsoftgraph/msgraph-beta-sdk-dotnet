@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets description.
+        /// Description of the Role definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Display Name of the Role definition.
         /// </summary>
@@ -38,11 +45,18 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
-        /// Description of the Role definition.
+        /// Gets or sets is built in.
+        /// Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBuiltIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is built in role definition.
+        /// Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltInRoleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBuiltInRoleDefinition { get; set; }
     
         /// <summary>
         /// Gets or sets permissions.
@@ -57,20 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rolePermissions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RolePermission> RolePermissions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is built in role definition.
-        /// Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltInRoleDefinition", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsBuiltInRoleDefinition { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is built in.
-        /// Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsBuiltIn { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.

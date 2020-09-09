@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets text.
+        /// Gets or sets feedbackBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
-        public EducationItemBody Text { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedbackBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet FeedbackBy { get; set; }
     
         /// <summary>
         /// Gets or sets feedbackDateTime.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public DateTimeOffset? FeedbackDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets feedbackBy.
+        /// Gets or sets text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedbackBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet FeedbackBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        public EducationItemBody Text { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IUserExperienceAnalyticsRegressionSummaryRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ModelRegression.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder"/>.</returns>
-        IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder ModelRegression { get; }
-
-        /// <summary>
         /// Gets the request builder for ManufacturerRegression.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionRequestBuilder"/>.</returns>
         IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionRequestBuilder ManufacturerRegression { get; }
+
+        /// <summary>
+        /// Gets the request builder for ModelRegression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder ModelRegression { get; }
 
         /// <summary>
         /// Gets the request builder for OperatingSystemRegression.

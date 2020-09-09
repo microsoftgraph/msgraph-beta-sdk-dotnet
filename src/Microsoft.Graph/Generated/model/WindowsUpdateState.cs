@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets device id.
-        /// The id of the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user id.
-        /// The id of the user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
         /// Gets or sets device display name.
         /// Device display name.
         /// </summary>
@@ -52,25 +38,11 @@ namespace Microsoft.Graph
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets user principal name.
-        /// User principal name.
+        /// Gets or sets device id.
+        /// The id of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// Windows udpate status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsUpdateStatus? Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets quality update version.
-        /// The Quality Update Version of the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityUpdateVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string QualityUpdateVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets feature update version.
@@ -92,6 +64,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets quality update version.
+        /// The Quality Update Version of the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityUpdateVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string QualityUpdateVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// Windows udpate status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsUpdateStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// The id of the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// User principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

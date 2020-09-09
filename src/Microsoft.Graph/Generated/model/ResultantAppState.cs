@@ -25,6 +25,11 @@ namespace Microsoft.Graph
         Installed = 1,
 	
         /// <summary>
+        /// Not Applicable
+        /// </summary>
+        NotApplicable = -1,
+	
+        /// <summary>
         /// Failed
         /// </summary>
         Failed = 2,
@@ -48,11 +53,6 @@ namespace Microsoft.Graph
         /// Unknown
         /// </summary>
         Unknown = 99,
-	
-        /// <summary>
-        /// Not Applicable
-        /// </summary>
-        NotApplicable = -1,
 	
     }
 }

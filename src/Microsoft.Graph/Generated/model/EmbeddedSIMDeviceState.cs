@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets modified date time.
-        /// The time the embedded SIM device status was last modified. Updated service side.
+        /// Gets or sets device name.
+        /// Device name to which the subscription was provisioned e.g. DESKTOP-JOE
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
@@ -52,25 +52,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets universal integrated circuit card identifier.
-        /// The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
+        /// Gets or sets modified date time.
+        /// The time the embedded SIM device status was last modified. Updated service side.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "universalIntegratedCircuitCardIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string UniversalIntegratedCircuitCardIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device name.
-        /// Device name to which the subscription was provisioned e.g. DESKTOP-JOE
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user name.
-        /// Username which the subscription was provisioned to e.g. joe@contoso.com
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.
@@ -85,6 +71,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stateDetails", Required = Newtonsoft.Json.Required.Default)]
         public string StateDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets universal integrated circuit card identifier.
+        /// The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "universalIntegratedCircuitCardIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string UniversalIntegratedCircuitCardIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user name.
+        /// Username which the subscription was provisioned to e.g. joe@contoso.com
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserName { get; set; }
     
     }
 }

@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets minimumLength.
-        /// The minimum permitted string length
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLength", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MinimumLength { get; set; }
-    
-        /// <summary>
         /// Gets or sets maximumLength.
         /// The maximum permitted string length
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumLength", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaximumLength { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimumLength.
+        /// The minimum permitted string length
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLength", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MinimumLength { get; set; }
     
     }
 }

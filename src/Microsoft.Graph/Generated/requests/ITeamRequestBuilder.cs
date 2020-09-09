@@ -38,46 +38,16 @@ namespace Microsoft.Graph
         IScheduleRequestBuilder Schedule { get; }
 
         /// <summary>
-        /// Gets the request builder for Group.
-        /// </summary>
-        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
-        IGroupWithReferenceRequestBuilder Group { get; }
-
-        /// <summary>
-        /// Gets the request builder for Template.
-        /// </summary>
-        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
-        ITeamsTemplateWithReferenceRequestBuilder Template { get; }
-
-        /// <summary>
-        /// Gets the request builder for Photo.
-        /// </summary>
-        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
-        IProfilePhotoRequestBuilder Photo { get; }
-
-        /// <summary>
-        /// Gets the request builder for Owners.
-        /// </summary>
-        /// <returns>The <see cref="ITeamOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
-        ITeamOwnersCollectionWithReferencesRequestBuilder Owners { get; }
-
-        /// <summary>
-        /// Gets the request builder for Members.
-        /// </summary>
-        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
-        ITeamMembersCollectionRequestBuilder Members { get; }
-
-        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
         ITeamChannelsCollectionRequestBuilder Channels { get; }
 
         /// <summary>
-        /// Gets the request builder for PrimaryChannel.
+        /// Gets the request builder for Group.
         /// </summary>
-        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
-        IChannelRequestBuilder PrimaryChannel { get; }
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        IGroupWithReferenceRequestBuilder Group { get; }
 
         /// <summary>
         /// Gets the request builder for InstalledApps.
@@ -86,22 +56,47 @@ namespace Microsoft.Graph
         ITeamInstalledAppsCollectionRequestBuilder InstalledApps { get; }
 
         /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="ITeamMembersCollectionRequestBuilder"/>.</returns>
+        ITeamMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="ITeamOperationsCollectionRequestBuilder"/>.</returns>
         ITeamOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="ITeamOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        ITeamOwnersCollectionWithReferencesRequestBuilder Owners { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photo.
+        /// </summary>
+        /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
+        IProfilePhotoRequestBuilder Photo { get; }
+
+        /// <summary>
+        /// Gets the request builder for PrimaryChannel.
+        /// </summary>
+        /// <returns>The <see cref="IChannelRequestBuilder"/>.</returns>
+        IChannelRequestBuilder PrimaryChannel { get; }
+
+        /// <summary>
+        /// Gets the request builder for Template.
+        /// </summary>
+        /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
+        ITeamsTemplateWithReferenceRequestBuilder Template { get; }
     
         /// <summary>
-        /// Gets the request builder for TeamSendActivityNotification.
+        /// Gets the request builder for TeamArchive.
         /// </summary>
-        /// <returns>The <see cref="ITeamSendActivityNotificationRequestBuilder"/>.</returns>
-        ITeamSendActivityNotificationRequestBuilder SendActivityNotification(
-            TeamworkActivityTopic topic = null,
-            string activityType = null,
-            Int64? chainId = null,
-            ItemBody previewText = null,
-            IEnumerable<KeyValuePair> templateParameters = null,
-            TeamworkNotificationRecipient recipient = null);
+        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
+        ITeamArchiveRequestBuilder Archive(
+            bool? shouldSetSpoSiteReadOnlyForMembers = null);
 
         /// <summary>
         /// Gets the request builder for TeamClone.
@@ -116,11 +111,22 @@ namespace Microsoft.Graph
             string classification = null);
 
         /// <summary>
-        /// Gets the request builder for TeamArchive.
+        /// Gets the request builder for TeamCompleteMigration.
         /// </summary>
-        /// <returns>The <see cref="ITeamArchiveRequestBuilder"/>.</returns>
-        ITeamArchiveRequestBuilder Archive(
-            bool? shouldSetSpoSiteReadOnlyForMembers = null);
+        /// <returns>The <see cref="ITeamCompleteMigrationRequestBuilder"/>.</returns>
+        ITeamCompleteMigrationRequestBuilder CompleteMigration();
+
+        /// <summary>
+        /// Gets the request builder for TeamSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="ITeamSendActivityNotificationRequestBuilder"/>.</returns>
+        ITeamSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationRecipient recipient = null);
 
         /// <summary>
         /// Gets the request builder for TeamUnarchive.

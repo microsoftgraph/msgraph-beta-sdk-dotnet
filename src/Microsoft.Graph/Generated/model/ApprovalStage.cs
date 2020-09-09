@@ -37,6 +37,18 @@ namespace Microsoft.Graph
         public Int32? ApprovalStageTimeOutInDays { get; set; }
     
         /// <summary>
+        /// Gets or sets escalationApprovers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "escalationApprovers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<UserSet> EscalationApprovers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets escalationTimeInMinutes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "escalationTimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EscalationTimeInMinutes { get; set; }
+    
+        /// <summary>
         /// Gets or sets isApproverJustificationRequired.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isApproverJustificationRequired", Required = Newtonsoft.Json.Required.Default)]
@@ -49,22 +61,10 @@ namespace Microsoft.Graph
         public bool? IsEscalationEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets escalationTimeInMinutes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "escalationTimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EscalationTimeInMinutes { get; set; }
-    
-        /// <summary>
         /// Gets or sets primaryApprovers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryApprovers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UserSet> PrimaryApprovers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets escalationApprovers.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "escalationApprovers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<UserSet> EscalationApprovers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

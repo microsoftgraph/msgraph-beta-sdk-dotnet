@@ -43,16 +43,16 @@ namespace Microsoft.Graph
         public string SourcePropertyName { get; set; }
     
         /// <summary>
-        /// Gets or sets targetPropertyName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetPropertyName", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetPropertyName { get; set; }
-    
-        /// <summary>
         /// Gets or sets targetDomain.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDomain", Required = Newtonsoft.Json.Required.Default)]
         public string TargetDomain { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targetPropertyName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetPropertyName", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetPropertyName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

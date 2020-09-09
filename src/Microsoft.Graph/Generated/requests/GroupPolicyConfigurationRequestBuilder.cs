@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DefinitionValues.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyConfigurationDefinitionValuesCollectionRequestBuilder"/>.</returns>
-        public IGroupPolicyConfigurationDefinitionValuesCollectionRequestBuilder DefinitionValues
-        {
-            get
-            {
-                return new GroupPolicyConfigurationDefinitionValuesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("definitionValues"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyConfigurationAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupPolicyConfigurationAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DefinitionValues.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyConfigurationDefinitionValuesCollectionRequestBuilder"/>.</returns>
+        public IGroupPolicyConfigurationDefinitionValuesCollectionRequestBuilder DefinitionValues
+        {
+            get
+            {
+                return new GroupPolicyConfigurationDefinitionValuesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("definitionValues"), this.Client);
             }
         }
     

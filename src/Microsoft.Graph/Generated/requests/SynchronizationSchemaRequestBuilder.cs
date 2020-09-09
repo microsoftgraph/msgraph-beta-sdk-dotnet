@@ -80,17 +80,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for SynchronizationSchemaFunctions.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationSchemaFunctionsRequestBuilder"/>.</returns>
-        public ISynchronizationSchemaFunctionsRequestBuilder Functions()
-        {
-            return new SynchronizationSchemaFunctionsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.functions"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for SynchronizationSchemaFilterOperators.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationSchemaFilterOperatorsRequestBuilder"/>.</returns>
@@ -98,6 +87,17 @@ namespace Microsoft.Graph
         {
             return new SynchronizationSchemaFilterOperatorsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.filterOperators"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SynchronizationSchemaFunctions.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationSchemaFunctionsRequestBuilder"/>.</returns>
+        public ISynchronizationSchemaFunctionsRequestBuilder Functions()
+        {
+            return new SynchronizationSchemaFunctionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.functions"),
                 this.Client);
         }
     

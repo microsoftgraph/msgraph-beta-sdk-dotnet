@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets ip v4prefix.
-        /// The IPv4 subnet to be connected to. e.g. 10.0.0.0/8
+        /// Gets or sets dns suffix list.
+        /// Valid DNS suffixes for the current network. e.g. seattle.contoso.com
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Prefix", Required = Newtonsoft.Json.Required.Default)]
-        public string IpV4Prefix { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ip v4gateway.
-        /// The IPv4 gateway address. e.g. 10.0.0.0
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Gateway", Required = Newtonsoft.Json.Required.Default)]
-        public string IpV4Gateway { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DnsSuffixList { get; set; }
     
         /// <summary>
         /// Gets or sets ip v4dhcpserver.
@@ -59,11 +52,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> IpV4DNSServerList { get; set; }
     
         /// <summary>
-        /// Gets or sets dns suffix list.
-        /// Valid DNS suffixes for the current network. e.g. seattle.contoso.com
+        /// Gets or sets ip v4gateway.
+        /// The IPv4 gateway address. e.g. 10.0.0.0
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DnsSuffixList { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Gateway", Required = Newtonsoft.Json.Required.Default)]
+        public string IpV4Gateway { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ip v4prefix.
+        /// The IPv4 subnet to be connected to. e.g. 10.0.0.0/8
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Prefix", Required = Newtonsoft.Json.Required.Default)]
+        public string IpV4Prefix { get; set; }
     
     }
 }

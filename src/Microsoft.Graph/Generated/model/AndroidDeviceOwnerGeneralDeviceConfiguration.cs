@@ -101,76 +101,6 @@ namespace Microsoft.Graph
         public bool? CertificateCredentialConfigurationDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets microsoft launcher configuration enabled.
-        /// Indicates whether or not to you want configure Microsoft Launcher.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftLauncherConfigurationEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher custom wallpaper enabled.
-        /// Indicates whether or not to configure the wallpaper on the targeted devices.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherCustomWallpaperEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftLauncherCustomWallpaperEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher custom wallpaper image url.
-        /// Indicates the URL for the image file to use as the wallpaper on the targeted devices.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherCustomWallpaperImageUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string MicrosoftLauncherCustomWallpaperImageUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher custom wallpaper allow user modification.
-        /// Indicates whether or not the user can modify the wallpaper to personalize their device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherCustomWallpaperAllowUserModification", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftLauncherCustomWallpaperAllowUserModification { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher feed enabled.
-        /// Indicates whether or not you want to enable the launcher feed on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherFeedEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftLauncherFeedEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher feed allow user modification.
-        /// Indicates whether or not the user can modify the launcher feed on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherFeedAllowUserModification", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftLauncherFeedAllowUserModification { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher dock presence configuration.
-        /// Indicates whether or not you want to configure the device dock.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherDockPresenceConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public MicrosoftLauncherDockPresence? MicrosoftLauncherDockPresenceConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher dock presence allow user modification.
-        /// Indicates whether or not the user can modify the device dock configuration on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherDockPresenceAllowUserModification", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftLauncherDockPresenceAllowUserModification { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft launcher search bar placement configuration.
-        /// Indicates the search bar placement configuration on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherSearchBarPlacementConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public MicrosoftLauncherSearchBarPlacement? MicrosoftLauncherSearchBarPlacementConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enrollment profile.
-        /// Indicates which enrollment profile you want to configure.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentProfile", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile { get; set; }
-    
-        /// <summary>
         /// Gets or sets data roaming blocked.
         /// Indicates whether or not to block a user from data roaming.
         /// </summary>
@@ -185,11 +115,11 @@ namespace Microsoft.Graph
         public bool? DateTimeConfigurationBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets factory reset device administrator emails.
-        /// List of Google account emails that will be required to authenticate after a device is factory reset before it can be set up.
+        /// Gets or sets enrollment profile.
+        /// Indicates which enrollment profile you want to configure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryResetDeviceAdministratorEmails", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> FactoryResetDeviceAdministratorEmails { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentProfile", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile { get; set; }
     
         /// <summary>
         /// Gets or sets factory reset blocked.
@@ -197,6 +127,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryResetBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? FactoryResetBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets factory reset device administrator emails.
+        /// List of Google account emails that will be required to authenticate after a device is factory reset before it can be set up.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryResetDeviceAdministratorEmails", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> FactoryResetDeviceAdministratorEmails { get; set; }
     
         /// <summary>
         /// Gets or sets global proxy.
@@ -213,32 +150,81 @@ namespace Microsoft.Graph
         public bool? GoogleAccountsBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode apps.
+        /// A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> KioskModeApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode bluetooth configuration enabled.
+        /// Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBluetoothConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeBluetoothConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode debug menu easy access enabled.
+        /// Whether or not to allow a user to easy access to the debug menu in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeDebugMenuEasyAccessEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeDebugMenuEasyAccessEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode exit code.
+        /// Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeExitCode", Required = Newtonsoft.Json.Required.Default)]
+        public string KioskModeExitCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode flashlight configuration enabled.
+        /// Whether or not to allow a user to use the flashlight in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeFlashlightConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeFlashlightConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode folder icon.
+        /// Folder icon configuration for managed home screen in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeFolderIcon", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode icon size.
+        /// Icon size configuration for managed home screen in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeIconSize", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed settings entry disabled.
+        /// Whether or not to display the Managed Settings entry point on the managed home screen in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeManagedSettingsEntryDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeManagedSettingsEntryDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode media volume configuration enabled.
+        /// Whether or not to allow a user to change the media volume in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeMediaVolumeConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeMediaVolumeConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode screen orientation.
+        /// Screen orientation configuration for managed home screen in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenOrientation", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerKioskModeScreenOrientation? KioskModeScreenOrientation { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode screen saver configuration enabled.
         /// Whether or not to enable screen saver mode or not in Kiosk Mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeScreenSaverConfigurationEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode screen saver image url.
-        /// URL for an image that will be the device's screen saver in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverImageUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string KioskModeScreenSaverImageUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode screen saver display time in seconds.
-        /// The number of seconds that the device will display the screen saver for in Kiosk Mode. Valid values 0 to 9999999
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverDisplayTimeInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? KioskModeScreenSaverDisplayTimeInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode screen saver start delay in seconds.
-        /// The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverStartDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? KioskModeScreenSaverStartDelayInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode screen saver detect media disabled.
@@ -248,25 +234,39 @@ namespace Microsoft.Graph
         public bool? KioskModeScreenSaverDetectMediaDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk mode apps.
-        /// A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
+        /// Gets or sets kiosk mode screen saver display time in seconds.
+        /// The number of seconds that the device will display the screen saver for in Kiosk Mode. Valid values 0 to 9999999
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeApps", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AppListItem> KioskModeApps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverDisplayTimeInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? KioskModeScreenSaverDisplayTimeInSeconds { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk mode wallpaper url.
-        /// URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.
+        /// Gets or sets kiosk mode screen saver image url.
+        /// URL for an image that will be the device's screen saver in Kiosk Mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeWallpaperUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string KioskModeWallpaperUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverImageUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string KioskModeScreenSaverImageUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk mode exit code.
-        /// Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
+        /// Gets or sets kiosk mode screen saver start delay in seconds.
+        /// The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeExitCode", Required = Newtonsoft.Json.Required.Default)]
-        public string KioskModeExitCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenSaverStartDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? KioskModeScreenSaverStartDelayInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode show app notification badge.
+        /// Whether or not to display application notification badges in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeShowAppNotificationBadge", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeShowAppNotificationBadge { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode show device info.
+        /// Whether or not to allow a user to access basic device information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeShowDeviceInfo", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeShowDeviceInfo { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode virtual home button enabled.
@@ -283,81 +283,11 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerVirtualHomeButtonType? KioskModeVirtualHomeButtonType { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk mode bluetooth configuration enabled.
-        /// Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.
+        /// Gets or sets kiosk mode wallpaper url.
+        /// URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeBluetoothConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeBluetoothConfigurationEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode wi fi configuration enabled.
-        /// Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeWiFiConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeWiFiConfigurationEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode flashlight configuration enabled.
-        /// Whether or not to allow a user to use the flashlight in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeFlashlightConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeFlashlightConfigurationEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode media volume configuration enabled.
-        /// Whether or not to allow a user to change the media volume in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeMediaVolumeConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeMediaVolumeConfigurationEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode show device info.
-        /// Whether or not to allow a user to access basic device information.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeShowDeviceInfo", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeShowDeviceInfo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode managed settings entry disabled.
-        /// Whether or not to display the Managed Settings entry point on the managed home screen in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeManagedSettingsEntryDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeManagedSettingsEntryDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode debug menu easy access enabled.
-        /// Whether or not to allow a user to easy access to the debug menu in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeDebugMenuEasyAccessEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeDebugMenuEasyAccessEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode show app notification badge.
-        /// Whether or not to display application notification badges in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeShowAppNotificationBadge", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskModeShowAppNotificationBadge { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode screen orientation.
-        /// Screen orientation configuration for managed home screen in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenOrientation", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidDeviceOwnerKioskModeScreenOrientation? KioskModeScreenOrientation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode icon size.
-        /// Icon size configuration for managed home screen in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeIconSize", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk mode folder icon.
-        /// Folder icon configuration for managed home screen in Kiosk Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeFolderIcon", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeWallpaperUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string KioskModeWallpaperUrl { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode wifi allowed ssids.
@@ -367,11 +297,81 @@ namespace Microsoft.Graph
         public IEnumerable<string> KioskModeWifiAllowedSsids { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode wi fi configuration enabled.
+        /// Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeWiFiConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeWiFiConfigurationEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets microphone force mute.
         /// Indicates whether or not to block unmuting the microphone on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microphoneForceMute", Required = Newtonsoft.Json.Required.Default)]
         public bool? MicrophoneForceMute { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher configuration enabled.
+        /// Indicates whether or not to you want configure Microsoft Launcher.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftLauncherConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher custom wallpaper allow user modification.
+        /// Indicates whether or not the user can modify the wallpaper to personalize their device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherCustomWallpaperAllowUserModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftLauncherCustomWallpaperAllowUserModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher custom wallpaper enabled.
+        /// Indicates whether or not to configure the wallpaper on the targeted devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherCustomWallpaperEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftLauncherCustomWallpaperEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher custom wallpaper image url.
+        /// Indicates the URL for the image file to use as the wallpaper on the targeted devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherCustomWallpaperImageUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string MicrosoftLauncherCustomWallpaperImageUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher dock presence allow user modification.
+        /// Indicates whether or not the user can modify the device dock configuration on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherDockPresenceAllowUserModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftLauncherDockPresenceAllowUserModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher dock presence configuration.
+        /// Indicates whether or not you want to configure the device dock.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherDockPresenceConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public MicrosoftLauncherDockPresence? MicrosoftLauncherDockPresenceConfiguration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher feed allow user modification.
+        /// Indicates whether or not the user can modify the launcher feed on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherFeedAllowUserModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftLauncherFeedAllowUserModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher feed enabled.
+        /// Indicates whether or not you want to enable the launcher feed on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherFeedEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftLauncherFeedEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft launcher search bar placement configuration.
+        /// Indicates the search bar placement configuration on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherSearchBarPlacementConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public MicrosoftLauncherSearchBarPlacement? MicrosoftLauncherSearchBarPlacementConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets network escape hatch allowed.
@@ -556,11 +556,11 @@ namespace Microsoft.Graph
         public bool? StorageBlockUsbFileTransfer { get; set; }
     
         /// <summary>
-        /// Gets or sets system update window start minutes after midnight.
-        /// Indicates the number of minutes after midnight that the system update window starts. Valid values 0 to 1440
+        /// Gets or sets system update install type.
+        /// The type of system update configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemUpdateWindowStartMinutesAfterMidnight", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SystemUpdateWindowStartMinutesAfterMidnight { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemUpdateInstallType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType { get; set; }
     
         /// <summary>
         /// Gets or sets system update window end minutes after midnight.
@@ -570,11 +570,11 @@ namespace Microsoft.Graph
         public Int32? SystemUpdateWindowEndMinutesAfterMidnight { get; set; }
     
         /// <summary>
-        /// Gets or sets system update install type.
-        /// The type of system update configuration.
+        /// Gets or sets system update window start minutes after midnight.
+        /// Indicates the number of minutes after midnight that the system update window starts. Valid values 0 to 1440
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemUpdateInstallType", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemUpdateWindowStartMinutesAfterMidnight", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SystemUpdateWindowStartMinutesAfterMidnight { get; set; }
     
         /// <summary>
         /// Gets or sets system windows blocked.

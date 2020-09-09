@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets enterpriseNetworkDomainNames.
-        /// This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected. These locations will be considered a safe destination for enterprise data to be shared to.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseNetworkDomainNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> EnterpriseNetworkDomainNames { get; set; }
-    
-        /// <summary>
         /// Gets or sets enterpriseCloudResources.
         /// Contains a list of enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudResources", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ProxiedDomain> EnterpriseCloudResources { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enterpriseIPRanges.
-        /// Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseIPRanges", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<IpRange> EnterpriseIPRanges { get; set; }
     
         /// <summary>
         /// Gets or sets enterpriseInternalProxyServers.
@@ -59,11 +45,25 @@ namespace Microsoft.Graph
         public IEnumerable<string> EnterpriseInternalProxyServers { get; set; }
     
         /// <summary>
+        /// Gets or sets enterpriseIPRanges.
+        /// Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseIPRanges", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IpRange> EnterpriseIPRanges { get; set; }
+    
+        /// <summary>
         /// Gets or sets enterpriseIPRangesAreAuthoritative.
         /// Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseIPRangesAreAuthoritative", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnterpriseIPRangesAreAuthoritative { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enterpriseNetworkDomainNames.
+        /// This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected. These locations will be considered a safe destination for enterprise data to be shared to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseNetworkDomainNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> EnterpriseNetworkDomainNames { get; set; }
     
         /// <summary>
         /// Gets or sets enterpriseProxyServers.

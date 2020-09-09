@@ -32,46 +32,10 @@ namespace Microsoft.Graph
         new IEntitlementManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AccessPackageCatalogs.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder"/>.</returns>
-        IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs { get; }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageResources.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder"/>.</returns>
-        IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder AccessPackageResources { get; }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageResourceRequests.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder"/>.</returns>
-        IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder AccessPackageResourceRequests { get; }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageResourceRoleScopes.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder"/>.</returns>
-        IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes { get; }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackages.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackagesCollectionRequestBuilder"/>.</returns>
-        IEntitlementManagementAccessPackagesCollectionRequestBuilder AccessPackages { get; }
-
-        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentPolicies.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentPoliciesCollectionRequestBuilder"/>.</returns>
         IEntitlementManagementAccessPackageAssignmentPoliciesCollectionRequestBuilder AccessPackageAssignmentPolicies { get; }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
-        IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments { get; }
 
         /// <summary>
         /// Gets the request builder for AccessPackageAssignmentRequests.
@@ -86,16 +50,52 @@ namespace Microsoft.Graph
         IEntitlementManagementAccessPackageAssignmentResourceRolesCollectionRequestBuilder AccessPackageAssignmentResourceRoles { get; }
 
         /// <summary>
-        /// Gets the request builder for Settings.
+        /// Gets the request builder for AccessPackageAssignments.
         /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementSettingsRequestBuilder"/>.</returns>
-        IEntitlementManagementSettingsRequestBuilder Settings { get; }
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageCatalogs.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs { get; }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResourceRequests.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder AccessPackageResourceRequests { get; }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResourceRoleScopes.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes { get; }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResources.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder AccessPackageResources { get; }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackages.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackagesCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackagesCollectionRequestBuilder AccessPackages { get; }
 
         /// <summary>
         /// Gets the request builder for ConnectedOrganizations.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementConnectedOrganizationsCollectionRequestBuilder"/>.</returns>
         IEntitlementManagementConnectedOrganizationsCollectionRequestBuilder ConnectedOrganizations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementSettingsRequestBuilder"/>.</returns>
+        IEntitlementManagementSettingsRequestBuilder Settings { get; }
     
     }
 }

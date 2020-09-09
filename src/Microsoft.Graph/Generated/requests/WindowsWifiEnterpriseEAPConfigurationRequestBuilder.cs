@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RootCertificatesForServerValidation.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
-        public IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation
-        {
-            get
-            {
-                return new WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificatesForServerValidation"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IWindowsCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new Windows81TrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForClientValidation"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificatesForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
+        public IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation
+        {
+            get
+            {
+                return new WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificatesForServerValidation"), this.Client);
             }
         }
     

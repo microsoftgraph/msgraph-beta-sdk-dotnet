@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets mentioned.
+        /// Gets or sets application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentioned", Required = Newtonsoft.Json.Required.Default)]
-        public EmailAddress Mentioned { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mention text.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentionText", Required = Newtonsoft.Json.Required.Default)]
-        public string MentionText { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "application", Required = Newtonsoft.Json.Required.Default)]
+        public string Application { get; set; }
     
         /// <summary>
         /// Gets or sets client reference.
@@ -61,22 +55,28 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets server created date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverCreatedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ServerCreatedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets deep link.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deepLink", Required = Newtonsoft.Json.Required.Default)]
         public string DeepLink { get; set; }
     
         /// <summary>
-        /// Gets or sets application.
+        /// Gets or sets mentioned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "application", Required = Newtonsoft.Json.Required.Default)]
-        public string Application { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentioned", Required = Newtonsoft.Json.Required.Default)]
+        public EmailAddress Mentioned { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mention text.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentionText", Required = Newtonsoft.Json.Required.Default)]
+        public string MentionText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets server created date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverCreatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ServerCreatedDateTime { get; set; }
     
     }
 }

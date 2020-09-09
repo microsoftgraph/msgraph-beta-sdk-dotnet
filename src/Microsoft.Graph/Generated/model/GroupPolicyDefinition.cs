@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets category path.
+        /// The localized full category path for the policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryPath", Required = Newtonsoft.Json.Required.Default)]
+        public string CategoryPath { get; set; }
+    
+        /// <summary>
         /// Gets or sets class type.
         /// Identifies the type of groups the policy can be applied to.
         /// </summary>
@@ -52,27 +59,6 @@ namespace Microsoft.Graph
         public string ExplainText { get; set; }
     
         /// <summary>
-        /// Gets or sets category path.
-        /// The localized full category path for the policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryPath", Required = Newtonsoft.Json.Required.Default)]
-        public string CategoryPath { get; set; }
-    
-        /// <summary>
-        /// Gets or sets supported on.
-        /// Localized string used to specify what operating system or application version is affected by the policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedOn", Required = Newtonsoft.Json.Required.Default)]
-        public string SupportedOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets policy type.
-        /// Specifies the type of group policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyType", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicyType? PolicyType { get; set; }
-    
-        /// <summary>
         /// Gets or sets group policy category id.
         /// The category id of the parent category
         /// </summary>
@@ -87,11 +73,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets definition file.
-        /// The group policy file associated with the definition.
+        /// Gets or sets policy type.
+        /// Specifies the type of group policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionFile", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicyDefinitionFile DefinitionFile { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyType", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyType? PolicyType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets supported on.
+        /// Localized string used to specify what operating system or application version is affected by the policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedOn", Required = Newtonsoft.Json.Required.Default)]
+        public string SupportedOn { get; set; }
     
         /// <summary>
         /// Gets or sets category.
@@ -99,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyCategory Category { get; set; }
+    
+        /// <summary>
+        /// Gets or sets definition file.
+        /// The group policy file associated with the definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionFile", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyDefinitionFile DefinitionFile { get; set; }
     
         /// <summary>
         /// Gets or sets presentations.

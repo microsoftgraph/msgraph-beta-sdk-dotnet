@@ -31,48 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets scep server urls.
-        /// SCEP Server Url(s).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scepServerUrls", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> ScepServerUrls { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject name format string.
-        /// Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
-        public string SubjectNameFormatString { get; set; }
-    
-        /// <summary>
-        /// Gets or sets key usage.
-        /// SCEP Key Usage.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
-        public KeyUsages? KeyUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets key size.
-        /// SCEP Key Size.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keySize", Required = Newtonsoft.Json.Required.Default)]
-        public KeySize? KeySize { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extended key usages.
-        /// Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extendedKeyUsages", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ExtendedKeyUsage> ExtendedKeyUsages { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject alternative name format string.
-        /// Custom String that defines the AAD Attribute.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameFormatString", Required = Newtonsoft.Json.Required.Default)]
-        public string SubjectAlternativeNameFormatString { get; set; }
-    
-        /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate
         /// </summary>
@@ -87,11 +45,46 @@ namespace Microsoft.Graph
         public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
     
         /// <summary>
-        /// Gets or sets root certificate.
-        /// Trusted Root Certificate.
+        /// Gets or sets extended key usages.
+        /// Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificate", Required = Newtonsoft.Json.Required.Default)]
-        public IosTrustedRootCertificate RootCertificate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extendedKeyUsages", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ExtendedKeyUsage> ExtendedKeyUsages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets key size.
+        /// SCEP Key Size.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keySize", Required = Newtonsoft.Json.Required.Default)]
+        public KeySize? KeySize { get; set; }
+    
+        /// <summary>
+        /// Gets or sets key usage.
+        /// SCEP Key Usage.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
+        public KeyUsages? KeyUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scep server urls.
+        /// SCEP Server Url(s).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scepServerUrls", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ScepServerUrls { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject alternative name format string.
+        /// Custom String that defines the AAD Attribute.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectAlternativeNameFormatString { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject name format string.
+        /// Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectNameFormatString { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.
@@ -99,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCertificateStates", Required = Newtonsoft.Json.Required.Default)]
         public IIosScepCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets root certificate.
+        /// Trusted Root Certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public IosTrustedRootCertificate RootCertificate { get; set; }
     
     }
 }

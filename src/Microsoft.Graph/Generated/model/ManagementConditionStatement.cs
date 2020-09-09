@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// The admin defined name of the management condition statement.
+        /// Gets or sets applicable platforms.
+        /// This is calculated from looking the management conditions associated to the management condition statement and finding the intersection of applicable platforms.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// The admin defined description of the management condition statement.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicablePlatforms", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DevicePlatformType> ApplicablePlatforms { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -52,18 +45,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets modified date time.
-        /// The time the management condition statement was last modified. Updated service side.
+        /// Gets or sets description.
+        /// The admin defined description of the management condition statement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets expression.
-        /// The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
+        /// Gets or sets display name.
+        /// The admin defined name of the management condition statement.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expression", Required = Newtonsoft.Json.Required.Default)]
-        public ManagementConditionExpression Expression { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets e tag.
@@ -73,11 +66,18 @@ namespace Microsoft.Graph
         public string ETag { get; set; }
     
         /// <summary>
-        /// Gets or sets applicable platforms.
-        /// This is calculated from looking the management conditions associated to the management condition statement and finding the intersection of applicable platforms.
+        /// Gets or sets expression.
+        /// The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicablePlatforms", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DevicePlatformType> ApplicablePlatforms { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expression", Required = Newtonsoft.Json.Required.Default)]
+        public ManagementConditionExpression Expression { get; set; }
+    
+        /// <summary>
+        /// Gets or sets modified date time.
+        /// The time the management condition statement was last modified. Updated service side.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets management conditions.

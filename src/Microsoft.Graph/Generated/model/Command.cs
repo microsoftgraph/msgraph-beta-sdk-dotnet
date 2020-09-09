@@ -31,34 +31,22 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Status", Required = Newtonsoft.Json.Required.Default)]
-        public string Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
-    
-        /// <summary>
         /// Gets or sets app service name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "AppServiceName", Required = Newtonsoft.Json.Required.Default)]
         public string AppServiceName { get; set; }
     
         /// <summary>
-        /// Gets or sets package family name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "PackageFamilyName", Required = Newtonsoft.Json.Required.Default)]
-        public string PackageFamilyName { get; set; }
-    
-        /// <summary>
         /// Gets or sets error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Error", Required = Newtonsoft.Json.Required.Default)]
         public string Error { get; set; }
+    
+        /// <summary>
+        /// Gets or sets package family name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "PackageFamilyName", Required = Newtonsoft.Json.Required.Default)]
+        public string PackageFamilyName { get; set; }
     
         /// <summary>
         /// Gets or sets payload.
@@ -77,6 +65,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "PostBackUri", Required = Newtonsoft.Json.Required.Default)]
         public string PostBackUri { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets responsepayload.

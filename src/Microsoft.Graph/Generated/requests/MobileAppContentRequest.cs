@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (mobileAppContentToInitialize != null && mobileAppContentToInitialize.AdditionalData != null)
             {
 
-                if (mobileAppContentToInitialize.Files != null && mobileAppContentToInitialize.Files.CurrentPage != null)
-                {
-                    mobileAppContentToInitialize.Files.AdditionalData = mobileAppContentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppContentToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppContentToInitialize.Files.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (mobileAppContentToInitialize.ContainedApps != null && mobileAppContentToInitialize.ContainedApps.CurrentPage != null)
                 {
                     mobileAppContentToInitialize.ContainedApps.AdditionalData = mobileAppContentToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         mobileAppContentToInitialize.ContainedApps.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (mobileAppContentToInitialize.Files != null && mobileAppContentToInitialize.Files.CurrentPage != null)
+                {
+                    mobileAppContentToInitialize.Files.AdditionalData = mobileAppContentToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    mobileAppContentToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        mobileAppContentToInitialize.Files.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

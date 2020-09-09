@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public InstallIntent? Intent { get; set; }
     
         /// <summary>
-        /// Gets or sets target.
-        /// The target group assignment defined by the admin.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets settings.
         /// The settings for target assignment defined by the admin.
         /// </summary>
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
         public string SourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// The target group assignment defined by the admin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }
 }

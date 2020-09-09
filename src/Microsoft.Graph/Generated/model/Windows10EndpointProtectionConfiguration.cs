@@ -31,11 +31,956 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets application guard allow file save on host.
+        /// Allow users to download files from Edge in the application guard container and save them on the host file system
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowFileSaveOnHost", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowFileSaveOnHost { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard allow persistence.
+        /// Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPersistence", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowPersistence { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard allow print to local printers.
+        /// Allow printing to Local Printers from Container
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToLocalPrinters", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowPrintToLocalPrinters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard allow print to network printers.
+        /// Allow printing to Network Printers from Container
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToNetworkPrinters", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowPrintToNetworkPrinters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard allow print to pdf.
+        /// Allow printing to PDF from Container
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToPDF", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowPrintToPDF { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard allow print to xps.
+        /// Allow printing to XPS from Container
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToXPS", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowPrintToXPS { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard allow virtual gpu.
+        /// Allow application guard to use virtual GPU
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowVirtualGPU", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardAllowVirtualGPU { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard block clipboard sharing.
+        /// Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockClipboardSharing", Required = Newtonsoft.Json.Required.Default)]
+        public ApplicationGuardBlockClipboardSharingType? ApplicationGuardBlockClipboardSharing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard block file transfer.
+        /// Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockFileTransfer", Required = Newtonsoft.Json.Required.Default)]
+        public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard block non enterprise content.
+        /// Block enterprise sites to load non-enterprise content, such as third party plug-ins
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockNonEnterpriseContent", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardBlockNonEnterpriseContent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard enabled.
+        /// Enable Windows Defender Application Guard
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard enabled options.
+        /// Enable Windows Defender Application Guard for newer Windows builds
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardEnabledOptions", Required = Newtonsoft.Json.Required.Default)]
+        public ApplicationGuardEnabledOptions? ApplicationGuardEnabledOptions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets application guard force auditing.
+        /// Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardForceAuditing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplicationGuardForceAuditing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app locker application control.
+        /// Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLockerApplicationControl", Required = Newtonsoft.Json.Required.Default)]
+        public AppLockerApplicationControlType? AppLockerApplicationControl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker allow standard user encryption.
+        /// Allows the admin to allow standard users to enable encrpytion during Azure AD Join.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerAllowStandardUserEncryption", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BitLockerAllowStandardUserEncryption { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker disable warning for other disk encryption.
+        /// Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerDisableWarningForOtherDiskEncryption", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BitLockerDisableWarningForOtherDiskEncryption { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker enable storage card encryption on mobile.
+        /// Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerEnableStorageCardEncryptionOnMobile", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BitLockerEnableStorageCardEncryptionOnMobile { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker encrypt device.
+        /// Allows the admin to require encryption to be turned on using BitLocker.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerEncryptDevice", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BitLockerEncryptDevice { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker fixed drive policy.
+        /// BitLocker Fixed Drive Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerFixedDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public BitLockerFixedDrivePolicy BitLockerFixedDrivePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker recovery password rotation.
+        /// This setting initiates a client-driven recovery password rotation after an OS drive recovery (either by using bootmgr or WinRE).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRecoveryPasswordRotation", Required = Newtonsoft.Json.Required.Default)]
+        public BitLockerRecoveryPasswordRotationType? BitLockerRecoveryPasswordRotation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker removable drive policy.
+        /// BitLocker Removable Drive Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRemovableDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bit locker system drive policy.
+        /// BitLocker System Drive Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerSystemDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public BitLockerSystemDrivePolicy BitLockerSystemDrivePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender additional guarded folders.
+        /// List of folder paths to be added to the list of protected folders
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdditionalGuardedFolders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderAdditionalGuardedFolders { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender adobe reader launch child process.
+        /// Value indicating the behavior of Adobe Reader from creating child processes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdobeReaderLaunchChildProcess", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderAdobeReaderLaunchChildProcess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender advanced ransomeware protection type.
+        /// Value indicating use of advanced protection against ransomeware
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdvancedRansomewareProtectionType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderAdvancedRansomewareProtectionType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow behavior monitoring.
+        /// Allows or disallows Windows Defender Behavior Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowBehaviorMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow cloud protection.
+        /// To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowCloudProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowCloudProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow end user access.
+        /// Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowEndUserAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow intrusion prevention system.
+        /// Allows or disallows Windows Defender Intrusion Prevention functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowIntrusionPreventionSystem", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowIntrusionPreventionSystem { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow on access protection.
+        /// Allows or disallows Windows Defender On Access Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowOnAccessProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow real time monitoring.
+        /// Allows or disallows Windows Defender Realtime Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowRealTimeMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow scan archive files.
+        /// Allows or disallows scanning of archives.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanArchiveFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow scan downloads.
+        /// Allows or disallows Windows Defender IOAVP Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanDownloads", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanDownloads { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow scan network files.
+        /// Allows or disallows a scanning of network files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanNetworkFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow scan removable drives during full scan.
+        /// Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanRemovableDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender allow scan scripts loaded in internet explorer.
+        /// Allows or disallows Windows Defender Script Scanning functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderAllowScanScriptsLoadedInInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender attack surface reduction excluded paths.
+        /// List of exe files and folders to be excluded from attack surface reduction rules
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAttackSurfaceReductionExcludedPaths", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderAttackSurfaceReductionExcludedPaths { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender block end user access.
+        /// Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderBlockEndUserAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender check for signatures before running scan.
+        /// This policy setting allows you to manage whether a check for new virus and spyware definitions will occur before running a scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCheckForSignaturesBeforeRunningScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderCheckForSignaturesBeforeRunningScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender cloud block level.
+        /// Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the "Join Microsoft MAPS" setting enabled in order to function.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCloudBlockLevel", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderCloudBlockLevelType? DefenderCloudBlockLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender cloud extended timeout in seconds.
+        /// Added in Windows 10, version 1709. This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe. Value type is integer, range is 0 - 50. This feature depends on three other MAPS settings the must all be enabled- "Configure the 'Block at First Sight' feature; "Join Microsoft MAPS"; "Send file samples when further analysis is required". Valid values 0 to 50
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCloudExtendedTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderCloudExtendedTimeoutInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender days before deleting quarantined malware.
+        /// Time period (in days) that quarantine items will be stored on the system. Valid values 0 to 90
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDaysBeforeDeletingQuarantinedMalware", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderDaysBeforeDeletingQuarantinedMalware { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender detected malware actions.
+        /// Allows an administrator to specify any valid threat severity levels and the corresponding default action ID to take.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDetectedMalwareActions", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderDetectedMalwareActions DefenderDetectedMalwareActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable behavior monitoring.
+        /// Allows or disallows Windows Defender Behavior Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableBehaviorMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable catchup full scan.
+        /// This policy setting allows you to configure catch-up scans for scheduled full scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCatchupFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable catchup quick scan.
+        /// This policy setting allows you to configure catch-up scans for scheduled quick scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupQuickScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCatchupQuickScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable cloud protection.
+        /// To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCloudProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCloudProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable intrusion prevention system.
+        /// Allows or disallows Windows Defender Intrusion Prevention functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableIntrusionPreventionSystem", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableIntrusionPreventionSystem { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable on access protection.
+        /// Allows or disallows Windows Defender On Access Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableOnAccessProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable real time monitoring.
+        /// Allows or disallows Windows Defender Realtime Monitoring functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableRealTimeMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan archive files.
+        /// Allows or disallows scanning of archives.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanArchiveFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan downloads.
+        /// Allows or disallows Windows Defender IOAVP Protection functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanDownloads", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanDownloads { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan network files.
+        /// Allows or disallows a scanning of network files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanNetworkFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan removable drives during full scan.
+        /// Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanRemovableDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable scan scripts loaded in internet explorer.
+        /// Allows or disallows Windows Defender Script Scanning functionality.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableScanScriptsLoadedInInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender email content execution.
+        /// Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEmailContentExecution", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderEmailContentExecution { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender email content execution type.
+        /// Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEmailContentExecutionType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderEmailContentExecutionType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender enable low cpu priority.
+        /// This policy setting allows you to enable or disable low CPU priority for scheduled scans.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableLowCpuPriority", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderEnableLowCpuPriority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender enable scan incoming mail.
+        /// Allows or disallows scanning of email.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableScanIncomingMail", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderEnableScanIncomingMail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender enable scan mapped network drives during full scan.
+        /// Allows or disallows a full scan of mapped network drives.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableScanMappedNetworkDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderEnableScanMappedNetworkDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender exploit protection xml.
+        /// Xml content containing information regarding exploit protection details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXml", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] DefenderExploitProtectionXml { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender exploit protection xml file name.
+        /// Name of the file from which DefenderExploitProtectionXml was obtained.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXmlFileName", Required = Newtonsoft.Json.Required.Default)]
+        public string DefenderExploitProtectionXmlFileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender file extensions to exclude.
+        /// File extensions to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFileExtensionsToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderFileExtensionsToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender files and folders to exclude.
+        /// Files and folder to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFilesAndFoldersToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderFilesAndFoldersToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender guarded folders allowed app paths.
+        /// List of paths to exe that are allowed to access protected folders
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderGuardedFoldersAllowedAppPaths", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderGuardedFoldersAllowedAppPaths { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender guard my folders type.
+        /// Value indicating the behavior of protected folders
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderGuardMyFoldersType", Required = Newtonsoft.Json.Required.Default)]
+        public FolderProtectionType? DefenderGuardMyFoldersType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender network protection type.
+        /// Value indicating the behavior of NetworkProtection
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderNetworkProtectionType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderNetworkProtectionType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office apps executable content creation or launch.
+        /// Value indicating the behavior of Office applications/macros creating or launching executable content
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsExecutableContentCreationOrLaunch", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderOfficeAppsExecutableContentCreationOrLaunch { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office apps executable content creation or launch type.
+        /// Value indicating the behavior of Office applications/macros creating or launching executable content
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsExecutableContentCreationOrLaunchType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderOfficeAppsExecutableContentCreationOrLaunchType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office apps launch child process.
+        /// Value indicating the behavior of Office application launching child processes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsLaunchChildProcess", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderOfficeAppsLaunchChildProcess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office apps launch child process type.
+        /// Value indicating the behavior of Office application launching child processes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsLaunchChildProcessType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderOfficeAppsLaunchChildProcessType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office apps other process injection.
+        /// Value indicating the behavior of  Office applications injecting into other processes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsOtherProcessInjection", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderOfficeAppsOtherProcessInjection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office apps other process injection type.
+        /// Value indicating the behavior of Office applications injecting into other processes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsOtherProcessInjectionType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderOfficeAppsOtherProcessInjectionType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office communication apps launch child process.
+        /// Value indicating the behavior of Office communication applications, including Microsoft Outlook, from creating child processes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeCommunicationAppsLaunchChildProcess", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderOfficeCommunicationAppsLaunchChildProcess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office macro code allow win32imports.
+        /// Value indicating the behavior of Win32 imports from Macro code in Office
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeMacroCodeAllowWin32Imports", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderOfficeMacroCodeAllowWin32Imports { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender office macro code allow win32imports type.
+        /// Value indicating the behavior of Win32 imports from Macro code in Office
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeMacroCodeAllowWin32ImportsType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderOfficeMacroCodeAllowWin32ImportsType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender potentially unwanted app action.
+        /// Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderPotentiallyUnwantedAppAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender prevent credential stealing type.
+        /// Value indicating if credential stealing from the Windows local security authority subsystem is permitted
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPreventCredentialStealingType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderPreventCredentialStealingType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender process creation.
+        /// Value indicating response to process creations originating from PSExec and WMI commands
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessCreation", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderProcessCreation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender process creation type.
+        /// Value indicating response to process creations originating from PSExec and WMI commands
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessCreationType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderProcessCreationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender processes to exclude.
+        /// Processes to exclude from scans and real time protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessesToExclude", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DefenderProcessesToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan direction.
+        /// Controls which sets of files should be monitored.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanDirection", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderRealtimeScanDirection? DefenderScanDirection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan max cpu percentage.
+        /// Represents the average CPU load factor for the Windows Defender scan (in percent). The default value is 50. Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMaxCpuPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderScanMaxCpuPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan type.
+        /// Selects whether to perform a quick scan or full scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderScanType? DefenderScanType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled quick scan time.
+        /// Selects the time of day that the Windows Defender quick scan should run. For example, a value of 0=12:00AM, a value of 60=1:00AM, a value of 120=2:00, and so on, up to a value of 1380=11:00PM. The default value is 120
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledQuickScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledQuickScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled scan day.
+        /// Selects the day that the Windows Defender scan should run.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanDay", Required = Newtonsoft.Json.Required.Default)]
+        public WeeklySchedule? DefenderScheduledScanDay { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled scan time.
+        /// Selects the time of day that the Windows Defender scan should run.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender script downloaded payload execution.
+        /// Value indicating the behavior of js/vbs executing payload downloaded from Internet
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptDownloadedPayloadExecution", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderScriptDownloadedPayloadExecution { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender script downloaded payload execution type.
+        /// Value indicating the behavior of js/vbs executing payload downloaded from Internet
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptDownloadedPayloadExecutionType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderScriptDownloadedPayloadExecutionType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender script obfuscated macro code.
+        /// Value indicating the behavior of obfuscated js/vbs/ps/macro code
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptObfuscatedMacroCode", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderScriptObfuscatedMacroCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender script obfuscated macro code type.
+        /// Value indicating the behavior of obfuscated js/vbs/ps/macro code
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptObfuscatedMacroCodeType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderScriptObfuscatedMacroCodeType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center block exploit protection override.
+        /// Indicates whether or not to block user from overriding Exploit Protection settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterBlockExploitProtectionOverride", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterBlockExploitProtectionOverride { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable account ui.
+        /// Used to disable the display of the account protection area.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableAccountUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableAccountUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable app browser ui.
+        /// Used to disable the display of the app and browser protection area.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableAppBrowserUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableAppBrowserUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable clear tpm ui.
+        /// Used to disable the display of the Clear TPM button.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableClearTpmUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableClearTpmUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable family ui.
+        /// Used to disable the display of the family options area.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableFamilyUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableFamilyUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable hardware ui.
+        /// Used to disable the display of the hardware protection area.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableHardwareUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableHardwareUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable health ui.
+        /// Used to disable the display of the device performance and health area.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableHealthUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableHealthUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable network ui.
+        /// Used to disable the display of the firewall and network protection area.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableNetworkUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableNetworkUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable notification area ui.
+        /// Used to disable the display of the notification area control. The user needs to either sign out and sign in or reboot the computer for this setting to take effect.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableNotificationAreaUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableNotificationAreaUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable ransomware ui.
+        /// Used to disable the display of the ransomware protection area. 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableRansomwareUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableRansomwareUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable secure boot ui.
+        /// Used to disable the display of the secure boot area under Device security.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableSecureBootUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableSecureBootUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable troubleshooting ui.
+        /// Used to disable the display of the security process troubleshooting under Device security.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableTroubleshootingUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableTroubleshootingUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable virus ui.
+        /// Used to disable the display of the virus and threat protection area.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableVirusUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableVirusUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center disable vulnerable tpm firmware update ui.
+        /// Used to disable the display of update TPM Firmware when a vulnerable firmware is detected.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center help email.
+        /// The email address that is displayed to users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterHelpEmail", Required = Newtonsoft.Json.Required.Default)]
+        public string DefenderSecurityCenterHelpEmail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center help phone.
+        /// The phone number or Skype ID that is displayed to users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterHelpPhone", Required = Newtonsoft.Json.Required.Default)]
+        public string DefenderSecurityCenterHelpPhone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center help url.
+        /// The help portal URL this is displayed to users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterHelpURL", Required = Newtonsoft.Json.Required.Default)]
+        public string DefenderSecurityCenterHelpURL { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center itcontact display.
+        /// Configure where to display IT contact information to end users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterITContactDisplay", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderSecurityCenterITContactDisplayType? DefenderSecurityCenterITContactDisplay { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center notifications from app.
+        /// Notifications to show from the displayed areas of app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterNotificationsFromApp", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderSecurityCenterNotificationsFromAppType? DefenderSecurityCenterNotificationsFromApp { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender security center organization display name.
+        /// The company name that is displayed to the users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterOrganizationDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DefenderSecurityCenterOrganizationDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender signature update interval in hours.
+        /// Specifies the interval (in hours) that will be used to check for signatures, so instead of using the ScheduleDay and ScheduleTime the check for new signatures will be set according to the interval. Valid values 0 to 24
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSignatureUpdateIntervalInHours", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderSignatureUpdateIntervalInHours { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender submit samples consent type.
+        /// Checks for the user consent level in Windows Defender to send data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSubmitSamplesConsentType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender untrusted executable.
+        /// Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedExecutable", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderUntrustedExecutable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender untrusted executable type.
+        /// Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedExecutableType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderUntrustedExecutableType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender untrusted usbprocess.
+        /// Value indicating response to untrusted and unsigned processes that run from USB
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedUSBProcess", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderUntrustedUSBProcess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender untrusted usbprocess type.
+        /// Value indicating response to untrusted and unsigned processes that run from USB
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedUSBProcessType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderAttackSurfaceType? DefenderUntrustedUSBProcessType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device guard enable secure boot with dma.
+        /// This property will be deprecated in May 2019 and will be replaced with property DeviceGuardSecureBootWithDMA. Specifies whether Platform Security Level is enabled at next reboot.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardEnableSecureBootWithDMA", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceGuardEnableSecureBootWithDMA { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device guard enable virtualization based security.
+        /// Turns On Virtualization Based Security(VBS).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardEnableVirtualizationBasedSecurity", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceGuardEnableVirtualizationBasedSecurity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device guard launch system guard.
+        /// Allows the IT admin to configure the launch of System Guard.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardLaunchSystemGuard", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? DeviceGuardLaunchSystemGuard { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device guard local system authority credential guard settings.
+        /// Turn on Credential Guard when Platform Security Level with Secure Boot and Virtualization Based Security are both enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardLocalSystemAuthorityCredentialGuardSettings", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceGuardLocalSystemAuthorityCredentialGuardType? DeviceGuardLocalSystemAuthorityCredentialGuardSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device guard secure boot with dma.
+        /// Specifies whether Platform Security Level is enabled at next reboot.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardSecureBootWithDMA", Required = Newtonsoft.Json.Required.Default)]
+        public SecureBootWithDMAType? DeviceGuardSecureBootWithDMA { get; set; }
+    
+        /// <summary>
         /// Gets or sets dma guard device enumeration policy.
         /// This policy is intended to provide additional security against external DMA capable devices. It allows for more control over the enumeration of external DMA capable devices incompatible with DMA Remapping/device memory isolation and sandboxing. This policy only takes effect when Kernel DMA Protection is supported and enabled by the system firmware. Kernel DMA Protection is a platform feature that cannot be controlled via policy or by end user. It has to be supported by the system at the time of manufacturing. To check if the system supports Kernel DMA Protection, please check the Kernel DMA Protection field in the Summary page of MSINFO32.exe.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dmaGuardDeviceEnumerationPolicy", Required = Newtonsoft.Json.Required.Default)]
         public DmaGuardDeviceEnumerationPolicyType? DmaGuardDeviceEnumerationPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall block stateful ftp.
+        /// Blocks stateful FTP connections to the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockStatefulFTP", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallBlockStatefulFTP { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall certificate revocation list check method.
+        /// Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallCertificateRevocationListCheckMethod", Required = Newtonsoft.Json.Required.Default)]
+        public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall idle timeout for security association in seconds.
+        /// Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIdleTimeoutForSecurityAssociationInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? FirewallIdleTimeoutForSecurityAssociationInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow dhcp.
+        /// Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowDHCP", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowDHCP { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow icmp.
+        /// Configures IPSec exemptions to allow ICMP
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowICMP", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowICMP { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow neighbor discovery.
+        /// Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowNeighborDiscovery", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowNeighborDiscovery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall ipsec exemptions allow router discovery.
+        /// Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowRouterDiscovery", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsAllowRouterDiscovery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall merge keying module settings.
+        /// If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallMergeKeyingModuleSettings", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallMergeKeyingModuleSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall packet queueing method.
+        /// Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPacketQueueingMethod", Required = Newtonsoft.Json.Required.Default)]
+        public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall pre shared key encoding method.
+        /// Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPreSharedKeyEncodingMethod", Required = Newtonsoft.Json.Required.Default)]
+        public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall profile domain.
+        /// Configures the firewall profile settings for domain networks
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfileDomain", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsFirewallNetworkProfile FirewallProfileDomain { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall profile private.
+        /// Configures the firewall profile settings for private networks
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePrivate", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsFirewallNetworkProfile FirewallProfilePrivate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets firewall profile public.
+        /// Configures the firewall profile settings for public networks
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePublic", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsFirewallNetworkProfile FirewallProfilePublic { get; set; }
     
         /// <summary>
         /// Gets or sets firewall rules.
@@ -45,25 +990,361 @@ namespace Microsoft.Graph
         public IEnumerable<WindowsFirewallRule> FirewallRules { get; set; }
     
         /// <summary>
+        /// Gets or sets lan manager authentication level.
+        /// This security setting determines which challenge/response authentication protocol is used for network logons.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lanManagerAuthenticationLevel", Required = Newtonsoft.Json.Required.Default)]
+        public LanManagerAuthenticationLevel? LanManagerAuthenticationLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lan manager workstation disable insecure guest logons.
+        /// If enabled,the SMB client will allow insecure guest logons. If not configured, the SMB client will reject insecure guest logons.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lanManagerWorkstationDisableInsecureGuestLogons", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LanManagerWorkstationDisableInsecureGuestLogons { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options administrator account name.
+        /// Define a different account name to be associated with the security identifier (SID) for the account ???Administrator???.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAdministratorAccountName", Required = Newtonsoft.Json.Required.Default)]
+        public string LocalSecurityOptionsAdministratorAccountName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options administrator elevation prompt behavior.
+        /// Define the behavior of the elevation prompt for admins in Admin Approval Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAdministratorElevationPromptBehavior", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsAdministratorElevationPromptBehaviorType? LocalSecurityOptionsAdministratorElevationPromptBehavior { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow anonymous enumeration of samaccounts and shares.
+        /// This security setting determines whether to allows anonymous users to perform certain activities, such as enumerating the names of domain accounts and network shares.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow pku2uauthentication requests.
+        /// Block PKU2U authentication requests to this device to use online identities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowPKU2UAuthenticationRequests", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsAllowPKU2UAuthenticationRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow remote calls to security accounts manager.
+        /// Edit the default Security Descriptor Definition Language string to allow or deny users and groups to make remote calls to the SAM.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager", Required = Newtonsoft.Json.Required.Default)]
+        public string LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow remote calls to security accounts manager helper bool.
+        /// UI helper boolean for LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager entity
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow system to be shut down without having to log on.
+        /// This security setting determines whether a computer can be shut down without having to log on to Windows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow uiaccess application elevation.
+        /// Allow UIAccess apps to prompt for elevation without using the secure desktop.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowUIAccessApplicationElevation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsAllowUIAccessApplicationElevation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow uiaccess applications for secure locations.
+        /// Allow UIAccess apps to prompt for elevation without using the secure desktop.Default is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowUIAccessApplicationsForSecureLocations", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options allow undock without having to logon.
+        /// Prevent a portable computer from being undocked without having to log in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowUndockWithoutHavingToLogon", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsAllowUndockWithoutHavingToLogon { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options block microsoft accounts.
+        /// Prevent users from adding new Microsoft accounts to this computer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockMicrosoftAccounts", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsBlockMicrosoftAccounts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options block remote logon with blank password.
+        /// Enable Local accounts that are not password protected to log on from locations other than the physical device.Default is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockRemoteLogonWithBlankPassword", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsBlockRemoteLogonWithBlankPassword { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options block remote optical drive access.
+        /// Enabling this settings allows only interactively logged on user to access CD-ROM media.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockRemoteOpticalDriveAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsBlockRemoteOpticalDriveAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options block users installing printer drivers.
+        /// Restrict installing printer drivers as part of connecting to a shared printer to admins only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockUsersInstallingPrinterDrivers", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsBlockUsersInstallingPrinterDrivers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options clear virtual memory page file.
+        /// This security setting determines whether the virtual memory pagefile is cleared when the system is shut down.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsClearVirtualMemoryPageFile", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsClearVirtualMemoryPageFile { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options client digitally sign communications always.
+        /// This security setting determines whether packet signing is required by the SMB client component.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsClientDigitallySignCommunicationsAlways", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsClientDigitallySignCommunicationsAlways { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options client send unencrypted password to third party smbservers.
+        /// If this security setting is enabled, the Server Message Block (SMB) redirector is allowed to send plaintext passwords to non-Microsoft SMB servers that do not support password encryption during authentication.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options detect application installations and prompt for elevation.
+        /// App installations requiring elevated privileges will prompt for admin credentials.Default is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options disable administrator account.
+        /// Determines whether the Local Administrator account is enabled or disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableAdministratorAccount", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDisableAdministratorAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options disable client digitally sign communications if server agrees.
+        /// This security setting determines whether the SMB client attempts to negotiate SMB packet signing.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options disable guest account.
+        /// Determines if the Guest account is enabled or disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableGuestAccount", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDisableGuestAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options disable server digitally sign communications always.
+        /// This security setting determines whether packet signing is required by the SMB server component.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableServerDigitallySignCommunicationsAlways", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options disable server digitally sign communications if client agrees.
+        /// This security setting determines whether the SMB server will negotiate SMB packet signing with clients that request it.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options do not allow anonymous enumeration of samaccounts.
+        /// This security setting determines what additional permissions will be granted for anonymous connections to the computer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options do not require ctrl alt del.
+        /// Require CTRL+ALT+DEL to be pressed before a user can log on.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDoNotRequireCtrlAltDel", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDoNotRequireCtrlAltDel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options do not store lanmanager hash value on next password change.
+        /// This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. It???s not stored by default.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options format and eject of removable media allowed user.
+        /// Define who is allowed to format and eject removable NTFS media.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType? LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options guest account name.
+        /// Define a different account name to be associated with the security identifier (SID) for the account ???Guest???.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsGuestAccountName", Required = Newtonsoft.Json.Required.Default)]
+        public string LocalSecurityOptionsGuestAccountName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options hide last signed in user.
+        /// Do not display the username of the last person who signed in on this device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsHideLastSignedInUser", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsHideLastSignedInUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options hide username at sign in.
+        /// Do not display the username of the person signing in to this device after credentials are entered and before the device???s desktop is shown.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsHideUsernameAtSignIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsHideUsernameAtSignIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options information displayed on lock screen.
+        /// Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsInformationDisplayedOnLockScreen", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsInformationDisplayedOnLockScreenType? LocalSecurityOptionsInformationDisplayedOnLockScreen { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options information shown on lock screen.
+        /// Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsInformationShownOnLockScreen", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsInformationShownOnLockScreenType? LocalSecurityOptionsInformationShownOnLockScreen { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options log on message text.
+        /// Set message text for users attempting to log in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsLogOnMessageText", Required = Newtonsoft.Json.Required.Default)]
+        public string LocalSecurityOptionsLogOnMessageText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options log on message title.
+        /// Set message title for users attempting to log in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsLogOnMessageTitle", Required = Newtonsoft.Json.Required.Default)]
+        public string LocalSecurityOptionsLogOnMessageTitle { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options machine inactivity limit.
+        /// Define maximum minutes of inactivity on the interactive desktop???s login screen until the screen saver runs. Valid values 0 to 9999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMachineInactivityLimit", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? LocalSecurityOptionsMachineInactivityLimit { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options machine inactivity limit in minutes.
+        /// Define maximum minutes of inactivity on the interactive desktop???s login screen until the screen saver runs. Valid values 0 to 9999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMachineInactivityLimitInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? LocalSecurityOptionsMachineInactivityLimitInMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options minimum session security for ntlm ssp based clients.
+        /// This security setting allows a client to require the negotiation of 128-bit encryption and/or NTLMv2 session security.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsMinimumSessionSecurity? LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options minimum session security for ntlm ssp based servers.
+        /// This security setting allows a server to require the negotiation of 128-bit encryption and/or NTLMv2 session security.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsMinimumSessionSecurity? LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options only elevate signed executables.
+        /// Enforce PKI certification path validation for a given executable file before it is permitted to run.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsOnlyElevateSignedExecutables", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsOnlyElevateSignedExecutables { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options restrict anonymous access to named pipes and shares.
+        /// By default, this security setting restricts anonymous access to shares and pipes to the settings for named pipes that can be accessed anonymously and Shares that can be accessed anonymously
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options smart card removal behavior.
+        /// This security setting determines what happens when the smart card for a logged-on user is removed from the smart card reader.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsSmartCardRemovalBehavior", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsSmartCardRemovalBehaviorType? LocalSecurityOptionsSmartCardRemovalBehavior { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options standard user elevation prompt behavior.
+        /// Define the behavior of the elevation prompt for standard users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsStandardUserElevationPromptBehavior", Required = Newtonsoft.Json.Required.Default)]
+        public LocalSecurityOptionsStandardUserElevationPromptBehaviorType? LocalSecurityOptionsStandardUserElevationPromptBehavior { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options switch to secure desktop when prompting for elevation.
+        /// Enable all elevation requests to go to the interactive user's desktop rather than the secure desktop. Prompt behavior policy settings for admins and standard users are used.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options use admin approval mode.
+        /// Defines whether the built-in admin account uses Admin Approval Mode or runs all apps with full admin privileges.Default is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsUseAdminApprovalMode", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsUseAdminApprovalMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options use admin approval mode for administrators.
+        /// Define whether Admin Approval Mode and all UAC policy settings are enabled, default is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsUseAdminApprovalModeForAdministrators", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsUseAdminApprovalModeForAdministrators { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local security options virtualize file and registry write failures to per user locations.
+        /// Virtualize file and registry write failures to per user locations
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen block override for files.
+        /// Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockOverrideForFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmartScreenBlockOverrideForFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen enable in shell.
+        /// Allows IT Admins to configure SmartScreen for Windows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenEnableInShell", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmartScreenEnableInShell { get; set; }
+    
+        /// <summary>
         /// Gets or sets user rights access credential manager as trusted caller.
         /// This user right is used by Credential Manager during Backup/Restore. Users' saved credentials might be compromised if this privilege is given to other entities. Only states NotConfigured and Allowed are supported
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsAccessCredentialManagerAsTrustedCaller", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementUserRightsSetting UserRightsAccessCredentialManagerAsTrustedCaller { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user rights allow access from network.
-        /// This user right determines which users and groups are allowed to connect to the computer over the network. State Allowed is supported.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsAllowAccessFromNetwork", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementUserRightsSetting UserRightsAllowAccessFromNetwork { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user rights block access from network.
-        /// This user right determines which users and groups are block from connecting to the computer over the network. State Block is supported.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsBlockAccessFromNetwork", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementUserRightsSetting UserRightsBlockAccessFromNetwork { get; set; }
     
         /// <summary>
         /// Gets or sets user rights act as part of the operating system.
@@ -73,18 +1354,11 @@ namespace Microsoft.Graph
         public DeviceManagementUserRightsSetting UserRightsActAsPartOfTheOperatingSystem { get; set; }
     
         /// <summary>
-        /// Gets or sets user rights local log on.
-        /// This user right determines which users can log on to the computer. States NotConfigured, Allowed are supported 
+        /// Gets or sets user rights allow access from network.
+        /// This user right determines which users and groups are allowed to connect to the computer over the network. State Allowed is supported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsLocalLogOn", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementUserRightsSetting UserRightsLocalLogOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user rights deny local log on.
-        /// This user right determines which users cannot log on to the computer. States NotConfigured, Blocked are supported 
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsDenyLocalLogOn", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementUserRightsSetting UserRightsDenyLocalLogOn { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsAllowAccessFromNetwork", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementUserRightsSetting UserRightsAllowAccessFromNetwork { get; set; }
     
         /// <summary>
         /// Gets or sets user rights backup data.
@@ -92,6 +1366,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsBackupData", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementUserRightsSetting UserRightsBackupData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user rights block access from network.
+        /// This user right determines which users and groups are block from connecting to the computer over the network. State Block is supported.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsBlockAccessFromNetwork", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementUserRightsSetting UserRightsBlockAccessFromNetwork { get; set; }
     
         /// <summary>
         /// Gets or sets user rights change system time.
@@ -143,18 +1424,18 @@ namespace Microsoft.Graph
         public DeviceManagementUserRightsSetting UserRightsDebugPrograms { get; set; }
     
         /// <summary>
-        /// Gets or sets user rights remote desktop services log on.
-        /// This user right determines which users and groups are prohibited from logging on as a Remote Desktop Services client. Only states NotConfigured and Blocked are supported
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsRemoteDesktopServicesLogOn", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementUserRightsSetting UserRightsRemoteDesktopServicesLogOn { get; set; }
-    
-        /// <summary>
         /// Gets or sets user rights delegation.
         /// This user right determines which users can set the Trusted for Delegation setting on a user or computer object. Only states NotConfigured and Allowed are supported.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsDelegation", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementUserRightsSetting UserRightsDelegation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user rights deny local log on.
+        /// This user right determines which users cannot log on to the computer. States NotConfigured, Blocked are supported 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsDenyLocalLogOn", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementUserRightsSetting UserRightsDenyLocalLogOn { get; set; }
     
         /// <summary>
         /// Gets or sets user rights generate security audits.
@@ -183,6 +1464,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsLoadUnloadDrivers", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementUserRightsSetting UserRightsLoadUnloadDrivers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user rights local log on.
+        /// This user right determines which users can log on to the computer. States NotConfigured, Allowed are supported 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsLocalLogOn", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementUserRightsSetting UserRightsLocalLogOn { get; set; }
     
         /// <summary>
         /// Gets or sets user rights lock memory.
@@ -227,6 +1515,13 @@ namespace Microsoft.Graph
         public DeviceManagementUserRightsSetting UserRightsProfileSingleProcess { get; set; }
     
         /// <summary>
+        /// Gets or sets user rights remote desktop services log on.
+        /// This user right determines which users and groups are prohibited from logging on as a Remote Desktop Services client. Only states NotConfigured and Blocked are supported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRightsRemoteDesktopServicesLogOn", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementUserRightsSetting UserRightsRemoteDesktopServicesLogOn { get; set; }
+    
+        /// <summary>
         /// Gets or sets user rights remote shutdown.
         /// This user right determines which users are allowed to shut down a computer from a remote location on the network. Misuse of this user right can result in a denial of service. Only states NotConfigured and Allowed are supported.
         /// </summary>
@@ -248,11 +1543,11 @@ namespace Microsoft.Graph
         public DeviceManagementUserRightsSetting UserRightsTakeOwnership { get; set; }
     
         /// <summary>
-        /// Gets or sets xbox services enable xbox game save task.
-        /// This setting determines whether xbox game save is enabled (1) or disabled (0).
+        /// Gets or sets windows defender tamper protection.
+        /// Configure windows defender TamperProtection settings
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "xboxServicesEnableXboxGameSaveTask", Required = Newtonsoft.Json.Required.Default)]
-        public bool? XboxServicesEnableXboxGameSaveTask { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsDefenderTamperProtection", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsDefenderTamperProtectionOptions? WindowsDefenderTamperProtection { get; set; }
     
         /// <summary>
         /// Gets or sets xbox services accessory management service startup mode.
@@ -260,6 +1555,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "xboxServicesAccessoryManagementServiceStartupMode", Required = Newtonsoft.Json.Required.Default)]
         public ServiceStartType? XboxServicesAccessoryManagementServiceStartupMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets xbox services enable xbox game save task.
+        /// This setting determines whether xbox game save is enabled (1) or disabled (0).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "xboxServicesEnableXboxGameSaveTask", Required = Newtonsoft.Json.Required.Default)]
+        public bool? XboxServicesEnableXboxGameSaveTask { get; set; }
     
         /// <summary>
         /// Gets or sets xbox services live auth manager service startup mode.
@@ -281,1308 +1583,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "xboxServicesLiveNetworkingServiceStartupMode", Required = Newtonsoft.Json.Required.Default)]
         public ServiceStartType? XboxServicesLiveNetworkingServiceStartupMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options block microsoft accounts.
-        /// Prevent users from adding new Microsoft accounts to this computer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockMicrosoftAccounts", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsBlockMicrosoftAccounts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options block remote logon with blank password.
-        /// Enable Local accounts that are not password protected to log on from locations other than the physical device.Default is enabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockRemoteLogonWithBlankPassword", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsBlockRemoteLogonWithBlankPassword { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options disable administrator account.
-        /// Determines whether the Local Administrator account is enabled or disabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableAdministratorAccount", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDisableAdministratorAccount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options administrator account name.
-        /// Define a different account name to be associated with the security identifier (SID) for the account ???Administrator???.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAdministratorAccountName", Required = Newtonsoft.Json.Required.Default)]
-        public string LocalSecurityOptionsAdministratorAccountName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options disable guest account.
-        /// Determines if the Guest account is enabled or disabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableGuestAccount", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDisableGuestAccount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options guest account name.
-        /// Define a different account name to be associated with the security identifier (SID) for the account ???Guest???.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsGuestAccountName", Required = Newtonsoft.Json.Required.Default)]
-        public string LocalSecurityOptionsGuestAccountName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow undock without having to logon.
-        /// Prevent a portable computer from being undocked without having to log in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowUndockWithoutHavingToLogon", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsAllowUndockWithoutHavingToLogon { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options block users installing printer drivers.
-        /// Restrict installing printer drivers as part of connecting to a shared printer to admins only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockUsersInstallingPrinterDrivers", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsBlockUsersInstallingPrinterDrivers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options block remote optical drive access.
-        /// Enabling this settings allows only interactively logged on user to access CD-ROM media.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsBlockRemoteOpticalDriveAccess", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsBlockRemoteOpticalDriveAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options format and eject of removable media allowed user.
-        /// Define who is allowed to format and eject removable NTFS media.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType? LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options machine inactivity limit.
-        /// Define maximum minutes of inactivity on the interactive desktop???s login screen until the screen saver runs. Valid values 0 to 9999
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMachineInactivityLimit", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? LocalSecurityOptionsMachineInactivityLimit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options machine inactivity limit in minutes.
-        /// Define maximum minutes of inactivity on the interactive desktop???s login screen until the screen saver runs. Valid values 0 to 9999
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMachineInactivityLimitInMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? LocalSecurityOptionsMachineInactivityLimitInMinutes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options do not require ctrl alt del.
-        /// Require CTRL+ALT+DEL to be pressed before a user can log on.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDoNotRequireCtrlAltDel", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDoNotRequireCtrlAltDel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options hide last signed in user.
-        /// Do not display the username of the last person who signed in on this device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsHideLastSignedInUser", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsHideLastSignedInUser { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options hide username at sign in.
-        /// Do not display the username of the person signing in to this device after credentials are entered and before the device???s desktop is shown.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsHideUsernameAtSignIn", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsHideUsernameAtSignIn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options log on message title.
-        /// Set message title for users attempting to log in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsLogOnMessageTitle", Required = Newtonsoft.Json.Required.Default)]
-        public string LocalSecurityOptionsLogOnMessageTitle { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options log on message text.
-        /// Set message text for users attempting to log in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsLogOnMessageText", Required = Newtonsoft.Json.Required.Default)]
-        public string LocalSecurityOptionsLogOnMessageText { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow pku2uauthentication requests.
-        /// Block PKU2U authentication requests to this device to use online identities.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowPKU2UAuthenticationRequests", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsAllowPKU2UAuthenticationRequests { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow remote calls to security accounts manager helper bool.
-        /// UI helper boolean for LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager entity
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow remote calls to security accounts manager.
-        /// Edit the default Security Descriptor Definition Language string to allow or deny users and groups to make remote calls to the SAM.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager", Required = Newtonsoft.Json.Required.Default)]
-        public string LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options minimum session security for ntlm ssp based clients.
-        /// This security setting allows a client to require the negotiation of 128-bit encryption and/or NTLMv2 session security.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsMinimumSessionSecurity? LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options minimum session security for ntlm ssp based servers.
-        /// This security setting allows a server to require the negotiation of 128-bit encryption and/or NTLMv2 session security.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsMinimumSessionSecurity? LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lan manager authentication level.
-        /// This security setting determines which challenge/response authentication protocol is used for network logons.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lanManagerAuthenticationLevel", Required = Newtonsoft.Json.Required.Default)]
-        public LanManagerAuthenticationLevel? LanManagerAuthenticationLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lan manager workstation disable insecure guest logons.
-        /// If enabled,the SMB client will allow insecure guest logons. If not configured, the SMB client will reject insecure guest logons.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lanManagerWorkstationDisableInsecureGuestLogons", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LanManagerWorkstationDisableInsecureGuestLogons { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options clear virtual memory page file.
-        /// This security setting determines whether the virtual memory pagefile is cleared when the system is shut down.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsClearVirtualMemoryPageFile", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsClearVirtualMemoryPageFile { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow system to be shut down without having to log on.
-        /// This security setting determines whether a computer can be shut down without having to log on to Windows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow uiaccess application elevation.
-        /// Allow UIAccess apps to prompt for elevation without using the secure desktop.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowUIAccessApplicationElevation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsAllowUIAccessApplicationElevation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options virtualize file and registry write failures to per user locations.
-        /// Virtualize file and registry write failures to per user locations
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options only elevate signed executables.
-        /// Enforce PKI certification path validation for a given executable file before it is permitted to run.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsOnlyElevateSignedExecutables", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsOnlyElevateSignedExecutables { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options administrator elevation prompt behavior.
-        /// Define the behavior of the elevation prompt for admins in Admin Approval Mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAdministratorElevationPromptBehavior", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsAdministratorElevationPromptBehaviorType? LocalSecurityOptionsAdministratorElevationPromptBehavior { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options standard user elevation prompt behavior.
-        /// Define the behavior of the elevation prompt for standard users.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsStandardUserElevationPromptBehavior", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsStandardUserElevationPromptBehaviorType? LocalSecurityOptionsStandardUserElevationPromptBehavior { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options switch to secure desktop when prompting for elevation.
-        /// Enable all elevation requests to go to the interactive user's desktop rather than the secure desktop. Prompt behavior policy settings for admins and standard users are used.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options detect application installations and prompt for elevation.
-        /// App installations requiring elevated privileges will prompt for admin credentials.Default is enabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow uiaccess applications for secure locations.
-        /// Allow UIAccess apps to prompt for elevation without using the secure desktop.Default is enabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowUIAccessApplicationsForSecureLocations", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options use admin approval mode.
-        /// Defines whether the built-in admin account uses Admin Approval Mode or runs all apps with full admin privileges.Default is enabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsUseAdminApprovalMode", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsUseAdminApprovalMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options use admin approval mode for administrators.
-        /// Define whether Admin Approval Mode and all UAC policy settings are enabled, default is enabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsUseAdminApprovalModeForAdministrators", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsUseAdminApprovalModeForAdministrators { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options information shown on lock screen.
-        /// Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsInformationShownOnLockScreen", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsInformationShownOnLockScreenType? LocalSecurityOptionsInformationShownOnLockScreen { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options information displayed on lock screen.
-        /// Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsInformationDisplayedOnLockScreen", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsInformationDisplayedOnLockScreenType? LocalSecurityOptionsInformationDisplayedOnLockScreen { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options disable client digitally sign communications if server agrees.
-        /// This security setting determines whether the SMB client attempts to negotiate SMB packet signing.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options client digitally sign communications always.
-        /// This security setting determines whether packet signing is required by the SMB client component.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsClientDigitallySignCommunicationsAlways", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsClientDigitallySignCommunicationsAlways { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options client send unencrypted password to third party smbservers.
-        /// If this security setting is enabled, the Server Message Block (SMB) redirector is allowed to send plaintext passwords to non-Microsoft SMB servers that do not support password encryption during authentication.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options disable server digitally sign communications always.
-        /// This security setting determines whether packet signing is required by the SMB server component.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableServerDigitallySignCommunicationsAlways", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options disable server digitally sign communications if client agrees.
-        /// This security setting determines whether the SMB server will negotiate SMB packet signing with clients that request it.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options restrict anonymous access to named pipes and shares.
-        /// By default, this security setting restricts anonymous access to shares and pipes to the settings for named pipes that can be accessed anonymously and Shares that can be accessed anonymously
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options do not allow anonymous enumeration of samaccounts.
-        /// This security setting determines what additional permissions will be granted for anonymous connections to the computer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options allow anonymous enumeration of samaccounts and shares.
-        /// This security setting determines whether to allows anonymous users to perform certain activities, such as enumerating the names of domain accounts and network shares.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options do not store lanmanager hash value on next password change.
-        /// This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. It???s not stored by default.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange { get; set; }
-    
-        /// <summary>
-        /// Gets or sets local security options smart card removal behavior.
-        /// This security setting determines what happens when the smart card for a logged-on user is removed from the smart card reader.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localSecurityOptionsSmartCardRemovalBehavior", Required = Newtonsoft.Json.Required.Default)]
-        public LocalSecurityOptionsSmartCardRemovalBehaviorType? LocalSecurityOptionsSmartCardRemovalBehavior { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable app browser ui.
-        /// Used to disable the display of the app and browser protection area.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableAppBrowserUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableAppBrowserUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable family ui.
-        /// Used to disable the display of the family options area.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableFamilyUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableFamilyUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable health ui.
-        /// Used to disable the display of the device performance and health area.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableHealthUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableHealthUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable network ui.
-        /// Used to disable the display of the firewall and network protection area.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableNetworkUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableNetworkUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable virus ui.
-        /// Used to disable the display of the virus and threat protection area.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableVirusUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableVirusUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable account ui.
-        /// Used to disable the display of the account protection area.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableAccountUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableAccountUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable clear tpm ui.
-        /// Used to disable the display of the Clear TPM button.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableClearTpmUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableClearTpmUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable hardware ui.
-        /// Used to disable the display of the hardware protection area.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableHardwareUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableHardwareUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable notification area ui.
-        /// Used to disable the display of the notification area control. The user needs to either sign out and sign in or reboot the computer for this setting to take effect.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableNotificationAreaUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableNotificationAreaUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable ransomware ui.
-        /// Used to disable the display of the ransomware protection area. 
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableRansomwareUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableRansomwareUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable secure boot ui.
-        /// Used to disable the display of the secure boot area under Device security.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableSecureBootUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableSecureBootUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable troubleshooting ui.
-        /// Used to disable the display of the security process troubleshooting under Device security.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableTroubleshootingUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableTroubleshootingUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center disable vulnerable tpm firmware update ui.
-        /// Used to disable the display of update TPM Firmware when a vulnerable firmware is detected.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center organization display name.
-        /// The company name that is displayed to the users.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterOrganizationDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DefenderSecurityCenterOrganizationDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center help email.
-        /// The email address that is displayed to users.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterHelpEmail", Required = Newtonsoft.Json.Required.Default)]
-        public string DefenderSecurityCenterHelpEmail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center help phone.
-        /// The phone number or Skype ID that is displayed to users.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterHelpPhone", Required = Newtonsoft.Json.Required.Default)]
-        public string DefenderSecurityCenterHelpPhone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center help url.
-        /// The help portal URL this is displayed to users.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterHelpURL", Required = Newtonsoft.Json.Required.Default)]
-        public string DefenderSecurityCenterHelpURL { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center notifications from app.
-        /// Notifications to show from the displayed areas of app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterNotificationsFromApp", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderSecurityCenterNotificationsFromAppType? DefenderSecurityCenterNotificationsFromApp { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center itcontact display.
-        /// Configure where to display IT contact information to end users.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterITContactDisplay", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderSecurityCenterITContactDisplayType? DefenderSecurityCenterITContactDisplay { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows defender tamper protection.
-        /// Configure windows defender TamperProtection settings
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsDefenderTamperProtection", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsDefenderTamperProtectionOptions? WindowsDefenderTamperProtection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall block stateful ftp.
-        /// Blocks stateful FTP connections to the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallBlockStatefulFTP", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallBlockStatefulFTP { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall idle timeout for security association in seconds.
-        /// Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIdleTimeoutForSecurityAssociationInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? FirewallIdleTimeoutForSecurityAssociationInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall pre shared key encoding method.
-        /// Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPreSharedKeyEncodingMethod", Required = Newtonsoft.Json.Required.Default)]
-        public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow neighbor discovery.
-        /// Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowNeighborDiscovery", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowNeighborDiscovery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow icmp.
-        /// Configures IPSec exemptions to allow ICMP
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowICMP", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowICMP { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow router discovery.
-        /// Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowRouterDiscovery", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowRouterDiscovery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall ipsec exemptions allow dhcp.
-        /// Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsAllowDHCP", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallIPSecExemptionsAllowDHCP { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall certificate revocation list check method.
-        /// Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallCertificateRevocationListCheckMethod", Required = Newtonsoft.Json.Required.Default)]
-        public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall merge keying module settings.
-        /// If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallMergeKeyingModuleSettings", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FirewallMergeKeyingModuleSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall packet queueing method.
-        /// Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallPacketQueueingMethod", Required = Newtonsoft.Json.Required.Default)]
-        public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall profile domain.
-        /// Configures the firewall profile settings for domain networks
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfileDomain", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsFirewallNetworkProfile FirewallProfileDomain { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall profile public.
-        /// Configures the firewall profile settings for public networks
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePublic", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsFirewallNetworkProfile FirewallProfilePublic { get; set; }
-    
-        /// <summary>
-        /// Gets or sets firewall profile private.
-        /// Configures the firewall profile settings for private networks
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallProfilePrivate", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsFirewallNetworkProfile FirewallProfilePrivate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender adobe reader launch child process.
-        /// Value indicating the behavior of Adobe Reader from creating child processes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdobeReaderLaunchChildProcess", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderAdobeReaderLaunchChildProcess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender attack surface reduction excluded paths.
-        /// List of exe files and folders to be excluded from attack surface reduction rules
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAttackSurfaceReductionExcludedPaths", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderAttackSurfaceReductionExcludedPaths { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office apps other process injection type.
-        /// Value indicating the behavior of??Office applications injecting into other processes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsOtherProcessInjectionType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderOfficeAppsOtherProcessInjectionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office apps other process injection.
-        /// Value indicating the behavior of?? Office applications injecting into other processes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsOtherProcessInjection", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderOfficeAppsOtherProcessInjection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office communication apps launch child process.
-        /// Value indicating the behavior of Office communication applications, including Microsoft Outlook, from creating child processes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeCommunicationAppsLaunchChildProcess", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderOfficeCommunicationAppsLaunchChildProcess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office apps executable content creation or launch type.
-        /// Value indicating the behavior of Office applications/macros creating or launching executable content
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsExecutableContentCreationOrLaunchType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderOfficeAppsExecutableContentCreationOrLaunchType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office apps executable content creation or launch.
-        /// Value indicating the behavior of Office applications/macros creating or launching executable content
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsExecutableContentCreationOrLaunch", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderOfficeAppsExecutableContentCreationOrLaunch { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office apps launch child process type.
-        /// Value indicating the behavior of Office application launching child processes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsLaunchChildProcessType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderOfficeAppsLaunchChildProcessType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office apps launch child process.
-        /// Value indicating the behavior of Office application launching child processes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeAppsLaunchChildProcess", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderOfficeAppsLaunchChildProcess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office macro code allow win32imports type.
-        /// Value indicating the behavior of Win32 imports from Macro code in Office
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeMacroCodeAllowWin32ImportsType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderOfficeMacroCodeAllowWin32ImportsType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender office macro code allow win32imports.
-        /// Value indicating the behavior of Win32 imports from Macro code in Office
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderOfficeMacroCodeAllowWin32Imports", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderOfficeMacroCodeAllowWin32Imports { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender script obfuscated macro code type.
-        /// Value indicating the behavior of obfuscated js/vbs/ps/macro code
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptObfuscatedMacroCodeType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderScriptObfuscatedMacroCodeType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender script obfuscated macro code.
-        /// Value indicating the behavior of obfuscated js/vbs/ps/macro code
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptObfuscatedMacroCode", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderScriptObfuscatedMacroCode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender script downloaded payload execution type.
-        /// Value indicating the behavior of js/vbs executing payload downloaded from Internet
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptDownloadedPayloadExecutionType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderScriptDownloadedPayloadExecutionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender script downloaded payload execution.
-        /// Value indicating the behavior of js/vbs executing payload downloaded from Internet
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScriptDownloadedPayloadExecution", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderScriptDownloadedPayloadExecution { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender prevent credential stealing type.
-        /// Value indicating if credential stealing from the Windows local security authority subsystem is permitted
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPreventCredentialStealingType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderPreventCredentialStealingType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender process creation type.
-        /// Value indicating response to process creations originating from PSExec and WMI commands
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessCreationType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderProcessCreationType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender process creation.
-        /// Value indicating response to process creations originating from PSExec and WMI commands
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessCreation", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderProcessCreation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender untrusted usbprocess type.
-        /// Value indicating response to untrusted and unsigned processes that run from USB
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedUSBProcessType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderUntrustedUSBProcessType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender untrusted usbprocess.
-        /// Value indicating response to untrusted and unsigned processes that run from USB
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedUSBProcess", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderUntrustedUSBProcess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender untrusted executable type.
-        /// Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedExecutableType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderUntrustedExecutableType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender untrusted executable.
-        /// Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderUntrustedExecutable", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderUntrustedExecutable { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender email content execution type.
-        /// Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEmailContentExecutionType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderAttackSurfaceType? DefenderEmailContentExecutionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender email content execution.
-        /// Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEmailContentExecution", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderEmailContentExecution { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender advanced ransomeware protection type.
-        /// Value indicating use of advanced protection against ransomeware
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdvancedRansomewareProtectionType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderAdvancedRansomewareProtectionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender guard my folders type.
-        /// Value indicating the behavior of protected folders
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderGuardMyFoldersType", Required = Newtonsoft.Json.Required.Default)]
-        public FolderProtectionType? DefenderGuardMyFoldersType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender guarded folders allowed app paths.
-        /// List of paths to exe that are allowed to access protected folders
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderGuardedFoldersAllowedAppPaths", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderGuardedFoldersAllowedAppPaths { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender additional guarded folders.
-        /// List of folder paths to be added to the list of protected folders
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAdditionalGuardedFolders", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderAdditionalGuardedFolders { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender network protection type.
-        /// Value indicating the behavior of NetworkProtection
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderNetworkProtectionType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderNetworkProtectionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender exploit protection xml.
-        /// Xml content containing information regarding exploit protection details.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXml", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] DefenderExploitProtectionXml { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender exploit protection xml file name.
-        /// Name of the file from which DefenderExploitProtectionXml was obtained.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderExploitProtectionXmlFileName", Required = Newtonsoft.Json.Required.Default)]
-        public string DefenderExploitProtectionXmlFileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender security center block exploit protection override.
-        /// Indicates whether or not to block user from overriding Exploit Protection settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSecurityCenterBlockExploitProtectionOverride", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderSecurityCenterBlockExploitProtectionOverride { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app locker application control.
-        /// Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLockerApplicationControl", Required = Newtonsoft.Json.Required.Default)]
-        public AppLockerApplicationControlType? AppLockerApplicationControl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device guard local system authority credential guard settings.
-        /// Turn on Credential Guard when Platform Security Level with Secure Boot and Virtualization Based Security are both enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardLocalSystemAuthorityCredentialGuardSettings", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceGuardLocalSystemAuthorityCredentialGuardType? DeviceGuardLocalSystemAuthorityCredentialGuardSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device guard enable virtualization based security.
-        /// Turns On Virtualization Based Security(VBS).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardEnableVirtualizationBasedSecurity", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceGuardEnableVirtualizationBasedSecurity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device guard enable secure boot with dma.
-        /// This property will be deprecated in May 2019 and will be replaced with property DeviceGuardSecureBootWithDMA. Specifies whether Platform Security Level is enabled at next reboot.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardEnableSecureBootWithDMA", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceGuardEnableSecureBootWithDMA { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device guard secure boot with dma.
-        /// Specifies whether Platform Security Level is enabled at next reboot.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardSecureBootWithDMA", Required = Newtonsoft.Json.Required.Default)]
-        public SecureBootWithDMAType? DeviceGuardSecureBootWithDMA { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device guard launch system guard.
-        /// Allows the IT admin to configure the launch of System Guard.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardLaunchSystemGuard", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? DeviceGuardLaunchSystemGuard { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen enable in shell.
-        /// Allows IT Admins to configure SmartScreen for Windows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenEnableInShell", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmartScreenEnableInShell { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen block override for files.
-        /// Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious files.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockOverrideForFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmartScreenBlockOverrideForFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard enabled.
-        /// Enable Windows Defender Application Guard
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard enabled options.
-        /// Enable Windows Defender Application Guard for newer Windows builds
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardEnabledOptions", Required = Newtonsoft.Json.Required.Default)]
-        public ApplicationGuardEnabledOptions? ApplicationGuardEnabledOptions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard block file transfer.
-        /// Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockFileTransfer", Required = Newtonsoft.Json.Required.Default)]
-        public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard block non enterprise content.
-        /// Block enterprise sites to load non-enterprise content, such as third party plug-ins
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockNonEnterpriseContent", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardBlockNonEnterpriseContent { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard allow persistence.
-        /// Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPersistence", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowPersistence { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard force auditing.
-        /// Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardForceAuditing", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardForceAuditing { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard block clipboard sharing.
-        /// Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardBlockClipboardSharing", Required = Newtonsoft.Json.Required.Default)]
-        public ApplicationGuardBlockClipboardSharingType? ApplicationGuardBlockClipboardSharing { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard allow print to pdf.
-        /// Allow printing to PDF from Container
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToPDF", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowPrintToPDF { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard allow print to xps.
-        /// Allow printing to XPS from Container
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToXPS", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowPrintToXPS { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard allow print to local printers.
-        /// Allow printing to Local Printers from Container
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToLocalPrinters", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowPrintToLocalPrinters { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard allow print to network printers.
-        /// Allow printing to Network Printers from Container
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowPrintToNetworkPrinters", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowPrintToNetworkPrinters { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard allow virtual gpu.
-        /// Allow application guard to use virtual GPU
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowVirtualGPU", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowVirtualGPU { get; set; }
-    
-        /// <summary>
-        /// Gets or sets application guard allow file save on host.
-        /// Allow users to download files from Edge in the application guard container and save them on the host file system
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationGuardAllowFileSaveOnHost", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplicationGuardAllowFileSaveOnHost { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker allow standard user encryption.
-        /// Allows the admin to allow standard users to enable encrpytion during Azure AD Join.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerAllowStandardUserEncryption", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BitLockerAllowStandardUserEncryption { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker disable warning for other disk encryption.
-        /// Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerDisableWarningForOtherDiskEncryption", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BitLockerDisableWarningForOtherDiskEncryption { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker enable storage card encryption on mobile.
-        /// Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerEnableStorageCardEncryptionOnMobile", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BitLockerEnableStorageCardEncryptionOnMobile { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker encrypt device.
-        /// Allows the admin to require encryption to be turned on using BitLocker.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerEncryptDevice", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BitLockerEncryptDevice { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker system drive policy.
-        /// BitLocker System Drive Policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerSystemDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
-        public BitLockerSystemDrivePolicy BitLockerSystemDrivePolicy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker fixed drive policy.
-        /// BitLocker Fixed Drive Policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerFixedDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
-        public BitLockerFixedDrivePolicy BitLockerFixedDrivePolicy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker removable drive policy.
-        /// BitLocker Removable Drive Policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRemovableDrivePolicy", Required = Newtonsoft.Json.Required.Default)]
-        public BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bit locker recovery password rotation.
-        /// This setting initiates a client-driven recovery password rotation after an OS drive recovery (either by using bootmgr or WinRE).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitLockerRecoveryPasswordRotation", Required = Newtonsoft.Json.Required.Default)]
-        public BitLockerRecoveryPasswordRotationType? BitLockerRecoveryPasswordRotation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable scan archive files.
-        /// Allows or disallows scanning of archives.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableScanArchiveFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow scan archive files.
-        /// Allows or disallows scanning of archives.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowScanArchiveFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable behavior monitoring.
-        /// Allows or disallows Windows Defender Behavior Monitoring functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableBehaviorMonitoring { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow behavior monitoring.
-        /// Allows or disallows Windows Defender Behavior Monitoring functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowBehaviorMonitoring { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable cloud protection.
-        /// To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCloudProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableCloudProtection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow cloud protection.
-        /// To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowCloudProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowCloudProtection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender enable scan incoming mail.
-        /// Allows or disallows scanning of email.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableScanIncomingMail", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderEnableScanIncomingMail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender enable scan mapped network drives during full scan.
-        /// Allows or disallows a full scan of mapped network drives.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableScanMappedNetworkDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderEnableScanMappedNetworkDrivesDuringFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable scan removable drives during full scan.
-        /// Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableScanRemovableDrivesDuringFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow scan removable drives during full scan.
-        /// Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowScanRemovableDrivesDuringFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable scan downloads.
-        /// Allows or disallows Windows Defender IOAVP Protection functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanDownloads", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableScanDownloads { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow scan downloads.
-        /// Allows or disallows Windows Defender IOAVP Protection functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanDownloads", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowScanDownloads { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable intrusion prevention system.
-        /// Allows or disallows Windows Defender Intrusion Prevention functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableIntrusionPreventionSystem", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableIntrusionPreventionSystem { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow intrusion prevention system.
-        /// Allows or disallows Windows Defender Intrusion Prevention functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowIntrusionPreventionSystem", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowIntrusionPreventionSystem { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable on access protection.
-        /// Allows or disallows Windows Defender On Access Protection functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableOnAccessProtection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow on access protection.
-        /// Allows or disallows Windows Defender On Access Protection functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowOnAccessProtection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable real time monitoring.
-        /// Allows or disallows Windows Defender Realtime Monitoring functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableRealTimeMonitoring { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow real time monitoring.
-        /// Allows or disallows Windows Defender Realtime Monitoring functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowRealTimeMonitoring { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable scan network files.
-        /// Allows or disallows a scanning of network files.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableScanNetworkFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow scan network files.
-        /// Allows or disallows a scanning of network files.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowScanNetworkFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable scan scripts loaded in internet explorer.
-        /// Allows or disallows Windows Defender Script Scanning functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableScanScriptsLoadedInInternetExplorer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow scan scripts loaded in internet explorer.
-        /// Allows or disallows Windows Defender Script Scanning functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowScanScriptsLoadedInInternetExplorer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender block end user access.
-        /// Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderBlockEndUserAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender allow end user access.
-        /// Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderAllowEndUserAccess", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderAllowEndUserAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan max cpu percentage.
-        /// Represents the average CPU load factor for the Windows Defender scan (in percent). The default value is 50. Valid values 0 to 100
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMaxCpuPercentage", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderScanMaxCpuPercentage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender check for signatures before running scan.
-        /// This policy setting allows you to manage whether a check for new virus and spyware definitions will occur before running a scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCheckForSignaturesBeforeRunningScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderCheckForSignaturesBeforeRunningScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender cloud block level.
-        /// Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the "Join Microsoft MAPS" setting enabled in order to function.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCloudBlockLevel", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderCloudBlockLevelType? DefenderCloudBlockLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender cloud extended timeout in seconds.
-        /// Added in Windows 10, version 1709. This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe. Value type is integer, range is 0 - 50. This feature depends on three other MAPS settings the must all be enabled- "Configure the 'Block at First Sight' feature; "Join Microsoft MAPS"; "Send file samples when further analysis is required". Valid values 0 to 50
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderCloudExtendedTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderCloudExtendedTimeoutInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender days before deleting quarantined malware.
-        /// Time period (in days) that quarantine items will be stored on the system. Valid values 0 to 90
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDaysBeforeDeletingQuarantinedMalware", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderDaysBeforeDeletingQuarantinedMalware { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable catchup full scan.
-        /// This policy setting allows you to configure catch-up scans for scheduled full scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableCatchupFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender disable catchup quick scan.
-        /// This policy setting allows you to configure catch-up scans for scheduled quick scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupQuickScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableCatchupQuickScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender enable low cpu priority.
-        /// This policy setting allows you to enable or disable low CPU priority for scheduled scans.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderEnableLowCpuPriority", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderEnableLowCpuPriority { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender file extensions to exclude.
-        /// File extensions to exclude from scans and real time protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFileExtensionsToExclude", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderFileExtensionsToExclude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender files and folders to exclude.
-        /// Files and folder to exclude from scans and real time protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderFilesAndFoldersToExclude", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderFilesAndFoldersToExclude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender processes to exclude.
-        /// Processes to exclude from scans and real time protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessesToExclude", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DefenderProcessesToExclude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender potentially unwanted app action.
-        /// Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderPotentiallyUnwantedAppAction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan direction.
-        /// Controls which sets of files should be monitored.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanDirection", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderRealtimeScanDirection? DefenderScanDirection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan type.
-        /// Selects whether to perform a quick scan or full scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderScanType? DefenderScanType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scheduled quick scan time.
-        /// Selects the time of day that the Windows Defender quick scan should run. For example, a value of 0=12:00AM, a value of 60=1:00AM, a value of 120=2:00, and so on, up to a value of 1380=11:00PM. The default value is 120
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledQuickScanTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay DefenderScheduledQuickScanTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scheduled scan day.
-        /// Selects the day that the Windows Defender scan should run.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanDay", Required = Newtonsoft.Json.Required.Default)]
-        public WeeklySchedule? DefenderScheduledScanDay { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scheduled scan time.
-        /// Selects the time of day that the Windows Defender scan should run.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay DefenderScheduledScanTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender signature update interval in hours.
-        /// Specifies the interval (in hours) that will be used to check for signatures, so instead of using the ScheduleDay and ScheduleTime the check for new signatures will be set according to the interval. Valid values 0 to 24
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSignatureUpdateIntervalInHours", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderSignatureUpdateIntervalInHours { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender submit samples consent type.
-        /// Checks for the user consent level in Windows Defender to send data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSubmitSamplesConsentType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender detected malware actions.
-        /// Allows an administrator to specify any valid threat severity levels and the corresponding default action ID to take.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDetectedMalwareActions", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderDetectedMalwareActions DefenderDetectedMalwareActions { get; set; }
     
     }
 }

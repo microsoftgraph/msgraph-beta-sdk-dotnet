@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets certificate template name.
+        /// PKCS Certificate Template Name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateTemplateName", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateTemplateName { get; set; }
+    
+        /// <summary>
         /// Gets or sets certification authority.
         /// PKCS Certification Authority
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationAuthorityName", Required = Newtonsoft.Json.Required.Default)]
         public string CertificationAuthorityName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate template name.
-        /// PKCS Certificate Template Name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateTemplateName", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateTemplateName { get; set; }
     
         /// <summary>
         /// Gets or sets subject alternative name format string.

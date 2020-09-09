@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets updateWindowStartTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateWindowStartTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay UpdateWindowStartTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets updateWindowEndTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateWindowEndTime", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay UpdateWindowEndTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets updateWindowStartTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateWindowStartTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay UpdateWindowStartTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

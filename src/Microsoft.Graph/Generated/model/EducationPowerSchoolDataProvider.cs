@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets connectionUrl.
+        /// Gets or sets allowTeachersInMultipleSchools.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ConnectionUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTeachersInMultipleSchools", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowTeachersInMultipleSchools { get; set; }
     
         /// <summary>
         /// Gets or sets clientId.
@@ -48,6 +48,18 @@ namespace Microsoft.Graph
         public string ClientSecret { get; set; }
     
         /// <summary>
+        /// Gets or sets connectionUrl.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ConnectionUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets customizations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizations", Required = Newtonsoft.Json.Required.Default)]
+        public EducationSynchronizationCustomizations Customizations { get; set; }
+    
+        /// <summary>
         /// Gets or sets schoolsIds.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schoolsIds", Required = Newtonsoft.Json.Required.Default)]
@@ -58,18 +70,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schoolYear", Required = Newtonsoft.Json.Required.Default)]
         public string SchoolYear { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowTeachersInMultipleSchools.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTeachersInMultipleSchools", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowTeachersInMultipleSchools { get; set; }
-    
-        /// <summary>
-        /// Gets or sets customizations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizations", Required = Newtonsoft.Json.Required.Default)]
-        public EducationSynchronizationCustomizations Customizations { get; set; }
     
     }
 }

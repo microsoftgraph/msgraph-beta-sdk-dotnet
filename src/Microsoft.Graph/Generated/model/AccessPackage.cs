@@ -37,16 +37,28 @@ namespace Microsoft.Graph
         public string CatalogId { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets created by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public string CreatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is hidden.
@@ -61,18 +73,6 @@ namespace Microsoft.Graph
         public bool? IsRoleScopesVisible { get; set; }
     
         /// <summary>
-        /// Gets or sets created by.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public string CreatedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets modified by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedBy", Required = Newtonsoft.Json.Required.Default)]
@@ -85,6 +85,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets access package assignment policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessPackageAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets access package catalog.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageCatalog", Required = Newtonsoft.Json.Required.Default)]
@@ -95,12 +101,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRoleScopes", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets access package assignment policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IAccessPackageAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
     
     }
 }

@@ -76,6 +76,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectGetUserOwnedObjects.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectGetUserOwnedObjectsRequestBuilder"/>.</returns>
+        public IDirectoryObjectGetUserOwnedObjectsRequestBuilder GetUserOwnedObjects(
+            string userId = null,
+            string type = null)
+        {
+            return new DirectoryObjectGetUserOwnedObjectsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getUserOwnedObjects"),
+                this.Client,
+                userId,
+                type);
+        }
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectValidateProperties.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>
@@ -92,21 +107,6 @@ namespace Microsoft.Graph
                 displayName,
                 mailNickname,
                 onBehalfOfUserId);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DirectoryObjectGetUserOwnedObjects.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectGetUserOwnedObjectsRequestBuilder"/>.</returns>
-        public IDirectoryObjectGetUserOwnedObjectsRequestBuilder GetUserOwnedObjects(
-            string userId = null,
-            string type = null)
-        {
-            return new DirectoryObjectGetUserOwnedObjectsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getUserOwnedObjects"),
-                this.Client,
-                userId,
-                type);
         }
     }
 }

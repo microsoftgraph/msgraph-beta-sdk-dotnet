@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets install command line.
-        /// The command line to install this app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installCommandLine", Required = Newtonsoft.Json.Required.Default)]
-        public string InstallCommandLine { get; set; }
-    
-        /// <summary>
-        /// Gets or sets uninstall command line.
-        /// The command line to uninstall this app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallCommandLine", Required = Newtonsoft.Json.Required.Default)]
-        public string UninstallCommandLine { get; set; }
-    
-        /// <summary>
         /// Gets or sets applicable architectures.
         /// The Windows architecture(s) for which this app can run on.
         /// </summary>
@@ -52,11 +38,38 @@ namespace Microsoft.Graph
         public WindowsArchitecture? ApplicableArchitectures { get; set; }
     
         /// <summary>
-        /// Gets or sets minimum supported operating system.
-        /// The value for the minimum applicable operating system.
+        /// Gets or sets detection rules.
+        /// The detection rules to detect Win32 Line of Business (LoB) app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionRules", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Win32LobAppDetection> DetectionRules { get; set; }
+    
+        /// <summary>
+        /// Gets or sets install command line.
+        /// The command line to install this app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installCommandLine", Required = Newtonsoft.Json.Required.Default)]
+        public string InstallCommandLine { get; set; }
+    
+        /// <summary>
+        /// Gets or sets install experience.
+        /// The install experience for this app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installExperience", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppInstallExperience InstallExperience { get; set; }
+    
+        /// <summary>
+        /// Gets or sets install language.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installLanguage", Required = Newtonsoft.Json.Required.Default)]
+        public string InstallLanguage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum cpu speed in mhz.
+        /// The value for the minimum CPU speed which is required to install this app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumCpuSpeedInMHz", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MinimumCpuSpeedInMHz { get; set; }
     
         /// <summary>
         /// Gets or sets minimum free disk space in mb.
@@ -80,46 +93,18 @@ namespace Microsoft.Graph
         public Int32? MinimumNumberOfProcessors { get; set; }
     
         /// <summary>
-        /// Gets or sets minimum cpu speed in mhz.
-        /// The value for the minimum CPU speed which is required to install this app.
+        /// Gets or sets minimum supported operating system.
+        /// The value for the minimum applicable operating system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumCpuSpeedInMHz", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MinimumCpuSpeedInMHz { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
         /// <summary>
-        /// Gets or sets detection rules.
-        /// The detection rules to detect Win32 Line of Business (LoB) app.
+        /// Gets or sets minimum supported windows release.
+        /// The value for the minimum supported windows release.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionRules", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Win32LobAppDetection> DetectionRules { get; set; }
-    
-        /// <summary>
-        /// Gets or sets requirement rules.
-        /// The requirement rules to detect Win32 Line of Business (LoB) app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requirementRules", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Win32LobAppRequirement> RequirementRules { get; set; }
-    
-        /// <summary>
-        /// Gets or sets rules.
-        /// The detection and requirement rules for this app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rules", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Win32LobAppRule> Rules { get; set; }
-    
-        /// <summary>
-        /// Gets or sets install experience.
-        /// The install experience for this app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installExperience", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppInstallExperience InstallExperience { get; set; }
-    
-        /// <summary>
-        /// Gets or sets return codes.
-        /// The return codes for post installation behavior.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnCodes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Win32LobAppReturnCode> ReturnCodes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedWindowsRelease", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumSupportedWindowsRelease { get; set; }
     
         /// <summary>
         /// Gets or sets msi information.
@@ -129,6 +114,27 @@ namespace Microsoft.Graph
         public Win32LobAppMsiInformation MsiInformation { get; set; }
     
         /// <summary>
+        /// Gets or sets requirement rules.
+        /// The requirement rules to detect Win32 Line of Business (LoB) app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requirementRules", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Win32LobAppRequirement> RequirementRules { get; set; }
+    
+        /// <summary>
+        /// Gets or sets return codes.
+        /// The return codes for post installation behavior.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnCodes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Win32LobAppReturnCode> ReturnCodes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rules.
+        /// The detection and requirement rules for this app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rules", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Win32LobAppRule> Rules { get; set; }
+    
+        /// <summary>
         /// Gets or sets setup file path.
         /// The relative path of the setup file in the encrypted Win32LobApp package.
         /// </summary>
@@ -136,17 +142,11 @@ namespace Microsoft.Graph
         public string SetupFilePath { get; set; }
     
         /// <summary>
-        /// Gets or sets install language.
+        /// Gets or sets uninstall command line.
+        /// The command line to uninstall this app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installLanguage", Required = Newtonsoft.Json.Required.Default)]
-        public string InstallLanguage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum supported windows release.
-        /// The value for the minimum supported windows release.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedWindowsRelease", Required = Newtonsoft.Json.Required.Default)]
-        public string MinimumSupportedWindowsRelease { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallCommandLine", Required = Newtonsoft.Json.Required.Default)]
+        public string UninstallCommandLine { get; set; }
     
     }
 }

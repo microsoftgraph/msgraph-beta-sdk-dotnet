@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets authentication method.
+        /// Authentication method for this VPN connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
+    
+        /// <summary>
         /// Gets or sets connection name.
         /// Connection name displayed to the user.
         /// </summary>
@@ -43,41 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionType", Required = Newtonsoft.Json.Required.Default)]
         public AppleVpnConnectionType? ConnectionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets login group or domain.
-        /// Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginGroupOrDomain", Required = Newtonsoft.Json.Required.Default)]
-        public string LoginGroupOrDomain { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role.
-        /// Role when connection type is set to Pulse Secure.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
-        public string Role { get; set; }
-    
-        /// <summary>
-        /// Gets or sets realm.
-        /// Realm when connection type is set to Pulse Secure.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realm", Required = Newtonsoft.Json.Required.Default)]
-        public string Realm { get; set; }
-    
-        /// <summary>
-        /// Gets or sets server.
-        /// VPN Server on the network. Make sure end users can access this network location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "server", Required = Newtonsoft.Json.Required.Default)]
-        public VpnServer Server { get; set; }
-    
-        /// <summary>
-        /// Gets or sets identifier.
-        /// Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifier", Required = Newtonsoft.Json.Required.Default)]
-        public string Identifier { get; set; }
     
         /// <summary>
         /// Gets or sets custom data.
@@ -94,20 +66,6 @@ namespace Microsoft.Graph
         public IEnumerable<KeyValuePair> CustomKeyValueData { get; set; }
     
         /// <summary>
-        /// Gets or sets enable split tunneling.
-        /// Send all network traffic through VPN.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSplitTunneling", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableSplitTunneling { get; set; }
-    
-        /// <summary>
-        /// Gets or sets authentication method.
-        /// Authentication method for this VPN connection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
-        public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
-    
-        /// <summary>
         /// Gets or sets enable per app.
         /// Setting this to true creates Per-App VPN payload which can later be associated with Apps that can trigger this VPN conneciton on the end user's iOS device.
         /// </summary>
@@ -115,11 +73,25 @@ namespace Microsoft.Graph
         public bool? EnablePerApp { get; set; }
     
         /// <summary>
-        /// Gets or sets safari domains.
-        /// Safari domains when this VPN per App setting is enabled. In addition to the apps associated with this VPN, Safari domains specified here will also be able to trigger this VPN connection.
+        /// Gets or sets enable split tunneling.
+        /// Send all network traffic through VPN.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safariDomains", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> SafariDomains { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSplitTunneling", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableSplitTunneling { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identifier.
+        /// Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifier", Required = Newtonsoft.Json.Required.Default)]
+        public string Identifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets login group or domain.
+        /// Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginGroupOrDomain", Required = Newtonsoft.Json.Required.Default)]
+        public string LoginGroupOrDomain { get; set; }
     
         /// <summary>
         /// Gets or sets on demand rules.
@@ -127,6 +99,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onDemandRules", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<VpnOnDemandRule> OnDemandRules { get; set; }
+    
+        /// <summary>
+        /// Gets or sets opt in to device id sharing.
+        /// Opt-In to sharing the device's Id to third-party vpn clients for use during network access control validation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "optInToDeviceIdSharing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OptInToDeviceIdSharing { get; set; }
     
         /// <summary>
         /// Gets or sets provider type.
@@ -143,11 +122,32 @@ namespace Microsoft.Graph
         public VpnProxyServer ProxyServer { get; set; }
     
         /// <summary>
-        /// Gets or sets opt in to device id sharing.
-        /// Opt-In to sharing the device's Id to third-party vpn clients for use during network access control validation.
+        /// Gets or sets realm.
+        /// Realm when connection type is set to Pulse Secure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "optInToDeviceIdSharing", Required = Newtonsoft.Json.Required.Default)]
-        public bool? OptInToDeviceIdSharing { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realm", Required = Newtonsoft.Json.Required.Default)]
+        public string Realm { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role.
+        /// Role when connection type is set to Pulse Secure.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        public string Role { get; set; }
+    
+        /// <summary>
+        /// Gets or sets safari domains.
+        /// Safari domains when this VPN per App setting is enabled. In addition to the apps associated with this VPN, Safari domains specified here will also be able to trigger this VPN connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safariDomains", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SafariDomains { get; set; }
+    
+        /// <summary>
+        /// Gets or sets server.
+        /// VPN Server on the network. Make sure end users can access this network location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "server", Required = Newtonsoft.Json.Required.Default)]
+        public VpnServer Server { get; set; }
     
     }
 }

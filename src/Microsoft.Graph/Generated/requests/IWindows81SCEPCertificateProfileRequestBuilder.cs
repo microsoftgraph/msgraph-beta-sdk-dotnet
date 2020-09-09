@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IWindows81SCEPCertificateProfileRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IWindows81TrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        IWindows81TrustedRootCertificateWithReferenceRequestBuilder RootCertificate { get; }
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceCertificateStates.
         /// </summary>
         /// <returns>The <see cref="IWindows81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder"/>.</returns>
         IWindows81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder ManagedDeviceCertificateStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IWindows81TrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IWindows81TrustedRootCertificateWithReferenceRequestBuilder RootCertificate { get; }
     
     }
 }

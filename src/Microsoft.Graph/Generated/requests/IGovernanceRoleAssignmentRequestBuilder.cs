@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IGovernanceRoleAssignmentRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for LinkedEligibleRoleAssignment.
+        /// </summary>
+        /// <returns>The <see cref="IGovernanceRoleAssignmentWithReferenceRequestBuilder"/>.</returns>
+        IGovernanceRoleAssignmentWithReferenceRequestBuilder LinkedEligibleRoleAssignment { get; }
+
+        /// <summary>
         /// Gets the request builder for Resource.
         /// </summary>
         /// <returns>The <see cref="IGovernanceResourceRequestBuilder"/>.</returns>
@@ -48,12 +54,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGovernanceSubjectRequestBuilder"/>.</returns>
         IGovernanceSubjectRequestBuilder Subject { get; }
-
-        /// <summary>
-        /// Gets the request builder for LinkedEligibleRoleAssignment.
-        /// </summary>
-        /// <returns>The <see cref="IGovernanceRoleAssignmentWithReferenceRequestBuilder"/>.</returns>
-        IGovernanceRoleAssignmentWithReferenceRequestBuilder LinkedEligibleRoleAssignment { get; }
     
         
     

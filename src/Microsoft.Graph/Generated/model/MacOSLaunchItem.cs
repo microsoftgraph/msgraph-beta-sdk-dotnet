@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets path.
-        /// Path to the launch item.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
-        public string Path { get; set; }
-    
-        /// <summary>
         /// Gets or sets hide.
         /// Whether or not to hide the item from the Users and Groups List.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hide", Required = Newtonsoft.Json.Required.Default)]
         public bool? Hide { get; set; }
+    
+        /// <summary>
+        /// Gets or sets path.
+        /// Path to the launch item.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
+        public string Path { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

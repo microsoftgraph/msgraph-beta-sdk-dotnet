@@ -30,18 +30,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets errorCode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
-        public string ErrorCode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reason.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
-        public string Reason { get; set; }
-    
-        /// <summary>
         /// Gets or sets additionalDetails.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
@@ -52,6 +40,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCategory", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorCategory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets errorCode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        public string ErrorCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reason.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedAction.

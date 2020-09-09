@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IOutlookTaskFolderRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Tasks.
+        /// Gets the request builder for MultiValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskFolderTasksCollectionRequestBuilder"/>.</returns>
-        IOutlookTaskFolderTasksCollectionRequestBuilder Tasks { get; }
+        /// <returns>The <see cref="IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
 
         /// <summary>
         /// Gets the request builder for SingleValueExtendedProperties.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         IOutlookTaskFolderSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
 
         /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
+        /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
+        /// <returns>The <see cref="IOutlookTaskFolderTasksCollectionRequestBuilder"/>.</returns>
+        IOutlookTaskFolderTasksCollectionRequestBuilder Tasks { get; }
     
     }
 }

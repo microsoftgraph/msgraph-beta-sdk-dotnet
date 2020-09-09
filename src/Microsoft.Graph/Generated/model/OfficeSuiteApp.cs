@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public bool? AutoAcceptEula { get; set; }
     
         /// <summary>
-        /// Gets or sets product ids.
-        /// The Product Ids that represent the Office365 Suite SKU.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<OfficeProductId> ProductIds { get; set; }
-    
-        /// <summary>
         /// Gets or sets excluded apps.
         /// The property to represent the apps which are excluded from the selected Office365 Product Id.
         /// </summary>
@@ -52,25 +45,11 @@ namespace Microsoft.Graph
         public ExcludedApps ExcludedApps { get; set; }
     
         /// <summary>
-        /// Gets or sets use shared computer activation.
-        /// The property to represent that whether the shared computer activation is used not for Office365 app suite.
+        /// Gets or sets install progress display level.
+        /// To specify the level of display for the Installation Progress Setup UI on the Device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useSharedComputerActivation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UseSharedComputerActivation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets update channel.
-        /// The property to represent the Office365 Update Channel.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateChannel", Required = Newtonsoft.Json.Required.Default)]
-        public OfficeUpdateChannel? UpdateChannel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets office platform architecture.
-        /// The property to represent the Office365 app suite version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officePlatformArchitecture", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsArchitecture? OfficePlatformArchitecture { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installProgressDisplayLevel", Required = Newtonsoft.Json.Required.Default)]
+        public OfficeSuiteInstallProgressDisplayLevel? InstallProgressDisplayLevel { get; set; }
     
         /// <summary>
         /// Gets or sets locales to install.
@@ -80,11 +59,25 @@ namespace Microsoft.Graph
         public IEnumerable<string> LocalesToInstall { get; set; }
     
         /// <summary>
-        /// Gets or sets install progress display level.
-        /// To specify the level of display for the Installation Progress Setup UI on the Device.
+        /// Gets or sets office configuration xml.
+        /// The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installProgressDisplayLevel", Required = Newtonsoft.Json.Required.Default)]
-        public OfficeSuiteInstallProgressDisplayLevel? InstallProgressDisplayLevel { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeConfigurationXml", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] OfficeConfigurationXml { get; set; }
+    
+        /// <summary>
+        /// Gets or sets office platform architecture.
+        /// The property to represent the Office365 app suite version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officePlatformArchitecture", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsArchitecture? OfficePlatformArchitecture { get; set; }
+    
+        /// <summary>
+        /// Gets or sets product ids.
+        /// The Product Ids that represent the Office365 Suite SKU.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OfficeProductId> ProductIds { get; set; }
     
         /// <summary>
         /// Gets or sets should uninstall older versions of office.
@@ -101,6 +94,13 @@ namespace Microsoft.Graph
         public string TargetVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets update channel.
+        /// The property to represent the Office365 Update Channel.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateChannel", Required = Newtonsoft.Json.Required.Default)]
+        public OfficeUpdateChannel? UpdateChannel { get; set; }
+    
+        /// <summary>
         /// Gets or sets update version.
         /// The property to represent the update version in which the specific target version is available for the Office365 app suite.
         /// </summary>
@@ -108,11 +108,11 @@ namespace Microsoft.Graph
         public string UpdateVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets office configuration xml.
-        /// The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.
+        /// Gets or sets use shared computer activation.
+        /// The property to represent that whether the shared computer activation is used not for Office365 app suite.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeConfigurationXml", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] OfficeConfigurationXml { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useSharedComputerActivation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UseSharedComputerActivation { get; set; }
     
     }
 }

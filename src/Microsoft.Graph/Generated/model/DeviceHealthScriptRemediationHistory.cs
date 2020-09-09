@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets lastModifiedDateTime.
-        /// The date on which the results history is calculated for the healthscript.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets historyData.
         /// The number of devices remediated by the device health script on the given date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "historyData", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeviceHealthScriptRemediationHistoryData> HistoryData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lastModifiedDateTime.
+        /// The date on which the results history is calculated for the healthscript.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

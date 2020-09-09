@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new ICustomerPaymentJournalRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for CustomerPayments.
-        /// </summary>
-        /// <returns>The <see cref="ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder"/>.</returns>
-        ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder CustomerPayments { get; }
-
-        /// <summary>
         /// Gets the request builder for Account.
         /// </summary>
         /// <returns>The <see cref="IAccountRequestBuilder"/>.</returns>
         IAccountRequestBuilder Account { get; }
+
+        /// <summary>
+        /// Gets the request builder for CustomerPayments.
+        /// </summary>
+        /// <returns>The <see cref="ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder"/>.</returns>
+        ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder CustomerPayments { get; }
     
     }
 }

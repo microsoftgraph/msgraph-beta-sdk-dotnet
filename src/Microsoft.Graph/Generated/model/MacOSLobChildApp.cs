@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets bundleId.
-        /// The Identity Name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
-        public string BundleId { get; set; }
-    
-        /// <summary>
         /// Gets or sets buildNumber.
         /// The build number of MacOS Line of Business (LoB) app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buildNumber", Required = Newtonsoft.Json.Required.Default)]
         public string BuildNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bundleId.
+        /// The Identity Name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets versionNumber.

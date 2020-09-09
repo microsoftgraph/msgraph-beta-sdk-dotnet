@@ -31,11 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// Unique GUID of the conditional access policy.
+        /// Gets or sets conditionsNotSatisfied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsNotSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
+    
+        /// <summary>
+        /// Gets or sets conditionsSatisfied.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
@@ -59,16 +64,11 @@ namespace Microsoft.Graph
         public IEnumerable<string> EnforcedSessionControls { get; set; }
     
         /// <summary>
-        /// Gets or sets conditionsSatisfied.
+        /// Gets or sets id.
+        /// Unique GUID of the conditional access policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsSatisfied", Required = Newtonsoft.Json.Required.Default)]
-        public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
-    
-        /// <summary>
-        /// Gets or sets conditionsNotSatisfied.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsNotSatisfied", Required = Newtonsoft.Json.Required.Default)]
-        public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets result.

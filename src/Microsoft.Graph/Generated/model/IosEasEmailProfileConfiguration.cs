@@ -73,13 +73,6 @@ namespace Microsoft.Graph
         public EmailSyncDuration? DurationOfEmailToSync { get; set; }
     
         /// <summary>
-        /// Gets or sets email address source.
-        /// Email attribute that is picked from AAD and injected into this profile before installing on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddressSource", Required = Newtonsoft.Json.Required.Default)]
-        public UserEmailSource? EmailAddressSource { get; set; }
-    
-        /// <summary>
         /// Gets or sets eas services.
         /// Exchange data to sync.
         /// </summary>
@@ -92,6 +85,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "easServicesUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? EasServicesUserOverrideEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets email address source.
+        /// Email attribute that is picked from AAD and injected into this profile before installing on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddressSource", Required = Newtonsoft.Json.Required.Default)]
+        public UserEmailSource? EmailAddressSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets encryption certificate type.
+        /// Encryption Certificate type for this Email profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificateType", Required = Newtonsoft.Json.Required.Default)]
+        public EmailCertificateType? EncryptionCertificateType { get; set; }
     
         /// <summary>
         /// Gets or sets host name.
@@ -108,6 +115,20 @@ namespace Microsoft.Graph
         public bool? RequireSmime { get; set; }
     
         /// <summary>
+        /// Gets or sets require ssl.
+        /// Indicates whether or not to use SSL.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireSsl", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RequireSsl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets signing certificate type.
+        /// Signing Certificate type for this Email profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signingCertificateType", Required = Newtonsoft.Json.Required.Default)]
+        public EmailCertificateType? SigningCertificateType { get; set; }
+    
+        /// <summary>
         /// Gets or sets smime enable per message switch.
         /// Indicates whether or not to allow unencrypted emails.
         /// </summary>
@@ -120,6 +141,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeEncryptByDefaultEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SmimeEncryptByDefaultEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smime encrypt by default user override enabled.
+        /// If set to true, the user can toggle the encryption by default setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeEncryptByDefaultUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmimeEncryptByDefaultUserOverrideEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smime encryption certificate user override enabled.
+        /// If set to true the user can select the S/MIME encryption identity. 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeEncryptionCertificateUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmimeEncryptionCertificateUserOverrideEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smime signing certificate user override enabled.
+        /// If set to true, the user can select the signing identity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeSigningCertificateUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmimeSigningCertificateUserOverrideEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets smime signing enabled.
@@ -136,34 +178,6 @@ namespace Microsoft.Graph
         public bool? SmimeSigningUserOverrideEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets smime encrypt by default user override enabled.
-        /// If set to true, the user can toggle the encryption by default setting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeEncryptByDefaultUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmimeEncryptByDefaultUserOverrideEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smime signing certificate user override enabled.
-        /// If set to true, the user can select the signing identity.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeSigningCertificateUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmimeSigningCertificateUserOverrideEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smime encryption certificate user override enabled.
-        /// If set to true the user can select the S/MIME encryption identity. 
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeEncryptionCertificateUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmimeEncryptionCertificateUserOverrideEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets require ssl.
-        /// Indicates whether or not to use SSL.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireSsl", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RequireSsl { get; set; }
-    
-        /// <summary>
         /// Gets or sets use oauth.
         /// Specifies whether the connection should use OAuth for authentication.
         /// </summary>
@@ -171,18 +185,11 @@ namespace Microsoft.Graph
         public bool? UseOAuth { get; set; }
     
         /// <summary>
-        /// Gets or sets signing certificate type.
-        /// Signing Certificate type for this Email profile.
+        /// Gets or sets derived credential settings.
+        /// Tenant level settings for the Derived Credentials to be used for authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signingCertificateType", Required = Newtonsoft.Json.Required.Default)]
-        public EmailCertificateType? SigningCertificateType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets encryption certificate type.
-        /// Encryption Certificate type for this Email profile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificateType", Required = Newtonsoft.Json.Required.Default)]
-        public EmailCertificateType? EncryptionCertificateType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.
@@ -192,13 +199,6 @@ namespace Microsoft.Graph
         public IosCertificateProfileBase IdentityCertificate { get; set; }
     
         /// <summary>
-        /// Gets or sets smime signing certificate.
-        /// S/MIME signing certificate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeSigningCertificate", Required = Newtonsoft.Json.Required.Default)]
-        public IosCertificateProfile SmimeSigningCertificate { get; set; }
-    
-        /// <summary>
         /// Gets or sets smime encryption certificate.
         /// S/MIME encryption certificate.
         /// </summary>
@@ -206,11 +206,11 @@ namespace Microsoft.Graph
         public IosCertificateProfile SmimeEncryptionCertificate { get; set; }
     
         /// <summary>
-        /// Gets or sets derived credential settings.
-        /// Tenant level settings for the Derived Credentials to be used for authentication.
+        /// Gets or sets smime signing certificate.
+        /// S/MIME signing certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeSigningCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public IosCertificateProfile SmimeSigningCertificate { get; set; }
     
     }
 }

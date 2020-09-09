@@ -31,16 +31,22 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
+        /// Gets or sets is root scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRootScope", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRootScope { get; set; }
     
         /// <summary>
         /// Gets or sets origin id.
@@ -59,12 +65,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleOriginId", Required = Newtonsoft.Json.Required.Default)]
         public string RoleOriginId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is root scope.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRootScope", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsRootScope { get; set; }
     
         /// <summary>
         /// Gets or sets url.

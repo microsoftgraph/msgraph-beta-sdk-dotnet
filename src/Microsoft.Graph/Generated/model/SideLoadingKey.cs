@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets value.
-        /// Side Loading Key Value, it is 5x5 value, seperated by hiphens.
+        /// Gets or sets description.
+        /// Side Loading Key description displayed to the ITPro Admins..
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
-        public string Value { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
-        /// Side Loading Key description displayed to the ITPro Admins..
+        /// Gets or sets last updated date time.
+        /// Side Loading Key Last Updated Date displayed to the ITPro Admins.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public string LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets total activation.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public Int32? TotalActivation { get; set; }
     
         /// <summary>
-        /// Gets or sets last updated date time.
-        /// Side Loading Key Last Updated Date displayed to the ITPro Admins.
+        /// Gets or sets value.
+        /// Side Loading Key Value, it is 5x5 value, seperated by hiphens.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public string LastUpdatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        public string Value { get; set; }
     
     }
 }

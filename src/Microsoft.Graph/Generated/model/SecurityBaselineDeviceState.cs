@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets managed device id.
-        /// Intune device id
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ManagedDeviceId { get; set; }
-    
-        /// <summary>
         /// Gets or sets device display name.
         /// Display name of the device
         /// </summary>
@@ -45,11 +38,18 @@ namespace Microsoft.Graph
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets user principal name.
-        /// User Principal Name
+        /// Gets or sets last reported date time.
+        /// Last modified date time of the policy report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastReportedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed device id.
+        /// Intune device id
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets state.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public SecurityBaselineComplianceState? State { get; set; }
     
         /// <summary>
-        /// Gets or sets last reported date time.
-        /// Last modified date time of the policy report
+        /// Gets or sets user principal name.
+        /// User Principal Name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastReportedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

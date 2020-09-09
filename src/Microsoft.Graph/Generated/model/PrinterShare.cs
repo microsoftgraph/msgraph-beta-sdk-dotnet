@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets printer.
+        /// Gets or sets allowed groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printer", Required = Newtonsoft.Json.Required.Default)]
-        public Printer Printer { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedGroups", Required = Newtonsoft.Json.Required.Default)]
+        public IPrinterShareAllowedGroupsCollectionPage AllowedGroups { get; set; }
     
         /// <summary>
         /// Gets or sets allowed users.
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         public IPrinterShareAllowedUsersCollectionPage AllowedUsers { get; set; }
     
         /// <summary>
-        /// Gets or sets allowed groups.
+        /// Gets or sets printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedGroups", Required = Newtonsoft.Json.Required.Default)]
-        public IPrinterShareAllowedGroupsCollectionPage AllowedGroups { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printer", Required = Newtonsoft.Json.Required.Default)]
+        public Printer Printer { get; set; }
     
     }
 }

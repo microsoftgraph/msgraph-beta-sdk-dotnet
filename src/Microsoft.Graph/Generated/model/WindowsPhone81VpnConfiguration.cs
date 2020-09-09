@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets authentication method.
+        /// Authentication method.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
+    
+        /// <summary>
         /// Gets or sets bypass vpn on company wifi.
         /// Bypass VPN on company Wi-Fi.
         /// </summary>
@@ -45,11 +52,11 @@ namespace Microsoft.Graph
         public bool? BypassVpnOnHomeWifi { get; set; }
     
         /// <summary>
-        /// Gets or sets authentication method.
-        /// Authentication method.
+        /// Gets or sets dns suffix search list.
+        /// DNS suffix search list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
-        public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixSearchList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DnsSuffixSearchList { get; set; }
     
         /// <summary>
         /// Gets or sets remember user credentials.
@@ -57,13 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rememberUserCredentials", Required = Newtonsoft.Json.Required.Default)]
         public bool? RememberUserCredentials { get; set; }
-    
-        /// <summary>
-        /// Gets or sets dns suffix search list.
-        /// DNS suffix search list.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixSearchList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DnsSuffixSearchList { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.

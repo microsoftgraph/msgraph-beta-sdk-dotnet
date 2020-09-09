@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets ios restriction.
-        /// Not yet documented
+        /// Gets or sets android for work restriction.
+        /// Android for work restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction IosRestriction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows restriction.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction WindowsRestriction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows mobile restriction.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMobileRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidForWorkRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction AndroidForWorkRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets android restriction.
@@ -59,11 +45,18 @@ namespace Microsoft.Graph
         public DeviceEnrollmentPlatformRestriction AndroidRestriction { get; set; }
     
         /// <summary>
-        /// Gets or sets android for work restriction.
-        /// Android for work restrictions based on platform, platform operating system version, and device ownership
+        /// Gets or sets ios restriction.
+        /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidForWorkRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction AndroidForWorkRestriction { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction IosRestriction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mac osrestriction.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction MacOSRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets mac restriction.
@@ -73,11 +66,18 @@ namespace Microsoft.Graph
         public DeviceEnrollmentPlatformRestriction MacRestriction { get; set; }
     
         /// <summary>
-        /// Gets or sets mac osrestriction.
+        /// Gets or sets windows mobile restriction.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceEnrollmentPlatformRestriction MacOSRestriction { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMobileRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows restriction.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction WindowsRestriction { get; set; }
     
     }
 }

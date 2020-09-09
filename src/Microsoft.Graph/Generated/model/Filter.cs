@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets categoryFilterGroups.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryFilterGroups", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<FilterGroup> CategoryFilterGroups { get; set; }
+    
+        /// <summary>
         /// Gets or sets groups.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputFilterGroups", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<FilterGroup> InputFilterGroups { get; set; }
-    
-        /// <summary>
-        /// Gets or sets categoryFilterGroups.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryFilterGroups", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<FilterGroup> CategoryFilterGroups { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

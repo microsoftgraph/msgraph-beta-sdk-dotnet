@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets teamIdentifier.
-        /// The team identifier that was used to sign the kernel extension.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string TeamIdentifier { get; set; }
-    
-        /// <summary>
         /// Gets or sets bundleId.
         /// Bundle ID of the kernel extension.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
         public string BundleId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teamIdentifier.
+        /// The team identifier that was used to sign the kernel extension.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string TeamIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

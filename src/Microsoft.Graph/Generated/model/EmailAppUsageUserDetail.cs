@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
+        /// Gets or sets deleted date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user principal name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date DeletedDate { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -49,16 +43,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets imap4app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imap4App", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Imap4App { get; set; }
+    
+        /// <summary>
         /// Gets or sets is deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDeleted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deleted date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date DeletedDate { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
@@ -73,16 +67,16 @@ namespace Microsoft.Graph
         public IEnumerable<string> MailForMac { get; set; }
     
         /// <summary>
+        /// Gets or sets other for mobile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "otherForMobile", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> OtherForMobile { get; set; }
+    
+        /// <summary>
         /// Gets or sets outlook for mac.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForMac", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> OutlookForMac { get; set; }
-    
-        /// <summary>
-        /// Gets or sets outlook for windows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForWindows", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> OutlookForWindows { get; set; }
     
         /// <summary>
         /// Gets or sets outlook for mobile.
@@ -91,16 +85,16 @@ namespace Microsoft.Graph
         public IEnumerable<string> OutlookForMobile { get; set; }
     
         /// <summary>
-        /// Gets or sets other for mobile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "otherForMobile", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> OtherForMobile { get; set; }
-    
-        /// <summary>
         /// Gets or sets outlook for web.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForWeb", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> OutlookForWeb { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outlook for windows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookForWindows", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> OutlookForWindows { get; set; }
     
         /// <summary>
         /// Gets or sets pop3app.
@@ -109,10 +103,16 @@ namespace Microsoft.Graph
         public IEnumerable<string> Pop3App { get; set; }
     
         /// <summary>
-        /// Gets or sets imap4app.
+        /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imap4App", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Imap4App { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets smtp app.
@@ -121,10 +121,10 @@ namespace Microsoft.Graph
         public IEnumerable<string> SmtpApp { get; set; }
     
         /// <summary>
-        /// Gets or sets report period.
+        /// Gets or sets user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportPeriod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets inventoryCount.
-        /// Number of devices with Inventory swung-over. This property is read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventoryCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? InventoryCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets compliancePolicyCount.
         /// Number of devices with CompliancePolicy swung-over. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? CompliancePolicyCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resourceAccessCount.
-        /// Number of devices with ResourceAccess swung-over. This property is read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAccessCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ResourceAccessCount { get; set; }
     
         /// <summary>
         /// Gets or sets configurationSettingsCount.
@@ -59,18 +45,18 @@ namespace Microsoft.Graph
         public Int32? ConfigurationSettingsCount { get; set; }
     
         /// <summary>
-        /// Gets or sets windowsUpdateForBusinessCount.
-        /// Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsUpdateForBusinessCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WindowsUpdateForBusinessCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets endpointProtectionCount.
         /// Number of devices with EndpointProtection swung-over. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointProtectionCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? EndpointProtectionCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets inventoryCount.
+        /// Number of devices with Inventory swung-over. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventoryCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? InventoryCount { get; set; }
     
         /// <summary>
         /// Gets or sets modernAppsCount.
@@ -87,11 +73,25 @@ namespace Microsoft.Graph
         public Int32? OfficeAppsCount { get; set; }
     
         /// <summary>
+        /// Gets or sets resourceAccessCount.
+        /// Number of devices with ResourceAccess swung-over. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAccessCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ResourceAccessCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets totalComanagedCount.
         /// Number of Co-Managed Devices. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalComanagedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TotalComanagedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windowsUpdateForBusinessCount.
+        /// Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsUpdateForBusinessCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WindowsUpdateForBusinessCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

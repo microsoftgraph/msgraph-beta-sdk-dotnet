@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets bundle id.
-        /// The bundle id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
-        public string BundleId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum supported operating system.
-        /// The value for the minimum applicable operating system.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
-        public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
-    
-        /// <summary>
         /// Gets or sets build number.
         /// The build number of MacOS Line of Business (LoB) app.
         /// </summary>
@@ -52,11 +38,11 @@ namespace Microsoft.Graph
         public string BuildNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets version number.
-        /// The version number of MacOS Line of Business (LoB) app.
+        /// Gets or sets bundle id.
+        /// The bundle id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string VersionNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets child apps.
@@ -73,11 +59,11 @@ namespace Microsoft.Graph
         public string IdentityVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets md5hash chunk size.
-        /// The chunk size for MD5 hash
+        /// Gets or sets ignore version detection.
+        /// A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for macOS Line of Business (LoB) apps that use a self update feature.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "md5HashChunkSize", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Md5HashChunkSize { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ignoreVersionDetection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IgnoreVersionDetection { get; set; }
     
         /// <summary>
         /// Gets or sets md5hash.
@@ -87,11 +73,25 @@ namespace Microsoft.Graph
         public IEnumerable<string> Md5Hash { get; set; }
     
         /// <summary>
-        /// Gets or sets ignore version detection.
-        /// A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for macOS Line of Business (LoB) apps that use a self update feature.
+        /// Gets or sets md5hash chunk size.
+        /// The chunk size for MD5 hash
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ignoreVersionDetection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IgnoreVersionDetection { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "md5HashChunkSize", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Md5HashChunkSize { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum supported operating system.
+        /// The value for the minimum applicable operating system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version number.
+        /// The version number of MacOS Line of Business (LoB) app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string VersionNumber { get; set; }
     
     }
 }

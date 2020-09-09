@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (approvalToInitialize != null && approvalToInitialize.AdditionalData != null)
             {
 
-                if (approvalToInitialize.PendingSteps != null && approvalToInitialize.PendingSteps.CurrentPage != null)
-                {
-                    approvalToInitialize.PendingSteps.AdditionalData = approvalToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalToInitialize.AdditionalData.TryGetValue("pendingSteps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalToInitialize.PendingSteps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (approvalToInitialize.CompletedSteps != null && approvalToInitialize.CompletedSteps.CurrentPage != null)
                 {
                     approvalToInitialize.CompletedSteps.AdditionalData = approvalToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         approvalToInitialize.CompletedSteps.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (approvalToInitialize.PendingSteps != null && approvalToInitialize.PendingSteps.CurrentPage != null)
+                {
+                    approvalToInitialize.PendingSteps.AdditionalData = approvalToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    approvalToInitialize.AdditionalData.TryGetValue("pendingSteps@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        approvalToInitialize.PendingSteps.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

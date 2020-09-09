@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
@@ -43,10 +49,10 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
+        /// Gets or sets publisherName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisherName", Required = Newtonsoft.Json.Required.Default)]
+        public string PublisherName { get; set; }
     
         /// <summary>
         /// Gets or sets rulePackageId.
@@ -59,12 +65,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rulePackageType", Required = Newtonsoft.Json.Required.Default)]
         public string RulePackageType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets publisherName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisherName", Required = Newtonsoft.Json.Required.Default)]
-        public string PublisherName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

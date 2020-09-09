@@ -24,11 +24,11 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets name.
-        /// The name of the param
+        /// Gets or sets applyDefaultValueWhenNotAssigned.
+        /// Whether Apply DefaultValue When Not Assigned
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyDefaultValueWhenNotAssigned", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApplyDefaultValueWhenNotAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public bool? IsRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets applyDefaultValueWhenNotAssigned.
-        /// Whether Apply DefaultValue When Not Assigned
+        /// Gets or sets name.
+        /// The name of the param
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyDefaultValueWhenNotAssigned", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApplyDefaultValueWhenNotAssigned { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

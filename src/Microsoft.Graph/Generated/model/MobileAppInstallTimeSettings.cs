@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets useLocalTime.
-        /// Whether the local device time or UTC time should be used when determining the available and deadline times.
+        /// Gets or sets deadlineDateTime.
+        /// The time at which the app should be installed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useLocalTime", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UseLocalTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deadlineDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? DeadlineDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets deadlineDateTime.
-        /// The time at which the app should be installed.
+        /// Gets or sets useLocalTime.
+        /// Whether the local device time or UTC time should be used when determining the available and deadline times.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deadlineDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? DeadlineDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useLocalTime", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UseLocalTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

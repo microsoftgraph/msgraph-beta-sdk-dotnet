@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets qualityId.
+        /// Gets or sets criteria.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
-        public string QualityId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets displayName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criteria", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RubricCriterion> Criteria { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -49,16 +43,22 @@ namespace Microsoft.Graph
         public EducationItemBody Description { get; set; }
     
         /// <summary>
+        /// Gets or sets displayName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets qualityId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
+        public string QualityId { get; set; }
+    
+        /// <summary>
         /// Gets or sets weight.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "weight", Required = Newtonsoft.Json.Required.Default)]
         public Single? Weight { get; set; }
-    
-        /// <summary>
-        /// Gets or sets criteria.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criteria", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RubricCriterion> Criteria { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

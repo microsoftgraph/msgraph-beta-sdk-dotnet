@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (mobileAppToInitialize != null && mobileAppToInitialize.AdditionalData != null)
             {
 
-                if (mobileAppToInitialize.Categories != null && mobileAppToInitialize.Categories.CurrentPage != null)
-                {
-                    mobileAppToInitialize.Categories.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (mobileAppToInitialize.Assignments != null && mobileAppToInitialize.Assignments.CurrentPage != null)
                 {
                     mobileAppToInitialize.Assignments.AdditionalData = mobileAppToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         mobileAppToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (mobileAppToInitialize.Categories != null && mobileAppToInitialize.Categories.CurrentPage != null)
+                {
+                    mobileAppToInitialize.Categories.AdditionalData = mobileAppToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    mobileAppToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        mobileAppToInitialize.Categories.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -282,22 +282,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (mobileAppToInitialize.UserStatuses != null && mobileAppToInitialize.UserStatuses.CurrentPage != null)
-                {
-                    mobileAppToInitialize.UserStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (mobileAppToInitialize.Relationships != null && mobileAppToInitialize.Relationships.CurrentPage != null)
                 {
                     mobileAppToInitialize.Relationships.AdditionalData = mobileAppToInitialize.AdditionalData;
@@ -309,6 +293,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         mobileAppToInitialize.Relationships.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (mobileAppToInitialize.UserStatuses != null && mobileAppToInitialize.UserStatuses.CurrentPage != null)
+                {
+                    mobileAppToInitialize.UserStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    mobileAppToInitialize.AdditionalData.TryGetValue("userStatuses@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        mobileAppToInitialize.UserStatuses.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

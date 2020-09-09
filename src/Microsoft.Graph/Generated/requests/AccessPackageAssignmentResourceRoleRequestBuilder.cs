@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AccessPackageResourceScope.
+        /// Gets the request builder for AccessPackageAssignments.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageResourceScopeRequestBuilder"/>.</returns>
-        public IAccessPackageResourceScopeRequestBuilder AccessPackageResourceScope
+        /// <returns>The <see cref="IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments
         {
             get
             {
-                return new AccessPackageResourceScopeRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceScope"), this.Client);
+                return new AccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignments"), this.Client);
             }
         }
 
@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AccessPackageResourceScope.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageResourceScopeRequestBuilder"/>.</returns>
+        public IAccessPackageResourceScopeRequestBuilder AccessPackageResourceScope
+        {
+            get
+            {
+                return new AccessPackageResourceScopeRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceScope"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageSubject.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageSubjectRequestBuilder"/>.</returns>
@@ -83,18 +95,6 @@ namespace Microsoft.Graph
             get
             {
                 return new AccessPackageSubjectRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageSubject"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments
-        {
-            get
-            {
-                return new AccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignments"), this.Client);
             }
         }
     

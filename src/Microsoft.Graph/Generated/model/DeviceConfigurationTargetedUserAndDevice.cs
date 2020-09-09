@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string DeviceName { get; set; }
     
         /// <summary>
-        /// Gets or sets userId.
-        /// The id of the user in the checkin.
+        /// Gets or sets lastCheckinDateTime.
+        /// Last checkin time for this user/device pair.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckinDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastCheckinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets userDisplayName.
@@ -59,18 +59,18 @@ namespace Microsoft.Graph
         public string UserDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets userId.
+        /// The id of the user in the checkin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
         /// Gets or sets userPrincipalName.
         /// The UPN of the user in the checkin.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lastCheckinDateTime.
-        /// Last checkin time for this user/device pair.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckinDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastCheckinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

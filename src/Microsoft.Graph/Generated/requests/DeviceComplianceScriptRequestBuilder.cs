@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RunSummary.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceComplianceScriptRunSummaryRequestBuilder"/>.</returns>
-        public IDeviceComplianceScriptRunSummaryRequestBuilder RunSummary
-        {
-            get
-            {
-                return new DeviceComplianceScriptRunSummaryRequestBuilder(this.AppendSegmentToRequestUrl("runSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceRunStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceComplianceScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceComplianceScriptDeviceRunStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceRunStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceComplianceScriptRunSummaryRequestBuilder"/>.</returns>
+        public IDeviceComplianceScriptRunSummaryRequestBuilder RunSummary
+        {
+            get
+            {
+                return new DeviceComplianceScriptRunSummaryRequestBuilder(this.AppendSegmentToRequestUrl("runSummary"), this.Client);
             }
         }
     

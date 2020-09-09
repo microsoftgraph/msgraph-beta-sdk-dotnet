@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets success device count.
-        /// Success device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SuccessDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets error device count.
         /// Error device count.
         /// </summary>
@@ -45,18 +38,25 @@ namespace Microsoft.Graph
         public Int32? ErrorDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets success user count.
-        /// Success user count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successUserCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SuccessUserCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets error user count.
         /// Error user count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorUserCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorUserCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets success device count.
+        /// Success device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SuccessDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets success user count.
+        /// Success user count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successUserCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SuccessUserCount { get; set; }
     
     }
 }

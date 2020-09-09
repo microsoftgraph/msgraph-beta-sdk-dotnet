@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public WindowsVpnConnectionType? ConnectionType { get; set; }
     
         /// <summary>
-        /// Gets or sets login group or domain.
-        /// Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginGroupOrDomain", Required = Newtonsoft.Json.Required.Default)]
-        public string LoginGroupOrDomain { get; set; }
-    
-        /// <summary>
         /// Gets or sets enable split tunneling.
         /// Enable split tunneling for the VPN.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSplitTunneling", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnableSplitTunneling { get; set; }
+    
+        /// <summary>
+        /// Gets or sets login group or domain.
+        /// Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loginGroupOrDomain", Required = Newtonsoft.Json.Required.Default)]
+        public string LoginGroupOrDomain { get; set; }
     
         /// <summary>
         /// Gets or sets proxy server.

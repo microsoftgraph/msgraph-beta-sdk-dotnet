@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets hideInstallationProgress.
-        /// Show or hide installation progress to user
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideInstallationProgress", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HideInstallationProgress { get; set; }
-    
-        /// <summary>
         /// Gets or sets allowDeviceUseBeforeProfileAndAppInstallComplete.
         /// Allow or block user to use device before profile and app installation complete
         /// </summary>
@@ -45,11 +38,11 @@ namespace Microsoft.Graph
         public bool? AllowDeviceUseBeforeProfileAndAppInstallComplete { get; set; }
     
         /// <summary>
-        /// Gets or sets blockDeviceSetupRetryByUser.
-        /// Allow the user to retry the setup on installation failure
+        /// Gets or sets allowDeviceUseOnInstallFailure.
+        /// Allow the user to continue using the device on installation failure
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockDeviceSetupRetryByUser", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BlockDeviceSetupRetryByUser { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeviceUseOnInstallFailure", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowDeviceUseOnInstallFailure { get; set; }
     
         /// <summary>
         /// Gets or sets allowLogCollectionOnInstallFailure.
@@ -59,6 +52,13 @@ namespace Microsoft.Graph
         public bool? AllowLogCollectionOnInstallFailure { get; set; }
     
         /// <summary>
+        /// Gets or sets blockDeviceSetupRetryByUser.
+        /// Allow the user to retry the setup on installation failure
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockDeviceSetupRetryByUser", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BlockDeviceSetupRetryByUser { get; set; }
+    
+        /// <summary>
         /// Gets or sets customErrorMessage.
         /// Set custom error message to show upon installation failure
         /// </summary>
@@ -66,18 +66,18 @@ namespace Microsoft.Graph
         public string CustomErrorMessage { get; set; }
     
         /// <summary>
+        /// Gets or sets hideInstallationProgress.
+        /// Show or hide installation progress to user
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideInstallationProgress", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideInstallationProgress { get; set; }
+    
+        /// <summary>
         /// Gets or sets installProgressTimeoutInMinutes.
         /// Set installation progress timeout in minutes
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installProgressTimeoutInMinutes", Required = Newtonsoft.Json.Required.Default)]
         public Int32? InstallProgressTimeoutInMinutes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowDeviceUseOnInstallFailure.
-        /// Allow the user to continue using the device on installation failure
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeviceUseOnInstallFailure", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowDeviceUseOnInstallFailure { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

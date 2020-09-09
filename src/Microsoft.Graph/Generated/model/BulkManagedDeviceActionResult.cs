@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets successfulDeviceIds.
-        /// Successful devices
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulDeviceIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> SuccessfulDeviceIds { get; set; }
-    
-        /// <summary>
         /// Gets or sets failedDeviceIds.
         /// Failed devices
         /// </summary>
@@ -57,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notSupportedDeviceIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> NotSupportedDeviceIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets successfulDeviceIds.
+        /// Successful devices
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulDeviceIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SuccessfulDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

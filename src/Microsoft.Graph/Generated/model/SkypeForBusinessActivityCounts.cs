@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets peer to peer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeer", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeer { get; set; }
-    
-        /// <summary>
         /// Gets or sets organized.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organized", Required = Newtonsoft.Json.Required.Default)]
@@ -49,10 +43,10 @@ namespace Microsoft.Graph
         public Int64? Participated { get; set; }
     
         /// <summary>
-        /// Gets or sets report refresh date.
+        /// Gets or sets peer to peer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeer", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeer { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
@@ -65,6 +59,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
     
     }
 }

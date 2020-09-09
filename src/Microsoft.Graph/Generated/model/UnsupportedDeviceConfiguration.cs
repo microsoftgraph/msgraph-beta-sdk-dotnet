@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets original entity type name.
-        /// The type of entity that would be returned otherwise.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalEntityTypeName", Required = Newtonsoft.Json.Required.Default)]
-        public string OriginalEntityTypeName { get; set; }
-    
-        /// <summary>
         /// Gets or sets details.
         /// Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UnsupportedDeviceConfigurationDetail> Details { get; set; }
+    
+        /// <summary>
+        /// Gets or sets original entity type name.
+        /// The type of entity that would be returned otherwise.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalEntityTypeName", Required = Newtonsoft.Json.Required.Default)]
+        public string OriginalEntityTypeName { get; set; }
     
     }
 }

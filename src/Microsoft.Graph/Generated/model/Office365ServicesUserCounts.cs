@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
-    
-        /// <summary>
         /// Gets or sets exchange active.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeActive", Required = Newtonsoft.Json.Required.Default)]
@@ -49,6 +43,18 @@ namespace Microsoft.Graph
         public Int64? ExchangeInactive { get; set; }
     
         /// <summary>
+        /// Gets or sets office365active.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365Active", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Office365Active { get; set; }
+    
+        /// <summary>
+        /// Gets or sets office365inactive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365Inactive", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Office365Inactive { get; set; }
+    
+        /// <summary>
         /// Gets or sets one drive active.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveActive", Required = Newtonsoft.Json.Required.Default)]
@@ -59,6 +65,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveInactive", Required = Newtonsoft.Json.Required.Default)]
         public Int64? OneDriveInactive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report period.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point active.
@@ -85,18 +103,6 @@ namespace Microsoft.Graph
         public Int64? SkypeForBusinessInactive { get; set; }
     
         /// <summary>
-        /// Gets or sets yammer active.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerActive", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? YammerActive { get; set; }
-    
-        /// <summary>
-        /// Gets or sets yammer inactive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerInactive", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? YammerInactive { get; set; }
-    
-        /// <summary>
         /// Gets or sets teams active.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsActive", Required = Newtonsoft.Json.Required.Default)]
@@ -109,22 +115,16 @@ namespace Microsoft.Graph
         public Int64? TeamsInactive { get; set; }
     
         /// <summary>
-        /// Gets or sets office365active.
+        /// Gets or sets yammer active.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365Active", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Office365Active { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerActive", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? YammerActive { get; set; }
     
         /// <summary>
-        /// Gets or sets office365inactive.
+        /// Gets or sets yammer inactive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365Inactive", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Office365Inactive { get; set; }
-    
-        /// <summary>
-        /// Gets or sets report period.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportPeriod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerInactive", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? YammerInactive { get; set; }
     
     }
 }

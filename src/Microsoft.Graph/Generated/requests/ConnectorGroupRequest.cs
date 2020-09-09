@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (connectorGroupToInitialize != null && connectorGroupToInitialize.AdditionalData != null)
             {
 
-                if (connectorGroupToInitialize.Members != null && connectorGroupToInitialize.Members.CurrentPage != null)
-                {
-                    connectorGroupToInitialize.Members.AdditionalData = connectorGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectorGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectorGroupToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (connectorGroupToInitialize.Applications != null && connectorGroupToInitialize.Applications.CurrentPage != null)
                 {
                     connectorGroupToInitialize.Applications.AdditionalData = connectorGroupToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         connectorGroupToInitialize.Applications.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (connectorGroupToInitialize.Members != null && connectorGroupToInitialize.Members.CurrentPage != null)
+                {
+                    connectorGroupToInitialize.Members.AdditionalData = connectorGroupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    connectorGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        connectorGroupToInitialize.Members.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

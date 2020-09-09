@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets target.
-        /// The Azure Active Directory group we are targeting the script to
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets run remediation script.
         /// Determine whether we want to run detection script only or run both detection script and remediation script
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSchedule", Required = Newtonsoft.Json.Required.Default)]
         public DeviceHealthScriptRunSchedule RunSchedule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// The Azure Active Directory group we are targeting the script to
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }
 }

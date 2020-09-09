@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// The user given display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// The user given description
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// The user given display name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is assigned.
@@ -59,13 +59,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets template id.
-        /// The ID of the template this intent was created from (if any)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
-        public string TemplateId { get; set; }
-    
-        /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this Entity instance.
         /// </summary>
@@ -73,18 +66,11 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
-        /// Gets or sets settings.
-        /// Collection of all settings to be applied
+        /// Gets or sets template id.
+        /// The ID of the template this intent was created from (if any)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementIntentSettingsCollectionPage Settings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets categories.
-        /// Collection of setting categories within the intent
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementIntentCategoriesCollectionPage Categories { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -92,6 +78,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementIntentAssignmentsCollectionPage Assignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets categories.
+        /// Collection of setting categories within the intent
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementIntentCategoriesCollectionPage Categories { get; set; }
     
         /// <summary>
         /// Gets or sets device setting state summaries.
@@ -108,18 +101,25 @@ namespace Microsoft.Graph
         public IDeviceManagementIntentDeviceStatesCollectionPage DeviceStates { get; set; }
     
         /// <summary>
-        /// Gets or sets user states.
-        /// Collection of states of all users that the intent is applied to
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStates", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementIntentUserStatesCollectionPage UserStates { get; set; }
-    
-        /// <summary>
         /// Gets or sets device state summary.
         /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStateSummary", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementIntentDeviceStateSummary DeviceStateSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings.
+        /// Collection of all settings to be applied
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementIntentSettingsCollectionPage Settings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user states.
+        /// Collection of states of all users that the intent is applied to
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStates", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementIntentUserStatesCollectionPage UserStates { get; set; }
     
         /// <summary>
         /// Gets or sets user state summary.

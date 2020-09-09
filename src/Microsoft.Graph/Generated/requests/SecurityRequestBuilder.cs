@@ -159,6 +159,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SecurityActions.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySecurityActionsCollectionRequestBuilder"/>.</returns>
+        public ISecuritySecurityActionsCollectionRequestBuilder SecurityActions
+        {
+            get
+            {
+                return new SecuritySecurityActionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityActions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TiIndicators.
         /// </summary>
         /// <returns>The <see cref="ISecurityTiIndicatorsCollectionRequestBuilder"/>.</returns>
@@ -179,18 +191,6 @@ namespace Microsoft.Graph
             get
             {
                 return new SecurityUserSecurityProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userSecurityProfiles"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SecurityActions.
-        /// </summary>
-        /// <returns>The <see cref="ISecuritySecurityActionsCollectionRequestBuilder"/>.</returns>
-        public ISecuritySecurityActionsCollectionRequestBuilder SecurityActions
-        {
-            get
-            {
-                return new SecuritySecurityActionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityActions"), this.Client);
             }
         }
     

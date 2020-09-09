@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets discovery date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveryDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? DiscoveryDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets discoverabilities.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverabilities", Required = Newtonsoft.Json.Required.Default)]
         public DirectoryDefinitionDiscoverabilities? Discoverabilities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets discovery date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveryDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? DiscoveryDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets name.

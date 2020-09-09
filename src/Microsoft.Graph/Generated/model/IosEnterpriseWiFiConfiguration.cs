@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets eap type.
-        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
+        /// Gets or sets authentication method.
+        /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
-        public EapType? EapType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets eap fast configuration.
@@ -45,18 +45,11 @@ namespace Microsoft.Graph
         public EapFastConfiguration? EapFastConfiguration { get; set; }
     
         /// <summary>
-        /// Gets or sets trusted server certificate names.
-        /// Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
+        /// Gets or sets eap type.
+        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedServerCertificateNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
-    
-        /// <summary>
-        /// Gets or sets authentication method.
-        /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
-        public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
+        public EapType? EapType { get; set; }
     
         /// <summary>
         /// Gets or sets inner authentication protocol for eap ttls.
@@ -73,13 +66,6 @@ namespace Microsoft.Graph
         public string OuterIdentityPrivacyTemporaryValue { get; set; }
     
         /// <summary>
-        /// Gets or sets username format string.
-        /// Username format string used to build the username to connect to wifi
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameFormatString", Required = Newtonsoft.Json.Required.Default)]
-        public string UsernameFormatString { get; set; }
-    
-        /// <summary>
         /// Gets or sets password format string.
         /// Password format string used to build the password to connect to wifi
         /// </summary>
@@ -87,11 +73,25 @@ namespace Microsoft.Graph
         public string PasswordFormatString { get; set; }
     
         /// <summary>
-        /// Gets or sets root certificates for server validation.
-        /// Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa.
+        /// Gets or sets trusted server certificate names.
+        /// Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificatesForServerValidation", Required = Newtonsoft.Json.Required.Default)]
-        public IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage RootCertificatesForServerValidation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedServerCertificateNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets username format string.
+        /// Username format string used to build the username to connect to wifi
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        public string UsernameFormatString { get; set; }
+    
+        /// <summary>
+        /// Gets or sets derived credential settings.
+        /// Tenant level settings for the Derived Credentials to be used for authentication.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.
@@ -101,11 +101,11 @@ namespace Microsoft.Graph
         public IosCertificateProfileBase IdentityCertificateForClientAuthentication { get; set; }
     
         /// <summary>
-        /// Gets or sets derived credential settings.
-        /// Tenant level settings for the Derived Credentials to be used for authentication.
+        /// Gets or sets root certificates for server validation.
+        /// Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificatesForServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        public IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage RootCertificatesForServerValidation { get; set; }
     
     }
 }

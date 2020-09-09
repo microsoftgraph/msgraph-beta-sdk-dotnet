@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets files.
-        /// The list of files for this app content version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "files", Required = Newtonsoft.Json.Required.Default)]
-        public IMobileAppContentFilesCollectionPage Files { get; set; }
-    
-        /// <summary>
         /// Gets or sets contained apps.
         /// The collection of contained apps in a MobileLobApp acting as a package.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "containedApps", Required = Newtonsoft.Json.Required.Default)]
         public IMobileAppContentContainedAppsCollectionPage ContainedApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets files.
+        /// The list of files for this app content version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "files", Required = Newtonsoft.Json.Required.Default)]
+        public IMobileAppContentFilesCollectionPage Files { get; set; }
     
     }
 }

@@ -31,27 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets run state.
-        /// State of latest run of the device management script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
-        public RunState? RunState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets result message.
-        /// Details of execution output.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultMessage", Required = Newtonsoft.Json.Required.Default)]
-        public string ResultMessage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last state update date time.
-        /// Latest time the device management script executes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastStateUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastStateUpdateDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets error code.
         /// Error code corresponding to erroneous execution of the device management script.
         /// </summary>
@@ -64,6 +43,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDescription", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last state update date time.
+        /// Latest time the device management script executes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastStateUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastStateUpdateDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets result message.
+        /// Details of execution output.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string ResultMessage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run state.
+        /// State of latest run of the device management script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
+        public RunState? RunState { get; set; }
     
         /// <summary>
         /// Gets or sets managed device.

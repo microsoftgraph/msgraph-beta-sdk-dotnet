@@ -51,30 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Resources.
-        /// </summary>
-        /// <returns>The <see cref="IEducationAssignmentResourcesCollectionRequestBuilder"/>.</returns>
-        public IEducationAssignmentResourcesCollectionRequestBuilder Resources
-        {
-            get
-            {
-                return new EducationAssignmentResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("resources"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Submissions.
-        /// </summary>
-        /// <returns>The <see cref="IEducationAssignmentSubmissionsCollectionRequestBuilder"/>.</returns>
-        public IEducationAssignmentSubmissionsCollectionRequestBuilder Submissions
-        {
-            get
-            {
-                return new EducationAssignmentSubmissionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("submissions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Categories.
         /// </summary>
         /// <returns>The <see cref="IEducationAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
@@ -87,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Resources.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentResourcesCollectionRequestBuilder"/>.</returns>
+        public IEducationAssignmentResourcesCollectionRequestBuilder Resources
+        {
+            get
+            {
+                return new EducationAssignmentResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("resources"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Rubric.
         /// </summary>
         /// <returns>The <see cref="IEducationRubricRequestBuilder"/>.</returns>
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new EducationRubricRequestBuilder(this.AppendSegmentToRequestUrl("rubric"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Submissions.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSubmissionsCollectionRequestBuilder"/>.</returns>
+        public IEducationAssignmentSubmissionsCollectionRequestBuilder Submissions
+        {
+            get
+            {
+                return new EducationAssignmentSubmissionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("submissions"), this.Client);
             }
         }
     

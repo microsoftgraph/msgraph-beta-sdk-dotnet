@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public Int32? ComanagedCount { get; set; }
     
         /// <summary>
-        /// Gets or sets eligibleCount.
-        /// Count of devices fully eligible for Co-Management
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eligibleCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EligibleCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets eligibleButNotAzureAdJoinedCount.
         /// Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
         /// </summary>
@@ -52,11 +45,11 @@ namespace Microsoft.Graph
         public Int32? EligibleButNotAzureAdJoinedCount { get; set; }
     
         /// <summary>
-        /// Gets or sets needsOsUpdateCount.
-        /// Count of devices that will be eligible for Co-Management after an OS update
+        /// Gets or sets eligibleCount.
+        /// Count of devices fully eligible for Co-Management
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "needsOsUpdateCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NeedsOsUpdateCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eligibleCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EligibleCount { get; set; }
     
         /// <summary>
         /// Gets or sets ineligibleCount.
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ineligibleCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? IneligibleCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets needsOsUpdateCount.
+        /// Count of devices that will be eligible for Co-Management after an OS update
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "needsOsUpdateCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NeedsOsUpdateCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

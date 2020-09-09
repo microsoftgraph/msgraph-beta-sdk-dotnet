@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets enforce signature check.
-        /// Indicate whether the script signature needs be checked.
+        /// Gets or sets created date time.
+        /// The date and time the device management script was created. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceSignatureCheck", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnforceSignatureCheck { get; set; }
-    
-        /// <summary>
-        /// Gets or sets run as32bit.
-        /// A value indicating whether the PowerShell script should run as 32-bit
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RunAs32Bit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Name of the device management script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -59,32 +45,18 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets script content.
-        /// The script content.
+        /// Gets or sets display name.
+        /// Name of the device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] ScriptContent { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// The date and time the device management script was created. This property is read-only.
+        /// Gets or sets enforce signature check.
+        /// Indicate whether the script signature needs be checked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// The date and time the device management script was last modified. This property is read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets run as account.
-        /// Indicates the type of execution context.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
-        public RunAsAccountType? RunAsAccount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceSignatureCheck", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnforceSignatureCheck { get; set; }
     
         /// <summary>
         /// Gets or sets file name.
@@ -94,6 +66,13 @@ namespace Microsoft.Graph
         public string FileName { get; set; }
     
         /// <summary>
+        /// Gets or sets last modified date time.
+        /// The date and time the device management script was last modified. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tag IDs for this PowerShellScript instance.
         /// </summary>
@@ -101,11 +80,25 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
-        /// Gets or sets group assignments.
-        /// The list of group assignments for the device management script.
+        /// Gets or sets run as32bit.
+        /// A value indicating whether the PowerShell script should run as 32-bit
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementScriptGroupAssignmentsCollectionPage GroupAssignments { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RunAs32Bit { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run as account.
+        /// Indicates the type of execution context.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
+        public RunAsAccountType? RunAsAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets script content.
+        /// The script content.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] ScriptContent { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -115,18 +108,25 @@ namespace Microsoft.Graph
         public IDeviceManagementScriptAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
-        /// Gets or sets run summary.
-        /// Run summary for device management script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSummary", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementScriptRunSummary RunSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets device run states.
         /// List of run states for this script across all devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRunStates", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementScriptDeviceRunStatesCollectionPage DeviceRunStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group assignments.
+        /// The list of group assignments for the device management script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementScriptGroupAssignmentsCollectionPage GroupAssignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run summary.
+        /// Run summary for device management script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSummary", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementScriptRunSummary RunSummary { get; set; }
     
         /// <summary>
         /// Gets or sets user run states.

@@ -31,116 +31,11 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets display name.
-        /// The admin provided or imported title of the app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// The description of the app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets publisher.
-        /// The publisher of the app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
-        public string Publisher { get; set; }
-    
-        /// <summary>
-        /// Gets or sets large icon.
-        /// The large icon, to be displayed in the app details and used for upload of the icon.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "largeIcon", Required = Newtonsoft.Json.Required.Default)]
-        public MimeContent LargeIcon { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// The date and time the app was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// The date and time the app was last modified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is featured.
-        /// The value indicating whether the app is marked as featured by the admin.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFeatured", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsFeatured { get; set; }
-    
-        /// <summary>
-        /// Gets or sets privacy information url.
-        /// The privacy statement Url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyInformationUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string PrivacyInformationUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets information url.
-        /// The more information Url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "informationUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string InformationUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets owner.
-        /// The owner of the app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
-        public string Owner { get; set; }
-    
-        /// <summary>
-        /// Gets or sets developer.
-        /// The developer of the app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "developer", Required = Newtonsoft.Json.Required.Default)]
-        public string Developer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets notes.
-        /// Notes for the app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
-        public string Notes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets upload state.
-        /// The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadState", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UploadState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets publishing state.
-        /// The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingState", Required = Newtonsoft.Json.Required.Default)]
-        public MobileAppPublishingState? PublishingState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is assigned.
-        /// The value indicating whether the app is assigned to at least one group.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssigned", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsAssigned { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role scope tag ids.
-        /// List of scope tag ids for this mobile app.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets dependent app count.
@@ -150,11 +45,109 @@ namespace Microsoft.Graph
         public Int32? DependentAppCount { get; set; }
     
         /// <summary>
-        /// Gets or sets categories.
-        /// The list of categories for this app.
+        /// Gets or sets description.
+        /// The description of the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
-        public IMobileAppCategoriesCollectionWithReferencesPage Categories { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets developer.
+        /// The developer of the app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "developer", Required = Newtonsoft.Json.Required.Default)]
+        public string Developer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// The admin provided or imported title of the app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets information url.
+        /// The more information Url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "informationUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string InformationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is assigned.
+        /// The value indicating whether the app is assigned to at least one group.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssigned", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsAssigned { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is featured.
+        /// The value indicating whether the app is marked as featured by the admin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFeatured", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFeatured { get; set; }
+    
+        /// <summary>
+        /// Gets or sets large icon.
+        /// The large icon, to be displayed in the app details and used for upload of the icon.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "largeIcon", Required = Newtonsoft.Json.Required.Default)]
+        public MimeContent LargeIcon { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// The date and time the app was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// Notes for the app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        public string Notes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets owner.
+        /// The owner of the app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
+        public string Owner { get; set; }
+    
+        /// <summary>
+        /// Gets or sets privacy information url.
+        /// The privacy statement Url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyInformationUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PrivacyInformationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets publisher.
+        /// The publisher of the app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        public string Publisher { get; set; }
+    
+        /// <summary>
+        /// Gets or sets publishing state.
+        /// The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingState", Required = Newtonsoft.Json.Required.Default)]
+        public MobileAppPublishingState? PublishingState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of scope tag ids for this mobile app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upload state.
+        /// The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadState", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UploadState { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -164,11 +157,11 @@ namespace Microsoft.Graph
         public IMobileAppAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
-        /// Gets or sets install summary.
-        /// Mobile App Install Summary.
+        /// Gets or sets categories.
+        /// The list of categories for this app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installSummary", Required = Newtonsoft.Json.Required.Default)]
-        public MobileAppInstallSummary InstallSummary { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        public IMobileAppCategoriesCollectionWithReferencesPage Categories { get; set; }
     
         /// <summary>
         /// Gets or sets device statuses.
@@ -178,11 +171,11 @@ namespace Microsoft.Graph
         public IMobileAppDeviceStatusesCollectionPage DeviceStatuses { get; set; }
     
         /// <summary>
-        /// Gets or sets user statuses.
-        /// The list of installation states for this mobile app.
+        /// Gets or sets install summary.
+        /// Mobile App Install Summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IMobileAppUserStatusesCollectionPage UserStatuses { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installSummary", Required = Newtonsoft.Json.Required.Default)]
+        public MobileAppInstallSummary InstallSummary { get; set; }
     
         /// <summary>
         /// Gets or sets relationships.
@@ -190,6 +183,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationships", Required = Newtonsoft.Json.Required.Default)]
         public IMobileAppRelationshipsCollectionPage Relationships { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user statuses.
+        /// The list of installation states for this mobile app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IMobileAppUserStatusesCollectionPage UserStatuses { get; set; }
     
     }
 }

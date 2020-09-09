@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public bool? IsProcessing { get; set; }
     
         /// <summary>
+        /// Gets or sets risk detail.
+        /// Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskDetail", Required = Newtonsoft.Json.Required.Default)]
+        public RiskDetail? RiskDetail { get; set; }
+    
+        /// <summary>
         /// Gets or sets risk last updated date time.
         /// The date and time that the risky user was last updated.
         /// </summary>
@@ -64,13 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskState", Required = Newtonsoft.Json.Required.Default)]
         public RiskState? RiskState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets risk detail.
-        /// Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskDetail", Required = Newtonsoft.Json.Required.Default)]
-        public RiskDetail? RiskDetail { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (managedEBookToInitialize != null && managedEBookToInitialize.AdditionalData != null)
             {
 
-                if (managedEBookToInitialize.Categories != null && managedEBookToInitialize.Categories.CurrentPage != null)
-                {
-                    managedEBookToInitialize.Categories.AdditionalData = managedEBookToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    managedEBookToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        managedEBookToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (managedEBookToInitialize.Assignments != null && managedEBookToInitialize.Assignments.CurrentPage != null)
                 {
                     managedEBookToInitialize.Assignments.AdditionalData = managedEBookToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         managedEBookToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (managedEBookToInitialize.Categories != null && managedEBookToInitialize.Categories.CurrentPage != null)
+                {
+                    managedEBookToInitialize.Categories.AdditionalData = managedEBookToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    managedEBookToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        managedEBookToInitialize.Categories.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

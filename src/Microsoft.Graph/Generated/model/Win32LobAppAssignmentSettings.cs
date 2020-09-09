@@ -30,6 +30,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets deliveryOptimizationPriority.
+        /// The delivery optimization priority for this app assignment. This setting is not supported in National Cloud environments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deliveryOptimizationPriority", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets installTimeSettings.
+        /// The install time settings to apply for this app assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installTimeSettings", Required = Newtonsoft.Json.Required.Default)]
+        public MobileAppInstallTimeSettings InstallTimeSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets notifications.
         /// The notification status for this app assignment.
         /// </summary>
@@ -42,20 +56,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartSettings", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRestartSettings RestartSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets installTimeSettings.
-        /// The install time settings to apply for this app assignment.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installTimeSettings", Required = Newtonsoft.Json.Required.Default)]
-        public MobileAppInstallTimeSettings InstallTimeSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deliveryOptimizationPriority.
-        /// The delivery optimization priority for this app assignment. This setting is not supported in National Cloud environments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deliveryOptimizationPriority", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority { get; set; }
     
     }
 }

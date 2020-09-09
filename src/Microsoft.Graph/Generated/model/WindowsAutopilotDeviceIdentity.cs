@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets deployment profile assignment status.
-        /// Profile assignment status of the Windows autopilot device.
+        /// Gets or sets addressable user name.
+        /// Addressable user name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentProfileAssignmentStatus", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsAutopilotProfileAssignmentStatus? DeploymentProfileAssignmentStatus { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addressableUserName", Required = Newtonsoft.Json.Required.Default)]
+        public string AddressableUserName { get; set; }
     
         /// <summary>
-        /// Gets or sets deployment profile assignment detailed status.
-        /// Profile assignment detailed status of the Windows autopilot device.
+        /// Gets or sets azure active directory device id.
+        /// AAD Device ID
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentProfileAssignmentDetailedStatus", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsAutopilotProfileAssignmentDetailedStatus? DeploymentProfileAssignmentDetailedStatus { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureActiveDirectoryDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string AzureActiveDirectoryDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets deployment profile assigned date time.
@@ -52,11 +52,32 @@ namespace Microsoft.Graph
         public DateTimeOffset? DeploymentProfileAssignedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets order identifier.
-        /// Order Identifier of the Windows autopilot device - Deprecated
+        /// Gets or sets deployment profile assignment detailed status.
+        /// Profile assignment detailed status of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string OrderIdentifier { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentProfileAssignmentDetailedStatus", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsAutopilotProfileAssignmentDetailedStatus? DeploymentProfileAssignmentDetailedStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deployment profile assignment status.
+        /// Profile assignment status of the Windows autopilot device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentProfileAssignmentStatus", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsAutopilotProfileAssignmentStatus? DeploymentProfileAssignmentStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Display Name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollment state.
+        /// Intune enrollment state of the Windows autopilot device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
+        public EnrollmentState? EnrollmentState { get; set; }
     
         /// <summary>
         /// Gets or sets group tag.
@@ -66,25 +87,18 @@ namespace Microsoft.Graph
         public string GroupTag { get; set; }
     
         /// <summary>
-        /// Gets or sets purchase order identifier.
-        /// Purchase Order Identifier of the Windows autopilot device.
+        /// Gets or sets last contacted date time.
+        /// Intune Last Contacted Date Time of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchaseOrderIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string PurchaseOrderIdentifier { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastContactedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastContactedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets serial number.
-        /// Serial number of the Windows autopilot device.
+        /// Gets or sets managed device id.
+        /// Managed Device ID
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string SerialNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets product key.
-        /// Product Key of the Windows autopilot device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productKey", Required = Newtonsoft.Json.Required.Default)]
-        public string ProductKey { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
@@ -101,32 +115,25 @@ namespace Microsoft.Graph
         public string Model { get; set; }
     
         /// <summary>
-        /// Gets or sets enrollment state.
-        /// Intune enrollment state of the Windows autopilot device.
+        /// Gets or sets order identifier.
+        /// Order Identifier of the Windows autopilot device - Deprecated
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
-        public EnrollmentState? EnrollmentState { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string OrderIdentifier { get; set; }
     
         /// <summary>
-        /// Gets or sets last contacted date time.
-        /// Intune Last Contacted Date Time of the Windows autopilot device.
+        /// Gets or sets product key.
+        /// Product Key of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastContactedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastContactedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productKey", Required = Newtonsoft.Json.Required.Default)]
+        public string ProductKey { get; set; }
     
         /// <summary>
-        /// Gets or sets addressable user name.
-        /// Addressable user name.
+        /// Gets or sets purchase order identifier.
+        /// Purchase Order Identifier of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addressableUserName", Required = Newtonsoft.Json.Required.Default)]
-        public string AddressableUserName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user principal name.
-        /// User Principal Name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchaseOrderIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string PurchaseOrderIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets resource name.
@@ -134,6 +141,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceName", Required = Newtonsoft.Json.Required.Default)]
         public string ResourceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets serial number.
+        /// Serial number of the Windows autopilot device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string SerialNumber { get; set; }
     
         /// <summary>
         /// Gets or sets sku number.
@@ -150,25 +164,11 @@ namespace Microsoft.Graph
         public string SystemFamily { get; set; }
     
         /// <summary>
-        /// Gets or sets azure active directory device id.
-        /// AAD Device ID
+        /// Gets or sets user principal name.
+        /// User Principal Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureActiveDirectoryDeviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string AzureActiveDirectoryDeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed device id.
-        /// Managed Device ID
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ManagedDeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Display Name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets deployment profile.

@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for UserPreferencePayload.
-        /// </summary>
-        /// <returns>The <see cref="IOfficeClientConfigurationUserPreferencePayloadRequestBuilder"/>.</returns>
-        public IOfficeClientConfigurationUserPreferencePayloadRequestBuilder UserPreferencePayload
-        {
-            get
-            {
-                return new OfficeClientConfigurationUserPreferencePayloadRequestBuilder(this.AppendSegmentToRequestUrl("userPreferencePayload"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for PolicyPayload.
         /// </summary>
         /// <returns>The <see cref="IOfficeClientConfigurationPolicyPayloadRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new OfficeClientConfigurationPolicyPayloadRequestBuilder(this.AppendSegmentToRequestUrl("policyPayload"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserPreferencePayload.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeClientConfigurationUserPreferencePayloadRequestBuilder"/>.</returns>
+        public IOfficeClientConfigurationUserPreferencePayloadRequestBuilder UserPreferencePayload
+        {
+            get
+            {
+                return new OfficeClientConfigurationUserPreferencePayloadRequestBuilder(this.AppendSegmentToRequestUrl("userPreferencePayload"), this.Client);
             }
         }
     

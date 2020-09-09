@@ -31,10 +31,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets name.
+        /// Gets or sets capabilities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilities", Required = Newtonsoft.Json.Required.Default)]
+        public PrinterCapabilities Capabilities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defaults.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaults", Required = Newtonsoft.Json.Required.Default)]
+        public PrinterDefaults Defaults { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is accepting jobs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAcceptingJobs", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsAcceptingJobs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        public PrinterLocation Location { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
@@ -49,28 +67,10 @@ namespace Microsoft.Graph
         public string Model { get; set; }
     
         /// <summary>
-        /// Gets or sets is accepting jobs.
+        /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAcceptingJobs", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsAcceptingJobs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaults.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaults", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterDefaults Defaults { get; set; }
-    
-        /// <summary>
-        /// Gets or sets location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterLocation Location { get; set; }
-    
-        /// <summary>
-        /// Gets or sets capabilities.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilities", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterCapabilities Capabilities { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets status.

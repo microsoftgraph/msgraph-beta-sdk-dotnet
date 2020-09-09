@@ -31,22 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets calculate discount on credit memos.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calculateDiscountOnCreditMemos", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CalculateDiscountOnCreditMemos { get; set; }
+    
+        /// <summary>
         /// Gets or sets code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
         public string Code { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets due date calculation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateCalculation", Required = Newtonsoft.Json.Required.Default)]
-        public string DueDateCalculation { get; set; }
     
         /// <summary>
         /// Gets or sets discount date calculation.
@@ -61,10 +55,16 @@ namespace Microsoft.Graph
         public Decimal? DiscountPercent { get; set; }
     
         /// <summary>
-        /// Gets or sets calculate discount on credit memos.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calculateDiscountOnCreditMemos", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CalculateDiscountOnCreditMemos { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets due date calculation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateCalculation", Required = Newtonsoft.Json.Required.Default)]
+        public string DueDateCalculation { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.

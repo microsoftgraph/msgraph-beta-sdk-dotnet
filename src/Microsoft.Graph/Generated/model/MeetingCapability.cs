@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public bool? AllowAnonymousUsersToDialOut { get; set; }
     
         /// <summary>
-        /// Gets or sets autoAdmittedUsers.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoAdmittedUsers", Required = Newtonsoft.Json.Required.Default)]
-        public AutoAdmittedUsersType? AutoAdmittedUsers { get; set; }
-    
-        /// <summary>
         /// Gets or sets allowAnonymousUsersToStartMeeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAnonymousUsersToStartMeeting", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowAnonymousUsersToStartMeeting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets autoAdmittedUsers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoAdmittedUsers", Required = Newtonsoft.Json.Required.Default)]
+        public AutoAdmittedUsersType? AutoAdmittedUsers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

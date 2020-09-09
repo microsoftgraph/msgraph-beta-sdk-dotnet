@@ -31,34 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets expiration date time.
-        /// Optional profile expiration date and time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets payload file name.
-        /// Payload file name (*.mobileprovision | *.xml).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadFileName", Required = Newtonsoft.Json.Required.Default)]
-        public string PayloadFileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets payload.
-        /// Payload. (UTF8 encoded byte array)
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] Payload { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role scope tag ids.
-        /// List of Scope Tags for this iOS LOB app provisioning configuration entity.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> RoleScopeTagIds { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// DateTime the object was created.
         /// </summary>
@@ -73,13 +45,6 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// DateTime the object was last modified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// Admin provided name of the device configuration.
         /// </summary>
@@ -87,18 +52,46 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets expiration date time.
+        /// Optional profile expiration date and time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// DateTime the object was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets payload.
+        /// Payload. (UTF8 encoded byte array)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] Payload { get; set; }
+    
+        /// <summary>
+        /// Gets or sets payload file name.
+        /// Payload file name (*.mobileprovision | *.xml).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadFileName", Required = Newtonsoft.Json.Required.Default)]
+        public string PayloadFileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of Scope Tags for this iOS LOB app provisioning configuration entity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets version.
         /// Version of the device configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Version { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group assignments.
-        /// The associated group assignments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionPage GroupAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -113,6 +106,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IIosLobAppProvisioningConfigurationDeviceStatusesCollectionPage DeviceStatuses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group assignments.
+        /// The associated group assignments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionPage GroupAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets user statuses.

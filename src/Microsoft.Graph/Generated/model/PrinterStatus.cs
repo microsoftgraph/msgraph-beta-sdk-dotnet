@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public PrinterProcessingState? ProcessingState { get; set; }
     
         /// <summary>
-        /// Gets or sets processingStateReasons.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingStateReasons", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrinterProcessingStateReason> ProcessingStateReasons { get; set; }
-    
-        /// <summary>
         /// Gets or sets processingStateDescription.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingStateDescription", Required = Newtonsoft.Json.Required.Default)]
         public string ProcessingStateDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets processingStateReasons.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingStateReasons", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrinterProcessingStateReason> ProcessingStateReasons { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

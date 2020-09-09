@@ -24,18 +24,18 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets operator.
-        /// The operator for detection
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppDetectionOperator? Operator { get; set; }
-    
-        /// <summary>
         /// Gets or sets detectionValue.
         /// The detection value
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionValue", Required = Newtonsoft.Json.Required.Default)]
         public string DetectionValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operator.
+        /// The operator for detection
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppDetectionOperator? Operator { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

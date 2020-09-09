@@ -38,16 +38,10 @@ namespace Microsoft.Graph
         IDataClassificationServiceExactMatchDataStoresCollectionRequestBuilder ExactMatchDataStores { get; }
 
         /// <summary>
-        /// Gets the request builder for SensitiveTypes.
+        /// Gets the request builder for ClassifyFile.
         /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceSensitiveTypesCollectionRequestBuilder SensitiveTypes { get; }
-
-        /// <summary>
-        /// Gets the request builder for Jobs.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceJobsCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceJobsCollectionRequestBuilder Jobs { get; }
+        /// <returns>The <see cref="IDataClassificationServiceClassifyFileCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceClassifyFileCollectionRequestBuilder ClassifyFile { get; }
 
         /// <summary>
         /// Gets the request builder for ClassifyFileJobs.
@@ -56,16 +50,16 @@ namespace Microsoft.Graph
         IDataClassificationServiceClassifyFileJobsCollectionRequestBuilder ClassifyFileJobs { get; }
 
         /// <summary>
+        /// Gets the request builder for ClassifyText.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceClassifyTextCollectionRequestBuilder ClassifyText { get; }
+
+        /// <summary>
         /// Gets the request builder for ClassifyTextJobs.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyTextJobsCollectionRequestBuilder"/>.</returns>
         IDataClassificationServiceClassifyTextJobsCollectionRequestBuilder ClassifyTextJobs { get; }
-
-        /// <summary>
-        /// Gets the request builder for EvaluateLabelJobs.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder EvaluateLabelJobs { get; }
 
         /// <summary>
         /// Gets the request builder for EvaluateDlpPoliciesJobs.
@@ -74,22 +68,28 @@ namespace Microsoft.Graph
         IDataClassificationServiceEvaluateDlpPoliciesJobsCollectionRequestBuilder EvaluateDlpPoliciesJobs { get; }
 
         /// <summary>
+        /// Gets the request builder for EvaluateLabelJobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceEvaluateLabelJobsCollectionRequestBuilder EvaluateLabelJobs { get; }
+
+        /// <summary>
+        /// Gets the request builder for Jobs.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceJobsCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceJobsCollectionRequestBuilder Jobs { get; }
+
+        /// <summary>
         /// Gets the request builder for LabelsAndPoliciesEvaluationJobs.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder"/>.</returns>
         IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder LabelsAndPoliciesEvaluationJobs { get; }
 
         /// <summary>
-        /// Gets the request builder for ClassifyText.
+        /// Gets the request builder for SensitiveTypes.
         /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceClassifyTextCollectionRequestBuilder ClassifyText { get; }
-
-        /// <summary>
-        /// Gets the request builder for ClassifyFile.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyFileCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceClassifyFileCollectionRequestBuilder ClassifyFile { get; }
+        /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>
+        IDataClassificationServiceSensitiveTypesCollectionRequestBuilder SensitiveTypes { get; }
 
         /// <summary>
         /// Gets the request builder for SensitivityLabels.

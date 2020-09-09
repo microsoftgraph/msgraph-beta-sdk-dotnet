@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets creationDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreationDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets assignmentMethod.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentMethod", Required = Newtonsoft.Json.Required.Default)]
         public AssignmentMethod? AssignmentMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets creationDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets label.

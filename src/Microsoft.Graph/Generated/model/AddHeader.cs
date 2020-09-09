@@ -30,16 +30,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets margin.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "margin", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Margin { get; set; }
-    
-        /// <summary>
         /// Gets or sets alignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alignment", Required = Newtonsoft.Json.Required.Default)]
         public Alignment? Alignment { get; set; }
+    
+        /// <summary>
+        /// Gets or sets margin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "margin", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Margin { get; set; }
     
     }
 }

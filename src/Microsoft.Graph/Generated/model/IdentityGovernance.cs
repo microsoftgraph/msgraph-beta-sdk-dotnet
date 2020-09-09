@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets entitlement management.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entitlementManagement", Required = Newtonsoft.Json.Required.Default)]
-        public EntitlementManagement EntitlementManagement { get; set; }
-    
-        /// <summary>
         /// Gets or sets access reviews.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviews", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsOfUse", Required = Newtonsoft.Json.Required.Default)]
         public TermsOfUseContainer TermsOfUse { get; set; }
+    
+        /// <summary>
+        /// Gets or sets entitlement management.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entitlementManagement", Required = Newtonsoft.Json.Required.Default)]
+        public EntitlementManagement EntitlementManagement { get; set; }
     
     }
 }

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (agreementToInitialize != null && agreementToInitialize.AdditionalData != null)
             {
 
-                if (agreementToInitialize.Files != null && agreementToInitialize.Files.CurrentPage != null)
-                {
-                    agreementToInitialize.Files.AdditionalData = agreementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    agreementToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        agreementToInitialize.Files.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (agreementToInitialize.Acceptances != null && agreementToInitialize.Acceptances.CurrentPage != null)
                 {
                     agreementToInitialize.Acceptances.AdditionalData = agreementToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         agreementToInitialize.Acceptances.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (agreementToInitialize.Files != null && agreementToInitialize.Files.CurrentPage != null)
+                {
+                    agreementToInitialize.Files.AdditionalData = agreementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    agreementToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        agreementToInitialize.Files.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

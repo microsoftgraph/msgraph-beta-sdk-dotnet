@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets startDay.
-        /// Start day of the time window
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDay", Required = Newtonsoft.Json.Required.Default)]
-        public DayOfWeek? StartDay { get; set; }
-    
-        /// <summary>
         /// Gets or sets endDay.
         /// End day of the time window
         /// </summary>
@@ -45,18 +38,25 @@ namespace Microsoft.Graph
         public DayOfWeek? EndDay { get; set; }
     
         /// <summary>
-        /// Gets or sets startTime.
-        /// Start time of the time window
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay StartTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets endTime.
         /// End time of the time window
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endTime", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay EndTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startDay.
+        /// Start day of the time window
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDay", Required = Newtonsoft.Json.Required.Default)]
+        public DayOfWeek? StartDay { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startTime.
+        /// Start time of the time window
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

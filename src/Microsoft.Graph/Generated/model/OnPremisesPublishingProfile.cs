@@ -31,22 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets is enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEnabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets hybrid agent updater configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hybridAgentUpdaterConfiguration", Required = Newtonsoft.Json.Required.Default)]
         public HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration { get; set; }
     
         /// <summary>
-        /// Gets or sets agents.
+        /// Gets or sets is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agents", Required = Newtonsoft.Json.Required.Default)]
-        public IOnPremisesPublishingProfileAgentsCollectionPage Agents { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets agent groups.
@@ -55,10 +49,16 @@ namespace Microsoft.Graph
         public IOnPremisesPublishingProfileAgentGroupsCollectionPage AgentGroups { get; set; }
     
         /// <summary>
-        /// Gets or sets published resources.
+        /// Gets or sets agents.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedResources", Required = Newtonsoft.Json.Required.Default)]
-        public IOnPremisesPublishingProfilePublishedResourcesCollectionPage PublishedResources { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agents", Required = Newtonsoft.Json.Required.Default)]
+        public IOnPremisesPublishingProfileAgentsCollectionPage Agents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets connector groups.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorGroups", Required = Newtonsoft.Json.Required.Default)]
+        public IOnPremisesPublishingProfileConnectorGroupsCollectionPage ConnectorGroups { get; set; }
     
         /// <summary>
         /// Gets or sets connectors.
@@ -67,10 +67,10 @@ namespace Microsoft.Graph
         public IOnPremisesPublishingProfileConnectorsCollectionPage Connectors { get; set; }
     
         /// <summary>
-        /// Gets or sets connector groups.
+        /// Gets or sets published resources.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorGroups", Required = Newtonsoft.Json.Required.Default)]
-        public IOnPremisesPublishingProfileConnectorGroupsCollectionPage ConnectorGroups { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedResources", Required = Newtonsoft.Json.Required.Default)]
+        public IOnPremisesPublishingProfilePublishedResourcesCollectionPage PublishedResources { get; set; }
     
     }
 }

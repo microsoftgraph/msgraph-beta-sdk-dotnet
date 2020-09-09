@@ -51,6 +51,18 @@ namespace Microsoft.Graph.TermStore
         }
     
         /// <summary>
+        /// Gets the request builder for Children.
+        /// </summary>
+        /// <returns>The <see cref="ISetChildrenCollectionRequestBuilder"/>.</returns>
+        public ISetChildrenCollectionRequestBuilder Children
+        {
+            get
+            {
+                return new SetChildrenCollectionRequestBuilder(this.AppendSegmentToRequestUrl("children"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ParentGroup.
         /// </summary>
         /// <returns>The <see cref="IGroupRequestBuilder"/>.</returns>
@@ -59,18 +71,6 @@ namespace Microsoft.Graph.TermStore
             get
             {
                 return new GroupRequestBuilder(this.AppendSegmentToRequestUrl("parentGroup"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Terms.
-        /// </summary>
-        /// <returns>The <see cref="ISetTermsCollectionRequestBuilder"/>.</returns>
-        public ISetTermsCollectionRequestBuilder Terms
-        {
-            get
-            {
-                return new SetTermsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("terms"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph.TermStore
         }
 
         /// <summary>
-        /// Gets the request builder for Children.
+        /// Gets the request builder for Terms.
         /// </summary>
-        /// <returns>The <see cref="ISetChildrenCollectionRequestBuilder"/>.</returns>
-        public ISetChildrenCollectionRequestBuilder Children
+        /// <returns>The <see cref="ISetTermsCollectionRequestBuilder"/>.</returns>
+        public ISetTermsCollectionRequestBuilder Terms
         {
             get
             {
-                return new SetChildrenCollectionRequestBuilder(this.AppendSegmentToRequestUrl("children"), this.Client);
+                return new SetTermsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("terms"), this.Client);
             }
         }
     

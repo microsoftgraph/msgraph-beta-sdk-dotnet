@@ -31,53 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets device id.
-        /// The user experience analytics device id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets start time.
-        /// The user experience analytics device boot start time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets core boot time in ms.
         /// The user experience analytics device core boot time in milliseconds.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coreBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
         public Int32? CoreBootTimeInMs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group policy boot time in ms.
-        /// The User experience analytics Device group policy boot time in milliseconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? GroupPolicyBootTimeInMs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets feature update boot time in ms.
-        /// The user experience analytics device feature update time in milliseconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureUpdateBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? FeatureUpdateBootTimeInMs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total boot time in ms.
-        /// The user experience analytics device total boot time in milliseconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalBootTimeInMs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group policy login time in ms.
-        /// The User experience analytics Device group policy login time in milliseconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? GroupPolicyLoginTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets core login time in ms.
@@ -87,25 +45,32 @@ namespace Microsoft.Graph
         public Int32? CoreLoginTimeInMs { get; set; }
     
         /// <summary>
-        /// Gets or sets responsive desktop time in ms.
-        /// The user experience analytics responsive desktop time in milliseconds.
+        /// Gets or sets device id.
+        /// The user experience analytics device id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiveDesktopTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ResponsiveDesktopTimeInMs { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceId { get; set; }
     
         /// <summary>
-        /// Gets or sets total login time in ms.
-        /// The user experience analytics device total login time in milliseconds.
+        /// Gets or sets feature update boot time in ms.
+        /// The user experience analytics device feature update time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalLoginTimeInMs { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureUpdateBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? FeatureUpdateBootTimeInMs { get; set; }
     
         /// <summary>
-        /// Gets or sets is first login.
-        /// The user experience analytics device first login.
+        /// Gets or sets group policy boot time in ms.
+        /// The User experience analytics Device group policy boot time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFirstLogin", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsFirstLogin { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? GroupPolicyBootTimeInMs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group policy login time in ms.
+        /// The User experience analytics Device group policy login time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? GroupPolicyLoginTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets is feature update.
@@ -115,6 +80,13 @@ namespace Microsoft.Graph
         public bool? IsFeatureUpdate { get; set; }
     
         /// <summary>
+        /// Gets or sets is first login.
+        /// The user experience analytics device first login.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFirstLogin", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFirstLogin { get; set; }
+    
+        /// <summary>
         /// Gets or sets operating system version.
         /// The user experience analytics device boot record's operating system version.
         /// </summary>
@@ -122,11 +94,39 @@ namespace Microsoft.Graph
         public string OperatingSystemVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets responsive desktop time in ms.
+        /// The user experience analytics responsive desktop time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiveDesktopTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ResponsiveDesktopTimeInMs { get; set; }
+    
+        /// <summary>
         /// Gets or sets restart category.
         /// OS restart category
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartCategory", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets start time.
+        /// The user experience analytics device boot start time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total boot time in ms.
+        /// The user experience analytics device total boot time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalBootTimeInMs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total login time in ms.
+        /// The user experience analytics device total login time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalLoginTimeInMs { get; set; }
     
     }
 }

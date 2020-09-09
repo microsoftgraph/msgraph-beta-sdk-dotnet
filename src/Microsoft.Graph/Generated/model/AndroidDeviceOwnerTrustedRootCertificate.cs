@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets trusted root certificate.
-        /// Trusted Root Certificate
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedRootCertificate", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] TrustedRootCertificate { get; set; }
-    
-        /// <summary>
         /// Gets or sets cert file name.
         /// File name to display in UI.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certFileName", Required = Newtonsoft.Json.Required.Default)]
         public string CertFileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trusted root certificate.
+        /// Trusted Root Certificate
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedRootCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] TrustedRootCertificate { get; set; }
     
     }
 }

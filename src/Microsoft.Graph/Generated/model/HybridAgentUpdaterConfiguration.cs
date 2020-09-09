@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allowUpdateConfigurationOverride.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUpdateConfigurationOverride", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowUpdateConfigurationOverride { get; set; }
+    
+        /// <summary>
         /// Gets or sets deferUpdateDateTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deferUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateWindow", Required = Newtonsoft.Json.Required.Default)]
         public UpdateWindow UpdateWindow { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowUpdateConfigurationOverride.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUpdateConfigurationOverride", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowUpdateConfigurationOverride { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

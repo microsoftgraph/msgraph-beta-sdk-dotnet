@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets bundleId.
-        /// BundleId of the application.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
-        public string BundleId { get; set; }
-    
-        /// <summary>
         /// Gets or sets allowsIncomingConnections.
         /// Whether or not incoming connections are allowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowsIncomingConnections", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowsIncomingConnections { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bundleId.
+        /// BundleId of the application.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

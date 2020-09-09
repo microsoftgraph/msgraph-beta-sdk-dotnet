@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets target group id.
-        /// The Id of the AAD group we are targeting the device configuration to.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetGroupId", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetGroupId { get; set; }
-    
-        /// <summary>
         /// Gets or sets exclude group.
         /// Indicates if this group is should be excluded. Defaults that the group should be included
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeGroup", Required = Newtonsoft.Json.Required.Default)]
         public bool? ExcludeGroup { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target group id.
+        /// The Id of the AAD group we are targeting the device configuration to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetGroupId", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration.

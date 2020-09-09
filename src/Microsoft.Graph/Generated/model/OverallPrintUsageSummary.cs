@@ -31,22 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets topUsers.
+        /// Gets or sets activePrintersCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topUsers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<UserPrintUsageSummary> TopUsers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets topPrinters.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topPrinters", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrinterUsageSummary> TopPrinters { get; set; }
-    
-        /// <summary>
-        /// Gets or sets daysInPeriod.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daysInPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DaysInPeriod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activePrintersCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ActivePrintersCount { get; set; }
     
         /// <summary>
         /// Gets or sets activeUsersCount.
@@ -55,22 +43,34 @@ namespace Microsoft.Graph
         public Int32? ActiveUsersCount { get; set; }
     
         /// <summary>
-        /// Gets or sets activePrintersCount.
+        /// Gets or sets daysInPeriod.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activePrintersCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ActivePrintersCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daysInPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DaysInPeriod { get; set; }
     
         /// <summary>
-        /// Gets or sets totalJobsProcessed.
+        /// Gets or sets topPrinters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalJobsProcessed", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalJobsProcessed { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topPrinters", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrinterUsageSummary> TopPrinters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets topUsers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topUsers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<UserPrintUsageSummary> TopUsers { get; set; }
     
         /// <summary>
         /// Gets or sets totalIncompleteJobs.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalIncompleteJobs", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TotalIncompleteJobs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets totalJobsProcessed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalJobsProcessed", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalJobsProcessed { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

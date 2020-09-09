@@ -30,20 +30,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets path.
-        /// The file or folder path to detect Win32 Line of Business (LoB) app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
-        public string Path { get; set; }
-    
-        /// <summary>
-        /// Gets or sets fileOrFolderName.
-        /// The file or folder name to detect Win32 Line of Business (LoB) app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileOrFolderName", Required = Newtonsoft.Json.Required.Default)]
-        public string FileOrFolderName { get; set; }
-    
-        /// <summary>
         /// Gets or sets check32BitOn64System.
         /// A value indicating whether this file or folder is for checking 32-bit app on 64-bit system
         /// </summary>
@@ -58,6 +44,20 @@ namespace Microsoft.Graph
         public Win32LobAppFileSystemDetectionType? DetectionType { get; set; }
     
         /// <summary>
+        /// Gets or sets detectionValue.
+        /// The file or folder detection value
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionValue", Required = Newtonsoft.Json.Required.Default)]
+        public string DetectionValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fileOrFolderName.
+        /// The file or folder name to detect Win32 Line of Business (LoB) app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileOrFolderName", Required = Newtonsoft.Json.Required.Default)]
+        public string FileOrFolderName { get; set; }
+    
+        /// <summary>
         /// Gets or sets operator.
         /// The operator for file or folder detection
         /// </summary>
@@ -65,11 +65,11 @@ namespace Microsoft.Graph
         public Win32LobAppDetectionOperator? Operator { get; set; }
     
         /// <summary>
-        /// Gets or sets detectionValue.
-        /// The file or folder detection value
+        /// Gets or sets path.
+        /// The file or folder path to detect Win32 Line of Business (LoB) app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionValue", Required = Newtonsoft.Json.Required.Default)]
-        public string DetectionValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
+        public string Path { get; set; }
     
     }
 }

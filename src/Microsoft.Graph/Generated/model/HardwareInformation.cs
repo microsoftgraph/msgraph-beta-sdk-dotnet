@@ -31,109 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets serialNumber.
-        /// Serial number.
+        /// Gets or sets batteryChargeCycles.
+        /// The number of charge cycles the device???s current battery has gone through. Valid values 0 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string SerialNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets totalStorageSpace.
-        /// Total storage space of the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalStorageSpace", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? TotalStorageSpace { get; set; }
-    
-        /// <summary>
-        /// Gets or sets freeStorageSpace.
-        /// Free storage space of the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "freeStorageSpace", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? FreeStorageSpace { get; set; }
-    
-        /// <summary>
-        /// Gets or sets imei.
-        /// IMEI
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imei", Required = Newtonsoft.Json.Required.Default)]
-        public string Imei { get; set; }
-    
-        /// <summary>
-        /// Gets or sets meid.
-        /// MEID
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meid", Required = Newtonsoft.Json.Required.Default)]
-        public string Meid { get; set; }
-    
-        /// <summary>
-        /// Gets or sets manufacturer.
-        /// Manufacturer of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
-        public string Manufacturer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets model.
-        /// Model of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
-        public string Model { get; set; }
-    
-        /// <summary>
-        /// Gets or sets phoneNumber.
-        /// Phone number of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string PhoneNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subscriberCarrier.
-        /// Subscriber carrier of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriberCarrier", Required = Newtonsoft.Json.Required.Default)]
-        public string SubscriberCarrier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cellularTechnology.
-        /// Cellular technology of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularTechnology", Required = Newtonsoft.Json.Required.Default)]
-        public string CellularTechnology { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wifiMac.
-        /// WiFi MAC address of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiMac", Required = Newtonsoft.Json.Required.Default)]
-        public string WifiMac { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operatingSystemLanguage.
-        /// Operating system language of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemLanguage", Required = Newtonsoft.Json.Required.Default)]
-        public string OperatingSystemLanguage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isSupervised.
-        /// Supervised mode of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSupervised", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsSupervised { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isEncrypted.
-        /// Encryption status of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEncrypted", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEncrypted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets batterySerialNumber.
-        /// The serial number of the device???s current battery
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batterySerialNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string BatterySerialNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batteryChargeCycles", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? BatteryChargeCycles { get; set; }
     
         /// <summary>
         /// Gets or sets batteryHealthPercentage.
@@ -143,39 +45,18 @@ namespace Microsoft.Graph
         public Int32? BatteryHealthPercentage { get; set; }
     
         /// <summary>
-        /// Gets or sets batteryChargeCycles.
-        /// The number of charge cycles the device???s current battery has gone through. Valid values 0 to 2147483647
+        /// Gets or sets batterySerialNumber.
+        /// The serial number of the device???s current battery
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batteryChargeCycles", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? BatteryChargeCycles { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batterySerialNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string BatterySerialNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets isSharedDevice.
-        /// Shared iPad
+        /// Gets or sets cellularTechnology.
+        /// Cellular technology of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSharedDevice", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsSharedDevice { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sharedDeviceCachedUsers.
-        /// All users on the shared Apple device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedDeviceCachedUsers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SharedAppleDeviceUser> SharedDeviceCachedUsers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tpmSpecificationVersion.
-        /// String that specifies the specification version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tpmSpecificationVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string TpmSpecificationVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operatingSystemEdition.
-        /// String that specifies the OS edition.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemEdition", Required = Newtonsoft.Json.Required.Default)]
-        public string OperatingSystemEdition { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularTechnology", Required = Newtonsoft.Json.Required.Default)]
+        public string CellularTechnology { get; set; }
     
         /// <summary>
         /// Gets or sets deviceFullQualifiedDomainName.
@@ -183,6 +64,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceFullQualifiedDomainName", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceFullQualifiedDomainName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceGuardLocalSystemAuthorityCredentialGuardState.
+        /// Local System Authority (LSA) credential guard status. 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardLocalSystemAuthorityCredentialGuardState", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState { get; set; }
     
         /// <summary>
         /// Gets or sets deviceGuardVirtualizationBasedSecurityHardwareRequirementState.
@@ -199,11 +87,81 @@ namespace Microsoft.Graph
         public DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState { get; set; }
     
         /// <summary>
-        /// Gets or sets deviceGuardLocalSystemAuthorityCredentialGuardState.
-        /// Local System Authority (LSA) credential guard status. 
+        /// Gets or sets freeStorageSpace.
+        /// Free storage space of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardLocalSystemAuthorityCredentialGuardState", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "freeStorageSpace", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? FreeStorageSpace { get; set; }
+    
+        /// <summary>
+        /// Gets or sets imei.
+        /// IMEI
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imei", Required = Newtonsoft.Json.Required.Default)]
+        public string Imei { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isEncrypted.
+        /// Encryption status of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEncrypted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEncrypted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isSharedDevice.
+        /// Shared iPad
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSharedDevice", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsSharedDevice { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isSupervised.
+        /// Supervised mode of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSupervised", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsSupervised { get; set; }
+    
+        /// <summary>
+        /// Gets or sets manufacturer.
+        /// Manufacturer of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        public string Manufacturer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets meid.
+        /// MEID
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meid", Required = Newtonsoft.Json.Required.Default)]
+        public string Meid { get; set; }
+    
+        /// <summary>
+        /// Gets or sets model.
+        /// Model of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        public string Model { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operatingSystemEdition.
+        /// String that specifies the OS edition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemEdition", Required = Newtonsoft.Json.Required.Default)]
+        public string OperatingSystemEdition { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operatingSystemLanguage.
+        /// Operating system language of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemLanguage", Required = Newtonsoft.Json.Required.Default)]
+        public string OperatingSystemLanguage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operatingSystemProductType.
+        /// Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemProductType", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? OperatingSystemProductType { get; set; }
     
         /// <summary>
         /// Gets or sets osBuildNumber.
@@ -213,11 +171,53 @@ namespace Microsoft.Graph
         public string OsBuildNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets operatingSystemProductType.
-        /// Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
+        /// Gets or sets phoneNumber.
+        /// Phone number of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemProductType", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? OperatingSystemProductType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string PhoneNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets serialNumber.
+        /// Serial number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string SerialNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sharedDeviceCachedUsers.
+        /// All users on the shared Apple device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedDeviceCachedUsers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SharedAppleDeviceUser> SharedDeviceCachedUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subscriberCarrier.
+        /// Subscriber carrier of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriberCarrier", Required = Newtonsoft.Json.Required.Default)]
+        public string SubscriberCarrier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets totalStorageSpace.
+        /// Total storage space of the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalStorageSpace", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? TotalStorageSpace { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tpmSpecificationVersion.
+        /// String that specifies the specification version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tpmSpecificationVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string TpmSpecificationVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifiMac.
+        /// WiFi MAC address of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiMac", Required = Newtonsoft.Json.Required.Default)]
+        public string WifiMac { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

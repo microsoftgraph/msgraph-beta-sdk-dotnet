@@ -38,39 +38,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last modified time of the PolicySetItem.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets payload id.
-        /// PayloadId of the PolicySetItem.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadId", Required = Newtonsoft.Json.Required.Default)]
-        public string PayloadId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets item type.
-        /// policySetType of the PolicySetItem.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemType", Required = Newtonsoft.Json.Required.Default)]
-        public string ItemType { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// DisplayName of the PolicySetItem.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// Status of the PolicySetItem.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public PolicySetStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets error code.
@@ -85,6 +57,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guidedDeploymentTags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> GuidedDeploymentTags { get; set; }
+    
+        /// <summary>
+        /// Gets or sets item type.
+        /// policySetType of the PolicySetItem.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemType", Required = Newtonsoft.Json.Required.Default)]
+        public string ItemType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// Last modified time of the PolicySetItem.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets payload id.
+        /// PayloadId of the PolicySetItem.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadId", Required = Newtonsoft.Json.Required.Default)]
+        public string PayloadId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// Status of the PolicySetItem.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public PolicySetStatus? Status { get; set; }
     
     }
 }

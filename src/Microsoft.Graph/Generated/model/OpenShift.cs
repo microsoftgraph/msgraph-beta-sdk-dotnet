@@ -31,18 +31,17 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets shared open shift.
-        /// A published open shift.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedOpenShift", Required = Newtonsoft.Json.Required.Default)]
-        public OpenShiftItem SharedOpenShift { get; set; }
-    
-        /// <summary>
         /// Gets or sets draft open shift.
         /// An unpublished open shift.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "draftOpenShift", Required = Newtonsoft.Json.Required.Default)]
         public OpenShiftItem DraftOpenShift { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is staged for deletion.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isStagedForDeletion", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsStagedForDeletion { get; set; }
     
         /// <summary>
         /// Gets or sets scheduling group id.
@@ -52,10 +51,11 @@ namespace Microsoft.Graph
         public string SchedulingGroupId { get; set; }
     
         /// <summary>
-        /// Gets or sets is staged for deletion.
+        /// Gets or sets shared open shift.
+        /// A published open shift.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isStagedForDeletion", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsStagedForDeletion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedOpenShift", Required = Newtonsoft.Json.Required.Default)]
+        public OpenShiftItem SharedOpenShift { get; set; }
     
     }
 }

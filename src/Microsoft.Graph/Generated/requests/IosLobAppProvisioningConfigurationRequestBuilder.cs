@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments
-        {
-            get
-            {
-                return new IosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IIosLobAppProvisioningConfigurationAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new IosLobAppProvisioningConfigurationDeviceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatuses"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments
+        {
+            get
+            {
+                return new IosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
             }
         }
 

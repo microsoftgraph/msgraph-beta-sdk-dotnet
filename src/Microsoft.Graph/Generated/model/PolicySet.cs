@@ -38,20 +38,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last modified time of the PolicySet.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// DisplayName of the PolicySet.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// Description of the PolicySet.
         /// </summary>
@@ -59,11 +45,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
-        /// Validation/assignment status of the PolicySet.
+        /// Gets or sets display name.
+        /// DisplayName of the PolicySet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public PolicySetStatus? Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets error code.
@@ -80,11 +66,25 @@ namespace Microsoft.Graph
         public IEnumerable<string> GuidedDeploymentTags { get; set; }
     
         /// <summary>
+        /// Gets or sets last modified date time.
+        /// Last modified time of the PolicySet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets role scope tags.
         /// RoleScopeTags of the PolicySet
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> RoleScopeTags { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// Validation/assignment status of the PolicySet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public PolicySetStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

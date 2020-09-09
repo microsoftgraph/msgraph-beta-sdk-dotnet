@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (securityBaselineTemplateToInitialize != null && securityBaselineTemplateToInitialize.AdditionalData != null)
             {
 
-                if (securityBaselineTemplateToInitialize.DeviceStates != null && securityBaselineTemplateToInitialize.DeviceStates.CurrentPage != null)
-                {
-                    securityBaselineTemplateToInitialize.DeviceStates.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries != null && securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.CurrentPage != null)
                 {
                     securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         securityBaselineTemplateToInitialize.CategoryDeviceStateSummaries.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (securityBaselineTemplateToInitialize.DeviceStates != null && securityBaselineTemplateToInitialize.DeviceStates.CurrentPage != null)
+                {
+                    securityBaselineTemplateToInitialize.DeviceStates.AdditionalData = securityBaselineTemplateToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    securityBaselineTemplateToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        securityBaselineTemplateToInitialize.DeviceStates.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

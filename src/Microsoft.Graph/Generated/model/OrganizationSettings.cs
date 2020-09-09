@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets profile card properties.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileCardProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IOrganizationSettingsProfileCardPropertiesCollectionPage ProfileCardProperties { get; set; }
-    
-        /// <summary>
         /// Gets or sets item insights.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemInsights", Required = Newtonsoft.Json.Required.Default)]
         public ItemInsightsSettings ItemInsights { get; set; }
+    
+        /// <summary>
+        /// Gets or sets profile card properties.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileCardProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IOrganizationSettingsProfileCardPropertiesCollectionPage ProfileCardProperties { get; set; }
     
     }
 }

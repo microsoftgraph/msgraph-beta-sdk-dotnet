@@ -31,34 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
+        /// Gets or sets active file count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeFileCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ActiveFileCount { get; set; }
     
         /// <summary>
-        /// Gets or sets site id.
+        /// Gets or sets file count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? SiteId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets site url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string SiteUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets owner display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string OwnerDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets owner principal name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string OwnerPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? FileCount { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
@@ -73,16 +55,16 @@ namespace Microsoft.Graph
         public Date LastActivityDate { get; set; }
     
         /// <summary>
-        /// Gets or sets file count.
+        /// Gets or sets owner display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? FileCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string OwnerDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets active file count.
+        /// Gets or sets owner principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeFileCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? ActiveFileCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string OwnerPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets page view count.
@@ -91,22 +73,16 @@ namespace Microsoft.Graph
         public Int64? PageViewCount { get; set; }
     
         /// <summary>
-        /// Gets or sets visited page count.
+        /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visitedPageCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? VisitedPageCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportPeriod { get; set; }
     
         /// <summary>
-        /// Gets or sets storage used in bytes.
+        /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? StorageUsedInBytes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets storage allocated in bytes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageAllocatedInBytes", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? StorageAllocatedInBytes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets root web template.
@@ -115,10 +91,34 @@ namespace Microsoft.Graph
         public string RootWebTemplate { get; set; }
     
         /// <summary>
-        /// Gets or sets report period.
+        /// Gets or sets site id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportPeriod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? SiteId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets site url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string SiteUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets storage allocated in bytes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageAllocatedInBytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? StorageAllocatedInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets storage used in bytes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? StorageUsedInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets visited page count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visitedPageCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? VisitedPageCount { get; set; }
     
     }
 }

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets priority.
-        /// Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Priority { get; set; }
-    
-        /// <summary>
         /// Gets or sets limit.
         /// Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "limit", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Limit { get; set; }
+    
+        /// <summary>
+        /// Gets or sets priority.
+        /// Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Priority { get; set; }
     
     }
 }

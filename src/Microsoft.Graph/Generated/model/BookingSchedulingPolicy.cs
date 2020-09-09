@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets timeSlotInterval.
-        /// Duration of each time slot.
+        /// Gets or sets allowStaffSelection.
+        /// Allow customers to choose a specific person for the booking.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeSlotInterval", Required = Newtonsoft.Json.Required.Default)]
-        public Duration TimeSlotInterval { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimumLeadTime.
-        /// Minimum lead time for bookings and cancellations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLeadTime", Required = Newtonsoft.Json.Required.Default)]
-        public Duration MinimumLeadTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStaffSelection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowStaffSelection { get; set; }
     
         /// <summary>
         /// Gets or sets maximumAdvance.
@@ -52,6 +45,13 @@ namespace Microsoft.Graph
         public Duration MaximumAdvance { get; set; }
     
         /// <summary>
+        /// Gets or sets minimumLeadTime.
+        /// Minimum lead time for bookings and cancellations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLeadTime", Required = Newtonsoft.Json.Required.Default)]
+        public Duration MinimumLeadTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets sendConfirmationsToOwner.
         /// Notify the business via email when a booking is created or changed.
         /// </summary>
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public bool? SendConfirmationsToOwner { get; set; }
     
         /// <summary>
-        /// Gets or sets allowStaffSelection.
-        /// Allow customers to choose a specific person for the booking.
+        /// Gets or sets timeSlotInterval.
+        /// Duration of each time slot.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStaffSelection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowStaffSelection { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeSlotInterval", Required = Newtonsoft.Json.Required.Default)]
+        public Duration TimeSlotInterval { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

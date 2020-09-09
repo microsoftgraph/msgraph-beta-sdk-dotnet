@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public IPrivilegedAccessResourcesCollectionPage Resources { get; set; }
     
         /// <summary>
-        /// Gets or sets role definitions.
+        /// Gets or sets role assignment requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
-        public IPrivilegedAccessRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IPrivilegedAccessRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         public IPrivilegedAccessRoleAssignmentsCollectionPage RoleAssignments { get; set; }
     
         /// <summary>
-        /// Gets or sets role assignment requests.
+        /// Gets or sets role definitions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
-        public IPrivilegedAccessRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        public IPrivilegedAccessRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
         /// <summary>
         /// Gets or sets role settings.

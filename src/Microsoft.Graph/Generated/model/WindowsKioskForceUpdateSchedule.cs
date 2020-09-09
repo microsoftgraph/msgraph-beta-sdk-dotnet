@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets startDateTime.
-        /// The start time for the force restart.
+        /// Gets or sets dayofMonth.
+        /// Day of month. Valid values 1 to 31
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets recurrence.
-        /// Recurrence schedule.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
-        public Windows10AppsUpdateRecurrence? Recurrence { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dayofMonth", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DayofMonth { get; set; }
     
         /// <summary>
         /// Gets or sets dayofWeek.
@@ -52,11 +45,11 @@ namespace Microsoft.Graph
         public DayOfWeek? DayofWeek { get; set; }
     
         /// <summary>
-        /// Gets or sets dayofMonth.
-        /// Day of month. Valid values 1 to 31
+        /// Gets or sets recurrence.
+        /// Recurrence schedule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dayofMonth", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DayofMonth { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
+        public Windows10AppsUpdateRecurrence? Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets runImmediatelyIfAfterStartDateTime.
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runImmediatelyIfAfterStartDateTime", Required = Newtonsoft.Json.Required.Default)]
         public bool? RunImmediatelyIfAfterStartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startDateTime.
+        /// The start time for the force restart.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

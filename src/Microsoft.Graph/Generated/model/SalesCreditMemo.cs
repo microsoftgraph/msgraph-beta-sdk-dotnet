@@ -31,52 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets number.
+        /// Gets or sets billing postal address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
-        public string Number { get; set; }
-    
-        /// <summary>
-        /// Gets or sets external document number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalDocumentNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string ExternalDocumentNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets credit memo date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creditMemoDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date CreditMemoDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets due date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date DueDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets customer id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? CustomerId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets customer number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomerNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets customer name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerName", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomerName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bill to name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billToName", Required = Newtonsoft.Json.Required.Default)]
-        public string BillToName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billingPostalAddress", Required = Newtonsoft.Json.Required.Default)]
+        public PostalAddressType BillingPostalAddress { get; set; }
     
         /// <summary>
         /// Gets or sets bill to customer id.
@@ -91,22 +49,16 @@ namespace Microsoft.Graph
         public string BillToCustomerNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets selling postal address.
+        /// Gets or sets bill to name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sellingPostalAddress", Required = Newtonsoft.Json.Required.Default)]
-        public PostalAddressType SellingPostalAddress { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billToName", Required = Newtonsoft.Json.Required.Default)]
+        public string BillToName { get; set; }
     
         /// <summary>
-        /// Gets or sets billing postal address.
+        /// Gets or sets credit memo date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billingPostalAddress", Required = Newtonsoft.Json.Required.Default)]
-        public PostalAddressType BillingPostalAddress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets currency id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currencyId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? CurrencyId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creditMemoDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date CreditMemoDate { get; set; }
     
         /// <summary>
         /// Gets or sets currency code.
@@ -115,22 +67,28 @@ namespace Microsoft.Graph
         public string CurrencyCode { get; set; }
     
         /// <summary>
-        /// Gets or sets payment terms id.
+        /// Gets or sets currency id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paymentTermsId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? PaymentTermsId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currencyId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? CurrencyId { get; set; }
     
         /// <summary>
-        /// Gets or sets salesperson.
+        /// Gets or sets customer id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesperson", Required = Newtonsoft.Json.Required.Default)]
-        public string Salesperson { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? CustomerId { get; set; }
     
         /// <summary>
-        /// Gets or sets prices include tax.
+        /// Gets or sets customer name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pricesIncludeTax", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PricesIncludeTax { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomerName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets customer number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomerNumber { get; set; }
     
         /// <summary>
         /// Gets or sets discount amount.
@@ -145,34 +103,22 @@ namespace Microsoft.Graph
         public bool? DiscountAppliedBeforeTax { get; set; }
     
         /// <summary>
-        /// Gets or sets total amount excluding tax.
+        /// Gets or sets due date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalAmountExcludingTax", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? TotalAmountExcludingTax { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date DueDate { get; set; }
     
         /// <summary>
-        /// Gets or sets total tax amount.
+        /// Gets or sets email.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalTaxAmount", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? TotalTaxAmount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        public string Email { get; set; }
     
         /// <summary>
-        /// Gets or sets total amount including tax.
+        /// Gets or sets external document number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalAmountIncludingTax", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? TotalAmountIncludingTax { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public string Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalDocumentNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalDocumentNumber { get; set; }
     
         /// <summary>
         /// Gets or sets invoice id.
@@ -187,28 +133,70 @@ namespace Microsoft.Graph
         public string InvoiceNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets last modified date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
+        public string Number { get; set; }
+    
+        /// <summary>
+        /// Gets or sets payment terms id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paymentTermsId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? PaymentTermsId { get; set; }
+    
+        /// <summary>
         /// Gets or sets phone number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
         public string PhoneNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets email.
+        /// Gets or sets prices include tax.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
-        public string Email { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pricesIncludeTax", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PricesIncludeTax { get; set; }
     
         /// <summary>
-        /// Gets or sets sales credit memo lines.
+        /// Gets or sets salesperson.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesCreditMemoLines", Required = Newtonsoft.Json.Required.Default)]
-        public ISalesCreditMemoSalesCreditMemoLinesCollectionPage SalesCreditMemoLines { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesperson", Required = Newtonsoft.Json.Required.Default)]
+        public string Salesperson { get; set; }
     
         /// <summary>
-        /// Gets or sets customer.
+        /// Gets or sets selling postal address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customer", Required = Newtonsoft.Json.Required.Default)]
-        public Customer Customer { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sellingPostalAddress", Required = Newtonsoft.Json.Required.Default)]
+        public PostalAddressType SellingPostalAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total amount excluding tax.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalAmountExcludingTax", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? TotalAmountExcludingTax { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total amount including tax.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalAmountIncludingTax", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? TotalAmountIncludingTax { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total tax amount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalTaxAmount", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? TotalTaxAmount { get; set; }
     
         /// <summary>
         /// Gets or sets currency.
@@ -217,10 +205,22 @@ namespace Microsoft.Graph
         public Currency Currency { get; set; }
     
         /// <summary>
+        /// Gets or sets customer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customer", Required = Newtonsoft.Json.Required.Default)]
+        public Customer Customer { get; set; }
+    
+        /// <summary>
         /// Gets or sets payment term.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paymentTerm", Required = Newtonsoft.Json.Required.Default)]
         public PaymentTerm PaymentTerm { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sales credit memo lines.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesCreditMemoLines", Required = Newtonsoft.Json.Required.Default)]
+        public ISalesCreditMemoSalesCreditMemoLinesCollectionPage SalesCreditMemoLines { get; set; }
     
     }
 }

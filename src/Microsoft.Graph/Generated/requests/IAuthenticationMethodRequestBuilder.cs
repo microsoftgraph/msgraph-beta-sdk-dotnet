@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IAuthenticationMethodRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AuthenticationMethodEnableSmsSignIn.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationMethodEnableSmsSignInRequestBuilder"/>.</returns>
-        IAuthenticationMethodEnableSmsSignInRequestBuilder EnableSmsSignIn();
-
-        /// <summary>
         /// Gets the request builder for AuthenticationMethodDisableSmsSignIn.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationMethodDisableSmsSignInRequestBuilder"/>.</returns>
         IAuthenticationMethodDisableSmsSignInRequestBuilder DisableSmsSignIn();
+
+        /// <summary>
+        /// Gets the request builder for AuthenticationMethodEnableSmsSignIn.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodEnableSmsSignInRequestBuilder"/>.</returns>
+        IAuthenticationMethodEnableSmsSignInRequestBuilder EnableSmsSignIn();
 
         /// <summary>
         /// Gets the request builder for AuthenticationMethodResetPassword.

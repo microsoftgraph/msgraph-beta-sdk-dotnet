@@ -45,6 +45,12 @@ namespace Microsoft.Graph
             IEnumerable<GroupPolicyUploadedLanguageFile> groupPolicyUploadedLanguageFiles = null);
 
         /// <summary>
+        /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemove.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder"/>.</returns>
+        IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder Remove();
+
+        /// <summary>
         /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemoveLanguageFiles.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveLanguageFilesRequestBuilder"/>.</returns>
@@ -65,12 +71,6 @@ namespace Microsoft.Graph
         IGroupPolicyUploadedDefinitionFileUploadNewVersionRequestBuilder UploadNewVersion(
             byte[] content,
             IEnumerable<GroupPolicyUploadedLanguageFile> groupPolicyUploadedLanguageFiles = null);
-
-        /// <summary>
-        /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemove.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder"/>.</returns>
-        IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder Remove();
     
     }
 }

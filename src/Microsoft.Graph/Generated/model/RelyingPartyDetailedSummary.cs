@@ -31,52 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets relying party id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relyingPartyId", Required = Newtonsoft.Json.Required.Default)]
-        public string RelyingPartyId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets service id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ServiceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets relying party name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relyingPartyName", Required = Newtonsoft.Json.Required.Default)]
-        public string RelyingPartyName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets successful sign in count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulSignInCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SuccessfulSignInCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets failed sign in count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedSignInCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? FailedSignInCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total sign in count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalSignInCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? TotalSignInCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sign in success rate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInSuccessRate", Required = Newtonsoft.Json.Required.Default)]
-        public double? SignInSuccessRate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets unique user count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueUserCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? UniqueUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets migration status.
@@ -91,10 +49,52 @@ namespace Microsoft.Graph
         public IEnumerable<KeyValuePair> MigrationValidationDetails { get; set; }
     
         /// <summary>
+        /// Gets or sets relying party id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relyingPartyId", Required = Newtonsoft.Json.Required.Default)]
+        public string RelyingPartyId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets relying party name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relyingPartyName", Required = Newtonsoft.Json.Required.Default)]
+        public string RelyingPartyName { get; set; }
+    
+        /// <summary>
         /// Gets or sets reply urls.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyUrls", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ReplyUrls { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ServiceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sign in success rate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInSuccessRate", Required = Newtonsoft.Json.Required.Default)]
+        public double? SignInSuccessRate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets successful sign in count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulSignInCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SuccessfulSignInCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total sign in count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalSignInCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? TotalSignInCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unique user count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueUserCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? UniqueUserCount { get; set; }
     
     }
 }

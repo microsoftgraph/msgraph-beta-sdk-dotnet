@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets publisher.
-        /// Name of the device health script publisher
+        /// Gets or sets created date time.
+        /// The timestamp of when the device health script was created. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
-        public string Publisher { get; set; }
-    
-        /// <summary>
-        /// Gets or sets version.
-        /// Version of the device health script
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
-        public string Version { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Name of the device health script
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -66,32 +52,18 @@ namespace Microsoft.Graph
         public byte[] DetectionScriptContent { get; set; }
     
         /// <summary>
-        /// Gets or sets remediation script content.
-        /// The entire content of the remediation powershell script
+        /// Gets or sets detection script parameters.
+        /// List of ComplexType DetectionScriptParameters objects.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptContent", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] RemediationScriptContent { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionScriptParameters", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceHealthScriptParameter> DetectionScriptParameters { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// The timestamp of when the device health script was created. This property is read-only.
+        /// Gets or sets display name.
+        /// Name of the device health script
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// The timestamp of when the device health script was modified. This property is read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets run as account.
-        /// Indicates the type of execution context
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
-        public RunAsAccountType? RunAsAccount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enforce signature check.
@@ -101,18 +73,11 @@ namespace Microsoft.Graph
         public bool? EnforceSignatureCheck { get; set; }
     
         /// <summary>
-        /// Gets or sets run as32bit.
-        /// Indicate whether PowerShell script(s) should run as 32-bit
+        /// Gets or sets highest available version.
+        /// Highest available version for a Microsoft Proprietary script
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RunAs32Bit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role scope tag ids.
-        /// List of Scope Tag IDs for the device health script
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> RoleScopeTagIds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highestAvailableVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string HighestAvailableVersion { get; set; }
     
         /// <summary>
         /// Gets or sets is global script.
@@ -122,18 +87,25 @@ namespace Microsoft.Graph
         public bool? IsGlobalScript { get; set; }
     
         /// <summary>
-        /// Gets or sets highest available version.
-        /// Highest available version for a Microsoft Proprietary script
+        /// Gets or sets last modified date time.
+        /// The timestamp of when the device health script was modified. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highestAvailableVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string HighestAvailableVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets detection script parameters.
-        /// List of ComplexType DetectionScriptParameters objects.
+        /// Gets or sets publisher.
+        /// Name of the device health script publisher
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionScriptParameters", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DeviceHealthScriptParameter> DetectionScriptParameters { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        public string Publisher { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediation script content.
+        /// The entire content of the remediation powershell script
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptContent", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] RemediationScriptContent { get; set; }
     
         /// <summary>
         /// Gets or sets remediation script parameters.
@@ -143,6 +115,34 @@ namespace Microsoft.Graph
         public IEnumerable<DeviceHealthScriptParameter> RemediationScriptParameters { get; set; }
     
         /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of Scope Tag IDs for the device health script
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run as32bit.
+        /// Indicate whether PowerShell script(s) should run as 32-bit
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RunAs32Bit { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run as account.
+        /// Indicates the type of execution context
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
+        public RunAsAccountType? RunAsAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version.
+        /// Version of the device health script
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        public string Version { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the device health script
         /// </summary>
@@ -150,18 +150,18 @@ namespace Microsoft.Graph
         public IDeviceHealthScriptAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
-        /// Gets or sets run summary.
-        /// High level run summary for device health script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSummary", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceHealthScriptRunSummary RunSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets device run states.
         /// List of run states for the device health script across all devices
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRunStates", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceHealthScriptDeviceRunStatesCollectionPage DeviceRunStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run summary.
+        /// High level run summary for device health script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSummary", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceHealthScriptRunSummary RunSummary { get; set; }
     
     }
 }

@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IIosLobAppProvisioningConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IIosLobAppProvisioningConfigurationAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -48,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIosLobAppProvisioningConfigurationDeviceStatusesCollectionRequestBuilder"/>.</returns>
         IIosLobAppProvisioningConfigurationDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
+
+        /// <summary>
+        /// Gets the request builder for GroupAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
 
         /// <summary>
         /// Gets the request builder for UserStatuses.

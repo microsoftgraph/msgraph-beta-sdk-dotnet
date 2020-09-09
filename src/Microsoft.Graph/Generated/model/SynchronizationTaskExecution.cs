@@ -91,16 +91,16 @@ namespace Microsoft.Graph
         public Int64? CountImportedReferenceDeltas { get; set; }
     
         /// <summary>
-        /// Gets or sets state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public SynchronizationTaskExecutionResult? State { get; set; }
-    
-        /// <summary>
         /// Gets or sets error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationError Error { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public SynchronizationTaskExecutionResult? State { get; set; }
     
         /// <summary>
         /// Gets or sets timeBegan.

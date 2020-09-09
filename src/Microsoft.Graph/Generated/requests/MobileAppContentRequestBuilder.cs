@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Files.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppContentFilesCollectionRequestBuilder"/>.</returns>
-        public IMobileAppContentFilesCollectionRequestBuilder Files
-        {
-            get
-            {
-                return new MobileAppContentFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("files"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ContainedApps.
         /// </summary>
         /// <returns>The <see cref="IMobileAppContentContainedAppsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new MobileAppContentContainedAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("containedApps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Files.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppContentFilesCollectionRequestBuilder"/>.</returns>
+        public IMobileAppContentFilesCollectionRequestBuilder Files
+        {
+            get
+            {
+                return new MobileAppContentFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("files"), this.Client);
             }
         }
     

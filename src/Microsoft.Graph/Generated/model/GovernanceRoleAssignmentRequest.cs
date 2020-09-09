@@ -31,6 +31,30 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets assignment state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
+        public string AssignmentState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets linked eligible role assignment id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkedEligibleRoleAssignmentId", Required = Newtonsoft.Json.Required.Default)]
+        public string LinkedEligibleRoleAssignmentId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reason.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        public string Reason { get; set; }
+    
+        /// <summary>
+        /// Gets or sets requested date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RequestedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
@@ -43,40 +67,10 @@ namespace Microsoft.Graph
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
-        /// Gets or sets subject id.
+        /// Gets or sets schedule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectId", Required = Newtonsoft.Json.Required.Default)]
-        public string SubjectId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets linked eligible role assignment id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkedEligibleRoleAssignmentId", Required = Newtonsoft.Json.Required.Default)]
-        public string LinkedEligibleRoleAssignmentId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assignment state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
-        public string AssignmentState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets requested date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? RequestedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reason.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
-        public string Reason { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        public GovernanceSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets status.
@@ -85,10 +79,16 @@ namespace Microsoft.Graph
         public GovernanceRoleAssignmentRequestStatus Status { get; set; }
     
         /// <summary>
-        /// Gets or sets schedule.
+        /// Gets or sets subject id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
-        public GovernanceSchedule Schedule { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectId", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets resource.

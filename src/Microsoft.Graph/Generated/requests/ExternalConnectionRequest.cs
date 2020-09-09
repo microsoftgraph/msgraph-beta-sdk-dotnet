@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (externalConnectionToInitialize != null && externalConnectionToInitialize.AdditionalData != null)
             {
 
+                if (externalConnectionToInitialize.Groups != null && externalConnectionToInitialize.Groups.CurrentPage != null)
+                {
+                    externalConnectionToInitialize.Groups.AdditionalData = externalConnectionToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    externalConnectionToInitialize.AdditionalData.TryGetValue("groups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        externalConnectionToInitialize.Groups.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (externalConnectionToInitialize.Items != null && externalConnectionToInitialize.Items.CurrentPage != null)
                 {
                     externalConnectionToInitialize.Items.AdditionalData = externalConnectionToInitialize.AdditionalData;
@@ -261,22 +277,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         externalConnectionToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (externalConnectionToInitialize.Groups != null && externalConnectionToInitialize.Groups.CurrentPage != null)
-                {
-                    externalConnectionToInitialize.Groups.AdditionalData = externalConnectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    externalConnectionToInitialize.AdditionalData.TryGetValue("groups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        externalConnectionToInitialize.Groups.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

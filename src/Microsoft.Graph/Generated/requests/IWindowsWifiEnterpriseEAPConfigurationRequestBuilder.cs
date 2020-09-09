@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IWindowsWifiEnterpriseEAPConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificatesForServerValidation.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
-        IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation { get; }
-
-        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IWindowsCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
@@ -48,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWindows81TrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
         IWindows81TrustedRootCertificateWithReferenceRequestBuilder RootCertificateForClientValidation { get; }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificatesForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
+        IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation { get; }
     
     }
 }

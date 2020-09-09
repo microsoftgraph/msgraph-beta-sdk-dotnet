@@ -51,30 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Services.
-        /// </summary>
-        /// <returns>The <see cref="IPrintServicesCollectionRequestBuilder"/>.</returns>
-        public IPrintServicesCollectionRequestBuilder Services
-        {
-            get
-            {
-                return new PrintServicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("services"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Printers.
-        /// </summary>
-        /// <returns>The <see cref="IPrintPrintersCollectionRequestBuilder"/>.</returns>
-        public IPrintPrintersCollectionRequestBuilder Printers
-        {
-            get
-            {
-                return new PrintPrintersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("printers"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Connectors.
         /// </summary>
         /// <returns>The <see cref="IPrintConnectorsCollectionRequestBuilder"/>.</returns>
@@ -87,14 +63,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Shares.
+        /// Gets the request builder for Operations.
         /// </summary>
-        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
-        public IPrintSharesCollectionRequestBuilder Shares
+        /// <returns>The <see cref="IPrintOperationsCollectionRequestBuilder"/>.</returns>
+        public IPrintOperationsCollectionRequestBuilder Operations
         {
             get
             {
-                return new PrintSharesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("shares"), this.Client);
+                return new PrintOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Printers.
+        /// </summary>
+        /// <returns>The <see cref="IPrintPrintersCollectionRequestBuilder"/>.</returns>
+        public IPrintPrintersCollectionRequestBuilder Printers
+        {
+            get
+            {
+                return new PrintPrintersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("printers"), this.Client);
             }
         }
 
@@ -123,14 +111,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Operations.
+        /// Gets the request builder for Services.
         /// </summary>
-        /// <returns>The <see cref="IPrintOperationsCollectionRequestBuilder"/>.</returns>
-        public IPrintOperationsCollectionRequestBuilder Operations
+        /// <returns>The <see cref="IPrintServicesCollectionRequestBuilder"/>.</returns>
+        public IPrintServicesCollectionRequestBuilder Services
         {
             get
             {
-                return new PrintOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+                return new PrintServicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("services"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
+        public IPrintSharesCollectionRequestBuilder Shares
+        {
+            get
+            {
+                return new PrintSharesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("shares"), this.Client);
             }
         }
 

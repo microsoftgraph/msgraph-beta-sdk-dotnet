@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
-        /// </summary>
-        /// <returns>The <see cref="IRbacApplicationRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        public IRbacApplicationRoleDefinitionsCollectionRequestBuilder RoleDefinitions
-        {
-            get
-            {
-                return new RbacApplicationRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for RoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRoleAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new RbacApplicationRoleAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleDefinitionsCollectionRequestBuilder RoleDefinitions
+        {
+            get
+            {
+                return new RbacApplicationRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
             }
         }
     

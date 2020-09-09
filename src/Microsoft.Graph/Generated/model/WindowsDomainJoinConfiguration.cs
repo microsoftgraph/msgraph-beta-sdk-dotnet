@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets active directory domain name.
+        /// Active Directory domain name to join.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeDirectoryDomainName", Required = Newtonsoft.Json.Required.Default)]
+        public string ActiveDirectoryDomainName { get; set; }
+    
+        /// <summary>
         /// Gets or sets computer name static prefix.
         /// Fixed prefix to be used for computer name.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "computerNameSuffixRandomCharCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ComputerNameSuffixRandomCharCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets active directory domain name.
-        /// Active Directory domain name to join.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeDirectoryDomainName", Required = Newtonsoft.Json.Required.Default)]
-        public string ActiveDirectoryDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets organizational unit.

@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Picture.
-        /// </summary>
-        /// <returns>The <see cref="ICustomerPictureCollectionRequestBuilder"/>.</returns>
-        public ICustomerPictureCollectionRequestBuilder Picture
-        {
-            get
-            {
-                return new CustomerPictureCollectionRequestBuilder(this.AppendSegmentToRequestUrl("picture"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Currency.
         /// </summary>
         /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PaymentMethod.
+        /// </summary>
+        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
+        public IPaymentMethodRequestBuilder PaymentMethod
+        {
+            get
+            {
+                return new PaymentMethodRequestBuilder(this.AppendSegmentToRequestUrl("paymentMethod"), this.Client);
             }
         }
 
@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Picture.
+        /// </summary>
+        /// <returns>The <see cref="ICustomerPictureCollectionRequestBuilder"/>.</returns>
+        public ICustomerPictureCollectionRequestBuilder Picture
+        {
+            get
+            {
+                return new CustomerPictureCollectionRequestBuilder(this.AppendSegmentToRequestUrl("picture"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ShipmentMethod.
         /// </summary>
         /// <returns>The <see cref="IShipmentMethodRequestBuilder"/>.</returns>
@@ -95,18 +107,6 @@ namespace Microsoft.Graph
             get
             {
                 return new ShipmentMethodRequestBuilder(this.AppendSegmentToRequestUrl("shipmentMethod"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for PaymentMethod.
-        /// </summary>
-        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
-        public IPaymentMethodRequestBuilder PaymentMethod
-        {
-            get
-            {
-                return new PaymentMethodRequestBuilder(this.AppendSegmentToRequestUrl("paymentMethod"), this.Client);
             }
         }
     

@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets order identifier.
-        /// Order Id of the Windows autopilot device.
+        /// Gets or sets assigned user principal name.
+        /// UPN of the user the device will be assigned
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string OrderIdentifier { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string AssignedUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets group tag.
@@ -45,18 +45,11 @@ namespace Microsoft.Graph
         public string GroupTag { get; set; }
     
         /// <summary>
-        /// Gets or sets serial number.
-        /// Serial number of the Windows autopilot device.
+        /// Gets or sets hardware identifier.
+        /// Hardware Blob of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string SerialNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets product key.
-        /// Product Key of the Windows autopilot device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productKey", Required = Newtonsoft.Json.Required.Default)]
-        public string ProductKey { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hardwareIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] HardwareIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets import id.
@@ -66,11 +59,25 @@ namespace Microsoft.Graph
         public string ImportId { get; set; }
     
         /// <summary>
-        /// Gets or sets hardware identifier.
-        /// Hardware Blob of the Windows autopilot device.
+        /// Gets or sets order identifier.
+        /// Order Id of the Windows autopilot device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hardwareIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] HardwareIdentifier { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string OrderIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets product key.
+        /// Product Key of the Windows autopilot device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productKey", Required = Newtonsoft.Json.Required.Default)]
+        public string ProductKey { get; set; }
+    
+        /// <summary>
+        /// Gets or sets serial number.
+        /// Serial number of the Windows autopilot device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string SerialNumber { get; set; }
     
         /// <summary>
         /// Gets or sets state.
@@ -78,13 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ImportedWindowsAutopilotDeviceIdentityState State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assigned user principal name.
-        /// UPN of the user the device will be assigned
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string AssignedUserPrincipalName { get; set; }
     
     }
 }

@@ -45,13 +45,6 @@ namespace Microsoft.Graph
         public IosWebContentFilterBase ContentFilterSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets lock screen footnote.
-        /// A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenFootnote", Required = Newtonsoft.Json.Required.Default)]
-        public string LockScreenFootnote { get; set; }
-    
-        /// <summary>
         /// Gets or sets home screen dock icons.
         /// A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
         /// </summary>
@@ -66,11 +59,32 @@ namespace Microsoft.Graph
         public IEnumerable<IosHomeScreenPage> HomeScreenPages { get; set; }
     
         /// <summary>
+        /// Gets or sets ios single sign on extension.
+        /// Gets or sets a single sign-on extension profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosSingleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        public IosSingleSignOnExtension IosSingleSignOnExtension { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lock screen footnote.
+        /// A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenFootnote", Required = Newtonsoft.Json.Required.Default)]
+        public string LockScreenFootnote { get; set; }
+    
+        /// <summary>
         /// Gets or sets notification settings.
         /// Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationSettings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IosNotificationSettings> NotificationSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single sign on extension.
+        /// Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        public SingleSignOnExtension SingleSignOnExtension { get; set; }
     
         /// <summary>
         /// Gets or sets single sign on settings.
@@ -92,20 +106,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wallpaperImage", Required = Newtonsoft.Json.Required.Default)]
         public MimeContent WallpaperImage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets single sign on extension.
-        /// Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
-        public SingleSignOnExtension SingleSignOnExtension { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ios single sign on extension.
-        /// Gets or sets a single sign-on extension profile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosSingleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
-        public IosSingleSignOnExtension IosSingleSignOnExtension { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.

@@ -31,109 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets network single sign on.
-        /// Specify the network single sign on type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkSingleSignOn", Required = Newtonsoft.Json.Required.Default)]
-        public NetworkSingleSignOnType? NetworkSingleSignOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets maximum authentication timeout in seconds.
-        /// Specify maximum authentication timeout (in seconds).  Valid range: 1-120
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAuthenticationTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MaximumAuthenticationTimeoutInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets prompt for additional authentication credentials.
-        /// Specify whether the wifi connection should prompt for additional authentication credentials.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "promptForAdditionalAuthenticationCredentials", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PromptForAdditionalAuthenticationCredentials { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enable pairwise master key caching.
-        /// Specify whether the wifi connection should enable pairwise master key caching.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enablePairwiseMasterKeyCaching", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnablePairwiseMasterKeyCaching { get; set; }
-    
-        /// <summary>
-        /// Gets or sets maximum pairwise master key cache time in minutes.
-        /// Specify maximum pairwise master key cache time (in minutes).  Valid range: 5-1440
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumPairwiseMasterKeyCacheTimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MaximumPairwiseMasterKeyCacheTimeInMinutes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets maximum number of pairwise master keys in cache.
-        /// Specify maximum number of pairwise master keys in cache.  Valid range: 1-255
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumNumberOfPairwiseMasterKeysInCache", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MaximumNumberOfPairwiseMasterKeysInCache { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enable pre authentication.
-        /// Specify whether pre-authentication should be enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enablePreAuthentication", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnablePreAuthentication { get; set; }
-    
-        /// <summary>
-        /// Gets or sets maximum pre authentication attempts.
-        /// Specify maximum pre-authentication attempts.  Valid range: 1-16
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumPreAuthenticationAttempts", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MaximumPreAuthenticationAttempts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets eap type.
-        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
-        public EapType? EapType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets trusted server certificate names.
-        /// Specify trusted server certificate names.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedServerCertificateNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
-    
-        /// <summary>
         /// Gets or sets authentication method.
         /// Specify the authentication method.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets inner authentication protocol for eapttls.
-        /// Specify inner authentication protocol for EAP TTLS.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerAuthenticationProtocolForEAPTTLS", Required = Newtonsoft.Json.Required.Default)]
-        public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS { get; set; }
-    
-        /// <summary>
-        /// Gets or sets outer identity privacy temporary value.
-        /// Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outerIdentityPrivacyTemporaryValue", Required = Newtonsoft.Json.Required.Default)]
-        public string OuterIdentityPrivacyTemporaryValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets require cryptographic binding.
-        /// Specify whether to enable cryptographic binding when EAP type is selected as PEAP.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireCryptographicBinding", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RequireCryptographicBinding { get; set; }
-    
-        /// <summary>
-        /// Gets or sets perform server validation.
-        /// Specify whether to enable verification of server's identity by validating the certificate when EAP type is selected as PEAP.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "performServerValidation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PerformServerValidation { get; set; }
     
         /// <summary>
         /// Gets or sets disable user prompt for server validation.
@@ -143,11 +45,102 @@ namespace Microsoft.Graph
         public bool? DisableUserPromptForServerValidation { get; set; }
     
         /// <summary>
-        /// Gets or sets root certificates for server validation.
-        /// Specify root certificate for server validation.
+        /// Gets or sets eap type.
+        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificatesForServerValidation", Required = Newtonsoft.Json.Required.Default)]
-        public IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage RootCertificatesForServerValidation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
+        public EapType? EapType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enable pairwise master key caching.
+        /// Specify whether the wifi connection should enable pairwise master key caching.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enablePairwiseMasterKeyCaching", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnablePairwiseMasterKeyCaching { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enable pre authentication.
+        /// Specify whether pre-authentication should be enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enablePreAuthentication", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnablePreAuthentication { get; set; }
+    
+        /// <summary>
+        /// Gets or sets inner authentication protocol for eapttls.
+        /// Specify inner authentication protocol for EAP TTLS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerAuthenticationProtocolForEAPTTLS", Required = Newtonsoft.Json.Required.Default)]
+        public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum authentication timeout in seconds.
+        /// Specify maximum authentication timeout (in seconds).  Valid range: 1-120
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAuthenticationTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MaximumAuthenticationTimeoutInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum number of pairwise master keys in cache.
+        /// Specify maximum number of pairwise master keys in cache.  Valid range: 1-255
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumNumberOfPairwiseMasterKeysInCache", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MaximumNumberOfPairwiseMasterKeysInCache { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum pairwise master key cache time in minutes.
+        /// Specify maximum pairwise master key cache time (in minutes).  Valid range: 5-1440
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumPairwiseMasterKeyCacheTimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MaximumPairwiseMasterKeyCacheTimeInMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum pre authentication attempts.
+        /// Specify maximum pre-authentication attempts.  Valid range: 1-16
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumPreAuthenticationAttempts", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MaximumPreAuthenticationAttempts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets network single sign on.
+        /// Specify the network single sign on type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkSingleSignOn", Required = Newtonsoft.Json.Required.Default)]
+        public NetworkSingleSignOnType? NetworkSingleSignOn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outer identity privacy temporary value.
+        /// Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outerIdentityPrivacyTemporaryValue", Required = Newtonsoft.Json.Required.Default)]
+        public string OuterIdentityPrivacyTemporaryValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets perform server validation.
+        /// Specify whether to enable verification of server's identity by validating the certificate when EAP type is selected as PEAP.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "performServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PerformServerValidation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets prompt for additional authentication credentials.
+        /// Specify whether the wifi connection should prompt for additional authentication credentials.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "promptForAdditionalAuthenticationCredentials", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PromptForAdditionalAuthenticationCredentials { get; set; }
+    
+        /// <summary>
+        /// Gets or sets require cryptographic binding.
+        /// Specify whether to enable cryptographic binding when EAP type is selected as PEAP.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireCryptographicBinding", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RequireCryptographicBinding { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trusted server certificate names.
+        /// Specify trusted server certificate names.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedServerCertificateNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.
@@ -162,6 +155,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificateForClientValidation", Required = Newtonsoft.Json.Required.Default)]
         public Windows81TrustedRootCertificate RootCertificateForClientValidation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets root certificates for server validation.
+        /// Specify root certificate for server validation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificatesForServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        public IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage RootCertificatesForServerValidation { get; set; }
     
     }
 }

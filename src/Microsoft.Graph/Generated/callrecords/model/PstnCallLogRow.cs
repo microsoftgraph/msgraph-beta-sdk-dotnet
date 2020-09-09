@@ -31,10 +31,16 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets id.
+        /// Gets or sets calleeNumber.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string CalleeNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets callerNumber.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callerNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string CallerNumber { get; set; }
     
         /// <summary>
         /// Gets or sets callId.
@@ -43,40 +49,10 @@ namespace Microsoft.Graph.CallRecords
         public string CallId { get; set; }
     
         /// <summary>
-        /// Gets or sets userId.
+        /// Gets or sets callType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userPrincipalName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userDisplayName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets startDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets endDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets duration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Duration { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callType", Required = Newtonsoft.Json.Required.Default)]
+        public string CallType { get; set; }
     
         /// <summary>
         /// Gets or sets charge.
@@ -85,34 +61,10 @@ namespace Microsoft.Graph.CallRecords
         public Decimal? Charge { get; set; }
     
         /// <summary>
-        /// Gets or sets callType.
+        /// Gets or sets conferenceId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callType", Required = Newtonsoft.Json.Required.Default)]
-        public string CallType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets currency.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency", Required = Newtonsoft.Json.Required.Default)]
-        public string Currency { get; set; }
-    
-        /// <summary>
-        /// Gets or sets calleeNumber.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string CalleeNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets usageCountryCode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageCountryCode", Required = Newtonsoft.Json.Required.Default)]
-        public string UsageCountryCode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tenantCountryCode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantCountryCode", Required = Newtonsoft.Json.Required.Default)]
-        public string TenantCountryCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conferenceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ConferenceId { get; set; }
     
         /// <summary>
         /// Gets or sets connectionCharge.
@@ -121,10 +73,10 @@ namespace Microsoft.Graph.CallRecords
         public Decimal? ConnectionCharge { get; set; }
     
         /// <summary>
-        /// Gets or sets callerNumber.
+        /// Gets or sets currency.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callerNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string CallerNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency", Required = Newtonsoft.Json.Required.Default)]
+        public string Currency { get; set; }
     
         /// <summary>
         /// Gets or sets destinationContext.
@@ -139,10 +91,28 @@ namespace Microsoft.Graph.CallRecords
         public string DestinationName { get; set; }
     
         /// <summary>
-        /// Gets or sets conferenceId.
+        /// Gets or sets duration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conferenceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ConferenceId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Duration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets endDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets inventoryType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventoryType", Required = Newtonsoft.Json.Required.Default)]
+        public string InventoryType { get; set; }
     
         /// <summary>
         /// Gets or sets licenseCapability.
@@ -151,10 +121,40 @@ namespace Microsoft.Graph.CallRecords
         public string LicenseCapability { get; set; }
     
         /// <summary>
-        /// Gets or sets inventoryType.
+        /// Gets or sets startDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventoryType", Required = Newtonsoft.Json.Required.Default)]
-        public string InventoryType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenantCountryCode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantCountryCode", Required = Newtonsoft.Json.Required.Default)]
+        public string TenantCountryCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usageCountryCode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageCountryCode", Required = Newtonsoft.Json.Required.Default)]
+        public string UsageCountryCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userDisplayName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userPrincipalName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

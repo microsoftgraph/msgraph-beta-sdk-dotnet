@@ -37,25 +37,25 @@ namespace Microsoft.Graph
         public bool? Check32BitOn64System { get; set; }
     
         /// <summary>
-        /// Gets or sets keyPath.
-        /// The registry key path to detect Win32 Line of Business (LoB) app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyPath", Required = Newtonsoft.Json.Required.Default)]
-        public string KeyPath { get; set; }
-    
-        /// <summary>
-        /// Gets or sets valueName.
-        /// The registry value name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueName", Required = Newtonsoft.Json.Required.Default)]
-        public string ValueName { get; set; }
-    
-        /// <summary>
         /// Gets or sets detectionType.
         /// The registry data detection type
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRegistryDetectionType? DetectionType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets detectionValue.
+        /// The registry detection value
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionValue", Required = Newtonsoft.Json.Required.Default)]
+        public string DetectionValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets keyPath.
+        /// The registry key path to detect Win32 Line of Business (LoB) app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyPath", Required = Newtonsoft.Json.Required.Default)]
+        public string KeyPath { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
@@ -65,11 +65,11 @@ namespace Microsoft.Graph
         public Win32LobAppDetectionOperator? Operator { get; set; }
     
         /// <summary>
-        /// Gets or sets detectionValue.
-        /// The registry detection value
+        /// Gets or sets valueName.
+        /// The registry value name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionValue", Required = Newtonsoft.Json.Required.Default)]
-        public string DetectionValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueName", Required = Newtonsoft.Json.Required.Default)]
+        public string ValueName { get; set; }
     
     }
 }

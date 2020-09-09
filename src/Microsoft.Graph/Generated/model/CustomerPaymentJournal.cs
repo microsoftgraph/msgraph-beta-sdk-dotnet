@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets balancing account id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? BalancingAccountId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets balancing account number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string BalancingAccountNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
@@ -49,28 +61,16 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets balancing account id.
+        /// Gets or sets account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? BalancingAccountId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets balancing account number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string BalancingAccountNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account", Required = Newtonsoft.Json.Required.Default)]
+        public Account Account { get; set; }
     
         /// <summary>
         /// Gets or sets customer payments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerPayments", Required = Newtonsoft.Json.Required.Default)]
         public ICustomerPaymentJournalCustomerPaymentsCollectionPage CustomerPayments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account", Required = Newtonsoft.Json.Required.Default)]
-        public Account Account { get; set; }
     
     }
 }

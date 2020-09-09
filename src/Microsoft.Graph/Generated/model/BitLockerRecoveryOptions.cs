@@ -38,25 +38,11 @@ namespace Microsoft.Graph
         public bool? BlockDataRecoveryAgent { get; set; }
     
         /// <summary>
-        /// Gets or sets recoveryPasswordUsage.
-        /// Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk.
+        /// Gets or sets enableBitLockerAfterRecoveryInformationToStore.
+        /// Indicates whether or not to enable BitLocker until recovery information is stored in AD DS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryPasswordUsage", Required = Newtonsoft.Json.Required.Default)]
-        public ConfigurationUsage? RecoveryPasswordUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets recoveryKeyUsage.
-        /// Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryKeyUsage", Required = Newtonsoft.Json.Required.Default)]
-        public ConfigurationUsage? RecoveryKeyUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets hideRecoveryOptions.
-        /// Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideRecoveryOptions", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HideRecoveryOptions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableBitLockerAfterRecoveryInformationToStore", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableBitLockerAfterRecoveryInformationToStore { get; set; }
     
         /// <summary>
         /// Gets or sets enableRecoveryInformationSaveToStore.
@@ -66,6 +52,13 @@ namespace Microsoft.Graph
         public bool? EnableRecoveryInformationSaveToStore { get; set; }
     
         /// <summary>
+        /// Gets or sets hideRecoveryOptions.
+        /// Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideRecoveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideRecoveryOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets recoveryInformationToStore.
         /// Configure what pieces of BitLocker recovery information are stored to AD DS.
         /// </summary>
@@ -73,11 +66,18 @@ namespace Microsoft.Graph
         public BitLockerRecoveryInformationType? RecoveryInformationToStore { get; set; }
     
         /// <summary>
-        /// Gets or sets enableBitLockerAfterRecoveryInformationToStore.
-        /// Indicates whether or not to enable BitLocker until recovery information is stored in AD DS.
+        /// Gets or sets recoveryKeyUsage.
+        /// Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableBitLockerAfterRecoveryInformationToStore", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableBitLockerAfterRecoveryInformationToStore { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryKeyUsage", Required = Newtonsoft.Json.Required.Default)]
+        public ConfigurationUsage? RecoveryKeyUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recoveryPasswordUsage.
+        /// Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryPasswordUsage", Required = Newtonsoft.Json.Required.Default)]
+        public ConfigurationUsage? RecoveryPasswordUsage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets device name.
-        /// Device name.
+        /// Gets or sets deployment status.
+        /// The deployment state of the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentStatus", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public string DeviceId { get; set; }
     
         /// <summary>
+        /// Gets or sets device name.
+        /// Device name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
+    
+        /// <summary>
         /// Gets or sets last sync date time.
         /// Last sync date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os version.
-        /// Windows OS Version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets os description.
@@ -66,11 +66,18 @@ namespace Microsoft.Graph
         public string OsDescription { get; set; }
     
         /// <summary>
-        /// Gets or sets deployment status.
-        /// The deployment state of the policy.
+        /// Gets or sets os version.
+        /// Windows OS Version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentStatus", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policy version.
+        /// Human readable version of the WindowsDefenderApplicationControl supplemental policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string PolicyVersion { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
@@ -85,13 +92,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets policy version.
-        /// Human readable version of the WindowsDefenderApplicationControl supplemental policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string PolicyVersion { get; set; }
     
         /// <summary>
         /// Gets or sets policy.

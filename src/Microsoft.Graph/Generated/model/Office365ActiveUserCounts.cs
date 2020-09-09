@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
+        /// Gets or sets exchange.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchange", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Exchange { get; set; }
     
         /// <summary>
         /// Gets or sets office365.
@@ -43,16 +43,28 @@ namespace Microsoft.Graph
         public Int64? Office365 { get; set; }
     
         /// <summary>
-        /// Gets or sets exchange.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchange", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Exchange { get; set; }
-    
-        /// <summary>
         /// Gets or sets one drive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDrive", Required = Newtonsoft.Json.Required.Default)]
         public Int64? OneDrive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report period.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point.
@@ -67,28 +79,16 @@ namespace Microsoft.Graph
         public Int64? SkypeForBusiness { get; set; }
     
         /// <summary>
-        /// Gets or sets yammer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammer", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Yammer { get; set; }
-    
-        /// <summary>
         /// Gets or sets teams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teams", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Teams { get; set; }
     
         /// <summary>
-        /// Gets or sets report date.
+        /// Gets or sets yammer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets report period.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportPeriod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammer", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Yammer { get; set; }
     
     }
 }

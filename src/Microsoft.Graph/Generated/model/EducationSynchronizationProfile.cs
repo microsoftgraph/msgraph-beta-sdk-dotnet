@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets data provider.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataProvider", Required = Newtonsoft.Json.Required.Default)]
+        public EducationSynchronizationDataProvider DataProvider { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
@@ -43,10 +49,10 @@ namespace Microsoft.Graph
         public Date ExpirationDate { get; set; }
     
         /// <summary>
-        /// Gets or sets data provider.
+        /// Gets or sets handle special character constraint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataProvider", Required = Newtonsoft.Json.Required.Default)]
-        public EducationSynchronizationDataProvider DataProvider { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "handleSpecialCharacterConstraint", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HandleSpecialCharacterConstraint { get; set; }
     
         /// <summary>
         /// Gets or sets identity synchronization configuration.
@@ -65,12 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public EducationSynchronizationProfileState? State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets handle special character constraint.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "handleSpecialCharacterConstraint", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HandleSpecialCharacterConstraint { get; set; }
     
         /// <summary>
         /// Gets or sets errors.

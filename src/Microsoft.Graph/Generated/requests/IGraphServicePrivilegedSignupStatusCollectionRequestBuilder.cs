@@ -37,12 +37,6 @@ namespace Microsoft.Graph
         IPrivilegedSignupStatusRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for PrivilegedSignupStatusSignUp.
-        /// </summary>
-        /// <returns>The <see cref="IPrivilegedSignupStatusSignUpRequestBuilder"/>.</returns>
-        IPrivilegedSignupStatusSignUpRequestBuilder SignUp();
-
-        /// <summary>
         /// Gets the request builder for PrivilegedSignupStatusCompleteSetup.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedSignupStatusCompleteSetupRequestBuilder"/>.</returns>
@@ -50,15 +44,21 @@ namespace Microsoft.Graph
             TenantSetupInfo tenantSetupInfo = null);
 
         /// <summary>
-        /// Gets the request builder for PrivilegedSignupStatusIsSignedUp.
+        /// Gets the request builder for PrivilegedSignupStatusSignUp.
         /// </summary>
-        /// <returns>The <see cref="IPrivilegedSignupStatusIsSignedUpRequestBuilder"/>.</returns>
-        IPrivilegedSignupStatusIsSignedUpRequestBuilder IsSignedUp();
+        /// <returns>The <see cref="IPrivilegedSignupStatusSignUpRequestBuilder"/>.</returns>
+        IPrivilegedSignupStatusSignUpRequestBuilder SignUp();
 
         /// <summary>
         /// Gets the request builder for PrivilegedSignupStatusCanSignUp.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedSignupStatusCanSignUpRequestBuilder"/>.</returns>
         IPrivilegedSignupStatusCanSignUpRequestBuilder CanSignUp();
+
+        /// <summary>
+        /// Gets the request builder for PrivilegedSignupStatusIsSignedUp.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedSignupStatusIsSignedUpRequestBuilder"/>.</returns>
+        IPrivilegedSignupStatusIsSignedUpRequestBuilder IsSignedUp();
     }
 }

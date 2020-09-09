@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets childCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ChildCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets album.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "album", Required = Newtonsoft.Json.Required.Default)]
         public Album Album { get; set; }
+    
+        /// <summary>
+        /// Gets or sets childCount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ChildCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

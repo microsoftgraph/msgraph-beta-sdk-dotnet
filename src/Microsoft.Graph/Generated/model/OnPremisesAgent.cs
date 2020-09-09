@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets machine name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "machineName", Required = Newtonsoft.Json.Required.Default)]
-        public string MachineName { get; set; }
-    
-        /// <summary>
         /// Gets or sets external ip.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalIp", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalIp { get; set; }
+    
+        /// <summary>
+        /// Gets or sets machine name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "machineName", Required = Newtonsoft.Json.Required.Default)]
+        public string MachineName { get; set; }
     
         /// <summary>
         /// Gets or sets status.

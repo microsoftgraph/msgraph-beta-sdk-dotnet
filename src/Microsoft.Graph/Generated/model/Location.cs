@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets displayName.
-        /// The name associated with the location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets locationEmailAddress.
-        /// Optional email address of the location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationEmailAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string LocationEmailAddress { get; set; }
-    
-        /// <summary>
         /// Gets or sets address.
         /// The street address of the location.
         /// </summary>
@@ -59,11 +45,18 @@ namespace Microsoft.Graph
         public OutlookGeoCoordinates Coordinates { get; set; }
     
         /// <summary>
-        /// Gets or sets locationUri.
-        /// Optional URI representing the location.
+        /// Gets or sets displayName.
+        /// The name associated with the location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationUri", Required = Newtonsoft.Json.Required.Default)]
-        public string LocationUri { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets locationEmailAddress.
+        /// Optional email address of the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationEmailAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string LocationEmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets locationType.
@@ -71,6 +64,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationType", Required = Newtonsoft.Json.Required.Default)]
         public LocationType? LocationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets locationUri.
+        /// Optional URI representing the location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationUri", Required = Newtonsoft.Json.Required.Default)]
+        public string LocationUri { get; set; }
     
         /// <summary>
         /// Gets or sets uniqueId.

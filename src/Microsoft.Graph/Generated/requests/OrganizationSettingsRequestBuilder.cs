@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ProfileCardProperties.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder"/>.</returns>
-        public IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder ProfileCardProperties
-        {
-            get
-            {
-                return new OrganizationSettingsProfileCardPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("profileCardProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
         /// <returns>The <see cref="IItemInsightsSettingsRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ItemInsightsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("itemInsights"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ProfileCardProperties.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder"/>.</returns>
+        public IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder ProfileCardProperties
+        {
+            get
+            {
+                return new OrganizationSettingsProfileCardPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("profileCardProperties"), this.Client);
             }
         }
     

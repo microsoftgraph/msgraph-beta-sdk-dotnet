@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IMacOSScepCertificateProfileRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        IMacOSTrustedRootCertificateWithReferenceRequestBuilder RootCertificate { get; }
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceCertificateStates.
         /// </summary>
         /// <returns>The <see cref="IMacOSScepCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder"/>.</returns>
         IMacOSScepCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder ManagedDeviceCertificateStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IMacOSTrustedRootCertificateWithReferenceRequestBuilder RootCertificate { get; }
     
     }
 }

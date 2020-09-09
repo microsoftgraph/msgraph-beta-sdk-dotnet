@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for InternalSponsors.
-        /// </summary>
-        /// <returns>The <see cref="IConnectedOrganizationInternalSponsorsCollectionRequestBuilder"/>.</returns>
-        public IConnectedOrganizationInternalSponsorsCollectionRequestBuilder InternalSponsors
-        {
-            get
-            {
-                return new ConnectedOrganizationInternalSponsorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("internalSponsors"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ExternalSponsors.
         /// </summary>
         /// <returns>The <see cref="IConnectedOrganizationExternalSponsorsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ConnectedOrganizationExternalSponsorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("externalSponsors"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for InternalSponsors.
+        /// </summary>
+        /// <returns>The <see cref="IConnectedOrganizationInternalSponsorsCollectionRequestBuilder"/>.</returns>
+        public IConnectedOrganizationInternalSponsorsCollectionRequestBuilder InternalSponsors
+        {
+            get
+            {
+                return new ConnectedOrganizationInternalSponsorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("internalSponsors"), this.Client);
             }
         }
     

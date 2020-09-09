@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
+        /// Gets or sets collaboration tags.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collaborationTags", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> CollaborationTags { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
@@ -53,12 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets collaboration tags.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collaborationTags", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> CollaborationTags { get; set; }
     
     }
 }

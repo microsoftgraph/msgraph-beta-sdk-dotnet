@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public string Code { get; set; }
     
         /// <summary>
+        /// Gets or sets innerError.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerError", Required = Newtonsoft.Json.Required.Default)]
+        public ClassificationInnerError InnerError { get; set; }
+    
+        /// <summary>
         /// Gets or sets message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
@@ -47,12 +53,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public string Target { get; set; }
-    
-        /// <summary>
-        /// Gets or sets innerError.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerError", Required = Newtonsoft.Json.Required.Default)]
-        public ClassificationInnerError InnerError { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

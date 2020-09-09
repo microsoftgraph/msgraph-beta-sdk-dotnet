@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IAndroidDeviceOwnerEnterpriseWiFiConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificateForServerValidation.
+        /// Gets the request builder for DerivedCredentialSettings.
         /// </summary>
-        /// <returns>The <see cref="IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation { get; }
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
 
         /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         IAndroidDeviceOwnerCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
 
         /// <summary>
-        /// Gets the request builder for DerivedCredentialSettings.
+        /// Gets the request builder for RootCertificateForServerValidation.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
-        IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
+        /// <returns>The <see cref="IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation { get; }
     
     }
 }

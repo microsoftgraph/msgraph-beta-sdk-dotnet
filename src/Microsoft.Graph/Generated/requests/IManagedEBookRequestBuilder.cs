@@ -32,28 +32,28 @@ namespace Microsoft.Graph
         new IManagedEBookRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Categories.
-        /// </summary>
-        /// <returns>The <see cref="IManagedEBookCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IManagedEBookCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IManagedEBookAssignmentsCollectionRequestBuilder"/>.</returns>
         IManagedEBookAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
-        /// Gets the request builder for InstallSummary.
+        /// Gets the request builder for Categories.
         /// </summary>
-        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
-        IEBookInstallSummaryRequestBuilder InstallSummary { get; }
+        /// <returns>The <see cref="IManagedEBookCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IManagedEBookCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceStates.
         /// </summary>
         /// <returns>The <see cref="IManagedEBookDeviceStatesCollectionRequestBuilder"/>.</returns>
         IManagedEBookDeviceStatesCollectionRequestBuilder DeviceStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for InstallSummary.
+        /// </summary>
+        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
+        IEBookInstallSummaryRequestBuilder InstallSummary { get; }
 
         /// <summary>
         /// Gets the request builder for UserStateSummary.

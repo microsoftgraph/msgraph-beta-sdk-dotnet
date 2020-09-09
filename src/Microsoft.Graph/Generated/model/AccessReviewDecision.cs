@@ -31,34 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets access recommendation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRecommendation", Required = Newtonsoft.Json.Required.Default)]
+        public string AccessRecommendation { get; set; }
+    
+        /// <summary>
         /// Gets or sets access review id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewId", Required = Newtonsoft.Json.Required.Default)]
         public string AccessReviewId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reviewed by.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
-        public UserIdentity ReviewedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reviewed date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ReviewedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets review result.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewResult", Required = Newtonsoft.Json.Required.Default)]
-        public string ReviewResult { get; set; }
-    
-        /// <summary>
-        /// Gets or sets justification.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
-        public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets applied by.
@@ -79,10 +61,28 @@ namespace Microsoft.Graph
         public string ApplyResult { get; set; }
     
         /// <summary>
-        /// Gets or sets access recommendation.
+        /// Gets or sets justification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRecommendation", Required = Newtonsoft.Json.Required.Default)]
-        public string AccessRecommendation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        public string Justification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reviewed by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
+        public UserIdentity ReviewedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reviewed date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ReviewedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets review result.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewResult", Required = Newtonsoft.Json.Required.Default)]
+        public string ReviewResult { get; set; }
     
     }
 }

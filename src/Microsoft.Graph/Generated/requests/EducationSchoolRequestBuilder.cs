@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AdministrativeUnit.
+        /// </summary>
+        /// <returns>The <see cref="IAdministrativeUnitWithReferenceRequestBuilder"/>.</returns>
+        public IAdministrativeUnitWithReferenceRequestBuilder AdministrativeUnit
+        {
+            get
+            {
+                return new AdministrativeUnitWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("administrativeUnit"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Classes.
         /// </summary>
         /// <returns>The <see cref="IEducationSchoolClassesCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -71,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new EducationSchoolUsersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("users"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AdministrativeUnit.
-        /// </summary>
-        /// <returns>The <see cref="IAdministrativeUnitWithReferenceRequestBuilder"/>.</returns>
-        public IAdministrativeUnitWithReferenceRequestBuilder AdministrativeUnit
-        {
-            get
-            {
-                return new AdministrativeUnitWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("administrativeUnit"), this.Client);
             }
         }
     

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IAndroidWorkProfileEnterpriseWiFiConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificateForServerValidation.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation { get; }
-
-        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IAndroidWorkProfileCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
         IAndroidWorkProfileCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificateForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation { get; }
     
     }
 }

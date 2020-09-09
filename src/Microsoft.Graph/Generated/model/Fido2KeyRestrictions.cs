@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets isEnforced.
+        /// Gets or sets aaGuids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnforced", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEnforced { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aaGuids", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AaGuids { get; set; }
     
         /// <summary>
         /// Gets or sets enforcementType.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public Fido2RestrictionEnforcementType? EnforcementType { get; set; }
     
         /// <summary>
-        /// Gets or sets aaGuids.
+        /// Gets or sets isEnforced.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aaGuids", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AaGuids { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnforced", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEnforced { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

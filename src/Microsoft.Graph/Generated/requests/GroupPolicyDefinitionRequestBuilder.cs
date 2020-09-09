@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DefinitionFile.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
-        public IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile
-        {
-            get
-            {
-                return new GroupPolicyDefinitionFileWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("definitionFile"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Category.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupPolicyCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("category"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DefinitionFile.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
+        public IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile
+        {
+            get
+            {
+                return new GroupPolicyDefinitionFileWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("definitionFile"), this.Client);
             }
         }
 

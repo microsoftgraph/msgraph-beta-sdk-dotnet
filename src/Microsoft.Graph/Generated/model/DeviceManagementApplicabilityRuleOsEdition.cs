@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets osEditionTypes.
-        /// Applicability rule OS edition type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osEditionTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Windows10EditionType> OsEditionTypes { get; set; }
-    
-        /// <summary>
         /// Gets or sets name.
         /// Name for object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets osEditionTypes.
+        /// Applicability rule OS edition type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osEditionTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Windows10EditionType> OsEditionTypes { get; set; }
     
         /// <summary>
         /// Gets or sets ruleType.

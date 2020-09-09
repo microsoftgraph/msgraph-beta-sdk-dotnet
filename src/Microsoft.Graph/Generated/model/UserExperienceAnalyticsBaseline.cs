@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets created date time.
+        /// The date the custom baseline was created.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The name of the user experience analytics baseline.
         /// </summary>
@@ -45,11 +52,11 @@ namespace Microsoft.Graph
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// The date the custom baseline was created.
+        /// Gets or sets best practices metrics.
+        /// The user experience analytics best practices metrics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bestPracticesMetrics", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsCategory BestPracticesMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets device boot performance metrics.
@@ -57,13 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceBootPerformanceMetrics", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics { get; set; }
-    
-        /// <summary>
-        /// Gets or sets best practices metrics.
-        /// The user experience analytics best practices metrics.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bestPracticesMetrics", Required = Newtonsoft.Json.Required.Default)]
-        public UserExperienceAnalyticsCategory BestPracticesMetrics { get; set; }
     
     }
 }

@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         public IEducationRootClassesCollectionPage Classes { get; set; }
     
         /// <summary>
+        /// Gets or sets me.
+        /// Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "me", Required = Newtonsoft.Json.Required.Default)]
+        public EducationUser Me { get; set; }
+    
+        /// <summary>
         /// Gets or sets schools.
         /// Read-only. Nullable.
         /// </summary>
@@ -56,13 +63,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "users", Required = Newtonsoft.Json.Required.Default)]
         public IEducationRootUsersCollectionPage Users { get; set; }
-    
-        /// <summary>
-        /// Gets or sets me.
-        /// Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "me", Required = Newtonsoft.Json.Required.Default)]
-        public EducationUser Me { get; set; }
     
     }
 }

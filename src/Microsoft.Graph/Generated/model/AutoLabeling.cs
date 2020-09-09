@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sensitiveTypeIds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> SensitiveTypeIds { get; set; }
-    
-        /// <summary>
         /// Gets or sets message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sensitiveTypeIds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SensitiveTypeIds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

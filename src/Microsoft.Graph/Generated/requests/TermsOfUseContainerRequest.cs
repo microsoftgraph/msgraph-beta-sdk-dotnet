@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (termsOfUseContainerToInitialize != null && termsOfUseContainerToInitialize.AdditionalData != null)
             {
 
-                if (termsOfUseContainerToInitialize.Agreements != null && termsOfUseContainerToInitialize.Agreements.CurrentPage != null)
-                {
-                    termsOfUseContainerToInitialize.Agreements.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreements@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (termsOfUseContainerToInitialize.AgreementAcceptances != null && termsOfUseContainerToInitialize.AgreementAcceptances.CurrentPage != null)
                 {
                     termsOfUseContainerToInitialize.AgreementAcceptances.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         termsOfUseContainerToInitialize.AgreementAcceptances.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (termsOfUseContainerToInitialize.Agreements != null && termsOfUseContainerToInitialize.Agreements.CurrentPage != null)
+                {
+                    termsOfUseContainerToInitialize.Agreements.AdditionalData = termsOfUseContainerToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    termsOfUseContainerToInitialize.AdditionalData.TryGetValue("agreements@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        termsOfUseContainerToInitialize.Agreements.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

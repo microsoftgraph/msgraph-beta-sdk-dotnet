@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets payloadId.
-        /// Key of the Payload, In the format of Guid.
+        /// Gets or sets error.
+        /// Exception information indicates if check for this item was successful or not.Empty string for no error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadId", Required = Newtonsoft.Json.Required.Default)]
-        public string PayloadId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets hasLink.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public bool? HasLink { get; set; }
     
         /// <summary>
-        /// Gets or sets error.
-        /// Exception information indicates if check for this item was successful or not.Empty string for no error.
+        /// Gets or sets payloadId.
+        /// Key of the Payload, In the format of Guid.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public string Error { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadId", Required = Newtonsoft.Json.Required.Default)]
+        public string PayloadId { get; set; }
     
         /// <summary>
         /// Gets or sets sources.

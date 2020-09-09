@@ -30,13 +30,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets path.
-        /// Define the path of a desktop app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
-        public string Path { get; set; }
-    
-        /// <summary>
         /// Gets or sets desktopApplicationId.
         /// Define the DesktopApplicationID of the app
         /// </summary>
@@ -49,6 +42,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "desktopApplicationLinkPath", Required = Newtonsoft.Json.Required.Default)]
         public string DesktopApplicationLinkPath { get; set; }
+    
+        /// <summary>
+        /// Gets or sets path.
+        /// Define the path of a desktop app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
+        public string Path { get; set; }
     
     }
 }

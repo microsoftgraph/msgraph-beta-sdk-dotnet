@@ -31,6 +31,48 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets aliases.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aliases", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Aliases { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isContent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isContent", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsContent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isQueryable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isQueryable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsQueryable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isRefinable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRefinable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRefinable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isRetrievable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRetrievable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRetrievable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isSearchable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSearchable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsSearchable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets labels.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Label> Labels { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
@@ -41,48 +83,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public PropertyType? Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isSearchable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSearchable", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsSearchable { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isRetrievable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRetrievable", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsRetrievable { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isQueryable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isQueryable", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsQueryable { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isContent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isContent", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsContent { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isRefinable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRefinable", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsRefinable { get; set; }
-    
-        /// <summary>
-        /// Gets or sets aliases.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aliases", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Aliases { get; set; }
-    
-        /// <summary>
-        /// Gets or sets labels.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Label> Labels { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -75,6 +75,23 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentityAssignResourceAccountToDevice.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder"/>.</returns>
+        public IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder AssignResourceAccountToDevice(
+            string userPrincipalName = null,
+            string addressableUserName = null,
+            string resourceAccountName = null)
+        {
+            return new WindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assignResourceAccountToDevice"),
+                this.Client,
+                userPrincipalName,
+                addressableUserName,
+                resourceAccountName);
+        }
+
+        /// <summary>
         /// Gets the request builder for WindowsAutopilotDeviceIdentityAssignUserToDevice.
         /// </summary>
         /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAssignUserToDeviceRequestBuilder"/>.</returns>
@@ -87,6 +104,17 @@ namespace Microsoft.Graph
                 this.Client,
                 userPrincipalName,
                 addressableUserName);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentityUnassignResourceAccountFromDevice.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder"/>.</returns>
+        public IWindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder UnassignResourceAccountFromDevice()
+        {
+            return new WindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unassignResourceAccountFromDevice"),
+                this.Client);
         }
 
         /// <summary>
@@ -117,34 +145,6 @@ namespace Microsoft.Graph
                 addressableUserName,
                 groupTag,
                 displayName);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WindowsAutopilotDeviceIdentityAssignResourceAccountToDevice.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder"/>.</returns>
-        public IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder AssignResourceAccountToDevice(
-            string userPrincipalName = null,
-            string addressableUserName = null,
-            string resourceAccountName = null)
-        {
-            return new WindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.assignResourceAccountToDevice"),
-                this.Client,
-                userPrincipalName,
-                addressableUserName,
-                resourceAccountName);
-        }
-
-        /// <summary>
-        /// Gets the request builder for WindowsAutopilotDeviceIdentityUnassignResourceAccountFromDevice.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder"/>.</returns>
-        public IWindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder UnassignResourceAccountFromDevice()
-        {
-            return new WindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.unassignResourceAccountFromDevice"),
-                this.Client);
         }
     
     }

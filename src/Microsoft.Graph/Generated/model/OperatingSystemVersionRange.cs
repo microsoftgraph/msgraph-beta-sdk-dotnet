@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets lowestVersion.
-        /// The lowest inclusive version that this range contains.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowestVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string LowestVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets highestVersion.
         /// The highest inclusive version that this range contains.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "highestVersion", Required = Newtonsoft.Json.Required.Default)]
         public string HighestVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lowestVersion.
+        /// The lowest inclusive version that this range contains.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lowestVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string LowestVersion { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

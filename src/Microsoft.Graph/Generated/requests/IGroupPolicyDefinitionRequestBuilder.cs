@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IGroupPolicyDefinitionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for DefinitionFile.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
-        IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile { get; }
-
-        /// <summary>
         /// Gets the request builder for Category.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
         IGroupPolicyCategoryWithReferenceRequestBuilder Category { get; }
+
+        /// <summary>
+        /// Gets the request builder for DefinitionFile.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
+        IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile { get; }
 
         /// <summary>
         /// Gets the request builder for Presentations.

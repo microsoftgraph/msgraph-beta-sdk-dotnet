@@ -31,28 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets source url.
+        /// Gets or sets is folder.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string SourceUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets provider type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerType", Required = Newtonsoft.Json.Required.Default)]
-        public ReferenceAttachmentProvider? ProviderType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets thumbnail url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ThumbnailUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets preview url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string PreviewUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFolder", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFolder { get; set; }
     
         /// <summary>
         /// Gets or sets permission.
@@ -61,10 +43,28 @@ namespace Microsoft.Graph
         public ReferenceAttachmentPermission? Permission { get; set; }
     
         /// <summary>
-        /// Gets or sets is folder.
+        /// Gets or sets preview url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFolder", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsFolder { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PreviewUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provider type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerType", Required = Newtonsoft.Json.Required.Default)]
+        public ReferenceAttachmentProvider? ProviderType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string SourceUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ThumbnailUrl { get; set; }
     
     }
 }

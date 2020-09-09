@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (rbacApplicationMultipleToInitialize != null && rbacApplicationMultipleToInitialize.AdditionalData != null)
             {
 
-                if (rbacApplicationMultipleToInitialize.RoleDefinitions != null && rbacApplicationMultipleToInitialize.RoleDefinitions.CurrentPage != null)
-                {
-                    rbacApplicationMultipleToInitialize.RoleDefinitions.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (rbacApplicationMultipleToInitialize.RoleAssignments != null && rbacApplicationMultipleToInitialize.RoleAssignments.CurrentPage != null)
                 {
                     rbacApplicationMultipleToInitialize.RoleAssignments.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         rbacApplicationMultipleToInitialize.RoleAssignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (rbacApplicationMultipleToInitialize.RoleDefinitions != null && rbacApplicationMultipleToInitialize.RoleDefinitions.CurrentPage != null)
+                {
+                    rbacApplicationMultipleToInitialize.RoleDefinitions.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

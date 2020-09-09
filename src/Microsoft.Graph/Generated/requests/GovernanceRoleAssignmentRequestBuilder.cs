@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for LinkedEligibleRoleAssignment.
+        /// </summary>
+        /// <returns>The <see cref="IGovernanceRoleAssignmentWithReferenceRequestBuilder"/>.</returns>
+        public IGovernanceRoleAssignmentWithReferenceRequestBuilder LinkedEligibleRoleAssignment
+        {
+            get
+            {
+                return new GovernanceRoleAssignmentWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("linkedEligibleRoleAssignment"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Resource.
         /// </summary>
         /// <returns>The <see cref="IGovernanceResourceRequestBuilder"/>.</returns>
@@ -83,18 +95,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GovernanceSubjectRequestBuilder(this.AppendSegmentToRequestUrl("subject"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for LinkedEligibleRoleAssignment.
-        /// </summary>
-        /// <returns>The <see cref="IGovernanceRoleAssignmentWithReferenceRequestBuilder"/>.</returns>
-        public IGovernanceRoleAssignmentWithReferenceRequestBuilder LinkedEligibleRoleAssignment
-        {
-            get
-            {
-                return new GovernanceRoleAssignmentWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("linkedEligibleRoleAssignment"), this.Client);
             }
         }
     

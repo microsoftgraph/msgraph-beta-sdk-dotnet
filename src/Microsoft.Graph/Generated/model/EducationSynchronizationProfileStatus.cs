@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public EducationSynchronizationStatus? Status { get; set; }
-    
-        /// <summary>
         /// Gets or sets last synchronization date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSynchronizationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSynchronizationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public EducationSynchronizationStatus? Status { get; set; }
     
     }
 }

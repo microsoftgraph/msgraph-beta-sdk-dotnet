@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IMacOSEnterpriseWiFiConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for IdentityCertificateForClientAuthentication.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        IMacOSCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
+
+        /// <summary>
         /// Gets the request builder for RootCertificateForServerValidation.
         /// </summary>
         /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
         IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation { get; }
-
-        /// <summary>
-        /// Gets the request builder for IdentityCertificateForClientAuthentication.
-        /// </summary>
-        /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
-        IMacOSCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
     
     }
 }

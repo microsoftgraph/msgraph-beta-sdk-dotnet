@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets no issue detected device count.
-        /// Number of devices for which the detection script did not find an issue and the device is healthy
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noIssueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NoIssueDetectedDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets issue detected device count.
-        /// Number of devices for which the detection script found an issue
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? IssueDetectedDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets detection script error device count.
         /// Number of devices on which the detection script execution encountered an error and did not complete
         /// </summary>
@@ -59,18 +45,25 @@ namespace Microsoft.Graph
         public Int32? DetectionScriptPendingDeviceCount { get; set; }
     
         /// <summary>
+        /// Gets or sets issue detected device count.
+        /// Number of devices for which the detection script found an issue
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IssueDetectedDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets issue remediated cumulative device count.
+        /// Number of devices that were remediated over the last 30 days
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueRemediatedCumulativeDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IssueRemediatedCumulativeDeviceCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets issue remediated device count.
         /// Number of devices for which the remediation script was able to resolve the detected issue
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueRemediatedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? IssueRemediatedDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remediation skipped device count.
-        /// Number of devices for which remediation was skipped
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationSkippedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RemediationSkippedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets issue reoccurred device count.
@@ -80,13 +73,6 @@ namespace Microsoft.Graph
         public Int32? IssueReoccurredDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets remediation script error device count.
-        /// Number of devices for which the remediation script execution encountered an error and did not complete
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptErrorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RemediationScriptErrorDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets last script run date time.
         /// Last run time for the script across all devices
         /// </summary>
@@ -94,11 +80,25 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastScriptRunDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets issue remediated cumulative device count.
-        /// Number of devices that were remediated over the last 30 days
+        /// Gets or sets no issue detected device count.
+        /// Number of devices for which the detection script did not find an issue and the device is healthy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueRemediatedCumulativeDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? IssueRemediatedCumulativeDeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noIssueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NoIssueDetectedDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediation script error device count.
+        /// Number of devices for which the remediation script execution encountered an error and did not complete
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptErrorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RemediationScriptErrorDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediation skipped device count.
+        /// Number of devices for which remediation was skipped
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationSkippedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RemediationSkippedDeviceCount { get; set; }
     
     }
 }

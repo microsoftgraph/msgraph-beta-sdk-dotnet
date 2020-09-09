@@ -31,18 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets recurrenceType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceType", Required = Newtonsoft.Json.Required.Default)]
-        public string RecurrenceType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets recurrenceEndType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceEndType", Required = Newtonsoft.Json.Required.Default)]
-        public string RecurrenceEndType { get; set; }
-    
-        /// <summary>
         /// Gets or sets durationInDays.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +41,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? RecurrenceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recurrenceEndType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceEndType", Required = Newtonsoft.Json.Required.Default)]
+        public string RecurrenceEndType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recurrenceType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceType", Required = Newtonsoft.Json.Required.Default)]
+        public string RecurrenceType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

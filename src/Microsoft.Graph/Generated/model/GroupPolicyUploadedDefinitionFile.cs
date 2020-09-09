@@ -31,32 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets file name.
-        /// The file name of the uploaded ADML file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
-        public string FileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// The upload status of the uploaded ADMX file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicyUploadedDefinitionFileStatus? Status { get; set; }
-    
-        /// <summary>
         /// Gets or sets content.
         /// The contents of the uploaded ADMX file.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public byte[] Content { get; set; }
-    
-        /// <summary>
-        /// Gets or sets upload date time.
-        /// The uploaded time of the uploaded ADMX file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? UploadDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets default language code.
@@ -66,11 +45,32 @@ namespace Microsoft.Graph
         public string DefaultLanguageCode { get; set; }
     
         /// <summary>
+        /// Gets or sets file name.
+        /// The file name of the uploaded ADML file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        public string FileName { get; set; }
+    
+        /// <summary>
         /// Gets or sets group policy uploaded language files.
         /// The list of ADML files associated with the uploaded ADMX file.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyUploadedLanguageFiles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// The upload status of the uploaded ADMX file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyUploadedDefinitionFileStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upload date time.
+        /// The uploaded time of the uploaded ADMX file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? UploadDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets group policy operations.

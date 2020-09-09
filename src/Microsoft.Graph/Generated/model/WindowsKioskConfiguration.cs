@@ -31,11 +31,25 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets kiosk profiles.
-        /// This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.
+        /// Gets or sets edge kiosk enable public browsing.
+        /// Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskProfiles", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<WindowsKioskProfile> KioskProfiles { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskEnablePublicBrowsing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeKioskEnablePublicBrowsing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk browser blocked url exceptions.
+        /// Specify URLs that the kiosk browser is allowed to navigate to
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskBrowserBlockedUrlExceptions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> KioskBrowserBlockedUrlExceptions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk browser blocked urls.
+        /// Specify URLs that the kiosk browsers should not navigate to
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskBrowserBlockedURLs", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> KioskBrowserBlockedURLs { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk browser default url.
@@ -43,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskBrowserDefaultUrl", Required = Newtonsoft.Json.Required.Default)]
         public string KioskBrowserDefaultUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk browser enable end session button.
+        /// Enable the kiosk browser's end session button. By default, the end session button is disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskBrowserEnableEndSessionButton", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskBrowserEnableEndSessionButton { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk browser enable home button.
@@ -59,13 +80,6 @@ namespace Microsoft.Graph
         public bool? KioskBrowserEnableNavigationButtons { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk browser enable end session button.
-        /// Enable the kiosk browser's end session button. By default, the end session button is disabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskBrowserEnableEndSessionButton", Required = Newtonsoft.Json.Required.Default)]
-        public bool? KioskBrowserEnableEndSessionButton { get; set; }
-    
-        /// <summary>
         /// Gets or sets kiosk browser restart on idle time in minutes.
         /// Specify the number of minutes the session is idle until the kiosk browser restarts in a fresh state.  Valid values are 1-1440. Valid values 1 to 1440
         /// </summary>
@@ -73,25 +87,11 @@ namespace Microsoft.Graph
         public Int32? KioskBrowserRestartOnIdleTimeInMinutes { get; set; }
     
         /// <summary>
-        /// Gets or sets kiosk browser blocked urls.
-        /// Specify URLs that the kiosk browsers should not navigate to
+        /// Gets or sets kiosk profiles.
+        /// This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskBrowserBlockedURLs", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> KioskBrowserBlockedURLs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets kiosk browser blocked url exceptions.
-        /// Specify URLs that the kiosk browser is allowed to navigate to
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskBrowserBlockedUrlExceptions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> KioskBrowserBlockedUrlExceptions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge kiosk enable public browsing.
-        /// Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskEnablePublicBrowsing", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeKioskEnablePublicBrowsing { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<WindowsKioskProfile> KioskProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets windows kiosk force update schedule.

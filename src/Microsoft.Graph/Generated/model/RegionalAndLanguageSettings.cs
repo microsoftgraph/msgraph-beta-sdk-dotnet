@@ -31,22 +31,22 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets default display language.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDisplayLanguage", Required = Newtonsoft.Json.Required.Default)]
-        public LocaleInfo DefaultDisplayLanguage { get; set; }
-    
-        /// <summary>
         /// Gets or sets authoring languages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authoringLanguages", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LocaleInfo> AuthoringLanguages { get; set; }
     
         /// <summary>
-        /// Gets or sets default translation language.
+        /// Gets or sets default display language.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultTranslationLanguage", Required = Newtonsoft.Json.Required.Default)]
-        public LocaleInfo DefaultTranslationLanguage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDisplayLanguage", Required = Newtonsoft.Json.Required.Default)]
+        public LocaleInfo DefaultDisplayLanguage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default regional format.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultRegionalFormat", Required = Newtonsoft.Json.Required.Default)]
+        public LocaleInfo DefaultRegionalFormat { get; set; }
     
         /// <summary>
         /// Gets or sets default speech input language.
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         public LocaleInfo DefaultSpeechInputLanguage { get; set; }
     
         /// <summary>
-        /// Gets or sets default regional format.
+        /// Gets or sets default translation language.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultRegionalFormat", Required = Newtonsoft.Json.Required.Default)]
-        public LocaleInfo DefaultRegionalFormat { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultTranslationLanguage", Required = Newtonsoft.Json.Required.Default)]
+        public LocaleInfo DefaultTranslationLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets regional format overrides.

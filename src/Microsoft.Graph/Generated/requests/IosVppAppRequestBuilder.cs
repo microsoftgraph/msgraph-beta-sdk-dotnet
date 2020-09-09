@@ -76,21 +76,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for IosVppAppRevokeUserLicense.
-        /// </summary>
-        /// <returns>The <see cref="IIosVppAppRevokeUserLicenseRequestBuilder"/>.</returns>
-        public IIosVppAppRevokeUserLicenseRequestBuilder RevokeUserLicense(
-            bool notifyManagedDevices,
-            string userId = null)
-        {
-            return new IosVppAppRevokeUserLicenseRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.revokeUserLicense"),
-                this.Client,
-                notifyManagedDevices,
-                userId);
-        }
-
-        /// <summary>
         /// Gets the request builder for IosVppAppRevokeDeviceLicense.
         /// </summary>
         /// <returns>The <see cref="IIosVppAppRevokeDeviceLicenseRequestBuilder"/>.</returns>
@@ -103,6 +88,21 @@ namespace Microsoft.Graph
                 this.Client,
                 notifyManagedDevices,
                 managedDeviceId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for IosVppAppRevokeUserLicense.
+        /// </summary>
+        /// <returns>The <see cref="IIosVppAppRevokeUserLicenseRequestBuilder"/>.</returns>
+        public IIosVppAppRevokeUserLicenseRequestBuilder RevokeUserLicense(
+            bool notifyManagedDevices,
+            string userId = null)
+        {
+            return new IosVppAppRevokeUserLicenseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.revokeUserLicense"),
+                this.Client,
+                notifyManagedDevices,
+                userId);
         }
     
     }

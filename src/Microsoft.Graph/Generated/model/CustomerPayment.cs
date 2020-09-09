@@ -31,54 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets journal display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "journalDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string JournalDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets line number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lineNumber", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? LineNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets customer id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? CustomerId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets customer number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomerNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets contact id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactId", Required = Newtonsoft.Json.Required.Default)]
-        public string ContactId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets posting date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postingDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date PostingDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets document number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string DocumentNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets external document number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalDocumentNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string ExternalDocumentNumber { get; set; }
-    
-        /// <summary>
         /// Gets or sets amount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "amount", Required = Newtonsoft.Json.Required.Default)]
@@ -97,22 +49,70 @@ namespace Microsoft.Graph
         public string AppliesToInvoiceNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
         /// Gets or sets comment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comment", Required = Newtonsoft.Json.Required.Default)]
         public string Comment { get; set; }
     
         /// <summary>
+        /// Gets or sets contact id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactId", Required = Newtonsoft.Json.Required.Default)]
+        public string ContactId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets customer id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? CustomerId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets customer number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomerNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets document number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string DocumentNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external document number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalDocumentNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalDocumentNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets journal display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "journalDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string JournalDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets line number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lineNumber", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? LineNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets posting date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postingDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date PostingDate { get; set; }
     
         /// <summary>
         /// Gets or sets customer.

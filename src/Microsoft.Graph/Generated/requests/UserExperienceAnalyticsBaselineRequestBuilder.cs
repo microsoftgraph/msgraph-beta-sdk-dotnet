@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DeviceBootPerformanceMetrics.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
-        public IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder DeviceBootPerformanceMetrics
-        {
-            get
-            {
-                return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("deviceBootPerformanceMetrics"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for BestPracticesMetrics.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("bestPracticesMetrics"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceBootPerformanceMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder DeviceBootPerformanceMetrics
+        {
+            get
+            {
+                return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("deviceBootPerformanceMetrics"), this.Client);
             }
         }
     

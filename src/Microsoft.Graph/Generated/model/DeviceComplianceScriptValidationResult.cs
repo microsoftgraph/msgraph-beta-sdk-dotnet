@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets ruleErrors.
+        /// Errors in json for the script for rules.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleErrors", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceComplianceScriptRuleError> RuleErrors { get; set; }
+    
+        /// <summary>
         /// Gets or sets rules.
         /// Parsed rules from json.
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptErrors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeviceComplianceScriptError> ScriptErrors { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ruleErrors.
-        /// Errors in json for the script for rules.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleErrors", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DeviceComplianceScriptRuleError> RuleErrors { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

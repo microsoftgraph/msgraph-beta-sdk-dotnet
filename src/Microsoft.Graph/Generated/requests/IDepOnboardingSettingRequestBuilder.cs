@@ -62,12 +62,10 @@ namespace Microsoft.Graph
         IDepOnboardingSettingGenerateEncryptionPublicKeyRequestBuilder GenerateEncryptionPublicKey();
 
         /// <summary>
-        /// Gets the request builder for DepOnboardingSettingUploadDepToken.
+        /// Gets the request builder for DepOnboardingSettingShareForSchoolDataSyncService.
         /// </summary>
-        /// <returns>The <see cref="IDepOnboardingSettingUploadDepTokenRequestBuilder"/>.</returns>
-        IDepOnboardingSettingUploadDepTokenRequestBuilder UploadDepToken(
-            string appleId = null,
-            string depToken = null);
+        /// <returns>The <see cref="IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder"/>.</returns>
+        IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService();
 
         /// <summary>
         /// Gets the request builder for DepOnboardingSettingSyncWithAppleDeviceEnrollmentProgram.
@@ -76,16 +74,18 @@ namespace Microsoft.Graph
         IDepOnboardingSettingSyncWithAppleDeviceEnrollmentProgramRequestBuilder SyncWithAppleDeviceEnrollmentProgram();
 
         /// <summary>
-        /// Gets the request builder for DepOnboardingSettingShareForSchoolDataSyncService.
-        /// </summary>
-        /// <returns>The <see cref="IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder"/>.</returns>
-        IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService();
-
-        /// <summary>
         /// Gets the request builder for DepOnboardingSettingUnshareForSchoolDataSyncService.
         /// </summary>
         /// <returns>The <see cref="IDepOnboardingSettingUnshareForSchoolDataSyncServiceRequestBuilder"/>.</returns>
         IDepOnboardingSettingUnshareForSchoolDataSyncServiceRequestBuilder UnshareForSchoolDataSyncService();
+
+        /// <summary>
+        /// Gets the request builder for DepOnboardingSettingUploadDepToken.
+        /// </summary>
+        /// <returns>The <see cref="IDepOnboardingSettingUploadDepTokenRequestBuilder"/>.</returns>
+        IDepOnboardingSettingUploadDepTokenRequestBuilder UploadDepToken(
+            string appleId = null,
+            string depToken = null);
 
         /// <summary>
         /// Gets the request builder for DepOnboardingSettingGetEncryptionPublicKey.

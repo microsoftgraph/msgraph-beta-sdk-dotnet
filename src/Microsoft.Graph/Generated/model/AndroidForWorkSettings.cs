@@ -38,6 +38,20 @@ namespace Microsoft.Graph
         public AndroidForWorkBindStatus? BindStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets device owner management enabled.
+        /// Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOwnerManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceOwnerManagementEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollment target.
+        /// Indicates which users can enroll devices in Android for Work device management
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentTarget", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidForWorkEnrollmentTarget? EnrollmentTarget { get; set; }
+    
+        /// <summary>
         /// Gets or sets last app sync date time.
         /// Last completion time for app sync
         /// </summary>
@@ -52,11 +66,11 @@ namespace Microsoft.Graph
         public AndroidForWorkSyncStatus? LastAppSyncStatus { get; set; }
     
         /// <summary>
-        /// Gets or sets owner user principal name.
-        /// Owner UPN that created the enterprise
+        /// Gets or sets last modified date time.
+        /// Last modification time for Android for Work settings
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string OwnerUserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets owner organization name.
@@ -66,18 +80,11 @@ namespace Microsoft.Graph
         public string OwnerOrganizationName { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last modification time for Android for Work settings
+        /// Gets or sets owner user principal name.
+        /// Owner UPN that created the enterprise
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enrollment target.
-        /// Indicates which users can enroll devices in Android for Work device management
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentTarget", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidForWorkEnrollmentTarget? EnrollmentTarget { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string OwnerUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets target group ids.
@@ -85,13 +92,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetGroupIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> TargetGroupIds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device owner management enabled.
-        /// Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOwnerManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceOwnerManagementEnabled { get; set; }
     
     }
 }

@@ -30,17 +30,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets loop.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loop", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Loop { get; set; }
+    
+        /// <summary>
         /// Gets or sets mediaInfo.
         /// The media information
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaInfo", Required = Newtonsoft.Json.Required.Default)]
         public MediaInfo MediaInfo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets loop.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loop", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Loop { get; set; }
     
     }
 }

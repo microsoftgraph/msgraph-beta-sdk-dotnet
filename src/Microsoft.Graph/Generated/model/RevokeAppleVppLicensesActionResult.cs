@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets totalLicensesCount.
-        /// Total number of Apple Vpp licenses associated
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalLicensesCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets failedLicensesCount.
         /// Total number of Apple Vpp licenses that failed to revoke
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedLicensesCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? FailedLicensesCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets totalLicensesCount.
+        /// Total number of Apple Vpp licenses associated
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalLicensesCount { get; set; }
     
     }
 }

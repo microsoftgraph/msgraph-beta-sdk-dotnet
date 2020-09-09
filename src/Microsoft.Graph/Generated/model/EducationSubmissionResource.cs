@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets resource.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
-        public EducationResource Resource { get; set; }
-    
-        /// <summary>
         /// Gets or sets assignment resource url.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentResourceUrl", Required = Newtonsoft.Json.Required.Default)]
         public string AssignmentResourceUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        public EducationResource Resource { get; set; }
     
     }
 }

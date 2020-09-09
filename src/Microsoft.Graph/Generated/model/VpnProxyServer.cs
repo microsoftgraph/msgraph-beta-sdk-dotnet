@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets automaticConfigurationScriptUrl.
-        /// Proxy's automatic configuration script url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "automaticConfigurationScriptUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string AutomaticConfigurationScriptUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets address.
         /// Address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
         public string Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets automaticConfigurationScriptUrl.
+        /// Proxy's automatic configuration script url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "automaticConfigurationScriptUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string AutomaticConfigurationScriptUrl { get; set; }
     
         /// <summary>
         /// Gets or sets port.

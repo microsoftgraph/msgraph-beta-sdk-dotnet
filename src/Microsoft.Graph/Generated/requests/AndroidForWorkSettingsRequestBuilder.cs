@@ -51,19 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AndroidForWorkSettingsRequestSignupUrl.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidForWorkSettingsRequestSignupUrlRequestBuilder"/>.</returns>
-        public IAndroidForWorkSettingsRequestSignupUrlRequestBuilder RequestSignupUrl(
-            string hostName = null)
-        {
-            return new AndroidForWorkSettingsRequestSignupUrlRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.requestSignupUrl"),
-                this.Client,
-                hostName);
-        }
-
-        /// <summary>
         /// Gets the request builder for AndroidForWorkSettingsCompleteSignup.
         /// </summary>
         /// <returns>The <see cref="IAndroidForWorkSettingsCompleteSignupRequestBuilder"/>.</returns>
@@ -74,6 +61,19 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.completeSignup"),
                 this.Client,
                 enterpriseToken);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AndroidForWorkSettingsRequestSignupUrl.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidForWorkSettingsRequestSignupUrlRequestBuilder"/>.</returns>
+        public IAndroidForWorkSettingsRequestSignupUrlRequestBuilder RequestSignupUrl(
+            string hostName = null)
+        {
+            return new AndroidForWorkSettingsRequestSignupUrlRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.requestSignupUrl"),
+                this.Client,
+                hostName);
         }
 
         /// <summary>

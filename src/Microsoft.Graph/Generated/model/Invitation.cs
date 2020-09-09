@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public string InvitedUserDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets invited user type.
-        /// The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invitedUserType", Required = Newtonsoft.Json.Required.Default)]
-        public string InvitedUserType { get; set; }
-    
-        /// <summary>
         /// Gets or sets invited user email address.
         /// The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&amp;)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (&amp;lt; &amp;gt;)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
         /// </summary>
@@ -59,6 +52,33 @@ namespace Microsoft.Graph
         public InvitedUserMessageInfo InvitedUserMessageInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets invited user type.
+        /// The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invitedUserType", Required = Newtonsoft.Json.Required.Default)]
+        public string InvitedUserType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets invite redeem url.
+        /// The URL the user can use to redeem their invitation. Read-only
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inviteRedeemUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string InviteRedeemUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets invite redirect url.
+        /// The URL the user should be redirected to once the invitation is redeemed. Required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inviteRedirectUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string InviteRedirectUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reset redemption.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resetRedemption", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ResetRedemption { get; set; }
+    
+        /// <summary>
         /// Gets or sets send invitation message.
         /// Indicates whether an email should be sent to the user being invited or not. The default is false.
         /// </summary>
@@ -66,31 +86,11 @@ namespace Microsoft.Graph
         public bool? SendInvitationMessage { get; set; }
     
         /// <summary>
-        /// Gets or sets invite redirect url.
-        /// The URL user should be redirected to once the invitation is redeemed. Required.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inviteRedirectUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string InviteRedirectUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets invite redeem url.
-        /// The URL user can use to redeem his invitation. Read-Only
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inviteRedeemUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string InviteRedeemUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets status.
         /// The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public string Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reset redemption.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resetRedemption", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ResetRedemption { get; set; }
     
         /// <summary>
         /// Gets or sets invited user.

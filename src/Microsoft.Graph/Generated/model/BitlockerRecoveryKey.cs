@@ -37,12 +37,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets volume type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "volumeType", Required = Newtonsoft.Json.Required.Default)]
-        public VolumeType? VolumeType { get; set; }
-    
-        /// <summary>
         /// Gets or sets device id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
         public string Key { get; set; }
+    
+        /// <summary>
+        /// Gets or sets volume type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "volumeType", Required = Newtonsoft.Json.Required.Default)]
+        public VolumeType? VolumeType { get; set; }
     
     }
 }

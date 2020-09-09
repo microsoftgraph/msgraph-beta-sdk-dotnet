@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets target host name.
+        /// Gets or sets display time to live.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetHostName", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetHostName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayTimeToLive", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DisplayTimeToLive { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
@@ -43,16 +43,16 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets group name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupName", Required = Newtonsoft.Json.Required.Default)]
+        public string GroupName { get; set; }
+    
+        /// <summary>
         /// Gets or sets payload.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
         public PayloadTypes Payload { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display time to live.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayTimeToLive", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DisplayTimeToLive { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
@@ -61,10 +61,10 @@ namespace Microsoft.Graph
         public Priority? Priority { get; set; }
     
         /// <summary>
-        /// Gets or sets group name.
+        /// Gets or sets target host name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupName", Required = Newtonsoft.Json.Required.Default)]
-        public string GroupName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetHostName", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetHostName { get; set; }
     
         /// <summary>
         /// Gets or sets target policy.

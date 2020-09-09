@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public IEnumerable<string> AllowedResourceActions { get; set; }
     
         /// <summary>
-        /// Gets or sets excludedResourceActions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedResourceActions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> ExcludedResourceActions { get; set; }
-    
-        /// <summary>
         /// Gets or sets condition.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "condition", Required = Newtonsoft.Json.Required.Default)]
         public string Condition { get; set; }
+    
+        /// <summary>
+        /// Gets or sets excludedResourceActions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedResourceActions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ExcludedResourceActions { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

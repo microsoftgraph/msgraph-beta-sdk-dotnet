@@ -37,15 +37,6 @@ namespace Microsoft.Graph
         IReportRootRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetUserArchivedPrintJobs.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
-        IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
-            string userId = null,
-            DateTimeOffset? periodStart = null,
-            DateTimeOffset? periodEnd = null);
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetGroupArchivedPrintJobs.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetGroupArchivedPrintJobsRequestBuilder"/>.</returns>
@@ -53,24 +44,6 @@ namespace Microsoft.Graph
             string groupId = null,
             DateTimeOffset? periodStart = null,
             DateTimeOffset? periodEnd = null);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetPrinterArchivedPrintJobs.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
-        IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
-            string printerId = null,
-            DateTimeOffset? periodStart = null,
-            DateTimeOffset? periodEnd = null);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetUserPrintUsageSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetUserPrintUsageSummaryRequestBuilder"/>.</returns>
-        IReportRootGetUserPrintUsageSummaryRequestBuilder GetUserPrintUsageSummary(
-            DateTimeOffset periodStart,
-            DateTimeOffset periodEnd,
-            string userId = null);
 
         /// <summary>
         /// Gets the request builder for ReportRootGetGroupPrintUsageSummary.
@@ -82,6 +55,24 @@ namespace Microsoft.Graph
             string groupId = null);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetOverallPrintUsageSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOverallPrintUsageSummaryRequestBuilder"/>.</returns>
+        IReportRootGetOverallPrintUsageSummaryRequestBuilder GetOverallPrintUsageSummary(
+            DateTimeOffset periodStart,
+            DateTimeOffset periodEnd,
+            Int32 topListsSize);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetPrinterArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
+            string printerId = null,
+            DateTimeOffset? periodStart = null,
+            DateTimeOffset? periodEnd = null);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetPrinterUsageSummary.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetPrinterUsageSummaryRequestBuilder"/>.</returns>
@@ -89,14 +80,6 @@ namespace Microsoft.Graph
             DateTimeOffset periodStart,
             DateTimeOffset periodEnd,
             string printerId = null);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetPrintUsageSummariesByUser.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetPrintUsageSummariesByUserRequestBuilder"/>.</returns>
-        IReportRootGetPrintUsageSummariesByUserRequestBuilder GetPrintUsageSummariesByUser(
-            DateTimeOffset periodStart,
-            DateTimeOffset periodEnd);
 
         /// <summary>
         /// Gets the request builder for ReportRootGetPrintUsageSummariesByGroup.
@@ -115,15 +98,6 @@ namespace Microsoft.Graph
             DateTimeOffset periodEnd);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOverallPrintUsageSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOverallPrintUsageSummaryRequestBuilder"/>.</returns>
-        IReportRootGetOverallPrintUsageSummaryRequestBuilder GetOverallPrintUsageSummary(
-            DateTimeOffset periodStart,
-            DateTimeOffset periodEnd,
-            Int32 topListsSize);
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetPrintUsageSummariesByTimeSpan.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetPrintUsageSummariesByTimeSpanRequestBuilder"/>.</returns>
@@ -131,5 +105,31 @@ namespace Microsoft.Graph
             DateTimeOffset periodStart,
             DateTimeOffset periodEnd,
             Int32 timeSpanInMinutes);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetPrintUsageSummariesByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetPrintUsageSummariesByUserRequestBuilder"/>.</returns>
+        IReportRootGetPrintUsageSummariesByUserRequestBuilder GetPrintUsageSummariesByUser(
+            DateTimeOffset periodStart,
+            DateTimeOffset periodEnd);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
+            string userId = null,
+            DateTimeOffset? periodStart = null,
+            DateTimeOffset? periodEnd = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserPrintUsageSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserPrintUsageSummaryRequestBuilder"/>.</returns>
+        IReportRootGetUserPrintUsageSummaryRequestBuilder GetUserPrintUsageSummary(
+            DateTimeOffset periodStart,
+            DateTimeOffset periodEnd,
+            string userId = null);
     }
 }

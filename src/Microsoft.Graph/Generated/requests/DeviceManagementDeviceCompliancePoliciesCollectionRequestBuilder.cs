@@ -74,19 +74,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyValidateComplianceScript.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder"/>.</returns>
-        public IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder ValidateComplianceScript(
-            DeviceCompliancePolicyScript deviceCompliancePolicyScript = null)
-        {
-            return new DeviceCompliancePolicyValidateComplianceScriptRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.validateComplianceScript"),
-                this.Client,
-                deviceCompliancePolicyScript);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyGetDevicesScheduledToRetire.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.</returns>
@@ -94,6 +81,17 @@ namespace Microsoft.Graph
         {
             return new DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getDevicesScheduledToRetire"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization()
+        {
+            return new DeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.refreshDeviceComplianceReportSummarization"),
                 this.Client);
         }
 
@@ -113,14 +111,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
+        /// Gets the request builder for DeviceCompliancePolicyValidateComplianceScript.
         /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
-        public IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization()
+        /// <returns>The <see cref="IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder ValidateComplianceScript(
+            DeviceCompliancePolicyScript deviceCompliancePolicyScript = null)
         {
-            return new DeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.refreshDeviceComplianceReportSummarization"),
-                this.Client);
+            return new DeviceCompliancePolicyValidateComplianceScriptRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validateComplianceScript"),
+                this.Client,
+                deviceCompliancePolicyScript);
         }
     }
 }

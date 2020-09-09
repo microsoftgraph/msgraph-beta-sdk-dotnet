@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allowed.
+        /// Allow or block this app from receiving Apple events.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowed", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Allowed { get; set; }
+    
+        /// <summary>
         /// Gets or sets codeRequirement.
         /// Code requirement for the app or binary that receives the Apple Event.
         /// </summary>
@@ -50,13 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierType", Required = Newtonsoft.Json.Required.Default)]
         public MacOSProcessIdentifierType? IdentifierType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowed.
-        /// Allow or block this app from receiving Apple events.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowed", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Allowed { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

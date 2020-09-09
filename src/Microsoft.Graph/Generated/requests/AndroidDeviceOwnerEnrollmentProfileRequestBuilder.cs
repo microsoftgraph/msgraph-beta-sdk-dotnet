@@ -51,17 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfileRevokeToken.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidDeviceOwnerEnrollmentProfileRevokeTokenRequestBuilder"/>.</returns>
-        public IAndroidDeviceOwnerEnrollmentProfileRevokeTokenRequestBuilder RevokeToken()
-        {
-            return new AndroidDeviceOwnerEnrollmentProfileRevokeTokenRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.revokeToken"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfileCreateToken.
         /// </summary>
         /// <returns>The <see cref="IAndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBuilder"/>.</returns>
@@ -72,6 +61,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.createToken"),
                 this.Client,
                 tokenValidityInSeconds);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfileRevokeToken.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidDeviceOwnerEnrollmentProfileRevokeTokenRequestBuilder"/>.</returns>
+        public IAndroidDeviceOwnerEnrollmentProfileRevokeTokenRequestBuilder RevokeToken()
+        {
+            return new AndroidDeviceOwnerEnrollmentProfileRevokeTokenRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.revokeToken"),
+                this.Client);
         }
     
     }

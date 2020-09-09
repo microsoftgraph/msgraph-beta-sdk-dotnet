@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IPrivilegedRoleRequestBuilder RoleInfo { get; }
     
         /// <summary>
+        /// Gets the request builder for PrivilegedRoleAssignmentMakeEligible.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedRoleAssignmentMakeEligibleRequestBuilder"/>.</returns>
+        IPrivilegedRoleAssignmentMakeEligibleRequestBuilder MakeEligible();
+
+        /// <summary>
         /// Gets the request builder for PrivilegedRoleAssignmentMakePermanent.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedRoleAssignmentMakePermanentRequestBuilder"/>.</returns>
@@ -45,12 +51,6 @@ namespace Microsoft.Graph
             string reason = null,
             string ticketNumber = null,
             string ticketSystem = null);
-
-        /// <summary>
-        /// Gets the request builder for PrivilegedRoleAssignmentMakeEligible.
-        /// </summary>
-        /// <returns>The <see cref="IPrivilegedRoleAssignmentMakeEligibleRequestBuilder"/>.</returns>
-        IPrivilegedRoleAssignmentMakeEligibleRequestBuilder MakeEligible();
     
     }
 }

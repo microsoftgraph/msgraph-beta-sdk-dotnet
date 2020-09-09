@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets securityGroupId.
-        /// AAD security group id to which it was targeted.
+        /// Gets or sets errorCode.
+        /// Error code for the failure, empty if no failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityGroupId", Required = Newtonsoft.Json.Required.Default)]
-        public string SecurityGroupId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets runState.
@@ -44,11 +44,11 @@ namespace Microsoft.Graph
         public RunState? RunState { get; set; }
     
         /// <summary>
-        /// Gets or sets errorCode.
-        /// Error code for the failure, empty if no failure.
+        /// Gets or sets securityGroupId.
+        /// AAD security group id to which it was targeted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
-        public string ErrorCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityGroupId", Required = Newtonsoft.Json.Required.Default)]
+        public string SecurityGroupId { get; set; }
     
     }
 }

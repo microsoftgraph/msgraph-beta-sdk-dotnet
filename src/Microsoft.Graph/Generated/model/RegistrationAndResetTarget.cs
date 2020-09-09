@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets targetType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetType", Required = Newtonsoft.Json.Required.Default)]
-        public AuthenticationMethodTargetType? TargetType { get; set; }
-    
-        /// <summary>
         /// Gets or sets id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minAuthMethodsToReset", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MinAuthMethodsToReset { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targetType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetType", Required = Newtonsoft.Json.Required.Default)]
+        public AuthenticationMethodTargetType? TargetType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

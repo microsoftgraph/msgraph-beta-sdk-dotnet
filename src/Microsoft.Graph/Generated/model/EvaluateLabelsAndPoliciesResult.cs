@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sensitivityLabelsResult.
+        /// Gets or sets classificationResult.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabelsResult", Required = Newtonsoft.Json.Required.Default)]
-        public EvaluateLabelJobResultGroup SensitivityLabelsResult { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationResult", Required = Newtonsoft.Json.Required.Default)]
+        public DetectedSensitiveContentWrapper ClassificationResult { get; set; }
     
         /// <summary>
         /// Gets or sets dataLossPreventionPoliciesResult.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public DlpPoliciesJobResult DataLossPreventionPoliciesResult { get; set; }
     
         /// <summary>
-        /// Gets or sets classificationResult.
+        /// Gets or sets sensitivityLabelsResult.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationResult", Required = Newtonsoft.Json.Required.Default)]
-        public DetectedSensitiveContentWrapper ClassificationResult { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabelsResult", Required = Newtonsoft.Json.Required.Default)]
+        public EvaluateLabelJobResultGroup SensitivityLabelsResult { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

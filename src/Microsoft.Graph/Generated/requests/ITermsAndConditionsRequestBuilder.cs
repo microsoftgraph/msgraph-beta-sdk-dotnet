@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new ITermsAndConditionsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
+        /// Gets the request builder for AcceptanceStatuses.
         /// </summary>
-        /// <returns>The <see cref="ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
+        /// <returns>The <see cref="ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder"/>.</returns>
+        ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder AcceptanceStatuses { get; }
 
         /// <summary>
         /// Gets the request builder for Assignments.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         ITermsAndConditionsAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
-        /// Gets the request builder for AcceptanceStatuses.
+        /// Gets the request builder for GroupAssignments.
         /// </summary>
-        /// <returns>The <see cref="ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder"/>.</returns>
-        ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder AcceptanceStatuses { get; }
+        /// <returns>The <see cref="ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
     
     }
 }

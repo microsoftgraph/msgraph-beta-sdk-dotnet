@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets role definition id.
+        /// Gets or sets app scope id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
-        public string RoleDefinitionId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopeId", Required = Newtonsoft.Json.Required.Default)]
+        public string AppScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets condition.
@@ -43,22 +43,16 @@ namespace Microsoft.Graph
         public string Condition { get; set; }
     
         /// <summary>
-        /// Gets or sets principal id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalId", Required = Newtonsoft.Json.Required.Default)]
-        public string PrincipalId { get; set; }
-    
-        /// <summary>
         /// Gets or sets directory scope id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryScopeId", Required = Newtonsoft.Json.Required.Default)]
         public string DirectoryScopeId { get; set; }
     
         /// <summary>
-        /// Gets or sets app scope id.
+        /// Gets or sets principal id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopeId", Required = Newtonsoft.Json.Required.Default)]
-        public string AppScopeId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalId", Required = Newtonsoft.Json.Required.Default)]
+        public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets resource scope.
@@ -67,16 +61,16 @@ namespace Microsoft.Graph
         public string ResourceScope { get; set; }
     
         /// <summary>
-        /// Gets or sets role definition.
+        /// Gets or sets role definition id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
-        public UnifiedRoleDefinition RoleDefinition { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string RoleDefinitionId { get; set; }
     
         /// <summary>
-        /// Gets or sets principal.
+        /// Gets or sets app scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principal", Required = Newtonsoft.Json.Required.Default)]
-        public DirectoryObject Principal { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScope", Required = Newtonsoft.Json.Required.Default)]
+        public AppScope AppScope { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope.
@@ -85,10 +79,16 @@ namespace Microsoft.Graph
         public DirectoryObject DirectoryScope { get; set; }
     
         /// <summary>
-        /// Gets or sets app scope.
+        /// Gets or sets principal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScope", Required = Newtonsoft.Json.Required.Default)]
-        public AppScope AppScope { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principal", Required = Newtonsoft.Json.Required.Default)]
+        public DirectoryObject Principal { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        public UnifiedRoleDefinition RoleDefinition { get; set; }
     
     }
 }

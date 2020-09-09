@@ -31,17 +31,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets text.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
-        public string Text { get; set; }
-    
-        /// <summary>
         /// Gets or sets link.
         /// The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "link", Required = Newtonsoft.Json.Required.Default)]
         public string Link { get; set; }
+    
+        /// <summary>
+        /// Gets or sets text.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

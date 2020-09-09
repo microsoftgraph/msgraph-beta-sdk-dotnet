@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets definitionId.
-        /// The setting definition ID of the setting depended on
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionId", Required = Newtonsoft.Json.Required.Default)]
-        public string DefinitionId { get; set; }
-    
-        /// <summary>
         /// Gets or sets constraints.
         /// Collection of constraints for the dependency setting value
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "constraints", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeviceManagementConstraint> Constraints { get; set; }
+    
+        /// <summary>
+        /// Gets or sets definitionId.
+        /// The setting definition ID of the setting depended on
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string DefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

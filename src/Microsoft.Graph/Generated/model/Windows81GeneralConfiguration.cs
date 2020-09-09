@@ -101,13 +101,6 @@ namespace Microsoft.Graph
         public bool? BrowserBlockSingleWordEntryOnIntranetSites { get; set; }
     
         /// <summary>
-        /// Gets or sets browser require smart screen.
-        /// Indicates whether or not to require the user to use the smart screen filter.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserRequireSmartScreen", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BrowserRequireSmartScreen { get; set; }
-    
-        /// <summary>
         /// Gets or sets browser enterprise mode site list location.
         /// The enterprise mode site list location. Could be a local file, local network or http location.
         /// </summary>
@@ -136,13 +129,6 @@ namespace Microsoft.Graph
         public string BrowserLoggingReportLocation { get; set; }
     
         /// <summary>
-        /// Gets or sets browser require high security for restricted sites.
-        /// Indicates whether or not to require high security for restricted sites.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserRequireHighSecurityForRestrictedSites", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BrowserRequireHighSecurityForRestrictedSites { get; set; }
-    
-        /// <summary>
         /// Gets or sets browser require firewall.
         /// Indicates whether or not to require a firewall.
         /// </summary>
@@ -155,6 +141,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserRequireFraudWarning", Required = Newtonsoft.Json.Required.Default)]
         public bool? BrowserRequireFraudWarning { get; set; }
+    
+        /// <summary>
+        /// Gets or sets browser require high security for restricted sites.
+        /// Indicates whether or not to require high security for restricted sites.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserRequireHighSecurityForRestrictedSites", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BrowserRequireHighSecurityForRestrictedSites { get; set; }
+    
+        /// <summary>
+        /// Gets or sets browser require smart screen.
+        /// Indicates whether or not to require the user to use the smart screen filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserRequireSmartScreen", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BrowserRequireSmartScreen { get; set; }
     
         /// <summary>
         /// Gets or sets browser trusted sites security level.
@@ -178,6 +178,13 @@ namespace Microsoft.Graph
         public bool? DiagnosticsBlockDataSubmission { get; set; }
     
         /// <summary>
+        /// Gets or sets minimum auto install classification.
+        /// The minimum update classification to install automatically.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumAutoInstallClassification", Required = Newtonsoft.Json.Required.Default)]
+        public UpdateClassification? MinimumAutoInstallClassification { get; set; }
+    
+        /// <summary>
         /// Gets or sets password block picture password and pin.
         /// Indicates whether or not to Block the user from using a pictures password and pin.
         /// </summary>
@@ -192,6 +199,13 @@ namespace Microsoft.Graph
         public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
+        /// Gets or sets password minimum character set count.
+        /// The number of character sets required in the password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumCharacterSetCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets password minimum length.
         /// The minimum password length.
         /// </summary>
@@ -204,13 +218,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }
-    
-        /// <summary>
-        /// Gets or sets password minimum character set count.
-        /// The number of character sets required in the password.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordMinimumCharacterSetCount { get; set; }
     
         /// <summary>
         /// Gets or sets password previous password block count.
@@ -239,13 +246,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRequireDeviceEncryption", Required = Newtonsoft.Json.Required.Default)]
         public bool? StorageRequireDeviceEncryption { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum auto install classification.
-        /// The minimum update classification to install automatically.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumAutoInstallClassification", Required = Newtonsoft.Json.Required.Default)]
-        public UpdateClassification? MinimumAutoInstallClassification { get; set; }
     
         /// <summary>
         /// Gets or sets updates minimum auto install classification.

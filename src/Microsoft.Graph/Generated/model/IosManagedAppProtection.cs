@@ -31,48 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets app data encryption type.
-        /// Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDataEncryptionType", Required = Newtonsoft.Json.Required.Default)]
-        public ManagedAppDataEncryptionType? AppDataEncryptionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum required sdk version.
-        /// Versions less than the specified version will block the managed app from accessing company data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredSdkVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string MinimumRequiredSdkVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deployed app count.
-        /// Count of apps to which the current policy is deployed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedAppCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeployedAppCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets face id blocked.
-        /// Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faceIdBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FaceIdBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets exempted app protocols.
-        /// Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exemptedAppProtocols", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<KeyValuePair> ExemptedAppProtocols { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum wipe sdk version.
-        /// Versions less than the specified version will block the managed app from accessing company data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumWipeSdkVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string MinimumWipeSdkVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets allowed ios device models.
         /// Semicolon seperated list of device models allowed, as a string, for the managed app to work.
         /// </summary>
@@ -87,32 +45,11 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed { get; set; }
     
         /// <summary>
-        /// Gets or sets third party keyboards blocked.
-        /// Defines if third party keyboards are allowed while accessing a managed app
+        /// Gets or sets app data encryption type.
+        /// Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thirdPartyKeyboardsBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ThirdPartyKeyboardsBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets filter open in to only managed apps.
-        /// Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filterOpenInToOnlyManagedApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FilterOpenInToOnlyManagedApps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets disable protection of managed outbound open in data.
-        /// Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableProtectionOfManagedOutboundOpenInData", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DisableProtectionOfManagedOutboundOpenInData { get; set; }
-    
-        /// <summary>
-        /// Gets or sets protect inbound data from unknown sources.
-        /// Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protectInboundDataFromUnknownSources", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ProtectInboundDataFromUnknownSources { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDataEncryptionType", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppDataEncryptionType? AppDataEncryptionType { get; set; }
     
         /// <summary>
         /// Gets or sets custom browser protocol.
@@ -127,6 +64,69 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDialerAppProtocol", Required = Newtonsoft.Json.Required.Default)]
         public string CustomDialerAppProtocol { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deployed app count.
+        /// Count of apps to which the current policy is deployed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedAppCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeployedAppCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets disable protection of managed outbound open in data.
+        /// Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableProtectionOfManagedOutboundOpenInData", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableProtectionOfManagedOutboundOpenInData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exempted app protocols.
+        /// Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exemptedAppProtocols", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> ExemptedAppProtocols { get; set; }
+    
+        /// <summary>
+        /// Gets or sets face id blocked.
+        /// Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faceIdBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FaceIdBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets filter open in to only managed apps.
+        /// Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filterOpenInToOnlyManagedApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FilterOpenInToOnlyManagedApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum required sdk version.
+        /// Versions less than the specified version will block the managed app from accessing company data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRequiredSdkVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumRequiredSdkVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum wipe sdk version.
+        /// Versions less than the specified version will block the managed app from accessing company data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumWipeSdkVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MinimumWipeSdkVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets protect inbound data from unknown sources.
+        /// Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protectInboundDataFromUnknownSources", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ProtectInboundDataFromUnknownSources { get; set; }
+    
+        /// <summary>
+        /// Gets or sets third party keyboards blocked.
+        /// Defines if third party keyboards are allowed while accessing a managed app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thirdPartyKeyboardsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ThirdPartyKeyboardsBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string AppDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets successful sign in count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulSignInCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SuccessfulSignInCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets failed sign in count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedSignInCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? FailedSignInCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets successful sign in count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulSignInCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SuccessfulSignInCount { get; set; }
     
         /// <summary>
         /// Gets or sets success percentage.

@@ -32,17 +32,17 @@ namespace Microsoft.Graph
         new IVppTokenRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for VppTokenSyncLicenses.
-        /// </summary>
-        /// <returns>The <see cref="IVppTokenSyncLicensesRequestBuilder"/>.</returns>
-        IVppTokenSyncLicensesRequestBuilder SyncLicenses();
-
-        /// <summary>
         /// Gets the request builder for VppTokenRevokeLicenses.
         /// </summary>
         /// <returns>The <see cref="IVppTokenRevokeLicensesRequestBuilder"/>.</returns>
         IVppTokenRevokeLicensesRequestBuilder RevokeLicenses(
             bool notifyManagedDevices);
+
+        /// <summary>
+        /// Gets the request builder for VppTokenSyncLicenses.
+        /// </summary>
+        /// <returns>The <see cref="IVppTokenSyncLicensesRequestBuilder"/>.</returns>
+        IVppTokenSyncLicensesRequestBuilder SyncLicenses();
     
     }
 }

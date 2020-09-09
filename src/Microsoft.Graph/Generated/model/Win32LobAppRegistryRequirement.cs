@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public bool? Check32BitOn64System { get; set; }
     
         /// <summary>
+        /// Gets or sets detectionType.
+        /// The registry data detection type
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppRegistryDetectionType? DetectionType { get; set; }
+    
+        /// <summary>
         /// Gets or sets keyPath.
         /// The registry key path to detect Win32 Line of Business (LoB) app
         /// </summary>
@@ -49,13 +56,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueName", Required = Newtonsoft.Json.Required.Default)]
         public string ValueName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets detectionType.
-        /// The registry data detection type
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppRegistryDetectionType? DetectionType { get; set; }
     
     }
 }

@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets userPrincipalName.
-        /// User name
+        /// Gets or sets dataQuota.
+        /// Data quota
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataQuota", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? DataQuota { get; set; }
     
         /// <summary>
         /// Gets or sets dataToSync.
@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public bool? DataToSync { get; set; }
     
         /// <summary>
-        /// Gets or sets dataQuota.
-        /// Data quota
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataQuota", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? DataQuota { get; set; }
-    
-        /// <summary>
         /// Gets or sets dataUsed.
         /// Data quota
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataUsed", Required = Newtonsoft.Json.Required.Default)]
         public Int64? DataUsed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userPrincipalName.
+        /// User name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

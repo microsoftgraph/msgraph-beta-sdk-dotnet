@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets succeededUserCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeededUserCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SucceededUserCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets failedUserCount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedUserCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? FailedUserCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets succeededUserCount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeededUserCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SucceededUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

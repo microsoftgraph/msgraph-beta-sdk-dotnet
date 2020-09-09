@@ -31,76 +31,16 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
-        /// Gets or sets id.
+        /// Gets or sets calleeNumber.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string CalleeNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets correlationId.
+        /// Gets or sets callEndSubReason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
-        public string CorrelationId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userPrincipalName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userDisplayName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets startDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets endDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets inviteDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inviteDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? InviteDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets failureDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? FailureDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets duration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Duration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets callType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callType", Required = Newtonsoft.Json.Required.Default)]
-        public string CallType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets successfulCall.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulCall", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SuccessfulCall { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callEndSubReason", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CallEndSubReason { get; set; }
     
         /// <summary>
         /// Gets or sets callerNumber.
@@ -109,10 +49,64 @@ namespace Microsoft.Graph.CallRecords
         public string CallerNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets calleeNumber.
+        /// Gets or sets callType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string CalleeNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callType", Required = Newtonsoft.Json.Required.Default)]
+        public string CallType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets correlationId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
+        public string CorrelationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets duration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Duration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets endDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets failureDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? FailureDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets finalSipCode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finalSipCode", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? FinalSipCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets finalSipCodePhrase.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finalSipCodePhrase", Required = Newtonsoft.Json.Required.Default)]
+        public string FinalSipCodePhrase { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets inviteDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inviteDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? InviteDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mediaBypassEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaBypassEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MediaBypassEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets mediaPathLocation.
@@ -127,22 +121,16 @@ namespace Microsoft.Graph.CallRecords
         public string SignalingLocation { get; set; }
     
         /// <summary>
-        /// Gets or sets finalSipCode.
+        /// Gets or sets startDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finalSipCode", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? FinalSipCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets callEndSubReason.
+        /// Gets or sets successfulCall.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callEndSubReason", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CallEndSubReason { get; set; }
-    
-        /// <summary>
-        /// Gets or sets finalSipCodePhrase.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finalSipCodePhrase", Required = Newtonsoft.Json.Required.Default)]
-        public string FinalSipCodePhrase { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulCall", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SuccessfulCall { get; set; }
     
         /// <summary>
         /// Gets or sets trunkFullyQualifiedDomainName.
@@ -151,10 +139,22 @@ namespace Microsoft.Graph.CallRecords
         public string TrunkFullyQualifiedDomainName { get; set; }
     
         /// <summary>
-        /// Gets or sets mediaBypassEnabled.
+        /// Gets or sets userDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaBypassEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MediaBypassEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userPrincipalName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

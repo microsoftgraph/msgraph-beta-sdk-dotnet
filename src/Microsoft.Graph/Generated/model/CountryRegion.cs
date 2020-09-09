@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets address format.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addressFormat", Required = Newtonsoft.Json.Required.Default)]
+        public string AddressFormat { get; set; }
+    
+        /// <summary>
         /// Gets or sets code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets address format.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addressFormat", Required = Newtonsoft.Json.Required.Default)]
-        public string AddressFormat { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.

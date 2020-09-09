@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAccessPackageRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAccessPackageAssignmentPoliciesCollectionRequestBuilder"/>.</returns>
+        IAccessPackageAccessPackageAssignmentPoliciesCollectionRequestBuilder AccessPackageAssignmentPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageCatalog.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageCatalogWithReferenceRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAccessPackageResourceRoleScopesCollectionRequestBuilder"/>.</returns>
         IAccessPackageAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes { get; }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageAssignmentPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IAccessPackageAccessPackageAssignmentPoliciesCollectionRequestBuilder"/>.</returns>
-        IAccessPackageAccessPackageAssignmentPoliciesCollectionRequestBuilder AccessPackageAssignmentPolicies { get; }
     
         
     

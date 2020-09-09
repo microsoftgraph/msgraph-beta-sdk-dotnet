@@ -76,6 +76,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemove.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder"/>.</returns>
+        public IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder Remove()
+        {
+            return new GroupPolicyUploadedDefinitionFileRemoveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.remove"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemoveLanguageFiles.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveLanguageFilesRequestBuilder"/>.</returns>
@@ -114,17 +125,6 @@ namespace Microsoft.Graph
                 this.Client,
                 content,
                 groupPolicyUploadedLanguageFiles);
-        }
-
-        /// <summary>
-        /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemove.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder"/>.</returns>
-        public IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder Remove()
-        {
-            return new GroupPolicyUploadedDefinitionFileRemoveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.remove"),
-                this.Client);
         }
     
     }

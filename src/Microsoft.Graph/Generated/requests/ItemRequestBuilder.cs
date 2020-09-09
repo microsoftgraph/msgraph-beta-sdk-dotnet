@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Picture.
-        /// </summary>
-        /// <returns>The <see cref="IItemPictureCollectionRequestBuilder"/>.</returns>
-        public IItemPictureCollectionRequestBuilder Picture
-        {
-            get
-            {
-                return new ItemPictureCollectionRequestBuilder(this.AppendSegmentToRequestUrl("picture"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ItemCategory.
         /// </summary>
         /// <returns>The <see cref="IItemCategoryRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ItemCategoryRequestBuilder(this.AppendSegmentToRequestUrl("itemCategory"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Picture.
+        /// </summary>
+        /// <returns>The <see cref="IItemPictureCollectionRequestBuilder"/>.</returns>
+        public IItemPictureCollectionRequestBuilder Picture
+        {
+            get
+            {
+                return new ItemPictureCollectionRequestBuilder(this.AppendSegmentToRequestUrl("picture"), this.Client);
             }
         }
     

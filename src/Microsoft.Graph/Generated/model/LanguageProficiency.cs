@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets tag.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tag", Required = Newtonsoft.Json.Required.Default)]
-        public string Tag { get; set; }
-    
-        /// <summary>
         /// Gets or sets proficiency.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proficiency", Required = Newtonsoft.Json.Required.Default)]
         public LanguageProficiencyLevel? Proficiency { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reading.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reading", Required = Newtonsoft.Json.Required.Default)]
+        public LanguageProficiencyLevel? Reading { get; set; }
     
         /// <summary>
         /// Gets or sets spoken.
@@ -55,16 +55,16 @@ namespace Microsoft.Graph
         public LanguageProficiencyLevel? Spoken { get; set; }
     
         /// <summary>
+        /// Gets or sets tag.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tag", Required = Newtonsoft.Json.Required.Default)]
+        public string Tag { get; set; }
+    
+        /// <summary>
         /// Gets or sets written.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "written", Required = Newtonsoft.Json.Required.Default)]
         public LanguageProficiencyLevel? Written { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reading.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reading", Required = Newtonsoft.Json.Required.Default)]
-        public LanguageProficiencyLevel? Reading { get; set; }
     
     }
 }

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DerivedCredentialSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        public IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings
+        {
+            get
+            {
+                return new DeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentialSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for IdentityCertificate.
         /// </summary>
         /// <returns>The <see cref="IIosCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
@@ -59,18 +71,6 @@ namespace Microsoft.Graph
             get
             {
                 return new IosCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificate"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SmimeSigningCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IIosCertificateProfileWithReferenceRequestBuilder"/>.</returns>
-        public IIosCertificateProfileWithReferenceRequestBuilder SmimeSigningCertificate
-        {
-            get
-            {
-                return new IosCertificateProfileWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("smimeSigningCertificate"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DerivedCredentialSettings.
+        /// Gets the request builder for SmimeSigningCertificate.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
-        public IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings
+        /// <returns>The <see cref="IIosCertificateProfileWithReferenceRequestBuilder"/>.</returns>
+        public IIosCertificateProfileWithReferenceRequestBuilder SmimeSigningCertificate
         {
             get
             {
-                return new DeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentialSettings"), this.Client);
+                return new IosCertificateProfileWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("smimeSigningCertificate"), this.Client);
             }
         }
     

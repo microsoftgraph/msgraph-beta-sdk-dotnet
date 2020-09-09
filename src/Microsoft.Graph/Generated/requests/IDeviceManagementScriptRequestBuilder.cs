@@ -32,28 +32,28 @@ namespace Microsoft.Graph
         new IDeviceManagementScriptRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementScriptAssignmentsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementScriptAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
-        /// Gets the request builder for RunSummary.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder"/>.</returns>
-        IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder RunSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceRunStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementScriptDeviceRunStatesCollectionRequestBuilder DeviceRunStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for GroupAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder GroupAssignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder"/>.</returns>
+        IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder RunSummary { get; }
 
         /// <summary>
         /// Gets the request builder for UserRunStates.

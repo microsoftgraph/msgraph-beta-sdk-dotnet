@@ -31,6 +31,27 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets compliancePolicy.
+        /// Whether compliance policy is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CompliancePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceConfiguration.
+        /// Whether device configuration is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceConfiguration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets endpointProtection.
+        /// Whether Endpoint Protection is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EndpointProtection { get; set; }
+    
+        /// <summary>
         /// Gets or sets inventory.
         /// Whether inventory is managed by Intune
         /// </summary>
@@ -45,6 +66,13 @@ namespace Microsoft.Graph
         public bool? ModernApps { get; set; }
     
         /// <summary>
+        /// Gets or sets officeApps.
+        /// Whether Office application is managed by Intune
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OfficeApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets resourceAccess.
         /// Whether resource access is managed by Intune
         /// </summary>
@@ -52,39 +80,11 @@ namespace Microsoft.Graph
         public bool? ResourceAccess { get; set; }
     
         /// <summary>
-        /// Gets or sets deviceConfiguration.
-        /// Whether device configuration is managed by Intune
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets compliancePolicy.
-        /// Whether compliance policy is managed by Intune
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicy", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CompliancePolicy { get; set; }
-    
-        /// <summary>
         /// Gets or sets windowsUpdateForBusiness.
         /// Whether Windows Update for Business is managed by Intune
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsUpdateForBusiness", Required = Newtonsoft.Json.Required.Default)]
         public bool? WindowsUpdateForBusiness { get; set; }
-    
-        /// <summary>
-        /// Gets or sets endpointProtection.
-        /// Whether Endpoint Protection is managed by Intune
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EndpointProtection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets officeApps.
-        /// Whether Office application is managed by Intune
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? OfficeApps { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

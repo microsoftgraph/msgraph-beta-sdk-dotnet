@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets fieldId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fieldId", Required = Newtonsoft.Json.Required.Default)]
-        public string FieldId { get; set; }
-    
-        /// <summary>
         /// Gets or sets customizedLabel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizedLabel", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLabel", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultLabel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fieldId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fieldId", Required = Newtonsoft.Json.Required.Default)]
+        public string FieldId { get; set; }
     
         /// <summary>
         /// Gets or sets type.

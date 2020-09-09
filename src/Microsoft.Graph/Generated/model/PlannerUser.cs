@@ -43,11 +43,16 @@ namespace Microsoft.Graph
         public PlannerRecentPlanReferenceCollection RecentPlanReferences { get; set; }
     
         /// <summary>
-        /// Gets or sets tasks.
-        /// Read-only. Nullable. Returns the plannerPlans shared with the user.
+        /// Gets or sets all.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerUserTasksCollectionPage Tasks { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "all", Required = Newtonsoft.Json.Required.Default)]
+        public IPlannerUserAllCollectionPage All { get; set; }
+    
+        /// <summary>
+        /// Gets or sets favorite plans.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "favoritePlans", Required = Newtonsoft.Json.Required.Default)]
+        public IPlannerUserFavoritePlansCollectionWithReferencesPage FavoritePlans { get; set; }
     
         /// <summary>
         /// Gets or sets plans.
@@ -57,22 +62,17 @@ namespace Microsoft.Graph
         public IPlannerUserPlansCollectionPage Plans { get; set; }
     
         /// <summary>
-        /// Gets or sets favorite plans.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "favoritePlans", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerUserFavoritePlansCollectionWithReferencesPage FavoritePlans { get; set; }
-    
-        /// <summary>
         /// Gets or sets recent plans.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recentPlans", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerUserRecentPlansCollectionWithReferencesPage RecentPlans { get; set; }
     
         /// <summary>
-        /// Gets or sets all.
+        /// Gets or sets tasks.
+        /// Read-only. Nullable. Returns the plannerPlans shared with the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "all", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerUserAllCollectionPage All { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        public IPlannerUserTasksCollectionPage Tasks { get; set; }
     
     }
 }

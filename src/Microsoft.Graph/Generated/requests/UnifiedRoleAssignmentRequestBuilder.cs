@@ -51,26 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RoleDefinition.
+        /// Gets the request builder for AppScope.
         /// </summary>
-        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
-        public IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition
+        /// <returns>The <see cref="IAppScopeRequestBuilder"/>.</returns>
+        public IAppScopeRequestBuilder AppScope
         {
             get
             {
-                return new UnifiedRoleDefinitionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinition"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Principal.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        public IDirectoryObjectWithReferenceRequestBuilder Principal
-        {
-            get
-            {
-                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("principal"), this.Client);
+                return new AppScopeRequestBuilder(this.AppendSegmentToRequestUrl("appScope"), this.Client);
             }
         }
 
@@ -87,14 +75,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AppScope.
+        /// Gets the request builder for Principal.
         /// </summary>
-        /// <returns>The <see cref="IAppScopeRequestBuilder"/>.</returns>
-        public IAppScopeRequestBuilder AppScope
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        public IDirectoryObjectWithReferenceRequestBuilder Principal
         {
             get
             {
-                return new AppScopeRequestBuilder(this.AppendSegmentToRequestUrl("appScope"), this.Client);
+                return new DirectoryObjectWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("principal"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
+        public IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition
+        {
+            get
+            {
+                return new UnifiedRoleDefinitionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinition"), this.Client);
             }
         }
     

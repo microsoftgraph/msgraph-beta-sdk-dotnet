@@ -61,23 +61,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetUserArchivedPrintJobs.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
-        public IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
-            string userId = null,
-            DateTimeOffset? periodStart = null,
-            DateTimeOffset? periodEnd = null)
-        {
-            return new ReportRootGetUserArchivedPrintJobsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getUserArchivedPrintJobs"),
-                this.Client,
-                userId,
-                periodStart,
-                periodEnd);
-        }
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetGroupArchivedPrintJobs.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetGroupArchivedPrintJobsRequestBuilder"/>.</returns>
@@ -92,40 +75,6 @@ namespace Microsoft.Graph
                 groupId,
                 periodStart,
                 periodEnd);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetPrinterArchivedPrintJobs.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
-        public IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
-            string printerId = null,
-            DateTimeOffset? periodStart = null,
-            DateTimeOffset? periodEnd = null)
-        {
-            return new ReportRootGetPrinterArchivedPrintJobsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getPrinterArchivedPrintJobs"),
-                this.Client,
-                printerId,
-                periodStart,
-                periodEnd);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetUserPrintUsageSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetUserPrintUsageSummaryRequestBuilder"/>.</returns>
-        public IReportRootGetUserPrintUsageSummaryRequestBuilder GetUserPrintUsageSummary(
-            DateTimeOffset periodStart,
-            DateTimeOffset periodEnd,
-            string userId = null)
-        {
-            return new ReportRootGetUserPrintUsageSummaryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getUserPrintUsageSummary"),
-                this.Client,
-                periodStart,
-                periodEnd,
-                userId);
         }
 
         /// <summary>
@@ -146,6 +95,40 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetOverallPrintUsageSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOverallPrintUsageSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetOverallPrintUsageSummaryRequestBuilder GetOverallPrintUsageSummary(
+            DateTimeOffset periodStart,
+            DateTimeOffset periodEnd,
+            Int32 topListsSize)
+        {
+            return new ReportRootGetOverallPrintUsageSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOverallPrintUsageSummary"),
+                this.Client,
+                periodStart,
+                periodEnd,
+                topListsSize);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetPrinterArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
+        public IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
+            string printerId = null,
+            DateTimeOffset? periodStart = null,
+            DateTimeOffset? periodEnd = null)
+        {
+            return new ReportRootGetPrinterArchivedPrintJobsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPrinterArchivedPrintJobs"),
+                this.Client,
+                printerId,
+                periodStart,
+                periodEnd);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetPrinterUsageSummary.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetPrinterUsageSummaryRequestBuilder"/>.</returns>
@@ -160,21 +143,6 @@ namespace Microsoft.Graph
                 periodStart,
                 periodEnd,
                 printerId);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetPrintUsageSummariesByUser.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetPrintUsageSummariesByUserRequestBuilder"/>.</returns>
-        public IReportRootGetPrintUsageSummariesByUserRequestBuilder GetPrintUsageSummariesByUser(
-            DateTimeOffset periodStart,
-            DateTimeOffset periodEnd)
-        {
-            return new ReportRootGetPrintUsageSummariesByUserRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getPrintUsageSummariesByUser"),
-                this.Client,
-                periodStart,
-                periodEnd);
         }
 
         /// <summary>
@@ -208,23 +176,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOverallPrintUsageSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOverallPrintUsageSummaryRequestBuilder"/>.</returns>
-        public IReportRootGetOverallPrintUsageSummaryRequestBuilder GetOverallPrintUsageSummary(
-            DateTimeOffset periodStart,
-            DateTimeOffset periodEnd,
-            Int32 topListsSize)
-        {
-            return new ReportRootGetOverallPrintUsageSummaryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOverallPrintUsageSummary"),
-                this.Client,
-                periodStart,
-                periodEnd,
-                topListsSize);
-        }
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetPrintUsageSummariesByTimeSpan.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetPrintUsageSummariesByTimeSpanRequestBuilder"/>.</returns>
@@ -239,6 +190,55 @@ namespace Microsoft.Graph
                 periodStart,
                 periodEnd,
                 timeSpanInMinutes);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetPrintUsageSummariesByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetPrintUsageSummariesByUserRequestBuilder"/>.</returns>
+        public IReportRootGetPrintUsageSummariesByUserRequestBuilder GetPrintUsageSummariesByUser(
+            DateTimeOffset periodStart,
+            DateTimeOffset periodEnd)
+        {
+            return new ReportRootGetPrintUsageSummariesByUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPrintUsageSummariesByUser"),
+                this.Client,
+                periodStart,
+                periodEnd);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
+        public IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
+            string userId = null,
+            DateTimeOffset? periodStart = null,
+            DateTimeOffset? periodEnd = null)
+        {
+            return new ReportRootGetUserArchivedPrintJobsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getUserArchivedPrintJobs"),
+                this.Client,
+                userId,
+                periodStart,
+                periodEnd);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserPrintUsageSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserPrintUsageSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetUserPrintUsageSummaryRequestBuilder GetUserPrintUsageSummary(
+            DateTimeOffset periodStart,
+            DateTimeOffset periodEnd,
+            string userId = null)
+        {
+            return new ReportRootGetUserPrintUsageSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getUserPrintUsageSummary"),
+                this.Client,
+                periodStart,
+                periodEnd,
+                userId);
         }
     }
 }

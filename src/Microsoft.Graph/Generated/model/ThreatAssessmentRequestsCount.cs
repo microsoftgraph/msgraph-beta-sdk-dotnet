@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "count", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Count { get; set; }
+    
+        /// <summary>
         /// Gets or sets createdDateTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pivotValue", Required = Newtonsoft.Json.Required.Default)]
         public string PivotValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "count", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Count { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

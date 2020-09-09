@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets teacher certificate settings.
-        /// The Trusted Root and PFX certificates for Teacher
+        /// Gets or sets device certificate settings.
+        /// The Trusted Root and PFX certificates for Device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacherCertificateSettings", Required = Newtonsoft.Json.Required.Default)]
-        public IosEduCertificateSettings TeacherCertificateSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCertificateSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IosEduCertificateSettings DeviceCertificateSettings { get; set; }
     
         /// <summary>
         /// Gets or sets student certificate settings.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public IosEduCertificateSettings StudentCertificateSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets device certificate settings.
-        /// The Trusted Root and PFX certificates for Device
+        /// Gets or sets teacher certificate settings.
+        /// The Trusted Root and PFX certificates for Teacher
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCertificateSettings", Required = Newtonsoft.Json.Required.Default)]
-        public IosEduCertificateSettings DeviceCertificateSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacherCertificateSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IosEduCertificateSettings TeacherCertificateSettings { get; set; }
     
     }
 }

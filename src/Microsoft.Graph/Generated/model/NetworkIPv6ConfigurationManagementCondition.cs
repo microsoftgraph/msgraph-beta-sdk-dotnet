@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets ip v6prefix.
-        /// The IPv6 subnet to be connected to. e.g. 2001:db8::/32
+        /// Gets or sets dns suffix list.
+        /// Valid DNS suffixes for the current network. e.g. seattle.contoso.com
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV6Prefix", Required = Newtonsoft.Json.Required.Default)]
-        public string IpV6Prefix { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ip v6gateway.
-        /// The IPv6 gateway address to. e.g 2001:db8::1
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV6Gateway", Required = Newtonsoft.Json.Required.Default)]
-        public string IpV6Gateway { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DnsSuffixList { get; set; }
     
         /// <summary>
         /// Gets or sets ip v6dnsserver list.
@@ -52,11 +45,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> IpV6DNSServerList { get; set; }
     
         /// <summary>
-        /// Gets or sets dns suffix list.
-        /// Valid DNS suffixes for the current network. e.g. seattle.contoso.com
+        /// Gets or sets ip v6gateway.
+        /// The IPv6 gateway address to. e.g 2001:db8::1
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DnsSuffixList { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV6Gateway", Required = Newtonsoft.Json.Required.Default)]
+        public string IpV6Gateway { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ip v6prefix.
+        /// The IPv6 subnet to be connected to. e.g. 2001:db8::/32
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV6Prefix", Required = Newtonsoft.Json.Required.Default)]
+        public string IpV6Prefix { get; set; }
     
     }
 }

@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public InformationProtectionPolicy Policy { get; set; }
     
         /// <summary>
+        /// Gets or sets data loss prevention policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLossPreventionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IInformationProtectionDataLossPreventionPoliciesCollectionPage DataLossPreventionPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets sensitivity labels.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabels", Required = Newtonsoft.Json.Required.Default)]
@@ -47,12 +53,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityPolicySettings", Required = Newtonsoft.Json.Required.Default)]
         public SensitivityPolicySettings SensitivityPolicySettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets data loss prevention policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLossPreventionPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IInformationProtectionDataLossPreventionPoliciesCollectionPage DataLossPreventionPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets threat assessment requests.

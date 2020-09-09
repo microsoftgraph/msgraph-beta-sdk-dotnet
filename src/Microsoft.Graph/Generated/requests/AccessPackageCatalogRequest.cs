@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (accessPackageCatalogToInitialize != null && accessPackageCatalogToInitialize.AdditionalData != null)
             {
 
-                if (accessPackageCatalogToInitialize.AccessPackageResources != null && accessPackageCatalogToInitialize.AccessPackageResources.CurrentPage != null)
-                {
-                    accessPackageCatalogToInitialize.AccessPackageResources.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageCatalogToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (accessPackageCatalogToInitialize.AccessPackageResourceRoles != null && accessPackageCatalogToInitialize.AccessPackageResourceRoles.CurrentPage != null)
                 {
                     accessPackageCatalogToInitialize.AccessPackageResourceRoles.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         accessPackageCatalogToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (accessPackageCatalogToInitialize.AccessPackageResources != null && accessPackageCatalogToInitialize.AccessPackageResources.CurrentPage != null)
+                {
+                    accessPackageCatalogToInitialize.AccessPackageResources.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    accessPackageCatalogToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        accessPackageCatalogToInitialize.AccessPackageResources.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for CustomerPayments.
-        /// </summary>
-        /// <returns>The <see cref="ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder"/>.</returns>
-        public ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder CustomerPayments
-        {
-            get
-            {
-                return new CustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customerPayments"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Account.
         /// </summary>
         /// <returns>The <see cref="IAccountRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AccountRequestBuilder(this.AppendSegmentToRequestUrl("account"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CustomerPayments.
+        /// </summary>
+        /// <returns>The <see cref="ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder"/>.</returns>
+        public ICustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder CustomerPayments
+        {
+            get
+            {
+                return new CustomerPaymentJournalCustomerPaymentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customerPayments"), this.Client);
             }
         }
     

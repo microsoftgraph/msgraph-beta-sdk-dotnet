@@ -49,16 +49,16 @@ namespace Microsoft.Graph
         public string Initials { get; set; }
     
         /// <summary>
-        /// Gets or sets last.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last", Required = Newtonsoft.Json.Required.Default)]
-        public string Last { get; set; }
-    
-        /// <summary>
         /// Gets or sets language tag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageTag { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last", Required = Newtonsoft.Json.Required.Default)]
+        public string Last { get; set; }
     
         /// <summary>
         /// Gets or sets maiden.
@@ -79,6 +79,12 @@ namespace Microsoft.Graph
         public string Nickname { get; set; }
     
         /// <summary>
+        /// Gets or sets pronunciation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
+        public YomiPersonName Pronunciation { get; set; }
+    
+        /// <summary>
         /// Gets or sets suffix.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suffix", Required = Newtonsoft.Json.Required.Default)]
@@ -89,12 +95,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
         public string Title { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pronunciation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
-        public YomiPersonName Pronunciation { get; set; }
     
     }
 }

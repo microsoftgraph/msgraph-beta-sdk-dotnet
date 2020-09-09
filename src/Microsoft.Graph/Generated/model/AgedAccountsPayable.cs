@@ -31,22 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets vendor number.
+        /// Gets or sets aged as of date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendorNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string VendorNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets currency code.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currencyCode", Required = Newtonsoft.Json.Required.Default)]
-        public string CurrencyCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agedAsOfDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date AgedAsOfDate { get; set; }
     
         /// <summary>
         /// Gets or sets balance due.
@@ -55,10 +43,22 @@ namespace Microsoft.Graph
         public Decimal? BalanceDue { get; set; }
     
         /// <summary>
+        /// Gets or sets currency code.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currencyCode", Required = Newtonsoft.Json.Required.Default)]
+        public string CurrencyCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets current amount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentAmount", Required = Newtonsoft.Json.Required.Default)]
         public Decimal? CurrentAmount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets period1amount.
@@ -79,16 +79,16 @@ namespace Microsoft.Graph
         public Decimal? Period3Amount { get; set; }
     
         /// <summary>
-        /// Gets or sets aged as of date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agedAsOfDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date AgedAsOfDate { get; set; }
-    
-        /// <summary>
         /// Gets or sets period length filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "periodLengthFilter", Required = Newtonsoft.Json.Required.Default)]
         public string PeriodLengthFilter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets vendor number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendorNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string VendorNumber { get; set; }
     
     }
 }

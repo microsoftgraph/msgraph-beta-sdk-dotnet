@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets device name.
-        /// Device name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
-    
-        /// <summary>
         /// Gets or sets device id.
         /// Device ID
         /// </summary>
@@ -45,18 +38,25 @@ namespace Microsoft.Graph
         public string DeviceId { get; set; }
     
         /// <summary>
-        /// Gets or sets last sync date time.
-        /// Last sync date time
+        /// Gets or sets device name.
+        /// Device name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
     
         /// <summary>
-        /// Gets or sets mobile app install status value.
-        /// The install state of the app.
+        /// Gets or sets display version.
+        /// Human readable version of the application
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppInstallStatusValue", Required = Newtonsoft.Json.Required.Default)]
-        public ResultantAppState? MobileAppInstallStatusValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets error code.
+        /// The error code for install or uninstall failures.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets install state.
@@ -73,18 +73,18 @@ namespace Microsoft.Graph
         public ResultantAppStateDetail? InstallStateDetail { get; set; }
     
         /// <summary>
-        /// Gets or sets error code.
-        /// The error code for install or uninstall failures.
+        /// Gets or sets last sync date time.
+        /// Last sync date time
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ErrorCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets os version.
-        /// OS Version
+        /// Gets or sets mobile app install status value.
+        /// The install state of the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppInstallStatusValue", Required = Newtonsoft.Json.Required.Default)]
+        public ResultantAppState? MobileAppInstallStatusValue { get; set; }
     
         /// <summary>
         /// Gets or sets os description.
@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osDescription", Required = Newtonsoft.Json.Required.Default)]
         public string OsDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os version.
+        /// OS Version
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
@@ -106,13 +113,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display version.
-        /// Human readable version of the application
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayVersion { get; set; }
     
         /// <summary>
         /// Gets or sets app.

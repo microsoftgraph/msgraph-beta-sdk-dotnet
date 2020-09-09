@@ -37,16 +37,10 @@ namespace Microsoft.Graph
         public string FeatureName { get; set; }
     
         /// <summary>
-        /// Gets or sets licenseRequired.
+        /// Gets or sets lastConfiguredDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseRequired", Required = Newtonsoft.Json.Required.Default)]
-        public AzureADLicenseType? LicenseRequired { get; set; }
-    
-        /// <summary>
-        /// Gets or sets licenseAssigned.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseAssigned", Required = Newtonsoft.Json.Required.Default)]
-        public AzureADLicenseType? LicenseAssigned { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConfiguredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastConfiguredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets lastUsedDateTime.
@@ -55,10 +49,16 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastUsedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets lastConfiguredDateTime.
+        /// Gets or sets licenseAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConfiguredDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastConfiguredDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseAssigned", Required = Newtonsoft.Json.Required.Default)]
+        public AzureADLicenseType? LicenseAssigned { get; set; }
+    
+        /// <summary>
+        /// Gets or sets licenseRequired.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseRequired", Required = Newtonsoft.Json.Required.Default)]
+        public AzureADLicenseType? LicenseRequired { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

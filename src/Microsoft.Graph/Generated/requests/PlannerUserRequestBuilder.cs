@@ -51,26 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Tasks.
+        /// Gets the request builder for All.
         /// </summary>
-        /// <returns>The <see cref="IPlannerUserTasksCollectionRequestBuilder"/>.</returns>
-        public IPlannerUserTasksCollectionRequestBuilder Tasks
+        /// <returns>The <see cref="IPlannerUserAllCollectionRequestBuilder"/>.</returns>
+        public IPlannerUserAllCollectionRequestBuilder All
         {
             get
             {
-                return new PlannerUserTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Plans.
-        /// </summary>
-        /// <returns>The <see cref="IPlannerUserPlansCollectionRequestBuilder"/>.</returns>
-        public IPlannerUserPlansCollectionRequestBuilder Plans
-        {
-            get
-            {
-                return new PlannerUserPlansCollectionRequestBuilder(this.AppendSegmentToRequestUrl("plans"), this.Client);
+                return new PlannerUserAllCollectionRequestBuilder(this.AppendSegmentToRequestUrl("all"), this.Client);
             }
         }
 
@@ -87,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Plans.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerUserPlansCollectionRequestBuilder"/>.</returns>
+        public IPlannerUserPlansCollectionRequestBuilder Plans
+        {
+            get
+            {
+                return new PlannerUserPlansCollectionRequestBuilder(this.AppendSegmentToRequestUrl("plans"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RecentPlans.
         /// </summary>
         /// <returns>The <see cref="IPlannerUserRecentPlansCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -99,14 +99,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for All.
+        /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IPlannerUserAllCollectionRequestBuilder"/>.</returns>
-        public IPlannerUserAllCollectionRequestBuilder All
+        /// <returns>The <see cref="IPlannerUserTasksCollectionRequestBuilder"/>.</returns>
+        public IPlannerUserTasksCollectionRequestBuilder Tasks
         {
             get
             {
-                return new PlannerUserAllCollectionRequestBuilder(this.AppendSegmentToRequestUrl("all"), this.Client);
+                return new PlannerUserTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
             }
         }
     

@@ -32,28 +32,28 @@ namespace Microsoft.Graph
         new IApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ExtensionProperties.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
-        IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
-
-        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
         IDirectoryObjectWithReferenceRequestBuilder CreatedOnBehalfOf { get; }
 
         /// <summary>
-        /// Gets the request builder for Owners.
+        /// Gets the request builder for ExtensionProperties.
         /// </summary>
-        /// <returns>The <see cref="IApplicationOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
-        IApplicationOwnersCollectionWithReferencesRequestBuilder Owners { get; }
+        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
+        IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
 
         /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
         IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.

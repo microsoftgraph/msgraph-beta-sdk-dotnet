@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets originalFormId.
+        /// Gets or sets editUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalFormId", Required = Newtonsoft.Json.Required.Default)]
-        public string OriginalFormId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "editUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string EditUrl { get; set; }
     
         /// <summary>
         /// Gets or sets formId.
@@ -48,16 +48,16 @@ namespace Microsoft.Graph
         public bool? IsGroupForm { get; set; }
     
         /// <summary>
+        /// Gets or sets originalFormId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalFormId", Required = Newtonsoft.Json.Required.Default)]
+        public string OriginalFormId { get; set; }
+    
+        /// <summary>
         /// Gets or sets viewUrl.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ViewUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets editUrl.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "editUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string EditUrl { get; set; }
     
     }
 }

@@ -70,25 +70,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TrustFrameworkKeySetUploadSecret.
-        /// </summary>
-        /// <returns>The <see cref="ITrustFrameworkKeySetUploadSecretRequestBuilder"/>.</returns>
-        public ITrustFrameworkKeySetUploadSecretRequestBuilder UploadSecret(
-            string use = null,
-            string k = null,
-            Int64? nbf = null,
-            Int64? exp = null)
-        {
-            return new TrustFrameworkKeySetUploadSecretRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.uploadSecret"),
-                this.Client,
-                use,
-                k,
-                nbf,
-                exp);
-        }
-
-        /// <summary>
         /// Gets the request builder for TrustFrameworkKeySetUploadCertificate.
         /// </summary>
         /// <returns>The <see cref="ITrustFrameworkKeySetUploadCertificateRequestBuilder"/>.</returns>
@@ -114,6 +95,25 @@ namespace Microsoft.Graph
                 this.Client,
                 key,
                 password);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TrustFrameworkKeySetUploadSecret.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkKeySetUploadSecretRequestBuilder"/>.</returns>
+        public ITrustFrameworkKeySetUploadSecretRequestBuilder UploadSecret(
+            string use = null,
+            string k = null,
+            Int64? nbf = null,
+            Int64? exp = null)
+        {
+            return new TrustFrameworkKeySetUploadSecretRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.uploadSecret"),
+                this.Client,
+                use,
+                k,
+                nbf,
+                exp);
         }
 
         /// <summary>

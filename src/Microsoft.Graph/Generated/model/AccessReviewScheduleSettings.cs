@@ -31,46 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets mailNotificationsEnabled.
+        /// Gets or sets applyActions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MailNotificationsEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reminderNotificationsEnabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ReminderNotificationsEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets justificationRequiredOnApproval.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationRequiredOnApproval", Required = Newtonsoft.Json.Required.Default)]
-        public bool? JustificationRequiredOnApproval { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaultDecisionEnabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDecisionEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefaultDecisionEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defaultDecision.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDecision", Required = Newtonsoft.Json.Required.Default)]
-        public string DefaultDecision { get; set; }
-    
-        /// <summary>
-        /// Gets or sets instanceDurationInDays.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instanceDurationInDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? InstanceDurationInDays { get; set; }
-    
-        /// <summary>
-        /// Gets or sets recurrence.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
-        public PatternedRecurrence Recurrence { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyActions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AccessReviewApplyAction> ApplyActions { get; set; }
     
         /// <summary>
         /// Gets or sets autoApplyDecisionsEnabled.
@@ -79,16 +43,52 @@ namespace Microsoft.Graph
         public bool? AutoApplyDecisionsEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets applyActions.
+        /// Gets or sets defaultDecision.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyActions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AccessReviewApplyAction> ApplyActions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDecision", Required = Newtonsoft.Json.Required.Default)]
+        public string DefaultDecision { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defaultDecisionEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDecisionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefaultDecisionEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets instanceDurationInDays.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instanceDurationInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? InstanceDurationInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets justificationRequiredOnApproval.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationRequiredOnApproval", Required = Newtonsoft.Json.Required.Default)]
+        public bool? JustificationRequiredOnApproval { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mailNotificationsEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MailNotificationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets recommendationsEnabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendationsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? RecommendationsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recurrence.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
+        public PatternedRecurrence Recurrence { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reminderNotificationsEnabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ReminderNotificationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

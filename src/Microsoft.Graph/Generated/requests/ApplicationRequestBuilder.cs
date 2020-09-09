@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ExtensionProperties.
-        /// </summary>
-        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
-        public IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties
-        {
-            get
-            {
-                return new ApplicationExtensionPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensionProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -75,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Owners.
+        /// Gets the request builder for ExtensionProperties.
         /// </summary>
-        /// <returns>The <see cref="IApplicationOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IApplicationOwnersCollectionWithReferencesRequestBuilder Owners
+        /// <returns>The <see cref="IApplicationExtensionPropertiesCollectionRequestBuilder"/>.</returns>
+        public IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties
         {
             get
             {
-                return new ApplicationOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
+                return new ApplicationExtensionPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensionProperties"), this.Client);
             }
         }
 
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("homeRealmDiscoveryPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationOwnersCollectionWithReferencesRequestBuilder Owners
+        {
+            get
+            {
+                return new ApplicationOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
             }
         }
 

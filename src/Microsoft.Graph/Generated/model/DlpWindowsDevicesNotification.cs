@@ -30,16 +30,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets lastModfiedBy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModfiedBy", Required = Newtonsoft.Json.Required.Default)]
-        public string LastModfiedBy { get; set; }
-    
-        /// <summary>
         /// Gets or sets contentName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentName", Required = Newtonsoft.Json.Required.Default)]
         public string ContentName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lastModfiedBy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModfiedBy", Required = Newtonsoft.Json.Required.Default)]
+        public string LastModfiedBy { get; set; }
     
     }
 }

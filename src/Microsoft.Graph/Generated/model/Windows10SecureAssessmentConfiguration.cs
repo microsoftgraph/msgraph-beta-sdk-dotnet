@@ -31,27 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets launch uri.
-        /// Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "launchUri", Required = Newtonsoft.Json.Required.Default)]
-        public string LaunchUri { get; set; }
-    
-        /// <summary>
-        /// Gets or sets configuration account.
-        /// The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAccount", Required = Newtonsoft.Json.Required.Default)]
-        public string ConfigurationAccount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets configuration account type.
-        /// The account type used to by ConfigurationAccount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAccountType", Required = Newtonsoft.Json.Required.Default)]
-        public SecureAssessmentAccountType? ConfigurationAccountType { get; set; }
-    
-        /// <summary>
         /// Gets or sets allow printing.
         /// Indicates whether or not to allow the app from printing during the test.
         /// </summary>
@@ -73,18 +52,39 @@ namespace Microsoft.Graph
         public bool? AllowTextSuggestion { get; set; }
     
         /// <summary>
-        /// Gets or sets local guest account name.
-        /// Specifies the display text for the local guest account shown on the sign-in screen. Typically is the name of an assessment. When the user clicks the local guest account on the sign-in screen, an assessment app is launched with a specified assessment URL. Secure assessments can only be configured with local guest account sign-in on devices running Windows 10, version 1903 or later. Important notice: this property must be set with assessmentAppUserModelID in order to make the local guest account sign-in experience work properly for secure assessments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localGuestAccountName", Required = Newtonsoft.Json.Required.Default)]
-        public string LocalGuestAccountName { get; set; }
-    
-        /// <summary>
         /// Gets or sets assessment app user model id.
         /// Specifies the application user model ID of the assessment app launched when a user signs in to a secure assessment with a local guest account. Important notice: this property must be set with localGuestAccountName in order to make the local guest account sign-in experience work properly for secure assessments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assessmentAppUserModelId", Required = Newtonsoft.Json.Required.Default)]
         public string AssessmentAppUserModelId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configuration account.
+        /// The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAccount", Required = Newtonsoft.Json.Required.Default)]
+        public string ConfigurationAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configuration account type.
+        /// The account type used to by ConfigurationAccount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAccountType", Required = Newtonsoft.Json.Required.Default)]
+        public SecureAssessmentAccountType? ConfigurationAccountType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets launch uri.
+        /// Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "launchUri", Required = Newtonsoft.Json.Required.Default)]
+        public string LaunchUri { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local guest account name.
+        /// Specifies the display text for the local guest account shown on the sign-in screen. Typically is the name of an assessment. When the user clicks the local guest account on the sign-in screen, an assessment app is launched with a specified assessment URL. Secure assessments can only be configured with local guest account sign-in on devices running Windows 10, version 1903 or later. Important notice: this property must be set with assessmentAppUserModelID in order to make the local guest account sign-in experience work properly for secure assessments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localGuestAccountName", Required = Newtonsoft.Json.Required.Default)]
+        public string LocalGuestAccountName { get; set; }
     
     }
 }

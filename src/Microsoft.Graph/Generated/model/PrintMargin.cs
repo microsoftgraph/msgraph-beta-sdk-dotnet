@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets top.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Top { get; set; }
-    
-        /// <summary>
         /// Gets or sets bottom.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bottom", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Bottom { get; set; }
+    
+        /// <summary>
+        /// Gets or sets left.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "left", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Left { get; set; }
     
         /// <summary>
         /// Gets or sets right.
@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public Int32? Right { get; set; }
     
         /// <summary>
-        /// Gets or sets left.
+        /// Gets or sets top.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "left", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Left { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Top { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

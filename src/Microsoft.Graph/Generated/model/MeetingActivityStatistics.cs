@@ -37,6 +37,24 @@ namespace Microsoft.Graph
         public Duration AfterHours { get; set; }
     
         /// <summary>
+        /// Gets or sets conflicting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflicting", Required = Newtonsoft.Json.Required.Default)]
+        public Duration Conflicting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets long.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "long", Required = Newtonsoft.Json.Required.Default)]
+        public Duration Long { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multitasking.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multitasking", Required = Newtonsoft.Json.Required.Default)]
+        public Duration Multitasking { get; set; }
+    
+        /// <summary>
         /// Gets or sets organized.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organized", Required = Newtonsoft.Json.Required.Default)]
@@ -47,24 +65,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurring", Required = Newtonsoft.Json.Required.Default)]
         public Duration Recurring { get; set; }
-    
-        /// <summary>
-        /// Gets or sets long.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "long", Required = Newtonsoft.Json.Required.Default)]
-        public Duration Long { get; set; }
-    
-        /// <summary>
-        /// Gets or sets conflicting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflicting", Required = Newtonsoft.Json.Required.Default)]
-        public Duration Conflicting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets multitasking.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multitasking", Required = Newtonsoft.Json.Required.Default)]
-        public Duration Multitasking { get; set; }
     
     }
 }

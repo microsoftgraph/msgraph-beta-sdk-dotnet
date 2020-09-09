@@ -31,58 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets printerId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerId", Required = Newtonsoft.Json.Required.Default)]
-        public string PrinterId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets processingState.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingState", Required = Newtonsoft.Json.Required.Default)]
-        public PrintJobProcessingState? ProcessingState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets createdDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets acquiredDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acquiredDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AcquiredDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets completionDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CompletionDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets acquiredByPrinter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acquiredByPrinter", Required = Newtonsoft.Json.Required.Default)]
         public bool? AcquiredByPrinter { get; set; }
     
         /// <summary>
-        /// Gets or sets copiesPrinted.
+        /// Gets or sets acquiredDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copiesPrinted", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CopiesPrinted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pageCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PageCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acquiredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AcquiredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets blackAndWhitePageCount.
@@ -97,10 +55,28 @@ namespace Microsoft.Graph
         public Int32? ColorPageCount { get; set; }
     
         /// <summary>
-        /// Gets or sets simplexPageCount.
+        /// Gets or sets completionDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "simplexPageCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SimplexPageCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CompletionDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets copiesPrinted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copiesPrinted", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CopiesPrinted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets createdBy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public UserIdentity CreatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets createdDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets duplexPageCount.
@@ -109,10 +85,34 @@ namespace Microsoft.Graph
         public Int32? DuplexPageCount { get; set; }
     
         /// <summary>
-        /// Gets or sets createdBy.
+        /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public UserIdentity CreatedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pageCount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PageCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets printerId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerId", Required = Newtonsoft.Json.Required.Default)]
+        public string PrinterId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets processingState.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingState", Required = Newtonsoft.Json.Required.Default)]
+        public PrintJobProcessingState? ProcessingState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets simplexPageCount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "simplexPageCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SimplexPageCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

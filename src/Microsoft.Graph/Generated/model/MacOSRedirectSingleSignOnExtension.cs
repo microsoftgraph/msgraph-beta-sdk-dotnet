@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets configurations.
+        /// Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyTypedValuePair> Configurations { get; set; }
+    
+        /// <summary>
         /// Gets or sets extensionIdentifier.
         /// Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
         /// </summary>
@@ -42,13 +49,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string TeamIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets configurations.
-        /// Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurations", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<KeyTypedValuePair> Configurations { get; set; }
     
         /// <summary>
         /// Gets or sets urlPrefixes.

@@ -31,46 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets androidCorporateWorkProfileCount.
+        /// The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidCorporateWorkProfileCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AndroidCorporateWorkProfileCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets androidCount.
         /// Number of android device count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? AndroidCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets iosCount.
-        /// Number of iOS device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? IosCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets macOSCount.
-        /// Number of Mac OS X device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MacOSCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windowsMobileCount.
-        /// Number of Windows mobile device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMobileCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WindowsMobileCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windowsCount.
-        /// Number of Windows device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WindowsCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets unknownCount.
-        /// Number of unknown device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UnknownCount { get; set; }
     
         /// <summary>
         /// Gets or sets androidDedicatedCount.
@@ -101,18 +73,46 @@ namespace Microsoft.Graph
         public Int32? AndroidWorkProfileCount { get; set; }
     
         /// <summary>
-        /// Gets or sets androidCorporateWorkProfileCount.
-        /// The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidCorporateWorkProfileCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? AndroidCorporateWorkProfileCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets configMgrDeviceCount.
         /// Number of ConfigMgr managed devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configMgrDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ConfigMgrDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets iosCount.
+        /// Number of iOS device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IosCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets macOSCount.
+        /// Number of Mac OS X device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MacOSCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unknownCount.
+        /// Number of unknown device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UnknownCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windowsCount.
+        /// Number of Windows device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WindowsCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windowsMobileCount.
+        /// Number of Windows mobile device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMobileCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WindowsMobileCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

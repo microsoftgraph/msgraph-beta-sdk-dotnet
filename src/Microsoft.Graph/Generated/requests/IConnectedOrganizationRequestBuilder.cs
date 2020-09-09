@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IConnectedOrganizationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for InternalSponsors.
-        /// </summary>
-        /// <returns>The <see cref="IConnectedOrganizationInternalSponsorsCollectionRequestBuilder"/>.</returns>
-        IConnectedOrganizationInternalSponsorsCollectionRequestBuilder InternalSponsors { get; }
-
-        /// <summary>
         /// Gets the request builder for ExternalSponsors.
         /// </summary>
         /// <returns>The <see cref="IConnectedOrganizationExternalSponsorsCollectionRequestBuilder"/>.</returns>
         IConnectedOrganizationExternalSponsorsCollectionRequestBuilder ExternalSponsors { get; }
+
+        /// <summary>
+        /// Gets the request builder for InternalSponsors.
+        /// </summary>
+        /// <returns>The <see cref="IConnectedOrganizationInternalSponsorsCollectionRequestBuilder"/>.</returns>
+        IConnectedOrganizationInternalSponsorsCollectionRequestBuilder InternalSponsors { get; }
     
     }
 }

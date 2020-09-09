@@ -110,16 +110,52 @@ namespace Microsoft.Graph
         IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
 
         /// <summary>
-        /// Gets the request builder for Outlook.
+        /// Gets the request builder for Calendar.
         /// </summary>
-        /// <returns>The <see cref="IOutlookUserRequestBuilder"/>.</returns>
-        IOutlookUserRequestBuilder Outlook { get; }
+        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
+        ICalendarRequestBuilder Calendar { get; }
 
         /// <summary>
-        /// Gets the request builder for Messages.
+        /// Gets the request builder for CalendarGroups.
         /// </summary>
-        /// <returns>The <see cref="IUserMessagesCollectionRequestBuilder"/>.</returns>
-        IUserMessagesCollectionRequestBuilder Messages { get; }
+        /// <returns>The <see cref="IUserCalendarGroupsCollectionRequestBuilder"/>.</returns>
+        IUserCalendarGroupsCollectionRequestBuilder CalendarGroups { get; }
+
+        /// <summary>
+        /// Gets the request builder for Calendars.
+        /// </summary>
+        /// <returns>The <see cref="IUserCalendarsCollectionRequestBuilder"/>.</returns>
+        IUserCalendarsCollectionRequestBuilder Calendars { get; }
+
+        /// <summary>
+        /// Gets the request builder for CalendarView.
+        /// </summary>
+        /// <returns>The <see cref="IUserCalendarViewCollectionRequestBuilder"/>.</returns>
+        IUserCalendarViewCollectionRequestBuilder CalendarView { get; }
+
+        /// <summary>
+        /// Gets the request builder for ContactFolders.
+        /// </summary>
+        /// <returns>The <see cref="IUserContactFoldersCollectionRequestBuilder"/>.</returns>
+        IUserContactFoldersCollectionRequestBuilder ContactFolders { get; }
+
+        /// <summary>
+        /// Gets the request builder for Contacts.
+        /// </summary>
+        /// <returns>The <see cref="IUserContactsCollectionRequestBuilder"/>.</returns>
+        IUserContactsCollectionRequestBuilder Contacts { get; }
+
+        /// <summary>
+        /// Gets the request builder for Events.
+        /// </summary>
+        /// <returns>The <see cref="IUserEventsCollectionRequestBuilder"/>.</returns>
+        IUserEventsCollectionRequestBuilder Events { get; }
+
+        /// <summary>
+        /// Gets the request builder for InferenceClassification.
+        /// </summary>
+        /// <returns>The <see cref="IInferenceClassificationRequestBuilder"/>.</returns>
+        IInferenceClassificationRequestBuilder InferenceClassification { get; }
 
         /// <summary>
         /// Gets the request builder for JoinedGroups.
@@ -134,58 +170,22 @@ namespace Microsoft.Graph
         IUserMailFoldersCollectionRequestBuilder MailFolders { get; }
 
         /// <summary>
-        /// Gets the request builder for Calendar.
+        /// Gets the request builder for Messages.
         /// </summary>
-        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
-        ICalendarRequestBuilder Calendar { get; }
+        /// <returns>The <see cref="IUserMessagesCollectionRequestBuilder"/>.</returns>
+        IUserMessagesCollectionRequestBuilder Messages { get; }
 
         /// <summary>
-        /// Gets the request builder for Calendars.
+        /// Gets the request builder for Outlook.
         /// </summary>
-        /// <returns>The <see cref="IUserCalendarsCollectionRequestBuilder"/>.</returns>
-        IUserCalendarsCollectionRequestBuilder Calendars { get; }
-
-        /// <summary>
-        /// Gets the request builder for CalendarGroups.
-        /// </summary>
-        /// <returns>The <see cref="IUserCalendarGroupsCollectionRequestBuilder"/>.</returns>
-        IUserCalendarGroupsCollectionRequestBuilder CalendarGroups { get; }
-
-        /// <summary>
-        /// Gets the request builder for CalendarView.
-        /// </summary>
-        /// <returns>The <see cref="IUserCalendarViewCollectionRequestBuilder"/>.</returns>
-        IUserCalendarViewCollectionRequestBuilder CalendarView { get; }
-
-        /// <summary>
-        /// Gets the request builder for Events.
-        /// </summary>
-        /// <returns>The <see cref="IUserEventsCollectionRequestBuilder"/>.</returns>
-        IUserEventsCollectionRequestBuilder Events { get; }
+        /// <returns>The <see cref="IOutlookUserRequestBuilder"/>.</returns>
+        IOutlookUserRequestBuilder Outlook { get; }
 
         /// <summary>
         /// Gets the request builder for People.
         /// </summary>
         /// <returns>The <see cref="IUserPeopleCollectionRequestBuilder"/>.</returns>
         IUserPeopleCollectionRequestBuilder People { get; }
-
-        /// <summary>
-        /// Gets the request builder for Contacts.
-        /// </summary>
-        /// <returns>The <see cref="IUserContactsCollectionRequestBuilder"/>.</returns>
-        IUserContactsCollectionRequestBuilder Contacts { get; }
-
-        /// <summary>
-        /// Gets the request builder for ContactFolders.
-        /// </summary>
-        /// <returns>The <see cref="IUserContactFoldersCollectionRequestBuilder"/>.</returns>
-        IUserContactFoldersCollectionRequestBuilder ContactFolders { get; }
-
-        /// <summary>
-        /// Gets the request builder for InferenceClassification.
-        /// </summary>
-        /// <returns>The <see cref="IInferenceClassificationRequestBuilder"/>.</returns>
-        IInferenceClassificationRequestBuilder InferenceClassification { get; }
 
         /// <summary>
         /// Gets the request builder for Photo.
@@ -224,16 +224,16 @@ namespace Microsoft.Graph
         IUserExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
-        /// Gets the request builder for Approvals.
-        /// </summary>
-        /// <returns>The <see cref="IUserApprovalsCollectionRequestBuilder"/>.</returns>
-        IUserApprovalsCollectionRequestBuilder Approvals { get; }
-
-        /// <summary>
         /// Gets the request builder for AppConsentRequestsForApproval.
         /// </summary>
         /// <returns>The <see cref="IUserAppConsentRequestsForApprovalCollectionRequestBuilder"/>.</returns>
         IUserAppConsentRequestsForApprovalCollectionRequestBuilder AppConsentRequestsForApproval { get; }
+
+        /// <summary>
+        /// Gets the request builder for Approvals.
+        /// </summary>
+        /// <returns>The <see cref="IUserApprovalsCollectionRequestBuilder"/>.</returns>
+        IUserApprovalsCollectionRequestBuilder Approvals { get; }
 
         /// <summary>
         /// Gets the request builder for PendingAccessReviewInstances.
@@ -372,6 +372,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
         IUserTeamworkRequestBuilder Teamwork { get; }
+
+        /// <summary>
+        /// Gets the request builder for Todo.
+        /// </summary>
+        /// <returns>The <see cref="ITodoRequestBuilder"/>.</returns>
+        ITodoRequestBuilder Todo { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
@@ -396,16 +402,16 @@ namespace Microsoft.Graph
         IUserInvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens();
 
         /// <summary>
-        /// Gets the request builder for UserRevokeSignInSessions.
-        /// </summary>
-        /// <returns>The <see cref="IUserRevokeSignInSessionsRequestBuilder"/>.</returns>
-        IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions();
-
-        /// <summary>
         /// Gets the request builder for UserReprocessLicenseAssignment.
         /// </summary>
         /// <returns>The <see cref="IUserReprocessLicenseAssignmentRequestBuilder"/>.</returns>
         IUserReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment();
+
+        /// <summary>
+        /// Gets the request builder for UserRevokeSignInSessions.
+        /// </summary>
+        /// <returns>The <see cref="IUserRevokeSignInSessionsRequestBuilder"/>.</returns>
+        IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions();
 
         /// <summary>
         /// Gets the request builder for UserFindMeetingTimes.
@@ -422,20 +428,20 @@ namespace Microsoft.Graph
             double? minimumAttendeePercentage = null);
 
         /// <summary>
-        /// Gets the request builder for UserSendMail.
-        /// </summary>
-        /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>
-        IUserSendMailRequestBuilder SendMail(
-            Message Message,
-            bool? SaveToSentItems = null);
-
-        /// <summary>
         /// Gets the request builder for UserGetMailTips.
         /// </summary>
         /// <returns>The <see cref="IUserGetMailTipsRequestBuilder"/>.</returns>
         IUserGetMailTipsRequestBuilder GetMailTips(
             IEnumerable<string> EmailAddresses,
             MailTipsType? MailTipsOptions = null);
+
+        /// <summary>
+        /// Gets the request builder for UserSendMail.
+        /// </summary>
+        /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>
+        IUserSendMailRequestBuilder SendMail(
+            Message Message,
+            bool? SaveToSentItems = null);
 
         /// <summary>
         /// Gets the request builder for UserTranslateExchangeIds.
@@ -453,6 +459,18 @@ namespace Microsoft.Graph
         IUserRemoveAllDevicesFromManagementRequestBuilder RemoveAllDevicesFromManagement();
 
         /// <summary>
+        /// Gets the request builder for UserUnblockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserUnblockManagedAppsRequestBuilder"/>.</returns>
+        IUserUnblockManagedAppsRequestBuilder UnblockManagedApps();
+
+        /// <summary>
+        /// Gets the request builder for UserWipeAndBlockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserWipeAndBlockManagedAppsRequestBuilder"/>.</returns>
+        IUserWipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps();
+
+        /// <summary>
         /// Gets the request builder for UserWipeManagedAppRegistrationByDeviceTag.
         /// </summary>
         /// <returns>The <see cref="IUserWipeManagedAppRegistrationByDeviceTagRequestBuilder"/>.</returns>
@@ -467,18 +485,6 @@ namespace Microsoft.Graph
             string deviceTag = null);
 
         /// <summary>
-        /// Gets the request builder for UserWipeAndBlockManagedApps.
-        /// </summary>
-        /// <returns>The <see cref="IUserWipeAndBlockManagedAppsRequestBuilder"/>.</returns>
-        IUserWipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps();
-
-        /// <summary>
-        /// Gets the request builder for UserUnblockManagedApps.
-        /// </summary>
-        /// <returns>The <see cref="IUserUnblockManagedAppsRequestBuilder"/>.</returns>
-        IUserUnblockManagedAppsRequestBuilder UnblockManagedApps();
-
-        /// <summary>
         /// Gets the request builder for UserExportPersonalData.
         /// </summary>
         /// <returns>The <see cref="IUserExportPersonalDataRequestBuilder"/>.</returns>
@@ -486,12 +492,10 @@ namespace Microsoft.Graph
             string storageLocation = null);
 
         /// <summary>
-        /// Gets the request builder for UserReminderView.
+        /// Gets the request builder for UserFindRoomLists.
         /// </summary>
-        /// <returns>The <see cref="IUserReminderViewRequestBuilder"/>.</returns>
-        IUserReminderViewRequestBuilder ReminderView(
-            string StartDateTime,
-            string EndDateTime = null);
+        /// <returns>The <see cref="IUserFindRoomListsRequestBuilder"/>.</returns>
+        IUserFindRoomListsRequestBuilder FindRoomLists();
 
         /// <summary>
         /// Gets the request builder for UserFindRooms.
@@ -507,10 +511,12 @@ namespace Microsoft.Graph
             string RoomList);
 
         /// <summary>
-        /// Gets the request builder for UserFindRoomLists.
+        /// Gets the request builder for UserReminderView.
         /// </summary>
-        /// <returns>The <see cref="IUserFindRoomListsRequestBuilder"/>.</returns>
-        IUserFindRoomListsRequestBuilder FindRoomLists();
+        /// <returns>The <see cref="IUserReminderViewRequestBuilder"/>.</returns>
+        IUserReminderViewRequestBuilder ReminderView(
+            string StartDateTime,
+            string EndDateTime = null);
 
         /// <summary>
         /// Gets the request builder for UserExportDeviceAndAppManagementData.

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets hasGraphMailbox.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasGraphMailbox", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HasGraphMailbox { get; set; }
+    
+        /// <summary>
         /// Gets or sets hasLicense.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasLicense", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasOptedOut", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasOptedOut { get; set; }
-    
-        /// <summary>
-        /// Gets or sets hasGraphMailbox.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasGraphMailbox", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HasGraphMailbox { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

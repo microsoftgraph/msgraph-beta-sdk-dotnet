@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets client registration status.
+        /// ClientRegistrationStatus
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientRegistrationStatus", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceRegistrationState? ClientRegistrationStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets device name.
         /// DeviceName
         /// </summary>
@@ -45,18 +52,11 @@ namespace Microsoft.Graph
         public DeviceType? DeviceType { get; set; }
     
         /// <summary>
-        /// Gets or sets client registration status.
-        /// ClientRegistrationStatus
+        /// Gets or sets entity source.
+        /// EntitySource
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientRegistrationStatus", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceRegistrationState? ClientRegistrationStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets owner type.
-        /// OwnerType
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
-        public OwnerType? OwnerType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entitySource", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EntitySource { get; set; }
     
         /// <summary>
         /// Gets or sets management agents.
@@ -73,11 +73,11 @@ namespace Microsoft.Graph
         public ManagementState? ManagementState { get; set; }
     
         /// <summary>
-        /// Gets or sets reference id.
-        /// ReferenceId
+        /// Gets or sets manufacturer.
+        /// Manufacturer
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ReferenceId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets mdm status.
@@ -85,27 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmStatus", Required = Newtonsoft.Json.Required.Default)]
         public string MdmStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os version.
-        /// OSVersion
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets serial number.
-        /// SerialNumber
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string SerialNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets manufacturer.
-        /// Manufacturer
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
-        public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
@@ -122,18 +101,39 @@ namespace Microsoft.Graph
         public string OsDescription { get; set; }
     
         /// <summary>
-        /// Gets or sets entity source.
-        /// EntitySource
+        /// Gets or sets os version.
+        /// OSVersion
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entitySource", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EntitySource { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets user id.
-        /// UserId
+        /// Gets or sets owner type.
+        /// OwnerType
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
+        public OwnerType? OwnerType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reference id.
+        /// ReferenceId
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ReferenceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets serial number.
+        /// SerialNumber
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string SerialNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// ComanagementEligibleStatus
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public ComanagementEligibleType? Status { get; set; }
     
         /// <summary>
         /// Gets or sets upn.
@@ -150,18 +150,18 @@ namespace Microsoft.Graph
         public string UserEmail { get; set; }
     
         /// <summary>
+        /// Gets or sets user id.
+        /// UserId
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
         /// Gets or sets user name.
         /// UserName
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
         public string UserName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// ComanagementEligibleStatus
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public ComanagementEligibleType? Status { get; set; }
     
     }
 }

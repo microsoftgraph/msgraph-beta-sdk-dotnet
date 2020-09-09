@@ -32,22 +32,10 @@ namespace Microsoft.Graph
         new IAuditLogRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SignIns.
-        /// </summary>
-        /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>
-        IAuditLogRootSignInsCollectionRequestBuilder SignIns { get; }
-
-        /// <summary>
         /// Gets the request builder for DirectoryAudits.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootDirectoryAuditsCollectionRequestBuilder"/>.</returns>
         IAuditLogRootDirectoryAuditsCollectionRequestBuilder DirectoryAudits { get; }
-
-        /// <summary>
-        /// Gets the request builder for RestrictedSignIns.
-        /// </summary>
-        /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
-        IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns { get; }
 
         /// <summary>
         /// Gets the request builder for DirectoryProvisioning.
@@ -60,6 +48,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootProvisioningCollectionRequestBuilder"/>.</returns>
         IAuditLogRootProvisioningCollectionRequestBuilder Provisioning { get; }
+
+        /// <summary>
+        /// Gets the request builder for RestrictedSignIns.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
+        IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns { get; }
+
+        /// <summary>
+        /// Gets the request builder for SignIns.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>
+        IAuditLogRootSignInsCollectionRequestBuilder SignIns { get; }
     
     }
 }

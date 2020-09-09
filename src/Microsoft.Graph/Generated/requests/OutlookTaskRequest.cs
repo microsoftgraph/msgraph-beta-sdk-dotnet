@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (outlookTaskToInitialize != null && outlookTaskToInitialize.AdditionalData != null)
             {
 
-                if (outlookTaskToInitialize.SingleValueExtendedProperties != null && outlookTaskToInitialize.SingleValueExtendedProperties.CurrentPage != null)
+                if (outlookTaskToInitialize.Attachments != null && outlookTaskToInitialize.Attachments.CurrentPage != null)
                 {
-                    outlookTaskToInitialize.SingleValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
+                    outlookTaskToInitialize.Attachments.AdditionalData = outlookTaskToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    outlookTaskToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
+                        outlookTaskToInitialize.Attachments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (outlookTaskToInitialize.Attachments != null && outlookTaskToInitialize.Attachments.CurrentPage != null)
+                if (outlookTaskToInitialize.SingleValueExtendedProperties != null && outlookTaskToInitialize.SingleValueExtendedProperties.CurrentPage != null)
                 {
-                    outlookTaskToInitialize.Attachments.AdditionalData = outlookTaskToInitialize.AdditionalData;
+                    outlookTaskToInitialize.SingleValueExtendedProperties.AdditionalData = outlookTaskToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    outlookTaskToInitialize.AdditionalData.TryGetValue("attachments@odata.nextLink", out nextPageLink);
+                    outlookTaskToInitialize.AdditionalData.TryGetValue("singleValueExtendedProperties@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        outlookTaskToInitialize.Attachments.InitializeNextPageRequest(
+                        outlookTaskToInitialize.SingleValueExtendedProperties.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Me.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserRequestBuilder"/>.</returns>
+        public IEducationUserRequestBuilder Me
+        {
+            get
+            {
+                return new EducationUserRequestBuilder(this.AppendSegmentToRequestUrl("me"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Schools.
         /// </summary>
         /// <returns>The <see cref="IEducationRootSchoolsCollectionRequestBuilder"/>.</returns>
@@ -95,18 +107,6 @@ namespace Microsoft.Graph
             get
             {
                 return new EducationRootUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("users"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Me.
-        /// </summary>
-        /// <returns>The <see cref="IEducationUserRequestBuilder"/>.</returns>
-        public IEducationUserRequestBuilder Me
-        {
-            get
-            {
-                return new EducationUserRequestBuilder(this.AppendSegmentToRequestUrl("me"), this.Client);
             }
         }
     

@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RoleDefinition.
-        /// </summary>
-        /// <returns>The <see cref="IGovernanceRoleDefinitionRequestBuilder"/>.</returns>
-        public IGovernanceRoleDefinitionRequestBuilder RoleDefinition
-        {
-            get
-            {
-                return new GovernanceRoleDefinitionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinition"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Resource.
         /// </summary>
         /// <returns>The <see cref="IGovernanceResourceRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new GovernanceResourceRequestBuilder(this.AppendSegmentToRequestUrl("resource"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IGovernanceRoleDefinitionRequestBuilder"/>.</returns>
+        public IGovernanceRoleDefinitionRequestBuilder RoleDefinition
+        {
+            get
+            {
+                return new GovernanceRoleDefinitionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinition"), this.Client);
             }
         }
     

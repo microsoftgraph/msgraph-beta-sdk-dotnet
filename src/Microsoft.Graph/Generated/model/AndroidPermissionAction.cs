@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets permission.
-        /// Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permission", Required = Newtonsoft.Json.Required.Default)]
-        public string Permission { get; set; }
-    
-        /// <summary>
         /// Gets or sets action.
         /// Type of Android permission action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public AndroidPermissionActionType? Action { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permission.
+        /// Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permission", Required = Newtonsoft.Json.Required.Default)]
+        public string Permission { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

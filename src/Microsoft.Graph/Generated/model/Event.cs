@@ -31,65 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets transaction id.
+        /// Gets or sets allow new time proposals.
+        /// True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transactionId", Required = Newtonsoft.Json.Required.Default)]
-        public string TransactionId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowNewTimeProposals { get; set; }
     
         /// <summary>
-        /// Gets or sets original start time zone.
-        /// The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
+        /// Gets or sets attendees.
+        /// The collection of attendees for the event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalStartTimeZone", Required = Newtonsoft.Json.Required.Default)]
-        public string OriginalStartTimeZone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets original end time zone.
-        /// The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalEndTimeZone", Required = Newtonsoft.Json.Required.Default)]
-        public string OriginalEndTimeZone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets response status.
-        /// Indicates the type of response sent in response to an event message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseStatus", Required = Newtonsoft.Json.Required.Default)]
-        public ResponseStatus ResponseStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets uid.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uid", Required = Newtonsoft.Json.Required.Default)]
-        public string Uid { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reminder minutes before start.
-        /// The number of minutes before the event start time that the reminder alert occurs.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderMinutesBeforeStart", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ReminderMinutesBeforeStart { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is reminder on.
-        /// Set to true if an alert is set to remind the user of the event.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReminderOn", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsReminderOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets has attachments.
-        /// Set to true if the event has attachments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasAttachments", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HasAttachments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject.
-        /// The text of the event's subject line.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
-        public string Subject { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendees", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Attendee> Attendees { get; set; }
     
         /// <summary>
         /// Gets or sets body.
@@ -106,32 +59,10 @@ namespace Microsoft.Graph
         public string BodyPreview { get; set; }
     
         /// <summary>
-        /// Gets or sets importance.
-        /// The importance of the event. The possible values are: low, normal, high.
+        /// Gets or sets cancelled occurrences.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
-        public Importance? Importance { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sensitivity.
-        /// The possible values are: normal, personal, private, confidential.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
-        public Sensitivity? Sensitivity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets start.
-        /// The date, time, and time zone that the event starts. By default, the start time is in UTC.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeTimeZone Start { get; set; }
-    
-        /// <summary>
-        /// Gets or sets original start.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalStart", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? OriginalStart { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cancelledOccurrences", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> CancelledOccurrences { get; set; }
     
         /// <summary>
         /// Gets or sets end.
@@ -141,18 +72,18 @@ namespace Microsoft.Graph
         public DateTimeTimeZone End { get; set; }
     
         /// <summary>
-        /// Gets or sets location.
-        /// The location of the event.
+        /// Gets or sets has attachments.
+        /// Set to true if the event has attachments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
-        public Location Location { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasAttachments", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HasAttachments { get; set; }
     
         /// <summary>
-        /// Gets or sets locations.
-        /// The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+        /// Gets or sets importance.
+        /// The importance of the event. The possible values are: low, normal, high.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locations", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Location> Locations { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
+        public Importance? Importance { get; set; }
     
         /// <summary>
         /// Gets or sets is all day.
@@ -169,11 +100,100 @@ namespace Microsoft.Graph
         public bool? IsCancelled { get; set; }
     
         /// <summary>
+        /// Gets or sets is draft.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDraft", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDraft { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is online meeting.
+        /// True if this event has online meeting information, false otherwise. Default is false. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOnlineMeeting", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsOnlineMeeting { get; set; }
+    
+        /// <summary>
         /// Gets or sets is organizer.
         /// Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOrganizer", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsOrganizer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is reminder on.
+        /// Set to true if an alert is set to remind the user of the event.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReminderOn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsReminderOn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets location.
+        /// The location of the event.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        public Location Location { get; set; }
+    
+        /// <summary>
+        /// Gets or sets locations.
+        /// The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Location> Locations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets occurrence id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "occurrenceId", Required = Newtonsoft.Json.Required.Default)]
+        public string OccurrenceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting.
+        /// Details for an attendee to join the meeting online. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeeting", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingInfo OnlineMeeting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting provider.
+        /// Represents the online meeting service provider. The possible values are teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingProvider", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingProviderType? OnlineMeetingProvider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting url.
+        /// A URL for an online meeting. The property is set only when an organizer specifies an event as an online meeting such as a Skype meeting. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string OnlineMeetingUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets organizer.
+        /// The organizer of the event.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizer", Required = Newtonsoft.Json.Required.Default)]
+        public Recipient Organizer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets original end time zone.
+        /// The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalEndTimeZone", Required = Newtonsoft.Json.Required.Default)]
+        public string OriginalEndTimeZone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets original start.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalStart", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? OriginalStart { get; set; }
+    
+        /// <summary>
+        /// Gets or sets original start time zone.
+        /// The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalStartTimeZone", Required = Newtonsoft.Json.Required.Default)]
+        public string OriginalStartTimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
@@ -183,11 +203,32 @@ namespace Microsoft.Graph
         public PatternedRecurrence Recurrence { get; set; }
     
         /// <summary>
+        /// Gets or sets reminder minutes before start.
+        /// The number of minutes before the event start time that the reminder alert occurs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderMinutesBeforeStart", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ReminderMinutesBeforeStart { get; set; }
+    
+        /// <summary>
         /// Gets or sets response requested.
         /// Default is true, which represents the organizer would like an invitee to send a response to the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseRequested", Required = Newtonsoft.Json.Required.Default)]
         public bool? ResponseRequested { get; set; }
+    
+        /// <summary>
+        /// Gets or sets response status.
+        /// Indicates the type of response sent in response to an event message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responseStatus", Required = Newtonsoft.Json.Required.Default)]
+        public ResponseStatus ResponseStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sensitivity.
+        /// The possible values are: normal, personal, private, confidential.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
+        public Sensitivity? Sensitivity { get; set; }
     
         /// <summary>
         /// Gets or sets series master id.
@@ -204,6 +245,26 @@ namespace Microsoft.Graph
         public FreeBusyStatus? ShowAs { get; set; }
     
         /// <summary>
+        /// Gets or sets start.
+        /// The date, time, and time zone that the event starts. By default, the start time is in UTC.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeTimeZone Start { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject.
+        /// The text of the event's subject line.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        public string Subject { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transaction id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transactionId", Required = Newtonsoft.Json.Required.Default)]
+        public string TransactionId { get; set; }
+    
+        /// <summary>
         /// Gets or sets type.
         /// The event type. The possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only.
         /// </summary>
@@ -211,18 +272,10 @@ namespace Microsoft.Graph
         public EventType? Type { get; set; }
     
         /// <summary>
-        /// Gets or sets attendees.
-        /// The collection of attendees for the event.
+        /// Gets or sets uid.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendees", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Attendee> Attendees { get; set; }
-    
-        /// <summary>
-        /// Gets or sets organizer.
-        /// The organizer of the event.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizer", Required = Newtonsoft.Json.Required.Default)]
-        public Recipient Organizer { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uid", Required = Newtonsoft.Json.Required.Default)]
+        public string Uid { get; set; }
     
         /// <summary>
         /// Gets or sets web link.
@@ -232,84 +285,11 @@ namespace Microsoft.Graph
         public string WebLink { get; set; }
     
         /// <summary>
-        /// Gets or sets online meeting url.
-        /// A URL for an online meeting. The property is set only when an organizer specifies an event as an online meeting such as a Skype meeting. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string OnlineMeetingUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is online meeting.
-        /// True if this event has online meeting information, false otherwise. Default is false. Optional.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOnlineMeeting", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsOnlineMeeting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets online meeting provider.
-        /// Represents the online meeting service provider. The possible values are teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingProvider", Required = Newtonsoft.Json.Required.Default)]
-        public OnlineMeetingProviderType? OnlineMeetingProvider { get; set; }
-    
-        /// <summary>
-        /// Gets or sets online meeting.
-        /// Details for an attendee to join the meeting online. Read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeeting", Required = Newtonsoft.Json.Required.Default)]
-        public OnlineMeetingInfo OnlineMeeting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allow new time proposals.
-        /// True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewTimeProposals", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowNewTimeProposals { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cancelled occurrences.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cancelledOccurrences", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> CancelledOccurrences { get; set; }
-    
-        /// <summary>
-        /// Gets or sets occurrence id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "occurrenceId", Required = Newtonsoft.Json.Required.Default)]
-        public string OccurrenceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is draft.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDraft", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsDraft { get; set; }
-    
-        /// <summary>
-        /// Gets or sets exception occurrences.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exceptionOccurrences", Required = Newtonsoft.Json.Required.Default)]
-        public IEventExceptionOccurrencesCollectionPage ExceptionOccurrences { get; set; }
-    
-        /// <summary>
         /// Gets or sets attachments.
         /// The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
         public IEventAttachmentsCollectionPage Attachments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets single value extended properties.
-        /// The collection of single-value extended properties defined for the event. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IEventSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
-    
-        /// <summary>
-        /// Gets or sets multi value extended properties.
-        /// The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IEventMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -319,11 +299,10 @@ namespace Microsoft.Graph
         public Calendar Calendar { get; set; }
     
         /// <summary>
-        /// Gets or sets instances.
-        /// The instances of the event. Navigation property. Read-only. Nullable.
+        /// Gets or sets exception occurrences.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
-        public IEventInstancesCollectionPage Instances { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exceptionOccurrences", Required = Newtonsoft.Json.Required.Default)]
+        public IEventExceptionOccurrencesCollectionPage ExceptionOccurrences { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
@@ -331,6 +310,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
         public IEventExtensionsCollectionPage Extensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets instances.
+        /// The instances of the event. Navigation property. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
+        public IEventInstancesCollectionPage Instances { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multi value extended properties.
+        /// The collection of multi-value extended properties defined for the event. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IEventMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single value extended properties.
+        /// The collection of single-value extended properties defined for the event. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IEventSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
     }
 }

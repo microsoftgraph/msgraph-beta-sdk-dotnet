@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public string Status { get; set; }
     
         /// <summary>
-        /// Gets or sets access package resource scope.
+        /// Gets or sets access package assignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScope", Required = Newtonsoft.Json.Required.Default)]
-        public AccessPackageResourceScope AccessPackageResourceScope { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionPage AccessPackageAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role.
@@ -61,16 +61,16 @@ namespace Microsoft.Graph
         public AccessPackageResourceRole AccessPackageResourceRole { get; set; }
     
         /// <summary>
+        /// Gets or sets access package resource scope.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScope", Required = Newtonsoft.Json.Required.Default)]
+        public AccessPackageResourceScope AccessPackageResourceScope { get; set; }
+    
+        /// <summary>
         /// Gets or sets access package subject.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageSubject", Required = Newtonsoft.Json.Required.Default)]
         public AccessPackageSubject AccessPackageSubject { get; set; }
-    
-        /// <summary>
-        /// Gets or sets access package assignments.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionPage AccessPackageAssignments { get; set; }
     
     }
 }

@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets recordingStatus.
-        /// Possible values are: unknown, notRecording, recording, or failed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingStatus", Required = Newtonsoft.Json.Required.Default)]
-        public RecordingStatus? RecordingStatus { get; set; }
-    
-        /// <summary>
         /// Gets or sets initiatedBy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatedBy", Required = Newtonsoft.Json.Required.Default)]
@@ -49,6 +42,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recordingStatus.
+        /// Possible values are: unknown, notRecording, recording, or failed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingStatus", Required = Newtonsoft.Json.Required.Default)]
+        public RecordingStatus? RecordingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -234,17 +234,17 @@ namespace Microsoft.Graph.TermStore
             if (setToInitialize != null && setToInitialize.AdditionalData != null)
             {
 
-                if (setToInitialize.Terms != null && setToInitialize.Terms.CurrentPage != null)
+                if (setToInitialize.Children != null && setToInitialize.Children.CurrentPage != null)
                 {
-                    setToInitialize.Terms.AdditionalData = setToInitialize.AdditionalData;
+                    setToInitialize.Children.AdditionalData = setToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("terms@odata.nextLink", out nextPageLink);
+                    setToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        setToInitialize.Terms.InitializeNextPageRequest(
+                        setToInitialize.Children.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph.TermStore
                     }
                 }
 
-                if (setToInitialize.Children != null && setToInitialize.Children.CurrentPage != null)
+                if (setToInitialize.Terms != null && setToInitialize.Terms.CurrentPage != null)
                 {
-                    setToInitialize.Children.AdditionalData = setToInitialize.AdditionalData;
+                    setToInitialize.Terms.AdditionalData = setToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    setToInitialize.AdditionalData.TryGetValue("children@odata.nextLink", out nextPageLink);
+                    setToInitialize.AdditionalData.TryGetValue("terms@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        setToInitialize.Children.InitializeNextPageRequest(
+                        setToInitialize.Terms.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

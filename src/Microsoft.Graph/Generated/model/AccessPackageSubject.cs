@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets object id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectId", Required = Newtonsoft.Json.Required.Default)]
-        public string ObjectId { get; set; }
-    
-        /// <summary>
         /// Gets or sets alt sec id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altSecId", Required = Newtonsoft.Json.Required.Default)]
         public string AltSecId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets connected organization id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganizationId", Required = Newtonsoft.Json.Required.Default)]
+        public string ConnectedOrganizationId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -49,16 +49,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets principal name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalName", Required = Newtonsoft.Json.Required.Default)]
-        public string PrincipalName { get; set; }
-    
-        /// <summary>
         /// Gets or sets email.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
         public string Email { get; set; }
+    
+        /// <summary>
+        /// Gets or sets object id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectId", Required = Newtonsoft.Json.Required.Default)]
+        public string ObjectId { get; set; }
     
         /// <summary>
         /// Gets or sets on premises security identifier.
@@ -67,16 +67,16 @@ namespace Microsoft.Graph
         public string OnPremisesSecurityIdentifier { get; set; }
     
         /// <summary>
+        /// Gets or sets principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalName", Required = Newtonsoft.Json.Required.Default)]
+        public string PrincipalName { get; set; }
+    
+        /// <summary>
         /// Gets or sets type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets connected organization id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganizationId", Required = Newtonsoft.Json.Required.Default)]
-        public string ConnectedOrganizationId { get; set; }
     
         /// <summary>
         /// Gets or sets connected organization.

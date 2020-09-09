@@ -32,18 +32,18 @@ namespace Microsoft.Graph
         new IAndroidForWorkSettingsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AndroidForWorkSettingsRequestSignupUrl.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidForWorkSettingsRequestSignupUrlRequestBuilder"/>.</returns>
-        IAndroidForWorkSettingsRequestSignupUrlRequestBuilder RequestSignupUrl(
-            string hostName = null);
-
-        /// <summary>
         /// Gets the request builder for AndroidForWorkSettingsCompleteSignup.
         /// </summary>
         /// <returns>The <see cref="IAndroidForWorkSettingsCompleteSignupRequestBuilder"/>.</returns>
         IAndroidForWorkSettingsCompleteSignupRequestBuilder CompleteSignup(
             string enterpriseToken = null);
+
+        /// <summary>
+        /// Gets the request builder for AndroidForWorkSettingsRequestSignupUrl.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidForWorkSettingsRequestSignupUrlRequestBuilder"/>.</returns>
+        IAndroidForWorkSettingsRequestSignupUrlRequestBuilder RequestSignupUrl(
+            string hostName = null);
 
         /// <summary>
         /// Gets the request builder for AndroidForWorkSettingsSyncApps.

@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Settings.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentSettingsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementIntentSettingsCollectionRequestBuilder Settings
+        /// <returns>The <see cref="IDeviceManagementIntentAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentAssignmentsCollectionRequestBuilder Assignments
         {
             get
             {
-                return new DeviceManagementIntentSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+                return new DeviceManagementIntentAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
 
@@ -71,18 +71,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementIntentCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Assignments.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementIntentAssignmentsCollectionRequestBuilder Assignments
-        {
-            get
-            {
-                return new DeviceManagementIntentAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
 
@@ -111,18 +99,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserStates.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentUserStatesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementIntentUserStatesCollectionRequestBuilder UserStates
-        {
-            get
-            {
-                return new DeviceManagementIntentUserStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStates"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceStateSummary.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentDeviceStateSummaryRequestBuilder"/>.</returns>
@@ -131,6 +107,30 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementIntentDeviceStateSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deviceStateSummary"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentSettingsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentSettingsCollectionRequestBuilder Settings
+        {
+            get
+            {
+                return new DeviceManagementIntentSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserStates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentUserStatesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentUserStatesCollectionRequestBuilder UserStates
+        {
+            get
+            {
+                return new DeviceManagementIntentUserStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStates"), this.Client);
             }
         }
 
@@ -147,16 +147,29 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DeviceManagementIntentUpdateSettings.
+        /// Gets the request builder for DeviceManagementIntentAssign.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentUpdateSettingsRequestBuilder"/>.</returns>
-        public IDeviceManagementIntentUpdateSettingsRequestBuilder UpdateSettings(
-            IEnumerable<DeviceManagementSettingInstance> settings = null)
+        /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentAssignRequestBuilder Assign(
+            IEnumerable<DeviceManagementIntentAssignment> assignments = null)
         {
-            return new DeviceManagementIntentUpdateSettingsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.updateSettings"),
+            return new DeviceManagementIntentAssignRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
                 this.Client,
-                settings);
+                assignments);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementIntentCreateCopy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentCreateCopyRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentCreateCopyRequestBuilder CreateCopy(
+            string displayName = null)
+        {
+            return new DeviceManagementIntentCreateCopyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createCopy"),
+                this.Client,
+                displayName);
         }
 
         /// <summary>
@@ -175,29 +188,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementIntentCreateCopy.
+        /// Gets the request builder for DeviceManagementIntentUpdateSettings.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentCreateCopyRequestBuilder"/>.</returns>
-        public IDeviceManagementIntentCreateCopyRequestBuilder CreateCopy(
-            string displayName = null)
+        /// <returns>The <see cref="IDeviceManagementIntentUpdateSettingsRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentUpdateSettingsRequestBuilder UpdateSettings(
+            IEnumerable<DeviceManagementSettingInstance> settings = null)
         {
-            return new DeviceManagementIntentCreateCopyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.createCopy"),
+            return new DeviceManagementIntentUpdateSettingsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateSettings"),
                 this.Client,
-                displayName);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementIntentAssign.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>
-        public IDeviceManagementIntentAssignRequestBuilder Assign(
-            IEnumerable<DeviceManagementIntentAssignment> assignments = null)
-        {
-            return new DeviceManagementIntentAssignRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
-                this.Client,
-                assignments);
+                settings);
         }
 
         /// <summary>

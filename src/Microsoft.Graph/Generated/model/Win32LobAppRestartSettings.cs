@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets gracePeriodInMinutes.
-        /// The number of minutes to wait before restarting the device after an app installation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gracePeriodInMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? GracePeriodInMinutes { get; set; }
-    
-        /// <summary>
         /// Gets or sets countdownDisplayBeforeRestartInMinutes.
         /// The number of minutes before the restart time to display the countdown dialog for pending restarts.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countdownDisplayBeforeRestartInMinutes", Required = Newtonsoft.Json.Required.Default)]
         public Int32? CountdownDisplayBeforeRestartInMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets gracePeriodInMinutes.
+        /// The number of minutes to wait before restarting the device after an app installation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gracePeriodInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? GracePeriodInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets restartNotificationSnoozeDurationInMinutes.

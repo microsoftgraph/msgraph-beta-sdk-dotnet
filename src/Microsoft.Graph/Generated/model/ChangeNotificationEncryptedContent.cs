@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string Data { get; set; }
     
         /// <summary>
-        /// Gets or sets dataSignature.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSignature", Required = Newtonsoft.Json.Required.Default)]
-        public string DataSignature { get; set; }
-    
-        /// <summary>
         /// Gets or sets dataKey.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataKey", Required = Newtonsoft.Json.Required.Default)]
         public string DataKey { get; set; }
+    
+        /// <summary>
+        /// Gets or sets dataSignature.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSignature", Required = Newtonsoft.Json.Required.Default)]
+        public string DataSignature { get; set; }
     
         /// <summary>
         /// Gets or sets encryptionCertificateId.

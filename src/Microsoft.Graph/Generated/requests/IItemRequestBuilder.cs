@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IItemRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Picture.
-        /// </summary>
-        /// <returns>The <see cref="IItemPictureCollectionRequestBuilder"/>.</returns>
-        IItemPictureCollectionRequestBuilder Picture { get; }
-
-        /// <summary>
         /// Gets the request builder for ItemCategory.
         /// </summary>
         /// <returns>The <see cref="IItemCategoryRequestBuilder"/>.</returns>
         IItemCategoryRequestBuilder ItemCategory { get; }
+
+        /// <summary>
+        /// Gets the request builder for Picture.
+        /// </summary>
+        /// <returns>The <see cref="IItemPictureCollectionRequestBuilder"/>.</returns>
+        IItemPictureCollectionRequestBuilder Picture { get; }
     
     }
 }

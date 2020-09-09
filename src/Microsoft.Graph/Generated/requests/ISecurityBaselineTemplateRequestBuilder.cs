@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new ISecurityBaselineTemplateRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for DeviceStateSummary.
+        /// Gets the request builder for CategoryDeviceStateSummaries.
         /// </summary>
-        /// <returns>The <see cref="ISecurityBaselineStateSummaryRequestBuilder"/>.</returns>
-        ISecurityBaselineStateSummaryRequestBuilder DeviceStateSummary { get; }
+        /// <returns>The <see cref="ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder"/>.</returns>
+        ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder CategoryDeviceStateSummaries { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceStates.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         ISecurityBaselineTemplateDeviceStatesCollectionRequestBuilder DeviceStates { get; }
 
         /// <summary>
-        /// Gets the request builder for CategoryDeviceStateSummaries.
+        /// Gets the request builder for DeviceStateSummary.
         /// </summary>
-        /// <returns>The <see cref="ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder"/>.</returns>
-        ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder CategoryDeviceStateSummaries { get; }
+        /// <returns>The <see cref="ISecurityBaselineStateSummaryRequestBuilder"/>.</returns>
+        ISecurityBaselineStateSummaryRequestBuilder DeviceStateSummary { get; }
     
     }
 }

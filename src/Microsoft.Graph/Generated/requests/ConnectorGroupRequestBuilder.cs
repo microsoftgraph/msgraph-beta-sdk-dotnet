@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Members.
-        /// </summary>
-        /// <returns>The <see cref="IConnectorGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IConnectorGroupMembersCollectionWithReferencesRequestBuilder Members
-        {
-            get
-            {
-                return new ConnectorGroupMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Applications.
         /// </summary>
         /// <returns>The <see cref="IConnectorGroupApplicationsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ConnectorGroupApplicationsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("applications"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IConnectorGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IConnectorGroupMembersCollectionWithReferencesRequestBuilder Members
+        {
+            get
+            {
+                return new ConnectorGroupMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
             }
         }
     

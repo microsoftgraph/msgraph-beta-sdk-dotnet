@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets snapshot date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "snapshotDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? SnapshotDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets feature name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureName", Required = Newtonsoft.Json.Required.Default)]
         public string FeatureName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets snapshot date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "snapshotDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? SnapshotDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets usage.

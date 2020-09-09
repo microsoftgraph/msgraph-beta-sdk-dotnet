@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets summarizedAppState.
-        /// runState for the object
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summarizedAppState", Required = Newtonsoft.Json.Required.Default)]
-        public RunState? SummarizedAppState { get; set; }
-    
-        /// <summary>
         /// Gets or sets deviceId.
         /// DeviceId of device represented by this object
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets summarizedAppState.
+        /// runState for the object
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summarizedAppState", Required = Newtonsoft.Json.Required.Default)]
+        public RunState? SummarizedAppState { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

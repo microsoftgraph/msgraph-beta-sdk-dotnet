@@ -43,16 +43,10 @@ namespace Microsoft.Graph
         public CompanyDetail Client { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets collaboration tags.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets detail.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
-        public PositionDetail Detail { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collaborationTags", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> CollaborationTags { get; set; }
     
         /// <summary>
         /// Gets or sets colleagues.
@@ -61,16 +55,22 @@ namespace Microsoft.Graph
         public IEnumerable<RelatedPerson> Colleagues { get; set; }
     
         /// <summary>
+        /// Gets or sets detail.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
+        public PositionDetail Detail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets sponsors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sponsors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RelatedPerson> Sponsors { get; set; }
-    
-        /// <summary>
-        /// Gets or sets collaboration tags.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collaborationTags", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> CollaborationTags { get; set; }
     
     }
 }

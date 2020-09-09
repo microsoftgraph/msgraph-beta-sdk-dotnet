@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Settings.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementTemplateSettingsCollectionRequestBuilder Settings
-        {
-            get
-            {
-                return new DeviceManagementTemplateSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Categories.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTemplateCategoriesCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementTemplateMigratableToCollectionRequestBuilder(this.AppendSegmentToRequestUrl("migratableTo"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTemplateSettingsCollectionRequestBuilder Settings
+        {
+            get
+            {
+                return new DeviceManagementTemplateSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
             }
         }
     

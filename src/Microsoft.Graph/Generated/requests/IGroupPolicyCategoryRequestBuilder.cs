@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IGroupPolicyCategoryRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Parent.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
-        IGroupPolicyCategoryWithReferenceRequestBuilder Parent { get; }
-
-        /// <summary>
         /// Gets the request builder for Children.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyCategoryChildrenCollectionWithReferencesRequestBuilder"/>.</returns>
         IGroupPolicyCategoryChildrenCollectionWithReferencesRequestBuilder Children { get; }
+
+        /// <summary>
+        /// Gets the request builder for DefinitionFile.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
+        IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile { get; }
 
         /// <summary>
         /// Gets the request builder for Definitions.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IGroupPolicyCategoryDefinitionsCollectionWithReferencesRequestBuilder Definitions { get; }
 
         /// <summary>
-        /// Gets the request builder for DefinitionFile.
+        /// Gets the request builder for Parent.
         /// </summary>
-        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
-        IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile { get; }
+        /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
+        IGroupPolicyCategoryWithReferenceRequestBuilder Parent { get; }
     
     }
 }

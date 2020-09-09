@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets is enabled.
-        /// Is setting enabled in UI
+        /// Gets or sets active hours end.
+        /// Active Hours End (active hours mean the time window when updates install should not happen)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursEnd", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay ActiveHoursEnd { get; set; }
     
         /// <summary>
         /// Gets or sets active hours start.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public TimeOfDay ActiveHoursStart { get; set; }
     
         /// <summary>
-        /// Gets or sets active hours end.
-        /// Active Hours End (active hours mean the time window when updates install should not happen)
+        /// Gets or sets custom update time windows.
+        /// If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeHoursEnd", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay ActiveHoursEnd { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customUpdateTimeWindows", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<CustomUpdateTimeWindow> CustomUpdateTimeWindows { get; set; }
     
         /// <summary>
         /// Gets or sets desired os version.
@@ -59,25 +59,25 @@ namespace Microsoft.Graph
         public string DesiredOsVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets scheduled install days.
-        /// Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledInstallDays", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DayOfWeek> ScheduledInstallDays { get; set; }
-    
-        /// <summary>
-        /// Gets or sets utc time offset in minutes.
-        /// UTC Time Offset indicated in minutes
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "utcTimeOffsetInMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UtcTimeOffsetInMinutes { get; set; }
-    
-        /// <summary>
         /// Gets or sets enforced software update delay in days.
         /// Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedSoftwareUpdateDelayInDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? EnforcedSoftwareUpdateDelayInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is enabled.
+        /// Is setting enabled in UI
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduled install days.
+        /// Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scheduledInstallDays", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DayOfWeek> ScheduledInstallDays { get; set; }
     
         /// <summary>
         /// Gets or sets update schedule type.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph
         public IosSoftwareUpdateScheduleType? UpdateScheduleType { get; set; }
     
         /// <summary>
-        /// Gets or sets custom update time windows.
-        /// If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
+        /// Gets or sets utc time offset in minutes.
+        /// UTC Time Offset indicated in minutes
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customUpdateTimeWindows", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<CustomUpdateTimeWindow> CustomUpdateTimeWindows { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "utcTimeOffsetInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UtcTimeOffsetInMinutes { get; set; }
     
     }
 }

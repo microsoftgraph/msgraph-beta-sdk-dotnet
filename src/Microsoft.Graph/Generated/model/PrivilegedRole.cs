@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
-        public PrivilegedRoleSettings Settings { get; set; }
-    
-        /// <summary>
         /// Gets or sets assignments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public IPrivilegedRoleAssignmentsCollectionWithReferencesPage Assignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public PrivilegedRoleSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets summary.

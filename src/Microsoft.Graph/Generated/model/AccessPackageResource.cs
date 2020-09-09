@@ -31,10 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets added by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedBy", Required = Newtonsoft.Json.Required.Default)]
+        public string AddedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets added on.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedOn", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AddedOn { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -43,16 +49,16 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets url.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
-        public string Url { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets resource type.
+        /// Gets or sets is pending onboarding.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceType", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPendingOnboarding", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsPendingOnboarding { get; set; }
     
         /// <summary>
         /// Gets or sets origin id.
@@ -67,34 +73,28 @@ namespace Microsoft.Graph
         public string OriginSystem { get; set; }
     
         /// <summary>
-        /// Gets or sets is pending onboarding.
+        /// Gets or sets resource type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPendingOnboarding", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsPendingOnboarding { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceType", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceType { get; set; }
     
         /// <summary>
-        /// Gets or sets added by.
+        /// Gets or sets url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedBy", Required = Newtonsoft.Json.Required.Default)]
-        public string AddedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets added on.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedOn", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AddedOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets access package resource scopes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScopes", Required = Newtonsoft.Json.Required.Default)]
-        public IAccessPackageResourceAccessPackageResourceScopesCollectionPage AccessPackageResourceScopes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        public string Url { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource roles.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRoles", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageResourceAccessPackageResourceRolesCollectionPage AccessPackageResourceRoles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets access package resource scopes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScopes", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessPackageResourceAccessPackageResourceScopesCollectionPage AccessPackageResourceScopes { get; set; }
     
     }
 }

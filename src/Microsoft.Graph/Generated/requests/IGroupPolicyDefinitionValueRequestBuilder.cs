@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IGroupPolicyDefinitionValueRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for PresentationValues.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyDefinitionValuePresentationValuesCollectionRequestBuilder"/>.</returns>
-        IGroupPolicyDefinitionValuePresentationValuesCollectionRequestBuilder PresentationValues { get; }
-
-        /// <summary>
         /// Gets the request builder for Definition.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyDefinitionWithReferenceRequestBuilder"/>.</returns>
         IGroupPolicyDefinitionWithReferenceRequestBuilder Definition { get; }
+
+        /// <summary>
+        /// Gets the request builder for PresentationValues.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionValuePresentationValuesCollectionRequestBuilder"/>.</returns>
+        IGroupPolicyDefinitionValuePresentationValuesCollectionRequestBuilder PresentationValues { get; }
     
     }
 }

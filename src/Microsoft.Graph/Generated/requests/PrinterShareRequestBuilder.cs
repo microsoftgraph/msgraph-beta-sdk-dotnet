@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Printer.
+        /// Gets the request builder for AllowedGroups.
         /// </summary>
-        /// <returns>The <see cref="IPrinterWithReferenceRequestBuilder"/>.</returns>
-        public IPrinterWithReferenceRequestBuilder Printer
+        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
+        public IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups
         {
             get
             {
-                return new PrinterWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("printer"), this.Client);
+                return new PrinterShareAllowedGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedGroups"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AllowedGroups.
+        /// Gets the request builder for Printer.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
-        public IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups
+        /// <returns>The <see cref="IPrinterWithReferenceRequestBuilder"/>.</returns>
+        public IPrinterWithReferenceRequestBuilder Printer
         {
             get
             {
-                return new PrinterShareAllowedGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedGroups"), this.Client);
+                return new PrinterWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("printer"), this.Client);
             }
         }
     

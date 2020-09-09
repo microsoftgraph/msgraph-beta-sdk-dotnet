@@ -31,16 +31,34 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets approval on elevation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalOnElevation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ApprovalOnElevation { get; set; }
+    
+        /// <summary>
         /// Gets or sets approver ids.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approverIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ApproverIds { get; set; }
     
         /// <summary>
-        /// Gets or sets min elevation duration.
+        /// Gets or sets elevation duration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minElevationDuration", Required = Newtonsoft.Json.Required.Default)]
-        public Duration MinElevationDuration { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "elevationDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration ElevationDuration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is mfa on elevation configurable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMfaOnElevationConfigurable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsMfaOnElevationConfigurable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last global admin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastGlobalAdmin", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LastGlobalAdmin { get; set; }
     
         /// <summary>
         /// Gets or sets max elavation duration.
@@ -49,10 +67,16 @@ namespace Microsoft.Graph
         public Duration MaxElavationDuration { get; set; }
     
         /// <summary>
-        /// Gets or sets elevation duration.
+        /// Gets or sets mfa on elevation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "elevationDuration", Required = Newtonsoft.Json.Required.Default)]
-        public Duration ElevationDuration { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaOnElevation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MfaOnElevation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets min elevation duration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minElevationDuration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration MinElevationDuration { get; set; }
     
         /// <summary>
         /// Gets or sets notification to user on elevation.
@@ -65,30 +89,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ticketingInfoOnElevation", Required = Newtonsoft.Json.Required.Default)]
         public bool? TicketingInfoOnElevation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mfa on elevation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaOnElevation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MfaOnElevation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last global admin.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastGlobalAdmin", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LastGlobalAdmin { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is mfa on elevation configurable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMfaOnElevationConfigurable", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsMfaOnElevationConfigurable { get; set; }
-    
-        /// <summary>
-        /// Gets or sets approval on elevation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalOnElevation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ApprovalOnElevation { get; set; }
     
     }
 }

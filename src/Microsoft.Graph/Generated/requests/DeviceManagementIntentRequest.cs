@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (deviceManagementIntentToInitialize != null && deviceManagementIntentToInitialize.AdditionalData != null)
             {
 
-                if (deviceManagementIntentToInitialize.Settings != null && deviceManagementIntentToInitialize.Settings.CurrentPage != null)
+                if (deviceManagementIntentToInitialize.Assignments != null && deviceManagementIntentToInitialize.Assignments.CurrentPage != null)
                 {
-                    deviceManagementIntentToInitialize.Settings.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
+                    deviceManagementIntentToInitialize.Assignments.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
+                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementIntentToInitialize.Settings.InitializeNextPageRequest(
+                        deviceManagementIntentToInitialize.Assignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -261,22 +261,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementIntentToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementIntentToInitialize.Assignments != null && deviceManagementIntentToInitialize.Assignments.CurrentPage != null)
-                {
-                    deviceManagementIntentToInitialize.Assignments.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentToInitialize.Assignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -309,6 +293,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementIntentToInitialize.DeviceStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementIntentToInitialize.Settings != null && deviceManagementIntentToInitialize.Settings.CurrentPage != null)
+                {
+                    deviceManagementIntentToInitialize.Settings.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementIntentToInitialize.Settings.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

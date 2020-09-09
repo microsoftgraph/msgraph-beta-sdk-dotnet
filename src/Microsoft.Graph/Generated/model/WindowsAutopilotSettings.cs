@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets last sync date time.
-        /// Last data sync date time with DDS service.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastSyncDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets last manual sync trigger date time.
         /// Last data sync date time with DDS service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastManualSyncTriggerDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastManualSyncTriggerDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last sync date time.
+        /// Last data sync date time with DDS service.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sync status.

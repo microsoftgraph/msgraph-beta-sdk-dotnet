@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets enrolled device count.
-        /// Total enrolled device count. Does not include PC devices managed via Intune PC Agent
+        /// Gets or sets device exchange access state summary.
+        /// Distribution of Exchange Access State in Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrolledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EnrolledDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mdm enrolled count.
-        /// The number of devices enrolled in MDM
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmEnrolledCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MdmEnrolledCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets dual enrolled device count.
-        /// The number of devices enrolled in both MDM and EAS
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dualEnrolledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DualEnrolledDeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceExchangeAccessStateSummary", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceExchangeAccessStateSummary DeviceExchangeAccessStateSummary { get; set; }
     
         /// <summary>
         /// Gets or sets device operating system summary.
@@ -59,11 +45,25 @@ namespace Microsoft.Graph
         public DeviceOperatingSystemSummary DeviceOperatingSystemSummary { get; set; }
     
         /// <summary>
-        /// Gets or sets device exchange access state summary.
-        /// Distribution of Exchange Access State in Intune
+        /// Gets or sets dual enrolled device count.
+        /// The number of devices enrolled in both MDM and EAS
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceExchangeAccessStateSummary", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceExchangeAccessStateSummary DeviceExchangeAccessStateSummary { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dualEnrolledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DualEnrolledDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrolled device count.
+        /// Total enrolled device count. Does not include PC devices managed via Intune PC Agent
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrolledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EnrolledDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// Last modified date time of device overview
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managed device models and manufacturers.
@@ -73,11 +73,11 @@ namespace Microsoft.Graph
         public ManagedDeviceModelsAndManufacturers ManagedDeviceModelsAndManufacturers { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last modified date time of device overview
+        /// Gets or sets mdm enrolled count.
+        /// The number of devices enrolled in MDM
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmEnrolledCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MdmEnrolledCount { get; set; }
     
     }
 }

@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserFlows.
-        /// </summary>
-        /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>
-        public IIdentityContainerUserFlowsCollectionRequestBuilder UserFlows
-        {
-            get
-            {
-                return new IdentityContainerUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userFlows"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>
@@ -95,6 +83,30 @@ namespace Microsoft.Graph
             get
             {
                 return new IdentityContainerB2xUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("b2xUserFlows"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerUserFlowsCollectionRequestBuilder UserFlows
+        {
+            get
+            {
+                return new IdentityContainerUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userFlows"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ContinuousAccessEvaluationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IContinuousAccessEvaluationPolicyRequestBuilder"/>.</returns>
+        public IContinuousAccessEvaluationPolicyRequestBuilder ContinuousAccessEvaluationPolicy
+        {
+            get
+            {
+                return new ContinuousAccessEvaluationPolicyRequestBuilder(this.AppendSegmentToRequestUrl("continuousAccessEvaluationPolicy"), this.Client);
             }
         }
     

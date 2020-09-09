@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public IEnumerable<AuditProperty> ModifiedProperties { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// Audit resource's type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
-    
-        /// <summary>
         /// Gets or sets resourceId.
         /// Audit resource's Id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
         public string ResourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// Audit resource's type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

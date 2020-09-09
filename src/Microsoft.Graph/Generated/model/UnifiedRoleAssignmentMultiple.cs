@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets role definition id.
+        /// Gets or sets app scope ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
-        public string RoleDefinitionId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopeIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AppScopeIds { get; set; }
     
         /// <summary>
         /// Gets or sets condition.
@@ -43,22 +43,10 @@ namespace Microsoft.Graph
         public string Condition { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets principal ids.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> PrincipalIds { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope ids.
@@ -67,22 +55,28 @@ namespace Microsoft.Graph
         public IEnumerable<string> DirectoryScopeIds { get; set; }
     
         /// <summary>
-        /// Gets or sets app scope ids.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopeIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AppScopeIds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets role definition.
+        /// Gets or sets principal ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
-        public UnifiedRoleDefinition RoleDefinition { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> PrincipalIds { get; set; }
     
         /// <summary>
-        /// Gets or sets principals.
+        /// Gets or sets role definition id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principals", Required = Newtonsoft.Json.Required.Default)]
-        public IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesPage Principals { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string RoleDefinitionId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app scopes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopes", Required = Newtonsoft.Json.Required.Default)]
+        public IUnifiedRoleAssignmentMultipleAppScopesCollectionPage AppScopes { get; set; }
     
         /// <summary>
         /// Gets or sets directory scopes.
@@ -91,10 +85,16 @@ namespace Microsoft.Graph
         public IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage DirectoryScopes { get; set; }
     
         /// <summary>
-        /// Gets or sets app scopes.
+        /// Gets or sets principals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopes", Required = Newtonsoft.Json.Required.Default)]
-        public IUnifiedRoleAssignmentMultipleAppScopesCollectionPage AppScopes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principals", Required = Newtonsoft.Json.Required.Default)]
+        public IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesPage Principals { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        public UnifiedRoleDefinition RoleDefinition { get; set; }
     
     }
 }

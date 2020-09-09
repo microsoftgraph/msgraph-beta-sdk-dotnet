@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Reviewers.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewReviewersCollectionRequestBuilder"/>.</returns>
-        public IAccessReviewReviewersCollectionRequestBuilder Reviewers
-        {
-            get
-            {
-                return new AccessReviewReviewersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reviewers"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Decisions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewDecisionsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AccessReviewDecisionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("decisions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Instances.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstancesCollectionRequestBuilder"/>.</returns>
+        public IAccessReviewInstancesCollectionRequestBuilder Instances
+        {
+            get
+            {
+                return new AccessReviewInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
             }
         }
 
@@ -87,36 +87,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Instances.
+        /// Gets the request builder for Reviewers.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstancesCollectionRequestBuilder"/>.</returns>
-        public IAccessReviewInstancesCollectionRequestBuilder Instances
+        /// <returns>The <see cref="IAccessReviewReviewersCollectionRequestBuilder"/>.</returns>
+        public IAccessReviewReviewersCollectionRequestBuilder Reviewers
         {
             get
             {
-                return new AccessReviewInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
+                return new AccessReviewReviewersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reviewers"), this.Client);
             }
         }
     
         /// <summary>
-        /// Gets the request builder for AccessReviewStop.
+        /// Gets the request builder for AccessReviewApplyDecisions.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewStopRequestBuilder"/>.</returns>
-        public IAccessReviewStopRequestBuilder Stop()
+        /// <returns>The <see cref="IAccessReviewApplyDecisionsRequestBuilder"/>.</returns>
+        public IAccessReviewApplyDecisionsRequestBuilder ApplyDecisions()
         {
-            return new AccessReviewStopRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewSendReminder.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewSendReminderRequestBuilder"/>.</returns>
-        public IAccessReviewSendReminderRequestBuilder SendReminder()
-        {
-            return new AccessReviewSendReminderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.sendReminder"),
+            return new AccessReviewApplyDecisionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.applyDecisions"),
                 this.Client);
         }
 
@@ -132,13 +121,24 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AccessReviewApplyDecisions.
+        /// Gets the request builder for AccessReviewSendReminder.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewApplyDecisionsRequestBuilder"/>.</returns>
-        public IAccessReviewApplyDecisionsRequestBuilder ApplyDecisions()
+        /// <returns>The <see cref="IAccessReviewSendReminderRequestBuilder"/>.</returns>
+        public IAccessReviewSendReminderRequestBuilder SendReminder()
         {
-            return new AccessReviewApplyDecisionsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.applyDecisions"),
+            return new AccessReviewSendReminderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendReminder"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewStop.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewStopRequestBuilder"/>.</returns>
+        public IAccessReviewStopRequestBuilder Stop()
+        {
+            return new AccessReviewStopRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
                 this.Client);
         }
     

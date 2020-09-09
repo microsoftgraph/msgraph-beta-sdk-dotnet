@@ -50,16 +50,16 @@ namespace Microsoft.Graph
         IEducationUserClassesCollectionWithReferencesRequestBuilder Classes { get; }
 
         /// <summary>
-        /// Gets the request builder for TaughtClasses.
-        /// </summary>
-        /// <returns>The <see cref="IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder TaughtClasses { get; }
-
-        /// <summary>
         /// Gets the request builder for Schools.
         /// </summary>
         /// <returns>The <see cref="IEducationUserSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
         IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
+
+        /// <summary>
+        /// Gets the request builder for TaughtClasses.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder TaughtClasses { get; }
 
         /// <summary>
         /// Gets the request builder for User.

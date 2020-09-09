@@ -40,84 +40,9 @@ namespace Microsoft.Graph
         Unknown = 3,
 	
         /// <summary>
-        /// Mdm Client Crashed
+        /// Update Scan Failed
         /// </summary>
-        MdmClientCrashed = -2016336109,
-	
-        /// <summary>
-        /// Timeout
-        /// </summary>
-        Timeout = -2016333898,
-	
-        /// <summary>
-        /// Downloading
-        /// </summary>
-        Downloading = -2016330712,
-	
-        /// <summary>
-        /// Download Failed
-        /// </summary>
-        DownloadFailed = -2016330711,
-	
-        /// <summary>
-        /// Download Requires Computer
-        /// </summary>
-        DownloadRequiresComputer = -2016330710,
-	
-        /// <summary>
-        /// Download Insufficient Space
-        /// </summary>
-        DownloadInsufficientSpace = -2016330709,
-	
-        /// <summary>
-        /// Download Insufficient Power
-        /// </summary>
-        DownloadInsufficientPower = -2016330708,
-	
-        /// <summary>
-        /// Download Insufficient Network
-        /// </summary>
-        DownloadInsufficientNetwork = -2016330707,
-	
-        /// <summary>
-        /// Installing
-        /// </summary>
-        Installing = -2016330706,
-	
-        /// <summary>
-        /// Install Insufficient Space
-        /// </summary>
-        InstallInsufficientSpace = -2016330705,
-	
-        /// <summary>
-        /// Install Insufficient Power
-        /// </summary>
-        InstallInsufficientPower = -2016330704,
-	
-        /// <summary>
-        /// Install Phone Call In Progress
-        /// </summary>
-        InstallPhoneCallInProgress = -2016330703,
-	
-        /// <summary>
-        /// Install Failed
-        /// </summary>
-        InstallFailed = -2016330702,
-	
-        /// <summary>
-        /// Not Supported Operation
-        /// </summary>
-        NotSupportedOperation = -2016330701,
-	
-        /// <summary>
-        /// Shared Device User Logged In Error
-        /// </summary>
-        SharedDeviceUserLoggedInError = -2016330699,
-	
-        /// <summary>
-        /// Update Error
-        /// </summary>
-        UpdateError = -2016330697,
+        UpdateScanFailed = -2016324062,
 	
         /// <summary>
         /// Device Os Higher Than Desired Os Version
@@ -125,9 +50,84 @@ namespace Microsoft.Graph
         DeviceOsHigherThanDesiredOsVersion = -2016330696,
 	
         /// <summary>
-        /// Update Scan Failed
+        /// Update Error
         /// </summary>
-        UpdateScanFailed = -2016324062,
+        UpdateError = -2016330697,
+	
+        /// <summary>
+        /// Shared Device User Logged In Error
+        /// </summary>
+        SharedDeviceUserLoggedInError = -2016330699,
+	
+        /// <summary>
+        /// Not Supported Operation
+        /// </summary>
+        NotSupportedOperation = -2016330701,
+	
+        /// <summary>
+        /// Install Failed
+        /// </summary>
+        InstallFailed = -2016330702,
+	
+        /// <summary>
+        /// Install Phone Call In Progress
+        /// </summary>
+        InstallPhoneCallInProgress = -2016330703,
+	
+        /// <summary>
+        /// Install Insufficient Power
+        /// </summary>
+        InstallInsufficientPower = -2016330704,
+	
+        /// <summary>
+        /// Install Insufficient Space
+        /// </summary>
+        InstallInsufficientSpace = -2016330705,
+	
+        /// <summary>
+        /// Installing
+        /// </summary>
+        Installing = -2016330706,
+	
+        /// <summary>
+        /// Download Insufficient Network
+        /// </summary>
+        DownloadInsufficientNetwork = -2016330707,
+	
+        /// <summary>
+        /// Download Insufficient Power
+        /// </summary>
+        DownloadInsufficientPower = -2016330708,
+	
+        /// <summary>
+        /// Download Insufficient Space
+        /// </summary>
+        DownloadInsufficientSpace = -2016330709,
+	
+        /// <summary>
+        /// Download Requires Computer
+        /// </summary>
+        DownloadRequiresComputer = -2016330710,
+	
+        /// <summary>
+        /// Download Failed
+        /// </summary>
+        DownloadFailed = -2016330711,
+	
+        /// <summary>
+        /// Downloading
+        /// </summary>
+        Downloading = -2016330712,
+	
+        /// <summary>
+        /// Timeout
+        /// </summary>
+        Timeout = -2016333898,
+	
+        /// <summary>
+        /// Mdm Client Crashed
+        /// </summary>
+        MdmClientCrashed = -2016336109,
 	
     }
 }

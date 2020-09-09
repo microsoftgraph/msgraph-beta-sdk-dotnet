@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (identityContainerToInitialize != null && identityContainerToInitialize.AdditionalData != null)
             {
 
-                if (identityContainerToInitialize.UserFlows != null && identityContainerToInitialize.UserFlows.CurrentPage != null)
-                {
-                    identityContainerToInitialize.UserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityContainerToInitialize.AdditionalData.TryGetValue("userFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityContainerToInitialize.UserFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (identityContainerToInitialize.B2cUserFlows != null && identityContainerToInitialize.B2cUserFlows.CurrentPage != null)
                 {
                     identityContainerToInitialize.B2cUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (identityContainerToInitialize.UserFlows != null && identityContainerToInitialize.UserFlows.CurrentPage != null)
+                {
+                    identityContainerToInitialize.UserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    identityContainerToInitialize.AdditionalData.TryGetValue("userFlows@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        identityContainerToInitialize.UserFlows.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

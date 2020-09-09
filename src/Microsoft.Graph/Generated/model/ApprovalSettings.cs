@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets approvalMode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalMode", Required = Newtonsoft.Json.Required.Default)]
+        public string ApprovalMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets approvalStages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalStages", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ApprovalStage> ApprovalStages { get; set; }
+    
+        /// <summary>
         /// Gets or sets isApprovalRequired.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isApprovalRequired", Required = Newtonsoft.Json.Required.Default)]
@@ -47,18 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRequestorJustificationRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsRequestorJustificationRequired { get; set; }
-    
-        /// <summary>
-        /// Gets or sets approvalMode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalMode", Required = Newtonsoft.Json.Required.Default)]
-        public string ApprovalMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets approvalStages.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalStages", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ApprovalStage> ApprovalStages { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user id.
-        /// UserId associated with this device registration record.
+        /// Gets or sets device mac address.
+        /// Device Mac address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device registration id.
-        /// Device identifier for this device registration record.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegistrationId", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceRegistrationId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMacAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceMacAddress { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
@@ -52,6 +45,13 @@ namespace Microsoft.Graph
         public string DeviceName { get; set; }
     
         /// <summary>
+        /// Gets or sets device registration id.
+        /// Device identifier for this device registration record.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegistrationId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceRegistrationId { get; set; }
+    
+        /// <summary>
         /// Gets or sets device type.
         /// Device type, for example, Windows laptop VS Windows phone.
         /// </summary>
@@ -59,18 +59,18 @@ namespace Microsoft.Graph
         public string DeviceType { get; set; }
     
         /// <summary>
-        /// Gets or sets device mac address.
-        /// Device Mac address.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMacAddress", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceMacAddress { get; set; }
-    
-        /// <summary>
         /// Gets or sets last check in date time.
         /// Last checkin time of the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckInDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastCheckInDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// UserId associated with this device registration record.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
     
     }
 }

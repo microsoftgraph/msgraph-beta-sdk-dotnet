@@ -31,34 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user id.
+        /// Gets or sets additional information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
+        public string AdditionalInformation { get; set; }
     
         /// <summary>
-        /// Gets or sets user name.
+        /// Gets or sets creation date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user mail.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userMail", Required = Newtonsoft.Json.Required.Default)]
-        public string UserMail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
-        public string RoleId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleName", Required = Newtonsoft.Json.Required.Default)]
-        public string RoleName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
@@ -67,10 +49,16 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets creation date time.
+        /// Gets or sets reference key.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceKey", Required = Newtonsoft.Json.Required.Default)]
+        public string ReferenceKey { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reference system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceSystem", Required = Newtonsoft.Json.Required.Default)]
+        public string ReferenceSystem { get; set; }
     
         /// <summary>
         /// Gets or sets requestor id.
@@ -85,34 +73,46 @@ namespace Microsoft.Graph
         public string RequestorName { get; set; }
     
         /// <summary>
-        /// Gets or sets tenant id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
-        public string TenantId { get; set; }
-    
-        /// <summary>
         /// Gets or sets request type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestType", Required = Newtonsoft.Json.Required.Default)]
         public string RequestType { get; set; }
     
         /// <summary>
-        /// Gets or sets additional information.
+        /// Gets or sets role id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
-        public string AdditionalInformation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
+        public string RoleId { get; set; }
     
         /// <summary>
-        /// Gets or sets reference key.
+        /// Gets or sets role name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceKey", Required = Newtonsoft.Json.Required.Default)]
-        public string ReferenceKey { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleName", Required = Newtonsoft.Json.Required.Default)]
+        public string RoleName { get; set; }
     
         /// <summary>
-        /// Gets or sets reference system.
+        /// Gets or sets tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceSystem", Required = Newtonsoft.Json.Required.Default)]
-        public string ReferenceSystem { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string TenantId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user mail.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userMail", Required = Newtonsoft.Json.Required.Default)]
+        public string UserMail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserName { get; set; }
     
     }
 }

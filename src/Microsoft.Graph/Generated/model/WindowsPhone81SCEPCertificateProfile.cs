@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets scep server urls.
-        /// SCEP Server Url(s).
+        /// Gets or sets hash algorithm.
+        /// SCEP Hash Algorithm.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scepServerUrls", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> ScepServerUrls { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject name format string.
-        /// Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
-        public string SubjectNameFormatString { get; set; }
-    
-        /// <summary>
-        /// Gets or sets key usage.
-        /// SCEP Key Usage.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
-        public KeyUsages? KeyUsage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        public HashAlgorithms? HashAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets key size.
@@ -59,11 +45,18 @@ namespace Microsoft.Graph
         public KeySize? KeySize { get; set; }
     
         /// <summary>
-        /// Gets or sets hash algorithm.
-        /// SCEP Hash Algorithm.
+        /// Gets or sets key usage.
+        /// SCEP Key Usage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashAlgorithm", Required = Newtonsoft.Json.Required.Default)]
-        public HashAlgorithms? HashAlgorithm { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
+        public KeyUsages? KeyUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scep server urls.
+        /// SCEP Server Url(s).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scepServerUrls", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ScepServerUrls { get; set; }
     
         /// <summary>
         /// Gets or sets subject alternative name format string.
@@ -73,11 +66,11 @@ namespace Microsoft.Graph
         public string SubjectAlternativeNameFormatString { get; set; }
     
         /// <summary>
-        /// Gets or sets root certificate.
-        /// Trusted Root Certificate.
+        /// Gets or sets subject name format string.
+        /// Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificate", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsPhone81TrustedRootCertificate RootCertificate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectNameFormatString { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.
@@ -85,6 +78,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCertificateStates", Required = Newtonsoft.Json.Required.Default)]
         public IWindowsPhone81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets root certificate.
+        /// Trusted Root Certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsPhone81TrustedRootCertificate RootCertificate { get; set; }
     
     }
 }

@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Policies.
-        /// </summary>
-        /// <returns>The <see cref="ITrustFrameworkPoliciesCollectionRequestBuilder"/>.</returns>
-        public ITrustFrameworkPoliciesCollectionRequestBuilder Policies
-        {
-            get
-            {
-                return new TrustFrameworkPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policies"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for KeySets.
         /// </summary>
         /// <returns>The <see cref="ITrustFrameworkKeySetsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TrustFrameworkKeySetsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("keySets"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Policies.
+        /// </summary>
+        /// <returns>The <see cref="ITrustFrameworkPoliciesCollectionRequestBuilder"/>.</returns>
+        public ITrustFrameworkPoliciesCollectionRequestBuilder Policies
+        {
+            get
+            {
+                return new TrustFrameworkPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("policies"), this.Client);
             }
         }
     
