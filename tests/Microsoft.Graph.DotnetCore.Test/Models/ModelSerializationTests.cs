@@ -139,7 +139,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             };
 
             var expectedSerializedStream = string.Format(
-                "{{\"contentType\":\"{1}\",\"content\":\"{0}\",\"@odata.type\":\"microsoft.graph.itemBody\"}}",
+                "{{\"content\":\"{0}\",\"contentType\":\"{1}\",\"@odata.type\":\"microsoft.graph.itemBody\"}}",
                 itemBody.Content,
                 "text");
 
