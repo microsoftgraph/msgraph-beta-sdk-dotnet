@@ -52,7 +52,7 @@ steps:
       Write-Host "Path to repo model directory: $repoModelsDir"
       Write-Host "##vso[task.setvariable variable=repoModelsDir]$repoModelsDir"
 
-      $typeSummaryFilePath = "$env:Build_SourcesDirectory\msgraph-sdk-dotnet\typeSummary.txt"
+      $typeSummaryFilePath = "$env:Build_SourcesDirectory\msgraph-beta-sdk-dotnet\typeSummary.txt"
       Write-Host "Path to type summary: $typeSummaryFilePath"
       Write-Host "##vso[task.setvariable variable=typeSummaryFilePath]$typeSummaryFilePath"
 
