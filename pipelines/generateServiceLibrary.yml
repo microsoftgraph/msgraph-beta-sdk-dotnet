@@ -47,11 +47,15 @@ steps:
   inputs:
     targetType: inline
     script: |
-      
+
       $repoModelsDir = "$env:Build_SourcesDirectory\msgraph-beta-sdk-dotnet\src\Microsoft.Graph\Generated\"
       Write-Host "Path to repo model directory: $repoModelsDir"
       Write-Host "##vso[task.setvariable variable=repoModelsDir]$repoModelsDir"
-      
+
+      $typeSummaryFilePath = "$env:Build_SourcesDirectory\msgraph-sdk-dotnet\typeSummary.txt"
+      Write-Host "Path to type summary: $typeSummaryFilePath"
+      Write-Host "##vso[task.setvariable variable=typeSummaryFilePath]$typeSummaryFilePath"
+
       $outputPath = Join-Path $env:Build_SourcesDirectory "output"
       Write-Host "Path to typewriter.exe output $outputPath"
       Write-Host "##vso[task.setvariable variable=outputPath]$outputPath"
@@ -134,6 +138,26 @@ steps:
   inputs:
     diagnosticsEnabled: True
 
+- task: PowerShell@2 # Setup environment variables and make them available to all tasks. See [1] for more info.
+  displayName: 'Get DLL path'
+  inputs:
+    targetType: inline
+    script: |
+      $allGeneratedDlls = Get-ChildItem $dir -Include Microsoft.Graph.Beta.dll -Recurse
+      $dotNetFrameworkDll = $allGeneratedDlls | Where-Object { !$_.FullName.Contains("obj") -and !$_.FullName.Contains("netstandard") }
+      $dllPath = $dotNetFrameworkDll.FullName
+      Write-Host "Path to Microsoft.Graph.Beta.dll: $dllPath"
+      Write-Host "##vso[task.setvariable variable=dllPath]$dllPath"
+
+- task: PowerShell@2
+  displayName: 'Generate type summary'
+  inputs:
+    targetType: filePath
+    filePath: '$(Build.SourcesDirectory)/msgraph-beta-sdk-dotnet/scripts/generateTypeSummary.ps1'
+    arguments: '-dllPath $(dllPath) -outputPath $(typeSummaryFilePath)'
+    workingDirectory: '$(Build.SourcesDirectory)' # Set the root for a multi-repo pipeline. /s
+  enabled: true
+
 - task: PowerShell@2
   displayName: 'Git: stage and commit generated files'
   inputs:
@@ -143,7 +167,16 @@ steps:
       Write-Host "About to add files....." -ForegroundColor Green
 
       git add . | Write-Host
-      git commit -m "Update generated files with build $env:Build_BuildId" | Write-Host
+
+      if ($env:Build_Reason -eq 'Manual') # Skip CI if manually running this pipeline.
+      {
+        git commit -m "Update generated files with build $env:Build_BuildId [skip ci]" | Write-Host
+      }
+      else
+      {
+        git commit -m "Update generated files with build $env:Build_BuildId" | Write-Host
+      }
+
       Write-Host "Added and commited generated files." -ForegroundColor Green
 
 - task: PowerShell@2
