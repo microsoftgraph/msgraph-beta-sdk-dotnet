@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new ICustomerRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Picture.
-        /// </summary>
-        /// <returns>The <see cref="ICustomerPictureCollectionRequestBuilder"/>.</returns>
-        ICustomerPictureCollectionRequestBuilder Picture { get; }
-
-        /// <summary>
         /// Gets the request builder for Currency.
         /// </summary>
         /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
         ICurrencyRequestBuilder Currency { get; }
+
+        /// <summary>
+        /// Gets the request builder for PaymentMethod.
+        /// </summary>
+        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
+        IPaymentMethodRequestBuilder PaymentMethod { get; }
 
         /// <summary>
         /// Gets the request builder for PaymentTerm.
@@ -50,16 +50,16 @@ namespace Microsoft.Graph
         IPaymentTermRequestBuilder PaymentTerm { get; }
 
         /// <summary>
+        /// Gets the request builder for Picture.
+        /// </summary>
+        /// <returns>The <see cref="ICustomerPictureCollectionRequestBuilder"/>.</returns>
+        ICustomerPictureCollectionRequestBuilder Picture { get; }
+
+        /// <summary>
         /// Gets the request builder for ShipmentMethod.
         /// </summary>
         /// <returns>The <see cref="IShipmentMethodRequestBuilder"/>.</returns>
         IShipmentMethodRequestBuilder ShipmentMethod { get; }
-
-        /// <summary>
-        /// Gets the request builder for PaymentMethod.
-        /// </summary>
-        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
-        IPaymentMethodRequestBuilder PaymentMethod { get; }
     
     }
 }

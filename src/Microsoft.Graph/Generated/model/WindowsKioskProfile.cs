@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets appConfiguration.
+        /// The App configuration that will be used for this kiosk configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsKioskAppConfiguration AppConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets profileId.
         /// Key of the entity.
         /// </summary>
@@ -39,17 +46,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets profileName.
-        /// This is a friendly name??used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
+        /// This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileName", Required = Newtonsoft.Json.Required.Default)]
         public string ProfileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets appConfiguration.
-        /// The App configuration that will be used for this kiosk configuration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsKioskAppConfiguration AppConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets userAccountsConfiguration.

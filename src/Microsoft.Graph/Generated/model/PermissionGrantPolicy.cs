@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets includes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includes", Required = Newtonsoft.Json.Required.Default)]
-        public IPermissionGrantPolicyIncludesCollectionPage Includes { get; set; }
-    
-        /// <summary>
         /// Gets or sets excludes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludes", Required = Newtonsoft.Json.Required.Default)]
         public IPermissionGrantPolicyExcludesCollectionPage Excludes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includes", Required = Newtonsoft.Json.Required.Default)]
+        public IPermissionGrantPolicyIncludesCollectionPage Includes { get; set; }
     
     }
 }

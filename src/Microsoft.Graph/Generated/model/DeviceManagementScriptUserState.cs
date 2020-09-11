@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets success device count.
-        /// Success device count for specific user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SuccessDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets error device count.
         /// Error device count for specific user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets success device count.
+        /// Success device count for specific user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SuccessDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.

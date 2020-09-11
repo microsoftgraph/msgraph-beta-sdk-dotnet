@@ -63,6 +63,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for PrivilegedRoleAssignmentMakeEligible.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedRoleAssignmentMakeEligibleRequestBuilder"/>.</returns>
+        public IPrivilegedRoleAssignmentMakeEligibleRequestBuilder MakeEligible()
+        {
+            return new PrivilegedRoleAssignmentMakeEligibleRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.makeEligible"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for PrivilegedRoleAssignmentMakePermanent.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedRoleAssignmentMakePermanentRequestBuilder"/>.</returns>
@@ -77,17 +88,6 @@ namespace Microsoft.Graph
                 reason,
                 ticketNumber,
                 ticketSystem);
-        }
-
-        /// <summary>
-        /// Gets the request builder for PrivilegedRoleAssignmentMakeEligible.
-        /// </summary>
-        /// <returns>The <see cref="IPrivilegedRoleAssignmentMakeEligibleRequestBuilder"/>.</returns>
-        public IPrivilegedRoleAssignmentMakeEligibleRequestBuilder MakeEligible()
-        {
-            return new PrivilegedRoleAssignmentMakeEligibleRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.makeEligible"),
-                this.Client);
         }
     
     }

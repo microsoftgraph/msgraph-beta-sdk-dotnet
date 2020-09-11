@@ -31,34 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user principal name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets auth methods.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethods", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RegistrationAuthMethod> AuthMethods { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is registered.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRegistered", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsRegistered { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets is capable.
@@ -67,10 +43,34 @@ namespace Microsoft.Graph
         public bool? IsCapable { get; set; }
     
         /// <summary>
+        /// Gets or sets is enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets is mfa registered.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMfaRegistered", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsMfaRegistered { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is registered.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRegistered", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRegistered { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

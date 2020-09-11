@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ExceptionOccurrences.
-        /// </summary>
-        /// <returns>The <see cref="IEventExceptionOccurrencesCollectionRequestBuilder"/>.</returns>
-        public IEventExceptionOccurrencesCollectionRequestBuilder ExceptionOccurrences
-        {
-            get
-            {
-                return new EventExceptionOccurrencesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exceptionOccurrences"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Attachments.
         /// </summary>
         /// <returns>The <see cref="IEventAttachmentsCollectionRequestBuilder"/>.</returns>
@@ -71,30 +59,6 @@ namespace Microsoft.Graph
             get
             {
                 return new EventAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IEventSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IEventSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
-        {
-            get
-            {
-                return new EventSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
-        /// </summary>
-        /// <returns>The <see cref="IEventMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IEventMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
-        {
-            get
-            {
-                return new EventMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
             }
         }
 
@@ -111,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Instances.
+        /// Gets the request builder for ExceptionOccurrences.
         /// </summary>
-        /// <returns>The <see cref="IEventInstancesCollectionRequestBuilder"/>.</returns>
-        public IEventInstancesCollectionRequestBuilder Instances
+        /// <returns>The <see cref="IEventExceptionOccurrencesCollectionRequestBuilder"/>.</returns>
+        public IEventExceptionOccurrencesCollectionRequestBuilder ExceptionOccurrences
         {
             get
             {
-                return new EventInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
+                return new EventExceptionOccurrencesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exceptionOccurrences"), this.Client);
             }
         }
 
@@ -133,46 +97,43 @@ namespace Microsoft.Graph
                 return new EventExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Instances.
+        /// </summary>
+        /// <returns>The <see cref="IEventInstancesCollectionRequestBuilder"/>.</returns>
+        public IEventInstancesCollectionRequestBuilder Instances
+        {
+            get
+            {
+                return new EventInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MultiValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IEventMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IEventMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
+        {
+            get
+            {
+                return new EventMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SingleValueExtendedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IEventSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IEventSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        {
+            get
+            {
+                return new EventSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
+            }
+        }
     
-        /// <summary>
-        /// Gets the request builder for EventDismissReminder.
-        /// </summary>
-        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
-        public IEventDismissReminderRequestBuilder DismissReminder()
-        {
-            return new EventDismissReminderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.dismissReminder"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventSnoozeReminder.
-        /// </summary>
-        /// <returns>The <see cref="IEventSnoozeReminderRequestBuilder"/>.</returns>
-        public IEventSnoozeReminderRequestBuilder SnoozeReminder(
-            DateTimeTimeZone NewReminderTime)
-        {
-            return new EventSnoozeReminderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.snoozeReminder"),
-                this.Client,
-                NewReminderTime);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventForward.
-        /// </summary>
-        /// <returns>The <see cref="IEventForwardRequestBuilder"/>.</returns>
-        public IEventForwardRequestBuilder Forward(
-            IEnumerable<Recipient> ToRecipients = null,
-            string Comment = null)
-        {
-            return new EventForwardRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.forward"),
-                this.Client,
-                ToRecipients,
-                Comment);
-        }
-
         /// <summary>
         /// Gets the request builder for EventAccept.
         /// </summary>
@@ -186,6 +147,19 @@ namespace Microsoft.Graph
                 this.Client,
                 Comment,
                 SendResponse);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EventCancel.
+        /// </summary>
+        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
+        public IEventCancelRequestBuilder Cancel(
+            string Comment = null)
+        {
+            return new EventCancelRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
+                this.Client,
+                Comment);
         }
 
         /// <summary>
@@ -204,6 +178,45 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for EventDismissReminder.
+        /// </summary>
+        /// <returns>The <see cref="IEventDismissReminderRequestBuilder"/>.</returns>
+        public IEventDismissReminderRequestBuilder DismissReminder()
+        {
+            return new EventDismissReminderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dismissReminder"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EventForward.
+        /// </summary>
+        /// <returns>The <see cref="IEventForwardRequestBuilder"/>.</returns>
+        public IEventForwardRequestBuilder Forward(
+            IEnumerable<Recipient> ToRecipients = null,
+            string Comment = null)
+        {
+            return new EventForwardRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.forward"),
+                this.Client,
+                ToRecipients,
+                Comment);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EventSnoozeReminder.
+        /// </summary>
+        /// <returns>The <see cref="IEventSnoozeReminderRequestBuilder"/>.</returns>
+        public IEventSnoozeReminderRequestBuilder SnoozeReminder(
+            DateTimeTimeZone NewReminderTime)
+        {
+            return new EventSnoozeReminderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.snoozeReminder"),
+                this.Client,
+                NewReminderTime);
+        }
+
+        /// <summary>
         /// Gets the request builder for EventTentativelyAccept.
         /// </summary>
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
@@ -216,19 +229,6 @@ namespace Microsoft.Graph
                 this.Client,
                 Comment,
                 SendResponse);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventCancel.
-        /// </summary>
-        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
-        public IEventCancelRequestBuilder Cancel(
-            string Comment = null)
-        {
-            return new EventCancelRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
-                this.Client,
-                Comment);
         }
     
     }

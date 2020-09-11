@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets use security key for signin.
-        /// Boolean value used to enable the Windows Hello security key as a logon credential.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useSecurityKeyForSignin", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UseSecurityKeyForSignin { get; set; }
-    
-        /// <summary>
         /// Gets or sets enhanced anti spoofing for facial features enabled.
         /// Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
         /// </summary>
@@ -45,25 +38,11 @@ namespace Microsoft.Graph
         public bool? EnhancedAntiSpoofingForFacialFeaturesEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets pin minimum length.
-        /// Integer value that sets the minimum number of characters required for the Windows Hello for Business PIN. Valid values are 4 to 127 inclusive and less than or equal to the value set for the maximum PIN. Valid values 4 to 127
+        /// Gets or sets pin expiration in days.
+        /// Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMinimumLength", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PinMinimumLength { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pin maximum length.
-        /// Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMaximumLength", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PinMaximumLength { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pin uppercase characters usage.
-        /// This value configures the use of uppercase characters in the Windows Hello for Business PIN.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinUppercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
-        public ConfigurationUsage? PinUppercaseCharactersUsage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinExpirationInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PinExpirationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets pin lowercase characters usage.
@@ -73,18 +52,18 @@ namespace Microsoft.Graph
         public ConfigurationUsage? PinLowercaseCharactersUsage { get; set; }
     
         /// <summary>
-        /// Gets or sets pin special characters usage.
-        /// Controls the ability to use special characters in the Windows Hello for Business PIN.
+        /// Gets or sets pin maximum length.
+        /// Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinSpecialCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
-        public ConfigurationUsage? PinSpecialCharactersUsage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMaximumLength", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PinMaximumLength { get; set; }
     
         /// <summary>
-        /// Gets or sets pin expiration in days.
-        /// Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
+        /// Gets or sets pin minimum length.
+        /// Integer value that sets the minimum number of characters required for the Windows Hello for Business PIN. Valid values are 4 to 127 inclusive and less than or equal to the value set for the maximum PIN. Valid values 4 to 127
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinExpirationInDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PinExpirationInDays { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinMinimumLength", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PinMinimumLength { get; set; }
     
         /// <summary>
         /// Gets or sets pin previous block count.
@@ -99,6 +78,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinRecoveryEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? PinRecoveryEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pin special characters usage.
+        /// Controls the ability to use special characters in the Windows Hello for Business PIN.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinSpecialCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
+        public ConfigurationUsage? PinSpecialCharactersUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pin uppercase characters usage.
+        /// This value configures the use of uppercase characters in the Windows Hello for Business PIN.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinUppercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
+        public ConfigurationUsage? PinUppercaseCharactersUsage { get; set; }
     
         /// <summary>
         /// Gets or sets security device required.
@@ -120,6 +113,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useCertificatesForOnPremisesAuthEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? UseCertificatesForOnPremisesAuthEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets use security key for signin.
+        /// Boolean value used to enable the Windows Hello security key as a logon credential.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useSecurityKeyForSignin", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UseSecurityKeyForSignin { get; set; }
     
         /// <summary>
         /// Gets or sets windows hello for business blocked.

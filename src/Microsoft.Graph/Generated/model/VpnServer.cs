@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets description.
-        /// Description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
         /// Gets or sets address.
         /// Address (IP address, FQDN or URL)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
         public string Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// Description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets isDefaultServer.

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sanType.
-        /// Custom SAN Type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sanType", Required = Newtonsoft.Json.Required.Default)]
-        public SubjectAlternativeNameType? SanType { get; set; }
-    
-        /// <summary>
         /// Gets or sets name.
         /// Custom SAN Name
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sanType.
+        /// Custom SAN Type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sanType", Required = Newtonsoft.Json.Required.Default)]
+        public SubjectAlternativeNameType? SanType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

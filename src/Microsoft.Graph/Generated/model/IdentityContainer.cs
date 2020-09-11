@@ -37,12 +37,6 @@ namespace Microsoft.Graph
         public ConditionalAccessRoot ConditionalAccess { get; set; }
     
         /// <summary>
-        /// Gets or sets user flows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlows", Required = Newtonsoft.Json.Required.Default)]
-        public IIdentityContainerUserFlowsCollectionPage UserFlows { get; set; }
-    
-        /// <summary>
         /// Gets or sets b2c user flows.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2cUserFlows", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +47,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2xUserFlows", Required = Newtonsoft.Json.Required.Default)]
         public IIdentityContainerB2xUserFlowsCollectionPage B2xUserFlows { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user flows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userFlows", Required = Newtonsoft.Json.Required.Default)]
+        public IIdentityContainerUserFlowsCollectionPage UserFlows { get; set; }
+    
+        /// <summary>
+        /// Gets or sets continuous access evaluation policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "continuousAccessEvaluationPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy { get; set; }
     
     }
 }

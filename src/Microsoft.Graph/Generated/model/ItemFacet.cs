@@ -37,10 +37,10 @@ namespace Microsoft.Graph
         public AllowedAudiences? AllowedAudiences { get; set; }
     
         /// <summary>
-        /// Gets or sets inference.
+        /// Gets or sets created by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inference", Required = Newtonsoft.Json.Required.Default)]
-        public InferenceData Inference { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -49,22 +49,22 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets created by.
+        /// Gets or sets inference.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet CreatedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inference", Required = Newtonsoft.Json.Required.Default)]
+        public InferenceData Inference { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet LastModifiedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets source.

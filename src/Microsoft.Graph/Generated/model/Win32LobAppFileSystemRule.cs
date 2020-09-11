@@ -30,11 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets path.
-        /// The file or folder path to look up.
+        /// Gets or sets check32BitOn64System.
+        /// A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
-        public string Path { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "check32BitOn64System", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Check32BitOn64System { get; set; }
+    
+        /// <summary>
+        /// Gets or sets comparisonValue.
+        /// The file or folder comparison value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonValue", Required = Newtonsoft.Json.Required.Default)]
+        public string ComparisonValue { get; set; }
     
         /// <summary>
         /// Gets or sets fileOrFolderName.
@@ -42,13 +49,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileOrFolderName", Required = Newtonsoft.Json.Required.Default)]
         public string FileOrFolderName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets check32BitOn64System.
-        /// A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "check32BitOn64System", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Check32BitOn64System { get; set; }
     
         /// <summary>
         /// Gets or sets operationType.
@@ -65,11 +65,11 @@ namespace Microsoft.Graph
         public Win32LobAppRuleOperator? Operator { get; set; }
     
         /// <summary>
-        /// Gets or sets comparisonValue.
-        /// The file or folder comparison value.
+        /// Gets or sets path.
+        /// The file or folder path to look up.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonValue", Required = Newtonsoft.Json.Required.Default)]
-        public string ComparisonValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "path", Required = Newtonsoft.Json.Required.Default)]
+        public string Path { get; set; }
     
     }
 }

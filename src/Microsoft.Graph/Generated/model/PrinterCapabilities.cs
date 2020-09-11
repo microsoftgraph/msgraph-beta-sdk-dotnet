@@ -31,34 +31,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets bottomMargins.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bottomMargins", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Int32> BottomMargins { get; set; }
+    
+        /// <summary>
+        /// Gets or sets collation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Collation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets colorModes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorModes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintColorMode> ColorModes { get; set; }
+    
+        /// <summary>
         /// Gets or sets contentTypes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ContentTypes { get; set; }
     
         /// <summary>
-        /// Gets or sets isColorPrintingSupported.
+        /// Gets or sets copiesPerJob.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isColorPrintingSupported", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsColorPrintingSupported { get; set; }
-    
-        /// <summary>
-        /// Gets or sets feedDirections.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedDirections", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrinterFeedDirection> FeedDirections { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isPageRangeSupported.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPageRangeSupported", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsPageRangeSupported { get; set; }
-    
-        /// <summary>
-        /// Gets or sets qualities.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualities", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrintQuality> Qualities { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copiesPerJob", Required = Newtonsoft.Json.Required.Default)]
+        public IntegerRange CopiesPerJob { get; set; }
     
         /// <summary>
         /// Gets or sets dpis.
@@ -73,10 +73,10 @@ namespace Microsoft.Graph
         public IEnumerable<PrintDuplexMode> DuplexModes { get; set; }
     
         /// <summary>
-        /// Gets or sets copiesPerJob.
+        /// Gets or sets feedDirections.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copiesPerJob", Required = Newtonsoft.Json.Required.Default)]
-        public IntegerRange CopiesPerJob { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedDirections", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrinterFeedDirection> FeedDirections { get; set; }
     
         /// <summary>
         /// Gets or sets finishings.
@@ -85,16 +85,34 @@ namespace Microsoft.Graph
         public IEnumerable<PrintFinishing> Finishings { get; set; }
     
         /// <summary>
+        /// Gets or sets inputBins.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputBins", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> InputBins { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isColorPrintingSupported.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isColorPrintingSupported", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsColorPrintingSupported { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isPageRangeSupported.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPageRangeSupported", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsPageRangeSupported { get; set; }
+    
+        /// <summary>
+        /// Gets or sets leftMargins.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "leftMargins", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Int32> LeftMargins { get; set; }
+    
+        /// <summary>
         /// Gets or sets mediaColors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaColors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> MediaColors { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mediaTypes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> MediaTypes { get; set; }
     
         /// <summary>
         /// Gets or sets mediaSizes.
@@ -103,10 +121,16 @@ namespace Microsoft.Graph
         public IEnumerable<string> MediaSizes { get; set; }
     
         /// <summary>
-        /// Gets or sets pagesPerSheet.
+        /// Gets or sets mediaTypes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pagesPerSheet", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Int32> PagesPerSheet { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> MediaTypes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multipageLayouts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multipageLayouts", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintMultipageLayout> MultipageLayouts { get; set; }
     
         /// <summary>
         /// Gets or sets orientations.
@@ -121,40 +145,16 @@ namespace Microsoft.Graph
         public IEnumerable<string> OutputBins { get; set; }
     
         /// <summary>
-        /// Gets or sets supportsFitPdfToPage.
+        /// Gets or sets pagesPerSheet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportsFitPdfToPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SupportsFitPdfToPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pagesPerSheet", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Int32> PagesPerSheet { get; set; }
     
         /// <summary>
-        /// Gets or sets multipageLayouts.
+        /// Gets or sets qualities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multipageLayouts", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrintMultipageLayout> MultipageLayouts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets colorModes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorModes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrintColorMode> ColorModes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets inputBins.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputBins", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> InputBins { get; set; }
-    
-        /// <summary>
-        /// Gets or sets topMargins.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topMargins", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Int32> TopMargins { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bottomMargins.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bottomMargins", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Int32> BottomMargins { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintQuality> Qualities { get; set; }
     
         /// <summary>
         /// Gets or sets rightMargins.
@@ -163,22 +163,16 @@ namespace Microsoft.Graph
         public IEnumerable<Int32> RightMargins { get; set; }
     
         /// <summary>
-        /// Gets or sets leftMargins.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "leftMargins", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Int32> LeftMargins { get; set; }
-    
-        /// <summary>
-        /// Gets or sets collation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Collation { get; set; }
-    
-        /// <summary>
         /// Gets or sets scalings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scalings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PrintScaling> Scalings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets supportedColorConfigurations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedColorConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintColorConfiguration> SupportedColorConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets supportedCopiesPerJob.
@@ -193,6 +187,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> SupportedDocumentMimeTypes { get; set; }
     
         /// <summary>
+        /// Gets or sets supportedDuplexConfigurations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedDuplexConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintDuplexConfiguration> SupportedDuplexConfigurations { get; set; }
+    
+        /// <summary>
         /// Gets or sets supportedFinishings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedFinishings", Required = Newtonsoft.Json.Required.Default)]
@@ -205,28 +205,16 @@ namespace Microsoft.Graph
         public IEnumerable<string> SupportedMediaColors { get; set; }
     
         /// <summary>
-        /// Gets or sets supportedMediaTypes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedMediaTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrintMediaType> SupportedMediaTypes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets supportedDuplexConfigurations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedDuplexConfigurations", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrintDuplexConfiguration> SupportedDuplexConfigurations { get; set; }
-    
-        /// <summary>
         /// Gets or sets supportedMediaSizes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedMediaSizes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> SupportedMediaSizes { get; set; }
     
         /// <summary>
-        /// Gets or sets supportedPagesPerSheet.
+        /// Gets or sets supportedMediaTypes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedPagesPerSheet", Required = Newtonsoft.Json.Required.Default)]
-        public IntegerRange SupportedPagesPerSheet { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedMediaTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintMediaType> SupportedMediaTypes { get; set; }
     
         /// <summary>
         /// Gets or sets supportedOrientations.
@@ -241,22 +229,34 @@ namespace Microsoft.Graph
         public IEnumerable<string> SupportedOutputBins { get; set; }
     
         /// <summary>
+        /// Gets or sets supportedPagesPerSheet.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedPagesPerSheet", Required = Newtonsoft.Json.Required.Default)]
+        public IntegerRange SupportedPagesPerSheet { get; set; }
+    
+        /// <summary>
         /// Gets or sets supportedPresentationDirections.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedPresentationDirections", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PrintPresentationDirection> SupportedPresentationDirections { get; set; }
     
         /// <summary>
-        /// Gets or sets supportedColorConfigurations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedColorConfigurations", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PrintColorConfiguration> SupportedColorConfigurations { get; set; }
-    
-        /// <summary>
         /// Gets or sets supportedPrintQualities.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedPrintQualities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PrintQuality> SupportedPrintQualities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets supportsFitPdfToPage.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportsFitPdfToPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SupportsFitPdfToPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets topMargins.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topMargins", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Int32> TopMargins { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

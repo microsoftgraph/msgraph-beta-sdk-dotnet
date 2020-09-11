@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
         /// Gets or sets applicationMode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationMode", Required = Newtonsoft.Json.Required.Default)]
         public ApplicationMode? ApplicationMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

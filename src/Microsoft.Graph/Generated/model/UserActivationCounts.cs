@@ -31,40 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets productType.
+        /// Gets or sets activatedOnSharedComputer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productType", Required = Newtonsoft.Json.Required.Default)]
-        public string ProductType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lastActivatedDate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivatedDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date LastActivatedDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Windows { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mac.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mac", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Mac { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows10Mobile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10Mobile", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Windows10Mobile { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ios.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ios", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Ios { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activatedOnSharedComputer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ActivatedOnSharedComputer { get; set; }
     
         /// <summary>
         /// Gets or sets android.
@@ -73,10 +43,40 @@ namespace Microsoft.Graph
         public Int64? Android { get; set; }
     
         /// <summary>
-        /// Gets or sets activatedOnSharedComputer.
+        /// Gets or sets ios.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activatedOnSharedComputer", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ActivatedOnSharedComputer { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ios", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Ios { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lastActivatedDate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivatedDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date LastActivatedDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mac.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mac", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Mac { get; set; }
+    
+        /// <summary>
+        /// Gets or sets productType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productType", Required = Newtonsoft.Json.Required.Default)]
+        public string ProductType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Windows { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows10Mobile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10Mobile", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Windows10Mobile { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

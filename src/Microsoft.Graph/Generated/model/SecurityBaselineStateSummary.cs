@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets secure count.
-        /// Number of secure devices
+        /// Gets or sets conflict count.
+        /// Number of conflict devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SecureCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets not secure count.
-        /// Number of not secure devices
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notSecureCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NotSecureCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets unknown count.
-        /// Number of unknown devices
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UnknownCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ConflictCount { get; set; }
     
         /// <summary>
         /// Gets or sets error count.
@@ -59,18 +45,32 @@ namespace Microsoft.Graph
         public Int32? ErrorCount { get; set; }
     
         /// <summary>
-        /// Gets or sets conflict count.
-        /// Number of conflict devices
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ConflictCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets not applicable count.
         /// Number of not applicable devices
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NotApplicableCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets not secure count.
+        /// Number of not secure devices
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notSecureCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NotSecureCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets secure count.
+        /// Number of secure devices
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SecureCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unknown count.
+        /// Number of unknown devices
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UnknownCount { get; set; }
     
     }
 }

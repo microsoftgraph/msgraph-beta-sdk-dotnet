@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets always on.
+        /// Whether or not to enable always-on VPN connection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AlwaysOn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets always on lockdown.
+        /// If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnLockdown", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AlwaysOnLockdown { get; set; }
+    
+        /// <summary>
         /// Gets or sets connection type.
         /// Connection type.
         /// </summary>
@@ -52,18 +66,11 @@ namespace Microsoft.Graph
         public IEnumerable<string> TargetedPackageIds { get; set; }
     
         /// <summary>
-        /// Gets or sets always on.
-        /// Whether or not to enable always-on VPN connection.
+        /// Gets or sets derived credential settings.
+        /// Tenant level settings for the Derived Credentials to be used for authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOn", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AlwaysOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets always on lockdown.
-        /// If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnLockdown", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AlwaysOnLockdown { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.
@@ -71,13 +78,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets derived credential settings.
-        /// Tenant level settings for the Derived Credentials to be used for authentication.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
     }
 }

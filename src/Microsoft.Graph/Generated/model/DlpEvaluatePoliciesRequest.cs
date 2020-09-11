@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets target.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public string Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets evaluationInput.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationInput", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationInfo", Required = Newtonsoft.Json.Required.Default)]
         public DlpNotification NotificationInfo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public string Target { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

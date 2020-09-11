@@ -31,34 +31,22 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets document id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? DocumentId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sequence.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Sequence { get; set; }
-    
-        /// <summary>
-        /// Gets or sets item id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? ItemId { get; set; }
-    
-        /// <summary>
         /// Gets or sets account id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? AccountId { get; set; }
     
         /// <summary>
-        /// Gets or sets line type.
+        /// Gets or sets amount excluding tax.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lineType", Required = Newtonsoft.Json.Required.Default)]
-        public string LineType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "amountExcludingTax", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? AmountExcludingTax { get; set; }
+    
+        /// <summary>
+        /// Gets or sets amount including tax.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "amountIncludingTax", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? AmountIncludingTax { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -67,28 +55,10 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets unit cost.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unitCost", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? UnitCost { get; set; }
-    
-        /// <summary>
-        /// Gets or sets quantity.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quantity", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? Quantity { get; set; }
-    
-        /// <summary>
         /// Gets or sets discount amount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discountAmount", Required = Newtonsoft.Json.Required.Default)]
         public Decimal? DiscountAmount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets discount percent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discountPercent", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? DiscountPercent { get; set; }
     
         /// <summary>
         /// Gets or sets discount applied before tax.
@@ -97,10 +67,70 @@ namespace Microsoft.Graph
         public bool? DiscountAppliedBeforeTax { get; set; }
     
         /// <summary>
-        /// Gets or sets amount excluding tax.
+        /// Gets or sets discount percent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "amountExcludingTax", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? AmountExcludingTax { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discountPercent", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? DiscountPercent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets document id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? DocumentId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expected receipt date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expectedReceiptDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ExpectedReceiptDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets invoice discount allocation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceDiscountAllocation", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? InvoiceDiscountAllocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets item id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? ItemId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets line type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lineType", Required = Newtonsoft.Json.Required.Default)]
+        public string LineType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets net amount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netAmount", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? NetAmount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets net amount including tax.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netAmountIncludingTax", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? NetAmountIncludingTax { get; set; }
+    
+        /// <summary>
+        /// Gets or sets net tax amount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netTaxAmount", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? NetTaxAmount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets quantity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quantity", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? Quantity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sequence.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Sequence { get; set; }
     
         /// <summary>
         /// Gets or sets tax code.
@@ -121,52 +151,22 @@ namespace Microsoft.Graph
         public Decimal? TotalTaxAmount { get; set; }
     
         /// <summary>
-        /// Gets or sets amount including tax.
+        /// Gets or sets unit cost.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "amountIncludingTax", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? AmountIncludingTax { get; set; }
-    
-        /// <summary>
-        /// Gets or sets invoice discount allocation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceDiscountAllocation", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? InvoiceDiscountAllocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets net amount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netAmount", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? NetAmount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets net tax amount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netTaxAmount", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? NetTaxAmount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets net amount including tax.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netAmountIncludingTax", Required = Newtonsoft.Json.Required.Default)]
-        public Decimal? NetAmountIncludingTax { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expected receipt date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expectedReceiptDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ExpectedReceiptDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets item.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "item", Required = Newtonsoft.Json.Required.Default)]
-        public Item Item { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unitCost", Required = Newtonsoft.Json.Required.Default)]
+        public Decimal? UnitCost { get; set; }
     
         /// <summary>
         /// Gets or sets account.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account", Required = Newtonsoft.Json.Required.Default)]
         public Account Account { get; set; }
+    
+        /// <summary>
+        /// Gets or sets item.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "item", Required = Newtonsoft.Json.Required.Default)]
+        public Item Item { get; set; }
     
     }
 }

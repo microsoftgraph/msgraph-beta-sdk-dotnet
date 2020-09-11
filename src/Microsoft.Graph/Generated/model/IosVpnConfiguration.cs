@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user domain.
-        /// Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDomain", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDomain { get; set; }
-    
-        /// <summary>
-        /// Gets or sets strict enforcement.
-        /// Zscaler only. Blocks network traffic until the user signs into Zscaler app. "True" means traffic is blocked.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "strictEnforcement", Required = Newtonsoft.Json.Required.Default)]
-        public bool? StrictEnforcement { get; set; }
-    
-        /// <summary>
         /// Gets or sets cloud name.
         /// Zscaler only. Zscaler cloud which the user is assigned to.
         /// </summary>
@@ -59,6 +45,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> ExcludeList { get; set; }
     
         /// <summary>
+        /// Gets or sets strict enforcement.
+        /// Zscaler only. Blocks network traffic until the user signs into Zscaler app. "True" means traffic is blocked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "strictEnforcement", Required = Newtonsoft.Json.Required.Default)]
+        public bool? StrictEnforcement { get; set; }
+    
+        /// <summary>
         /// Gets or sets targeted mobile apps.
         /// Targeted mobile apps. This collection can contain a maximum of 500 elements.
         /// </summary>
@@ -66,11 +59,11 @@ namespace Microsoft.Graph
         public IEnumerable<AppListItem> TargetedMobileApps { get; set; }
     
         /// <summary>
-        /// Gets or sets identity certificate.
-        /// Identity certificate for client authentication when authentication method is certificate.
+        /// Gets or sets user domain.
+        /// Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
-        public IosCertificateProfileBase IdentityCertificate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDomain", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDomain { get; set; }
     
         /// <summary>
         /// Gets or sets derived credential settings.
@@ -78,6 +71,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identity certificate.
+        /// Identity certificate for client authentication when authentication method is certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
+        public IosCertificateProfileBase IdentityCertificate { get; set; }
     
     }
 }

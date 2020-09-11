@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets self service sign up.
+        /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selfServiceSignUp", Required = Newtonsoft.Json.Required.Default)]
-        public SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
+        /// Gets or sets self service sign up.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selfServiceSignUp", Required = Newtonsoft.Json.Required.Default)]
+        public SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp { get; set; }
     
     }
 }

@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public ExternalGroupMemberType? Type { get; set; }
-    
-        /// <summary>
         /// Gets or sets identity source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySource", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySourceType? IdentitySource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public ExternalGroupMemberType? Type { get; set; }
     
     }
 }

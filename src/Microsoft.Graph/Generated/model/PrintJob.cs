@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets created by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public UserIdentity CreatedBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public PrintJobStatus Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created by.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets documents.

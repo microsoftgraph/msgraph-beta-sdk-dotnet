@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AssignmentCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
+        public IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories
+        {
+            get
+            {
+                return new EducationClassAssignmentCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentCategories"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -63,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AssignmentCategories.
+        /// Gets the request builder for Group.
         /// </summary>
-        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
-        public IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories
+        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
+        public IGroupWithReferenceRequestBuilder Group
         {
             get
             {
-                return new EducationClassAssignmentCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentCategories"), this.Client);
+                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
             }
         }
 
@@ -87,18 +99,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Teachers.
-        /// </summary>
-        /// <returns>The <see cref="IEducationClassTeachersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IEducationClassTeachersCollectionWithReferencesRequestBuilder Teachers
-        {
-            get
-            {
-                return new EducationClassTeachersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("teachers"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Schools.
         /// </summary>
         /// <returns>The <see cref="IEducationClassSchoolsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -111,14 +111,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Group.
+        /// Gets the request builder for Teachers.
         /// </summary>
-        /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
-        public IGroupWithReferenceRequestBuilder Group
+        /// <returns>The <see cref="IEducationClassTeachersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IEducationClassTeachersCollectionWithReferencesRequestBuilder Teachers
         {
             get
             {
-                return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
+                return new EducationClassTeachersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("teachers"), this.Client);
             }
         }
     

@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets user preference payload.
+        /// Gets or sets checkin statuses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPreferencePayload", Required = Newtonsoft.Json.Required.Default)]
-        public Stream UserPreferencePayload { get; set; }
-    
-        /// <summary>
-        /// Gets or sets policy payload.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyPayload", Required = Newtonsoft.Json.Required.Default)]
-        public Stream PolicyPayload { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checkinStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<OfficeClientCheckinStatus> CheckinStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -55,6 +49,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets policy payload.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyPayload", Required = Newtonsoft.Json.Required.Default)]
+        public Stream PolicyPayload { get; set; }
+    
+        /// <summary>
         /// Gets or sets priority.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
@@ -67,10 +67,10 @@ namespace Microsoft.Graph
         public OfficeUserCheckinSummary UserCheckinSummary { get; set; }
     
         /// <summary>
-        /// Gets or sets checkin statuses.
+        /// Gets or sets user preference payload.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checkinStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<OfficeClientCheckinStatus> CheckinStatuses { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPreferencePayload", Required = Newtonsoft.Json.Required.Default)]
+        public Stream UserPreferencePayload { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

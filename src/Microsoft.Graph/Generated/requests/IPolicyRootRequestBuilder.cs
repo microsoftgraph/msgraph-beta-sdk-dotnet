@@ -98,16 +98,16 @@ namespace Microsoft.Graph
         IDirectoryRoleAccessReviewPolicyRequestBuilder DirectoryRoleAccessReviewPolicy { get; }
 
         /// <summary>
-        /// Gets the request builder for IdentitySecurityDefaultsEnforcementPolicy.
-        /// </summary>
-        /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>
-        IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get; }
-
-        /// <summary>
         /// Gets the request builder for ConditionalAccessPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootConditionalAccessPoliciesCollectionRequestBuilder"/>.</returns>
         IPolicyRootConditionalAccessPoliciesCollectionRequestBuilder ConditionalAccessPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for IdentitySecurityDefaultsEnforcementPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>
+        IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get; }
     
     }
 }

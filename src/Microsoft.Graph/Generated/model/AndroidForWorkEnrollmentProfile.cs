@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string AccountId { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
-        /// Display name for the enrollment profile.
+        /// Gets or sets created date time.
+        /// Date time the enrollment profile was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -52,32 +52,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
-        /// Date time the enrollment profile was created.
+        /// Gets or sets display name.
+        /// Display name for the enrollment profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// Date time the enrollment profile was last modified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets token value.
-        /// Value of the most recently created token for this enrollment profile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenValue", Required = Newtonsoft.Json.Required.Default)]
-        public string TokenValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets token expiration date time.
-        /// Date time the most recently created token will expire.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? TokenExpirationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enrolled device count.
@@ -85,6 +64,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrolledDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? EnrolledDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// Date time the enrollment profile was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets qr code content.
@@ -99,6 +85,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qrCodeImage", Required = Newtonsoft.Json.Required.Default)]
         public MimeContent QrCodeImage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token expiration date time.
+        /// Date time the most recently created token will expire.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? TokenExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets token value.
+        /// Value of the most recently created token for this enrollment profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenValue", Required = Newtonsoft.Json.Required.Default)]
+        public string TokenValue { get; set; }
     
     }
 }

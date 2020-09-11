@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public string BundleId { get; set; }
     
         /// <summary>
-        /// Gets or sets file name.
-        /// Configuration file name (*.plist | *.xml).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
-        public string FileName { get; set; }
-    
-        /// <summary>
         /// Gets or sets configuration xml.
         /// Configuration xml. (UTF8 encoded byte array)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationXml", Required = Newtonsoft.Json.Required.Default)]
         public byte[] ConfigurationXml { get; set; }
+    
+        /// <summary>
+        /// Gets or sets file name.
+        /// Configuration file name (*.plist | *.xml).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        public string FileName { get; set; }
     
     }
 }

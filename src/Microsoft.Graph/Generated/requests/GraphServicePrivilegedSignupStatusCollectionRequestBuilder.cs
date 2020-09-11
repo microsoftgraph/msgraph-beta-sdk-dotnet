@@ -61,17 +61,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PrivilegedSignupStatusSignUp.
-        /// </summary>
-        /// <returns>The <see cref="IPrivilegedSignupStatusSignUpRequestBuilder"/>.</returns>
-        public IPrivilegedSignupStatusSignUpRequestBuilder SignUp()
-        {
-            return new PrivilegedSignupStatusSignUpRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.signUp"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for PrivilegedSignupStatusCompleteSetup.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedSignupStatusCompleteSetupRequestBuilder"/>.</returns>
@@ -85,13 +74,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PrivilegedSignupStatusIsSignedUp.
+        /// Gets the request builder for PrivilegedSignupStatusSignUp.
         /// </summary>
-        /// <returns>The <see cref="IPrivilegedSignupStatusIsSignedUpRequestBuilder"/>.</returns>
-        public IPrivilegedSignupStatusIsSignedUpRequestBuilder IsSignedUp()
+        /// <returns>The <see cref="IPrivilegedSignupStatusSignUpRequestBuilder"/>.</returns>
+        public IPrivilegedSignupStatusSignUpRequestBuilder SignUp()
         {
-            return new PrivilegedSignupStatusIsSignedUpRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.isSignedUp"),
+            return new PrivilegedSignupStatusSignUpRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.signUp"),
                 this.Client);
         }
 
@@ -103,6 +92,17 @@ namespace Microsoft.Graph
         {
             return new PrivilegedSignupStatusCanSignUpRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.canSignUp"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for PrivilegedSignupStatusIsSignedUp.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedSignupStatusIsSignedUpRequestBuilder"/>.</returns>
+        public IPrivilegedSignupStatusIsSignedUpRequestBuilder IsSignedUp()
+        {
+            return new PrivilegedSignupStatusIsSignedUpRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.isSignedUp"),
                 this.Client);
         }
     }

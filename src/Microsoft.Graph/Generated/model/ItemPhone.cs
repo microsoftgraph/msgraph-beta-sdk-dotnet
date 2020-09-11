@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public PhoneType? Type { get; set; }
-    
-        /// <summary>
         /// Gets or sets number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
         public string Number { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public PhoneType? Type { get; set; }
     
     }
 }

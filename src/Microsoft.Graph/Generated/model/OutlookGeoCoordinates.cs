@@ -31,11 +31,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets accuracy.
+        /// The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accuracy", Required = Newtonsoft.Json.Required.Default)]
+        public double? Accuracy { get; set; }
+    
+        /// <summary>
         /// Gets or sets altitude.
         /// The altitude of the location.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitude", Required = Newtonsoft.Json.Required.Default)]
         public double? Altitude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets altitudeAccuracy.
+        /// The accuracy of the altitude.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitudeAccuracy", Required = Newtonsoft.Json.Required.Default)]
+        public double? AltitudeAccuracy { get; set; }
     
         /// <summary>
         /// Gets or sets latitude.
@@ -50,20 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
         public double? Longitude { get; set; }
-    
-        /// <summary>
-        /// Gets or sets accuracy.
-        /// The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accuracy", Required = Newtonsoft.Json.Required.Default)]
-        public double? Accuracy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets altitudeAccuracy.
-        /// The accuracy of the altitude.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "altitudeAccuracy", Required = Newtonsoft.Json.Required.Default)]
-        public double? AltitudeAccuracy { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

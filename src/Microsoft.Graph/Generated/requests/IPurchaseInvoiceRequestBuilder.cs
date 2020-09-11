@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IPurchaseInvoiceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Currency.
+        /// </summary>
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        ICurrencyRequestBuilder Currency { get; }
+
+        /// <summary>
         /// Gets the request builder for PurchaseInvoiceLines.
         /// </summary>
         /// <returns>The <see cref="IPurchaseInvoicePurchaseInvoiceLinesCollectionRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IVendorRequestBuilder"/>.</returns>
         IVendorRequestBuilder Vendor { get; }
-
-        /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        ICurrencyRequestBuilder Currency { get; }
     
         /// <summary>
         /// Gets the request builder for PurchaseInvoicePost.

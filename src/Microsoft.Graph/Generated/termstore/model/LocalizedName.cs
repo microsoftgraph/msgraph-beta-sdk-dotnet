@@ -31,16 +31,16 @@ namespace Microsoft.Graph.TermStore
         }
 
         /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
         /// Gets or sets languageTag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageTag { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

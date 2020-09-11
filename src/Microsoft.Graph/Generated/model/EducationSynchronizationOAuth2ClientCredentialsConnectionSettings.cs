@@ -30,16 +30,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets tokenUrl.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string TokenUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets scope.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
         public string Scope { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tokenUrl.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string TokenUrl { get; set; }
     
     }
 }

@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Picture.
-        /// </summary>
-        /// <returns>The <see cref="IVendorPictureCollectionRequestBuilder"/>.</returns>
-        public IVendorPictureCollectionRequestBuilder Picture
-        {
-            get
-            {
-                return new VendorPictureCollectionRequestBuilder(this.AppendSegmentToRequestUrl("picture"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Currency.
         /// </summary>
         /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PaymentMethod.
+        /// </summary>
+        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
+        public IPaymentMethodRequestBuilder PaymentMethod
+        {
+            get
+            {
+                return new PaymentMethodRequestBuilder(this.AppendSegmentToRequestUrl("paymentMethod"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PaymentMethod.
+        /// Gets the request builder for Picture.
         /// </summary>
-        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
-        public IPaymentMethodRequestBuilder PaymentMethod
+        /// <returns>The <see cref="IVendorPictureCollectionRequestBuilder"/>.</returns>
+        public IVendorPictureCollectionRequestBuilder Picture
         {
             get
             {
-                return new PaymentMethodRequestBuilder(this.AppendSegmentToRequestUrl("paymentMethod"), this.Client);
+                return new VendorPictureCollectionRequestBuilder(this.AppendSegmentToRequestUrl("picture"), this.Client);
             }
         }
     

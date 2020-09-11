@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets comparisonValue.
+        /// The script output comparison value. Do not specify a value if the rule is used for detection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonValue", Required = Newtonsoft.Json.Required.Default)]
+        public string ComparisonValue { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// The display name for the rule. Do not specify this value if the rule is used for detection.
         /// </summary>
@@ -42,6 +49,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceSignatureCheck", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnforceSignatureCheck { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operationType.
+        /// The script output comparison operation type. Use NotConfigured (the default value) if the rule is used for detection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppPowerShellScriptRuleOperationType? OperationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operator.
+        /// The script output operator. Use NotConfigured (the default value) if the rule is used for detection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppRuleOperator? Operator { get; set; }
     
         /// <summary>
         /// Gets or sets runAs32Bit.
@@ -63,27 +84,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
         public string ScriptContent { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operationType.
-        /// The script output comparison operation type. Use NotConfigured (the default value) if the rule is used for detection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppPowerShellScriptRuleOperationType? OperationType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operator.
-        /// The script output operator. Use NotConfigured (the default value) if the rule is used for detection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppRuleOperator? Operator { get; set; }
-    
-        /// <summary>
-        /// Gets or sets comparisonValue.
-        /// The script output comparison value. Do not specify a value if the rule is used for detection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonValue", Required = Newtonsoft.Json.Required.Default)]
-        public string ComparisonValue { get; set; }
     
     }
 }

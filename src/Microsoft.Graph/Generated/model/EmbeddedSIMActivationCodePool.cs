@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// The admin defined name of the embedded SIM activation code pool.
+        /// Gets or sets activation code count.
+        /// The total count of activation codes which belong to this pool.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// The time the embedded SIM activation code pool was created. Generated service side.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets modified date time.
-        /// The time the embedded SIM activation code pool was last modified. Updated service side.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activationCodeCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ActivationCodeCount { get; set; }
     
         /// <summary>
         /// Gets or sets activation codes.
@@ -59,11 +45,25 @@ namespace Microsoft.Graph
         public IEnumerable<EmbeddedSIMActivationCode> ActivationCodes { get; set; }
     
         /// <summary>
-        /// Gets or sets activation code count.
-        /// The total count of activation codes which belong to this pool.
+        /// Gets or sets created date time.
+        /// The time the embedded SIM activation code pool was created. Generated service side.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activationCodeCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ActivationCodeCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// The admin defined name of the embedded SIM activation code pool.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets modified date time.
+        /// The time the embedded SIM activation code pool was last modified. Updated service side.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

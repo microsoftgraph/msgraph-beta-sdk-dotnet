@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets role definitions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
-        public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
-    
-        /// <summary>
         /// Gets or sets role assignments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignments", Required = Newtonsoft.Json.Required.Default)]
         public IRbacApplicationRoleAssignmentsCollectionPage RoleAssignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role definitions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
     }
 }

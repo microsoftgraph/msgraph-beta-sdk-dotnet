@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates { get; }
 
         /// <summary>
-        /// Gets the request builder for DeviceConfigurationStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder DeviceConfigurationStates { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
         IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder DeviceConfigurationStates { get; }
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceMobileAppConfigurationStates.
@@ -68,10 +68,10 @@ namespace Microsoft.Graph
         IDeviceCategoryRequestBuilder DeviceCategory { get; }
 
         /// <summary>
-        /// Gets the request builder for WindowsProtectionState.
+        /// Gets the request builder for LogCollectionRequests.
         /// </summary>
-        /// <returns>The <see cref="IWindowsProtectionStateRequestBuilder"/>.</returns>
-        IWindowsProtectionStateRequestBuilder WindowsProtectionState { get; }
+        /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceLogCollectionRequestsCollectionRequestBuilder LogCollectionRequests { get; }
 
         /// <summary>
         /// Gets the request builder for Users.
@@ -80,10 +80,10 @@ namespace Microsoft.Graph
         IManagedDeviceUsersCollectionRequestBuilder Users { get; }
 
         /// <summary>
-        /// Gets the request builder for LogCollectionRequests.
+        /// Gets the request builder for WindowsProtectionState.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceLogCollectionRequestsCollectionRequestBuilder LogCollectionRequests { get; }
+        /// <returns>The <see cref="IWindowsProtectionStateRequestBuilder"/>.</returns>
+        IWindowsProtectionStateRequestBuilder WindowsProtectionState { get; }
     
         /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
@@ -92,6 +92,39 @@ namespace Microsoft.Graph
         IManagedDeviceOverrideComplianceStateRequestBuilder OverrideComplianceState(
             AdministratorConfiguredDeviceComplianceState complianceState,
             string remediationUrl = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceBypassActivationLock.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBypassActivationLockRequestBuilder"/>.</returns>
+        IManagedDeviceBypassActivationLockRequestBuilder BypassActivationLock();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCleanWindowsDevice.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCleanWindowsDeviceRequestBuilder"/>.</returns>
+        IManagedDeviceCleanWindowsDeviceRequestBuilder CleanWindowsDevice(
+            bool keepUserData);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCreateDeviceLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder"/>.</returns>
+        IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest(
+            DeviceLogCollectionRequestObject templateType = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceDeleteUserFromSharedAppleDevice.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder"/>.</returns>
+        IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice(
+            string userPrincipalName = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceDisableLostMode.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDisableLostModeRequestBuilder"/>.</returns>
+        IManagedDeviceDisableLostModeRequestBuilder DisableLostMode();
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceEnableLostMode.
@@ -103,52 +136,34 @@ namespace Microsoft.Graph
             string footer = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceLocateDevice.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>
+        IManagedDeviceLocateDeviceRequestBuilder LocateDevice();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceLogoutSharedAppleDeviceActiveUser.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder"/>.</returns>
+        IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser();
+
+        /// <summary>
         /// Gets the request builder for ManagedDevicePlayLostModeSound.
         /// </summary>
         /// <returns>The <see cref="IManagedDevicePlayLostModeSoundRequestBuilder"/>.</returns>
         IManagedDevicePlayLostModeSoundRequestBuilder PlayLostModeSound();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceSetDeviceName.
+        /// Gets the request builder for ManagedDeviceRebootNow.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSetDeviceNameRequestBuilder"/>.</returns>
-        IManagedDeviceSetDeviceNameRequestBuilder SetDeviceName(
-            string deviceName = null);
+        /// <returns>The <see cref="IManagedDeviceRebootNowRequestBuilder"/>.</returns>
+        IManagedDeviceRebootNowRequestBuilder RebootNow();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceRotateFileVaultKey.
+        /// Gets the request builder for ManagedDeviceRecoverPasscode.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
-        IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceCreateDeviceLogCollectionRequest.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder"/>.</returns>
-        IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest(
-            DeviceLogCollectionRequestObject templateType = null);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRetire.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRetireRequestBuilder"/>.</returns>
-        IManagedDeviceRetireRequestBuilder Retire();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceWipe.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceWipeRequestBuilder"/>.</returns>
-        IManagedDeviceWipeRequestBuilder Wipe(
-            bool? keepEnrollmentData = null,
-            bool? keepUserData = null,
-            string macOsUnlockCode = null,
-            bool? useProtectedWipe = null);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceResetPasscode.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceResetPasscodeRequestBuilder"/>.</returns>
-        IManagedDeviceResetPasscodeRequestBuilder ResetPasscode();
+        /// <returns>The <see cref="IManagedDeviceRecoverPasscodeRequestBuilder"/>.</returns>
+        IManagedDeviceRecoverPasscodeRequestBuilder RecoverPasscode();
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceRemoteLock.
@@ -163,28 +178,49 @@ namespace Microsoft.Graph
         IManagedDeviceRequestRemoteAssistanceRequestBuilder RequestRemoteAssistance();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceDisableLostMode.
+        /// Gets the request builder for ManagedDeviceResetPasscode.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDisableLostModeRequestBuilder"/>.</returns>
-        IManagedDeviceDisableLostModeRequestBuilder DisableLostMode();
+        /// <returns>The <see cref="IManagedDeviceResetPasscodeRequestBuilder"/>.</returns>
+        IManagedDeviceResetPasscodeRequestBuilder ResetPasscode();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceLocateDevice.
+        /// Gets the request builder for ManagedDeviceRetire.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>
-        IManagedDeviceLocateDeviceRequestBuilder LocateDevice();
+        /// <returns>The <see cref="IManagedDeviceRetireRequestBuilder"/>.</returns>
+        IManagedDeviceRetireRequestBuilder Retire();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceBypassActivationLock.
+        /// Gets the request builder for ManagedDeviceRevokeAppleVppLicenses.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceBypassActivationLockRequestBuilder"/>.</returns>
-        IManagedDeviceBypassActivationLockRequestBuilder BypassActivationLock();
+        /// <returns>The <see cref="IManagedDeviceRevokeAppleVppLicensesRequestBuilder"/>.</returns>
+        IManagedDeviceRevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceRebootNow.
+        /// Gets the request builder for ManagedDeviceRotateBitLockerKeys.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRebootNowRequestBuilder"/>.</returns>
-        IManagedDeviceRebootNowRequestBuilder RebootNow();
+        /// <returns>The <see cref="IManagedDeviceRotateBitLockerKeysRequestBuilder"/>.</returns>
+        IManagedDeviceRotateBitLockerKeysRequestBuilder RotateBitLockerKeys();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateFileVaultKey.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
+        IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceSetDeviceName.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSetDeviceNameRequestBuilder"/>.</returns>
+        IManagedDeviceSetDeviceNameRequestBuilder SetDeviceName(
+            string deviceName = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceShutDown.
@@ -193,36 +229,24 @@ namespace Microsoft.Graph
         IManagedDeviceShutDownRequestBuilder ShutDown();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceRecoverPasscode.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRecoverPasscodeRequestBuilder"/>.</returns>
-        IManagedDeviceRecoverPasscodeRequestBuilder RecoverPasscode();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceCleanWindowsDevice.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceCleanWindowsDeviceRequestBuilder"/>.</returns>
-        IManagedDeviceCleanWindowsDeviceRequestBuilder CleanWindowsDevice(
-            bool keepUserData);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceLogoutSharedAppleDeviceActiveUser.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder"/>.</returns>
-        IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceDeleteUserFromSharedAppleDevice.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder"/>.</returns>
-        IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice(
-            string userPrincipalName = null);
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceSyncDevice.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSyncDeviceRequestBuilder"/>.</returns>
         IManagedDeviceSyncDeviceRequestBuilder SyncDevice();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceTriggerConfigurationManagerAction.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceTriggerConfigurationManagerActionRequestBuilder"/>.</returns>
+        IManagedDeviceTriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction(
+            ConfigurationManagerAction configurationManagerAction);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceUpdateWindowsDeviceAccount.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder"/>.</returns>
+        IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount(
+            UpdateWindowsDeviceAccountActionParameter updateWindowsDeviceAccountActionParameter = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceWindowsDefenderScan.
@@ -238,38 +262,14 @@ namespace Microsoft.Graph
         IManagedDeviceWindowsDefenderUpdateSignaturesRequestBuilder WindowsDefenderUpdateSignatures();
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceUpdateWindowsDeviceAccount.
+        /// Gets the request builder for ManagedDeviceWipe.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder"/>.</returns>
-        IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount(
-            UpdateWindowsDeviceAccountActionParameter updateWindowsDeviceAccountActionParameter = null);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRevokeAppleVppLicenses.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRevokeAppleVppLicensesRequestBuilder"/>.</returns>
-        IManagedDeviceRevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRotateBitLockerKeys.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRotateBitLockerKeysRequestBuilder"/>.</returns>
-        IManagedDeviceRotateBitLockerKeysRequestBuilder RotateBitLockerKeys();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle,
-            string notificationBody);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceTriggerConfigurationManagerAction.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceTriggerConfigurationManagerActionRequestBuilder"/>.</returns>
-        IManagedDeviceTriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction(
-            ConfigurationManagerAction configurationManagerAction);
+        /// <returns>The <see cref="IManagedDeviceWipeRequestBuilder"/>.</returns>
+        IManagedDeviceWipeRequestBuilder Wipe(
+            bool? keepEnrollmentData = null,
+            bool? keepUserData = null,
+            string macOsUnlockCode = null,
+            bool? useProtectedWipe = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceGetNonCompliantSettings.

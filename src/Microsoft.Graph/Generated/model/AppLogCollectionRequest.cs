@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets status.
-        /// Log upload status
+        /// Gets or sets completed date time.
+        /// Time at which the upload log request reached a terminal state
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public AppLogUploadState? Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets error message.
-        /// Error message if any during the upload process
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
-        public string ErrorMessage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets custom log folders.
@@ -52,11 +45,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> CustomLogFolders { get; set; }
     
         /// <summary>
-        /// Gets or sets completed date time.
-        /// Time at which the upload log request reached a terminal state
+        /// Gets or sets error message.
+        /// Error message if any during the upload process
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CompletedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string ErrorMessage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// Log upload status
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public AppLogUploadState? Status { get; set; }
     
     }
 }

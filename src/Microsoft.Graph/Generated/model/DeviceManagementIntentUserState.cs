@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user principal name.
-        /// The user principal name that is being reported on a device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user name.
-        /// The user name that is being reported on a device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserName { get; set; }
-    
-        /// <summary>
         /// Gets or sets device count.
         /// Count of Devices that belongs to a user for an intent
         /// </summary>
@@ -64,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ComplianceStatus? State { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user name.
+        /// The user name that is being reported on a device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// The user principal name that is being reported on a device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

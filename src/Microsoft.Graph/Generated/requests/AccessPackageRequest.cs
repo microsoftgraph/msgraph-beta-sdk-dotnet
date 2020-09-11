@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (accessPackageToInitialize != null && accessPackageToInitialize.AdditionalData != null)
             {
 
-                if (accessPackageToInitialize.AccessPackageResourceRoleScopes != null && accessPackageToInitialize.AccessPackageResourceRoleScopes.CurrentPage != null)
-                {
-                    accessPackageToInitialize.AccessPackageResourceRoleScopes.AdditionalData = accessPackageToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoleScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (accessPackageToInitialize.AccessPackageAssignmentPolicies != null && accessPackageToInitialize.AccessPackageAssignmentPolicies.CurrentPage != null)
                 {
                     accessPackageToInitialize.AccessPackageAssignmentPolicies.AdditionalData = accessPackageToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         accessPackageToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (accessPackageToInitialize.AccessPackageResourceRoleScopes != null && accessPackageToInitialize.AccessPackageResourceRoleScopes.CurrentPage != null)
+                {
+                    accessPackageToInitialize.AccessPackageResourceRoleScopes.AdditionalData = accessPackageToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    accessPackageToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoleScopes@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        accessPackageToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets value.
-        /// The raw enum value text
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
-        public string Value { get; set; }
-    
-        /// <summary>
         /// Gets or sets displayName.
         /// Display name for this enum value
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets value.
+        /// The raw enum value text
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        public string Value { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

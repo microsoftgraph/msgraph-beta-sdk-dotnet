@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         ISecuritySecureScoresCollectionRequestBuilder SecureScores { get; }
 
         /// <summary>
+        /// Gets the request builder for SecurityActions.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySecurityActionsCollectionRequestBuilder"/>.</returns>
+        ISecuritySecurityActionsCollectionRequestBuilder SecurityActions { get; }
+
+        /// <summary>
         /// Gets the request builder for TiIndicators.
         /// </summary>
         /// <returns>The <see cref="ISecurityTiIndicatorsCollectionRequestBuilder"/>.</returns>
@@ -96,12 +102,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISecurityUserSecurityProfilesCollectionRequestBuilder"/>.</returns>
         ISecurityUserSecurityProfilesCollectionRequestBuilder UserSecurityProfiles { get; }
-
-        /// <summary>
-        /// Gets the request builder for SecurityActions.
-        /// </summary>
-        /// <returns>The <see cref="ISecuritySecurityActionsCollectionRequestBuilder"/>.</returns>
-        ISecuritySecurityActionsCollectionRequestBuilder SecurityActions { get; }
     
     }
 }

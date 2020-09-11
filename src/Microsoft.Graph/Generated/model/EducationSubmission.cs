@@ -37,6 +37,36 @@ namespace Microsoft.Graph
         public EducationSubmissionRecipient Recipient { get; set; }
     
         /// <summary>
+        /// Gets or sets released by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releasedBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet ReleasedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets released date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releasedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ReleasedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resources folder url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourcesFolderUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourcesFolderUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets returned by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnedBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet ReturnedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets returned date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ReturnedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
@@ -67,34 +97,10 @@ namespace Microsoft.Graph
         public DateTimeOffset? UnsubmittedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets released by.
+        /// Gets or sets outcomes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releasedBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet ReleasedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets released date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "releasedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ReleasedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets returned by.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnedBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet ReturnedBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets returned date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "returnedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ReturnedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resources folder url.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourcesFolderUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourcesFolderUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outcomes", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationSubmissionOutcomesCollectionPage Outcomes { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
@@ -107,12 +113,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "submittedResources", Required = Newtonsoft.Json.Required.Default)]
         public IEducationSubmissionSubmittedResourcesCollectionPage SubmittedResources { get; set; }
-    
-        /// <summary>
-        /// Gets or sets outcomes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outcomes", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationSubmissionOutcomesCollectionPage Outcomes { get; set; }
     
     }
 }

@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IIosEnterpriseWiFiConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificatesForServerValidation.
+        /// Gets the request builder for DerivedCredentialSettings.
         /// </summary>
-        /// <returns>The <see cref="IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
-        IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation { get; }
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
 
         /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         IIosCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
 
         /// <summary>
-        /// Gets the request builder for DerivedCredentialSettings.
+        /// Gets the request builder for RootCertificatesForServerValidation.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
-        IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
+        /// <returns>The <see cref="IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
+        IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation { get; }
     
     }
 }

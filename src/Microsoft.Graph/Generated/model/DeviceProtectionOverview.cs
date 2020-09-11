@@ -31,11 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets totalReportedDeviceCount.
-        /// Total device count.
+        /// Gets or sets cleanDeviceCount.
+        /// Clean device count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalReportedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalReportedDeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cleanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CleanDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets criticalFailuresDeviceCount.
+        /// Critical failures device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criticalFailuresDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CriticalFailuresDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets inactiveThreatAgentDeviceCount.
@@ -45,39 +52,11 @@ namespace Microsoft.Graph
         public Int32? InactiveThreatAgentDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets unknownStateThreatAgentDeviceCount.
-        /// Device with threat agent state as unknown count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownStateThreatAgentDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UnknownStateThreatAgentDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pendingSignatureUpdateDeviceCount.
-        /// Device with old signature count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingSignatureUpdateDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PendingSignatureUpdateDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cleanDeviceCount.
-        /// Clean device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cleanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CleanDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets pendingFullScanDeviceCount.
         /// Pending full scan device count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingFullScanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PendingFullScanDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pendingRestartDeviceCount.
-        /// Pending restart device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingRestartDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PendingRestartDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingManualStepsDeviceCount.
@@ -94,18 +73,39 @@ namespace Microsoft.Graph
         public Int32? PendingOfflineScanDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets criticalFailuresDeviceCount.
-        /// Critical failures device count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criticalFailuresDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CriticalFailuresDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets pendingQuickScanDeviceCount.
         /// Pending quick scan device count. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingQuickScanDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PendingQuickScanDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pendingRestartDeviceCount.
+        /// Pending restart device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingRestartDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PendingRestartDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pendingSignatureUpdateDeviceCount.
+        /// Device with old signature count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingSignatureUpdateDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PendingSignatureUpdateDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets totalReportedDeviceCount.
+        /// Total device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalReportedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalReportedDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unknownStateThreatAgentDeviceCount.
+        /// Device with threat agent state as unknown count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownStateThreatAgentDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UnknownStateThreatAgentDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

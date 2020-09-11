@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IEducationSubmissionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Outcomes.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionOutcomesCollectionRequestBuilder"/>.</returns>
+        IEducationSubmissionOutcomesCollectionRequestBuilder Outcomes { get; }
+
+        /// <summary>
         /// Gets the request builder for Resources.
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionResourcesCollectionRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionSubmittedResourcesCollectionRequestBuilder"/>.</returns>
         IEducationSubmissionSubmittedResourcesCollectionRequestBuilder SubmittedResources { get; }
-
-        /// <summary>
-        /// Gets the request builder for Outcomes.
-        /// </summary>
-        /// <returns>The <see cref="IEducationSubmissionOutcomesCollectionRequestBuilder"/>.</returns>
-        IEducationSubmissionOutcomesCollectionRequestBuilder Outcomes { get; }
     
         /// <summary>
         /// Gets the request builder for EducationSubmissionReturn.

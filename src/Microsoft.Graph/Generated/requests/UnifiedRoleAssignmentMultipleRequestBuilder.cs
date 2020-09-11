@@ -51,26 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RoleDefinition.
+        /// Gets the request builder for AppScopes.
         /// </summary>
-        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
-        public IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition
+        /// <returns>The <see cref="IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder"/>.</returns>
+        public IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder AppScopes
         {
             get
             {
-                return new UnifiedRoleDefinitionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinition"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Principals.
-        /// </summary>
-        /// <returns>The <see cref="IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder Principals
-        {
-            get
-            {
-                return new UnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("principals"), this.Client);
+                return new UnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appScopes"), this.Client);
             }
         }
 
@@ -87,14 +75,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AppScopes.
+        /// Gets the request builder for Principals.
         /// </summary>
-        /// <returns>The <see cref="IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder"/>.</returns>
-        public IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder AppScopes
+        /// <returns>The <see cref="IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder Principals
         {
             get
             {
-                return new UnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appScopes"), this.Client);
+                return new UnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("principals"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
+        public IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition
+        {
+            get
+            {
+                return new UnifiedRoleDefinitionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinition"), this.Client);
             }
         }
     

@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets created date time.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -45,18 +45,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets priority.
+        /// Gets or sets display name.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Priority { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// Not yet documented
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -66,11 +59,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets version.
+        /// Gets or sets priority.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Version { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
@@ -78,6 +71,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version.
+        /// Not yet documented
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Version { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

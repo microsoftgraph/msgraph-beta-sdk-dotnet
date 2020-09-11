@@ -31,55 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets value type.
-        /// The data type of the value
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManangementIntentValueType? ValueType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// The setting's display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is top level.
-        /// If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTopLevel", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsTopLevel { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// The setting's description
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets placeholder text.
-        /// Placeholder text as an example of valid input
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "placeholderText", Required = Newtonsoft.Json.Required.Default)]
-        public string PlaceholderText { get; set; }
-    
-        /// <summary>
-        /// Gets or sets documentation url.
-        /// Url to setting documentation
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentationUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string DocumentationUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets keywords.
-        /// Keywords associated with the setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keywords", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Keywords { get; set; }
-    
-        /// <summary>
         /// Gets or sets constraints.
         /// Collection of constraints for the setting value
         /// </summary>
@@ -92,6 +43,55 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependencies", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeviceManagementSettingDependency> Dependencies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// The setting's description
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// The setting's display name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets documentation url.
+        /// Url to setting documentation
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentationUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string DocumentationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is top level.
+        /// If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isTopLevel", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsTopLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets keywords.
+        /// Keywords associated with the setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keywords", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Keywords { get; set; }
+    
+        /// <summary>
+        /// Gets or sets placeholder text.
+        /// Placeholder text as an example of valid input
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "placeholderText", Required = Newtonsoft.Json.Required.Default)]
+        public string PlaceholderText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets value type.
+        /// The data type of the value
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManangementIntentValueType? ValueType { get; set; }
     
     }
 }

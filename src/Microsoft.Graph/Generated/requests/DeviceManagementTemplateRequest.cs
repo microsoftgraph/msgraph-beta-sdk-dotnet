@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (deviceManagementTemplateToInitialize != null && deviceManagementTemplateToInitialize.AdditionalData != null)
             {
 
-                if (deviceManagementTemplateToInitialize.Settings != null && deviceManagementTemplateToInitialize.Settings.CurrentPage != null)
-                {
-                    deviceManagementTemplateToInitialize.Settings.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementTemplateToInitialize.Categories != null && deviceManagementTemplateToInitialize.Categories.CurrentPage != null)
                 {
                     deviceManagementTemplateToInitialize.Categories.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementTemplateToInitialize.Settings != null && deviceManagementTemplateToInitialize.Settings.CurrentPage != null)
+                {
+                    deviceManagementTemplateToInitialize.Settings.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

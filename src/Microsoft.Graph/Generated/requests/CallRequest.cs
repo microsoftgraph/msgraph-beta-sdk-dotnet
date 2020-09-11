@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (callToInitialize != null && callToInitialize.AdditionalData != null)
             {
 
-                if (callToInitialize.Participants != null && callToInitialize.Participants.CurrentPage != null)
-                {
-                    callToInitialize.Participants.AdditionalData = callToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    callToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        callToInitialize.Participants.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (callToInitialize.AudioRoutingGroups != null && callToInitialize.AudioRoutingGroups.CurrentPage != null)
                 {
                     callToInitialize.AudioRoutingGroups.AdditionalData = callToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         callToInitialize.Operations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (callToInitialize.Participants != null && callToInitialize.Participants.CurrentPage != null)
+                {
+                    callToInitialize.Participants.AdditionalData = callToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    callToInitialize.AdditionalData.TryGetValue("participants@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        callToInitialize.Participants.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

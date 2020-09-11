@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets policies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
-        public ITrustFrameworkPoliciesCollectionPage Policies { get; set; }
-    
-        /// <summary>
         /// Gets or sets key sets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keySets", Required = Newtonsoft.Json.Required.Default)]
         public ITrustFrameworkKeySetsCollectionPage KeySets { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
+        public ITrustFrameworkPoliciesCollectionPage Policies { get; set; }
     
     }
 }

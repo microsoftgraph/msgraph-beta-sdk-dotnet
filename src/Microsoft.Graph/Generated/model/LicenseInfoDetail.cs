@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public AzureADLicenseType? LicenseType { get; set; }
     
         /// <summary>
-        /// Gets or sets totalLicenseCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicenseCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalLicenseCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets totalAssignedCount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalAssignedCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TotalAssignedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets totalLicenseCount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalLicenseCount { get; set; }
     
         /// <summary>
         /// Gets or sets totalUsageCount.

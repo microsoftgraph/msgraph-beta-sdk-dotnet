@@ -31,6 +31,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets complianceState.
+        /// Managed Device ComplianceStatus
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceState", Required = Newtonsoft.Json.Required.Default)]
+        public ComplianceStatus? ComplianceState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceCompliancePolicyId.
+        /// Device Compliance PolicyId
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceCompliancePolicyId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceCompliancePolicyName.
+        /// Device Compliance Policy Name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceCompliancePolicyName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceType.
+        /// Managed Device Device Type
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceType? DeviceType { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// Key of the entity.
         /// </summary>
@@ -52,27 +80,6 @@ namespace Microsoft.Graph
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
-        /// Gets or sets deviceType.
-        /// Managed Device Device Type
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceType? DeviceType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets complianceState.
-        /// Managed Device ComplianceStatus
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceState", Required = Newtonsoft.Json.Required.Default)]
-        public ComplianceStatus? ComplianceState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets retireAfterDateTime.
-        /// Managed Device Retire After DateTime
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "retireAfterDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? RetireAfterDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets managementAgent.
         /// Managed Device ManagementAgentType
         /// </summary>
@@ -87,18 +94,11 @@ namespace Microsoft.Graph
         public ManagedDeviceOwnerType? OwnerType { get; set; }
     
         /// <summary>
-        /// Gets or sets deviceCompliancePolicyName.
-        /// Device Compliance Policy Name
+        /// Gets or sets retireAfterDateTime.
+        /// Managed Device Retire After DateTime
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceCompliancePolicyName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deviceCompliancePolicyId.
-        /// Device Compliance PolicyId
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyId", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceCompliancePolicyId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "retireAfterDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RetireAfterDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets roleScopeTagIds.

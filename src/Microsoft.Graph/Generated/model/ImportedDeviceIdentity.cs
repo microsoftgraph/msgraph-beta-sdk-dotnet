@@ -31,39 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets imported device identifier.
-        /// Imported Device Identifier
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string ImportedDeviceIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets imported device identity type.
-        /// Type of Imported Device Identity
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentityType", Required = Newtonsoft.Json.Required.Default)]
-        public ImportedDeviceIdentityType? ImportedDeviceIdentityType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last Modified DateTime of the description
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// Created Date Time of the device
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last contacted date time.
-        /// Last Contacted Date Time of the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastContactedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastContactedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -78,6 +50,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
         public EnrollmentState? EnrollmentState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets imported device identifier.
+        /// Imported Device Identifier
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string ImportedDeviceIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets imported device identity type.
+        /// Type of Imported Device Identity
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentityType", Required = Newtonsoft.Json.Required.Default)]
+        public ImportedDeviceIdentityType? ImportedDeviceIdentityType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last contacted date time.
+        /// Last Contacted Date Time of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastContactedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastContactedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// Last Modified DateTime of the description
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets platform.

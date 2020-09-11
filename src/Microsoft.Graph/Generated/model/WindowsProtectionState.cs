@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets malware protection enabled.
-        /// Anti malware is enabled or not
+        /// Gets or sets anti malware version.
+        /// Current anti malware version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "malwareProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MalwareProtectionEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "antiMalwareVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string AntiMalwareVersion { get; set; }
     
         /// <summary>
         /// Gets or sets device state.
@@ -45,11 +45,67 @@ namespace Microsoft.Graph
         public WindowsDeviceHealthState? DeviceState { get; set; }
     
         /// <summary>
-        /// Gets or sets real time protection enabled.
-        /// Real time protection is enabled or not?
+        /// Gets or sets engine version.
+        /// Current endpoint protection engine's version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realTimeProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RealTimeProtectionEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "engineVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string EngineVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets full scan overdue.
+        /// Full scan overdue or not?
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanOverdue", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FullScanOverdue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets full scan required.
+        /// Full scan required or not?
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FullScanRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last full scan date time.
+        /// Last quick scan datetime
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastFullScanDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last full scan signature version.
+        /// Last full scan signature version
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string LastFullScanSignatureVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last quick scan date time.
+        /// Last quick scan datetime
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastQuickScanDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last quick scan signature version.
+        /// Last quick scan signature version
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string LastQuickScanSignatureVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last reported date time.
+        /// Last device health status reported time
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastReportedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets malware protection enabled.
+        /// Anti malware is enabled or not
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "malwareProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MalwareProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets network inspection system enabled.
@@ -66,18 +122,11 @@ namespace Microsoft.Graph
         public bool? QuickScanOverdue { get; set; }
     
         /// <summary>
-        /// Gets or sets full scan overdue.
-        /// Full scan overdue or not?
+        /// Gets or sets real time protection enabled.
+        /// Real time protection is enabled or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanOverdue", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FullScanOverdue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets signature update overdue.
-        /// Signature out of date or not?
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureUpdateOverdue", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SignatureUpdateOverdue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realTimeProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RealTimeProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets reboot required.
@@ -87,18 +136,11 @@ namespace Microsoft.Graph
         public bool? RebootRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets full scan required.
-        /// Full scan required or not?
+        /// Gets or sets signature update overdue.
+        /// Signature out of date or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? FullScanRequired { get; set; }
-    
-        /// <summary>
-        /// Gets or sets engine version.
-        /// Current endpoint protection engine's version
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "engineVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string EngineVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureUpdateOverdue", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SignatureUpdateOverdue { get; set; }
     
         /// <summary>
         /// Gets or sets signature version.
@@ -106,48 +148,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureVersion", Required = Newtonsoft.Json.Required.Default)]
         public string SignatureVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets anti malware version.
-        /// Current anti malware version
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "antiMalwareVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string AntiMalwareVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last quick scan date time.
-        /// Last quick scan datetime
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastQuickScanDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last full scan date time.
-        /// Last quick scan datetime
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastFullScanDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last quick scan signature version.
-        /// Last quick scan signature version
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string LastQuickScanSignatureVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last full scan signature version.
-        /// Last full scan signature version
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string LastFullScanSignatureVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last reported date time.
-        /// Last device health status reported time
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastReportedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets detected malware state.

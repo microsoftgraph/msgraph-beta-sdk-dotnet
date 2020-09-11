@@ -250,33 +250,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (dataClassificationServiceToInitialize.SensitiveTypes != null && dataClassificationServiceToInitialize.SensitiveTypes.CurrentPage != null)
+                if (dataClassificationServiceToInitialize.ClassifyFile != null && dataClassificationServiceToInitialize.ClassifyFile.CurrentPage != null)
                 {
-                    dataClassificationServiceToInitialize.SensitiveTypes.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+                    dataClassificationServiceToInitialize.ClassifyFile.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitiveTypes@odata.nextLink", out nextPageLink);
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFile@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (dataClassificationServiceToInitialize.Jobs != null && dataClassificationServiceToInitialize.Jobs.CurrentPage != null)
-                {
-                    dataClassificationServiceToInitialize.Jobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
+                        dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -298,6 +282,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (dataClassificationServiceToInitialize.ClassifyText != null && dataClassificationServiceToInitialize.ClassifyText.CurrentPage != null)
+                {
+                    dataClassificationServiceToInitialize.ClassifyText.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyText@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (dataClassificationServiceToInitialize.ClassifyTextJobs != null && dataClassificationServiceToInitialize.ClassifyTextJobs.CurrentPage != null)
                 {
                     dataClassificationServiceToInitialize.ClassifyTextJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
@@ -309,22 +309,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (dataClassificationServiceToInitialize.EvaluateLabelJobs != null && dataClassificationServiceToInitialize.EvaluateLabelJobs.CurrentPage != null)
-                {
-                    dataClassificationServiceToInitialize.EvaluateLabelJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateLabelJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -346,6 +330,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (dataClassificationServiceToInitialize.EvaluateLabelJobs != null && dataClassificationServiceToInitialize.EvaluateLabelJobs.CurrentPage != null)
+                {
+                    dataClassificationServiceToInitialize.EvaluateLabelJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateLabelJobs@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (dataClassificationServiceToInitialize.Jobs != null && dataClassificationServiceToInitialize.Jobs.CurrentPage != null)
+                {
+                    dataClassificationServiceToInitialize.Jobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs != null && dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.CurrentPage != null)
                 {
                     dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
@@ -362,33 +378,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (dataClassificationServiceToInitialize.ClassifyText != null && dataClassificationServiceToInitialize.ClassifyText.CurrentPage != null)
+                if (dataClassificationServiceToInitialize.SensitiveTypes != null && dataClassificationServiceToInitialize.SensitiveTypes.CurrentPage != null)
                 {
-                    dataClassificationServiceToInitialize.ClassifyText.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
+                    dataClassificationServiceToInitialize.SensitiveTypes.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyText@odata.nextLink", out nextPageLink);
+                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitiveTypes@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (dataClassificationServiceToInitialize.ClassifyFile != null && dataClassificationServiceToInitialize.ClassifyFile.CurrentPage != null)
-                {
-                    dataClassificationServiceToInitialize.ClassifyFile.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFile@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(
+                        dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

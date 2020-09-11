@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SalesOrderLines.
+        /// Gets the request builder for Currency.
         /// </summary>
-        /// <returns>The <see cref="ISalesOrderSalesOrderLinesCollectionRequestBuilder"/>.</returns>
-        public ISalesOrderSalesOrderLinesCollectionRequestBuilder SalesOrderLines
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        public ICurrencyRequestBuilder Currency
         {
             get
             {
-                return new SalesOrderSalesOrderLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesOrderLines"), this.Client);
+                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
             }
         }
 
@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        public ICurrencyRequestBuilder Currency
-        {
-            get
-            {
-                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for PaymentTerm.
         /// </summary>
         /// <returns>The <see cref="IPaymentTermRequestBuilder"/>.</returns>
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PaymentTermRequestBuilder(this.AppendSegmentToRequestUrl("paymentTerm"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesOrderLines.
+        /// </summary>
+        /// <returns>The <see cref="ISalesOrderSalesOrderLinesCollectionRequestBuilder"/>.</returns>
+        public ISalesOrderSalesOrderLinesCollectionRequestBuilder SalesOrderLines
+        {
+            get
+            {
+                return new SalesOrderSalesOrderLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesOrderLines"), this.Client);
             }
         }
     

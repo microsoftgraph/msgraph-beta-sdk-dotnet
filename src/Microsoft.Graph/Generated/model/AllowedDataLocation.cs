@@ -37,10 +37,10 @@ namespace Microsoft.Graph
         public string AppId { get; set; }
     
         /// <summary>
-        /// Gets or sets location.
+        /// Gets or sets domain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
-        public string Location { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domain", Required = Newtonsoft.Json.Required.Default)]
+        public string Domain { get; set; }
     
         /// <summary>
         /// Gets or sets is default.
@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public bool? IsDefault { get; set; }
     
         /// <summary>
-        /// Gets or sets domain.
+        /// Gets or sets location.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domain", Required = Newtonsoft.Json.Required.Default)]
-        public string Domain { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        public string Location { get; set; }
     
     }
 }

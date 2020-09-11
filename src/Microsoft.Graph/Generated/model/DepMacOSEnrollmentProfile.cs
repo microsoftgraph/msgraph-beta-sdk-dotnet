@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets registration disabled.
-        /// Indicates if registration is disabled
+        /// Gets or sets choose your lock screen disabled.
+        /// Indicates if iCloud Documents and Desktop screen is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RegistrationDisabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chooseYourLockScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ChooseYourLockScreenDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets file vault disabled.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public bool? ICloudStorageDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets choose your lock screen disabled.
-        /// Indicates if iCloud Documents and Desktop screen is disabled
+        /// Gets or sets registration disabled.
+        /// Indicates if registration is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chooseYourLockScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ChooseYourLockScreenDisabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RegistrationDisabled { get; set; }
     
     }
 }

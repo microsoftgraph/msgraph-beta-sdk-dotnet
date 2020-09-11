@@ -32,28 +32,22 @@ namespace Microsoft.Graph
         new IPrintRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Services.
-        /// </summary>
-        /// <returns>The <see cref="IPrintServicesCollectionRequestBuilder"/>.</returns>
-        IPrintServicesCollectionRequestBuilder Services { get; }
-
-        /// <summary>
-        /// Gets the request builder for Printers.
-        /// </summary>
-        /// <returns>The <see cref="IPrintPrintersCollectionRequestBuilder"/>.</returns>
-        IPrintPrintersCollectionRequestBuilder Printers { get; }
-
-        /// <summary>
         /// Gets the request builder for Connectors.
         /// </summary>
         /// <returns>The <see cref="IPrintConnectorsCollectionRequestBuilder"/>.</returns>
         IPrintConnectorsCollectionRequestBuilder Connectors { get; }
 
         /// <summary>
-        /// Gets the request builder for Shares.
+        /// Gets the request builder for Operations.
         /// </summary>
-        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
-        IPrintSharesCollectionRequestBuilder Shares { get; }
+        /// <returns>The <see cref="IPrintOperationsCollectionRequestBuilder"/>.</returns>
+        IPrintOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Printers.
+        /// </summary>
+        /// <returns>The <see cref="IPrintPrintersCollectionRequestBuilder"/>.</returns>
+        IPrintPrintersCollectionRequestBuilder Printers { get; }
 
         /// <summary>
         /// Gets the request builder for PrinterShares.
@@ -68,10 +62,16 @@ namespace Microsoft.Graph
         IPrintReportsCollectionRequestBuilder Reports { get; }
 
         /// <summary>
-        /// Gets the request builder for Operations.
+        /// Gets the request builder for Services.
         /// </summary>
-        /// <returns>The <see cref="IPrintOperationsCollectionRequestBuilder"/>.</returns>
-        IPrintOperationsCollectionRequestBuilder Operations { get; }
+        /// <returns>The <see cref="IPrintServicesCollectionRequestBuilder"/>.</returns>
+        IPrintServicesCollectionRequestBuilder Services { get; }
+
+        /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrintSharesCollectionRequestBuilder"/>.</returns>
+        IPrintSharesCollectionRequestBuilder Shares { get; }
 
         /// <summary>
         /// Gets the request builder for TaskDefinitions.

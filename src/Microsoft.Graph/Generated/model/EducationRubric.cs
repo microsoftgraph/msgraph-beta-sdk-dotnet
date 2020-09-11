@@ -31,34 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets created by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public EducationItemBody Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets qualities.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualities", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RubricQuality> Qualities { get; set; }
-    
-        /// <summary>
-        /// Gets or sets levels.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "levels", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RubricLevel> Levels { get; set; }
-    
-        /// <summary>
-        /// Gets or sets grading.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grading", Required = Newtonsoft.Json.Required.Default)]
-        public EducationAssignmentGradeType Grading { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -67,10 +43,28 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets created by.
+        /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet CreatedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public EducationItemBody Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets grading.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grading", Required = Newtonsoft.Json.Required.Default)]
+        public EducationAssignmentGradeType Grading { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -79,10 +73,16 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified by.
+        /// Gets or sets levels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet LastModifiedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "levels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RubricLevel> Levels { get; set; }
+    
+        /// <summary>
+        /// Gets or sets qualities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualities", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RubricQuality> Qualities { get; set; }
     
     }
 }

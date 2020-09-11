@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets directory property name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryPropertyName", Required = Newtonsoft.Json.Required.Default)]
-        public string DirectoryPropertyName { get; set; }
-    
-        /// <summary>
         /// Gets or sets annotations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "annotations", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ProfileCardAnnotation> Annotations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets directory property name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryPropertyName", Required = Newtonsoft.Json.Required.Default)]
+        public string DirectoryPropertyName { get; set; }
     
     }
 }

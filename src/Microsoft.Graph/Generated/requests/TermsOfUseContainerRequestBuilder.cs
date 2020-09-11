@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Agreements.
-        /// </summary>
-        /// <returns>The <see cref="ITermsOfUseContainerAgreementsCollectionRequestBuilder"/>.</returns>
-        public ITermsOfUseContainerAgreementsCollectionRequestBuilder Agreements
-        {
-            get
-            {
-                return new TermsOfUseContainerAgreementsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("agreements"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AgreementAcceptances.
         /// </summary>
         /// <returns>The <see cref="ITermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("agreementAcceptances"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Agreements.
+        /// </summary>
+        /// <returns>The <see cref="ITermsOfUseContainerAgreementsCollectionRequestBuilder"/>.</returns>
+        public ITermsOfUseContainerAgreementsCollectionRequestBuilder Agreements
+        {
+            get
+            {
+                return new TermsOfUseContainerAgreementsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("agreements"), this.Client);
             }
         }
     

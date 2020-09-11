@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets detail.
+        /// Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
+        public RiskDetail? Detail { get; set; }
+    
+        /// <summary>
         /// Gets or sets eventTypes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventTypes", Required = Newtonsoft.Json.Required.Default)]
@@ -42,13 +49,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> RiskEventTypes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets detail.
-        /// Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
-        public RiskDetail? Detail { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

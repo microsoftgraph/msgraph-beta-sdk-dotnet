@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets runState.
-        /// Status of the item.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
-        public RunState? RunState { get; set; }
-    
-        /// <summary>
         /// Gets or sets errorCode.
         /// Error code for the failure, empty if no failure.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets runState.
+        /// Status of the item.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
+        public RunState? RunState { get; set; }
     
     }
 }

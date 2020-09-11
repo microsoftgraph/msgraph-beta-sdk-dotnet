@@ -38,13 +38,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
-        /// User provided name for the resource object.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// User provided description for the resource object.
         /// </summary>
@@ -52,11 +45,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets role scope tag ids.
-        /// The list of scope tags for the configuration.
+        /// Gets or sets display name.
+        /// User provided name for the resource object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> RoleScopeTagIds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -66,11 +59,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets definition values.
-        /// The list of enabled or disabled group policy definition values for the configuration.
+        /// Gets or sets role scope tag ids.
+        /// The list of scope tags for the configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionValues", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupPolicyConfigurationDefinitionValuesCollectionPage DefinitionValues { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -78,6 +71,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public IGroupPolicyConfigurationAssignmentsCollectionPage Assignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets definition values.
+        /// The list of enabled or disabled group policy definition values for the configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionValues", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupPolicyConfigurationDefinitionValuesCollectionPage DefinitionValues { get; set; }
     
     }
 }

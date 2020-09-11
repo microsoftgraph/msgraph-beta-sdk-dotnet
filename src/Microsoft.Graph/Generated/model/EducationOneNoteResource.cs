@@ -30,16 +30,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sectionName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionName", Required = Newtonsoft.Json.Required.Default)]
-        public string SectionName { get; set; }
-    
-        /// <summary>
         /// Gets or sets pageUrl.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageUrl", Required = Newtonsoft.Json.Required.Default)]
         public string PageUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sectionName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionName", Required = Newtonsoft.Json.Required.Default)]
+        public string SectionName { get; set; }
     
     }
 }

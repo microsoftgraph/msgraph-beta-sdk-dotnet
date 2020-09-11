@@ -31,46 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets execution frequency.
-        /// The interval for script to run. If not defined the script will run once
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "executionFrequency", Required = Newtonsoft.Json.Required.Default)]
-        public Duration ExecutionFrequency { get; set; }
-    
-        /// <summary>
-        /// Gets or sets retry count.
-        /// Number of times for the script to be retried if it fails
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "retryCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RetryCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets block execution notifications.
         /// Does not notify the user a script is being executed
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockExecutionNotifications", Required = Newtonsoft.Json.Required.Default)]
         public bool? BlockExecutionNotifications { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Name of the device management script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// Optional description for the device management script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets script content.
-        /// The script content.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] ScriptContent { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -80,18 +45,25 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// The date and time the device management script was last modified. This property is read-only.
+        /// Gets or sets description.
+        /// Optional description for the device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets run as account.
-        /// Indicates the type of execution context.
+        /// Gets or sets display name.
+        /// Name of the device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
-        public RunAsAccountType? RunAsAccount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets execution frequency.
+        /// The interval for script to run. If not defined the script will run once
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "executionFrequency", Required = Newtonsoft.Json.Required.Default)]
+        public Duration ExecutionFrequency { get; set; }
     
         /// <summary>
         /// Gets or sets file name.
@@ -101,6 +73,20 @@ namespace Microsoft.Graph
         public string FileName { get; set; }
     
         /// <summary>
+        /// Gets or sets last modified date time.
+        /// The date and time the device management script was last modified. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets retry count.
+        /// Number of times for the script to be retried if it fails
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "retryCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RetryCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tag IDs for this PowerShellScript instance.
         /// </summary>
@@ -108,11 +94,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
-        /// Gets or sets group assignments.
-        /// The list of group assignments for the device management script.
+        /// Gets or sets run as account.
+        /// Indicates the type of execution context.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceShellScriptGroupAssignmentsCollectionPage GroupAssignments { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
+        public RunAsAccountType? RunAsAccount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets script content.
+        /// The script content.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] ScriptContent { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -122,18 +115,25 @@ namespace Microsoft.Graph
         public IDeviceShellScriptAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
-        /// Gets or sets run summary.
-        /// Run summary for device management script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSummary", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementScriptRunSummary RunSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets device run states.
         /// List of run states for this script across all devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRunStates", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceShellScriptDeviceRunStatesCollectionPage DeviceRunStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group assignments.
+        /// The list of group assignments for the device management script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceShellScriptGroupAssignmentsCollectionPage GroupAssignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets run summary.
+        /// Run summary for device management script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSummary", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementScriptRunSummary RunSummary { get; set; }
     
         /// <summary>
         /// Gets or sets user run states.

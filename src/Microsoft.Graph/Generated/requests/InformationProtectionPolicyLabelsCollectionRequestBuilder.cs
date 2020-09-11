@@ -61,19 +61,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for InformationProtectionLabelExtractLabel.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionLabelExtractLabelRequestBuilder"/>.</returns>
-        public IInformationProtectionLabelExtractLabelRequestBuilder ExtractLabel(
-            ContentInfo contentInfo)
-        {
-            return new InformationProtectionLabelExtractLabelRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.extractLabel"),
-                this.Client,
-                contentInfo);
-        }
-
-        /// <summary>
         /// Gets the request builder for InformationProtectionLabelEvaluateApplication.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionLabelEvaluateApplicationRequestBuilder"/>.</returns>
@@ -86,6 +73,21 @@ namespace Microsoft.Graph
                 this.Client,
                 contentInfo,
                 labelingOptions);
+        }
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionLabelEvaluateClassificationResults.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder"/>.</returns>
+        public IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder EvaluateClassificationResults(
+            ContentInfo contentInfo,
+            IEnumerable<ClassificationResult> classificationResults)
+        {
+            return new InformationProtectionLabelEvaluateClassificationResultsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.evaluateClassificationResults"),
+                this.Client,
+                contentInfo,
+                classificationResults);
         }
 
         /// <summary>
@@ -104,18 +106,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for InformationProtectionLabelEvaluateClassificationResults.
+        /// Gets the request builder for InformationProtectionLabelExtractLabel.
         /// </summary>
-        /// <returns>The <see cref="IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder"/>.</returns>
-        public IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder EvaluateClassificationResults(
-            ContentInfo contentInfo,
-            IEnumerable<ClassificationResult> classificationResults)
+        /// <returns>The <see cref="IInformationProtectionLabelExtractLabelRequestBuilder"/>.</returns>
+        public IInformationProtectionLabelExtractLabelRequestBuilder ExtractLabel(
+            ContentInfo contentInfo)
         {
-            return new InformationProtectionLabelEvaluateClassificationResultsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.evaluateClassificationResults"),
+            return new InformationProtectionLabelExtractLabelRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.extractLabel"),
                 this.Client,
-                contentInfo,
-                classificationResults);
+                contentInfo);
         }
     }
 }

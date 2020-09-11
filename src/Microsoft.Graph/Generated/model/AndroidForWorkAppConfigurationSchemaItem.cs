@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets schemaItemKey.
-        /// Unique key the application uses to identify the item
+        /// Gets or sets dataType.
+        /// The type of value this item describes
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaItemKey", Required = Newtonsoft.Json.Required.Default)]
-        public string SchemaItemKey { get; set; }
-    
-        /// <summary>
-        /// Gets or sets displayName.
-        /// Human readable name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// Description of what the item controls within the application
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidForWorkAppConfigurationSchemaItemDataType? DataType { get; set; }
     
         /// <summary>
         /// Gets or sets defaultBoolValue.
@@ -66,13 +52,6 @@ namespace Microsoft.Graph
         public Int32? DefaultIntValue { get; set; }
     
         /// <summary>
-        /// Gets or sets defaultStringValue.
-        /// Default value for string type items, if specified by the app developer
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultStringValue", Required = Newtonsoft.Json.Required.Default)]
-        public string DefaultStringValue { get; set; }
-    
-        /// <summary>
         /// Gets or sets defaultStringArrayValue.
         /// Default value for string array type items, if specified by the app developer
         /// </summary>
@@ -80,11 +59,32 @@ namespace Microsoft.Graph
         public IEnumerable<string> DefaultStringArrayValue { get; set; }
     
         /// <summary>
-        /// Gets or sets dataType.
-        /// The type of value this item describes
+        /// Gets or sets defaultStringValue.
+        /// Default value for string type items, if specified by the app developer
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataType", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidForWorkAppConfigurationSchemaItemDataType? DataType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultStringValue", Required = Newtonsoft.Json.Required.Default)]
+        public string DefaultStringValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// Description of what the item controls within the application
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets displayName.
+        /// Human readable name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets schemaItemKey.
+        /// Unique key the application uses to identify the item
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaItemKey", Required = Newtonsoft.Json.Required.Default)]
+        public string SchemaItemKey { get; set; }
     
         /// <summary>
         /// Gets or sets selections.

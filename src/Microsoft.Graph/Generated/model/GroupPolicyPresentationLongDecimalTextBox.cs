@@ -38,6 +38,27 @@ namespace Microsoft.Graph
         public Int64? DefaultValue { get; set; }
     
         /// <summary>
+        /// Gets or sets max value.
+        /// An unsigned long that specifies the maximum allowed value. The default value is 9999.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxValue", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? MaxValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets min value.
+        /// An unsigned long that specifies the minimum allowed value. The default value is 0.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minValue", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? MinValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets required.
+        /// Requirement to enter a value in the parameter box. The default value is false.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Required { get; set; }
+    
+        /// <summary>
         /// Gets or sets spin.
         /// If true, create a spin control; otherwise, create a text box for numeric entry. The default value is true.
         /// </summary>
@@ -50,27 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spinStep", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SpinStep { get; set; }
-    
-        /// <summary>
-        /// Gets or sets required.
-        /// Requirement to enter a value in the parameter box. The default value is false.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Required { get; set; }
-    
-        /// <summary>
-        /// Gets or sets min value.
-        /// An unsigned long that specifies the minimum allowed value. The default value is 0.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minValue", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? MinValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets max value.
-        /// An unsigned long that specifies the maximum allowed value. The default value is 9999.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxValue", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? MaxValue { get; set; }
     
     }
 }

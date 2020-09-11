@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets catalog id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "catalogId", Required = Newtonsoft.Json.Required.Default)]
-        public string CatalogId { get; set; }
-    
-        /// <summary>
         /// Gets or sets access package id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageId", Required = Newtonsoft.Json.Required.Default)]
@@ -49,10 +43,10 @@ namespace Microsoft.Graph
         public string AssignmentPolicyId { get; set; }
     
         /// <summary>
-        /// Gets or sets target id.
+        /// Gets or sets assignment state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
+        public string AssignmentState { get; set; }
     
         /// <summary>
         /// Gets or sets assignment status.
@@ -61,10 +55,16 @@ namespace Microsoft.Graph
         public string AssignmentStatus { get; set; }
     
         /// <summary>
-        /// Gets or sets assignment state.
+        /// Gets or sets catalog id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
-        public string AssignmentState { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "catalogId", Required = Newtonsoft.Json.Required.Default)]
+        public string CatalogId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expired date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpiredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets is extended.
@@ -73,10 +73,16 @@ namespace Microsoft.Graph
         public bool? IsExtended { get; set; }
     
         /// <summary>
-        /// Gets or sets expired date time.
+        /// Gets or sets schedule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiredDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpiredDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        public RequestSchedule Schedule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetId { get; set; }
     
         /// <summary>
         /// Gets or sets access package.
@@ -91,12 +97,6 @@ namespace Microsoft.Graph
         public AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
     
         /// <summary>
-        /// Gets or sets target.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public AccessPackageSubject Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets access package assignment requests.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
@@ -107,6 +107,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentResourceRoles", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionPage AccessPackageAssignmentResourceRoles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public AccessPackageSubject Target { get; set; }
     
     }
 }

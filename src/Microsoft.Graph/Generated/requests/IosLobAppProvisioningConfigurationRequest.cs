@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (iosLobAppProvisioningConfigurationToInitialize != null && iosLobAppProvisioningConfigurationToInitialize.AdditionalData != null)
             {
 
-                if (iosLobAppProvisioningConfigurationToInitialize.GroupAssignments != null && iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.CurrentPage != null)
-                {
-                    iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (iosLobAppProvisioningConfigurationToInitialize.Assignments != null && iosLobAppProvisioningConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
                     iosLobAppProvisioningConfigurationToInitialize.Assignments.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         iosLobAppProvisioningConfigurationToInitialize.DeviceStatuses.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (iosLobAppProvisioningConfigurationToInitialize.GroupAssignments != null && iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.CurrentPage != null)
+                {
+                    iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.AdditionalData = iosLobAppProvisioningConfigurationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    iosLobAppProvisioningConfigurationToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        iosLobAppProvisioningConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

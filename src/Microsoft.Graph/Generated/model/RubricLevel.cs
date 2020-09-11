@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets levelId.
+        /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "levelId", Required = Newtonsoft.Json.Required.Default)]
-        public string LevelId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public EducationItemBody Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
@@ -43,16 +43,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public EducationItemBody Description { get; set; }
-    
-        /// <summary>
         /// Gets or sets grading.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grading", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentGradeType Grading { get; set; }
+    
+        /// <summary>
+        /// Gets or sets levelId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "levelId", Required = Newtonsoft.Json.Required.Default)]
+        public string LevelId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

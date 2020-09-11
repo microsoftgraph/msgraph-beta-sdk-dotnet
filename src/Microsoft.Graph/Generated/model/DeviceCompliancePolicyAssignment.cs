@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets target.
-        /// Target for the compliance policy assignment.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets source.
         /// The assignment source for the device compliance policy, direct or parcel/policySet.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
         public string SourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// Target for the compliance policy assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }
 }

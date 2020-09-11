@@ -31,28 +31,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets agreement file id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementFileId", Required = Newtonsoft.Json.Required.Default)]
+        public string AgreementFileId { get; set; }
+    
+        /// <summary>
         /// Gets or sets agreement id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementId", Required = Newtonsoft.Json.Required.Default)]
         public string AgreementId { get; set; }
     
         /// <summary>
-        /// Gets or sets user id.
+        /// Gets or sets device display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device ostype.
@@ -67,28 +67,10 @@ namespace Microsoft.Graph
         public string DeviceOSVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets agreement file id.
+        /// Gets or sets expiration date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementFileId", Required = Newtonsoft.Json.Required.Default)]
-        public string AgreementFileId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user principal name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user email.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEmail", Required = Newtonsoft.Json.Required.Default)]
-        public string UserEmail { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets recorded date time.
@@ -97,16 +79,34 @@ namespace Microsoft.Graph
         public DateTimeOffset? RecordedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets expiration date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets state.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public AgreementAcceptanceState? State { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user email.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEmail", Required = Newtonsoft.Json.Required.Default)]
+        public string UserEmail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

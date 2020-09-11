@@ -31,6 +31,24 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets elevated count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "elevatedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ElevatedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ManagedCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mfa enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MfaEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
@@ -41,24 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usersCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? UsersCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ManagedCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets elevated count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "elevatedCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ElevatedCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mfa enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MfaEnabled { get; set; }
     
     }
 }

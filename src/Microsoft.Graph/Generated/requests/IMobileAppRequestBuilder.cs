@@ -32,22 +32,16 @@ namespace Microsoft.Graph
         new IMobileAppRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Categories.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IMobileAppAssignmentsCollectionRequestBuilder"/>.</returns>
         IMobileAppAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
-        /// Gets the request builder for InstallSummary.
+        /// Gets the request builder for Categories.
         /// </summary>
-        /// <returns>The <see cref="IMobileAppInstallSummaryRequestBuilder"/>.</returns>
-        IMobileAppInstallSummaryRequestBuilder InstallSummary { get; }
+        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceStatuses.
@@ -56,16 +50,22 @@ namespace Microsoft.Graph
         IMobileAppDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
 
         /// <summary>
-        /// Gets the request builder for UserStatuses.
+        /// Gets the request builder for InstallSummary.
         /// </summary>
-        /// <returns>The <see cref="IMobileAppUserStatusesCollectionRequestBuilder"/>.</returns>
-        IMobileAppUserStatusesCollectionRequestBuilder UserStatuses { get; }
+        /// <returns>The <see cref="IMobileAppInstallSummaryRequestBuilder"/>.</returns>
+        IMobileAppInstallSummaryRequestBuilder InstallSummary { get; }
 
         /// <summary>
         /// Gets the request builder for Relationships.
         /// </summary>
         /// <returns>The <see cref="IMobileAppRelationshipsCollectionRequestBuilder"/>.</returns>
         IMobileAppRelationshipsCollectionRequestBuilder Relationships { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppUserStatusesCollectionRequestBuilder"/>.</returns>
+        IMobileAppUserStatusesCollectionRequestBuilder UserStatuses { get; }
     
         /// <summary>
         /// Gets the request builder for MobileAppAssign.

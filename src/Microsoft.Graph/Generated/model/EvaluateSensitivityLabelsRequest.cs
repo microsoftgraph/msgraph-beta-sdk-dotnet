@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets discoveredSensitiveTypes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveredSensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
-    
-        /// <summary>
         /// Gets or sets currentLabel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentLabel", Required = Newtonsoft.Json.Required.Default)]
         public CurrentLabel CurrentLabel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets discoveredSensitiveTypes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveredSensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

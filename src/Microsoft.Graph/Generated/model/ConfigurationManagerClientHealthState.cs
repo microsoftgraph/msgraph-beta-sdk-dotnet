@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets state.
-        /// Current configuration manager client state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public ConfigurationManagerClientState? State { get; set; }
-    
-        /// <summary>
         /// Gets or sets errorCode.
         /// Error code for failed state.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// Current configuration manager client state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public ConfigurationManagerClientState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

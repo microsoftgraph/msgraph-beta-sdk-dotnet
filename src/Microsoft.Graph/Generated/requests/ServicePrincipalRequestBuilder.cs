@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for HomeRealmDiscoveryPolicies.
+        /// Gets the request builder for CreatedObjects.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies
+        /// <returns>The <see cref="IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects
         {
             get
             {
-                return new ServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("homeRealmDiscoveryPolicies"), this.Client);
+                return new ServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("createdObjects"), this.Client);
             }
         }
 
@@ -111,50 +111,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Oauth2PermissionGrants.
+        /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants
+        /// <returns>The <see cref="IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder HomeRealmDiscoveryPolicies
         {
             get
             {
-                return new ServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("oauth2PermissionGrants"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder MemberOf
-        {
-            get
-            {
-                return new ServicePrincipalMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("memberOf"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for TransitiveMemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf
-        {
-            get
-            {
-                return new ServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMemberOf"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for CreatedObjects.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects
-        {
-            get
-            {
-                return new ServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("createdObjects"), this.Client);
+                return new ServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("homeRealmDiscoveryPolicies"), this.Client);
             }
         }
 
@@ -171,14 +135,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Owners.
+        /// Gets the request builder for MemberOf.
         /// </summary>
-        /// <returns>The <see cref="IServicePrincipalOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IServicePrincipalOwnersCollectionWithReferencesRequestBuilder Owners
+        /// <returns>The <see cref="IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalMemberOfCollectionWithReferencesRequestBuilder MemberOf
         {
             get
             {
-                return new ServicePrincipalOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
+                return new ServicePrincipalMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("memberOf"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Oauth2PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder Oauth2PermissionGrants
+        {
+            get
+            {
+                return new ServicePrincipalOauth2PermissionGrantsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("oauth2PermissionGrants"), this.Client);
             }
         }
 
@@ -191,6 +167,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ServicePrincipalOwnedObjectsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("ownedObjects"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Owners.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalOwnersCollectionWithReferencesRequestBuilder Owners
+        {
+            get
+            {
+                return new ServicePrincipalOwnersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("owners"), this.Client);
             }
         }
 
@@ -215,6 +203,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ServicePrincipalTokenLifetimePoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("tokenLifetimePolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveMemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf
+        {
+            get
+            {
+                return new ServicePrincipalTransitiveMemberOfCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("transitiveMemberOf"), this.Client);
             }
         }
 
@@ -246,19 +246,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ServicePrincipalGetPasswordSingleSignOnCredentials.
-        /// </summary>
-        /// <returns>The <see cref="IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
-        public IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials(
-            string id)
-        {
-            return new ServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getPasswordSingleSignOnCredentials"),
-                this.Client,
-                id);
-        }
-
-        /// <summary>
         /// Gets the request builder for ServicePrincipalDeletePasswordSingleSignOnCredentials.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
@@ -267,6 +254,19 @@ namespace Microsoft.Graph
         {
             return new ServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.deletePasswordSingleSignOnCredentials"),
+                this.Client,
+                id);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalGetPasswordSingleSignOnCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder"/>.</returns>
+        public IServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials(
+            string id)
+        {
+            return new ServicePrincipalGetPasswordSingleSignOnCredentialsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPasswordSingleSignOnCredentials"),
                 this.Client,
                 id);
         }

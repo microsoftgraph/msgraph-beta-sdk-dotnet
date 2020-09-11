@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Item.
-        /// </summary>
-        /// <returns>The <see cref="IItemRequestBuilder"/>.</returns>
-        public IItemRequestBuilder Item
-        {
-            get
-            {
-                return new ItemRequestBuilder(this.AppendSegmentToRequestUrl("item"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Account.
         /// </summary>
         /// <returns>The <see cref="IAccountRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AccountRequestBuilder(this.AppendSegmentToRequestUrl("account"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Item.
+        /// </summary>
+        /// <returns>The <see cref="IItemRequestBuilder"/>.</returns>
+        public IItemRequestBuilder Item
+        {
+            get
+            {
+                return new ItemRequestBuilder(this.AppendSegmentToRequestUrl("item"), this.Client);
             }
         }
     

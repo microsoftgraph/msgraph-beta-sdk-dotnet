@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets start.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Start { get; set; }
-    
-        /// <summary>
         /// Gets or sets end.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
         public Int64? End { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximum", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Maximum { get; set; }
     
         /// <summary>
         /// Gets or sets minimum.
@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public Int64? Minimum { get; set; }
     
         /// <summary>
-        /// Gets or sets maximum.
+        /// Gets or sets start.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximum", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Maximum { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Start { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

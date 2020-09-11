@@ -40,6 +40,20 @@ namespace Microsoft.Graph
             IEnumerable<string> packageIds = null);
 
         /// <summary>
+        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsCompleteSignup.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsCompleteSignupRequestBuilder"/>.</returns>
+        IAndroidManagedStoreAccountEnterpriseSettingsCompleteSignupRequestBuilder CompleteSignup(
+            string enterpriseToken = null);
+
+        /// <summary>
+        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebToken.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder"/>.</returns>
+        IAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder CreateGooglePlayWebToken(
+            string parentUri = null);
+
+        /// <summary>
         /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrl.
         /// </summary>
         /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder"/>.</returns>
@@ -47,11 +61,11 @@ namespace Microsoft.Graph
             string hostName = null);
 
         /// <summary>
-        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsCompleteSignup.
+        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentState.
         /// </summary>
-        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsCompleteSignupRequestBuilder"/>.</returns>
-        IAndroidManagedStoreAccountEnterpriseSettingsCompleteSignupRequestBuilder CompleteSignup(
-            string enterpriseToken = null);
+        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder"/>.</returns>
+        IAndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder SetAndroidDeviceOwnerFullyManagedEnrollmentState(
+            bool enabled);
 
         /// <summary>
         /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsSyncApps.
@@ -64,20 +78,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilder"/>.</returns>
         IAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilder Unbind();
-
-        /// <summary>
-        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebToken.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder"/>.</returns>
-        IAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder CreateGooglePlayWebToken(
-            string parentUri = null);
-
-        /// <summary>
-        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentState.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder"/>.</returns>
-        IAndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder SetAndroidDeviceOwnerFullyManagedEnrollmentState(
-            bool enabled);
     
     }
 }

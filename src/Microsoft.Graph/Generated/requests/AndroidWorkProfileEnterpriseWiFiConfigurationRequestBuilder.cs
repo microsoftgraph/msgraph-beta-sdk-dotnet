@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RootCertificateForServerValidation.
-        /// </summary>
-        /// <returns>The <see cref="IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        public IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation
-        {
-            get
-            {
-                return new AndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForServerValidation"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IAndroidWorkProfileCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AndroidWorkProfileCertificateProfileBaseWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("identityCertificateForClientAuthentication"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificateForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        public IAndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation
+        {
+            get
+            {
+                return new AndroidWorkProfileTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForServerValidation"), this.Client);
             }
         }
     

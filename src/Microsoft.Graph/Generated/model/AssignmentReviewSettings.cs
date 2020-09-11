@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets durationInDays.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DurationInDays { get; set; }
+    
+        /// <summary>
         /// Gets or sets isEnabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
@@ -43,6 +49,12 @@ namespace Microsoft.Graph
         public string RecurrenceType { get; set; }
     
         /// <summary>
+        /// Gets or sets reviewers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<UserSet> Reviewers { get; set; }
+    
+        /// <summary>
         /// Gets or sets reviewerType.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewerType", Required = Newtonsoft.Json.Required.Default)]
@@ -53,18 +65,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets durationInDays.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DurationInDays { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reviewers.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<UserSet> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

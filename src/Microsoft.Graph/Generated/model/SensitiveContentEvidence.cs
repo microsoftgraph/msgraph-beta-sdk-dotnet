@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets length.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "length", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Length { get; set; }
+    
+        /// <summary>
         /// Gets or sets match.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "match", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offset", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Offset { get; set; }
-    
-        /// <summary>
-        /// Gets or sets length.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "length", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Length { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

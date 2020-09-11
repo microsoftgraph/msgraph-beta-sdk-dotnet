@@ -211,10 +211,10 @@ namespace Microsoft.Graph
         public string TrustType { get; set; }
     
         /// <summary>
-        /// Gets or sets name.
+        /// Gets or sets kind.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Kind", Required = Newtonsoft.Json.Required.Default)]
+        public string Kind { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
@@ -229,22 +229,22 @@ namespace Microsoft.Graph
         public string Model { get; set; }
     
         /// <summary>
-        /// Gets or sets kind.
+        /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Kind", Required = Newtonsoft.Json.Required.Default)]
-        public string Kind { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Status", Required = Newtonsoft.Json.Required.Default)]
-        public string Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Platform", Required = Newtonsoft.Json.Required.Default)]
         public string Platform { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets member of.

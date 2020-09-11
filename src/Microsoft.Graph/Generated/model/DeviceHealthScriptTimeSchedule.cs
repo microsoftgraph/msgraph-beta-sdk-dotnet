@@ -23,18 +23,18 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets useUtc.
-        /// Indicate if the time is Utc or client local time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useUtc", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UseUtc { get; set; }
-    
-        /// <summary>
         /// Gets or sets time.
         /// At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "time", Required = Newtonsoft.Json.Required.Default)]
         public TimeOfDay Time { get; set; }
+    
+        /// <summary>
+        /// Gets or sets useUtc.
+        /// Indicate if the time is Utc or client local time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useUtc", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UseUtc { get; set; }
     
     }
 }

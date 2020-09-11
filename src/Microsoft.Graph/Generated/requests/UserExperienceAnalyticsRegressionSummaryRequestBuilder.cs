@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ModelRegression.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder"/>.</returns>
-        public IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder ModelRegression
-        {
-            get
-            {
-                return new UserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("modelRegression"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ManufacturerRegression.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("manufacturerRegression"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ModelRegression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder ModelRegression
+        {
+            get
+            {
+                return new UserExperienceAnalyticsRegressionSummaryModelRegressionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("modelRegression"), this.Client);
             }
         }
 

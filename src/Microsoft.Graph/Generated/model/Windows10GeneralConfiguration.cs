@@ -31,102 +31,60 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets task manager block end task.
-        /// Specify whether non-administrators can use Task Manager to end tasks.
+        /// Gets or sets accounts block adding non microsoft account email.
+        /// Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskManagerBlockEndTask", Required = Newtonsoft.Json.Required.Default)]
-        public bool? TaskManagerBlockEndTask { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountsBlockAddingNonMicrosoftAccountEmail", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AccountsBlockAddingNonMicrosoftAccountEmail { get; set; }
     
         /// <summary>
-        /// Gets or sets energy saver on battery threshold percentage.
-        /// This setting allows you to specify battery charge level at which Energy Saver is turned on. While on battery, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
+        /// Gets or sets activate apps with voice.
+        /// Specifies if Windows apps can be activated by voice.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "energySaverOnBatteryThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EnergySaverOnBatteryThresholdPercentage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activateAppsWithVoice", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? ActivateAppsWithVoice { get; set; }
     
         /// <summary>
-        /// Gets or sets energy saver plugged in threshold percentage.
-        /// This setting allows you to specify battery charge level at which Energy Saver is turned on. While plugged in, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
+        /// Gets or sets anti theft mode blocked.
+        /// Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "energySaverPluggedInThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EnergySaverPluggedInThresholdPercentage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "antiTheftModeBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AntiTheftModeBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets power lid close action on battery.
-        /// This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while on battery.
+        /// Gets or sets app management msiallow user control over install.
+        /// This policy setting permits users to change installation options that typically are available only to system administrators.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerLidCloseActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
-        public PowerActionType? PowerLidCloseActionOnBattery { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementMSIAllowUserControlOverInstall", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppManagementMSIAllowUserControlOverInstall { get; set; }
     
         /// <summary>
-        /// Gets or sets power lid close action plugged in.
-        /// This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while plugged in.
+        /// Gets or sets app management msialways install with elevated privileges.
+        /// This policy setting directs Windows Installer to use elevated permissions when it installs any program on the system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerLidCloseActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
-        public PowerActionType? PowerLidCloseActionPluggedIn { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementMSIAlwaysInstallWithElevatedPrivileges", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppManagementMSIAlwaysInstallWithElevatedPrivileges { get; set; }
     
         /// <summary>
-        /// Gets or sets power button action on battery.
-        /// This setting specifies the action that Windows takes when a user presses the Power button while on battery.
+        /// Gets or sets app management package family names to launch after log on.
+        /// List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.???
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerButtonActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
-        public PowerActionType? PowerButtonActionOnBattery { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementPackageFamilyNamesToLaunchAfterLogOn", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AppManagementPackageFamilyNamesToLaunchAfterLogOn { get; set; }
     
         /// <summary>
-        /// Gets or sets power button action plugged in.
-        /// This setting specifies the action that Windows takes when a user presses the Power button while plugged in.
+        /// Gets or sets apps allow trusted apps sideloading.
+        /// Indicates whether apps from AppX packages signed with a trusted certificate can be side loaded. Possible values are: notConfigured, blocked, allowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerButtonActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
-        public PowerActionType? PowerButtonActionPluggedIn { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsAllowTrustedAppsSideloading", Required = Newtonsoft.Json.Required.Default)]
+        public StateManagementSetting? AppsAllowTrustedAppsSideloading { get; set; }
     
         /// <summary>
-        /// Gets or sets power sleep button action on battery.
-        /// This setting specifies the action that Windows takes when a user presses the Sleep button while on battery.
+        /// Gets or sets apps block windows store originated apps.
+        /// Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerSleepButtonActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
-        public PowerActionType? PowerSleepButtonActionOnBattery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets power sleep button action plugged in.
-        /// This setting specifies the action that Windows takes when a user presses the Sleep button while plugged in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerSleepButtonActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
-        public PowerActionType? PowerSleepButtonActionPluggedIn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets power hybrid sleep on battery.
-        /// This setting allows you to turn off hybrid sleep while on battery. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerHybridSleepOnBattery", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? PowerHybridSleepOnBattery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets power hybrid sleep plugged in.
-        /// This setting allows you to turn off hybrid sleep while plugged in. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerHybridSleepPluggedIn", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? PowerHybridSleepPluggedIn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows10apps force update schedule.
-        /// Windows 10 force update schedule for Apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10AppsForceUpdateSchedule", Required = Newtonsoft.Json.Required.Default)]
-        public Windows10AppsForceUpdateSchedule Windows10AppsForceUpdateSchedule { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enable automatic redeployment.
-        /// Allow users with administrative rights to delete all user data and settings using CTRL + Win + R at the device lock screen so that the device can be automatically re-configured and re-enrolled into management.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableAutomaticRedeployment", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableAutomaticRedeployment { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft account sign in assistant settings.
-        /// Controls the Microsoft Account Sign-In Assistant (wlidsvc) NT service.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAccountSignInAssistantSettings", Required = Newtonsoft.Json.Required.Default)]
-        public SignInAssistantOptions? MicrosoftAccountSignInAssistantSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsBlockWindowsStoreOriginatedApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppsBlockWindowsStoreOriginatedApps { get; set; }
     
         /// <summary>
         /// Gets or sets authentication allow secondary device.
@@ -136,13 +94,6 @@ namespace Microsoft.Graph
         public bool? AuthenticationAllowSecondaryDevice { get; set; }
     
         /// <summary>
-        /// Gets or sets authentication web sign in.
-        /// Indicates whether or not Web Credential Provider will be enabled.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationWebSignIn", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? AuthenticationWebSignIn { get; set; }
-    
-        /// <summary>
         /// Gets or sets authentication preferred azure adtenant domain name.
         /// Specifies the preferred domain among available domains in the Azure AD tenant.
         /// </summary>
@@ -150,277 +101,11 @@ namespace Microsoft.Graph
         public string AuthenticationPreferredAzureADTenantDomainName { get; set; }
     
         /// <summary>
-        /// Gets or sets cryptography allow fips algorithm policy.
-        /// Specify whether to allow or disallow the Federal Information Processing Standard (FIPS) policy.
+        /// Gets or sets authentication web sign in.
+        /// Indicates whether or not Web Credential Provider will be enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cryptographyAllowFipsAlgorithmPolicy", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CryptographyAllowFipsAlgorithmPolicy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display app list with gdi dpiscaling turned on.
-        /// List of legacy applications that have GDI DPI Scaling turned on.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayAppListWithGdiDPIScalingTurnedOn", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DisplayAppListWithGdiDPIScalingTurnedOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display app list with gdi dpiscaling turned off.
-        /// List of legacy applications that have GDI DPI Scaling turned off.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayAppListWithGdiDPIScalingTurnedOff", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DisplayAppListWithGdiDPIScalingTurnedOff { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enterprise cloud print discovery end point.
-        /// Endpoint for discovering cloud printers.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintDiscoveryEndPoint", Required = Newtonsoft.Json.Required.Default)]
-        public string EnterpriseCloudPrintDiscoveryEndPoint { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enterprise cloud print oauth authority.
-        /// Authentication endpoint for acquiring OAuth tokens.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintOAuthAuthority", Required = Newtonsoft.Json.Required.Default)]
-        public string EnterpriseCloudPrintOAuthAuthority { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enterprise cloud print oauth client identifier.
-        /// GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintOAuthClientIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string EnterpriseCloudPrintOAuthClientIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enterprise cloud print resource identifier.
-        /// OAuth resource URI for print service as configured in the Azure portal.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintResourceIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string EnterpriseCloudPrintResourceIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enterprise cloud print discovery max limit.
-        /// Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintDiscoveryMaxLimit", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EnterpriseCloudPrintDiscoveryMaxLimit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enterprise cloud print mopria discovery resource identifier.
-        /// OAuth resource URI for printer discovery service as configured in Azure portal.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets experience do not sync browser settings.
-        /// Allow or prevent the syncing of Microsoft Edge Browser settings. Option for IT admins to prevent syncing across devices, but allow user override.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceDoNotSyncBrowserSettings", Required = Newtonsoft.Json.Required.Default)]
-        public BrowserSyncSetting? ExperienceDoNotSyncBrowserSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets messaging block sync.
-        /// Indicates whether or not to block text message back up and restore and Messaging Everywhere.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockSync", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MessagingBlockSync { get; set; }
-    
-        /// <summary>
-        /// Gets or sets messaging block mms.
-        /// Indicates whether or not to block the MMS send/receive functionality on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockMMS", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MessagingBlockMMS { get; set; }
-    
-        /// <summary>
-        /// Gets or sets messaging block rich communication services.
-        /// Indicates whether or not to block the RCS send/receive functionality on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockRichCommunicationServices", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MessagingBlockRichCommunicationServices { get; set; }
-    
-        /// <summary>
-        /// Gets or sets printer names.
-        /// Automatically provision printers based on their names (network host names).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> PrinterNames { get; set; }
-    
-        /// <summary>
-        /// Gets or sets printer default name.
-        /// Name (network host name) of an installed printer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerDefaultName", Required = Newtonsoft.Json.Required.Default)]
-        public string PrinterDefaultName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets printer block addition.
-        /// Prevent user installation of additional printers from printers settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerBlockAddition", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PrinterBlockAddition { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search block diacritics.
-        /// Specifies if search can use diacritics.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchBlockDiacritics", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchBlockDiacritics { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search disable auto language detection.
-        /// Specifies whether to use automatic language detection when indexing content and properties.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableAutoLanguageDetection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchDisableAutoLanguageDetection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search disable indexing encrypted items.
-        /// Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableIndexingEncryptedItems", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchDisableIndexingEncryptedItems { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search enable remote queries.
-        /// Indicates whether or not to block remote queries of this computer’s index.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchEnableRemoteQueries", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchEnableRemoteQueries { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search disable use location.
-        /// Specifies if search can use location information.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableUseLocation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchDisableUseLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search disable location.
-        /// Specifies if search can use location information.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableLocation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchDisableLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search disable indexer backoff.
-        /// Indicates whether or not to disable the search indexer backoff feature.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableIndexerBackoff", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchDisableIndexerBackoff { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search disable indexing removable drive.
-        /// Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableIndexingRemovableDrive", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchDisableIndexingRemovableDrive { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search enable automatic index size manangement.
-        /// Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchEnableAutomaticIndexSizeManangement", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchEnableAutomaticIndexSizeManangement { get; set; }
-    
-        /// <summary>
-        /// Gets or sets search block web results.
-        /// Indicates whether or not to block the web search.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchBlockWebResults", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SearchBlockWebResults { get; set; }
-    
-        /// <summary>
-        /// Gets or sets find my files.
-        /// Controls if the user can configure search to Find My Files mode, which searches files in secondary hard drives and also outside of the user profile. Find My Files does not allow users to search files or locations to which they do not have access.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "findMyFiles", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? FindMyFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security block azure adjoined devices auto encryption.
-        /// Specify whether to allow automatic device encryption during OOBE when the device is Azure AD joined (desktop only).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityBlockAzureADJoinedDevicesAutoEncryption", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SecurityBlockAzureADJoinedDevicesAutoEncryption { get; set; }
-    
-        /// <summary>
-        /// Gets or sets diagnostics data submission mode.
-        /// Gets or sets a value allowing the device to send diagnostic and usage telemetry data, such as Watson. Possible values are: userDefined, none, basic, enhanced, full.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diagnosticsDataSubmissionMode", Required = Newtonsoft.Json.Required.Default)]
-        public DiagnosticDataSubmissionMode? DiagnosticsDataSubmissionMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets one drive disable file sync.
-        /// Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveDisableFileSync", Required = Newtonsoft.Json.Required.Default)]
-        public bool? OneDriveDisableFileSync { get; set; }
-    
-        /// <summary>
-        /// Gets or sets system telemetry proxy server.
-        /// Gets or sets the fully qualified domain name (FQDN) or IP address of a proxy server to forward Connected User Experiences and Telemetry requests.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemTelemetryProxyServer", Required = Newtonsoft.Json.Required.Default)]
-        public string SystemTelemetryProxyServer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge telemetry for microsoft365analytics.
-        /// Specifies what type of telemetry data (none, intranet, internet, both) is sent to Microsoft 365 Analytics
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeTelemetryForMicrosoft365Analytics", Required = Newtonsoft.Json.Required.Default)]
-        public EdgeTelemetryMode? EdgeTelemetryForMicrosoft365Analytics { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ink workspace access.
-        /// Controls the user access to the ink workspace, from the desktop and from above the lock screen.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inkWorkspaceAccess", Required = Newtonsoft.Json.Required.Default)]
-        public InkAccessSetting? InkWorkspaceAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ink workspace access state.
-        /// Controls the user access to the ink workspace, from the desktop and from above the lock screen.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inkWorkspaceAccessState", Required = Newtonsoft.Json.Required.Default)]
-        public StateManagementSetting? InkWorkspaceAccessState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ink workspace block suggested apps.
-        /// Specify whether to show recommended app suggestions in the ink workspace.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inkWorkspaceBlockSuggestedApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? InkWorkspaceBlockSuggestedApps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen enable app install control.
-        /// Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenEnableAppInstallControl", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmartScreenEnableAppInstallControl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen app install control.
-        /// Added in Windows 10, version 1703. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenAppInstallControl", Required = Newtonsoft.Json.Required.Default)]
-        public AppInstallControlType? SmartScreenAppInstallControl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets personalization desktop image url.
-        /// A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalizationDesktopImageUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string PersonalizationDesktopImageUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets personalization lock screen image url.
-        /// A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalizationLockScreenImageUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string PersonalizationLockScreenImageUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationWebSignIn", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? AuthenticationWebSignIn { get; set; }
     
         /// <summary>
         /// Gets or sets bluetooth allowed services.
@@ -437,18 +122,18 @@ namespace Microsoft.Graph
         public bool? BluetoothBlockAdvertising { get; set; }
     
         /// <summary>
-        /// Gets or sets bluetooth block prompted proximal connections.
-        /// Whether or not to block the users from using Swift Pair and other proximity based scenarios.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlockPromptedProximalConnections", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BluetoothBlockPromptedProximalConnections { get; set; }
-    
-        /// <summary>
         /// Gets or sets bluetooth block discoverable mode.
         /// Whether or not to Block the user from using bluetooth discoverable mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlockDiscoverableMode", Required = Newtonsoft.Json.Required.Default)]
         public bool? BluetoothBlockDiscoverableMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bluetooth blocked.
+        /// Whether or not to Block the user from using bluetooth.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BluetoothBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets bluetooth block pre pairing.
@@ -458,249 +143,18 @@ namespace Microsoft.Graph
         public bool? BluetoothBlockPrePairing { get; set; }
     
         /// <summary>
-        /// Gets or sets edge block autofill.
-        /// Indicates whether or not to block auto fill.
+        /// Gets or sets bluetooth block prompted proximal connections.
+        /// Whether or not to block the users from using Swift Pair and other proximity based scenarios.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockAutofill", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockAutofill { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlockPromptedProximalConnections", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BluetoothBlockPromptedProximalConnections { get; set; }
     
         /// <summary>
-        /// Gets or sets edge blocked.
-        /// Indicates whether or not to Block the user from using the Edge browser.
+        /// Gets or sets camera blocked.
+        /// Whether or not to Block the user from accessing the camera of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge cookie policy.
-        /// Indicates which cookies to block in the Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeCookiePolicy", Required = Newtonsoft.Json.Required.Default)]
-        public EdgeCookiePolicy? EdgeCookiePolicy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block developer tools.
-        /// Indicates whether or not to block developer tools in the Edge browser.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockDeveloperTools", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockDeveloperTools { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block sending do not track header.
-        /// Indicates whether or not to Block the user from sending the do not track header.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSendingDoNotTrackHeader", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockSendingDoNotTrackHeader { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block extensions.
-        /// Indicates whether or not to block extensions in the Edge browser.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockExtensions", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockExtensions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block in private browsing.
-        /// Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockInPrivateBrowsing", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockInPrivateBrowsing { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block java script.
-        /// Indicates whether or not to Block the user from using JavaScript.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockJavaScript", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockJavaScript { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block password manager.
-        /// Indicates whether or not to Block password manager.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPasswordManager", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockPasswordManager { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block address bar dropdown.
-        /// Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockAddressBarDropdown", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockAddressBarDropdown { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block compatibility list.
-        /// Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockCompatibilityList", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockCompatibilityList { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge clear browsing data on exit.
-        /// Clear browsing data on exiting Microsoft Edge.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeClearBrowsingDataOnExit", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeClearBrowsingDataOnExit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge allow start pages modification.
-        /// Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeAllowStartPagesModification", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeAllowStartPagesModification { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge disable first run page.
-        /// Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeDisableFirstRunPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeDisableFirstRunPage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block live tile data collection.
-        /// Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockLiveTileDataCollection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockLiveTileDataCollection { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge sync favorites with internet explorer.
-        /// Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSyncFavoritesWithInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeSyncFavoritesWithInternetExplorer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge favorites list location.
-        /// The location of the favorites list to provision. Could be a local file, local network or http location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeFavoritesListLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string EdgeFavoritesListLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block edit favorites.
-        /// Indicates whether or not to Block the user from making changes to Favorites.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockEditFavorites", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockEditFavorites { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge new tab page url.
-        /// Specify the page opened when new tabs are created.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeNewTabPageURL", Required = Newtonsoft.Json.Required.Default)]
-        public string EdgeNewTabPageURL { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge home button configuration.
-        /// Causes the Home button to either hide, load the default Start page, load a New tab page, or a custom URL
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeHomeButtonConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public EdgeHomeButtonConfiguration EdgeHomeButtonConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge home button configuration enabled.
-        /// Enable the Home button configuration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeHomeButtonConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeHomeButtonConfigurationEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge opens with.
-        /// Specify what kind of pages are open at start.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeOpensWith", Required = Newtonsoft.Json.Required.Default)]
-        public EdgeOpenOptions? EdgeOpensWith { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block sideloading extensions.
-        /// Indicates whether the user can sideload extensions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSideloadingExtensions", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockSideloadingExtensions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge required extension package family names.
-        /// Specify the list of package family names of browser extensions that are required and cannot be turned off by the user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeRequiredExtensionPackageFamilyNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> EdgeRequiredExtensionPackageFamilyNames { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block printing.
-        /// Configure Edge to allow or block printing.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPrinting", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockPrinting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge favorites bar visibility.
-        /// Get or set a value that specifies whether to set the favorites bar to always be visible or hidden on any page.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeFavoritesBarVisibility", Required = Newtonsoft.Json.Required.Default)]
-        public VisibilitySetting? EdgeFavoritesBarVisibility { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block saving history.
-        /// Configure Edge to allow browsing history to be saved or to never save browsing history.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSavingHistory", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockSavingHistory { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block full screen mode.
-        /// Allow or prevent Edge from entering the full screen mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockFullScreenMode", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockFullScreenMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block web content on new tab page.
-        /// Configure to load a blank page in Edge instead of the default New tab page and prevent users from changing it.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockWebContentOnNewTabPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockWebContentOnNewTabPage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block tab preloading.
-        /// Configure whether Edge preloads the new tab page at Windows startup.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockTabPreloading", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockTabPreloading { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block prelaunch.
-        /// Decide whether Microsoft Edge is prelaunched at Windows startup.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPrelaunch", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockPrelaunch { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge show message when opening internet explorer sites.
-        /// Controls the message displayed by Edge before switching to Internet Explorer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeShowMessageWhenOpeningInternetExplorerSites", Required = Newtonsoft.Json.Required.Default)]
-        public InternetExplorerMessageSetting? EdgeShowMessageWhenOpeningInternetExplorerSites { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge prevent certificate error override.
-        /// Allow or prevent users from overriding certificate errors.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgePreventCertificateErrorOverride", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgePreventCertificateErrorOverride { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge kiosk mode restriction.
-        /// Controls how the Microsoft Edge settings are restricted based on the configure kiosk mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskModeRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public EdgeKioskModeRestrictionType? EdgeKioskModeRestriction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge kiosk reset after idle time in minutes.
-        /// Specifies the time in minutes from the last user activity before Microsoft Edge kiosk resets.  Valid values are 0-1440. The default is 5. 0 indicates no reset. Valid values 0 to 1440
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskResetAfterIdleTimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? EdgeKioskResetAfterIdleTimeInMinutes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameraBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CameraBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets cellular block data when roaming.
@@ -731,60 +185,53 @@ namespace Microsoft.Graph
         public ConfigurationUsage? CellularData { get; set; }
     
         /// <summary>
-        /// Gets or sets defender require real time monitoring.
-        /// Indicates whether or not to require real time monitoring.
+        /// Gets or sets certificates block manual root certificate installation.
+        /// Whether or not to Block the user from doing manual root certificate installation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderRequireRealTimeMonitoring { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificatesBlockManualRootCertificateInstallation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CertificatesBlockManualRootCertificateInstallation { get; set; }
     
         /// <summary>
-        /// Gets or sets defender require behavior monitoring.
-        /// Indicates whether or not to require behavior monitoring.
+        /// Gets or sets configure time zone.
+        /// Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderRequireBehaviorMonitoring { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configureTimeZone", Required = Newtonsoft.Json.Required.Default)]
+        public string ConfigureTimeZone { get; set; }
     
         /// <summary>
-        /// Gets or sets defender require network inspection system.
-        /// Indicates whether or not to require network inspection system.
+        /// Gets or sets connected devices service blocked.
+        /// Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireNetworkInspectionSystem", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderRequireNetworkInspectionSystem { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedDevicesServiceBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ConnectedDevicesServiceBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets defender scan downloads.
-        /// Indicates whether or not to scan downloads.
+        /// Gets or sets copy paste blocked.
+        /// Whether or not to Block the user from using copy paste.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanDownloads", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanDownloads { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copyPasteBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CopyPasteBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets defender schedule scan enable low cpu priority.
-        /// When enabled, low CPU priority will be used during scheduled scans.
+        /// Gets or sets cortana blocked.
+        /// Whether or not to Block the user from using Cortana.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduleScanEnableLowCpuPriority", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScheduleScanEnableLowCpuPriority { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cortanaBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CortanaBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets defender disable catchup quick scan.
-        /// When blocked, catch-up scans for scheduled quick scans will be turned off.
+        /// Gets or sets cryptography allow fips algorithm policy.
+        /// Specify whether to allow or disallow the Federal Information Processing Standard (FIPS) policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupQuickScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableCatchupQuickScan { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cryptographyAllowFipsAlgorithmPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CryptographyAllowFipsAlgorithmPolicy { get; set; }
     
         /// <summary>
-        /// Gets or sets defender disable catchup full scan.
-        /// When blocked, catch-up scans for scheduled full scans will be turned off.
+        /// Gets or sets data protection block direct memory access.
+        /// This policy setting allows you to block direct memory access (DMA) for all hot pluggable PCI downstream ports until a user logs into Windows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderDisableCatchupFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan scripts loaded in internet explorer.
-        /// Indicates whether or not to scan scripts loaded in Internet Explorer browser.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanScriptsLoadedInInternetExplorer { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataProtectionBlockDirectMemoryAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DataProtectionBlockDirectMemoryAccess { get; set; }
     
         /// <summary>
         /// Gets or sets defender block end user access.
@@ -794,74 +241,11 @@ namespace Microsoft.Graph
         public bool? DefenderBlockEndUserAccess { get; set; }
     
         /// <summary>
-        /// Gets or sets defender signature update interval in hours.
-        /// The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
+        /// Gets or sets defender block on access protection.
+        /// Allows or disallows Windows Defender On Access Protection functionality.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSignatureUpdateIntervalInHours", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderSignatureUpdateIntervalInHours { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender monitor file activity.
-        /// Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderMonitorFileActivity", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderMonitorFileActivity? DefenderMonitorFileActivity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender days before deleting quarantined malware.
-        /// Number of days before deleting quarantined malware. Valid values 0 to 90
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDaysBeforeDeletingQuarantinedMalware", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderDaysBeforeDeletingQuarantinedMalware { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan max cpu.
-        /// Max CPU usage percentage during scan. Valid values 0 to 100
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMaxCpu", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DefenderScanMaxCpu { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan archive files.
-        /// Indicates whether or not to scan archive files.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanArchiveFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan incoming mail.
-        /// Indicates whether or not to scan incoming mail messages.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanIncomingMail", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanIncomingMail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan removable drives during full scan.
-        /// Indicates whether or not to scan removable drives during full scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanRemovableDrivesDuringFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan mapped network drives during full scan.
-        /// Indicates whether or not to scan mapped network drives during full scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMappedNetworkDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanMappedNetworkDrivesDuringFullScan { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan network files.
-        /// Indicates whether or not to scan files opened from a network folder.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderScanNetworkFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender require cloud protection.
-        /// Indicates whether or not to require cloud protection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireCloudProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderRequireCloudProtection { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderBlockOnAccessProtection { get; set; }
     
         /// <summary>
         /// Gets or sets defender cloud block level.
@@ -885,67 +269,11 @@ namespace Microsoft.Graph
         public Int32? DefenderCloudExtendedTimeoutInSeconds { get; set; }
     
         /// <summary>
-        /// Gets or sets defender prompt for sample submission.
-        /// The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.
+        /// Gets or sets defender days before deleting quarantined malware.
+        /// Number of days before deleting quarantined malware. Valid values 0 to 90
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPromptForSampleSubmission", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderPromptForSampleSubmission? DefenderPromptForSampleSubmission { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scheduled quick scan time.
-        /// The time to perform a daily quick scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledQuickScanTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay DefenderScheduledQuickScanTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scan type.
-        /// The defender system scan type. Possible values are: userDefined, disabled, quick, full.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderScanType? DefenderScanType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender system scan schedule.
-        /// Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSystemScanSchedule", Required = Newtonsoft.Json.Required.Default)]
-        public WeeklySchedule? DefenderSystemScanSchedule { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender scheduled scan time.
-        /// The defender time for the system scan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
-        public TimeOfDay DefenderScheduledScanTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender potentially unwanted app action.
-        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderPotentiallyUnwantedAppAction? DefenderPotentiallyUnwantedAppAction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender potentially unwanted app action setting.
-        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppActionSetting", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender submit samples consent type.
-        /// Checks for the user consent level in Windows Defender to send data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSubmitSamplesConsentType", Required = Newtonsoft.Json.Required.Default)]
-        public DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets defender block on access protection.
-        /// Allows or disallows Windows Defender On Access Protection functionality.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderBlockOnAccessProtection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DefenderBlockOnAccessProtection { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDaysBeforeDeletingQuarantinedMalware", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderDaysBeforeDeletingQuarantinedMalware { get; set; }
     
         /// <summary>
         /// Gets or sets defender detected malware actions.
@@ -953,6 +281,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDetectedMalwareActions", Required = Newtonsoft.Json.Required.Default)]
         public DefenderDetectedMalwareActions DefenderDetectedMalwareActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable catchup full scan.
+        /// When blocked, catch-up scans for scheduled full scans will be turned off.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCatchupFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender disable catchup quick scan.
+        /// When blocked, catch-up scans for scheduled quick scans will be turned off.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderDisableCatchupQuickScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderDisableCatchupQuickScan { get; set; }
     
         /// <summary>
         /// Gets or sets defender file extensions to exclude.
@@ -969,11 +311,690 @@ namespace Microsoft.Graph
         public IEnumerable<string> DefenderFilesAndFoldersToExclude { get; set; }
     
         /// <summary>
+        /// Gets or sets defender monitor file activity.
+        /// Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderMonitorFileActivity", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderMonitorFileActivity? DefenderMonitorFileActivity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender potentially unwanted app action.
+        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppAction", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderPotentiallyUnwantedAppAction? DefenderPotentiallyUnwantedAppAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender potentially unwanted app action setting.
+        /// Gets or sets Defender???s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPotentiallyUnwantedAppActionSetting", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting { get; set; }
+    
+        /// <summary>
         /// Gets or sets defender processes to exclude.
         /// Processes to exclude from scans and real time protection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderProcessesToExclude", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> DefenderProcessesToExclude { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender prompt for sample submission.
+        /// The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderPromptForSampleSubmission", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderPromptForSampleSubmission? DefenderPromptForSampleSubmission { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender require behavior monitoring.
+        /// Indicates whether or not to require behavior monitoring.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireBehaviorMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderRequireBehaviorMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender require cloud protection.
+        /// Indicates whether or not to require cloud protection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireCloudProtection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderRequireCloudProtection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender require network inspection system.
+        /// Indicates whether or not to require network inspection system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireNetworkInspectionSystem", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderRequireNetworkInspectionSystem { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender require real time monitoring.
+        /// Indicates whether or not to require real time monitoring.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderRequireRealTimeMonitoring", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderRequireRealTimeMonitoring { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan archive files.
+        /// Indicates whether or not to scan archive files.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanArchiveFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanArchiveFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan downloads.
+        /// Indicates whether or not to scan downloads.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanDownloads", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanDownloads { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan incoming mail.
+        /// Indicates whether or not to scan incoming mail messages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanIncomingMail", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanIncomingMail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan mapped network drives during full scan.
+        /// Indicates whether or not to scan mapped network drives during full scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMappedNetworkDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanMappedNetworkDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan max cpu.
+        /// Max CPU usage percentage during scan. Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanMaxCpu", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderScanMaxCpu { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan network files.
+        /// Indicates whether or not to scan files opened from a network folder.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanNetworkFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanNetworkFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan removable drives during full scan.
+        /// Indicates whether or not to scan removable drives during full scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanRemovableDrivesDuringFullScan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanRemovableDrivesDuringFullScan { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan scripts loaded in internet explorer.
+        /// Indicates whether or not to scan scripts loaded in Internet Explorer browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanScriptsLoadedInInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScanScriptsLoadedInInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scan type.
+        /// The defender system scan type. Possible values are: userDefined, disabled, quick, full.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScanType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderScanType? DefenderScanType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled quick scan time.
+        /// The time to perform a daily quick scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledQuickScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledQuickScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender scheduled scan time.
+        /// The defender time for the system scan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduledScanTime", Required = Newtonsoft.Json.Required.Default)]
+        public TimeOfDay DefenderScheduledScanTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender schedule scan enable low cpu priority.
+        /// When enabled, low CPU priority will be used during scheduled scans.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderScheduleScanEnableLowCpuPriority", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DefenderScheduleScanEnableLowCpuPriority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender signature update interval in hours.
+        /// The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSignatureUpdateIntervalInHours", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DefenderSignatureUpdateIntervalInHours { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender submit samples consent type.
+        /// Checks for the user consent level in Windows Defender to send data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSubmitSamplesConsentType", Required = Newtonsoft.Json.Required.Default)]
+        public DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets defender system scan schedule.
+        /// Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defenderSystemScanSchedule", Required = Newtonsoft.Json.Required.Default)]
+        public WeeklySchedule? DefenderSystemScanSchedule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets developer unlock setting.
+        /// Indicates whether or not to allow developer unlock. Possible values are: notConfigured, blocked, allowed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "developerUnlockSetting", Required = Newtonsoft.Json.Required.Default)]
+        public StateManagementSetting? DeveloperUnlockSetting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device management block factory reset on mobile.
+        /// Indicates whether or not to Block the user from resetting their phone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementBlockFactoryResetOnMobile", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceManagementBlockFactoryResetOnMobile { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device management block manual unenroll.
+        /// Indicates whether or not to Block the user from doing manual un-enrollment from device management.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementBlockManualUnenroll", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceManagementBlockManualUnenroll { get; set; }
+    
+        /// <summary>
+        /// Gets or sets diagnostics data submission mode.
+        /// Gets or sets a value allowing the device to send diagnostic and usage telemetry data, such as Watson. Possible values are: userDefined, none, basic, enhanced, full.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diagnosticsDataSubmissionMode", Required = Newtonsoft.Json.Required.Default)]
+        public DiagnosticDataSubmissionMode? DiagnosticsDataSubmissionMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display app list with gdi dpiscaling turned off.
+        /// List of legacy applications that have GDI DPI Scaling turned off.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayAppListWithGdiDPIScalingTurnedOff", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DisplayAppListWithGdiDPIScalingTurnedOff { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display app list with gdi dpiscaling turned on.
+        /// List of legacy applications that have GDI DPI Scaling turned on.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayAppListWithGdiDPIScalingTurnedOn", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DisplayAppListWithGdiDPIScalingTurnedOn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge allow start pages modification.
+        /// Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeAllowStartPagesModification", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeAllowStartPagesModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block access to about flags.
+        /// Indicates whether or not to prevent access to about flags on Edge browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockAccessToAboutFlags", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockAccessToAboutFlags { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block address bar dropdown.
+        /// Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockAddressBarDropdown", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockAddressBarDropdown { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block autofill.
+        /// Indicates whether or not to block auto fill.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockAutofill", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockAutofill { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block compatibility list.
+        /// Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockCompatibilityList", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockCompatibilityList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block developer tools.
+        /// Indicates whether or not to block developer tools in the Edge browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockDeveloperTools", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockDeveloperTools { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge blocked.
+        /// Indicates whether or not to Block the user from using the Edge browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block edit favorites.
+        /// Indicates whether or not to Block the user from making changes to Favorites.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockEditFavorites", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockEditFavorites { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block extensions.
+        /// Indicates whether or not to block extensions in the Edge browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockExtensions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockExtensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block full screen mode.
+        /// Allow or prevent Edge from entering the full screen mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockFullScreenMode", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockFullScreenMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block in private browsing.
+        /// Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockInPrivateBrowsing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockInPrivateBrowsing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block java script.
+        /// Indicates whether or not to Block the user from using JavaScript.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockJavaScript", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockJavaScript { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block live tile data collection.
+        /// Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockLiveTileDataCollection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockLiveTileDataCollection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block password manager.
+        /// Indicates whether or not to Block password manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPasswordManager", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockPasswordManager { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block popups.
+        /// Indicates whether or not to block popups.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPopups", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockPopups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block prelaunch.
+        /// Decide whether Microsoft Edge is prelaunched at Windows startup.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPrelaunch", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockPrelaunch { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block printing.
+        /// Configure Edge to allow or block printing.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPrinting", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockPrinting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block saving history.
+        /// Configure Edge to allow browsing history to be saved or to never save browsing history.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSavingHistory", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockSavingHistory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block search engine customization.
+        /// Indicates whether or not to block the user from adding new search engine or changing the default search engine.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSearchEngineCustomization", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockSearchEngineCustomization { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block search suggestions.
+        /// Indicates whether or not to block the user from using the search suggestions in the address bar.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSearchSuggestions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockSearchSuggestions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block sending do not track header.
+        /// Indicates whether or not to Block the user from sending the do not track header.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSendingDoNotTrackHeader", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockSendingDoNotTrackHeader { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block sending intranet traffic to internet explorer.
+        /// Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSendingIntranetTrafficToInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockSendingIntranetTrafficToInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block sideloading extensions.
+        /// Indicates whether the user can sideload extensions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSideloadingExtensions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockSideloadingExtensions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block tab preloading.
+        /// Configure whether Edge preloads the new tab page at Windows startup.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockTabPreloading", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockTabPreloading { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge block web content on new tab page.
+        /// Configure to load a blank page in Edge instead of the default New tab page and prevent users from changing it.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockWebContentOnNewTabPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeBlockWebContentOnNewTabPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge clear browsing data on exit.
+        /// Clear browsing data on exiting Microsoft Edge.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeClearBrowsingDataOnExit", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeClearBrowsingDataOnExit { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge cookie policy.
+        /// Indicates which cookies to block in the Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeCookiePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public EdgeCookiePolicy? EdgeCookiePolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge disable first run page.
+        /// Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeDisableFirstRunPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeDisableFirstRunPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge enterprise mode site list location.
+        /// Indicates the enterprise mode site list location. Could be a local file, local network or http location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeEnterpriseModeSiteListLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string EdgeEnterpriseModeSiteListLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge favorites bar visibility.
+        /// Get or set a value that specifies whether to set the favorites bar to always be visible or hidden on any page.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeFavoritesBarVisibility", Required = Newtonsoft.Json.Required.Default)]
+        public VisibilitySetting? EdgeFavoritesBarVisibility { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge favorites list location.
+        /// The location of the favorites list to provision. Could be a local file, local network or http location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeFavoritesListLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string EdgeFavoritesListLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge first run url.
+        /// The first run URL for when Edge browser is opened for the first time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeFirstRunUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string EdgeFirstRunUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge home button configuration.
+        /// Causes the Home button to either hide, load the default Start page, load a New tab page, or a custom URL
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeHomeButtonConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public EdgeHomeButtonConfiguration EdgeHomeButtonConfiguration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge home button configuration enabled.
+        /// Enable the Home button configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeHomeButtonConfigurationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeHomeButtonConfigurationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge homepage urls.
+        /// The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeHomepageUrls", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> EdgeHomepageUrls { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge kiosk mode restriction.
+        /// Controls how the Microsoft Edge settings are restricted based on the configure kiosk mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskModeRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public EdgeKioskModeRestrictionType? EdgeKioskModeRestriction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge kiosk reset after idle time in minutes.
+        /// Specifies the time in minutes from the last user activity before Microsoft Edge kiosk resets.  Valid values are 0-1440. The default is 5. 0 indicates no reset. Valid values 0 to 1440
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeKioskResetAfterIdleTimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EdgeKioskResetAfterIdleTimeInMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge new tab page url.
+        /// Specify the page opened when new tabs are created.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeNewTabPageURL", Required = Newtonsoft.Json.Required.Default)]
+        public string EdgeNewTabPageURL { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge opens with.
+        /// Specify what kind of pages are open at start.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeOpensWith", Required = Newtonsoft.Json.Required.Default)]
+        public EdgeOpenOptions? EdgeOpensWith { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge prevent certificate error override.
+        /// Allow or prevent users from overriding certificate errors.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgePreventCertificateErrorOverride", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgePreventCertificateErrorOverride { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge required extension package family names.
+        /// Specify the list of package family names of browser extensions that are required and cannot be turned off by the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeRequiredExtensionPackageFamilyNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> EdgeRequiredExtensionPackageFamilyNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge require smart screen.
+        /// Indicates whether or not to Require the user to use the smart screen filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeRequireSmartScreen", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeRequireSmartScreen { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge search engine.
+        /// Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSearchEngine", Required = Newtonsoft.Json.Required.Default)]
+        public EdgeSearchEngineBase EdgeSearchEngine { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge send intranet traffic to internet explorer.
+        /// Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSendIntranetTrafficToInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeSendIntranetTrafficToInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge show message when opening internet explorer sites.
+        /// Controls the message displayed by Edge before switching to Internet Explorer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeShowMessageWhenOpeningInternetExplorerSites", Required = Newtonsoft.Json.Required.Default)]
+        public InternetExplorerMessageSetting? EdgeShowMessageWhenOpeningInternetExplorerSites { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge sync favorites with internet explorer.
+        /// Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSyncFavoritesWithInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EdgeSyncFavoritesWithInternetExplorer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets edge telemetry for microsoft365analytics.
+        /// Specifies what type of telemetry data (none, intranet, internet, both) is sent to Microsoft 365 Analytics
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeTelemetryForMicrosoft365Analytics", Required = Newtonsoft.Json.Required.Default)]
+        public EdgeTelemetryMode? EdgeTelemetryForMicrosoft365Analytics { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enable automatic redeployment.
+        /// Allow users with administrative rights to delete all user data and settings using CTRL + Win + R at the device lock screen so that the device can be automatically re-configured and re-enrolled into management.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableAutomaticRedeployment", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableAutomaticRedeployment { get; set; }
+    
+        /// <summary>
+        /// Gets or sets energy saver on battery threshold percentage.
+        /// This setting allows you to specify battery charge level at which Energy Saver is turned on. While on battery, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "energySaverOnBatteryThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EnergySaverOnBatteryThresholdPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets energy saver plugged in threshold percentage.
+        /// This setting allows you to specify battery charge level at which Energy Saver is turned on. While plugged in, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "energySaverPluggedInThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EnergySaverPluggedInThresholdPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enterprise cloud print discovery end point.
+        /// Endpoint for discovering cloud printers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintDiscoveryEndPoint", Required = Newtonsoft.Json.Required.Default)]
+        public string EnterpriseCloudPrintDiscoveryEndPoint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enterprise cloud print discovery max limit.
+        /// Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintDiscoveryMaxLimit", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EnterpriseCloudPrintDiscoveryMaxLimit { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enterprise cloud print mopria discovery resource identifier.
+        /// OAuth resource URI for printer discovery service as configured in Azure portal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enterprise cloud print oauth authority.
+        /// Authentication endpoint for acquiring OAuth tokens.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintOAuthAuthority", Required = Newtonsoft.Json.Required.Default)]
+        public string EnterpriseCloudPrintOAuthAuthority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enterprise cloud print oauth client identifier.
+        /// GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintOAuthClientIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string EnterpriseCloudPrintOAuthClientIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enterprise cloud print resource identifier.
+        /// OAuth resource URI for print service as configured in the Azure portal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCloudPrintResourceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string EnterpriseCloudPrintResourceIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets experience block device discovery.
+        /// Indicates whether or not to enable device discovery UX.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceBlockDeviceDiscovery", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExperienceBlockDeviceDiscovery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets experience block error dialog when no sim.
+        /// Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceBlockErrorDialogWhenNoSIM", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExperienceBlockErrorDialogWhenNoSIM { get; set; }
+    
+        /// <summary>
+        /// Gets or sets experience block task switcher.
+        /// Indicates whether or not to enable task switching on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceBlockTaskSwitcher", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExperienceBlockTaskSwitcher { get; set; }
+    
+        /// <summary>
+        /// Gets or sets experience do not sync browser settings.
+        /// Allow or prevent the syncing of Microsoft Edge Browser settings. Option for IT admins to prevent syncing across devices, but allow user override.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceDoNotSyncBrowserSettings", Required = Newtonsoft.Json.Required.Default)]
+        public BrowserSyncSetting? ExperienceDoNotSyncBrowserSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets find my files.
+        /// Controls if the user can configure search to Find My Files mode, which searches files in secondary hard drives and also outside of the user profile. Find My Files does not allow users to search files or locations to which they do not have access.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "findMyFiles", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? FindMyFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets game dvr blocked.
+        /// Indicates whether or not to block DVR and broadcasting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gameDvrBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? GameDvrBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ink workspace access.
+        /// Controls the user access to the ink workspace, from the desktop and from above the lock screen.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inkWorkspaceAccess", Required = Newtonsoft.Json.Required.Default)]
+        public InkAccessSetting? InkWorkspaceAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ink workspace access state.
+        /// Controls the user access to the ink workspace, from the desktop and from above the lock screen.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inkWorkspaceAccessState", Required = Newtonsoft.Json.Required.Default)]
+        public StateManagementSetting? InkWorkspaceAccessState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ink workspace block suggested apps.
+        /// Specify whether to show recommended app suggestions in the ink workspace.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inkWorkspaceBlockSuggestedApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? InkWorkspaceBlockSuggestedApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets internet sharing blocked.
+        /// Indicates whether or not to Block the user from using internet sharing.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internetSharingBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? InternetSharingBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets location services blocked.
+        /// Indicates whether or not to Block the user from location services.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationServicesBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LocationServicesBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lock screen activate apps with voice.
+        /// This policy setting specifies whether Windows apps can be activated by voice while the system is locked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenActivateAppsWithVoice", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? LockScreenActivateAppsWithVoice { get; set; }
     
         /// <summary>
         /// Gets or sets lock screen allow timeout configuration.
@@ -1011,11 +1032,95 @@ namespace Microsoft.Graph
         public Int32? LockScreenTimeoutInSeconds { get; set; }
     
         /// <summary>
-        /// Gets or sets lock screen activate apps with voice.
-        /// This policy setting specifies whether Windows apps can be activated by voice while the system is locked.
+        /// Gets or sets logon block fast user switching.
+        /// Disables the ability to quickly switch between users that are logged on simultaneously without logging off.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenActivateAppsWithVoice", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? LockScreenActivateAppsWithVoice { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonBlockFastUserSwitching", Required = Newtonsoft.Json.Required.Default)]
+        public bool? LogonBlockFastUserSwitching { get; set; }
+    
+        /// <summary>
+        /// Gets or sets messaging block mms.
+        /// Indicates whether or not to block the MMS send/receive functionality on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockMMS", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MessagingBlockMMS { get; set; }
+    
+        /// <summary>
+        /// Gets or sets messaging block rich communication services.
+        /// Indicates whether or not to block the RCS send/receive functionality on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockRichCommunicationServices", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MessagingBlockRichCommunicationServices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets messaging block sync.
+        /// Indicates whether or not to block text message back up and restore and Messaging Everywhere.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingBlockSync", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MessagingBlockSync { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft account blocked.
+        /// Indicates whether or not to Block a Microsoft account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAccountBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftAccountBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft account block settings sync.
+        /// Indicates whether or not to Block Microsoft account settings sync.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAccountBlockSettingsSync", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MicrosoftAccountBlockSettingsSync { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft account sign in assistant settings.
+        /// Controls the Microsoft Account Sign-In Assistant (wlidsvc) NT service.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAccountSignInAssistantSettings", Required = Newtonsoft.Json.Required.Default)]
+        public SignInAssistantOptions? MicrosoftAccountSignInAssistantSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets network proxy apply settings device wide.
+        /// If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyApplySettingsDeviceWide", Required = Newtonsoft.Json.Required.Default)]
+        public bool? NetworkProxyApplySettingsDeviceWide { get; set; }
+    
+        /// <summary>
+        /// Gets or sets network proxy automatic configuration url.
+        /// Address to the proxy auto-config (PAC) script you want to use.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyAutomaticConfigurationUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string NetworkProxyAutomaticConfigurationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets network proxy disable auto detect.
+        /// Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyDisableAutoDetect", Required = Newtonsoft.Json.Required.Default)]
+        public bool? NetworkProxyDisableAutoDetect { get; set; }
+    
+        /// <summary>
+        /// Gets or sets network proxy server.
+        /// Specifies manual proxy server settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyServer", Required = Newtonsoft.Json.Required.Default)]
+        public Windows10NetworkProxyServer NetworkProxyServer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets nfc blocked.
+        /// Indicates whether or not to Block the user from using near field communication.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nfcBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? NfcBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets one drive disable file sync.
+        /// Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveDisableFileSync", Required = Newtonsoft.Json.Required.Default)]
+        public bool? OneDriveDisableFileSync { get; set; }
     
         /// <summary>
         /// Gets or sets password block simple.
@@ -1032,6 +1137,20 @@ namespace Microsoft.Graph
         public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
+        /// Gets or sets password minimum age in days.
+        /// This security setting determines the period of time (in days) that a password must be used before the user can change it. Valid values 0 to 998
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumAgeInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumAgeInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minimum character set count.
+        /// The number of character sets required in the password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumCharacterSetCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets password minimum length.
         /// The minimum password length. Valid values 4 to 16
         /// </summary>
@@ -1044,13 +1163,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }
-    
-        /// <summary>
-        /// Gets or sets password minimum character set count.
-        /// The number of character sets required in the password.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumCharacterSetCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordMinimumCharacterSetCount { get; set; }
     
         /// <summary>
         /// Gets or sets password previous password block count.
@@ -1067,18 +1179,18 @@ namespace Microsoft.Graph
         public bool? PasswordRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets password require when resume from idle state.
-        /// Indicates whether or not to require a password upon resuming from an idle state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequireWhenResumeFromIdleState", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordRequireWhenResumeFromIdleState { get; set; }
-    
-        /// <summary>
         /// Gets or sets password required type.
         /// The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public RequiredPasswordType? PasswordRequiredType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password require when resume from idle state.
+        /// Indicates whether or not to require a password upon resuming from an idle state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequireWhenResumeFromIdleState", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordRequireWhenResumeFromIdleState { get; set; }
     
         /// <summary>
         /// Gets or sets password sign in failure count before factory reset.
@@ -1088,11 +1200,95 @@ namespace Microsoft.Graph
         public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
-        /// Gets or sets password minimum age in days.
-        /// This security setting determines the period of time (in days) that a password must be used before the user can change it. Valid values 0 to 998
+        /// Gets or sets personalization desktop image url.
+        /// A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumAgeInDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordMinimumAgeInDays { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalizationDesktopImageUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PersonalizationDesktopImageUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets personalization lock screen image url.
+        /// A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalizationLockScreenImageUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PersonalizationLockScreenImageUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power button action on battery.
+        /// This setting specifies the action that Windows takes when a user presses the Power button while on battery.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerButtonActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerButtonActionOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power button action plugged in.
+        /// This setting specifies the action that Windows takes when a user presses the Power button while plugged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerButtonActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerButtonActionPluggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power hybrid sleep on battery.
+        /// This setting allows you to turn off hybrid sleep while on battery. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerHybridSleepOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? PowerHybridSleepOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power hybrid sleep plugged in.
+        /// This setting allows you to turn off hybrid sleep while plugged in. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerHybridSleepPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? PowerHybridSleepPluggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power lid close action on battery.
+        /// This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while on battery.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerLidCloseActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerLidCloseActionOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power lid close action plugged in.
+        /// This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while plugged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerLidCloseActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerLidCloseActionPluggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power sleep button action on battery.
+        /// This setting specifies the action that Windows takes when a user presses the Sleep button while on battery.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerSleepButtonActionOnBattery", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerSleepButtonActionOnBattery { get; set; }
+    
+        /// <summary>
+        /// Gets or sets power sleep button action plugged in.
+        /// This setting specifies the action that Windows takes when a user presses the Sleep button while plugged in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerSleepButtonActionPluggedIn", Required = Newtonsoft.Json.Required.Default)]
+        public PowerActionType? PowerSleepButtonActionPluggedIn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets printer block addition.
+        /// Prevent user installation of additional printers from printers settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerBlockAddition", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PrinterBlockAddition { get; set; }
+    
+        /// <summary>
+        /// Gets or sets printer default name.
+        /// Name (network host name) of an installed printer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerDefaultName", Required = Newtonsoft.Json.Required.Default)]
+        public string PrinterDefaultName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets printer names.
+        /// Automatically provision printers based on their names (network host names).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> PrinterNames { get; set; }
     
         /// <summary>
         /// Gets or sets privacy advertising id.
@@ -1109,11 +1305,11 @@ namespace Microsoft.Graph
         public bool? PrivacyAutoAcceptPairingAndConsentPrompts { get; set; }
     
         /// <summary>
-        /// Gets or sets privacy disable launch experience.
-        /// This policy prevents the privacy experience from launching during user logon for new and upgraded users.???
+        /// Gets or sets privacy block activity feed.
+        /// Blocks the usage of cloud based speech services for Cortana, Dictation, or Store applications.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyDisableLaunchExperience", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PrivacyDisableLaunchExperience { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyBlockActivityFeed", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PrivacyBlockActivityFeed { get; set; }
     
         /// <summary>
         /// Gets or sets privacy block input personalization.
@@ -1130,18 +1326,277 @@ namespace Microsoft.Graph
         public bool? PrivacyBlockPublishUserActivities { get; set; }
     
         /// <summary>
-        /// Gets or sets privacy block activity feed.
-        /// Blocks the usage of cloud based speech services for Cortana, Dictation, or Store applications.
+        /// Gets or sets privacy disable launch experience.
+        /// This policy prevents the privacy experience from launching during user logon for new and upgraded users.???
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyBlockActivityFeed", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PrivacyBlockActivityFeed { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyDisableLaunchExperience", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PrivacyDisableLaunchExperience { get; set; }
     
         /// <summary>
-        /// Gets or sets activate apps with voice.
-        /// Specifies if Windows apps can be activated by voice.
+        /// Gets or sets reset protection mode blocked.
+        /// Indicates whether or not to Block the user from reset protection mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activateAppsWithVoice", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? ActivateAppsWithVoice { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resetProtectionModeBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ResetProtectionModeBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets safe search filter.
+        /// Specifies what filter level of safe search is required. Possible values are: userDefined, strict, moderate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safeSearchFilter", Required = Newtonsoft.Json.Required.Default)]
+        public SafeSearchFilterType? SafeSearchFilter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets screen capture blocked.
+        /// Indicates whether or not to Block the user from taking Screenshots.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ScreenCaptureBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search block diacritics.
+        /// Specifies if search can use diacritics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchBlockDiacritics", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchBlockDiacritics { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search block web results.
+        /// Indicates whether or not to block the web search.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchBlockWebResults", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchBlockWebResults { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search disable auto language detection.
+        /// Specifies whether to use automatic language detection when indexing content and properties.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableAutoLanguageDetection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchDisableAutoLanguageDetection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search disable indexer backoff.
+        /// Indicates whether or not to disable the search indexer backoff feature.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableIndexerBackoff", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchDisableIndexerBackoff { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search disable indexing encrypted items.
+        /// Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableIndexingEncryptedItems", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchDisableIndexingEncryptedItems { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search disable indexing removable drive.
+        /// Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableIndexingRemovableDrive", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchDisableIndexingRemovableDrive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search disable location.
+        /// Specifies if search can use location information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableLocation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchDisableLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search disable use location.
+        /// Specifies if search can use location information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchDisableUseLocation", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchDisableUseLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search enable automatic index size manangement.
+        /// Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchEnableAutomaticIndexSizeManangement", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchEnableAutomaticIndexSizeManangement { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search enable remote queries.
+        /// Indicates whether or not to block remote queries of this computer’s index.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "searchEnableRemoteQueries", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SearchEnableRemoteQueries { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security block azure adjoined devices auto encryption.
+        /// Specify whether to allow automatic device encryption during OOBE when the device is Azure AD joined (desktop only).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityBlockAzureADJoinedDevicesAutoEncryption", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecurityBlockAzureADJoinedDevicesAutoEncryption { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block accounts page.
+        /// Indicates whether or not to block access to Accounts in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockAccountsPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockAccountsPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block add provisioning package.
+        /// Indicates whether or not to block the user from installing provisioning packages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockAddProvisioningPackage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockAddProvisioningPackage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block apps page.
+        /// Indicates whether or not to block access to Apps in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockAppsPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockAppsPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block change language.
+        /// Indicates whether or not to block the user from changing the language settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangeLanguage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockChangeLanguage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block change power sleep.
+        /// Indicates whether or not to block the user from changing power and sleep settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangePowerSleep", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockChangePowerSleep { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block change region.
+        /// Indicates whether or not to block the user from changing the region settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangeRegion", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockChangeRegion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block change system time.
+        /// Indicates whether or not to block the user from changing date and time settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangeSystemTime", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockChangeSystemTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block devices page.
+        /// Indicates whether or not to block access to Devices in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockDevicesPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockDevicesPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block ease of access page.
+        /// Indicates whether or not to block access to Ease of Access in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockEaseOfAccessPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockEaseOfAccessPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block edit device name.
+        /// Indicates whether or not to block the user from editing the device name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockEditDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockEditDeviceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block gaming page.
+        /// Indicates whether or not to block access to Gaming in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockGamingPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockGamingPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block network internet page.
+        /// Indicates whether or not to block access to Network &amp; Internet in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockNetworkInternetPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockNetworkInternetPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block personalization page.
+        /// Indicates whether or not to block access to Personalization in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockPersonalizationPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockPersonalizationPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block privacy page.
+        /// Indicates whether or not to block access to Privacy in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockPrivacyPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockPrivacyPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block remove provisioning package.
+        /// Indicates whether or not to block the runtime configuration agent from removing provisioning packages.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockRemoveProvisioningPackage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockRemoveProvisioningPackage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block settings app.
+        /// Indicates whether or not to block access to Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockSettingsApp", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockSettingsApp { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block system page.
+        /// Indicates whether or not to block access to System in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockSystemPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockSystemPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block time language page.
+        /// Indicates whether or not to block access to Time &amp; Language in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockTimeLanguagePage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockTimeLanguagePage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings block update security page.
+        /// Indicates whether or not to block access to Update &amp; Security in Settings app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockUpdateSecurityPage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SettingsBlockUpdateSecurityPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shared user app data allowed.
+        /// Indicates whether or not to block multiple users of the same app to share data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedUserAppDataAllowed", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SharedUserAppDataAllowed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen app install control.
+        /// Added in Windows 10, version 1703. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenAppInstallControl", Required = Newtonsoft.Json.Required.Default)]
+        public AppInstallControlType? SmartScreenAppInstallControl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen block prompt override.
+        /// Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockPromptOverride", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmartScreenBlockPromptOverride { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen block prompt override for files.
+        /// Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockPromptOverrideForFiles", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmartScreenBlockPromptOverrideForFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets smart screen enable app install control.
+        /// Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenEnableAppInstallControl", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SmartScreenEnableAppInstallControl { get; set; }
     
         /// <summary>
         /// Gets or sets start block unpinning apps from taskbar.
@@ -1340,88 +1795,116 @@ namespace Microsoft.Graph
         public VisibilitySetting? StartMenuPinnedFolderVideos { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block settings app.
-        /// Indicates whether or not to block access to Settings app.
+        /// Gets or sets storage block removable storage.
+        /// Indicates whether or not to Block the user from using removable storage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockSettingsApp", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockSettingsApp { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageBlockRemovableStorage", Required = Newtonsoft.Json.Required.Default)]
+        public bool? StorageBlockRemovableStorage { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block system page.
-        /// Indicates whether or not to block access to System in Settings app.
+        /// Gets or sets storage require mobile device encryption.
+        /// Indicating whether or not to require encryption on a mobile device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockSystemPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockSystemPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRequireMobileDeviceEncryption", Required = Newtonsoft.Json.Required.Default)]
+        public bool? StorageRequireMobileDeviceEncryption { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block devices page.
-        /// Indicates whether or not to block access to Devices in Settings app.
+        /// Gets or sets storage restrict app data to system volume.
+        /// Indicates whether application data is restricted to the system drive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockDevicesPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockDevicesPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRestrictAppDataToSystemVolume", Required = Newtonsoft.Json.Required.Default)]
+        public bool? StorageRestrictAppDataToSystemVolume { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block network internet page.
-        /// Indicates whether or not to block access to Network &amp; Internet in Settings app.
+        /// Gets or sets storage restrict app install to system volume.
+        /// Indicates whether the installation of applications is restricted to the system drive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockNetworkInternetPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockNetworkInternetPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRestrictAppInstallToSystemVolume", Required = Newtonsoft.Json.Required.Default)]
+        public bool? StorageRestrictAppInstallToSystemVolume { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block personalization page.
-        /// Indicates whether or not to block access to Personalization in Settings app.
+        /// Gets or sets system telemetry proxy server.
+        /// Gets or sets the fully qualified domain name (FQDN) or IP address of a proxy server to forward Connected User Experiences and Telemetry requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockPersonalizationPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockPersonalizationPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemTelemetryProxyServer", Required = Newtonsoft.Json.Required.Default)]
+        public string SystemTelemetryProxyServer { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block accounts page.
-        /// Indicates whether or not to block access to Accounts in Settings app.
+        /// Gets or sets task manager block end task.
+        /// Specify whether non-administrators can use Task Manager to end tasks.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockAccountsPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockAccountsPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskManagerBlockEndTask", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TaskManagerBlockEndTask { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block time language page.
-        /// Indicates whether or not to block access to Time &amp; Language in Settings app.
+        /// Gets or sets tenant lockdown require network during out of box experience.
+        /// Whether the device is required to connect to the network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockTimeLanguagePage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockTimeLanguagePage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantLockdownRequireNetworkDuringOutOfBoxExperience", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TenantLockdownRequireNetworkDuringOutOfBoxExperience { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block ease of access page.
-        /// Indicates whether or not to block access to Ease of Access in Settings app.
+        /// Gets or sets uninstall built in apps.
+        /// Indicates whether or not to uninstall a fixed list of built-in Windows apps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockEaseOfAccessPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockEaseOfAccessPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallBuiltInApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UninstallBuiltInApps { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block privacy page.
-        /// Indicates whether or not to block access to Privacy in Settings app.
+        /// Gets or sets usb blocked.
+        /// Indicates whether or not to Block the user from USB connection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockPrivacyPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockPrivacyPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usbBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UsbBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block update security page.
-        /// Indicates whether or not to block access to Update &amp; Security in Settings app.
+        /// Gets or sets voice recording blocked.
+        /// Indicates whether or not to Block the user from voice recording.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockUpdateSecurityPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockUpdateSecurityPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "voiceRecordingBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? VoiceRecordingBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block apps page.
-        /// Indicates whether or not to block access to Apps in Settings app.
+        /// Gets or sets web rtc block localhost ip address.
+        /// Indicates whether or not user's localhost IP address is displayed while making phone calls using the WebRTC
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockAppsPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockAppsPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webRtcBlockLocalhostIpAddress", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WebRtcBlockLocalhostIpAddress { get; set; }
     
         /// <summary>
-        /// Gets or sets settings block gaming page.
-        /// Indicates whether or not to block access to Gaming in Settings app.
+        /// Gets or sets wi fi block automatic connect hotspots.
+        /// Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockGamingPage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockGamingPage { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlockAutomaticConnectHotspots", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WiFiBlockAutomaticConnectHotspots { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wi fi blocked.
+        /// Indicates whether or not to Block the user from using Wi-Fi.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WiFiBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wi fi block manual configuration.
+        /// Indicates whether or not to Block the user from using Wi-Fi manual configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlockManualConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WiFiBlockManualConfiguration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wi fi scan interval.
+        /// Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiScanInterval", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WiFiScanInterval { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows10apps force update schedule.
+        /// Windows 10 force update schedule for Apps.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10AppsForceUpdateSchedule", Required = Newtonsoft.Json.Required.Default)]
+        public Windows10AppsForceUpdateSchedule Windows10AppsForceUpdateSchedule { get; set; }
     
         /// <summary>
         /// Gets or sets windows spotlight block consumer specific features.
@@ -1480,361 +1963,25 @@ namespace Microsoft.Graph
         public WindowsSpotlightEnablementSettings? WindowsSpotlightConfigureOnLockScreen { get; set; }
     
         /// <summary>
-        /// Gets or sets network proxy apply settings device wide.
-        /// If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.
+        /// Gets or sets windows store block auto update.
+        /// Indicates whether or not to block automatic update of apps from Windows Store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyApplySettingsDeviceWide", Required = Newtonsoft.Json.Required.Default)]
-        public bool? NetworkProxyApplySettingsDeviceWide { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsStoreBlockAutoUpdate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WindowsStoreBlockAutoUpdate { get; set; }
     
         /// <summary>
-        /// Gets or sets network proxy disable auto detect.
-        /// Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.
+        /// Gets or sets windows store blocked.
+        /// Indicates whether or not to Block the user from using the Windows store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyDisableAutoDetect", Required = Newtonsoft.Json.Required.Default)]
-        public bool? NetworkProxyDisableAutoDetect { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsStoreBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WindowsStoreBlocked { get; set; }
     
         /// <summary>
-        /// Gets or sets network proxy automatic configuration url.
-        /// Address to the proxy auto-config (PAC) script you want to use.
+        /// Gets or sets windows store enable private store only.
+        /// Indicates whether or not to enable Private Store Only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyAutomaticConfigurationUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string NetworkProxyAutomaticConfigurationUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets network proxy server.
-        /// Specifies manual proxy server settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkProxyServer", Required = Newtonsoft.Json.Required.Default)]
-        public Windows10NetworkProxyServer NetworkProxyServer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets accounts block adding non microsoft account email.
-        /// Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountsBlockAddingNonMicrosoftAccountEmail", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AccountsBlockAddingNonMicrosoftAccountEmail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets anti theft mode blocked.
-        /// Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "antiTheftModeBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AntiTheftModeBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bluetooth blocked.
-        /// Whether or not to Block the user from using bluetooth.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bluetoothBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BluetoothBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets camera blocked.
-        /// Whether or not to Block the user from accessing the camera of the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameraBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CameraBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets connected devices service blocked.
-        /// Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedDevicesServiceBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ConnectedDevicesServiceBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificates block manual root certificate installation.
-        /// Whether or not to Block the user from doing manual root certificate installation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificatesBlockManualRootCertificateInstallation", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CertificatesBlockManualRootCertificateInstallation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets copy paste blocked.
-        /// Whether or not to Block the user from using copy paste.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copyPasteBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CopyPasteBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cortana blocked.
-        /// Whether or not to Block the user from using Cortana.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cortanaBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? CortanaBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device management block factory reset on mobile.
-        /// Indicates whether or not to Block the user from resetting their phone.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementBlockFactoryResetOnMobile", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceManagementBlockFactoryResetOnMobile { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device management block manual unenroll.
-        /// Indicates whether or not to Block the user from doing manual un-enrollment from device management.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementBlockManualUnenroll", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceManagementBlockManualUnenroll { get; set; }
-    
-        /// <summary>
-        /// Gets or sets safe search filter.
-        /// Specifies what filter level of safe search is required. Possible values are: userDefined, strict, moderate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safeSearchFilter", Required = Newtonsoft.Json.Required.Default)]
-        public SafeSearchFilterType? SafeSearchFilter { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block popups.
-        /// Indicates whether or not to block popups.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockPopups", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockPopups { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block search suggestions.
-        /// Indicates whether or not to block the user from using the search suggestions in the address bar.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSearchSuggestions", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockSearchSuggestions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block search engine customization.
-        /// Indicates whether or not to block the user from adding new search engine or changing the default search engine.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSearchEngineCustomization", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockSearchEngineCustomization { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block sending intranet traffic to internet explorer.
-        /// Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockSendingIntranetTrafficToInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockSendingIntranetTrafficToInternetExplorer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge send intranet traffic to internet explorer.
-        /// Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSendIntranetTrafficToInternetExplorer", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeSendIntranetTrafficToInternetExplorer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge require smart screen.
-        /// Indicates whether or not to Require the user to use the smart screen filter.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeRequireSmartScreen", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeRequireSmartScreen { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge enterprise mode site list location.
-        /// Indicates the enterprise mode site list location. Could be a local file, local network or http location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeEnterpriseModeSiteListLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string EdgeEnterpriseModeSiteListLocation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge first run url.
-        /// The first run URL for when Edge browser is opened for the first time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeFirstRunUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string EdgeFirstRunUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge search engine.
-        /// Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeSearchEngine", Required = Newtonsoft.Json.Required.Default)]
-        public EdgeSearchEngineBase EdgeSearchEngine { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge homepage urls.
-        /// The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeHomepageUrls", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> EdgeHomepageUrls { get; set; }
-    
-        /// <summary>
-        /// Gets or sets edge block access to about flags.
-        /// Indicates whether or not to prevent access to about flags on Edge browser.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edgeBlockAccessToAboutFlags", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EdgeBlockAccessToAboutFlags { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen block prompt override.
-        /// Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockPromptOverride", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmartScreenBlockPromptOverride { get; set; }
-    
-        /// <summary>
-        /// Gets or sets smart screen block prompt override for files.
-        /// Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smartScreenBlockPromptOverrideForFiles", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SmartScreenBlockPromptOverrideForFiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets web rtc block localhost ip address.
-        /// Indicates whether or not user's localhost IP address is displayed while making phone calls using the WebRTC
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webRtcBlockLocalhostIpAddress", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WebRtcBlockLocalhostIpAddress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets internet sharing blocked.
-        /// Indicates whether or not to Block the user from using internet sharing.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internetSharingBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? InternetSharingBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settings block add provisioning package.
-        /// Indicates whether or not to block the user from installing provisioning packages.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockAddProvisioningPackage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockAddProvisioningPackage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settings block remove provisioning package.
-        /// Indicates whether or not to block the runtime configuration agent from removing provisioning packages.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockRemoveProvisioningPackage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockRemoveProvisioningPackage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settings block change system time.
-        /// Indicates whether or not to block the user from changing date and time settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangeSystemTime", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockChangeSystemTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settings block edit device name.
-        /// Indicates whether or not to block the user from editing the device name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockEditDeviceName", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockEditDeviceName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settings block change region.
-        /// Indicates whether or not to block the user from changing the region settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangeRegion", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockChangeRegion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settings block change language.
-        /// Indicates whether or not to block the user from changing the language settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangeLanguage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockChangeLanguage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets settings block change power sleep.
-        /// Indicates whether or not to block the user from changing power and sleep settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingsBlockChangePowerSleep", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SettingsBlockChangePowerSleep { get; set; }
-    
-        /// <summary>
-        /// Gets or sets location services blocked.
-        /// Indicates whether or not to Block the user from location services.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locationServicesBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LocationServicesBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft account blocked.
-        /// Indicates whether or not to Block a Microsoft account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAccountBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftAccountBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets microsoft account block settings sync.
-        /// Indicates whether or not to Block Microsoft account settings sync.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAccountBlockSettingsSync", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MicrosoftAccountBlockSettingsSync { get; set; }
-    
-        /// <summary>
-        /// Gets or sets nfc blocked.
-        /// Indicates whether or not to Block the user from using near field communication.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nfcBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? NfcBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reset protection mode blocked.
-        /// Indicates whether or not to Block the user from reset protection mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resetProtectionModeBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ResetProtectionModeBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets screen capture blocked.
-        /// Indicates whether or not to Block the user from taking Screenshots.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "screenCaptureBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ScreenCaptureBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets storage block removable storage.
-        /// Indicates whether or not to Block the user from using removable storage.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageBlockRemovableStorage", Required = Newtonsoft.Json.Required.Default)]
-        public bool? StorageBlockRemovableStorage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets storage require mobile device encryption.
-        /// Indicating whether or not to require encryption on a mobile device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRequireMobileDeviceEncryption", Required = Newtonsoft.Json.Required.Default)]
-        public bool? StorageRequireMobileDeviceEncryption { get; set; }
-    
-        /// <summary>
-        /// Gets or sets usb blocked.
-        /// Indicates whether or not to Block the user from USB connection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usbBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UsbBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets voice recording blocked.
-        /// Indicates whether or not to Block the user from voice recording.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "voiceRecordingBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? VoiceRecordingBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wi fi block automatic connect hotspots.
-        /// Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlockAutomaticConnectHotspots", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WiFiBlockAutomaticConnectHotspots { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wi fi blocked.
-        /// Indicates whether or not to Block the user from using Wi-Fi.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WiFiBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wi fi block manual configuration.
-        /// Indicates whether or not to Block the user from using Wi-Fi manual configuration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiBlockManualConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WiFiBlockManualConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets wi fi scan interval.
-        /// Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiScanInterval", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WiFiScanInterval { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsStoreEnablePrivateStoreOnly", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WindowsStoreEnablePrivateStoreOnly { get; set; }
     
         /// <summary>
         /// Gets or sets wireless display block projection to this device.
@@ -1856,153 +2003,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wirelessDisplayRequirePinForPairing", Required = Newtonsoft.Json.Required.Default)]
         public bool? WirelessDisplayRequirePinForPairing { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows store blocked.
-        /// Indicates whether or not to Block the user from using the Windows store.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsStoreBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WindowsStoreBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps allow trusted apps sideloading.
-        /// Indicates whether apps from AppX packages signed with a trusted certificate can be side loaded. Possible values are: notConfigured, blocked, allowed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsAllowTrustedAppsSideloading", Required = Newtonsoft.Json.Required.Default)]
-        public StateManagementSetting? AppsAllowTrustedAppsSideloading { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows store block auto update.
-        /// Indicates whether or not to block automatic update of apps from Windows Store.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsStoreBlockAutoUpdate", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WindowsStoreBlockAutoUpdate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets developer unlock setting.
-        /// Indicates whether or not to allow developer unlock. Possible values are: notConfigured, blocked, allowed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "developerUnlockSetting", Required = Newtonsoft.Json.Required.Default)]
-        public StateManagementSetting? DeveloperUnlockSetting { get; set; }
-    
-        /// <summary>
-        /// Gets or sets shared user app data allowed.
-        /// Indicates whether or not to block multiple users of the same app to share data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedUserAppDataAllowed", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SharedUserAppDataAllowed { get; set; }
-    
-        /// <summary>
-        /// Gets or sets apps block windows store originated apps.
-        /// Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsBlockWindowsStoreOriginatedApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AppsBlockWindowsStoreOriginatedApps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows store enable private store only.
-        /// Indicates whether or not to enable Private Store Only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsStoreEnablePrivateStoreOnly", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WindowsStoreEnablePrivateStoreOnly { get; set; }
-    
-        /// <summary>
-        /// Gets or sets storage restrict app data to system volume.
-        /// Indicates whether application data is restricted to the system drive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRestrictAppDataToSystemVolume", Required = Newtonsoft.Json.Required.Default)]
-        public bool? StorageRestrictAppDataToSystemVolume { get; set; }
-    
-        /// <summary>
-        /// Gets or sets storage restrict app install to system volume.
-        /// Indicates whether the installation of applications is restricted to the system drive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageRestrictAppInstallToSystemVolume", Required = Newtonsoft.Json.Required.Default)]
-        public bool? StorageRestrictAppInstallToSystemVolume { get; set; }
-    
-        /// <summary>
-        /// Gets or sets game dvr blocked.
-        /// Indicates whether or not to block DVR and broadcasting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gameDvrBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? GameDvrBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets experience block device discovery.
-        /// Indicates whether or not to enable device discovery UX.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceBlockDeviceDiscovery", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ExperienceBlockDeviceDiscovery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets experience block error dialog when no sim.
-        /// Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceBlockErrorDialogWhenNoSIM", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ExperienceBlockErrorDialogWhenNoSIM { get; set; }
-    
-        /// <summary>
-        /// Gets or sets experience block task switcher.
-        /// Indicates whether or not to enable task switching on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "experienceBlockTaskSwitcher", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ExperienceBlockTaskSwitcher { get; set; }
-    
-        /// <summary>
-        /// Gets or sets logon block fast user switching.
-        /// Disables the ability to quickly switch between users that are logged on simultaneously without logging off.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonBlockFastUserSwitching", Required = Newtonsoft.Json.Required.Default)]
-        public bool? LogonBlockFastUserSwitching { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tenant lockdown require network during out of box experience.
-        /// Whether the device is required to connect to the network.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantLockdownRequireNetworkDuringOutOfBoxExperience", Required = Newtonsoft.Json.Required.Default)]
-        public bool? TenantLockdownRequireNetworkDuringOutOfBoxExperience { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app management msiallow user control over install.
-        /// This policy setting permits users to change installation options that typically are available only to system administrators.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementMSIAllowUserControlOverInstall", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AppManagementMSIAllowUserControlOverInstall { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app management msialways install with elevated privileges.
-        /// This policy setting directs Windows Installer to use elevated permissions when it installs any program on the system.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementMSIAlwaysInstallWithElevatedPrivileges", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AppManagementMSIAlwaysInstallWithElevatedPrivileges { get; set; }
-    
-        /// <summary>
-        /// Gets or sets data protection block direct memory access.
-        /// This policy setting allows you to block direct memory access (DMA) for all hot pluggable PCI downstream ports until a user logs into Windows.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataProtectionBlockDirectMemoryAccess", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DataProtectionBlockDirectMemoryAccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app management package family names to launch after log on.
-        /// List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.???
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementPackageFamilyNamesToLaunchAfterLogOn", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AppManagementPackageFamilyNamesToLaunchAfterLogOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets uninstall built in apps.
-        /// Indicates whether or not to uninstall a fixed list of built-in Windows apps.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallBuiltInApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UninstallBuiltInApps { get; set; }
-    
-        /// <summary>
-        /// Gets or sets configure time zone.
-        /// Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configureTimeZone", Required = Newtonsoft.Json.Required.Default)]
-        public string ConfigureTimeZone { get; set; }
     
         /// <summary>
         /// Gets or sets privacy access controls.

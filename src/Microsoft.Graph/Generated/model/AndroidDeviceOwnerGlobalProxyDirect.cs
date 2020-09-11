@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets excludedHosts.
+        /// The excluded hosts
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedHosts", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ExcludedHosts { get; set; }
+    
+        /// <summary>
         /// Gets or sets host.
         /// The host name
         /// </summary>
@@ -42,13 +49,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "port", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Port { get; set; }
-    
-        /// <summary>
-        /// Gets or sets excludedHosts.
-        /// The excluded hosts
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedHosts", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> ExcludedHosts { get; set; }
     
     }
 }

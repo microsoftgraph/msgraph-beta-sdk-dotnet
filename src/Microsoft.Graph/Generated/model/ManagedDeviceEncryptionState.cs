@@ -31,11 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user principal name.
-        /// User name
+        /// Gets or sets advanced bit locker states.
+        /// Advanced BitLocker State
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedBitLockerStates", Required = Newtonsoft.Json.Required.Default)]
+        public AdvancedBitLockerState? AdvancedBitLockerStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device name.
+        /// Device name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets device type.
@@ -45,25 +52,11 @@ namespace Microsoft.Graph
         public DeviceTypes? DeviceType { get; set; }
     
         /// <summary>
-        /// Gets or sets os version.
-        /// Operating system version of the device
+        /// Gets or sets encryption policy setting state.
+        /// Encryption policy setting state
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tpm specification version.
-        /// Device TPM Version
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tpmSpecificationVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string TpmSpecificationVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device name.
-        /// Device name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionPolicySettingState", Required = Newtonsoft.Json.Required.Default)]
+        public ComplianceStatus? EncryptionPolicySettingState { get; set; }
     
         /// <summary>
         /// Gets or sets encryption readiness state.
@@ -80,20 +73,6 @@ namespace Microsoft.Graph
         public EncryptionState? EncryptionState { get; set; }
     
         /// <summary>
-        /// Gets or sets encryption policy setting state.
-        /// Encryption policy setting state
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionPolicySettingState", Required = Newtonsoft.Json.Required.Default)]
-        public ComplianceStatus? EncryptionPolicySettingState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets advanced bit locker states.
-        /// Advanced BitLocker State
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedBitLockerStates", Required = Newtonsoft.Json.Required.Default)]
-        public AdvancedBitLockerState? AdvancedBitLockerStates { get; set; }
-    
-        /// <summary>
         /// Gets or sets file vault states.
         /// FileVault State
         /// </summary>
@@ -101,11 +80,32 @@ namespace Microsoft.Graph
         public FileVaultState? FileVaultStates { get; set; }
     
         /// <summary>
+        /// Gets or sets os version.
+        /// Operating system version of the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets policy details.
         /// Policy Details
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<EncryptionReportPolicyDetails> PolicyDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tpm specification version.
+        /// Device TPM Version
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tpmSpecificationVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string TpmSpecificationVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// User name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

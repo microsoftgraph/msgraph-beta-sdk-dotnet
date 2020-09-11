@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets osVersion.
-        /// OS version
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets deviceCount.
         /// Count of devices with malware for the OS version
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastUpdateDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets osVersion.
+        /// OS version
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

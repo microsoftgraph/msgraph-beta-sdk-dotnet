@@ -43,16 +43,16 @@ namespace Microsoft.Graph.TermStore
         public Term FromTerm { get; set; }
     
         /// <summary>
-        /// Gets or sets to term.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toTerm", Required = Newtonsoft.Json.Required.Default)]
-        public Term ToTerm { get; set; }
-    
-        /// <summary>
         /// Gets or sets set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "set", Required = Newtonsoft.Json.Required.Default)]
         public Set Set { get; set; }
+    
+        /// <summary>
+        /// Gets or sets to term.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toTerm", Required = Newtonsoft.Json.Required.Default)]
+        public Term ToTerm { get; set; }
     
     }
 }

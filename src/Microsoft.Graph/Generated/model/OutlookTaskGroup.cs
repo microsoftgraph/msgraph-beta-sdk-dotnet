@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public string ChangeKey { get; set; }
     
         /// <summary>
+        /// Gets or sets group key.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupKey", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? GroupKey { get; set; }
+    
+        /// <summary>
         /// Gets or sets is default group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultGroup", Required = Newtonsoft.Json.Required.Default)]
@@ -47,12 +53,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group key.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupKey", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? GroupKey { get; set; }
     
         /// <summary>
         /// Gets or sets task folders.

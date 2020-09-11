@@ -30,16 +30,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets tenantId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
-        public string TenantId { get; set; }
-    
-        /// <summary>
         /// Gets or sets displayName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenantId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string TenantId { get; set; }
     
     }
 }

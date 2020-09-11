@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets balancing account id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? BalancingAccountId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets balancing account number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string BalancingAccountNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
@@ -47,18 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets balancing account id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? BalancingAccountId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets balancing account number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string BalancingAccountNumber { get; set; }
     
         /// <summary>
         /// Gets or sets account.

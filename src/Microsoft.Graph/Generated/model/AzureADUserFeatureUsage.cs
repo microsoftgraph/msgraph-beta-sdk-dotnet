@@ -31,34 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets feature usage details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureUsageDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<FeatureUsageDetail> FeatureUsageDetails { get; set; }
+    
+        /// <summary>
         /// Gets or sets last updated date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user principal name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets license recommended.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseRecommended", Required = Newtonsoft.Json.Required.Default)]
-        public AzureADLicenseType? LicenseRecommended { get; set; }
     
         /// <summary>
         /// Gets or sets license assigned.
@@ -67,10 +49,28 @@ namespace Microsoft.Graph
         public AzureADLicenseType? LicenseAssigned { get; set; }
     
         /// <summary>
-        /// Gets or sets feature usage details.
+        /// Gets or sets license recommended.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureUsageDetails", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<FeatureUsageDetail> FeatureUsageDetails { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseRecommended", Required = Newtonsoft.Json.Required.Default)]
+        public AzureADLicenseType? LicenseRecommended { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

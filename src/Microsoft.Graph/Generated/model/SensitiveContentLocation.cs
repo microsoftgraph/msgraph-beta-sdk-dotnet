@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets evidences.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evidences", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SensitiveContentEvidence> Evidences { get; set; }
+    
+        /// <summary>
         /// Gets or sets idMatch.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "idMatch", Required = Newtonsoft.Json.Required.Default)]
         public string IdMatch { get; set; }
-    
-        /// <summary>
-        /// Gets or sets offset.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offset", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Offset { get; set; }
     
         /// <summary>
         /// Gets or sets length.
@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public Int32? Length { get; set; }
     
         /// <summary>
-        /// Gets or sets evidences.
+        /// Gets or sets offset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evidences", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SensitiveContentEvidence> Evidences { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offset", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Offset { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets change uefi settings permission.
-        /// Defines the permission level granted to users to change UEFI settings.
+        /// Gets or sets boot from built in network adapters.
+        /// Defines whether a user is allowed to boot from built-in network adapters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeUefiSettingsPermission", Required = Newtonsoft.Json.Required.Default)]
-        public ChangeUefiSettingsPermission? ChangeUefiSettingsPermission { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bootFromBuiltInNetworkAdapters", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? BootFromBuiltInNetworkAdapters { get; set; }
     
         /// <summary>
-        /// Gets or sets virtualization of cpu and io.
-        /// Defines whether CPU and IO virtualization is enabled.
+        /// Gets or sets boot from external media.
+        /// Defines whether a user is allowed to boot from external media.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "virtualizationOfCpuAndIO", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? VirtualizationOfCpuAndIO { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bootFromExternalMedia", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? BootFromExternalMedia { get; set; }
     
         /// <summary>
         /// Gets or sets cameras.
@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameras", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? Cameras { get; set; }
+    
+        /// <summary>
+        /// Gets or sets change uefi settings permission.
+        /// Defines the permission level granted to users to change UEFI settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeUefiSettingsPermission", Required = Newtonsoft.Json.Required.Default)]
+        public ChangeUefiSettingsPermission? ChangeUefiSettingsPermission { get; set; }
     
         /// <summary>
         /// Gets or sets microphones and speakers.
@@ -66,18 +73,11 @@ namespace Microsoft.Graph
         public Enablement? Radios { get; set; }
     
         /// <summary>
-        /// Gets or sets boot from external media.
-        /// Defines whether a user is allowed to boot from external media.
+        /// Gets or sets virtualization of cpu and io.
+        /// Defines whether CPU and IO virtualization is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bootFromExternalMedia", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? BootFromExternalMedia { get; set; }
-    
-        /// <summary>
-        /// Gets or sets boot from built in network adapters.
-        /// Defines whether a user is allowed to boot from built-in network adapters.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bootFromBuiltInNetworkAdapters", Required = Newtonsoft.Json.Required.Default)]
-        public Enablement? BootFromBuiltInNetworkAdapters { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "virtualizationOfCpuAndIO", Required = Newtonsoft.Json.Required.Default)]
+        public Enablement? VirtualizationOfCpuAndIO { get; set; }
     
     }
 }

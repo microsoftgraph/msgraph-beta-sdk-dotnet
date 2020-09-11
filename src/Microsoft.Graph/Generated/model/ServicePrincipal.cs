@@ -173,17 +173,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> NotificationEmailAddresses { get; set; }
     
         /// <summary>
-        /// Gets or sets published permission scopes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedPermissionScopes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<PermissionScope> PublishedPermissionScopes { get; set; }
-    
-        /// <summary>
         /// Gets or sets password credentials.
         /// The collection of password credentials associated with the service principal. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordCredentials", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PasswordCredential> PasswordCredentials { get; set; }
+    
+        /// <summary>
+        /// Gets or sets preferred single sign on mode.
+        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredSingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
+        public string PreferredSingleSignOnMode { get; set; }
     
         /// <summary>
         /// Gets or sets preferred token signing key end date time.
@@ -198,11 +199,10 @@ namespace Microsoft.Graph
         public string PreferredTokenSigningKeyThumbprint { get; set; }
     
         /// <summary>
-        /// Gets or sets preferred single sign on mode.
-        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
+        /// Gets or sets published permission scopes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredSingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
-        public string PreferredSingleSignOnMode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedPermissionScopes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PermissionScope> PublishedPermissionScopes { get; set; }
     
         /// <summary>
         /// Gets or sets publisher name.
@@ -286,11 +286,11 @@ namespace Microsoft.Graph
         public IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
     
         /// <summary>
-        /// Gets or sets home realm discovery policies.
-        /// The homeRealmDiscoveryPolicies assigned to this service principal.
+        /// Gets or sets created objects.
+        /// Directory objects created by this service principal. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdObjects", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
     
         /// <summary>
         /// Gets or sets endpoints.
@@ -300,11 +300,17 @@ namespace Microsoft.Graph
         public IServicePrincipalEndpointsCollectionPage Endpoints { get; set; }
     
         /// <summary>
-        /// Gets or sets oauth2permission grants.
-        /// Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
+        /// Gets or sets home realm discovery policies.
+        /// The homeRealmDiscoveryPolicies assigned to this service principal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oauth2PermissionGrants", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets license details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalLicenseDetailsCollectionPage LicenseDetails { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
@@ -314,30 +320,11 @@ namespace Microsoft.Graph
         public IServicePrincipalMemberOfCollectionWithReferencesPage MemberOf { get; set; }
     
         /// <summary>
-        /// Gets or sets transitive member of.
+        /// Gets or sets oauth2permission grants.
+        /// Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created objects.
-        /// Directory objects created by this service principal. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdObjects", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
-    
-        /// <summary>
-        /// Gets or sets license details.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalLicenseDetailsCollectionPage LicenseDetails { get; set; }
-    
-        /// <summary>
-        /// Gets or sets owners.
-        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
-        public IServicePrincipalOwnersCollectionWithReferencesPage Owners { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oauth2PermissionGrants", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesPage Oauth2PermissionGrants { get; set; }
     
         /// <summary>
         /// Gets or sets owned objects.
@@ -345,6 +332,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownedObjects", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
+    
+        /// <summary>
+        /// Gets or sets owners.
+        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
         /// Gets or sets token issuance policies.
@@ -359,6 +353,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transitive member of.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transitiveMemberOf", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }
     
         /// <summary>
         /// Gets or sets synchronization.

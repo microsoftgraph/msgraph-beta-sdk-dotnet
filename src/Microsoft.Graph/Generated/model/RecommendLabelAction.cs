@@ -30,18 +30,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets label.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
-        public LabelDetails Label { get; set; }
-    
-        /// <summary>
-        /// Gets or sets responsibleSensitiveTypeIds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsibleSensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<Guid> ResponsibleSensitiveTypeIds { get; set; }
-    
-        /// <summary>
         /// Gets or sets actions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
@@ -52,6 +40,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionSource", Required = Newtonsoft.Json.Required.Default)]
         public ActionSource? ActionSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets label.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        public LabelDetails Label { get; set; }
+    
+        /// <summary>
+        /// Gets or sets responsibleSensitiveTypeIds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsibleSensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<Guid> ResponsibleSensitiveTypeIds { get; set; }
     
     }
 }

@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public IEnumerable<SearchHit> Hits { get; set; }
     
         /// <summary>
-        /// Gets or sets total.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "total", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Total { get; set; }
-    
-        /// <summary>
         /// Gets or sets moreResultsAvailable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "moreResultsAvailable", Required = Newtonsoft.Json.Required.Default)]
         public bool? MoreResultsAvailable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "total", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Total { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

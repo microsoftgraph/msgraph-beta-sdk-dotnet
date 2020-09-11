@@ -45,20 +45,20 @@ namespace Microsoft.Graph
             bool notifyManagedDevices);
 
         /// <summary>
-        /// Gets the request builder for IosVppAppRevokeUserLicense.
-        /// </summary>
-        /// <returns>The <see cref="IIosVppAppRevokeUserLicenseRequestBuilder"/>.</returns>
-        IIosVppAppRevokeUserLicenseRequestBuilder RevokeUserLicense(
-            bool notifyManagedDevices,
-            string userId = null);
-
-        /// <summary>
         /// Gets the request builder for IosVppAppRevokeDeviceLicense.
         /// </summary>
         /// <returns>The <see cref="IIosVppAppRevokeDeviceLicenseRequestBuilder"/>.</returns>
         IIosVppAppRevokeDeviceLicenseRequestBuilder RevokeDeviceLicense(
             bool notifyManagedDevices,
             string managedDeviceId = null);
+
+        /// <summary>
+        /// Gets the request builder for IosVppAppRevokeUserLicense.
+        /// </summary>
+        /// <returns>The <see cref="IIosVppAppRevokeUserLicenseRequestBuilder"/>.</returns>
+        IIosVppAppRevokeUserLicenseRequestBuilder RevokeUserLicense(
+            bool notifyManagedDevices,
+            string userId = null);
     
     }
 }

@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string ChangeKey { get; set; }
     
         /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
         /// Gets or sets is default folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultFolder", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefaultFolder { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets parent group key.
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         public Guid? ParentGroupKey { get; set; }
     
         /// <summary>
-        /// Gets or sets tasks.
+        /// Gets or sets multi value extended properties.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
-        public IOutlookTaskFolderTasksCollectionPage Tasks { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IOutlookTaskFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -67,10 +67,10 @@ namespace Microsoft.Graph
         public IOutlookTaskFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
         /// <summary>
-        /// Gets or sets multi value extended properties.
+        /// Gets or sets tasks.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IOutlookTaskFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        public IOutlookTaskFolderTasksCollectionPage Tasks { get; set; }
     
     }
 }

@@ -31,39 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets productCode.
-        /// The MSI product code.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productCode", Required = Newtonsoft.Json.Required.Default)]
-        public string ProductCode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets productVersion.
-        /// The MSI product version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string ProductVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets upgradeCode.
-        /// The MSI upgrade code.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeCode", Required = Newtonsoft.Json.Required.Default)]
-        public string UpgradeCode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets requiresReboot.
-        /// Whether the MSI app requires the machine to reboot to complete installation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresReboot", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RequiresReboot { get; set; }
-    
-        /// <summary>
         /// Gets or sets packageType.
         /// The MSI package type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppMsiPackageType? PackageType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets productCode.
+        /// The MSI product code.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productCode", Required = Newtonsoft.Json.Required.Default)]
+        public string ProductCode { get; set; }
     
         /// <summary>
         /// Gets or sets productName.
@@ -73,11 +52,32 @@ namespace Microsoft.Graph
         public string ProductName { get; set; }
     
         /// <summary>
+        /// Gets or sets productVersion.
+        /// The MSI product version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string ProductVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets publisher.
         /// The MSI publisher.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
         public string Publisher { get; set; }
+    
+        /// <summary>
+        /// Gets or sets requiresReboot.
+        /// Whether the MSI app requires the machine to reboot to complete installation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresReboot", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RequiresReboot { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgradeCode.
+        /// The MSI upgrade code.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upgradeCode", Required = Newtonsoft.Json.Required.Default)]
+        public string UpgradeCode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

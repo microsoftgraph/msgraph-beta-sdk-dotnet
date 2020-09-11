@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets realm.
-        /// Gets or sets the case-sensitive realm name for this profile.
+        /// Gets or sets activeDirectorySiteCode.
+        /// Gets or sets the Active Directory site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realm", Required = Newtonsoft.Json.Required.Default)]
-        public string Realm { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeDirectorySiteCode", Required = Newtonsoft.Json.Required.Default)]
+        public string ActiveDirectorySiteCode { get; set; }
     
         /// <summary>
-        /// Gets or sets domains.
-        /// Gets or sets a list of hosts or domain names for which the app extension performs SSO.
+        /// Gets or sets blockActiveDirectorySiteAutoDiscovery.
+        /// Enables or disables whether the Kerberos extension can automatically determine its site name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domains", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Domains { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockActiveDirectorySiteAutoDiscovery", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BlockActiveDirectorySiteAutoDiscovery { get; set; }
     
         /// <summary>
         /// Gets or sets blockAutomaticLogin.
@@ -72,6 +72,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> DomainRealms { get; set; }
     
         /// <summary>
+        /// Gets or sets domains.
+        /// Gets or sets a list of hosts or domain names for which the app extension performs SSO.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domains", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Domains { get; set; }
+    
+        /// <summary>
         /// Gets or sets isDefaultRealm.
         /// When true, this profile's realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.
         /// </summary>
@@ -84,6 +91,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordBlockModification", Required = Newtonsoft.Json.Required.Default)]
         public bool? PasswordBlockModification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets passwordChangeUrl.
+        /// Gets or sets the URL that the user will be sent to when they initiate a password change.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordChangeUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PasswordChangeUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets passwordEnableLocalSync.
+        /// Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordEnableLocalSync", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordEnableLocalSync { get; set; }
     
         /// <summary>
         /// Gets or sets passwordExpirationDays.
@@ -100,25 +121,11 @@ namespace Microsoft.Graph
         public Int32? PasswordExpirationNotificationDays { get; set; }
     
         /// <summary>
-        /// Gets or sets userPrincipalName.
-        /// Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
+        /// Gets or sets passwordMinimumAgeDays.
+        /// Gets or sets the minimum number of days until a user can change their password again.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets passwordRequireActiveDirectoryComplexity.
-        /// Enables or disables whether passwords must meet Active Directory's complexity requirements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequireActiveDirectoryComplexity", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordRequireActiveDirectoryComplexity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets passwordPreviousPasswordBlockCount.
-        /// Gets or sets the number of previous passwords to block.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPreviousPasswordBlockCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordPreviousPasswordBlockCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumAgeDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinimumAgeDays { get; set; }
     
         /// <summary>
         /// Gets or sets passwordMinimumLength.
@@ -128,11 +135,18 @@ namespace Microsoft.Graph
         public Int32? PasswordMinimumLength { get; set; }
     
         /// <summary>
-        /// Gets or sets passwordMinimumAgeDays.
-        /// Gets or sets the minimum number of days until a user can change their password again.
+        /// Gets or sets passwordPreviousPasswordBlockCount.
+        /// Gets or sets the number of previous passwords to block.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinimumAgeDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PasswordMinimumAgeDays { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordPreviousPasswordBlockCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordPreviousPasswordBlockCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets passwordRequireActiveDirectoryComplexity.
+        /// Enables or disables whether passwords must meet Active Directory's complexity requirements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequireActiveDirectoryComplexity", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PasswordRequireActiveDirectoryComplexity { get; set; }
     
         /// <summary>
         /// Gets or sets passwordRequirementsDescription.
@@ -142,6 +156,13 @@ namespace Microsoft.Graph
         public string PasswordRequirementsDescription { get; set; }
     
         /// <summary>
+        /// Gets or sets realm.
+        /// Gets or sets the case-sensitive realm name for this profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realm", Required = Newtonsoft.Json.Required.Default)]
+        public string Realm { get; set; }
+    
+        /// <summary>
         /// Gets or sets requireUserPresence.
         /// Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.
         /// </summary>
@@ -149,32 +170,11 @@ namespace Microsoft.Graph
         public bool? RequireUserPresence { get; set; }
     
         /// <summary>
-        /// Gets or sets activeDirectorySiteCode.
-        /// Gets or sets the Active Directory site.
+        /// Gets or sets userPrincipalName.
+        /// Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeDirectorySiteCode", Required = Newtonsoft.Json.Required.Default)]
-        public string ActiveDirectorySiteCode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets passwordEnableLocalSync.
-        /// Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordEnableLocalSync", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PasswordEnableLocalSync { get; set; }
-    
-        /// <summary>
-        /// Gets or sets blockActiveDirectorySiteAutoDiscovery.
-        /// Enables or disables whether the Kerberos extension can automatically determine its site name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockActiveDirectorySiteAutoDiscovery", Required = Newtonsoft.Json.Required.Default)]
-        public bool? BlockActiveDirectorySiteAutoDiscovery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets passwordChangeUrl.
-        /// Gets or sets the URL that the user will be sent to when they initiate a password change.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordChangeUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string PasswordChangeUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

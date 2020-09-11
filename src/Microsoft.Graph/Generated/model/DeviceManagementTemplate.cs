@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// The template's display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// The template's description
         /// </summary>
@@ -45,18 +38,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets version info.
-        /// The template's version information
+        /// Gets or sets display name.
+        /// The template's display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionInfo", Required = Newtonsoft.Json.Required.Default)]
-        public string VersionInfo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is deprecated.
-        /// The template is deprecated or not. Intents cannot be created from a deprecated template.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeprecated", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsDeprecated { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets intent count.
@@ -66,11 +52,11 @@ namespace Microsoft.Graph
         public Int32? IntentCount { get; set; }
     
         /// <summary>
-        /// Gets or sets template type.
-        /// The template's type.
+        /// Gets or sets is deprecated.
+        /// The template is deprecated or not. Intents cannot be created from a deprecated template.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateType", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementTemplateType? TemplateType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeprecated", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDeprecated { get; set; }
     
         /// <summary>
         /// Gets or sets platform type.
@@ -80,13 +66,6 @@ namespace Microsoft.Graph
         public PolicyPlatformType? PlatformType { get; set; }
     
         /// <summary>
-        /// Gets or sets template subtype.
-        /// The template's subtype.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateSubtype", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementTemplateSubtype? TemplateSubtype { get; set; }
-    
-        /// <summary>
         /// Gets or sets published date time.
         /// When the template was published
         /// </summary>
@@ -94,11 +73,25 @@ namespace Microsoft.Graph
         public DateTimeOffset? PublishedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets settings.
-        /// Collection of all settings this template has
+        /// Gets or sets template subtype.
+        /// The template's subtype.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementTemplateSettingsCollectionPage Settings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateSubtype", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementTemplateSubtype? TemplateSubtype { get; set; }
+    
+        /// <summary>
+        /// Gets or sets template type.
+        /// The template's type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementTemplateType? TemplateType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version info.
+        /// The template's version information
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionInfo", Required = Newtonsoft.Json.Required.Default)]
+        public string VersionInfo { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
@@ -113,6 +106,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migratableTo", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementTemplateMigratableToCollectionPage MigratableTo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings.
+        /// Collection of all settings this template has
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementTemplateSettingsCollectionPage Settings { get; set; }
     
     }
 }

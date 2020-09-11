@@ -31,39 +31,25 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets device name.
-        /// The user experience analytics device name.
+        /// Gets or sets average blue screens.
+        /// Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageBlueScreens", Required = Newtonsoft.Json.Required.Default)]
+        public double? AverageBlueScreens { get; set; }
     
         /// <summary>
-        /// Gets or sets model.
-        /// The user experience analytics device model.
+        /// Gets or sets average restarts.
+        /// Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
-        public string Model { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageRestarts", Required = Newtonsoft.Json.Required.Default)]
+        public double? AverageRestarts { get; set; }
     
         /// <summary>
-        /// Gets or sets manufacturer.
-        /// The user experience analytics device manufacturer.
+        /// Gets or sets blue screen count.
+        /// Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
-        public string Manufacturer { get; set; }
-    
-        /// <summary>
-        /// Gets or sets disk type.
-        /// The user experience analytics device disk type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diskType", Required = Newtonsoft.Json.Required.Default)]
-        public DiskType? DiskType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operating system version.
-        /// The user experience analytics device Operating System version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OperatingSystemVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blueScreenCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? BlueScreenCount { get; set; }
     
         /// <summary>
         /// Gets or sets boot score.
@@ -80,11 +66,46 @@ namespace Microsoft.Graph
         public Int32? CoreBootTimeInMs { get; set; }
     
         /// <summary>
+        /// Gets or sets core login time in ms.
+        /// The user experience analytics device core login time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coreLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CoreLoginTimeInMs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device count.
+        /// User experience analytics summarized device count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? DeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device name.
+        /// The user experience analytics device name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets disk type.
+        /// The user experience analytics device disk type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diskType", Required = Newtonsoft.Json.Required.Default)]
+        public DiskType? DiskType { get; set; }
+    
+        /// <summary>
         /// Gets or sets group policy boot time in ms.
         /// The user experience analytics device group policy boot time in milliseconds.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
         public Int32? GroupPolicyBootTimeInMs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group policy login time in ms.
+        /// The user experience analytics device group policy login time in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? GroupPolicyLoginTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets health status.
@@ -101,25 +122,25 @@ namespace Microsoft.Graph
         public Int32? LoginScore { get; set; }
     
         /// <summary>
-        /// Gets or sets core login time in ms.
-        /// The user experience analytics device core login time in milliseconds.
+        /// Gets or sets manufacturer.
+        /// The user experience analytics device manufacturer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coreLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CoreLoginTimeInMs { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        public string Manufacturer { get; set; }
     
         /// <summary>
-        /// Gets or sets group policy login time in ms.
-        /// The user experience analytics device group policy login time in milliseconds.
+        /// Gets or sets model.
+        /// The user experience analytics device model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? GroupPolicyLoginTimeInMs { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        public string Model { get; set; }
     
         /// <summary>
-        /// Gets or sets device count.
-        /// User experience analytics summarized device count.
+        /// Gets or sets operating system version.
+        /// The user experience analytics device Operating System version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? DeviceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OperatingSystemVersion { get; set; }
     
         /// <summary>
         /// Gets or sets responsive desktop time in ms.
@@ -129,32 +150,11 @@ namespace Microsoft.Graph
         public Int32? ResponsiveDesktopTimeInMs { get; set; }
     
         /// <summary>
-        /// Gets or sets blue screen count.
-        /// Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blueScreenCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? BlueScreenCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets restart count.
         /// Number of Restarts in the last 14 days. Valid values 0 to 9999999
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? RestartCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets average blue screens.
-        /// Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageBlueScreens", Required = Newtonsoft.Json.Required.Default)]
-        public double? AverageBlueScreens { get; set; }
-    
-        /// <summary>
-        /// Gets or sets average restarts.
-        /// Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "averageRestarts", Required = Newtonsoft.Json.Required.Default)]
-        public double? AverageRestarts { get; set; }
     
     }
 }

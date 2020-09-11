@@ -31,18 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets printer id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerId", Required = Newtonsoft.Json.Required.Default)]
-        public string PrinterId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets usage date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date UsageDate { get; set; }
-    
-        /// <summary>
         /// Gets or sets completed black and white job count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedBlackAndWhiteJobCount", Required = Newtonsoft.Json.Required.Default)]
@@ -59,6 +47,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteJobCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? IncompleteJobCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets printer id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerId", Required = Newtonsoft.Json.Required.Default)]
+        public string PrinterId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usage date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date UsageDate { get; set; }
     
     }
 }

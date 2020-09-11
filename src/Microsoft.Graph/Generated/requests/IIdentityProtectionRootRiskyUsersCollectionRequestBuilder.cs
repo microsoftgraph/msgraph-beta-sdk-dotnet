@@ -37,17 +37,17 @@ namespace Microsoft.Graph
         IRiskyUserRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for RiskyUserDismiss.
-        /// </summary>
-        /// <returns>The <see cref="IRiskyUserDismissRequestBuilder"/>.</returns>
-        IRiskyUserDismissRequestBuilder Dismiss(
-            IEnumerable<string> userIds = null);
-
-        /// <summary>
         /// Gets the request builder for RiskyUserConfirmCompromised.
         /// </summary>
         /// <returns>The <see cref="IRiskyUserConfirmCompromisedRequestBuilder"/>.</returns>
         IRiskyUserConfirmCompromisedRequestBuilder ConfirmCompromised(
+            IEnumerable<string> userIds = null);
+
+        /// <summary>
+        /// Gets the request builder for RiskyUserDismiss.
+        /// </summary>
+        /// <returns>The <see cref="IRiskyUserDismissRequestBuilder"/>.</returns>
+        IRiskyUserDismissRequestBuilder Dismiss(
             IEnumerable<string> userIds = null);
     }
 }

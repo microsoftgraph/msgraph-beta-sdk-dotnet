@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RootCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IIosTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        public IIosTrustedRootCertificateWithReferenceRequestBuilder RootCertificate
-        {
-            get
-            {
-                return new IosTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificate"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceCertificateStates.
         /// </summary>
         /// <returns>The <see cref="IIosScepCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new IosScepCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceCertificateStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IIosTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        public IIosTrustedRootCertificateWithReferenceRequestBuilder RootCertificate
+        {
+            get
+            {
+                return new IosTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificate"), this.Client);
             }
         }
     

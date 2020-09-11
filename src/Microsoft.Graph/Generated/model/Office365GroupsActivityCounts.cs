@@ -31,34 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
-    
-        /// <summary>
         /// Gets or sets exchange emails received.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeEmailsReceived", Required = Newtonsoft.Json.Required.Default)]
         public Int64? ExchangeEmailsReceived { get; set; }
-    
-        /// <summary>
-        /// Gets or sets yammer messages posted.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesPosted", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? YammerMessagesPosted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets yammer messages read.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesRead", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? YammerMessagesRead { get; set; }
-    
-        /// <summary>
-        /// Gets or sets yammer messages liked.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesLiked", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? YammerMessagesLiked { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
@@ -71,6 +47,30 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets yammer messages liked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesLiked", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? YammerMessagesLiked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets yammer messages posted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesPosted", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? YammerMessagesPosted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets yammer messages read.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesRead", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? YammerMessagesRead { get; set; }
     
     }
 }

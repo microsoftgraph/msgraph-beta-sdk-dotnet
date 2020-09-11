@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
+        /// Gets or sets color.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
+        public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -49,10 +43,22 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets color.
+        /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
-        public string Color { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isActive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsActive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity.
@@ -65,12 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tooltip", Required = Newtonsoft.Json.Required.Default)]
         public string Tooltip { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isActive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

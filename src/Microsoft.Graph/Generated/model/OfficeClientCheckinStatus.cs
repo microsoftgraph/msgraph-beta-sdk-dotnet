@@ -31,10 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets userPrincipalName.
+        /// Gets or sets appliedPolicies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AppliedPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets checkinDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checkinDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CheckinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deviceName.
@@ -55,10 +61,10 @@ namespace Microsoft.Graph
         public string DevicePlatformVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets wasSuccessful.
+        /// Gets or sets errorMessage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wasSuccessful", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WasSuccessful { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string ErrorMessage { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
@@ -67,22 +73,16 @@ namespace Microsoft.Graph
         public string UserId { get; set; }
     
         /// <summary>
-        /// Gets or sets checkinDateTime.
+        /// Gets or sets userPrincipalName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checkinDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CheckinDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
-        /// Gets or sets errorMessage.
+        /// Gets or sets wasSuccessful.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
-        public string ErrorMessage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets appliedPolicies.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AppliedPolicies { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wasSuccessful", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WasSuccessful { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

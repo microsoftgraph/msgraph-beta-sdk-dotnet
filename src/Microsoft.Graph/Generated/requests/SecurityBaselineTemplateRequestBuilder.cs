@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DeviceStateSummary.
+        /// Gets the request builder for CategoryDeviceStateSummaries.
         /// </summary>
-        /// <returns>The <see cref="ISecurityBaselineStateSummaryRequestBuilder"/>.</returns>
-        public ISecurityBaselineStateSummaryRequestBuilder DeviceStateSummary
+        /// <returns>The <see cref="ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder"/>.</returns>
+        public ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder CategoryDeviceStateSummaries
         {
             get
             {
-                return new SecurityBaselineStateSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deviceStateSummary"), this.Client);
+                return new SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categoryDeviceStateSummaries"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for CategoryDeviceStateSummaries.
+        /// Gets the request builder for DeviceStateSummary.
         /// </summary>
-        /// <returns>The <see cref="ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder"/>.</returns>
-        public ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder CategoryDeviceStateSummaries
+        /// <returns>The <see cref="ISecurityBaselineStateSummaryRequestBuilder"/>.</returns>
+        public ISecurityBaselineStateSummaryRequestBuilder DeviceStateSummary
         {
             get
             {
-                return new SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categoryDeviceStateSummaries"), this.Client);
+                return new SecurityBaselineStateSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deviceStateSummary"), this.Client);
             }
         }
     

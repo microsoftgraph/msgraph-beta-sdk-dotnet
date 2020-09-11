@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets delivery optimization mode.
-        /// Specifies the download method that delivery optimization can use to manage network bandwidth consumption for large content distribution scenarios.
+        /// Gets or sets background download from http delay in seconds.
+        /// Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deliveryOptimizationMode", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsDeliveryOptimizationMode? DeliveryOptimizationMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets restrict peer selection by.
-        /// Option 1 (Subnet mask) only applies to Delivery Optimization modes Download Mode LAN (1) and Group (2).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictPeerSelectionBy", Required = Newtonsoft.Json.Required.Default)]
-        public DeliveryOptimizationRestrictPeerSelectionByOptions? RestrictPeerSelectionBy { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group id source.
-        /// The options set in this policy only apply to Delivery Optimization mode Group (2) download mode. If Group (2) isn't set as Download mode, this policy will be ignored. For option 3 - DHCP Option ID, the client will query DHCP Option ID 234 and use the returned GUID value as the Group ID.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupIdSource", Required = Newtonsoft.Json.Required.Default)]
-        public DeliveryOptimizationGroupIdSource GroupIdSource { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "backgroundDownloadFromHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? BackgroundDownloadFromHttpDelayInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets bandwidth mode.
@@ -59,11 +45,32 @@ namespace Microsoft.Graph
         public DeliveryOptimizationBandwidth BandwidthMode { get; set; }
     
         /// <summary>
-        /// Gets or sets background download from http delay in seconds.
-        /// Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295
+        /// Gets or sets cache server background download fallback to http delay in seconds.
+        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "backgroundDownloadFromHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? BackgroundDownloadFromHttpDelayInSeconds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cache server foreground download fallback to http delay in seconds.
+        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.???
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerForegroundDownloadFallbackToHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CacheServerForegroundDownloadFallbackToHttpDelayInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cache server host names.
+        /// Specifies cache servers host names.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerHostNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> CacheServerHostNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets delivery optimization mode.
+        /// Specifies the download method that delivery optimization can use to manage network bandwidth consumption for large content distribution scenarios.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deliveryOptimizationMode", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsDeliveryOptimizationMode? DeliveryOptimizationMode { get; set; }
     
         /// <summary>
         /// Gets or sets foreground download from http delay in seconds.
@@ -73,39 +80,11 @@ namespace Microsoft.Graph
         public Int64? ForegroundDownloadFromHttpDelayInSeconds { get; set; }
     
         /// <summary>
-        /// Gets or sets minimum ram allowed to peer in gigabytes.
-        /// Specifies the minimum RAM size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
+        /// Gets or sets group id source.
+        /// The options set in this policy only apply to Delivery Optimization mode Group (2) download mode. If Group (2) isn't set as Download mode, this policy will be ignored. For option 3 - DHCP Option ID, the client will query DHCP Option ID 234 and use the returned GUID value as the Group ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRamAllowedToPeerInGigabytes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MinimumRamAllowedToPeerInGigabytes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum disk size allowed to peer in gigabytes.
-        /// Recommended values: 64 GB to 256 GB. Valid values 1 to 100000
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumDiskSizeAllowedToPeerInGigabytes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MinimumDiskSizeAllowedToPeerInGigabytes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum file size to cache in megabytes.
-        /// Recommended values: 1 MB to 100,000 MB. Valid values 1 to 100000
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumFileSizeToCacheInMegabytes", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MinimumFileSizeToCacheInMegabytes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets minimum battery percentage allowed to upload.
-        /// The default value is 0. The value 0 (zero) means "not limited" and the cloud service default value will be used. Valid values 0 to 100
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumBatteryPercentageAllowedToUpload", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MinimumBatteryPercentageAllowedToUpload { get; set; }
-    
-        /// <summary>
-        /// Gets or sets modify cache location.
-        /// Specifies the drive that Delivery Optimization should use for its cache.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifyCacheLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string ModifyCacheLocation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupIdSource", Required = Newtonsoft.Json.Required.Default)]
+        public DeliveryOptimizationGroupIdSource GroupIdSource { get; set; }
     
         /// <summary>
         /// Gets or sets maximum cache age in days.
@@ -122,32 +101,53 @@ namespace Microsoft.Graph
         public DeliveryOptimizationMaxCacheSize MaximumCacheSize { get; set; }
     
         /// <summary>
+        /// Gets or sets minimum battery percentage allowed to upload.
+        /// The default value is 0. The value 0 (zero) means "not limited" and the cloud service default value will be used. Valid values 0 to 100
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumBatteryPercentageAllowedToUpload", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MinimumBatteryPercentageAllowedToUpload { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum disk size allowed to peer in gigabytes.
+        /// Recommended values: 64 GB to 256 GB. Valid values 1 to 100000
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumDiskSizeAllowedToPeerInGigabytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MinimumDiskSizeAllowedToPeerInGigabytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum file size to cache in megabytes.
+        /// Recommended values: 1 MB to 100,000 MB. Valid values 1 to 100000
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumFileSizeToCacheInMegabytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MinimumFileSizeToCacheInMegabytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets minimum ram allowed to peer in gigabytes.
+        /// Specifies the minimum RAM size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumRamAllowedToPeerInGigabytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MinimumRamAllowedToPeerInGigabytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets modify cache location.
+        /// Specifies the drive that Delivery Optimization should use for its cache.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifyCacheLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string ModifyCacheLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restrict peer selection by.
+        /// Option 1 (Subnet mask) only applies to Delivery Optimization modes Download Mode LAN (1) and Group (2).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictPeerSelectionBy", Required = Newtonsoft.Json.Required.Default)]
+        public DeliveryOptimizationRestrictPeerSelectionByOptions? RestrictPeerSelectionBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets vpn peer caching.
         /// Specifies whether the device is allowed to participate in Peer Caching while connected via VPN to the domain network.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnPeerCaching", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? VpnPeerCaching { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cache server host names.
-        /// Specifies cache servers host names.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerHostNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> CacheServerHostNames { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cache server foreground download fallback to http delay in seconds.
-        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.???
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerForegroundDownloadFallbackToHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CacheServerForegroundDownloadFallbackToHttpDelayInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cache server background download fallback to http delay in seconds.
-        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds { get; set; }
     
     }
 }

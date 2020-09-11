@@ -31,28 +31,28 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user principal name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets user state.
+        /// Gets or sets last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userState", Required = Newtonsoft.Json.Required.Default)]
-        public string UserState { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date LastActivityDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report period.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets state change date.
@@ -61,10 +61,28 @@ namespace Microsoft.Graph
         public Date StateChangeDate { get; set; }
     
         /// <summary>
-        /// Gets or sets last activity date.
+        /// Gets or sets used android phone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date LastActivityDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedAndroidPhone", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UsedAndroidPhone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usedi pad.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usediPad", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UsediPad { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usedi phone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usediPhone", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UsediPhone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets used others.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedOthers", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UsedOthers { get; set; }
     
         /// <summary>
         /// Gets or sets used web.
@@ -79,34 +97,16 @@ namespace Microsoft.Graph
         public bool? UsedWindowsPhone { get; set; }
     
         /// <summary>
-        /// Gets or sets used android phone.
+        /// Gets or sets user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedAndroidPhone", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UsedAndroidPhone { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
-        /// Gets or sets usedi phone.
+        /// Gets or sets user state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usediPhone", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UsediPhone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets usedi pad.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usediPad", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UsediPad { get; set; }
-    
-        /// <summary>
-        /// Gets or sets used others.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedOthers", Required = Newtonsoft.Json.Required.Default)]
-        public bool? UsedOthers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets report period.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportPeriod { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userState", Required = Newtonsoft.Json.Required.Default)]
+        public string UserState { get; set; }
     
     }
 }

@@ -207,26 +207,98 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Outlook.
+        /// Gets the request builder for Calendar.
         /// </summary>
-        /// <returns>The <see cref="IOutlookUserRequestBuilder"/>.</returns>
-        public IOutlookUserRequestBuilder Outlook
+        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
+        public ICalendarRequestBuilder Calendar
         {
             get
             {
-                return new OutlookUserRequestBuilder(this.AppendSegmentToRequestUrl("outlook"), this.Client);
+                return new CalendarRequestBuilder(this.AppendSegmentToRequestUrl("calendar"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for Messages.
+        /// Gets the request builder for CalendarGroups.
         /// </summary>
-        /// <returns>The <see cref="IUserMessagesCollectionRequestBuilder"/>.</returns>
-        public IUserMessagesCollectionRequestBuilder Messages
+        /// <returns>The <see cref="IUserCalendarGroupsCollectionRequestBuilder"/>.</returns>
+        public IUserCalendarGroupsCollectionRequestBuilder CalendarGroups
         {
             get
             {
-                return new UserMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
+                return new UserCalendarGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarGroups"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Calendars.
+        /// </summary>
+        /// <returns>The <see cref="IUserCalendarsCollectionRequestBuilder"/>.</returns>
+        public IUserCalendarsCollectionRequestBuilder Calendars
+        {
+            get
+            {
+                return new UserCalendarsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendars"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CalendarView.
+        /// </summary>
+        /// <returns>The <see cref="IUserCalendarViewCollectionRequestBuilder"/>.</returns>
+        public IUserCalendarViewCollectionRequestBuilder CalendarView
+        {
+            get
+            {
+                return new UserCalendarViewCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarView"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ContactFolders.
+        /// </summary>
+        /// <returns>The <see cref="IUserContactFoldersCollectionRequestBuilder"/>.</returns>
+        public IUserContactFoldersCollectionRequestBuilder ContactFolders
+        {
+            get
+            {
+                return new UserContactFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contactFolders"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Contacts.
+        /// </summary>
+        /// <returns>The <see cref="IUserContactsCollectionRequestBuilder"/>.</returns>
+        public IUserContactsCollectionRequestBuilder Contacts
+        {
+            get
+            {
+                return new UserContactsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contacts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Events.
+        /// </summary>
+        /// <returns>The <see cref="IUserEventsCollectionRequestBuilder"/>.</returns>
+        public IUserEventsCollectionRequestBuilder Events
+        {
+            get
+            {
+                return new UserEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("events"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for InferenceClassification.
+        /// </summary>
+        /// <returns>The <see cref="IInferenceClassificationRequestBuilder"/>.</returns>
+        public IInferenceClassificationRequestBuilder InferenceClassification
+        {
+            get
+            {
+                return new InferenceClassificationRequestBuilder(this.AppendSegmentToRequestUrl("inferenceClassification"), this.Client);
             }
         }
 
@@ -255,62 +327,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Calendar.
+        /// Gets the request builder for Messages.
         /// </summary>
-        /// <returns>The <see cref="ICalendarRequestBuilder"/>.</returns>
-        public ICalendarRequestBuilder Calendar
+        /// <returns>The <see cref="IUserMessagesCollectionRequestBuilder"/>.</returns>
+        public IUserMessagesCollectionRequestBuilder Messages
         {
             get
             {
-                return new CalendarRequestBuilder(this.AppendSegmentToRequestUrl("calendar"), this.Client);
+                return new UserMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for Calendars.
+        /// Gets the request builder for Outlook.
         /// </summary>
-        /// <returns>The <see cref="IUserCalendarsCollectionRequestBuilder"/>.</returns>
-        public IUserCalendarsCollectionRequestBuilder Calendars
+        /// <returns>The <see cref="IOutlookUserRequestBuilder"/>.</returns>
+        public IOutlookUserRequestBuilder Outlook
         {
             get
             {
-                return new UserCalendarsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendars"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for CalendarGroups.
-        /// </summary>
-        /// <returns>The <see cref="IUserCalendarGroupsCollectionRequestBuilder"/>.</returns>
-        public IUserCalendarGroupsCollectionRequestBuilder CalendarGroups
-        {
-            get
-            {
-                return new UserCalendarGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarGroups"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for CalendarView.
-        /// </summary>
-        /// <returns>The <see cref="IUserCalendarViewCollectionRequestBuilder"/>.</returns>
-        public IUserCalendarViewCollectionRequestBuilder CalendarView
-        {
-            get
-            {
-                return new UserCalendarViewCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calendarView"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Events.
-        /// </summary>
-        /// <returns>The <see cref="IUserEventsCollectionRequestBuilder"/>.</returns>
-        public IUserEventsCollectionRequestBuilder Events
-        {
-            get
-            {
-                return new UserEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("events"), this.Client);
+                return new OutlookUserRequestBuilder(this.AppendSegmentToRequestUrl("outlook"), this.Client);
             }
         }
 
@@ -323,42 +359,6 @@ namespace Microsoft.Graph
             get
             {
                 return new UserPeopleCollectionRequestBuilder(this.AppendSegmentToRequestUrl("people"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Contacts.
-        /// </summary>
-        /// <returns>The <see cref="IUserContactsCollectionRequestBuilder"/>.</returns>
-        public IUserContactsCollectionRequestBuilder Contacts
-        {
-            get
-            {
-                return new UserContactsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contacts"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ContactFolders.
-        /// </summary>
-        /// <returns>The <see cref="IUserContactFoldersCollectionRequestBuilder"/>.</returns>
-        public IUserContactFoldersCollectionRequestBuilder ContactFolders
-        {
-            get
-            {
-                return new UserContactFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contactFolders"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for InferenceClassification.
-        /// </summary>
-        /// <returns>The <see cref="IInferenceClassificationRequestBuilder"/>.</returns>
-        public IInferenceClassificationRequestBuilder InferenceClassification
-        {
-            get
-            {
-                return new InferenceClassificationRequestBuilder(this.AppendSegmentToRequestUrl("inferenceClassification"), this.Client);
             }
         }
 
@@ -435,18 +435,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Approvals.
-        /// </summary>
-        /// <returns>The <see cref="IUserApprovalsCollectionRequestBuilder"/>.</returns>
-        public IUserApprovalsCollectionRequestBuilder Approvals
-        {
-            get
-            {
-                return new UserApprovalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("approvals"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AppConsentRequestsForApproval.
         /// </summary>
         /// <returns>The <see cref="IUserAppConsentRequestsForApprovalCollectionRequestBuilder"/>.</returns>
@@ -455,6 +443,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserAppConsentRequestsForApprovalCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appConsentRequestsForApproval"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Approvals.
+        /// </summary>
+        /// <returns>The <see cref="IUserApprovalsCollectionRequestBuilder"/>.</returns>
+        public IUserApprovalsCollectionRequestBuilder Approvals
+        {
+            get
+            {
+                return new UserApprovalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("approvals"), this.Client);
             }
         }
 
@@ -733,6 +733,18 @@ namespace Microsoft.Graph
                 return new UserTeamworkRequestBuilder(this.AppendSegmentToRequestUrl("teamwork"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Todo.
+        /// </summary>
+        /// <returns>The <see cref="ITodoRequestBuilder"/>.</returns>
+        public ITodoRequestBuilder Todo
+        {
+            get
+            {
+                return new TodoRequestBuilder(this.AppendSegmentToRequestUrl("todo"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
@@ -776,17 +788,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserRevokeSignInSessions.
-        /// </summary>
-        /// <returns>The <see cref="IUserRevokeSignInSessionsRequestBuilder"/>.</returns>
-        public IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions()
-        {
-            return new UserRevokeSignInSessionsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.revokeSignInSessions"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for UserReprocessLicenseAssignment.
         /// </summary>
         /// <returns>The <see cref="IUserReprocessLicenseAssignmentRequestBuilder"/>.</returns>
@@ -794,6 +795,17 @@ namespace Microsoft.Graph
         {
             return new UserReprocessLicenseAssignmentRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.reprocessLicenseAssignment"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserRevokeSignInSessions.
+        /// </summary>
+        /// <returns>The <see cref="IUserRevokeSignInSessionsRequestBuilder"/>.</returns>
+        public IUserRevokeSignInSessionsRequestBuilder RevokeSignInSessions()
+        {
+            return new UserRevokeSignInSessionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.revokeSignInSessions"),
                 this.Client);
         }
 
@@ -825,21 +837,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserSendMail.
-        /// </summary>
-        /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>
-        public IUserSendMailRequestBuilder SendMail(
-            Message Message,
-            bool? SaveToSentItems = null)
-        {
-            return new UserSendMailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.sendMail"),
-                this.Client,
-                Message,
-                SaveToSentItems);
-        }
-
-        /// <summary>
         /// Gets the request builder for UserGetMailTips.
         /// </summary>
         /// <returns>The <see cref="IUserGetMailTipsRequestBuilder"/>.</returns>
@@ -852,6 +849,21 @@ namespace Microsoft.Graph
                 this.Client,
                 EmailAddresses,
                 MailTipsOptions);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserSendMail.
+        /// </summary>
+        /// <returns>The <see cref="IUserSendMailRequestBuilder"/>.</returns>
+        public IUserSendMailRequestBuilder SendMail(
+            Message Message,
+            bool? SaveToSentItems = null)
+        {
+            return new UserSendMailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendMail"),
+                this.Client,
+                Message,
+                SaveToSentItems);
         }
 
         /// <summary>
@@ -883,6 +895,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserUnblockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserUnblockManagedAppsRequestBuilder"/>.</returns>
+        public IUserUnblockManagedAppsRequestBuilder UnblockManagedApps()
+        {
+            return new UserUnblockManagedAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unblockManagedApps"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserWipeAndBlockManagedApps.
+        /// </summary>
+        /// <returns>The <see cref="IUserWipeAndBlockManagedAppsRequestBuilder"/>.</returns>
+        public IUserWipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps()
+        {
+            return new UserWipeAndBlockManagedAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.wipeAndBlockManagedApps"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserWipeManagedAppRegistrationByDeviceTag.
         /// </summary>
         /// <returns>The <see cref="IUserWipeManagedAppRegistrationByDeviceTagRequestBuilder"/>.</returns>
@@ -909,28 +943,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserWipeAndBlockManagedApps.
-        /// </summary>
-        /// <returns>The <see cref="IUserWipeAndBlockManagedAppsRequestBuilder"/>.</returns>
-        public IUserWipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps()
-        {
-            return new UserWipeAndBlockManagedAppsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.wipeAndBlockManagedApps"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for UserUnblockManagedApps.
-        /// </summary>
-        /// <returns>The <see cref="IUserUnblockManagedAppsRequestBuilder"/>.</returns>
-        public IUserUnblockManagedAppsRequestBuilder UnblockManagedApps()
-        {
-            return new UserUnblockManagedAppsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.unblockManagedApps"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for UserExportPersonalData.
         /// </summary>
         /// <returns>The <see cref="IUserExportPersonalDataRequestBuilder"/>.</returns>
@@ -944,18 +956,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserReminderView.
+        /// Gets the request builder for UserFindRoomLists.
         /// </summary>
-        /// <returns>The <see cref="IUserReminderViewRequestBuilder"/>.</returns>
-        public IUserReminderViewRequestBuilder ReminderView(
-            string StartDateTime,
-            string EndDateTime = null)
+        /// <returns>The <see cref="IUserFindRoomListsRequestBuilder"/>.</returns>
+        public IUserFindRoomListsRequestBuilder FindRoomLists()
         {
-            return new UserReminderViewRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.reminderView"),
-                this.Client,
-                StartDateTime,
-                EndDateTime);
+            return new UserFindRoomListsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findRoomLists"),
+                this.Client);
         }
 
         /// <summary>
@@ -983,14 +991,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserFindRoomLists.
+        /// Gets the request builder for UserReminderView.
         /// </summary>
-        /// <returns>The <see cref="IUserFindRoomListsRequestBuilder"/>.</returns>
-        public IUserFindRoomListsRequestBuilder FindRoomLists()
+        /// <returns>The <see cref="IUserReminderViewRequestBuilder"/>.</returns>
+        public IUserReminderViewRequestBuilder ReminderView(
+            string StartDateTime,
+            string EndDateTime = null)
         {
-            return new UserFindRoomListsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.findRoomLists"),
-                this.Client);
+            return new UserReminderViewRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reminderView"),
+                this.Client,
+                StartDateTime,
+                EndDateTime);
         }
 
         /// <summary>

@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IApprovalWorkflowProviderBusinessFlowsCollectionRequestBuilder BusinessFlows { get; }
 
         /// <summary>
-        /// Gets the request builder for PolicyTemplates.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder"/>.</returns>
-        IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder PolicyTemplates { get; }
-
-        /// <summary>
         /// Gets the request builder for BusinessFlowsWithRequestsAwaitingMyDecision.
         /// </summary>
         /// <returns>The <see cref="IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionRequestBuilder"/>.</returns>
         IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionRequestBuilder BusinessFlowsWithRequestsAwaitingMyDecision { get; }
+
+        /// <summary>
+        /// Gets the request builder for PolicyTemplates.
+        /// </summary>
+        /// <returns>The <see cref="IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder"/>.</returns>
+        IApprovalWorkflowProviderPolicyTemplatesCollectionRequestBuilder PolicyTemplates { get; }
     
     }
 }

@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets profile name.
-        /// This is a friendly name??used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileName", Required = Newtonsoft.Json.Required.Default)]
-        public string ProfileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets show task bar.
-        /// This setting allows the admin to specify whether the Task Bar is shown or not.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showTaskBar", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ShowTaskBar { get; set; }
-    
-        /// <summary>
         /// Gets or sets app user model ids.
         /// These are the only Windows Store Apps that will be available to launch from the Start menu.
         /// </summary>
@@ -59,18 +45,32 @@ namespace Microsoft.Graph
         public IEnumerable<string> DesktopAppPaths { get; set; }
     
         /// <summary>
+        /// Gets or sets profile name.
+        /// This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileName", Required = Newtonsoft.Json.Required.Default)]
+        public string ProfileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets show task bar.
+        /// This setting allows the admin to specify whether the Task Bar is shown or not.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showTaskBar", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShowTaskBar { get; set; }
+    
+        /// <summary>
+        /// Gets or sets start menu layout xml.
+        /// Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startMenuLayoutXml", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] StartMenuLayoutXml { get; set; }
+    
+        /// <summary>
         /// Gets or sets user accounts.
         /// The user accounts that will be locked to this kiosk configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAccounts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> UserAccounts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets start menu layout xml.
-        /// Allows admins to override the default Start layout and prevents the user from changing it.??The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startMenuLayoutXml", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] StartMenuLayoutXml { get; set; }
     
     }
 }

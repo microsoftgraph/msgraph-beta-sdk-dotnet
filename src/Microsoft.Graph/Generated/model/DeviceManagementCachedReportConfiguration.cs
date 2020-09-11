@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report name.
-        /// Name of the report
+        /// Gets or sets expiration date time.
+        /// Time that the cached report expires
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportName", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets filter.
@@ -45,18 +45,11 @@ namespace Microsoft.Graph
         public string Filter { get; set; }
     
         /// <summary>
-        /// Gets or sets select.
-        /// Columns selected from the report
+        /// Gets or sets last refresh date time.
+        /// Time that the cached report was last refreshed
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "select", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Select { get; set; }
-    
-        /// <summary>
-        /// Gets or sets order by.
-        /// Ordering of columns in the report
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderBy", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> OrderBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastRefreshDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
@@ -66,25 +59,32 @@ namespace Microsoft.Graph
         public string Metadata { get; set; }
     
         /// <summary>
+        /// Gets or sets order by.
+        /// Ordering of columns in the report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderBy", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> OrderBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report name.
+        /// Name of the report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportName", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets select.
+        /// Columns selected from the report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "select", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Select { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// Status of the cached report
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementReportStatus? Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last refresh date time.
-        /// Time that the cached report was last refreshed
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastRefreshDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expiration date time.
-        /// Time that the cached report expires
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
     
     }
 }

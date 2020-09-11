@@ -31,32 +31,11 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets renewal threshold percentage.
-        /// Certificate renewal threshold percentage.
+        /// Gets or sets certificate validity period scale.
+        /// Scale for the Certificate Validity Period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renewalThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RenewalThresholdPercentage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets key storage provider.
-        /// Key Storage Provider (KSP).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyStorageProvider", Required = Newtonsoft.Json.Required.Default)]
-        public KeyStorageProviderOption? KeyStorageProvider { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject name format.
-        /// Certificate Subject Name Format.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormat", Required = Newtonsoft.Json.Required.Default)]
-        public SubjectNameFormat? SubjectNameFormat { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject alternative name type.
-        /// Certificate Subject Alternative Name Type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameType", Required = Newtonsoft.Json.Required.Default)]
-        public SubjectAlternativeNameType? SubjectAlternativeNameType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodScale", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateValidityPeriodScale? CertificateValidityPeriodScale { get; set; }
     
         /// <summary>
         /// Gets or sets certificate validity period value.
@@ -66,18 +45,39 @@ namespace Microsoft.Graph
         public Int32? CertificateValidityPeriodValue { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate validity period scale.
-        /// Scale for the Certificate Validity Period.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodScale", Required = Newtonsoft.Json.Required.Default)]
-        public CertificateValidityPeriodScale? CertificateValidityPeriodScale { get; set; }
-    
-        /// <summary>
         /// Gets or sets extended key usages.
         /// Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extendedKeyUsages", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ExtendedKeyUsage> ExtendedKeyUsages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets key storage provider.
+        /// Key Storage Provider (KSP).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyStorageProvider", Required = Newtonsoft.Json.Required.Default)]
+        public KeyStorageProviderOption? KeyStorageProvider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets renewal threshold percentage.
+        /// Certificate renewal threshold percentage.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renewalThresholdPercentage", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RenewalThresholdPercentage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject alternative name type.
+        /// Certificate Subject Alternative Name Type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameType", Required = Newtonsoft.Json.Required.Default)]
+        public SubjectAlternativeNameType? SubjectAlternativeNameType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject name format.
+        /// Certificate Subject Name Format.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormat", Required = Newtonsoft.Json.Required.Default)]
+        public SubjectNameFormat? SubjectNameFormat { get; set; }
     
     }
 }

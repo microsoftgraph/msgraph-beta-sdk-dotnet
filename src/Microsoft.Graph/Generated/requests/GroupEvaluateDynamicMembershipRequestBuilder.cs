@@ -24,6 +24,21 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="memberId">A memberId parameter for the OData method call.</param>
+        public GroupEvaluateDynamicMembershipRequestBuilder(
+            string requestUrl,
+            IBaseClient client,
+            string memberId)
+            : base(requestUrl, client)
+        {
+            this.SetParameter("memberId", memberId, true);
+        }
+
+        /// <summary>
+        /// Constructs a new <see cref="GroupEvaluateDynamicMembershipRequestBuilder"/>.
+        /// </summary>
+        /// <param name="requestUrl">The URL for the request.</param>
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="memberId">A memberId parameter for the OData method call.</param>
         /// <param name="membershipRule">A membershipRule parameter for the OData method call.</param>
         public GroupEvaluateDynamicMembershipRequestBuilder(
             string requestUrl,
@@ -34,21 +49,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("memberId", memberId, true);
             this.SetParameter("membershipRule", membershipRule, true);
-        }
-
-        /// <summary>
-        /// Constructs a new <see cref="GroupEvaluateDynamicMembershipRequestBuilder"/>.
-        /// </summary>
-        /// <param name="requestUrl">The URL for the request.</param>
-        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="memberId">A memberId parameter for the OData method call.</param>
-        public GroupEvaluateDynamicMembershipRequestBuilder(
-            string requestUrl,
-            IBaseClient client,
-            string memberId)
-            : base(requestUrl, client)
-        {
-            this.SetParameter("memberId", memberId, true);
         }
 
         /// <summary>

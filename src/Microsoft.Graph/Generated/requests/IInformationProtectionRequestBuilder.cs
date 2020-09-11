@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IInformationProtectionPolicyRequestBuilder Policy { get; }
 
         /// <summary>
+        /// Gets the request builder for DataLossPreventionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder"/>.</returns>
+        IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder DataLossPreventionPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for SensitivityLabels.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionSensitivityLabelsCollectionRequestBuilder"/>.</returns>
@@ -48,12 +54,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISensitivityPolicySettingsRequestBuilder"/>.</returns>
         ISensitivityPolicySettingsRequestBuilder SensitivityPolicySettings { get; }
-
-        /// <summary>
-        /// Gets the request builder for DataLossPreventionPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder"/>.</returns>
-        IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder DataLossPreventionPolicies { get; }
 
         /// <summary>
         /// Gets the request builder for ThreatAssessmentRequests.

@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets teamIdentifier.
-        /// Gets or sets the team identifier used to sign the system extension.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string TeamIdentifier { get; set; }
-    
-        /// <summary>
         /// Gets or sets allowedTypes.
         /// Gets or sets the allowed macOS system extension types.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedTypes", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSystemExtensionType? AllowedTypes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teamIdentifier.
+        /// Gets or sets the team identifier used to sign the system extension.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string TeamIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

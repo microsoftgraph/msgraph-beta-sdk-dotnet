@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string AppleIdentifier { get; set; }
     
         /// <summary>
-        /// Gets or sets token expiration date time.
-        /// When the token will expire.
+        /// Gets or sets data sharing consent granted.
+        /// Consent granted for data sharing with Apple Dep Service
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? TokenExpirationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSharingConsentGranted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DataSharingConsentGranted { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -59,11 +59,25 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastSuccessfulSyncDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets last sync error code.
+        /// Error code reported by Apple during last dep sync.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncErrorCode", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? LastSyncErrorCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets last sync triggered date time.
         /// When Intune last requested a sync.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncTriggeredDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncTriggeredDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of Scope Tags for this Entity instance.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets share token with school data sync service.
@@ -73,18 +87,18 @@ namespace Microsoft.Graph
         public bool? ShareTokenWithSchoolDataSyncService { get; set; }
     
         /// <summary>
-        /// Gets or sets last sync error code.
-        /// Error code reported by Apple during last dep sync.
+        /// Gets or sets synced device count.
+        /// Gets synced device count
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncErrorCode", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? LastSyncErrorCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SyncedDeviceCount { get; set; }
     
         /// <summary>
-        /// Gets or sets token type.
-        /// Gets or sets the Dep Token Type.
+        /// Gets or sets token expiration date time.
+        /// When the token will expire.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenType", Required = Newtonsoft.Json.Required.Default)]
-        public DepTokenType? TokenType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenExpirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? TokenExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets token name.
@@ -94,25 +108,11 @@ namespace Microsoft.Graph
         public string TokenName { get; set; }
     
         /// <summary>
-        /// Gets or sets synced device count.
-        /// Gets synced device count
+        /// Gets or sets token type.
+        /// Gets or sets the Dep Token Type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SyncedDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets data sharing consent granted.
-        /// Consent granted for data sharing with Apple Dep Service
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSharingConsentGranted", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DataSharingConsentGranted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role scope tag ids.
-        /// List of Scope Tags for this Entity instance.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> RoleScopeTagIds { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenType", Required = Newtonsoft.Json.Required.Default)]
+        public DepTokenType? TokenType { get; set; }
     
         /// <summary>
         /// Gets or sets default ios enrollment profile.

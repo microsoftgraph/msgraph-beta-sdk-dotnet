@@ -30,22 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets recipients.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Recipients { get; set; }
-    
-        /// <summary>
         /// Gets or sets actionLastModifiedDateTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionLastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActionLastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets overrideOption.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overrideOption", Required = Newtonsoft.Json.Required.Default)]
-        public OverrideOption? OverrideOption { get; set; }
     
         /// <summary>
         /// Gets or sets emailText.
@@ -54,10 +42,22 @@ namespace Microsoft.Graph
         public string EmailText { get; set; }
     
         /// <summary>
+        /// Gets or sets overrideOption.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overrideOption", Required = Newtonsoft.Json.Required.Default)]
+        public OverrideOption? OverrideOption { get; set; }
+    
+        /// <summary>
         /// Gets or sets policyTip.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTip", Required = Newtonsoft.Json.Required.Default)]
         public string PolicyTip { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recipients.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipients", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Recipients { get; set; }
     
     }
 }

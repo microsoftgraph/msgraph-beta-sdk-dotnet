@@ -75,17 +75,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for EducationSynchronizationProfileResume.
-        /// </summary>
-        /// <returns>The <see cref="IEducationSynchronizationProfileResumeRequestBuilder"/>.</returns>
-        public IEducationSynchronizationProfileResumeRequestBuilder Resume()
-        {
-            return new EducationSynchronizationProfileResumeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.resume"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for EducationSynchronizationProfilePause.
         /// </summary>
         /// <returns>The <see cref="IEducationSynchronizationProfilePauseRequestBuilder"/>.</returns>
@@ -104,6 +93,17 @@ namespace Microsoft.Graph
         {
             return new EducationSynchronizationProfileResetRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.reset"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EducationSynchronizationProfileResume.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSynchronizationProfileResumeRequestBuilder"/>.</returns>
+        public IEducationSynchronizationProfileResumeRequestBuilder Resume()
+        {
+            return new EducationSynchronizationProfileResumeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.resume"),
                 this.Client);
         }
 

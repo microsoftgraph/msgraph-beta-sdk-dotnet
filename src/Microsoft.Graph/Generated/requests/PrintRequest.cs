@@ -234,38 +234,6 @@ namespace Microsoft.Graph
             if (printToInitialize != null && printToInitialize.AdditionalData != null)
             {
 
-                if (printToInitialize.Services != null && printToInitialize.Services.CurrentPage != null)
-                {
-                    printToInitialize.Services.AdditionalData = printToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printToInitialize.Services.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (printToInitialize.Printers != null && printToInitialize.Printers.CurrentPage != null)
-                {
-                    printToInitialize.Printers.AdditionalData = printToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printToInitialize.AdditionalData.TryGetValue("printers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printToInitialize.Printers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (printToInitialize.Connectors != null && printToInitialize.Connectors.CurrentPage != null)
                 {
                     printToInitialize.Connectors.AdditionalData = printToInitialize.AdditionalData;
@@ -282,17 +250,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (printToInitialize.Shares != null && printToInitialize.Shares.CurrentPage != null)
+                if (printToInitialize.Operations != null && printToInitialize.Operations.CurrentPage != null)
                 {
-                    printToInitialize.Shares.AdditionalData = printToInitialize.AdditionalData;
+                    printToInitialize.Operations.AdditionalData = printToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    printToInitialize.AdditionalData.TryGetValue("shares@odata.nextLink", out nextPageLink);
+                    printToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        printToInitialize.Shares.InitializeNextPageRequest(
+                        printToInitialize.Operations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (printToInitialize.Printers != null && printToInitialize.Printers.CurrentPage != null)
+                {
+                    printToInitialize.Printers.AdditionalData = printToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    printToInitialize.AdditionalData.TryGetValue("printers@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        printToInitialize.Printers.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -330,17 +314,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (printToInitialize.Operations != null && printToInitialize.Operations.CurrentPage != null)
+                if (printToInitialize.Services != null && printToInitialize.Services.CurrentPage != null)
                 {
-                    printToInitialize.Operations.AdditionalData = printToInitialize.AdditionalData;
+                    printToInitialize.Services.AdditionalData = printToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    printToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
+                    printToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        printToInitialize.Operations.InitializeNextPageRequest(
+                        printToInitialize.Services.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (printToInitialize.Shares != null && printToInitialize.Shares.CurrentPage != null)
+                {
+                    printToInitialize.Shares.AdditionalData = printToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    printToInitialize.AdditionalData.TryGetValue("shares@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        printToInitialize.Shares.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

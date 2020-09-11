@@ -32,22 +32,16 @@ namespace Microsoft.Graph
         new IDeviceManagementIntentRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Settings.
+        /// Gets the request builder for Assignments.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentSettingsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementIntentSettingsCollectionRequestBuilder Settings { get; }
+        /// <returns>The <see cref="IDeviceManagementIntentAssignmentsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementIntentAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
         /// Gets the request builder for Categories.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentCategoriesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementIntentCategoriesCollectionRequestBuilder Categories { get; }
-
-        /// <summary>
-        /// Gets the request builder for Assignments.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentAssignmentsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementIntentAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceSettingStateSummaries.
@@ -62,16 +56,22 @@ namespace Microsoft.Graph
         IDeviceManagementIntentDeviceStatesCollectionRequestBuilder DeviceStates { get; }
 
         /// <summary>
-        /// Gets the request builder for UserStates.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentUserStatesCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementIntentUserStatesCollectionRequestBuilder UserStates { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceStateSummary.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentDeviceStateSummaryRequestBuilder"/>.</returns>
         IDeviceManagementIntentDeviceStateSummaryRequestBuilder DeviceStateSummary { get; }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentSettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementIntentSettingsCollectionRequestBuilder Settings { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserStates.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentUserStatesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementIntentUserStatesCollectionRequestBuilder UserStates { get; }
 
         /// <summary>
         /// Gets the request builder for UserStateSummary.
@@ -80,11 +80,18 @@ namespace Microsoft.Graph
         IDeviceManagementIntentUserStateSummaryRequestBuilder UserStateSummary { get; }
     
         /// <summary>
-        /// Gets the request builder for DeviceManagementIntentUpdateSettings.
+        /// Gets the request builder for DeviceManagementIntentAssign.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentUpdateSettingsRequestBuilder"/>.</returns>
-        IDeviceManagementIntentUpdateSettingsRequestBuilder UpdateSettings(
-            IEnumerable<DeviceManagementSettingInstance> settings = null);
+        /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>
+        IDeviceManagementIntentAssignRequestBuilder Assign(
+            IEnumerable<DeviceManagementIntentAssignment> assignments = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementIntentCreateCopy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentCreateCopyRequestBuilder"/>.</returns>
+        IDeviceManagementIntentCreateCopyRequestBuilder CreateCopy(
+            string displayName = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementIntentMigrateToTemplate.
@@ -95,18 +102,11 @@ namespace Microsoft.Graph
             string newTemplateId = null);
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementIntentCreateCopy.
+        /// Gets the request builder for DeviceManagementIntentUpdateSettings.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentCreateCopyRequestBuilder"/>.</returns>
-        IDeviceManagementIntentCreateCopyRequestBuilder CreateCopy(
-            string displayName = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementIntentAssign.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntentAssignRequestBuilder"/>.</returns>
-        IDeviceManagementIntentAssignRequestBuilder Assign(
-            IEnumerable<DeviceManagementIntentAssignment> assignments = null);
+        /// <returns>The <see cref="IDeviceManagementIntentUpdateSettingsRequestBuilder"/>.</returns>
+        IDeviceManagementIntentUpdateSettingsRequestBuilder UpdateSettings(
+            IEnumerable<DeviceManagementSettingInstance> settings = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementIntentCompare.

@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last modified time of the Assignment Filter.
+        /// Gets or sets description.
+        /// Description of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
-        /// Description of the Assignment Filter.
+        /// Gets or sets last modified date time.
+        /// Last modified time of the Assignment Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
@@ -66,18 +66,18 @@ namespace Microsoft.Graph
         public DevicePlatformType? Platform { get; set; }
     
         /// <summary>
-        /// Gets or sets rule.
-        /// Rule definition of the Assignment Filter.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rule", Required = Newtonsoft.Json.Required.Default)]
-        public string Rule { get; set; }
-    
-        /// <summary>
         /// Gets or sets role scope tags.
         /// RoleScopeTags of the Assignment Filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> RoleScopeTags { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rule.
+        /// Rule definition of the Assignment Filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rule", Required = Newtonsoft.Json.Required.Default)]
+        public string Rule { get; set; }
     
     }
 }

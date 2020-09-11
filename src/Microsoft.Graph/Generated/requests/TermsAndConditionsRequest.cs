@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (termsAndConditionsToInitialize != null && termsAndConditionsToInitialize.AdditionalData != null)
             {
 
-                if (termsAndConditionsToInitialize.GroupAssignments != null && termsAndConditionsToInitialize.GroupAssignments.CurrentPage != null)
+                if (termsAndConditionsToInitialize.AcceptanceStatuses != null && termsAndConditionsToInitialize.AcceptanceStatuses.CurrentPage != null)
                 {
-                    termsAndConditionsToInitialize.GroupAssignments.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
+                    termsAndConditionsToInitialize.AcceptanceStatuses.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    termsAndConditionsToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
+                    termsAndConditionsToInitialize.AdditionalData.TryGetValue("acceptanceStatuses@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        termsAndConditionsToInitialize.GroupAssignments.InitializeNextPageRequest(
+                        termsAndConditionsToInitialize.AcceptanceStatuses.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (termsAndConditionsToInitialize.AcceptanceStatuses != null && termsAndConditionsToInitialize.AcceptanceStatuses.CurrentPage != null)
+                if (termsAndConditionsToInitialize.GroupAssignments != null && termsAndConditionsToInitialize.GroupAssignments.CurrentPage != null)
                 {
-                    termsAndConditionsToInitialize.AcceptanceStatuses.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
+                    termsAndConditionsToInitialize.GroupAssignments.AdditionalData = termsAndConditionsToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    termsAndConditionsToInitialize.AdditionalData.TryGetValue("acceptanceStatuses@odata.nextLink", out nextPageLink);
+                    termsAndConditionsToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        termsAndConditionsToInitialize.AcceptanceStatuses.InitializeNextPageRequest(
+                        termsAndConditionsToInitialize.GroupAssignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

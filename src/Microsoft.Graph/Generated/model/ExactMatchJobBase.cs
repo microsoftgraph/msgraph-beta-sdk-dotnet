@@ -31,16 +31,22 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets completion date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CompletionDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets creation date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets start date time.
+        /// Gets or sets error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        public ClassificationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
@@ -49,16 +55,10 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets completion date time.
+        /// Gets or sets start date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CompletionDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets error.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
-        public ClassificationError Error { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
     
     }
 }

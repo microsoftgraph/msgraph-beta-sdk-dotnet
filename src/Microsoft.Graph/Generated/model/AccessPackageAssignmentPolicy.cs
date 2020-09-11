@@ -37,34 +37,16 @@ namespace Microsoft.Graph
         public string AccessPackageId { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets access review settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewSettings", Required = Newtonsoft.Json.Required.Default)]
+        public AssignmentReviewSettings AccessReviewSettings { get; set; }
     
         /// <summary>
         /// Gets or sets can extend.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canExtend", Required = Newtonsoft.Json.Required.Default)]
         public bool? CanExtend { get; set; }
-    
-        /// <summary>
-        /// Gets or sets duration in days.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DurationInDays { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expiration date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
@@ -79,6 +61,30 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets duration in days.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DurationInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expiration date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets modified by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedBy", Required = Newtonsoft.Json.Required.Default)]
@@ -91,22 +97,16 @@ namespace Microsoft.Graph
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets requestor settings.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorSettings", Required = Newtonsoft.Json.Required.Default)]
-        public RequestorSettings RequestorSettings { get; set; }
-    
-        /// <summary>
         /// Gets or sets request approval settings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestApprovalSettings", Required = Newtonsoft.Json.Required.Default)]
         public ApprovalSettings RequestApprovalSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets access review settings.
+        /// Gets or sets requestor settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewSettings", Required = Newtonsoft.Json.Required.Default)]
-        public AssignmentReviewSettings AccessReviewSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorSettings", Required = Newtonsoft.Json.Required.Default)]
+        public RequestorSettings RequestorSettings { get; set; }
     
         /// <summary>
         /// Gets or sets access package.

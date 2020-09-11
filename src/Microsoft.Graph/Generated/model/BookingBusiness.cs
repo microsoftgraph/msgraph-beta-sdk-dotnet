@@ -31,41 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets business type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessType", Required = Newtonsoft.Json.Required.Default)]
-        public string BusinessType { get; set; }
-    
-        /// <summary>
         /// Gets or sets address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
         public PhysicalAddress Address { get; set; }
-    
-        /// <summary>
-        /// Gets or sets phone.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
-        public string Phone { get; set; }
-    
-        /// <summary>
-        /// Gets or sets email.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
-        public string Email { get; set; }
-    
-        /// <summary>
-        /// Gets or sets web site url.
-        /// Example: https://www.contoso.com
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webSiteUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string WebSiteUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets default currency iso.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultCurrencyIso", Required = Newtonsoft.Json.Required.Default)]
-        public string DefaultCurrencyIso { get; set; }
     
         /// <summary>
         /// Gets or sets business hours.
@@ -74,10 +43,22 @@ namespace Microsoft.Graph
         public IEnumerable<BookingWorkHours> BusinessHours { get; set; }
     
         /// <summary>
-        /// Gets or sets scheduling policy.
+        /// Gets or sets business type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingPolicy", Required = Newtonsoft.Json.Required.Default)]
-        public BookingSchedulingPolicy SchedulingPolicy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessType", Required = Newtonsoft.Json.Required.Default)]
+        public string BusinessType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default currency iso.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultCurrencyIso", Required = Newtonsoft.Json.Required.Default)]
+        public string DefaultCurrencyIso { get; set; }
+    
+        /// <summary>
+        /// Gets or sets email.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets is published.
@@ -86,10 +67,29 @@ namespace Microsoft.Graph
         public bool? IsPublished { get; set; }
     
         /// <summary>
+        /// Gets or sets phone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
+        public string Phone { get; set; }
+    
+        /// <summary>
         /// Gets or sets public url.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publicUrl", Required = Newtonsoft.Json.Required.Default)]
         public string PublicUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scheduling policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public BookingSchedulingPolicy SchedulingPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web site url.
+        /// Example: https://www.contoso.com
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webSiteUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string WebSiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets appointments.

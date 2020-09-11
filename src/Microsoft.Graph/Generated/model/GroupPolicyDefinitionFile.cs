@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// The localized friendly name of the ADMX file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// The localized description of the policy settings in the ADMX file. The default value is empty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// The localized friendly name of the ADMX file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets language codes.
@@ -52,18 +52,11 @@ namespace Microsoft.Graph
         public IEnumerable<string> LanguageCodes { get; set; }
     
         /// <summary>
-        /// Gets or sets target prefix.
-        /// Specifies the logical name that refers to the namespace within the ADMX file.
+        /// Gets or sets last modified date time.
+        /// The date and time the entity was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetPrefix", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetPrefix { get; set; }
-    
-        /// <summary>
-        /// Gets or sets target namespace.
-        /// Specifies the URI used to identify the namespace within the ADMX file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetNamespace", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetNamespace { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets policy type.
@@ -80,11 +73,18 @@ namespace Microsoft.Graph
         public string Revision { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// The date and time the entity was last modified.
+        /// Gets or sets target namespace.
+        /// Specifies the URI used to identify the namespace within the ADMX file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetNamespace", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetNamespace { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target prefix.
+        /// Specifies the logical name that refers to the namespace within the ADMX file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetPrefix", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetPrefix { get; set; }
     
         /// <summary>
         /// Gets or sets definitions.

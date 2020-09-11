@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets eap type.
-        /// Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidEapType? EapType { get; set; }
-    
-        /// <summary>
         /// Gets or sets authentication method.
         /// Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets eap type.
+        /// Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidEapType? EapType { get; set; }
     
         /// <summary>
         /// Gets or sets inner authentication protocol for eap ttls.
@@ -66,13 +66,6 @@ namespace Microsoft.Graph
         public string OuterIdentityPrivacyTemporaryValue { get; set; }
     
         /// <summary>
-        /// Gets or sets username format string.
-        /// Username format string used to build the username to connect to wifi
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameFormatString", Required = Newtonsoft.Json.Required.Default)]
-        public string UsernameFormatString { get; set; }
-    
-        /// <summary>
         /// Gets or sets password format string.
         /// Password format string used to build the password to connect to wifi
         /// </summary>
@@ -87,11 +80,11 @@ namespace Microsoft.Graph
         public string PreSharedKey { get; set; }
     
         /// <summary>
-        /// Gets or sets root certificate for server validation.
-        /// Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
+        /// Gets or sets username format string.
+        /// Username format string used to build the username to connect to wifi
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificateForServerValidation", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidTrustedRootCertificate RootCertificateForServerValidation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        public string UsernameFormatString { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.
@@ -99,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificateForClientAuthentication", Required = Newtonsoft.Json.Required.Default)]
         public AndroidCertificateProfileBase IdentityCertificateForClientAuthentication { get; set; }
+    
+        /// <summary>
+        /// Gets or sets root certificate for server validation.
+        /// Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificateForServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidTrustedRootCertificate RootCertificateForServerValidation { get; set; }
     
     }
 }

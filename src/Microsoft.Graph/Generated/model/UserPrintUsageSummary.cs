@@ -31,18 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets userPrincipalName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userDisplayName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets completedJobCount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedJobCount", Required = Newtonsoft.Json.Required.Default)]
@@ -59,6 +47,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
         public Identity User { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userDisplayName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userPrincipalName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets no issue detected device count.
-        /// Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noIssueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NoIssueDetectedDeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets issue detected device count.
-        /// Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? IssueDetectedDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets detection script error device count.
         /// Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
         /// </summary>
@@ -59,11 +45,25 @@ namespace Microsoft.Graph
         public Int32? DetectionScriptPendingDeviceCount { get; set; }
     
         /// <summary>
+        /// Gets or sets issue detected device count.
+        /// Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IssueDetectedDeviceCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets last script run date time.
         /// Last run time for the script across all devices
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastScriptRunDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastScriptRunDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets no issue detected device count.
+        /// Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noIssueDetectedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NoIssueDetectedDeviceCount { get; set; }
     
     }
 }

@@ -250,22 +250,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (outlookUserToInitialize.TaskGroups != null && outlookUserToInitialize.TaskGroups.CurrentPage != null)
-                {
-                    outlookUserToInitialize.TaskGroups.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("taskGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (outlookUserToInitialize.TaskFolders != null && outlookUserToInitialize.TaskFolders.CurrentPage != null)
                 {
                     outlookUserToInitialize.TaskFolders.AdditionalData = outlookUserToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         outlookUserToInitialize.TaskFolders.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (outlookUserToInitialize.TaskGroups != null && outlookUserToInitialize.TaskGroups.CurrentPage != null)
+                {
+                    outlookUserToInitialize.TaskGroups.AdditionalData = outlookUserToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    outlookUserToInitialize.AdditionalData.TryGetValue("taskGroups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        outlookUserToInitialize.TaskGroups.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IOrganizationSettingsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for ProfileCardProperties.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder"/>.</returns>
-        IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder ProfileCardProperties { get; }
-
-        /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
         /// <returns>The <see cref="IItemInsightsSettingsRequestBuilder"/>.</returns>
         IItemInsightsSettingsRequestBuilder ItemInsights { get; }
+
+        /// <summary>
+        /// Gets the request builder for ProfileCardProperties.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder"/>.</returns>
+        IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder ProfileCardProperties { get; }
     
     }
 }

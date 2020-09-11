@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets userExperienceAnalyticsMetricId.
-        /// The unique identifier of the user experience analytics insight.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsMetricId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserExperienceAnalyticsMetricId { get; set; }
-    
-        /// <summary>
         /// Gets or sets insightId.
         /// The unique identifier of the user experience analytics insight.
         /// </summary>
@@ -45,18 +38,25 @@ namespace Microsoft.Graph
         public string InsightId { get; set; }
     
         /// <summary>
-        /// Gets or sets values.
-        /// The value of the user experience analytics insight.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<UserExperienceAnalyticsInsightValue> Values { get; set; }
-    
-        /// <summary>
         /// Gets or sets severity.
         /// The value of the user experience analytics insight.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsInsightSeverity? Severity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsMetricId.
+        /// The unique identifier of the user experience analytics insight.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsMetricId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserExperienceAnalyticsMetricId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets values.
+        /// The value of the user experience analytics insight.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<UserExperienceAnalyticsInsightValue> Values { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,18 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets rubric quality feedback.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubricQualityFeedback", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RubricQualityFeedbackModel> RubricQualityFeedback { get; set; }
-    
-        /// <summary>
-        /// Gets or sets rubric quality selected levels.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubricQualitySelectedLevels", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RubricQualitySelectedColumnModel> RubricQualitySelectedLevels { get; set; }
-    
-        /// <summary>
         /// Gets or sets published rubric quality feedback.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedRubricQualityFeedback", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +41,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedRubricQualitySelectedLevels", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RubricQualitySelectedColumnModel> PublishedRubricQualitySelectedLevels { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rubric quality feedback.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubricQualityFeedback", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RubricQualityFeedbackModel> RubricQualityFeedback { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rubric quality selected levels.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubricQualitySelectedLevels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RubricQualitySelectedColumnModel> RubricQualitySelectedLevels { get; set; }
     
     }
 }

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets classification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        public PermissionClassificationType? Classification { get; set; }
+    
+        /// <summary>
         /// Gets or sets permission id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionId", Required = Newtonsoft.Json.Required.Default)]
@@ -41,12 +47,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionName", Required = Newtonsoft.Json.Required.Default)]
         public string PermissionName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets classification.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
-        public PermissionClassificationType? Classification { get; set; }
     
     }
 }

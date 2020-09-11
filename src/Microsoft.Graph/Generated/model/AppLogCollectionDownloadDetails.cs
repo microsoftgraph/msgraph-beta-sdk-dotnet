@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets downloadUrl.
-        /// Download SAS Url for completed AppLogUploadRequest
+        /// Gets or sets appLogDecryptionAlgorithm.
+        /// DecryptionAlgorithm for Content
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downloadUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string DownloadUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLogDecryptionAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        public AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets decryptionKey.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string DecryptionKey { get; set; }
     
         /// <summary>
-        /// Gets or sets appLogDecryptionAlgorithm.
-        /// DecryptionAlgorithm for Content
+        /// Gets or sets downloadUrl.
+        /// Download SAS Url for completed AppLogUploadRequest
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLogDecryptionAlgorithm", Required = Newtonsoft.Json.Required.Default)]
-        public AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downloadUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string DownloadUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

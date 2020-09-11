@@ -31,34 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets class id.
+        /// Gets or sets allow late submissions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classId", Required = Newtonsoft.Json.Required.Default)]
-        public string ClassId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowLateSubmissions", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowLateSubmissions { get; set; }
     
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets allow students to add resources to submission.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets instructions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instructions", Required = Newtonsoft.Json.Required.Default)]
-        public EducationItemBody Instructions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets close date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closeDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CloseDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets due date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? DueDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStudentsToAddResourcesToSubmission", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowStudentsToAddResourcesToSubmission { get; set; }
     
         /// <summary>
         /// Gets or sets assign date time.
@@ -73,28 +55,22 @@ namespace Microsoft.Graph
         public DateTimeOffset? AssignedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets grading.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grading", Required = Newtonsoft.Json.Required.Default)]
-        public EducationAssignmentGradeType Grading { get; set; }
-    
-        /// <summary>
         /// Gets or sets assign to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignTo", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentRecipient AssignTo { get; set; }
     
         /// <summary>
-        /// Gets or sets allow late submissions.
+        /// Gets or sets class id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowLateSubmissions", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowLateSubmissions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classId", Required = Newtonsoft.Json.Required.Default)]
+        public string ClassId { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
+        /// Gets or sets close date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CloseDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
@@ -103,10 +79,34 @@ namespace Microsoft.Graph
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
+        /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets due date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? DueDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets grading.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grading", Required = Newtonsoft.Json.Required.Default)]
+        public EducationAssignmentGradeType Grading { get; set; }
+    
+        /// <summary>
+        /// Gets or sets instructions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instructions", Required = Newtonsoft.Json.Required.Default)]
+        public EducationItemBody Instructions { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
@@ -115,10 +115,10 @@ namespace Microsoft.Graph
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
-        /// Gets or sets allow students to add resources to submission.
+        /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStudentsToAddResourcesToSubmission", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowStudentsToAddResourcesToSubmission { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
@@ -127,28 +127,28 @@ namespace Microsoft.Graph
         public EducationAssignmentStatus? Status { get; set; }
     
         /// <summary>
-        /// Gets or sets resources.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationAssignmentResourcesCollectionPage Resources { get; set; }
-    
-        /// <summary>
-        /// Gets or sets submissions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "submissions", Required = Newtonsoft.Json.Required.Default)]
-        public IEducationAssignmentSubmissionsCollectionPage Submissions { get; set; }
-    
-        /// <summary>
         /// Gets or sets categories.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
         public IEducationAssignmentCategoriesCollectionPage Categories { get; set; }
     
         /// <summary>
+        /// Gets or sets resources.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationAssignmentResourcesCollectionPage Resources { get; set; }
+    
+        /// <summary>
         /// Gets or sets rubric.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubric", Required = Newtonsoft.Json.Required.Default)]
         public EducationRubric Rubric { get; set; }
+    
+        /// <summary>
+        /// Gets or sets submissions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "submissions", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationAssignmentSubmissionsCollectionPage Submissions { get; set; }
     
     }
 }

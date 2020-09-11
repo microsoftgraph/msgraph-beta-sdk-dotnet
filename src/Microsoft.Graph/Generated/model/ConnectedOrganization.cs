@@ -31,18 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
         /// Gets or sets created by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +41,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identity sources.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySources", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<IdentitySource> IdentitySources { get; set; }
     
         /// <summary>
         /// Gets or sets modified by.
@@ -67,22 +73,16 @@ namespace Microsoft.Graph
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets identity sources.
+        /// Gets or sets external sponsors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySources", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<IdentitySource> IdentitySources { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSponsors", Required = Newtonsoft.Json.Required.Default)]
+        public IConnectedOrganizationExternalSponsorsCollectionPage ExternalSponsors { get; set; }
     
         /// <summary>
         /// Gets or sets internal sponsors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internalSponsors", Required = Newtonsoft.Json.Required.Default)]
         public IConnectedOrganizationInternalSponsorsCollectionPage InternalSponsors { get; set; }
-    
-        /// <summary>
-        /// Gets or sets external sponsors.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSponsors", Required = Newtonsoft.Json.Required.Default)]
-        public IConnectedOrganizationExternalSponsorsCollectionPage ExternalSponsors { get; set; }
     
     }
 }

@@ -31,28 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets created by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets description for admins.
@@ -67,16 +55,16 @@ namespace Microsoft.Graph
         public string DescriptionForReviewers { get; set; }
     
         /// <summary>
-        /// Gets or sets created by.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public UserIdentity CreatedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets scope.
+        /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
-        public AccessReviewScope Scope { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
@@ -85,10 +73,22 @@ namespace Microsoft.Graph
         public IEnumerable<AccessReviewReviewerScope> Reviewers { get; set; }
     
         /// <summary>
+        /// Gets or sets scope.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        public AccessReviewScope Scope { get; set; }
+    
+        /// <summary>
         /// Gets or sets settings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public AccessReviewScheduleSettings Settings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets instances.

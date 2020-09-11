@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public string DefaultValue { get; set; }
     
         /// <summary>
-        /// Gets or sets suggestions.
-        /// Localized strings listed in the drop-down list of the combo box. The default value is empty.
+        /// Gets or sets max length.
+        /// An unsigned integer that specifies the maximum number of text characters for the parameter. The default value is 1023.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Suggestions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxLength", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? MaxLength { get; set; }
     
         /// <summary>
         /// Gets or sets required.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public bool? Required { get; set; }
     
         /// <summary>
-        /// Gets or sets max length.
-        /// An unsigned integer that specifies the maximum number of text characters for the parameter. The default value is 1023.
+        /// Gets or sets suggestions.
+        /// Localized strings listed in the drop-down list of the combo box. The default value is empty.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxLength", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? MaxLength { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suggestions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Suggestions { get; set; }
     
     }
 }

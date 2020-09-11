@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
+        /// Gets or sets assigned products.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AssignedProducts { get; set; }
     
         /// <summary>
-        /// Gets or sets user principal name.
+        /// Gets or sets deleted date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date DeletedDate { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -49,16 +49,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets is deleted.
+        /// Gets or sets exchange last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsDeleted { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ExchangeLastActivityDate { get; set; }
     
         /// <summary>
-        /// Gets or sets deleted date.
+        /// Gets or sets exchange license assign date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date DeletedDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ExchangeLicenseAssignDate { get; set; }
     
         /// <summary>
         /// Gets or sets has exchange license.
@@ -85,22 +85,22 @@ namespace Microsoft.Graph
         public bool? HasSkypeForBusinessLicense { get; set; }
     
         /// <summary>
-        /// Gets or sets has yammer license.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasYammerLicense", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HasYammerLicense { get; set; }
-    
-        /// <summary>
         /// Gets or sets has teams license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasTeamsLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasTeamsLicense { get; set; }
     
         /// <summary>
-        /// Gets or sets exchange last activity date.
+        /// Gets or sets has yammer license.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ExchangeLastActivityDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasYammerLicense", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HasYammerLicense { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is deleted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets one drive last activity date.
@@ -109,40 +109,22 @@ namespace Microsoft.Graph
         public Date OneDriveLastActivityDate { get; set; }
     
         /// <summary>
-        /// Gets or sets share point last activity date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date SharePointLastActivityDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets skype for business last activity date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusinessLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date SkypeForBusinessLastActivityDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets yammer last activity date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date YammerLastActivityDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets teams last activity date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date TeamsLastActivityDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets exchange license assign date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ExchangeLicenseAssignDate { get; set; }
-    
-        /// <summary>
         /// Gets or sets one drive license assign date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date OneDriveLicenseAssignDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets share point last activity date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date SharePointLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point license assign date.
@@ -151,16 +133,22 @@ namespace Microsoft.Graph
         public Date SharePointLicenseAssignDate { get; set; }
     
         /// <summary>
+        /// Gets or sets skype for business last activity date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusinessLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date SkypeForBusinessLastActivityDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets skype for business license assign date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusinessLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date SkypeForBusinessLicenseAssignDate { get; set; }
     
         /// <summary>
-        /// Gets or sets yammer license assign date.
+        /// Gets or sets teams last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date YammerLicenseAssignDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date TeamsLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets teams license assign date.
@@ -169,10 +157,22 @@ namespace Microsoft.Graph
         public Date TeamsLicenseAssignDate { get; set; }
     
         /// <summary>
-        /// Gets or sets assigned products.
+        /// Gets or sets user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AssignedProducts { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets yammer last activity date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date YammerLastActivityDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets yammer license assign date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date YammerLicenseAssignDate { get; set; }
     
     }
 }

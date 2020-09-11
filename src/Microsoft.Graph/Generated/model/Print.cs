@@ -37,28 +37,22 @@ namespace Microsoft.Graph
         public PrintSettings Settings { get; set; }
     
         /// <summary>
-        /// Gets or sets services.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "services", Required = Newtonsoft.Json.Required.Default)]
-        public IPrintServicesCollectionPage Services { get; set; }
-    
-        /// <summary>
-        /// Gets or sets printers.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printers", Required = Newtonsoft.Json.Required.Default)]
-        public IPrintPrintersCollectionPage Printers { get; set; }
-    
-        /// <summary>
         /// Gets or sets connectors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectors", Required = Newtonsoft.Json.Required.Default)]
         public IPrintConnectorsCollectionPage Connectors { get; set; }
     
         /// <summary>
-        /// Gets or sets shares.
+        /// Gets or sets operations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shares", Required = Newtonsoft.Json.Required.Default)]
-        public IPrintSharesCollectionPage Shares { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        public IPrintOperationsCollectionPage Operations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets printers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printers", Required = Newtonsoft.Json.Required.Default)]
+        public IPrintPrintersCollectionPage Printers { get; set; }
     
         /// <summary>
         /// Gets or sets printer shares.
@@ -73,10 +67,16 @@ namespace Microsoft.Graph
         public IPrintReportsCollectionPage Reports { get; set; }
     
         /// <summary>
-        /// Gets or sets operations.
+        /// Gets or sets services.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
-        public IPrintOperationsCollectionPage Operations { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "services", Required = Newtonsoft.Json.Required.Default)]
+        public IPrintServicesCollectionPage Services { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shares.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shares", Required = Newtonsoft.Json.Required.Default)]
+        public IPrintSharesCollectionPage Shares { get; set; }
     
         /// <summary>
         /// Gets or sets task definitions.

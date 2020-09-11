@@ -63,18 +63,6 @@ namespace Microsoft.Graph.TermStore
         }
 
         /// <summary>
-        /// Gets the request builder for ToTerm.
-        /// </summary>
-        /// <returns>The <see cref="ITermWithReferenceRequestBuilder"/>.</returns>
-        public ITermWithReferenceRequestBuilder ToTerm
-        {
-            get
-            {
-                return new TermWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("toTerm"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Set.
         /// </summary>
         /// <returns>The <see cref="ISetWithReferenceRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph.TermStore
             get
             {
                 return new SetWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("set"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ToTerm.
+        /// </summary>
+        /// <returns>The <see cref="ITermWithReferenceRequestBuilder"/>.</returns>
+        public ITermWithReferenceRequestBuilder ToTerm
+        {
+            get
+            {
+                return new TermWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("toTerm"), this.Client);
             }
         }
     

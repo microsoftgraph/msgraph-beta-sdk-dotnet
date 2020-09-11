@@ -61,32 +61,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TiIndicatorSubmitTiIndicators.
-        /// </summary>
-        /// <returns>The <see cref="ITiIndicatorSubmitTiIndicatorsRequestBuilder"/>.</returns>
-        public ITiIndicatorSubmitTiIndicatorsRequestBuilder SubmitTiIndicators(
-            IEnumerable<TiIndicator> value = null)
-        {
-            return new TiIndicatorSubmitTiIndicatorsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.submitTiIndicators"),
-                this.Client,
-                value);
-        }
-
-        /// <summary>
-        /// Gets the request builder for TiIndicatorUpdateTiIndicators.
-        /// </summary>
-        /// <returns>The <see cref="ITiIndicatorUpdateTiIndicatorsRequestBuilder"/>.</returns>
-        public ITiIndicatorUpdateTiIndicatorsRequestBuilder UpdateTiIndicators(
-            IEnumerable<TiIndicator> value = null)
-        {
-            return new TiIndicatorUpdateTiIndicatorsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.updateTiIndicators"),
-                this.Client,
-                value);
-        }
-
-        /// <summary>
         /// Gets the request builder for TiIndicatorDeleteTiIndicators.
         /// </summary>
         /// <returns>The <see cref="ITiIndicatorDeleteTiIndicatorsRequestBuilder"/>.</returns>
@@ -108,6 +82,32 @@ namespace Microsoft.Graph
         {
             return new TiIndicatorDeleteTiIndicatorsByExternalIdRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.deleteTiIndicatorsByExternalId"),
+                this.Client,
+                value);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TiIndicatorSubmitTiIndicators.
+        /// </summary>
+        /// <returns>The <see cref="ITiIndicatorSubmitTiIndicatorsRequestBuilder"/>.</returns>
+        public ITiIndicatorSubmitTiIndicatorsRequestBuilder SubmitTiIndicators(
+            IEnumerable<TiIndicator> value = null)
+        {
+            return new TiIndicatorSubmitTiIndicatorsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.submitTiIndicators"),
+                this.Client,
+                value);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TiIndicatorUpdateTiIndicators.
+        /// </summary>
+        /// <returns>The <see cref="ITiIndicatorUpdateTiIndicatorsRequestBuilder"/>.</returns>
+        public ITiIndicatorUpdateTiIndicatorsRequestBuilder UpdateTiIndicators(
+            IEnumerable<TiIndicator> value = null)
+        {
+            return new TiIndicatorUpdateTiIndicatorsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateTiIndicators"),
                 this.Client,
                 value);
         }

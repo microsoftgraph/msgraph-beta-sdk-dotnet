@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (userExperienceAnalyticsRegressionSummaryToInitialize != null && userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData != null)
             {
 
-                if (userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.CurrentPage != null)
-                {
-                    userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("modelRegression@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.CurrentPage != null)
                 {
                     userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         userExperienceAnalyticsRegressionSummaryToInitialize.ManufacturerRegression.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression != null && userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.CurrentPage != null)
+                {
+                    userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.AdditionalData = userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    userExperienceAnalyticsRegressionSummaryToInitialize.AdditionalData.TryGetValue("modelRegression@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        userExperienceAnalyticsRegressionSummaryToInitialize.ModelRegression.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -31,27 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// Event display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets component name.
-        /// Component name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "componentName", Required = Newtonsoft.Json.Required.Default)]
-        public string ComponentName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets actor.
-        /// AAD user and application that are associated with the audit event.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actor", Required = Newtonsoft.Json.Required.Default)]
-        public AuditActor Actor { get; set; }
-    
-        /// <summary>
         /// Gets or sets activity.
         /// Friendly name of the activity.
         /// </summary>
@@ -64,13 +43,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActivityDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets activity type.
-        /// The type of activity that was being performed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityType", Required = Newtonsoft.Json.Required.Default)]
-        public string ActivityType { get; set; }
     
         /// <summary>
         /// Gets or sets activity operation type.
@@ -87,18 +59,18 @@ namespace Microsoft.Graph
         public string ActivityResult { get; set; }
     
         /// <summary>
-        /// Gets or sets correlation id.
-        /// The client request Id that is used to correlate activity within the system.
+        /// Gets or sets activity type.
+        /// The type of activity that was being performed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? CorrelationId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityType", Required = Newtonsoft.Json.Required.Default)]
+        public string ActivityType { get; set; }
     
         /// <summary>
-        /// Gets or sets resources.
-        /// Resources being modified.
+        /// Gets or sets actor.
+        /// AAD user and application that are associated with the audit event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AuditResource> Resources { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actor", Required = Newtonsoft.Json.Required.Default)]
+        public AuditActor Actor { get; set; }
     
         /// <summary>
         /// Gets or sets category.
@@ -106,6 +78,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public string Category { get; set; }
+    
+        /// <summary>
+        /// Gets or sets component name.
+        /// Component name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "componentName", Required = Newtonsoft.Json.Required.Default)]
+        public string ComponentName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets correlation id.
+        /// The client request Id that is used to correlate activity within the system.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? CorrelationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Event display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resources.
+        /// Resources being modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AuditResource> Resources { get; set; }
     
     }
 }

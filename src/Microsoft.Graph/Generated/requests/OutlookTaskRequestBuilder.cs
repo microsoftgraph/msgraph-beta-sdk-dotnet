@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
+        /// Gets the request builder for Attachments.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
+        /// <returns>The <see cref="IOutlookTaskAttachmentsCollectionRequestBuilder"/>.</returns>
+        public IOutlookTaskAttachmentsCollectionRequestBuilder Attachments
         {
             get
             {
-                return new OutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
+                return new OutlookTaskAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Attachments.
+        /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskAttachmentsCollectionRequestBuilder"/>.</returns>
-        public IOutlookTaskAttachmentsCollectionRequestBuilder Attachments
+        /// <returns>The <see cref="IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties
         {
             get
             {
-                return new OutlookTaskAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
+                return new OutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("singleValueExtendedProperties"), this.Client);
             }
         }
     

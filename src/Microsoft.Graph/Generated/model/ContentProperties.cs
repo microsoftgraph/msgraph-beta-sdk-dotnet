@@ -37,10 +37,10 @@ namespace Microsoft.Graph
         public IEnumerable<string> Extensions { get; set; }
     
         /// <summary>
-        /// Gets or sets metadata.
+        /// Gets or sets lastModifiedBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
-        public ContentMetadata Metadata { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        public string LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedDateTime.
@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets lastModifiedBy.
+        /// Gets or sets metadata.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
-        public string LastModifiedBy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
+        public ContentMetadata Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

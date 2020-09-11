@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets issuerUri.
+        /// Gets or sets displayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerUri", Required = Newtonsoft.Json.Required.Default)]
-        public string IssuerUri { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets domainName.
@@ -42,10 +42,10 @@ namespace Microsoft.Graph
         public string DomainName { get; set; }
     
         /// <summary>
-        /// Gets or sets displayName.
+        /// Gets or sets issuerUri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerUri", Required = Newtonsoft.Json.Required.Default)]
+        public string IssuerUri { get; set; }
     
     }
 }

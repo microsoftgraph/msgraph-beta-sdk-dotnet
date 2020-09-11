@@ -37,28 +37,28 @@ namespace Microsoft.Graph
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
-        /// Gets or sets detail.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
-        public PositionDetail Detail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets manager.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
-        public RelatedPerson Manager { get; set; }
-    
-        /// <summary>
         /// Gets or sets colleagues.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colleagues", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RelatedPerson> Colleagues { get; set; }
     
         /// <summary>
+        /// Gets or sets detail.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
+        public PositionDetail Detail { get; set; }
+    
+        /// <summary>
         /// Gets or sets is current.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCurrent", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsCurrent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets manager.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
+        public RelatedPerson Manager { get; set; }
     
     }
 }

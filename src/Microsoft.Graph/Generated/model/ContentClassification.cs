@@ -31,18 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sensitiveTypeId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeId", Required = Newtonsoft.Json.Required.Default)]
-        public string SensitiveTypeId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets uniqueCount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UniqueCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets confidence.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +41,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MatchLocation> Matches { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sensitiveTypeId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeId", Required = Newtonsoft.Json.Required.Default)]
+        public string SensitiveTypeId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets uniqueCount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UniqueCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

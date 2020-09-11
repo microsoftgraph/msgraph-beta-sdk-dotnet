@@ -31,46 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets default enrollment type.
-        /// The default profile enrollment type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultEnrollmentType", Required = Newtonsoft.Json.Required.Default)]
-        public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType { get; set; }
-    
-        /// <summary>
         /// Gets or sets available enrollment type options.
         /// List of available enrollment type options
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availableEnrollmentTypeOptions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Name of the profile
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// Description of the profile
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets priority.
-        /// Priority, 0 is highest
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Priority { get; set; }
-    
-        /// <summary>
-        /// Gets or sets platform.
-        /// The platform of the Device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
-        public DevicePlatformType? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -80,11 +45,46 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets default enrollment type.
+        /// The default profile enrollment type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultEnrollmentType", Required = Newtonsoft.Json.Required.Default)]
+        public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// Description of the profile
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Name of the profile
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// Profile last modified time
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets platform.
+        /// The platform of the Device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        public DevicePlatformType? Platform { get; set; }
+    
+        /// <summary>
+        /// Gets or sets priority.
+        /// Priority, 0 is highest
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.

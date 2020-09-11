@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets productVersion.
-        /// The version of the update.
+        /// Gets or sets expirationDateTime.
+        /// The expiration date of the update.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string ProductVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets postingDateTime.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? PostingDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets expirationDateTime.
-        /// The expiration date of the update.
+        /// Gets or sets productVersion.
+        /// The version of the update.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string ProductVersion { get; set; }
     
         /// <summary>
         /// Gets or sets supportedDevices.

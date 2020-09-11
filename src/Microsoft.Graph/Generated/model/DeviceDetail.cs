@@ -31,6 +31,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets browser.
+        /// Indicates the browser information of the used for signing in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browser", Required = Newtonsoft.Json.Required.Default)]
+        public string Browser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets browserId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserId", Required = Newtonsoft.Json.Required.Default)]
+        public string BrowserId { get; set; }
+    
+        /// <summary>
         /// Gets or sets deviceId.
         /// Refers to the UniqueID of the device used for signing in.
         /// </summary>
@@ -45,26 +58,6 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets operatingSystem.
-        /// Indicates the operating system name and version used for signing in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystem", Required = Newtonsoft.Json.Required.Default)]
-        public string OperatingSystem { get; set; }
-    
-        /// <summary>
-        /// Gets or sets browser.
-        /// Indicates the browser information of the used for signing in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browser", Required = Newtonsoft.Json.Required.Default)]
-        public string Browser { get; set; }
-    
-        /// <summary>
-        /// Gets or sets browserId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "browserId", Required = Newtonsoft.Json.Required.Default)]
-        public string BrowserId { get; set; }
-    
-        /// <summary>
         /// Gets or sets isCompliant.
         /// Indicates whether the device is compliant.
         /// </summary>
@@ -77,6 +70,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isManaged", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsManaged { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operatingSystem.
+        /// Indicates the operating system name and version used for signing in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets trustType.

@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
+        /// Gets or sets confidence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Confidence { get; set; }
     
         /// <summary>
         /// Gets or sets count.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public Int32? Count { get; set; }
     
         /// <summary>
-        /// Gets or sets confidence.
+        /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Confidence { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

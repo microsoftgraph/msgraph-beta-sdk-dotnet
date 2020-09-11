@@ -31,40 +31,22 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets web.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "web", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Web { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows phone.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsPhone", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? WindowsPhone { get; set; }
-    
-        /// <summary>
         /// Gets or sets android phone.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidPhone", Required = Newtonsoft.Json.Required.Default)]
         public Int32? AndroidPhone { get; set; }
     
         /// <summary>
-        /// Gets or sets i phone.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iPhone", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? IPhone { get; set; }
-    
-        /// <summary>
         /// Gets or sets i pad.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iPad", Required = Newtonsoft.Json.Required.Default)]
         public Int32? IPad { get; set; }
+    
+        /// <summary>
+        /// Gets or sets i phone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iPhone", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? IPhone { get; set; }
     
         /// <summary>
         /// Gets or sets other.
@@ -83,6 +65,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "web", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Web { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows phone.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsPhone", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WindowsPhone { get; set; }
     
     }
 }

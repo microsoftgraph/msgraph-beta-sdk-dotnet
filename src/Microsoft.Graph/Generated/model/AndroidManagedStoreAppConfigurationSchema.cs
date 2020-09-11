@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public byte[] ExampleJson { get; set; }
     
         /// <summary>
-        /// Gets or sets schema items.
-        /// Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaItems", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems { get; set; }
-    
-        /// <summary>
         /// Gets or sets nested schema items.
         /// Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nestedSchemaItems", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AndroidManagedStoreAppConfigurationSchemaItem> NestedSchemaItems { get; set; }
+    
+        /// <summary>
+        /// Gets or sets schema items.
+        /// Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaItems", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems { get; set; }
     
     }
 }

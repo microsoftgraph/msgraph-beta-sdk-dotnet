@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets managed device id.
-        /// The Intune managed device ID.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ManagedDeviceId { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The device name.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSyncDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed device id.
+        /// The Intune managed device ID.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedDeviceId { get; set; }
     
     }
 }

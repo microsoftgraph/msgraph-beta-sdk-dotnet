@@ -48,16 +48,16 @@ namespace Microsoft.Graph
         public EducationSynchronizationCustomization Student { get; set; }
     
         /// <summary>
-        /// Gets or sets teacher.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacher", Required = Newtonsoft.Json.Required.Default)]
-        public EducationSynchronizationCustomization Teacher { get; set; }
-    
-        /// <summary>
         /// Gets or sets studentEnrollment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "studentEnrollment", Required = Newtonsoft.Json.Required.Default)]
         public EducationSynchronizationCustomization StudentEnrollment { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teacher.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacher", Required = Newtonsoft.Json.Required.Default)]
+        public EducationSynchronizationCustomization Teacher { get; set; }
     
         /// <summary>
         /// Gets or sets teacherRoster.

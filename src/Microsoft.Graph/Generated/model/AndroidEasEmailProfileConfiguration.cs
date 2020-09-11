@@ -45,32 +45,11 @@ namespace Microsoft.Graph
         public EasAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
-        /// Gets or sets sync calendar.
-        /// Toggles syncing the calendar. If set to false calendar is turned off on the device.
+        /// Gets or sets custom domain name.
+        /// Custom domain name value used while generating an email profile before installing on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncCalendar", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SyncCalendar { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sync contacts.
-        /// Toggles syncing contacts. If set to false contacts are turned off on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncContacts", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SyncContacts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sync tasks.
-        /// Toggles syncing tasks. If set to false tasks are turned off on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncTasks", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SyncTasks { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sync notes.
-        /// Toggles syncing notes. If set to false notes are turned off on the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncNotes", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SyncNotes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDomainName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets duration of email to sync.
@@ -115,11 +94,32 @@ namespace Microsoft.Graph
         public bool? RequireSsl { get; set; }
     
         /// <summary>
-        /// Gets or sets username source.
-        /// Username attribute that is picked from AAD and injected into this profile before installing on the device.
+        /// Gets or sets sync calendar.
+        /// Toggles syncing the calendar. If set to false calendar is turned off on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameSource", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidUsernameSource? UsernameSource { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncCalendar", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SyncCalendar { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sync contacts.
+        /// Toggles syncing contacts. If set to false contacts are turned off on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncContacts", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SyncContacts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sync notes.
+        /// Toggles syncing notes. If set to false notes are turned off on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncNotes", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SyncNotes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sync tasks.
+        /// Toggles syncing tasks. If set to false tasks are turned off on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncTasks", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SyncTasks { get; set; }
     
         /// <summary>
         /// Gets or sets user domain name source.
@@ -129,11 +129,11 @@ namespace Microsoft.Graph
         public DomainNameSource? UserDomainNameSource { get; set; }
     
         /// <summary>
-        /// Gets or sets custom domain name.
-        /// Custom domain name value used while generating an email profile before installing on the device.
+        /// Gets or sets username source.
+        /// Username attribute that is picked from AAD and injected into this profile before installing on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDomainName", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomDomainName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameSource", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidUsernameSource? UsernameSource { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.

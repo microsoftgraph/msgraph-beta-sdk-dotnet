@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets required.
-        /// Requirement to enter a value in the text box. Default value is false.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Required { get; set; }
-    
-        /// <summary>
         /// Gets or sets max length.
         /// An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxStrings", Required = Newtonsoft.Json.Required.Default)]
         public Int64? MaxStrings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets required.
+        /// Requirement to enter a value in the text box. Default value is false.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Required { get; set; }
     
     }
 }

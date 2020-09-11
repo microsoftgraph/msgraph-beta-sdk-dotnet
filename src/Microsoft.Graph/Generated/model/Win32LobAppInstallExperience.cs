@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets runAsAccount.
-        /// Indicates the type of execution context the app runs in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
-        public RunAsAccountType? RunAsAccount { get; set; }
-    
-        /// <summary>
         /// Gets or sets deviceRestartBehavior.
         /// Device restart behavior.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRestartBehavior", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRestartBehavior? DeviceRestartBehavior { get; set; }
+    
+        /// <summary>
+        /// Gets or sets runAsAccount.
+        /// Indicates the type of execution context the app runs in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
+        public RunAsAccountType? RunAsAccount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

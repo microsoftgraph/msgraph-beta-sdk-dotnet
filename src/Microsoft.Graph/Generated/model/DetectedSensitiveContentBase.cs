@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
+        /// Gets or sets confidence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Confidence { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
@@ -43,16 +43,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets uniqueCount.
+        /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UniqueCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? Id { get; set; }
     
         /// <summary>
-        /// Gets or sets confidence.
+        /// Gets or sets matches.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Confidence { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SensitiveContentLocation> Matches { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedConfidence.
@@ -61,10 +61,10 @@ namespace Microsoft.Graph
         public Int32? RecommendedConfidence { get; set; }
     
         /// <summary>
-        /// Gets or sets matches.
+        /// Gets or sets uniqueCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SensitiveContentLocation> Matches { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UniqueCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

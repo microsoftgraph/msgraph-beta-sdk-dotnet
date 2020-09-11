@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IOutlookUserMasterCategoriesCollectionRequestBuilder MasterCategories { get; }
 
         /// <summary>
-        /// Gets the request builder for TaskGroups.
-        /// </summary>
-        /// <returns>The <see cref="IOutlookUserTaskGroupsCollectionRequestBuilder"/>.</returns>
-        IOutlookUserTaskGroupsCollectionRequestBuilder TaskGroups { get; }
-
-        /// <summary>
         /// Gets the request builder for TaskFolders.
         /// </summary>
         /// <returns>The <see cref="IOutlookUserTaskFoldersCollectionRequestBuilder"/>.</returns>
         IOutlookUserTaskFoldersCollectionRequestBuilder TaskFolders { get; }
+
+        /// <summary>
+        /// Gets the request builder for TaskGroups.
+        /// </summary>
+        /// <returns>The <see cref="IOutlookUserTaskGroupsCollectionRequestBuilder"/>.</returns>
+        IOutlookUserTaskGroupsCollectionRequestBuilder TaskGroups { get; }
 
         /// <summary>
         /// Gets the request builder for Tasks.

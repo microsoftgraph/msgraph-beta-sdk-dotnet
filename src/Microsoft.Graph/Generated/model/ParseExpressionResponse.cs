@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public PublicError Error { get; set; }
     
         /// <summary>
-        /// Gets or sets evaluationSucceeded.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationSucceeded", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EvaluationSucceeded { get; set; }
-    
-        /// <summary>
         /// Gets or sets evaluationResult.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationResult", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EvaluationResult { get; set; }
+    
+        /// <summary>
+        /// Gets or sets evaluationSucceeded.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationSucceeded", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EvaluationSucceeded { get; set; }
     
         /// <summary>
         /// Gets or sets parsedExpression.

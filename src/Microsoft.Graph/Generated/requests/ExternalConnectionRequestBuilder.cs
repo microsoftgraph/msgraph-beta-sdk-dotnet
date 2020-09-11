@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Schema.
+        /// Gets the request builder for Groups.
         /// </summary>
-        /// <returns>The <see cref="ISchemaRequestBuilder"/>.</returns>
-        public ISchemaRequestBuilder Schema
+        /// <returns>The <see cref="IExternalConnectionGroupsCollectionRequestBuilder"/>.</returns>
+        public IExternalConnectionGroupsCollectionRequestBuilder Groups
         {
             get
             {
-                return new SchemaRequestBuilder(this.AppendSegmentToRequestUrl("schema"), this.Client);
+                return new ExternalConnectionGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groups"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Groups.
+        /// Gets the request builder for Schema.
         /// </summary>
-        /// <returns>The <see cref="IExternalConnectionGroupsCollectionRequestBuilder"/>.</returns>
-        public IExternalConnectionGroupsCollectionRequestBuilder Groups
+        /// <returns>The <see cref="ISchemaRequestBuilder"/>.</returns>
+        public ISchemaRequestBuilder Schema
         {
             get
             {
-                return new ExternalConnectionGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groups"), this.Client);
+                return new SchemaRequestBuilder(this.AppendSegmentToRequestUrl("schema"), this.Client);
             }
         }
     

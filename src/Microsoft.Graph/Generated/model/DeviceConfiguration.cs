@@ -31,6 +31,48 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets created date time.
+        /// DateTime the object was created.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets description.
+        /// Admin provided description of the Device Configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device management applicability rule device mode.
+        /// The device mode applicability rule for this Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleDeviceMode", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device management applicability rule os edition.
+        /// The OS edition applicability for this Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleOsEdition", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEdition { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device management applicability rule os version.
+        /// The OS version applicability rule for this Policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleOsVersion", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display name.
+        /// Admin provided name of the device configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// DateTime the object was last modified.
         /// </summary>
@@ -52,60 +94,11 @@ namespace Microsoft.Graph
         public bool? SupportsScopeTags { get; set; }
     
         /// <summary>
-        /// Gets or sets device management applicability rule os edition.
-        /// The OS edition applicability for this Policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleOsEdition", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEdition { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device management applicability rule os version.
-        /// The OS version applicability rule for this Policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleOsVersion", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device management applicability rule device mode.
-        /// The device mode applicability rule for this Policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManagementApplicabilityRuleDeviceMode", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// DateTime the object was created.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// Admin provided description of the Device Configuration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// Admin provided name of the device configuration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets version.
         /// Version of the device configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Version { get; set; }
-    
-        /// <summary>
-        /// Gets or sets group assignments.
-        /// The list of group assignments for the device configuration profile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceConfigurationGroupAssignmentsCollectionPage GroupAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -115,18 +108,18 @@ namespace Microsoft.Graph
         public IDeviceConfigurationAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
+        /// Gets or sets device setting state summaries.
+        /// Device Configuration Setting State Device Summary
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSettingStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceConfigurationDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
+    
+        /// <summary>
         /// Gets or sets device statuses.
         /// Device configuration installation status by device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceConfigurationDeviceStatusesCollectionPage DeviceStatuses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user statuses.
-        /// Device configuration installation status by user.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets device status overview.
@@ -136,18 +129,25 @@ namespace Microsoft.Graph
         public DeviceConfigurationDeviceOverview DeviceStatusOverview { get; set; }
     
         /// <summary>
+        /// Gets or sets group assignments.
+        /// The list of group assignments for the device configuration profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceConfigurationGroupAssignmentsCollectionPage GroupAssignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user statuses.
+        /// Device configuration installation status by user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceConfigurationUserStatusesCollectionPage UserStatuses { get; set; }
+    
+        /// <summary>
         /// Gets or sets user status overview.
         /// Device Configuration users status overview
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStatusOverview", Required = Newtonsoft.Json.Required.Default)]
         public DeviceConfigurationUserOverview UserStatusOverview { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device setting state summaries.
-        /// Device Configuration Setting State Device Summary
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSettingStateSummaries", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceConfigurationDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
     
     }
 }

@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets detectionType.
+        /// The detection type for script output
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppPowerShellScriptDetectionType? DetectionType { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// The unique display name for this rule
         /// </summary>
@@ -63,13 +70,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
         public string ScriptContent { get; set; }
-    
-        /// <summary>
-        /// Gets or sets detectionType.
-        /// The detection type for script output
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppPowerShellScriptDetectionType? DetectionType { get; set; }
     
     }
 }

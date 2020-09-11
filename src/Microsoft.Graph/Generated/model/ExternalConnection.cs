@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets name.
+        /// Gets or sets configuration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        public Configuration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -43,16 +43,16 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets configuration.
+        /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
-        public Configuration Configuration { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets schema.
+        /// Gets or sets groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]
-        public Schema Schema { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
+        public IExternalConnectionGroupsCollectionPage Groups { get; set; }
     
         /// <summary>
         /// Gets or sets items.
@@ -67,10 +67,10 @@ namespace Microsoft.Graph
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
-        /// Gets or sets groups.
+        /// Gets or sets schema.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
-        public IExternalConnectionGroupsCollectionPage Groups { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]
+        public Schema Schema { get; set; }
     
     }
 }

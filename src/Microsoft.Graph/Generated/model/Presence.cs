@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets availability.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availability", Required = Newtonsoft.Json.Required.Default)]
-        public string Availability { get; set; }
-    
-        /// <summary>
         /// Gets or sets activity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activity", Required = Newtonsoft.Json.Required.Default)]
         public string Activity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets availability.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availability", Required = Newtonsoft.Json.Required.Default)]
+        public string Availability { get; set; }
     
     }
 }

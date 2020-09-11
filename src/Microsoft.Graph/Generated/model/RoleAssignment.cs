@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets description.
+        /// Description of the Role Assignment.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display or friendly name of the role Assignment.
         /// </summary>
@@ -38,11 +45,11 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets description.
-        /// Description of the Role Assignment.
+        /// Gets or sets resource scopes.
+        /// List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceScopes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ResourceScopes { get; set; }
     
         /// <summary>
         /// Gets or sets scope members.
@@ -57,13 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeType", Required = Newtonsoft.Json.Required.Default)]
         public RoleAssignmentScopeType? ScopeType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource scopes.
-        /// List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceScopes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> ResourceScopes { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.

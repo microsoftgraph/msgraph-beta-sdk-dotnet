@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets service display name.
-        /// The display name of the service work flow
+        /// Gets or sets grant date time.
+        /// The time consent was granted for this account
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string ServiceDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets terms url.
-        /// The TermsUrl for the data sharing consent
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string TermsUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? GrantDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets granted.
@@ -50,13 +43,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "granted", Required = Newtonsoft.Json.Required.Default)]
         public bool? Granted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets grant date time.
-        /// The time consent was granted for this account
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? GrantDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets granted by upn.
@@ -71,6 +57,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grantedByUserId", Required = Newtonsoft.Json.Required.Default)]
         public string GrantedByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service display name.
+        /// The display name of the service work flow
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string ServiceDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets terms url.
+        /// The TermsUrl for the data sharing consent
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string TermsUrl { get; set; }
     
     }
 }

@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets resource name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceName", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceName { get; set; }
-    
-        /// <summary>
         /// Gets or sets publishing type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingType", Required = Newtonsoft.Json.Required.Default)]
         public OnPremisesPublishingType? PublishingType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceName", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceName { get; set; }
     
         /// <summary>
         /// Gets or sets agent groups.

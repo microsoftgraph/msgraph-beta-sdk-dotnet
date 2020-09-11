@@ -31,34 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user id.
-        /// User unique identifier, must be Guid
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user name.
-        /// User name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed device id.
-        /// Managed device unique identifier, must be Guid
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ManagedDeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device name.
-        /// Device name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
-    
-        /// <summary>
         /// Gets or sets device configuration id.
         /// Device configuration profile unique identifier, must be Guid
         /// </summary>
@@ -73,11 +45,32 @@ namespace Microsoft.Graph
         public string DeviceConfigurationName { get; set; }
     
         /// <summary>
+        /// Gets or sets device name.
+        /// Device name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed device id.
+        /// Managed device unique identifier, must be Guid
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedDeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets platform type.
         /// Platform type
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformType", Required = Newtonsoft.Json.Required.Default)]
         public PolicyPlatformType? PlatformType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restricted apps.
+        /// List of violated restricted apps
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ManagedDeviceReportedApp> RestrictedApps { get; set; }
     
         /// <summary>
         /// Gets or sets restricted apps state.
@@ -87,11 +80,18 @@ namespace Microsoft.Graph
         public RestrictedAppsState? RestrictedAppsState { get; set; }
     
         /// <summary>
-        /// Gets or sets restricted apps.
-        /// List of violated restricted apps
+        /// Gets or sets user id.
+        /// User unique identifier, must be Guid
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedApps", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ManagedDeviceReportedApp> RestrictedApps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user name.
+        /// User name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserName { get; set; }
     
     }
 }

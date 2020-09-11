@@ -32,28 +32,28 @@ namespace Microsoft.Graph
         new IPrinterRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AllowedUsers.
-        /// </summary>
-        /// <returns>The <see cref="IPrinterAllowedUsersCollectionRequestBuilder"/>.</returns>
-        IPrinterAllowedUsersCollectionRequestBuilder AllowedUsers { get; }
-
-        /// <summary>
         /// Gets the request builder for AllowedGroups.
         /// </summary>
         /// <returns>The <see cref="IPrinterAllowedGroupsCollectionRequestBuilder"/>.</returns>
         IPrinterAllowedGroupsCollectionRequestBuilder AllowedGroups { get; }
 
         /// <summary>
-        /// Gets the request builder for Share.
+        /// Gets the request builder for AllowedUsers.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareWithReferenceRequestBuilder"/>.</returns>
-        IPrinterShareWithReferenceRequestBuilder Share { get; }
+        /// <returns>The <see cref="IPrinterAllowedUsersCollectionRequestBuilder"/>.</returns>
+        IPrinterAllowedUsersCollectionRequestBuilder AllowedUsers { get; }
 
         /// <summary>
         /// Gets the request builder for Connectors.
         /// </summary>
         /// <returns>The <see cref="IPrinterConnectorsCollectionWithReferencesRequestBuilder"/>.</returns>
         IPrinterConnectorsCollectionWithReferencesRequestBuilder Connectors { get; }
+
+        /// <summary>
+        /// Gets the request builder for Share.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterShareWithReferenceRequestBuilder"/>.</returns>
+        IPrinterShareWithReferenceRequestBuilder Share { get; }
 
         /// <summary>
         /// Gets the request builder for TaskTriggers.

@@ -24,20 +24,6 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets startLayoutTileSize.
-        /// The app tile size for the start layout
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startLayoutTileSize", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsAppStartLayoutTileSize? StartLayoutTileSize { get; set; }
-    
-        /// <summary>
-        /// Gets or sets name.
-        /// Represents the friendly name of an app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
         /// Gets or sets appType.
         /// The app type
         /// </summary>
@@ -50,6 +36,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoLaunch", Required = Newtonsoft.Json.Required.Default)]
         public bool? AutoLaunch { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// Represents the friendly name of an app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startLayoutTileSize.
+        /// The app tile size for the start layout
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startLayoutTileSize", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsAppStartLayoutTileSize? StartLayoutTileSize { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

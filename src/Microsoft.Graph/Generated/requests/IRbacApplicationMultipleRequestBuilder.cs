@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IRbacApplicationMultipleRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
-        /// </summary>
-        /// <returns>The <see cref="IRbacApplicationMultipleRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        IRbacApplicationMultipleRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
-
-        /// <summary>
         /// Gets the request builder for RoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationMultipleRoleAssignmentsCollectionRequestBuilder"/>.</returns>
         IRbacApplicationMultipleRoleAssignmentsCollectionRequestBuilder RoleAssignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationMultipleRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        IRbacApplicationMultipleRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
     
     }
 }

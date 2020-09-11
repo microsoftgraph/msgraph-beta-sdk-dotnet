@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets resource location.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLocation", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceLocation { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
@@ -53,12 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statusDetail", Required = Newtonsoft.Json.Required.Default)]
         public string StatusDetail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource location.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceLocation", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceLocation { get; set; }
     
     }
 }

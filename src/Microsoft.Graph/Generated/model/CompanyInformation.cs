@@ -31,46 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
         public PostalAddressType Address { get; set; }
-    
-        /// <summary>
-        /// Gets or sets phone number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string PhoneNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets fax number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faxNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string FaxNumber { get; set; }
-    
-        /// <summary>
-        /// Gets or sets email.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
-        public string Email { get; set; }
-    
-        /// <summary>
-        /// Gets or sets website.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "website", Required = Newtonsoft.Json.Required.Default)]
-        public string Website { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tax registration number.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxRegistrationNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string TaxRegistrationNumber { get; set; }
     
         /// <summary>
         /// Gets or sets currency code.
@@ -85,10 +49,40 @@ namespace Microsoft.Graph
         public Date CurrentFiscalYearStartDate { get; set; }
     
         /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets email.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        public string Email { get; set; }
+    
+        /// <summary>
+        /// Gets or sets fax number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faxNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string FaxNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets industry.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "industry", Required = Newtonsoft.Json.Required.Default)]
         public string Industry { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets phone number.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string PhoneNumber { get; set; }
     
         /// <summary>
         /// Gets or sets picture.
@@ -97,10 +91,16 @@ namespace Microsoft.Graph
         public Stream Picture { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
+        /// Gets or sets tax registration number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxRegistrationNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string TaxRegistrationNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets website.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "website", Required = Newtonsoft.Json.Required.Default)]
+        public string Website { get; set; }
     
     }
 }

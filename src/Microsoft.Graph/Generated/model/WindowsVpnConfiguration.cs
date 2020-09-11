@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public string ConnectionName { get; set; }
     
         /// <summary>
-        /// Gets or sets servers.
-        /// List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<VpnServer> Servers { get; set; }
-    
-        /// <summary>
         /// Gets or sets custom xml.
         /// Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customXml", Required = Newtonsoft.Json.Required.Default)]
         public byte[] CustomXml { get; set; }
+    
+        /// <summary>
+        /// Gets or sets servers.
+        /// List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<VpnServer> Servers { get; set; }
     
     }
 }

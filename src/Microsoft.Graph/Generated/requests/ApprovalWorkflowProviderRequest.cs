@@ -250,22 +250,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (approvalWorkflowProviderToInitialize.PolicyTemplates != null && approvalWorkflowProviderToInitialize.PolicyTemplates.CurrentPage != null)
-                {
-                    approvalWorkflowProviderToInitialize.PolicyTemplates.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("policyTemplates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision != null && approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.CurrentPage != null)
                 {
                     approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
@@ -277,6 +261,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (approvalWorkflowProviderToInitialize.PolicyTemplates != null && approvalWorkflowProviderToInitialize.PolicyTemplates.CurrentPage != null)
+                {
+                    approvalWorkflowProviderToInitialize.PolicyTemplates.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("policyTemplates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

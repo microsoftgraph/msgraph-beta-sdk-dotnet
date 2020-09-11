@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IIosVpnConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for IdentityCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IIosCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
-        IIosCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificate { get; }
-
-        /// <summary>
         /// Gets the request builder for DerivedCredentialSettings.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
         IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for IdentityCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IIosCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
+        IIosCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificate { get; }
     
     }
 }

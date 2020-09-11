@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets registered date time.
+        /// Gets or sets accepting jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? RegisteredDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptingJobs", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AcceptingJobs { get; set; }
     
         /// <summary>
         /// Gets or sets is shared.
@@ -43,16 +43,10 @@ namespace Microsoft.Graph
         public bool? IsShared { get; set; }
     
         /// <summary>
-        /// Gets or sets accepting jobs.
+        /// Gets or sets registered date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptingJobs", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AcceptingJobs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowed users.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUsers", Required = Newtonsoft.Json.Required.Default)]
-        public IPrinterAllowedUsersCollectionPage AllowedUsers { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RegisteredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets allowed groups.
@@ -61,16 +55,22 @@ namespace Microsoft.Graph
         public IPrinterAllowedGroupsCollectionPage AllowedGroups { get; set; }
     
         /// <summary>
-        /// Gets or sets share.
+        /// Gets or sets allowed users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "share", Required = Newtonsoft.Json.Required.Default)]
-        public PrinterShare Share { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUsers", Required = Newtonsoft.Json.Required.Default)]
+        public IPrinterAllowedUsersCollectionPage AllowedUsers { get; set; }
     
         /// <summary>
         /// Gets or sets connectors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectors", Required = Newtonsoft.Json.Required.Default)]
         public IPrinterConnectorsCollectionWithReferencesPage Connectors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets share.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "share", Required = Newtonsoft.Json.Required.Default)]
+        public PrinterShare Share { get; set; }
     
         /// <summary>
         /// Gets or sets task triggers.

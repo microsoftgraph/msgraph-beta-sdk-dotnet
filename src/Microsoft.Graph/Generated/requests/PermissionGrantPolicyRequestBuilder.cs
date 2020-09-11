@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Includes.
-        /// </summary>
-        /// <returns>The <see cref="IPermissionGrantPolicyIncludesCollectionRequestBuilder"/>.</returns>
-        public IPermissionGrantPolicyIncludesCollectionRequestBuilder Includes
-        {
-            get
-            {
-                return new PermissionGrantPolicyIncludesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("includes"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Excludes.
         /// </summary>
         /// <returns>The <see cref="IPermissionGrantPolicyExcludesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PermissionGrantPolicyExcludesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("excludes"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Includes.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionGrantPolicyIncludesCollectionRequestBuilder"/>.</returns>
+        public IPermissionGrantPolicyIncludesCollectionRequestBuilder Includes
+        {
+            get
+            {
+                return new PermissionGrantPolicyIncludesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("includes"), this.Client);
             }
         }
     

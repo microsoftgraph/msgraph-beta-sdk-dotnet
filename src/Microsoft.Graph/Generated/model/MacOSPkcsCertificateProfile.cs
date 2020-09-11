@@ -31,6 +31,27 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allow all apps access.
+        /// AllowAllAppsAccess setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAllAppsAccess", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAllAppsAccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate store.
+        /// Target store certificate
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateStore? CertificateStore { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate template name.
+        /// PKCS certificate template name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateTemplateName", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateTemplateName { get; set; }
+    
+        /// <summary>
         /// Gets or sets certification authority.
         /// PKCS certification authority FQDN.
         /// </summary>
@@ -45,11 +66,11 @@ namespace Microsoft.Graph
         public string CertificationAuthorityName { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate template name.
-        /// PKCS certificate template name.
+        /// Gets or sets custom subject alternative names.
+        /// Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateTemplateName", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateTemplateName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSubjectAlternativeNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
     
         /// <summary>
         /// Gets or sets subject alternative name format string.
@@ -64,27 +85,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
         public string SubjectNameFormatString { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate store.
-        /// Target store certificate
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
-        public CertificateStore? CertificateStore { get; set; }
-    
-        /// <summary>
-        /// Gets or sets custom subject alternative names.
-        /// Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSubjectAlternativeNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allow all apps access.
-        /// AllowAllAppsAccess setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAllAppsAccess", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowAllAppsAccess { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.

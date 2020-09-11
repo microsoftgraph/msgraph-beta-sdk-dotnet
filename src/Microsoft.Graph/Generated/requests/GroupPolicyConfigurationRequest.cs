@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (groupPolicyConfigurationToInitialize != null && groupPolicyConfigurationToInitialize.AdditionalData != null)
             {
 
-                if (groupPolicyConfigurationToInitialize.DefinitionValues != null && groupPolicyConfigurationToInitialize.DefinitionValues.CurrentPage != null)
-                {
-                    groupPolicyConfigurationToInitialize.DefinitionValues.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("definitionValues@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (groupPolicyConfigurationToInitialize.Assignments != null && groupPolicyConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
                     groupPolicyConfigurationToInitialize.Assignments.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         groupPolicyConfigurationToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (groupPolicyConfigurationToInitialize.DefinitionValues != null && groupPolicyConfigurationToInitialize.DefinitionValues.CurrentPage != null)
+                {
+                    groupPolicyConfigurationToInitialize.DefinitionValues.AdditionalData = groupPolicyConfigurationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupPolicyConfigurationToInitialize.AdditionalData.TryGetValue("definitionValues@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupPolicyConfigurationToInitialize.DefinitionValues.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

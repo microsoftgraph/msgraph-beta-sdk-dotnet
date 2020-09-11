@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets setting scope.
-        /// Setting Scope of the unsupported extension.
+        /// Gets or sets extension type.
+        /// ExtensionType of the unsupported extension.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingScope", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicySettingScope? SettingScope { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionType", Required = Newtonsoft.Json.Required.Default)]
+        public string ExtensionType { get; set; }
     
         /// <summary>
         /// Gets or sets namespace url.
@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public string NamespaceUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets extension type.
-        /// ExtensionType of the unsupported extension.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionType", Required = Newtonsoft.Json.Required.Default)]
-        public string ExtensionType { get; set; }
-    
-        /// <summary>
         /// Gets or sets node name.
         /// Node name of the unsupported extension.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nodeName", Required = Newtonsoft.Json.Required.Default)]
         public string NodeName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting scope.
+        /// Setting Scope of the unsupported extension.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingScope", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicySettingScope? SettingScope { get; set; }
     
     }
 }

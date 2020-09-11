@@ -31,40 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets permission classification.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionClassification", Required = Newtonsoft.Json.Required.Default)]
-        public string PermissionClassification { get; set; }
-    
-        /// <summary>
-        /// Gets or sets permission type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionType", Required = Newtonsoft.Json.Required.Default)]
-        public PermissionType? PermissionType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource application.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceApplication", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceApplication { get; set; }
-    
-        /// <summary>
-        /// Gets or sets permissions.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Permissions { get; set; }
-    
-        /// <summary>
         /// Gets or sets client application ids.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientApplicationIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ClientApplicationIds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets client application tenant ids.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientApplicationTenantIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> ClientApplicationTenantIds { get; set; }
     
         /// <summary>
         /// Gets or sets client application publisher ids.
@@ -77,6 +47,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientApplicationsFromVerifiedPublisherOnly", Required = Newtonsoft.Json.Required.Default)]
         public bool? ClientApplicationsFromVerifiedPublisherOnly { get; set; }
+    
+        /// <summary>
+        /// Gets or sets client application tenant ids.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientApplicationTenantIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ClientApplicationTenantIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permission classification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionClassification", Required = Newtonsoft.Json.Required.Default)]
+        public string PermissionClassification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permissions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Permissions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permission type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionType", Required = Newtonsoft.Json.Required.Default)]
+        public PermissionType? PermissionType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource application.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceApplication", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceApplication { get; set; }
     
     }
 }

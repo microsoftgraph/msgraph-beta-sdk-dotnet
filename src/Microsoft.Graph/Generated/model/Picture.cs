@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets width.
+        /// Gets or sets content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "width", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Width { get; set; }
-    
-        /// <summary>
-        /// Gets or sets height.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "height", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Height { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets content type.
@@ -49,10 +43,16 @@ namespace Microsoft.Graph
         public string ContentType { get; set; }
     
         /// <summary>
-        /// Gets or sets content.
+        /// Gets or sets height.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public Stream Content { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "height", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Height { get; set; }
+    
+        /// <summary>
+        /// Gets or sets width.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "width", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Width { get; set; }
     
     }
 }

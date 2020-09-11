@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets contentType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
-        public BodyType? ContentType { get; set; }
-    
-        /// <summary>
         /// Gets or sets content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
         public string Content { get; set; }
+    
+        /// <summary>
+        /// Gets or sets contentType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        public BodyType? ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

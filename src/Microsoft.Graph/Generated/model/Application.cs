@@ -65,20 +65,6 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets is fallback public client.
-        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFallbackPublicClient", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsFallbackPublicClient { get; set; }
-    
-        /// <summary>
-        /// Gets or sets identifier uris.
-        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierUris", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> IdentifierUris { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// The display name for the application.
         /// </summary>
@@ -93,6 +79,13 @@ namespace Microsoft.Graph
         public string GroupMembershipClaims { get; set; }
     
         /// <summary>
+        /// Gets or sets identifier uris.
+        /// The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierUris", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IdentifierUris { get; set; }
+    
+        /// <summary>
         /// Gets or sets info.
         /// Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
         /// </summary>
@@ -104,6 +97,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeviceOnlyAuthSupported", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDeviceOnlyAuthSupported { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is fallback public client.
+        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFallbackPublicClient", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFallbackPublicClient { get; set; }
     
         /// <summary>
         /// Gets or sets key credentials.
@@ -175,6 +175,12 @@ namespace Microsoft.Graph
         public string SignInAudience { get; set; }
     
         /// <summary>
+        /// Gets or sets spa.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spa", Required = Newtonsoft.Json.Required.Default)]
+        public SpaApplication Spa { get; set; }
+    
+        /// <summary>
         /// Gets or sets tags.
         /// Custom strings that can be used to categorize and identify the application. Not nullable.
         /// </summary>
@@ -208,13 +214,6 @@ namespace Microsoft.Graph
         public OnPremisesPublishing OnPremisesPublishing { get; set; }
     
         /// <summary>
-        /// Gets or sets extension properties.
-        /// Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
-    
-        /// <summary>
         /// Gets or sets created on behalf of.
         /// Read-only.
         /// </summary>
@@ -222,17 +221,24 @@ namespace Microsoft.Graph
         public DirectoryObject CreatedOnBehalfOf { get; set; }
     
         /// <summary>
-        /// Gets or sets owners.
-        /// Directory objects that are owners of the application. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Read-only. Nullable.
+        /// Gets or sets extension properties.
+        /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
-        public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensionProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets owners.
+        /// Directory objects that are owners of the application. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
+        public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
         /// Gets or sets token issuance policies.

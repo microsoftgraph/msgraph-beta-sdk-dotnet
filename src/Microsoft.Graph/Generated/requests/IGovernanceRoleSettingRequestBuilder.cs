@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IGovernanceRoleSettingRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RoleDefinition.
-        /// </summary>
-        /// <returns>The <see cref="IGovernanceRoleDefinitionRequestBuilder"/>.</returns>
-        IGovernanceRoleDefinitionRequestBuilder RoleDefinition { get; }
-
-        /// <summary>
         /// Gets the request builder for Resource.
         /// </summary>
         /// <returns>The <see cref="IGovernanceResourceRequestBuilder"/>.</returns>
         IGovernanceResourceRequestBuilder Resource { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IGovernanceRoleDefinitionRequestBuilder"/>.</returns>
+        IGovernanceRoleDefinitionRequestBuilder RoleDefinition { get; }
     
     }
 }

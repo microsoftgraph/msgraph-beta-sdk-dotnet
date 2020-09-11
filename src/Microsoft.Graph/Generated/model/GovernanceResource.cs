@@ -31,28 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets external id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
-        public string ExternalId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
+        /// Gets or sets external id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public string Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets registered date time.
@@ -67,16 +55,28 @@ namespace Microsoft.Graph
         public string RegisteredRoot { get; set; }
     
         /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
+    
+        /// <summary>
         /// Gets or sets parent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
         public GovernanceResource Parent { get; set; }
     
         /// <summary>
-        /// Gets or sets role definitions.
+        /// Gets or sets role assignment requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
-        public IGovernanceResourceRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IGovernanceResourceRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
@@ -85,10 +85,10 @@ namespace Microsoft.Graph
         public IGovernanceResourceRoleAssignmentsCollectionPage RoleAssignments { get; set; }
     
         /// <summary>
-        /// Gets or sets role assignment requests.
+        /// Gets or sets role definitions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
-        public IGovernanceResourceRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        public IGovernanceResourceRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
         /// <summary>
         /// Gets or sets role settings.

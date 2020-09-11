@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IPrinterShareRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Printer.
+        /// Gets the request builder for AllowedGroups.
         /// </summary>
-        /// <returns>The <see cref="IPrinterWithReferenceRequestBuilder"/>.</returns>
-        IPrinterWithReferenceRequestBuilder Printer { get; }
+        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
+        IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups { get; }
 
         /// <summary>
         /// Gets the request builder for AllowedUsers.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         IPrinterShareAllowedUsersCollectionRequestBuilder AllowedUsers { get; }
 
         /// <summary>
-        /// Gets the request builder for AllowedGroups.
+        /// Gets the request builder for Printer.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
-        IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups { get; }
+        /// <returns>The <see cref="IPrinterWithReferenceRequestBuilder"/>.</returns>
+        IPrinterWithReferenceRequestBuilder Printer { get; }
     
     }
 }

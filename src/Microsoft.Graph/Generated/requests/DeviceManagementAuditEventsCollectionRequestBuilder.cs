@@ -61,17 +61,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AuditEventGetAuditCategories.
-        /// </summary>
-        /// <returns>The <see cref="IAuditEventGetAuditCategoriesRequestBuilder"/>.</returns>
-        public IAuditEventGetAuditCategoriesRequestBuilder GetAuditCategories()
-        {
-            return new AuditEventGetAuditCategoriesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAuditCategories"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for AuditEventGetAuditActivityTypes.
         /// </summary>
         /// <returns>The <see cref="IAuditEventGetAuditActivityTypesRequestBuilder"/>.</returns>
@@ -82,6 +71,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getAuditActivityTypes"),
                 this.Client,
                 category);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AuditEventGetAuditCategories.
+        /// </summary>
+        /// <returns>The <see cref="IAuditEventGetAuditCategoriesRequestBuilder"/>.</returns>
+        public IAuditEventGetAuditCategoriesRequestBuilder GetAuditCategories()
+        {
+            return new AuditEventGetAuditCategoriesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAuditCategories"),
+                this.Client);
         }
     }
 }

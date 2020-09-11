@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets ruleId.
+        /// Gets or sets actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleId", Required = Newtonsoft.Json.Required.Default)]
-        public string RuleId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DlpActionInfo> Actions { get; set; }
     
         /// <summary>
-        /// Gets or sets ruleName.
+        /// Gets or sets isMostRestrictive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleName", Required = Newtonsoft.Json.Required.Default)]
-        public string RuleName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMostRestrictive", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsMostRestrictive { get; set; }
     
         /// <summary>
         /// Gets or sets policyId.
@@ -55,28 +55,28 @@ namespace Microsoft.Graph
         public string PolicyName { get; set; }
     
         /// <summary>
-        /// Gets or sets isMostRestrictive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMostRestrictive", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsMostRestrictive { get; set; }
-    
-        /// <summary>
         /// Gets or sets priority.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Priority { get; set; }
     
         /// <summary>
-        /// Gets or sets actions.
+        /// Gets or sets ruleId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DlpActionInfo> Actions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleId", Required = Newtonsoft.Json.Required.Default)]
+        public string RuleId { get; set; }
     
         /// <summary>
         /// Gets or sets ruleMode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleMode", Required = Newtonsoft.Json.Required.Default)]
         public RuleMode? RuleMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ruleName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleName", Required = Newtonsoft.Json.Required.Default)]
+        public string RuleName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

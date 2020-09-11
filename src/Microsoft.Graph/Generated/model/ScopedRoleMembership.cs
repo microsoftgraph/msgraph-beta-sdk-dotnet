@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets role id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
-        public string RoleId { get; set; }
-    
-        /// <summary>
         /// Gets or sets administrative unit id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnitId", Required = Newtonsoft.Json.Required.Default)]
         public string AdministrativeUnitId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
+        public string RoleId { get; set; }
     
         /// <summary>
         /// Gets or sets role member info.

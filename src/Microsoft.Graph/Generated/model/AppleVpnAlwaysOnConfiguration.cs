@@ -31,6 +31,55 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets airPrintExceptionAction.
+        /// Determine whether AirPrint service will be exempt from the always-on VPN connection
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "airPrintExceptionAction", Required = Newtonsoft.Json.Required.Default)]
+        public VpnServiceExceptionAction? AirPrintExceptionAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowAllCaptiveNetworkPlugins.
+        /// Specifies whether traffic from all captive network plugins should be allowed outside the vpn
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAllCaptiveNetworkPlugins", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowAllCaptiveNetworkPlugins { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowCaptiveWebSheet.
+        /// Determines whether traffic from the Websheet app is allowed outside of the VPN
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCaptiveWebSheet", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowCaptiveWebSheet { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allowedCaptiveNetworkPlugins.
+        /// Determines whether all, some, or no non-native captive networking apps are allowed
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedCaptiveNetworkPlugins", Required = Newtonsoft.Json.Required.Default)]
+        public SpecifiedCaptiveNetworkPlugins AllowedCaptiveNetworkPlugins { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cellularExceptionAction.
+        /// Determine whether Cellular service will be exempt from the always-on VPN connection
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularExceptionAction", Required = Newtonsoft.Json.Required.Default)]
+        public VpnServiceExceptionAction? CellularExceptionAction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets natKeepAliveIntervalInSeconds.
+        /// Specifies how often in seconds to send a network address translation keepalive package through the VPN
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "natKeepAliveIntervalInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? NatKeepAliveIntervalInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets natKeepAliveOffloadEnable.
+        /// Enable hardware offloading of NAT keepalive signals when the device is asleep
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "natKeepAliveOffloadEnable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? NatKeepAliveOffloadEnable { get; set; }
+    
+        /// <summary>
         /// Gets or sets tunnelConfiguration.
         /// Determines what connections the specific tunnel configuration applies to
         /// </summary>
@@ -50,55 +99,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "voicemailExceptionAction", Required = Newtonsoft.Json.Required.Default)]
         public VpnServiceExceptionAction? VoicemailExceptionAction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets airPrintExceptionAction.
-        /// Determine whether AirPrint service will be exempt from the always-on VPN connection
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "airPrintExceptionAction", Required = Newtonsoft.Json.Required.Default)]
-        public VpnServiceExceptionAction? AirPrintExceptionAction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cellularExceptionAction.
-        /// Determine whether Cellular service will be exempt from the always-on VPN connection
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularExceptionAction", Required = Newtonsoft.Json.Required.Default)]
-        public VpnServiceExceptionAction? CellularExceptionAction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowAllCaptiveNetworkPlugins.
-        /// Specifies whether traffic from all captive network plugins should be allowed outside the vpn
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAllCaptiveNetworkPlugins", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowAllCaptiveNetworkPlugins { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowedCaptiveNetworkPlugins.
-        /// Determines whether all, some, or no non-native captive networking apps are allowed
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedCaptiveNetworkPlugins", Required = Newtonsoft.Json.Required.Default)]
-        public SpecifiedCaptiveNetworkPlugins AllowedCaptiveNetworkPlugins { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowCaptiveWebSheet.
-        /// Determines whether traffic from the Websheet app is allowed outside of the VPN
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCaptiveWebSheet", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowCaptiveWebSheet { get; set; }
-    
-        /// <summary>
-        /// Gets or sets natKeepAliveIntervalInSeconds.
-        /// Specifies how often in seconds to send a network address translation keepalive package through the VPN
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "natKeepAliveIntervalInSeconds", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NatKeepAliveIntervalInSeconds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets natKeepAliveOffloadEnable.
-        /// Enable hardware offloading of NAT keepalive signals when the device is asleep
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "natKeepAliveOffloadEnable", Required = Newtonsoft.Json.Required.Default)]
-        public bool? NatKeepAliveOffloadEnable { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

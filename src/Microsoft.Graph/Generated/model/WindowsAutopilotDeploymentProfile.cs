@@ -31,27 +31,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets display name.
-        /// Name of the profile
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// Description of the profile
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets language.
-        /// Language configured on the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
-        public string Language { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// Profile creation time
         /// </summary>
@@ -59,32 +38,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// Profile last modified time
+        /// Gets or sets description.
+        /// Description of the profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets out of box experience settings.
-        /// Out of box experience setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outOfBoxExperienceSettings", Required = Newtonsoft.Json.Required.Default)]
-        public OutOfBoxExperienceSettings OutOfBoxExperienceSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enrollment status screen settings.
-        /// Enrollment status screen setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentStatusScreenSettings", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsEnrollmentStatusScreenSettings EnrollmentStatusScreenSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets extract hardware hash.
-        /// HardwareHash Extraction for the profile
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extractHardwareHash", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ExtractHardwareHash { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets device name template.
@@ -101,11 +59,53 @@ namespace Microsoft.Graph
         public WindowsAutopilotDeviceType? DeviceType { get; set; }
     
         /// <summary>
+        /// Gets or sets display name.
+        /// Name of the profile
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets enable white glove.
         /// Enable Autopilot White Glove for the profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableWhiteGlove", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnableWhiteGlove { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollment status screen settings.
+        /// Enrollment status screen setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentStatusScreenSettings", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsEnrollmentStatusScreenSettings EnrollmentStatusScreenSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets extract hardware hash.
+        /// HardwareHash Extraction for the profile
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extractHardwareHash", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExtractHardwareHash { get; set; }
+    
+        /// <summary>
+        /// Gets or sets language.
+        /// Language configured on the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "language", Required = Newtonsoft.Json.Required.Default)]
+        public string Language { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// Profile last modified time
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets out of box experience settings.
+        /// Out of box experience setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outOfBoxExperienceSettings", Required = Newtonsoft.Json.Required.Default)]
+        public OutOfBoxExperienceSettings OutOfBoxExperienceSettings { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.

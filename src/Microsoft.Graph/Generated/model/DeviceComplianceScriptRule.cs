@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets settingName.
-        /// Setting name specified in the rule.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets operator.
-        /// Operator specified in the rule.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
-        public Operator? Operator { get; set; }
-    
-        /// <summary>
         /// Gets or sets dataType.
         /// Data type specified in the rule.
         /// </summary>
@@ -57,6 +43,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operand", Required = Newtonsoft.Json.Required.Default)]
         public string Operand { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operator.
+        /// Operator specified in the rule.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        public Operator? Operator { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settingName.
+        /// Setting name specified in the rule.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

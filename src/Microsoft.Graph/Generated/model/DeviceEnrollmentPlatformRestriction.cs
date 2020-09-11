@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets platformBlocked.
-        /// Block the platform from enrolling
+        /// Gets or sets blockedManufacturers.
+        /// Collection of blocked Manufacturers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PlatformBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets personalDeviceEnrollmentBlocked.
-        /// Block personally owned devices from enrolling
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalDeviceEnrollmentBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PersonalDeviceEnrollmentBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets osMinimumVersion.
-        /// Min OS version supported
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string OsMinimumVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockedManufacturers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> BlockedManufacturers { get; set; }
     
         /// <summary>
         /// Gets or sets osMaximumVersion.
@@ -59,11 +45,25 @@ namespace Microsoft.Graph
         public string OsMaximumVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets blockedManufacturers.
-        /// Collection of blocked Manufacturers.
+        /// Gets or sets osMinimumVersion.
+        /// Min OS version supported
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockedManufacturers", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> BlockedManufacturers { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string OsMinimumVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets personalDeviceEnrollmentBlocked.
+        /// Block personally owned devices from enrolling
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalDeviceEnrollmentBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PersonalDeviceEnrollmentBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets platformBlocked.
+        /// Block the platform from enrolling
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PlatformBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (deviceConfigurationToInitialize != null && deviceConfigurationToInitialize.AdditionalData != null)
             {
 
-                if (deviceConfigurationToInitialize.GroupAssignments != null && deviceConfigurationToInitialize.GroupAssignments.CurrentPage != null)
-                {
-                    deviceConfigurationToInitialize.GroupAssignments.AdditionalData = deviceConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceConfigurationToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceConfigurationToInitialize.Assignments != null && deviceConfigurationToInitialize.Assignments.CurrentPage != null)
                 {
                     deviceConfigurationToInitialize.Assignments.AdditionalData = deviceConfigurationToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceConfigurationToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceConfigurationToInitialize.DeviceSettingStateSummaries != null && deviceConfigurationToInitialize.DeviceSettingStateSummaries.CurrentPage != null)
+                {
+                    deviceConfigurationToInitialize.DeviceSettingStateSummaries.AdditionalData = deviceConfigurationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceConfigurationToInitialize.AdditionalData.TryGetValue("deviceSettingStateSummaries@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceConfigurationToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -282,6 +282,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceConfigurationToInitialize.GroupAssignments != null && deviceConfigurationToInitialize.GroupAssignments.CurrentPage != null)
+                {
+                    deviceConfigurationToInitialize.GroupAssignments.AdditionalData = deviceConfigurationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceConfigurationToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceConfigurationToInitialize.GroupAssignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceConfigurationToInitialize.UserStatuses != null && deviceConfigurationToInitialize.UserStatuses.CurrentPage != null)
                 {
                     deviceConfigurationToInitialize.UserStatuses.AdditionalData = deviceConfigurationToInitialize.AdditionalData;
@@ -293,22 +309,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceConfigurationToInitialize.UserStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceConfigurationToInitialize.DeviceSettingStateSummaries != null && deviceConfigurationToInitialize.DeviceSettingStateSummaries.CurrentPage != null)
-                {
-                    deviceConfigurationToInitialize.DeviceSettingStateSummaries.AdditionalData = deviceConfigurationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceConfigurationToInitialize.AdditionalData.TryGetValue("deviceSettingStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceConfigurationToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

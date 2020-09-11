@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RunSummary.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceHealthScriptRunSummaryRequestBuilder"/>.</returns>
-        public IDeviceHealthScriptRunSummaryRequestBuilder RunSummary
-        {
-            get
-            {
-                return new DeviceHealthScriptRunSummaryRequestBuilder(this.AppendSegmentToRequestUrl("runSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceRunStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceHealthScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceHealthScriptDeviceRunStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceRunStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptRunSummaryRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptRunSummaryRequestBuilder RunSummary
+        {
+            get
+            {
+                return new DeviceHealthScriptRunSummaryRequestBuilder(this.AppendSegmentToRequestUrl("runSummary"), this.Client);
             }
         }
     
@@ -100,6 +100,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetGlobalScriptHighestAvailableVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder"/>.</returns>
+        public IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion()
+        {
+            return new DeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getGlobalScriptHighestAvailableVersion"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceHealthScriptUpdateGlobalScript.
         /// </summary>
         /// <returns>The <see cref="IDeviceHealthScriptUpdateGlobalScriptRequestBuilder"/>.</returns>
@@ -110,17 +121,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.updateGlobalScript"),
                 this.Client,
                 version);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceHealthScriptGetGlobalScriptHighestAvailableVersion.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder"/>.</returns>
-        public IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion()
-        {
-            return new DeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getGlobalScriptHighestAvailableVersion"),
-                this.Client);
         }
 
         /// <summary>

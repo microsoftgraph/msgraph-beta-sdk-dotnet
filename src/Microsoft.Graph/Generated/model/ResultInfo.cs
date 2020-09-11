@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public Int32? Code { get; set; }
     
         /// <summary>
-        /// Gets or sets subcode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subcode", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Subcode { get; set; }
-    
-        /// <summary>
         /// Gets or sets message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subcode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subcode", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Subcode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

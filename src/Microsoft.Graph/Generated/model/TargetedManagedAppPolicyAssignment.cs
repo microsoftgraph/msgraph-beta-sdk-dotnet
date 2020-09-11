@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets target.
-        /// Identifier for deployment of a group or app
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
-    
-        /// <summary>
         /// Gets or sets source.
         /// Type of resource used for deployment to a group, direct or parcel/policySet
         /// </summary>
@@ -50,6 +43,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
         public string SourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target.
+        /// Identifier for deployment of a group or app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }
 }

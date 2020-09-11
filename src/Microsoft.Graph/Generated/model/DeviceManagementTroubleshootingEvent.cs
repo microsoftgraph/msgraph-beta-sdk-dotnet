@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets event date time.
-        /// Time when the event occurred .
+        /// Gets or sets additional information.
+        /// A set of string key and string value pairs which provides additional information on the Troubleshooting event
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EventDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> AdditionalInformation { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string CorrelationId { get; set; }
     
         /// <summary>
-        /// Gets or sets troubleshooting error details.
-        /// Object containing detailed information about the error and its remediation.
+        /// Gets or sets event date time.
+        /// Time when the event occurred .
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingErrorDetails", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets event name.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public string EventName { get; set; }
     
         /// <summary>
-        /// Gets or sets additional information.
-        /// A set of string key and string value pairs which provides additional information on the Troubleshooting event
+        /// Gets or sets troubleshooting error details.
+        /// Object containing detailed information about the error and its remediation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<KeyValuePair> AdditionalInformation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingErrorDetails", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
     
     }
 }

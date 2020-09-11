@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets app id.
+        /// Gets or sets aggregated event date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
-        public string AppId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregatedEventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AggregatedEventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public string AppDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
+        /// Gets or sets app id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public SignInStatus Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets sign in count.
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         public Int64? SignInCount { get; set; }
     
         /// <summary>
-        /// Gets or sets aggregated event date time.
+        /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregatedEventDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AggregatedEventDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public SignInStatus Status { get; set; }
     
     }
 }

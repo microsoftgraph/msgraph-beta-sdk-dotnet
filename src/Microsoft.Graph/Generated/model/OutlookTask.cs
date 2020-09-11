@@ -121,10 +121,10 @@ namespace Microsoft.Graph
         public string Subject { get; set; }
     
         /// <summary>
-        /// Gets or sets single value extended properties.
+        /// Gets or sets attachments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
-        public IOutlookTaskSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
+        public IOutlookTaskAttachmentsCollectionPage Attachments { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
@@ -133,10 +133,10 @@ namespace Microsoft.Graph
         public IOutlookTaskMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
         /// <summary>
-        /// Gets or sets attachments.
+        /// Gets or sets single value extended properties.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
-        public IOutlookTaskAttachmentsCollectionPage Attachments { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IOutlookTaskSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
     }
 }

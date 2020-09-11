@@ -37,18 +37,18 @@ namespace Microsoft.Graph
         public string ProductCode { get; set; }
     
         /// <summary>
-        /// Gets or sets productVersionOperator.
-        /// The operator to detect product version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersionOperator", Required = Newtonsoft.Json.Required.Default)]
-        public Win32LobAppDetectionOperator? ProductVersionOperator { get; set; }
-    
-        /// <summary>
         /// Gets or sets productVersion.
         /// The product version of Win32 Line of Business (LoB) app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersion", Required = Newtonsoft.Json.Required.Default)]
         public string ProductVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets productVersionOperator.
+        /// The operator to detect product version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersionOperator", Required = Newtonsoft.Json.Required.Default)]
+        public Win32LobAppDetectionOperator? ProductVersionOperator { get; set; }
     
     }
 }

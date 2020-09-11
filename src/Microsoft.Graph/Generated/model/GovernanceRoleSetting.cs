@@ -31,36 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets resource id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets role definition id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
-        public string RoleDefinitionId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is default.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsDefault { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last updated date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastUpdatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last updated by.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedBy", Required = Newtonsoft.Json.Required.Default)]
-        public string LastUpdatedBy { get; set; }
-    
-        /// <summary>
         /// Gets or sets admin eligible settings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminEligibleSettings", Required = Newtonsoft.Json.Required.Default)]
@@ -71,6 +41,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminMemberSettings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<GovernanceRuleSetting> AdminMemberSettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is default.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDefault { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last updated by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedBy", Required = Newtonsoft.Json.Required.Default)]
+        public string LastUpdatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last updated date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role definition id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets user eligible settings.
@@ -85,16 +85,16 @@ namespace Microsoft.Graph
         public IEnumerable<GovernanceRuleSetting> UserMemberSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets role definition.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
-        public GovernanceRoleDefinition RoleDefinition { get; set; }
-    
-        /// <summary>
         /// Gets or sets resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public GovernanceResource Resource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role definition.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        public GovernanceRoleDefinition RoleDefinition { get; set; }
     
     }
 }

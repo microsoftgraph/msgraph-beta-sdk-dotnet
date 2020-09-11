@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string Status { get; set; }
     
         /// <summary>
-        /// Gets or sets subStatus.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subStatus", Required = Newtonsoft.Json.Required.Default)]
-        public string SubStatus { get; set; }
-    
-        /// <summary>
         /// Gets or sets statusDetails.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statusDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValue> StatusDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subStatus.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subStatus", Required = Newtonsoft.Json.Required.Default)]
+        public string SubStatus { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

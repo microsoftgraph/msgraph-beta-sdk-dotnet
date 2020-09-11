@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Categories.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories
-        {
-            get
-            {
-                return new MobileAppCategoriesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IMobileAppAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -75,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for InstallSummary.
+        /// Gets the request builder for Categories.
         /// </summary>
-        /// <returns>The <see cref="IMobileAppInstallSummaryRequestBuilder"/>.</returns>
-        public IMobileAppInstallSummaryRequestBuilder InstallSummary
+        /// <returns>The <see cref="IMobileAppCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories
         {
             get
             {
-                return new MobileAppInstallSummaryRequestBuilder(this.AppendSegmentToRequestUrl("installSummary"), this.Client);
+                return new MobileAppCategoriesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
             }
         }
 
@@ -99,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserStatuses.
+        /// Gets the request builder for InstallSummary.
         /// </summary>
-        /// <returns>The <see cref="IMobileAppUserStatusesCollectionRequestBuilder"/>.</returns>
-        public IMobileAppUserStatusesCollectionRequestBuilder UserStatuses
+        /// <returns>The <see cref="IMobileAppInstallSummaryRequestBuilder"/>.</returns>
+        public IMobileAppInstallSummaryRequestBuilder InstallSummary
         {
             get
             {
-                return new MobileAppUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
+                return new MobileAppInstallSummaryRequestBuilder(this.AppendSegmentToRequestUrl("installSummary"), this.Client);
             }
         }
 
@@ -119,6 +107,18 @@ namespace Microsoft.Graph
             get
             {
                 return new MobileAppRelationshipsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("relationships"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IMobileAppUserStatusesCollectionRequestBuilder"/>.</returns>
+        public IMobileAppUserStatusesCollectionRequestBuilder UserStatuses
+        {
+            get
+            {
+                return new MobileAppUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
             }
         }
     

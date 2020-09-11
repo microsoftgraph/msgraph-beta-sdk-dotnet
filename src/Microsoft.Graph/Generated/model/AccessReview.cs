@@ -31,28 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets business flow template id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets start date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets end date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? EndDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public string Status { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessFlowTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        public string BusinessFlowTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
@@ -61,28 +43,22 @@ namespace Microsoft.Graph
         public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
-        /// Gets or sets business flow template id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessFlowTemplateId", Required = Newtonsoft.Json.Required.Default)]
-        public string BusinessFlowTemplateId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets reviewer type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewerType", Required = Newtonsoft.Json.Required.Default)]
-        public string ReviewerType { get; set; }
-    
-        /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets settings.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
-        public AccessReviewSettings Settings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets end date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed entity.
@@ -91,10 +67,28 @@ namespace Microsoft.Graph
         public Identity ReviewedEntity { get; set; }
     
         /// <summary>
-        /// Gets or sets reviewers.
+        /// Gets or sets reviewer type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
-        public IAccessReviewReviewersCollectionPage Reviewers { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewerType", Required = Newtonsoft.Json.Required.Default)]
+        public string ReviewerType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public AccessReviewSettings Settings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets start date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets decisions.
@@ -103,16 +97,22 @@ namespace Microsoft.Graph
         public IAccessReviewDecisionsCollectionPage Decisions { get; set; }
     
         /// <summary>
+        /// Gets or sets instances.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessReviewInstancesCollectionPage Instances { get; set; }
+    
+        /// <summary>
         /// Gets or sets my decisions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "myDecisions", Required = Newtonsoft.Json.Required.Default)]
         public IAccessReviewMyDecisionsCollectionPage MyDecisions { get; set; }
     
         /// <summary>
-        /// Gets or sets instances.
+        /// Gets or sets reviewers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
-        public IAccessReviewInstancesCollectionPage Instances { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
+        public IAccessReviewReviewersCollectionPage Reviewers { get; set; }
     
     }
 }

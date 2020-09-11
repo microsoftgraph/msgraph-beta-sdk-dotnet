@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IExternalConnectionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Schema.
+        /// Gets the request builder for Groups.
         /// </summary>
-        /// <returns>The <see cref="ISchemaRequestBuilder"/>.</returns>
-        ISchemaRequestBuilder Schema { get; }
+        /// <returns>The <see cref="IExternalConnectionGroupsCollectionRequestBuilder"/>.</returns>
+        IExternalConnectionGroupsCollectionRequestBuilder Groups { get; }
 
         /// <summary>
         /// Gets the request builder for Items.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IExternalConnectionOperationsCollectionRequestBuilder Operations { get; }
 
         /// <summary>
-        /// Gets the request builder for Groups.
+        /// Gets the request builder for Schema.
         /// </summary>
-        /// <returns>The <see cref="IExternalConnectionGroupsCollectionRequestBuilder"/>.</returns>
-        IExternalConnectionGroupsCollectionRequestBuilder Groups { get; }
+        /// <returns>The <see cref="ISchemaRequestBuilder"/>.</returns>
+        ISchemaRequestBuilder Schema { get; }
     
     }
 }

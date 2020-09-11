@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets trackId.
-        /// Unique track identifier.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trackId", Required = Newtonsoft.Json.Required.Default)]
-        public string TrackId { get; set; }
-    
-        /// <summary>
         /// Gets or sets trackAlias.
         /// Friendly name for track.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trackAlias", Required = Newtonsoft.Json.Required.Default)]
         public string TrackAlias { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trackId.
+        /// Unique track identifier.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trackId", Required = Newtonsoft.Json.Required.Default)]
+        public string TrackId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IApprovalRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for PendingSteps.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalPendingStepsCollectionRequestBuilder"/>.</returns>
-        IApprovalPendingStepsCollectionRequestBuilder PendingSteps { get; }
-
-        /// <summary>
         /// Gets the request builder for CompletedSteps.
         /// </summary>
         /// <returns>The <see cref="IApprovalCompletedStepsCollectionRequestBuilder"/>.</returns>
         IApprovalCompletedStepsCollectionRequestBuilder CompletedSteps { get; }
+
+        /// <summary>
+        /// Gets the request builder for PendingSteps.
+        /// </summary>
+        /// <returns>The <see cref="IApprovalPendingStepsCollectionRequestBuilder"/>.</returns>
+        IApprovalPendingStepsCollectionRequestBuilder PendingSteps { get; }
     
     }
 }

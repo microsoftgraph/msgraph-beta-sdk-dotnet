@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets model regression.
-        /// The metric values for the user experience analytics model regression.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modelRegression", Required = Newtonsoft.Json.Required.Default)]
-        public IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionPage ModelRegression { get; set; }
-    
-        /// <summary>
         /// Gets or sets manufacturer regression.
         /// The metric values for the user experience analytics Manufacturer regression.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturerRegression", Required = Newtonsoft.Json.Required.Default)]
         public IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionPage ManufacturerRegression { get; set; }
+    
+        /// <summary>
+        /// Gets or sets model regression.
+        /// The metric values for the user experience analytics model regression.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modelRegression", Required = Newtonsoft.Json.Required.Default)]
+        public IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionPage ModelRegression { get; set; }
     
         /// <summary>
         /// Gets or sets operating system regression.

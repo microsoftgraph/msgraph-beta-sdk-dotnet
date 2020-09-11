@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report name.
-        /// Name of the report
+        /// Gets or sets expiration date time.
+        /// Time that the exported report expires
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportName", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets filter.
@@ -45,18 +45,32 @@ namespace Microsoft.Graph
         public string Filter { get; set; }
     
         /// <summary>
-        /// Gets or sets select.
-        /// Columns selected from the report
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "select", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Select { get; set; }
-    
-        /// <summary>
         /// Gets or sets format.
         /// Format of the exported report
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementReportFileFormat? Format { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report name.
+        /// Name of the report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportName", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets request date time.
+        /// Time that the exported report was requested
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? RequestDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets select.
+        /// Columns selected from the report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "select", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Select { get; set; }
     
         /// <summary>
         /// Gets or sets snapshot id.
@@ -78,20 +92,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
         public string Url { get; set; }
-    
-        /// <summary>
-        /// Gets or sets request date time.
-        /// Time that the exported report was requested
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? RequestDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expiration date time.
-        /// Time that the exported report expires
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
     
     }
 }

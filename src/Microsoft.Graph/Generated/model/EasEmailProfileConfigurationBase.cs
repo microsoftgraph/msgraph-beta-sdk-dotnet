@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets username source.
-        /// Username attribute that is picked from AAD and injected into this profile before installing on the device.
+        /// Gets or sets custom domain name.
+        /// Custom domain name value used while generating an email profile before installing on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameSource", Required = Newtonsoft.Json.Required.Default)]
-        public UserEmailSource? UsernameSource { get; set; }
-    
-        /// <summary>
-        /// Gets or sets username aadsource.
-        /// Name of the AAD field, that will be used to retrieve UserName for email profile.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameAADSource", Required = Newtonsoft.Json.Required.Default)]
-        public UsernameSource? UsernameAADSource { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDomainName", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets user domain name source.
@@ -52,11 +45,18 @@ namespace Microsoft.Graph
         public DomainNameSource? UserDomainNameSource { get; set; }
     
         /// <summary>
-        /// Gets or sets custom domain name.
-        /// Custom domain name value used while generating an email profile before installing on the device.
+        /// Gets or sets username aadsource.
+        /// Name of the AAD field, that will be used to retrieve UserName for email profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customDomainName", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomDomainName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameAADSource", Required = Newtonsoft.Json.Required.Default)]
+        public UsernameSource? UsernameAADSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets username source.
+        /// Username attribute that is picked from AAD and injected into this profile before installing on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameSource", Required = Newtonsoft.Json.Required.Default)]
+        public UserEmailSource? UsernameSource { get; set; }
     
     }
 }

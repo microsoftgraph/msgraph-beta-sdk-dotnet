@@ -51,66 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AccessPackageCatalogs.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder"/>.</returns>
-        public IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs
-        {
-            get
-            {
-                return new EntitlementManagementAccessPackageCatalogsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageCatalogs"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageResources.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder"/>.</returns>
-        public IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder AccessPackageResources
-        {
-            get
-            {
-                return new EntitlementManagementAccessPackageResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResources"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageResourceRequests.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder"/>.</returns>
-        public IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder AccessPackageResourceRequests
-        {
-            get
-            {
-                return new EntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceRequests"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageResourceRoleScopes.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder"/>.</returns>
-        public IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes
-        {
-            get
-            {
-                return new EntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceRoleScopes"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackages.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackagesCollectionRequestBuilder"/>.</returns>
-        public IEntitlementManagementAccessPackagesCollectionRequestBuilder AccessPackages
-        {
-            get
-            {
-                return new EntitlementManagementAccessPackagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackages"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentPolicies.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentPoliciesCollectionRequestBuilder"/>.</returns>
@@ -119,18 +59,6 @@ namespace Microsoft.Graph
             get
             {
                 return new EntitlementManagementAccessPackageAssignmentPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignmentPolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments
-        {
-            get
-            {
-                return new EntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignments"), this.Client);
             }
         }
 
@@ -159,14 +87,74 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Settings.
+        /// Gets the request builder for AccessPackageAssignments.
         /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementSettingsRequestBuilder"/>.</returns>
-        public IEntitlementManagementSettingsRequestBuilder Settings
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments
         {
             get
             {
-                return new EntitlementManagementSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+                return new EntitlementManagementAccessPackageAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageAssignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageCatalogs.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageCatalogsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageCatalogs"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResourceRequests.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder AccessPackageResourceRequests
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResourceRoleScopes.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder AccessPackageResourceRoleScopes
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageResourceRoleScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceRoleScopes"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResources.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageResourcesCollectionRequestBuilder AccessPackageResources
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResources"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackages.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackagesCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackagesCollectionRequestBuilder AccessPackages
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackages"), this.Client);
             }
         }
 
@@ -179,6 +167,18 @@ namespace Microsoft.Graph
             get
             {
                 return new EntitlementManagementConnectedOrganizationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("connectedOrganizations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementSettingsRequestBuilder"/>.</returns>
+        public IEntitlementManagementSettingsRequestBuilder Settings
+        {
+            get
+            {
+                return new EntitlementManagementSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
             }
         }
     

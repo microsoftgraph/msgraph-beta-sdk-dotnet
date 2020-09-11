@@ -50,14 +50,64 @@ namespace Microsoft.Graph
         IosAppStoreUpdateFailedToInstall = 1000,
 	
         /// <summary>
+        /// Processor Architecture Not Applicable
+        /// </summary>
+        ProcessorArchitectureNotApplicable = -1000,
+	
+        /// <summary>
         /// Vpp App Has Update Available
         /// </summary>
         VppAppHasUpdateAvailable = 1001,
 	
         /// <summary>
+        /// Minimum Disk Space Not Met
+        /// </summary>
+        MinimumDiskSpaceNotMet = -1001,
+	
+        /// <summary>
         /// User Rejected Update
         /// </summary>
         UserRejectedUpdate = 1002,
+	
+        /// <summary>
+        /// Minimum Os Version Not Met
+        /// </summary>
+        MinimumOsVersionNotMet = -1002,
+	
+        /// <summary>
+        /// Minimum Physical Memory Not Met
+        /// </summary>
+        MinimumPhysicalMemoryNotMet = -1003,
+	
+        /// <summary>
+        /// Minimum Logical Processor Count Not Met
+        /// </summary>
+        MinimumLogicalProcessorCountNotMet = -1004,
+	
+        /// <summary>
+        /// Minimum Cpu Speed Not Met
+        /// </summary>
+        MinimumCpuSpeedNotMet = -1005,
+	
+        /// <summary>
+        /// Platform Not Applicable
+        /// </summary>
+        PlatformNotApplicable = -1006,
+	
+        /// <summary>
+        /// File System Requirement Not Met
+        /// </summary>
+        FileSystemRequirementNotMet = -1011,
+	
+        /// <summary>
+        /// Registry Requirement Not Met
+        /// </summary>
+        RegistryRequirementNotMet = -1012,
+	
+        /// <summary>
+        /// Power Shell Script Requirement Not Met
+        /// </summary>
+        PowerShellScriptRequirementNotMet = -1013,
 	
         /// <summary>
         /// See Install Error Code
@@ -103,56 +153,6 @@ namespace Microsoft.Graph
         /// Content Downloaded
         /// </summary>
         ContentDownloaded = 5002,
-	
-        /// <summary>
-        /// Power Shell Script Requirement Not Met
-        /// </summary>
-        PowerShellScriptRequirementNotMet = -1013,
-	
-        /// <summary>
-        /// Registry Requirement Not Met
-        /// </summary>
-        RegistryRequirementNotMet = -1012,
-	
-        /// <summary>
-        /// File System Requirement Not Met
-        /// </summary>
-        FileSystemRequirementNotMet = -1011,
-	
-        /// <summary>
-        /// Platform Not Applicable
-        /// </summary>
-        PlatformNotApplicable = -1006,
-	
-        /// <summary>
-        /// Minimum Cpu Speed Not Met
-        /// </summary>
-        MinimumCpuSpeedNotMet = -1005,
-	
-        /// <summary>
-        /// Minimum Logical Processor Count Not Met
-        /// </summary>
-        MinimumLogicalProcessorCountNotMet = -1004,
-	
-        /// <summary>
-        /// Minimum Physical Memory Not Met
-        /// </summary>
-        MinimumPhysicalMemoryNotMet = -1003,
-	
-        /// <summary>
-        /// Minimum Os Version Not Met
-        /// </summary>
-        MinimumOsVersionNotMet = -1002,
-	
-        /// <summary>
-        /// Minimum Disk Space Not Met
-        /// </summary>
-        MinimumDiskSpaceNotMet = -1001,
-	
-        /// <summary>
-        /// Processor Architecture Not Applicable
-        /// </summary>
-        ProcessorArchitectureNotApplicable = -1000,
 	
     }
 }

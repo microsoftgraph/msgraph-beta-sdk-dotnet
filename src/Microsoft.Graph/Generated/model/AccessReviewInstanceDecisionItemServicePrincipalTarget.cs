@@ -30,10 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets servicePrincipalId.
+        /// Gets or sets appId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalId", Required = Newtonsoft.Json.Required.Default)]
-        public string ServicePrincipalId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets servicePrincipalDisplayName.
@@ -42,10 +42,10 @@ namespace Microsoft.Graph
         public string ServicePrincipalDisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets appId.
+        /// Gets or sets servicePrincipalId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
-        public string AppId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ServicePrincipalId { get; set; }
     
     }
 }

@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sensitivityLabel.
+        /// Gets or sets responsiblePolicy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabel", Required = Newtonsoft.Json.Required.Default)]
-        public MatchingLabel SensitivityLabel { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiblePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public ResponsiblePolicy ResponsiblePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets responsibleSensitiveTypes.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public IEnumerable<ResponsibleSensitiveType> ResponsibleSensitiveTypes { get; set; }
     
         /// <summary>
-        /// Gets or sets responsiblePolicy.
+        /// Gets or sets sensitivityLabel.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiblePolicy", Required = Newtonsoft.Json.Required.Default)]
-        public ResponsiblePolicy ResponsiblePolicy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabel", Required = Newtonsoft.Json.Required.Default)]
+        public MatchingLabel SensitivityLabel { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

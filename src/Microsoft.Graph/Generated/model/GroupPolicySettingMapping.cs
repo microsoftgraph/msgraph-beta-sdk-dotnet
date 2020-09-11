@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets parent id.
-        /// Parent Id of the group policy setting.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentId", Required = Newtonsoft.Json.Required.Default)]
-        public string ParentId { get; set; }
-    
-        /// <summary>
         /// Gets or sets child id list.
         /// List of Child Ids of the group policy setting.
         /// </summary>
@@ -45,25 +38,67 @@ namespace Microsoft.Graph
         public IEnumerable<string> ChildIdList { get; set; }
     
         /// <summary>
-        /// Gets or sets setting name.
-        /// The name of this group policy setting.
+        /// Gets or sets intune setting definition id.
+        /// The Intune Setting Definition Id
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string IntuneSettingDefinitionId { get; set; }
     
         /// <summary>
-        /// Gets or sets setting value.
-        /// The value of this group policy setting.
+        /// Gets or sets intune setting uri list.
+        /// The list of Intune Setting URIs this group policy setting maps to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingValue", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingUriList", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IntuneSettingUriList { get; set; }
     
         /// <summary>
-        /// Gets or sets setting value type.
-        /// The value type of this group policy setting.
+        /// Gets or sets is mdm supported.
+        /// Indicates if the setting is supported by Intune or not
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingValueType", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingValueType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMdmSupported", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsMdmSupported { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mdm csp name.
+        /// The CSP name this group policy setting maps to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmCspName", Required = Newtonsoft.Json.Required.Default)]
+        public string MdmCspName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mdm minimum osversion.
+        /// The minimum OS version this mdm setting supports.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmMinimumOSVersion", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MdmMinimumOSVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mdm setting uri.
+        /// The MDM CSP URI this group policy setting maps to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmSettingUri", Required = Newtonsoft.Json.Required.Default)]
+        public string MdmSettingUri { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mdm supported state.
+        /// Indicates if the setting is supported in Mdm or not
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmSupportedState", Required = Newtonsoft.Json.Required.Default)]
+        public MdmSupportedState? MdmSupportedState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets parent id.
+        /// Parent Id of the group policy setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentId", Required = Newtonsoft.Json.Required.Default)]
+        public string ParentId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting category.
+        /// The category the group policy setting is in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingCategory", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingCategory { get; set; }
     
         /// <summary>
         /// Gets or sets setting display name.
@@ -87,60 +122,11 @@ namespace Microsoft.Graph
         public string SettingDisplayValueType { get; set; }
     
         /// <summary>
-        /// Gets or sets setting value display units.
-        /// The display units of this group policy setting value
+        /// Gets or sets setting name.
+        /// The name of this group policy setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingValueDisplayUnits", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingValueDisplayUnits { get; set; }
-    
-        /// <summary>
-        /// Gets or sets setting category.
-        /// The category the group policy setting is in.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingCategory", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingCategory { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mdm csp name.
-        /// The CSP name this group policy setting maps to.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmCspName", Required = Newtonsoft.Json.Required.Default)]
-        public string MdmCspName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mdm setting uri.
-        /// The MDM CSP URI this group policy setting maps to.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmSettingUri", Required = Newtonsoft.Json.Required.Default)]
-        public string MdmSettingUri { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mdm minimum osversion.
-        /// The minimum OS version this mdm setting supports.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmMinimumOSVersion", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MdmMinimumOSVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets setting type.
-        /// The setting type (security or admx) of the Group Policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingType", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicySettingType? SettingType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is mdm supported.
-        /// Indicates if the setting is supported by Intune or not
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMdmSupported", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsMdmSupported { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mdm supported state.
-        /// Indicates if the setting is supported in Mdm or not
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmSupportedState", Required = Newtonsoft.Json.Required.Default)]
-        public MdmSupportedState? MdmSupportedState { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingName { get; set; }
     
         /// <summary>
         /// Gets or sets setting scope.
@@ -150,18 +136,32 @@ namespace Microsoft.Graph
         public GroupPolicySettingScope? SettingScope { get; set; }
     
         /// <summary>
-        /// Gets or sets intune setting uri list.
-        /// The list of Intune Setting URIs this group policy setting maps to
+        /// Gets or sets setting type.
+        /// The setting type (security or admx) of the Group Policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingUriList", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> IntuneSettingUriList { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingType", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicySettingType? SettingType { get; set; }
     
         /// <summary>
-        /// Gets or sets intune setting definition id.
-        /// The Intune Setting Definition Id
+        /// Gets or sets setting value.
+        /// The value of this group policy setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneSettingDefinitionId", Required = Newtonsoft.Json.Required.Default)]
-        public string IntuneSettingDefinitionId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingValue", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting value display units.
+        /// The display units of this group policy setting value
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingValueDisplayUnits", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingValueDisplayUnits { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting value type.
+        /// The value type of this group policy setting.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingValueType", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingValueType { get; set; }
     
     }
 }

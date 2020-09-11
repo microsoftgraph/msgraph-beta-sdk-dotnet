@@ -122,18 +122,18 @@ namespace Microsoft.Graph
         public DeviceDetail DeviceDetail { get; set; }
     
         /// <summary>
-        /// Gets or sets is interactive.
-        /// Indicates if a sign-in is interactive or not.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInteractive", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsInteractive { get; set; }
-    
-        /// <summary>
         /// Gets or sets ip address.
         /// IP address of the client used to sign in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
         public string IpAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is interactive.
+        /// Indicates if a sign-in is interactive or not.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isInteractive", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsInteractive { get; set; }
     
         /// <summary>
         /// Gets or sets location.
@@ -165,6 +165,26 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingTimeInMilliseconds", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ProcessingTimeInMilliseconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource display name.
+        /// Name of the resource the user signed into.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource id.
+        /// ID of the resource that the user signed into.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource tenant id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceTenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets risk detail.
@@ -207,26 +227,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskState", Required = Newtonsoft.Json.Required.Default)]
         public RiskState? RiskState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource display name.
-        /// Name of the resource the user signed into.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource id.
-        /// ID of the resource that the user signed into.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource tenant id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceTenantId", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets service principal id.

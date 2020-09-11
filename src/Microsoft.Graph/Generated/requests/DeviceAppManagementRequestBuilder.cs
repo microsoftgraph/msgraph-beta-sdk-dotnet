@@ -51,38 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ManagedEBooks.
+        /// Gets the request builder for ManagedEBookCategories.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories
         {
             get
             {
-                return new DeviceAppManagementManagedEBooksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBooks"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MobileApps.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementMobileAppsCollectionRequestBuilder MobileApps
-        {
-            get
-            {
-                return new DeviceAppManagementMobileAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileApps"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MobileAppCategories.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder MobileAppCategories
-        {
-            get
-            {
-                return new DeviceAppManagementMobileAppCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileAppCategories"), this.Client);
+                return new DeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBookCategories"), this.Client);
             }
         }
 
@@ -111,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for SymantecCodeSigningCertificate.
+        /// Gets the request builder for MobileAppCategories.
         /// </summary>
-        /// <returns>The <see cref="ISymantecCodeSigningCertificateRequestBuilder"/>.</returns>
-        public ISymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate
+        /// <returns>The <see cref="IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementMobileAppCategoriesCollectionRequestBuilder MobileAppCategories
         {
             get
             {
-                return new SymantecCodeSigningCertificateRequestBuilder(this.AppendSegmentToRequestUrl("symantecCodeSigningCertificate"), this.Client);
+                return new DeviceAppManagementMobileAppCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileAppCategories"), this.Client);
             }
         }
 
@@ -135,14 +111,38 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedEBookCategories.
+        /// Gets the request builder for MobileApps.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder ManagedEBookCategories
+        /// <returns>The <see cref="IDeviceAppManagementMobileAppsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementMobileAppsCollectionRequestBuilder MobileApps
         {
             get
             {
-                return new DeviceAppManagementManagedEBookCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBookCategories"), this.Client);
+                return new DeviceAppManagementMobileAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileApps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SymantecCodeSigningCertificate.
+        /// </summary>
+        /// <returns>The <see cref="ISymantecCodeSigningCertificateRequestBuilder"/>.</returns>
+        public ISymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate
+        {
+            get
+            {
+                return new SymantecCodeSigningCertificateRequestBuilder(this.AppendSegmentToRequestUrl("symantecCodeSigningCertificate"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedEBooks.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementManagedEBooksCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementManagedEBooksCollectionRequestBuilder ManagedEBooks
+        {
+            get
+            {
+                return new DeviceAppManagementManagedEBooksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedEBooks"), this.Client);
             }
         }
 
@@ -195,30 +195,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedAppPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder ManagedAppPolicies
-        {
-            get
-            {
-                return new DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedAppPolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for IosManagedAppProtections.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder IosManagedAppProtections
-        {
-            get
-            {
-                return new DeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("iosManagedAppProtections"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AndroidManagedAppProtections.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementAndroidManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
@@ -243,38 +219,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TargetedManagedAppConfigurations.
+        /// Gets the request builder for IosManagedAppProtections.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder TargetedManagedAppConfigurations
+        /// <returns>The <see cref="IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder IosManagedAppProtections
         {
             get
             {
-                return new DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("targetedManagedAppConfigurations"), this.Client);
+                return new DeviceAppManagementIosManagedAppProtectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("iosManagedAppProtections"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for MdmWindowsInformationProtectionPolicies.
+        /// Gets the request builder for ManagedAppPolicies.
         /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder MdmWindowsInformationProtectionPolicies
+        /// <returns>The <see cref="IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementManagedAppPoliciesCollectionRequestBuilder ManagedAppPolicies
         {
             get
             {
-                return new DeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mdmWindowsInformationProtectionPolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for WindowsInformationProtectionPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder WindowsInformationProtectionPolicies
-        {
-            get
-            {
-                return new DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionPolicies"), this.Client);
+                return new DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedAppPolicies"), this.Client);
             }
         }
 
@@ -303,6 +267,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MdmWindowsInformationProtectionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder MdmWindowsInformationProtectionPolicies
+        {
+            get
+            {
+                return new DeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mdmWindowsInformationProtectionPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TargetedManagedAppConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder TargetedManagedAppConfigurations
+        {
+            get
+            {
+                return new DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("targetedManagedAppConfigurations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for WindowsInformationProtectionDeviceRegistrations.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionRequestBuilder"/>.</returns>
@@ -311,6 +299,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionDeviceRegistrations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsInformationProtectionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder WindowsInformationProtectionPolicies
+        {
+            get
+            {
+                return new DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionPolicies"), this.Client);
             }
         }
 

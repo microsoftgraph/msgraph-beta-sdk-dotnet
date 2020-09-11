@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RootCertificateForServerValidation.
+        /// Gets the request builder for DerivedCredentialSettings.
         /// </summary>
-        /// <returns>The <see cref="IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        public IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        public IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings
         {
             get
             {
-                return new AndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForServerValidation"), this.Client);
+                return new DeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentialSettings"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DerivedCredentialSettings.
+        /// Gets the request builder for RootCertificateForServerValidation.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
-        public IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings
+        /// <returns>The <see cref="IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        public IAndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation
         {
             get
             {
-                return new DeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentialSettings"), this.Client);
+                return new AndroidDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificateForServerValidation"), this.Client);
             }
         }
     

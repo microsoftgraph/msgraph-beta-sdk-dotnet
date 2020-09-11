@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets configuration type.
+        /// Specifies how the value should be configured. This can be either as a Policy or as a Preference.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationType", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyConfigurationType? ConfigurationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
         /// The date and time the object was created.
         /// </summary>
@@ -45,13 +52,6 @@ namespace Microsoft.Graph
         public bool? Enabled { get; set; }
     
         /// <summary>
-        /// Gets or sets configuration type.
-        /// Specifies how the value should be configured. This can be either as a Policy or as a Preference.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationType", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicyConfigurationType? ConfigurationType { get; set; }
-    
-        /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.
         /// </summary>
@@ -59,18 +59,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets presentation values.
-        /// The associated group policy presentation values with the definition value.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presentationValues", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupPolicyDefinitionValuePresentationValuesCollectionPage PresentationValues { get; set; }
-    
-        /// <summary>
         /// Gets or sets definition.
         /// The associated group policy definition with the value.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definition", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyDefinition Definition { get; set; }
+    
+        /// <summary>
+        /// Gets or sets presentation values.
+        /// The associated group policy presentation values with the definition value.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presentationValues", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupPolicyDefinitionValuePresentationValuesCollectionPage PresentationValues { get; set; }
     
     }
 }

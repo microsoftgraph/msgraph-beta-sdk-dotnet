@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets subject.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
-        public string Subject { get; set; }
-    
-        /// <summary>
         /// Gets or sets courseNumber.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "courseNumber", Required = Newtonsoft.Json.Required.Default)]
@@ -59,6 +53,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

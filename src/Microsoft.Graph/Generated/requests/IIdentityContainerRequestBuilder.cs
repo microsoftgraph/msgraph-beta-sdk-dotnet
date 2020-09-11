@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         IConditionalAccessRootRequestBuilder ConditionalAccess { get; }
 
         /// <summary>
-        /// Gets the request builder for UserFlows.
-        /// </summary>
-        /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>
-        IIdentityContainerUserFlowsCollectionRequestBuilder UserFlows { get; }
-
-        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>
@@ -54,6 +48,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2xUserFlowsCollectionRequestBuilder"/>.</returns>
         IIdentityContainerB2xUserFlowsCollectionRequestBuilder B2xUserFlows { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerUserFlowsCollectionRequestBuilder UserFlows { get; }
+
+        /// <summary>
+        /// Gets the request builder for ContinuousAccessEvaluationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IContinuousAccessEvaluationPolicyRequestBuilder"/>.</returns>
+        IContinuousAccessEvaluationPolicyRequestBuilder ContinuousAccessEvaluationPolicy { get; }
     
     }
 }

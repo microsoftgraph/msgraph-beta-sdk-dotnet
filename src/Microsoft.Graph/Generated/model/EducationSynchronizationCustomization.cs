@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allowDisplayNameUpdate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDisplayNameUpdate", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowDisplayNameUpdate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isSyncDeferred.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSyncDeferred", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsSyncDeferred { get; set; }
+    
+        /// <summary>
         /// Gets or sets optionalPropertiesToSync.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "optionalPropertiesToSync", Required = Newtonsoft.Json.Required.Default)]
@@ -41,18 +53,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationStartDate", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SynchronizationStartDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isSyncDeferred.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSyncDeferred", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsSyncDeferred { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowDisplayNameUpdate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDisplayNameUpdate", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowDisplayNameUpdate { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

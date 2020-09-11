@@ -32,16 +32,10 @@ namespace Microsoft.Graph
         new IPlannerUserRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Tasks.
+        /// Gets the request builder for All.
         /// </summary>
-        /// <returns>The <see cref="IPlannerUserTasksCollectionRequestBuilder"/>.</returns>
-        IPlannerUserTasksCollectionRequestBuilder Tasks { get; }
-
-        /// <summary>
-        /// Gets the request builder for Plans.
-        /// </summary>
-        /// <returns>The <see cref="IPlannerUserPlansCollectionRequestBuilder"/>.</returns>
-        IPlannerUserPlansCollectionRequestBuilder Plans { get; }
+        /// <returns>The <see cref="IPlannerUserAllCollectionRequestBuilder"/>.</returns>
+        IPlannerUserAllCollectionRequestBuilder All { get; }
 
         /// <summary>
         /// Gets the request builder for FavoritePlans.
@@ -50,16 +44,22 @@ namespace Microsoft.Graph
         IPlannerUserFavoritePlansCollectionWithReferencesRequestBuilder FavoritePlans { get; }
 
         /// <summary>
+        /// Gets the request builder for Plans.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerUserPlansCollectionRequestBuilder"/>.</returns>
+        IPlannerUserPlansCollectionRequestBuilder Plans { get; }
+
+        /// <summary>
         /// Gets the request builder for RecentPlans.
         /// </summary>
         /// <returns>The <see cref="IPlannerUserRecentPlansCollectionWithReferencesRequestBuilder"/>.</returns>
         IPlannerUserRecentPlansCollectionWithReferencesRequestBuilder RecentPlans { get; }
 
         /// <summary>
-        /// Gets the request builder for All.
+        /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IPlannerUserAllCollectionRequestBuilder"/>.</returns>
-        IPlannerUserAllCollectionRequestBuilder All { get; }
+        /// <returns>The <see cref="IPlannerUserTasksCollectionRequestBuilder"/>.</returns>
+        IPlannerUserTasksCollectionRequestBuilder Tasks { get; }
     
     }
 }

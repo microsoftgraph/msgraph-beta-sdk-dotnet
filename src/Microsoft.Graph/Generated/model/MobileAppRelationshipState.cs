@@ -31,32 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets sourceIds.
-        /// The collection of source mobile app's ids.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> SourceIds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets targetId.
-        /// The related target app's id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets targetDisplayName.
-        /// The related target app's display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string TargetDisplayName { get; set; }
-    
-        /// <summary>
         /// Gets or sets deviceId.
         /// The corresponding device id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets errorCode.
+        /// The error code for install or uninstall failures of target app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets installState.
@@ -73,11 +59,25 @@ namespace Microsoft.Graph
         public ResultantAppStateDetail? InstallStateDetail { get; set; }
     
         /// <summary>
-        /// Gets or sets errorCode.
-        /// The error code for install or uninstall failures of target app.
+        /// Gets or sets sourceIds.
+        /// The collection of source mobile app's ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ErrorCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> SourceIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targetDisplayName.
+        /// The related target app's display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targetId.
+        /// The related target app's id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetId { get; set; }
     
         /// <summary>
         /// Gets or sets targetLastSyncDateTime.

@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new ISalesOrderRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SalesOrderLines.
+        /// Gets the request builder for Currency.
         /// </summary>
-        /// <returns>The <see cref="ISalesOrderSalesOrderLinesCollectionRequestBuilder"/>.</returns>
-        ISalesOrderSalesOrderLinesCollectionRequestBuilder SalesOrderLines { get; }
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        ICurrencyRequestBuilder Currency { get; }
 
         /// <summary>
         /// Gets the request builder for Customer.
@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         ICustomerRequestBuilder Customer { get; }
 
         /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        ICurrencyRequestBuilder Currency { get; }
-
-        /// <summary>
         /// Gets the request builder for PaymentTerm.
         /// </summary>
         /// <returns>The <see cref="IPaymentTermRequestBuilder"/>.</returns>
         IPaymentTermRequestBuilder PaymentTerm { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesOrderLines.
+        /// </summary>
+        /// <returns>The <see cref="ISalesOrderSalesOrderLinesCollectionRequestBuilder"/>.</returns>
+        ISalesOrderSalesOrderLinesCollectionRequestBuilder SalesOrderLines { get; }
     
     }
 }

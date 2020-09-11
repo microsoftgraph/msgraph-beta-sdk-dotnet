@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets contexts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contexts", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerPlanContextCollection Contexts { get; set; }
+    
+        /// <summary>
         /// Gets or sets created by.
         /// Read-only. The user who created the plan.
         /// </summary>
@@ -59,19 +65,6 @@ namespace Microsoft.Graph
         public string Title { get; set; }
     
         /// <summary>
-        /// Gets or sets contexts.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contexts", Required = Newtonsoft.Json.Required.Default)]
-        public PlannerPlanContextCollection Contexts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tasks.
-        /// Read-only. Nullable. Collection of tasks in the plan.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
-        public IPlannerPlanTasksCollectionPage Tasks { get; set; }
-    
-        /// <summary>
         /// Gets or sets buckets.
         /// Read-only. Nullable. Collection of buckets in the plan.
         /// </summary>
@@ -84,6 +77,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
         public PlannerPlanDetails Details { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tasks.
+        /// Read-only. Nullable. Collection of tasks in the plan.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        public IPlannerPlanTasksCollectionPage Tasks { get; set; }
     
     }
 }

@@ -32,22 +32,22 @@ namespace Microsoft.Graph
         new IOnPremisesPublishingProfileRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Agents.
-        /// </summary>
-        /// <returns>The <see cref="IOnPremisesPublishingProfileAgentsCollectionRequestBuilder"/>.</returns>
-        IOnPremisesPublishingProfileAgentsCollectionRequestBuilder Agents { get; }
-
-        /// <summary>
         /// Gets the request builder for AgentGroups.
         /// </summary>
         /// <returns>The <see cref="IOnPremisesPublishingProfileAgentGroupsCollectionRequestBuilder"/>.</returns>
         IOnPremisesPublishingProfileAgentGroupsCollectionRequestBuilder AgentGroups { get; }
 
         /// <summary>
-        /// Gets the request builder for PublishedResources.
+        /// Gets the request builder for Agents.
         /// </summary>
-        /// <returns>The <see cref="IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder"/>.</returns>
-        IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder PublishedResources { get; }
+        /// <returns>The <see cref="IOnPremisesPublishingProfileAgentsCollectionRequestBuilder"/>.</returns>
+        IOnPremisesPublishingProfileAgentsCollectionRequestBuilder Agents { get; }
+
+        /// <summary>
+        /// Gets the request builder for ConnectorGroups.
+        /// </summary>
+        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder"/>.</returns>
+        IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder ConnectorGroups { get; }
 
         /// <summary>
         /// Gets the request builder for Connectors.
@@ -56,10 +56,10 @@ namespace Microsoft.Graph
         IOnPremisesPublishingProfileConnectorsCollectionRequestBuilder Connectors { get; }
 
         /// <summary>
-        /// Gets the request builder for ConnectorGroups.
+        /// Gets the request builder for PublishedResources.
         /// </summary>
-        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder"/>.</returns>
-        IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder ConnectorGroups { get; }
+        /// <returns>The <see cref="IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder"/>.</returns>
+        IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder PublishedResources { get; }
     
     }
 }

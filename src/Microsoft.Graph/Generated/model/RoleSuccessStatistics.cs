@@ -31,6 +31,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets permanentFail.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentFail", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PermanentFail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permanentSuccess.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentSuccess", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PermanentSuccess { get; set; }
+    
+        /// <summary>
+        /// Gets or sets removeFail.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeFail", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? RemoveFail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets removeSuccess.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeSuccess", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? RemoveSuccess { get; set; }
+    
+        /// <summary>
         /// Gets or sets roleId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
@@ -43,40 +67,16 @@ namespace Microsoft.Graph
         public string RoleName { get; set; }
     
         /// <summary>
-        /// Gets or sets temporarySuccess.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "temporarySuccess", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? TemporarySuccess { get; set; }
-    
-        /// <summary>
         /// Gets or sets temporaryFail.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "temporaryFail", Required = Newtonsoft.Json.Required.Default)]
         public Int64? TemporaryFail { get; set; }
     
         /// <summary>
-        /// Gets or sets permanentSuccess.
+        /// Gets or sets temporarySuccess.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentSuccess", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PermanentSuccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets permanentFail.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permanentFail", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PermanentFail { get; set; }
-    
-        /// <summary>
-        /// Gets or sets removeSuccess.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeSuccess", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? RemoveSuccess { get; set; }
-    
-        /// <summary>
-        /// Gets or sets removeFail.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "removeFail", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? RemoveFail { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "temporarySuccess", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? TemporarySuccess { get; set; }
     
         /// <summary>
         /// Gets or sets unknownFail.

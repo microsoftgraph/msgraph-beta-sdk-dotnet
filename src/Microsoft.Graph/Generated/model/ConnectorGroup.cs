@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
         /// Gets or sets connector group type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorGroupType", Required = Newtonsoft.Json.Required.Default)]
@@ -49,22 +43,28 @@ namespace Microsoft.Graph
         public bool? IsDefault { get; set; }
     
         /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
         /// Gets or sets region.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
         public ConnectorGroupRegion? Region { get; set; }
     
         /// <summary>
-        /// Gets or sets members.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
-        public IConnectorGroupMembersCollectionWithReferencesPage Members { get; set; }
-    
-        /// <summary>
         /// Gets or sets applications.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applications", Required = Newtonsoft.Json.Required.Default)]
         public IConnectorGroupApplicationsCollectionWithReferencesPage Applications { get; set; }
+    
+        /// <summary>
+        /// Gets or sets members.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        public IConnectorGroupMembersCollectionWithReferencesPage Members { get; set; }
     
     }
 }

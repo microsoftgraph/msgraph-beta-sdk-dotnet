@@ -75,35 +75,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AccessReviewInstanceStop.
+        /// Gets the request builder for AccessReviewInstanceAcceptRecommendations.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
-        public IAccessReviewInstanceStopRequestBuilder Stop()
+        /// <returns>The <see cref="IAccessReviewInstanceAcceptRecommendationsRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceAcceptRecommendationsRequestBuilder AcceptRecommendations()
         {
-            return new AccessReviewInstanceStopRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewInstanceSendReminder.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceSendReminderRequestBuilder"/>.</returns>
-        public IAccessReviewInstanceSendReminderRequestBuilder SendReminder()
-        {
-            return new AccessReviewInstanceSendReminderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.sendReminder"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewInstanceResetDecisions.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceResetDecisionsRequestBuilder"/>.</returns>
-        public IAccessReviewInstanceResetDecisionsRequestBuilder ResetDecisions()
-        {
-            return new AccessReviewInstanceResetDecisionsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.resetDecisions"),
+            return new AccessReviewInstanceAcceptRecommendationsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.acceptRecommendations"),
                 this.Client);
         }
 
@@ -119,13 +97,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AccessReviewInstanceAcceptRecommendations.
+        /// Gets the request builder for AccessReviewInstanceResetDecisions.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceAcceptRecommendationsRequestBuilder"/>.</returns>
-        public IAccessReviewInstanceAcceptRecommendationsRequestBuilder AcceptRecommendations()
+        /// <returns>The <see cref="IAccessReviewInstanceResetDecisionsRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceResetDecisionsRequestBuilder ResetDecisions()
         {
-            return new AccessReviewInstanceAcceptRecommendationsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.acceptRecommendations"),
+            return new AccessReviewInstanceResetDecisionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.resetDecisions"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceSendReminder.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceSendReminderRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceSendReminderRequestBuilder SendReminder()
+        {
+            return new AccessReviewInstanceSendReminderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendReminder"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceStop.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceStopRequestBuilder Stop()
+        {
+            return new AccessReviewInstanceStopRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
                 this.Client);
         }
     

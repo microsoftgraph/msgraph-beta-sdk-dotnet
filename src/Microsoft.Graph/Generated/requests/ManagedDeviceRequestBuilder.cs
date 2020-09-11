@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceConfigurationStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder DeviceConfigurationStates
-        {
-            get
-            {
-                return new ManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurationStates"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicyStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceConfigurationStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder DeviceConfigurationStates
+        {
+            get
+            {
+                return new ManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurationStates"), this.Client);
             }
         }
 
@@ -123,14 +123,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WindowsProtectionState.
+        /// Gets the request builder for LogCollectionRequests.
         /// </summary>
-        /// <returns>The <see cref="IWindowsProtectionStateRequestBuilder"/>.</returns>
-        public IWindowsProtectionStateRequestBuilder WindowsProtectionState
+        /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceLogCollectionRequestsCollectionRequestBuilder LogCollectionRequests
         {
             get
             {
-                return new WindowsProtectionStateRequestBuilder(this.AppendSegmentToRequestUrl("windowsProtectionState"), this.Client);
+                return new ManagedDeviceLogCollectionRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("logCollectionRequests"), this.Client);
             }
         }
 
@@ -147,14 +147,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for LogCollectionRequests.
+        /// Gets the request builder for WindowsProtectionState.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceLogCollectionRequestsCollectionRequestBuilder LogCollectionRequests
+        /// <returns>The <see cref="IWindowsProtectionStateRequestBuilder"/>.</returns>
+        public IWindowsProtectionStateRequestBuilder WindowsProtectionState
         {
             get
             {
-                return new ManagedDeviceLogCollectionRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("logCollectionRequests"), this.Client);
+                return new WindowsProtectionStateRequestBuilder(this.AppendSegmentToRequestUrl("windowsProtectionState"), this.Client);
             }
         }
     
@@ -171,6 +171,67 @@ namespace Microsoft.Graph
                 this.Client,
                 complianceState,
                 remediationUrl);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceBypassActivationLock.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBypassActivationLockRequestBuilder"/>.</returns>
+        public IManagedDeviceBypassActivationLockRequestBuilder BypassActivationLock()
+        {
+            return new ManagedDeviceBypassActivationLockRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.bypassActivationLock"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCleanWindowsDevice.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCleanWindowsDeviceRequestBuilder"/>.</returns>
+        public IManagedDeviceCleanWindowsDeviceRequestBuilder CleanWindowsDevice(
+            bool keepUserData)
+        {
+            return new ManagedDeviceCleanWindowsDeviceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.cleanWindowsDevice"),
+                this.Client,
+                keepUserData);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceCreateDeviceLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder"/>.</returns>
+        public IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest(
+            DeviceLogCollectionRequestObject templateType = null)
+        {
+            return new ManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createDeviceLogCollectionRequest"),
+                this.Client,
+                templateType);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceDeleteUserFromSharedAppleDevice.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder"/>.</returns>
+        public IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice(
+            string userPrincipalName = null)
+        {
+            return new ManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.deleteUserFromSharedAppleDevice"),
+                this.Client,
+                userPrincipalName);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceDisableLostMode.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDisableLostModeRequestBuilder"/>.</returns>
+        public IManagedDeviceDisableLostModeRequestBuilder DisableLostMode()
+        {
+            return new ManagedDeviceDisableLostModeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.disableLostMode"),
+                this.Client);
         }
 
         /// <summary>
@@ -191,6 +252,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceLocateDevice.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>
+        public IManagedDeviceLocateDeviceRequestBuilder LocateDevice()
+        {
+            return new ManagedDeviceLocateDeviceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.locateDevice"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceLogoutSharedAppleDeviceActiveUser.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder"/>.</returns>
+        public IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser()
+        {
+            return new ManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.logoutSharedAppleDeviceActiveUser"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDevicePlayLostModeSound.
         /// </summary>
         /// <returns>The <see cref="IManagedDevicePlayLostModeSoundRequestBuilder"/>.</returns>
@@ -202,80 +285,24 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceSetDeviceName.
+        /// Gets the request builder for ManagedDeviceRebootNow.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSetDeviceNameRequestBuilder"/>.</returns>
-        public IManagedDeviceSetDeviceNameRequestBuilder SetDeviceName(
-            string deviceName = null)
+        /// <returns>The <see cref="IManagedDeviceRebootNowRequestBuilder"/>.</returns>
+        public IManagedDeviceRebootNowRequestBuilder RebootNow()
         {
-            return new ManagedDeviceSetDeviceNameRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.setDeviceName"),
-                this.Client,
-                deviceName);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRotateFileVaultKey.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
-        public IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey()
-        {
-            return new ManagedDeviceRotateFileVaultKeyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.rotateFileVaultKey"),
+            return new ManagedDeviceRebootNowRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rebootNow"),
                 this.Client);
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceCreateDeviceLogCollectionRequest.
+        /// Gets the request builder for ManagedDeviceRecoverPasscode.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder"/>.</returns>
-        public IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest(
-            DeviceLogCollectionRequestObject templateType = null)
+        /// <returns>The <see cref="IManagedDeviceRecoverPasscodeRequestBuilder"/>.</returns>
+        public IManagedDeviceRecoverPasscodeRequestBuilder RecoverPasscode()
         {
-            return new ManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.createDeviceLogCollectionRequest"),
-                this.Client,
-                templateType);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRetire.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRetireRequestBuilder"/>.</returns>
-        public IManagedDeviceRetireRequestBuilder Retire()
-        {
-            return new ManagedDeviceRetireRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.retire"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceWipe.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceWipeRequestBuilder"/>.</returns>
-        public IManagedDeviceWipeRequestBuilder Wipe(
-            bool? keepEnrollmentData = null,
-            bool? keepUserData = null,
-            string macOsUnlockCode = null,
-            bool? useProtectedWipe = null)
-        {
-            return new ManagedDeviceWipeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.wipe"),
-                this.Client,
-                keepEnrollmentData,
-                keepUserData,
-                macOsUnlockCode,
-                useProtectedWipe);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceResetPasscode.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceResetPasscodeRequestBuilder"/>.</returns>
-        public IManagedDeviceResetPasscodeRequestBuilder ResetPasscode()
-        {
-            return new ManagedDeviceResetPasscodeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.resetPasscode"),
+            return new ManagedDeviceRecoverPasscodeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.recoverPasscode"),
                 this.Client);
         }
 
@@ -302,47 +329,86 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceDisableLostMode.
+        /// Gets the request builder for ManagedDeviceResetPasscode.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDisableLostModeRequestBuilder"/>.</returns>
-        public IManagedDeviceDisableLostModeRequestBuilder DisableLostMode()
+        /// <returns>The <see cref="IManagedDeviceResetPasscodeRequestBuilder"/>.</returns>
+        public IManagedDeviceResetPasscodeRequestBuilder ResetPasscode()
         {
-            return new ManagedDeviceDisableLostModeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.disableLostMode"),
+            return new ManagedDeviceResetPasscodeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.resetPasscode"),
                 this.Client);
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceLocateDevice.
+        /// Gets the request builder for ManagedDeviceRetire.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>
-        public IManagedDeviceLocateDeviceRequestBuilder LocateDevice()
+        /// <returns>The <see cref="IManagedDeviceRetireRequestBuilder"/>.</returns>
+        public IManagedDeviceRetireRequestBuilder Retire()
         {
-            return new ManagedDeviceLocateDeviceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.locateDevice"),
+            return new ManagedDeviceRetireRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.retire"),
                 this.Client);
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceBypassActivationLock.
+        /// Gets the request builder for ManagedDeviceRevokeAppleVppLicenses.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceBypassActivationLockRequestBuilder"/>.</returns>
-        public IManagedDeviceBypassActivationLockRequestBuilder BypassActivationLock()
+        /// <returns>The <see cref="IManagedDeviceRevokeAppleVppLicensesRequestBuilder"/>.</returns>
+        public IManagedDeviceRevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses()
         {
-            return new ManagedDeviceBypassActivationLockRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.bypassActivationLock"),
+            return new ManagedDeviceRevokeAppleVppLicensesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.revokeAppleVppLicenses"),
                 this.Client);
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceRebootNow.
+        /// Gets the request builder for ManagedDeviceRotateBitLockerKeys.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRebootNowRequestBuilder"/>.</returns>
-        public IManagedDeviceRebootNowRequestBuilder RebootNow()
+        /// <returns>The <see cref="IManagedDeviceRotateBitLockerKeysRequestBuilder"/>.</returns>
+        public IManagedDeviceRotateBitLockerKeysRequestBuilder RotateBitLockerKeys()
         {
-            return new ManagedDeviceRebootNowRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.rebootNow"),
+            return new ManagedDeviceRotateBitLockerKeysRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rotateBitLockerKeys"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateFileVaultKey.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
+        public IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey()
+        {
+            return new ManagedDeviceRotateFileVaultKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rotateFileVaultKey"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        public IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody)
+        {
+            return new ManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
+                this.Client,
+                notificationTitle,
+                notificationBody);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceSetDeviceName.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSetDeviceNameRequestBuilder"/>.</returns>
+        public IManagedDeviceSetDeviceNameRequestBuilder SetDeviceName(
+            string deviceName = null)
+        {
+            return new ManagedDeviceSetDeviceNameRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setDeviceName"),
+                this.Client,
+                deviceName);
         }
 
         /// <summary>
@@ -357,54 +423,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceRecoverPasscode.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRecoverPasscodeRequestBuilder"/>.</returns>
-        public IManagedDeviceRecoverPasscodeRequestBuilder RecoverPasscode()
-        {
-            return new ManagedDeviceRecoverPasscodeRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.recoverPasscode"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceCleanWindowsDevice.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceCleanWindowsDeviceRequestBuilder"/>.</returns>
-        public IManagedDeviceCleanWindowsDeviceRequestBuilder CleanWindowsDevice(
-            bool keepUserData)
-        {
-            return new ManagedDeviceCleanWindowsDeviceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.cleanWindowsDevice"),
-                this.Client,
-                keepUserData);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceLogoutSharedAppleDeviceActiveUser.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder"/>.</returns>
-        public IManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser()
-        {
-            return new ManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.logoutSharedAppleDeviceActiveUser"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceDeleteUserFromSharedAppleDevice.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder"/>.</returns>
-        public IManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice(
-            string userPrincipalName = null)
-        {
-            return new ManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.deleteUserFromSharedAppleDevice"),
-                this.Client,
-                userPrincipalName);
-        }
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceSyncDevice.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSyncDeviceRequestBuilder"/>.</returns>
@@ -413,6 +431,32 @@ namespace Microsoft.Graph
             return new ManagedDeviceSyncDeviceRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.syncDevice"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceTriggerConfigurationManagerAction.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceTriggerConfigurationManagerActionRequestBuilder"/>.</returns>
+        public IManagedDeviceTriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction(
+            ConfigurationManagerAction configurationManagerAction)
+        {
+            return new ManagedDeviceTriggerConfigurationManagerActionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.triggerConfigurationManagerAction"),
+                this.Client,
+                configurationManagerAction);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceUpdateWindowsDeviceAccount.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder"/>.</returns>
+        public IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount(
+            UpdateWindowsDeviceAccountActionParameter updateWindowsDeviceAccountActionParameter = null)
+        {
+            return new ManagedDeviceUpdateWindowsDeviceAccountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateWindowsDeviceAccount"),
+                this.Client,
+                updateWindowsDeviceAccountActionParameter);
         }
 
         /// <summary>
@@ -440,66 +484,22 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceUpdateWindowsDeviceAccount.
+        /// Gets the request builder for ManagedDeviceWipe.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder"/>.</returns>
-        public IManagedDeviceUpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount(
-            UpdateWindowsDeviceAccountActionParameter updateWindowsDeviceAccountActionParameter = null)
+        /// <returns>The <see cref="IManagedDeviceWipeRequestBuilder"/>.</returns>
+        public IManagedDeviceWipeRequestBuilder Wipe(
+            bool? keepEnrollmentData = null,
+            bool? keepUserData = null,
+            string macOsUnlockCode = null,
+            bool? useProtectedWipe = null)
         {
-            return new ManagedDeviceUpdateWindowsDeviceAccountRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.updateWindowsDeviceAccount"),
+            return new ManagedDeviceWipeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.wipe"),
                 this.Client,
-                updateWindowsDeviceAccountActionParameter);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRevokeAppleVppLicenses.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRevokeAppleVppLicensesRequestBuilder"/>.</returns>
-        public IManagedDeviceRevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses()
-        {
-            return new ManagedDeviceRevokeAppleVppLicensesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.revokeAppleVppLicenses"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRotateBitLockerKeys.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRotateBitLockerKeysRequestBuilder"/>.</returns>
-        public IManagedDeviceRotateBitLockerKeysRequestBuilder RotateBitLockerKeys()
-        {
-            return new ManagedDeviceRotateBitLockerKeysRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.rotateBitLockerKeys"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        public IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle,
-            string notificationBody)
-        {
-            return new ManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
-                this.Client,
-                notificationTitle,
-                notificationBody);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceTriggerConfigurationManagerAction.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceTriggerConfigurationManagerActionRequestBuilder"/>.</returns>
-        public IManagedDeviceTriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction(
-            ConfigurationManagerAction configurationManagerAction)
-        {
-            return new ManagedDeviceTriggerConfigurationManagerActionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.triggerConfigurationManagerAction"),
-                this.Client,
-                configurationManagerAction);
+                keepEnrollmentData,
+                keepUserData,
+                macOsUnlockCode,
+                useProtectedWipe);
         }
 
         /// <summary>

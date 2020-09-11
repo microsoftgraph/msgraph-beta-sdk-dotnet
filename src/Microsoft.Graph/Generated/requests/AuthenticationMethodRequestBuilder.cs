@@ -51,17 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AuthenticationMethodEnableSmsSignIn.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationMethodEnableSmsSignInRequestBuilder"/>.</returns>
-        public IAuthenticationMethodEnableSmsSignInRequestBuilder EnableSmsSignIn()
-        {
-            return new AuthenticationMethodEnableSmsSignInRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.enableSmsSignIn"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for AuthenticationMethodDisableSmsSignIn.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationMethodDisableSmsSignInRequestBuilder"/>.</returns>
@@ -69,6 +58,17 @@ namespace Microsoft.Graph
         {
             return new AuthenticationMethodDisableSmsSignInRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.disableSmsSignIn"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AuthenticationMethodEnableSmsSignIn.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodEnableSmsSignInRequestBuilder"/>.</returns>
+        public IAuthenticationMethodEnableSmsSignInRequestBuilder EnableSmsSignIn()
+        {
+            return new AuthenticationMethodEnableSmsSignInRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.enableSmsSignIn"),
                 this.Client);
         }
 

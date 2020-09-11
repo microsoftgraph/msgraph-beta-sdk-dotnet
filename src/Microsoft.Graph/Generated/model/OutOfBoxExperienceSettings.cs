@@ -31,11 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets hidePrivacySettings.
-        /// Show or hide privacy settings to user
+        /// Gets or sets deviceUsageType.
+        /// AAD join authentication type
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hidePrivacySettings", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HidePrivacySettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceUsageType", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsDeviceUsageType? DeviceUsageType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hideEscapeLink.
+        /// If set to true, then the user can't start over with different account, on company sign-in
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideEscapeLink", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideEscapeLink { get; set; }
     
         /// <summary>
         /// Gets or sets hideEULA.
@@ -45,18 +52,11 @@ namespace Microsoft.Graph
         public bool? HideEULA { get; set; }
     
         /// <summary>
-        /// Gets or sets userType.
-        /// Type of user
+        /// Gets or sets hidePrivacySettings.
+        /// Show or hide privacy settings to user
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsUserType? UserType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deviceUsageType.
-        /// AAD join authentication type
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceUsageType", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsDeviceUsageType? DeviceUsageType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hidePrivacySettings", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HidePrivacySettings { get; set; }
     
         /// <summary>
         /// Gets or sets skipKeyboardSelectionPage.
@@ -66,11 +66,11 @@ namespace Microsoft.Graph
         public bool? SkipKeyboardSelectionPage { get; set; }
     
         /// <summary>
-        /// Gets or sets hideEscapeLink.
-        /// If set to true, then the user can't start over with different account, on company sign-in
+        /// Gets or sets userType.
+        /// Type of user
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideEscapeLink", Required = Newtonsoft.Json.Required.Default)]
-        public bool? HideEscapeLink { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsUserType? UserType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

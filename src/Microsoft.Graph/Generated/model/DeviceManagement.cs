@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets settings.
-        /// Account level settings.
+        /// Gets or sets device compliance report summarization date time.
+        /// The last requested time of device compliance reporting for this account. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementSettings Settings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets maximum dep tokens.
-        /// Maximum number of dep tokens allowed per-tenant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumDepTokens", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MaximumDepTokens { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceReportSummarizationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? DeviceComplianceReportSummarizationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets intune account id.
@@ -59,18 +52,25 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastReportAggregationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets device compliance report summarization date time.
-        /// The last requested time of device compliance reporting for this account. This property is read-only.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceReportSummarizationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? DeviceComplianceReportSummarizationDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets legacy pc manangement enabled.
         /// The property to enable Non-MDM managed legacy PC management for this account. This property is read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legacyPcManangementEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? LegacyPcManangementEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum dep tokens.
+        /// Maximum number of dep tokens allowed per-tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumDepTokens", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MaximumDepTokens { get; set; }
+    
+        /// <summary>
+        /// Gets or sets settings.
+        /// Account level settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets unlicensed adminstrators enabled.
@@ -87,25 +87,11 @@ namespace Microsoft.Graph
         public IntuneBrand IntuneBrand { get; set; }
     
         /// <summary>
-        /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// Gets or sets account move completion date time.
+        /// The date &amp; time when tenant data moved between scaleunits.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionState", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subscriptions.
-        /// Tenant's Subscription.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptions", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementSubscriptions? Subscriptions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed device cleanup settings.
-        /// Device cleanup rule
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCleanupSettings", Required = Newtonsoft.Json.Required.Default)]
-        public ManagedDeviceCleanupSettings ManagedDeviceCleanupSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountMoveCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AccountMoveCompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets admin consent.
@@ -122,18 +108,25 @@ namespace Microsoft.Graph
         public DeviceProtectionOverview DeviceProtectionOverview { get; set; }
     
         /// <summary>
-        /// Gets or sets windows malware overview.
-        /// Malware overview for windows devices.
+        /// Gets or sets managed device cleanup settings.
+        /// Device cleanup rule
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMalwareOverview", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsMalwareOverview WindowsMalwareOverview { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCleanupSettings", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedDeviceCleanupSettings ManagedDeviceCleanupSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets account move completion date time.
-        /// The date &amp; time when tenant data moved between scaleunits.
+        /// Gets or sets subscriptions.
+        /// Tenant's Subscription.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountMoveCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AccountMoveCompletionDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptions", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementSubscriptions? Subscriptions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subscription state.
+        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionState", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics settings.
@@ -143,6 +136,13 @@ namespace Microsoft.Graph
         public UserExperienceAnalyticsSettings UserExperienceAnalyticsSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets windows malware overview.
+        /// Malware overview for windows devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMalwareOverview", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsMalwareOverview WindowsMalwareOverview { get; set; }
+    
+        /// <summary>
         /// Gets or sets audit events.
         /// The Audit Events
         /// </summary>
@@ -150,11 +150,11 @@ namespace Microsoft.Graph
         public IDeviceManagementAuditEventsCollectionPage AuditEvents { get; set; }
     
         /// <summary>
-        /// Gets or sets android for work settings.
-        /// The singleton Android for Work settings entity.
+        /// Gets or sets android device owner enrollment profiles.
+        /// Android device owner enrollment profile entities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidForWorkSettings", Required = Newtonsoft.Json.Required.Default)]
-        public AndroidForWorkSettings AndroidForWorkSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceOwnerEnrollmentProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage AndroidDeviceOwnerEnrollmentProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets android for work app configuration schemas.
@@ -171,6 +171,13 @@ namespace Microsoft.Graph
         public IDeviceManagementAndroidForWorkEnrollmentProfilesCollectionPage AndroidForWorkEnrollmentProfiles { get; set; }
     
         /// <summary>
+        /// Gets or sets android for work settings.
+        /// The singleton Android for Work settings entity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidForWorkSettings", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidForWorkSettings AndroidForWorkSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets android managed store account enterprise settings.
         /// The singleton Android managed store account enterprise settings entity.
         /// </summary>
@@ -183,13 +190,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidManagedStoreAppConfigurationSchemas", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionPage AndroidManagedStoreAppConfigurationSchemas { get; set; }
-    
-        /// <summary>
-        /// Gets or sets android device owner enrollment profiles.
-        /// Android device owner enrollment profile entities.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceOwnerEnrollmentProfiles", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage AndroidDeviceOwnerEnrollmentProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets assignment filters.
@@ -206,11 +206,18 @@ namespace Microsoft.Graph
         public IDeviceManagementTermsAndConditionsCollectionPage TermsAndConditions { get; set; }
     
         /// <summary>
-        /// Gets or sets device configurations.
-        /// The device configurations.
+        /// Gets or sets advanced threat protection onboarding state summary.
+        /// The summary state of ATP onboarding state for this account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurations", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDeviceConfigurationsCollectionPage DeviceConfigurations { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionOnboardingStateSummary", Required = Newtonsoft.Json.Required.Default)]
+        public AdvancedThreatProtectionOnboardingStateSummary AdvancedThreatProtectionOnboardingStateSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cart to class associations.
+        /// The Cart To Class Associations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cartToClassAssociations", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementCartToClassAssociationsCollectionPage CartToClassAssociations { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance policies.
@@ -218,13 +225,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicies", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementDeviceCompliancePoliciesCollectionPage DeviceCompliancePolicies { get; set; }
-    
-        /// <summary>
-        /// Gets or sets software update status summary.
-        /// The software update status summary.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "softwareUpdateStatusSummary", Required = Newtonsoft.Json.Required.Default)]
-        public SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance policy device state summary.
@@ -241,11 +241,11 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionPage DeviceCompliancePolicySettingStateSummaries { get; set; }
     
         /// <summary>
-        /// Gets or sets advanced threat protection onboarding state summary.
-        /// The summary state of ATP onboarding state for this account.
+        /// Gets or sets device configuration conflict summary.
+        /// Summary of policies in conflict state for this account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionOnboardingStateSummary", Required = Newtonsoft.Json.Required.Default)]
-        public AdvancedThreatProtectionOnboardingStateSummary AdvancedThreatProtectionOnboardingStateSummary { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationConflictSummary", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage DeviceConfigurationConflictSummary { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration device state summaries.
@@ -255,34 +255,6 @@ namespace Microsoft.Graph
         public DeviceConfigurationDeviceStateSummary DeviceConfigurationDeviceStateSummaries { get; set; }
     
         /// <summary>
-        /// Gets or sets device configuration user state summaries.
-        /// The device configuration user state summary for this account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationUserStateSummaries", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceConfigurationUserStateSummary DeviceConfigurationUserStateSummaries { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cart to class associations.
-        /// The Cart To Class Associations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cartToClassAssociations", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementCartToClassAssociationsCollectionPage CartToClassAssociations { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ios update statuses.
-        /// The IOS software update installation statuses for this account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosUpdateStatuses", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementIosUpdateStatusesCollectionPage IosUpdateStatuses { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ndes connectors.
-        /// The collection of Ndes connectors for this account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ndesConnectors", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementNdesConnectorsCollectionPage NdesConnectors { get; set; }
-    
-        /// <summary>
         /// Gets or sets device configuration restricted apps violations.
         /// Restricted apps violations for this account.
         /// </summary>
@@ -290,18 +262,11 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionPage DeviceConfigurationRestrictedAppsViolations { get; set; }
     
         /// <summary>
-        /// Gets or sets managed device encryption states.
-        /// Encryption report for devices in this account
+        /// Gets or sets device configurations.
+        /// The device configurations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceEncryptionStates", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementManagedDeviceEncryptionStatesCollectionPage ManagedDeviceEncryptionStates { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device configuration conflict summary.
-        /// Summary of policies in conflict state for this account.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationConflictSummary", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage DeviceConfigurationConflictSummary { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceConfigurationsCollectionPage DeviceConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets device configurations all managed device certificate states.
@@ -311,39 +276,46 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionPage DeviceConfigurationsAllManagedDeviceCertificateStates { get; set; }
     
         /// <summary>
-        /// Gets or sets device categories.
-        /// The list of device categories with the tenant.
+        /// Gets or sets device configuration user state summaries.
+        /// The device configuration user state summary for this account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCategories", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDeviceCategoriesCollectionPage DeviceCategories { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationUserStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceConfigurationUserStateSummary DeviceConfigurationUserStateSummaries { get; set; }
     
         /// <summary>
-        /// Gets or sets exchange connectors.
-        /// The list of Exchange Connectors configured by the tenant.
+        /// Gets or sets ios update statuses.
+        /// The IOS software update installation statuses for this account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeConnectors", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementExchangeConnectorsCollectionPage ExchangeConnectors { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosUpdateStatuses", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementIosUpdateStatusesCollectionPage IosUpdateStatuses { get; set; }
     
         /// <summary>
-        /// Gets or sets device enrollment configurations.
-        /// The list of device enrollment configurations
+        /// Gets or sets managed device encryption states.
+        /// Encryption report for devices in this account
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentConfigurations", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDeviceEnrollmentConfigurationsCollectionPage DeviceEnrollmentConfigurations { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceEncryptionStates", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementManagedDeviceEncryptionStatesCollectionPage ManagedDeviceEncryptionStates { get; set; }
     
         /// <summary>
-        /// Gets or sets exchange on premises policy.
-        /// The policy which controls mobile device access to Exchange On Premises
+        /// Gets or sets ndes connectors.
+        /// The collection of Ndes connectors for this account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeOnPremisesPolicy", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementExchangeOnPremisesPolicy ExchangeOnPremisesPolicy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ndesConnectors", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementNdesConnectorsCollectionPage NdesConnectors { get; set; }
     
         /// <summary>
-        /// Gets or sets exchange on premises policies.
-        /// The list of Exchange On Premisis policies configured by the tenant.
+        /// Gets or sets software update status summary.
+        /// The software update status summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeOnPremisesPolicies", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementExchangeOnPremisesPoliciesCollectionPage ExchangeOnPremisesPolicies { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "softwareUpdateStatusSummary", Required = Newtonsoft.Json.Required.Default)]
+        public SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets compliance management partners.
+        /// The list of Compliance Management Partners configured by the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceManagementPartners", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementComplianceManagementPartnersCollectionPage ComplianceManagementPartners { get; set; }
     
         /// <summary>
         /// Gets or sets conditional access settings.
@@ -353,11 +325,18 @@ namespace Microsoft.Graph
         public OnPremisesConditionalAccessSettings ConditionalAccessSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets mobile threat defense connectors.
-        /// The list of Mobile threat Defense connectors configured by the tenant.
+        /// Gets or sets device categories.
+        /// The list of device categories with the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileThreatDefenseConnectors", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementMobileThreatDefenseConnectorsCollectionPage MobileThreatDefenseConnectors { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCategories", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceCategoriesCollectionPage DeviceCategories { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device enrollment configurations.
+        /// The list of device enrollment configurations
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceEnrollmentConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceEnrollmentConfigurationsCollectionPage DeviceEnrollmentConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets device management partners.
@@ -367,11 +346,39 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceManagementPartnersCollectionPage DeviceManagementPartners { get; set; }
     
         /// <summary>
-        /// Gets or sets compliance management partners.
-        /// The list of Compliance Management Partners configured by the tenant.
+        /// Gets or sets exchange connectors.
+        /// The list of Exchange Connectors configured by the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceManagementPartners", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementComplianceManagementPartnersCollectionPage ComplianceManagementPartners { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeConnectors", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementExchangeConnectorsCollectionPage ExchangeConnectors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exchange on premises policies.
+        /// The list of Exchange On Premisis policies configured by the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeOnPremisesPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementExchangeOnPremisesPoliciesCollectionPage ExchangeOnPremisesPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets exchange on premises policy.
+        /// The policy which controls mobile device access to Exchange On Premises
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeOnPremisesPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementExchangeOnPremisesPolicy ExchangeOnPremisesPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobile threat defense connectors.
+        /// The list of Mobile threat Defense connectors configured by the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileThreatDefenseConnectors", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementMobileThreatDefenseConnectorsCollectionPage MobileThreatDefenseConnectors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets categories.
+        /// The available categories
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementCategoriesCollectionPage Categories { get; set; }
     
         /// <summary>
         /// Gets or sets intents.
@@ -395,25 +402,53 @@ namespace Microsoft.Graph
         public IDeviceManagementTemplatesCollectionPage Templates { get; set; }
     
         /// <summary>
-        /// Gets or sets categories.
-        /// The available categories
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementCategoriesCollectionPage Categories { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remote action audits.
-        /// The list of device remote action audits with the tenant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteActionAudits", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementRemoteActionAuditsCollectionPage RemoteActionAudits { get; set; }
-    
-        /// <summary>
         /// Gets or sets apple push notification certificate.
         /// Apple push notification certificate.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applePushNotificationCertificate", Required = Newtonsoft.Json.Required.Default)]
         public ApplePushNotificationCertificate ApplePushNotificationCertificate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets comanaged devices.
+        /// The list of co-managed devices report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comanagedDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementComanagedDevicesCollectionPage ComanagedDevices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets comanagement eligible devices.
+        /// The list of co-management eligible devices report
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comanagementEligibleDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementComanagementEligibleDevicesCollectionPage ComanagementEligibleDevices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets data sharing consents.
+        /// Data sharing consents.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSharingConsents", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDataSharingConsentsCollectionPage DataSharingConsents { get; set; }
+    
+        /// <summary>
+        /// Gets or sets detected apps.
+        /// The list of detected apps associated with a device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectedApps", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDetectedAppsCollectionPage DetectedApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device compliance scripts.
+        /// The list of device compliance scripts associated with the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceScripts", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceComplianceScriptsCollectionPage DeviceComplianceScripts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device health scripts.
+        /// The list of device health scripts associated with the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceHealthScripts", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceHealthScriptsCollectionPage DeviceHealthScripts { get; set; }
     
         /// <summary>
         /// Gets or sets device management scripts.
@@ -430,32 +465,11 @@ namespace Microsoft.Graph
         public IDeviceManagementDeviceShellScriptsCollectionPage DeviceShellScripts { get; set; }
     
         /// <summary>
-        /// Gets or sets device health scripts.
-        /// The list of device health scripts associated with the tenant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceHealthScripts", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDeviceHealthScriptsCollectionPage DeviceHealthScripts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device compliance scripts.
-        /// The list of device compliance scripts associated with the tenant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceScripts", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDeviceComplianceScriptsCollectionPage DeviceComplianceScripts { get; set; }
-    
-        /// <summary>
         /// Gets or sets managed device overview.
         /// Device overview
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceOverview", Required = Newtonsoft.Json.Required.Default)]
         public ManagedDeviceOverview ManagedDeviceOverview { get; set; }
-    
-        /// <summary>
-        /// Gets or sets detected apps.
-        /// The list of detected apps associated with a device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectedApps", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDetectedAppsCollectionPage DetectedApps { get; set; }
     
         /// <summary>
         /// Gets or sets managed devices.
@@ -465,20 +479,6 @@ namespace Microsoft.Graph
         public IDeviceManagementManagedDevicesCollectionPage ManagedDevices { get; set; }
     
         /// <summary>
-        /// Gets or sets windows malware information.
-        /// The list of affected malware in the tenant.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMalwareInformation", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementWindowsMalwareInformationCollectionPage WindowsMalwareInformation { get; set; }
-    
-        /// <summary>
-        /// Gets or sets data sharing consents.
-        /// Data sharing consents.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSharingConsents", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementDataSharingConsentsCollectionPage DataSharingConsents { get; set; }
-    
-        /// <summary>
         /// Gets or sets mobile app troubleshooting events.
         /// The collection property of MobileAppTroubleshootingEvent.
         /// </summary>
@@ -486,11 +486,18 @@ namespace Microsoft.Graph
         public IDeviceManagementMobileAppTroubleshootingEventsCollectionPage MobileAppTroubleshootingEvents { get; set; }
     
         /// <summary>
-        /// Gets or sets user experience analytics overview.
-        /// User experience analytics overview
+        /// Gets or sets remote action audits.
+        /// The list of device remote action audits with the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsOverview", Required = Newtonsoft.Json.Required.Default)]
-        public UserExperienceAnalyticsOverview UserExperienceAnalyticsOverview { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteActionAudits", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementRemoteActionAuditsCollectionPage RemoteActionAudits { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health application performance.
+        /// User experience analytics appHealth Application Performance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthApplicationPerformance", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformance { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics baselines.
@@ -514,13 +521,6 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionPage UserExperienceAnalyticsDevicePerformance { get; set; }
     
         /// <summary>
-        /// Gets or sets user experience analytics regression summary.
-        /// User experience analytics regression summary
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsRegressionSummary", Required = Newtonsoft.Json.Required.Default)]
-        public UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets user experience analytics device startup history.
         /// User experience analytics device Startup History
         /// </summary>
@@ -542,13 +542,6 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage UserExperienceAnalyticsDeviceStartupProcessPerformance { get; set; }
     
         /// <summary>
-        /// Gets or sets user experience analytics score history.
-        /// User experience analytics device Startup Score History
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsScoreHistory", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage UserExperienceAnalyticsScoreHistory { get; set; }
-    
-        /// <summary>
         /// Gets or sets user experience analytics metric history.
         /// User experience analytics metric history
         /// </summary>
@@ -556,25 +549,32 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage UserExperienceAnalyticsMetricHistory { get; set; }
     
         /// <summary>
-        /// Gets or sets user experience analytics app health application performance.
-        /// User experience analytics appHealth Application Performance
+        /// Gets or sets user experience analytics overview.
+        /// User experience analytics overview
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthApplicationPerformance", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformance { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsOverview", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsOverview UserExperienceAnalyticsOverview { get; set; }
     
         /// <summary>
-        /// Gets or sets comanaged devices.
-        /// The list of co-managed devices report
+        /// Gets or sets user experience analytics regression summary.
+        /// User experience analytics regression summary
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comanagedDevices", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementComanagedDevicesCollectionPage ComanagedDevices { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsRegressionSummary", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
     
         /// <summary>
-        /// Gets or sets comanagement eligible devices.
-        /// The list of co-management eligible devices report
+        /// Gets or sets user experience analytics score history.
+        /// User experience analytics device Startup Score History
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comanagementEligibleDevices", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementComanagementEligibleDevicesCollectionPage ComanagementEligibleDevices { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsScoreHistory", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionPage UserExperienceAnalyticsScoreHistory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows malware information.
+        /// The list of affected malware in the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMalwareInformation", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementWindowsMalwareInformationCollectionPage WindowsMalwareInformation { get; set; }
     
         /// <summary>
         /// Gets or sets derived credentials.
@@ -584,32 +584,11 @@ namespace Microsoft.Graph
         public IDeviceManagementDerivedCredentialsCollectionPage DerivedCredentials { get; set; }
     
         /// <summary>
-        /// Gets or sets windows autopilot settings.
-        /// The Windows autopilot account settings.
+        /// Gets or sets apple user initiated enrollment profiles.
+        /// Apple user initiated enrollment profiles
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotSettings", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsAutopilotSettings WindowsAutopilotSettings { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows autopilot device identities.
-        /// The Windows autopilot device identities contained collection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionPage WindowsAutopilotDeviceIdentities { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows autopilot deployment profiles.
-        /// Windows auto pilot deployment profiles
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotDeploymentProfiles", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage WindowsAutopilotDeploymentProfiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets imported device identities.
-        /// The imported device identities.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementImportedDeviceIdentitiesCollectionPage ImportedDeviceIdentities { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleUserInitiatedEnrollmentProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage AppleUserInitiatedEnrollmentProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets dep onboarding settings.
@@ -619,6 +598,13 @@ namespace Microsoft.Graph
         public IDeviceManagementDepOnboardingSettingsCollectionPage DepOnboardingSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets imported device identities.
+        /// The imported device identities.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementImportedDeviceIdentitiesCollectionPage ImportedDeviceIdentities { get; set; }
+    
+        /// <summary>
         /// Gets or sets imported windows autopilot device identities.
         /// Collection of imported Windows autopilot devices.
         /// </summary>
@@ -626,11 +612,25 @@ namespace Microsoft.Graph
         public IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionPage ImportedWindowsAutopilotDeviceIdentities { get; set; }
     
         /// <summary>
-        /// Gets or sets apple user initiated enrollment profiles.
-        /// Apple user initiated enrollment profiles
+        /// Gets or sets windows autopilot deployment profiles.
+        /// Windows auto pilot deployment profiles
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleUserInitiatedEnrollmentProfiles", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage AppleUserInitiatedEnrollmentProfiles { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotDeploymentProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage WindowsAutopilotDeploymentProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows autopilot device identities.
+        /// The Windows autopilot device identities contained collection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionPage WindowsAutopilotDeviceIdentities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows autopilot settings.
+        /// The Windows autopilot account settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotSettings", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsAutopilotSettings WindowsAutopilotSettings { get; set; }
     
         /// <summary>
         /// Gets or sets management conditions.
@@ -647,13 +647,6 @@ namespace Microsoft.Graph
         public IDeviceManagementManagementConditionStatementsCollectionPage ManagementConditionStatements { get; set; }
     
         /// <summary>
-        /// Gets or sets group policy object files.
-        /// A list of Group Policy Object files uploaded.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectFiles", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementGroupPolicyObjectFilesCollectionPage GroupPolicyObjectFiles { get; set; }
-    
-        /// <summary>
         /// Gets or sets group policy migration reports.
         /// A list of Group Policy migration reports.
         /// </summary>
@@ -661,11 +654,11 @@ namespace Microsoft.Graph
         public IDeviceManagementGroupPolicyMigrationReportsCollectionPage GroupPolicyMigrationReports { get; set; }
     
         /// <summary>
-        /// Gets or sets group policy configurations.
-        /// The group policy configurations created by this account.
+        /// Gets or sets group policy object files.
+        /// A list of Group Policy Object files uploaded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyConfigurations", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementGroupPolicyConfigurationsCollectionPage GroupPolicyConfigurations { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectFiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementGroupPolicyObjectFilesCollectionPage GroupPolicyObjectFiles { get; set; }
     
         /// <summary>
         /// Gets or sets group policy categories.
@@ -675,11 +668,11 @@ namespace Microsoft.Graph
         public IDeviceManagementGroupPolicyCategoriesCollectionPage GroupPolicyCategories { get; set; }
     
         /// <summary>
-        /// Gets or sets group policy definitions.
-        /// The available group policy definitions for this account.
+        /// Gets or sets group policy configurations.
+        /// The group policy configurations created by this account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyDefinitions", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementGroupPolicyDefinitionsCollectionPage GroupPolicyDefinitions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementGroupPolicyConfigurationsCollectionPage GroupPolicyConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets group policy definition files.
@@ -687,6 +680,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyDefinitionFiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementGroupPolicyDefinitionFilesCollectionPage GroupPolicyDefinitionFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets group policy definitions.
+        /// The available group policy definitions for this account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementGroupPolicyDefinitionsCollectionPage GroupPolicyDefinitions { get; set; }
     
         /// <summary>
         /// Gets or sets group policy uploaded definition files.
@@ -710,11 +710,11 @@ namespace Microsoft.Graph
         public IDeviceManagementDomainJoinConnectorsCollectionPage DomainJoinConnectors { get; set; }
     
         /// <summary>
-        /// Gets or sets role definitions.
-        /// The Role Definitions.
+        /// Gets or sets resource operations.
+        /// The Resource Operations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceOperations", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementResourceOperationsCollectionPage ResourceOperations { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
@@ -724,18 +724,18 @@ namespace Microsoft.Graph
         public IDeviceManagementRoleAssignmentsCollectionPage RoleAssignments { get; set; }
     
         /// <summary>
+        /// Gets or sets role definitions.
+        /// The Role Definitions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
+    
+        /// <summary>
         /// Gets or sets role scope tags.
         /// The Role Scope Tags.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTags", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementRoleScopeTagsCollectionPage RoleScopeTags { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource operations.
-        /// The Resource Operations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceOperations", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementResourceOperationsCollectionPage ResourceOperations { get; set; }
     
         /// <summary>
         /// Gets or sets remote assistance partners.
@@ -752,13 +752,6 @@ namespace Microsoft.Graph
         public DeviceManagementReports Reports { get; set; }
     
         /// <summary>
-        /// Gets or sets telecom expense management partners.
-        /// The telecom expense management partners.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "telecomExpenseManagementPartners", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementTelecomExpenseManagementPartnersCollectionPage TelecomExpenseManagementPartners { get; set; }
-    
-        /// <summary>
         /// Gets or sets embedded simactivation code pools.
         /// The embedded SIM activation code pools created by this account.
         /// </summary>
@@ -766,11 +759,11 @@ namespace Microsoft.Graph
         public IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionPage EmbeddedSIMActivationCodePools { get; set; }
     
         /// <summary>
-        /// Gets or sets troubleshooting events.
-        /// The list of troubleshooting events for the tenant.
+        /// Gets or sets telecom expense management partners.
+        /// The telecom expense management partners.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingEvents", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementTroubleshootingEventsCollectionPage TroubleshootingEvents { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "telecomExpenseManagementPartners", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementTelecomExpenseManagementPartnersCollectionPage TelecomExpenseManagementPartners { get; set; }
     
         /// <summary>
         /// Gets or sets autopilot events.
@@ -780,11 +773,25 @@ namespace Microsoft.Graph
         public IDeviceManagementAutopilotEventsCollectionPage AutopilotEvents { get; set; }
     
         /// <summary>
+        /// Gets or sets troubleshooting events.
+        /// The list of troubleshooting events for the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingEvents", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementTroubleshootingEventsCollectionPage TroubleshootingEvents { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows feature update profiles.
         /// A collection of windows feature update profiles
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsFeatureUpdateProfiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementWindowsFeatureUpdateProfilesCollectionPage WindowsFeatureUpdateProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets intune branding profiles.
+        /// Intune branding profiles targeted to AAD groups
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneBrandingProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementIntuneBrandingProfilesCollectionPage IntuneBrandingProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection app learning summaries.
@@ -799,13 +806,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionNetworkLearningSummaries", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionPage WindowsInformationProtectionNetworkLearningSummaries { get; set; }
-    
-        /// <summary>
-        /// Gets or sets intune branding profiles.
-        /// Intune branding profiles targeted to AAD groups
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneBrandingProfiles", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementIntuneBrandingProfilesCollectionPage IntuneBrandingProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets user pfx certificates.

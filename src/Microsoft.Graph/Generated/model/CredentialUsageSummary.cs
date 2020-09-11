@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets auth method.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
+        public UsageAuthMethod? AuthMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets failure activity count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureActivityCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? FailureActivityCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets feature.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feature", Required = Newtonsoft.Json.Required.Default)]
@@ -41,18 +53,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulActivityCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SuccessfulActivityCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets failure activity count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureActivityCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? FailureActivityCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets auth method.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
-        public UsageAuthMethod? AuthMethod { get; set; }
     
     }
 }

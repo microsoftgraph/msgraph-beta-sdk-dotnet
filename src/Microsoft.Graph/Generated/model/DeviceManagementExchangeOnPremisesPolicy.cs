@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets notification content.
-        /// Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
+        /// Gets or sets access rules.
+        /// The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationContent", Required = Newtonsoft.Json.Required.Default)]
-        public byte[] NotificationContent { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRules", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceManagementExchangeAccessRule> AccessRules { get; set; }
     
         /// <summary>
         /// Gets or sets default access level.
@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public DeviceManagementExchangeAccessLevel? DefaultAccessLevel { get; set; }
     
         /// <summary>
-        /// Gets or sets access rules.
-        /// The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRules", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DeviceManagementExchangeAccessRule> AccessRules { get; set; }
-    
-        /// <summary>
         /// Gets or sets known device classes.
         /// The list of device classes known to Exchange
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "knownDeviceClasses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeviceManagementExchangeDeviceClass> KnownDeviceClasses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notification content.
+        /// Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationContent", Required = Newtonsoft.Json.Required.Default)]
+        public byte[] NotificationContent { get; set; }
     
         /// <summary>
         /// Gets or sets conditional access settings.

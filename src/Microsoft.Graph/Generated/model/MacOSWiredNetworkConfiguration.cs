@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets network name.
-        /// Network Name
+        /// Gets or sets authentication method.
+        /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkName", Required = Newtonsoft.Json.Required.Default)]
-        public string NetworkName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets network interface.
-        /// Network interface.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkInterface", Required = Newtonsoft.Json.Required.Default)]
-        public WiredNetworkInterface? NetworkInterface { get; set; }
-    
-        /// <summary>
-        /// Gets or sets eap type.
-        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the wired network.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
-        public EapType? EapType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets eap fast configuration.
@@ -59,25 +45,11 @@ namespace Microsoft.Graph
         public EapFastConfiguration? EapFastConfiguration { get; set; }
     
         /// <summary>
-        /// Gets or sets trusted server certificate names.
-        /// Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this wired network.
+        /// Gets or sets eap type.
+        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the wired network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedServerCertificateNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
-    
-        /// <summary>
-        /// Gets or sets authentication method.
-        /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
-        public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets non eap authentication method for eap ttls.
-        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nonEapAuthenticationMethodForEapTtls", Required = Newtonsoft.Json.Required.Default)]
-        public NonEapAuthenticationMethodForEapTtlsType? NonEapAuthenticationMethodForEapTtls { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
+        public EapType? EapType { get; set; }
     
         /// <summary>
         /// Gets or sets enable outer identity privacy.
@@ -87,11 +59,32 @@ namespace Microsoft.Graph
         public string EnableOuterIdentityPrivacy { get; set; }
     
         /// <summary>
-        /// Gets or sets root certificate for server validation.
-        /// Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.
+        /// Gets or sets network interface.
+        /// Network interface.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificateForServerValidation", Required = Newtonsoft.Json.Required.Default)]
-        public MacOSTrustedRootCertificate RootCertificateForServerValidation { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkInterface", Required = Newtonsoft.Json.Required.Default)]
+        public WiredNetworkInterface? NetworkInterface { get; set; }
+    
+        /// <summary>
+        /// Gets or sets network name.
+        /// Network Name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkName", Required = Newtonsoft.Json.Required.Default)]
+        public string NetworkName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets non eap authentication method for eap ttls.
+        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nonEapAuthenticationMethodForEapTtls", Required = Newtonsoft.Json.Required.Default)]
+        public NonEapAuthenticationMethodForEapTtlsType? NonEapAuthenticationMethodForEapTtls { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trusted server certificate names.
+        /// Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this wired network.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedServerCertificateNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.
@@ -99,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificateForClientAuthentication", Required = Newtonsoft.Json.Required.Default)]
         public MacOSCertificateProfileBase IdentityCertificateForClientAuthentication { get; set; }
+    
+        /// <summary>
+        /// Gets or sets root certificate for server validation.
+        /// Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificateForServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSTrustedRootCertificate RootCertificateForServerValidation { get; set; }
     
     }
 }

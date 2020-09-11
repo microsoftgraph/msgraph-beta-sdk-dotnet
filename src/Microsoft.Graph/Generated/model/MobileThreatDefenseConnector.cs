@@ -31,60 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets last heartbeat date time.
-        /// DateTime of last Heartbeat recieved from the Data Sync Partner
+        /// Gets or sets allow partner to collect iosapplication metadata.
+        /// For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastHeartbeatDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets partner state.
-        /// Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
-        public MobileThreatPartnerTenantState? PartnerState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets android mobile application management enabled.
-        /// For Android, set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidMobileApplicationManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AndroidMobileApplicationManagementEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ios mobile application management enabled.
-        /// For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosMobileApplicationManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IosMobileApplicationManagementEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets android enabled.
-        /// For Android, set whether data from the data sync partner should be used during compliance evaluations
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AndroidEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ios enabled.
-        /// For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IosEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows enabled.
-        /// For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WindowsEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets mac enabled.
-        /// For Mac, get or set whether data from the data sync partner should be used during compliance evaluations
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? MacEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowPartnerToCollectIOSApplicationMetadata", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowPartnerToCollectIOSApplicationMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets android device blocked on missing partner data.
@@ -94,6 +45,20 @@ namespace Microsoft.Graph
         public bool? AndroidDeviceBlockedOnMissingPartnerData { get; set; }
     
         /// <summary>
+        /// Gets or sets android enabled.
+        /// For Android, set whether data from the data sync partner should be used during compliance evaluations
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AndroidEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets android mobile application management enabled.
+        /// For Android, set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidMobileApplicationManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AndroidMobileApplicationManagementEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets ios device blocked on missing partner data.
         /// For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
         /// </summary>
@@ -101,11 +66,25 @@ namespace Microsoft.Graph
         public bool? IosDeviceBlockedOnMissingPartnerData { get; set; }
     
         /// <summary>
-        /// Gets or sets windows device blocked on missing partner data.
-        /// For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+        /// Gets or sets ios enabled.
+        /// For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsDeviceBlockedOnMissingPartnerData", Required = Newtonsoft.Json.Required.Default)]
-        public bool? WindowsDeviceBlockedOnMissingPartnerData { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IosEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ios mobile application management enabled.
+        /// For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosMobileApplicationManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IosMobileApplicationManagementEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last heartbeat date time.
+        /// DateTime of last Heartbeat recieved from the Data Sync Partner
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastHeartbeatDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets mac device blocked on missing partner data.
@@ -115,11 +94,18 @@ namespace Microsoft.Graph
         public bool? MacDeviceBlockedOnMissingPartnerData { get; set; }
     
         /// <summary>
-        /// Gets or sets partner unsupported os version blocked.
-        /// Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+        /// Gets or sets mac enabled.
+        /// For Mac, get or set whether data from the data sync partner should be used during compliance evaluations
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerUnsupportedOsVersionBlocked", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PartnerUnsupportedOsVersionBlocked { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? MacEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets partner state.
+        /// Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
+        public MobileThreatPartnerTenantState? PartnerState { get; set; }
     
         /// <summary>
         /// Gets or sets partner unresponsiveness threshold in days.
@@ -129,11 +115,25 @@ namespace Microsoft.Graph
         public Int32? PartnerUnresponsivenessThresholdInDays { get; set; }
     
         /// <summary>
-        /// Gets or sets allow partner to collect iosapplication metadata.
-        /// For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
+        /// Gets or sets partner unsupported os version blocked.
+        /// Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowPartnerToCollectIOSApplicationMetadata", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowPartnerToCollectIOSApplicationMetadata { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerUnsupportedOsVersionBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PartnerUnsupportedOsVersionBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows device blocked on missing partner data.
+        /// For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsDeviceBlockedOnMissingPartnerData", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WindowsDeviceBlockedOnMissingPartnerData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows enabled.
+        /// For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? WindowsEnabled { get; set; }
     
     }
 }

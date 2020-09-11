@@ -31,13 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets package id.
-        /// The package identifier.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
-        public string PackageId { get; set; }
-    
-        /// <summary>
         /// Gets or sets app identifier.
         /// The Identity Name.
         /// </summary>
@@ -45,11 +38,18 @@ namespace Microsoft.Graph
         public string AppIdentifier { get; set; }
     
         /// <summary>
-        /// Gets or sets used license count.
-        /// The number of VPP licenses in use.
+        /// Gets or sets app store url.
+        /// The Play for Work Store app URL.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? UsedLicenseCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string AppStoreUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets package id.
+        /// The package identifier.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
+        public string PackageId { get; set; }
     
         /// <summary>
         /// Gets or sets total license count.
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public Int32? TotalLicenseCount { get; set; }
     
         /// <summary>
-        /// Gets or sets app store url.
-        /// The Play for Work Store app URL.
+        /// Gets or sets used license count.
+        /// The number of VPP licenses in use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string AppStoreUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? UsedLicenseCount { get; set; }
     
     }
 }

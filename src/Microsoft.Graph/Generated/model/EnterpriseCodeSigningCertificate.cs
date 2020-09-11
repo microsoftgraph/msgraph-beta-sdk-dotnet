@@ -38,32 +38,11 @@ namespace Microsoft.Graph
         public byte[] Content { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
-        /// The Certificate Status Provisioned or not Provisioned.
+        /// Gets or sets expiration date time.
+        /// The Cert Expiration Date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public CertificateStatus? Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject name.
-        /// The Subject Name for the cert.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
-        public string SubjectName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subject.
-        /// The Subject Value for the cert.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
-        public string Subject { get; set; }
-    
-        /// <summary>
-        /// Gets or sets issuer name.
-        /// The Issuer Name for the cert.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerName", Required = Newtonsoft.Json.Required.Default)]
-        public string IssuerName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets issuer.
@@ -73,11 +52,32 @@ namespace Microsoft.Graph
         public string Issuer { get; set; }
     
         /// <summary>
-        /// Gets or sets expiration date time.
-        /// The Cert Expiration Date.
+        /// Gets or sets issuer name.
+        /// The Issuer Name for the cert.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerName", Required = Newtonsoft.Json.Required.Default)]
+        public string IssuerName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// The Certificate Status Provisioned or not Provisioned.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject.
+        /// The Subject Value for the cert.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        public string Subject { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject name.
+        /// The Subject Name for the cert.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectName { get; set; }
     
         /// <summary>
         /// Gets or sets upload date time.

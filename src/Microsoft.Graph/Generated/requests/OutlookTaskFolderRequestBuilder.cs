@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Tasks.
+        /// Gets the request builder for MultiValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskFolderTasksCollectionRequestBuilder"/>.</returns>
-        public IOutlookTaskFolderTasksCollectionRequestBuilder Tasks
+        /// <returns>The <see cref="IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        public IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
         {
             get
             {
-                return new OutlookTaskFolderTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
+                return new OutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for MultiValueExtendedProperties.
+        /// Gets the request builder for Tasks.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        public IOutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties
+        /// <returns>The <see cref="IOutlookTaskFolderTasksCollectionRequestBuilder"/>.</returns>
+        public IOutlookTaskFolderTasksCollectionRequestBuilder Tasks
         {
             get
             {
-                return new OutlookTaskFolderMultiValueExtendedPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("multiValueExtendedProperties"), this.Client);
+                return new OutlookTaskFolderTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
             }
         }
     

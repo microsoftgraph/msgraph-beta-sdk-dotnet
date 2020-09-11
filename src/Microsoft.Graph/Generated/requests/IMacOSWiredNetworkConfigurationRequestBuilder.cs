@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IMacOSWiredNetworkConfigurationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificateForServerValidation.
-        /// </summary>
-        /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        IMacOSTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation { get; }
-
-        /// <summary>
         /// Gets the request builder for IdentityCertificateForClientAuthentication.
         /// </summary>
         /// <returns>The <see cref="IMacOSCertificateProfileBaseWithReferenceRequestBuilder"/>.</returns>
         IMacOSCertificateProfileBaseWithReferenceRequestBuilder IdentityCertificateForClientAuthentication { get; }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificateForServerValidation.
+        /// </summary>
+        /// <returns>The <see cref="IMacOSTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IMacOSTrustedRootCertificateWithReferenceRequestBuilder RootCertificateForServerValidation { get; }
     
     }
 }

@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
+        /// Gets the request builder for AcceptanceStatuses.
         /// </summary>
-        /// <returns>The <see cref="ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        public ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder GroupAssignments
+        /// <returns>The <see cref="ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder"/>.</returns>
+        public ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder AcceptanceStatuses
         {
             get
             {
-                return new TermsAndConditionsGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
+                return new TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acceptanceStatuses"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AcceptanceStatuses.
+        /// Gets the request builder for GroupAssignments.
         /// </summary>
-        /// <returns>The <see cref="ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder"/>.</returns>
-        public ITermsAndConditionsAcceptanceStatusesCollectionRequestBuilder AcceptanceStatuses
+        /// <returns>The <see cref="ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        public ITermsAndConditionsGroupAssignmentsCollectionRequestBuilder GroupAssignments
         {
             get
             {
-                return new TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acceptanceStatuses"), this.Client);
+                return new TermsAndConditionsGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
             }
         }
     

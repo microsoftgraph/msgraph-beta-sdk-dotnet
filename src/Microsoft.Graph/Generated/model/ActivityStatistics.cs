@@ -37,10 +37,10 @@ namespace Microsoft.Graph
         public AnalyticsActivityType? Activity { get; set; }
     
         /// <summary>
-        /// Gets or sets start date.
+        /// Gets or sets duration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date StartDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        public Duration Duration { get; set; }
     
         /// <summary>
         /// Gets or sets end date.
@@ -49,16 +49,16 @@ namespace Microsoft.Graph
         public Date EndDate { get; set; }
     
         /// <summary>
+        /// Gets or sets start date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date StartDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets time zone used.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZoneUsed", Required = Newtonsoft.Json.Required.Default)]
         public string TimeZoneUsed { get; set; }
-    
-        /// <summary>
-        /// Gets or sets duration.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
-        public Duration Duration { get; set; }
     
     }
 }

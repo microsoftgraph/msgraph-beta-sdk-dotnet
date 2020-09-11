@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IPrivilegedRoleRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Settings.
-        /// </summary>
-        /// <returns>The <see cref="IPrivilegedRoleSettingsRequestBuilder"/>.</returns>
-        IPrivilegedRoleSettingsRequestBuilder Settings { get; }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
         IPrivilegedRoleAssignmentsCollectionWithReferencesRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedRoleSettingsRequestBuilder"/>.</returns>
+        IPrivilegedRoleSettingsRequestBuilder Settings { get; }
 
         /// <summary>
         /// Gets the request builder for Summary.

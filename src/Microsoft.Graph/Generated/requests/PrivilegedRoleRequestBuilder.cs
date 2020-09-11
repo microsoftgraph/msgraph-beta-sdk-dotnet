@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Settings.
-        /// </summary>
-        /// <returns>The <see cref="IPrivilegedRoleSettingsRequestBuilder"/>.</returns>
-        public IPrivilegedRoleSettingsRequestBuilder Settings
-        {
-            get
-            {
-                return new PrivilegedRoleSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedRoleAssignmentsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PrivilegedRoleAssignmentsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedRoleSettingsRequestBuilder"/>.</returns>
+        public IPrivilegedRoleSettingsRequestBuilder Settings
+        {
+            get
+            {
+                return new PrivilegedRoleSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
             }
         }
 

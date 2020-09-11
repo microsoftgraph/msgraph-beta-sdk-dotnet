@@ -38,10 +38,10 @@ namespace Microsoft.Graph
         IPrivilegedAccessResourcesCollectionRequestBuilder Resources { get; }
 
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
+        /// Gets the request builder for RoleAssignmentRequests.
         /// </summary>
-        /// <returns>The <see cref="IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
+        /// <returns>The <see cref="IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
+        IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests { get; }
 
         /// <summary>
         /// Gets the request builder for RoleAssignments.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IPrivilegedAccessRoleAssignmentsCollectionRequestBuilder RoleAssignments { get; }
 
         /// <summary>
-        /// Gets the request builder for RoleAssignmentRequests.
+        /// Gets the request builder for RoleDefinitions.
         /// </summary>
-        /// <returns>The <see cref="IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
-        IPrivilegedAccessRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests { get; }
+        /// <returns>The <see cref="IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        IPrivilegedAccessRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
 
         /// <summary>
         /// Gets the request builder for RoleSettings.

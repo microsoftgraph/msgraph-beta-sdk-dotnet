@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets platform.
-        /// Device OS/Platform
+        /// Gets or sets action.
+        /// Device Action
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
-        public DevicePlatformType? Platform { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        public CompanyPortalAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets ownerType.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public OwnerType? OwnerType { get; set; }
     
         /// <summary>
-        /// Gets or sets action.
-        /// Device Action
+        /// Gets or sets platform.
+        /// Device OS/Platform
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
-        public CompanyPortalAction? Action { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        public DevicePlatformType? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

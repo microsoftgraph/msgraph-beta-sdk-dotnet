@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new ITermsOfUseContainerRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Agreements.
-        /// </summary>
-        /// <returns>The <see cref="ITermsOfUseContainerAgreementsCollectionRequestBuilder"/>.</returns>
-        ITermsOfUseContainerAgreementsCollectionRequestBuilder Agreements { get; }
-
-        /// <summary>
         /// Gets the request builder for AgreementAcceptances.
         /// </summary>
         /// <returns>The <see cref="ITermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder"/>.</returns>
         ITermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances { get; }
+
+        /// <summary>
+        /// Gets the request builder for Agreements.
+        /// </summary>
+        /// <returns>The <see cref="ITermsOfUseContainerAgreementsCollectionRequestBuilder"/>.</returns>
+        ITermsOfUseContainerAgreementsCollectionRequestBuilder Agreements { get; }
     
     }
 }

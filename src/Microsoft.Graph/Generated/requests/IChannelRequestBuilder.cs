@@ -32,6 +32,18 @@ namespace Microsoft.Graph
         new IChannelRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for FilesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
+        IDriveItemRequestBuilder FilesFolder { get; }
+
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IChannelMembersCollectionRequestBuilder"/>.</returns>
+        IChannelMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
         /// Gets the request builder for Messages.
         /// </summary>
         /// <returns>The <see cref="IChannelMessagesCollectionRequestBuilder"/>.</returns>
@@ -42,20 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
         IChannelTabsCollectionRequestBuilder Tabs { get; }
-
-        /// <summary>
-        /// Gets the request builder for Members.
-        /// </summary>
-        /// <returns>The <see cref="IChannelMembersCollectionRequestBuilder"/>.</returns>
-        IChannelMembersCollectionRequestBuilder Members { get; }
-
-        /// <summary>
-        /// Gets the request builder for FilesFolder.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
-        IDriveItemRequestBuilder FilesFolder { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for ChannelCompleteMigration.
+        /// </summary>
+        /// <returns>The <see cref="IChannelCompleteMigrationRequestBuilder"/>.</returns>
+        IChannelCompleteMigrationRequestBuilder CompleteMigration();
     
     }
 }

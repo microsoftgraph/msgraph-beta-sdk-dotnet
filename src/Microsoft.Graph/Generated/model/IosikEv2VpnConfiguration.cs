@@ -31,6 +31,27 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allow default child security association parameters.
+        /// Allows the use of child security association parameters by setting all parameters to the device's default unless explicitly specified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDefaultChildSecurityAssociationParameters", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowDefaultChildSecurityAssociationParameters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow default security association parameters.
+        /// Allows the use of security association parameters by setting all parameters to the device's default unless explicitly specified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDefaultSecurityAssociationParameters", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AllowDefaultSecurityAssociationParameters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets always on configuration.
+        /// AlwaysOn Configuration
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public AppleVpnAlwaysOnConfiguration AlwaysOnConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets child security association parameters.
         /// Child Security Association Parameters
         /// </summary>
@@ -64,6 +85,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableRedirect", Required = Newtonsoft.Json.Required.Default)]
         public bool? DisableRedirect { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enable always on configuration.
+        /// Determines if Always on VPN is enabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableAlwaysOnConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableAlwaysOnConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets enable certificate revocation check.
@@ -155,34 +183,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tlsMinimumVersion", Required = Newtonsoft.Json.Required.Default)]
         public string TlsMinimumVersion { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allow default security association parameters.
-        /// Allows the use of security association parameters by setting all parameters to the device's default unless explicitly specified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDefaultSecurityAssociationParameters", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowDefaultSecurityAssociationParameters { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allow default child security association parameters.
-        /// Allows the use of child security association parameters by setting all parameters to the device's default unless explicitly specified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDefaultChildSecurityAssociationParameters", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AllowDefaultChildSecurityAssociationParameters { get; set; }
-    
-        /// <summary>
-        /// Gets or sets always on configuration.
-        /// AlwaysOn Configuration
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public AppleVpnAlwaysOnConfiguration AlwaysOnConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enable always on configuration.
-        /// Determines if Always on VPN is enabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableAlwaysOnConfiguration", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableAlwaysOnConfiguration { get; set; }
     
     }
 }

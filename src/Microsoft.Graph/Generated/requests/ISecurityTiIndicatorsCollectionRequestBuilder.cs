@@ -37,20 +37,6 @@ namespace Microsoft.Graph
         ITiIndicatorRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for TiIndicatorSubmitTiIndicators.
-        /// </summary>
-        /// <returns>The <see cref="ITiIndicatorSubmitTiIndicatorsRequestBuilder"/>.</returns>
-        ITiIndicatorSubmitTiIndicatorsRequestBuilder SubmitTiIndicators(
-            IEnumerable<TiIndicator> value = null);
-
-        /// <summary>
-        /// Gets the request builder for TiIndicatorUpdateTiIndicators.
-        /// </summary>
-        /// <returns>The <see cref="ITiIndicatorUpdateTiIndicatorsRequestBuilder"/>.</returns>
-        ITiIndicatorUpdateTiIndicatorsRequestBuilder UpdateTiIndicators(
-            IEnumerable<TiIndicator> value = null);
-
-        /// <summary>
         /// Gets the request builder for TiIndicatorDeleteTiIndicators.
         /// </summary>
         /// <returns>The <see cref="ITiIndicatorDeleteTiIndicatorsRequestBuilder"/>.</returns>
@@ -63,5 +49,19 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITiIndicatorDeleteTiIndicatorsByExternalIdRequestBuilder"/>.</returns>
         ITiIndicatorDeleteTiIndicatorsByExternalIdRequestBuilder DeleteTiIndicatorsByExternalId(
             IEnumerable<string> value = null);
+
+        /// <summary>
+        /// Gets the request builder for TiIndicatorSubmitTiIndicators.
+        /// </summary>
+        /// <returns>The <see cref="ITiIndicatorSubmitTiIndicatorsRequestBuilder"/>.</returns>
+        ITiIndicatorSubmitTiIndicatorsRequestBuilder SubmitTiIndicators(
+            IEnumerable<TiIndicator> value = null);
+
+        /// <summary>
+        /// Gets the request builder for TiIndicatorUpdateTiIndicators.
+        /// </summary>
+        /// <returns>The <see cref="ITiIndicatorUpdateTiIndicatorsRequestBuilder"/>.</returns>
+        ITiIndicatorUpdateTiIndicatorsRequestBuilder UpdateTiIndicators(
+            IEnumerable<TiIndicator> value = null);
     }
 }

@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets operation type.
-        /// The type of group policy operation.
+        /// Gets or sets last modified date time.
+        /// The date and time the entity was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicyOperationType? OperationType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets operation status.
@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public GroupPolicyOperationStatus? OperationStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets operation type.
+        /// The type of group policy operation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyOperationType? OperationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets status details.
         /// The group policy operation status detail.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statusDetails", Required = Newtonsoft.Json.Required.Default)]
         public string StatusDetails { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// The date and time the entity was last modified.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
     
     }
 }

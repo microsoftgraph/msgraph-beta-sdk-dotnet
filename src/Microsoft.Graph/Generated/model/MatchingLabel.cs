@@ -31,22 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
+        /// Gets or sets applicationMode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets displayName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationMode", Required = Newtonsoft.Json.Required.Default)]
+        public ApplicationMode? ApplicationMode { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -55,16 +43,16 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets toolTip.
+        /// Gets or sets displayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toolTip", Required = Newtonsoft.Json.Required.Default)]
-        public string ToolTip { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets policyTip.
+        /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTip", Required = Newtonsoft.Json.Required.Default)]
-        public string PolicyTip { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets isEndpointProtectionEnabled.
@@ -73,22 +61,34 @@ namespace Microsoft.Graph
         public bool? IsEndpointProtectionEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets applicationMode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationMode", Required = Newtonsoft.Json.Required.Default)]
-        public ApplicationMode? ApplicationMode { get; set; }
-    
-        /// <summary>
         /// Gets or sets labelActions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LabelActionBase> LabelActions { get; set; }
     
         /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policyTip.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTip", Required = Newtonsoft.Json.Required.Default)]
+        public string PolicyTip { get; set; }
+    
+        /// <summary>
         /// Gets or sets priority.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Priority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets toolTip.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toolTip", Required = Newtonsoft.Json.Required.Default)]
+        public string ToolTip { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

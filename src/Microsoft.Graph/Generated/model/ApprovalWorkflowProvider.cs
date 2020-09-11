@@ -43,16 +43,16 @@ namespace Microsoft.Graph
         public IApprovalWorkflowProviderBusinessFlowsCollectionPage BusinessFlows { get; set; }
     
         /// <summary>
-        /// Gets or sets policy templates.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTemplates", Required = Newtonsoft.Json.Required.Default)]
-        public IApprovalWorkflowProviderPolicyTemplatesCollectionPage PolicyTemplates { get; set; }
-    
-        /// <summary>
         /// Gets or sets business flows with requests awaiting my decision.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessFlowsWithRequestsAwaitingMyDecision", Required = Newtonsoft.Json.Required.Default)]
         public IApprovalWorkflowProviderBusinessFlowsWithRequestsAwaitingMyDecisionCollectionPage BusinessFlowsWithRequestsAwaitingMyDecision { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policy templates.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTemplates", Required = Newtonsoft.Json.Required.Default)]
+        public IApprovalWorkflowProviderPolicyTemplatesCollectionPage PolicyTemplates { get; set; }
     
     }
 }

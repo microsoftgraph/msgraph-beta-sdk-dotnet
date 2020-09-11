@@ -31,6 +31,27 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets authenticationTransformConstants.
+        /// Authentication Transform Constants
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationTransformConstants", Required = Newtonsoft.Json.Required.Default)]
+        public AuthenticationTransformConstant? AuthenticationTransformConstants { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cipherTransformConstants.
+        /// Cipher Transform Constants
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cipherTransformConstants", Required = Newtonsoft.Json.Required.Default)]
+        public VpnEncryptionAlgorithmType? CipherTransformConstants { get; set; }
+    
+        /// <summary>
+        /// Gets or sets dhGroup.
+        /// Diffie Hellman Group
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dhGroup", Required = Newtonsoft.Json.Required.Default)]
+        public DiffieHellmanGroup? DhGroup { get; set; }
+    
+        /// <summary>
         /// Gets or sets encryptionMethod.
         /// Encryption Method
         /// </summary>
@@ -43,27 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "integrityCheckMethod", Required = Newtonsoft.Json.Required.Default)]
         public VpnIntegrityAlgorithmType? IntegrityCheckMethod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets dhGroup.
-        /// Diffie Hellman Group
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dhGroup", Required = Newtonsoft.Json.Required.Default)]
-        public DiffieHellmanGroup? DhGroup { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cipherTransformConstants.
-        /// Cipher Transform Constants
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cipherTransformConstants", Required = Newtonsoft.Json.Required.Default)]
-        public VpnEncryptionAlgorithmType? CipherTransformConstants { get; set; }
-    
-        /// <summary>
-        /// Gets or sets authenticationTransformConstants.
-        /// Authentication Transform Constants
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationTransformConstants", Required = Newtonsoft.Json.Required.Default)]
-        public AuthenticationTransformConstant? AuthenticationTransformConstants { get; set; }
     
         /// <summary>
         /// Gets or sets pfsGroup.

@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (onPremisesPublishingProfileToInitialize != null && onPremisesPublishingProfileToInitialize.AdditionalData != null)
             {
 
-                if (onPremisesPublishingProfileToInitialize.Agents != null && onPremisesPublishingProfileToInitialize.Agents.CurrentPage != null)
-                {
-                    onPremisesPublishingProfileToInitialize.Agents.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (onPremisesPublishingProfileToInitialize.AgentGroups != null && onPremisesPublishingProfileToInitialize.AgentGroups.CurrentPage != null)
                 {
                     onPremisesPublishingProfileToInitialize.AgentGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
@@ -266,17 +250,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (onPremisesPublishingProfileToInitialize.PublishedResources != null && onPremisesPublishingProfileToInitialize.PublishedResources.CurrentPage != null)
+                if (onPremisesPublishingProfileToInitialize.Agents != null && onPremisesPublishingProfileToInitialize.Agents.CurrentPage != null)
                 {
-                    onPremisesPublishingProfileToInitialize.PublishedResources.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
+                    onPremisesPublishingProfileToInitialize.Agents.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out nextPageLink);
+                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("agents@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(
+                        onPremisesPublishingProfileToInitialize.Agents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (onPremisesPublishingProfileToInitialize.ConnectorGroups != null && onPremisesPublishingProfileToInitialize.ConnectorGroups.CurrentPage != null)
+                {
+                    onPremisesPublishingProfileToInitialize.ConnectorGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectorGroups@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -298,17 +298,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (onPremisesPublishingProfileToInitialize.ConnectorGroups != null && onPremisesPublishingProfileToInitialize.ConnectorGroups.CurrentPage != null)
+                if (onPremisesPublishingProfileToInitialize.PublishedResources != null && onPremisesPublishingProfileToInitialize.PublishedResources.CurrentPage != null)
                 {
-                    onPremisesPublishingProfileToInitialize.ConnectorGroups.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
+                    onPremisesPublishingProfileToInitialize.PublishedResources.AdditionalData = onPremisesPublishingProfileToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("connectorGroups@odata.nextLink", out nextPageLink);
+                    onPremisesPublishingProfileToInitialize.AdditionalData.TryGetValue("publishedResources@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        onPremisesPublishingProfileToInitialize.ConnectorGroups.InitializeNextPageRequest(
+                        onPremisesPublishingProfileToInitialize.PublishedResources.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

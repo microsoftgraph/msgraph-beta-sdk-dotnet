@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets deviceClass.
-        /// Device Class which will be impacted by this rule.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceClass", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementExchangeDeviceClass DeviceClass { get; set; }
-    
-        /// <summary>
         /// Gets or sets accessLevel.
         /// Access Level for Exchange granted by this rule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessLevel", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementExchangeAccessLevel? AccessLevel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceClass.
+        /// Device Class which will be impacted by this rule.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceClass", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementExchangeDeviceClass DeviceClass { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

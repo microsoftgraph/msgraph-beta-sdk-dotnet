@@ -37,12 +37,6 @@ namespace Microsoft.Graph
         public bool? IsEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Version { get; set; }
-    
-        /// <summary>
         /// Gets or sets notify reviewers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifyReviewers", Required = Newtonsoft.Json.Required.Default)]
@@ -65,6 +59,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AccessReviewScope> Reviewers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Version { get; set; }
     
     }
 }

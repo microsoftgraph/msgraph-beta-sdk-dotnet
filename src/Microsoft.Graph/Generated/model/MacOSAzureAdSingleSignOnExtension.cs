@@ -30,13 +30,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets enableSharedDeviceMode.
-        /// Enables or disables shared device mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSharedDeviceMode", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableSharedDeviceMode { get; set; }
-    
-        /// <summary>
         /// Gets or sets bundleIdAccessControlList.
         /// An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
         /// </summary>
@@ -49,6 +42,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurations", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyTypedValuePair> Configurations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enableSharedDeviceMode.
+        /// Enables or disables shared device mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSharedDeviceMode", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableSharedDeviceMode { get; set; }
     
     }
 }

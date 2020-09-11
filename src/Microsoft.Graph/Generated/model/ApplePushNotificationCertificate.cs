@@ -38,39 +38,11 @@ namespace Microsoft.Graph
         public string AppleIdentifier { get; set; }
     
         /// <summary>
-        /// Gets or sets topic identifier.
-        /// Topic Id.
+        /// Gets or sets certificate.
+        /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topicIdentifier", Required = Newtonsoft.Json.Required.Default)]
-        public string TopicIdentifier { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last modified date time.
-        /// Last modified date and time for Apple push notification certificate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expiration date time.
-        /// The expiration date and time for Apple push notification certificate.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate upload status.
-        /// The certificate upload status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateUploadStatus", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateUploadStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate upload failure reason.
-        /// The reason the certificate upload failed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateUploadFailureReason", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateUploadFailureReason { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
+        public string Certificate { get; set; }
     
         /// <summary>
         /// Gets or sets certificate serial number.
@@ -80,11 +52,39 @@ namespace Microsoft.Graph
         public string CertificateSerialNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate.
-        /// Not yet documented
+        /// Gets or sets certificate upload failure reason.
+        /// The reason the certificate upload failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificate", Required = Newtonsoft.Json.Required.Default)]
-        public string Certificate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateUploadFailureReason", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateUploadFailureReason { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate upload status.
+        /// The certificate upload status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateUploadStatus", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateUploadStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expiration date time.
+        /// The expiration date and time for Apple push notification certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// Last modified date and time for Apple push notification certificate.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets topic identifier.
+        /// Topic Id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topicIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string TopicIdentifier { get; set; }
     
     }
 }

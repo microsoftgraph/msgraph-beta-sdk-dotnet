@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (auditLogRootToInitialize != null && auditLogRootToInitialize.AdditionalData != null)
             {
 
-                if (auditLogRootToInitialize.SignIns != null && auditLogRootToInitialize.SignIns.CurrentPage != null)
-                {
-                    auditLogRootToInitialize.SignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    auditLogRootToInitialize.AdditionalData.TryGetValue("signIns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        auditLogRootToInitialize.SignIns.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (auditLogRootToInitialize.DirectoryAudits != null && auditLogRootToInitialize.DirectoryAudits.CurrentPage != null)
                 {
                     auditLogRootToInitialize.DirectoryAudits.AdditionalData = auditLogRootToInitialize.AdditionalData;
@@ -261,22 +245,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         auditLogRootToInitialize.DirectoryAudits.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (auditLogRootToInitialize.RestrictedSignIns != null && auditLogRootToInitialize.RestrictedSignIns.CurrentPage != null)
-                {
-                    auditLogRootToInitialize.RestrictedSignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    auditLogRootToInitialize.AdditionalData.TryGetValue("restrictedSignIns@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        auditLogRootToInitialize.RestrictedSignIns.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -309,6 +277,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         auditLogRootToInitialize.Provisioning.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (auditLogRootToInitialize.RestrictedSignIns != null && auditLogRootToInitialize.RestrictedSignIns.CurrentPage != null)
+                {
+                    auditLogRootToInitialize.RestrictedSignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    auditLogRootToInitialize.AdditionalData.TryGetValue("restrictedSignIns@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        auditLogRootToInitialize.RestrictedSignIns.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (auditLogRootToInitialize.SignIns != null && auditLogRootToInitialize.SignIns.CurrentPage != null)
+                {
+                    auditLogRootToInitialize.SignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    auditLogRootToInitialize.AdditionalData.TryGetValue("signIns@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        auditLogRootToInitialize.SignIns.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

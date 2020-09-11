@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets contentClassifications.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentClassifications", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ContentClassification> ContentClassifications { get; set; }
+    
+        /// <summary>
         /// Gets or sets sensitiveTypeIds.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
@@ -47,12 +53,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeoutInMs", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TimeoutInMs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets contentClassifications.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentClassifications", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ContentClassification> ContentClassifications { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

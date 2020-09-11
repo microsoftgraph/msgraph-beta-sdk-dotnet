@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets fileName.
-        /// The file name of the uploaded ADML file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
-        public string FileName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets languageCode.
-        /// The language code of the uploaded ADML file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageCode", Required = Newtonsoft.Json.Required.Default)]
-        public string LanguageCode { get; set; }
-    
-        /// <summary>
         /// Gets or sets content.
         /// The contents of the uploaded ADML file.
         /// </summary>
@@ -52,11 +38,25 @@ namespace Microsoft.Graph
         public byte[] Content { get; set; }
     
         /// <summary>
+        /// Gets or sets fileName.
+        /// The file name of the uploaded ADML file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        public string FileName { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// Key of the entity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
+    
+        /// <summary>
+        /// Gets or sets languageCode.
+        /// The language code of the uploaded ADML file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageCode", Required = Newtonsoft.Json.Required.Default)]
+        public string LanguageCode { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedDateTime.

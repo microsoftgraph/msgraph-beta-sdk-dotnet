@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DataLossPreventionPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder"/>.</returns>
+        public IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder DataLossPreventionPolicies
+        {
+            get
+            {
+                return new InformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dataLossPreventionPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SensitivityLabels.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionSensitivityLabelsCollectionRequestBuilder"/>.</returns>
@@ -83,18 +95,6 @@ namespace Microsoft.Graph
             get
             {
                 return new SensitivityPolicySettingsRequestBuilder(this.AppendSegmentToRequestUrl("sensitivityPolicySettings"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DataLossPreventionPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder"/>.</returns>
-        public IInformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder DataLossPreventionPolicies
-        {
-            get
-            {
-                return new InformationProtectionDataLossPreventionPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dataLossPreventionPolicies"), this.Client);
             }
         }
 

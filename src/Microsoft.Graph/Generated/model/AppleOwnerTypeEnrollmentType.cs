@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets ownerType.
-        /// The owner type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
-        public ManagedDeviceOwnerType? OwnerType { get; set; }
-    
-        /// <summary>
         /// Gets or sets enrollmentType.
         /// The enrollment type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentType", Required = Newtonsoft.Json.Required.Default)]
         public AppleUserInitiatedEnrollmentType? EnrollmentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ownerType.
+        /// The owner type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedDeviceOwnerType? OwnerType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

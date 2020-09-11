@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (permissionGrantPolicyToInitialize != null && permissionGrantPolicyToInitialize.AdditionalData != null)
             {
 
-                if (permissionGrantPolicyToInitialize.Includes != null && permissionGrantPolicyToInitialize.Includes.CurrentPage != null)
-                {
-                    permissionGrantPolicyToInitialize.Includes.AdditionalData = permissionGrantPolicyToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("includes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        permissionGrantPolicyToInitialize.Includes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (permissionGrantPolicyToInitialize.Excludes != null && permissionGrantPolicyToInitialize.Excludes.CurrentPage != null)
                 {
                     permissionGrantPolicyToInitialize.Excludes.AdditionalData = permissionGrantPolicyToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         permissionGrantPolicyToInitialize.Excludes.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (permissionGrantPolicyToInitialize.Includes != null && permissionGrantPolicyToInitialize.Includes.CurrentPage != null)
+                {
+                    permissionGrantPolicyToInitialize.Includes.AdditionalData = permissionGrantPolicyToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    permissionGrantPolicyToInitialize.AdditionalData.TryGetValue("includes@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        permissionGrantPolicyToInitialize.Includes.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

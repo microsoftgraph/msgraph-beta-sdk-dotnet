@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IVendorRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Picture.
-        /// </summary>
-        /// <returns>The <see cref="IVendorPictureCollectionRequestBuilder"/>.</returns>
-        IVendorPictureCollectionRequestBuilder Picture { get; }
-
-        /// <summary>
         /// Gets the request builder for Currency.
         /// </summary>
         /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
         ICurrencyRequestBuilder Currency { get; }
+
+        /// <summary>
+        /// Gets the request builder for PaymentMethod.
+        /// </summary>
+        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
+        IPaymentMethodRequestBuilder PaymentMethod { get; }
 
         /// <summary>
         /// Gets the request builder for PaymentTerm.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph
         IPaymentTermRequestBuilder PaymentTerm { get; }
 
         /// <summary>
-        /// Gets the request builder for PaymentMethod.
+        /// Gets the request builder for Picture.
         /// </summary>
-        /// <returns>The <see cref="IPaymentMethodRequestBuilder"/>.</returns>
-        IPaymentMethodRequestBuilder PaymentMethod { get; }
+        /// <returns>The <see cref="IVendorPictureCollectionRequestBuilder"/>.</returns>
+        IVendorPictureCollectionRequestBuilder Picture { get; }
     
     }
 }

@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets group policy object id.
-        /// The Group Policy Object GUID from GPO Xml content
+        /// Gets or sets content.
+        /// The Group Policy Object file content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? GroupPolicyObjectId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ou distinguished name.
-        /// The distinguished name of the OU.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ouDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
-        public string OuDistinguishedName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -52,6 +45,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets group policy object id.
+        /// The Group Policy Object GUID from GPO Xml content
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? GroupPolicyObjectId { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time at which the GroupPolicyObjectFile was last modified.
         /// </summary>
@@ -59,11 +59,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets content.
-        /// The Group Policy Object file content.
+        /// Gets or sets ou distinguished name.
+        /// The distinguished name of the OU.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
-        public string Content { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ouDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
+        public string OuDistinguishedName { get; set; }
     
     }
 }

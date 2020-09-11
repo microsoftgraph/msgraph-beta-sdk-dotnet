@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets expressionResult.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressionResult", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ExpressionResult { get; set; }
-    
-        /// <summary>
         /// Gets or sets expression.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expression", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +41,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressionEvaluationDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ExpressionEvaluationDetails> ExpressionEvaluationDetailsProperty { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expressionResult.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressionResult", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExpressionResult { get; set; }
     
         /// <summary>
         /// Gets or sets propertyToEvaluate.

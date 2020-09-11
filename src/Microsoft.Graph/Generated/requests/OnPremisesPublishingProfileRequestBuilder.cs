@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Agents.
-        /// </summary>
-        /// <returns>The <see cref="IOnPremisesPublishingProfileAgentsCollectionRequestBuilder"/>.</returns>
-        public IOnPremisesPublishingProfileAgentsCollectionRequestBuilder Agents
-        {
-            get
-            {
-                return new OnPremisesPublishingProfileAgentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("agents"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AgentGroups.
         /// </summary>
         /// <returns>The <see cref="IOnPremisesPublishingProfileAgentGroupsCollectionRequestBuilder"/>.</returns>
@@ -75,14 +63,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PublishedResources.
+        /// Gets the request builder for Agents.
         /// </summary>
-        /// <returns>The <see cref="IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder"/>.</returns>
-        public IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder PublishedResources
+        /// <returns>The <see cref="IOnPremisesPublishingProfileAgentsCollectionRequestBuilder"/>.</returns>
+        public IOnPremisesPublishingProfileAgentsCollectionRequestBuilder Agents
         {
             get
             {
-                return new OnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("publishedResources"), this.Client);
+                return new OnPremisesPublishingProfileAgentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("agents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ConnectorGroups.
+        /// </summary>
+        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder"/>.</returns>
+        public IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder ConnectorGroups
+        {
+            get
+            {
+                return new OnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("connectorGroups"), this.Client);
             }
         }
 
@@ -99,14 +99,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ConnectorGroups.
+        /// Gets the request builder for PublishedResources.
         /// </summary>
-        /// <returns>The <see cref="IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder"/>.</returns>
-        public IOnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder ConnectorGroups
+        /// <returns>The <see cref="IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder"/>.</returns>
+        public IOnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder PublishedResources
         {
             get
             {
-                return new OnPremisesPublishingProfileConnectorGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("connectorGroups"), this.Client);
+                return new OnPremisesPublishingProfilePublishedResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("publishedResources"), this.Client);
             }
         }
     

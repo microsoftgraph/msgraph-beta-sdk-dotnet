@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles != null && deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("androidDeviceOwnerEnrollmentProfiles@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas != null && deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas.CurrentPage != null)
                 {
                     deviceManagementToInitialize.AndroidForWorkAppConfigurationSchemas.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -298,22 +314,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles != null && deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("androidDeviceOwnerEnrollmentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.AndroidDeviceOwnerEnrollmentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.AssignmentFilters != null && deviceManagementToInitialize.AssignmentFilters.CurrentPage != null)
                 {
                     deviceManagementToInitialize.AssignmentFilters.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -346,17 +346,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.DeviceConfigurations != null && deviceManagementToInitialize.DeviceConfigurations.CurrentPage != null)
+                if (deviceManagementToInitialize.CartToClassAssociations != null && deviceManagementToInitialize.CartToClassAssociations.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.DeviceConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.CartToClassAssociations.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurations@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("cartToClassAssociations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.DeviceConfigurations.InitializeNextPageRequest(
+                        deviceManagementToInitialize.CartToClassAssociations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -394,49 +394,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.CartToClassAssociations != null && deviceManagementToInitialize.CartToClassAssociations.CurrentPage != null)
+                if (deviceManagementToInitialize.DeviceConfigurationConflictSummary != null && deviceManagementToInitialize.DeviceConfigurationConflictSummary.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.CartToClassAssociations.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.DeviceConfigurationConflictSummary.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("cartToClassAssociations@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurationConflictSummary@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.CartToClassAssociations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.IosUpdateStatuses != null && deviceManagementToInitialize.IosUpdateStatuses.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.IosUpdateStatuses.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("iosUpdateStatuses@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.IosUpdateStatuses.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.NdesConnectors != null && deviceManagementToInitialize.NdesConnectors.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.NdesConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("ndesConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.NdesConnectors.InitializeNextPageRequest(
+                        deviceManagementToInitialize.DeviceConfigurationConflictSummary.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -458,33 +426,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.ManagedDeviceEncryptionStates != null && deviceManagementToInitialize.ManagedDeviceEncryptionStates.CurrentPage != null)
+                if (deviceManagementToInitialize.DeviceConfigurations != null && deviceManagementToInitialize.DeviceConfigurations.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.ManagedDeviceEncryptionStates.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.DeviceConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("managedDeviceEncryptionStates@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.ManagedDeviceEncryptionStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.DeviceConfigurationConflictSummary != null && deviceManagementToInitialize.DeviceConfigurationConflictSummary.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.DeviceConfigurationConflictSummary.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceConfigurationConflictSummary@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceConfigurationConflictSummary.InitializeNextPageRequest(
+                        deviceManagementToInitialize.DeviceConfigurations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -506,6 +458,70 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.IosUpdateStatuses != null && deviceManagementToInitialize.IosUpdateStatuses.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.IosUpdateStatuses.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("iosUpdateStatuses@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.IosUpdateStatuses.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.ManagedDeviceEncryptionStates != null && deviceManagementToInitialize.ManagedDeviceEncryptionStates.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ManagedDeviceEncryptionStates.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("managedDeviceEncryptionStates@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ManagedDeviceEncryptionStates.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.NdesConnectors != null && deviceManagementToInitialize.NdesConnectors.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.NdesConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("ndesConnectors@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.NdesConnectors.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ComplianceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("complianceManagementPartners@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ComplianceManagementPartners.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.DeviceCategories != null && deviceManagementToInitialize.DeviceCategories.CurrentPage != null)
                 {
                     deviceManagementToInitialize.DeviceCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -522,22 +538,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.ExchangeConnectors != null && deviceManagementToInitialize.ExchangeConnectors.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.ExchangeConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("exchangeConnectors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ExchangeConnectors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.DeviceEnrollmentConfigurations != null && deviceManagementToInitialize.DeviceEnrollmentConfigurations.CurrentPage != null)
                 {
                     deviceManagementToInitialize.DeviceEnrollmentConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -549,6 +549,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.DeviceEnrollmentConfigurations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.DeviceManagementPartners != null && deviceManagementToInitialize.DeviceManagementPartners.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DeviceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceManagementPartners@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DeviceManagementPartners.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.ExchangeConnectors != null && deviceManagementToInitialize.ExchangeConnectors.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ExchangeConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("exchangeConnectors@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ExchangeConnectors.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -586,33 +618,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.DeviceManagementPartners != null && deviceManagementToInitialize.DeviceManagementPartners.CurrentPage != null)
+                if (deviceManagementToInitialize.Categories != null && deviceManagementToInitialize.Categories.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.DeviceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.Categories.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceManagementPartners@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.DeviceManagementPartners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.ComplianceManagementPartners != null && deviceManagementToInitialize.ComplianceManagementPartners.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.ComplianceManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("complianceManagementPartners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ComplianceManagementPartners.InitializeNextPageRequest(
+                        deviceManagementToInitialize.Categories.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -666,33 +682,97 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.Categories != null && deviceManagementToInitialize.Categories.CurrentPage != null)
+                if (deviceManagementToInitialize.ComanagedDevices != null && deviceManagementToInitialize.ComanagedDevices.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.Categories.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.ComanagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("comanagedDevices@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.Categories.InitializeNextPageRequest(
+                        deviceManagementToInitialize.ComanagedDevices.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
                 }
 
-                if (deviceManagementToInitialize.RemoteActionAudits != null && deviceManagementToInitialize.RemoteActionAudits.CurrentPage != null)
+                if (deviceManagementToInitialize.ComanagementEligibleDevices != null && deviceManagementToInitialize.ComanagementEligibleDevices.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.RemoteActionAudits.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.ComanagementEligibleDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("remoteActionAudits@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("comanagementEligibleDevices@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.RemoteActionAudits.InitializeNextPageRequest(
+                        deviceManagementToInitialize.ComanagementEligibleDevices.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.DataSharingConsents != null && deviceManagementToInitialize.DataSharingConsents.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DataSharingConsents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("dataSharingConsents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DataSharingConsents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.DetectedApps != null && deviceManagementToInitialize.DetectedApps.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DetectedApps.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("detectedApps@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DetectedApps.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.DeviceComplianceScripts != null && deviceManagementToInitialize.DeviceComplianceScripts.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DeviceComplianceScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceComplianceScripts@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DeviceComplianceScripts.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.DeviceHealthScripts != null && deviceManagementToInitialize.DeviceHealthScripts.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DeviceHealthScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceHealthScripts@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DeviceHealthScripts.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -730,54 +810,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.DeviceHealthScripts != null && deviceManagementToInitialize.DeviceHealthScripts.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.DeviceHealthScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceHealthScripts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceHealthScripts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.DeviceComplianceScripts != null && deviceManagementToInitialize.DeviceComplianceScripts.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.DeviceComplianceScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceComplianceScripts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DeviceComplianceScripts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.DetectedApps != null && deviceManagementToInitialize.DetectedApps.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.DetectedApps.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("detectedApps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DetectedApps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.ManagedDevices != null && deviceManagementToInitialize.ManagedDevices.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ManagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -794,38 +826,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.WindowsMalwareInformation != null && deviceManagementToInitialize.WindowsMalwareInformation.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.WindowsMalwareInformation.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsMalwareInformation@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsMalwareInformation.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.DataSharingConsents != null && deviceManagementToInitialize.DataSharingConsents.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.DataSharingConsents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("dataSharingConsents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.DataSharingConsents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.MobileAppTroubleshootingEvents != null && deviceManagementToInitialize.MobileAppTroubleshootingEvents.CurrentPage != null)
                 {
                     deviceManagementToInitialize.MobileAppTroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -837,6 +837,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.MobileAppTroubleshootingEvents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.RemoteActionAudits != null && deviceManagementToInitialize.RemoteActionAudits.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.RemoteActionAudits.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("remoteActionAudits@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.RemoteActionAudits.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformance@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -938,22 +970,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsScoreHistory@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -970,49 +986,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.CurrentPage != null)
+                if (deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformance@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsScoreHistory@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.InitializeNextPageRequest(
+                        deviceManagementToInitialize.UserExperienceAnalyticsScoreHistory.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
                 }
 
-                if (deviceManagementToInitialize.ComanagedDevices != null && deviceManagementToInitialize.ComanagedDevices.CurrentPage != null)
+                if (deviceManagementToInitialize.WindowsMalwareInformation != null && deviceManagementToInitialize.WindowsMalwareInformation.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.ComanagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.WindowsMalwareInformation.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("comanagedDevices@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsMalwareInformation@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.ComanagedDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.ComanagementEligibleDevices != null && deviceManagementToInitialize.ComanagementEligibleDevices.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.ComanagementEligibleDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("comanagementEligibleDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ComanagementEligibleDevices.InitializeNextPageRequest(
+                        deviceManagementToInitialize.WindowsMalwareInformation.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1034,49 +1034,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.WindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.CurrentPage != null)
+                if (deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles != null && deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsAutopilotDeviceIdentities@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("appleUserInitiatedEnrollmentProfiles@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles != null && deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsAutopilotDeploymentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.ImportedDeviceIdentities != null && deviceManagementToInitialize.ImportedDeviceIdentities.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.ImportedDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("importedDeviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ImportedDeviceIdentities.InitializeNextPageRequest(
+                        deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1098,6 +1066,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.ImportedDeviceIdentities != null && deviceManagementToInitialize.ImportedDeviceIdentities.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ImportedDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("importedDeviceIdentities@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ImportedDeviceIdentities.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1114,17 +1098,33 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles != null && deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.CurrentPage != null)
+                if (deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles != null && deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("appleUserInitiatedEnrollmentProfiles@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsAutopilotDeploymentProfiles@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.AppleUserInitiatedEnrollmentProfiles.InitializeNextPageRequest(
+                        deviceManagementToInitialize.WindowsAutopilotDeploymentProfiles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.WindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsAutopilotDeviceIdentities@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1162,22 +1162,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.GroupPolicyObjectFiles != null && deviceManagementToInitialize.GroupPolicyObjectFiles.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.GroupPolicyObjectFiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyObjectFiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.GroupPolicyObjectFiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.GroupPolicyMigrationReports != null && deviceManagementToInitialize.GroupPolicyMigrationReports.CurrentPage != null)
                 {
                     deviceManagementToInitialize.GroupPolicyMigrationReports.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1194,17 +1178,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.GroupPolicyConfigurations != null && deviceManagementToInitialize.GroupPolicyConfigurations.CurrentPage != null)
+                if (deviceManagementToInitialize.GroupPolicyObjectFiles != null && deviceManagementToInitialize.GroupPolicyObjectFiles.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.GroupPolicyConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.GroupPolicyObjectFiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyConfigurations@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyObjectFiles@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.GroupPolicyConfigurations.InitializeNextPageRequest(
+                        deviceManagementToInitialize.GroupPolicyObjectFiles.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1226,17 +1210,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.GroupPolicyDefinitions != null && deviceManagementToInitialize.GroupPolicyDefinitions.CurrentPage != null)
+                if (deviceManagementToInitialize.GroupPolicyConfigurations != null && deviceManagementToInitialize.GroupPolicyConfigurations.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.GroupPolicyDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.GroupPolicyConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyDefinitions@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyConfigurations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.GroupPolicyDefinitions.InitializeNextPageRequest(
+                        deviceManagementToInitialize.GroupPolicyConfigurations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1253,6 +1237,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.GroupPolicyDefinitionFiles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.GroupPolicyDefinitions != null && deviceManagementToInitialize.GroupPolicyDefinitions.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.GroupPolicyDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("groupPolicyDefinitions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.GroupPolicyDefinitions.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1306,17 +1306,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.RoleDefinitions != null && deviceManagementToInitialize.RoleDefinitions.CurrentPage != null)
+                if (deviceManagementToInitialize.ResourceOperations != null && deviceManagementToInitialize.ResourceOperations.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.RoleDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.ResourceOperations.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("resourceOperations@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.RoleDefinitions.InitializeNextPageRequest(
+                        deviceManagementToInitialize.ResourceOperations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1338,6 +1338,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.RoleDefinitions != null && deviceManagementToInitialize.RoleDefinitions.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.RoleDefinitions.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.RoleDefinitions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.RoleScopeTags != null && deviceManagementToInitialize.RoleScopeTags.CurrentPage != null)
                 {
                     deviceManagementToInitialize.RoleScopeTags.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1349,22 +1365,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.RoleScopeTags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.ResourceOperations != null && deviceManagementToInitialize.ResourceOperations.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.ResourceOperations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("resourceOperations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.ResourceOperations.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1386,22 +1386,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.TelecomExpenseManagementPartners != null && deviceManagementToInitialize.TelecomExpenseManagementPartners.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.TelecomExpenseManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("telecomExpenseManagementPartners@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.TelecomExpenseManagementPartners.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (deviceManagementToInitialize.EmbeddedSIMActivationCodePools != null && deviceManagementToInitialize.EmbeddedSIMActivationCodePools.CurrentPage != null)
                 {
                     deviceManagementToInitialize.EmbeddedSIMActivationCodePools.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1418,17 +1402,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (deviceManagementToInitialize.TroubleshootingEvents != null && deviceManagementToInitialize.TroubleshootingEvents.CurrentPage != null)
+                if (deviceManagementToInitialize.TelecomExpenseManagementPartners != null && deviceManagementToInitialize.TelecomExpenseManagementPartners.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.TroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.TelecomExpenseManagementPartners.AdditionalData = deviceManagementToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("troubleshootingEvents@odata.nextLink", out nextPageLink);
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("telecomExpenseManagementPartners@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(
+                        deviceManagementToInitialize.TelecomExpenseManagementPartners.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1450,6 +1434,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.TroubleshootingEvents != null && deviceManagementToInitialize.TroubleshootingEvents.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.TroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("troubleshootingEvents@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.WindowsFeatureUpdateProfiles != null && deviceManagementToInitialize.WindowsFeatureUpdateProfiles.CurrentPage != null)
                 {
                     deviceManagementToInitialize.WindowsFeatureUpdateProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1461,6 +1461,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.WindowsFeatureUpdateProfiles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.IntuneBrandingProfiles != null && deviceManagementToInitialize.IntuneBrandingProfiles.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.IntuneBrandingProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("intuneBrandingProfiles@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.IntuneBrandingProfiles.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1493,22 +1509,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (deviceManagementToInitialize.IntuneBrandingProfiles != null && deviceManagementToInitialize.IntuneBrandingProfiles.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.IntuneBrandingProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementToInitialize.AdditionalData.TryGetValue("intuneBrandingProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementToInitialize.IntuneBrandingProfiles.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

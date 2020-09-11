@@ -31,36 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets report refresh date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets under limit.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "underLimit", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? UnderLimit { get; set; }
-    
-        /// <summary>
-        /// Gets or sets warning issued.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "warningIssued", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? WarningIssued { get; set; }
-    
-        /// <summary>
-        /// Gets or sets send prohibited.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendProhibited", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SendProhibited { get; set; }
-    
-        /// <summary>
-        /// Gets or sets send receive prohibited.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendReceiveProhibited", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? SendReceiveProhibited { get; set; }
-    
-        /// <summary>
         /// Gets or sets indeterminate.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "indeterminate", Required = Newtonsoft.Json.Required.Default)]
@@ -77,6 +47,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets send prohibited.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendProhibited", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SendProhibited { get; set; }
+    
+        /// <summary>
+        /// Gets or sets send receive prohibited.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendReceiveProhibited", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SendReceiveProhibited { get; set; }
+    
+        /// <summary>
+        /// Gets or sets under limit.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "underLimit", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? UnderLimit { get; set; }
+    
+        /// <summary>
+        /// Gets or sets warning issued.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "warningIssued", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? WarningIssued { get; set; }
     
     }
 }

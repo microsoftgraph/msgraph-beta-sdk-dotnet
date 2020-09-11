@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets message.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        public string Message { get; set; }
+    
+        /// <summary>
         /// Gets or sets restrictionAction.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictionAction", Required = Newtonsoft.Json.Required.Default)]
@@ -40,12 +46,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "triggers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RestrictionTrigger> Triggers { get; set; }
-    
-        /// <summary>
-        /// Gets or sets message.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
-        public string Message { get; set; }
     
     }
 }

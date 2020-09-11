@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RootCertificatesForServerValidation.
+        /// Gets the request builder for DerivedCredentialSettings.
         /// </summary>
-        /// <returns>The <see cref="IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
-        public IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation
+        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
+        public IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings
         {
             get
             {
-                return new IosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificatesForServerValidation"), this.Client);
+                return new DeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentialSettings"), this.Client);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DerivedCredentialSettings.
+        /// Gets the request builder for RootCertificatesForServerValidation.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder"/>.</returns>
-        public IDeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder DerivedCredentialSettings
+        /// <returns>The <see cref="IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder"/>.</returns>
+        public IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder RootCertificatesForServerValidation
         {
             get
             {
-                return new DeviceManagementDerivedCredentialSettingsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentialSettings"), this.Client);
+                return new IosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificatesForServerValidation"), this.Client);
             }
         }
     

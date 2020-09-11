@@ -31,27 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets v10_7.
-        /// Mac OS 10.7 or later.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_7", Required = Newtonsoft.Json.Required.Default)]
-        public bool? V10_7 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets v10_8.
-        /// Mac OS 10.8 or later.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_8", Required = Newtonsoft.Json.Required.Default)]
-        public bool? V10_8 { get; set; }
-    
-        /// <summary>
-        /// Gets or sets v10_9.
-        /// Mac OS 10.9 or later.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_9", Required = Newtonsoft.Json.Required.Default)]
-        public bool? V10_9 { get; set; }
-    
-        /// <summary>
         /// Gets or sets v10_10.
         /// Mac OS 10.10 or later.
         /// </summary>
@@ -92,6 +71,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_15", Required = Newtonsoft.Json.Required.Default)]
         public bool? V10_15 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets v10_7.
+        /// Mac OS 10.7 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_7", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V10_7 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets v10_8.
+        /// Mac OS 10.8 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_8", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V10_8 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets v10_9.
+        /// Mac OS 10.9 or later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_9", Required = Newtonsoft.Json.Required.Default)]
+        public bool? V10_9 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

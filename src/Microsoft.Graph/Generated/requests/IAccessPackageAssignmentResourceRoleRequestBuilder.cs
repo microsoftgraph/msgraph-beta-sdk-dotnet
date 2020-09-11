@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IAccessPackageAssignmentResourceRoleRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AccessPackageResourceScope.
+        /// Gets the request builder for AccessPackageAssignments.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageResourceScopeRequestBuilder"/>.</returns>
-        IAccessPackageResourceScopeRequestBuilder AccessPackageResourceScope { get; }
+        /// <returns>The <see cref="IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments { get; }
 
         /// <summary>
         /// Gets the request builder for AccessPackageResourceRole.
@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         IAccessPackageResourceRoleRequestBuilder AccessPackageResourceRole { get; }
 
         /// <summary>
+        /// Gets the request builder for AccessPackageResourceScope.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageResourceScopeRequestBuilder"/>.</returns>
+        IAccessPackageResourceScopeRequestBuilder AccessPackageResourceScope { get; }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageSubject.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageSubjectRequestBuilder"/>.</returns>
         IAccessPackageSubjectRequestBuilder AccessPackageSubject { get; }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder"/>.</returns>
-        IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionRequestBuilder AccessPackageAssignments { get; }
     
         
     

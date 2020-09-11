@@ -234,17 +234,17 @@ namespace Microsoft.Graph
             if (outlookTaskFolderToInitialize != null && outlookTaskFolderToInitialize.AdditionalData != null)
             {
 
-                if (outlookTaskFolderToInitialize.Tasks != null && outlookTaskFolderToInitialize.Tasks.CurrentPage != null)
+                if (outlookTaskFolderToInitialize.MultiValueExtendedProperties != null && outlookTaskFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
                 {
-                    outlookTaskFolderToInitialize.Tasks.AdditionalData = outlookTaskFolderToInitialize.AdditionalData;
+                    outlookTaskFolderToInitialize.MultiValueExtendedProperties.AdditionalData = outlookTaskFolderToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    outlookTaskFolderToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
+                    outlookTaskFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        outlookTaskFolderToInitialize.Tasks.InitializeNextPageRequest(
+                        outlookTaskFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -266,17 +266,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (outlookTaskFolderToInitialize.MultiValueExtendedProperties != null && outlookTaskFolderToInitialize.MultiValueExtendedProperties.CurrentPage != null)
+                if (outlookTaskFolderToInitialize.Tasks != null && outlookTaskFolderToInitialize.Tasks.CurrentPage != null)
                 {
-                    outlookTaskFolderToInitialize.MultiValueExtendedProperties.AdditionalData = outlookTaskFolderToInitialize.AdditionalData;
+                    outlookTaskFolderToInitialize.Tasks.AdditionalData = outlookTaskFolderToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    outlookTaskFolderToInitialize.AdditionalData.TryGetValue("multiValueExtendedProperties@odata.nextLink", out nextPageLink);
+                    outlookTaskFolderToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        outlookTaskFolderToInitialize.MultiValueExtendedProperties.InitializeNextPageRequest(
+                        outlookTaskFolderToInitialize.Tasks.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

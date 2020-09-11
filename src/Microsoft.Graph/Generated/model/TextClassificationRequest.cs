@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets text.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
-        public string Text { get; set; }
-    
-        /// <summary>
         /// Gets or sets file extension.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileExtension", Required = Newtonsoft.Json.Required.Default)]
         public string FileExtension { get; set; }
+    
+        /// <summary>
+        /// Gets or sets scopes to run.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopesToRun", Required = Newtonsoft.Json.Required.Default)]
+        public SensitiveTypeScope? ScopesToRun { get; set; }
     
         /// <summary>
         /// Gets or sets sensitive type ids.
@@ -49,10 +49,10 @@ namespace Microsoft.Graph
         public IEnumerable<string> SensitiveTypeIds { get; set; }
     
         /// <summary>
-        /// Gets or sets scopes to run.
+        /// Gets or sets text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopesToRun", Required = Newtonsoft.Json.Required.Default)]
-        public SensitiveTypeScope? ScopesToRun { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        public string Text { get; set; }
     
     }
 }

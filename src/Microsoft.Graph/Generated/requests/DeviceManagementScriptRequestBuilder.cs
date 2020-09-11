@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for GroupAssignments.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder GroupAssignments
-        {
-            get
-            {
-                return new DeviceManagementScriptGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementScriptAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -75,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RunSummary.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder"/>.</returns>
-        public IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder RunSummary
-        {
-            get
-            {
-                return new DeviceManagementScriptRunSummaryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("runSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceRunStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
@@ -95,6 +71,30 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementScriptDeviceRunStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceRunStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementScriptGroupAssignmentsCollectionRequestBuilder GroupAssignments
+        {
+            get
+            {
+                return new DeviceManagementScriptGroupAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupAssignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder"/>.</returns>
+        public IDeviceManagementScriptRunSummaryWithReferenceRequestBuilder RunSummary
+        {
+            get
+            {
+                return new DeviceManagementScriptRunSummaryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("runSummary"), this.Client);
             }
         }
 

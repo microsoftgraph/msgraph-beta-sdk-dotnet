@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SignIns.
-        /// </summary>
-        /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>
-        public IAuditLogRootSignInsCollectionRequestBuilder SignIns
-        {
-            get
-            {
-                return new AuditLogRootSignInsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("signIns"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DirectoryAudits.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootDirectoryAuditsCollectionRequestBuilder"/>.</returns>
@@ -71,18 +59,6 @@ namespace Microsoft.Graph
             get
             {
                 return new AuditLogRootDirectoryAuditsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("directoryAudits"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for RestrictedSignIns.
-        /// </summary>
-        /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
-        public IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns
-        {
-            get
-            {
-                return new AuditLogRootRestrictedSignInsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("restrictedSignIns"), this.Client);
             }
         }
 
@@ -107,6 +83,30 @@ namespace Microsoft.Graph
             get
             {
                 return new AuditLogRootProvisioningCollectionRequestBuilder(this.AppendSegmentToRequestUrl("provisioning"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RestrictedSignIns.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
+        public IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns
+        {
+            get
+            {
+                return new AuditLogRootRestrictedSignInsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("restrictedSignIns"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SignIns.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>
+        public IAuditLogRootSignInsCollectionRequestBuilder SignIns
+        {
+            get
+            {
+                return new AuditLogRootSignInsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("signIns"), this.Client);
             }
         }
     

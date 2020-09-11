@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IIosScepCertificateProfileRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RootCertificate.
-        /// </summary>
-        /// <returns>The <see cref="IIosTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
-        IIosTrustedRootCertificateWithReferenceRequestBuilder RootCertificate { get; }
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceCertificateStates.
         /// </summary>
         /// <returns>The <see cref="IIosScepCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder"/>.</returns>
         IIosScepCertificateProfileManagedDeviceCertificateStatesCollectionRequestBuilder ManagedDeviceCertificateStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for RootCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IIosTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IIosTrustedRootCertificateWithReferenceRequestBuilder RootCertificate { get; }
     
     }
 }

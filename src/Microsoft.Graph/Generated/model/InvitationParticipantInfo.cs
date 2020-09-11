@@ -31,17 +31,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets endpointType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointType", Required = Newtonsoft.Json.Required.Default)]
+        public EndpointType? EndpointType { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity.
         /// The identitySet associated with this invitation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Identity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets endpointType.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointType", Required = Newtonsoft.Json.Required.Default)]
-        public EndpointType? EndpointType { get; set; }
     
         /// <summary>
         /// Gets or sets replacesCallId.

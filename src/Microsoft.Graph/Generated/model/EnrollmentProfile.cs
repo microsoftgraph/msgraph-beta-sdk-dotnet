@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
-        /// Name of the profile
+        /// Gets or sets configuration endpoint url.
+        /// Configuration endpoint url to use for Enrollment
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationEndpointUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ConfigurationEndpointUrl { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -45,18 +45,11 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets requires user authentication.
-        /// Indicates if the profile requires user authentication
+        /// Gets or sets display name.
+        /// Name of the profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresUserAuthentication", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RequiresUserAuthentication { get; set; }
-    
-        /// <summary>
-        /// Gets or sets configuration endpoint url.
-        /// Configuration endpoint url to use for Enrollment
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationEndpointUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ConfigurationEndpointUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enable authentication via company portal.
@@ -71,6 +64,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireCompanyPortalOnSetupAssistantEnrolledDevices", Required = Newtonsoft.Json.Required.Default)]
         public bool? RequireCompanyPortalOnSetupAssistantEnrolledDevices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets requires user authentication.
+        /// Indicates if the profile requires user authentication
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiresUserAuthentication", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RequiresUserAuthentication { get; set; }
     
     }
 }

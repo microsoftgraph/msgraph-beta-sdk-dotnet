@@ -31,25 +31,11 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets i tunes pairing mode.
-        /// Indicates the iTunes pairing mode
+        /// Gets or sets appearance screen disabled.
+        /// Indicates if Apperance screen is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iTunesPairingMode", Required = Newtonsoft.Json.Required.Default)]
-        public ITunesPairingMode? ITunesPairingMode { get; set; }
-    
-        /// <summary>
-        /// Gets or sets management certificates.
-        /// Management certificates for Apple Configurator
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementCertificates", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<ManagementCertificateWithThumbprint> ManagementCertificates { get; set; }
-    
-        /// <summary>
-        /// Gets or sets restore from android disabled.
-        /// Indicates if Restore from Android is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restoreFromAndroidDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? RestoreFromAndroidDisabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appearanceScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppearanceScreenDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets await device configured confirmation.
@@ -59,11 +45,18 @@ namespace Microsoft.Graph
         public bool? AwaitDeviceConfiguredConfirmation { get; set; }
     
         /// <summary>
-        /// Gets or sets shared ipad maximum user count.
-        /// This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
+        /// Gets or sets company portal vpp token id.
+        /// If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. 'enableAuthenticationViaCompanyPortal' must be set in order for this property to be set.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedIPadMaximumUserCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? SharedIPadMaximumUserCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyPortalVppTokenId", Required = Newtonsoft.Json.Required.Default)]
+        public string CompanyPortalVppTokenId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device to device migration disabled.
+        /// Indicates if Device To Device Migration is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceToDeviceMigrationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceToDeviceMigrationDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets enable shared ipad.
@@ -73,18 +66,18 @@ namespace Microsoft.Graph
         public bool? EnableSharedIPad { get; set; }
     
         /// <summary>
-        /// Gets or sets company portal vpp token id.
-        /// If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. 'enableAuthenticationViaCompanyPortal' must be set in order for this property to be set.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyPortalVppTokenId", Required = Newtonsoft.Json.Required.Default)]
-        public string CompanyPortalVppTokenId { get; set; }
-    
-        /// <summary>
         /// Gets or sets enable single app enrollment mode.
         /// Tells the device to enable single app mode and apply app-lock during enrollment. Default is false. 'enableAuthenticationViaCompanyPortal' and 'companyPortalVppTokenId' must be set for this property to be set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSingleAppEnrollmentMode", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnableSingleAppEnrollmentMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets express language screen disabled.
+        /// Indicates if Express Language screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressLanguageScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExpressLanguageScreenDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets home button screen disabled.
@@ -101,11 +94,46 @@ namespace Microsoft.Graph
         public bool? IMessageAndFaceTimeScreenDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets i tunes pairing mode.
+        /// Indicates the iTunes pairing mode
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iTunesPairingMode", Required = Newtonsoft.Json.Required.Default)]
+        public ITunesPairingMode? ITunesPairingMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management certificates.
+        /// Management certificates for Apple Configurator
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementCertificates", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ManagementCertificateWithThumbprint> ManagementCertificates { get; set; }
+    
+        /// <summary>
         /// Gets or sets on boarding screen disabled.
         /// Indicates if onboarding setup screen is disabled
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onBoardingScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? OnBoardingScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets preferred language screen disabled.
+        /// Indicates if Preferred language screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguageScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PreferredLanguageScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restore from android disabled.
+        /// Indicates if Restore from Android is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restoreFromAndroidDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RestoreFromAndroidDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shared ipad maximum user count.
+        /// This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedIPadMaximumUserCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SharedIPadMaximumUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets sim setup screen disabled.
@@ -127,34 +155,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "watchMigrationScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? WatchMigrationScreenDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets appearance screen disabled.
-        /// Indicates if Apperance screen is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appearanceScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AppearanceScreenDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets express language screen disabled.
-        /// Indicates if Express Language screen is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressLanguageScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ExpressLanguageScreenDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets preferred language screen disabled.
-        /// Indicates if Preferred language screen is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguageScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PreferredLanguageScreenDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device to device migration disabled.
-        /// Indicates if Device To Device Migration is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceToDeviceMigrationDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? DeviceToDeviceMigrationDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets welcome screen disabled.

@@ -31,18 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets type.
-        /// Actor Type.
+        /// Gets or sets applicationDisplayName.
+        /// Name of the Application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userPermissions.
-        /// List of user permissions when the audit was performed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPermissions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> UserPermissions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string ApplicationDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets applicationId.
@@ -52,46 +45,11 @@ namespace Microsoft.Graph
         public string ApplicationId { get; set; }
     
         /// <summary>
-        /// Gets or sets applicationDisplayName.
-        /// Name of the Application.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string ApplicationDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userPrincipalName.
-        /// User Principal Name (UPN).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets servicePrincipalName.
-        /// Service Principal Name (SPN).
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string ServicePrincipalName { get; set; }
-    
-        /// <summary>
         /// Gets or sets ipAddress.
         /// IPAddress.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
         public string IpAddress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userId.
-        /// User Id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets userRoleScopeTags.
-        /// List of user scope tags when the audit was performed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRoleScopeTags", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<RoleScopeTagInfo> UserRoleScopeTags { get; set; }
     
         /// <summary>
         /// Gets or sets remoteTenantId.
@@ -106,6 +64,48 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteUserId", Required = Newtonsoft.Json.Required.Default)]
         public string RemoteUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets servicePrincipalName.
+        /// Service Principal Name (SPN).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string ServicePrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// Actor Type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userId.
+        /// User Id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userPermissions.
+        /// List of user permissions when the audit was performed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPermissions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> UserPermissions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userPrincipalName.
+        /// User Principal Name (UPN).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userRoleScopeTags.
+        /// List of user scope tags when the audit was performed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRoleScopeTags", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<RoleScopeTagInfo> UserRoleScopeTags { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

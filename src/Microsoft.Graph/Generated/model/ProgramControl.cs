@@ -37,16 +37,16 @@ namespace Microsoft.Graph
         public string ControlId { get; set; }
     
         /// <summary>
-        /// Gets or sets program id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "programId", Required = Newtonsoft.Json.Required.Default)]
-        public string ProgramId { get; set; }
-    
-        /// <summary>
         /// Gets or sets control type id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlTypeId", Required = Newtonsoft.Json.Required.Default)]
         public string ControlTypeId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -55,16 +55,16 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public string Status { get; set; }
-    
-        /// <summary>
         /// Gets or sets owner.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity Owner { get; set; }
+    
+        /// <summary>
+        /// Gets or sets program id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "programId", Required = Newtonsoft.Json.Required.Default)]
+        public string ProgramId { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
@@ -73,10 +73,10 @@ namespace Microsoft.Graph
         public ProgramResource Resource { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
+        /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets program.

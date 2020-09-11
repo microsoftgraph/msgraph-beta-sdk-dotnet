@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IOfficeClientConfigurationAssignmentsCollectionRequestBuilder Assignments { get; }
     
         /// <summary>
-        /// Gets the request builder for UserPreferencePayload.
-        /// </summary>
-        /// <returns>The <see cref="IOfficeClientConfigurationUserPreferencePayloadRequestBuilder"/>.</returns>
-        IOfficeClientConfigurationUserPreferencePayloadRequestBuilder UserPreferencePayload { get; }
-
-        /// <summary>
         /// Gets the request builder for PolicyPayload.
         /// </summary>
         /// <returns>The <see cref="IOfficeClientConfigurationPolicyPayloadRequestBuilder"/>.</returns>
         IOfficeClientConfigurationPolicyPayloadRequestBuilder PolicyPayload { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserPreferencePayload.
+        /// </summary>
+        /// <returns>The <see cref="IOfficeClientConfigurationUserPreferencePayloadRequestBuilder"/>.</returns>
+        IOfficeClientConfigurationUserPreferencePayloadRequestBuilder UserPreferencePayload { get; }
     
         /// <summary>
         /// Gets the request builder for OfficeClientConfigurationAssign.

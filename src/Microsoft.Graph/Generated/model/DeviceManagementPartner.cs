@@ -31,39 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets last heartbeat date time.
-        /// Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastHeartbeatDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets partner state.
-        /// Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementPartnerTenantState? PartnerState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets partner app type.
-        /// Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerAppType", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementPartnerAppType? PartnerAppType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets single tenant app id.
-        /// Partner Single tenant App id
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleTenantAppId", Required = Newtonsoft.Json.Required.Default)]
-        public string SingleTenantAppId { get; set; }
-    
-        /// <summary>
         /// Gets or sets display name.
         /// Partner display name
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets groups requiring partner enrollment.
+        /// User groups that specifies whether enrollment is through partner.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupsRequiringPartnerEnrollment", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment { get; set; }
     
         /// <summary>
         /// Gets or sets is configured.
@@ -73,11 +52,32 @@ namespace Microsoft.Graph
         public bool? IsConfigured { get; set; }
     
         /// <summary>
-        /// Gets or sets when partner devices will be removed.
-        /// DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
+        /// Gets or sets last heartbeat date time.
+        /// Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "whenPartnerDevicesWillBeRemoved", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? WhenPartnerDevicesWillBeRemoved { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastHeartbeatDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets partner app type.
+        /// Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerAppType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementPartnerAppType? PartnerAppType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets partner state.
+        /// Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "partnerState", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementPartnerTenantState? PartnerState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single tenant app id.
+        /// Partner Single tenant App id
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleTenantAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string SingleTenantAppId { get; set; }
     
         /// <summary>
         /// Gets or sets when partner devices will be marked as non compliant.
@@ -87,13 +87,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliant { get; set; }
     
         /// <summary>
-        /// Gets or sets when partner devices will be removed date time.
-        /// DateTime in UTC when PartnerDevices will be removed
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "whenPartnerDevicesWillBeRemovedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? WhenPartnerDevicesWillBeRemovedDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets when partner devices will be marked as non compliant date time.
         /// DateTime in UTC when PartnerDevices will be marked as NonCompliant
         /// </summary>
@@ -101,11 +94,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets groups requiring partner enrollment.
-        /// User groups that specifies whether enrollment is through partner.
+        /// Gets or sets when partner devices will be removed.
+        /// DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupsRequiringPartnerEnrollment", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "whenPartnerDevicesWillBeRemoved", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? WhenPartnerDevicesWillBeRemoved { get; set; }
+    
+        /// <summary>
+        /// Gets or sets when partner devices will be removed date time.
+        /// DateTime in UTC when PartnerDevices will be removed
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "whenPartnerDevicesWillBeRemovedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? WhenPartnerDevicesWillBeRemovedDateTime { get; set; }
     
     }
 }

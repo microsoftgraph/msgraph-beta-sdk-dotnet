@@ -43,28 +43,28 @@ namespace Microsoft.Graph
         public string FirstDayOfWeek { get; set; }
     
         /// <summary>
-        /// Gets or sets shortDateFormat.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortDateFormat", Required = Newtonsoft.Json.Required.Default)]
-        public string ShortDateFormat { get; set; }
-    
-        /// <summary>
         /// Gets or sets longDateFormat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longDateFormat", Required = Newtonsoft.Json.Required.Default)]
         public string LongDateFormat { get; set; }
     
         /// <summary>
-        /// Gets or sets shortTimeFormat.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortTimeFormat", Required = Newtonsoft.Json.Required.Default)]
-        public string ShortTimeFormat { get; set; }
-    
-        /// <summary>
         /// Gets or sets longTimeFormat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longTimeFormat", Required = Newtonsoft.Json.Required.Default)]
         public string LongTimeFormat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shortDateFormat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortDateFormat", Required = Newtonsoft.Json.Required.Default)]
+        public string ShortDateFormat { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shortTimeFormat.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortTimeFormat", Required = Newtonsoft.Json.Required.Default)]
+        public string ShortTimeFormat { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.

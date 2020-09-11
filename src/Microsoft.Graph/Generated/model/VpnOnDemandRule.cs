@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets ssids.
-        /// Network Service Set Identifiers (SSIDs).
+        /// Gets or sets action.
+        /// Action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ssids", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> Ssids { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        public VpnOnDemandRuleConnectionAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets dnsSearchDomains.
@@ -43,20 +43,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSearchDomains", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> DnsSearchDomains { get; set; }
-    
-        /// <summary>
-        /// Gets or sets probeUrl.
-        /// A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probeUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string ProbeUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets action.
-        /// Action.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
-        public VpnOnDemandRuleConnectionAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets domainAction.
@@ -78,6 +64,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probeRequiredUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ProbeRequiredUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets probeUrl.
+        /// A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probeUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ProbeUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ssids.
+        /// Network Service Set Identifiers (SSIDs).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ssids", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Ssids { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

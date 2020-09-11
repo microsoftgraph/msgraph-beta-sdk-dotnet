@@ -31,18 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets userNewMessageRestriction.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userNewMessageRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public UserNewMessageRestriction? UserNewMessageRestriction { get; set; }
-    
-        /// <summary>
-        /// Gets or sets replyRestriction.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyRestriction", Required = Newtonsoft.Json.Required.Default)]
-        public ReplyRestriction? ReplyRestriction { get; set; }
-    
-        /// <summary>
         /// Gets or sets allowNewMessageFromBots.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewMessageFromBots", Required = Newtonsoft.Json.Required.Default)]
@@ -53,6 +41,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewMessageFromConnectors", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowNewMessageFromConnectors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets replyRestriction.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public ReplyRestriction? ReplyRestriction { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userNewMessageRestriction.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userNewMessageRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public UserNewMessageRestriction? UserNewMessageRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

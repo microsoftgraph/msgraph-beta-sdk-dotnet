@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public Date Date { get; set; }
     
         /// <summary>
-        /// Gets or sets remediatedDeviceCount.
-        /// The number of devices remediated by the device health script.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediatedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RemediatedDeviceCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets noIssueDeviceCount.
         /// The number of devices that were found to have no issue by the device health script.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "noIssueDeviceCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? NoIssueDeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediatedDeviceCount.
+        /// The number of devices remediated by the device health script.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediatedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RemediatedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

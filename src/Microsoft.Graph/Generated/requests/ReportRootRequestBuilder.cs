@@ -87,30 +87,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DailyPrintUsageSummariesByUser.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder"/>.</returns>
-        public IReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder DailyPrintUsageSummariesByUser
-        {
-            get
-            {
-                return new ReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dailyPrintUsageSummariesByUser"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for MonthlyPrintUsageSummariesByUser.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder"/>.</returns>
-        public IReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder MonthlyPrintUsageSummariesByUser
-        {
-            get
-            {
-                return new ReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("monthlyPrintUsageSummariesByUser"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DailyPrintUsageSummariesByPrinter.
         /// </summary>
         /// <returns>The <see cref="IReportRootDailyPrintUsageSummariesByPrinterCollectionRequestBuilder"/>.</returns>
@@ -119,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ReportRootDailyPrintUsageSummariesByPrinterCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dailyPrintUsageSummariesByPrinter"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DailyPrintUsageSummariesByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder"/>.</returns>
+        public IReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder DailyPrintUsageSummariesByUser
+        {
+            get
+            {
+                return new ReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dailyPrintUsageSummariesByUser"), this.Client);
             }
         }
 
@@ -133,7 +121,45 @@ namespace Microsoft.Graph
                 return new ReportRootMonthlyPrintUsageSummariesByPrinterCollectionRequestBuilder(this.AppendSegmentToRequestUrl("monthlyPrintUsageSummariesByPrinter"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for MonthlyPrintUsageSummariesByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder"/>.</returns>
+        public IReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder MonthlyPrintUsageSummariesByUser
+        {
+            get
+            {
+                return new ReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("monthlyPrintUsageSummariesByUser"), this.Client);
+            }
+        }
     
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAzureADApplicationSignInSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAzureADApplicationSignInSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetAzureADApplicationSignInSummaryRequestBuilder GetAzureADApplicationSignInSummary(
+            string period)
+        {
+            return new ReportRootGetAzureADApplicationSignInSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADApplicationSignInSummary"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAzureADFeatureUsage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAzureADFeatureUsageRequestBuilder"/>.</returns>
+        public IReportRootGetAzureADFeatureUsageRequestBuilder GetAzureADFeatureUsage(
+            string period)
+        {
+            return new ReportRootGetAzureADFeatureUsageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADFeatureUsage"),
+                this.Client,
+                period);
+        }
+
         /// <summary>
         /// Gets the request builder for ReportRootGetAzureADLicenseUsage.
         /// </summary>
@@ -159,27 +185,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADFeatureUsage.
+        /// Gets the request builder for ReportRootGetCredentialUsageSummary.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADFeatureUsageRequestBuilder"/>.</returns>
-        public IReportRootGetAzureADFeatureUsageRequestBuilder GetAzureADFeatureUsage(
+        /// <returns>The <see cref="IReportRootGetCredentialUsageSummaryRequestBuilder"/>.</returns>
+        public IReportRootGetCredentialUsageSummaryRequestBuilder GetCredentialUsageSummary(
             string period)
         {
-            return new ReportRootGetAzureADFeatureUsageRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADFeatureUsage"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADApplicationSignInSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADApplicationSignInSummaryRequestBuilder"/>.</returns>
-        public IReportRootGetAzureADApplicationSignInSummaryRequestBuilder GetAzureADApplicationSignInSummary(
-            string period)
-        {
-            return new ReportRootGetAzureADApplicationSignInSummaryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADApplicationSignInSummary"),
+            return new ReportRootGetCredentialUsageSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCredentialUsageSummary"),
                 this.Client,
                 period);
         }
@@ -196,19 +209,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetCredentialUsageSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetCredentialUsageSummaryRequestBuilder"/>.</returns>
-        public IReportRootGetCredentialUsageSummaryRequestBuilder GetCredentialUsageSummary(
-            string period)
-        {
-            return new ReportRootGetCredentialUsageSummaryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getCredentialUsageSummary"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetRelyingPartyDetailedSummary.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetRelyingPartyDetailedSummaryRequestBuilder"/>.</returns>
@@ -219,6 +219,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getRelyingPartyDetailedSummary"),
                 this.Client,
                 period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootDeviceConfigurationDeviceActivity.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
+        public IReportRootDeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity()
+        {
+            return new ReportRootDeviceConfigurationDeviceActivityRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.deviceConfigurationDeviceActivity"),
+                this.Client);
         }
 
         /// <summary>
@@ -233,14 +244,41 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootDeviceConfigurationDeviceActivity.
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentDetails.
         /// </summary>
-        /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
-        public IReportRootDeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity()
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder ManagedDeviceEnrollmentAbandonmentDetails(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null)
         {
-            return new ReportRootDeviceConfigurationDeviceActivityRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.deviceConfigurationDeviceActivity"),
-                this.Client);
+            return new ReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentDetails"),
+                this.Client,
+                skip,
+                top,
+                filter,
+                skipToken);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentSummary.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder"/>.</returns>
+        public IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder ManagedDeviceEnrollmentAbandonmentSummary(
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null,
+            string skipToken = null)
+        {
+            return new ReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentSummary"),
+                this.Client,
+                skip,
+                top,
+                filter,
+                skipToken);
         }
 
         /// <summary>
@@ -309,233 +347,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentSummary.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder ManagedDeviceEnrollmentAbandonmentSummary(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null)
-        {
-            return new ReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentSummary"),
-                this.Client,
-                skip,
-                top,
-                filter,
-                skipToken);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootManagedDeviceEnrollmentAbandonmentDetails.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder"/>.</returns>
-        public IReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder ManagedDeviceEnrollmentAbandonmentDetails(
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null,
-            string skipToken = null)
-        {
-            return new ReportRootManagedDeviceEnrollmentAbandonmentDetailsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedDeviceEnrollmentAbandonmentDetails"),
-                this.Client,
-                skip,
-                top,
-                filter,
-                skipToken);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActivationsUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365ActivationsUserDetailRequestBuilder GetOffice365ActivationsUserDetail()
-        {
-            return new ReportRootGetOffice365ActivationsUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActivationsUserDetail"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActivationCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActivationCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365ActivationCountsRequestBuilder GetOffice365ActivationCounts()
-        {
-            return new ReportRootGetOffice365ActivationCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActivationCounts"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActivationsUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365ActivationsUserCountsRequestBuilder GetOffice365ActivationsUserCounts()
-        {
-            return new ReportRootGetOffice365ActivationsUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActivationsUserCounts"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
-            Date date)
-        {
-            return new ReportRootGetOffice365ActiveUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActiveUserDetail"),
-                this.Client,
-                date);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
-            string period)
-        {
-            return new ReportRootGetOffice365ActiveUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActiveUserDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ServicesUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ServicesUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365ServicesUserCountsRequestBuilder GetOffice365ServicesUserCounts(
-            string period)
-        {
-            return new ReportRootGetOffice365ServicesUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ServicesUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365ActiveUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365ActiveUserCountsRequestBuilder GetOffice365ActiveUserCounts(
-            string period)
-        {
-            return new ReportRootGetOffice365ActiveUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActiveUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
-            Date date)
-        {
-            return new ReportRootGetOffice365GroupsActivityDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityDetail"),
-                this.Client,
-                date);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
-            string period)
-        {
-            return new ReportRootGetOffice365GroupsActivityDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365GroupsActivityCountsRequestBuilder GetOffice365GroupsActivityCounts(
-            string period)
-        {
-            return new ReportRootGetOffice365GroupsActivityCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityGroupCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder GetOffice365GroupsActivityGroupCounts(
-            string period)
-        {
-            return new ReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityGroupCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityStorage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityStorageRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365GroupsActivityStorageRequestBuilder GetOffice365GroupsActivityStorage(
-            string period)
-        {
-            return new ReportRootGetOffice365GroupsActivityStorageRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityStorage"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOffice365GroupsActivityFileCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder GetOffice365GroupsActivityFileCounts(
-            string period)
-        {
-            return new ReportRootGetOffice365GroupsActivityFileCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityFileCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
-            Date date)
-        {
-            return new ReportRootGetEmailActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailActivityUserDetail"),
-                this.Client,
-                date);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
-            string period)
-        {
-            return new ReportRootGetEmailActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailActivityUserDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetEmailActivityCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetEmailActivityCountsRequestBuilder"/>.</returns>
@@ -562,27 +373,27 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
             Date date)
         {
-            return new ReportRootGetEmailAppUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailAppUsageUserDetail"),
+            return new ReportRootGetEmailActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailActivityUserDetail"),
                 this.Client,
                 date);
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// Gets the request builder for ReportRootGetEmailActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetEmailActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetEmailActivityUserDetailRequestBuilder GetEmailActivityUserDetail(
             string period)
         {
-            return new ReportRootGetEmailAppUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailAppUsageUserDetail"),
+            return new ReportRootGetEmailActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailActivityUserDetail"),
                 this.Client,
                 period);
         }
@@ -614,6 +425,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
+            Date date)
+        {
+            return new ReportRootGetEmailAppUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailAppUsageUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetEmailAppUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetEmailAppUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetEmailAppUsageUserDetailRequestBuilder GetEmailAppUsageUserDetail(
+            string period)
+        {
+            return new ReportRootGetEmailAppUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEmailAppUsageUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetEmailAppUsageVersionsUserCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetEmailAppUsageVersionsUserCountsRequestBuilder"/>.</returns>
@@ -622,6 +459,58 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetEmailAppUsageVersionsUserCountsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getEmailAppUsageVersionsUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppPlatformUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppPlatformUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppPlatformUserCountsRequestBuilder GetM365AppPlatformUserCounts(
+            string period)
+        {
+            return new ReportRootGetM365AppPlatformUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppPlatformUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppUserCountsRequestBuilder GetM365AppUserCounts(
+            string period)
+        {
+            return new ReportRootGetM365AppUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
+            Date date)
+        {
+            return new ReportRootGetM365AppUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetM365AppUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetM365AppUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
+            string period)
+        {
+            return new ReportRootGetM365AppUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
                 this.Client,
                 period);
         }
@@ -679,40 +568,164 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// Gets the request builder for ReportRootGetOffice365ActivationCounts.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
-            Date date)
+        /// <returns>The <see cref="IReportRootGetOffice365ActivationCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365ActivationCountsRequestBuilder GetOffice365ActivationCounts()
         {
-            return new ReportRootGetOneDriveActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveActivityUserDetail"),
-                this.Client,
-                date);
+            return new ReportRootGetOffice365ActivationCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActivationCounts"),
+                this.Client);
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// Gets the request builder for ReportRootGetOffice365ActivationsUserCounts.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
+        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365ActivationsUserCountsRequestBuilder GetOffice365ActivationsUserCounts()
+        {
+            return new ReportRootGetOffice365ActivationsUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActivationsUserCounts"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ActivationsUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ActivationsUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365ActivationsUserDetailRequestBuilder GetOffice365ActivationsUserDetail()
+        {
+            return new ReportRootGetOffice365ActivationsUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActivationsUserDetail"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ActiveUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365ActiveUserCountsRequestBuilder GetOffice365ActiveUserCounts(
             string period)
         {
-            return new ReportRootGetOneDriveActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveActivityUserDetail"),
+            return new ReportRootGetOffice365ActiveUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActiveUserCounts"),
                 this.Client,
                 period);
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveActivityUserCounts.
+        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOneDriveActivityUserCountsRequestBuilder GetOneDriveActivityUserCounts(
+        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
+            Date date)
+        {
+            return new ReportRootGetOffice365ActiveUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActiveUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ActiveUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ActiveUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365ActiveUserDetailRequestBuilder GetOffice365ActiveUserDetail(
             string period)
         {
-            return new ReportRootGetOneDriveActivityUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveActivityUserCounts"),
+            return new ReportRootGetOffice365ActiveUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ActiveUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365GroupsActivityCountsRequestBuilder GetOffice365GroupsActivityCounts(
+            string period)
+        {
+            return new ReportRootGetOffice365GroupsActivityCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
+            Date date)
+        {
+            return new ReportRootGetOffice365GroupsActivityDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityDetailRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365GroupsActivityDetailRequestBuilder GetOffice365GroupsActivityDetail(
+            string period)
+        {
+            return new ReportRootGetOffice365GroupsActivityDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityFileCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365GroupsActivityFileCountsRequestBuilder GetOffice365GroupsActivityFileCounts(
+            string period)
+        {
+            return new ReportRootGetOffice365GroupsActivityFileCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityFileCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityGroupCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder GetOffice365GroupsActivityGroupCounts(
+            string period)
+        {
+            return new ReportRootGetOffice365GroupsActivityGroupCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityGroupCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365GroupsActivityStorage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365GroupsActivityStorageRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365GroupsActivityStorageRequestBuilder GetOffice365GroupsActivityStorage(
+            string period)
+        {
+            return new ReportRootGetOffice365GroupsActivityStorageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365GroupsActivityStorage"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOffice365ServicesUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOffice365ServicesUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOffice365ServicesUserCountsRequestBuilder GetOffice365ServicesUserCounts(
+            string period)
+        {
+            return new ReportRootGetOffice365ServicesUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOffice365ServicesUserCounts"),
                 this.Client,
                 period);
         }
@@ -731,6 +744,58 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOneDriveActivityUserCountsRequestBuilder GetOneDriveActivityUserCounts(
+            string period)
+        {
+            return new ReportRootGetOneDriveActivityUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveActivityUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
+            Date date)
+        {
+            return new ReportRootGetOneDriveActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveActivityUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetOneDriveActivityUserDetailRequestBuilder GetOneDriveActivityUserDetail(
+            string period)
+        {
+            return new ReportRootGetOneDriveActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveActivityUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetOneDriveUsageAccountCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetOneDriveUsageAccountCountsRequestBuilder"/>.</returns>
+        public IReportRootGetOneDriveUsageAccountCountsRequestBuilder GetOneDriveUsageAccountCounts(
+            string period)
+        {
+            return new ReportRootGetOneDriveUsageAccountCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveUsageAccountCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetOneDriveUsageAccountDetail.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetOneDriveUsageAccountDetailRequestBuilder"/>.</returns>
@@ -752,19 +817,6 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetOneDriveUsageAccountDetailRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveUsageAccountDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetOneDriveUsageAccountCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetOneDriveUsageAccountCountsRequestBuilder"/>.</returns>
-        public IReportRootGetOneDriveUsageAccountCountsRequestBuilder GetOneDriveUsageAccountCounts(
-            string period)
-        {
-            return new ReportRootGetOneDriveUsageAccountCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOneDriveUsageAccountCounts"),
                 this.Client,
                 period);
         }
@@ -796,6 +848,45 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointActivityFileCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointActivityFileCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSharePointActivityFileCountsRequestBuilder GetSharePointActivityFileCounts(
+            string period)
+        {
+            return new ReportRootGetSharePointActivityFileCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointActivityFileCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointActivityPages.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointActivityPagesRequestBuilder"/>.</returns>
+        public IReportRootGetSharePointActivityPagesRequestBuilder GetSharePointActivityPages(
+            string period)
+        {
+            return new ReportRootGetSharePointActivityPagesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointActivityPages"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointActivityUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSharePointActivityUserCountsRequestBuilder GetSharePointActivityUserCounts(
+            string period)
+        {
+            return new ReportRootGetSharePointActivityUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointActivityUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetSharePointActivityUserDetail.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetSharePointActivityUserDetailRequestBuilder"/>.</returns>
@@ -817,45 +908,6 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetSharePointActivityUserDetailRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointActivityUserDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointActivityFileCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointActivityFileCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSharePointActivityFileCountsRequestBuilder GetSharePointActivityFileCounts(
-            string period)
-        {
-            return new ReportRootGetSharePointActivityFileCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointActivityFileCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointActivityUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSharePointActivityUserCountsRequestBuilder GetSharePointActivityUserCounts(
-            string period)
-        {
-            return new ReportRootGetSharePointActivityUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointActivityUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointActivityPages.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointActivityPagesRequestBuilder"/>.</returns>
-        public IReportRootGetSharePointActivityPagesRequestBuilder GetSharePointActivityPages(
-            string period)
-        {
-            return new ReportRootGetSharePointActivityPagesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointActivityPages"),
                 this.Client,
                 period);
         }
@@ -900,6 +952,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetSharePointSiteUsagePages.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSharePointSiteUsagePagesRequestBuilder"/>.</returns>
+        public IReportRootGetSharePointSiteUsagePagesRequestBuilder GetSharePointSiteUsagePages(
+            string period)
+        {
+            return new ReportRootGetSharePointSiteUsagePagesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointSiteUsagePages"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetSharePointSiteUsageSiteCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetSharePointSiteUsageSiteCountsRequestBuilder"/>.</returns>
@@ -921,45 +986,6 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetSharePointSiteUsageStorageRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointSiteUsageStorage"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSharePointSiteUsagePages.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSharePointSiteUsagePagesRequestBuilder"/>.</returns>
-        public IReportRootGetSharePointSiteUsagePagesRequestBuilder GetSharePointSiteUsagePages(
-            string period)
-        {
-            return new ReportRootGetSharePointSiteUsagePagesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSharePointSiteUsagePages"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
-            Date date)
-        {
-            return new ReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessActivityUserDetail"),
-                this.Client,
-                date);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessActivityUserDetail"),
                 this.Client,
                 period);
         }
@@ -991,144 +1017,27 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityCounts.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessPeerToPeerActivityCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityUserCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessPeerToPeerActivityUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityMinuteCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder GetSkypeForBusinessOrganizerActivityCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessOrganizerActivityCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder GetSkypeForBusinessOrganizerActivityUserCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityMinuteCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder GetSkypeForBusinessOrganizerActivityMinuteCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessOrganizerActivityMinuteCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder GetSkypeForBusinessParticipantActivityCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessParticipantActivityCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder GetSkypeForBusinessParticipantActivityUserCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessParticipantActivityUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityMinuteCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder GetSkypeForBusinessParticipantActivityMinuteCounts(
-            string period)
-        {
-            return new ReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
             Date date)
         {
-            return new ReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail"),
+            return new ReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessActivityUserDetail"),
                 this.Client,
                 date);
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder GetSkypeForBusinessActivityUserDetail(
             string period)
         {
-            return new ReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail"),
+            return new ReportRootGetSkypeForBusinessActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessActivityUserDetail"),
                 this.Client,
                 period);
         }
@@ -1160,27 +1069,248 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
             Date date)
         {
-            return new ReportRootGetYammerActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerActivityUserDetail"),
+            return new ReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail"),
                 this.Client,
                 date);
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
+        /// Gets the request builder for ReportRootGetSkypeForBusinessDeviceUsageUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder GetSkypeForBusinessDeviceUsageUserDetail(
             string period)
         {
-            return new ReportRootGetYammerActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerActivityUserDetail"),
+            return new ReportRootGetSkypeForBusinessDeviceUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder GetSkypeForBusinessOrganizerActivityCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessOrganizerActivityCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessOrganizerActivityCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityMinuteCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder GetSkypeForBusinessOrganizerActivityMinuteCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessOrganizerActivityMinuteCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessOrganizerActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder GetSkypeForBusinessOrganizerActivityUserCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessOrganizerActivityUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder GetSkypeForBusinessParticipantActivityCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessParticipantActivityCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessParticipantActivityCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityMinuteCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder GetSkypeForBusinessParticipantActivityMinuteCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessParticipantActivityMinuteCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessParticipantActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder GetSkypeForBusinessParticipantActivityUserCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessParticipantActivityUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessParticipantActivityUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessPeerToPeerActivityCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessPeerToPeerActivityCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityMinuteCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessPeerToPeerActivityMinuteCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetSkypeForBusinessPeerToPeerActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder GetSkypeForBusinessPeerToPeerActivityUserCounts(
+            string period)
+        {
+            return new ReportRootGetSkypeForBusinessPeerToPeerActivityUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSkypeForBusinessPeerToPeerActivityUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageDistributionUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder GetTeamsDeviceUsageDistributionUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageDistributionUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder GetTeamsDeviceUsageUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsDeviceUsageUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
+            Date date)
+        {
+            return new ReportRootGetTeamsDeviceUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
+            string period)
+        {
+            return new ReportRootGetTeamsDeviceUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityCountsRequestBuilder GetTeamsUserActivityCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsUserActivityCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityUserCountsRequestBuilder GetTeamsUserActivityUserCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsUserActivityUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
+            Date date)
+        {
+            return new ReportRootGetTeamsUserActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
+            string period)
+        {
+            return new ReportRootGetTeamsUserActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityUserDetail"),
                 this.Client,
                 period);
         }
@@ -1212,27 +1342,27 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
             Date date)
         {
-            return new ReportRootGetYammerDeviceUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerDeviceUsageUserDetail"),
+            return new ReportRootGetYammerActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerActivityUserDetail"),
                 this.Client,
                 date);
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// Gets the request builder for ReportRootGetYammerActivityUserDetail.
         /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+        /// <returns>The <see cref="IReportRootGetYammerActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetYammerActivityUserDetailRequestBuilder GetYammerActivityUserDetail(
             string period)
         {
-            return new ReportRootGetYammerDeviceUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerDeviceUsageUserDetail"),
+            return new ReportRootGetYammerActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerActivityUserDetail"),
                 this.Client,
                 period);
         }
@@ -1259,6 +1389,45 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetYammerDeviceUsageUserCountsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getYammerDeviceUsageUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+            Date date)
+        {
+            return new ReportRootGetYammerDeviceUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerDeviceUsageUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetYammerDeviceUsageUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetYammerDeviceUsageUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetYammerDeviceUsageUserDetailRequestBuilder GetYammerDeviceUsageUserDetail(
+            string period)
+        {
+            return new ReportRootGetYammerDeviceUsageUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerDeviceUsageUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetYammerGroupsActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetYammerGroupsActivityCountsRequestBuilder"/>.</returns>
+        public IReportRootGetYammerGroupsActivityCountsRequestBuilder GetYammerGroupsActivityCounts(
+            string period)
+        {
+            return new ReportRootGetYammerGroupsActivityCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerGroupsActivityCounts"),
                 this.Client,
                 period);
         }
@@ -1298,175 +1467,6 @@ namespace Microsoft.Graph
         {
             return new ReportRootGetYammerGroupsActivityGroupCountsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getYammerGroupsActivityGroupCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetYammerGroupsActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetYammerGroupsActivityCountsRequestBuilder"/>.</returns>
-        public IReportRootGetYammerGroupsActivityCountsRequestBuilder GetYammerGroupsActivityCounts(
-            string period)
-        {
-            return new ReportRootGetYammerGroupsActivityCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getYammerGroupsActivityCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
-            Date date)
-        {
-            return new ReportRootGetTeamsUserActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityUserDetail"),
-                this.Client,
-                date);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsUserActivityUserDetailRequestBuilder GetTeamsUserActivityUserDetail(
-            string period)
-        {
-            return new ReportRootGetTeamsUserActivityUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityUserDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityCountsRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsUserActivityCountsRequestBuilder GetTeamsUserActivityCounts(
-            string period)
-        {
-            return new ReportRootGetTeamsUserActivityCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsUserActivityUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsUserActivityUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsUserActivityUserCountsRequestBuilder GetTeamsUserActivityUserCounts(
-            string period)
-        {
-            return new ReportRootGetTeamsUserActivityUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsUserActivityUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
-            Date date)
-        {
-            return new ReportRootGetTeamsDeviceUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageUserDetail"),
-                this.Client,
-                date);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsDeviceUsageUserDetailRequestBuilder GetTeamsDeviceUsageUserDetail(
-            string period)
-        {
-            return new ReportRootGetTeamsDeviceUsageUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageUserDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsDeviceUsageUserCountsRequestBuilder GetTeamsDeviceUsageUserCounts(
-            string period)
-        {
-            return new ReportRootGetTeamsDeviceUsageUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetTeamsDeviceUsageDistributionUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder GetTeamsDeviceUsageDistributionUserCounts(
-            string period)
-        {
-            return new ReportRootGetTeamsDeviceUsageDistributionUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsDeviceUsageDistributionUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetM365AppUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetM365AppUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
-            Date date)
-        {
-            return new ReportRootGetM365AppUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
-                this.Client,
-                date);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetM365AppUserDetail.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetM365AppUserDetailRequestBuilder"/>.</returns>
-        public IReportRootGetM365AppUserDetailRequestBuilder GetM365AppUserDetail(
-            string period)
-        {
-            return new ReportRootGetM365AppUserDetailRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserDetail"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetM365AppUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetM365AppUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetM365AppUserCountsRequestBuilder GetM365AppUserCounts(
-            string period)
-        {
-            return new ReportRootGetM365AppUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppUserCounts"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetM365AppPlatformUserCounts.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetM365AppPlatformUserCountsRequestBuilder"/>.</returns>
-        public IReportRootGetM365AppPlatformUserCountsRequestBuilder GetM365AppPlatformUserCounts(
-            string period)
-        {
-            return new ReportRootGetM365AppPlatformUserCountsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getM365AppPlatformUserCounts"),
                 this.Client,
                 period);
         }

@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets api version.
+        /// API version for the call back URL. Start with 1.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apiVersion", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? ApiVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Name of the workforce integration.
         /// </summary>
@@ -38,11 +45,10 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets api version.
-        /// API version for the call back URL. Start with 1.
+        /// Gets or sets eligibility filtering enabled entities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apiVersion", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? ApiVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eligibilityFilteringEnabledEntities", Required = Newtonsoft.Json.Required.Default)]
+        public EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities { get; set; }
     
         /// <summary>
         /// Gets or sets encryption.
@@ -59,11 +65,11 @@ namespace Microsoft.Graph
         public bool? IsActive { get; set; }
     
         /// <summary>
-        /// Gets or sets url.
-        /// Workforce Integration URL for callbacks from the Shifts service.
+        /// Gets or sets supported entities.
+        /// The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
-        public string Url { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedEntities", Required = Newtonsoft.Json.Required.Default)]
+        public WorkforceIntegrationSupportedEntities? SupportedEntities { get; set; }
     
         /// <summary>
         /// Gets or sets supports.
@@ -72,17 +78,11 @@ namespace Microsoft.Graph
         public WorkforceIntegrationSupportedEntities? Supports { get; set; }
     
         /// <summary>
-        /// Gets or sets supported entities.
-        /// The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences
+        /// Gets or sets url.
+        /// Workforce Integration URL for callbacks from the Shifts service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedEntities", Required = Newtonsoft.Json.Required.Default)]
-        public WorkforceIntegrationSupportedEntities? SupportedEntities { get; set; }
-    
-        /// <summary>
-        /// Gets or sets eligibility filtering enabled entities.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eligibilityFilteringEnabledEntities", Required = Newtonsoft.Json.Required.Default)]
-        public EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        public string Url { get; set; }
     
     }
 }

@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets device name.
+        /// Name of the device on which Windows management app is installed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device osversion.
+        /// Windows 10 OS version of the device on which Windows management app is installed.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOSVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceOSVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets health state.
         /// Windows management app health state.
         /// </summary>
@@ -50,20 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckInDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastCheckInDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device name.
-        /// Name of the device on which Windows management app is installed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device osversion.
-        /// Windows 10 OS version of the device on which Windows management app is installed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOSVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceOSVersion { get; set; }
     
     }
 }

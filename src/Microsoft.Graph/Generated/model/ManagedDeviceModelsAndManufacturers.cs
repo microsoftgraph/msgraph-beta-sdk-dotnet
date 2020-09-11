@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets deviceModels.
-        /// List of Models for managed devices in the account
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceModels", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> DeviceModels { get; set; }
-    
-        /// <summary>
         /// Gets or sets deviceManufacturers.
         /// List of Manufactures for managed devices in the account
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManufacturers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> DeviceManufacturers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceModels.
+        /// List of Models for managed devices in the account
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceModels", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> DeviceModels { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

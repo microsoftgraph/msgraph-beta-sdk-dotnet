@@ -31,25 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets user principal name.
-        /// The user principal name that is being reported on a device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user name.
-        /// The user name that is being reported on a device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserName { get; set; }
-    
-        /// <summary>
         /// Gets or sets device display name.
         /// Device name that is being reported
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device id.
+        /// Device id that is being reported
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets last reported date time.
@@ -66,11 +59,18 @@ namespace Microsoft.Graph
         public ComplianceStatus? State { get; set; }
     
         /// <summary>
-        /// Gets or sets device id.
-        /// Device id that is being reported
+        /// Gets or sets user name.
+        /// The user name that is being reported on a device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// The user principal name that is being reported on a device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserPrincipalName { get; set; }
     
     }
 }

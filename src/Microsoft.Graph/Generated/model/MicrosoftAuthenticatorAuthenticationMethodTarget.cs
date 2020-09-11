@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets shown context.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shownContext", Required = Newtonsoft.Json.Required.Default)]
-        public AuthenticatorAppContextType? ShownContext { get; set; }
-    
-        /// <summary>
         /// Gets or sets is number matching required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isNumberMatchingRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsNumberMatchingRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shown context.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shownContext", Required = Newtonsoft.Json.Required.Default)]
+        public AuthenticatorAppContextType? ShownContext { get; set; }
     
     }
 }

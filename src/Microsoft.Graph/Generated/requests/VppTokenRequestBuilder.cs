@@ -51,17 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for VppTokenSyncLicenses.
-        /// </summary>
-        /// <returns>The <see cref="IVppTokenSyncLicensesRequestBuilder"/>.</returns>
-        public IVppTokenSyncLicensesRequestBuilder SyncLicenses()
-        {
-            return new VppTokenSyncLicensesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.syncLicenses"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for VppTokenRevokeLicenses.
         /// </summary>
         /// <returns>The <see cref="IVppTokenRevokeLicensesRequestBuilder"/>.</returns>
@@ -72,6 +61,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.revokeLicenses"),
                 this.Client,
                 notifyManagedDevices);
+        }
+
+        /// <summary>
+        /// Gets the request builder for VppTokenSyncLicenses.
+        /// </summary>
+        /// <returns>The <see cref="IVppTokenSyncLicensesRequestBuilder"/>.</returns>
+        public IVppTokenSyncLicensesRequestBuilder SyncLicenses()
+        {
+            return new VppTokenSyncLicensesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.syncLicenses"),
+                this.Client);
         }
     
     }

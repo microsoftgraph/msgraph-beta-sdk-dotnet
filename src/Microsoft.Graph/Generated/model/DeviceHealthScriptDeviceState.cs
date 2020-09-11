@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public RunState? DetectionState { get; set; }
     
         /// <summary>
-        /// Gets or sets last state update date time.
-        /// The last timestamp of when the device health script executed
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastStateUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastStateUpdateDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets expected state update date time.
         /// The next timestamp of when the device health script is expected to execute
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expectedStateUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ExpectedStateUpdateDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last state update date time.
+        /// The last timestamp of when the device health script executed
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastStateUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastStateUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
@@ -59,25 +59,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets pre remediation detection script output.
-        /// Output of the detection script before remediation
+        /// Gets or sets post remediation detection script error.
+        /// Error from the detection script after remediation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preRemediationDetectionScriptOutput", Required = Newtonsoft.Json.Required.Default)]
-        public string PreRemediationDetectionScriptOutput { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pre remediation detection script error.
-        /// Error from the detection script before remediation
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preRemediationDetectionScriptError", Required = Newtonsoft.Json.Required.Default)]
-        public string PreRemediationDetectionScriptError { get; set; }
-    
-        /// <summary>
-        /// Gets or sets remediation script error.
-        /// Error output of the remediation script
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptError", Required = Newtonsoft.Json.Required.Default)]
-        public string RemediationScriptError { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postRemediationDetectionScriptError", Required = Newtonsoft.Json.Required.Default)]
+        public string PostRemediationDetectionScriptError { get; set; }
     
         /// <summary>
         /// Gets or sets post remediation detection script output.
@@ -87,11 +73,25 @@ namespace Microsoft.Graph
         public string PostRemediationDetectionScriptOutput { get; set; }
     
         /// <summary>
-        /// Gets or sets post remediation detection script error.
-        /// Error from the detection script after remediation
+        /// Gets or sets pre remediation detection script error.
+        /// Error from the detection script before remediation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postRemediationDetectionScriptError", Required = Newtonsoft.Json.Required.Default)]
-        public string PostRemediationDetectionScriptError { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preRemediationDetectionScriptError", Required = Newtonsoft.Json.Required.Default)]
+        public string PreRemediationDetectionScriptError { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pre remediation detection script output.
+        /// Output of the detection script before remediation
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preRemediationDetectionScriptOutput", Required = Newtonsoft.Json.Required.Default)]
+        public string PreRemediationDetectionScriptOutput { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediation script error.
+        /// Error output of the remediation script
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptError", Required = Newtonsoft.Json.Required.Default)]
+        public string RemediationScriptError { get; set; }
     
         /// <summary>
         /// Gets or sets remediation state.

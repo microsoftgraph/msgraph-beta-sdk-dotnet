@@ -31,27 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets group policy object id.
-        /// The Group Policy Object GUID from GPO Xml content
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectId", Required = Newtonsoft.Json.Required.Default)]
-        public Guid? GroupPolicyObjectId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// The name of Group Policy Object from the GPO Xml Content
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets ou distinguished name.
-        /// The distinguished name of the OU.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ouDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
-        public string OuDistinguishedName { get; set; }
-    
-        /// <summary>
         /// Gets or sets created date time.
         /// The date and time at which the GroupPolicyMigrationReport was created.
         /// </summary>
@@ -59,11 +38,11 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last modified date time.
-        /// The date and time at which the GroupPolicyMigrationReport was last modified.
+        /// Gets or sets display name.
+        /// The name of Group Policy Object from the GPO Xml Content
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets group policy created date time.
@@ -80,6 +59,20 @@ namespace Microsoft.Graph
         public DateTimeOffset? GroupPolicyLastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets group policy object id.
+        /// The Group Policy Object GUID from GPO Xml content
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectId", Required = Newtonsoft.Json.Required.Default)]
+        public Guid? GroupPolicyObjectId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last modified date time.
+        /// The date and time at which the GroupPolicyMigrationReport was last modified.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets migration readiness.
         /// The Intune coverage for the associated Group Policy Object file.
         /// </summary>
@@ -87,18 +80,11 @@ namespace Microsoft.Graph
         public GroupPolicyMigrationReadiness? MigrationReadiness { get; set; }
     
         /// <summary>
-        /// Gets or sets targeted in active directory.
-        /// The Targeted in AD property from GPO Xml Content
+        /// Gets or sets ou distinguished name.
+        /// The distinguished name of the OU.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedInActiveDirectory", Required = Newtonsoft.Json.Required.Default)]
-        public bool? TargetedInActiveDirectory { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total settings count.
-        /// The total number of Group Policy Settings from GPO file.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalSettingsCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalSettingsCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ouDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
+        public string OuDistinguishedName { get; set; }
     
         /// <summary>
         /// Gets or sets supported settings count.
@@ -113,6 +99,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedSettingsPercent", Required = Newtonsoft.Json.Required.Default)]
         public Int32? SupportedSettingsPercent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targeted in active directory.
+        /// The Targeted in AD property from GPO Xml Content
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedInActiveDirectory", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TargetedInActiveDirectory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total settings count.
+        /// The total number of Group Policy Settings from GPO file.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalSettingsCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalSettingsCount { get; set; }
     
         /// <summary>
         /// Gets or sets group policy setting mappings.

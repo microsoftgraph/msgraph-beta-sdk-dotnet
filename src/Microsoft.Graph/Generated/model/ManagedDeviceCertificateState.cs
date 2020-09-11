@@ -31,81 +31,18 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets device platform.
-        /// Device platform
+        /// Gets or sets certificate enhanced key usage.
+        /// Extended key usage
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePlatform", Required = Newtonsoft.Json.Required.Default)]
-        public DevicePlatformType? DevicePlatform { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateEnhancedKeyUsage", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateEnhancedKeyUsage { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate key usage.
-        /// Key usage
+        /// Gets or sets certificate error code.
+        /// Error code
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyUsage", Required = Newtonsoft.Json.Required.Default)]
-        public KeyUsages? CertificateKeyUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate validity period units.
-        /// Validity period units
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodUnits", Required = Newtonsoft.Json.Required.Default)]
-        public CertificateValidityPeriodScale? CertificateValidityPeriodUnits { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate issuance state.
-        /// Issuance State
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateIssuanceState", Required = Newtonsoft.Json.Required.Default)]
-        public CertificateIssuanceStates? CertificateIssuanceState { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate key storage provider.
-        /// Key Storage Provider
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyStorageProvider", Required = Newtonsoft.Json.Required.Default)]
-        public KeyStorageProviderOption? CertificateKeyStorageProvider { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate subject name format.
-        /// Subject name format
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectNameFormat", Required = Newtonsoft.Json.Required.Default)]
-        public SubjectNameFormat? CertificateSubjectNameFormat { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate subject alternative name format.
-        /// Subject alternative name format
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectAlternativeNameFormat", Required = Newtonsoft.Json.Required.Default)]
-        public SubjectAlternativeNameType? CertificateSubjectAlternativeNameFormat { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate revoke status.
-        /// Revoke status
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateRevokeStatus", Required = Newtonsoft.Json.Required.Default)]
-        public CertificateRevocationStatus? CertificateRevokeStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate profile display name.
-        /// Certificate profile display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateProfileDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateProfileDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device display name.
-        /// Device display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DeviceDisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user display name.
-        /// User display name
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string UserDisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateErrorCode", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CertificateErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets certificate expiration date time.
@@ -115,18 +52,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? CertificateExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate last issuance state changed date time.
-        /// Last certificate issuance state change
+        /// Gets or sets certificate issuance date time.
+        /// Issuance date
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateLastIssuanceStateChangedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CertificateLastIssuanceStateChangedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateIssuanceDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CertificateIssuanceDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets last certificate state change date time.
-        /// Last certificate issuance state change
+        /// Gets or sets certificate issuance state.
+        /// Issuance State
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCertificateStateChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastCertificateStateChangeDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateIssuanceState", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateIssuanceStates? CertificateIssuanceState { get; set; }
     
         /// <summary>
         /// Gets or sets certificate issuer.
@@ -136,11 +73,46 @@ namespace Microsoft.Graph
         public string CertificateIssuer { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate thumbprint.
-        /// Thumbprint
+        /// Gets or sets certificate key length.
+        /// Key length
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateThumbprint", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateThumbprint { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyLength", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CertificateKeyLength { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate key storage provider.
+        /// Key Storage Provider
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyStorageProvider", Required = Newtonsoft.Json.Required.Default)]
+        public KeyStorageProviderOption? CertificateKeyStorageProvider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate key usage.
+        /// Key usage
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyUsage", Required = Newtonsoft.Json.Required.Default)]
+        public KeyUsages? CertificateKeyUsage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate last issuance state changed date time.
+        /// Last certificate issuance state change
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateLastIssuanceStateChangedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CertificateLastIssuanceStateChangedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate profile display name.
+        /// Certificate profile display name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateProfileDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateProfileDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate revoke status.
+        /// Revoke status
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateRevokeStatus", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateRevocationStatus? CertificateRevokeStatus { get; set; }
     
         /// <summary>
         /// Gets or sets certificate serial number.
@@ -150,32 +122,11 @@ namespace Microsoft.Graph
         public string CertificateSerialNumber { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate key length.
-        /// Key length
+        /// Gets or sets certificate subject alternative name format.
+        /// Subject alternative name format
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyLength", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CertificateKeyLength { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate enhanced key usage.
-        /// Extended key usage
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateEnhancedKeyUsage", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateEnhancedKeyUsage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate validity period.
-        /// Validity period
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CertificateValidityPeriod { get; set; }
-    
-        /// <summary>
-        /// Gets or sets certificate subject name format string.
-        /// Subject name format string for custom subject name formats
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
-        public string CertificateSubjectNameFormatString { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectAlternativeNameFormat", Required = Newtonsoft.Json.Required.Default)]
+        public SubjectAlternativeNameType? CertificateSubjectAlternativeNameFormat { get; set; }
     
         /// <summary>
         /// Gets or sets certificate subject alternative name format string.
@@ -185,18 +136,67 @@ namespace Microsoft.Graph
         public string CertificateSubjectAlternativeNameFormatString { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate issuance date time.
-        /// Issuance date
+        /// Gets or sets certificate subject name format.
+        /// Subject name format
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateIssuanceDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CertificateIssuanceDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectNameFormat", Required = Newtonsoft.Json.Required.Default)]
+        public SubjectNameFormat? CertificateSubjectNameFormat { get; set; }
     
         /// <summary>
-        /// Gets or sets certificate error code.
-        /// Error code
+        /// Gets or sets certificate subject name format string.
+        /// Subject name format string for custom subject name formats
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateErrorCode", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? CertificateErrorCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateSubjectNameFormatString { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate thumbprint.
+        /// Thumbprint
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateThumbprint", Required = Newtonsoft.Json.Required.Default)]
+        public string CertificateThumbprint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate validity period.
+        /// Validity period
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? CertificateValidityPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate validity period units.
+        /// Validity period units
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodUnits", Required = Newtonsoft.Json.Required.Default)]
+        public CertificateValidityPeriodScale? CertificateValidityPeriodUnits { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device display name.
+        /// Device display name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device platform.
+        /// Device platform
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePlatform", Required = Newtonsoft.Json.Required.Default)]
+        public DevicePlatformType? DevicePlatform { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last certificate state change date time.
+        /// Last certificate issuance state change
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCertificateStateChangeDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastCertificateStateChangeDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user display name.
+        /// User display name
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string UserDisplayName { get; set; }
     
     }
 }

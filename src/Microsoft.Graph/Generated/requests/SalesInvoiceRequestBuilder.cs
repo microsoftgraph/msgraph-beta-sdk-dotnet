@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SalesInvoiceLines.
+        /// Gets the request builder for Currency.
         /// </summary>
-        /// <returns>The <see cref="ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder"/>.</returns>
-        public ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder SalesInvoiceLines
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        public ICurrencyRequestBuilder Currency
         {
             get
             {
-                return new SalesInvoiceSalesInvoiceLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesInvoiceLines"), this.Client);
+                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
             }
         }
 
@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        public ICurrencyRequestBuilder Currency
-        {
-            get
-            {
-                return new CurrencyRequestBuilder(this.AppendSegmentToRequestUrl("currency"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for PaymentTerm.
         /// </summary>
         /// <returns>The <see cref="IPaymentTermRequestBuilder"/>.</returns>
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PaymentTermRequestBuilder(this.AppendSegmentToRequestUrl("paymentTerm"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoiceLines.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder"/>.</returns>
+        public ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder SalesInvoiceLines
+        {
+            get
+            {
+                return new SalesInvoiceSalesInvoiceLinesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("salesInvoiceLines"), this.Client);
             }
         }
 
@@ -111,17 +111,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SalesInvoiceCancelAndSend.
-        /// </summary>
-        /// <returns>The <see cref="ISalesInvoiceCancelAndSendRequestBuilder"/>.</returns>
-        public ISalesInvoiceCancelAndSendRequestBuilder CancelAndSend()
-        {
-            return new SalesInvoiceCancelAndSendRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.cancelAndSend"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for SalesInvoiceCancel.
         /// </summary>
         /// <returns>The <see cref="ISalesInvoiceCancelRequestBuilder"/>.</returns>
@@ -133,13 +122,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for SalesInvoicePostAndSend.
+        /// Gets the request builder for SalesInvoiceCancelAndSend.
         /// </summary>
-        /// <returns>The <see cref="ISalesInvoicePostAndSendRequestBuilder"/>.</returns>
-        public ISalesInvoicePostAndSendRequestBuilder PostAndSend()
+        /// <returns>The <see cref="ISalesInvoiceCancelAndSendRequestBuilder"/>.</returns>
+        public ISalesInvoiceCancelAndSendRequestBuilder CancelAndSend()
         {
-            return new SalesInvoicePostAndSendRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.postAndSend"),
+            return new SalesInvoiceCancelAndSendRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.cancelAndSend"),
                 this.Client);
         }
 
@@ -151,6 +140,17 @@ namespace Microsoft.Graph
         {
             return new SalesInvoicePostRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.post"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoicePostAndSend.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoicePostAndSendRequestBuilder"/>.</returns>
+        public ISalesInvoicePostAndSendRequestBuilder PostAndSend()
+        {
+            return new SalesInvoicePostAndSendRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.postAndSend"),
                 this.Client);
         }
 

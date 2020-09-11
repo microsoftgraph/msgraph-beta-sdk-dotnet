@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IPermissionGrantPolicyRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Includes.
-        /// </summary>
-        /// <returns>The <see cref="IPermissionGrantPolicyIncludesCollectionRequestBuilder"/>.</returns>
-        IPermissionGrantPolicyIncludesCollectionRequestBuilder Includes { get; }
-
-        /// <summary>
         /// Gets the request builder for Excludes.
         /// </summary>
         /// <returns>The <see cref="IPermissionGrantPolicyExcludesCollectionRequestBuilder"/>.</returns>
         IPermissionGrantPolicyExcludesCollectionRequestBuilder Excludes { get; }
+
+        /// <summary>
+        /// Gets the request builder for Includes.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionGrantPolicyIncludesCollectionRequestBuilder"/>.</returns>
+        IPermissionGrantPolicyIncludesCollectionRequestBuilder Includes { get; }
     
     }
 }

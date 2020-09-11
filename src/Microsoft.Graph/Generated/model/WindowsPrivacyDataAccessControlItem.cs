@@ -38,11 +38,11 @@ namespace Microsoft.Graph
         public WindowsPrivacyDataAccessLevel? AccessLevel { get; set; }
     
         /// <summary>
-        /// Gets or sets data category.
-        /// This indicates a privacy data category to which the specific access control will apply.
+        /// Gets or sets app display name.
+        /// The Package Family Name of a Windows app. When set, the access level applies to the specified application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataCategory", Required = Newtonsoft.Json.Required.Default)]
-        public WindowsPrivacyDataCategory? DataCategory { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app package family name.
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         public string AppPackageFamilyName { get; set; }
     
         /// <summary>
-        /// Gets or sets app display name.
-        /// The Package Family Name of a Windows app. When set, the access level applies to the specified application.
+        /// Gets or sets data category.
+        /// This indicates a privacy data category to which the specific access control will apply.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
-        public string AppDisplayName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataCategory", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsPrivacyDataCategory? DataCategory { get; set; }
     
     }
 }

@@ -32,28 +32,28 @@ namespace Microsoft.Graph
         new IEducationAssignmentRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Resources.
-        /// </summary>
-        /// <returns>The <see cref="IEducationAssignmentResourcesCollectionRequestBuilder"/>.</returns>
-        IEducationAssignmentResourcesCollectionRequestBuilder Resources { get; }
-
-        /// <summary>
-        /// Gets the request builder for Submissions.
-        /// </summary>
-        /// <returns>The <see cref="IEducationAssignmentSubmissionsCollectionRequestBuilder"/>.</returns>
-        IEducationAssignmentSubmissionsCollectionRequestBuilder Submissions { get; }
-
-        /// <summary>
         /// Gets the request builder for Categories.
         /// </summary>
         /// <returns>The <see cref="IEducationAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
         IEducationAssignmentCategoriesCollectionRequestBuilder Categories { get; }
 
         /// <summary>
+        /// Gets the request builder for Resources.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentResourcesCollectionRequestBuilder"/>.</returns>
+        IEducationAssignmentResourcesCollectionRequestBuilder Resources { get; }
+
+        /// <summary>
         /// Gets the request builder for Rubric.
         /// </summary>
         /// <returns>The <see cref="IEducationRubricRequestBuilder"/>.</returns>
         IEducationRubricRequestBuilder Rubric { get; }
+
+        /// <summary>
+        /// Gets the request builder for Submissions.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSubmissionsCollectionRequestBuilder"/>.</returns>
+        IEducationAssignmentSubmissionsCollectionRequestBuilder Submissions { get; }
     
         /// <summary>
         /// Gets the request builder for EducationAssignmentPublish.

@@ -51,6 +51,13 @@ namespace Microsoft.Graph
             IEnumerable<SynchronizationJobApplicationParameters> parameters = null);
 
         /// <summary>
+        /// Gets the request builder for SynchronizationJobRestart.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobRestartRequestBuilder"/>.</returns>
+        ISynchronizationJobRestartRequestBuilder Restart(
+            SynchronizationJobRestartCriteria criteria = null);
+
+        /// <summary>
         /// Gets the request builder for SynchronizationJobStart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
@@ -61,13 +68,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStopRequestBuilder"/>.</returns>
         ISynchronizationJobStopRequestBuilder Stop();
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobRestart.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobRestartRequestBuilder"/>.</returns>
-        ISynchronizationJobRestartRequestBuilder Restart(
-            SynchronizationJobRestartCriteria criteria = null);
 
         /// <summary>
         /// Gets the request builder for SynchronizationJobValidateCredentials.

@@ -38,27 +38,6 @@ namespace Microsoft.Graph
         public string AccountName { get; set; }
     
         /// <summary>
-        /// Gets or sets sync calendar.
-        /// Whether or not to sync the calendar.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncCalendar", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SyncCalendar { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sync contacts.
-        /// Whether or not to sync contacts.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncContacts", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SyncContacts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sync tasks.
-        /// Whether or not to sync tasks.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncTasks", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SyncTasks { get; set; }
-    
-        /// <summary>
         /// Gets or sets duration of email to sync.
         /// Duration of email to sync.
         /// </summary>
@@ -92,6 +71,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireSsl", Required = Newtonsoft.Json.Required.Default)]
         public bool? RequireSsl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sync calendar.
+        /// Whether or not to sync the calendar.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncCalendar", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SyncCalendar { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sync contacts.
+        /// Whether or not to sync contacts.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncContacts", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SyncContacts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sync tasks.
+        /// Whether or not to sync tasks.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncTasks", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SyncTasks { get; set; }
     
     }
 }

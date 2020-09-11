@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IDeviceManagementTemplateRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Settings.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementTemplateSettingsCollectionRequestBuilder Settings { get; }
-
-        /// <summary>
         /// Gets the request builder for Categories.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTemplateCategoriesCollectionRequestBuilder"/>.</returns>
@@ -48,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTemplateMigratableToCollectionRequestBuilder"/>.</returns>
         IDeviceManagementTemplateMigratableToCollectionRequestBuilder MigratableTo { get; }
+
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementTemplateSettingsCollectionRequestBuilder Settings { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceManagementTemplateCreateInstance.

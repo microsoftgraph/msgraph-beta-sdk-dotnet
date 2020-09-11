@@ -31,11 +31,25 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets compliance status.
+        /// The policy compliance status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceStatus", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The friendly name of the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last reported date time.
+        /// Timestamp of the reported policy status
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastReportedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets policy type.
@@ -45,25 +59,11 @@ namespace Microsoft.Graph
         public DeviceManagementAutopilotPolicyType? PolicyType { get; set; }
     
         /// <summary>
-        /// Gets or sets compliance status.
-        /// The policy compliance status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceStatus", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus { get; set; }
-    
-        /// <summary>
         /// Gets or sets tracked on enrollment status.
         /// Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trackedOnEnrollmentStatus", Required = Newtonsoft.Json.Required.Default)]
         public bool? TrackedOnEnrollmentStatus { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last reported date time.
-        /// Timestamp of the reported policy status
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? LastReportedDateTime { get; set; }
     
     }
 }

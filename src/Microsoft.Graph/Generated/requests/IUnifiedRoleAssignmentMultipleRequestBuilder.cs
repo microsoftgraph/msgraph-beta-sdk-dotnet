@@ -32,16 +32,10 @@ namespace Microsoft.Graph
         new IUnifiedRoleAssignmentMultipleRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RoleDefinition.
+        /// Gets the request builder for AppScopes.
         /// </summary>
-        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
-        IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition { get; }
-
-        /// <summary>
-        /// Gets the request builder for Principals.
-        /// </summary>
-        /// <returns>The <see cref="IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder Principals { get; }
+        /// <returns>The <see cref="IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder"/>.</returns>
+        IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder AppScopes { get; }
 
         /// <summary>
         /// Gets the request builder for DirectoryScopes.
@@ -50,10 +44,16 @@ namespace Microsoft.Graph
         IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesRequestBuilder DirectoryScopes { get; }
 
         /// <summary>
-        /// Gets the request builder for AppScopes.
+        /// Gets the request builder for Principals.
         /// </summary>
-        /// <returns>The <see cref="IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder"/>.</returns>
-        IUnifiedRoleAssignmentMultipleAppScopesCollectionRequestBuilder AppScopes { get; }
+        /// <returns>The <see cref="IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesRequestBuilder Principals { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRoleDefinitionWithReferenceRequestBuilder"/>.</returns>
+        IUnifiedRoleDefinitionWithReferenceRequestBuilder RoleDefinition { get; }
     
     }
 }

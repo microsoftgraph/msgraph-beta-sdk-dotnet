@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IIdentityGovernanceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for EntitlementManagement.
-        /// </summary>
-        /// <returns>The <see cref="IEntitlementManagementRequestBuilder"/>.</returns>
-        IEntitlementManagementRequestBuilder EntitlementManagement { get; }
-
-        /// <summary>
         /// Gets the request builder for AccessReviews.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetRequestBuilder"/>.</returns>
@@ -48,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITermsOfUseContainerRequestBuilder"/>.</returns>
         ITermsOfUseContainerRequestBuilder TermsOfUse { get; }
+
+        /// <summary>
+        /// Gets the request builder for EntitlementManagement.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementRequestBuilder"/>.</returns>
+        IEntitlementManagementRequestBuilder EntitlementManagement { get; }
     
     }
 }

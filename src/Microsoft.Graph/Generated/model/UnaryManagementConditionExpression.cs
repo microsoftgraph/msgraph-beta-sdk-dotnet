@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets operator.
-        /// The operator used in the evaluation of the unary operation.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
-        public UnaryManagementConditionExpressionOperatorType? Operator { get; set; }
-    
-        /// <summary>
         /// Gets or sets operand.
         /// The operand of the unary operation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operand", Required = Newtonsoft.Json.Required.Default)]
         public ManagementConditionExpressionModel Operand { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operator.
+        /// The operator used in the evaluation of the unary operation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        public UnaryManagementConditionExpressionOperatorType? Operator { get; set; }
     
     }
 }

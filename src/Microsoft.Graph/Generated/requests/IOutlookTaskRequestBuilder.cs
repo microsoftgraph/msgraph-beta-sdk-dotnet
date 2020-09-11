@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IOutlookTaskRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SingleValueExtendedProperties.
+        /// Gets the request builder for Attachments.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
-        IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
+        /// <returns>The <see cref="IOutlookTaskAttachmentsCollectionRequestBuilder"/>.</returns>
+        IOutlookTaskAttachmentsCollectionRequestBuilder Attachments { get; }
 
         /// <summary>
         /// Gets the request builder for MultiValueExtendedProperties.
@@ -44,10 +44,10 @@ namespace Microsoft.Graph
         IOutlookTaskMultiValueExtendedPropertiesCollectionRequestBuilder MultiValueExtendedProperties { get; }
 
         /// <summary>
-        /// Gets the request builder for Attachments.
+        /// Gets the request builder for SingleValueExtendedProperties.
         /// </summary>
-        /// <returns>The <see cref="IOutlookTaskAttachmentsCollectionRequestBuilder"/>.</returns>
-        IOutlookTaskAttachmentsCollectionRequestBuilder Attachments { get; }
+        /// <returns>The <see cref="IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder"/>.</returns>
+        IOutlookTaskSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         /// <summary>
         /// Gets the request builder for OutlookTaskComplete.

@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets culture.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "culture", Required = Newtonsoft.Json.Required.Default)]
+        public string Culture { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets source.
@@ -49,16 +49,16 @@ namespace Microsoft.Graph
         public string Source { get; set; }
     
         /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public string Type { get; set; }
+    
+        /// <summary>
         /// Gets or sets version.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
         public string Version { get; set; }
-    
-        /// <summary>
-        /// Gets or sets culture.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "culture", Required = Newtonsoft.Json.Required.Default)]
-        public string Culture { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

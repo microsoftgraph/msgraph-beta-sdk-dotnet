@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets display name.
+        /// Gets or sets custom data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customData", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomData { get; set; }
     
         /// <summary>
         /// Gets or sets de duplication id.
@@ -49,22 +43,16 @@ namespace Microsoft.Graph
         public string DeDuplicationId { get; set; }
     
         /// <summary>
-        /// Gets or sets schema id.
+        /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaId", Required = Newtonsoft.Json.Required.Default)]
-        public string SchemaId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets custom data.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customData", Required = Newtonsoft.Json.Required.Default)]
-        public string CustomData { get; set; }
-    
-        /// <summary>
-        /// Gets or sets record version.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string RecordVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets policy.
@@ -77,6 +65,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyTemplateId", Required = Newtonsoft.Json.Required.Default)]
         public string PolicyTemplateId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets record version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string RecordVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets schema id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schemaId", Required = Newtonsoft.Json.Required.Default)]
+        public string SchemaId { get; set; }
     
         /// <summary>
         /// Gets or sets settings.

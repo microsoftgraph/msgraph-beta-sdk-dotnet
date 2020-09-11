@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets status.
-        /// Certificate connector status
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Status { get; set; }
-    
-        /// <summary>
         /// Gets or sets certExpiryTime.
         /// Certificate expire time
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certExpiryTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CertExpiryTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets connectorVersion.
+        /// Version of certificate connector
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string ConnectorVersion { get; set; }
     
         /// <summary>
         /// Gets or sets enrollmentError.
@@ -59,18 +59,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastConnectorConnectionTime { get; set; }
     
         /// <summary>
-        /// Gets or sets connectorVersion.
-        /// Version of certificate connector
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string ConnectorVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets lastUploadVersion.
         /// Version of last uploaded certificate connector
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUploadVersion", Required = Newtonsoft.Json.Required.Default)]
         public Int64? LastUploadVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// Certificate connector status
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Status { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

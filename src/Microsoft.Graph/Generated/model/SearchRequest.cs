@@ -31,28 +31,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets entityTypes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<EntityType> EntityTypes { get; set; }
-    
-        /// <summary>
         /// Gets or sets contentSources.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSources", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ContentSources { get; set; }
     
         /// <summary>
-        /// Gets or sets query.
+        /// Gets or sets enableTopResults.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
-        public SearchQuery Query { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableTopResults", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableTopResults { get; set; }
+    
+        /// <summary>
+        /// Gets or sets entityTypes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<EntityType> EntityTypes { get; set; }
     
         /// <summary>
         /// Gets or sets from.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
         public Int32? From { get; set; }
+    
+        /// <summary>
+        /// Gets or sets query.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
+        public SearchQuery Query { get; set; }
     
         /// <summary>
         /// Gets or sets size.
@@ -65,12 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "stored_fields", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Stored_fields { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enableTopResults.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableTopResults", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableTopResults { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets app supports oem config.
+        /// Whether or not this AppConfig is an OEMConfig policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appSupportsOemConfig", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppSupportsOemConfig { get; set; }
+    
+        /// <summary>
         /// Gets or sets package id.
         /// Android Enterprise app configuration package id.
         /// </summary>
@@ -50,13 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AndroidPermissionAction> PermissionActions { get; set; }
-    
-        /// <summary>
-        /// Gets or sets app supports oem config.
-        /// Whether or not this AppConfig is an OEMConfig policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appSupportsOemConfig", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AppSupportsOemConfig { get; set; }
     
         /// <summary>
         /// Gets or sets profile applicability.

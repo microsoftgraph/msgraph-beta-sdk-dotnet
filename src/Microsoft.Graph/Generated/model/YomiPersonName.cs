@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public string First { get; set; }
     
         /// <summary>
+        /// Gets or sets last.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last", Required = Newtonsoft.Json.Required.Default)]
+        public string Last { get; set; }
+    
+        /// <summary>
         /// Gets or sets maiden.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maiden", Required = Newtonsoft.Json.Required.Default)]
@@ -53,12 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "middle", Required = Newtonsoft.Json.Required.Default)]
         public string Middle { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last", Required = Newtonsoft.Json.Required.Default)]
-        public string Last { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

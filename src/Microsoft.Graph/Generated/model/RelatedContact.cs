@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets id.
-        /// Identity of the contact within Azure Active Directory.
+        /// Gets or sets accessConsent.
+        /// Indicates whether the user has been consented to access student data.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessConsent", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AccessConsent { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public string EmailAddress { get; set; }
     
         /// <summary>
+        /// Gets or sets id.
+        /// Identity of the contact within Azure Active Directory.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        public string Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets mobilePhone.
         /// Mobile phone number of the contact.
         /// </summary>
@@ -64,13 +71,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationship", Required = Newtonsoft.Json.Required.Default)]
         public ContactRelationship? Relationship { get; set; }
-    
-        /// <summary>
-        /// Gets or sets accessConsent.
-        /// Indicates whether the user has been consented to access student data.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessConsent", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AccessConsent { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

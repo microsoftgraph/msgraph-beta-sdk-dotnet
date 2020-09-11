@@ -31,16 +31,22 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets checksum.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checksum", Required = Newtonsoft.Json.Required.Default)]
+        public string Checksum { get; set; }
+    
+        /// <summary>
         /// Gets or sets datastore id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "datastoreId", Required = Newtonsoft.Json.Required.Default)]
         public string DatastoreId { get; set; }
     
         /// <summary>
-        /// Gets or sets upload agent id.
+        /// Gets or sets data upload uri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadAgentId", Required = Newtonsoft.Json.Required.Default)]
-        public string UploadAgentId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataUploadURI", Required = Newtonsoft.Json.Required.Default)]
+        public string DataUploadURI { get; set; }
     
         /// <summary>
         /// Gets or sets fields.
@@ -55,16 +61,10 @@ namespace Microsoft.Graph
         public string FileName { get; set; }
     
         /// <summary>
-        /// Gets or sets checksum.
+        /// Gets or sets processing completion date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checksum", Required = Newtonsoft.Json.Required.Default)]
-        public string Checksum { get; set; }
-    
-        /// <summary>
-        /// Gets or sets data upload uri.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataUploadURI", Required = Newtonsoft.Json.Required.Default)]
-        public string DataUploadURI { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ProcessingCompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets remaining block count.
@@ -73,28 +73,10 @@ namespace Microsoft.Graph
         public Int32? RemainingBlockCount { get; set; }
     
         /// <summary>
-        /// Gets or sets total block count.
+        /// Gets or sets remaining job count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalBlockCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalBlockCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets state.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public string State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets upload completion date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? UploadCompletionDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets processing completion date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ProcessingCompletionDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remainingJobCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? RemainingJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets rows per block.
@@ -103,22 +85,40 @@ namespace Microsoft.Graph
         public Int32? RowsPerBlock { get; set; }
     
         /// <summary>
+        /// Gets or sets salt.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salt", Required = Newtonsoft.Json.Required.Default)]
+        public string Salt { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public string State { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total block count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalBlockCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalBlockCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets total job count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalJobCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? TotalJobCount { get; set; }
     
         /// <summary>
-        /// Gets or sets remaining job count.
+        /// Gets or sets upload agent id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remainingJobCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? RemainingJobCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadAgentId", Required = Newtonsoft.Json.Required.Default)]
+        public string UploadAgentId { get; set; }
     
         /// <summary>
-        /// Gets or sets salt.
+        /// Gets or sets upload completion date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salt", Required = Newtonsoft.Json.Required.Default)]
-        public string Salt { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? UploadCompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets upload agent.

@@ -86,17 +86,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for PrintJobStartPrintJob.
-        /// </summary>
-        /// <returns>The <see cref="IPrintJobStartPrintJobRequestBuilder"/>.</returns>
-        public IPrintJobStartPrintJobRequestBuilder StartPrintJob()
-        {
-            return new PrintJobStartPrintJobRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.startPrintJob"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for PrintJobRedirect.
         /// </summary>
         /// <returns>The <see cref="IPrintJobRedirectRequestBuilder"/>.</returns>
@@ -107,6 +96,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.redirect"),
                 this.Client,
                 destinationPrinterId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for PrintJobStartPrintJob.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobStartPrintJobRequestBuilder"/>.</returns>
+        public IPrintJobStartPrintJobRequestBuilder StartPrintJob()
+        {
+            return new PrintJobStartPrintJobRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.startPrintJob"),
+                this.Client);
         }
     
     }

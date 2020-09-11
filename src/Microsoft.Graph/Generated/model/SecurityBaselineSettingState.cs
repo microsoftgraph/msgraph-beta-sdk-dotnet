@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets setting category id.
+        /// The setting category id which this setting belongs to
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingCategoryId", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingCategoryId { get; set; }
+    
+        /// <summary>
         /// Gets or sets setting name.
         /// The setting name that is being reported
         /// </summary>
@@ -43,13 +50,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public SecurityBaselineComplianceState? State { get; set; }
-    
-        /// <summary>
-        /// Gets or sets setting category id.
-        /// The setting category id which this setting belongs to
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingCategoryId", Required = Newtonsoft.Json.Required.Default)]
-        public string SettingCategoryId { get; set; }
     
     }
 }

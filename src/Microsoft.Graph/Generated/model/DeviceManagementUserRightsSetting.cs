@@ -31,18 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets state.
-        /// Representing the current state of this user rights setting
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
-        public StateManagementSetting? State { get; set; }
-    
-        /// <summary>
         /// Gets or sets localUsersOrGroups.
         /// Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localUsersOrGroups", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<DeviceManagementUserRightsLocalUserOrGroup> LocalUsersOrGroups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// Representing the current state of this user rights setting
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public StateManagementSetting? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

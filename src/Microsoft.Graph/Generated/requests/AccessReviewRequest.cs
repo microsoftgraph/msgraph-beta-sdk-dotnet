@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (accessReviewToInitialize != null && accessReviewToInitialize.AdditionalData != null)
             {
 
-                if (accessReviewToInitialize.Reviewers != null && accessReviewToInitialize.Reviewers.CurrentPage != null)
-                {
-                    accessReviewToInitialize.Reviewers.AdditionalData = accessReviewToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("reviewers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessReviewToInitialize.Reviewers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (accessReviewToInitialize.Decisions != null && accessReviewToInitialize.Decisions.CurrentPage != null)
                 {
                     accessReviewToInitialize.Decisions.AdditionalData = accessReviewToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         accessReviewToInitialize.Decisions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (accessReviewToInitialize.Instances != null && accessReviewToInitialize.Instances.CurrentPage != null)
+                {
+                    accessReviewToInitialize.Instances.AdditionalData = accessReviewToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    accessReviewToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        accessReviewToInitialize.Instances.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -282,17 +282,17 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (accessReviewToInitialize.Instances != null && accessReviewToInitialize.Instances.CurrentPage != null)
+                if (accessReviewToInitialize.Reviewers != null && accessReviewToInitialize.Reviewers.CurrentPage != null)
                 {
-                    accessReviewToInitialize.Instances.AdditionalData = accessReviewToInitialize.AdditionalData;
+                    accessReviewToInitialize.Reviewers.AdditionalData = accessReviewToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    accessReviewToInitialize.AdditionalData.TryGetValue("instances@odata.nextLink", out nextPageLink);
+                    accessReviewToInitialize.AdditionalData.TryGetValue("reviewers@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        accessReviewToInitialize.Instances.InitializeNextPageRequest(
+                        accessReviewToInitialize.Reviewers.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

@@ -31,10 +31,34 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets request type.
+        /// Gets or sets completed date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestType", Required = Newtonsoft.Json.Required.Default)]
-        public string RequestType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDate", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CompletedDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expiration date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is validation only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isValidationOnly", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsValidationOnly { get; set; }
+    
+        /// <summary>
+        /// Gets or sets justification.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets request state.
@@ -49,34 +73,16 @@ namespace Microsoft.Graph
         public string RequestStatus { get; set; }
     
         /// <summary>
-        /// Gets or sets is validation only.
+        /// Gets or sets request type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isValidationOnly", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsValidationOnly { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestType", Required = Newtonsoft.Json.Required.Default)]
+        public string RequestType { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
+        /// Gets or sets schedule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets completed date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDate", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CompletedDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expiration date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets justification.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
-        public string Justification { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        public RequestSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets access package.

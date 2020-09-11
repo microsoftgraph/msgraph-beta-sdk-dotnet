@@ -31,81 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets displayName.
-        /// Company/organization name that is displayed to end users.
+        /// Gets or sets companyPortalBlockedActions.
+        /// Collection of blocked actions on the company portal as per platform and device ownership types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets themeColor.
-        /// Primary theme color used in the Company Portal applications and web portal.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "themeColor", Required = Newtonsoft.Json.Required.Default)]
-        public RgbColor ThemeColor { get; set; }
-    
-        /// <summary>
-        /// Gets or sets showLogo.
-        /// Boolean that represents whether the administrator-supplied logo images are shown or not shown.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showLogo", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ShowLogo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lightBackgroundLogo.
-        /// Logo image displayed in Company Portal apps which have a light background behind the logo.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lightBackgroundLogo", Required = Newtonsoft.Json.Required.Default)]
-        public MimeContent LightBackgroundLogo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets darkBackgroundLogo.
-        /// Logo image displayed in Company Portal apps which have a dark background behind the logo.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "darkBackgroundLogo", Required = Newtonsoft.Json.Required.Default)]
-        public MimeContent DarkBackgroundLogo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets showNameNextToLogo.
-        /// Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showNameNextToLogo", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ShowNameNextToLogo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets landingPageCustomizedImage.
-        /// Customized image displayed in Company Portal app landing page
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "landingPageCustomizedImage", Required = Newtonsoft.Json.Required.Default)]
-        public MimeContent LandingPageCustomizedImage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets showDisplayNameNextToLogo.
-        /// Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showDisplayNameNextToLogo", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ShowDisplayNameNextToLogo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets roleScopeTagIds.
-        /// List of scope tags assigned to the default branding profile
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> RoleScopeTagIds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets contactITName.
-        /// Name of the person/organization responsible for IT support.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITName", Required = Newtonsoft.Json.Required.Default)]
-        public string ContactITName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets contactITPhoneNumber.
-        /// Phone number of the person/organization responsible for IT support.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITPhoneNumber", Required = Newtonsoft.Json.Required.Default)]
-        public string ContactITPhoneNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyPortalBlockedActions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<CompanyPortalBlockedAction> CompanyPortalBlockedActions { get; set; }
     
         /// <summary>
         /// Gets or sets contactITEmailAddress.
@@ -115,6 +45,13 @@ namespace Microsoft.Graph
         public string ContactITEmailAddress { get; set; }
     
         /// <summary>
+        /// Gets or sets contactITName.
+        /// Name of the person/organization responsible for IT support.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITName", Required = Newtonsoft.Json.Required.Default)]
+        public string ContactITName { get; set; }
+    
+        /// <summary>
         /// Gets or sets contactITNotes.
         /// Text comments regarding the person/organization responsible for IT support.
         /// </summary>
@@ -122,25 +59,11 @@ namespace Microsoft.Graph
         public string ContactITNotes { get; set; }
     
         /// <summary>
-        /// Gets or sets onlineSupportSiteUrl.
-        /// URL to the company/organization’s IT helpdesk site.
+        /// Gets or sets contactITPhoneNumber.
+        /// Phone number of the person/organization responsible for IT support.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string OnlineSupportSiteUrl { get; set; }
-    
-        /// <summary>
-        /// Gets or sets onlineSupportSiteName.
-        /// Display name of the company/organization’s IT helpdesk site.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
-        public string OnlineSupportSiteName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets privacyUrl.
-        /// URL to the company/organization’s privacy policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string PrivacyUrl { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITPhoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        public string ContactITPhoneNumber { get; set; }
     
         /// <summary>
         /// Gets or sets customPrivacyMessage.
@@ -150,11 +73,25 @@ namespace Microsoft.Graph
         public string CustomPrivacyMessage { get; set; }
     
         /// <summary>
-        /// Gets or sets isRemoveDeviceDisabled.
-        /// Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
+        /// Gets or sets darkBackgroundLogo.
+        /// Logo image displayed in Company Portal apps which have a dark background behind the logo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemoveDeviceDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsRemoveDeviceDisabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "darkBackgroundLogo", Required = Newtonsoft.Json.Required.Default)]
+        public MimeContent DarkBackgroundLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets displayName.
+        /// Company/organization name that is displayed to end users.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enrollmentAvailability.
+        /// Customized device enrollment flow displayed to the end user 
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentAvailability", Required = Newtonsoft.Json.Required.Default)]
+        public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
     
         /// <summary>
         /// Gets or sets isFactoryResetDisabled.
@@ -164,25 +101,53 @@ namespace Microsoft.Graph
         public bool? IsFactoryResetDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets companyPortalBlockedActions.
-        /// Collection of blocked actions on the company portal as per platform and device ownership types.
+        /// Gets or sets isRemoveDeviceDisabled.
+        /// Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyPortalBlockedActions", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<CompanyPortalBlockedAction> CompanyPortalBlockedActions { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemoveDeviceDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRemoveDeviceDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets showAzureADEnterpriseApps.
-        /// Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
+        /// Gets or sets landingPageCustomizedImage.
+        /// Customized image displayed in Company Portal app landing page
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showAzureADEnterpriseApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ShowAzureADEnterpriseApps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "landingPageCustomizedImage", Required = Newtonsoft.Json.Required.Default)]
+        public MimeContent LandingPageCustomizedImage { get; set; }
     
         /// <summary>
-        /// Gets or sets showOfficeWebApps.
-        /// Boolean that indicates if Office WebApps will be shown in Company Portal
+        /// Gets or sets lightBackgroundLogo.
+        /// Logo image displayed in Company Portal apps which have a light background behind the logo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showOfficeWebApps", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ShowOfficeWebApps { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lightBackgroundLogo", Required = Newtonsoft.Json.Required.Default)]
+        public MimeContent LightBackgroundLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onlineSupportSiteName.
+        /// Display name of the company/organization’s IT helpdesk site.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
+        public string OnlineSupportSiteName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onlineSupportSiteUrl.
+        /// URL to the company/organization’s IT helpdesk site.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string OnlineSupportSiteUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets privacyUrl.
+        /// URL to the company/organization’s privacy policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string PrivacyUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets roleScopeTagIds.
+        /// List of scope tags assigned to the default branding profile
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets sendDeviceOwnershipChangePushNotification.
@@ -192,11 +157,46 @@ namespace Microsoft.Graph
         public bool? SendDeviceOwnershipChangePushNotification { get; set; }
     
         /// <summary>
-        /// Gets or sets enrollmentAvailability.
-        /// Customized device enrollment flow displayed to the end user 
+        /// Gets or sets showAzureADEnterpriseApps.
+        /// Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentAvailability", Required = Newtonsoft.Json.Required.Default)]
-        public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showAzureADEnterpriseApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShowAzureADEnterpriseApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets showDisplayNameNextToLogo.
+        /// Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showDisplayNameNextToLogo", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShowDisplayNameNextToLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets showLogo.
+        /// Boolean that represents whether the administrator-supplied logo images are shown or not shown.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showLogo", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShowLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets showNameNextToLogo.
+        /// Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showNameNextToLogo", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShowNameNextToLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets showOfficeWebApps.
+        /// Boolean that indicates if Office WebApps will be shown in Company Portal
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showOfficeWebApps", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ShowOfficeWebApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets themeColor.
+        /// Primary theme color used in the Company Portal applications and web portal.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "themeColor", Required = Newtonsoft.Json.Required.Default)]
+        public RgbColor ThemeColor { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

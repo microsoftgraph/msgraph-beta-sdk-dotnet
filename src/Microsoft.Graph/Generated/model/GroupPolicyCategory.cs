@@ -52,18 +52,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets parent.
-        /// The parent category
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicyCategory Parent { get; set; }
-    
-        /// <summary>
         /// Gets or sets children.
         /// The children categories
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
         public IGroupPolicyCategoryChildrenCollectionWithReferencesPage Children { get; set; }
+    
+        /// <summary>
+        /// Gets or sets definition file.
+        /// The id of the definition file the category came from
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionFile", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyDefinitionFile DefinitionFile { get; set; }
     
         /// <summary>
         /// Gets or sets definitions.
@@ -73,11 +73,11 @@ namespace Microsoft.Graph
         public IGroupPolicyCategoryDefinitionsCollectionWithReferencesPage Definitions { get; set; }
     
         /// <summary>
-        /// Gets or sets definition file.
-        /// The id of the definition file the category came from
+        /// Gets or sets parent.
+        /// The parent category
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionFile", Required = Newtonsoft.Json.Required.Default)]
-        public GroupPolicyDefinitionFile DefinitionFile { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
+        public GroupPolicyCategory Parent { get; set; }
     
     }
 }

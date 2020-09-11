@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AccessPackageResourceScopes.
-        /// </summary>
-        /// <returns>The <see cref="IAccessPackageResourceAccessPackageResourceScopesCollectionRequestBuilder"/>.</returns>
-        public IAccessPackageResourceAccessPackageResourceScopesCollectionRequestBuilder AccessPackageResourceScopes
-        {
-            get
-            {
-                return new AccessPackageResourceAccessPackageResourceScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceScopes"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for AccessPackageResourceRoles.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageResourceAccessPackageResourceRolesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AccessPackageResourceAccessPackageResourceRolesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceRoles"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageResourceScopes.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageResourceAccessPackageResourceScopesCollectionRequestBuilder"/>.</returns>
+        public IAccessPackageResourceAccessPackageResourceScopesCollectionRequestBuilder AccessPackageResourceScopes
+        {
+            get
+            {
+                return new AccessPackageResourceAccessPackageResourceScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceScopes"), this.Client);
             }
         }
     

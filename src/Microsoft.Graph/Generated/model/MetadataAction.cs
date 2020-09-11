@@ -30,16 +30,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets metadataToRemove.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadataToRemove", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> MetadataToRemove { get; set; }
-    
-        /// <summary>
         /// Gets or sets metadataToAdd.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadataToAdd", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> MetadataToAdd { get; set; }
+    
+        /// <summary>
+        /// Gets or sets metadataToRemove.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadataToRemove", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> MetadataToRemove { get; set; }
     
     }
 }

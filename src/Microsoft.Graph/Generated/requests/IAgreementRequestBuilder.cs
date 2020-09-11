@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAgreementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Acceptances.
+        /// </summary>
+        /// <returns>The <see cref="IAgreementAcceptancesCollectionRequestBuilder"/>.</returns>
+        IAgreementAcceptancesCollectionRequestBuilder Acceptances { get; }
+
+        /// <summary>
         /// Gets the request builder for File.
         /// </summary>
         /// <returns>The <see cref="IAgreementFileRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAgreementFilesCollectionRequestBuilder"/>.</returns>
         IAgreementFilesCollectionRequestBuilder Files { get; }
-
-        /// <summary>
-        /// Gets the request builder for Acceptances.
-        /// </summary>
-        /// <returns>The <see cref="IAgreementAcceptancesCollectionRequestBuilder"/>.</returns>
-        IAgreementAcceptancesCollectionRequestBuilder Acceptances { get; }
     
     }
 }

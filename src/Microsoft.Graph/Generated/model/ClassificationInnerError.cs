@@ -31,16 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets errorDateTime.
+        /// Gets or sets activityId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ErrorDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets code.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
-        public string Code { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityId", Required = Newtonsoft.Json.Required.Default)]
+        public string ActivityId { get; set; }
     
         /// <summary>
         /// Gets or sets clientRequestId.
@@ -49,10 +43,16 @@ namespace Microsoft.Graph
         public string ClientRequestId { get; set; }
     
         /// <summary>
-        /// Gets or sets activityId.
+        /// Gets or sets code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityId", Required = Newtonsoft.Json.Required.Default)]
-        public string ActivityId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
+        public string Code { get; set; }
+    
+        /// <summary>
+        /// Gets or sets errorDateTime.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ErrorDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

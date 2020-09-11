@@ -31,10 +31,10 @@ namespace Microsoft.Graph.TermStore
         }
 	
         /// <summary>
-        /// Gets or sets localized names.
+        /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizedNames", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<LocalizedName> LocalizedNames { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph.TermStore
         public string Description { get; set; }
     
         /// <summary>
-        /// Gets or sets created date time.
+        /// Gets or sets localized names.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizedNames", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<LocalizedName> LocalizedNames { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
@@ -55,16 +55,16 @@ namespace Microsoft.Graph.TermStore
         public IEnumerable<Microsoft.Graph.KeyValue> Properties { get; set; }
     
         /// <summary>
+        /// Gets or sets children.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
+        public ISetChildrenCollectionPage Children { get; set; }
+    
+        /// <summary>
         /// Gets or sets parent group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentGroup", Required = Newtonsoft.Json.Required.Default)]
         public Group ParentGroup { get; set; }
-    
-        /// <summary>
-        /// Gets or sets terms.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "terms", Required = Newtonsoft.Json.Required.Default)]
-        public ISetTermsCollectionPage Terms { get; set; }
     
         /// <summary>
         /// Gets or sets relations.
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.TermStore
         public ISetRelationsCollectionPage Relations { get; set; }
     
         /// <summary>
-        /// Gets or sets children.
+        /// Gets or sets terms.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
-        public ISetChildrenCollectionPage Children { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "terms", Required = Newtonsoft.Json.Required.Default)]
+        public ISetTermsCollectionPage Terms { get; set; }
     
     }
 }

@@ -31,12 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets authenticationStepDateTime.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? AuthenticationStepDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets authenticationMethod.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
@@ -49,10 +43,16 @@ namespace Microsoft.Graph
         public string AuthenticationMethodDetail { get; set; }
     
         /// <summary>
-        /// Gets or sets succeeded.
+        /// Gets or sets authenticationStepDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeeded", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Succeeded { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? AuthenticationStepDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authenticationStepRequirement.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepRequirement", Required = Newtonsoft.Json.Required.Default)]
+        public string AuthenticationStepRequirement { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepResultDetail.
@@ -61,10 +61,10 @@ namespace Microsoft.Graph
         public string AuthenticationStepResultDetail { get; set; }
     
         /// <summary>
-        /// Gets or sets authenticationStepRequirement.
+        /// Gets or sets succeeded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepRequirement", Required = Newtonsoft.Json.Required.Default)]
-        public string AuthenticationStepRequirement { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeeded", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Succeeded { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

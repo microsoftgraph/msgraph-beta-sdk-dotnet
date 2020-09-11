@@ -31,39 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets deviceComplianceCheckinThresholdDays.
-        /// The number of days a device is allowed to go without checking in to remain compliant. Valid values 0 to 120
+        /// Gets or sets androidDeviceAdministratorEnrollmentEnabled.
+        /// The property to determine if Android device administrator enrollment is enabled for this account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceCheckinThresholdDays", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeviceComplianceCheckinThresholdDays { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isScheduledActionEnabled.
-        /// Is feature enabled or not for scheduled action for rule.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isScheduledActionEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsScheduledActionEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets secureByDefault.
-        /// Device should be noncompliant when there is no compliance policy targeted when this is true
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureByDefault", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SecureByDefault { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enhancedJailBreak.
-        /// Is feature enabled or not for enhanced jailbreak detection.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enhancedJailBreak", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnhancedJailBreak { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deviceInactivityBeforeRetirementInDay.
-        /// When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceInactivityBeforeRetirementInDay", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? DeviceInactivityBeforeRetirementInDay { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceAdministratorEnrollmentEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AndroidDeviceAdministratorEnrollmentEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets derivedCredentialProvider.
@@ -80,11 +52,32 @@ namespace Microsoft.Graph
         public string DerivedCredentialUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets androidDeviceAdministratorEnrollmentEnabled.
-        /// The property to determine if Android device administrator enrollment is enabled for this account.
+        /// Gets or sets deviceComplianceCheckinThresholdDays.
+        /// The number of days a device is allowed to go without checking in to remain compliant. Valid values 0 to 120
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceAdministratorEnrollmentEnabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? AndroidDeviceAdministratorEnrollmentEnabled { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceCheckinThresholdDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeviceComplianceCheckinThresholdDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceInactivityBeforeRetirementInDay.
+        /// When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceInactivityBeforeRetirementInDay", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DeviceInactivityBeforeRetirementInDay { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enableLogCollection.
+        /// Determines whether the log collection feature should be available for use.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableLogCollection", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnableLogCollection { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enhancedJailBreak.
+        /// Is feature enabled or not for enhanced jailbreak detection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enhancedJailBreak", Required = Newtonsoft.Json.Required.Default)]
+        public bool? EnhancedJailBreak { get; set; }
     
         /// <summary>
         /// Gets or sets ignoreDevicesForUnsupportedSettingsEnabled.
@@ -94,11 +87,18 @@ namespace Microsoft.Graph
         public bool? IgnoreDevicesForUnsupportedSettingsEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets enableLogCollection.
-        /// Determines whether the log collection feature should be available for use.
+        /// Gets or sets isScheduledActionEnabled.
+        /// Is feature enabled or not for scheduled action for rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableLogCollection", Required = Newtonsoft.Json.Required.Default)]
-        public bool? EnableLogCollection { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isScheduledActionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsScheduledActionEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets secureByDefault.
+        /// Device should be noncompliant when there is no compliance policy targeted when this is true
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureByDefault", Required = Newtonsoft.Json.Required.Default)]
+        public bool? SecureByDefault { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

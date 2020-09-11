@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Parent.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
-        public IGroupPolicyCategoryWithReferenceRequestBuilder Parent
-        {
-            get
-            {
-                return new GroupPolicyCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("parent"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Children.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyCategoryChildrenCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupPolicyCategoryChildrenCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("children"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DefinitionFile.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
+        public IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile
+        {
+            get
+            {
+                return new GroupPolicyDefinitionFileWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("definitionFile"), this.Client);
             }
         }
 
@@ -87,14 +87,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DefinitionFile.
+        /// Gets the request builder for Parent.
         /// </summary>
-        /// <returns>The <see cref="IGroupPolicyDefinitionFileWithReferenceRequestBuilder"/>.</returns>
-        public IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile
+        /// <returns>The <see cref="IGroupPolicyCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IGroupPolicyCategoryWithReferenceRequestBuilder Parent
         {
             get
             {
-                return new GroupPolicyDefinitionFileWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("definitionFile"), this.Client);
+                return new GroupPolicyCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("parent"), this.Client);
             }
         }
     

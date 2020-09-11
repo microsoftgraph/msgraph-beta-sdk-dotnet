@@ -30,16 +30,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets connectionSettings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionSettings", Required = Newtonsoft.Json.Required.Default)]
+        public EducationSynchronizationConnectionSettings ConnectionSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets connectionUrl.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ConnectionUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets connectionSettings.
+        /// Gets or sets customizations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionSettings", Required = Newtonsoft.Json.Required.Default)]
-        public EducationSynchronizationConnectionSettings ConnectionSettings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizations", Required = Newtonsoft.Json.Required.Default)]
+        public EducationSynchronizationCustomizations Customizations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets providerName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerName", Required = Newtonsoft.Json.Required.Default)]
+        public string ProviderName { get; set; }
     
         /// <summary>
         /// Gets or sets schoolsIds.
@@ -52,18 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> TermIds { get; set; }
-    
-        /// <summary>
-        /// Gets or sets providerName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerName", Required = Newtonsoft.Json.Required.Default)]
-        public string ProviderName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets customizations.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizations", Required = Newtonsoft.Json.Required.Default)]
-        public EducationSynchronizationCustomizations Customizations { get; set; }
     
     }
 }

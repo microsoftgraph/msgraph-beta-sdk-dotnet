@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TaskGroups.
-        /// </summary>
-        /// <returns>The <see cref="IOutlookUserTaskGroupsCollectionRequestBuilder"/>.</returns>
-        public IOutlookUserTaskGroupsCollectionRequestBuilder TaskGroups
-        {
-            get
-            {
-                return new OutlookUserTaskGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("taskGroups"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for TaskFolders.
         /// </summary>
         /// <returns>The <see cref="IOutlookUserTaskFoldersCollectionRequestBuilder"/>.</returns>
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
             get
             {
                 return new OutlookUserTaskFoldersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("taskFolders"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TaskGroups.
+        /// </summary>
+        /// <returns>The <see cref="IOutlookUserTaskGroupsCollectionRequestBuilder"/>.</returns>
+        public IOutlookUserTaskGroupsCollectionRequestBuilder TaskGroups
+        {
+            get
+            {
+                return new OutlookUserTaskGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("taskGroups"), this.Client);
             }
         }
 

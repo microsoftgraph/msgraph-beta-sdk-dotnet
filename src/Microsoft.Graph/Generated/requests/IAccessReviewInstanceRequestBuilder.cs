@@ -44,22 +44,10 @@ namespace Microsoft.Graph
         IAccessReviewScheduleDefinitionWithReferenceRequestBuilder Definition { get; }
     
         /// <summary>
-        /// Gets the request builder for AccessReviewInstanceStop.
+        /// Gets the request builder for AccessReviewInstanceAcceptRecommendations.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
-        IAccessReviewInstanceStopRequestBuilder Stop();
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewInstanceSendReminder.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceSendReminderRequestBuilder"/>.</returns>
-        IAccessReviewInstanceSendReminderRequestBuilder SendReminder();
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewInstanceResetDecisions.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceResetDecisionsRequestBuilder"/>.</returns>
-        IAccessReviewInstanceResetDecisionsRequestBuilder ResetDecisions();
+        /// <returns>The <see cref="IAccessReviewInstanceAcceptRecommendationsRequestBuilder"/>.</returns>
+        IAccessReviewInstanceAcceptRecommendationsRequestBuilder AcceptRecommendations();
 
         /// <summary>
         /// Gets the request builder for AccessReviewInstanceApplyDecisions.
@@ -68,10 +56,22 @@ namespace Microsoft.Graph
         IAccessReviewInstanceApplyDecisionsRequestBuilder ApplyDecisions();
 
         /// <summary>
-        /// Gets the request builder for AccessReviewInstanceAcceptRecommendations.
+        /// Gets the request builder for AccessReviewInstanceResetDecisions.
         /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceAcceptRecommendationsRequestBuilder"/>.</returns>
-        IAccessReviewInstanceAcceptRecommendationsRequestBuilder AcceptRecommendations();
+        /// <returns>The <see cref="IAccessReviewInstanceResetDecisionsRequestBuilder"/>.</returns>
+        IAccessReviewInstanceResetDecisionsRequestBuilder ResetDecisions();
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceSendReminder.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceSendReminderRequestBuilder"/>.</returns>
+        IAccessReviewInstanceSendReminderRequestBuilder SendReminder();
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceStop.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
+        IAccessReviewInstanceStopRequestBuilder Stop();
     
     }
 }

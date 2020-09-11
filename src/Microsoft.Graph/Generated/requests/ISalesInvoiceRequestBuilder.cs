@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new ISalesInvoiceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SalesInvoiceLines.
+        /// Gets the request builder for Currency.
         /// </summary>
-        /// <returns>The <see cref="ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder"/>.</returns>
-        ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder SalesInvoiceLines { get; }
+        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
+        ICurrencyRequestBuilder Currency { get; }
 
         /// <summary>
         /// Gets the request builder for Customer.
@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         ICustomerRequestBuilder Customer { get; }
 
         /// <summary>
-        /// Gets the request builder for Currency.
-        /// </summary>
-        /// <returns>The <see cref="ICurrencyRequestBuilder"/>.</returns>
-        ICurrencyRequestBuilder Currency { get; }
-
-        /// <summary>
         /// Gets the request builder for PaymentTerm.
         /// </summary>
         /// <returns>The <see cref="IPaymentTermRequestBuilder"/>.</returns>
         IPaymentTermRequestBuilder PaymentTerm { get; }
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoiceLines.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder"/>.</returns>
+        ISalesInvoiceSalesInvoiceLinesCollectionRequestBuilder SalesInvoiceLines { get; }
 
         /// <summary>
         /// Gets the request builder for ShipmentMethod.
@@ -62,28 +62,28 @@ namespace Microsoft.Graph
         IShipmentMethodRequestBuilder ShipmentMethod { get; }
     
         /// <summary>
-        /// Gets the request builder for SalesInvoiceCancelAndSend.
-        /// </summary>
-        /// <returns>The <see cref="ISalesInvoiceCancelAndSendRequestBuilder"/>.</returns>
-        ISalesInvoiceCancelAndSendRequestBuilder CancelAndSend();
-
-        /// <summary>
         /// Gets the request builder for SalesInvoiceCancel.
         /// </summary>
         /// <returns>The <see cref="ISalesInvoiceCancelRequestBuilder"/>.</returns>
         ISalesInvoiceCancelRequestBuilder Cancel();
 
         /// <summary>
-        /// Gets the request builder for SalesInvoicePostAndSend.
+        /// Gets the request builder for SalesInvoiceCancelAndSend.
         /// </summary>
-        /// <returns>The <see cref="ISalesInvoicePostAndSendRequestBuilder"/>.</returns>
-        ISalesInvoicePostAndSendRequestBuilder PostAndSend();
+        /// <returns>The <see cref="ISalesInvoiceCancelAndSendRequestBuilder"/>.</returns>
+        ISalesInvoiceCancelAndSendRequestBuilder CancelAndSend();
 
         /// <summary>
         /// Gets the request builder for SalesInvoicePost.
         /// </summary>
         /// <returns>The <see cref="ISalesInvoicePostRequestBuilder"/>.</returns>
         ISalesInvoicePostRequestBuilder Post();
+
+        /// <summary>
+        /// Gets the request builder for SalesInvoicePostAndSend.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoicePostAndSendRequestBuilder"/>.</returns>
+        ISalesInvoicePostAndSendRequestBuilder PostAndSend();
 
         /// <summary>
         /// Gets the request builder for SalesInvoiceSend.

@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets authMethod.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
-        public string AuthMethod { get; set; }
-    
-        /// <summary>
         /// Gets or sets authDetail.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authDetail", Required = Newtonsoft.Json.Required.Default)]
         public string AuthDetail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authMethod.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
+        public string AuthMethod { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

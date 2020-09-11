@@ -110,18 +110,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DepOnboardingSettingUploadDepToken.
+        /// Gets the request builder for DepOnboardingSettingShareForSchoolDataSyncService.
         /// </summary>
-        /// <returns>The <see cref="IDepOnboardingSettingUploadDepTokenRequestBuilder"/>.</returns>
-        public IDepOnboardingSettingUploadDepTokenRequestBuilder UploadDepToken(
-            string appleId = null,
-            string depToken = null)
+        /// <returns>The <see cref="IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder"/>.</returns>
+        public IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService()
         {
-            return new DepOnboardingSettingUploadDepTokenRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.uploadDepToken"),
-                this.Client,
-                appleId,
-                depToken);
+            return new DepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.shareForSchoolDataSyncService"),
+                this.Client);
         }
 
         /// <summary>
@@ -136,17 +132,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DepOnboardingSettingShareForSchoolDataSyncService.
-        /// </summary>
-        /// <returns>The <see cref="IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder"/>.</returns>
-        public IDepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService()
-        {
-            return new DepOnboardingSettingShareForSchoolDataSyncServiceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.shareForSchoolDataSyncService"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for DepOnboardingSettingUnshareForSchoolDataSyncService.
         /// </summary>
         /// <returns>The <see cref="IDepOnboardingSettingUnshareForSchoolDataSyncServiceRequestBuilder"/>.</returns>
@@ -155,6 +140,21 @@ namespace Microsoft.Graph
             return new DepOnboardingSettingUnshareForSchoolDataSyncServiceRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.unshareForSchoolDataSyncService"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DepOnboardingSettingUploadDepToken.
+        /// </summary>
+        /// <returns>The <see cref="IDepOnboardingSettingUploadDepTokenRequestBuilder"/>.</returns>
+        public IDepOnboardingSettingUploadDepTokenRequestBuilder UploadDepToken(
+            string appleId = null,
+            string depToken = null)
+        {
+            return new DepOnboardingSettingUploadDepTokenRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.uploadDepToken"),
+                this.Client,
+                appleId,
+                depToken);
         }
 
         /// <summary>

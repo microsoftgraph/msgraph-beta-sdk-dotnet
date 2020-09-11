@@ -38,16 +38,16 @@ namespace Microsoft.Graph
         IDeviceHealthScriptAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
-        /// Gets the request builder for RunSummary.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceHealthScriptRunSummaryRequestBuilder"/>.</returns>
-        IDeviceHealthScriptRunSummaryRequestBuilder RunSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceRunStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceHealthScriptDeviceRunStatesCollectionRequestBuilder"/>.</returns>
         IDeviceHealthScriptDeviceRunStatesCollectionRequestBuilder DeviceRunStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for RunSummary.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptRunSummaryRequestBuilder"/>.</returns>
+        IDeviceHealthScriptRunSummaryRequestBuilder RunSummary { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceHealthScriptAssign.
@@ -57,17 +57,17 @@ namespace Microsoft.Graph
             IEnumerable<DeviceHealthScriptAssignment> deviceHealthScriptAssignments = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceHealthScriptGetGlobalScriptHighestAvailableVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder"/>.</returns>
+        IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion();
+
+        /// <summary>
         /// Gets the request builder for DeviceHealthScriptUpdateGlobalScript.
         /// </summary>
         /// <returns>The <see cref="IDeviceHealthScriptUpdateGlobalScriptRequestBuilder"/>.</returns>
         IDeviceHealthScriptUpdateGlobalScriptRequestBuilder UpdateGlobalScript(
             string version = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceHealthScriptGetGlobalScriptHighestAvailableVersion.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder"/>.</returns>
-        IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion();
 
         /// <summary>
         /// Gets the request builder for DeviceHealthScriptGetRemediationHistory.

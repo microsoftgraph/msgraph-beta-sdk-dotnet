@@ -32,46 +32,22 @@ namespace Microsoft.Graph
         new IAuthenticationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Methods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationMethodsCollectionRequestBuilder Methods { get; }
-
-        /// <summary>
-        /// Gets the request builder for SecurityQuestionMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder SecurityQuestionMethods { get; }
-
-        /// <summary>
-        /// Gets the request builder for PhoneMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationPhoneMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationPhoneMethodsCollectionRequestBuilder PhoneMethods { get; }
-
-        /// <summary>
-        /// Gets the request builder for PasswordMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationPasswordMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationPasswordMethodsCollectionRequestBuilder PasswordMethods { get; }
-
-        /// <summary>
-        /// Gets the request builder for Operations.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationOperationsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationOperationsCollectionRequestBuilder Operations { get; }
-
-        /// <summary>
         /// Gets the request builder for EmailMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationEmailMethodsCollectionRequestBuilder"/>.</returns>
         IAuthenticationEmailMethodsCollectionRequestBuilder EmailMethods { get; }
 
         /// <summary>
-        /// Gets the request builder for OathMethods.
+        /// Gets the request builder for Fido2Methods.
         /// </summary>
-        /// <returns>The <see cref="IAuthenticationOathMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationOathMethodsCollectionRequestBuilder OathMethods { get; }
+        /// <returns>The <see cref="IAuthenticationFido2MethodsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationFido2MethodsCollectionRequestBuilder Fido2Methods { get; }
+
+        /// <summary>
+        /// Gets the request builder for Methods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationMethodsCollectionRequestBuilder Methods { get; }
 
         /// <summary>
         /// Gets the request builder for MicrosoftAuthenticatorMethods.
@@ -80,16 +56,40 @@ namespace Microsoft.Graph
         IAuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder MicrosoftAuthenticatorMethods { get; }
 
         /// <summary>
+        /// Gets the request builder for OathMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationOathMethodsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationOathMethodsCollectionRequestBuilder OathMethods { get; }
+
+        /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationOperationsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
         /// Gets the request builder for PasswordlessMicrosoftAuthenticatorMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionRequestBuilder"/>.</returns>
         IAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionRequestBuilder PasswordlessMicrosoftAuthenticatorMethods { get; }
 
         /// <summary>
-        /// Gets the request builder for Fido2Methods.
+        /// Gets the request builder for PasswordMethods.
         /// </summary>
-        /// <returns>The <see cref="IAuthenticationFido2MethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationFido2MethodsCollectionRequestBuilder Fido2Methods { get; }
+        /// <returns>The <see cref="IAuthenticationPasswordMethodsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationPasswordMethodsCollectionRequestBuilder PasswordMethods { get; }
+
+        /// <summary>
+        /// Gets the request builder for PhoneMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationPhoneMethodsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationPhoneMethodsCollectionRequestBuilder PhoneMethods { get; }
+
+        /// <summary>
+        /// Gets the request builder for SecurityQuestionMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder SecurityQuestionMethods { get; }
 
         /// <summary>
         /// Gets the request builder for TemporaryAccessPassMethods.

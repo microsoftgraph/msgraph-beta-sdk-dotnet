@@ -45,13 +45,6 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets mobileAppIntent.
-        /// Mobile App Intent.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIntent", Required = Newtonsoft.Json.Required.Default)]
-        public MobileAppIntent? MobileAppIntent { get; set; }
-    
-        /// <summary>
         /// Gets or sets displayVersion.
         /// Human readable version of the application
         /// </summary>
@@ -64,6 +57,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installState", Required = Newtonsoft.Json.Required.Default)]
         public ResultantAppState? InstallState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobileAppIntent.
+        /// Mobile App Intent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIntent", Required = Newtonsoft.Json.Required.Default)]
+        public MobileAppIntent? MobileAppIntent { get; set; }
     
         /// <summary>
         /// Gets or sets supportedDeviceTypes.

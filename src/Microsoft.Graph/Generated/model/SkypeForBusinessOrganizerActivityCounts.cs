@@ -31,28 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets im.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "im", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Im { get; set; }
-    
-        /// <summary>
-        /// Gets or sets audio video.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioVideo", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? AudioVideo { get; set; }
-    
-        /// <summary>
         /// Gets or sets app sharing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appSharing", Required = Newtonsoft.Json.Required.Default)]
         public Int64? AppSharing { get; set; }
     
         /// <summary>
-        /// Gets or sets web.
+        /// Gets or sets audio video.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "web", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? Web { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioVideo", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? AudioVideo { get; set; }
     
         /// <summary>
         /// Gets or sets dial in out3rd party.
@@ -67,10 +55,10 @@ namespace Microsoft.Graph
         public Int64? DialInOutMicrosoft { get; set; }
     
         /// <summary>
-        /// Gets or sets report refresh date.
+        /// Gets or sets im.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ReportRefreshDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "im", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Im { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
@@ -83,6 +71,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report refresh date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ReportRefreshDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "web", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Web { get; set; }
     
     }
 }

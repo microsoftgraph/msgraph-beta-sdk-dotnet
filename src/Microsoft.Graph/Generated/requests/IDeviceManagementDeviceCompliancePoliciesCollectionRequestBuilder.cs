@@ -44,17 +44,16 @@ namespace Microsoft.Graph
             IEnumerable<string> payloadIds = null);
 
         /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyValidateComplianceScript.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder"/>.</returns>
-        IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder ValidateComplianceScript(
-            DeviceCompliancePolicyScript deviceCompliancePolicyScript = null);
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyGetDevicesScheduledToRetire.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.</returns>
         IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder GetDevicesScheduledToRetire();
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization();
 
         /// <summary>
         /// Gets the request builder for DeviceCompliancePolicySetScheduledRetireState.
@@ -65,9 +64,10 @@ namespace Microsoft.Graph
             IEnumerable<string> managedDeviceIds = null);
 
         /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
+        /// Gets the request builder for DeviceCompliancePolicyValidateComplianceScript.
         /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
-        IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization();
+        /// <returns>The <see cref="IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder"/>.</returns>
+        IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder ValidateComplianceScript(
+            DeviceCompliancePolicyScript deviceCompliancePolicyScript = null);
     }
 }

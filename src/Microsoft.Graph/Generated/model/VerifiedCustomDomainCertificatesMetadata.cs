@@ -31,22 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets thumbprint.
+        /// Gets or sets expiryDate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbprint", Required = Newtonsoft.Json.Required.Default)]
-        public string Thumbprint { get; set; }
-    
-        /// <summary>
-        /// Gets or sets subjectName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
-        public string SubjectName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets issuerName.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerName", Required = Newtonsoft.Json.Required.Default)]
-        public string IssuerName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiryDate", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? ExpiryDate { get; set; }
     
         /// <summary>
         /// Gets or sets issueDate.
@@ -55,10 +43,22 @@ namespace Microsoft.Graph
         public DateTimeOffset? IssueDate { get; set; }
     
         /// <summary>
-        /// Gets or sets expiryDate.
+        /// Gets or sets issuerName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiryDate", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? ExpiryDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerName", Required = Newtonsoft.Json.Required.Default)]
+        public string IssuerName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subjectName.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
+        public string SubjectName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets thumbprint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbprint", Required = Newtonsoft.Json.Required.Default)]
+        public string Thumbprint { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

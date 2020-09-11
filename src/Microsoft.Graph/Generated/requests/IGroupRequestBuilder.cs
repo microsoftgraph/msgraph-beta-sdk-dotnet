@@ -38,6 +38,24 @@ namespace Microsoft.Graph
         IGroupAppRoleAssignmentsCollectionRequestBuilder AppRoleAssignments { get; }
 
         /// <summary>
+        /// Gets the request builder for CreatedOnBehalfOf.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
+        IDirectoryObjectWithReferenceRequestBuilder CreatedOnBehalfOf { get; }
+
+        /// <summary>
+        /// Gets the request builder for Endpoints.
+        /// </summary>
+        /// <returns>The <see cref="IGroupEndpointsCollectionRequestBuilder"/>.</returns>
+        IGroupEndpointsCollectionRequestBuilder Endpoints { get; }
+
+        /// <summary>
+        /// Gets the request builder for MemberOf.
+        /// </summary>
+        /// <returns>The <see cref="IGroupMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
+
+        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -50,46 +68,10 @@ namespace Microsoft.Graph
         IGroupMembersWithLicenseErrorsCollectionWithReferencesRequestBuilder MembersWithLicenseErrors { get; }
 
         /// <summary>
-        /// Gets the request builder for MemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IGroupMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        IGroupMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
-
-        /// <summary>
-        /// Gets the request builder for TransitiveMembers.
-        /// </summary>
-        /// <returns>The <see cref="IGroupTransitiveMembersCollectionWithReferencesRequestBuilder"/>.</returns>
-        IGroupTransitiveMembersCollectionWithReferencesRequestBuilder TransitiveMembers { get; }
-
-        /// <summary>
-        /// Gets the request builder for TransitiveMemberOf.
-        /// </summary>
-        /// <returns>The <see cref="IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
-        IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
-
-        /// <summary>
-        /// Gets the request builder for CreatedOnBehalfOf.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
-        IDirectoryObjectWithReferenceRequestBuilder CreatedOnBehalfOf { get; }
-
-        /// <summary>
         /// Gets the request builder for Owners.
         /// </summary>
         /// <returns>The <see cref="IGroupOwnersCollectionWithReferencesRequestBuilder"/>.</returns>
         IGroupOwnersCollectionWithReferencesRequestBuilder Owners { get; }
-
-        /// <summary>
-        /// Gets the request builder for Settings.
-        /// </summary>
-        /// <returns>The <see cref="IGroupSettingsCollectionRequestBuilder"/>.</returns>
-        IGroupSettingsCollectionRequestBuilder Settings { get; }
-
-        /// <summary>
-        /// Gets the request builder for Endpoints.
-        /// </summary>
-        /// <returns>The <see cref="IGroupEndpointsCollectionRequestBuilder"/>.</returns>
-        IGroupEndpointsCollectionRequestBuilder Endpoints { get; }
 
         /// <summary>
         /// Gets the request builder for PermissionGrants.
@@ -98,34 +80,28 @@ namespace Microsoft.Graph
         IGroupPermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
 
         /// <summary>
-        /// Gets the request builder for Conversations.
+        /// Gets the request builder for Settings.
         /// </summary>
-        /// <returns>The <see cref="IGroupConversationsCollectionRequestBuilder"/>.</returns>
-        IGroupConversationsCollectionRequestBuilder Conversations { get; }
+        /// <returns>The <see cref="IGroupSettingsCollectionRequestBuilder"/>.</returns>
+        IGroupSettingsCollectionRequestBuilder Settings { get; }
 
         /// <summary>
-        /// Gets the request builder for Photos.
+        /// Gets the request builder for TransitiveMemberOf.
         /// </summary>
-        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
-        IGroupPhotosCollectionRequestBuilder Photos { get; }
+        /// <returns>The <see cref="IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupTransitiveMemberOfCollectionWithReferencesRequestBuilder TransitiveMemberOf { get; }
+
+        /// <summary>
+        /// Gets the request builder for TransitiveMembers.
+        /// </summary>
+        /// <returns>The <see cref="IGroupTransitiveMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupTransitiveMembersCollectionWithReferencesRequestBuilder TransitiveMembers { get; }
 
         /// <summary>
         /// Gets the request builder for AcceptedSenders.
         /// </summary>
         /// <returns>The <see cref="IGroupAcceptedSendersCollectionRequestBuilder"/>.</returns>
         IGroupAcceptedSendersCollectionRequestBuilder AcceptedSenders { get; }
-
-        /// <summary>
-        /// Gets the request builder for RejectedSenders.
-        /// </summary>
-        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
-        IGroupRejectedSendersCollectionRequestBuilder RejectedSenders { get; }
-
-        /// <summary>
-        /// Gets the request builder for Threads.
-        /// </summary>
-        /// <returns>The <see cref="IGroupThreadsCollectionRequestBuilder"/>.</returns>
-        IGroupThreadsCollectionRequestBuilder Threads { get; }
 
         /// <summary>
         /// Gets the request builder for Calendar.
@@ -140,6 +116,12 @@ namespace Microsoft.Graph
         IGroupCalendarViewCollectionRequestBuilder CalendarView { get; }
 
         /// <summary>
+        /// Gets the request builder for Conversations.
+        /// </summary>
+        /// <returns>The <see cref="IGroupConversationsCollectionRequestBuilder"/>.</returns>
+        IGroupConversationsCollectionRequestBuilder Conversations { get; }
+
+        /// <summary>
         /// Gets the request builder for Events.
         /// </summary>
         /// <returns>The <see cref="IGroupEventsCollectionRequestBuilder"/>.</returns>
@@ -150,6 +132,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IProfilePhotoRequestBuilder"/>.</returns>
         IProfilePhotoRequestBuilder Photo { get; }
+
+        /// <summary>
+        /// Gets the request builder for Photos.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPhotosCollectionRequestBuilder"/>.</returns>
+        IGroupPhotosCollectionRequestBuilder Photos { get; }
+
+        /// <summary>
+        /// Gets the request builder for RejectedSenders.
+        /// </summary>
+        /// <returns>The <see cref="IGroupRejectedSendersCollectionRequestBuilder"/>.</returns>
+        IGroupRejectedSendersCollectionRequestBuilder RejectedSenders { get; }
+
+        /// <summary>
+        /// Gets the request builder for Threads.
+        /// </summary>
+        /// <returns>The <see cref="IGroupThreadsCollectionRequestBuilder"/>.</returns>
+        IGroupThreadsCollectionRequestBuilder Threads { get; }
 
         /// <summary>
         /// Gets the request builder for Drive.
@@ -200,11 +200,18 @@ namespace Microsoft.Graph
         ITeamRequestBuilder Team { get; }
     
         /// <summary>
-        /// Gets the request builder for GroupEvaluateDynamicMembership.
+        /// Gets the request builder for GroupAssignLicense.
         /// </summary>
-        /// <returns>The <see cref="IGroupEvaluateDynamicMembershipRequestBuilder"/>.</returns>
-        IGroupEvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership(
-            string memberId = null);
+        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
+        IGroupAssignLicenseRequestBuilder AssignLicense(
+            IEnumerable<AssignedLicense> addLicenses,
+            IEnumerable<Guid> removeLicenses);
+
+        /// <summary>
+        /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
+        /// </summary>
+        /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>
+        IGroupCheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp();
 
         /// <summary>
         /// Gets the request builder for GroupValidateProperties.
@@ -214,32 +221,6 @@ namespace Microsoft.Graph
             string displayName = null,
             string mailNickname = null,
             Guid? onBehalfOfUserId = null);
-
-        /// <summary>
-        /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
-        /// </summary>
-        /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>
-        IGroupCheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp();
-
-        /// <summary>
-        /// Gets the request builder for GroupAssignLicense.
-        /// </summary>
-        /// <returns>The <see cref="IGroupAssignLicenseRequestBuilder"/>.</returns>
-        IGroupAssignLicenseRequestBuilder AssignLicense(
-            IEnumerable<AssignedLicense> addLicenses,
-            IEnumerable<Guid> removeLicenses);
-
-        /// <summary>
-        /// Gets the request builder for GroupSubscribeByMail.
-        /// </summary>
-        /// <returns>The <see cref="IGroupSubscribeByMailRequestBuilder"/>.</returns>
-        IGroupSubscribeByMailRequestBuilder SubscribeByMail();
-
-        /// <summary>
-        /// Gets the request builder for GroupUnsubscribeByMail.
-        /// </summary>
-        /// <returns>The <see cref="IGroupUnsubscribeByMailRequestBuilder"/>.</returns>
-        IGroupUnsubscribeByMailRequestBuilder UnsubscribeByMail();
 
         /// <summary>
         /// Gets the request builder for GroupAddFavorite.
@@ -258,6 +239,25 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupResetUnseenCountRequestBuilder"/>.</returns>
         IGroupResetUnseenCountRequestBuilder ResetUnseenCount();
+
+        /// <summary>
+        /// Gets the request builder for GroupSubscribeByMail.
+        /// </summary>
+        /// <returns>The <see cref="IGroupSubscribeByMailRequestBuilder"/>.</returns>
+        IGroupSubscribeByMailRequestBuilder SubscribeByMail();
+
+        /// <summary>
+        /// Gets the request builder for GroupUnsubscribeByMail.
+        /// </summary>
+        /// <returns>The <see cref="IGroupUnsubscribeByMailRequestBuilder"/>.</returns>
+        IGroupUnsubscribeByMailRequestBuilder UnsubscribeByMail();
+
+        /// <summary>
+        /// Gets the request builder for GroupEvaluateDynamicMembership.
+        /// </summary>
+        /// <returns>The <see cref="IGroupEvaluateDynamicMembershipRequestBuilder"/>.</returns>
+        IGroupEvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership(
+            string memberId = null);
 
         /// <summary>
         /// Gets the request builder for GroupRenew.

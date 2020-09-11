@@ -116,35 +116,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetUnhealthyDefenderAgentsReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getUnhealthyDefenderAgentsReport"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetMalwareSummaryReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder"/>.</returns>
@@ -174,6 +145,60 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetUnhealthyDefenderAgentsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getUnhealthyDefenderAgentsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCachedReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCachedReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetCachedReportRequestBuilder GetCachedReport(
+            string id = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null)
+        {
+            return new DeviceManagementReportsGetCachedReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCachedReport"),
+                this.Client,
+                id,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder"/>.</returns>
@@ -190,6 +215,62 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetHistoricalReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetHistoricalReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetHistoricalReportRequestBuilder GetHistoricalReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetHistoricalReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getHistoricalReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceMetadata.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPolicyNonComplianceMetadata"),
                 this.Client,
                 name,
                 select,
@@ -232,35 +313,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceMetadata.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getPolicyNonComplianceMetadata"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetPolicyNonComplianceSummaryReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder"/>.</returns>
@@ -277,35 +329,6 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getPolicyNonComplianceSummaryReport"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetSettingNonComplianceReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetSettingNonComplianceReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getSettingNonComplianceReport"),
                 this.Client,
                 name,
                 select,
@@ -348,62 +371,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetHistoricalReport.
+        /// Gets the request builder for DeviceManagementReportsGetSettingNonComplianceReport.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetHistoricalReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetHistoricalReportRequestBuilder GetHistoricalReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetHistoricalReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getHistoricalReport"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                filter);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetCachedReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetCachedReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetCachedReportRequestBuilder GetCachedReport(
-            string id = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null)
-        {
-            return new DeviceManagementReportsGetCachedReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getCachedReport"),
-                this.Client,
-                id,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetWindowsUpdateAlertSummaryReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport(
+        /// <returns>The <see cref="IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
@@ -414,8 +385,8 @@ namespace Microsoft.Graph
             string sessionId = null,
             string filter = null)
         {
-            return new DeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getWindowsUpdateAlertSummaryReport"),
+            return new DeviceManagementReportsGetSettingNonComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSettingNonComplianceReport"),
                 this.Client,
                 name,
                 select,
@@ -445,6 +416,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getWindowsUpdateAlertsPerPolicyPerDeviceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsUpdateAlertSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getWindowsUpdateAlertSummaryReport"),
                 this.Client,
                 name,
                 select,

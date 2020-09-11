@@ -63,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AndroidForWorkSettings.
+        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfiles.
         /// </summary>
-        /// <returns>The <see cref="IAndroidForWorkSettingsRequestBuilder"/>.</returns>
-        public IAndroidForWorkSettingsRequestBuilder AndroidForWorkSettings
+        /// <returns>The <see cref="IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles
         {
             get
             {
-                return new AndroidForWorkSettingsRequestBuilder(this.AppendSegmentToRequestUrl("androidForWorkSettings"), this.Client);
+                return new DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("androidDeviceOwnerEnrollmentProfiles"), this.Client);
             }
         }
 
@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AndroidForWorkSettings.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidForWorkSettingsRequestBuilder"/>.</returns>
+        public IAndroidForWorkSettingsRequestBuilder AndroidForWorkSettings
+        {
+            get
+            {
+                return new AndroidForWorkSettingsRequestBuilder(this.AppendSegmentToRequestUrl("androidForWorkSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettings.
         /// </summary>
         /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsRequestBuilder"/>.</returns>
@@ -119,18 +131,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionRequestBuilder(this.AppendSegmentToRequestUrl("androidManagedStoreAppConfigurationSchemas"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfiles.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles
-        {
-            get
-            {
-                return new DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("androidDeviceOwnerEnrollmentProfiles"), this.Client);
             }
         }
 
@@ -159,14 +159,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceConfigurations.
+        /// Gets the request builder for AdvancedThreatProtectionOnboardingStateSummary.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceConfigurationsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDeviceConfigurationsCollectionRequestBuilder DeviceConfigurations
+        /// <returns>The <see cref="IAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder"/>.</returns>
+        public IAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder AdvancedThreatProtectionOnboardingStateSummary
         {
             get
             {
-                return new DeviceManagementDeviceConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurations"), this.Client);
+                return new AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(this.AppendSegmentToRequestUrl("advancedThreatProtectionOnboardingStateSummary"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CartToClassAssociations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCartToClassAssociationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementCartToClassAssociationsCollectionRequestBuilder CartToClassAssociations
+        {
+            get
+            {
+                return new DeviceManagementCartToClassAssociationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("cartToClassAssociations"), this.Client);
             }
         }
 
@@ -179,18 +191,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicies"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SoftwareUpdateStatusSummary.
-        /// </summary>
-        /// <returns>The <see cref="ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder"/>.</returns>
-        public ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder SoftwareUpdateStatusSummary
-        {
-            get
-            {
-                return new SoftwareUpdateStatusSummaryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("softwareUpdateStatusSummary"), this.Client);
             }
         }
 
@@ -219,14 +219,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AdvancedThreatProtectionOnboardingStateSummary.
+        /// Gets the request builder for DeviceConfigurationConflictSummary.
         /// </summary>
-        /// <returns>The <see cref="IAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder"/>.</returns>
-        public IAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder AdvancedThreatProtectionOnboardingStateSummary
+        /// <returns>The <see cref="IDeviceManagementDeviceConfigurationConflictSummaryCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceConfigurationConflictSummaryCollectionRequestBuilder DeviceConfigurationConflictSummary
         {
             get
             {
-                return new AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(this.AppendSegmentToRequestUrl("advancedThreatProtectionOnboardingStateSummary"), this.Client);
+                return new DeviceManagementDeviceConfigurationConflictSummaryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurationConflictSummary"), this.Client);
             }
         }
 
@@ -243,54 +243,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceConfigurationUserStateSummaries.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceConfigurationUserStateSummaryRequestBuilder"/>.</returns>
-        public IDeviceConfigurationUserStateSummaryRequestBuilder DeviceConfigurationUserStateSummaries
-        {
-            get
-            {
-                return new DeviceConfigurationUserStateSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurationUserStateSummaries"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for CartToClassAssociations.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementCartToClassAssociationsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementCartToClassAssociationsCollectionRequestBuilder CartToClassAssociations
-        {
-            get
-            {
-                return new DeviceManagementCartToClassAssociationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("cartToClassAssociations"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for IosUpdateStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIosUpdateStatusesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementIosUpdateStatusesCollectionRequestBuilder IosUpdateStatuses
-        {
-            get
-            {
-                return new DeviceManagementIosUpdateStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("iosUpdateStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for NdesConnectors.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementNdesConnectorsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementNdesConnectorsCollectionRequestBuilder NdesConnectors
-        {
-            get
-            {
-                return new DeviceManagementNdesConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("ndesConnectors"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceConfigurationRestrictedAppsViolations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionRequestBuilder"/>.</returns>
@@ -303,26 +255,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagedDeviceEncryptionStates.
+        /// Gets the request builder for DeviceConfigurations.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder ManagedDeviceEncryptionStates
+        /// <returns>The <see cref="IDeviceManagementDeviceConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceConfigurationsCollectionRequestBuilder DeviceConfigurations
         {
             get
             {
-                return new DeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceEncryptionStates"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceConfigurationConflictSummary.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceConfigurationConflictSummaryCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDeviceConfigurationConflictSummaryCollectionRequestBuilder DeviceConfigurationConflictSummary
-        {
-            get
-            {
-                return new DeviceManagementDeviceConfigurationConflictSummaryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurationConflictSummary"), this.Client);
+                return new DeviceManagementDeviceConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurations"), this.Client);
             }
         }
 
@@ -339,62 +279,74 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceCategories.
+        /// Gets the request builder for DeviceConfigurationUserStateSummaries.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceCategoriesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDeviceCategoriesCollectionRequestBuilder DeviceCategories
+        /// <returns>The <see cref="IDeviceConfigurationUserStateSummaryRequestBuilder"/>.</returns>
+        public IDeviceConfigurationUserStateSummaryRequestBuilder DeviceConfigurationUserStateSummaries
         {
             get
             {
-                return new DeviceManagementDeviceCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCategories"), this.Client);
+                return new DeviceConfigurationUserStateSummaryRequestBuilder(this.AppendSegmentToRequestUrl("deviceConfigurationUserStateSummaries"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for ExchangeConnectors.
+        /// Gets the request builder for IosUpdateStatuses.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementExchangeConnectorsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementExchangeConnectorsCollectionRequestBuilder ExchangeConnectors
+        /// <returns>The <see cref="IDeviceManagementIosUpdateStatusesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementIosUpdateStatusesCollectionRequestBuilder IosUpdateStatuses
         {
             get
             {
-                return new DeviceManagementExchangeConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exchangeConnectors"), this.Client);
+                return new DeviceManagementIosUpdateStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("iosUpdateStatuses"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceEnrollmentConfigurations.
+        /// Gets the request builder for ManagedDeviceEncryptionStates.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder DeviceEnrollmentConfigurations
+        /// <returns>The <see cref="IDeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder ManagedDeviceEncryptionStates
         {
             get
             {
-                return new DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceEnrollmentConfigurations"), this.Client);
+                return new DeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceEncryptionStates"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for ExchangeOnPremisesPolicy.
+        /// Gets the request builder for NdesConnectors.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementExchangeOnPremisesPolicyRequestBuilder"/>.</returns>
-        public IDeviceManagementExchangeOnPremisesPolicyRequestBuilder ExchangeOnPremisesPolicy
+        /// <returns>The <see cref="IDeviceManagementNdesConnectorsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementNdesConnectorsCollectionRequestBuilder NdesConnectors
         {
             get
             {
-                return new DeviceManagementExchangeOnPremisesPolicyRequestBuilder(this.AppendSegmentToRequestUrl("exchangeOnPremisesPolicy"), this.Client);
+                return new DeviceManagementNdesConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("ndesConnectors"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for ExchangeOnPremisesPolicies.
+        /// Gets the request builder for SoftwareUpdateStatusSummary.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementExchangeOnPremisesPoliciesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementExchangeOnPremisesPoliciesCollectionRequestBuilder ExchangeOnPremisesPolicies
+        /// <returns>The <see cref="ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder"/>.</returns>
+        public ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder SoftwareUpdateStatusSummary
         {
             get
             {
-                return new DeviceManagementExchangeOnPremisesPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exchangeOnPremisesPolicies"), this.Client);
+                return new SoftwareUpdateStatusSummaryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("softwareUpdateStatusSummary"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ComplianceManagementPartners.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder ComplianceManagementPartners
+        {
+            get
+            {
+                return new DeviceManagementComplianceManagementPartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("complianceManagementPartners"), this.Client);
             }
         }
 
@@ -411,14 +363,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for MobileThreatDefenseConnectors.
+        /// Gets the request builder for DeviceCategories.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder MobileThreatDefenseConnectors
+        /// <returns>The <see cref="IDeviceManagementDeviceCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceCategoriesCollectionRequestBuilder DeviceCategories
         {
             get
             {
-                return new DeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileThreatDefenseConnectors"), this.Client);
+                return new DeviceManagementDeviceCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCategories"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder DeviceEnrollmentConfigurations
+        {
+            get
+            {
+                return new DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceEnrollmentConfigurations"), this.Client);
             }
         }
 
@@ -435,14 +399,62 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ComplianceManagementPartners.
+        /// Gets the request builder for ExchangeConnectors.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementComplianceManagementPartnersCollectionRequestBuilder ComplianceManagementPartners
+        /// <returns>The <see cref="IDeviceManagementExchangeConnectorsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementExchangeConnectorsCollectionRequestBuilder ExchangeConnectors
         {
             get
             {
-                return new DeviceManagementComplianceManagementPartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("complianceManagementPartners"), this.Client);
+                return new DeviceManagementExchangeConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exchangeConnectors"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ExchangeOnPremisesPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementExchangeOnPremisesPoliciesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementExchangeOnPremisesPoliciesCollectionRequestBuilder ExchangeOnPremisesPolicies
+        {
+            get
+            {
+                return new DeviceManagementExchangeOnPremisesPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exchangeOnPremisesPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ExchangeOnPremisesPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementExchangeOnPremisesPolicyRequestBuilder"/>.</returns>
+        public IDeviceManagementExchangeOnPremisesPolicyRequestBuilder ExchangeOnPremisesPolicy
+        {
+            get
+            {
+                return new DeviceManagementExchangeOnPremisesPolicyRequestBuilder(this.AppendSegmentToRequestUrl("exchangeOnPremisesPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MobileThreatDefenseConnectors.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder MobileThreatDefenseConnectors
+        {
+            get
+            {
+                return new DeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileThreatDefenseConnectors"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Categories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCategoriesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementCategoriesCollectionRequestBuilder Categories
+        {
+            get
+            {
+                return new DeviceManagementCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
             }
         }
 
@@ -483,30 +495,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Categories.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementCategoriesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementCategoriesCollectionRequestBuilder Categories
-        {
-            get
-            {
-                return new DeviceManagementCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for RemoteActionAudits.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementRemoteActionAuditsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementRemoteActionAuditsCollectionRequestBuilder RemoteActionAudits
-        {
-            get
-            {
-                return new DeviceManagementRemoteActionAuditsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("remoteActionAudits"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ApplePushNotificationCertificate.
         /// </summary>
         /// <returns>The <see cref="IApplePushNotificationCertificateRequestBuilder"/>.</returns>
@@ -515,6 +503,78 @@ namespace Microsoft.Graph
             get
             {
                 return new ApplePushNotificationCertificateRequestBuilder(this.AppendSegmentToRequestUrl("applePushNotificationCertificate"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ComanagedDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComanagedDevicesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComanagedDevicesCollectionRequestBuilder ComanagedDevices
+        {
+            get
+            {
+                return new DeviceManagementComanagedDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comanagedDevices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ComanagementEligibleDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder ComanagementEligibleDevices
+        {
+            get
+            {
+                return new DeviceManagementComanagementEligibleDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comanagementEligibleDevices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DataSharingConsents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDataSharingConsentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDataSharingConsentsCollectionRequestBuilder DataSharingConsents
+        {
+            get
+            {
+                return new DeviceManagementDataSharingConsentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dataSharingConsents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DetectedApps.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDetectedAppsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDetectedAppsCollectionRequestBuilder DetectedApps
+        {
+            get
+            {
+                return new DeviceManagementDetectedAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("detectedApps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceComplianceScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder DeviceComplianceScripts
+        {
+            get
+            {
+                return new DeviceManagementDeviceComplianceScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceComplianceScripts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceHealthScriptsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceHealthScriptsCollectionRequestBuilder DeviceHealthScripts
+        {
+            get
+            {
+                return new DeviceManagementDeviceHealthScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceHealthScripts"), this.Client);
             }
         }
 
@@ -543,30 +603,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceHealthScripts.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceHealthScriptsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDeviceHealthScriptsCollectionRequestBuilder DeviceHealthScripts
-        {
-            get
-            {
-                return new DeviceManagementDeviceHealthScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceHealthScripts"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceComplianceScripts.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder DeviceComplianceScripts
-        {
-            get
-            {
-                return new DeviceManagementDeviceComplianceScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceComplianceScripts"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ManagedDeviceOverview.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverviewWithReferenceRequestBuilder"/>.</returns>
@@ -575,18 +611,6 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceOverviewWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceOverview"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DetectedApps.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDetectedAppsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDetectedAppsCollectionRequestBuilder DetectedApps
-        {
-            get
-            {
-                return new DeviceManagementDetectedAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("detectedApps"), this.Client);
             }
         }
 
@@ -603,30 +627,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WindowsMalwareInformation.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementWindowsMalwareInformationCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementWindowsMalwareInformationCollectionRequestBuilder WindowsMalwareInformation
-        {
-            get
-            {
-                return new DeviceManagementWindowsMalwareInformationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsMalwareInformation"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for DataSharingConsents.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementDataSharingConsentsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementDataSharingConsentsCollectionRequestBuilder DataSharingConsents
-        {
-            get
-            {
-                return new DeviceManagementDataSharingConsentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dataSharingConsents"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for MobileAppTroubleshootingEvents.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementMobileAppTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
@@ -639,14 +639,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsOverview.
+        /// Gets the request builder for RemoteActionAudits.
         /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsOverviewRequestBuilder"/>.</returns>
-        public IUserExperienceAnalyticsOverviewRequestBuilder UserExperienceAnalyticsOverview
+        /// <returns>The <see cref="IDeviceManagementRemoteActionAuditsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementRemoteActionAuditsCollectionRequestBuilder RemoteActionAudits
         {
             get
             {
-                return new UserExperienceAnalyticsOverviewRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsOverview"), this.Client);
+                return new DeviceManagementRemoteActionAuditsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("remoteActionAudits"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthApplicationPerformance"), this.Client);
             }
         }
 
@@ -687,18 +699,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsRegressionSummary.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryRequestBuilder"/>.</returns>
-        public IUserExperienceAnalyticsRegressionSummaryRequestBuilder UserExperienceAnalyticsRegressionSummary
-        {
-            get
-            {
-                return new UserExperienceAnalyticsRegressionSummaryRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsRegressionSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDeviceStartupHistory.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionRequestBuilder"/>.</returns>
@@ -735,18 +735,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsScoreHistory.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory
-        {
-            get
-            {
-                return new DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsScoreHistory"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsMetricHistory.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder"/>.</returns>
@@ -759,38 +747,50 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
+        /// Gets the request builder for UserExperienceAnalyticsOverview.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance
+        /// <returns>The <see cref="IUserExperienceAnalyticsOverviewRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsOverviewRequestBuilder UserExperienceAnalyticsOverview
         {
             get
             {
-                return new DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthApplicationPerformance"), this.Client);
+                return new UserExperienceAnalyticsOverviewRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsOverview"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for ComanagedDevices.
+        /// Gets the request builder for UserExperienceAnalyticsRegressionSummary.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementComanagedDevicesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementComanagedDevicesCollectionRequestBuilder ComanagedDevices
+        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsRegressionSummaryRequestBuilder UserExperienceAnalyticsRegressionSummary
         {
             get
             {
-                return new DeviceManagementComanagedDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comanagedDevices"), this.Client);
+                return new UserExperienceAnalyticsRegressionSummaryRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsRegressionSummary"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for ComanagementEligibleDevices.
+        /// Gets the request builder for UserExperienceAnalyticsScoreHistory.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementComanagementEligibleDevicesCollectionRequestBuilder ComanagementEligibleDevices
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory
         {
             get
             {
-                return new DeviceManagementComanagementEligibleDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("comanagementEligibleDevices"), this.Client);
+                return new DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsScoreHistory"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsMalwareInformation.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsMalwareInformationCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementWindowsMalwareInformationCollectionRequestBuilder WindowsMalwareInformation
+        {
+            get
+            {
+                return new DeviceManagementWindowsMalwareInformationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsMalwareInformation"), this.Client);
             }
         }
 
@@ -807,50 +807,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for WindowsAutopilotSettings.
+        /// Gets the request builder for AppleUserInitiatedEnrollmentProfiles.
         /// </summary>
-        /// <returns>The <see cref="IWindowsAutopilotSettingsRequestBuilder"/>.</returns>
-        public IWindowsAutopilotSettingsRequestBuilder WindowsAutopilotSettings
+        /// <returns>The <see cref="IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder AppleUserInitiatedEnrollmentProfiles
         {
             get
             {
-                return new WindowsAutopilotSettingsRequestBuilder(this.AppendSegmentToRequestUrl("windowsAutopilotSettings"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for WindowsAutopilotDeviceIdentities.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder WindowsAutopilotDeviceIdentities
-        {
-            get
-            {
-                return new DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsAutopilotDeviceIdentities"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for WindowsAutopilotDeploymentProfiles.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionRequestBuilder WindowsAutopilotDeploymentProfiles
-        {
-            get
-            {
-                return new DeviceManagementWindowsAutopilotDeploymentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsAutopilotDeploymentProfiles"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ImportedDeviceIdentities.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementImportedDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementImportedDeviceIdentitiesCollectionRequestBuilder ImportedDeviceIdentities
-        {
-            get
-            {
-                return new DeviceManagementImportedDeviceIdentitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("importedDeviceIdentities"), this.Client);
+                return new DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appleUserInitiatedEnrollmentProfiles"), this.Client);
             }
         }
 
@@ -867,6 +831,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ImportedDeviceIdentities.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementImportedDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementImportedDeviceIdentitiesCollectionRequestBuilder ImportedDeviceIdentities
+        {
+            get
+            {
+                return new DeviceManagementImportedDeviceIdentitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("importedDeviceIdentities"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ImportedWindowsAutopilotDeviceIdentities.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
@@ -879,14 +855,38 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for AppleUserInitiatedEnrollmentProfiles.
+        /// Gets the request builder for WindowsAutopilotDeploymentProfiles.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder AppleUserInitiatedEnrollmentProfiles
+        /// <returns>The <see cref="IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionRequestBuilder WindowsAutopilotDeploymentProfiles
         {
             get
             {
-                return new DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appleUserInitiatedEnrollmentProfiles"), this.Client);
+                return new DeviceManagementWindowsAutopilotDeploymentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsAutopilotDeploymentProfiles"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentities.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder WindowsAutopilotDeviceIdentities
+        {
+            get
+            {
+                return new DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsAutopilotDeviceIdentities"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsAutopilotSettings.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotSettingsRequestBuilder"/>.</returns>
+        public IWindowsAutopilotSettingsRequestBuilder WindowsAutopilotSettings
+        {
+            get
+            {
+                return new WindowsAutopilotSettingsRequestBuilder(this.AppendSegmentToRequestUrl("windowsAutopilotSettings"), this.Client);
             }
         }
 
@@ -915,18 +915,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for GroupPolicyObjectFiles.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder GroupPolicyObjectFiles
-        {
-            get
-            {
-                return new DeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyObjectFiles"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for GroupPolicyMigrationReports.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGroupPolicyMigrationReportsCollectionRequestBuilder"/>.</returns>
@@ -939,14 +927,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for GroupPolicyConfigurations.
+        /// Gets the request builder for GroupPolicyObjectFiles.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder GroupPolicyConfigurations
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder GroupPolicyObjectFiles
         {
             get
             {
-                return new DeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyConfigurations"), this.Client);
+                return new DeviceManagementGroupPolicyObjectFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyObjectFiles"), this.Client);
             }
         }
 
@@ -963,14 +951,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for GroupPolicyDefinitions.
+        /// Gets the request builder for GroupPolicyConfigurations.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder GroupPolicyDefinitions
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder GroupPolicyConfigurations
         {
             get
             {
-                return new DeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyDefinitions"), this.Client);
+                return new DeviceManagementGroupPolicyConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyConfigurations"), this.Client);
             }
         }
 
@@ -983,6 +971,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementGroupPolicyDefinitionFilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyDefinitionFiles"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupPolicyDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder GroupPolicyDefinitions
+        {
+            get
+            {
+                return new DeviceManagementGroupPolicyDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("groupPolicyDefinitions"), this.Client);
             }
         }
 
@@ -1023,14 +1023,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RoleDefinitions.
+        /// Gets the request builder for ResourceOperations.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementRoleDefinitionsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementRoleDefinitionsCollectionRequestBuilder RoleDefinitions
+        /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementResourceOperationsCollectionRequestBuilder ResourceOperations
         {
             get
             {
-                return new DeviceManagementRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
+                return new DeviceManagementResourceOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("resourceOperations"), this.Client);
             }
         }
 
@@ -1047,6 +1047,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for RoleDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementRoleDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementRoleDefinitionsCollectionRequestBuilder RoleDefinitions
+        {
+            get
+            {
+                return new DeviceManagementRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RoleScopeTags.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementRoleScopeTagsCollectionRequestBuilder"/>.</returns>
@@ -1055,18 +1067,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementRoleScopeTagsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleScopeTags"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ResourceOperations.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementResourceOperationsCollectionRequestBuilder ResourceOperations
-        {
-            get
-            {
-                return new DeviceManagementResourceOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("resourceOperations"), this.Client);
             }
         }
 
@@ -1095,18 +1095,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TelecomExpenseManagementPartners.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder TelecomExpenseManagementPartners
-        {
-            get
-            {
-                return new DeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("telecomExpenseManagementPartners"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for EmbeddedSIMActivationCodePools.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionRequestBuilder"/>.</returns>
@@ -1119,14 +1107,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for TroubleshootingEvents.
+        /// Gets the request builder for TelecomExpenseManagementPartners.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementTroubleshootingEventsCollectionRequestBuilder TroubleshootingEvents
+        /// <returns>The <see cref="IDeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder TelecomExpenseManagementPartners
         {
             get
             {
-                return new DeviceManagementTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("troubleshootingEvents"), this.Client);
+                return new DeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("telecomExpenseManagementPartners"), this.Client);
             }
         }
 
@@ -1143,6 +1131,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TroubleshootingEvents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTroubleshootingEventsCollectionRequestBuilder TroubleshootingEvents
+        {
+            get
+            {
+                return new DeviceManagementTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("troubleshootingEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for WindowsFeatureUpdateProfiles.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder"/>.</returns>
@@ -1151,6 +1151,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementWindowsFeatureUpdateProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsFeatureUpdateProfiles"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for IntuneBrandingProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntuneBrandingProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementIntuneBrandingProfilesCollectionRequestBuilder IntuneBrandingProfiles
+        {
+            get
+            {
+                return new DeviceManagementIntuneBrandingProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("intuneBrandingProfiles"), this.Client);
             }
         }
 
@@ -1179,18 +1191,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for IntuneBrandingProfiles.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementIntuneBrandingProfilesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementIntuneBrandingProfilesCollectionRequestBuilder IntuneBrandingProfiles
-        {
-            get
-            {
-                return new DeviceManagementIntuneBrandingProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("intuneBrandingProfiles"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for UserPfxCertificates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserPfxCertificatesCollectionRequestBuilder"/>.</returns>
@@ -1203,13 +1203,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DeviceManagementEnableUnlicensedAdminstrators.
+        /// Gets the request builder for DeviceManagementEnableAndroidDeviceAdministratorEnrollment.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder"/>.</returns>
-        public IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators()
+        /// <returns>The <see cref="IDeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder"/>.</returns>
+        public IDeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder EnableAndroidDeviceAdministratorEnrollment()
         {
-            return new DeviceManagementEnableUnlicensedAdminstratorsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.enableUnlicensedAdminstrators"),
+            return new DeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.enableAndroidDeviceAdministratorEnrollment"),
                 this.Client);
         }
 
@@ -1225,13 +1225,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementEnableAndroidDeviceAdministratorEnrollment.
+        /// Gets the request builder for DeviceManagementEnableUnlicensedAdminstrators.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder"/>.</returns>
-        public IDeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder EnableAndroidDeviceAdministratorEnrollment()
+        /// <returns>The <see cref="IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder"/>.</returns>
+        public IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators()
         {
-            return new DeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.enableAndroidDeviceAdministratorEnrollment"),
+            return new DeviceManagementEnableUnlicensedAdminstratorsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.enableUnlicensedAdminstrators"),
                 this.Client);
         }
 
@@ -1288,6 +1288,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementGetAssignedRoleDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetAssignedRoleDetailsRequestBuilder"/>.</returns>
+        public IDeviceManagementGetAssignedRoleDetailsRequestBuilder GetAssignedRoleDetails()
+        {
+            return new DeviceManagementGetAssignedRoleDetailsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAssignedRoleDetails"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementGetEffectivePermissions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
@@ -1312,19 +1323,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementGetRoleScopeTagsByResource.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGetRoleScopeTagsByResourceRequestBuilder"/>.</returns>
-        public IDeviceManagementGetRoleScopeTagsByResourceRequestBuilder GetRoleScopeTagsByResource(
-            string resource = null)
-        {
-            return new DeviceManagementGetRoleScopeTagsByResourceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getRoleScopeTagsByResource"),
-                this.Client,
-                resource);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementGetRoleScopeTagsByIds.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetRoleScopeTagsByIdsRequestBuilder"/>.</returns>
@@ -1338,14 +1336,16 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementGetAssignedRoleDetails.
+        /// Gets the request builder for DeviceManagementGetRoleScopeTagsByResource.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGetAssignedRoleDetailsRequestBuilder"/>.</returns>
-        public IDeviceManagementGetAssignedRoleDetailsRequestBuilder GetAssignedRoleDetails()
+        /// <returns>The <see cref="IDeviceManagementGetRoleScopeTagsByResourceRequestBuilder"/>.</returns>
+        public IDeviceManagementGetRoleScopeTagsByResourceRequestBuilder GetRoleScopeTagsByResource(
+            string resource = null)
         {
-            return new DeviceManagementGetAssignedRoleDetailsRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAssignedRoleDetails"),
-                this.Client);
+            return new DeviceManagementGetRoleScopeTagsByResourceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRoleScopeTagsByResource"),
+                this.Client,
+                resource);
         }
 
         /// <summary>

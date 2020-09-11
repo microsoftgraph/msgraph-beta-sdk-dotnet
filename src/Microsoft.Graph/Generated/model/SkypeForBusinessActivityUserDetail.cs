@@ -31,88 +31,34 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets total peer to peer session count.
+        /// Gets or sets assigned products.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalPeerToPeerSessionCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? TotalPeerToPeerSessionCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AssignedProducts { get; set; }
     
         /// <summary>
-        /// Gets or sets total organized conference count.
+        /// Gets or sets deleted date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalOrganizedConferenceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? TotalOrganizedConferenceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date DeletedDate { get; set; }
     
         /// <summary>
-        /// Gets or sets total participated conference count.
+        /// Gets or sets is deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalParticipatedConferenceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? TotalParticipatedConferenceCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDeleted { get; set; }
     
         /// <summary>
-        /// Gets or sets peer to peer last activity date.
+        /// Gets or sets last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date PeerToPeerLastActivityDate { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date LastActivityDate { get; set; }
     
         /// <summary>
-        /// Gets or sets organized conference last activity date.
+        /// Gets or sets organized conference app sharing count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date OrganizedConferenceLastActivityDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets participated conference last activity date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date ParticipatedConferenceLastActivityDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets peer to peer imcount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerIMCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeerIMCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets peer to peer audio count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerAudioCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeerAudioCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets peer to peer audio minutes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerAudioMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeerAudioMinutes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets peer to peer video count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerVideoCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeerVideoCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets peer to peer video minutes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerVideoMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeerVideoMinutes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets peer to peer app sharing count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerAppSharingCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeerAppSharingCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets peer to peer file transfer count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerFileTransferCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? PeerToPeerFileTransferCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets organized conference imcount.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceIMCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? OrganizedConferenceIMCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceAppSharingCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OrganizedConferenceAppSharingCount { get; set; }
     
         /// <summary>
         /// Gets or sets organized conference audio video count.
@@ -127,22 +73,10 @@ namespace Microsoft.Graph
         public Int64? OrganizedConferenceAudioVideoMinutes { get; set; }
     
         /// <summary>
-        /// Gets or sets organized conference app sharing count.
+        /// Gets or sets organized conference cloud dial in microsoft minutes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceAppSharingCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? OrganizedConferenceAppSharingCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets organized conference web count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceWebCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? OrganizedConferenceWebCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets organized conference dial in out3rd party count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceDialInOut3rdPartyCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? OrganizedConferenceDialInOut3rdPartyCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceCloudDialInMicrosoftMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OrganizedConferenceCloudDialInMicrosoftMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets organized conference cloud dial in out microsoft count.
@@ -151,22 +85,40 @@ namespace Microsoft.Graph
         public Int64? OrganizedConferenceCloudDialInOutMicrosoftCount { get; set; }
     
         /// <summary>
-        /// Gets or sets organized conference cloud dial in microsoft minutes.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceCloudDialInMicrosoftMinutes", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? OrganizedConferenceCloudDialInMicrosoftMinutes { get; set; }
-    
-        /// <summary>
         /// Gets or sets organized conference cloud dial out microsoft minutes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceCloudDialOutMicrosoftMinutes", Required = Newtonsoft.Json.Required.Default)]
         public Int64? OrganizedConferenceCloudDialOutMicrosoftMinutes { get; set; }
     
         /// <summary>
-        /// Gets or sets participated conference imcount.
+        /// Gets or sets organized conference dial in out3rd party count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceIMCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? ParticipatedConferenceIMCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceDialInOut3rdPartyCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OrganizedConferenceDialInOut3rdPartyCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets organized conference imcount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceIMCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OrganizedConferenceIMCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets organized conference last activity date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date OrganizedConferenceLastActivityDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets organized conference web count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizedConferenceWebCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OrganizedConferenceWebCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets participated conference app sharing count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceAppSharingCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ParticipatedConferenceAppSharingCount { get; set; }
     
         /// <summary>
         /// Gets or sets participated conference audio video count.
@@ -181,10 +133,22 @@ namespace Microsoft.Graph
         public Int64? ParticipatedConferenceAudioVideoMinutes { get; set; }
     
         /// <summary>
-        /// Gets or sets participated conference app sharing count.
+        /// Gets or sets participated conference dial in out3rd party count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceAppSharingCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? ParticipatedConferenceAppSharingCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceDialInOut3rdPartyCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ParticipatedConferenceDialInOut3rdPartyCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets participated conference imcount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceIMCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? ParticipatedConferenceIMCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets participated conference last activity date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date ParticipatedConferenceLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets participated conference web count.
@@ -193,10 +157,58 @@ namespace Microsoft.Graph
         public Int64? ParticipatedConferenceWebCount { get; set; }
     
         /// <summary>
-        /// Gets or sets participated conference dial in out3rd party count.
+        /// Gets or sets peer to peer app sharing count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participatedConferenceDialInOut3rdPartyCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? ParticipatedConferenceDialInOut3rdPartyCount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerAppSharingCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeerAppSharingCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets peer to peer audio count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerAudioCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeerAudioCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets peer to peer audio minutes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerAudioMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeerAudioMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets peer to peer file transfer count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerFileTransferCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeerFileTransferCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets peer to peer imcount.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerIMCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeerIMCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets peer to peer last activity date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        public Date PeerToPeerLastActivityDate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets peer to peer video count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerVideoCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeerVideoCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets peer to peer video minutes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "peerToPeerVideoMinutes", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? PeerToPeerVideoMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets report period.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
@@ -205,40 +217,28 @@ namespace Microsoft.Graph
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
+        /// Gets or sets total organized conference count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalOrganizedConferenceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? TotalOrganizedConferenceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total participated conference count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalParticipatedConferenceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? TotalParticipatedConferenceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total peer to peer session count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalPeerToPeerSessionCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? TotalPeerToPeerSessionCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets user principal name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is deleted.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsDeleted { get; set; }
-    
-        /// <summary>
-        /// Gets or sets deleted date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date DeletedDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets last activity date.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
-        public Date LastActivityDate { get; set; }
-    
-        /// <summary>
-        /// Gets or sets assigned products.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<string> AssignedProducts { get; set; }
-    
-        /// <summary>
-        /// Gets or sets report period.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
-        public string ReportPeriod { get; set; }
     
     }
 }

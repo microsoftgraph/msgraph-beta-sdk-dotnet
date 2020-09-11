@@ -85,16 +85,16 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
-        /// Gets or sets required.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
-        public bool? Required { get; set; }
-    
-        /// <summary>
         /// Gets or sets referencedObjects.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencedObjects", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ReferencedObject> ReferencedObjects { get; set; }
+    
+        /// <summary>
+        /// Gets or sets required.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
+        public bool? Required { get; set; }
     
         /// <summary>
         /// Gets or sets type.

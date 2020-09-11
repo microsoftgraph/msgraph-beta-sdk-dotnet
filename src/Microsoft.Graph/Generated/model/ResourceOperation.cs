@@ -31,20 +31,6 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets resource.
-        /// Resource category to which this Operation belongs.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
-        public string Resource { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource name.
-        /// Name of the Resource this operation is performed on.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceName", Required = Newtonsoft.Json.Required.Default)]
-        public string ResourceName { get; set; }
-    
-        /// <summary>
         /// Gets or sets action name.
         /// Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
         /// </summary>
@@ -64,6 +50,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabledForScopeValidation", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnabledForScopeValidation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource.
+        /// Resource category to which this Operation belongs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        public string Resource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource name.
+        /// Name of the Resource this operation is performed on.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceName", Required = Newtonsoft.Json.Required.Default)]
+        public string ResourceName { get; set; }
     
     }
 }

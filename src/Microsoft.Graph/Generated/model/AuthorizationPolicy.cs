@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public bool? AllowEmailVerifiedUsersToJoinOrganization { get; set; }
     
         /// <summary>
+        /// Gets or sets allow invites from.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowInvitesFrom", Required = Newtonsoft.Json.Required.Default)]
+        public AllowInvitesFrom? AllowInvitesFrom { get; set; }
+    
+        /// <summary>
         /// Gets or sets block msol power shell.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockMsolPowerShell", Required = Newtonsoft.Json.Required.Default)]

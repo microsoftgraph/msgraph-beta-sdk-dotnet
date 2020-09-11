@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         public string ManagedDeviceIdentifier { get; set; }
     
         /// <summary>
-        /// Gets or sets user id.
-        /// Identifier for the user that tried to enroll the device.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
         /// Gets or sets mobile app list.
         /// The list of payload intents and states for the tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppList", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MobileAppIntentAndStateDetail> MobileAppList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user id.
+        /// Identifier for the user that tried to enroll the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
     
     }
 }

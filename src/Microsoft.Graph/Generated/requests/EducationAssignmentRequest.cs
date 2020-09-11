@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (educationAssignmentToInitialize != null && educationAssignmentToInitialize.AdditionalData != null)
             {
 
+                if (educationAssignmentToInitialize.Categories != null && educationAssignmentToInitialize.Categories.CurrentPage != null)
+                {
+                    educationAssignmentToInitialize.Categories.AdditionalData = educationAssignmentToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    educationAssignmentToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        educationAssignmentToInitialize.Categories.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (educationAssignmentToInitialize.Resources != null && educationAssignmentToInitialize.Resources.CurrentPage != null)
                 {
                     educationAssignmentToInitialize.Resources.AdditionalData = educationAssignmentToInitialize.AdditionalData;
@@ -261,22 +277,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         educationAssignmentToInitialize.Submissions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (educationAssignmentToInitialize.Categories != null && educationAssignmentToInitialize.Categories.CurrentPage != null)
-                {
-                    educationAssignmentToInitialize.Categories.AdditionalData = educationAssignmentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    educationAssignmentToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        educationAssignmentToInitialize.Categories.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

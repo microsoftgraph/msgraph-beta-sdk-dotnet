@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets snapshot date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "snapshotDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? SnapshotDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets license info details.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseInfoDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LicenseInfoDetail> LicenseInfoDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets snapshot date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "snapshotDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? SnapshotDateTime { get; set; }
     
     }
 }

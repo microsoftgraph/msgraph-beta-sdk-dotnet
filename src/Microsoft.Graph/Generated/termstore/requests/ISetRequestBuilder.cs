@@ -32,16 +32,16 @@ namespace Microsoft.Graph.TermStore
         new ISetRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
+        /// Gets the request builder for Children.
+        /// </summary>
+        /// <returns>The <see cref="ISetChildrenCollectionRequestBuilder"/>.</returns>
+        ISetChildrenCollectionRequestBuilder Children { get; }
+
+        /// <summary>
         /// Gets the request builder for ParentGroup.
         /// </summary>
         /// <returns>The <see cref="IGroupRequestBuilder"/>.</returns>
         IGroupRequestBuilder ParentGroup { get; }
-
-        /// <summary>
-        /// Gets the request builder for Terms.
-        /// </summary>
-        /// <returns>The <see cref="ISetTermsCollectionRequestBuilder"/>.</returns>
-        ISetTermsCollectionRequestBuilder Terms { get; }
 
         /// <summary>
         /// Gets the request builder for Relations.
@@ -50,10 +50,10 @@ namespace Microsoft.Graph.TermStore
         ISetRelationsCollectionRequestBuilder Relations { get; }
 
         /// <summary>
-        /// Gets the request builder for Children.
+        /// Gets the request builder for Terms.
         /// </summary>
-        /// <returns>The <see cref="ISetChildrenCollectionRequestBuilder"/>.</returns>
-        ISetChildrenCollectionRequestBuilder Children { get; }
+        /// <returns>The <see cref="ISetTermsCollectionRequestBuilder"/>.</returns>
+        ISetTermsCollectionRequestBuilder Terms { get; }
     
     }
 }

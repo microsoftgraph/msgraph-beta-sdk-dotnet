@@ -31,11 +31,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets type.
-        /// Device type
+        /// Gets or sets maximumOperatingSystemVersion.
+        /// Maximum OS version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceType? Type { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumOperatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string MaximumOperatingSystemVersion { get; set; }
     
         /// <summary>
         /// Gets or sets minimumOperatingSystemVersion.
@@ -45,11 +45,11 @@ namespace Microsoft.Graph
         public string MinimumOperatingSystemVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets maximumOperatingSystemVersion.
-        /// Maximum OS version
+        /// Gets or sets type.
+        /// Device type
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumOperatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
-        public string MaximumOperatingSystemVersion { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

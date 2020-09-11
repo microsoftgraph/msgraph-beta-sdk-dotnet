@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets discoveredSensitiveTypes.
+        /// Gets or sets accessScope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveredSensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessScope", Required = Newtonsoft.Json.Required.Default)]
+        public AccessScope? AccessScope { get; set; }
     
         /// <summary>
         /// Gets or sets currentLabel.
@@ -43,10 +43,10 @@ namespace Microsoft.Graph
         public CurrentLabel CurrentLabel { get; set; }
     
         /// <summary>
-        /// Gets or sets accessScope.
+        /// Gets or sets discoveredSensitiveTypes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessScope", Required = Newtonsoft.Json.Required.Default)]
-        public AccessScope? AccessScope { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveredSensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

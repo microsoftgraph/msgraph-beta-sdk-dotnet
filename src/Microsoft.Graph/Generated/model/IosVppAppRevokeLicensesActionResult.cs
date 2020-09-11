@@ -31,34 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets userId.
-        /// UserId associated with the action.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
-        public string UserId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managedDeviceId.
-        /// DeviceId associated with the action.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
-        public string ManagedDeviceId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets totalLicensesCount.
-        /// A count of the number of licenses for which revoke was attempted.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? TotalLicensesCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets failedLicensesCount.
-        /// A count of the number of licenses for which revoke failed.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedLicensesCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? FailedLicensesCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets actionFailureReason.
         /// The reason for the revoke licenses action failure.
         /// </summary>
@@ -80,11 +52,11 @@ namespace Microsoft.Graph
         public ActionState? ActionState { get; set; }
     
         /// <summary>
-        /// Gets or sets startDateTime.
-        /// Time the action was initiated
+        /// Gets or sets failedLicensesCount.
+        /// A count of the number of licenses for which revoke failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? StartDateTime { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? FailedLicensesCount { get; set; }
     
         /// <summary>
         /// Gets or sets lastUpdatedDateTime.
@@ -92,6 +64,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managedDeviceId.
+        /// DeviceId associated with the action.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string ManagedDeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets startDateTime.
+        /// Time the action was initiated
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? StartDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets totalLicensesCount.
+        /// A count of the number of licenses for which revoke was attempted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? TotalLicensesCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userId.
+        /// UserId associated with the action.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

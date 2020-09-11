@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets appUserModelId.
-        /// This is the only Application User Model ID (AUMID) that will be available to launch use while in Kiosk Mode
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUserModelId", Required = Newtonsoft.Json.Required.Default)]
-        public string AppUserModelId { get; set; }
-    
-        /// <summary>
         /// Gets or sets appId.
         /// This references an Intune App that will be target to the same assignments as Kiosk configuration
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
         public string AppId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets appUserModelId.
+        /// This is the only Application User Model ID (AUMID) that will be available to launch use while in Kiosk Mode
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUserModelId", Required = Newtonsoft.Json.Required.Default)]
+        public string AppUserModelId { get; set; }
     
         /// <summary>
         /// Gets or sets containedAppId.

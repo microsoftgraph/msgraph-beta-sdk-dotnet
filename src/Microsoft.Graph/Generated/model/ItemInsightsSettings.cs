@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets is enabled in organization.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabledInOrganization", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsEnabledInOrganization { get; set; }
-    
-        /// <summary>
         /// Gets or sets disabled for group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disabledForGroup", Required = Newtonsoft.Json.Required.Default)]
         public string DisabledForGroup { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is enabled in organization.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabledInOrganization", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEnabledInOrganization { get; set; }
     
     }
 }

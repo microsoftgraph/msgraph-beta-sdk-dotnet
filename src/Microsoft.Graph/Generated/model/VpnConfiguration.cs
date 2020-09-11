@@ -45,18 +45,18 @@ namespace Microsoft.Graph
         public string ConnectionName { get; set; }
     
         /// <summary>
-        /// Gets or sets role.
-        /// Role when connection type is set to Pulse Secure.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
-        public string Role { get; set; }
-    
-        /// <summary>
         /// Gets or sets realm.
         /// Realm when connection type is set to Pulse Secure.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realm", Required = Newtonsoft.Json.Required.Default)]
         public string Realm { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role.
+        /// Role when connection type is set to Pulse Secure.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        public string Role { get; set; }
     
         /// <summary>
         /// Gets or sets servers.

@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets device count.
+        /// User experience analytics device startup process summarized count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? DeviceCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets median impact in ms.
+        /// User experience analytics device startup process median impact in milliseconds.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "medianImpactInMs", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MedianImpactInMs { get; set; }
+    
+        /// <summary>
         /// Gets or sets process name.
         /// User experience analytics device startup process name.
         /// </summary>
@@ -50,20 +64,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
         public string Publisher { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device count.
-        /// User experience analytics device startup process summarized count.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
-        public Int64? DeviceCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets median impact in ms.
-        /// User experience analytics device startup process median impact in milliseconds.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "medianImpactInMs", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? MedianImpactInMs { get; set; }
     
         /// <summary>
         /// Gets or sets total impact in ms.

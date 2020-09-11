@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Categories.
-        /// </summary>
-        /// <returns>The <see cref="IManagedEBookCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IManagedEBookCategoriesCollectionWithReferencesRequestBuilder Categories
-        {
-            get
-            {
-                return new ManagedEBookCategoriesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Assignments.
         /// </summary>
         /// <returns>The <see cref="IManagedEBookAssignmentsCollectionRequestBuilder"/>.</returns>
@@ -75,14 +63,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for InstallSummary.
+        /// Gets the request builder for Categories.
         /// </summary>
-        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
-        public IEBookInstallSummaryRequestBuilder InstallSummary
+        /// <returns>The <see cref="IManagedEBookCategoriesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IManagedEBookCategoriesCollectionWithReferencesRequestBuilder Categories
         {
             get
             {
-                return new EBookInstallSummaryRequestBuilder(this.AppendSegmentToRequestUrl("installSummary"), this.Client);
+                return new ManagedEBookCategoriesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
             }
         }
 
@@ -95,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedEBookDeviceStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for InstallSummary.
+        /// </summary>
+        /// <returns>The <see cref="IEBookInstallSummaryRequestBuilder"/>.</returns>
+        public IEBookInstallSummaryRequestBuilder InstallSummary
+        {
+            get
+            {
+                return new EBookInstallSummaryRequestBuilder(this.AppendSegmentToRequestUrl("installSummary"), this.Client);
             }
         }
 

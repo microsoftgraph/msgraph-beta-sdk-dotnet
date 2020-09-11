@@ -30,18 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets passcode.
-        /// Newly generated passcode for the device
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcode", Required = Newtonsoft.Json.Required.Default)]
-        public string Passcode { get; set; }
-    
-        /// <summary>
         /// Gets or sets errorCode.
         /// RotateBitLockerKeys action error code. Valid values 0 to 2147483647
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets passcode.
+        /// Newly generated passcode for the device
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcode", Required = Newtonsoft.Json.Required.Default)]
+        public string Passcode { get; set; }
     
     }
 }

@@ -38,16 +38,16 @@ namespace Microsoft.Graph.TermStore
         ITermWithReferenceRequestBuilder FromTerm { get; }
 
         /// <summary>
-        /// Gets the request builder for ToTerm.
-        /// </summary>
-        /// <returns>The <see cref="ITermWithReferenceRequestBuilder"/>.</returns>
-        ITermWithReferenceRequestBuilder ToTerm { get; }
-
-        /// <summary>
         /// Gets the request builder for Set.
         /// </summary>
         /// <returns>The <see cref="ISetWithReferenceRequestBuilder"/>.</returns>
         ISetWithReferenceRequestBuilder Set { get; }
+
+        /// <summary>
+        /// Gets the request builder for ToTerm.
+        /// </summary>
+        /// <returns>The <see cref="ITermWithReferenceRequestBuilder"/>.</returns>
+        ITermWithReferenceRequestBuilder ToTerm { get; }
     
     }
 }

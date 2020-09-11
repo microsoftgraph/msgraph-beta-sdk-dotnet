@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (connectedOrganizationToInitialize != null && connectedOrganizationToInitialize.AdditionalData != null)
             {
 
-                if (connectedOrganizationToInitialize.InternalSponsors != null && connectedOrganizationToInitialize.InternalSponsors.CurrentPage != null)
-                {
-                    connectedOrganizationToInitialize.InternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("internalSponsors@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (connectedOrganizationToInitialize.ExternalSponsors != null && connectedOrganizationToInitialize.ExternalSponsors.CurrentPage != null)
                 {
                     connectedOrganizationToInitialize.ExternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
@@ -261,6 +245,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         connectedOrganizationToInitialize.ExternalSponsors.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (connectedOrganizationToInitialize.InternalSponsors != null && connectedOrganizationToInitialize.InternalSponsors.CurrentPage != null)
+                {
+                    connectedOrganizationToInitialize.InternalSponsors.AdditionalData = connectedOrganizationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    connectedOrganizationToInitialize.AdditionalData.TryGetValue("internalSponsors@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        connectedOrganizationToInitialize.InternalSponsors.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
