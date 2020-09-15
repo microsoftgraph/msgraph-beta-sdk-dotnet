@@ -38,18 +38,18 @@ namespace Microsoft.Graph
         IApprovalRequestBuilder Approval { get; }
     
         /// <summary>
+        /// Gets the request builder for RequestStop.
+        /// </summary>
+        /// <returns>The <see cref="IRequestStopRequestBuilder"/>.</returns>
+        IRequestStopRequestBuilder Stop();
+
+        /// <summary>
         /// Gets the request builder for RequestRecordDecisions.
         /// </summary>
         /// <returns>The <see cref="IRequestRecordDecisionsRequestBuilder"/>.</returns>
         IRequestRecordDecisionsRequestBuilder RecordDecisions(
             string reviewResult = null,
             string justification = null);
-
-        /// <summary>
-        /// Gets the request builder for RequestStop.
-        /// </summary>
-        /// <returns>The <see cref="IRequestStopRequestBuilder"/>.</returns>
-        IRequestStopRequestBuilder Stop();
     
     }
 }

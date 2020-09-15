@@ -159,6 +159,21 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        public IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody)
+        {
+            return new ManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
+                this.Client,
+                notificationTitle,
+                notificationBody);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
@@ -381,21 +396,6 @@ namespace Microsoft.Graph
             return new ManagedDeviceRotateFileVaultKeyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.rotateFileVaultKey"),
                 this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        public IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle,
-            string notificationBody)
-        {
-            return new ManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.sendCustomNotificationToCompanyPortal"),
-                this.Client,
-                notificationTitle,
-                notificationBody);
         }
 
         /// <summary>

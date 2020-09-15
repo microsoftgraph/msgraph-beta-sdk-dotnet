@@ -111,6 +111,23 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for MessageForward.
+        /// </summary>
+        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
+        public IMessageForwardRequestBuilder Forward(
+            IEnumerable<Recipient> ToRecipients = null,
+            Message Message = null,
+            string Comment = null)
+        {
+            return new MessageForwardRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.forward"),
+                this.Client,
+                ToRecipients,
+                Message,
+                Comment);
+        }
+
+        /// <summary>
         /// Gets the request builder for MessageCopy.
         /// </summary>
         /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
@@ -119,6 +136,19 @@ namespace Microsoft.Graph
         {
             return new MessageCopyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.copy"),
+                this.Client,
+                DestinationId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MessageMove.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
+        public IMessageMoveRequestBuilder Move(
+            string DestinationId)
+        {
+            return new MessageMoveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.move"),
                 this.Client,
                 DestinationId);
         }
@@ -168,36 +198,6 @@ namespace Microsoft.Graph
                 this.Client,
                 Message,
                 Comment);
-        }
-
-        /// <summary>
-        /// Gets the request builder for MessageForward.
-        /// </summary>
-        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
-        public IMessageForwardRequestBuilder Forward(
-            IEnumerable<Recipient> ToRecipients = null,
-            Message Message = null,
-            string Comment = null)
-        {
-            return new MessageForwardRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.forward"),
-                this.Client,
-                ToRecipients,
-                Message,
-                Comment);
-        }
-
-        /// <summary>
-        /// Gets the request builder for MessageMove.
-        /// </summary>
-        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
-        public IMessageMoveRequestBuilder Move(
-            string DestinationId)
-        {
-            return new MessageMoveRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.move"),
-                this.Client,
-                DestinationId);
         }
 
         /// <summary>

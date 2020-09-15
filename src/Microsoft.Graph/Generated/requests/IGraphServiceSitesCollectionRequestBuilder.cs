@@ -49,5 +49,18 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISiteRemoveRequestBuilder"/>.</returns>
         ISiteRemoveRequestBuilder Remove(
             IEnumerable<Site> value = null);
+
+        /// <summary>
+        /// Gets the request builder for SiteDelta.
+        /// </summary>
+        /// <returns>The <see cref="ISiteDeltaRequestBuilder"/>.</returns>
+        ISiteDeltaRequestBuilder Delta();
+
+        /// <summary>
+        /// Gets the request builder for SiteDelta.
+        /// </summary>
+        /// <returns>The <see cref="ISiteDeltaRequestBuilder"/>.</returns>
+        ISiteDeltaRequestBuilder Delta(
+            string token = null);
     }
 }

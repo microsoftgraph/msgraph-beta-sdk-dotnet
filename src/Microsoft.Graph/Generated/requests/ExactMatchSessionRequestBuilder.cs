@@ -74,17 +74,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ExactMatchSessionCommit.
-        /// </summary>
-        /// <returns>The <see cref="IExactMatchSessionCommitRequestBuilder"/>.</returns>
-        public IExactMatchSessionCommitRequestBuilder Commit()
-        {
-            return new ExactMatchSessionCommitRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.commit"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for ExactMatchSessionRenew.
         /// </summary>
         /// <returns>The <see cref="IExactMatchSessionRenewRequestBuilder"/>.</returns>
@@ -92,6 +81,17 @@ namespace Microsoft.Graph
         {
             return new ExactMatchSessionRenewRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.renew"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ExactMatchSessionCommit.
+        /// </summary>
+        /// <returns>The <see cref="IExactMatchSessionCommitRequestBuilder"/>.</returns>
+        public IExactMatchSessionCommitRequestBuilder Commit()
+        {
+            return new ExactMatchSessionCommitRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.commit"),
                 this.Client);
         }
     

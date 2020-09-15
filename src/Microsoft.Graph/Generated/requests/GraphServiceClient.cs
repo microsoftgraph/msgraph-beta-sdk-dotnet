@@ -857,39 +857,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceLinkedResources request builder.
-        /// </summary>
-        public IGraphServiceLinkedResourcesCollectionRequestBuilder LinkedResources
-        {
-            get
-            {
-                return new GraphServiceLinkedResourcesCollectionRequestBuilder(this.BaseUrl + "/linkedResources", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceLists request builder.
-        /// </summary>
-        public IGraphServiceListsCollectionRequestBuilder Lists
-        {
-            get
-            {
-                return new GraphServiceListsCollectionRequestBuilder(this.BaseUrl + "/lists", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceTasks request builder.
-        /// </summary>
-        public IGraphServiceTasksCollectionRequestBuilder Tasks
-        {
-            get
-            {
-                return new GraphServiceTasksCollectionRequestBuilder(this.BaseUrl + "/tasks", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
         public IAuditLogRootRequestBuilder AuditLogs
@@ -1216,17 +1183,6 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceTodo request builder.
-        /// </summary>
-        public ITodoRequestBuilder Todo
-        {
-            get
-            {
-                return new TodoRequestBuilder(this.BaseUrl + "/todo", this);
             }
         }
     

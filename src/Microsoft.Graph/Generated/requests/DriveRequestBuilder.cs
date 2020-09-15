@@ -135,17 +135,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for DriveRecent.
-        /// </summary>
-        /// <returns>The <see cref="IDriveRecentRequestBuilder"/>.</returns>
-        public IDriveRecentRequestBuilder Recent()
-        {
-            return new DriveRecentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.recent"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for DriveSearch.
         /// </summary>
         /// <returns>The <see cref="IDriveSearchRequestBuilder"/>.</returns>
@@ -156,6 +145,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.search"),
                 this.Client,
                 q);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveRecent.
+        /// </summary>
+        /// <returns>The <see cref="IDriveRecentRequestBuilder"/>.</returns>
+        public IDriveRecentRequestBuilder Recent()
+        {
+            return new DriveRecentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.recent"),
+                this.Client);
         }
 
         /// <summary>

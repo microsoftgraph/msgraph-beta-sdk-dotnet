@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IAccessReviewScheduleDefinitionWithReferenceRequestBuilder Definition { get; }
     
         /// <summary>
+        /// Gets the request builder for AccessReviewInstanceStop.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
+        IAccessReviewInstanceStopRequestBuilder Stop();
+
+        /// <summary>
         /// Gets the request builder for AccessReviewInstanceAcceptRecommendations.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceAcceptRecommendationsRequestBuilder"/>.</returns>
@@ -66,12 +72,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceSendReminderRequestBuilder"/>.</returns>
         IAccessReviewInstanceSendReminderRequestBuilder SendReminder();
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewInstanceStop.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
-        IAccessReviewInstanceStopRequestBuilder Stop();
     
     }
 }

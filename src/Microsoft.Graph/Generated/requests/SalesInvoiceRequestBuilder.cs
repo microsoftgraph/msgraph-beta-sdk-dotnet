@@ -122,6 +122,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SalesInvoiceSend.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoiceSendRequestBuilder"/>.</returns>
+        public ISalesInvoiceSendRequestBuilder Send()
+        {
+            return new SalesInvoiceSendRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.send"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for SalesInvoiceCancelAndSend.
         /// </summary>
         /// <returns>The <see cref="ISalesInvoiceCancelAndSendRequestBuilder"/>.</returns>
@@ -151,17 +162,6 @@ namespace Microsoft.Graph
         {
             return new SalesInvoicePostAndSendRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.postAndSend"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for SalesInvoiceSend.
-        /// </summary>
-        /// <returns>The <see cref="ISalesInvoiceSendRequestBuilder"/>.</returns>
-        public ISalesInvoiceSendRequestBuilder Send()
-        {
-            return new SalesInvoiceSendRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.send"),
                 this.Client);
         }
     

@@ -32,6 +32,23 @@ namespace Microsoft.Graph
         new IWorkbookFunctionsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsDelta.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsDeltaRequestBuilder"/>.</returns>
+        IWorkbookFunctionsDeltaRequestBuilder Delta(
+            Newtonsoft.Json.Linq.JToken number1 = null,
+            Newtonsoft.Json.Linq.JToken number2 = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsLookup.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsLookupRequestBuilder"/>.</returns>
+        IWorkbookFunctionsLookupRequestBuilder Lookup(
+            Newtonsoft.Json.Linq.JToken lookupValue = null,
+            Newtonsoft.Json.Linq.JToken lookupVector = null,
+            Newtonsoft.Json.Linq.JToken resultVector = null);
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsAbs.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsAbsRequestBuilder"/>.</returns>
@@ -823,14 +840,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookFunctionsDegreesRequestBuilder"/>.</returns>
         IWorkbookFunctionsDegreesRequestBuilder Degrees(
             Newtonsoft.Json.Linq.JToken angle = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsDelta.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsDeltaRequestBuilder"/>.</returns>
-        IWorkbookFunctionsDeltaRequestBuilder Delta(
-            Newtonsoft.Json.Linq.JToken number1 = null,
-            Newtonsoft.Json.Linq.JToken number2 = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFunctionsDevSq.
@@ -1754,15 +1763,6 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken probability = null,
             Newtonsoft.Json.Linq.JToken mean = null,
             Newtonsoft.Json.Linq.JToken standardDev = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsLookup.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsLookupRequestBuilder"/>.</returns>
-        IWorkbookFunctionsLookupRequestBuilder Lookup(
-            Newtonsoft.Json.Linq.JToken lookupValue = null,
-            Newtonsoft.Json.Linq.JToken lookupVector = null,
-            Newtonsoft.Json.Linq.JToken resultVector = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFunctionsLower.

@@ -38,17 +38,17 @@ namespace Microsoft.Graph
         IGroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionRequestBuilder GroupPolicyOperations { get; }
     
         /// <summary>
+        /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemove.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder"/>.</returns>
+        IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder Remove();
+
+        /// <summary>
         /// Gets the request builder for GroupPolicyUploadedDefinitionFileAddLanguageFiles.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileAddLanguageFilesRequestBuilder"/>.</returns>
         IGroupPolicyUploadedDefinitionFileAddLanguageFilesRequestBuilder AddLanguageFiles(
             IEnumerable<GroupPolicyUploadedLanguageFile> groupPolicyUploadedLanguageFiles = null);
-
-        /// <summary>
-        /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemove.
-        /// </summary>
-        /// <returns>The <see cref="IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder"/>.</returns>
-        IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder Remove();
 
         /// <summary>
         /// Gets the request builder for GroupPolicyUploadedDefinitionFileRemoveLanguageFiles.

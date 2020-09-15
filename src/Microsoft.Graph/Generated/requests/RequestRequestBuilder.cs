@@ -63,6 +63,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for RequestStop.
+        /// </summary>
+        /// <returns>The <see cref="IRequestStopRequestBuilder"/>.</returns>
+        public IRequestStopRequestBuilder Stop()
+        {
+            return new RequestStopRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for RequestRecordDecisions.
         /// </summary>
         /// <returns>The <see cref="IRequestRecordDecisionsRequestBuilder"/>.</returns>
@@ -75,17 +86,6 @@ namespace Microsoft.Graph
                 this.Client,
                 reviewResult,
                 justification);
-        }
-
-        /// <summary>
-        /// Gets the request builder for RequestStop.
-        /// </summary>
-        /// <returns>The <see cref="IRequestStopRequestBuilder"/>.</returns>
-        public IRequestStopRequestBuilder Stop()
-        {
-            return new RequestStopRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
-                this.Client);
         }
     
     }

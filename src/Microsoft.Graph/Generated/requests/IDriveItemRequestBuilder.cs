@@ -92,6 +92,29 @@ namespace Microsoft.Graph
         IDriveItemContentRequestBuilder Content { get; }
     
         /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemCopy.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCopyRequestBuilder"/>.</returns>
+        IDriveItemCopyRequestBuilder Copy(
+            string name = null,
+            ItemReference parentReference = null);
+
+        /// <summary>
+        /// Gets the request builder for DriveItemCreateUploadSession.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
+        IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
+            DriveItemUploadableProperties item = null);
+
+        /// <summary>
         /// Gets the request builder for DriveItemCheckin.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCheckinRequestBuilder"/>.</returns>
@@ -106,14 +129,6 @@ namespace Microsoft.Graph
         IDriveItemCheckoutRequestBuilder Checkout();
 
         /// <summary>
-        /// Gets the request builder for DriveItemCopy.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemCopyRequestBuilder"/>.</returns>
-        IDriveItemCopyRequestBuilder Copy(
-            string name = null,
-            ItemReference parentReference = null);
-
-        /// <summary>
         /// Gets the request builder for DriveItemCreateLink.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateLinkRequestBuilder"/>.</returns>
@@ -124,13 +139,6 @@ namespace Microsoft.Graph
             string password = null,
             string message = null,
             IEnumerable<DriveRecipient> recipients = null);
-
-        /// <summary>
-        /// Gets the request builder for DriveItemCreateUploadSession.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
-        IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
-            DriveItemUploadableProperties item = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemFollow.
@@ -161,14 +169,6 @@ namespace Microsoft.Graph
             bool? allowEdit = null,
             string page = null,
             double? zoom = null);
-
-        /// <summary>
-        /// Gets the request builder for DriveItemRestore.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
-        IDriveItemRestoreRequestBuilder Restore(
-            ItemReference parentReference = null,
-            string name = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemUnfollow.
