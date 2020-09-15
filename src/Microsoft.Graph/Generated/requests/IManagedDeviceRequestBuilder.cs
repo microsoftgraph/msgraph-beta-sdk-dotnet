@@ -86,6 +86,14 @@ namespace Microsoft.Graph
         IWindowsProtectionStateRequestBuilder WindowsProtectionState { get; }
     
         /// <summary>
+        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
+        IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
+            string notificationTitle,
+            string notificationBody);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
@@ -206,14 +214,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceRotateFileVaultKeyRequestBuilder"/>.</returns>
         IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
-        IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal(
-            string notificationTitle,
-            string notificationBody);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceSetDeviceName.

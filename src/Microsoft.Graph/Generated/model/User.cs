@@ -134,11 +134,29 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets employee hire date.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeHireDate", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EmployeeHireDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets employee id.
         /// The employee identifier assigned to the user by the organization. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeId", Required = Newtonsoft.Json.Required.Default)]
         public string EmployeeId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets employee org data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeOrgData", Required = Newtonsoft.Json.Required.Default)]
+        public EmployeeOrgData EmployeeOrgData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets employee type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeType", Required = Newtonsoft.Json.Required.Default)]
+        public string EmployeeType { get; set; }
     
         /// <summary>
         /// Gets or sets external user state.

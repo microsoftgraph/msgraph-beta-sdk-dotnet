@@ -111,17 +111,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SalesQuoteMakeInvoice.
-        /// </summary>
-        /// <returns>The <see cref="ISalesQuoteMakeInvoiceRequestBuilder"/>.</returns>
-        public ISalesQuoteMakeInvoiceRequestBuilder MakeInvoice()
-        {
-            return new SalesQuoteMakeInvoiceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.makeInvoice"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for SalesQuoteSend.
         /// </summary>
         /// <returns>The <see cref="ISalesQuoteSendRequestBuilder"/>.</returns>
@@ -129,6 +118,17 @@ namespace Microsoft.Graph
         {
             return new SalesQuoteSendRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.send"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SalesQuoteMakeInvoice.
+        /// </summary>
+        /// <returns>The <see cref="ISalesQuoteMakeInvoiceRequestBuilder"/>.</returns>
+        public ISalesQuoteMakeInvoiceRequestBuilder MakeInvoice()
+        {
+            return new SalesQuoteMakeInvoiceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.makeInvoice"),
                 this.Client);
         }
     

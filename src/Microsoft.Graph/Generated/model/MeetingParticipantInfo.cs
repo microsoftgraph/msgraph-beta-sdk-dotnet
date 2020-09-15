@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public IdentitySet Identity { get; set; }
     
         /// <summary>
+        /// Gets or sets role.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingRole? Role { get; set; }
+    
+        /// <summary>
         /// Gets or sets upn.
         /// User principal name of the participant.
         /// </summary>

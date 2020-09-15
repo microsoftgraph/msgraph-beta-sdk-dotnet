@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public AccessLevel? AccessLevel { get; set; }
     
         /// <summary>
+        /// Gets or sets allowed presenters.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingPresenters? AllowedPresenters { get; set; }
+    
+        /// <summary>
         /// Gets or sets audio conferencing.
         /// The phone access (dial-in) information for an online meeting. Read-only.
         /// </summary>

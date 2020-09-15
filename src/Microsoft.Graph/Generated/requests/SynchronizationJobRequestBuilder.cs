@@ -74,6 +74,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SynchronizationJobStart.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
+        public ISynchronizationJobStartRequestBuilder Start()
+        {
+            return new SynchronizationJobStartRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.start"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for SynchronizationJobProvisionOnDemand.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobProvisionOnDemandRequestBuilder"/>.</returns>
@@ -97,17 +108,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.restart"),
                 this.Client,
                 criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobStart.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
-        public ISynchronizationJobStartRequestBuilder Start()
-        {
-            return new SynchronizationJobStartRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.start"),
-                this.Client);
         }
 
         /// <summary>

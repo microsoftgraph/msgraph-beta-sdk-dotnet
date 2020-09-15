@@ -75,6 +75,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AccessReviewInstanceStop.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceStopRequestBuilder Stop()
+        {
+            return new AccessReviewInstanceStopRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessReviewInstanceAcceptRecommendations.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceAcceptRecommendationsRequestBuilder"/>.</returns>
@@ -115,17 +126,6 @@ namespace Microsoft.Graph
         {
             return new AccessReviewInstanceSendReminderRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.sendReminder"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewInstanceStop.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewInstanceStopRequestBuilder"/>.</returns>
-        public IAccessReviewInstanceStopRequestBuilder Stop()
-        {
-            return new AccessReviewInstanceStopRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
                 this.Client);
         }
     

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets deleted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deleted", Required = Newtonsoft.Json.Required.Default)]
+        public Deleted Deleted { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The full title for the site. Read-only.
         /// </summary>

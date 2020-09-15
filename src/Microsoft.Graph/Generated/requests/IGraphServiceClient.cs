@@ -382,21 +382,6 @@ namespace Microsoft.Graph
         IGraphServiceTeamsTemplatesCollectionRequestBuilder TeamsTemplates { get; }
     
         /// <summary>
-        /// Gets the GraphServiceLinkedResources request builder.
-        /// </summary>
-        IGraphServiceLinkedResourcesCollectionRequestBuilder LinkedResources { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceLists request builder.
-        /// </summary>
-        IGraphServiceListsCollectionRequestBuilder Lists { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceTasks request builder.
-        /// </summary>
-        IGraphServiceTasksCollectionRequestBuilder Tasks { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
         IAuditLogRootRequestBuilder AuditLogs { get; }
@@ -545,11 +530,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceTeamwork request builder.
         /// </summary>
         ITeamworkRequestBuilder Teamwork { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceTodo request builder.
-        /// </summary>
-        ITodoRequestBuilder Todo { get; }
     
     }
 }

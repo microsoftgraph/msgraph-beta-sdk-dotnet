@@ -55,6 +55,18 @@ namespace Microsoft.Graph
         public Int64? Outlook2016 { get; set; }
     
         /// <summary>
+        /// Gets or sets outlook2019.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook2019", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? Outlook2019 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outlook m365.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookM365", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? OutlookM365 { get; set; }
+    
+        /// <summary>
         /// Gets or sets report period.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]

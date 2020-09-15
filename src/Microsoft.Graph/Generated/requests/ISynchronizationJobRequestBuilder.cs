@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         ISynchronizationJobPauseRequestBuilder Pause();
 
         /// <summary>
+        /// Gets the request builder for SynchronizationJobStart.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
+        ISynchronizationJobStartRequestBuilder Start();
+
+        /// <summary>
         /// Gets the request builder for SynchronizationJobProvisionOnDemand.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobProvisionOnDemandRequestBuilder"/>.</returns>
@@ -56,12 +62,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISynchronizationJobRestartRequestBuilder"/>.</returns>
         ISynchronizationJobRestartRequestBuilder Restart(
             SynchronizationJobRestartCriteria criteria = null);
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobStart.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
-        ISynchronizationJobStartRequestBuilder Start();
 
         /// <summary>
         /// Gets the request builder for SynchronizationJobStop.

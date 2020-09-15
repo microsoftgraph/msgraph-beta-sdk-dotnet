@@ -135,6 +135,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for EventCancel.
+        /// </summary>
+        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
+        public IEventCancelRequestBuilder Cancel(
+            string Comment = null)
+        {
+            return new EventCancelRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
+                this.Client,
+                Comment);
+        }
+
+        /// <summary>
         /// Gets the request builder for EventAccept.
         /// </summary>
         /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
@@ -147,19 +160,6 @@ namespace Microsoft.Graph
                 this.Client,
                 Comment,
                 SendResponse);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EventCancel.
-        /// </summary>
-        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
-        public IEventCancelRequestBuilder Cancel(
-            string Comment = null)
-        {
-            return new EventCancelRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
-                this.Client,
-                Comment);
         }
 
         /// <summary>

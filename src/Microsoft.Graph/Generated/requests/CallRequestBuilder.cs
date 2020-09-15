@@ -87,6 +87,29 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CallRedirect.
+        /// </summary>
+        /// <returns>The <see cref="ICallRedirectRequestBuilder"/>.</returns>
+        public ICallRedirectRequestBuilder Redirect(
+            IEnumerable<InvitationParticipantInfo> targets,
+            CallDisposition? targetDisposition = null,
+            Int32? timeout = null,
+            bool? maskCallee = null,
+            bool? maskCaller = null,
+            string callbackUri = null)
+        {
+            return new CallRedirectRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.redirect"),
+                this.Client,
+                targets,
+                targetDisposition,
+                timeout,
+                maskCallee,
+                maskCaller,
+                callbackUri);
+        }
+
+        /// <summary>
         /// Gets the request builder for CallAnswer.
         /// </summary>
         /// <returns>The <see cref="ICallAnswerRequestBuilder"/>.</returns>
@@ -226,29 +249,6 @@ namespace Microsoft.Graph
                 streamWhileRecording,
                 stopTones,
                 clientContext);
-        }
-
-        /// <summary>
-        /// Gets the request builder for CallRedirect.
-        /// </summary>
-        /// <returns>The <see cref="ICallRedirectRequestBuilder"/>.</returns>
-        public ICallRedirectRequestBuilder Redirect(
-            IEnumerable<InvitationParticipantInfo> targets,
-            CallDisposition? targetDisposition = null,
-            Int32? timeout = null,
-            bool? maskCallee = null,
-            bool? maskCaller = null,
-            string callbackUri = null)
-        {
-            return new CallRedirectRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.redirect"),
-                this.Client,
-                targets,
-                targetDisposition,
-                timeout,
-                maskCallee,
-                maskCaller,
-                callbackUri);
         }
 
         /// <summary>

@@ -62,16 +62,16 @@ namespace Microsoft.Graph
         IShipmentMethodRequestBuilder ShipmentMethod { get; }
     
         /// <summary>
-        /// Gets the request builder for SalesQuoteMakeInvoice.
-        /// </summary>
-        /// <returns>The <see cref="ISalesQuoteMakeInvoiceRequestBuilder"/>.</returns>
-        ISalesQuoteMakeInvoiceRequestBuilder MakeInvoice();
-
-        /// <summary>
         /// Gets the request builder for SalesQuoteSend.
         /// </summary>
         /// <returns>The <see cref="ISalesQuoteSendRequestBuilder"/>.</returns>
         ISalesQuoteSendRequestBuilder Send();
+
+        /// <summary>
+        /// Gets the request builder for SalesQuoteMakeInvoice.
+        /// </summary>
+        /// <returns>The <see cref="ISalesQuoteMakeInvoiceRequestBuilder"/>.</returns>
+        ISalesQuoteMakeInvoiceRequestBuilder MakeInvoice();
     
     }
 }

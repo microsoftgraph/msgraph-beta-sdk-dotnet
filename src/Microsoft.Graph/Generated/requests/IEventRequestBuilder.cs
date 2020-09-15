@@ -74,19 +74,19 @@ namespace Microsoft.Graph
         IEventSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         /// <summary>
+        /// Gets the request builder for EventCancel.
+        /// </summary>
+        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
+        IEventCancelRequestBuilder Cancel(
+            string Comment = null);
+
+        /// <summary>
         /// Gets the request builder for EventAccept.
         /// </summary>
         /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
         IEventAcceptRequestBuilder Accept(
             string Comment = null,
             bool? SendResponse = null);
-
-        /// <summary>
-        /// Gets the request builder for EventCancel.
-        /// </summary>
-        /// <returns>The <see cref="IEventCancelRequestBuilder"/>.</returns>
-        IEventCancelRequestBuilder Cancel(
-            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventDecline.

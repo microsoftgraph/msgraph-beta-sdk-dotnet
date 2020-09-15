@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         ISalesInvoiceCancelRequestBuilder Cancel();
 
         /// <summary>
+        /// Gets the request builder for SalesInvoiceSend.
+        /// </summary>
+        /// <returns>The <see cref="ISalesInvoiceSendRequestBuilder"/>.</returns>
+        ISalesInvoiceSendRequestBuilder Send();
+
+        /// <summary>
         /// Gets the request builder for SalesInvoiceCancelAndSend.
         /// </summary>
         /// <returns>The <see cref="ISalesInvoiceCancelAndSendRequestBuilder"/>.</returns>
@@ -84,12 +90,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISalesInvoicePostAndSendRequestBuilder"/>.</returns>
         ISalesInvoicePostAndSendRequestBuilder PostAndSend();
-
-        /// <summary>
-        /// Gets the request builder for SalesInvoiceSend.
-        /// </summary>
-        /// <returns>The <see cref="ISalesInvoiceSendRequestBuilder"/>.</returns>
-        ISalesInvoiceSendRequestBuilder Send();
     
     }
 }

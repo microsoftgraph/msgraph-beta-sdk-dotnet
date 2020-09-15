@@ -62,10 +62,26 @@ namespace Microsoft.Graph
         IMessageSingleValueExtendedPropertiesCollectionRequestBuilder SingleValueExtendedProperties { get; }
     
         /// <summary>
+        /// Gets the request builder for MessageForward.
+        /// </summary>
+        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
+        IMessageForwardRequestBuilder Forward(
+            IEnumerable<Recipient> ToRecipients = null,
+            Message Message = null,
+            string Comment = null);
+
+        /// <summary>
         /// Gets the request builder for MessageCopy.
         /// </summary>
         /// <returns>The <see cref="IMessageCopyRequestBuilder"/>.</returns>
         IMessageCopyRequestBuilder Copy(
+            string DestinationId);
+
+        /// <summary>
+        /// Gets the request builder for MessageMove.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
+        IMessageMoveRequestBuilder Move(
             string DestinationId);
 
         /// <summary>
@@ -92,22 +108,6 @@ namespace Microsoft.Graph
         IMessageCreateReplyAllRequestBuilder CreateReplyAll(
             Message Message = null,
             string Comment = null);
-
-        /// <summary>
-        /// Gets the request builder for MessageForward.
-        /// </summary>
-        /// <returns>The <see cref="IMessageForwardRequestBuilder"/>.</returns>
-        IMessageForwardRequestBuilder Forward(
-            IEnumerable<Recipient> ToRecipients = null,
-            Message Message = null,
-            string Comment = null);
-
-        /// <summary>
-        /// Gets the request builder for MessageMove.
-        /// </summary>
-        /// <returns>The <see cref="IMessageMoveRequestBuilder"/>.</returns>
-        IMessageMoveRequestBuilder Move(
-            string DestinationId);
 
         /// <summary>
         /// Gets the request builder for MessageReply.

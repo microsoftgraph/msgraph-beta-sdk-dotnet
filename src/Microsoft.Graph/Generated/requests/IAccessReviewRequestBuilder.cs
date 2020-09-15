@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IAccessReviewReviewersCollectionRequestBuilder Reviewers { get; }
     
         /// <summary>
+        /// Gets the request builder for AccessReviewStop.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewStopRequestBuilder"/>.</returns>
+        IAccessReviewStopRequestBuilder Stop();
+
+        /// <summary>
         /// Gets the request builder for AccessReviewApplyDecisions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewApplyDecisionsRequestBuilder"/>.</returns>
@@ -72,12 +78,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSendReminderRequestBuilder"/>.</returns>
         IAccessReviewSendReminderRequestBuilder SendReminder();
-
-        /// <summary>
-        /// Gets the request builder for AccessReviewStop.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewStopRequestBuilder"/>.</returns>
-        IAccessReviewStopRequestBuilder Stop();
     
     }
 }

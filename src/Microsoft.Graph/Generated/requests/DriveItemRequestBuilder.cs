@@ -171,6 +171,49 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DriveItemRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
+        public IDriveItemRestoreRequestBuilder Restore(
+            ItemReference parentReference = null,
+            string name = null)
+        {
+            return new DriveItemRestoreRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
+                this.Client,
+                parentReference,
+                name);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemCopy.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCopyRequestBuilder"/>.</returns>
+        public IDriveItemCopyRequestBuilder Copy(
+            string name = null,
+            ItemReference parentReference = null)
+        {
+            return new DriveItemCopyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.copy"),
+                this.Client,
+                name,
+                parentReference);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DriveItemCreateUploadSession.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
+        public IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
+            DriveItemUploadableProperties item = null)
+        {
+            return new DriveItemCreateUploadSessionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
+                this.Client,
+                item);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemCheckin.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCheckinRequestBuilder"/>.</returns>
@@ -197,21 +240,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DriveItemCopy.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemCopyRequestBuilder"/>.</returns>
-        public IDriveItemCopyRequestBuilder Copy(
-            string name = null,
-            ItemReference parentReference = null)
-        {
-            return new DriveItemCopyRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.copy"),
-                this.Client,
-                name,
-                parentReference);
-        }
-
-        /// <summary>
         /// Gets the request builder for DriveItemCreateLink.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateLinkRequestBuilder"/>.</returns>
@@ -232,19 +260,6 @@ namespace Microsoft.Graph
                 password,
                 message,
                 recipients);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DriveItemCreateUploadSession.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemCreateUploadSessionRequestBuilder"/>.</returns>
-        public IDriveItemCreateUploadSessionRequestBuilder CreateUploadSession(
-            DriveItemUploadableProperties item = null)
-        {
-            return new DriveItemCreateUploadSessionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
-                this.Client,
-                item);
         }
 
         /// <summary>
@@ -302,21 +317,6 @@ namespace Microsoft.Graph
                 allowEdit,
                 page,
                 zoom);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DriveItemRestore.
-        /// </summary>
-        /// <returns>The <see cref="IDriveItemRestoreRequestBuilder"/>.</returns>
-        public IDriveItemRestoreRequestBuilder Restore(
-            ItemReference parentReference = null,
-            string name = null)
-        {
-            return new DriveItemRestoreRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
-                this.Client,
-                parentReference,
-                name);
         }
 
         /// <summary>

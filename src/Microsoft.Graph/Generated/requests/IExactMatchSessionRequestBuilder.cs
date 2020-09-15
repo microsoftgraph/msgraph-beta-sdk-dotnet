@@ -44,16 +44,16 @@ namespace Microsoft.Graph
         IExactMatchSessionCancelRequestBuilder Cancel();
 
         /// <summary>
-        /// Gets the request builder for ExactMatchSessionCommit.
-        /// </summary>
-        /// <returns>The <see cref="IExactMatchSessionCommitRequestBuilder"/>.</returns>
-        IExactMatchSessionCommitRequestBuilder Commit();
-
-        /// <summary>
         /// Gets the request builder for ExactMatchSessionRenew.
         /// </summary>
         /// <returns>The <see cref="IExactMatchSessionRenewRequestBuilder"/>.</returns>
         IExactMatchSessionRenewRequestBuilder Renew();
+
+        /// <summary>
+        /// Gets the request builder for ExactMatchSessionCommit.
+        /// </summary>
+        /// <returns>The <see cref="IExactMatchSessionCommitRequestBuilder"/>.</returns>
+        IExactMatchSessionCommitRequestBuilder Commit();
     
     }
 }

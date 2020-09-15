@@ -37,6 +37,16 @@ namespace Microsoft.Graph
         IDirectoryObjectRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for DirectoryObjectValidateProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>
+        IDirectoryObjectValidatePropertiesRequestBuilder ValidateProperties(
+            string entityType = null,
+            string displayName = null,
+            string mailNickname = null,
+            Guid? onBehalfOfUserId = null);
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetByIds.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectGetByIdsRequestBuilder"/>.</returns>
@@ -51,15 +61,5 @@ namespace Microsoft.Graph
         IDirectoryObjectGetUserOwnedObjectsRequestBuilder GetUserOwnedObjects(
             string userId = null,
             string type = null);
-
-        /// <summary>
-        /// Gets the request builder for DirectoryObjectValidateProperties.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectValidatePropertiesRequestBuilder"/>.</returns>
-        IDirectoryObjectValidatePropertiesRequestBuilder ValidateProperties(
-            string entityType = null,
-            string displayName = null,
-            string mailNickname = null,
-            Guid? onBehalfOfUserId = null);
     }
 }
