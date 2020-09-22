@@ -129,6 +129,13 @@ namespace Microsoft.Graph
         public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
+        /// Gets or sets required password complexity.
+        /// Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is a new API targeted to Android 11+.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredPasswordComplexity", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity { get; set; }
+    
+        /// <summary>
         /// Gets or sets restricted apps.
         /// Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.
         /// </summary>

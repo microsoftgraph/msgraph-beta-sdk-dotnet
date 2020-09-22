@@ -41,5 +41,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamAllMessagesRequestBuilder"/>.</returns>
         ITeamAllMessagesRequestBuilder AllMessages();
+
+        /// <summary>
+        /// Gets the request builder for TeamGetAllMessages.
+        /// </summary>
+        /// <returns>The <see cref="ITeamGetAllMessagesRequestBuilder"/>.</returns>
+        ITeamGetAllMessagesRequestBuilder GetAllMessages();
     }
 }

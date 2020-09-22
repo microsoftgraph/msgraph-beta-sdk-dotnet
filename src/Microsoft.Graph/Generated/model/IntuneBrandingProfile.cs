@@ -94,6 +94,13 @@ namespace Microsoft.Graph
         public string CustomPrivacyMessage { get; set; }
     
         /// <summary>
+        /// Gets or sets disable client telemetry.
+        /// Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableClientTelemetry", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableClientTelemetry { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Company/organization name that is displayed to end users
         /// </summary>

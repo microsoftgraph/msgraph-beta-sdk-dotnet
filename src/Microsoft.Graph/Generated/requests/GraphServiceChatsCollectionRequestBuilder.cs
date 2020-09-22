@@ -70,5 +70,16 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.allMessages"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for ChatGetAllMessages.
+        /// </summary>
+        /// <returns>The <see cref="IChatGetAllMessagesRequestBuilder"/>.</returns>
+        public IChatGetAllMessagesRequestBuilder GetAllMessages()
+        {
+            return new ChatGetAllMessagesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAllMessages"),
+                this.Client);
+        }
     }
 }

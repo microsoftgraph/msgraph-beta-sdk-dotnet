@@ -96,18 +96,5 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
                 this.Client);
         }
-
-        /// <summary>
-        /// Gets the request builder for SiteDelta.
-        /// </summary>
-        /// <returns>The <see cref="ISiteDeltaRequestBuilder"/>.</returns>
-        public ISiteDeltaRequestBuilder Delta(
-            string token = null)
-        {
-            return new SiteDeltaRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
-                this.Client,
-                token);
-        }
     }
 }

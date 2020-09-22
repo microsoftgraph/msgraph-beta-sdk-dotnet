@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of return code.
+        /// The type of return code. Possible values are: failed, success, softReboot, hardReboot, retry.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppReturnCodeType? Type { get; set; }

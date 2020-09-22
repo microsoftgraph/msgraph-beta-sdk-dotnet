@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OrganizationalBrandingRequestBuilder.
     /// </summary>
-    public partial class OrganizationalBrandingRequestBuilder : EntityRequestBuilder, IOrganizationalBrandingRequestBuilder
+    public partial class OrganizationalBrandingRequestBuilder : OrganizationalBrandingPropertiesRequestBuilder, IOrganizationalBrandingRequestBuilder
     {
 
         /// <summary>
@@ -51,38 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for BackgroundImage.
+        /// Gets the request builder for Localizations.
         /// </summary>
-        /// <returns>The <see cref="IOrganizationalBrandingBackgroundImageRequestBuilder"/>.</returns>
-        public IOrganizationalBrandingBackgroundImageRequestBuilder BackgroundImage
+        /// <returns>The <see cref="IOrganizationalBrandingLocalizationsCollectionRequestBuilder"/>.</returns>
+        public IOrganizationalBrandingLocalizationsCollectionRequestBuilder Localizations
         {
             get
             {
-                return new OrganizationalBrandingBackgroundImageRequestBuilder(this.AppendSegmentToRequestUrl("backgroundImage"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for BannerLogo.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationalBrandingBannerLogoRequestBuilder"/>.</returns>
-        public IOrganizationalBrandingBannerLogoRequestBuilder BannerLogo
-        {
-            get
-            {
-                return new OrganizationalBrandingBannerLogoRequestBuilder(this.AppendSegmentToRequestUrl("bannerLogo"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SquareLogo.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationalBrandingSquareLogoRequestBuilder"/>.</returns>
-        public IOrganizationalBrandingSquareLogoRequestBuilder SquareLogo
-        {
-            get
-            {
-                return new OrganizationalBrandingSquareLogoRequestBuilder(this.AppendSegmentToRequestUrl("squareLogo"), this.Client);
+                return new OrganizationalBrandingLocalizationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("localizations"), this.Client);
             }
         }
     

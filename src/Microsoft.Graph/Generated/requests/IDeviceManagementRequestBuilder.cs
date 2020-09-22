@@ -338,6 +338,48 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthDeviceModelPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthDeviceModelPerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthDevicePerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthDevicePerformanceDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformanceDetails { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthOSVersionPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthOSVersionPerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthOverview.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsCategoryRequestBuilder UserExperienceAnalyticsAppHealthOverview { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsBaselines.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBaselinesCollectionRequestBuilder"/>.</returns>
@@ -506,6 +548,18 @@ namespace Microsoft.Graph
         IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder GroupPolicyUploadedDefinitionFiles { get; }
 
         /// <summary>
+        /// Gets the request builder for MicrosoftTunnelConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder MicrosoftTunnelConfigurations { get; }
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelSites.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelSitesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementMicrosoftTunnelSitesCollectionRequestBuilder MicrosoftTunnelSites { get; }
+
+        /// <summary>
         /// Gets the request builder for NotificationMessageTemplates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementNotificationMessageTemplatesCollectionRequestBuilder"/>.</returns>
@@ -652,6 +706,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder"/>.</returns>
         IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary();
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetSuggestedEnrollmentLimit.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder"/>.</returns>
+        IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder GetSuggestedEnrollmentLimit(
+            string enrollmentType = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetAssignedRoleDetails.

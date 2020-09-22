@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for B2cAuthenticationMethodsPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IB2cAuthenticationMethodsPolicyRequestBuilder"/>.</returns>
+        public IB2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy
+        {
+            get
+            {
+                return new B2cAuthenticationMethodsPolicyRequestBuilder(this.AppendSegmentToRequestUrl("b2cAuthenticationMethodsPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceRegistrationPolicy.
         /// </summary>
         /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>

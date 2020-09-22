@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets answers.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "answers", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AccessPackageAnswer> Answers { get; set; }
+    
+        /// <summary>
         /// Gets or sets completed date.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDate", Required = Newtonsoft.Json.Required.Default)]

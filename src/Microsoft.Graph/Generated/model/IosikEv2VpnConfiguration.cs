@@ -129,6 +129,13 @@ namespace Microsoft.Graph
         public VpnLocalIdentifier? LocalIdentifier { get; set; }
     
         /// <summary>
+        /// Gets or sets mtu size in bytes.
+        /// Maximum transmission unit. Valid values 1 to 65536
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mtuSizeInBytes", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MtuSizeInBytes { get; set; }
+    
+        /// <summary>
         /// Gets or sets remote identifier.
         /// Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN
         /// </summary>

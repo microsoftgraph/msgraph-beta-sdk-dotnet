@@ -35,14 +35,34 @@ namespace Microsoft.Graph
         DriveItem = 2,
 	
         /// <summary>
-        /// External File
-        /// </summary>
-        ExternalFile = 3,
-	
-        /// <summary>
         /// External Item
         /// </summary>
         ExternalItem = 4,
+	
+        /// <summary>
+        /// Site
+        /// </summary>
+        Site = 5,
+	
+        /// <summary>
+        /// List
+        /// </summary>
+        List = 6,
+	
+        /// <summary>
+        /// List Item
+        /// </summary>
+        ListItem = 7,
+	
+        /// <summary>
+        /// Drive
+        /// </summary>
+        Drive = 8,
+	
+        /// <summary>
+        /// Unknownfuturevalue
+        /// </summary>
+        Unknownfuturevalue = 9,
 	
     }
 }

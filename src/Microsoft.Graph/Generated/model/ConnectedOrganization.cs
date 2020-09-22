@@ -73,6 +73,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public ConnectedOrganizationState? State { get; set; }
+    
+        /// <summary>
         /// Gets or sets external sponsors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSponsors", Required = Newtonsoft.Json.Required.Default)]

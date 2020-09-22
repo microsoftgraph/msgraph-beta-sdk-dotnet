@@ -25,7 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ruleType.
-        /// The rule type indicating the purpose of the rule.
+        /// The rule type indicating the purpose of the rule. Possible values are: detection, requirement.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRuleType? RuleType { get; set; }

@@ -874,6 +874,102 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthDeviceModelPerformance@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDeviceModelPerformance.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthDevicePerformance@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformance.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthDevicePerformanceDetails@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("userExperienceAnalyticsAppHealthOSVersionPerformance@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.UserExperienceAnalyticsAppHealthOSVersionPerformance.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.UserExperienceAnalyticsBaselines != null && deviceManagementToInitialize.UserExperienceAnalyticsBaselines.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsBaselines.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -1269,6 +1365,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.GroupPolicyUploadedDefinitionFiles.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.MicrosoftTunnelConfigurations != null && deviceManagementToInitialize.MicrosoftTunnelConfigurations.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.MicrosoftTunnelConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("microsoftTunnelConfigurations@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.MicrosoftTunnelConfigurations.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.MicrosoftTunnelSites != null && deviceManagementToInitialize.MicrosoftTunnelSites.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.MicrosoftTunnelSites.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("microsoftTunnelSites@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.MicrosoftTunnelSites.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

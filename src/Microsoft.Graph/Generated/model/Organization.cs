@@ -196,10 +196,10 @@ namespace Microsoft.Graph
         public MdmAuthority? MobileDeviceManagementAuthority { get; set; }
     
         /// <summary>
-        /// Gets or sets brandings.
+        /// Gets or sets branding.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "brandings", Required = Newtonsoft.Json.Required.Default)]
-        public IOrganizationBrandingsCollectionPage Brandings { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "branding", Required = Newtonsoft.Json.Required.Default)]
+        public OrganizationalBranding Branding { get; set; }
     
         /// <summary>
         /// Gets or sets certificate based auth configuration.

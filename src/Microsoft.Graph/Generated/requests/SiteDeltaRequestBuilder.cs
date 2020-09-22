@@ -31,21 +31,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Constructs a new <see cref="SiteDeltaRequestBuilder"/>.
-        /// </summary>
-        /// <param name="requestUrl">The URL for the request.</param>
-        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="token">A token parameter for the OData method call.</param>
-        public SiteDeltaRequestBuilder(
-            string requestUrl,
-            IBaseClient client,
-            string token)
-            : base(requestUrl, client)
-        {
-            this.SetParameter("token", token, true);
-        }
-
-        /// <summary>
         /// A method used by the base class to construct a request class instance.
         /// </summary>
         /// <param name="functionUrl">The request URL to </param>

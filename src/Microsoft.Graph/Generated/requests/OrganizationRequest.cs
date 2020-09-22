@@ -234,22 +234,6 @@ namespace Microsoft.Graph
             if (organizationToInitialize != null && organizationToInitialize.AdditionalData != null)
             {
 
-                if (organizationToInitialize.Brandings != null && organizationToInitialize.Brandings.CurrentPage != null)
-                {
-                    organizationToInitialize.Brandings.AdditionalData = organizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("brandings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        organizationToInitialize.Brandings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (organizationToInitialize.CertificateBasedAuthConfiguration != null && organizationToInitialize.CertificateBasedAuthConfiguration.CurrentPage != null)
                 {
                     organizationToInitialize.CertificateBasedAuthConfiguration.AdditionalData = organizationToInitialize.AdditionalData;

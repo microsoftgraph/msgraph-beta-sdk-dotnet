@@ -941,6 +941,13 @@ namespace Microsoft.Graph
         public bool? FirewallIPSecExemptionsAllowRouterDiscovery { get; set; }
     
         /// <summary>
+        /// Gets or sets firewall ipsec exemptions none.
+        /// Configures IPSec exemptions to no exemptions
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firewallIPSecExemptionsNone", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FirewallIPSecExemptionsNone { get; set; }
+    
+        /// <summary>
         /// Gets or sets firewall merge keying module settings.
         /// If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
         /// </summary>

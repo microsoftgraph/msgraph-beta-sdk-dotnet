@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         Size2048 = 1,
 	
+        /// <summary>
+        /// Size4096
+        /// </summary>
+        Size4096 = 2,
+	
     }
 }

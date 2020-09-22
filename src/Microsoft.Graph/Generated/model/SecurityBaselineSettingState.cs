@@ -31,6 +31,20 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets contributing policies.
+        /// The policies that contribute to this setting instance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributingPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SecurityBaselineContributingPolicy> ContributingPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets error code.
+        /// The error code if the setting is in error state
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        public string ErrorCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets setting category id.
         /// The setting category id which this setting belongs to
         /// </summary>
@@ -38,11 +52,32 @@ namespace Microsoft.Graph
         public string SettingCategoryId { get; set; }
     
         /// <summary>
+        /// Gets or sets setting category name.
+        /// The setting category name which this setting belongs to
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingCategoryName", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingCategoryName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting id.
+        /// The setting id guid
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingId", Required = Newtonsoft.Json.Required.Default)]
+        public string SettingId { get; set; }
+    
+        /// <summary>
         /// Gets or sets setting name.
         /// The setting name that is being reported
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingName", Required = Newtonsoft.Json.Required.Default)]
         public string SettingName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source policies.
+        /// The policies that contribute to this setting instance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourcePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SettingSource> SourcePolicies { get; set; }
     
         /// <summary>
         /// Gets or sets state.

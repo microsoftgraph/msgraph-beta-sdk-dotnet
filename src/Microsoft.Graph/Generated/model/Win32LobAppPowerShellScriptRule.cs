@@ -52,14 +52,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operationType.
-        /// The script output comparison operation type. Use NotConfigured (the default value) if the rule is used for detection.
+        /// The script output comparison operation type. Use NotConfigured (the default value) if the rule is used for detection. Possible values are: notConfigured, string, dateTime, integer, float, version, boolean.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppPowerShellScriptRuleOperationType? OperationType { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
-        /// The script output operator. Use NotConfigured (the default value) if the rule is used for detection.
+        /// The script output operator. Use NotConfigured (the default value) if the rule is used for detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRuleOperator? Operator { get; set; }

@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("deviceBootPerformanceMetrics"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for RebootAnalyticsMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder RebootAnalyticsMetrics
+        {
+            get
+            {
+                return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rebootAnalyticsMetrics"), this.Client);
+            }
+        }
     
     }
 }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets productVersionOperator.
-        /// The product version comparison operator.
+        /// The product version comparison operator. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productVersionOperator", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRuleOperator? ProductVersionOperator { get; set; }

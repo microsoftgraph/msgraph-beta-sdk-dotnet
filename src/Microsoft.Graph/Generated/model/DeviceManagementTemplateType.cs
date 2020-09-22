@@ -69,5 +69,10 @@ namespace Microsoft.Graph
         /// </summary>
         DeviceConfigurationForOffice365 = 9,
 	
+        /// <summary>
+        /// Cloud PC
+        /// </summary>
+        CloudPC = 10,
+	
     }
 }

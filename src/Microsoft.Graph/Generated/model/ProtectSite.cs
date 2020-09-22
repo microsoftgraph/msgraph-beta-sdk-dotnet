@@ -35,5 +35,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessType", Required = Newtonsoft.Json.Required.Default)]
         public SiteAccessType? AccessType { get; set; }
     
+        /// <summary>
+        /// Gets or sets conditionalAccessProtectionLevelId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessProtectionLevelId", Required = Newtonsoft.Json.Required.Default)]
+        public string ConditionalAccessProtectionLevelId { get; set; }
+    
     }
 }

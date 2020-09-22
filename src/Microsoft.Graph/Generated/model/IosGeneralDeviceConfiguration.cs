@@ -94,6 +94,13 @@ namespace Microsoft.Graph
         public bool? AirPrintForceTrustedTLS { get; set; }
     
         /// <summary>
+        /// Gets or sets app clips blocked.
+        /// Prevents a user from adding any App Clips and removes any existing App Clips on the device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appClipsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AppClipsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets apple news blocked.
         /// Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
         /// </summary>

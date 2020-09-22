@@ -80,6 +80,13 @@ namespace Microsoft.Graph
         public IEnumerable<KeyValuePair> ApprovedKeyboards { get; set; }
     
         /// <summary>
+        /// Gets or sets biometric authentication blocked.
+        /// Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "biometricAuthenticationBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? BiometricAuthenticationBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets custom browser display name.
         /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
@@ -197,6 +204,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAndroidSafetyNetDeviceAttestationType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidManagedAppSafetyNetDeviceAttestationType? RequiredAndroidSafetyNetDeviceAttestationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets required android safety net evaluation type.
+        /// Defines the Android SafetyNet evaluation type requirement for a managed app to work.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAndroidSafetyNetEvaluationType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType { get; set; }
     
         /// <summary>
         /// Gets or sets screen capture blocked.
