@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public IEnumerable<KeyValuePair> CustomKeyValueData { get; set; }
     
         /// <summary>
+        /// Gets or sets disable on demand user override.
+        /// Toggle to prevent user from disabling automatic VPN in the Settings app
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableOnDemandUserOverride", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableOnDemandUserOverride { get; set; }
+    
+        /// <summary>
         /// Gets or sets enable per app.
         /// Setting this to true creates Per-App VPN payload which can later be associated with Apps that can trigger this VPN conneciton on the end user's iOS device.
         /// </summary>
@@ -78,6 +85,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSplitTunneling", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnableSplitTunneling { get; set; }
+    
+        /// <summary>
+        /// Gets or sets excluded domains.
+        /// Domains that are accessed through the public internet instead of through VPN, even when per-app VPN is activated
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedDomains", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ExcludedDomains { get; set; }
     
         /// <summary>
         /// Gets or sets identifier.

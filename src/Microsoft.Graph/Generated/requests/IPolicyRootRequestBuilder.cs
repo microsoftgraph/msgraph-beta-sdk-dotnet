@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IAuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy { get; }
 
         /// <summary>
+        /// Gets the request builder for B2cAuthenticationMethodsPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IB2cAuthenticationMethodsPolicyRequestBuilder"/>.</returns>
+        IB2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceRegistrationPolicy.
         /// </summary>
         /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>

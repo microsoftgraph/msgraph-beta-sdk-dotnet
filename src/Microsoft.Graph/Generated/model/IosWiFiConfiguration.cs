@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public bool? ConnectWhenNetworkNameIsHidden { get; set; }
     
         /// <summary>
+        /// Gets or sets disable mac address randomization.
+        /// If set to true, forces devices connecting using this Wi-Fi profile to present their actual Wi-Fi MAC address instead of a random MAC address. Applies to iOS 14 and later.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableMacAddressRandomization", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableMacAddressRandomization { get; set; }
+    
+        /// <summary>
         /// Gets or sets network name.
         /// Network Name
         /// </summary>

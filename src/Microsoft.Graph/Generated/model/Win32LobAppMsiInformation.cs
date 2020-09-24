@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets packageType.
-        /// The MSI package type.
+        /// The MSI package type. Possible values are: perMachine, perUser, dualPurpose.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppMsiPackageType? PackageType { get; set; }

@@ -66,8 +66,22 @@ namespace Microsoft.Graph
         public string ContactITPhoneNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets customCanSeePrivacyMessage.
+        /// The custom privacy message used to explain what the organization can see and do on managed devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customCanSeePrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomCanSeePrivacyMessage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets customCantSeePrivacyMessage.
+        /// The custom privacy message used to explain what the organization can???t see or do on managed devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customCantSeePrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomCantSeePrivacyMessage { get; set; }
+    
+        /// <summary>
         /// Gets or sets customPrivacyMessage.
-        /// Custom privacy message.
+        /// The custom privacy message used to explain what the organization can???t see or do on managed devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customPrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
         public string CustomPrivacyMessage { get; set; }
@@ -78,6 +92,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "darkBackgroundLogo", Required = Newtonsoft.Json.Required.Default)]
         public MimeContent DarkBackgroundLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets disableClientTelemetry.
+        /// Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableClientTelemetry", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DisableClientTelemetry { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.

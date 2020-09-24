@@ -52,14 +52,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operationType.
-        /// The file system operation type.
+        /// The file system operation type. Possible values are: notConfigured, exists, modifiedDate, createdDate, version, sizeInMB.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppFileSystemOperationType? OperationType { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
-        /// The operator for file or folder detection.
+        /// The operator for file or folder detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRuleOperator? Operator { get; set; }

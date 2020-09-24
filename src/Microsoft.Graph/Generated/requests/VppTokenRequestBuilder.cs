@@ -55,12 +55,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IVppTokenRevokeLicensesRequestBuilder"/>.</returns>
         public IVppTokenRevokeLicensesRequestBuilder RevokeLicenses(
-            bool notifyManagedDevices)
+            bool notifyManagedDevices,
+            bool? revokeUntrackedLicenses = null)
         {
             return new VppTokenRevokeLicensesRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.revokeLicenses"),
                 this.Client,
-                notifyManagedDevices);
+                notifyManagedDevices,
+                revokeUntrackedLicenses);
         }
 
         /// <summary>

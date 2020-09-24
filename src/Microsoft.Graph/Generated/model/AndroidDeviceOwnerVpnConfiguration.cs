@@ -52,11 +52,25 @@ namespace Microsoft.Graph
         public AndroidVpnConnectionType? ConnectionType { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft tunnel site id.
+        /// Microsoft Tunnel site ID.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelSiteId", Required = Newtonsoft.Json.Required.Default)]
+        public string MicrosoftTunnelSiteId { get; set; }
+    
+        /// <summary>
         /// Gets or sets proxy server.
         /// Proxy server.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyServer", Required = Newtonsoft.Json.Required.Default)]
         public VpnProxyServer ProxyServer { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targeted mobile apps.
+        /// Targeted mobile apps. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AppListItem> TargetedMobileApps { get; set; }
     
         /// <summary>
         /// Gets or sets targeted package ids.

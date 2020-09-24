@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets applicable architectures.
-        /// The Windows architecture(s) for which this app can run on.
+        /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableArchitectures", Required = Newtonsoft.Json.Required.Default)]
         public WindowsArchitecture? ApplicableArchitectures { get; set; }
@@ -57,12 +57,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installExperience", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppInstallExperience InstallExperience { get; set; }
-    
-        /// <summary>
-        /// Gets or sets install language.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installLanguage", Required = Newtonsoft.Json.Required.Default)]
-        public string InstallLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets minimum cpu speed in mhz.

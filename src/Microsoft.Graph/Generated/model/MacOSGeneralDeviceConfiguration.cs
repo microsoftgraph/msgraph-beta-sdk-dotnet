@@ -373,6 +373,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spotlightBlockInternetResults", Required = Newtonsoft.Json.Required.Default)]
         public bool? SpotlightBlockInternetResults { get; set; }
     
+        /// <summary>
+        /// Gets or sets update delay policy.
+        /// Determines whether to delay OS and/or app updates for macOS.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateDelayPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public MacOSSoftwareUpdateDelayPolicy? UpdateDelayPolicy { get; set; }
+    
     }
 }
 

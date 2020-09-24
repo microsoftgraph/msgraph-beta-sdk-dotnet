@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets admx setting definition id.
+        /// Admx Group Policy Id
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "admxSettingDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        public string AdmxSettingDefinitionId { get; set; }
+    
+        /// <summary>
         /// Gets or sets child id list.
         /// List of Child Ids of the group policy setting.
         /// </summary>

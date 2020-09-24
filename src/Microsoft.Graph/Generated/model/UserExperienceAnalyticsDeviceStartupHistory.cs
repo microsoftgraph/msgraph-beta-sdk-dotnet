@@ -108,6 +108,20 @@ namespace Microsoft.Graph
         public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory { get; set; }
     
         /// <summary>
+        /// Gets or sets restart fault bucket.
+        /// OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartFaultBucket", Required = Newtonsoft.Json.Required.Default)]
+        public string RestartFaultBucket { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restart stop code.
+        /// OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartStopCode", Required = Newtonsoft.Json.Required.Default)]
+        public string RestartStopCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets start time.
         /// The user experience analytics device boot start time.
         /// </summary>

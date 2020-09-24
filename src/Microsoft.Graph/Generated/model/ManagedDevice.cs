@@ -332,6 +332,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? ManagementCertificateExpirationDate { get; set; }
     
         /// <summary>
+        /// Gets or sets management features.
+        /// Device management features
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementFeatures", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedDeviceManagementFeatures? ManagementFeatures { get; set; }
+    
+        /// <summary>
         /// Gets or sets management state.
         /// Management state of the device. This property is read-only.
         /// </summary>
@@ -470,6 +477,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuFamily", Required = Newtonsoft.Json.Required.Default)]
         public string SkuFamily { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sku number.
+        /// Device sku number, see also: https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuNumber", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SkuNumber { get; set; }
     
         /// <summary>
         /// Gets or sets specification version.

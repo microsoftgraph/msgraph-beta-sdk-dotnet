@@ -143,6 +143,20 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
+        /// Gets or sets superseded app count.
+        /// The total number of apps this app is directly or indirectly superseded by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supersededAppCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SupersededAppCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets superseding app count.
+        /// The total number of apps this app directly or indirectly supersedes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supersedingAppCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? SupersedingAppCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets upload state.
         /// The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
         /// </summary>
@@ -179,7 +193,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets relationships.
-        /// List of relationships for this mobile app.
+        /// The set of direct relationships for this app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationships", Required = Newtonsoft.Json.Required.Default)]
         public IMobileAppRelationshipsCollectionPage Relationships { get; set; }

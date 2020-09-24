@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         IScheduleSwapShiftsChangeRequestsCollectionRequestBuilder SwapShiftsChangeRequests { get; }
 
         /// <summary>
+        /// Gets the request builder for TimeCards.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimeCardsCollectionRequestBuilder"/>.</returns>
+        IScheduleTimeCardsCollectionRequestBuilder TimeCards { get; }
+
+        /// <summary>
         /// Gets the request builder for TimeOffReasons.
         /// </summary>
         /// <returns>The <see cref="IScheduleTimeOffReasonsCollectionRequestBuilder"/>.</returns>

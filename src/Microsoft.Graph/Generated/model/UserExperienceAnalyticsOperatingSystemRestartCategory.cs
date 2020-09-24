@@ -49,5 +49,15 @@ namespace Microsoft.Graph
         /// </summary>
         ShutdownWithoutUpdate = 5,
 	
+        /// <summary>
+        /// Long Power Button Press
+        /// </summary>
+        LongPowerButtonPress = 6,
+	
+        /// <summary>
+        /// Boot Error
+        /// </summary>
+        BootError = 7,
+	
     }
 }

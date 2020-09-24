@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="notifyManagedDevices">A notifyManagedDevices parameter for the OData method call.</param>
+        /// <param name="revokeUntrackedLicenses">A revokeUntrackedLicenses parameter for the OData method call.</param>
         public VppTokenRevokeLicensesRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            bool notifyManagedDevices)
+            bool notifyManagedDevices,
+            bool? revokeUntrackedLicenses)
             : base(requestUrl, client)
         {
             this.SetParameter("notifyManagedDevices", notifyManagedDevices, false);
+            this.SetParameter("revokeUntrackedLicenses", revokeUntrackedLicenses, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("notifyManagedDevices"))
             {
                 request.RequestBody.NotifyManagedDevices = this.GetParameter<bool>("notifyManagedDevices");
+            }
+
+            if (this.HasParameter("revokeUntrackedLicenses"))
+            {
+                request.RequestBody.RevokeUntrackedLicenses = this.GetParameter<bool?>("revokeUntrackedLicenses");
             }
 
             return request;

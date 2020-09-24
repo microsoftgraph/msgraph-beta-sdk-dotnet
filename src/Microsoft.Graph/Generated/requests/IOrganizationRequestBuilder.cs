@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IOrganizationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Brandings.
+        /// Gets the request builder for Branding.
         /// </summary>
-        /// <returns>The <see cref="IOrganizationBrandingsCollectionRequestBuilder"/>.</returns>
-        IOrganizationBrandingsCollectionRequestBuilder Brandings { get; }
+        /// <returns>The <see cref="IOrganizationalBrandingRequestBuilder"/>.</returns>
+        IOrganizationalBrandingRequestBuilder Branding { get; }
 
         /// <summary>
         /// Gets the request builder for CertificateBasedAuthConfiguration.

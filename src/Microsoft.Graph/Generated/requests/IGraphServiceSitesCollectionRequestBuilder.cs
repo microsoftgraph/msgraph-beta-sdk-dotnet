@@ -55,12 +55,5 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISiteDeltaRequestBuilder"/>.</returns>
         ISiteDeltaRequestBuilder Delta();
-
-        /// <summary>
-        /// Gets the request builder for SiteDelta.
-        /// </summary>
-        /// <returns>The <see cref="ISiteDeltaRequestBuilder"/>.</returns>
-        ISiteDeltaRequestBuilder Delta(
-            string token = null);
     }
 }

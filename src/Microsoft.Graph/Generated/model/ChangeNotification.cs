@@ -46,6 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets encryptedContent.
+        /// (Preview) Encrypted content attached with the change notification. Only provided if encryptionCertificate and includeResourceData were defined during the subscription request and if the resource supports it. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptedContent", Required = Newtonsoft.Json.Required.Default)]
         public ChangeNotificationEncryptedContent EncryptedContent { get; set; }

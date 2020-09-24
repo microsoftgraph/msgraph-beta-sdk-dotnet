@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets aggregationFilters.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregationFilters", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AggregationFilters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets aggregations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AggregationOption> Aggregations { get; set; }
+    
+        /// <summary>
         /// Gets or sets contentSources.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSources", Required = Newtonsoft.Json.Required.Default)]
@@ -49,6 +61,12 @@ namespace Microsoft.Graph
         public IEnumerable<EntityType> EntityTypes { get; set; }
     
         /// <summary>
+        /// Gets or sets fields.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> Fields { get; set; }
+    
+        /// <summary>
         /// Gets or sets from.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
@@ -65,6 +83,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Size { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sortProperties.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortProperties", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SortProperty> SortProperties { get; set; }
     
         /// <summary>
         /// Gets or sets stored_fields.

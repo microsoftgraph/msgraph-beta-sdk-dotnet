@@ -41,5 +41,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChatAllMessagesRequestBuilder"/>.</returns>
         IChatAllMessagesRequestBuilder AllMessages();
+
+        /// <summary>
+        /// Gets the request builder for ChatGetAllMessages.
+        /// </summary>
+        /// <returns>The <see cref="IChatGetAllMessagesRequestBuilder"/>.</returns>
+        IChatGetAllMessagesRequestBuilder GetAllMessages();
     }
 }

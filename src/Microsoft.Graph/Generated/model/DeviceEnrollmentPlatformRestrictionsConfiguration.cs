@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public DeviceEnrollmentPlatformRestriction MacRestriction { get; set; }
     
         /// <summary>
+        /// Gets or sets windows home sku restriction.
+        /// Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsHomeSkuRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction WindowsHomeSkuRestriction { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows mobile restriction.
         /// Not yet documented
         /// </summary>

@@ -108,6 +108,13 @@ namespace Microsoft.Graph
         public string HostName { get; set; }
     
         /// <summary>
+        /// Gets or sets per app vpnprofile id.
+        /// Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "perAppVPNProfileId", Required = Newtonsoft.Json.Required.Default)]
+        public string PerAppVPNProfileId { get; set; }
+    
+        /// <summary>
         /// Gets or sets require smime.
         /// Indicates whether or not to use S/MIME certificate.
         /// </summary>

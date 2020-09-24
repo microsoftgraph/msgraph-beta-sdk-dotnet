@@ -43,22 +43,46 @@ namespace Microsoft.Graph
         public Int32? _score { get; set; }
     
         /// <summary>
-        /// Gets or sets _sortField.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "_sortField", Required = Newtonsoft.Json.Required.Default)]
-        public string _sortField { get; set; }
-    
-        /// <summary>
         /// Gets or sets _summary.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "_summary", Required = Newtonsoft.Json.Required.Default)]
         public string _summary { get; set; }
     
         /// <summary>
+        /// Gets or sets contentSource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSource", Required = Newtonsoft.Json.Required.Default)]
+        public string ContentSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hitId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hitId", Required = Newtonsoft.Json.Required.Default)]
+        public string HitId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rank.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rank", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Rank { get; set; }
+    
+        /// <summary>
+        /// Gets or sets summary.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
+        public string Summary { get; set; }
+    
+        /// <summary>
         /// Gets or sets _source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "_source", Required = Newtonsoft.Json.Required.Default)]
         public Entity _source { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        public Entity Resource { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

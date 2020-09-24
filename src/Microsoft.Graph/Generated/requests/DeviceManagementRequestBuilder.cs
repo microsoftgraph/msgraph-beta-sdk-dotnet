@@ -663,6 +663,90 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthDeviceModelPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthDeviceModelPerformance
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthDeviceModelPerformance"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthDevicePerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformance
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthDevicePerformance"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthDevicePerformanceDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformanceDetails
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthDevicePerformanceDetails"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthOSVersionPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionRequestBuilder UserExperienceAnalyticsAppHealthOSVersionPerformance
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthOSVersionPerformance"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthOverview.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsCategoryRequestBuilder UserExperienceAnalyticsAppHealthOverview
+        {
+            get
+            {
+                return new UserExperienceAnalyticsCategoryRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthOverview"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsBaselines.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBaselinesCollectionRequestBuilder"/>.</returns>
@@ -999,6 +1083,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MicrosoftTunnelConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder MicrosoftTunnelConfigurations
+        {
+            get
+            {
+                return new DeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("microsoftTunnelConfigurations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelSites.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelSitesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementMicrosoftTunnelSitesCollectionRequestBuilder MicrosoftTunnelSites
+        {
+            get
+            {
+                return new DeviceManagementMicrosoftTunnelSitesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("microsoftTunnelSites"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for NotificationMessageTemplates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementNotificationMessageTemplatesCollectionRequestBuilder"/>.</returns>
@@ -1285,6 +1393,19 @@ namespace Microsoft.Graph
             return new DeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getComanagementEligibleDevicesSummary"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetSuggestedEnrollmentLimit.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder"/>.</returns>
+        public IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder GetSuggestedEnrollmentLimit(
+            string enrollmentType = null)
+        {
+            return new DeviceManagementGetSuggestedEnrollmentLimitRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSuggestedEnrollmentLimit"),
+                this.Client,
+                enrollmentType);
         }
 
         /// <summary>

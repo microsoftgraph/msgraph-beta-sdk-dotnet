@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets deviceRestartBehavior.
-        /// Device restart behavior.
+        /// Device restart behavior. Possible values are: basedOnReturnCode, allow, suppress, force.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRestartBehavior", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRestartBehavior? DeviceRestartBehavior { get; set; }

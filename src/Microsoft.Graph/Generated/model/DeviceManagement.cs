@@ -500,6 +500,55 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformance { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics app health application performance by app version.
+        /// User experience analytics appHealth Application Performance by App Version
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health application performance by osversion.
+        /// User experience analytics appHealth Application Performance by OS Version
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health device model performance.
+        /// User experience analytics appHealth Model Performance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthDeviceModelPerformance", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionPage UserExperienceAnalyticsAppHealthDeviceModelPerformance { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health device performance.
+        /// User experience analytics appHealth Device Performance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthDevicePerformance", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceCollectionPage UserExperienceAnalyticsAppHealthDevicePerformance { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health device performance details.
+        /// User experience analytics device performance details
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthDevicePerformanceDetails", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionPage UserExperienceAnalyticsAppHealthDevicePerformanceDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health osversion performance.
+        /// User experience analytics appHealth OS version Performance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthOSVersionPerformance", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionPage UserExperienceAnalyticsAppHealthOSVersionPerformance { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health overview.
+        /// User experience analytics appHealth overview
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsAppHealthOverview", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsCategory UserExperienceAnalyticsAppHealthOverview { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics baselines.
         /// User experience analytics baselines
         /// </summary>
@@ -694,6 +743,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyUploadedDefinitionFiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionPage GroupPolicyUploadedDefinitionFiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft tunnel configurations.
+        /// Collection of MicrosoftTunnelConfiguration settings associated with account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementMicrosoftTunnelConfigurationsCollectionPage MicrosoftTunnelConfigurations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft tunnel sites.
+        /// Collection of MicrosoftTunnelSite settings associated with account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelSites", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementMicrosoftTunnelSitesCollectionPage MicrosoftTunnelSites { get; set; }
     
         /// <summary>
         /// Gets or sets notification message templates.

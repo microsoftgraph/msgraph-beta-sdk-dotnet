@@ -945,6 +945,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceBranding request builder.
+        /// </summary>
+        public IOrganizationalBrandingRequestBuilder Branding
+        {
+            get
+            {
+                return new OrganizationalBrandingRequestBuilder(this.BaseUrl + "/branding", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectory request builder.
         /// </summary>
         public IDirectoryRequestBuilder Directory

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets aggregations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SearchAggregation> Aggregations { get; set; }
+    
+        /// <summary>
         /// Gets or sets hits.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hits", Required = Newtonsoft.Json.Required.Default)]

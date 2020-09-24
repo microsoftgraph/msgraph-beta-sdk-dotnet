@@ -276,6 +276,13 @@ namespace Microsoft.Graph
         public bool? PowerOffBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets required password complexity.
+        /// Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredPasswordComplexity", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity { get; set; }
+    
+        /// <summary>
         /// Gets or sets screen capture blocked.
         /// Indicates whether or not to block screenshots.
         /// </summary>

@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         public bool? TimeClockEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets time clock settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeClockSettings", Required = Newtonsoft.Json.Required.Default)]
+        public TimeClockSettings TimeClockSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets time off requests enabled.
         /// Indicates whether time off requests are enabled for the schedule.
         /// </summary>
@@ -136,6 +142,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "swapShiftsChangeRequests", Required = Newtonsoft.Json.Required.Default)]
         public IScheduleSwapShiftsChangeRequestsCollectionPage SwapShiftsChangeRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets time cards.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeCards", Required = Newtonsoft.Json.Required.Default)]
+        public IScheduleTimeCardsCollectionPage TimeCards { get; set; }
     
         /// <summary>
         /// Gets or sets time off reasons.

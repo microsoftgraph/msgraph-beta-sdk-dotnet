@@ -123,6 +123,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TimeCards.
+        /// </summary>
+        /// <returns>The <see cref="IScheduleTimeCardsCollectionRequestBuilder"/>.</returns>
+        public IScheduleTimeCardsCollectionRequestBuilder TimeCards
+        {
+            get
+            {
+                return new ScheduleTimeCardsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("timeCards"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TimeOffReasons.
         /// </summary>
         /// <returns>The <see cref="IScheduleTimeOffReasonsCollectionRequestBuilder"/>.</returns>

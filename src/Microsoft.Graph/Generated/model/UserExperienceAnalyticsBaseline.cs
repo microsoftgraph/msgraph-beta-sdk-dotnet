@@ -65,6 +65,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceBootPerformanceMetrics", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics { get; set; }
     
+        /// <summary>
+        /// Gets or sets reboot analytics metrics.
+        /// The user experience analytics reboot analytics metrics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rebootAnalyticsMetrics", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsCategory RebootAnalyticsMetrics { get; set; }
+    
     }
 }
 

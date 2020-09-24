@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? AddedOn { get; set; }
     
         /// <summary>
+        /// Gets or sets attributes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attributes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AccessPackageResourceAttribute> Attributes { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]

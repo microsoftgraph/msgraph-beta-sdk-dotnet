@@ -50,6 +50,66 @@ namespace Microsoft.Graph
         IDeviceManagementReportsReportSchedulesCollectionRequestBuilder ReportSchedules { get; }
     
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetAppsInstallSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetAppsInstallSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetAppsInstallSummaryReportRequestBuilder GetAppsInstallSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetAppStatusOverviewReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetAppStatusOverviewReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetAppStatusOverviewReportRequestBuilder GetAppStatusOverviewReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceInstallStatusReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceInstallStatusReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDeviceInstallStatusReportRequestBuilder GetDeviceInstallStatusReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetUserInstallStatusReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetUserInstallStatusReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetUserInstallStatusReportRequestBuilder GetUserInstallStatusReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetActiveMalwareReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetActiveMalwareReportRequestBuilder"/>.</returns>

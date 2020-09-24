@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public AuthenticationFlowsPolicy AuthenticationFlowsPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets b2c authentication methods policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2cAuthenticationMethodsPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public B2cAuthenticationMethodsPolicy B2cAuthenticationMethodsPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets device registration policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegistrationPolicy", Required = Newtonsoft.Json.Required.Default)]

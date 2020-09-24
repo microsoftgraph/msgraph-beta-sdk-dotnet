@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets questions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "questions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AccessPackageQuestion> Questions { get; set; }
+    
+        /// <summary>
         /// Gets or sets request approval settings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestApprovalSettings", Required = Newtonsoft.Json.Required.Default)]

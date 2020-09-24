@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Brandings.
+        /// Gets the request builder for Branding.
         /// </summary>
-        /// <returns>The <see cref="IOrganizationBrandingsCollectionRequestBuilder"/>.</returns>
-        public IOrganizationBrandingsCollectionRequestBuilder Brandings
+        /// <returns>The <see cref="IOrganizationalBrandingRequestBuilder"/>.</returns>
+        public IOrganizationalBrandingRequestBuilder Branding
         {
             get
             {
-                return new OrganizationBrandingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("brandings"), this.Client);
+                return new OrganizationalBrandingRequestBuilder(this.AppendSegmentToRequestUrl("branding"), this.Client);
             }
         }
 

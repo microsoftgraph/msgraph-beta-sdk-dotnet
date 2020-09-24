@@ -28,5 +28,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifyManagedDevices", Required = Newtonsoft.Json.Required.Default)]
         public bool NotifyManagedDevices { get; set; }
     
+        /// <summary>
+        /// Gets or sets RevokeUntrackedLicenses.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "revokeUntrackedLicenses", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RevokeUntrackedLicenses { get; set; }
+    
     }
 }

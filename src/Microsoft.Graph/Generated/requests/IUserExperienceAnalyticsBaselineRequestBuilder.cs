@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
         IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder DeviceBootPerformanceMetrics { get; }
+
+        /// <summary>
+        /// Gets the request builder for RebootAnalyticsMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder RebootAnalyticsMetrics { get; }
     
     }
 }

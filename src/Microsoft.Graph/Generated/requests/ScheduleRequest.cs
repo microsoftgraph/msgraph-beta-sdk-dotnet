@@ -330,6 +330,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (scheduleToInitialize.TimeCards != null && scheduleToInitialize.TimeCards.CurrentPage != null)
+                {
+                    scheduleToInitialize.TimeCards.AdditionalData = scheduleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    scheduleToInitialize.AdditionalData.TryGetValue("timeCards@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        scheduleToInitialize.TimeCards.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (scheduleToInitialize.TimeOffReasons != null && scheduleToInitialize.TimeOffReasons.CurrentPage != null)
                 {
                     scheduleToInitialize.TimeOffReasons.AdditionalData = scheduleToInitialize.AdditionalData;

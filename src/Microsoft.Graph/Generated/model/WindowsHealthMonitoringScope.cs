@@ -36,9 +36,9 @@ namespace Microsoft.Graph
         BootPerformance = 2,
 	
         /// <summary>
-        /// User Experience Analytics
+        /// Windows Updates
         /// </summary>
-        UserExperienceAnalytics = 4,
+        WindowsUpdates = 4,
 	
     }
 }

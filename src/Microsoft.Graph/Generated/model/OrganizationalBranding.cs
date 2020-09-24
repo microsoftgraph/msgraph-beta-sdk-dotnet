@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Organizational Branding.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class OrganizationalBranding : Entity
+    public partial class OrganizationalBranding : OrganizationalBrandingProperties
     {
     
 		///<summary>
@@ -31,46 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets background color.
+        /// Gets or sets localizations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "backgroundColor", Required = Newtonsoft.Json.Required.Default)]
-        public string BackgroundColor { get; set; }
-    
-        /// <summary>
-        /// Gets or sets background image.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "backgroundImage", Required = Newtonsoft.Json.Required.Default)]
-        public Stream BackgroundImage { get; set; }
-    
-        /// <summary>
-        /// Gets or sets banner logo.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bannerLogo", Required = Newtonsoft.Json.Required.Default)]
-        public Stream BannerLogo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets locale.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "locale", Required = Newtonsoft.Json.Required.Default)]
-        public string Locale { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sign in page text.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInPageText", Required = Newtonsoft.Json.Required.Default)]
-        public string SignInPageText { get; set; }
-    
-        /// <summary>
-        /// Gets or sets square logo.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "squareLogo", Required = Newtonsoft.Json.Required.Default)]
-        public Stream SquareLogo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets username hint text.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameHintText", Required = Newtonsoft.Json.Required.Default)]
-        public string UsernameHintText { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizations", Required = Newtonsoft.Json.Required.Default)]
+        public IOrganizationalBrandingLocalizationsCollectionPage Localizations { get; set; }
     
     }
 }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOrganizationalBrandingRequestBuilder.
     /// </summary>
-    public partial interface IOrganizationalBrandingRequestBuilder : IEntityRequestBuilder
+    public partial interface IOrganizationalBrandingRequestBuilder : IOrganizationalBrandingPropertiesRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -32,22 +32,10 @@ namespace Microsoft.Graph
         new IOrganizationalBrandingRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for BackgroundImage.
+        /// Gets the request builder for Localizations.
         /// </summary>
-        /// <returns>The <see cref="IOrganizationalBrandingBackgroundImageRequestBuilder"/>.</returns>
-        IOrganizationalBrandingBackgroundImageRequestBuilder BackgroundImage { get; }
-
-        /// <summary>
-        /// Gets the request builder for BannerLogo.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationalBrandingBannerLogoRequestBuilder"/>.</returns>
-        IOrganizationalBrandingBannerLogoRequestBuilder BannerLogo { get; }
-
-        /// <summary>
-        /// Gets the request builder for SquareLogo.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationalBrandingSquareLogoRequestBuilder"/>.</returns>
-        IOrganizationalBrandingSquareLogoRequestBuilder SquareLogo { get; }
+        /// <returns>The <see cref="IOrganizationalBrandingLocalizationsCollectionRequestBuilder"/>.</returns>
+        IOrganizationalBrandingLocalizationsCollectionRequestBuilder Localizations { get; }
     
     }
 }

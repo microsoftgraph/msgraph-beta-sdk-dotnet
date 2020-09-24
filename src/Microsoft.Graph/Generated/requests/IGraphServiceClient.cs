@@ -422,6 +422,11 @@ namespace Microsoft.Graph
         IInformationProtectionRequestBuilder InformationProtection { get; }
     
         /// <summary>
+        /// Gets the GraphServiceBranding request builder.
+        /// </summary>
+        IOrganizationalBrandingRequestBuilder Branding { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectory request builder.
         /// </summary>
         IDirectoryRequestBuilder Directory { get; }
