@@ -44,11 +44,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<string> PostAsync(
+        public async System.Threading.Tasks.Task<string> PostAsync(
             CancellationToken cancellationToken)
         {
             this.Method = "POST";
-            return this.SendAsync<string>(null, cancellationToken);
+            var response = await this.SendAsync<ODataMethodStringResponse>(null, cancellationToken);
+            return response.Value;
         }
 
 
