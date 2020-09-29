@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ComplianceRequestBuilder.
     /// </summary>
-    public partial class ComplianceRequestBuilder : EntityRequestBuilder, IComplianceRequestBuilder
+    public partial class ComplianceRequestBuilder : BaseRequestBuilder, IComplianceRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IComplianceRequest Request()
+        public IComplianceRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IComplianceRequest Request(IEnumerable<Option> options)
+        public IComplianceRequest Request(IEnumerable<Option> options)
         {
             return new ComplianceRequest(this.RequestUrl, this.Client, options);
         }

@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type Identity Protection Root.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class IdentityProtectionRoot : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class IdentityProtectionRoot
     {
     
 		///<summary>
@@ -41,6 +42,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskyUsers", Required = Newtonsoft.Json.Required.Default)]
         public IIdentityProtectionRootRiskyUsersCollectionPage RiskyUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

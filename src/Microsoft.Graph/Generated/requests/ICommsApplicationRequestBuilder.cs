@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICommsApplicationRequestBuilder.
     /// </summary>
-    public partial interface ICommsApplicationRequestBuilder : IEntityRequestBuilder
+    public partial interface ICommsApplicationRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ICommsApplicationRequest Request();
+        ICommsApplicationRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ICommsApplicationRequest Request(IEnumerable<Option> options);
+        ICommsApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Calls.

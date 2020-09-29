@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIdentityProtectionRootRequestBuilder.
     /// </summary>
-    public partial interface IIdentityProtectionRootRequestBuilder : IEntityRequestBuilder
+    public partial interface IIdentityProtectionRootRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IIdentityProtectionRootRequest Request();
+        IIdentityProtectionRootRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IIdentityProtectionRootRequest Request(IEnumerable<Option> options);
+        IIdentityProtectionRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for RiskDetections.

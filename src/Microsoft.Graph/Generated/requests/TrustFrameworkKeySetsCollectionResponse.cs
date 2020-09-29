@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// The type TrustFrameworkKeySetsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter))]
     public class TrustFrameworkKeySetsCollectionResponse
     {
         /// <summary>
