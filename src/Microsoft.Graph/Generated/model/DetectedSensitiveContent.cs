@@ -30,10 +30,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets classificationAttributes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationAttributes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ClassificationAttribute> ClassificationAttributes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets classificationMethod.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationMethod", Required = Newtonsoft.Json.Required.Default)]
+        public ClassificationMethod? ClassificationMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets matches.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<SensitiveContentLocation> Matches { get; set; }
+    
+        /// <summary>
         /// Gets or sets scope.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
         public SensitiveTypeScope? Scope { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sensitiveTypeSource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeSource", Required = Newtonsoft.Json.Required.Default)]
+        public SensitiveTypeSource? SensitiveTypeSource { get; set; }
     
     }
 }

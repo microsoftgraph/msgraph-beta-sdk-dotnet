@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// Gets or sets created by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public UserIdentity CreatedBy { get; set; }
+        public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -47,6 +47,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
         public string Reason { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
     
     }
 }

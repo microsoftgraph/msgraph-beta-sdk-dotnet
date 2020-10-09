@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets additional information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
+        public string AdditionalInformation { get; set; }
+    
+        /// <summary>
         /// Gets or sets customer email address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerEmailAddress", Required = Newtonsoft.Json.Required.Default)]
@@ -109,6 +115,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceUrl", Required = Newtonsoft.Json.Required.Default)]
         public string InvoiceUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is location online.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLocationOnline", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsLocationOnline { get; set; }
+    
+        /// <summary>
+        /// Gets or sets online meeting url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetingUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string OnlineMeetingUrl { get; set; }
     
         /// <summary>
         /// Gets or sets opt out of customer email.

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets additional information.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
+        public string AdditionalInformation { get; set; }
+    
+        /// <summary>
         /// Gets or sets default duration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDuration", Required = Newtonsoft.Json.Required.Default)]
@@ -72,6 +78,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHiddenFromCustomers", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsHiddenFromCustomers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is location online.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLocationOnline", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsLocationOnline { get; set; }
     
         /// <summary>
         /// Gets or sets notes.

@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type Trust Framework.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class TrustFramework : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class TrustFramework
     {
     
 		///<summary>
@@ -41,6 +42,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
         public ITrustFrameworkPoliciesCollectionPage Policies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

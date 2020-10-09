@@ -192,16 +192,6 @@ namespace Microsoft.Graph
         IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions { get; }
     
         /// <summary>
-        /// Gets the GraphServiceConnectorGroups request builder.
-        /// </summary>
-        IGraphServiceConnectorGroupsCollectionRequestBuilder ConnectorGroups { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceConnectors request builder.
-        /// </summary>
-        IGraphServiceConnectorsCollectionRequestBuilder Connectors { get; }
-    
-        /// <summary>
         /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
         /// </summary>
         IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles { get; }

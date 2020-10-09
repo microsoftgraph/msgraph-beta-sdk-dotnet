@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type FinancialsRequestBuilder.
     /// </summary>
-    public partial class FinancialsRequestBuilder : EntityRequestBuilder, IFinancialsRequestBuilder
+    public partial class FinancialsRequestBuilder : BaseRequestBuilder, IFinancialsRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IFinancialsRequest Request()
+        public IFinancialsRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IFinancialsRequest Request(IEnumerable<Option> options)
+        public IFinancialsRequest Request(IEnumerable<Option> options)
         {
             return new FinancialsRequest(this.RequestUrl, this.Client, options);
         }

@@ -34,5 +34,20 @@ namespace Microsoft.Graph
         /// </summary>
         Saml = 3,
 	
+        /// <summary>
+        /// Ping Header Based
+        /// </summary>
+        PingHeaderBased = 4,
+	
+        /// <summary>
+        /// Aad Header Based
+        /// </summary>
+        AadHeaderBased = 5,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 6,
+	
     }
 }

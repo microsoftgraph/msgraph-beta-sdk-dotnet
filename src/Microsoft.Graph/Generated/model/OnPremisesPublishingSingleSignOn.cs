@@ -31,15 +31,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets KerberosSignOnSettings.
+        /// Gets or sets kerberosSignOnSettings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "KerberosSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kerberosSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
         public KerberosSignOnSettings KerberosSignOnSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets SingleSignOnMode.
+        /// Gets or sets singleSignOnMode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "SingleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
         public SingleSignOnMode? SingleSignOnMode { get; set; }
     
         /// <summary>

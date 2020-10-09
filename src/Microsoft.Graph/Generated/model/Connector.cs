@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets member of.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
-        public IConnectorMemberOfCollectionWithReferencesPage MemberOf { get; set; }
+        public IConnectorMemberOfCollectionPage MemberOf { get; set; }
     
     }
 }

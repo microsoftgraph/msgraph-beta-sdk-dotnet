@@ -19,7 +19,8 @@ namespace Microsoft.Graph.TermStore
     /// The type Store.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class Store : Microsoft.Graph.Entity
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    public partial class Store
     {
     
 		///<summary>
@@ -53,6 +54,18 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sets", Required = Newtonsoft.Json.Required.Default)]
         public IStoreSetsCollectionPage Sets { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

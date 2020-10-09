@@ -134,7 +134,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the group, unique in the organization. This property must be specified when a group is created. Returned by default. Supports $filter.
+        /// The mail alias for the group, unique in the organization. This property must be specified when a group is created. These characters cannot be used in the mailNickName: @()/[]';:.&amp;lt;&amp;gt;,SPACE. Returned by default. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNickname", Required = Newtonsoft.Json.Required.Default)]
         public string MailNickname { get; set; }
@@ -238,12 +238,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource behavior options.
+        /// Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceBehaviorOptions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ResourceBehaviorOptions { get; set; }
     
         /// <summary>
         /// Gets or sets resource provisioning options.
+        /// Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceProvisioningOptions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ResourceProvisioningOptions { get; set; }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrintRequestBuilder.
     /// </summary>
-    public partial class PrintRequestBuilder : EntityRequestBuilder, IPrintRequestBuilder
+    public partial class PrintRequestBuilder : BaseRequestBuilder, IPrintRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IPrintRequest Request()
+        public IPrintRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IPrintRequest Request(IEnumerable<Option> options)
+        public IPrintRequest Request(IEnumerable<Option> options)
         {
             return new PrintRequest(this.RequestUrl, this.Client, options);
         }

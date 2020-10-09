@@ -33,49 +33,49 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets app service name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "AppServiceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appServiceName", Required = Newtonsoft.Json.Required.Default)]
         public string AppServiceName { get; set; }
     
         /// <summary>
         /// Gets or sets error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets package family name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "PackageFamilyName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageFamilyName", Required = Newtonsoft.Json.Required.Default)]
         public string PackageFamilyName { get; set; }
     
         /// <summary>
         /// Gets or sets payload.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Payload", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
         public PayloadRequestObject Payload { get; set; }
     
         /// <summary>
         /// Gets or sets permission ticket.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "PermissionTicket", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionTicket", Required = Newtonsoft.Json.Required.Default)]
         public string PermissionTicket { get; set; }
     
         /// <summary>
         /// Gets or sets post back uri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "PostBackUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postBackUri", Required = Newtonsoft.Json.Required.Default)]
         public string PostBackUri { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }
     
         /// <summary>

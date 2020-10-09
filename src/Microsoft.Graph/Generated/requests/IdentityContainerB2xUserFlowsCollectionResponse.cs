@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// The type IdentityContainerB2xUserFlowsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter))]
     public class IdentityContainerB2xUserFlowsCollectionResponse
     {
         /// <summary>

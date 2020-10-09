@@ -49,12 +49,6 @@ namespace Microsoft.Graph
         public Guid? Id { get; set; }
     
         /// <summary>
-        /// Gets or sets matches.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SensitiveContentLocation> Matches { get; set; }
-    
-        /// <summary>
         /// Gets or sets recommendedConfidence.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedConfidence", Required = Newtonsoft.Json.Required.Default)]
