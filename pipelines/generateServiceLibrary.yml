@@ -137,7 +137,7 @@ steps:
   displayName: 'Run beta tests - .NETCoreApp,Version=v3.1'
   inputs:
     diagnosticsEnabled: True
-    #testSelector: 'testAssemblies'
+    testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\*.Test.dll
       !*testhost.dll 
@@ -146,7 +146,7 @@ steps:
       !**\obj\**
       !**\xunit.runner.visualstudio.testadapter.dll
       !**\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-    searchFolder: './tests/*'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
     otherConsoleOptions: '/Framework:.NETCoreApp,Version=v3.1 /logger:console;verbosity="normal"'
     configuration: release'
 
