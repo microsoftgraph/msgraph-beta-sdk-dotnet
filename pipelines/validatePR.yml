@@ -57,7 +57,21 @@ steps:
     clean: true
 
 - task: VSTest@2
-  displayName: 'Run enabled tests'
+  displayName: 'Run beta tests - .NETCoreApp,Version=v3.1'
+  inputs:
+    diagnosticsEnabled: True
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*.Test.dll
+      !*testhost.dll 
+      !**\*testhost.dll
+      !**\*Exceptions.Handling.Tests.dll
+      !**\obj\**
+      !**\xunit.runner.visualstudio.testadapter.dll
+      !**\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    otherConsoleOptions: '/Framework:.NETCoreApp,Version=v3.1 /logger:console;verbosity="normal"'
+    configuration: 'debug'
 
 - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
   displayName: 'Graph Client Tooling pipeline fail notification'
