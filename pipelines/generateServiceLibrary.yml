@@ -148,7 +148,7 @@ steps:
       !**\xunit.runner.visualstudio.dotnetcore.testadapter.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
     otherConsoleOptions: '/Framework:.NETCoreApp,Version=v3.1 /logger:console;verbosity="normal"'
-    configuration: release'
+    configuration: 'release'
 
 - task: PowerShell@2 # Setup environment variables and make them available to all tasks. See [1] for more info.
   displayName: 'Get DLL path'
