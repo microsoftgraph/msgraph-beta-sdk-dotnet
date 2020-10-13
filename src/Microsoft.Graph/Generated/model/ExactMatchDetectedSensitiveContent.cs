@@ -29,5 +29,11 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.exactMatchDetectedSensitiveContent";
         }
 
+        /// <summary>
+        /// Gets or sets matches.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ExactMatchSensitiveContentLocation> Matches { get; set; }
+    
     }
 }

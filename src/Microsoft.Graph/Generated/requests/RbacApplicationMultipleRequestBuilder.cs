@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ResourceNamespaces.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationMultipleResourceNamespacesCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationMultipleResourceNamespacesCollectionRequestBuilder ResourceNamespaces
+        {
+            get
+            {
+                return new RbacApplicationMultipleResourceNamespacesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("resourceNamespaces"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationMultipleRoleAssignmentsCollectionRequestBuilder"/>.</returns>

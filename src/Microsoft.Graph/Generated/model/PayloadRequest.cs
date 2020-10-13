@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         /// </summary>
         public PayloadRequestObject()
         {
-            this.ODataType = "microsoft.graph.PayloadRequest";
+            this.ODataType = "microsoft.graph.payloadRequest";
         }
 
         /// <summary>

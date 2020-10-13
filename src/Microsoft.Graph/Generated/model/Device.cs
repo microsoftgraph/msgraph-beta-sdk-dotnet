@@ -213,37 +213,39 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets kind.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Kind", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kind", Required = Newtonsoft.Json.Required.Default)]
         public string Kind { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
+        /// Manufacturer of the device. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
+        /// Model of the device. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
         public string Platform { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "Status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public string Status { get; set; }
     
         /// <summary>

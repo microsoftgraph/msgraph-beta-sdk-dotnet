@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets classificationAttributes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationAttributes", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<ClassificationAttribute> ClassificationAttributes { get; set; }
+    
+        /// <summary>
         /// Gets or sets confidence.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]

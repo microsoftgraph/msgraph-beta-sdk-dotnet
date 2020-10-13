@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type Bitlocker.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class Bitlocker : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class Bitlocker
     {
     
 		///<summary>
@@ -35,6 +36,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryKeys", Required = Newtonsoft.Json.Required.Default)]
         public IBitlockerRecoveryKeysCollectionPage RecoveryKeys { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

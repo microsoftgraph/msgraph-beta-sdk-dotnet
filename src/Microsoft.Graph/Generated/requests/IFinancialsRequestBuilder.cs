@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IFinancialsRequestBuilder.
     /// </summary>
-    public partial interface IFinancialsRequestBuilder : IEntityRequestBuilder
+    public partial interface IFinancialsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IFinancialsRequest Request();
+        IFinancialsRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IFinancialsRequest Request(IEnumerable<Option> options);
+        IFinancialsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Companies.

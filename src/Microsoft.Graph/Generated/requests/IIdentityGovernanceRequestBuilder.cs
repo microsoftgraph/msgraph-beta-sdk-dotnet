@@ -16,26 +16,32 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIdentityGovernanceRequestBuilder.
     /// </summary>
-    public partial interface IIdentityGovernanceRequestBuilder : IEntityRequestBuilder
+    public partial interface IIdentityGovernanceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IIdentityGovernanceRequest Request();
+        IIdentityGovernanceRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IIdentityGovernanceRequest Request(IEnumerable<Option> options);
+        IIdentityGovernanceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for AccessReviews.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetRequestBuilder"/>.</returns>
         IAccessReviewSetRequestBuilder AccessReviews { get; }
+
+        /// <summary>
+        /// Gets the request builder for AppConsent.
+        /// </summary>
+        /// <returns>The <see cref="IAppConsentApprovalRouteRequestBuilder"/>.</returns>
+        IAppConsentApprovalRouteRequestBuilder AppConsent { get; }
 
         /// <summary>
         /// Gets the request builder for TermsOfUse.

@@ -16,6 +16,7 @@ namespace Microsoft.Graph
     /// The type IdentityProtectionRootRiskDetectionsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter))]
     public class IdentityProtectionRootRiskDetectionsCollectionResponse
     {
         /// <summary>

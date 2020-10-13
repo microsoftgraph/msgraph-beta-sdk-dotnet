@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OfficeConfigurationRequestBuilder.
     /// </summary>
-    public partial class OfficeConfigurationRequestBuilder : EntityRequestBuilder, IOfficeConfigurationRequestBuilder
+    public partial class OfficeConfigurationRequestBuilder : BaseRequestBuilder, IOfficeConfigurationRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IOfficeConfigurationRequest Request()
+        public IOfficeConfigurationRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IOfficeConfigurationRequest Request(IEnumerable<Option> options)
+        public IOfficeConfigurationRequest Request(IEnumerable<Option> options)
         {
             return new OfficeConfigurationRequest(this.RequestUrl, this.Client, options);
         }

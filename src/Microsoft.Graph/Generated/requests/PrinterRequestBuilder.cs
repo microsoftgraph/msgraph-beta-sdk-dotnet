@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterSharesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IPrinterSharesCollectionWithReferencesRequestBuilder Shares
+        {
+            get
+            {
+                return new PrinterSharesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("shares"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TaskTriggers.
         /// </summary>
         /// <returns>The <see cref="IPrinterTaskTriggersCollectionRequestBuilder"/>.</returns>
@@ -118,6 +130,17 @@ namespace Microsoft.Graph
         {
             return new PrinterResetDefaultsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.resetDefaults"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for PrinterRestoreFactoryDefaults.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterRestoreFactoryDefaultsRequestBuilder"/>.</returns>
+        public IPrinterRestoreFactoryDefaultsRequestBuilder RestoreFactoryDefaults()
+        {
+            return new PrinterRestoreFactoryDefaultsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restoreFactoryDefaults"),
                 this.Client);
         }
 

@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// Gets or sets created by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
-        public string CreatedBy { get; set; }
+        public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets last modified by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
-        public string LastModifiedBy { get; set; }
+        public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.

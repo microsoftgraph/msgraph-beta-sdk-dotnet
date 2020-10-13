@@ -51,6 +51,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for PrintDocumentCreateUploadSession.
+        /// </summary>
+        /// <returns>The <see cref="IPrintDocumentCreateUploadSessionRequestBuilder"/>.</returns>
+        public IPrintDocumentCreateUploadSessionRequestBuilder CreateUploadSession(
+            PrintDocumentUploadProperties properties)
+        {
+            return new PrintDocumentCreateUploadSessionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
+                this.Client,
+                properties);
+        }
+
+        /// <summary>
         /// Gets the request builder for PrintDocumentUploadData.
         /// </summary>
         /// <returns>The <see cref="IPrintDocumentUploadDataRequestBuilder"/>.</returns>

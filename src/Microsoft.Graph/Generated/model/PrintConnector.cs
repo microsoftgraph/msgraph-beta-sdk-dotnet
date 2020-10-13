@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public DeviceHealth DeviceHealth { get; set; }
     
         /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets fully qualified domain name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullyQualifiedDomainName", Required = Newtonsoft.Json.Required.Default)]

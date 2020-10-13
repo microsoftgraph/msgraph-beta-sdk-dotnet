@@ -439,28 +439,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceConnectorGroups request builder.
-        /// </summary>
-        public IGraphServiceConnectorGroupsCollectionRequestBuilder ConnectorGroups
-        {
-            get
-            {
-                return new GraphServiceConnectorGroupsCollectionRequestBuilder(this.BaseUrl + "/connectorGroups", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceConnectors request builder.
-        /// </summary>
-        public IGraphServiceConnectorsCollectionRequestBuilder Connectors
-        {
-            get
-            {
-                return new GraphServiceConnectorsCollectionRequestBuilder(this.BaseUrl + "/connectors", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceOnPremisesPublishingProfiles request builder.
         /// </summary>
         public IGraphServiceOnPremisesPublishingProfilesCollectionRequestBuilder OnPremisesPublishingProfiles

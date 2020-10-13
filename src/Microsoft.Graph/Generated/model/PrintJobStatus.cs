@@ -37,6 +37,24 @@ namespace Microsoft.Graph
         public bool? AcquiredByPrinter { get; set; }
     
         /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets details.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrintJobStateDetail> Details { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isAcquiredByPrinter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAcquiredByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsAcquiredByPrinter { get; set; }
+    
+        /// <summary>
         /// Gets or sets processingState.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingState", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +65,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingStateDescription", Required = Newtonsoft.Json.Required.Default)]
         public string ProcessingStateDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public PrintJobProcessingState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

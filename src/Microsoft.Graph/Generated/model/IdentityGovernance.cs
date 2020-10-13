@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type Identity Governance.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class IdentityGovernance : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class IdentityGovernance
     {
     
 		///<summary>
@@ -37,6 +38,12 @@ namespace Microsoft.Graph
         public AccessReviewSet AccessReviews { get; set; }
     
         /// <summary>
+        /// Gets or sets app consent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConsent", Required = Newtonsoft.Json.Required.Default)]
+        public AppConsentApprovalRoute AppConsent { get; set; }
+    
+        /// <summary>
         /// Gets or sets terms of use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsOfUse", Required = Newtonsoft.Json.Required.Default)]
@@ -47,6 +54,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entitlementManagement", Required = Newtonsoft.Json.Required.Default)]
         public EntitlementManagement EntitlementManagement { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

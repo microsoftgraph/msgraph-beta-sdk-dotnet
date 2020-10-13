@@ -30,39 +30,34 @@ namespace Microsoft.Graph
         Pending = 1,
 	
         /// <summary>
-        /// Pending Held
-        /// </summary>
-        PendingHeld = 2,
-	
-        /// <summary>
         /// Processing
         /// </summary>
-        Processing = 3,
+        Processing = 2,
 	
         /// <summary>
         /// Paused
         /// </summary>
-        Paused = 4,
+        Paused = 3,
 	
         /// <summary>
         /// Stopped
         /// </summary>
-        Stopped = 5,
+        Stopped = 4,
 	
         /// <summary>
         /// Completed
         /// </summary>
-        Completed = 6,
+        Completed = 5,
 	
         /// <summary>
         /// Canceled
         /// </summary>
-        Canceled = 7,
+        Canceled = 6,
 	
         /// <summary>
         /// Aborted
         /// </summary>
-        Aborted = 8,
+        Aborted = 7,
 	
     }
 }

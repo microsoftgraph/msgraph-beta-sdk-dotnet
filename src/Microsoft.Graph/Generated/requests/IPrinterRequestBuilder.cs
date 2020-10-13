@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IPrinterShareWithReferenceRequestBuilder Share { get; }
 
         /// <summary>
+        /// Gets the request builder for Shares.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterSharesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPrinterSharesCollectionWithReferencesRequestBuilder Shares { get; }
+
+        /// <summary>
         /// Gets the request builder for TaskTriggers.
         /// </summary>
         /// <returns>The <see cref="IPrinterTaskTriggersCollectionRequestBuilder"/>.</returns>
@@ -66,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrinterResetDefaultsRequestBuilder"/>.</returns>
         IPrinterResetDefaultsRequestBuilder ResetDefaults();
+
+        /// <summary>
+        /// Gets the request builder for PrinterRestoreFactoryDefaults.
+        /// </summary>
+        /// <returns>The <see cref="IPrinterRestoreFactoryDefaultsRequestBuilder"/>.</returns>
+        IPrinterRestoreFactoryDefaultsRequestBuilder RestoreFactoryDefaults();
 
         /// <summary>
         /// Gets the request builder for PrinterGetCapabilities.

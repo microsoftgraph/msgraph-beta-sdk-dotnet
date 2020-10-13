@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CommsApplicationRequestBuilder.
     /// </summary>
-    public partial class CommsApplicationRequestBuilder : EntityRequestBuilder, ICommsApplicationRequestBuilder
+    public partial class CommsApplicationRequestBuilder : BaseRequestBuilder, ICommsApplicationRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICommsApplicationRequest Request()
+        public ICommsApplicationRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICommsApplicationRequest Request(IEnumerable<Option> options)
+        public ICommsApplicationRequest Request(IEnumerable<Option> options)
         {
             return new CommsApplicationRequest(this.RequestUrl, this.Client, options);
         }

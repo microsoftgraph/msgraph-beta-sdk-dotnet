@@ -62,6 +62,17 @@ namespace Microsoft.Graph
         IListItemVersionsCollectionRequestBuilder Versions { get; }
     
         /// <summary>
+        /// Gets the request builder for ListItemCreateLink.
+        /// </summary>
+        /// <returns>The <see cref="IListItemCreateLinkRequestBuilder"/>.</returns>
+        IListItemCreateLinkRequestBuilder CreateLink(
+            string type,
+            string scope = null,
+            DateTimeOffset? expirationDateTime = null,
+            string password = null,
+            IEnumerable<DriveRecipient> recipients = null);
+
+        /// <summary>
         /// Gets the request builder for ListItemGetActivitiesByInterval.
         /// </summary>
         /// <returns>The <see cref="IListItemGetActivitiesByIntervalRequestBuilder"/>.</returns>

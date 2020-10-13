@@ -904,13 +904,13 @@ namespace Microsoft.Graph
         /// Gets or sets chats.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chats", Required = Newtonsoft.Json.Required.Default)]
-        public IUserChatsCollectionPage Chats { get; set; }
+        public IUserChatsCollectionWithReferencesPage Chats { get; set; }
     
         /// <summary>
         /// Gets or sets joined teams.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinedTeams", Required = Newtonsoft.Json.Required.Default)]
-        public IUserJoinedTeamsCollectionPage JoinedTeams { get; set; }
+        public IUserJoinedTeamsCollectionWithReferencesPage JoinedTeams { get; set; }
     
         /// <summary>
         /// Gets or sets teamwork.

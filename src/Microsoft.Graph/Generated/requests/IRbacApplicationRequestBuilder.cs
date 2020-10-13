@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IRbacApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ResourceNamespaces.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationResourceNamespacesCollectionRequestBuilder"/>.</returns>
+        IRbacApplicationResourceNamespacesCollectionRequestBuilder ResourceNamespaces { get; }
+
+        /// <summary>
         /// Gets the request builder for RoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRoleAssignmentsCollectionRequestBuilder"/>.</returns>

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets resource namespaces.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceNamespaces", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationMultipleResourceNamespacesCollectionPage ResourceNamespaces { get; set; }
+    
+        /// <summary>
         /// Gets or sets role assignments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignments", Required = Newtonsoft.Json.Required.Default)]

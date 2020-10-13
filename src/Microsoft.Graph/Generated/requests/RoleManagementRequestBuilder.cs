@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RoleManagementRequestBuilder.
     /// </summary>
-    public partial class RoleManagementRequestBuilder : EntityRequestBuilder, IRoleManagementRequestBuilder
+    public partial class RoleManagementRequestBuilder : BaseRequestBuilder, IRoleManagementRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IRoleManagementRequest Request()
+        public IRoleManagementRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IRoleManagementRequest Request(IEnumerable<Option> options)
+        public IRoleManagementRequest Request(IEnumerable<Option> options)
         {
             return new RoleManagementRequest(this.RequestUrl, this.Client, options);
         }

@@ -73,6 +73,12 @@ namespace Microsoft.Graph
         public PrinterShare Share { get; set; }
     
         /// <summary>
+        /// Gets or sets shares.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shares", Required = Newtonsoft.Json.Required.Default)]
+        public IPrinterSharesCollectionWithReferencesPage Shares { get; set; }
+    
+        /// <summary>
         /// Gets or sets task triggers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskTriggers", Required = Newtonsoft.Json.Required.Default)]

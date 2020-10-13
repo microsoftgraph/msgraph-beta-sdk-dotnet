@@ -282,6 +282,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (printerToInitialize.Shares != null && printerToInitialize.Shares.CurrentPage != null)
+                {
+                    printerToInitialize.Shares.AdditionalData = printerToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    printerToInitialize.AdditionalData.TryGetValue("shares@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        printerToInitialize.Shares.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (printerToInitialize.TaskTriggers != null && printerToInitialize.TaskTriggers.CurrentPage != null)
                 {
                     printerToInitialize.TaskTriggers.AdditionalData = printerToInitialize.AdditionalData;
