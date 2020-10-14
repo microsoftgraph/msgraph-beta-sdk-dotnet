@@ -79,6 +79,12 @@ namespace Microsoft.Graph
         public bool? HasAttachments { get; set; }
     
         /// <summary>
+        /// Gets or sets hide attendees.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideAttendees", Required = Newtonsoft.Json.Required.Default)]
+        public bool? HideAttendees { get; set; }
+    
+        /// <summary>
         /// Gets or sets importance.
         /// The importance of the event. The possible values are: low, normal, high.
         /// </summary>

@@ -67,6 +67,12 @@ namespace Microsoft.Graph
         public PrinterFeedDirection? FeedDirection { get; set; }
     
         /// <summary>
+        /// Gets or sets feedOrientation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedOrientation", Required = Newtonsoft.Json.Required.Default)]
+        public PrinterFeedOrientation? FeedOrientation { get; set; }
+    
+        /// <summary>
         /// Gets or sets finishings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finishings", Required = Newtonsoft.Json.Required.Default)]

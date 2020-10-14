@@ -75,6 +75,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for PrintJobCancel.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobCancelRequestBuilder"/>.</returns>
+        public IPrintJobCancelRequestBuilder Cancel()
+        {
+            return new PrintJobCancelRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for PrintJobStart.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobStartRequestBuilder"/>.</returns>
+        public IPrintJobStartRequestBuilder Start()
+        {
+            return new PrintJobStartRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.start"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for PrintJobCancelPrintJob.
         /// </summary>
         /// <returns>The <see cref="IPrintJobCancelPrintJobRequestBuilder"/>.</returns>

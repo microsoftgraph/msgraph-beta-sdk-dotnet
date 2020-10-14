@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// Gets or sets closed by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closedBy", Required = Newtonsoft.Json.Required.Default)]
-        public string ClosedBy { get; set; }
+        public IdentitySet ClosedBy { get; set; }
     
         /// <summary>
         /// Gets or sets closed date time.
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// Gets or sets last modified by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
-        public string LastModifiedBy { get; set; }
+        public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.

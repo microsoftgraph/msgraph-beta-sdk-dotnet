@@ -79,6 +79,12 @@ namespace Microsoft.Graph
         public IEnumerable<PrinterFeedDirection> FeedDirections { get; set; }
     
         /// <summary>
+        /// Gets or sets feedOrientations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedOrientations", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<PrinterFeedOrientation> FeedOrientations { get; set; }
+    
+        /// <summary>
         /// Gets or sets finishings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finishings", Required = Newtonsoft.Json.Required.Default)]

@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (rbacApplicationMultipleToInitialize != null && rbacApplicationMultipleToInitialize.AdditionalData != null)
             {
 
+                if (rbacApplicationMultipleToInitialize.ResourceNamespaces != null && rbacApplicationMultipleToInitialize.ResourceNamespaces.CurrentPage != null)
+                {
+                    rbacApplicationMultipleToInitialize.ResourceNamespaces.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        rbacApplicationMultipleToInitialize.ResourceNamespaces.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (rbacApplicationMultipleToInitialize.RoleAssignments != null && rbacApplicationMultipleToInitialize.RoleAssignments.CurrentPage != null)
                 {
                     rbacApplicationMultipleToInitialize.RoleAssignments.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;

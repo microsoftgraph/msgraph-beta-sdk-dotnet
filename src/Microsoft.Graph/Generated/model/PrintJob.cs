@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        public PrintJobConfiguration Configuration { get; set; }
+    
+        /// <summary>
         /// Gets or sets created by.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
@@ -41,6 +47,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is fetchable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFetchable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFetchable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets redirected from.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectedFrom", Required = Newtonsoft.Json.Required.Default)]
+        public string RedirectedFrom { get; set; }
+    
+        /// <summary>
+        /// Gets or sets redirected to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "redirectedTo", Required = Newtonsoft.Json.Required.Default)]
+        public string RedirectedTo { get; set; }
     
         /// <summary>
         /// Gets or sets status.

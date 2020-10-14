@@ -19,8 +19,7 @@ namespace Microsoft.Graph
     /// The type SensitiveContentLocation.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class SensitiveContentLocation
+    public partial class SensitiveContentLocation : SensitiveContentLocationBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SensitiveContentLocation"/> class.
@@ -31,40 +30,10 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets evidences.
+        /// Gets or sets confidence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evidences", Required = Newtonsoft.Json.Required.Default)]
-        public IEnumerable<SensitiveContentEvidence> Evidences { get; set; }
-    
-        /// <summary>
-        /// Gets or sets idMatch.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "idMatch", Required = Newtonsoft.Json.Required.Default)]
-        public string IdMatch { get; set; }
-    
-        /// <summary>
-        /// Gets or sets length.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "length", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Length { get; set; }
-    
-        /// <summary>
-        /// Gets or sets offset.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offset", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Offset { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Confidence { get; set; }
     
     }
 }

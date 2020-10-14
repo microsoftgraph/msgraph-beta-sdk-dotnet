@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IdentityGovernanceRequestBuilder.
     /// </summary>
-    public partial class IdentityGovernanceRequestBuilder : EntityRequestBuilder, IIdentityGovernanceRequestBuilder
+    public partial class IdentityGovernanceRequestBuilder : BaseRequestBuilder, IIdentityGovernanceRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IIdentityGovernanceRequest Request()
+        public IIdentityGovernanceRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IIdentityGovernanceRequest Request(IEnumerable<Option> options)
+        public IIdentityGovernanceRequest Request(IEnumerable<Option> options)
         {
             return new IdentityGovernanceRequest(this.RequestUrl, this.Client, options);
         }
@@ -59,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AccessReviewSetRequestBuilder(this.AppendSegmentToRequestUrl("accessReviews"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AppConsent.
+        /// </summary>
+        /// <returns>The <see cref="IAppConsentApprovalRouteRequestBuilder"/>.</returns>
+        public IAppConsentApprovalRouteRequestBuilder AppConsent
+        {
+            get
+            {
+                return new AppConsentApprovalRouteRequestBuilder(this.AppendSegmentToRequestUrl("appConsent"), this.Client);
             }
         }
 

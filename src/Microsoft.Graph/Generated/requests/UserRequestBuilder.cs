@@ -701,24 +701,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Chats.
         /// </summary>
-        /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
-        public IUserChatsCollectionRequestBuilder Chats
+        /// <returns>The <see cref="IUserChatsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserChatsCollectionWithReferencesRequestBuilder Chats
         {
             get
             {
-                return new UserChatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("chats"), this.Client);
+                return new UserChatsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("chats"), this.Client);
             }
         }
 
         /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
-        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
-        public IUserJoinedTeamsCollectionRequestBuilder JoinedTeams
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams
         {
             get
             {
-                return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+                return new UserJoinedTeamsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
             }
         }
 

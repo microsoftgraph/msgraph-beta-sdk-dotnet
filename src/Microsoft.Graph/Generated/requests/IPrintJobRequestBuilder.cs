@@ -44,6 +44,18 @@ namespace Microsoft.Graph
         IPrintJobTasksCollectionRequestBuilder Tasks { get; }
     
         /// <summary>
+        /// Gets the request builder for PrintJobCancel.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobCancelRequestBuilder"/>.</returns>
+        IPrintJobCancelRequestBuilder Cancel();
+
+        /// <summary>
+        /// Gets the request builder for PrintJobStart.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobStartRequestBuilder"/>.</returns>
+        IPrintJobStartRequestBuilder Start();
+
+        /// <summary>
         /// Gets the request builder for PrintJobCancelPrintJob.
         /// </summary>
         /// <returns>The <see cref="IPrintJobCancelPrintJobRequestBuilder"/>.</returns>

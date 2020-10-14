@@ -64,7 +64,7 @@ namespace Microsoft.Graph
         /// Gets or sets members.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
-        public IConnectorGroupMembersCollectionWithReferencesPage Members { get; set; }
+        public IConnectorGroupMembersCollectionPage Members { get; set; }
     
     }
 }

@@ -64,6 +64,19 @@ namespace Microsoft.Graph
                 roles,
                 recipients);
         }
+
+        /// <summary>
+        /// Gets the request builder for PermissionRevokeGrants.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRevokeGrantsRequestBuilder"/>.</returns>
+        public IPermissionRevokeGrantsRequestBuilder RevokeGrants(
+            IEnumerable<DriveRecipient> grantees = null)
+        {
+            return new PermissionRevokeGrantsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.revokeGrants"),
+                this.Client,
+                grantees);
+        }
     
     }
 }

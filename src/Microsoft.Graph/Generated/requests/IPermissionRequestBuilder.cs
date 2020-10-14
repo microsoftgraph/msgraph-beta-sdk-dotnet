@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         IPermissionGrantRequestBuilder Grant(
             IEnumerable<string> roles = null,
             IEnumerable<DriveRecipient> recipients = null);
+
+        /// <summary>
+        /// Gets the request builder for PermissionRevokeGrants.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRevokeGrantsRequestBuilder"/>.</returns>
+        IPermissionRevokeGrantsRequestBuilder RevokeGrants(
+            IEnumerable<DriveRecipient> grantees = null);
     
     }
 }

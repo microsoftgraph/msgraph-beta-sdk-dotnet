@@ -111,6 +111,27 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ListItemCreateLink.
+        /// </summary>
+        /// <returns>The <see cref="IListItemCreateLinkRequestBuilder"/>.</returns>
+        public IListItemCreateLinkRequestBuilder CreateLink(
+            string type,
+            string scope = null,
+            DateTimeOffset? expirationDateTime = null,
+            string password = null,
+            IEnumerable<DriveRecipient> recipients = null)
+        {
+            return new ListItemCreateLinkRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createLink"),
+                this.Client,
+                type,
+                scope,
+                expirationDateTime,
+                password,
+                recipients);
+        }
+
+        /// <summary>
         /// Gets the request builder for ListItemGetActivitiesByInterval.
         /// </summary>
         /// <returns>The <see cref="IListItemGetActivitiesByIntervalRequestBuilder"/>.</returns>

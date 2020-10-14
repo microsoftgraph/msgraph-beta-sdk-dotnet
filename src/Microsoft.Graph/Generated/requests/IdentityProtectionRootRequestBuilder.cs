@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IdentityProtectionRootRequestBuilder.
     /// </summary>
-    public partial class IdentityProtectionRootRequestBuilder : EntityRequestBuilder, IIdentityProtectionRootRequestBuilder
+    public partial class IdentityProtectionRootRequestBuilder : BaseRequestBuilder, IIdentityProtectionRootRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IIdentityProtectionRootRequest Request()
+        public IIdentityProtectionRootRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IIdentityProtectionRootRequest Request(IEnumerable<Option> options)
+        public IIdentityProtectionRootRequest Request(IEnumerable<Option> options)
         {
             return new IdentityProtectionRootRequest(this.RequestUrl, this.Client, options);
         }

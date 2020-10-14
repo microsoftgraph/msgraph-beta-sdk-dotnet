@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type Policy Root.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class PolicyRoot : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class PolicyRoot
     {
     
 		///<summary>
@@ -79,6 +80,12 @@ namespace Microsoft.Graph
         public IPolicyRootPermissionGrantPoliciesCollectionPage PermissionGrantPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets private link resource policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privateLinkResourcePolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootPrivateLinkResourcePoliciesCollectionPage PrivateLinkResourcePolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
@@ -113,6 +120,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySecurityDefaultsEnforcementPolicy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

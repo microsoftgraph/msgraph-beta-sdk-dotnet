@@ -16,7 +16,7 @@ namespace Microsoft.Graph.TermStore
     /// <summary>
     /// The type StoreRequestBuilder.
     /// </summary>
-    public partial class StoreRequestBuilder : Microsoft.Graph.EntityRequestBuilder, IStoreRequestBuilder
+    public partial class StoreRequestBuilder : Microsoft.Graph.BaseRequestBuilder, IStoreRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.TermStore
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IStoreRequest Request()
+        public IStoreRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IStoreRequest Request(IEnumerable<Microsoft.Graph.Option> options)
+        public IStoreRequest Request(IEnumerable<Microsoft.Graph.Option> options)
         {
             return new StoreRequest(this.RequestUrl, this.Client, options);
         }
