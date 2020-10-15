@@ -79,7 +79,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 ## Other resources
 
-* NuGet Package: [https://www.nuget.org/packages/Microsoft.Graph.Beta](https://www.nuget.org/packages/Microsoft.Graph)
+* NuGet Package: [https://www.nuget.org/packages/Microsoft.Graph.Beta](https://www.nuget.org/packages/Microsoft.Graph.Beta)
 
 ## Building library locally
 
