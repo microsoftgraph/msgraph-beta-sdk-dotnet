@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets costCenter.
+        /// The cost center associated with the user. Returned only on $select. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "costCenter", Required = Newtonsoft.Json.Required.Default)]
         public string CostCenter { get; set; }
     
         /// <summary>
         /// Gets or sets division.
+        /// The name of the division in which the user works. Returned only on $select. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "division", Required = Newtonsoft.Json.Required.Default)]
         public string Division { get; set; }
