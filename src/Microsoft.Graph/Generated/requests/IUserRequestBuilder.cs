@@ -358,14 +358,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Chats.
         /// </summary>
-        /// <returns>The <see cref="IUserChatsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IUserChatsCollectionWithReferencesRequestBuilder Chats { get; }
+        /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
+        IUserChatsCollectionRequestBuilder Chats { get; }
 
         /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
-        /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams { get; }
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
+        IUserJoinedTeamsCollectionRequestBuilder JoinedTeams { get; }
 
         /// <summary>
         /// Gets the request builder for Teamwork.
