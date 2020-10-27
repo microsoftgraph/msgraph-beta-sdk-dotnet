@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessagesCollectionPage Messages { get; set; }
     
+        /// <summary>
+        /// Gets or sets tabs.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]
+        public IChatTabsCollectionPage Tabs { get; set; }
+    
     }
 }
 

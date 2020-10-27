@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public ConditionalAccessApplications Applications { get; set; }
     
         /// <summary>
+        /// Gets or sets clientApplications.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientApplications", Required = Newtonsoft.Json.Required.Default)]
+        public ConditionalAccessClientApplications ClientApplications { get; set; }
+    
+        /// <summary>
         /// Gets or sets clientAppTypes.
         /// Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other.
         /// </summary>

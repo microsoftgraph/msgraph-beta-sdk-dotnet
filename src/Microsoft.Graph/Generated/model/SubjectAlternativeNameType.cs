@@ -45,5 +45,10 @@ namespace Microsoft.Graph
         /// </summary>
         DomainNameService = 8,
 	
+        /// <summary>
+        /// Universal Resource Identifier
+        /// </summary>
+        UniversalResourceIdentifier = 16,
+	
     }
 }

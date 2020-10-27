@@ -73,6 +73,13 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerEnrollmentMode? EnrollmentMode { get; set; }
     
         /// <summary>
+        /// Gets or sets enrollment token type.
+        /// The enrollment token type for an enrollment profile.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentTokenType", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerEnrollmentTokenType? EnrollmentTokenType { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// Date time the enrollment profile was last modified.
         /// </summary>

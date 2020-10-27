@@ -52,6 +52,20 @@ namespace Microsoft.Graph
         public AndroidVpnConnectionType? ConnectionType { get; set; }
     
         /// <summary>
+        /// Gets or sets custom data.
+        /// Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customData", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValue> CustomData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom key value data.
+        /// Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customKeyValueData", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<KeyValuePair> CustomKeyValueData { get; set; }
+    
+        /// <summary>
         /// Gets or sets microsoft tunnel site id.
         /// Microsoft Tunnel site ID.
         /// </summary>

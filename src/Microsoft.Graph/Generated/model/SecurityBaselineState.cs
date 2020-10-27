@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public string SecurityBaselineTemplateId { get; set; }
     
         /// <summary>
+        /// Gets or sets state.
+        /// Security baseline compliance state
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        public SecurityBaselineComplianceState? State { get; set; }
+    
+        /// <summary>
         /// Gets or sets user principal name.
         /// User Principal Name
         /// </summary>

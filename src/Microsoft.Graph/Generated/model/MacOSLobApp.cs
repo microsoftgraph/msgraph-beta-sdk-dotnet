@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public bool? IgnoreVersionDetection { get; set; }
     
         /// <summary>
+        /// Gets or sets install as managed.
+        /// A boolean to control whether the app will be installed as managed (requires macOS 11.0 and other PKG restrictions).
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installAsManaged", Required = Newtonsoft.Json.Required.Default)]
+        public bool? InstallAsManaged { get; set; }
+    
+        /// <summary>
         /// Gets or sets md5hash.
         /// The MD5 hash codes
         /// </summary>

@@ -80,6 +80,13 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed { get; set; }
     
         /// <summary>
+        /// Gets or sets app action if device lock not set.
+        /// Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfDeviceLockNotSet", Required = Newtonsoft.Json.Required.Default)]
+        public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet { get; set; }
+    
+        /// <summary>
         /// Gets or sets app action if ios device model not allowed.
         /// Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only)
         /// </summary>
@@ -99,6 +106,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "biometricAuthenticationBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? BiometricAuthenticationBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets block after company portal update deferral in days.
+        /// Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockAfterCompanyPortalUpdateDeferralInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? BlockAfterCompanyPortalUpdateDeferralInDays { get; set; }
     
         /// <summary>
         /// Gets or sets custom browser display name.
@@ -155,6 +169,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deployedAppCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DeployedAppCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device lock required.
+        /// Defines if any kind of lock must be required on device. (android only)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceLockRequired", Required = Newtonsoft.Json.Required.Default)]
+        public bool? DeviceLockRequired { get; set; }
     
         /// <summary>
         /// Gets or sets disable app encryption if device encryption is enabled.
@@ -302,6 +323,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thirdPartyKeyboardsBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? ThirdPartyKeyboardsBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets warn after company portal update deferral in days.
+        /// Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "warnAfterCompanyPortalUpdateDeferralInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WarnAfterCompanyPortalUpdateDeferralInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wipe after company portal update deferral in days.
+        /// Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wipeAfterCompanyPortalUpdateDeferralInDays", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? WipeAfterCompanyPortalUpdateDeferralInDays { get; set; }
     
         /// <summary>
         /// Gets or sets apps.

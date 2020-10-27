@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IServicePrincipalCreatedObjectsCollectionWithReferencesRequestBuilder CreatedObjects { get; }
 
         /// <summary>
+        /// Gets the request builder for DelegatedPermissionClassifications.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder"/>.</returns>
+        IServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder DelegatedPermissionClassifications { get; }
+
+        /// <summary>
         /// Gets the request builder for Endpoints.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalEndpointsCollectionRequestBuilder"/>.</returns>

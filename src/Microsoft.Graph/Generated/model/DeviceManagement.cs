@@ -290,6 +290,13 @@ namespace Microsoft.Graph
         public IDeviceManagementIosUpdateStatusesCollectionPage IosUpdateStatuses { get; set; }
     
         /// <summary>
+        /// Gets or sets mac ossoftware update account summaries.
+        /// The MacOS software update account summaries for this account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSSoftwareUpdateAccountSummaries", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionPage MacOSSoftwareUpdateAccountSummaries { get; set; }
+    
+        /// <summary>
         /// Gets or sets managed device encryption states.
         /// Encryption report for devices in this account
         /// </summary>
@@ -442,6 +449,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceScripts", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementDeviceComplianceScriptsCollectionPage DeviceComplianceScripts { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device custom attribute shell scripts.
+        /// The list of device custom attribute shell scripts associated with the tenant.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCustomAttributeShellScripts", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementDeviceCustomAttributeShellScriptsCollectionPage DeviceCustomAttributeShellScripts { get; set; }
     
         /// <summary>
         /// Gets or sets device health scripts.
@@ -631,6 +645,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentials", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementDerivedCredentialsCollectionPage DerivedCredentials { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource access profiles.
+        /// Collection of resource access settings associated with account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAccessProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementResourceAccessProfilesCollectionPage ResourceAccessProfiles { get; set; }
     
         /// <summary>
         /// Gets or sets apple user initiated enrollment profiles.

@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets accessibility screen disabled.
+        /// Indicates if Accessibility screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessibilityScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? AccessibilityScreenDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets choose your lock screen disabled.
         /// Indicates if iCloud Documents and Desktop screen is disabled
         /// </summary>
@@ -59,11 +66,25 @@ namespace Microsoft.Graph
         public bool? ICloudStorageDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets pass code disabled.
+        /// Indicates if Passcode setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passCodeDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PassCodeDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets registration disabled.
         /// Indicates if registration is disabled
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? RegistrationDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets zoom disabled.
+        /// Indicates if zoom setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zoomDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ZoomDisabled { get; set; }
     
     }
 }
