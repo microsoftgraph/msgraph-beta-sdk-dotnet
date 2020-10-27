@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DelegatedPermissionClassifications.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder"/>.</returns>
+        public IServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder DelegatedPermissionClassifications
+        {
+            get
+            {
+                return new ServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("delegatedPermissionClassifications"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Endpoints.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalEndpointsCollectionRequestBuilder"/>.</returns>

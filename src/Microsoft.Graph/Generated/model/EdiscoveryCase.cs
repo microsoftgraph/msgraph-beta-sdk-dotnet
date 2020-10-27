@@ -85,6 +85,12 @@ namespace Microsoft.Graph
         public CaseStatus? Status { get; set; }
     
         /// <summary>
+        /// Gets or sets custodians.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custodians", Required = Newtonsoft.Json.Required.Default)]
+        public IEdiscoveryCaseCustodiansCollectionPage Custodians { get; set; }
+    
+        /// <summary>
         /// Gets or sets review sets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewSets", Required = Newtonsoft.Json.Required.Default)]

@@ -66,6 +66,20 @@ namespace Microsoft.Graph
         public string DocumentationUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets header subtitle.
+        /// subtitle of the setting header for more details about the category/section
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "headerSubtitle", Required = Newtonsoft.Json.Required.Default)]
+        public string HeaderSubtitle { get; set; }
+    
+        /// <summary>
+        /// Gets or sets header title.
+        /// title of the setting header represents a category/section of a setting/settings
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "headerTitle", Required = Newtonsoft.Json.Required.Default)]
+        public string HeaderTitle { get; set; }
+    
+        /// <summary>
         /// Gets or sets is top level.
         /// If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
         /// </summary>

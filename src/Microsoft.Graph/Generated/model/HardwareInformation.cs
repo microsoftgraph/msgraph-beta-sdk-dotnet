@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public string Imei { get; set; }
     
         /// <summary>
+        /// Gets or sets ipAddressV4.
+        /// IPAddressV4
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddressV4", Required = Newtonsoft.Json.Required.Default)]
+        public string IpAddressV4 { get; set; }
+    
+        /// <summary>
         /// Gets or sets isEncrypted.
         /// Encryption status of the device
         /// </summary>
@@ -190,6 +197,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedDeviceCachedUsers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SharedAppleDeviceUser> SharedDeviceCachedUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subnetAddress.
+        /// SubnetAddress
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subnetAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string SubnetAddress { get; set; }
     
         /// <summary>
         /// Gets or sets subscriberCarrier.

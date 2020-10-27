@@ -40,13 +40,13 @@ namespace Microsoft.Graph
         /// Gets or sets activities.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
-        public string Activities { get; set; }
+        public IEnumerable<string> Activities { get; set; }
     
         /// <summary>
         /// Gets or sets awards.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "awards", Required = Newtonsoft.Json.Required.Default)]
-        public string Awards { get; set; }
+        public IEnumerable<string> Awards { get; set; }
     
         /// <summary>
         /// Gets or sets description.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
         /// Gets or sets fieldsOfStudy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fieldsOfStudy", Required = Newtonsoft.Json.Required.Default)]
-        public string FieldsOfStudy { get; set; }
+        public IEnumerable<string> FieldsOfStudy { get; set; }
     
         /// <summary>
         /// Gets or sets grade.

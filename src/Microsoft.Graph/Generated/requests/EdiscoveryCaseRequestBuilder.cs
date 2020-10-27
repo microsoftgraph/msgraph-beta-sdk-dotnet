@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Custodians.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCaseCustodiansCollectionRequestBuilder"/>.</returns>
+        public IEdiscoveryCaseCustodiansCollectionRequestBuilder Custodians
+        {
+            get
+            {
+                return new EdiscoveryCaseCustodiansCollectionRequestBuilder(this.AppendSegmentToRequestUrl("custodians"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ReviewSets.
         /// </summary>
         /// <returns>The <see cref="IEdiscoveryCaseReviewSetsCollectionRequestBuilder"/>.</returns>

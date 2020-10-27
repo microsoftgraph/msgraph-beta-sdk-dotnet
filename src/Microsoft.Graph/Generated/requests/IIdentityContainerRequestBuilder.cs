@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IIdentityContainerB2xUserFlowsCollectionRequestBuilder B2xUserFlows { get; }
 
         /// <summary>
+        /// Gets the request builder for UserFlowAttributes.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerUserFlowAttributesCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerUserFlowAttributesCollectionRequestBuilder UserFlowAttributes { get; }
+
+        /// <summary>
         /// Gets the request builder for UserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerUserFlowsCollectionRequestBuilder"/>.</returns>

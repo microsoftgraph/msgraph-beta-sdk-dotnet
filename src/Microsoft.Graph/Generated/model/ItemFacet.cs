@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// Gets or sets source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
-        public PersonDataSource Source { get; set; }
+        public PersonDataSources Source { get; set; }
     
     }
 }

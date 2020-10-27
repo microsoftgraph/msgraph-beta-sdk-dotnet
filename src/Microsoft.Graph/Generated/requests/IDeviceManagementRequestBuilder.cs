@@ -158,6 +158,12 @@ namespace Microsoft.Graph
         IDeviceManagementIosUpdateStatusesCollectionRequestBuilder IosUpdateStatuses { get; }
 
         /// <summary>
+        /// Gets the request builder for MacOSSoftwareUpdateAccountSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionRequestBuilder MacOSSoftwareUpdateAccountSummaries { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceEncryptionStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder"/>.</returns>
@@ -288,6 +294,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementDeviceComplianceScriptsCollectionRequestBuilder DeviceComplianceScripts { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCustomAttributeShellScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceCustomAttributeShellScriptsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementDeviceCustomAttributeShellScriptsCollectionRequestBuilder DeviceCustomAttributeShellScripts { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceHealthScripts.
@@ -450,6 +462,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementDerivedCredentialsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementDerivedCredentialsCollectionRequestBuilder DerivedCredentials { get; }
+
+        /// <summary>
+        /// Gets the request builder for ResourceAccessProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementResourceAccessProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementResourceAccessProfilesCollectionRequestBuilder ResourceAccessProfiles { get; }
 
         /// <summary>
         /// Gets the request builder for AppleUserInitiatedEnrollmentProfiles.

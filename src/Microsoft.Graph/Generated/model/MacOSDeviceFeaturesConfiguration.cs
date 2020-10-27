@@ -38,8 +38,15 @@ namespace Microsoft.Graph
         public bool? AdminShowHostInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets app associated domains.
+        /// Gets or sets a list that maps apps to their associated domains. Application identifiers must be unique. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appAssociatedDomains", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MacOSAssociatedDomainsItem> AppAssociatedDomains { get; set; }
+    
+        /// <summary>
         /// Gets or sets associated domains.
-        /// Gets or sets a list that maps apps to their associated domains. The key should match the app's ID, and the value should be a string in the form of "service:domain" where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.
+        /// DEPRECATED: use appAssociatedDomains instead. Gets or sets a list that maps apps to their associated domains. The key should match the app's ID, and the value should be a string in the form of "service:domain" where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "associatedDomains", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> AssociatedDomains { get; set; }

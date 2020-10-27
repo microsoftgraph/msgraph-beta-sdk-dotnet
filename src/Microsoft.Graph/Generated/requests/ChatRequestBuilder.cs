@@ -85,6 +85,18 @@ namespace Microsoft.Graph
                 return new ChatMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("messages"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Tabs.
+        /// </summary>
+        /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>
+        public IChatTabsCollectionRequestBuilder Tabs
+        {
+            get
+            {
+                return new ChatTabsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tabs"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for ChatSendActivityNotification.

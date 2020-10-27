@@ -125,6 +125,21 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetActiveMalwareSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetActiveMalwareSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetActiveMalwareSummaryReportRequestBuilder GetActiveMalwareSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetMalwareSummaryReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder"/>.</returns>

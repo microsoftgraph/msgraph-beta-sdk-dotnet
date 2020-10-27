@@ -283,6 +283,13 @@ namespace Microsoft.Graph
         public Int32? PasswordExpirationDays { get; set; }
     
         /// <summary>
+        /// Gets or sets password maximum attempt count.
+        /// The number of allowed failed attempts to enter the passcode at the device's lock screen. Valid values 2 to 11
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMaximumAttemptCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMaximumAttemptCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets password minimum character set count.
         /// Number of character sets a password must contain. Valid values 0 to 4
         /// </summary>
@@ -309,6 +316,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesOfInactivityBeforeScreenTimeout", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasswordMinutesOfInactivityBeforeScreenTimeout { get; set; }
+    
+        /// <summary>
+        /// Gets or sets password minutes until failed login reset.
+        /// The number of minutes before the login is reset after the maximum number of unsuccessful login attempts is reached.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMinutesUntilFailedLoginReset", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? PasswordMinutesUntilFailedLoginReset { get; set; }
     
         /// <summary>
         /// Gets or sets password previous password block count.

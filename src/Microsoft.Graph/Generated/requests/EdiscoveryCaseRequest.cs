@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (ediscoveryCaseToInitialize != null && ediscoveryCaseToInitialize.AdditionalData != null)
             {
 
+                if (ediscoveryCaseToInitialize.Custodians != null && ediscoveryCaseToInitialize.Custodians.CurrentPage != null)
+                {
+                    ediscoveryCaseToInitialize.Custodians.AdditionalData = ediscoveryCaseToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    ediscoveryCaseToInitialize.AdditionalData.TryGetValue("custodians@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        ediscoveryCaseToInitialize.Custodians.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (ediscoveryCaseToInitialize.ReviewSets != null && ediscoveryCaseToInitialize.ReviewSets.CurrentPage != null)
                 {
                     ediscoveryCaseToInitialize.ReviewSets.AdditionalData = ediscoveryCaseToInitialize.AdditionalData;

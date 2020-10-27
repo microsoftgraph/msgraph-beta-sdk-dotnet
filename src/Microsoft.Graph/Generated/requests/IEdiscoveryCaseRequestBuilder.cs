@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IEdiscoveryCaseRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Custodians.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCaseCustodiansCollectionRequestBuilder"/>.</returns>
+        IEdiscoveryCaseCustodiansCollectionRequestBuilder Custodians { get; }
+
+        /// <summary>
         /// Gets the request builder for ReviewSets.
         /// </summary>
         /// <returns>The <see cref="IEdiscoveryCaseReviewSetsCollectionRequestBuilder"/>.</returns>

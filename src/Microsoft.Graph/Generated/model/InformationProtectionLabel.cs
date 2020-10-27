@@ -55,6 +55,12 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
+        /// Gets or sets parent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
+        public ParentLabelDetails Parent { get; set; }
+    
+        /// <summary>
         /// Gets or sets sensitivity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]

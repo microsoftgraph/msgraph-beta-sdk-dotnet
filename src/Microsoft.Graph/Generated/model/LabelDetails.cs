@@ -19,8 +19,7 @@ namespace Microsoft.Graph
     /// The type LabelDetails.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class LabelDetails
+    public partial class LabelDetails : ParentLabelDetails
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LabelDetails"/> class.
@@ -30,59 +29,5 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.labelDetails";
         }
 
-        /// <summary>
-        /// Gets or sets color.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
-        public string Color { get; set; }
-    
-        /// <summary>
-        /// Gets or sets description.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
-        public string Description { get; set; }
-    
-        /// <summary>
-        /// Gets or sets id.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
-        public string Id { get; set; }
-    
-        /// <summary>
-        /// Gets or sets isActive.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsActive { get; set; }
-    
-        /// <summary>
-        /// Gets or sets name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
-        public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sensitivity.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Sensitivity { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tooltip.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tooltip", Required = Newtonsoft.Json.Required.Default)]
-        public string Tooltip { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
-    
     }
 }

@@ -115,11 +115,25 @@ namespace Microsoft.Graph
         public bool? OnBoardingScreenDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets pass code disabled.
+        /// Indicates if Passcode setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passCodeDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PassCodeDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets preferred language screen disabled.
         /// Indicates if Preferred language screen is disabled
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredLanguageScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? PreferredLanguageScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets restore completed screen disabled.
+        /// Indicates if Weclome screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restoreCompletedScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? RestoreCompletedScreenDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets restore from android disabled.
@@ -150,6 +164,13 @@ namespace Microsoft.Graph
         public bool? SoftwareUpdateScreenDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets update complete screen disabled.
+        /// Indicates if Weclome screen is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateCompleteScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UpdateCompleteScreenDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets watch migration screen disabled.
         /// Indicates if the watch migration screen is disabled
         /// </summary>
@@ -162,6 +183,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomeScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? WelcomeScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets zoom disabled.
+        /// Indicates if zoom setup pane is disabled
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zoomDisabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ZoomDisabled { get; set; }
     
     }
 }

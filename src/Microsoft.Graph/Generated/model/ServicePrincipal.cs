@@ -293,6 +293,12 @@ namespace Microsoft.Graph
         public IServicePrincipalCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
     
         /// <summary>
+        /// Gets or sets delegated permission classifications.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegatedPermissionClassifications", Required = Newtonsoft.Json.Required.Default)]
+        public IServicePrincipalDelegatedPermissionClassificationsCollectionPage DelegatedPermissionClassifications { get; set; }
+    
+        /// <summary>
         /// Gets or sets endpoints.
         /// Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
         /// </summary>

@@ -94,13 +94,6 @@ namespace Microsoft.Graph
         public bool? LocationDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets pass code disabled.
-        /// Indicates if Passcode setup pane is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passCodeDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? PassCodeDisabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets privacy pane disabled.
         /// Indicates if privacy screen is disabled
         /// </summary>
@@ -169,13 +162,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "touchIdDisabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? TouchIdDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets zoom disabled.
-        /// Indicates if zoom setup pane is disabled
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zoomDisabled", Required = Newtonsoft.Json.Required.Default)]
-        public bool? ZoomDisabled { get; set; }
     
     }
 }

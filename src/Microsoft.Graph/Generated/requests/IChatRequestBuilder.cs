@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChatMessagesCollectionRequestBuilder"/>.</returns>
         IChatMessagesCollectionRequestBuilder Messages { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tabs.
+        /// </summary>
+        /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>
+        IChatTabsCollectionRequestBuilder Tabs { get; }
     
         /// <summary>
         /// Gets the request builder for ChatSendActivityNotification.

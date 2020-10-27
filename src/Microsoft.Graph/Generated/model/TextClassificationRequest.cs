@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public string FileExtension { get; set; }
     
         /// <summary>
+        /// Gets or sets match tolerances to include.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchTolerancesToInclude", Required = Newtonsoft.Json.Required.Default)]
+        public MlClassificationMatchTolerance? MatchTolerancesToInclude { get; set; }
+    
+        /// <summary>
         /// Gets or sets scopes to run.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopesToRun", Required = Newtonsoft.Json.Required.Default)]

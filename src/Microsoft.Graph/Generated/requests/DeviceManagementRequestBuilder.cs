@@ -303,6 +303,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MacOSSoftwareUpdateAccountSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionRequestBuilder MacOSSoftwareUpdateAccountSummaries
+        {
+            get
+            {
+                return new DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("macOSSoftwareUpdateAccountSummaries"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceEncryptionStates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementManagedDeviceEncryptionStatesCollectionRequestBuilder"/>.</returns>
@@ -563,6 +575,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementDeviceComplianceScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceComplianceScripts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCustomAttributeShellScripts.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementDeviceCustomAttributeShellScriptsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementDeviceCustomAttributeShellScriptsCollectionRequestBuilder DeviceCustomAttributeShellScripts
+        {
+            get
+            {
+                return new DeviceManagementDeviceCustomAttributeShellScriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCustomAttributeShellScripts"), this.Client);
             }
         }
 
@@ -887,6 +911,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementDerivedCredentialsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("derivedCredentials"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ResourceAccessProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementResourceAccessProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementResourceAccessProfilesCollectionRequestBuilder ResourceAccessProfiles
+        {
+            get
+            {
+                return new DeviceManagementResourceAccessProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("resourceAccessProfiles"), this.Client);
             }
         }
 

@@ -474,6 +474,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries != null && deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("macOSSoftwareUpdateAccountSummaries@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.MacOSSoftwareUpdateAccountSummaries.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.ManagedDeviceEncryptionStates != null && deviceManagementToInitialize.ManagedDeviceEncryptionStates.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ManagedDeviceEncryptionStates.AdditionalData = deviceManagementToInitialize.AdditionalData;
@@ -757,6 +773,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.DeviceComplianceScripts.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.DeviceCustomAttributeShellScripts != null && deviceManagementToInitialize.DeviceCustomAttributeShellScripts.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.DeviceCustomAttributeShellScripts.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("deviceCustomAttributeShellScripts@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.DeviceCustomAttributeShellScripts.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }
@@ -1125,6 +1157,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         deviceManagementToInitialize.DerivedCredentials.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.ResourceAccessProfiles != null && deviceManagementToInitialize.ResourceAccessProfiles.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ResourceAccessProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("resourceAccessProfiles@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ResourceAccessProfiles.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

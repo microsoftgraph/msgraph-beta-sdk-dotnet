@@ -101,6 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lifecycle notification url.
+        /// The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifecycleNotificationUrl", Required = Newtonsoft.Json.Required.Default)]
         public string LifecycleNotificationUrl { get; set; }

@@ -232,6 +232,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetActiveMalwareSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetActiveMalwareSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetActiveMalwareSummaryReportRequestBuilder GetActiveMalwareSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetActiveMalwareSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActiveMalwareSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetMalwareSummaryReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetMalwareSummaryReportRequestBuilder"/>.</returns>
