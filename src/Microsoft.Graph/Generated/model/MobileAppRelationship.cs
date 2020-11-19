@@ -38,11 +38,25 @@ namespace Microsoft.Graph
         public string TargetDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets target display version.
+        /// The target mobile app's display version.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDisplayVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetDisplayVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets target id.
         /// The target mobile app's app id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
         public string TargetId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target publisher.
+        /// The target mobile app's publisher.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetPublisher", Required = Newtonsoft.Json.Required.Default)]
+        public string TargetPublisher { get; set; }
     
         /// <summary>
         /// Gets or sets target type.

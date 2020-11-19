@@ -54,5 +54,20 @@ namespace Microsoft.Graph
         /// </summary>
         Antivirus = 6,
 	
+        /// <summary>
+        /// Firewall Shared App List
+        /// </summary>
+        FirewallSharedAppList = 7,
+	
+        /// <summary>
+        /// Firewall Shared Ip List
+        /// </summary>
+        FirewallSharedIpList = 8,
+	
+        /// <summary>
+        /// Firewall Shared Portlist
+        /// </summary>
+        FirewallSharedPortlist = 9,
+	
     }
 }

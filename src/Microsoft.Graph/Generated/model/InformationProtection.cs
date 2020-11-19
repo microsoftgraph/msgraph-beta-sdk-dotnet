@@ -31,10 +31,10 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets policy.
+        /// Gets or sets bitlocker.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
-        public InformationProtectionPolicy Policy { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitlocker", Required = Newtonsoft.Json.Required.Default)]
+        public Bitlocker Bitlocker { get; set; }
     
         /// <summary>
         /// Gets or sets data loss prevention policies.
@@ -53,6 +53,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityPolicySettings", Required = Newtonsoft.Json.Required.Default)]
         public SensitivityPolicySettings SensitivityPolicySettings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
+        public InformationProtectionPolicy Policy { get; set; }
     
         /// <summary>
         /// Gets or sets threat assessment requests.

@@ -74,5 +74,10 @@ namespace Microsoft.Graph
         /// </summary>
         CloudPC = 10,
 	
+        /// <summary>
+        /// Firewall Shared Settings
+        /// </summary>
+        FirewallSharedSettings = 11,
+	
     }
 }

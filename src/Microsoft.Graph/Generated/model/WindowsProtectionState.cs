@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public bool? FullScanRequired { get; set; }
     
         /// <summary>
+        /// Gets or sets is virtual machine.
+        /// Indicates whether the device is a virtual machine.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isVirtualMachine", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsVirtualMachine { get; set; }
+    
+        /// <summary>
         /// Gets or sets last full scan date time.
         /// Last quick scan datetime
         /// </summary>
@@ -115,6 +122,13 @@ namespace Microsoft.Graph
         public bool? NetworkInspectionSystemEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets product status.
+        /// Product Status of Windows Defender Antivirus
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productStatus", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsDefenderProductStatus? ProductStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets quick scan overdue.
         /// Quick scan overdue or not?
         /// </summary>
@@ -148,6 +162,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureVersion", Required = Newtonsoft.Json.Required.Default)]
         public string SignatureVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tamper protection enabled.
+        /// Indicates whether the Windows Defender tamper protection feature is enabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tamperProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? TamperProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets detected malware state.

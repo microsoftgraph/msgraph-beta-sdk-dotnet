@@ -34,5 +34,15 @@ namespace Microsoft.Graph
         /// </summary>
         AuditMode = 2,
 	
+        /// <summary>
+        /// Warn
+        /// </summary>
+        Warn = 6,
+	
+        /// <summary>
+        /// Disable
+        /// </summary>
+        Disable = 99,
+	
     }
 }

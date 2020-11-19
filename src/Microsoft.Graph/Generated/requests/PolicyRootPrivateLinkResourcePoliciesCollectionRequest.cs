@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified PrivateLinkResource to the collection via POST.
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST.
         /// </summary>
-        /// <param name="privateLinkResource">The PrivateLinkResource to add.</param>
-        /// <returns>The created PrivateLinkResource.</returns>
-        public System.Threading.Tasks.Task<PrivateLinkResource> AddAsync(PrivateLinkResource privateLinkResource)
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
+        /// <returns>The created PrivateLinkResourcePolicy.</returns>
+        public System.Threading.Tasks.Task<PrivateLinkResourcePolicy> AddAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy)
         {
-            return this.AddAsync(privateLinkResource, CancellationToken.None);
+            return this.AddAsync(privateLinkResourcePolicy, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified PrivateLinkResource to the collection via POST.
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST.
         /// </summary>
-        /// <param name="privateLinkResource">The PrivateLinkResource to add.</param>
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrivateLinkResource.</returns>
-        public System.Threading.Tasks.Task<PrivateLinkResource> AddAsync(PrivateLinkResource privateLinkResource, CancellationToken cancellationToken)
+        /// <returns>The created PrivateLinkResourcePolicy.</returns>
+        public System.Threading.Tasks.Task<PrivateLinkResourcePolicy> AddAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<PrivateLinkResource>(privateLinkResource, cancellationToken);
+            return this.SendAsync<PrivateLinkResourcePolicy>(privateLinkResourcePolicy, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Expand(Expression<Func<PrivateLinkResource, object>> expandExpression)
+        public IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Expand(Expression<Func<PrivateLinkResourcePolicy, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Select(Expression<Func<PrivateLinkResource, object>> selectExpression)
+        public IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Select(Expression<Func<PrivateLinkResourcePolicy, object>> selectExpression)
         {
             if (selectExpression == null)
             {

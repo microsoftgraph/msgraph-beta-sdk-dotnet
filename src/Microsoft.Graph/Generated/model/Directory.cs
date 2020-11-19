@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }
     
         /// <summary>
+        /// Gets or sets shared email domains.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedEmailDomains", Required = Newtonsoft.Json.Required.Default)]
+        public IDirectorySharedEmailDomainsCollectionPage SharedEmailDomains { get; set; }
+    
+        /// <summary>
         /// Gets or sets feature rollout policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureRolloutPolicies", Required = Newtonsoft.Json.Required.Default)]

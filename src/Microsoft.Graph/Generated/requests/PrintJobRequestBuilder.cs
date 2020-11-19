@@ -97,6 +97,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PrintJobAbort.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobAbortRequestBuilder"/>.</returns>
+        public IPrintJobAbortRequestBuilder Abort(
+            string reason = null)
+        {
+            return new PrintJobAbortRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.abort"),
+                this.Client,
+                reason);
+        }
+
+        /// <summary>
         /// Gets the request builder for PrintJobCancelPrintJob.
         /// </summary>
         /// <returns>The <see cref="IPrintJobCancelPrintJobRequestBuilder"/>.</returns>
@@ -112,12 +125,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrintJobRedirectRequestBuilder"/>.</returns>
         public IPrintJobRedirectRequestBuilder Redirect(
-            string destinationPrinterId = null)
+            string destinationPrinterId = null,
+            PrintJobConfiguration configuration = null)
         {
             return new PrintJobRedirectRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.redirect"),
                 this.Client,
-                destinationPrinterId);
+                destinationPrinterId,
+                configuration);
         }
 
         /// <summary>

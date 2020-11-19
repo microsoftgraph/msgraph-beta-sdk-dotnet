@@ -110,6 +110,81 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPoliciesReportForDevice.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPoliciesReportForDeviceRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationPoliciesReportForDeviceRequestBuilder GetConfigurationPoliciesReportForDevice(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicyDevicesReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicyDevicesReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationPolicyDevicesReportRequestBuilder GetConfigurationPolicyDevicesReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicyDeviceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicyDeviceSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationPolicyDeviceSummaryReportRequestBuilder GetConfigurationPolicyDeviceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationSettingDetailsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationSettingDetailsReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationSettingDetailsReportRequestBuilder GetConfigurationSettingDetailsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationSettingsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationSettingsReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationSettingsReportRequestBuilder GetConfigurationSettingsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetActiveMalwareReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetActiveMalwareReportRequestBuilder"/>.</returns>
@@ -159,6 +234,51 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetUnhealthyFirewallReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyFirewallReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetUnhealthyFirewallReportRequestBuilder GetUnhealthyFirewallReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetUnhealthyFirewallSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetUnhealthyFirewallSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetUnhealthyFirewallSummaryReportRequestBuilder GetUnhealthyFirewallSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCertificatesReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCertificatesReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetCertificatesReportRequestBuilder GetCertificatesReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,

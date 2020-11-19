@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAgreementFileLocalizationRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Versions.
+        /// </summary>
+        /// <returns>The <see cref="IAgreementFileLocalizationVersionsCollectionRequestBuilder"/>.</returns>
+        IAgreementFileLocalizationVersionsCollectionRequestBuilder Versions { get; }
+    
     }
 }

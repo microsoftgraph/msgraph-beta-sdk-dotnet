@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IDomainServiceConfigurationRecordsCollectionRequestBuilder ServiceConfigurationRecords { get; }
 
         /// <summary>
+        /// Gets the request builder for SharedEmailDomainInvitations.
+        /// </summary>
+        /// <returns>The <see cref="IDomainSharedEmailDomainInvitationsCollectionRequestBuilder"/>.</returns>
+        IDomainSharedEmailDomainInvitationsCollectionRequestBuilder SharedEmailDomainInvitations { get; }
+
+        /// <summary>
         /// Gets the request builder for VerificationDnsRecords.
         /// </summary>
         /// <returns>The <see cref="IDomainVerificationDnsRecordsCollectionRequestBuilder"/>.</returns>

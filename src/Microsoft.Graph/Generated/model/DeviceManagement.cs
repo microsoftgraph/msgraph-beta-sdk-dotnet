@@ -143,18 +143,17 @@ namespace Microsoft.Graph
         public WindowsMalwareOverview WindowsMalwareOverview { get; set; }
     
         /// <summary>
-        /// Gets or sets audit events.
-        /// The Audit Events
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "auditEvents", Required = Newtonsoft.Json.Required.Default)]
-        public IDeviceManagementAuditEventsCollectionPage AuditEvents { get; set; }
-    
-        /// <summary>
         /// Gets or sets android device owner enrollment profiles.
         /// Android device owner enrollment profile entities.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceOwnerEnrollmentProfiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionPage AndroidDeviceOwnerEnrollmentProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets virtual endpoint.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "virtualEndpoint", Required = Newtonsoft.Json.Required.Default)]
+        public VirtualEndpoint VirtualEndpoint { get; set; }
     
         /// <summary>
         /// Gets or sets android for work app configuration schemas.
@@ -190,6 +189,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidManagedStoreAppConfigurationSchemas", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionPage AndroidManagedStoreAppConfigurationSchemas { get; set; }
+    
+        /// <summary>
+        /// Gets or sets audit events.
+        /// The Audit Events
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "auditEvents", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementAuditEventsCollectionPage AuditEvents { get; set; }
     
         /// <summary>
         /// Gets or sets assignment filters.
@@ -316,6 +322,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "softwareUpdateStatusSummary", Required = Newtonsoft.Json.Required.Default)]
         public SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configuration categories.
+        /// List of all Configuration Categories
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationCategories", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementConfigurationCategoriesCollectionPage ConfigurationCategories { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configuration policies.
+        /// List of all Configuration policies
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementConfigurationPoliciesCollectionPage ConfigurationPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets configuration settings.
+        /// List of all ConfigurationSettings
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationSettings", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementConfigurationSettingsCollectionPage ConfigurationSettings { get; set; }
     
         /// <summary>
         /// Gets or sets compliance management partners.
@@ -792,6 +819,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainJoinConnectors", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementDomainJoinConnectorsCollectionPage DomainJoinConnectors { get; set; }
+    
+        /// <summary>
+        /// Gets or sets config manager collections.
+        /// A list of ConfigManagerCollection
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configManagerCollections", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementConfigManagerCollectionsCollectionPage ConfigManagerCollections { get; set; }
     
         /// <summary>
         /// Gets or sets resource operations.

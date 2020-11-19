@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IPrivateLinkResourceRequestBuilder"/> for the specified PrivateLinkResource.
+        /// Gets an <see cref="IPrivateLinkResourcePolicyRequestBuilder"/> for the specified PrivateLinkResourcePolicy.
         /// </summary>
-        /// <param name="id">The ID for the PrivateLinkResource.</param>
-        /// <returns>The <see cref="IPrivateLinkResourceRequestBuilder"/>.</returns>
-        IPrivateLinkResourceRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the PrivateLinkResourcePolicy.</param>
+        /// <returns>The <see cref="IPrivateLinkResourcePolicyRequestBuilder"/>.</returns>
+        IPrivateLinkResourcePolicyRequestBuilder this[string id] { get; }
 
         
     }

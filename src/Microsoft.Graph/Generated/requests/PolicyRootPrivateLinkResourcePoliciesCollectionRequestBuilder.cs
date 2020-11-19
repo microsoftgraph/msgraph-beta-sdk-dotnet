@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IPrivateLinkResourceRequestBuilder"/> for the specified PolicyRootPrivateLinkResource.
+        /// Gets an <see cref="IPrivateLinkResourcePolicyRequestBuilder"/> for the specified PolicyRootPrivateLinkResourcePolicy.
         /// </summary>
-        /// <param name="id">The ID for the PolicyRootPrivateLinkResource.</param>
-        /// <returns>The <see cref="IPrivateLinkResourceRequestBuilder"/>.</returns>
-        public IPrivateLinkResourceRequestBuilder this[string id]
+        /// <param name="id">The ID for the PolicyRootPrivateLinkResourcePolicy.</param>
+        /// <returns>The <see cref="IPrivateLinkResourcePolicyRequestBuilder"/>.</returns>
+        public IPrivateLinkResourcePolicyRequestBuilder this[string id]
         {
             get
             {
-                return new PrivateLinkResourceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new PrivateLinkResourcePolicyRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

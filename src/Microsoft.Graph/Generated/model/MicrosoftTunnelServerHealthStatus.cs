@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         UpgradeInProgress = 5,
 	
+        /// <summary>
+        /// Upgrade Failed
+        /// </summary>
+        UpgradeFailed = 6,
+	
     }
 }

@@ -32,10 +32,10 @@ namespace Microsoft.Graph
         new IInformationProtectionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Policy.
+        /// Gets the request builder for Bitlocker.
         /// </summary>
-        /// <returns>The <see cref="IInformationProtectionPolicyRequestBuilder"/>.</returns>
-        IInformationProtectionPolicyRequestBuilder Policy { get; }
+        /// <returns>The <see cref="IBitlockerRequestBuilder"/>.</returns>
+        IBitlockerRequestBuilder Bitlocker { get; }
 
         /// <summary>
         /// Gets the request builder for DataLossPreventionPolicies.
@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISensitivityPolicySettingsRequestBuilder"/>.</returns>
         ISensitivityPolicySettingsRequestBuilder SensitivityPolicySettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for Policy.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionPolicyRequestBuilder"/>.</returns>
+        IInformationProtectionPolicyRequestBuilder Policy { get; }
 
         /// <summary>
         /// Gets the request builder for ThreatAssessmentRequests.

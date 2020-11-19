@@ -122,6 +122,12 @@ namespace Microsoft.Graph
         public IDomainServiceConfigurationRecordsCollectionPage ServiceConfigurationRecords { get; set; }
     
         /// <summary>
+        /// Gets or sets shared email domain invitations.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedEmailDomainInvitations", Required = Newtonsoft.Json.Required.Default)]
+        public IDomainSharedEmailDomainInvitationsCollectionPage SharedEmailDomainInvitations { get; set; }
+    
+        /// <summary>
         /// Gets or sets verification dns records.
         /// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable
         /// </summary>

@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PolicyRootPrivateLinkResourcePoliciesCollectionPage.
     /// </summary>
-    public partial class PolicyRootPrivateLinkResourcePoliciesCollectionPage : CollectionPage<PrivateLinkResource>, IPolicyRootPrivateLinkResourcePoliciesCollectionPage
+    public partial class PolicyRootPrivateLinkResourcePoliciesCollectionPage : CollectionPage<PrivateLinkResourcePolicy>, IPolicyRootPrivateLinkResourcePoliciesCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IPolicyRootPrivateLinkResourcePoliciesCollectionRequest"/> instance.

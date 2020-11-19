@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="destinationPrinterId">A destinationPrinterId parameter for the OData method call.</param>
+        /// <param name="configuration">A configuration parameter for the OData method call.</param>
         public PrintJobRedirectRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            string destinationPrinterId)
+            string destinationPrinterId,
+            PrintJobConfiguration configuration)
             : base(requestUrl, client)
         {
             this.SetParameter("destinationPrinterId", destinationPrinterId, true);
+            this.SetParameter("configuration", configuration, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("destinationPrinterId"))
             {
                 request.RequestBody.DestinationPrinterId = this.GetParameter<string>("destinationPrinterId");
+            }
+
+            if (this.HasParameter("configuration"))
+            {
+                request.RequestBody.Configuration = this.GetParameter<PrintJobConfiguration>("configuration");
             }
 
             return request;

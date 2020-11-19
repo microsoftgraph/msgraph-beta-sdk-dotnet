@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified PrivateLinkResource to the collection via POST.
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST.
         /// </summary>
-        /// <param name="privateLinkResource">The PrivateLinkResource to add.</param>
-        /// <returns>The created PrivateLinkResource.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResource> AddAsync(PrivateLinkResource privateLinkResource);
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
+        /// <returns>The created PrivateLinkResourcePolicy.</returns>
+        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> AddAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy);
 
         /// <summary>
-        /// Adds the specified PrivateLinkResource to the collection via POST.
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST.
         /// </summary>
-        /// <param name="privateLinkResource">The PrivateLinkResource to add.</param>
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrivateLinkResource.</returns>
-        System.Threading.Tasks.Task<PrivateLinkResource> AddAsync(PrivateLinkResource privateLinkResource, CancellationToken cancellationToken);
+        /// <returns>The created PrivateLinkResourcePolicy.</returns>
+        System.Threading.Tasks.Task<PrivateLinkResourcePolicy> AddAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Expand(Expression<Func<PrivateLinkResource, object>> expandExpression);
+        IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Expand(Expression<Func<PrivateLinkResourcePolicy, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Select(Expression<Func<PrivateLinkResource, object>> selectExpression);
+        IPolicyRootPrivateLinkResourcePoliciesCollectionRequest Select(Expression<Func<PrivateLinkResourcePolicy, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

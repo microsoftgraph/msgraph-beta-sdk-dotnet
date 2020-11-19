@@ -59,6 +59,12 @@ namespace Microsoft.Graph
         public string LanguageId { get; set; }
     
         /// <summary>
+        /// Gets or sets platformId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformId", Required = Newtonsoft.Json.Required.Default)]
+        public string PlatformId { get; set; }
+    
+        /// <summary>
         /// Gets or sets region.
         /// The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
         /// </summary>

@@ -30,6 +30,12 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.agreementFileLocalization";
         }
 	
+        /// <summary>
+        /// Gets or sets versions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versions", Required = Newtonsoft.Json.Required.Default)]
+        public IAgreementFileLocalizationVersionsCollectionPage Versions { get; set; }
+    
     }
 }
 

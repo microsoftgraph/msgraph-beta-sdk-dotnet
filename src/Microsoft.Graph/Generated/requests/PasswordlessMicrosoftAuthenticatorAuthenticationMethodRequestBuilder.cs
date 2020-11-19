@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Device.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceRequestBuilder"/>.</returns>
+        public IDeviceRequestBuilder Device
+        {
+            get
+            {
+                return new DeviceRequestBuilder(this.AppendSegmentToRequestUrl("device"), this.Client);
+            }
+        }
+    
     }
 }

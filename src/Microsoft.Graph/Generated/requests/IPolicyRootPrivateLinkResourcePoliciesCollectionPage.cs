@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IPolicyRootPrivateLinkResourcePoliciesCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<PolicyRootPrivateLinkResourcePoliciesCollectionPage>))]
-    public interface IPolicyRootPrivateLinkResourcePoliciesCollectionPage : ICollectionPage<PrivateLinkResource>
+    public interface IPolicyRootPrivateLinkResourcePoliciesCollectionPage : ICollectionPage<PrivateLinkResourcePolicy>
     {
         /// <summary>
         /// Gets the next page <see cref="IPolicyRootPrivateLinkResourcePoliciesCollectionRequest"/> instance.

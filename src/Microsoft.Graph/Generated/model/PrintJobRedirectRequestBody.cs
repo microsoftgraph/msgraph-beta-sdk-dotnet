@@ -28,5 +28,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationPrinterId", Required = Newtonsoft.Json.Required.Default)]
         public string DestinationPrinterId { get; set; }
     
+        /// <summary>
+        /// Gets or sets Configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
+        public PrintJobConfiguration Configuration { get; set; }
+    
     }
 }

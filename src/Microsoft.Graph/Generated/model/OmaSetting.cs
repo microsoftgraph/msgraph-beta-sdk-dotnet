@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets isEncrypted.
+        /// Indicates whether the value field is encrypted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEncrypted", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEncrypted { get; set; }
+    
+        /// <summary>
         /// Gets or sets omaUri.
         /// OMA.
         /// </summary>

@@ -38,9 +38,22 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed presenters.
+        /// Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets alternative recording.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeRecording", Required = Newtonsoft.Json.Required.Default)]
+        public Stream AlternativeRecording { get; set; }
+    
+        /// <summary>
+        /// Gets or sets attendee report.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendeeReport", Required = Newtonsoft.Json.Required.Default)]
+        public Stream AttendeeReport { get; set; }
     
         /// <summary>
         /// Gets or sets audio conferencing.
@@ -48,6 +61,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioConferencing", Required = Newtonsoft.Json.Required.Default)]
         public AudioConferencing AudioConferencing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets broadcast settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "broadcastSettings", Required = Newtonsoft.Json.Required.Default)]
+        public BroadcastMeetingSettings BroadcastSettings { get; set; }
     
         /// <summary>
         /// Gets or sets canceled date time.
@@ -114,6 +133,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is entry exit announced.
+        /// Whether or not to announce when callers join or leave.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEntryExitAnnounced", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEntryExitAnnounced { get; set; }
@@ -133,6 +153,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lobby bypass settings.
+        /// Specifies which participants can bypass the meeting   lobby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lobbyBypassSettings", Required = Newtonsoft.Json.Required.Default)]
         public LobbyBypassSettings LobbyBypassSettings { get; set; }
@@ -143,6 +164,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
         public MeetingParticipants Participants { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recording.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recording", Required = Newtonsoft.Json.Required.Default)]
+        public Stream Recording { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.

@@ -387,6 +387,11 @@ namespace Microsoft.Graph
         IBitlockerRequestBuilder Bitlocker { get; }
     
         /// <summary>
+        /// Gets the GraphServiceDeviceManagement request builder.
+        /// </summary>
+        IDeviceManagementRequestBuilder DeviceManagement { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceCompliance request builder.
         /// </summary>
         IComplianceRequestBuilder Compliance { get; }
@@ -465,11 +470,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceIdentityGovernance request builder.
         /// </summary>
         IIdentityGovernanceRequestBuilder IdentityGovernance { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceDeviceManagement request builder.
-        /// </summary>
-        IDeviceManagementRequestBuilder DeviceManagement { get; }
     
         /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.

@@ -38,11 +38,46 @@ namespace Microsoft.Graph
         public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication period in seconds.
+        /// Specify the number of seconds for the client to wait after an authentication attempt before failing. Valid range 1-3600.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationPeriodInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AuthenticationPeriodInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication retry delay period in seconds.
+        /// Specify the number of seconds between a failed authentication and the next authentication attempt. Valid range 1-3600.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationRetryDelayPeriodInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AuthenticationRetryDelayPeriodInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication type.
+        /// Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you???re using certificate authentication, make sure the certificate type matches the authentication type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationType", Required = Newtonsoft.Json.Required.Default)]
+        public WifiAuthenticationType? AuthenticationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cache credentials.
+        /// Specify whether to cache user credentials on the device so that users don???t need to keep entering them each time they connect.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cacheCredentials", Required = Newtonsoft.Json.Required.Default)]
+        public bool? CacheCredentials { get; set; }
+    
+        /// <summary>
         /// Gets or sets disable user prompt for server validation.
         /// Specify whether to prevent the user from being prompted to authorize new servers for trusted certification authorities when EAP type is selected as PEAP.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableUserPromptForServerValidation", Required = Newtonsoft.Json.Required.Default)]
         public bool? DisableUserPromptForServerValidation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets eapol start period in seconds.
+        /// Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapolStartPeriodInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? EapolStartPeriodInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets eap type.
@@ -73,11 +108,25 @@ namespace Microsoft.Graph
         public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS { get; set; }
     
         /// <summary>
+        /// Gets or sets maximum authentication failures.
+        /// Specify the maximum authentication failures allowed for a set of credentials. Valid range 1-100.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAuthenticationFailures", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MaximumAuthenticationFailures { get; set; }
+    
+        /// <summary>
         /// Gets or sets maximum authentication timeout in seconds.
         /// Specify maximum authentication timeout (in seconds).  Valid range: 1-120
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAuthenticationTimeoutInSeconds", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaximumAuthenticationTimeoutInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum eapolstart messages.
+        /// Specifiy the maximum number of EAPOL (Extensible Authentication Protocol over LAN) Start messages to be sent before returning failure. Valid range 1-100.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumEAPOLStartMessages", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? MaximumEAPOLStartMessages { get; set; }
     
         /// <summary>
         /// Gets or sets maximum number of pairwise master keys in cache.
@@ -141,6 +190,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedServerCertificateNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> TrustedServerCertificateNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user based virtual lan.
+        /// Specifiy whether to change the virtual LAN used by the device based on the user???s credentials. Cannot be used when NetworkSingleSignOnType is set to ???Disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userBasedVirtualLan", Required = Newtonsoft.Json.Required.Default)]
+        public bool? UserBasedVirtualLan { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.

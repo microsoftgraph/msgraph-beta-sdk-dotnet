@@ -66,6 +66,13 @@ namespace Microsoft.Graph
         public bool? Enabled { get; set; }
     
         /// <summary>
+        /// Gets or sets previewVisibility.
+        /// Overrides the notification preview policy set by the user on an iOS device.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewVisibility", Required = Newtonsoft.Json.Required.Default)]
+        public IosNotificationPreviewVisibility? PreviewVisibility { get; set; }
+    
+        /// <summary>
         /// Gets or sets publisher.
         /// Publisher to be associated with the bundleID.
         /// </summary>
