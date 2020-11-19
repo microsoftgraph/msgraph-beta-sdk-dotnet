@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SharedEmailDomainInvitations.
+        /// </summary>
+        /// <returns>The <see cref="IDomainSharedEmailDomainInvitationsCollectionRequestBuilder"/>.</returns>
+        public IDomainSharedEmailDomainInvitationsCollectionRequestBuilder SharedEmailDomainInvitations
+        {
+            get
+            {
+                return new DomainSharedEmailDomainInvitationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sharedEmailDomainInvitations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for VerificationDnsRecords.
         /// </summary>
         /// <returns>The <see cref="IDomainVerificationDnsRecordsCollectionRequestBuilder"/>.</returns>

@@ -31,16 +31,16 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets is number matching required.
+        /// Gets or sets authentication mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isNumberMatchingRequired", Required = Newtonsoft.Json.Required.Default)]
-        public bool? IsNumberMatchingRequired { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMode", Required = Newtonsoft.Json.Required.Default)]
+        public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode { get; set; }
     
         /// <summary>
-        /// Gets or sets shown context.
+        /// Gets or sets feature settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shownContext", Required = Newtonsoft.Json.Required.Default)]
-        public AuthenticatorAppContextType? ShownContext { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureSettings", Required = Newtonsoft.Json.Required.Default)]
+        public AuthenticatorAppFeatureSettings? FeatureSettings { get; set; }
     
     }
 }

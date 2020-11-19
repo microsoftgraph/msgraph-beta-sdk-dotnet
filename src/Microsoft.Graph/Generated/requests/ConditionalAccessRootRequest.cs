@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (conditionalAccessRootToInitialize != null && conditionalAccessRootToInitialize.AdditionalData != null)
             {
 
+                if (conditionalAccessRootToInitialize.AuthenticationContextClassReferences != null && conditionalAccessRootToInitialize.AuthenticationContextClassReferences.CurrentPage != null)
+                {
+                    conditionalAccessRootToInitialize.AuthenticationContextClassReferences.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    conditionalAccessRootToInitialize.AdditionalData.TryGetValue("authenticationContextClassReferences@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        conditionalAccessRootToInitialize.AuthenticationContextClassReferences.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (conditionalAccessRootToInitialize.NamedLocations != null && conditionalAccessRootToInitialize.NamedLocations.CurrentPage != null)
                 {
                     conditionalAccessRootToInitialize.NamedLocations.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;

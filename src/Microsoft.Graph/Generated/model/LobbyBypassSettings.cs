@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isDialInBypassEnabled.
+        /// Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDialInBypassEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDialInBypassEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
+        /// Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Possible values are listed in the following table. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
         public LobbyBypassScope? Scope { get; set; }

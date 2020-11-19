@@ -87,30 +87,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for MicrosoftAuthenticatorMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder MicrosoftAuthenticatorMethods
-        {
-            get
-            {
-                return new AuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("microsoftAuthenticatorMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for OathMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationOathMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationOathMethodsCollectionRequestBuilder OathMethods
-        {
-            get
-            {
-                return new AuthenticationOathMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("oathMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationOperationsCollectionRequestBuilder"/>.</returns>
@@ -155,30 +131,6 @@ namespace Microsoft.Graph
             get
             {
                 return new AuthenticationPhoneMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("phoneMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for SecurityQuestionMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder SecurityQuestionMethods
-        {
-            get
-            {
-                return new AuthenticationSecurityQuestionMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityQuestionMethods"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for TemporaryAccessPassMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder"/>.</returns>
-        public IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder TemporaryAccessPassMethods
-        {
-            get
-            {
-                return new AuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("temporaryAccessPassMethods"), this.Client);
             }
         }
     

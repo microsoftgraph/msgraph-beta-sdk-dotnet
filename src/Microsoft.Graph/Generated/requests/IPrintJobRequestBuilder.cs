@@ -56,6 +56,13 @@ namespace Microsoft.Graph
         IPrintJobStartRequestBuilder Start();
 
         /// <summary>
+        /// Gets the request builder for PrintJobAbort.
+        /// </summary>
+        /// <returns>The <see cref="IPrintJobAbortRequestBuilder"/>.</returns>
+        IPrintJobAbortRequestBuilder Abort(
+            string reason = null);
+
+        /// <summary>
         /// Gets the request builder for PrintJobCancelPrintJob.
         /// </summary>
         /// <returns>The <see cref="IPrintJobCancelPrintJobRequestBuilder"/>.</returns>
@@ -66,7 +73,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrintJobRedirectRequestBuilder"/>.</returns>
         IPrintJobRedirectRequestBuilder Redirect(
-            string destinationPrinterId = null);
+            string destinationPrinterId = null,
+            PrintJobConfiguration configuration = null);
 
         /// <summary>
         /// Gets the request builder for PrintJobStartPrintJob.

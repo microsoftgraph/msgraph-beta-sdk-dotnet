@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IPasswordlessMicrosoftAuthenticatorAuthenticationMethodRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Device.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceRequestBuilder"/>.</returns>
+        IDeviceRequestBuilder Device { get; }
+    
     }
 }

@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IDirectoryDeletedItemsCollectionRequestBuilder DeletedItems { get; }
 
         /// <summary>
+        /// Gets the request builder for SharedEmailDomains.
+        /// </summary>
+        /// <returns>The <see cref="IDirectorySharedEmailDomainsCollectionRequestBuilder"/>.</returns>
+        IDirectorySharedEmailDomainsCollectionRequestBuilder SharedEmailDomains { get; }
+
+        /// <summary>
         /// Gets the request builder for FeatureRolloutPolicies.
         /// </summary>
         /// <returns>The <see cref="IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>

@@ -50,18 +50,6 @@ namespace Microsoft.Graph
         IAuthenticationMethodsCollectionRequestBuilder Methods { get; }
 
         /// <summary>
-        /// Gets the request builder for MicrosoftAuthenticatorMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder MicrosoftAuthenticatorMethods { get; }
-
-        /// <summary>
-        /// Gets the request builder for OathMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationOathMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationOathMethodsCollectionRequestBuilder OathMethods { get; }
-
-        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationOperationsCollectionRequestBuilder"/>.</returns>
@@ -84,18 +72,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAuthenticationPhoneMethodsCollectionRequestBuilder"/>.</returns>
         IAuthenticationPhoneMethodsCollectionRequestBuilder PhoneMethods { get; }
-
-        /// <summary>
-        /// Gets the request builder for SecurityQuestionMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationSecurityQuestionMethodsCollectionRequestBuilder SecurityQuestionMethods { get; }
-
-        /// <summary>
-        /// Gets the request builder for TemporaryAccessPassMethods.
-        /// </summary>
-        /// <returns>The <see cref="IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder"/>.</returns>
-        IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder TemporaryAccessPassMethods { get; }
     
     }
 }

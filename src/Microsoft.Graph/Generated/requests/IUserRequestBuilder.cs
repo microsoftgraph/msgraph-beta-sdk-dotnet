@@ -364,8 +364,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
-        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
-        IUserJoinedTeamsCollectionRequestBuilder JoinedTeams { get; }
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams { get; }
 
         /// <summary>
         /// Gets the request builder for Teamwork.

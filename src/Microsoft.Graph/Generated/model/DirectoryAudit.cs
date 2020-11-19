@@ -87,7 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets result.
-        /// Indicates the result of the activity.Possible values are: success, failure, timeout, unknownFutureValue.
+        /// Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "result", Required = Newtonsoft.Json.Required.Default)]
         public OperationResult? Result { get; set; }

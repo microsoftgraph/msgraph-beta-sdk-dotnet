@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IDeviceManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AuditEvents.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementAuditEventsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementAuditEventsCollectionRequestBuilder AuditEvents { get; }
-
-        /// <summary>
         /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfiles.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles { get; }
+
+        /// <summary>
+        /// Gets the request builder for VirtualEndpoint.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointRequestBuilder"/>.</returns>
+        IVirtualEndpointRequestBuilder VirtualEndpoint { get; }
 
         /// <summary>
         /// Gets the request builder for AndroidForWorkAppConfigurationSchemas.
@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionRequestBuilder"/>.</returns>
         IDeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionRequestBuilder AndroidManagedStoreAppConfigurationSchemas { get; }
+
+        /// <summary>
+        /// Gets the request builder for AuditEvents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAuditEventsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAuditEventsCollectionRequestBuilder AuditEvents { get; }
 
         /// <summary>
         /// Gets the request builder for AssignmentFilters.
@@ -180,6 +186,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder"/>.</returns>
         ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder SoftwareUpdateStatusSummary { get; }
+
+        /// <summary>
+        /// Gets the request builder for ConfigurationCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementConfigurationCategoriesCollectionRequestBuilder ConfigurationCategories { get; }
+
+        /// <summary>
+        /// Gets the request builder for ConfigurationPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationPoliciesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementConfigurationPoliciesCollectionRequestBuilder ConfigurationPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for ConfigurationSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationSettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementConfigurationSettingsCollectionRequestBuilder ConfigurationSettings { get; }
 
         /// <summary>
         /// Gets the request builder for ComplianceManagementPartners.
@@ -590,6 +614,12 @@ namespace Microsoft.Graph
         IDeviceManagementDomainJoinConnectorsCollectionRequestBuilder DomainJoinConnectors { get; }
 
         /// <summary>
+        /// Gets the request builder for ConfigManagerCollections.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigManagerCollectionsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementConfigManagerCollectionsCollectionRequestBuilder ConfigManagerCollections { get; }
+
+        /// <summary>
         /// Gets the request builder for ResourceOperations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
@@ -707,6 +737,19 @@ namespace Microsoft.Graph
             IEnumerable<string> groupsToNotify = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementGetEffectivePermissions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
+        IDeviceManagementGetEffectivePermissionsRequestBuilder GetEffectivePermissions();
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetEffectivePermissions.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
+        IDeviceManagementGetEffectivePermissionsRequestBuilder GetEffectivePermissions(
+            string scope = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementVerifyWindowsEnrollmentAutoDiscovery.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryRequestBuilder"/>.</returns>
@@ -737,19 +780,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetAssignedRoleDetailsRequestBuilder"/>.</returns>
         IDeviceManagementGetAssignedRoleDetailsRequestBuilder GetAssignedRoleDetails();
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementGetEffectivePermissions.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
-        IDeviceManagementGetEffectivePermissionsRequestBuilder GetEffectivePermissions();
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementGetEffectivePermissions.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
-        IDeviceManagementGetEffectivePermissionsRequestBuilder GetEffectivePermissions(
-            string scope = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetRoleScopeTagsByIds.

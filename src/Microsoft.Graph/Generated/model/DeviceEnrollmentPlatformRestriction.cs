@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> BlockedManufacturers { get; set; }
     
         /// <summary>
+        /// Gets or sets blockedSkus.
+        /// Collection of blocked Skus.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockedSkus", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> BlockedSkus { get; set; }
+    
+        /// <summary>
         /// Gets or sets osMaximumVersion.
         /// Max OS version supported
         /// </summary>

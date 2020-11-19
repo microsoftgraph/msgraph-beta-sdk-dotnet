@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new AgreementFileLocalizationRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Versions.
+        /// </summary>
+        /// <returns>The <see cref="IAgreementFileLocalizationVersionsCollectionRequestBuilder"/>.</returns>
+        public IAgreementFileLocalizationVersionsCollectionRequestBuilder Versions
+        {
+            get
+            {
+                return new AgreementFileLocalizationVersionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("versions"), this.Client);
+            }
+        }
+    
     }
 }

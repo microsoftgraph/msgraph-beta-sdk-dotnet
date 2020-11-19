@@ -868,6 +868,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceDeviceManagement request builder.
+        /// </summary>
+        public IDeviceManagementRequestBuilder DeviceManagement
+        {
+            get
+            {
+                return new DeviceManagementRequestBuilder(this.BaseUrl + "/deviceManagement", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceCompliance request builder.
         /// </summary>
         public IComplianceRequestBuilder Compliance
@@ -1044,17 +1055,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDeviceManagement request builder.
-        /// </summary>
-        public IDeviceManagementRequestBuilder DeviceManagement
-        {
-            get
-            {
-                return new DeviceManagementRequestBuilder(this.BaseUrl + "/deviceManagement", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
         public IDeviceAppManagementRequestBuilder DeviceAppManagement
@@ -1127,7 +1127,7 @@ namespace Microsoft.Graph
         {
             get
             {
-                return new SecurityRequestBuilder(this.BaseUrl + "/Security", this);
+                return new SecurityRequestBuilder(this.BaseUrl + "/security", this);
             }
         }
     

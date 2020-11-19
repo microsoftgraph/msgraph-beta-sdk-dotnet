@@ -374,13 +374,6 @@ namespace Microsoft.Graph
         public Int32? SoftwareUpdatesEnforcedDelayInDays { get; set; }
     
         /// <summary>
-        /// Gets or sets software updates force delayed.
-        /// Indicates whether or not to delay user visibility of software updates when the device is in supervised mode.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "softwareUpdatesForceDelayed", Required = Newtonsoft.Json.Required.Default)]
-        public bool? SoftwareUpdatesForceDelayed { get; set; }
-    
-        /// <summary>
         /// Gets or sets spotlight block internet results.
         /// Indicates whether or not to block Spotlight from returning any results from an Internet search.
         /// </summary>

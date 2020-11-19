@@ -282,38 +282,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (authenticationToInitialize.MicrosoftAuthenticatorMethods != null && authenticationToInitialize.MicrosoftAuthenticatorMethods.CurrentPage != null)
-                {
-                    authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (authenticationToInitialize.OathMethods != null && authenticationToInitialize.OathMethods.CurrentPage != null)
-                {
-                    authenticationToInitialize.OathMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("oathMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.OathMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (authenticationToInitialize.Operations != null && authenticationToInitialize.Operations.CurrentPage != null)
                 {
                     authenticationToInitialize.Operations.AdditionalData = authenticationToInitialize.AdditionalData;
@@ -373,38 +341,6 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         authenticationToInitialize.PhoneMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (authenticationToInitialize.SecurityQuestionMethods != null && authenticationToInitialize.SecurityQuestionMethods.CurrentPage != null)
-                {
-                    authenticationToInitialize.SecurityQuestionMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("securityQuestionMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.SecurityQuestionMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (authenticationToInitialize.TemporaryAccessPassMethods != null && authenticationToInitialize.TemporaryAccessPassMethods.CurrentPage != null)
-                {
-                    authenticationToInitialize.TemporaryAccessPassMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("temporaryAccessPassMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.TemporaryAccessPassMethods.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

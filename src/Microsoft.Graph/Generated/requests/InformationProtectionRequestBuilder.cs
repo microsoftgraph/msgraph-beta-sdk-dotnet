@@ -51,14 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Policy.
+        /// Gets the request builder for Bitlocker.
         /// </summary>
-        /// <returns>The <see cref="IInformationProtectionPolicyRequestBuilder"/>.</returns>
-        public IInformationProtectionPolicyRequestBuilder Policy
+        /// <returns>The <see cref="IBitlockerRequestBuilder"/>.</returns>
+        public IBitlockerRequestBuilder Bitlocker
         {
             get
             {
-                return new InformationProtectionPolicyRequestBuilder(this.AppendSegmentToRequestUrl("policy"), this.Client);
+                return new BitlockerRequestBuilder(this.AppendSegmentToRequestUrl("bitlocker"), this.Client);
             }
         }
 
@@ -95,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new SensitivityPolicySettingsRequestBuilder(this.AppendSegmentToRequestUrl("sensitivityPolicySettings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Policy.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionPolicyRequestBuilder"/>.</returns>
+        public IInformationProtectionPolicyRequestBuilder Policy
+        {
+            get
+            {
+                return new InformationProtectionPolicyRequestBuilder(this.AppendSegmentToRequestUrl("policy"), this.Client);
             }
         }
 

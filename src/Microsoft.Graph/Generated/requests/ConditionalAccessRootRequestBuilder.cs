@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AuthenticationContextClassReferences.
+        /// </summary>
+        /// <returns>The <see cref="IConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder"/>.</returns>
+        public IConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder AuthenticationContextClassReferences
+        {
+            get
+            {
+                return new ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("authenticationContextClassReferences"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for NamedLocations.
         /// </summary>
         /// <returns>The <see cref="IConditionalAccessRootNamedLocationsCollectionRequestBuilder"/>.</returns>

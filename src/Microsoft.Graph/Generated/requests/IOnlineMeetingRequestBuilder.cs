@@ -31,6 +31,24 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IOnlineMeetingRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for AlternativeRecording.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingAlternativeRecordingRequestBuilder"/>.</returns>
+        IOnlineMeetingAlternativeRecordingRequestBuilder AlternativeRecording { get; }
+
+        /// <summary>
+        /// Gets the request builder for AttendeeReport.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingAttendeeReportRequestBuilder"/>.</returns>
+        IOnlineMeetingAttendeeReportRequestBuilder AttendeeReport { get; }
+
+        /// <summary>
+        /// Gets the request builder for Recording.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingRecordingRequestBuilder"/>.</returns>
+        IOnlineMeetingRecordingRequestBuilder Recording { get; }
+    
         
     
     }

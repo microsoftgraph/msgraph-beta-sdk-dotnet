@@ -234,38 +234,6 @@ namespace Microsoft.Graph
             if (printerToInitialize != null && printerToInitialize.AdditionalData != null)
             {
 
-                if (printerToInitialize.AllowedGroups != null && printerToInitialize.AllowedGroups.CurrentPage != null)
-                {
-                    printerToInitialize.AllowedGroups.AdditionalData = printerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("allowedGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerToInitialize.AllowedGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (printerToInitialize.AllowedUsers != null && printerToInitialize.AllowedUsers.CurrentPage != null)
-                {
-                    printerToInitialize.AllowedUsers.AdditionalData = printerToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printerToInitialize.AdditionalData.TryGetValue("allowedUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printerToInitialize.AllowedUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (printerToInitialize.Connectors != null && printerToInitialize.Connectors.CurrentPage != null)
                 {
                     printerToInitialize.Connectors.AdditionalData = printerToInitialize.AdditionalData;

@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets authentication context class references.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationContextClassReferences", Required = Newtonsoft.Json.Required.Default)]
+        public IConditionalAccessRootAuthenticationContextClassReferencesCollectionPage AuthenticationContextClassReferences { get; set; }
+    
+        /// <summary>
         /// Gets or sets named locations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "namedLocations", Required = Newtonsoft.Json.Required.Default)]

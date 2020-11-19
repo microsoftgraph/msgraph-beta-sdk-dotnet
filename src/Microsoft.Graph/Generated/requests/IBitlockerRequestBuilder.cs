@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IBitlockerRequestBuilder.
     /// </summary>
-    public partial interface IBitlockerRequestBuilder : IBaseRequestBuilder
+    public partial interface IBitlockerRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        IBitlockerRequest Request();
+        new IBitlockerRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IBitlockerRequest Request(IEnumerable<Option> options);
+        new IBitlockerRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for RecoveryKeys.

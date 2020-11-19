@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type BitlockerRequestBuilder.
     /// </summary>
-    public partial class BitlockerRequestBuilder : BaseRequestBuilder, IBitlockerRequestBuilder
+    public partial class BitlockerRequestBuilder : EntityRequestBuilder, IBitlockerRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IBitlockerRequest Request()
+        public new IBitlockerRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IBitlockerRequest Request(IEnumerable<Option> options)
+        public new IBitlockerRequest Request(IEnumerable<Option> options)
         {
             return new BitlockerRequest(this.RequestUrl, this.Client, options);
         }

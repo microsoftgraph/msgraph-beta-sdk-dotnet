@@ -150,6 +150,41 @@ namespace Microsoft.Graph
         public bool? GoogleAccountsBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk customization device settings blocked.
+        /// Indicates whether a user can access the device's Settings app while in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationDeviceSettingsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskCustomizationDeviceSettingsBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk customization power button actions blocked.
+        /// Whether the power menu is shown when a user long presses the Power button of a device in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationPowerButtonActionsBlocked", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskCustomizationPowerButtonActionsBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk customization status bar.
+        /// Indicates whether system info and notifications are disabled in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationStatusBar", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerKioskCustomizationStatusBar? KioskCustomizationStatusBar { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk customization system error warnings.
+        /// Indicates whether system error dialogs for crashed or unresponsive apps are shown in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationSystemErrorWarnings", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskCustomizationSystemErrorWarnings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk customization system navigation.
+        /// Indicates which navigation features are enabled in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationSystemNavigation", Required = Newtonsoft.Json.Required.Default)]
+        public AndroidDeviceOwnerKioskCustomizationSystemNavigation? KioskCustomizationSystemNavigation { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode apps.
         /// A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
         /// </summary>

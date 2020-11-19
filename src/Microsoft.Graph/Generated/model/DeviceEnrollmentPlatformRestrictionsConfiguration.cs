@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public DeviceEnrollmentPlatformRestriction AndroidRestriction { get; set; }
     
         /// <summary>
+        /// Gets or sets aosp restriction.
+        /// AOSP restrictions based on platform, platform operating system version, and device ownership
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aospRestriction", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceEnrollmentPlatformRestriction AospRestriction { get; set; }
+    
+        /// <summary>
         /// Gets or sets ios restriction.
         /// Not yet documented
         /// </summary>

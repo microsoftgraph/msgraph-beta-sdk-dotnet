@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SharedEmailDomains.
+        /// </summary>
+        /// <returns>The <see cref="IDirectorySharedEmailDomainsCollectionRequestBuilder"/>.</returns>
+        public IDirectorySharedEmailDomainsCollectionRequestBuilder SharedEmailDomains
+        {
+            get
+            {
+                return new DirectorySharedEmailDomainsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sharedEmailDomains"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for FeatureRolloutPolicies.
         /// </summary>
         /// <returns>The <see cref="IDirectoryFeatureRolloutPoliciesCollectionRequestBuilder"/>.</returns>

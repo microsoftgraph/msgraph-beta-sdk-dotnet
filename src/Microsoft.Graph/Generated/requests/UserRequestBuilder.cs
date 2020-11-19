@@ -713,12 +713,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
-        /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>
-        public IUserJoinedTeamsCollectionRequestBuilder JoinedTeams
+        /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams
         {
             get
             {
-                return new UserJoinedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+                return new UserJoinedTeamsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
             }
         }
 

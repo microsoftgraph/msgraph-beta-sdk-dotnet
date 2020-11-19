@@ -30,6 +30,12 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.emailAuthenticationMethod";
         }
 	
+        /// <summary>
+        /// Gets or sets email address.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        public string EmailAddress { get; set; }
+    
     }
 }
 

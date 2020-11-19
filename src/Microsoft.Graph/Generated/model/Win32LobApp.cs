@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public IEnumerable<Win32LobAppDetection> DetectionRules { get; set; }
     
         /// <summary>
+        /// Gets or sets display version.
+        /// The version displayed in the UX for this app.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayVersion", Required = Newtonsoft.Json.Required.Default)]
+        public string DisplayVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets install command line.
         /// The command line to install this app
         /// </summary>
