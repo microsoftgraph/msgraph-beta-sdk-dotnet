@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = -1,
+	
+        /// <summary>
         /// Free
         /// </summary>
         Free = 0,
@@ -28,11 +33,6 @@ namespace Microsoft.Graph
         /// Tentative
         /// </summary>
         Tentative = 1,
-	
-        /// <summary>
-        /// Unknown
-        /// </summary>
-        Unknown = -1,
 	
         /// <summary>
         /// Busy

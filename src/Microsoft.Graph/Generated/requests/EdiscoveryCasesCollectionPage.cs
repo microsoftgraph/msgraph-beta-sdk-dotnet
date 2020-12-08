@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EdiscoveryCasesCollectionPage.
     /// </summary>
-    public partial class EdiscoveryCasesCollectionPage : CollectionPage<EdiscoveryCase>, IEdiscoveryCasesCollectionPage
+    public partial class EdiscoveryCasesCollectionPage : CollectionPage<Case>, IEdiscoveryCasesCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IEdiscoveryCasesCollectionRequest"/> instance.

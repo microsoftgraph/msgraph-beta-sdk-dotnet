@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICaseIndexOperationRequestBuilder.
     /// </summary>
-    public partial interface ICaseIndexOperationRequestBuilder : IEntityRequestBuilder
+    public partial interface ICaseIndexOperationRequestBuilder : ICaseOperationRequestBuilder
     {
         /// <summary>
         /// Builds the request.

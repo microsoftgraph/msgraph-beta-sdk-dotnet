@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = -1,
+	
+        /// <summary>
         /// Ip
         /// </summary>
         Ip = 0,
@@ -28,11 +33,6 @@ namespace Microsoft.Graph
         /// Icmp
         /// </summary>
         Icmp = 1,
-	
-        /// <summary>
-        /// Unknown
-        /// </summary>
-        Unknown = -1,
 	
         /// <summary>
         /// Igmp

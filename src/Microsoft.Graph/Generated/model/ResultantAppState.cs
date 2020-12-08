@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Installed
-        /// </summary>
-        Installed = 1,
-	
-        /// <summary>
         /// Not Applicable
         /// </summary>
         NotApplicable = -1,
+	
+        /// <summary>
+        /// Installed
+        /// </summary>
+        Installed = 1,
 	
         /// <summary>
         /// Failed

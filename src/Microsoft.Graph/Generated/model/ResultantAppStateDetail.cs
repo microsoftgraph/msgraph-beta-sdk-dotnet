@@ -20,54 +20,14 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// No Additional Details
-        /// </summary>
-        NoAdditionalDetails = 0,
-	
-        /// <summary>
-        /// Dependency Failed To Install
-        /// </summary>
-        DependencyFailedToInstall = 1,
-	
-        /// <summary>
-        /// Dependency With Requirements Not Met
-        /// </summary>
-        DependencyWithRequirementsNotMet = 2,
-	
-        /// <summary>
-        /// Dependency Pending Reboot
-        /// </summary>
-        DependencyPendingReboot = 3,
-	
-        /// <summary>
-        /// Dependency With Auto Install Disabled
-        /// </summary>
-        DependencyWithAutoInstallDisabled = 4,
-	
-        /// <summary>
-        /// Ios App Store Update Failed To Install
-        /// </summary>
-        IosAppStoreUpdateFailedToInstall = 1000,
-	
-        /// <summary>
         /// Processor Architecture Not Applicable
         /// </summary>
         ProcessorArchitectureNotApplicable = -1000,
 	
         /// <summary>
-        /// Vpp App Has Update Available
-        /// </summary>
-        VppAppHasUpdateAvailable = 1001,
-	
-        /// <summary>
         /// Minimum Disk Space Not Met
         /// </summary>
         MinimumDiskSpaceNotMet = -1001,
-	
-        /// <summary>
-        /// User Rejected Update
-        /// </summary>
-        UserRejectedUpdate = 1002,
 	
         /// <summary>
         /// Minimum Os Version Not Met
@@ -108,6 +68,46 @@ namespace Microsoft.Graph
         /// Power Shell Script Requirement Not Met
         /// </summary>
         PowerShellScriptRequirementNotMet = -1013,
+	
+        /// <summary>
+        /// No Additional Details
+        /// </summary>
+        NoAdditionalDetails = 0,
+	
+        /// <summary>
+        /// Dependency Failed To Install
+        /// </summary>
+        DependencyFailedToInstall = 1,
+	
+        /// <summary>
+        /// Dependency With Requirements Not Met
+        /// </summary>
+        DependencyWithRequirementsNotMet = 2,
+	
+        /// <summary>
+        /// Dependency Pending Reboot
+        /// </summary>
+        DependencyPendingReboot = 3,
+	
+        /// <summary>
+        /// Dependency With Auto Install Disabled
+        /// </summary>
+        DependencyWithAutoInstallDisabled = 4,
+	
+        /// <summary>
+        /// Ios App Store Update Failed To Install
+        /// </summary>
+        IosAppStoreUpdateFailedToInstall = 1000,
+	
+        /// <summary>
+        /// Vpp App Has Update Available
+        /// </summary>
+        VppAppHasUpdateAvailable = 1001,
+	
+        /// <summary>
+        /// User Rejected Update
+        /// </summary>
+        UserRejectedUpdate = 1002,
 	
         /// <summary>
         /// See Install Error Code

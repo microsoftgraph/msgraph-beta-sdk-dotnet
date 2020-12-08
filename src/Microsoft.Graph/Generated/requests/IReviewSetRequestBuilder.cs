@@ -37,5 +37,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IReviewSetQueriesCollectionRequestBuilder"/>.</returns>
         IReviewSetQueriesCollectionRequestBuilder Queries { get; }
     
+        /// <summary>
+        /// Gets the request builder for ReviewSetExport.
+        /// </summary>
+        /// <returns>The <see cref="IReviewSetExportRequestBuilder"/>.</returns>
+        IReviewSetExportRequestBuilder Export(
+            ExportFileStructure exportStructure,
+            string outputName = null,
+            string description = null,
+            string azureBlobContainer = null,
+            string azureBlobToken = null,
+            ExportOptions? exportOptions = null);
+    
     }
 }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets errorCode.
-        /// Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
+        /// Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ErrorCode { get; set; }

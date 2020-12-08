@@ -37,7 +37,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 3,
+        UnknownFutureValue = 4,
+	
+        /// <summary>
+        /// Warning
+        /// </summary>
+        Warning = 3,
 	
     }
 }

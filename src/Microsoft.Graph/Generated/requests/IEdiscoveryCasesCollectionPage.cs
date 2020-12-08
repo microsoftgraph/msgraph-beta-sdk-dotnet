@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IEdiscoveryCasesCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<EdiscoveryCasesCollectionPage>))]
-    public interface IEdiscoveryCasesCollectionPage : ICollectionPage<EdiscoveryCase>
+    public interface IEdiscoveryCasesCollectionPage : ICollectionPage<Case>
     {
         /// <summary>
         /// Gets the next page <see cref="IEdiscoveryCasesCollectionRequest"/> instance.

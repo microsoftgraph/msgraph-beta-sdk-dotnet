@@ -340,6 +340,12 @@ namespace Microsoft.Graph
         public Int32? UnseenMessagesCount { get; set; }
     
         /// <summary>
+        /// Gets or sets membership rule processing status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRuleProcessingStatus", Required = Newtonsoft.Json.Required.Default)]
+        public MembershipRuleProcessingStatus MembershipRuleProcessingStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets is archived.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]

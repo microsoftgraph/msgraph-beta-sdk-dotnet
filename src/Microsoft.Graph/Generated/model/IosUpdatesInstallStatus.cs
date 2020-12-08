@@ -20,26 +20,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Success
-        /// </summary>
-        Success = 0,
-	
-        /// <summary>
-        /// Available
-        /// </summary>
-        Available = 1,
-	
-        /// <summary>
-        /// Idle
-        /// </summary>
-        Idle = 2,
-	
-        /// <summary>
-        /// Unknown
-        /// </summary>
-        Unknown = 3,
-	
-        /// <summary>
         /// Update Scan Failed
         /// </summary>
         UpdateScanFailed = -2016324062,
@@ -128,6 +108,26 @@ namespace Microsoft.Graph
         /// Mdm Client Crashed
         /// </summary>
         MdmClientCrashed = -2016336109,
+	
+        /// <summary>
+        /// Success
+        /// </summary>
+        Success = 0,
+	
+        /// <summary>
+        /// Available
+        /// </summary>
+        Available = 1,
+	
+        /// <summary>
+        /// Idle
+        /// </summary>
+        Idle = 2,
+	
+        /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = 3,
 	
     }
 }

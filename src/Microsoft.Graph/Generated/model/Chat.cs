@@ -68,6 +68,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets messages.
+        /// A collection of all the messages in the chat. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
         public IChatMessagesCollectionPage Messages { get; set; }

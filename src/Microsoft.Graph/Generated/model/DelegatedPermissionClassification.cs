@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets classification.
+        /// The classification value being given. Possible value: low. Does not support $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
         public PermissionClassificationType? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets permission id.
+        /// The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionId", Required = Newtonsoft.Json.Required.Default)]
         public string PermissionId { get; set; }
     
         /// <summary>
         /// Gets or sets permission name.
+        /// The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionName", Required = Newtonsoft.Json.Required.Default)]
         public string PermissionName { get; set; }

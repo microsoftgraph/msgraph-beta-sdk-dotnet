@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets excludes.
+        /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludes", Required = Newtonsoft.Json.Required.Default)]
         public IPermissionGrantPolicyExcludesCollectionPage Excludes { get; set; }
     
         /// <summary>
         /// Gets or sets includes.
+        /// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includes", Required = Newtonsoft.Json.Required.Default)]
         public IPermissionGrantPolicyIncludesCollectionPage Includes { get; set; }

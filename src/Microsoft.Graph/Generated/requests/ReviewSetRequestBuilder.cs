@@ -62,5 +62,28 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for ReviewSetExport.
+        /// </summary>
+        /// <returns>The <see cref="IReviewSetExportRequestBuilder"/>.</returns>
+        public IReviewSetExportRequestBuilder Export(
+            ExportFileStructure exportStructure,
+            string outputName = null,
+            string description = null,
+            string azureBlobContainer = null,
+            string azureBlobToken = null,
+            ExportOptions? exportOptions = null)
+        {
+            return new ReviewSetExportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.export"),
+                this.Client,
+                exportStructure,
+                outputName,
+                description,
+                azureBlobContainer,
+                azureBlobToken,
+                exportOptions);
+        }
+    
     }
 }

@@ -46,13 +46,13 @@ namespace Microsoft.Graph
         /// Gets or sets allowed groups.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedGroups", Required = Newtonsoft.Json.Required.Default)]
-        public IPrinterShareAllowedGroupsCollectionPage AllowedGroups { get; set; }
+        public IPrinterShareAllowedGroupsCollectionWithReferencesPage AllowedGroups { get; set; }
     
         /// <summary>
         /// Gets or sets allowed users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUsers", Required = Newtonsoft.Json.Required.Default)]
-        public IPrinterShareAllowedUsersCollectionPage AllowedUsers { get; set; }
+        public IPrinterShareAllowedUsersCollectionWithReferencesPage AllowedUsers { get; set; }
     
         /// <summary>
         /// Gets or sets printer.

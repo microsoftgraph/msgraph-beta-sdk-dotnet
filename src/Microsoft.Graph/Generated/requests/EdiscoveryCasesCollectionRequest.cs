@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified EdiscoveryCase to the collection via POST.
+        /// Adds the specified Case to the collection via POST.
         /// </summary>
-        /// <param name="ediscoveryCase">The EdiscoveryCase to add.</param>
-        /// <returns>The created EdiscoveryCase.</returns>
-        public System.Threading.Tasks.Task<EdiscoveryCase> AddAsync(EdiscoveryCase ediscoveryCase)
+        /// <param name="casesCase">The Case to add.</param>
+        /// <returns>The created Case.</returns>
+        public System.Threading.Tasks.Task<Case> AddAsync(Case casesCase)
         {
-            return this.AddAsync(ediscoveryCase, CancellationToken.None);
+            return this.AddAsync(casesCase, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified EdiscoveryCase to the collection via POST.
+        /// Adds the specified Case to the collection via POST.
         /// </summary>
-        /// <param name="ediscoveryCase">The EdiscoveryCase to add.</param>
+        /// <param name="casesCase">The Case to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EdiscoveryCase.</returns>
-        public System.Threading.Tasks.Task<EdiscoveryCase> AddAsync(EdiscoveryCase ediscoveryCase, CancellationToken cancellationToken)
+        /// <returns>The created Case.</returns>
+        public System.Threading.Tasks.Task<Case> AddAsync(Case casesCase, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<EdiscoveryCase>(ediscoveryCase, cancellationToken);
+            return this.SendAsync<Case>(casesCase, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IEdiscoveryCasesCollectionRequest Expand(Expression<Func<EdiscoveryCase, object>> expandExpression)
+        public IEdiscoveryCasesCollectionRequest Expand(Expression<Func<Case, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IEdiscoveryCasesCollectionRequest Select(Expression<Func<EdiscoveryCase, object>> selectExpression)
+        public IEdiscoveryCasesCollectionRequest Select(Expression<Func<Case, object>> selectExpression)
         {
             if (selectExpression == null)
             {

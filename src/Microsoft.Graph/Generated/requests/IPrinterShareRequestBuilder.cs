@@ -34,14 +34,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AllowedGroups.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
-        IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups { get; }
+        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPrinterShareAllowedGroupsCollectionWithReferencesRequestBuilder AllowedGroups { get; }
 
         /// <summary>
         /// Gets the request builder for AllowedUsers.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareAllowedUsersCollectionRequestBuilder"/>.</returns>
-        IPrinterShareAllowedUsersCollectionRequestBuilder AllowedUsers { get; }
+        /// <returns>The <see cref="IPrinterShareAllowedUsersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPrinterShareAllowedUsersCollectionWithReferencesRequestBuilder AllowedUsers { get; }
 
         /// <summary>
         /// Gets the request builder for Printer.

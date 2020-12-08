@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedToCreateApps.
+        /// Indicates whether the default user role can create applications.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToCreateApps", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowedToCreateApps { get; set; }
     
         /// <summary>
         /// Gets or sets allowedToCreateSecurityGroups.
+        /// Indicates whether the default user role can create security groups.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToCreateSecurityGroups", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowedToCreateSecurityGroups { get; set; }
     
         /// <summary>
         /// Gets or sets allowedToReadOtherUsers.
+        /// Indicates whether the default user role can read other users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToReadOtherUsers", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowedToReadOtherUsers { get; set; }

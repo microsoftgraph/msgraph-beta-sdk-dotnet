@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CaseIndexOperationRequestBuilder.
     /// </summary>
-    public partial class CaseIndexOperationRequestBuilder : EntityRequestBuilder, ICaseIndexOperationRequestBuilder
+    public partial class CaseIndexOperationRequestBuilder : CaseOperationRequestBuilder, ICaseIndexOperationRequestBuilder
     {
 
         /// <summary>
