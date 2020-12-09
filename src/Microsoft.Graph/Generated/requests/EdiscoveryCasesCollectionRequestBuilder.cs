@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IEdiscoveryCaseRequestBuilder"/> for the specified EdiscoveryEdiscoveryCase.
+        /// Gets an <see cref="ICaseRequestBuilder"/> for the specified EdiscoveryCase.
         /// </summary>
-        /// <param name="id">The ID for the EdiscoveryEdiscoveryCase.</param>
-        /// <returns>The <see cref="IEdiscoveryCaseRequestBuilder"/>.</returns>
-        public IEdiscoveryCaseRequestBuilder this[string id]
+        /// <param name="id">The ID for the EdiscoveryCase.</param>
+        /// <returns>The <see cref="ICaseRequestBuilder"/>.</returns>
+        public ICaseRequestBuilder this[string id]
         {
             get
             {
-                return new EdiscoveryCaseRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new CaseRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

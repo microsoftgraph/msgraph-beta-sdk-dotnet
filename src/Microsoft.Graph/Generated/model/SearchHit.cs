@@ -31,6 +31,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets contentSource.
+        /// The name of the content source which the externalItem is part of .
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSource", Required = Newtonsoft.Json.Required.Default)]
+        public string ContentSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hitId.
+        /// The internal identifier for the item.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hitId", Required = Newtonsoft.Json.Required.Default)]
+        public string HitId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rank.
+        /// The rank or the order of the result.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rank", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? Rank { get; set; }
+    
+        /// <summary>
+        /// Gets or sets summary.
+        /// A summary of the result, if a summary is available.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
+        public string Summary { get; set; }
+    
+        /// <summary>
         /// Gets or sets _id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "_id", Required = Newtonsoft.Json.Required.Default)]
@@ -49,40 +77,16 @@ namespace Microsoft.Graph
         public string _summary { get; set; }
     
         /// <summary>
-        /// Gets or sets contentSource.
+        /// Gets or sets resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSource", Required = Newtonsoft.Json.Required.Default)]
-        public string ContentSource { get; set; }
-    
-        /// <summary>
-        /// Gets or sets hitId.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hitId", Required = Newtonsoft.Json.Required.Default)]
-        public string HitId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets rank.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rank", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Rank { get; set; }
-    
-        /// <summary>
-        /// Gets or sets summary.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
-        public string Summary { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        public Entity Resource { get; set; }
     
         /// <summary>
         /// Gets or sets _source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "_source", Required = Newtonsoft.Json.Required.Default)]
         public Entity _source { get; set; }
-    
-        /// <summary>
-        /// Gets or sets resource.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
-        public Entity Resource { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

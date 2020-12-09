@@ -248,7 +248,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Sign-in status. Possible values include Success and Failure.
+        /// Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public SignInStatus Status { get; set; }

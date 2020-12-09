@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// None
+        /// </summary>
+        None = -1,
+	
+        /// <summary>
         /// Owner
         /// </summary>
         Owner = 0,
@@ -28,11 +33,6 @@ namespace Microsoft.Graph
         /// Contributor
         /// </summary>
         Contributor = 1,
-	
-        /// <summary>
-        /// None
-        /// </summary>
-        None = -1,
 	
         /// <summary>
         /// Reader

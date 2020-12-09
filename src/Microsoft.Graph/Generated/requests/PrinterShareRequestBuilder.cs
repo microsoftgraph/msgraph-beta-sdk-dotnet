@@ -53,24 +53,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AllowedGroups.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionRequestBuilder"/>.</returns>
-        public IPrinterShareAllowedGroupsCollectionRequestBuilder AllowedGroups
+        /// <returns>The <see cref="IPrinterShareAllowedGroupsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IPrinterShareAllowedGroupsCollectionWithReferencesRequestBuilder AllowedGroups
         {
             get
             {
-                return new PrinterShareAllowedGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedGroups"), this.Client);
+                return new PrinterShareAllowedGroupsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("allowedGroups"), this.Client);
             }
         }
 
         /// <summary>
         /// Gets the request builder for AllowedUsers.
         /// </summary>
-        /// <returns>The <see cref="IPrinterShareAllowedUsersCollectionRequestBuilder"/>.</returns>
-        public IPrinterShareAllowedUsersCollectionRequestBuilder AllowedUsers
+        /// <returns>The <see cref="IPrinterShareAllowedUsersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IPrinterShareAllowedUsersCollectionWithReferencesRequestBuilder AllowedUsers
         {
             get
             {
-                return new PrinterShareAllowedUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("allowedUsers"), this.Client);
+                return new PrinterShareAllowedUsersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("allowedUsers"), this.Client);
             }
         }
 

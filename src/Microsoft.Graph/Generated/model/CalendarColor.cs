@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Auto
+        /// </summary>
+        Auto = -1,
+	
+        /// <summary>
         /// Light Blue
         /// </summary>
         LightBlue = 0,
@@ -28,11 +33,6 @@ namespace Microsoft.Graph
         /// Light Green
         /// </summary>
         LightGreen = 1,
-	
-        /// <summary>
-        /// Auto
-        /// </summary>
-        Auto = -1,
 	
         /// <summary>
         /// Light Orange

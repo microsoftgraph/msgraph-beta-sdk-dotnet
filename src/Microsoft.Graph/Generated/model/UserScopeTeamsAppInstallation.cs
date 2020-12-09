@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets chat.
+        /// The chat between the user and Teams app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chat", Required = Newtonsoft.Json.Required.Default)]
         public Chat Chat { get; set; }

@@ -250,7 +250,7 @@ namespace Microsoft.Graph
         /// Gets or sets network destination asn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkDestinationAsn", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NetworkDestinationAsn { get; set; }
+        public Int64? NetworkDestinationAsn { get; set; }
     
         /// <summary>
         /// Gets or sets network destination cidr block.
@@ -304,7 +304,7 @@ namespace Microsoft.Graph
         /// Gets or sets network source asn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkSourceAsn", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? NetworkSourceAsn { get; set; }
+        public Int64? NetworkSourceAsn { get; set; }
     
         /// <summary>
         /// Gets or sets network source cidr block.

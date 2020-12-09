@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IB2xIdentityUserFlowIdentityProvidersCollectionWithReferencesRequestBuilder"/>.</returns>
         IB2xIdentityUserFlowIdentityProvidersCollectionWithReferencesRequestBuilder IdentityProviders { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserAttributeAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IB2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder"/>.</returns>
+        IB2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder UserAttributeAssignments { get; }
     
     }
 }

@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IEdiscoveryCasesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IEdiscoveryCaseRequestBuilder"/> for the specified EdiscoveryCase.
+        /// Gets an <see cref="ICaseRequestBuilder"/> for the specified Case.
         /// </summary>
-        /// <param name="id">The ID for the EdiscoveryCase.</param>
-        /// <returns>The <see cref="IEdiscoveryCaseRequestBuilder"/>.</returns>
-        IEdiscoveryCaseRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the Case.</param>
+        /// <returns>The <see cref="ICaseRequestBuilder"/>.</returns>
+        ICaseRequestBuilder this[string id] { get; }
 
         
     }

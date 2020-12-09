@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets capabilityStatus.
-        /// For example, 'Enabled'.
+        /// Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "capabilityStatus", Required = Newtonsoft.Json.Required.Default)]
         public string CapabilityStatus { get; set; }

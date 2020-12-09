@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public string ActivityGroupName { get; set; }
     
         /// <summary>
+        /// Gets or sets alert detections.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alertDetections", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AlertDetection> AlertDetections { get; set; }
+    
+        /// <summary>
         /// Gets or sets assigned to.
         /// Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).
         /// </summary>
@@ -156,6 +162,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> IncidentIds { get; set; }
     
         /// <summary>
+        /// Gets or sets investigation security states.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "investigationSecurityStates", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<InvestigationSecurityState> InvestigationSecurityStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last event date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastEventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastEventDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// Time at which the alert entity was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
@@ -168,6 +186,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "malwareStates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MalwareState> MalwareStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets message security states.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageSecurityStates", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<MessageSecurityState> MessageSecurityStates { get; set; }
     
         /// <summary>
         /// Gets or sets network connections.
@@ -245,6 +269,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "triggers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AlertTrigger> Triggers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets uri click security states.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uriClickSecurityStates", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<UriClickSecurityState> UriClickSecurityStates { get; set; }
     
         /// <summary>
         /// Gets or sets user states.

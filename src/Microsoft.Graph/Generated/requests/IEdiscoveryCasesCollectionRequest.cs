@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified EdiscoveryCase to the collection via POST.
+        /// Adds the specified Case to the collection via POST.
         /// </summary>
-        /// <param name="ediscoveryCase">The EdiscoveryCase to add.</param>
-        /// <returns>The created EdiscoveryCase.</returns>
-        System.Threading.Tasks.Task<EdiscoveryCase> AddAsync(EdiscoveryCase ediscoveryCase);
+        /// <param name="casesCase">The Case to add.</param>
+        /// <returns>The created Case.</returns>
+        System.Threading.Tasks.Task<Case> AddAsync(Case casesCase);
 
         /// <summary>
-        /// Adds the specified EdiscoveryCase to the collection via POST.
+        /// Adds the specified Case to the collection via POST.
         /// </summary>
-        /// <param name="ediscoveryCase">The EdiscoveryCase to add.</param>
+        /// <param name="casesCase">The Case to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EdiscoveryCase.</returns>
-        System.Threading.Tasks.Task<EdiscoveryCase> AddAsync(EdiscoveryCase ediscoveryCase, CancellationToken cancellationToken);
+        /// <returns>The created Case.</returns>
+        System.Threading.Tasks.Task<Case> AddAsync(Case casesCase, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IEdiscoveryCasesCollectionRequest Expand(Expression<Func<EdiscoveryCase, object>> expandExpression);
+        IEdiscoveryCasesCollectionRequest Expand(Expression<Func<Case, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IEdiscoveryCasesCollectionRequest Select(Expression<Func<EdiscoveryCase, object>> selectExpression);
+        IEdiscoveryCasesCollectionRequest Select(Expression<Func<Case, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

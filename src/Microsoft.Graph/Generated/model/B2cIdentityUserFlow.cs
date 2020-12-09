@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityProviders", Required = Newtonsoft.Json.Required.Default)]
         public IB2cIdentityUserFlowIdentityProvidersCollectionWithReferencesPage IdentityProviders { get; set; }
     
+        /// <summary>
+        /// Gets or sets user attribute assignments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userAttributeAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IB2cIdentityUserFlowUserAttributeAssignmentsCollectionPage UserAttributeAssignments { get; set; }
+    
     }
 }
 

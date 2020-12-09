@@ -27,23 +27,26 @@ namespace Microsoft.Graph
         /// </summary>
         public ResultInfo()
         {
-            this.ODataType = "microsoft.graph.ResultInfo";
+            this.ODataType = "microsoft.graph.resultInfo";
         }
 
         /// <summary>
         /// Gets or sets code.
+        /// The result code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Code { get; set; }
     
         /// <summary>
         /// Gets or sets message.
+        /// The message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets subcode.
+        /// The result sub-code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subcode", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Subcode { get; set; }

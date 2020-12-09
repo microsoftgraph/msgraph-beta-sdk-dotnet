@@ -1017,13 +1017,6 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken upperLimit = null);
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsErf_Precise.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsErf_PreciseRequestBuilder"/>.</returns>
-        IWorkbookFunctionsErf_PreciseRequestBuilder Erf_Precise(
-            Newtonsoft.Json.Linq.JToken X = null);
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsErfC.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsErfCRequestBuilder"/>.</returns>
@@ -1035,6 +1028,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsErfC_PreciseRequestBuilder"/>.</returns>
         IWorkbookFunctionsErfC_PreciseRequestBuilder ErfC_Precise(
+            Newtonsoft.Json.Linq.JToken X = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsErf_Precise.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsErf_PreciseRequestBuilder"/>.</returns>
+        IWorkbookFunctionsErf_PreciseRequestBuilder Erf_Precise(
             Newtonsoft.Json.Linq.JToken X = null);
 
         /// <summary>
@@ -1074,43 +1074,6 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken x = null,
             Newtonsoft.Json.Linq.JToken lambda = null,
             Newtonsoft.Json.Linq.JToken cumulative = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsF_Dist.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsF_DistRequestBuilder"/>.</returns>
-        IWorkbookFunctionsF_DistRequestBuilder F_Dist(
-            Newtonsoft.Json.Linq.JToken x = null,
-            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
-            Newtonsoft.Json.Linq.JToken degFreedom2 = null,
-            Newtonsoft.Json.Linq.JToken cumulative = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsF_Dist_RT.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsF_Dist_RTRequestBuilder"/>.</returns>
-        IWorkbookFunctionsF_Dist_RTRequestBuilder F_Dist_RT(
-            Newtonsoft.Json.Linq.JToken x = null,
-            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
-            Newtonsoft.Json.Linq.JToken degFreedom2 = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsF_Inv.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsF_InvRequestBuilder"/>.</returns>
-        IWorkbookFunctionsF_InvRequestBuilder F_Inv(
-            Newtonsoft.Json.Linq.JToken probability = null,
-            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
-            Newtonsoft.Json.Linq.JToken degFreedom2 = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsF_Inv_RT.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsF_Inv_RTRequestBuilder"/>.</returns>
-        IWorkbookFunctionsF_Inv_RTRequestBuilder F_Inv_RT(
-            Newtonsoft.Json.Linq.JToken probability = null,
-            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
-            Newtonsoft.Json.Linq.JToken degFreedom2 = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFunctionsFact.
@@ -1210,10 +1173,61 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken schedule = null);
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsF_Dist.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsF_DistRequestBuilder"/>.</returns>
+        IWorkbookFunctionsF_DistRequestBuilder F_Dist(
+            Newtonsoft.Json.Linq.JToken x = null,
+            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
+            Newtonsoft.Json.Linq.JToken degFreedom2 = null,
+            Newtonsoft.Json.Linq.JToken cumulative = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsF_Dist_RT.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsF_Dist_RTRequestBuilder"/>.</returns>
+        IWorkbookFunctionsF_Dist_RTRequestBuilder F_Dist_RT(
+            Newtonsoft.Json.Linq.JToken x = null,
+            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
+            Newtonsoft.Json.Linq.JToken degFreedom2 = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsF_Inv.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsF_InvRequestBuilder"/>.</returns>
+        IWorkbookFunctionsF_InvRequestBuilder F_Inv(
+            Newtonsoft.Json.Linq.JToken probability = null,
+            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
+            Newtonsoft.Json.Linq.JToken degFreedom2 = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsF_Inv_RT.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsF_Inv_RTRequestBuilder"/>.</returns>
+        IWorkbookFunctionsF_Inv_RTRequestBuilder F_Inv_RT(
+            Newtonsoft.Json.Linq.JToken probability = null,
+            Newtonsoft.Json.Linq.JToken degFreedom1 = null,
+            Newtonsoft.Json.Linq.JToken degFreedom2 = null);
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsGamma.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsGammaRequestBuilder"/>.</returns>
         IWorkbookFunctionsGammaRequestBuilder Gamma(
+            Newtonsoft.Json.Linq.JToken x = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsGammaLn.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsGammaLnRequestBuilder"/>.</returns>
+        IWorkbookFunctionsGammaLnRequestBuilder GammaLn(
+            Newtonsoft.Json.Linq.JToken x = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsGammaLn_Precise.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsGammaLn_PreciseRequestBuilder"/>.</returns>
+        IWorkbookFunctionsGammaLn_PreciseRequestBuilder GammaLn_Precise(
             Newtonsoft.Json.Linq.JToken x = null);
 
         /// <summary>
@@ -1234,20 +1248,6 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken probability = null,
             Newtonsoft.Json.Linq.JToken alpha = null,
             Newtonsoft.Json.Linq.JToken beta = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsGammaLn.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsGammaLnRequestBuilder"/>.</returns>
-        IWorkbookFunctionsGammaLnRequestBuilder GammaLn(
-            Newtonsoft.Json.Linq.JToken x = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsGammaLn_Precise.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsGammaLn_PreciseRequestBuilder"/>.</returns>
-        IWorkbookFunctionsGammaLn_PreciseRequestBuilder GammaLn_Precise(
-            Newtonsoft.Json.Linq.JToken x = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFunctionsGauss.
@@ -1626,14 +1626,6 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken value = null);
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsIso_Ceiling.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsIso_CeilingRequestBuilder"/>.</returns>
-        IWorkbookFunctionsIso_CeilingRequestBuilder Iso_Ceiling(
-            Newtonsoft.Json.Linq.JToken number = null,
-            Newtonsoft.Json.Linq.JToken significance = null);
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsIsOdd.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsIsOddRequestBuilder"/>.</returns>
@@ -1646,6 +1638,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookFunctionsIsoWeekNumRequestBuilder"/>.</returns>
         IWorkbookFunctionsIsoWeekNumRequestBuilder IsoWeekNum(
             Newtonsoft.Json.Linq.JToken date = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsIso_Ceiling.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsIso_CeilingRequestBuilder"/>.</returns>
+        IWorkbookFunctionsIso_CeilingRequestBuilder Iso_Ceiling(
+            Newtonsoft.Json.Linq.JToken number = null,
+            Newtonsoft.Json.Linq.JToken significance = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFunctionsIspmt.
@@ -2583,20 +2583,6 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken standardDev = null);
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsStDev_P.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsStDev_PRequestBuilder"/>.</returns>
-        IWorkbookFunctionsStDev_PRequestBuilder StDev_P(
-            Newtonsoft.Json.Linq.JToken values = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsStDev_S.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsStDev_SRequestBuilder"/>.</returns>
-        IWorkbookFunctionsStDev_SRequestBuilder StDev_S(
-            Newtonsoft.Json.Linq.JToken values = null);
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsStDevA.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsStDevARequestBuilder"/>.</returns>
@@ -2608,6 +2594,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsStDevPARequestBuilder"/>.</returns>
         IWorkbookFunctionsStDevPARequestBuilder StDevPA(
+            Newtonsoft.Json.Linq.JToken values = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsStDev_P.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsStDev_PRequestBuilder"/>.</returns>
+        IWorkbookFunctionsStDev_PRequestBuilder StDev_P(
+            Newtonsoft.Json.Linq.JToken values = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsStDev_S.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsStDev_SRequestBuilder"/>.</returns>
+        IWorkbookFunctionsStDev_SRequestBuilder StDev_S(
             Newtonsoft.Json.Linq.JToken values = null);
 
         /// <summary>
@@ -2675,47 +2675,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookFunctionsTRequestBuilder"/>.</returns>
         IWorkbookFunctionsTRequestBuilder T(
             Newtonsoft.Json.Linq.JToken value = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsT_Dist.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsT_DistRequestBuilder"/>.</returns>
-        IWorkbookFunctionsT_DistRequestBuilder T_Dist(
-            Newtonsoft.Json.Linq.JToken x = null,
-            Newtonsoft.Json.Linq.JToken degFreedom = null,
-            Newtonsoft.Json.Linq.JToken cumulative = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsT_Dist_2T.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsT_Dist_2TRequestBuilder"/>.</returns>
-        IWorkbookFunctionsT_Dist_2TRequestBuilder T_Dist_2T(
-            Newtonsoft.Json.Linq.JToken x = null,
-            Newtonsoft.Json.Linq.JToken degFreedom = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsT_Dist_RT.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsT_Dist_RTRequestBuilder"/>.</returns>
-        IWorkbookFunctionsT_Dist_RTRequestBuilder T_Dist_RT(
-            Newtonsoft.Json.Linq.JToken x = null,
-            Newtonsoft.Json.Linq.JToken degFreedom = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsT_Inv.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsT_InvRequestBuilder"/>.</returns>
-        IWorkbookFunctionsT_InvRequestBuilder T_Inv(
-            Newtonsoft.Json.Linq.JToken probability = null,
-            Newtonsoft.Json.Linq.JToken degFreedom = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsT_Inv_2T.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsT_Inv_2TRequestBuilder"/>.</returns>
-        IWorkbookFunctionsT_Inv_2TRequestBuilder T_Inv_2T(
-            Newtonsoft.Json.Linq.JToken probability = null,
-            Newtonsoft.Json.Linq.JToken degFreedom = null);
 
         /// <summary>
         /// Gets the request builder for WorkbookFunctionsTan.
@@ -2825,6 +2784,47 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken value = null);
 
         /// <summary>
+        /// Gets the request builder for WorkbookFunctionsT_Dist.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsT_DistRequestBuilder"/>.</returns>
+        IWorkbookFunctionsT_DistRequestBuilder T_Dist(
+            Newtonsoft.Json.Linq.JToken x = null,
+            Newtonsoft.Json.Linq.JToken degFreedom = null,
+            Newtonsoft.Json.Linq.JToken cumulative = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsT_Dist_2T.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsT_Dist_2TRequestBuilder"/>.</returns>
+        IWorkbookFunctionsT_Dist_2TRequestBuilder T_Dist_2T(
+            Newtonsoft.Json.Linq.JToken x = null,
+            Newtonsoft.Json.Linq.JToken degFreedom = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsT_Dist_RT.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsT_Dist_RTRequestBuilder"/>.</returns>
+        IWorkbookFunctionsT_Dist_RTRequestBuilder T_Dist_RT(
+            Newtonsoft.Json.Linq.JToken x = null,
+            Newtonsoft.Json.Linq.JToken degFreedom = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsT_Inv.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsT_InvRequestBuilder"/>.</returns>
+        IWorkbookFunctionsT_InvRequestBuilder T_Inv(
+            Newtonsoft.Json.Linq.JToken probability = null,
+            Newtonsoft.Json.Linq.JToken degFreedom = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsT_Inv_2T.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsT_Inv_2TRequestBuilder"/>.</returns>
+        IWorkbookFunctionsT_Inv_2TRequestBuilder T_Inv_2T(
+            Newtonsoft.Json.Linq.JToken probability = null,
+            Newtonsoft.Json.Linq.JToken degFreedom = null);
+
+        /// <summary>
         /// Gets the request builder for WorkbookFunctionsUnichar.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsUnicharRequestBuilder"/>.</returns>
@@ -2861,20 +2861,6 @@ namespace Microsoft.Graph
             Newtonsoft.Json.Linq.JToken text = null);
 
         /// <summary>
-        /// Gets the request builder for WorkbookFunctionsVar_P.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsVar_PRequestBuilder"/>.</returns>
-        IWorkbookFunctionsVar_PRequestBuilder Var_P(
-            Newtonsoft.Json.Linq.JToken values = null);
-
-        /// <summary>
-        /// Gets the request builder for WorkbookFunctionsVar_S.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookFunctionsVar_SRequestBuilder"/>.</returns>
-        IWorkbookFunctionsVar_SRequestBuilder Var_S(
-            Newtonsoft.Json.Linq.JToken values = null);
-
-        /// <summary>
         /// Gets the request builder for WorkbookFunctionsVarA.
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsVarARequestBuilder"/>.</returns>
@@ -2886,6 +2872,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookFunctionsVarPARequestBuilder"/>.</returns>
         IWorkbookFunctionsVarPARequestBuilder VarPA(
+            Newtonsoft.Json.Linq.JToken values = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsVar_P.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsVar_PRequestBuilder"/>.</returns>
+        IWorkbookFunctionsVar_PRequestBuilder Var_P(
+            Newtonsoft.Json.Linq.JToken values = null);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookFunctionsVar_S.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookFunctionsVar_SRequestBuilder"/>.</returns>
+        IWorkbookFunctionsVar_SRequestBuilder Var_S(
             Newtonsoft.Json.Linq.JToken values = null);
 
         /// <summary>

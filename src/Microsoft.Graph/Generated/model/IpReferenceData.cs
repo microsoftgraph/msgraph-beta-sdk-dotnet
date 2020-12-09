@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// Gets or sets asn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "asn", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? Asn { get; set; }
+        public Int64? Asn { get; set; }
     
         /// <summary>
         /// Gets or sets city.

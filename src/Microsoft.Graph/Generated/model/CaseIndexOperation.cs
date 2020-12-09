@@ -19,7 +19,7 @@ namespace Microsoft.Graph
     /// The type Case Index Operation.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class CaseIndexOperation : Entity
+    public partial class CaseIndexOperation : CaseOperation
     {
     
 		///<summary>
@@ -30,42 +30,6 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.caseIndexOperation";
         }
 	
-        /// <summary>
-        /// Gets or sets action.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
-        public CaseAction? Action { get; set; }
-    
-        /// <summary>
-        /// Gets or sets completed date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CompletedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets created date time.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? CreatedDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets display name.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets percent progress.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentProgress", Required = Newtonsoft.Json.Required.Default)]
-        public Int32? PercentProgress { get; set; }
-    
-        /// <summary>
-        /// Gets or sets status.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
-        public CaseOperationStatus? Status { get; set; }
-    
     }
 }
 

@@ -38,18 +38,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hits.
+        /// A collection of the search results.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hits", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SearchHit> Hits { get; set; }
     
         /// <summary>
         /// Gets or sets moreResultsAvailable.
+        /// Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "moreResultsAvailable", Required = Newtonsoft.Json.Required.Default)]
         public bool? MoreResultsAvailable { get; set; }
     
         /// <summary>
         /// Gets or sets total.
+        /// The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "total", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Total { get; set; }
