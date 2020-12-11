@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("enrollmentType", enrollmentType, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

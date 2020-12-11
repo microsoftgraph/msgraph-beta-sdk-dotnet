@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("userPrincipalName", userPrincipalName, true);
             this.SetParameter("deviceId", deviceId, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

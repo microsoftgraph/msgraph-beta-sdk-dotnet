@@ -28,6 +28,7 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
+            this.SetFunctionParameters();
         }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("period", period, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

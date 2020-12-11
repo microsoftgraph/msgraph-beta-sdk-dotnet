@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("summarizeBy", summarizeBy, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

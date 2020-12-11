@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("status", status, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

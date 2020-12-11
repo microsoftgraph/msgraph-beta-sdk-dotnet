@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("index", index, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>
@@ -44,6 +45,41 @@ namespace Microsoft.Graph
             var request = new WorkbookRangeViewItemAtRequest(functionUrl, this.Client, options);
 
             return request;
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeViewItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeViewItemAtRequestBuilder"/>.</returns>
+        public IWorkbookRangeViewItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookRangeViewItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeViewRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRangeViewRangeRequestBuilder"/>.</returns>
+        public IWorkbookRangeViewRangeRequestBuilder Range()
+        {
+            return new WorkbookRangeViewRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for Rows.
+        /// Represents a collection of range views associated with the range. Read-only. Read-only.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRangeViewRequestBuilder"/>.</returns>
+        public IWorkbookRangeViewRequestBuilder Rows
+        {
+            get
+            {
+                return new WorkbookRangeViewRequestBuilder(this.AppendSegmentToRequestUrl("rows"), this.Client);
+            }
         }
     }
 }

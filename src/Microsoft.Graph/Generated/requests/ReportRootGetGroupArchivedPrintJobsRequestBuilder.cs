@@ -37,6 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("groupId", groupId, true);
             this.SetParameter("periodStart", periodStart, true);
             this.SetParameter("periodEnd", periodEnd, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

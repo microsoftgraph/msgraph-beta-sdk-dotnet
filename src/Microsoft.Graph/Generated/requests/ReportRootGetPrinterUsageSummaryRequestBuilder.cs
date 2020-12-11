@@ -37,6 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("periodStart", periodStart, false);
             this.SetParameter("periodEnd", periodEnd, false);
             this.SetParameter("printerId", printerId, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("bundleId", bundleId, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

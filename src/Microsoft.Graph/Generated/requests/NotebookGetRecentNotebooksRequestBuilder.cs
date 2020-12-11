@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("includePersonalNotebooks", includePersonalNotebooks, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

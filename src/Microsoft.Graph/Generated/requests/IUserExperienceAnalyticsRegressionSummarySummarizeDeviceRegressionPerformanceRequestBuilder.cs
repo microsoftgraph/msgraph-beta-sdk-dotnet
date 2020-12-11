@@ -24,5 +24,30 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         IUserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequest Request(IEnumerable<Option> options = null);
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequestBuilder.
+        /// </summary>
+        /// <param name="summarizeBy">A summarizeBy parameter for the OData method call.</param>
+        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequestBuilder SummarizeDeviceRegressionPerformance(
+            UserExperienceAnalyticsSummarizedBy summarizeBy);
+        /// <summary>
+        /// Gets the request builder for ManufacturerRegression.
+        /// The metric values for the user experience analytics Manufacturer regression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsMetricRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsMetricRequestBuilder ManufacturerRegression  { get; }
+        /// <summary>
+        /// Gets the request builder for ModelRegression.
+        /// The metric values for the user experience analytics model regression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsMetricRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsMetricRequestBuilder ModelRegression  { get; }
+        /// <summary>
+        /// Gets the request builder for OperatingSystemRegression.
+        /// The metric values for the user experience analytics operating system regression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsMetricRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsMetricRequestBuilder OperatingSystemRegression  { get; }
     }
 }

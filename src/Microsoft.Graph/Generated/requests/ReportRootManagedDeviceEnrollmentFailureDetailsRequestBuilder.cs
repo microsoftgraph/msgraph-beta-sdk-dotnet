@@ -28,6 +28,7 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
+            this.SetFunctionParameters();
         }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace Microsoft.Graph
             this.SetParameter("top", top, true);
             this.SetParameter("filter", filter, true);
             this.SetParameter("skipToken", skipToken, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>
