@@ -1,4 +1,8 @@
-﻿using System.Threading;
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
+using System.Threading;
 
 namespace Microsoft.Graph
 {
@@ -20,7 +24,7 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Team> PutAsync(Team teamToCreate, CancellationToken cancellationToken);
     }
 
-    public partial class TeamRequest
+    public partial class TeamRequest : ITeamRequest
     {
         /// <summary>
         /// Creates the specified Team using PUT.

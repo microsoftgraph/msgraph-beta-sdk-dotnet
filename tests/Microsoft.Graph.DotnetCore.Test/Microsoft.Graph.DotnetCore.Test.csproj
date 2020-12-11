@@ -9,7 +9,11 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
-
+  
+  <PropertyGroup>
+     <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  
   <ItemGroup>
     <EmbeddedResource Include="Requests\Functional\Resources\excelTestResource.xlsx" />
     <EmbeddedResource Include="Requests\Functional\Resources\hamilton.PNG" />

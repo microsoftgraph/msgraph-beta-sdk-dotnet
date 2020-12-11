@@ -50,6 +50,53 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             ServiceException ex = await Assert.ThrowsAsync<ServiceException>(async () => await graphClient.Me.Request().GetAsync());
             Assert.IsType<Async.TaskCanceledException>(ex.InnerException);
         }
+
+        /// <summary>
+        /// Test manually created partial ExternalItem partial with PutAsync()
+        /// Matches https://docs.microsoft.com/en-us/graph/api/externalconnection-put-items?view=graph-rest-beta&tabs=csharp#request
+        /// </summary>
+        /// <returns></returns>
+        [Fact(Skip = "No CI set up for functional tests")]
+        public async Async.Task AddExternalItemWithPutPartialTest()
+        { 
+            var externalItem = new ExternalItem
+            {
+                Acl = new List<Acl>()
+            {
+                new Acl
+                {
+                    Type = AclType.User,
+                    Value = "e811976d-83df-4cbd-8b9b-5215b18aa874",
+                    AccessType = AccessType.Grant,
+                    IdentitySource = "azureActiveDirectory"
+                },
+                new Acl
+                {
+                    Type = AclType.Group,
+                    Value = "14m1b9c38qe647f6a",
+                    AccessType = AccessType.Deny,
+                    IdentitySource = "external"
+                }
+            },
+            Properties = new Microsoft.Graph.Properties
+            {
+                AdditionalData = new Dictionary<string, object>()
+                {
+                    {"title", "Error in the payment gateway"},
+                    {"priority", "1"},
+                    {"assignee", "john@contoso.com"}
+                }
+                },
+                Content = new ExternalItemContent
+                {
+                    Value = "Error in payment gateway...",
+                    Type = ExternalItemContentType.Text
+                }
+            };
+
+
+            await graphClient.External.Connections["contosohr"].Items["TSP228082938"].Request().PutAsync(externalItem);
+        }
     }
 }
 
