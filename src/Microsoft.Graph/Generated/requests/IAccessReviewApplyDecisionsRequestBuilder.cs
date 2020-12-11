@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessReviewApplyDecisionsRequestBuilder.
     /// </summary>
-    public partial interface IAccessReviewApplyDecisionsRequestBuilder
+    public partial interface IAccessReviewApplyDecisionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

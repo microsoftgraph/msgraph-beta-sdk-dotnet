@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder.
     /// </summary>
-    public partial interface IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder
+    public partial interface IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

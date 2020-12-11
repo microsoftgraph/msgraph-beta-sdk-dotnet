@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAuditEventGetAuditActivityTypesRequestBuilder.
     /// </summary>
-    public partial interface IAuditEventGetAuditActivityTypesRequestBuilder
+    public partial interface IAuditEventGetAuditActivityTypesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

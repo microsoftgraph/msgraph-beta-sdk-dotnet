@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserFindRoomListsRequestBuilder.
     /// </summary>
-    public partial interface IUserFindRoomListsRequestBuilder
+    public partial interface IUserFindRoomListsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

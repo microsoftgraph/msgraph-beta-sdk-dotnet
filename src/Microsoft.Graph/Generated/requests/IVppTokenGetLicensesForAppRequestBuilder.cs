@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IVppTokenGetLicensesForAppRequestBuilder.
     /// </summary>
-    public partial interface IVppTokenGetLicensesForAppRequestBuilder
+    public partial interface IVppTokenGetLicensesForAppRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEducationSynchronizationProfileUploadUrlRequestBuilder.
     /// </summary>
-    public partial interface IEducationSynchronizationProfileUploadUrlRequestBuilder
+    public partial interface IEducationSynchronizationProfileUploadUrlRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

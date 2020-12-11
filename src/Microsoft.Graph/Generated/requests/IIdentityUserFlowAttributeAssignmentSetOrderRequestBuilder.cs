@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIdentityUserFlowAttributeAssignmentSetOrderRequestBuilder.
     /// </summary>
-    public partial interface IIdentityUserFlowAttributeAssignmentSetOrderRequestBuilder
+    public partial interface IIdentityUserFlowAttributeAssignmentSetOrderRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

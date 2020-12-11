@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDepOnboardingSettingSyncWithAppleDeviceEnrollmentProgramRequestBuilder.
     /// </summary>
-    public partial interface IDepOnboardingSettingSyncWithAppleDeviceEnrollmentProgramRequestBuilder
+    public partial interface IDepOnboardingSettingSyncWithAppleDeviceEnrollmentProgramRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceCompliancePolicyHasPayloadLinksRequestBuilder.
     /// </summary>
-    public partial interface IDeviceCompliancePolicyHasPayloadLinksRequestBuilder
+    public partial interface IDeviceCompliancePolicyHasPayloadLinksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

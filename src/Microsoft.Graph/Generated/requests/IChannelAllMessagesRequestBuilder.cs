@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IChannelAllMessagesRequestBuilder.
     /// </summary>
-    public partial interface IChannelAllMessagesRequestBuilder
+    public partial interface IChannelAllMessagesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

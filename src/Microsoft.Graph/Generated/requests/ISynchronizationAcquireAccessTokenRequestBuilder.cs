@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISynchronizationAcquireAccessTokenRequestBuilder.
     /// </summary>
-    public partial interface ISynchronizationAcquireAccessTokenRequestBuilder
+    public partial interface ISynchronizationAcquireAccessTokenRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

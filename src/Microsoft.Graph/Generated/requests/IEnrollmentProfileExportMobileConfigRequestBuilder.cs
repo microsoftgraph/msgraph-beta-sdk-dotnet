@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEnrollmentProfileExportMobileConfigRequestBuilder.
     /// </summary>
-    public partial interface IEnrollmentProfileExportMobileConfigRequestBuilder
+    public partial interface IEnrollmentProfileExportMobileConfigRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserUnblockManagedAppsRequestBuilder.
     /// </summary>
-    public partial interface IUserUnblockManagedAppsRequestBuilder
+    public partial interface IUserUnblockManagedAppsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

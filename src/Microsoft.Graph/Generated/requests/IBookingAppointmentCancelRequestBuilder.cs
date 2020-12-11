@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IBookingAppointmentCancelRequestBuilder.
     /// </summary>
-    public partial interface IBookingAppointmentCancelRequestBuilder
+    public partial interface IBookingAppointmentCancelRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIosLobAppProvisioningConfigurationAssignRequestBuilder.
     /// </summary>
-    public partial interface IIosLobAppProvisioningConfigurationAssignRequestBuilder
+    public partial interface IIosLobAppProvisioningConfigurationAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

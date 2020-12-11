@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetUserArchivedPrintJobsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetUserArchivedPrintJobsRequestBuilder
+    public partial interface IReportRootGetUserArchivedPrintJobsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

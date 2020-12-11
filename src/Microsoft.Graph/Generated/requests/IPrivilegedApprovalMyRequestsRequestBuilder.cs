@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrivilegedApprovalMyRequestsRequestBuilder.
     /// </summary>
-    public partial interface IPrivilegedApprovalMyRequestsRequestBuilder
+    public partial interface IPrivilegedApprovalMyRequestsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

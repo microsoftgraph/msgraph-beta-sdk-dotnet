@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserInvalidateAllRefreshTokensRequestBuilder.
     /// </summary>
-    public partial interface IUserInvalidateAllRefreshTokensRequestBuilder
+    public partial interface IUserInvalidateAllRefreshTokensRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

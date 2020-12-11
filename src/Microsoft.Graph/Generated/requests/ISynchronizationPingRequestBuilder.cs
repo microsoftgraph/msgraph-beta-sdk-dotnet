@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISynchronizationPingRequestBuilder.
     /// </summary>
-    public partial interface ISynchronizationPingRequestBuilder
+    public partial interface ISynchronizationPingRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

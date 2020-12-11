@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder
+    public partial interface IDeviceManagementEnableAndroidDeviceAdministratorEnrollmentRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

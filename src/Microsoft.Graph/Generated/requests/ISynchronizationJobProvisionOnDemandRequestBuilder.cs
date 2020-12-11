@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISynchronizationJobProvisionOnDemandRequestBuilder.
     /// </summary>
-    public partial interface ISynchronizationJobProvisionOnDemandRequestBuilder
+    public partial interface ISynchronizationJobProvisionOnDemandRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

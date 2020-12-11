@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementReportsGetHistoricalReportRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementReportsGetHistoricalReportRequestBuilder
+    public partial interface IDeviceManagementReportsGetHistoricalReportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISecurityActionCancelSecurityActionRequestBuilder.
     /// </summary>
-    public partial interface ISecurityActionCancelSecurityActionRequestBuilder
+    public partial interface ISecurityActionCancelSecurityActionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

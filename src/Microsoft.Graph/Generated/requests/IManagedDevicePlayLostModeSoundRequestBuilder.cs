@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDevicePlayLostModeSoundRequestBuilder.
     /// </summary>
-    public partial interface IManagedDevicePlayLostModeSoundRequestBuilder
+    public partial interface IManagedDevicePlayLostModeSoundRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

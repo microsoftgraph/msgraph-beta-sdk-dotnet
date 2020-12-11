@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder
+    public partial interface IDeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

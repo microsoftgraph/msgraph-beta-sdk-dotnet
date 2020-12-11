@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrintJobStartPrintJobRequestBuilder.
     /// </summary>
-    public partial interface IPrintJobStartPrintJobRequestBuilder
+    public partial interface IPrintJobStartPrintJobRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

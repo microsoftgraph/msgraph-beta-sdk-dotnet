@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder
+    public partial interface IDeviceConfigurationWindowsPrivacyAccessControlsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

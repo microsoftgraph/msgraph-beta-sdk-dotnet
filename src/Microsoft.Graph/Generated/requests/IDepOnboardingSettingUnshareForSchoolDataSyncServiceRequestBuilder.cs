@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDepOnboardingSettingUnshareForSchoolDataSyncServiceRequestBuilder.
     /// </summary>
-    public partial interface IDepOnboardingSettingUnshareForSchoolDataSyncServiceRequestBuilder
+    public partial interface IDepOnboardingSettingUnshareForSchoolDataSyncServiceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

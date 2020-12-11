@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IResourceOperationGetScopesForUserRequestBuilder.
     /// </summary>
-    public partial interface IResourceOperationGetScopesForUserRequestBuilder
+    public partial interface IResourceOperationGetScopesForUserRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementScriptHasPayloadLinksRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementScriptHasPayloadLinksRequestBuilder
+    public partial interface IDeviceManagementScriptHasPayloadLinksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

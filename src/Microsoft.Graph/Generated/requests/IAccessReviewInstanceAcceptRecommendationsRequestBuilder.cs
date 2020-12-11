@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessReviewInstanceAcceptRecommendationsRequestBuilder.
     /// </summary>
-    public partial interface IAccessReviewInstanceAcceptRecommendationsRequestBuilder
+    public partial interface IAccessReviewInstanceAcceptRecommendationsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

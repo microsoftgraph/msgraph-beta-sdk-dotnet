@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder.
     /// </summary>
-    public partial interface IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder
+    public partial interface IServicePrincipalDeletePasswordSingleSignOnCredentialsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsAutopilotSettingsSyncRequestBuilder.
     /// </summary>
-    public partial interface IWindowsAutopilotSettingsSyncRequestBuilder
+    public partial interface IWindowsAutopilotSettingsSyncRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

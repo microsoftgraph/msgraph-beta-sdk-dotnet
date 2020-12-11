@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidForWorkSettingsSyncAppsRequestBuilder.
     /// </summary>
-    public partial interface IAndroidForWorkSettingsSyncAppsRequestBuilder
+    public partial interface IAndroidForWorkSettingsSyncAppsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

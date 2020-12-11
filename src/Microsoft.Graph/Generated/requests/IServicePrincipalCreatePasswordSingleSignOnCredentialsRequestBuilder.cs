@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder.
     /// </summary>
-    public partial interface IServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder
+    public partial interface IServicePrincipalCreatePasswordSingleSignOnCredentialsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

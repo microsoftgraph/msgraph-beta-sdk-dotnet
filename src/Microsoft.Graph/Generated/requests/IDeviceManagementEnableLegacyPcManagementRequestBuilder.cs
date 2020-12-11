@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementEnableLegacyPcManagementRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementEnableLegacyPcManagementRequestBuilder
+    public partial interface IDeviceManagementEnableLegacyPcManagementRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

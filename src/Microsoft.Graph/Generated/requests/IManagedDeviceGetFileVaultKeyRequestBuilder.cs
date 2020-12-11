@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceGetFileVaultKeyRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceGetFileVaultKeyRequestBuilder
+    public partial interface IManagedDeviceGetFileVaultKeyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

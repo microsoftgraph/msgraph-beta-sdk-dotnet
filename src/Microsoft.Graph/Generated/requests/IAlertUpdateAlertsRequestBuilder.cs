@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAlertUpdateAlertsRequestBuilder.
     /// </summary>
-    public partial interface IAlertUpdateAlertsRequestBuilder
+    public partial interface IAlertUpdateAlertsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

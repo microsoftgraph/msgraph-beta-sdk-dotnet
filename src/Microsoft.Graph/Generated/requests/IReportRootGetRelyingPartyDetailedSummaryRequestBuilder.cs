@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetRelyingPartyDetailedSummaryRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetRelyingPartyDetailedSummaryRequestBuilder
+    public partial interface IReportRootGetRelyingPartyDetailedSummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

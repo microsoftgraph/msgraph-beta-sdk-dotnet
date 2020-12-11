@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrinterRestoreFactoryDefaultsRequestBuilder.
     /// </summary>
-    public partial interface IPrinterRestoreFactoryDefaultsRequestBuilder
+    public partial interface IPrinterRestoreFactoryDefaultsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

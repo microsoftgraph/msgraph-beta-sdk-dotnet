@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISynchronizationSchemaFunctionsRequestBuilder.
     /// </summary>
-    public partial interface ISynchronizationSchemaFunctionsRequestBuilder
+    public partial interface ISynchronizationSchemaFunctionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

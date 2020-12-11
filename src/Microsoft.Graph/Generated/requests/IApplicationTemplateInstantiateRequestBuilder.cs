@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IApplicationTemplateInstantiateRequestBuilder.
     /// </summary>
-    public partial interface IApplicationTemplateInstantiateRequestBuilder
+    public partial interface IApplicationTemplateInstantiateRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

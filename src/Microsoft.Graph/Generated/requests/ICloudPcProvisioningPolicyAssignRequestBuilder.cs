@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICloudPcProvisioningPolicyAssignRequestBuilder.
     /// </summary>
-    public partial interface ICloudPcProvisioningPolicyAssignRequestBuilder
+    public partial interface ICloudPcProvisioningPolicyAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

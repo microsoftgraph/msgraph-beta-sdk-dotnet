@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IConfigManagerCollectionGetPolicySummaryRequestBuilder.
     /// </summary>
-    public partial interface IConfigManagerCollectionGetPolicySummaryRequestBuilder
+    public partial interface IConfigManagerCollectionGetPolicySummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

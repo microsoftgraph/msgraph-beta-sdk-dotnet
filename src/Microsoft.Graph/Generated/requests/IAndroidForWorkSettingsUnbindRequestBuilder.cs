@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidForWorkSettingsUnbindRequestBuilder.
     /// </summary>
-    public partial interface IAndroidForWorkSettingsUnbindRequestBuilder
+    public partial interface IAndroidForWorkSettingsUnbindRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

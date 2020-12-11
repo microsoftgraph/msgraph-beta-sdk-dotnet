@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEnrollmentProfileUpdateDeviceProfileAssignmentRequestBuilder.
     /// </summary>
-    public partial interface IEnrollmentProfileUpdateDeviceProfileAssignmentRequestBuilder
+    public partial interface IEnrollmentProfileUpdateDeviceProfileAssignmentRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

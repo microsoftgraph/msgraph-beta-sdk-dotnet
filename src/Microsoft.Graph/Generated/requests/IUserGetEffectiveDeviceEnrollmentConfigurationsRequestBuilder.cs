@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder.
     /// </summary>
-    public partial interface IUserGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder
+    public partial interface IUserGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

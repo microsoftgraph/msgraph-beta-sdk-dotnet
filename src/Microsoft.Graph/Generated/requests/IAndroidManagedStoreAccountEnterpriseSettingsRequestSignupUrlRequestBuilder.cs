@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder.
     /// </summary>
-    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder
+    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

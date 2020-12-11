@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceHealthScriptGetRemediationSummaryRequestBuilder.
     /// </summary>
-    public partial interface IDeviceHealthScriptGetRemediationSummaryRequestBuilder
+    public partial interface IDeviceHealthScriptGetRemediationSummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

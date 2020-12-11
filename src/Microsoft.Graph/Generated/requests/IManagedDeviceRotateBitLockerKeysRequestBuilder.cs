@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRotateBitLockerKeysRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRotateBitLockerKeysRequestBuilder
+    public partial interface IManagedDeviceRotateBitLockerKeysRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

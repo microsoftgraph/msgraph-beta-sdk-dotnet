@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIntuneBrandingProfileAssignRequestBuilder.
     /// </summary>
-    public partial interface IIntuneBrandingProfileAssignRequestBuilder
+    public partial interface IIntuneBrandingProfileAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

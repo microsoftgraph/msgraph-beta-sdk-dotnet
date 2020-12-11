@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessPackageCatalogSearchRequestBuilder.
     /// </summary>
-    public partial interface IAccessPackageCatalogSearchRequestBuilder
+    public partial interface IAccessPackageCatalogSearchRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

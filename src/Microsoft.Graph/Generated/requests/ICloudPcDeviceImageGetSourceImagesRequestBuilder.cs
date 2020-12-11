@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICloudPcDeviceImageGetSourceImagesRequestBuilder.
     /// </summary>
-    public partial interface ICloudPcDeviceImageGetSourceImagesRequestBuilder
+    public partial interface ICloudPcDeviceImageGetSourceImagesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsFeatureUpdateProfileAssignRequestBuilder.
     /// </summary>
-    public partial interface IWindowsFeatureUpdateProfileAssignRequestBuilder
+    public partial interface IWindowsFeatureUpdateProfileAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

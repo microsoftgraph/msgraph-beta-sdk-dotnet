@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPermissionRevokeGrantsRequestBuilder.
     /// </summary>
-    public partial interface IPermissionRevokeGrantsRequestBuilder
+    public partial interface IPermissionRevokeGrantsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

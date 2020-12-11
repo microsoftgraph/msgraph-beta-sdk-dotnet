@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEducationSynchronizationProfileResetRequestBuilder.
     /// </summary>
-    public partial interface IEducationSynchronizationProfileResetRequestBuilder
+    public partial interface IEducationSynchronizationProfileResetRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

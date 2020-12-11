@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEventMessageRequestDeclineRequestBuilder.
     /// </summary>
-    public partial interface IEventMessageRequestDeclineRequestBuilder
+    public partial interface IEventMessageRequestDeclineRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

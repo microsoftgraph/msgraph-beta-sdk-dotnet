@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGovernanceResourceRegisterRequestBuilder.
     /// </summary>
-    public partial interface IGovernanceResourceRegisterRequestBuilder
+    public partial interface IGovernanceResourceRegisterRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

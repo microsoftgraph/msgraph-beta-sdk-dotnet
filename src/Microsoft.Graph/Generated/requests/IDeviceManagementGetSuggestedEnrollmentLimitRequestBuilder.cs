@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder
+    public partial interface IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

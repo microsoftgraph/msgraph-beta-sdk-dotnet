@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDataClassificationServiceClassifyExactMatchesRequestBuilder.
     /// </summary>
-    public partial interface IDataClassificationServiceClassifyExactMatchesRequestBuilder
+    public partial interface IDataClassificationServiceClassifyExactMatchesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMobileAppGetMobileAppCountRequestBuilder.
     /// </summary>
-    public partial interface IMobileAppGetMobileAppCountRequestBuilder
+    public partial interface IMobileAppGetMobileAppCountRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

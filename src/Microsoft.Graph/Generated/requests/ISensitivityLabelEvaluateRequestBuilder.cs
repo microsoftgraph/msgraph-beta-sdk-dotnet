@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISensitivityLabelEvaluateRequestBuilder.
     /// </summary>
-    public partial interface ISensitivityLabelEvaluateRequestBuilder
+    public partial interface ISensitivityLabelEvaluateRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITargetedManagedAppConfigurationHasPayloadLinksRequestBuilder.
     /// </summary>
-    public partial interface ITargetedManagedAppConfigurationHasPayloadLinksRequestBuilder
+    public partial interface ITargetedManagedAppConfigurationHasPayloadLinksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

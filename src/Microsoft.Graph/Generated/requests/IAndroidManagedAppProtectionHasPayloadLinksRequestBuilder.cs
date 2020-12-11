@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidManagedAppProtectionHasPayloadLinksRequestBuilder.
     /// </summary>
-    public partial interface IAndroidManagedAppProtectionHasPayloadLinksRequestBuilder
+    public partial interface IAndroidManagedAppProtectionHasPayloadLinksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

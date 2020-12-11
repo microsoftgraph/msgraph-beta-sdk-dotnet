@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICaseReopenRequestBuilder.
     /// </summary>
-    public partial interface ICaseReopenRequestBuilder
+    public partial interface ICaseReopenRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

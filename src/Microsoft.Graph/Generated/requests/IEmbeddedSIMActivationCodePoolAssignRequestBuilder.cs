@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEmbeddedSIMActivationCodePoolAssignRequestBuilder.
     /// </summary>
-    public partial interface IEmbeddedSIMActivationCodePoolAssignRequestBuilder
+    public partial interface IEmbeddedSIMActivationCodePoolAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

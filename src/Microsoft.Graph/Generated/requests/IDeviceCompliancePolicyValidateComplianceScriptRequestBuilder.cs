@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder.
     /// </summary>
-    public partial interface IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder
+    public partial interface IDeviceCompliancePolicyValidateComplianceScriptRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

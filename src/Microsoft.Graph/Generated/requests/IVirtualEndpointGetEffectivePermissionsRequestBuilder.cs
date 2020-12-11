@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IVirtualEndpointGetEffectivePermissionsRequestBuilder.
     /// </summary>
-    public partial interface IVirtualEndpointGetEffectivePermissionsRequestBuilder
+    public partial interface IVirtualEndpointGetEffectivePermissionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

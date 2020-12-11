@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICustodianReleaseRequestBuilder.
     /// </summary>
-    public partial interface ICustodianReleaseRequestBuilder
+    public partial interface ICustodianReleaseRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

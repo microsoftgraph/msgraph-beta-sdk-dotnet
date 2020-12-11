@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IRoleScopeTagAssignRequestBuilder.
     /// </summary>
-    public partial interface IRoleScopeTagAssignRequestBuilder
+    public partial interface IRoleScopeTagAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder.
     /// </summary>
-    public partial interface IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder
+    public partial interface IInformationProtectionLabelEvaluateClassificationResultsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

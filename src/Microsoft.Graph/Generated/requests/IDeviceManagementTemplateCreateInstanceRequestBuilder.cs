@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementTemplateCreateInstanceRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementTemplateCreateInstanceRequestBuilder
+    public partial interface IDeviceManagementTemplateCreateInstanceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementGetComanagedDevicesSummaryRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementGetComanagedDevicesSummaryRequestBuilder
+    public partial interface IDeviceManagementGetComanagedDevicesSummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

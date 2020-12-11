@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IListItemCreateLinkRequestBuilder.
     /// </summary>
-    public partial interface IListItemCreateLinkRequestBuilder
+    public partial interface IListItemCreateLinkRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

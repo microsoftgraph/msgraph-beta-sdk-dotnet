@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceAppManagementTaskUpdateStatusRequestBuilder.
     /// </summary>
-    public partial interface IDeviceAppManagementTaskUpdateStatusRequestBuilder
+    public partial interface IDeviceAppManagementTaskUpdateStatusRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

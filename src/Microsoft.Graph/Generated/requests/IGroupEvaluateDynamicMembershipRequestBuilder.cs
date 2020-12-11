@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupEvaluateDynamicMembershipRequestBuilder.
     /// </summary>
-    public partial interface IGroupEvaluateDynamicMembershipRequestBuilder
+    public partial interface IGroupEvaluateDynamicMembershipRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

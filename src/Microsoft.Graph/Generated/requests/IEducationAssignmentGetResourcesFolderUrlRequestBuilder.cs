@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEducationAssignmentGetResourcesFolderUrlRequestBuilder.
     /// </summary>
-    public partial interface IEducationAssignmentGetResourcesFolderUrlRequestBuilder
+    public partial interface IEducationAssignmentGetResourcesFolderUrlRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

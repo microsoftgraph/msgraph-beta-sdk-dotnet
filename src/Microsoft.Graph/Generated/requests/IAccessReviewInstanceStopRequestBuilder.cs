@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessReviewInstanceStopRequestBuilder.
     /// </summary>
-    public partial interface IAccessReviewInstanceStopRequestBuilder
+    public partial interface IAccessReviewInstanceStopRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

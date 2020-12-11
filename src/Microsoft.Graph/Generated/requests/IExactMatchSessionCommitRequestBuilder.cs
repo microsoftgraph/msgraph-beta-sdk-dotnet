@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IExactMatchSessionCommitRequestBuilder.
     /// </summary>
-    public partial interface IExactMatchSessionCommitRequestBuilder
+    public partial interface IExactMatchSessionCommitRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

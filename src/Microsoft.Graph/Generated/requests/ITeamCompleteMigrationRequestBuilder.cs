@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITeamCompleteMigrationRequestBuilder.
     /// </summary>
-    public partial interface ITeamCompleteMigrationRequestBuilder
+    public partial interface ITeamCompleteMigrationRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

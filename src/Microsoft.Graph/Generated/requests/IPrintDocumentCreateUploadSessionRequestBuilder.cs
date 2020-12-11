@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrintDocumentCreateUploadSessionRequestBuilder.
     /// </summary>
-    public partial interface IPrintDocumentCreateUploadSessionRequestBuilder
+    public partial interface IPrintDocumentCreateUploadSessionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

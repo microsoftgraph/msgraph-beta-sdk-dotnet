@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder
+    public partial interface IDeviceManagementSendCustomNotificationToCompanyPortalRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

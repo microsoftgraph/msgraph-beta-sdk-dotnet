@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementReportsGetConfigurationSettingsReportRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementReportsGetConfigurationSettingsReportRequestBuilder
+    public partial interface IDeviceManagementReportsGetConfigurationSettingsReportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

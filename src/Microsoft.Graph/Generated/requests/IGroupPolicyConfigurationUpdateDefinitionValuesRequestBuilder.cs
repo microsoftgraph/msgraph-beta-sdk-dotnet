@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder.
     /// </summary>
-    public partial interface IGroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder
+    public partial interface IGroupPolicyConfigurationUpdateDefinitionValuesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

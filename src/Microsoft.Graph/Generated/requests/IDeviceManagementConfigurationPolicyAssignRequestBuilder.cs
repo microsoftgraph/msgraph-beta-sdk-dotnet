@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementConfigurationPolicyAssignRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementConfigurationPolicyAssignRequestBuilder
+    public partial interface IDeviceManagementConfigurationPolicyAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

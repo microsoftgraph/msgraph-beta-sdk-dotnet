@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDataLossPreventionPolicyEvaluateRequestBuilder.
     /// </summary>
-    public partial interface IDataLossPreventionPolicyEvaluateRequestBuilder
+    public partial interface IDataLossPreventionPolicyEvaluateRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

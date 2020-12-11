@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IChatSendActivityNotificationRequestBuilder.
     /// </summary>
-    public partial interface IChatSendActivityNotificationRequestBuilder
+    public partial interface IChatSendActivityNotificationRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

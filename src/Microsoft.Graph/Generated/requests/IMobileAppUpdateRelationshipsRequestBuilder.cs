@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMobileAppUpdateRelationshipsRequestBuilder.
     /// </summary>
-    public partial interface IMobileAppUpdateRelationshipsRequestBuilder
+    public partial interface IMobileAppUpdateRelationshipsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

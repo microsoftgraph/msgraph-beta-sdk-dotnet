@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITimeCardConfirmRequestBuilder.
     /// </summary>
-    public partial interface ITimeCardConfirmRequestBuilder
+    public partial interface ITimeCardConfirmRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

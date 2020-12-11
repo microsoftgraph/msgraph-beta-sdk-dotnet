@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementTemplateCompareRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementTemplateCompareRequestBuilder
+    public partial interface IDeviceManagementTemplateCompareRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

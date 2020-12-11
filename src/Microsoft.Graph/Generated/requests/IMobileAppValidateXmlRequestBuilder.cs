@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMobileAppValidateXmlRequestBuilder.
     /// </summary>
-    public partial interface IMobileAppValidateXmlRequestBuilder
+    public partial interface IMobileAppValidateXmlRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

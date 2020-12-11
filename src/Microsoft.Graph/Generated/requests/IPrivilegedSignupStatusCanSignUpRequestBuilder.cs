@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrivilegedSignupStatusCanSignUpRequestBuilder.
     /// </summary>
-    public partial interface IPrivilegedSignupStatusCanSignUpRequestBuilder
+    public partial interface IPrivilegedSignupStatusCanSignUpRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

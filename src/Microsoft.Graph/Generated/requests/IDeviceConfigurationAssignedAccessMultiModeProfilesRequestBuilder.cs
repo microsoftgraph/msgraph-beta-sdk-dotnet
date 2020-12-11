@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceConfigurationAssignedAccessMultiModeProfilesRequestBuilder.
     /// </summary>
-    public partial interface IDeviceConfigurationAssignedAccessMultiModeProfilesRequestBuilder
+    public partial interface IDeviceConfigurationAssignedAccessMultiModeProfilesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

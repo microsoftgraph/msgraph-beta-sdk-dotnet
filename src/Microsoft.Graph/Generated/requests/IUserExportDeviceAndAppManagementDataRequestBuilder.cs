@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserExportDeviceAndAppManagementDataRequestBuilder.
     /// </summary>
-    public partial interface IUserExportDeviceAndAppManagementDataRequestBuilder
+    public partial interface IUserExportDeviceAndAppManagementDataRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

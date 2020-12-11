@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessReviewSendReminderRequestBuilder.
     /// </summary>
-    public partial interface IAccessReviewSendReminderRequestBuilder
+    public partial interface IAccessReviewSendReminderRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

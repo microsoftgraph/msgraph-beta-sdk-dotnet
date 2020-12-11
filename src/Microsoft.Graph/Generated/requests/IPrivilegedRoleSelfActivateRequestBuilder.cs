@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrivilegedRoleSelfActivateRequestBuilder.
     /// </summary>
-    public partial interface IPrivilegedRoleSelfActivateRequestBuilder
+    public partial interface IPrivilegedRoleSelfActivateRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICustodianUpdateIndexRequestBuilder.
     /// </summary>
-    public partial interface ICustodianUpdateIndexRequestBuilder
+    public partial interface ICustodianUpdateIndexRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

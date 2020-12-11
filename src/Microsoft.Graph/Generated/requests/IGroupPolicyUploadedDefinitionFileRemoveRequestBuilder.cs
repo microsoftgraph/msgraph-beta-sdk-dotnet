@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder.
     /// </summary>
-    public partial interface IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder
+    public partial interface IGroupPolicyUploadedDefinitionFileRemoveRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

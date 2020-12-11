@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsInformationProtectionDeviceRegistrationWipeRequestBuilder.
     /// </summary>
-    public partial interface IWindowsInformationProtectionDeviceRegistrationWipeRequestBuilder
+    public partial interface IWindowsInformationProtectionDeviceRegistrationWipeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

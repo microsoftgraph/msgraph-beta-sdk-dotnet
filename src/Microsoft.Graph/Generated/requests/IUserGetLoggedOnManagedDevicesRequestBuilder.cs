@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserGetLoggedOnManagedDevicesRequestBuilder.
     /// </summary>
-    public partial interface IUserGetLoggedOnManagedDevicesRequestBuilder
+    public partial interface IUserGetLoggedOnManagedDevicesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

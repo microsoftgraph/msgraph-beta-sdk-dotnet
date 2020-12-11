@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder.
     /// </summary>
-    public partial interface IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder
+    public partial interface IDeviceHealthScriptGetGlobalScriptHighestAvailableVersionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAppleUserInitiatedEnrollmentProfileSetPriorityRequestBuilder.
     /// </summary>
-    public partial interface IAppleUserInitiatedEnrollmentProfileSetPriorityRequestBuilder
+    public partial interface IAppleUserInitiatedEnrollmentProfileSetPriorityRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

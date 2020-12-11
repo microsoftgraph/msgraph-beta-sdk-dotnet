@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder
+    public partial interface IDeviceConfigurationGetIosAvailableUpdateVersionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

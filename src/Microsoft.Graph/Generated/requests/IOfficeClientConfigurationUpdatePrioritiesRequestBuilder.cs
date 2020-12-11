@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOfficeClientConfigurationUpdatePrioritiesRequestBuilder.
     /// </summary>
-    public partial interface IOfficeClientConfigurationUpdatePrioritiesRequestBuilder
+    public partial interface IOfficeClientConfigurationUpdatePrioritiesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

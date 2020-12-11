@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAppLogCollectionRequestCreateDownloadUrlRequestBuilder.
     /// </summary>
-    public partial interface IAppLogCollectionRequestCreateDownloadUrlRequestBuilder
+    public partial interface IAppLogCollectionRequestCreateDownloadUrlRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

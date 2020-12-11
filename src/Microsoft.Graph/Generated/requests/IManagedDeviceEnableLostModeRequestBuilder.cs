@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceEnableLostModeRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceEnableLostModeRequestBuilder
+    public partial interface IManagedDeviceEnableLostModeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

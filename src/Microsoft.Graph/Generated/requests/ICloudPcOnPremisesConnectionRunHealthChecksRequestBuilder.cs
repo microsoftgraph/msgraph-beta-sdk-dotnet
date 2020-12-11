@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICloudPcOnPremisesConnectionRunHealthChecksRequestBuilder.
     /// </summary>
-    public partial interface ICloudPcOnPremisesConnectionRunHealthChecksRequestBuilder
+    public partial interface ICloudPcOnPremisesConnectionRunHealthChecksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

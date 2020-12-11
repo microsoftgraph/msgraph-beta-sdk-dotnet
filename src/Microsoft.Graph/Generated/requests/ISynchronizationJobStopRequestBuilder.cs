@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISynchronizationJobStopRequestBuilder.
     /// </summary>
-    public partial interface ISynchronizationJobStopRequestBuilder
+    public partial interface ISynchronizationJobStopRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

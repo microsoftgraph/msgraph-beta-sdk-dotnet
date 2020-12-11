@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITimeCardEndBreakRequestBuilder.
     /// </summary>
-    public partial interface ITimeCardEndBreakRequestBuilder
+    public partial interface ITimeCardEndBreakRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

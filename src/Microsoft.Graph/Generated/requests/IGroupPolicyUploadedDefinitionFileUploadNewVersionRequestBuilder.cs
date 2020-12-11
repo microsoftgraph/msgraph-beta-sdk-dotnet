@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupPolicyUploadedDefinitionFileUploadNewVersionRequestBuilder.
     /// </summary>
-    public partial interface IGroupPolicyUploadedDefinitionFileUploadNewVersionRequestBuilder
+    public partial interface IGroupPolicyUploadedDefinitionFileUploadNewVersionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
