@@ -26,7 +26,7 @@ Both the v1.0 and beta Microsoft Graph endpoints share the same namespace. This 
 If your project (.csproj) uses a Reference element to reference the Microsoft.Graph.Beta library, you'll need to specify the DLL alias within the <Aliases> element. We suggest that you use the BetaLib alias, although any alias will do:
 
 ```
-<Reference Include="Microsoft.Graph.Beta, Version=0.1.0.0, Culture=neutral>
+<Reference Include="Microsoft.Graph.Beta, Version=0.35.0-preview, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\Microsoft.Graph.Beta.dll</HintPath>
       <Aliases>BetaLib</Aliases>
