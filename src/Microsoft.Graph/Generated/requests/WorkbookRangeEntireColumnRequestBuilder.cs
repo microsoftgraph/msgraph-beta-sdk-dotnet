@@ -109,6 +109,19 @@ namespace Microsoft.Graph
                 this.Client);
         }
         /// <summary>
+        /// Gets the request builder for WorkbookRangeColumnsAfterRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeColumnsAfterRequestBuilder"/>.</returns>
+        public IWorkbookRangeColumnsAfterRequestBuilder ColumnsAfter(
+            Int32? count)
+        {
+            return new WorkbookRangeColumnsAfterRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.columnsAfter"),
+                this.Client,
+                count);
+        }
+        /// <summary>
         /// Gets the request builder for WorkbookRangeColumnsBeforeRequestBuilder.
         /// </summary>
         /// <returns>The <see cref="IWorkbookRangeColumnsBeforeRequestBuilder"/>.</returns>
@@ -117,6 +130,19 @@ namespace Microsoft.Graph
             return new WorkbookRangeColumnsBeforeRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.columnsBefore"),
                 this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeColumnsBeforeRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeColumnsBeforeRequestBuilder"/>.</returns>
+        public IWorkbookRangeColumnsBeforeRequestBuilder ColumnsBefore(
+            Int32? count)
+        {
+            return new WorkbookRangeColumnsBeforeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.columnsBefore"),
+                this.Client,
+                count);
         }
         /// <summary>
         /// Gets the request builder for WorkbookRangeDeleteRequestBuilder.
@@ -276,6 +302,19 @@ namespace Microsoft.Graph
                 this.Client);
         }
         /// <summary>
+        /// Gets the request builder for WorkbookRangeRowsAboveRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeRowsAboveRequestBuilder"/>.</returns>
+        public IWorkbookRangeRowsAboveRequestBuilder RowsAbove(
+            Int32? count)
+        {
+            return new WorkbookRangeRowsAboveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rowsAbove"),
+                this.Client,
+                count);
+        }
+        /// <summary>
         /// Gets the request builder for WorkbookRangeRowsBelowRequestBuilder.
         /// </summary>
         /// <returns>The <see cref="IWorkbookRangeRowsBelowRequestBuilder"/>.</returns>
@@ -284,6 +323,19 @@ namespace Microsoft.Graph
             return new WorkbookRangeRowsBelowRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.rowsBelow"),
                 this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeRowsBelowRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeRowsBelowRequestBuilder"/>.</returns>
+        public IWorkbookRangeRowsBelowRequestBuilder RowsBelow(
+            Int32? count)
+        {
+            return new WorkbookRangeRowsBelowRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rowsBelow"),
+                this.Client,
+                count);
         }
         /// <summary>
         /// Gets the request builder for WorkbookRangeUnmergeRequestBuilder.
@@ -304,6 +356,19 @@ namespace Microsoft.Graph
             return new WorkbookRangeUsedRangeRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.usedRange"),
                 this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeUsedRangeRequestBuilder.
+        /// </summary>
+        /// <param name="valuesOnly">A valuesOnly parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeUsedRangeRequestBuilder"/>.</returns>
+        public IWorkbookRangeUsedRangeRequestBuilder UsedRange(
+            bool valuesOnly)
+        {
+            return new WorkbookRangeUsedRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.usedRange"),
+                this.Client,
+                valuesOnly);
         }
         /// <summary>
         /// Gets the request builder for WorkbookRangeVisibleViewRequestBuilder.

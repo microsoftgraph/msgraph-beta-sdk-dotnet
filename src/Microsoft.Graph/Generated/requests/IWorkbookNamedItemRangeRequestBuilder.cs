@@ -60,10 +60,24 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookRangeColumnsAfterRequestBuilder"/>.</returns>
         IWorkbookRangeColumnsAfterRequestBuilder ColumnsAfter();
         /// <summary>
+        /// Gets the request builder for WorkbookRangeColumnsAfterRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeColumnsAfterRequestBuilder"/>.</returns>
+        IWorkbookRangeColumnsAfterRequestBuilder ColumnsAfter(
+            Int32? count);
+        /// <summary>
         /// Gets the request builder for WorkbookRangeColumnsBeforeRequestBuilder.
         /// </summary>
         /// <returns>The <see cref="IWorkbookRangeColumnsBeforeRequestBuilder"/>.</returns>
         IWorkbookRangeColumnsBeforeRequestBuilder ColumnsBefore();
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeColumnsBeforeRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeColumnsBeforeRequestBuilder"/>.</returns>
+        IWorkbookRangeColumnsBeforeRequestBuilder ColumnsBefore(
+            Int32? count);
         /// <summary>
         /// Gets the request builder for WorkbookRangeDeleteRequestBuilder.
         /// </summary>
@@ -148,10 +162,24 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookRangeRowsAboveRequestBuilder"/>.</returns>
         IWorkbookRangeRowsAboveRequestBuilder RowsAbove();
         /// <summary>
+        /// Gets the request builder for WorkbookRangeRowsAboveRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeRowsAboveRequestBuilder"/>.</returns>
+        IWorkbookRangeRowsAboveRequestBuilder RowsAbove(
+            Int32? count);
+        /// <summary>
         /// Gets the request builder for WorkbookRangeRowsBelowRequestBuilder.
         /// </summary>
         /// <returns>The <see cref="IWorkbookRangeRowsBelowRequestBuilder"/>.</returns>
         IWorkbookRangeRowsBelowRequestBuilder RowsBelow();
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeRowsBelowRequestBuilder.
+        /// </summary>
+        /// <param name="count">A count parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeRowsBelowRequestBuilder"/>.</returns>
+        IWorkbookRangeRowsBelowRequestBuilder RowsBelow(
+            Int32? count);
         /// <summary>
         /// Gets the request builder for WorkbookRangeUnmergeRequestBuilder.
         /// </summary>
@@ -162,6 +190,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookRangeUsedRangeRequestBuilder"/>.</returns>
         IWorkbookRangeUsedRangeRequestBuilder UsedRange();
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeUsedRangeRequestBuilder.
+        /// </summary>
+        /// <param name="valuesOnly">A valuesOnly parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeUsedRangeRequestBuilder"/>.</returns>
+        IWorkbookRangeUsedRangeRequestBuilder UsedRange(
+            bool valuesOnly);
         /// <summary>
         /// Gets the request builder for WorkbookRangeVisibleViewRequestBuilder.
         /// </summary>

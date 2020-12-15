@@ -86,6 +86,54 @@ namespace Microsoft.Graph
                 this.Client);
         }
         /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <param name="width">A width parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        public IWorkbookChartImageRequestBuilder Image(
+            Int32 width)
+        {
+            return new WorkbookChartImageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.image"),
+                this.Client,
+                width);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <param name="width">A width parameter for the OData method call.</param>
+        /// <param name="height">A height parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        public IWorkbookChartImageRequestBuilder Image(
+            Int32 width,
+            Int32 height)
+        {
+            return new WorkbookChartImageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.image"),
+                this.Client,
+                width,
+                height);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <param name="width">A width parameter for the OData method call.</param>
+        /// <param name="height">A height parameter for the OData method call.</param>
+        /// <param name="fittingMode">A fittingMode parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        public IWorkbookChartImageRequestBuilder Image(
+            Int32 width,
+            Int32 height,
+            string fittingMode)
+        {
+            return new WorkbookChartImageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.image"),
+                this.Client,
+                width,
+                height,
+                fittingMode);
+        }
+        /// <summary>
         /// Gets the request builder for WorkbookChartItemRequestBuilder.
         /// </summary>
         /// <param name="name">A name parameter for the OData method call.</param>

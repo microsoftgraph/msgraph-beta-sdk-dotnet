@@ -9,6 +9,7 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Net.Http;
 
     /// <summary>

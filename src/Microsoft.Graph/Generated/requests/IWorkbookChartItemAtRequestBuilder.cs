@@ -46,6 +46,33 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
         IWorkbookChartImageRequestBuilder Image();
         /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <param name="width">A width parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        IWorkbookChartImageRequestBuilder Image(
+            Int32 width);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <param name="width">A width parameter for the OData method call.</param>
+        /// <param name="height">A height parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        IWorkbookChartImageRequestBuilder Image(
+            Int32 width,
+            Int32 height);
+        /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <param name="width">A width parameter for the OData method call.</param>
+        /// <param name="height">A height parameter for the OData method call.</param>
+        /// <param name="fittingMode">A fittingMode parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        IWorkbookChartImageRequestBuilder Image(
+            Int32 width,
+            Int32 height,
+            string fittingMode);
+        /// <summary>
         /// Gets the request builder for WorkbookChartItemRequestBuilder.
         /// </summary>
         /// <param name="name">A name parameter for the OData method call.</param>
