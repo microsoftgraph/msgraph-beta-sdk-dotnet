@@ -179,7 +179,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets minimum auto install classification.
-        /// The minimum update classification to install automatically.
+        /// The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumAutoInstallClassification", Required = Newtonsoft.Json.Required.Default)]
         public UpdateClassification? MinimumAutoInstallClassification { get; set; }
@@ -249,7 +249,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets updates minimum auto install classification.
-        /// The minimum update classification to install automatically.
+        /// The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatesMinimumAutoInstallClassification", Required = Newtonsoft.Json.Required.Default)]
         public UpdateClassification? UpdatesMinimumAutoInstallClassification { get; set; }

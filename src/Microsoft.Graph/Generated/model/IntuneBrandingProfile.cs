@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment availability.
-        /// Customized device enrollment flow displayed to the end user 
+        /// Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentAvailability", Required = Newtonsoft.Json.Required.Default)]
         public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
@@ -158,21 +158,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets online support site name.
-        /// Display name of the company/organization???s IT helpdesk site
+        /// Display name of the company/organization’s IT helpdesk site
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineSupportSiteName { get; set; }
     
         /// <summary>
         /// Gets or sets online support site url.
-        /// URL to the company/organization???s IT helpdesk site
+        /// URL to the company/organization’s IT helpdesk site
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
         public string OnlineSupportSiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets privacy url.
-        /// URL to the company/organization???s privacy policy
+        /// URL to the company/organization’s privacy policy
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
         public string PrivacyUrl { get; set; }

@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom attribute type.
-        /// The expected type of the custom attribute's value.
+        /// The expected type of the custom attribute's value. Possible values are: integer, string, dateTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customAttributeType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceCustomAttributeValueType? CustomAttributeType { get; set; }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets run as account.
-        /// Indicates the type of execution context.
+        /// Indicates the type of execution context. Possible values are: system, user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
         public RunAsAccountType? RunAsAccount { get; set; }

@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets all other update behavior.
-        /// Update behavior for all other updates.
+        /// Update behavior for all other updates. Possible values are: notConfigured, default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allOtherUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets config data update behavior.
-        /// Update behavior for configuration data file updates.
+        /// Update behavior for configuration data file updates. Possible values are: notConfigured, default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configDataUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateBehavior? ConfigDataUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets critical update behavior.
-        /// Update behavior for critical updates.
+        /// Update behavior for critical updates. Possible values are: notConfigured, default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criticalUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateBehavior? CriticalUpdateBehavior { get; set; }
@@ -60,14 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets firmware update behavior.
-        /// Update behavior for firmware updates.
+        /// Update behavior for firmware updates. Possible values are: notConfigured, default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firmwareUpdateBehavior", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets update schedule type.
-        /// Update schedule type
+        /// Update schedule type. Possible values are: alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateScheduleType", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateScheduleType? UpdateScheduleType { get; set; }

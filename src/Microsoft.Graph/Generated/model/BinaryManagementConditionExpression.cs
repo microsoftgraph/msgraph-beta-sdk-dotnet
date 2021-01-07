@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operator.
-        /// The operator used in the evaluation of the binary operation.
+        /// The operator used in the evaluation of the binary operation. Possible values are: or, and.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
         public BinaryManagementConditionExpressionOperatorType? Operator { get; set; }

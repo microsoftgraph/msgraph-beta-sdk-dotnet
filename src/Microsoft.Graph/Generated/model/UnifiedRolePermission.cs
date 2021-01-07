@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedResourceActions.
+        /// Set of tasks that can be perfomed on a resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedResourceActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AllowedResourceActions { get; set; }
     
         /// <summary>
         /// Gets or sets condition.
+        /// Optional constraints that must be met for the permission to be effective.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "condition", Required = Newtonsoft.Json.Required.Default)]
         public string Condition { get; set; }

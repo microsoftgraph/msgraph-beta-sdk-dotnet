@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets update category.
-        /// Software update type
+        /// Software update type. Possible values are: critical, configurationDataFile, firmware, other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateCategory", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateCategory? UpdateCategory { get; set; }

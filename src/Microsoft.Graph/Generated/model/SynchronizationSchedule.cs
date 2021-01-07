@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets expiration.
+        /// Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiration", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? Expiration { get; set; }
     
         /// <summary>
         /// Gets or sets interval.
+        /// The interval between synchronization iterations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "interval", Required = Newtonsoft.Json.Required.Default)]
         public Duration Interval { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// Possible values are: Active, Disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationScheduleState? State { get; set; }

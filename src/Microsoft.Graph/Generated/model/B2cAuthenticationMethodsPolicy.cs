@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets is email password authentication enabled.
+        /// The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEmailPasswordAuthenticationEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEmailPasswordAuthenticationEnabled { get; set; }
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is user name authentication enabled.
+        /// The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isUserNameAuthenticationEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsUserNameAuthenticationEnabled { get; set; }

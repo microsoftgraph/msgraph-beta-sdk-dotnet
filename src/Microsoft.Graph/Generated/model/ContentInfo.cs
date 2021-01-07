@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets format.
+        /// Possible values are: default, email.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
         public ContentFormat? Format { get; set; }
     
         /// <summary>
         /// Gets or sets identifier.
+        /// Identifier used for Azure Information Protection Analytics.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifier", Required = Newtonsoft.Json.Required.Default)]
         public string Identifier { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
+        /// Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// Possible values are: rest, motion, use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ContentState? State { get; set; }

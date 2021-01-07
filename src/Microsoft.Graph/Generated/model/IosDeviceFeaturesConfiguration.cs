@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wallpaper display location.
-        /// A wallpaper display location specifier.
+        /// A wallpaper display location specifier. Possible values are: notConfigured, lockScreen, homeScreen, lockAndHomeScreens.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wallpaperDisplayLocation", Required = Newtonsoft.Json.Required.Default)]
         public IosWallpaperDisplayLocation? WallpaperDisplayLocation { get; set; }

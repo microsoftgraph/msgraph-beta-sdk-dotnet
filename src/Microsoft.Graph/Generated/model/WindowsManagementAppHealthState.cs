@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets health state.
-        /// Windows management app health state.
+        /// Windows management app health state. Possible values are: unknown, healthy, unhealthy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthState", Required = Newtonsoft.Json.Required.Default)]
         public HealthState? HealthState { get; set; }

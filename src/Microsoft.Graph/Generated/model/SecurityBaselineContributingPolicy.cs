@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sourceType.
-        /// Authoring source of the policy
+        /// Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceType", Required = Newtonsoft.Json.Required.Default)]
         public SecurityBaselinePolicySourceType? SourceType { get; set; }

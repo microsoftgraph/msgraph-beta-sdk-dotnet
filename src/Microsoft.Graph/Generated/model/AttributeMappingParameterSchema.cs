@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowMultipleOccurrences.
+        /// The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMultipleOccurrences", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowMultipleOccurrences { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Parameter name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets required.
+        /// true if the parameter is required; otherwise false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
         public bool? Required { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public AttributeType? Type { get; set; }

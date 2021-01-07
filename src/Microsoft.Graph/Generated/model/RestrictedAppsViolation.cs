@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform type.
-        /// Platform type
+        /// Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformType", Required = Newtonsoft.Json.Required.Default)]
         public PolicyPlatformType? PlatformType { get; set; }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets restricted apps state.
-        /// Restricted apps state
+        /// Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedAppsState", Required = Newtonsoft.Json.Required.Default)]
         public RestrictedAppsState? RestrictedAppsState { get; set; }

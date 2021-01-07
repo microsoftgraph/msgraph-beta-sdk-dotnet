@@ -32,42 +32,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accountDomain.
+        /// Domain of user account used to logon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountDomain", Required = Newtonsoft.Json.Required.Default)]
         public string AccountDomain { get; set; }
     
         /// <summary>
         /// Gets or sets accountName.
+        /// Account name of user account used to logon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountName", Required = Newtonsoft.Json.Required.Default)]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets accountType.
+        /// User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountType", Required = Newtonsoft.Json.Required.Default)]
         public UserAccountSecurityType? AccountType { get; set; }
     
         /// <summary>
         /// Gets or sets firstSeenDateTime.
+        /// DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? FirstSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets lastSeenDateTime.
+        /// DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets logonId.
+        /// User logon ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonId", Required = Newtonsoft.Json.Required.Default)]
         public string LogonId { get; set; }
     
         /// <summary>
         /// Gets or sets logonTypes.
+        /// Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LogonType> LogonTypes { get; set; }

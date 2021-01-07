@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets summarizedAppState.
-        /// runState for the object
+        /// runState for the object. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summarizedAppState", Required = Newtonsoft.Json.Required.Default)]
         public RunState? SummarizedAppState { get; set; }

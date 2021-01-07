@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets feedback.
+        /// Specific feedback for one quality of this rubric.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
         public EducationItemBody Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets qualityId.
+        /// The ID of the rubricQuality that this feedback is related to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
         public string QualityId { get; set; }

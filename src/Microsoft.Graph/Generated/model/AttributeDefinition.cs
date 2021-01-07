@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets anchor.
+        /// true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "anchor", Required = Newtonsoft.Json.Required.Default)]
         public bool? Anchor { get; set; }
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets caseExact.
+        /// true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "caseExact", Required = Newtonsoft.Json.Required.Default)]
         public bool? CaseExact { get; set; }
@@ -56,48 +58,56 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets flowNullValues.
+        /// 'true' to allow null values for attributes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flowNullValues", Required = Newtonsoft.Json.Required.Default)]
         public bool? FlowNullValues { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
+        /// Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MetadataEntry> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets multivalued.
+        /// true if an attribute can have multiple values. Default is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multivalued", Required = Newtonsoft.Json.Required.Default)]
         public bool? Multivalued { get; set; }
     
         /// <summary>
         /// Gets or sets mutability.
+        /// An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mutability", Required = Newtonsoft.Json.Required.Default)]
         public Mutability? Mutability { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Name of the attribute. Must be unique within the object definition. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets referencedObjects.
+        /// For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencedObjects", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ReferencedObject> ReferencedObjects { get; set; }
     
         /// <summary>
         /// Gets or sets required.
+        /// true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
         public bool? Required { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean. Default is String.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public AttributeType? Type { get; set; }

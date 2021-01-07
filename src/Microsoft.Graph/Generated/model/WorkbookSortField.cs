@@ -19,8 +19,7 @@ namespace Microsoft.Graph
     /// The type WorkbookSortField.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class WorkbookSortField
+    public partial class WorkbookSortField : Entity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkbookSortField"/> class.
@@ -46,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets dataOption.
-        /// Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
+        /// Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataOption", Required = Newtonsoft.Json.Required.Default)]
         public string DataOption { get; set; }
@@ -67,22 +66,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sortOn.
-        /// Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
+        /// Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortOn", Required = Newtonsoft.Json.Required.Default)]
         public string SortOn { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
     
     }
 }

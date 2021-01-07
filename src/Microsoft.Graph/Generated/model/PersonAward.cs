@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets description.
+        /// Descpription of the award or honor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Name of the award or honor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets issued date.
+        /// The date that the award or honor was granted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuedDate", Required = Newtonsoft.Json.Required.Default)]
         public Date IssuedDate { get; set; }
     
         /// <summary>
         /// Gets or sets issuing authority.
+        /// Authority which granted the award or honor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuingAuthority", Required = Newtonsoft.Json.Required.Default)]
         public string IssuingAuthority { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
+        /// URL referencing a thumbnail of the award or honor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ThumbnailUrl { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
+        /// URL referencing the award or honor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }

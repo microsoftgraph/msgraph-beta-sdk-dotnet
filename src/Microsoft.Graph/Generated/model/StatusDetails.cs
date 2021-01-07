@@ -31,30 +31,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additionalDetails.
+        /// Additional details in case of error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
         public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets errorCategory.
+        /// Categorizes the error code.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCategory", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorCategory { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
+        /// Unique error code if any occurred.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets reason.
+        /// Summarizes the status and describes why the status happened.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedAction.
+        /// Provides the resolution for the corresponding error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedAction", Required = Newtonsoft.Json.Required.Default)]
         public string RecommendedAction { get; set; }

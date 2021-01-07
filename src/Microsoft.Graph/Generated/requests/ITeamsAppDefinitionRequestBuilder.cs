@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ITeamsAppDefinitionRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Bot.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkBotRequestBuilder"/>.</returns>
+        ITeamworkBotRequestBuilder Bot { get; }
+    
     }
 }

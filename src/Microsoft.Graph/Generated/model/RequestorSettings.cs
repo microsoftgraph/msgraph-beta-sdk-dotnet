@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets acceptRequests.
+        /// Indicates whether new requests are accepted on this policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptRequests", Required = Newtonsoft.Json.Required.Default)]
         public bool? AcceptRequests { get; set; }
     
         /// <summary>
         /// Gets or sets allowedRequestors.
+        /// The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedRequestors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UserSet> AllowedRequestors { get; set; }
     
         /// <summary>
         /// Gets or sets scopeType.
+        /// Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopeType", Required = Newtonsoft.Json.Required.Default)]
         public string ScopeType { get; set; }

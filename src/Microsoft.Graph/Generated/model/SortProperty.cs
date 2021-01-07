@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isDescending.
+        /// True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDescending", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDescending { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The name of the property to sort on. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

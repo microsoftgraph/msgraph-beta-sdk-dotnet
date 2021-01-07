@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets previewVisibility.
-        /// Overrides the notification preview policy set by the user on an iOS device.
+        /// Overrides the notification preview policy set by the user on an iOS device. Possible values are: notConfigured, alwaysShow, hideWhenLocked, neverShow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewVisibility", Required = Newtonsoft.Json.Required.Default)]
         public IosNotificationPreviewVisibility? PreviewVisibility { get; set; }

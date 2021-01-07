@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets contexts.
+        /// Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contexts", Required = Newtonsoft.Json.Required.Default)]
         public PlannerPlanContextCollection Contexts { get; set; }

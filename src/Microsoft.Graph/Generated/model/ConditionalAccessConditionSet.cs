@@ -52,12 +52,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets devices.
+        /// Devices in the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devices", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessDevices Devices { get; set; }
     
         /// <summary>
         /// Gets or sets deviceStates.
+        /// Device states in the policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStates", Required = Newtonsoft.Json.Required.Default)]
         public ConditionalAccessDeviceStates DeviceStates { get; set; }
@@ -78,13 +80,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets signInRiskLevels.
-        /// Risk levels included in the policy. Possible values are: low, medium, high, none.
+        /// Sign-in risk levels included in the policy. Possible values are: low, medium, high, none.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInRiskLevels", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RiskLevel> SignInRiskLevels { get; set; }
     
         /// <summary>
         /// Gets or sets userRiskLevels.
+        /// User risk levels included in the policy. Possible values are: low, medium, high, none.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRiskLevels", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RiskLevel> UserRiskLevels { get; set; }

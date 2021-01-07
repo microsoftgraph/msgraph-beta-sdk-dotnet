@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment state.
-        /// The state of the device in Intune
+        /// The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
         public EnrollmentState? EnrollmentState { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets imported device identity type.
-        /// Type of Imported Device Identity
+        /// Type of Imported Device Identity. Possible values are: unknown, imei, serialNumber.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedDeviceIdentityType", Required = Newtonsoft.Json.Required.Default)]
         public ImportedDeviceIdentityType? ImportedDeviceIdentityType { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform.
-        /// The platform of the Device.
+        /// The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
         public Platform? Platform { get; set; }

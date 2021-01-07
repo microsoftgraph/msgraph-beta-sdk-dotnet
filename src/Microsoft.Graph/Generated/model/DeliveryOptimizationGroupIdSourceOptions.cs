@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets groupIdSourceOption.
-        /// Set this policy to restrict peer selection to a specific source.
+        /// Set this policy to restrict peer selection to a specific source. Possible values are: notConfigured, adSite, authenticatedDomainSid, dhcpUserOption, dnsSuffix.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupIdSourceOption", Required = Newtonsoft.Json.Required.Default)]
         public DeliveryOptimizationGroupIdOptionsType? GroupIdSourceOption { get; set; }

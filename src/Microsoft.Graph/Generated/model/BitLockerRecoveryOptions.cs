@@ -60,21 +60,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recoveryInformationToStore.
-        /// Configure what pieces of BitLocker recovery information are stored to AD DS.
+        /// Configure what pieces of BitLocker recovery information are stored to AD DS. Possible values are: passwordAndKey, passwordOnly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryInformationToStore", Required = Newtonsoft.Json.Required.Default)]
         public BitLockerRecoveryInformationType? RecoveryInformationToStore { get; set; }
     
         /// <summary>
         /// Gets or sets recoveryKeyUsage.
-        /// Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk.
+        /// Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryKeyUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? RecoveryKeyUsage { get; set; }
     
         /// <summary>
         /// Gets or sets recoveryPasswordUsage.
-        /// Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk.
+        /// Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryPasswordUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? RecoveryPasswordUsage { get; set; }

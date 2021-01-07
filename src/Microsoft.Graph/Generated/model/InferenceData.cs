@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets confidenceScore.
+        /// Confidence score reflecting the accuracy of the data inferred about the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidenceScore", Required = Newtonsoft.Json.Required.Default)]
         public double? ConfidenceScore { get; set; }
     
         /// <summary>
         /// Gets or sets userHasVerifiedAccuracy.
+        /// Records if the user has confirmed this inference as being True or False.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userHasVerifiedAccuracy", Required = Newtonsoft.Json.Required.Default)]
         public bool? UserHasVerifiedAccuracy { get; set; }

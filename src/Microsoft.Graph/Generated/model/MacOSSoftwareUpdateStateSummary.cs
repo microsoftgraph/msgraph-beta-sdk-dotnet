@@ -53,14 +53,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// State of the software update
+        /// State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateState? State { get; set; }
     
         /// <summary>
         /// Gets or sets update category.
-        /// Software update category
+        /// Software update category. Possible values are: critical, configurationDataFile, firmware, other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateCategory", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateCategory? UpdateCategory { get; set; }

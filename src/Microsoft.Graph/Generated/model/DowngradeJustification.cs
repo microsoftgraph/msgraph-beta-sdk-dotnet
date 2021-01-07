@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isDowngradeJustified.
+        /// Indicates whether the downgrade is or is not justified.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDowngradeJustified", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDowngradeJustified { get; set; }
     
         /// <summary>
         /// Gets or sets justificationMessage.
+        /// Message that indicates why a downgrade is justified. The message will appear in administrative logs.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationMessage", Required = Newtonsoft.Json.Required.Default)]
         public string JustificationMessage { get; set; }

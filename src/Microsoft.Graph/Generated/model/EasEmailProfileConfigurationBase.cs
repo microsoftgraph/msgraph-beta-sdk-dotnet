@@ -39,21 +39,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user domain name source.
-        /// UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device.
+        /// UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDomainNameSource", Required = Newtonsoft.Json.Required.Default)]
         public DomainNameSource? UserDomainNameSource { get; set; }
     
         /// <summary>
         /// Gets or sets username aadsource.
-        /// Name of the AAD field, that will be used to retrieve UserName for email profile.
+        /// Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameAADSource", Required = Newtonsoft.Json.Required.Default)]
         public UsernameSource? UsernameAADSource { get; set; }
     
         /// <summary>
         /// Gets or sets username source.
-        /// Username attribute that is picked from AAD and injected into this profile before installing on the device.
+        /// Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameSource", Required = Newtonsoft.Json.Required.Default)]
         public UserEmailSource? UsernameSource { get; set; }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supersedence type.
-        /// The supersedence relationship type between the parent and child apps.
+        /// The supersedence relationship type between the parent and child apps. Possible values are: update, replace.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supersedenceType", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppSupersedenceType? SupersedenceType { get; set; }

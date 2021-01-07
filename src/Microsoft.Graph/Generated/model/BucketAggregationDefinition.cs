@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isDescending.
+        /// True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDescending", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDescending { get; set; }
     
         /// <summary>
         /// Gets or sets minimumCount.
+        /// The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MinimumCount { get; set; }
     
         /// <summary>
         /// Gets or sets prefixFilter.
+        /// A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prefixFilter", Required = Newtonsoft.Json.Required.Default)]
         public string PrefixFilter { get; set; }
     
         /// <summary>
         /// Gets or sets ranges.
+        /// Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ranges", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<BucketAggregationRange> Ranges { get; set; }
     
         /// <summary>
         /// Gets or sets sortBy.
+        /// The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sortBy", Required = Newtonsoft.Json.Required.Default)]
         public BucketAggregationSortProperty? SortBy { get; set; }

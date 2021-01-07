@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mdm supported state.
-        /// Indicates if the setting is supported in Mdm or not
+        /// Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmSupportedState", Required = Newtonsoft.Json.Required.Default)]
         public MdmSupportedState? MdmSupportedState { get; set; }
@@ -137,14 +137,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting scope.
-        /// The scope of the setting
+        /// The scope of the setting. Possible values are: unknown, device, user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingScope", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicySettingScope? SettingScope { get; set; }
     
         /// <summary>
         /// Gets or sets setting type.
-        /// The setting type (security or admx) of the Group Policy.
+        /// The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingType", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicySettingType? SettingType { get; set; }

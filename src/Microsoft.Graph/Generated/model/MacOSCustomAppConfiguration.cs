@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets file name.
-        /// Configuration file name (*.plist | *.xml).
+        /// Configuration file name (.plist
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
         public string FileName { get; set; }

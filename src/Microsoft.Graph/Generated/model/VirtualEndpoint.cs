@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets cloud pcs.
+        /// Cloud managed virtual desktops.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPCs", Required = Newtonsoft.Json.Required.Default)]
         public IVirtualEndpointCloudPCsCollectionPage CloudPCs { get; set; }
     
         /// <summary>
         /// Gets or sets device images.
+        /// The image resource on cloud PC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceImages", Required = Newtonsoft.Json.Required.Default)]
         public IVirtualEndpointDeviceImagesCollectionPage DeviceImages { get; set; }
     
         /// <summary>
         /// Gets or sets on premises connections.
+        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesConnections", Required = Newtonsoft.Json.Required.Default)]
         public IVirtualEndpointOnPremisesConnectionsCollectionPage OnPremisesConnections { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning policies.
+        /// cloud PC provisioning policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IVirtualEndpointProvisioningPoliciesCollectionPage ProvisioningPolicies { get; set; }

@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hasGraphMailbox.
+        /// Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasGraphMailbox", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasGraphMailbox { get; set; }
     
         /// <summary>
         /// Gets or sets hasLicense.
+        /// Specifies if the user has a MyAnalytics license assigned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasLicense { get; set; }
     
         /// <summary>
         /// Gets or sets hasOptedOut.
+        /// Specifies if the user opted out of MyAnalytics.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasOptedOut", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasOptedOut { get; set; }
