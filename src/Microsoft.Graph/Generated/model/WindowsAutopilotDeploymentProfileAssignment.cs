@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets source.
-        /// Type of resource used for deployment to a group, direct or parcel/policySet
+        /// Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }

@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets schedule.
+        /// Schedule used to run the job. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Status of the job, which includes when the job was last run, current job state, and errors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets synchronization job settings.
+        /// Settings associated with the job. Some settings are inherited from the template.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationJobSettings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> SynchronizationJobSettings { get; set; }
     
         /// <summary>
         /// Gets or sets template id.
+        /// Identifier of the synchronization template this job is based on.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
         public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets schema.
+        /// The synchronization schema configured for the job.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationSchema Schema { get; set; }

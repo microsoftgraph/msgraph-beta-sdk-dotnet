@@ -88,6 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device compliance policy script.
+        /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicyScript", Required = Newtonsoft.Json.Required.Default)]
         public DeviceCompliancePolicyScript DeviceCompliancePolicyScript { get; set; }
@@ -101,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device threat protection required security level.
-        /// Require Device Threat Protection minimum risk level to report noncompliance.
+        /// Require Device Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceThreatProtectionRequiredSecurityLevel", Required = Newtonsoft.Json.Required.Default)]
         public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel { get; set; }

@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets completion month year.
+        /// The month and year the user graduated or completed the activity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionMonthYear", Required = Newtonsoft.Json.Required.Default)]
         public Date CompletionMonthYear { get; set; }
     
         /// <summary>
         /// Gets or sets end month year.
+        /// The month and year the user completed the educational activity referenced.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endMonthYear", Required = Newtonsoft.Json.Required.Default)]
         public Date EndMonthYear { get; set; }
     
         /// <summary>
         /// Gets or sets institution.
+        /// Contains details of the institution studied at.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "institution", Required = Newtonsoft.Json.Required.Default)]
         public InstitutionData Institution { get; set; }
     
         /// <summary>
         /// Gets or sets program.
+        /// Contains extended information about the program or course.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "program", Required = Newtonsoft.Json.Required.Default)]
         public EducationalActivityDetail Program { get; set; }
     
         /// <summary>
         /// Gets or sets start month year.
+        /// The month and year the user commenced the activity referenced.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startMonthYear", Required = Newtonsoft.Json.Required.Default)]
         public Date StartMonthYear { get; set; }

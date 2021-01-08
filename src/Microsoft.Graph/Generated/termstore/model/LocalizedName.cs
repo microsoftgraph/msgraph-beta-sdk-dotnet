@@ -32,12 +32,14 @@ namespace Microsoft.Graph.TermStore
 
         /// <summary>
         /// Gets or sets languageTag.
+        /// The language tag for the label.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The name in the localized language.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

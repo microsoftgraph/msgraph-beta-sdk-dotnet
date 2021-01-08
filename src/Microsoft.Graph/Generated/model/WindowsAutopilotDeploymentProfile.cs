@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device type.
-        /// The AutoPilot device type that this profile is applicable to.
+        /// The AutoPilot device type that this profile is applicable to. Possible values are: windowsPc, surfaceHub2.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceType", Required = Newtonsoft.Json.Required.Default)]
         public WindowsAutopilotDeviceType? DeviceType { get; set; }

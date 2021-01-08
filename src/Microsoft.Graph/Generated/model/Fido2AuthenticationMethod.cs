@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets aa guid.
+        /// Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aaGuid", Required = Newtonsoft.Json.Required.Default)]
         public string AaGuid { get; set; }
     
         /// <summary>
         /// Gets or sets attestation certificates.
+        /// The attestation certificate(s) attached to this security key.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attestationCertificates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AttestationCertificates { get; set; }
     
         /// <summary>
         /// Gets or sets attestation level.
+        /// The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attestationLevel", Required = Newtonsoft.Json.Required.Default)]
         public AttestationLevel? AttestationLevel { get; set; }
@@ -56,6 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets creation date time.
+        /// The timestamp when this key was registered to the user.
         /// </summary>
         [Obsolete("The creationDateTime property is deprecated and will stop returning data on December 31, 2020. Please use the createdDateTime property.")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
@@ -63,12 +67,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of the key as given by the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets model.
+        /// The manufacturer-assigned model of the FIDO2 security key.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
         public string Model { get; set; }

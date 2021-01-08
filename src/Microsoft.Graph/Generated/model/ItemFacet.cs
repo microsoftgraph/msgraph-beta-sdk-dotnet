@@ -32,42 +32,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed audiences.
+        /// The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedAudiences", Required = Newtonsoft.Json.Required.Default)]
         public AllowedAudiences? AllowedAudiences { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// Provides the identifier of the user and/or application that created the entity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Provides the dateTimeOffset for when the entity was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets inference.
+        /// Contains inference detail if the entity is inferred by the creating or modifying application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inference", Required = Newtonsoft.Json.Required.Default)]
         public InferenceData Inference { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// Provides the identifier of the user and/or application that last modified the entity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// Provides the dateTimeOffset for when the entity was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets source.
+        /// Where the values within an entity originated if synced from another service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public PersonDataSources Source { get; set; }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets comparisonResult.
-        /// Setting comparison result
+        /// Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comparisonResult", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementComparisonResult? ComparisonResult { get; set; }

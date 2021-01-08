@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets status.
+        /// Possible values are: success, warning, failure, skipped, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public ProvisioningResult? Status { get; set; }

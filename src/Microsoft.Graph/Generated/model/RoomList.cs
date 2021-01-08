@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rooms", Required = Newtonsoft.Json.Required.Default)]
         public IRoomListRoomsCollectionPage Rooms { get; set; }
     
+        /// <summary>
+        /// Gets or sets spaces.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spaces", Required = Newtonsoft.Json.Required.Default)]
+        public IRoomListSpacesCollectionPage Spaces { get; set; }
+    
     }
 }
 

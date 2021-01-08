@@ -25,6 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets error.
+        /// The error that occurred, if any, during the course of the bulk operation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public PublicError Error { get; set; }

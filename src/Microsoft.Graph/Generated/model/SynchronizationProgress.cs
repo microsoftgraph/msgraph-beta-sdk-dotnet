@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets completedUnits.
+        /// The numerator of a progress ratio; the number of units of changes already processed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedUnits", Required = Newtonsoft.Json.Required.Default)]
         public Int64? CompletedUnits { get; set; }
     
         /// <summary>
         /// Gets or sets progressObservationDateTime.
+        /// The time of a progress observation as an offset in minutes from UTC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "progressObservationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ProgressObservationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets totalUnits.
+        /// The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalUnits", Required = Newtonsoft.Json.Required.Default)]
         public Int64? TotalUnits { get; set; }
     
         /// <summary>
         /// Gets or sets units.
+        /// An optional description of the units.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "units", Required = Newtonsoft.Json.Required.Default)]
         public string Units { get; set; }

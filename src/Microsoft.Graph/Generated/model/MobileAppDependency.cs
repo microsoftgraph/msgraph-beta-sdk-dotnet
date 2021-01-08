@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets dependency type.
-        /// The type of dependency relationship between the parent and child apps.
+        /// The type of dependency relationship between the parent and child apps. Possible values are: detect, autoInstall.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependencyType", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppDependencyType? DependencyType { get; set; }

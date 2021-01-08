@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets documentConversionEnabled.
+        /// Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentConversionEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? DocumentConversionEnabled { get; set; }

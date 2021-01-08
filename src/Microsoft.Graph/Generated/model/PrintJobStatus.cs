@@ -38,18 +38,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// A human-readable description of the print job's current processing state. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets details.
+        /// Additional details for print job state. Valid values are described in the following table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PrintJobStateDetail> Details { get; set; }
     
         /// <summary>
         /// Gets or sets isAcquiredByPrinter.
+        /// True if the job was acknowledged by a printer; false otherwise. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAcquiredByPrinter", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsAcquiredByPrinter { get; set; }
@@ -68,6 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
+        /// The print job's current processing state. Valid values are described in the following table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public PrintJobProcessingState? State { get; set; }

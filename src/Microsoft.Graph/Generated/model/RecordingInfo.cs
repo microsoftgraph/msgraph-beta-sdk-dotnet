@@ -32,13 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiatedBy.
+        /// The participant who initiated the recording.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatedBy", Required = Newtonsoft.Json.Required.Default)]
         public ParticipantInfo InitiatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
-        /// The identities of the recording initiator.
+        /// The identities of recording initiator.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }

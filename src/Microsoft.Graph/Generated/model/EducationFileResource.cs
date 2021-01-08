@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fileUrl.
+        /// Location on disk of the file resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileUrl", Required = Newtonsoft.Json.Required.Default)]
         public string FileUrl { get; set; }

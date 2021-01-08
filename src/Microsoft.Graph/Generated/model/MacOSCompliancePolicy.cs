@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets gatekeeper allowed app source.
-        /// System and Privacy setting that determines which download locations apps can be run from on a macOS device.
+        /// System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gatekeeperAllowedAppSource", Required = Newtonsoft.Json.Required.Default)]
         public MacOSGatekeeperAppSources? GatekeeperAllowedAppSource { get; set; }

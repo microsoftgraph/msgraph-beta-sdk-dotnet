@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appId.
+        /// The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public OperationStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets updatedDateTime.
+        /// Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? UpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user.
+        /// The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
         public string User { get; set; }

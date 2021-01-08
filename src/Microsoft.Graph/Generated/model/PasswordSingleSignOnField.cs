@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets customizedLabel.
+        /// Title/label override for customization.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizedLabel", Required = Newtonsoft.Json.Required.Default)]
         public string CustomizedLabel { get; set; }
     
         /// <summary>
         /// Gets or sets defaultLabel.
+        /// Label that would be used if no customizedLabel is provided. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLabel", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultLabel { get; set; }
     
         /// <summary>
         /// Gets or sets fieldId.
+        /// Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fieldId", Required = Newtonsoft.Json.Required.Default)]
         public string FieldId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Type of the credential. The values can be text, password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

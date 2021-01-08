@@ -32,14 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets shareAPNSData.
-        /// The admin consent state of sharing user and device data to Apple.
+        /// The admin consent state of sharing user and device data to Apple. Possible values are: notConfigured, granted, notGranted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shareAPNSData", Required = Newtonsoft.Json.Required.Default)]
         public AdminConsentState? ShareAPNSData { get; set; }
     
         /// <summary>
         /// Gets or sets shareUserExperienceAnalyticsData.
-        /// Gets or sets the admin consent for sharing User experience analytics data.
+        /// Gets or sets the admin consent for sharing User experience analytics data. Possible values are: notConfigured, granted, notGranted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shareUserExperienceAnalyticsData", Required = Newtonsoft.Json.Required.Default)]
         public AdminConsentState? ShareUserExperienceAnalyticsData { get; set; }

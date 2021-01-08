@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets columnId.
+        /// ID of the selected level for this quality.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columnId", Required = Newtonsoft.Json.Required.Default)]
         public string ColumnId { get; set; }
     
         /// <summary>
         /// Gets or sets qualityId.
+        /// ID of the associated quality.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
         public string QualityId { get; set; }

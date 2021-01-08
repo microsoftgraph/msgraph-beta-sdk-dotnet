@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets annotations.
+        /// Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "annotations", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ProfileCardAnnotation> Annotations { get; set; }
     
         /// <summary>
         /// Gets or sets directory property name.
+        /// Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryPropertyName", Required = Newtonsoft.Json.Required.Default)]
         public string DirectoryPropertyName { get; set; }

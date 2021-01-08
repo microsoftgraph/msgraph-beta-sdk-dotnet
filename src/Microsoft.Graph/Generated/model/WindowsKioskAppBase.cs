@@ -25,7 +25,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appType.
-        /// The app type
+        /// The app type. Possible values are: unknown, store, desktop, aumId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appType", Required = Newtonsoft.Json.Required.Default)]
         public WindowsKioskAppType? AppType { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets startLayoutTileSize.
-        /// The app tile size for the start layout
+        /// The app tile size for the start layout. Possible values are: hidden, small, medium, wide, large.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startLayoutTileSize", Required = Newtonsoft.Json.Required.Default)]
         public WindowsAppStartLayoutTileSize? StartLayoutTileSize { get; set; }

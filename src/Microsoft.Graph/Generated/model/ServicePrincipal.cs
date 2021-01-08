@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets password single sign on settings.
+        /// The collection for settings related to password single sign-on. Use $select=passwordSingleSignOnSettings to read the property. Read-only for applicationTemplates except for custom applicationTemplates.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordSingleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
         public PasswordSingleSignOnSettings PasswordSingleSignOnSettings { get; set; }
@@ -120,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets error url.
+        /// Deprecated. Don't use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorUrl { get; set; }
@@ -188,18 +190,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred token signing key end date time.
+        /// Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredTokenSigningKeyEndDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? PreferredTokenSigningKeyEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets preferred token signing key thumbprint.
+        /// Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preferredTokenSigningKeyThumbprint", Required = Newtonsoft.Json.Required.Default)]
         public string PreferredTokenSigningKeyThumbprint { get; set; }
     
         /// <summary>
         /// Gets or sets published permission scopes.
+        /// The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedPermissionScopes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PermissionScope> PublishedPermissionScopes { get; set; }
@@ -219,6 +224,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets saml metadata url.
+        /// The url where the service exposes SAML metadata for federation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "samlMetadataUrl", Required = Newtonsoft.Json.Required.Default)]
         public string SamlMetadataUrl { get; set; }
@@ -246,6 +252,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in audience.
+        /// Specifies what Microsoft accounts are supported for the associated application. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInAudience", Required = Newtonsoft.Json.Required.Default)]
         public string SignInAudience { get; set; }
@@ -294,6 +301,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delegated permission classifications.
+        /// The permission classifications for delegated permissions exposed by the app that this service principal represents.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delegatedPermissionClassifications", Required = Newtonsoft.Json.Required.Default)]
         public IServicePrincipalDelegatedPermissionClassificationsCollectionPage DelegatedPermissionClassifications { get; set; }

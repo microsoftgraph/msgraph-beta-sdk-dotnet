@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets membershipRule.
+        /// If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRule", Required = Newtonsoft.Json.Required.Default)]
         public string MembershipRule { get; set; }
     
         /// <summary>
         /// Gets or sets membershipRuleEvaluationDetails.
+        /// Provides a detailed anaylsis of the membership evaluation result.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRuleEvaluationDetails", Required = Newtonsoft.Json.Required.Default)]
         public ExpressionEvaluationDetails MembershipRuleEvaluationDetails { get; set; }
     
         /// <summary>
         /// Gets or sets membershipRuleEvaluationResult.
+        /// The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRuleEvaluationResult", Required = Newtonsoft.Json.Required.Default)]
         public bool? MembershipRuleEvaluationResult { get; set; }

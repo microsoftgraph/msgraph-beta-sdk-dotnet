@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets arity.
+        /// Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "arity", Required = Newtonsoft.Json.Required.Default)]
         public ScopeOperatorType? Arity { get; set; }
     
         /// <summary>
         /// Gets or sets multivalued comparison type.
+        /// Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multivaluedComparisonType", Required = Newtonsoft.Json.Required.Default)]
         public ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType { get; set; }
     
         /// <summary>
         /// Gets or sets supported attribute types.
+        /// Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedAttributeTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AttributeType> SupportedAttributeTypes { get; set; }

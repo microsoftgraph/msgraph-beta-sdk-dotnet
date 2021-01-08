@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets operatorName.
+        /// Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatorName", Required = Newtonsoft.Json.Required.Default)]
         public string OperatorName { get; set; }
     
         /// <summary>
         /// Gets or sets sourceOperandName.
+        /// Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceOperandName", Required = Newtonsoft.Json.Required.Default)]
         public string SourceOperandName { get; set; }
     
         /// <summary>
         /// Gets or sets targetOperand.
+        /// Values that the source operand will be tested against.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetOperand", Required = Newtonsoft.Json.Required.Default)]
         public FilterOperand TargetOperand { get; set; }

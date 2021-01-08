@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets class type.
-        /// Identifies the type of groups the policy can be applied to.
+        /// Identifies the type of groups the policy can be applied to. Possible values are: user, machine.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classType", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyDefinitionClassType? ClassType { get; set; }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policy type.
-        /// Specifies the type of group policy.
+        /// Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyType", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyType? PolicyType { get; set; }

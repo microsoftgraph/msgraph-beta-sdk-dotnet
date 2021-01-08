@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets detection state.
-        /// Detection state from the lastest device health script execution
+        /// Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionState", Required = Newtonsoft.Json.Required.Default)]
         public RunState? DetectionState { get; set; }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets remediation state.
-        /// Remediation state from the lastest device health script execution
+        /// Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationState", Required = Newtonsoft.Json.Required.Default)]
         public RemediationState? RemediationState { get; set; }

@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets runState.
-        /// Status of the item.
+        /// Status of the item. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
         public RunState? RunState { get; set; }

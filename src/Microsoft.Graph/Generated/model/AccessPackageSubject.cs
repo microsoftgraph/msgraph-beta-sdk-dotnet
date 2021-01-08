@@ -44,18 +44,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of the subject.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets email.
+        /// The email address of the subject.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets object id.
+        /// The object ID of the subject.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectId", Required = Newtonsoft.Json.Required.Default)]
         public string ObjectId { get; set; }
@@ -68,12 +71,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal name.
+        /// The principal name, if known, of the subject.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalName", Required = Newtonsoft.Json.Required.Default)]
         public string PrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The resource type of the subject.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

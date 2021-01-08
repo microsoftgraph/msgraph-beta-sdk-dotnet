@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets disk type.
-        /// The user experience analytics device disk type.
+        /// The user experience analytics device disk type. Possible values are: unkown, hdd, ssd.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diskType", Required = Newtonsoft.Json.Required.Default)]
         public DiskType? DiskType { get; set; }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets health status.
-        /// The health state of the user experience analytics device.
+        /// The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthStatus", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }

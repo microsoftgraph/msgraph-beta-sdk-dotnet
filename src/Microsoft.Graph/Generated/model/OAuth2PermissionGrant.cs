@@ -46,6 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiry time.
+        /// Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiryTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ExpiryTime { get; set; }
@@ -73,6 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets start time.
+        /// Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartTime { get; set; }

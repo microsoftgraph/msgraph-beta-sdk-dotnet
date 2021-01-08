@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets answeredQuestion.
+        /// The question the answer is for. Required and Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "answeredQuestion", Required = Newtonsoft.Json.Required.Default)]
         public AccessPackageQuestion AnsweredQuestion { get; set; }
     
         /// <summary>
         /// Gets or sets displayValue.
+        /// The display value of the answer. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayValue", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayValue { get; set; }

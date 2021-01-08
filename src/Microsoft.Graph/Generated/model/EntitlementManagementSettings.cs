@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets days until external user deleted after blocked.
+        /// If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daysUntilExternalUserDeletedAfterBlocked", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DaysUntilExternalUserDeletedAfterBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets external user lifecycle action.
+        /// One of None, BlockSignIn, or BlockSignInAndDelete.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalUserLifecycleAction", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalUserLifecycleAction { get; set; }

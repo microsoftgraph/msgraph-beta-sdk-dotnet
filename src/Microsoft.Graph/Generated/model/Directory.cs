@@ -51,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets feature rollout policies.
+        /// Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureRolloutPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IDirectoryFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }

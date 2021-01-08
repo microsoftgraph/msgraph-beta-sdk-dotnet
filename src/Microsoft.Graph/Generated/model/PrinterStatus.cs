@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
+        /// A human-readable description of the printer's current processing state. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets details.
+        /// The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PrinterProcessingStateDetail> Details { get; set; }
@@ -62,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
+        /// The current processing state. Valid values are described in the following table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public PrinterProcessingState? State { get; set; }

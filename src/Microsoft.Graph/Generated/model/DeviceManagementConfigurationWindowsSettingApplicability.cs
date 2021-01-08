@@ -52,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets requiredAzureAdTrustType.
-        /// Required AzureAD trust type
+        /// Required AzureAD trust type. Possible values are: none, azureAdJoined, addWorkAccount, mdmOnly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAzureAdTrustType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType { get; set; }

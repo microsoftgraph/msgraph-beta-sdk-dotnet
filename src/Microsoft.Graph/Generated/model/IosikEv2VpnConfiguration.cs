@@ -60,14 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client authentication type.
-        /// Type of Client Authentication the VPN client will use.
+        /// Type of Client Authentication the VPN client will use. Possible values are: userAuthentication, deviceAuthentication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientAuthenticationType", Required = Newtonsoft.Json.Required.Default)]
         public VpnClientAuthenticationType? ClientAuthenticationType { get; set; }
     
         /// <summary>
         /// Gets or sets dead peer detection rate.
-        /// Determine how often to check if a peer connection is still active. 
+        /// Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deadPeerDetectionRate", Required = Newtonsoft.Json.Required.Default)]
         public VpnDeadPeerDetectionRate? DeadPeerDetectionRate { get; set; }
@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local identifier.
-        /// Method of identifying the client that is trying to connect via VPN. 
+        /// Method of identifying the client that is trying to connect via VPN. . Possible values are: deviceFQDN, empty, clientCertificateSubjectName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public VpnLocalIdentifier? LocalIdentifier { get; set; }
@@ -165,7 +165,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets server certificate type.
-        /// The type of certificate the VPN server will present to the VPN client for authentication.
+        /// The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serverCertificateType", Required = Newtonsoft.Json.Required.Default)]
         public VpnServerCertificateType? ServerCertificateType { get; set; }

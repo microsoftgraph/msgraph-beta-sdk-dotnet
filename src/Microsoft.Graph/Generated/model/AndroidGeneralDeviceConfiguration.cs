@@ -277,7 +277,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets required password complexity.
-        /// Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+        /// Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+. Possible values are: none, low, medium, high.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredPasswordComplexity", Required = Newtonsoft.Json.Required.Default)]
         public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity { get; set; }

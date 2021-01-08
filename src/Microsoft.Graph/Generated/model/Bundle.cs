@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets album.
+        /// If the bundle is an [album][], then the album property is included
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "album", Required = Newtonsoft.Json.Required.Default)]
         public Album Album { get; set; }
     
         /// <summary>
         /// Gets or sets childCount.
+        /// Number of children contained immediately within this container.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ChildCount { get; set; }

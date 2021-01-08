@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentType.
+        /// The document's content (MIME) type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
         public string ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets documentName.
+        /// The document's name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentName", Required = Newtonsoft.Json.Required.Default)]
         public string DocumentName { get; set; }
     
         /// <summary>
         /// Gets or sets size.
+        /// The document's size in bytes.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Size { get; set; }

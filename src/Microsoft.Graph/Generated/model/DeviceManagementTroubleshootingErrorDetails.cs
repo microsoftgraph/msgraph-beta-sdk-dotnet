@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets context.
+        /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "context", Required = Newtonsoft.Json.Required.Default)]
         public string Context { get; set; }
     
         /// <summary>
         /// Gets or sets failure.
+        /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failure", Required = Newtonsoft.Json.Required.Default)]
         public string Failure { get; set; }

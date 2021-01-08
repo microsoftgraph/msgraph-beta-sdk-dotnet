@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets total.
+        /// Total amount of the directory quota.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "total", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Total { get; set; }
     
         /// <summary>
         /// Gets or sets used.
+        /// Used amount of the directory quota.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "used", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Used { get; set; }

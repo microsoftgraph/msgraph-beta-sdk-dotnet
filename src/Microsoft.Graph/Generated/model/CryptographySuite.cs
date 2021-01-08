@@ -32,42 +32,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authenticationTransformConstants.
-        /// Authentication Transform Constants
+        /// Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationTransformConstants", Required = Newtonsoft.Json.Required.Default)]
         public AuthenticationTransformConstant? AuthenticationTransformConstants { get; set; }
     
         /// <summary>
         /// Gets or sets cipherTransformConstants.
-        /// Cipher Transform Constants
+        /// Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cipherTransformConstants", Required = Newtonsoft.Json.Required.Default)]
         public VpnEncryptionAlgorithmType? CipherTransformConstants { get; set; }
     
         /// <summary>
         /// Gets or sets dhGroup.
-        /// Diffie Hellman Group
+        /// Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dhGroup", Required = Newtonsoft.Json.Required.Default)]
         public DiffieHellmanGroup? DhGroup { get; set; }
     
         /// <summary>
         /// Gets or sets encryptionMethod.
-        /// Encryption Method
+        /// Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionMethod", Required = Newtonsoft.Json.Required.Default)]
         public VpnEncryptionAlgorithmType? EncryptionMethod { get; set; }
     
         /// <summary>
         /// Gets or sets integrityCheckMethod.
-        /// Integrity Check Method
+        /// Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "integrityCheckMethod", Required = Newtonsoft.Json.Required.Default)]
         public VpnIntegrityAlgorithmType? IntegrityCheckMethod { get; set; }
     
         /// <summary>
         /// Gets or sets pfsGroup.
-        /// Perfect Forward Secrecy Group
+        /// Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pfsGroup", Required = Newtonsoft.Json.Required.Default)]
         public PerfectForwardSecrecyGroup? PfsGroup { get; set; }

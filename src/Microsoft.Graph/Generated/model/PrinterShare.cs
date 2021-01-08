@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets allow all users.
+        /// If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAllUsers", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowAllUsers { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The DateTimeOffset when the printer share was created. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets allowed groups.
+        /// The groups whose users have access to print using the printer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedGroups", Required = Newtonsoft.Json.Required.Default)]
         public IPrinterShareAllowedGroupsCollectionWithReferencesPage AllowedGroups { get; set; }
     
         /// <summary>
         /// Gets or sets allowed users.
+        /// The users who have access to print using the printer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUsers", Required = Newtonsoft.Json.Required.Default)]
         public IPrinterShareAllowedUsersCollectionWithReferencesPage AllowedUsers { get; set; }
     
         /// <summary>
         /// Gets or sets printer.
+        /// The printer that this printer share is related to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printer", Required = Newtonsoft.Json.Required.Default)]
         public Printer Printer { get; set; }

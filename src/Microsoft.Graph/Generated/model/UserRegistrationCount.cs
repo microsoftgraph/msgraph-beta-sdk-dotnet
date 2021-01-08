@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets registrationCount.
+        /// Provides the registration count for your tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? RegistrationCount { get; set; }
     
         /// <summary>
         /// Gets or sets registrationStatus.
+        /// Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationStatus", Required = Newtonsoft.Json.Required.Default)]
         public RegistrationStatusType? RegistrationStatus { get; set; }

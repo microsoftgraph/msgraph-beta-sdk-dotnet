@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets action.
-        /// Device Action
+        /// Device Action. Possible values are: unknown, remove, reset.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public CompanyPortalAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets ownerType.
-        /// Device ownership type
+        /// Device ownership type. Possible values are: unknown, company, personal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerType", Required = Newtonsoft.Json.Required.Default)]
         public OwnerType? OwnerType { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
-        /// Device OS/Platform
+        /// Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
         public DevicePlatformType? Platform { get; set; }

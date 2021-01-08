@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets groupId.
+        /// The id of the assignment's target group
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupId", Required = Newtonsoft.Json.Required.Default)]
         public string GroupId { get; set; }

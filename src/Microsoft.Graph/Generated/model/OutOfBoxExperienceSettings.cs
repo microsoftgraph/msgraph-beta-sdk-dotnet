@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets deviceUsageType.
-        /// AAD join authentication type
+        /// AAD join authentication type. Possible values are: singleUser, shared.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceUsageType", Required = Newtonsoft.Json.Required.Default)]
         public WindowsDeviceUsageType? DeviceUsageType { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userType.
-        /// Type of user
+        /// Type of user. Possible values are: administrator, standard.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
         public WindowsUserType? UserType { get; set; }

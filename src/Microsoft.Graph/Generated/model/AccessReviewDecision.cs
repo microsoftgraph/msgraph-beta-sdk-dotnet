@@ -32,42 +32,49 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets access recommendation.
+        /// The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessRecommendation", Required = Newtonsoft.Json.Required.Default)]
         public string AccessRecommendation { get; set; }
     
         /// <summary>
         /// Gets or sets access review id.
+        /// The feature-generated id of the access review.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewId", Required = Newtonsoft.Json.Required.Default)]
         public string AccessReviewId { get; set; }
     
         /// <summary>
         /// Gets or sets applied by.
+        /// When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity AppliedBy { get; set; }
     
         /// <summary>
         /// Gets or sets applied date time.
+        /// The date and time when the review decision was applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AppliedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets apply result.
+        /// The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyResult", Required = Newtonsoft.Json.Required.Default)]
         public string ApplyResult { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
+        /// The reviewer's business justification, if supplied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
+        /// The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity ReviewedBy { get; set; }
@@ -80,6 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets review result.
+        /// The result of the review, one of NotReviewed, Deny, DontKnow or Approve.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewResult", Required = Newtonsoft.Json.Required.Default)]
         public string ReviewResult { get; set; }

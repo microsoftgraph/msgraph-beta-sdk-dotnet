@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets name.
+        /// Role name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
+        /// The assignments for this role. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public IPrivilegedRoleAssignmentsCollectionWithReferencesPage Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
+        /// The settings for this role. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public PrivilegedRoleSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets summary.
+        /// The summary information for this role. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
         public PrivilegedRoleSummary Summary { get; set; }

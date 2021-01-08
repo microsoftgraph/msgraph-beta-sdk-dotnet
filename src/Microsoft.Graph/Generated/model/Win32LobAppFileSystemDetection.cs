@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets detectionType.
-        /// The file system detection type
+        /// The file system detection type. Possible values are: notConfigured, exists, modifiedDate, createdDate, version, sizeInMB, doesNotExist.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppFileSystemDetectionType? DetectionType { get; set; }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operator.
-        /// The operator for file or folder detection
+        /// The operator for file or folder detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppDetectionOperator? Operator { get; set; }

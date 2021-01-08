@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appType.
-        /// Application type.
+        /// Application type. Possible values are: desktop, universal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appType", Required = Newtonsoft.Json.Required.Default)]
         public Windows10AppType? AppType { get; set; }

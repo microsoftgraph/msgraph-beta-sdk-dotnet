@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets day.
-        /// The day of the week represented by this instance.
+        /// The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "day", Required = Newtonsoft.Json.Required.Default)]
         public DayOfWeek? Day { get; set; }

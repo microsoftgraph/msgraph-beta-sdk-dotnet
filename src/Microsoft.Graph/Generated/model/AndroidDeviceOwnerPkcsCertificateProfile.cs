@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets certificate store.
-        /// Target store certificate
+        /// Target store certificate. Possible values are: user, machine.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
         public CertificateStore? CertificateStore { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certification authority type.
-        /// Certification authority type
+        /// Certification authority type. Possible values are: notConfigured, microsoft, digiCert.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificationAuthorityType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementCertificationAuthority? CertificationAuthorityType { get; set; }

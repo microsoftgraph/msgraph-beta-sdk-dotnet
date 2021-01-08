@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets certificate store.
-        /// Target store certificate
+        /// Target store certificate. Possible values are: user, machine.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
         public CertificateStore? CertificateStore { get; set; }
@@ -46,21 +46,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hash algorithm.
-        /// SCEP Hash Algorithm
+        /// SCEP Hash Algorithm. Possible values are: sha1, sha2.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashAlgorithm", Required = Newtonsoft.Json.Required.Default)]
         public HashAlgorithms? HashAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets key size.
-        /// SCEP Key Size
+        /// SCEP Key Size. Possible values are: size1024, size2048, size4096.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keySize", Required = Newtonsoft.Json.Required.Default)]
         public KeySize? KeySize { get; set; }
     
         /// <summary>
         /// Gets or sets key usage.
-        /// SCEP Key Usage
+        /// SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
         public KeyUsages? KeyUsage { get; set; }

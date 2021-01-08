@@ -32,30 +32,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The claim that provides the display name or full name for the user. It is a required propoerty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets email.
+        /// The claim that provides the email address of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets givenName.
+        /// The claim that provides the first name of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "givenName", Required = Newtonsoft.Json.Required.Default)]
         public string GivenName { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
+        /// The claim that provides the last name of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
         public string Surname { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
+        /// The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }

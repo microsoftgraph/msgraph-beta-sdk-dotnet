@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets clauses.
+        /// Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clauses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<FilterClause> Clauses { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Human-readable name of the filter group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

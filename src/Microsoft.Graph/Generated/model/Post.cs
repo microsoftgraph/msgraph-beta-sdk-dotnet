@@ -67,6 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets importance.
+        /// The importance of a group post: low, normal, high.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
         public Importance? Importance { get; set; }
@@ -94,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments.
-        /// Read-only. Nullable.
+        /// The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
         public IPostAttachmentsCollectionPage Attachments { get; set; }
@@ -108,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets in reply to.
-        /// Read-only.
+        /// The earlier post that this post is replying to in the conversationThread. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inReplyTo", Required = Newtonsoft.Json.Required.Default)]
         public Post InReplyTo { get; set; }

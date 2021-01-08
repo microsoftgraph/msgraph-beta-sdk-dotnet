@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate store.
-        /// Target store certificate
+        /// Target store certificate. Possible values are: user, machine.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
         public CertificateStore? CertificateStore { get; set; }
