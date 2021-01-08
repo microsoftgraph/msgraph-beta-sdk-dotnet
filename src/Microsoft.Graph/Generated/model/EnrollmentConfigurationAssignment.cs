@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets source.
-        /// Type of resource used for deployment to a group, direct or policySet
+        /// Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
-        /// Not yet documented
+        /// Represents an assignment to managed devices in the tenant
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

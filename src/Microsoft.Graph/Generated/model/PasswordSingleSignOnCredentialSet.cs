@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets credentials.
+        /// A list of credential objects that define the complete sign in flow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentials", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Credential> Credentials { get; set; }
     
         /// <summary>
         /// Gets or sets id.
+        /// The ID of the user or group this credential set belongs to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }

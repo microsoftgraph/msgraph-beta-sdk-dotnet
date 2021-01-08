@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Type of device which is impacted by this rule e.g. Model, Family
+        /// Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementExchangeAccessRuleType? Type { get; set; }

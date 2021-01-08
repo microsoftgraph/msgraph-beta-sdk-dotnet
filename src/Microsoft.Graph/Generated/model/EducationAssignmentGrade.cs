@@ -25,12 +25,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets gradedBy.
+        /// User who did the grading.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gradedBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet GradedBy { get; set; }
     
         /// <summary>
         /// Gets or sets gradedDateTime.
+        /// Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gradedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? GradedDateTime { get; set; }

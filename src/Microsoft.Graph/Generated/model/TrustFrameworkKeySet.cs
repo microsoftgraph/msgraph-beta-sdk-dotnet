@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets keys.
+        /// A collection of the keys.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keys", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<TrustFrameworkKey> Keys { get; set; }

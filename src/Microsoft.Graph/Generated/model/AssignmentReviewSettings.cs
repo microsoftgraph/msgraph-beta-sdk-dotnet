@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets durationInDays.
+        /// The number of days to allow input from reviewers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
+        /// If true, access reviews are required for assignments from this policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceType.
+        /// The interval for recurrence, such as monthly or quarterly.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceType", Required = Newtonsoft.Json.Required.Default)]
         public string RecurrenceType { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
+        /// If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UserSet> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets reviewerType.
+        /// Who should be asked to do the review, either Self or Reviewers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewerType", Required = Newtonsoft.Json.Required.Default)]
         public string ReviewerType { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
+        /// When the first review should start.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets deployment status.
-        /// The deployment state of the policy.
+        /// The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentStatus", Required = Newtonsoft.Json.Required.Default)]
         public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus { get; set; }

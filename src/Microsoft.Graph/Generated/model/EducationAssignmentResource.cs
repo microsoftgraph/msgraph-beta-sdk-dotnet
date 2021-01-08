@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets distribute for student work.
+        /// Indicates whether this resource should be copied to each student submission for modification and submission.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "distributeForStudentWork", Required = Newtonsoft.Json.Required.Default)]
         public bool? DistributeForStudentWork { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
+        /// Resource object that has been associated with this assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public EducationResource Resource { get; set; }

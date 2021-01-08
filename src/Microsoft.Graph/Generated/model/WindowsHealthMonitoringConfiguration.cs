@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets allow device health monitoring.
-        /// Enables device health monitoring on the device
+        /// Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeviceHealthMonitoring", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? AllowDeviceHealthMonitoring { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets config device health monitoring scope.
-        /// Specifies set of events collected from the device where health monitoring is enabled
+        /// Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configDeviceHealthMonitoringScope", Required = Newtonsoft.Json.Required.Default)]
         public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope { get; set; }

@@ -32,42 +32,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets calendar.
+        /// The calendar to use, e.g., Gregorian Calendar.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendar", Required = Newtonsoft.Json.Required.Default)]
         public string Calendar { get; set; }
     
         /// <summary>
         /// Gets or sets firstDayOfWeek.
+        /// The first day of the week to use, e.g., Sunday.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstDayOfWeek", Required = Newtonsoft.Json.Required.Default)]
         public string FirstDayOfWeek { get; set; }
     
         /// <summary>
         /// Gets or sets longDateFormat.
+        /// The long date time format to be used for displaying dates.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longDateFormat", Required = Newtonsoft.Json.Required.Default)]
         public string LongDateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets longTimeFormat.
+        /// The long time format to be used for displaying time.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longTimeFormat", Required = Newtonsoft.Json.Required.Default)]
         public string LongTimeFormat { get; set; }
     
         /// <summary>
         /// Gets or sets shortDateFormat.
+        /// The short date time format to be used for displaying dates.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortDateFormat", Required = Newtonsoft.Json.Required.Default)]
         public string ShortDateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets shortTimeFormat.
+        /// The short time format to be used for displaying time.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortTimeFormat", Required = Newtonsoft.Json.Required.Default)]
         public string ShortTimeFormat { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
+        /// The timezone to be used for displaying time.Returned by default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZone", Required = Newtonsoft.Json.Required.Default)]
         public string TimeZone { get; set; }

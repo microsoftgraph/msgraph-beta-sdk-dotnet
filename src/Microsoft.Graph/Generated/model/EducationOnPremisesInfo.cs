@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets immutableId.
+        /// Unique identifier for the user object in Active Directory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "immutableId", Required = Newtonsoft.Json.Required.Default)]
         public string ImmutableId { get; set; }

@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets run state.
-        /// State of latest run of the device management script.
+        /// State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
         public RunState? RunState { get; set; }

@@ -32,42 +32,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets collate.
+        /// Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collate", Required = Newtonsoft.Json.Required.Default)]
         public bool? Collate { get; set; }
     
         /// <summary>
         /// Gets or sets colorMode.
+        /// The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorMode", Required = Newtonsoft.Json.Required.Default)]
         public PrintColorMode? ColorMode { get; set; }
     
         /// <summary>
         /// Gets or sets copies.
+        /// The number of copies that should be printed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copies", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Copies { get; set; }
     
         /// <summary>
         /// Gets or sets dpi.
+        /// The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dpi", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Dpi { get; set; }
     
         /// <summary>
         /// Gets or sets duplexMode.
+        /// The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duplexMode", Required = Newtonsoft.Json.Required.Default)]
         public PrintDuplexMode? DuplexMode { get; set; }
     
         /// <summary>
         /// Gets or sets feedOrientation.
+        /// The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedOrientation", Required = Newtonsoft.Json.Required.Default)]
         public PrinterFeedOrientation? FeedOrientation { get; set; }
     
         /// <summary>
         /// Gets or sets finishings.
+        /// Finishing processes to use when printing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "finishings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PrintFinishing> Finishings { get; set; }
@@ -80,66 +87,77 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inputBin.
+        /// The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputBin", Required = Newtonsoft.Json.Required.Default)]
         public string InputBin { get; set; }
     
         /// <summary>
         /// Gets or sets margin.
+        /// The margin settings to use when printing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "margin", Required = Newtonsoft.Json.Required.Default)]
         public PrintMargin Margin { get; set; }
     
         /// <summary>
         /// Gets or sets mediaSize.
+        /// The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaSize", Required = Newtonsoft.Json.Required.Default)]
         public string MediaSize { get; set; }
     
         /// <summary>
         /// Gets or sets mediaType.
+        /// The default media (such as paper) type to print the document on. Valid values are described in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaType", Required = Newtonsoft.Json.Required.Default)]
         public string MediaType { get; set; }
     
         /// <summary>
         /// Gets or sets multipageLayout.
+        /// The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multipageLayout", Required = Newtonsoft.Json.Required.Default)]
         public PrintMultipageLayout? MultipageLayout { get; set; }
     
         /// <summary>
         /// Gets or sets orientation.
+        /// The orientation setting the printer should use when printing the job. Valid values are described in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orientation", Required = Newtonsoft.Json.Required.Default)]
         public PrintOrientation? Orientation { get; set; }
     
         /// <summary>
         /// Gets or sets outputBin.
+        /// The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputBin", Required = Newtonsoft.Json.Required.Default)]
         public string OutputBin { get; set; }
     
         /// <summary>
         /// Gets or sets pageRanges.
+        /// The page ranges to print. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageRanges", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<IntegerRange> PageRanges { get; set; }
     
         /// <summary>
         /// Gets or sets pagesPerSheet.
+        /// The number of document pages to print on each sheet.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pagesPerSheet", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PagesPerSheet { get; set; }
     
         /// <summary>
         /// Gets or sets quality.
+        /// The print quality to use when printing the job. Valid values are described in the table below. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quality", Required = Newtonsoft.Json.Required.Default)]
         public PrintQuality? Quality { get; set; }
     
         /// <summary>
         /// Gets or sets scaling.
+        /// Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scaling", Required = Newtonsoft.Json.Required.Default)]
         public PrintScaling? Scaling { get; set; }

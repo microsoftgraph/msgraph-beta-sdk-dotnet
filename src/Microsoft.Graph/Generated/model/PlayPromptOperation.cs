@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets completion reason.
+        /// Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionReason", Required = Newtonsoft.Json.Required.Default)]
         public PlayPromptCompletionReason? CompletionReason { get; set; }

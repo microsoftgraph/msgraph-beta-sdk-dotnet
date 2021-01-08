@@ -32,7 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate validity period scale.
-        /// Scale for the Certificate Validity Period.
+        /// Scale for the Certificate Validity Period. Possible values are: days, months, years.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodScale", Required = Newtonsoft.Json.Required.Default)]
         public CertificateValidityPeriodScale? CertificateValidityPeriodScale { get; set; }
@@ -60,14 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subject alternative name type.
-        /// Certificate Subject Alternative Name Type.
+        /// Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameType", Required = Newtonsoft.Json.Required.Default)]
         public SubjectAlternativeNameType? SubjectAlternativeNameType { get; set; }
     
         /// <summary>
         /// Gets or sets subject name format.
-        /// Certificate Subject Name Format.
+        /// Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormat", Required = Newtonsoft.Json.Required.Default)]
         public SubjectNameFormat? SubjectNameFormat { get; set; }

@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets order identifier.
-        /// Order Id of the Windows autopilot device.
+        /// Order Id of the Windows autopilot device. - Deprecate
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string OrderIdentifier { get; set; }

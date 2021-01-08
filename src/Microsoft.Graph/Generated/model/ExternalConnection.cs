@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets configuration.
+        /// Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configuration", Required = Newtonsoft.Json.Required.Default)]
         public Configuration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Description of the connection displayed in the Microsoft 365 admin center. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ConnectionState? State { get; set; }
@@ -62,18 +66,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets items.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets schema.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]
         public Schema Schema { get; set; }

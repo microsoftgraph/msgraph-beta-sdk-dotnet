@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ruleIdentifier.
+        /// The id of the rule. For example, ExpirationRule and MfaRule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleIdentifier", Required = Newtonsoft.Json.Required.Default)]
         public string RuleIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets setting.
+        /// The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setting", Required = Newtonsoft.Json.Required.Default)]
         public string Setting { get; set; }

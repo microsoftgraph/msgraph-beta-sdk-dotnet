@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets data.
+        /// The required properties for the webPart (varies by webPart)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "data", Required = Newtonsoft.Json.Required.Default)]
         public SitePageData Data { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// A unique identifier specifying the webPart type. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

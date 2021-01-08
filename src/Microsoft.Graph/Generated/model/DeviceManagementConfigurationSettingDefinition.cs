@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets access types.
-        /// Read/write access mode of the setting
+        /// Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessTypes", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationSettingAccessTypes? AccessTypes { get; set; }
@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting usage.
-        /// Setting type, for example, configuration and compliance
+        /// Setting type, for example, configuration and compliance. Possible values are: none, configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingUsage", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }

@@ -32,18 +32,21 @@ namespace Microsoft.Graph.TermStore
 
         /// <summary>
         /// Gets or sets isDefault.
+        /// Indicates whether the label is the default label.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets languageTag.
+        /// The anguage tag for the label.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The name of the label.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

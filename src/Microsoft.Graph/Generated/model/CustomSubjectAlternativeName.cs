@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sanType.
-        /// Custom SAN Type.
+        /// Custom SAN Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sanType", Required = Newtonsoft.Json.Required.Default)]
         public SubjectAlternativeNameType? SanType { get; set; }

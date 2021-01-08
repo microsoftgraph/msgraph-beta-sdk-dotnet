@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets batteryChargeCycles.
-        /// The number of charge cycles the device???s current battery has gone through. Valid values 0 to 2147483647
+        /// The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batteryChargeCycles", Required = Newtonsoft.Json.Required.Default)]
         public Int32? BatteryChargeCycles { get; set; }
     
         /// <summary>
         /// Gets or sets batteryHealthPercentage.
-        /// The device???s current battery???s health percentage. Valid values 0 to 100
+        /// The device’s current battery’s health percentage. Valid values 0 to 100
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batteryHealthPercentage", Required = Newtonsoft.Json.Required.Default)]
         public Int32? BatteryHealthPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets batterySerialNumber.
-        /// The serial number of the device???s current battery
+        /// The serial number of the device’s current battery
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batterySerialNumber", Required = Newtonsoft.Json.Required.Default)]
         public string BatterySerialNumber { get; set; }
@@ -60,28 +60,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deviceFullQualifiedDomainName.
-        /// Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string. 
+        /// Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceFullQualifiedDomainName", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceFullQualifiedDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets deviceGuardLocalSystemAuthorityCredentialGuardState.
-        /// Local System Authority (LSA) credential guard status. 
+        /// Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardLocalSystemAuthorityCredentialGuardState", Required = Newtonsoft.Json.Required.Default)]
         public DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState { get; set; }
     
         /// <summary>
         /// Gets or sets deviceGuardVirtualizationBasedSecurityHardwareRequirementState.
-        /// Virtualization-based security hardware requirement status.
+        /// Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardVirtualizationBasedSecurityHardwareRequirementState", Required = Newtonsoft.Json.Required.Default)]
         public DeviceGuardVirtualizationBasedSecurityHardwareRequirementState? DeviceGuardVirtualizationBasedSecurityHardwareRequirementState { get; set; }
     
         /// <summary>
         /// Gets or sets deviceGuardVirtualizationBasedSecurityState.
-        /// Virtualization-based security status. 
+        /// Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceGuardVirtualizationBasedSecurityState", Required = Newtonsoft.Json.Required.Default)]
         public DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState { get; set; }

@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appliesTo.
+        /// The user role type to assign to the license. Possible values are: student, teacher, faculty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
         public EducationUserRole? AppliesTo { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Represents the domain for the user account.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }

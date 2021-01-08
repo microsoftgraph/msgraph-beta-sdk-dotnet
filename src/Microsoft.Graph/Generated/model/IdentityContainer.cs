@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public ConditionalAccessRoot ConditionalAccess { get; set; }
     
         /// <summary>
+        /// Gets or sets api connectors.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apiConnectors", Required = Newtonsoft.Json.Required.Default)]
+        public IIdentityContainerApiConnectorsCollectionPage ApiConnectors { get; set; }
+    
+        /// <summary>
         /// Gets or sets b2c user flows.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2cUserFlows", Required = Newtonsoft.Json.Required.Default)]

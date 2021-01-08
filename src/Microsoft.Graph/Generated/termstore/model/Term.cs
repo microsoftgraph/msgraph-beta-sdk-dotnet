@@ -32,12 +32,14 @@ namespace Microsoft.Graph.TermStore
 	
         /// <summary>
         /// Gets or sets created date time.
+        /// Date and time of term creation. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets descriptions.
+        /// Description about term that is dependent on the languageTag
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "descriptions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LocalizedDescription> Descriptions { get; set; }
@@ -50,30 +52,35 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// Last date and time of term modification. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
+        /// Collection of properties on the term
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Microsoft.Graph.KeyValue> Properties { get; set; }
     
         /// <summary>
         /// Gets or sets children.
+        /// Children of current term
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
         public ITermChildrenCollectionPage Children { get; set; }
     
         /// <summary>
         /// Gets or sets relations.
+        /// To indicate which terms are related to the current term as either pinned or reused
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relations", Required = Newtonsoft.Json.Required.Default)]
         public ITermRelationsCollectionPage Relations { get; set; }
     
         /// <summary>
         /// Gets or sets set.
+        /// The [set] in which the term is created
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "set", Required = Newtonsoft.Json.Required.Default)]
         public Set Set { get; set; }

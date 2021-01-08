@@ -53,42 +53,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app action if android device manufacturer not allowed.
-        /// Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. (Android only)
+        /// Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. (Android only). Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidDeviceManufacturerNotAllowed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets app action if android device model not allowed.
-        /// Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (Android Only)
+        /// Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (Android Only). Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidDeviceModelNotAllowed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceModelNotAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets app action if android safety net apps verification failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails.
+        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidSafetyNetAppsVerificationFailed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed { get; set; }
     
         /// <summary>
         /// Gets or sets app action if android safety net device attestation failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails.
+        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidSafetyNetDeviceAttestationFailed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed { get; set; }
     
         /// <summary>
         /// Gets or sets app action if device lock not set.
-        /// Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only)
+        /// Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only). Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfDeviceLockNotSet", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet { get; set; }
     
         /// <summary>
         /// Gets or sets app action if ios device model not allowed.
-        /// Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only)
+        /// Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfIosDeviceModelNotAllowed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed { get; set; }
@@ -291,21 +291,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets required android safety net apps verification type.
-        /// Defines the Android SafetyNet Apps Verification requirement for a managed app to work.
+        /// Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAndroidSafetyNetAppsVerificationType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidManagedAppSafetyNetAppsVerificationType? RequiredAndroidSafetyNetAppsVerificationType { get; set; }
     
         /// <summary>
         /// Gets or sets required android safety net device attestation type.
-        /// Defines the Android SafetyNet Device Attestation requirement for a managed app to work.
+        /// Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAndroidSafetyNetDeviceAttestationType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidManagedAppSafetyNetDeviceAttestationType? RequiredAndroidSafetyNetDeviceAttestationType { get; set; }
     
         /// <summary>
         /// Gets or sets required android safety net evaluation type.
-        /// Defines the Android SafetyNet evaluation type requirement for a managed app to work. (Android Only)
+        /// Defines the Android SafetyNet evaluation type requirement for a managed app to work. (Android Only). Possible values are: basic, hardwareBacked.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAndroidSafetyNetEvaluationType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType { get; set; }

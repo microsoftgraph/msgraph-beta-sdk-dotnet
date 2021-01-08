@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowUpdateConfigurationOverride.
+        /// Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUpdateConfigurationOverride", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowUpdateConfigurationOverride { get; set; }
     
         /// <summary>
         /// Gets or sets deferUpdateDateTime.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deferUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? DeferUpdateDateTime { get; set; }

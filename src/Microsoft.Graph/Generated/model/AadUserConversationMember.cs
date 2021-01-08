@@ -38,8 +38,15 @@ namespace Microsoft.Graph
         public string Email { get; set; }
     
         /// <summary>
+        /// Gets or sets tenant id.
+        /// TenantId which the Azure AD user belongs to.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string TenantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets user id.
-        /// The guid of the user.
+        /// The GUID of the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }

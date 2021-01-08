@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets associationType.
+        /// Nullable. An app-defined type of association between the plannerPlan and the app. The app can use this information to track different kinds of relationships to the same plannerPlan.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "associationType", Required = Newtonsoft.Json.Required.Default)]
         public string AssociationType { get; set; }
     
         /// <summary>
         /// Gets or sets createdDateTime.
+        /// Read-only. The date and time when the plannerPlanContext was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets displayNameSegments.
+        /// The segments of the name of the external experience. Segments represent a hierarchical structure that allows other apps to display the relationship.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayNameSegments", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> DisplayNameSegments { get; set; }
     
         /// <summary>
         /// Gets or sets ownerAppId.
+        /// Read-only. ID of the app that created the plannerPlanContext.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerAppId", Required = Newtonsoft.Json.Required.Default)]
         public string OwnerAppId { get; set; }

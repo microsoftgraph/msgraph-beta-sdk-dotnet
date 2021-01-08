@@ -60,14 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platforms.
-        /// Platforms types, which settings in the category have.
+        /// Platforms types, which settings in the category have. Possible values are: none, macOS, windows10X, windows10.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies types, which settings in the category have.
+        /// Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technologies", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

@@ -25,24 +25,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
+        /// ID of the question.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets isRequired.
+        /// Whether the requestor is required to supply an answer or not.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsRequired { get; set; }
     
         /// <summary>
         /// Gets or sets sequence.
+        /// Relative position of this question when displaying a list of questions to the requestor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Sequence { get; set; }
     
         /// <summary>
         /// Gets or sets text.
+        /// The text of the question to show to the requestor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
         public AccessPackageLocalizedContent Text { get; set; }

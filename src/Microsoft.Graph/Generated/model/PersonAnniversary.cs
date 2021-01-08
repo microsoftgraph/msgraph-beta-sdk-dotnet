@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets date.
+        /// Contains the date associated with the anniversary type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "date", Required = Newtonsoft.Json.Required.Default)]
         public Date Date { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of anniversary the date represents. Possible values are: birthday, wedding, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public AnniversaryType? Type { get; set; }

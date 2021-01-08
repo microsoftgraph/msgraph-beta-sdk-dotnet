@@ -32,24 +32,28 @@ namespace Microsoft.Graph.TermStore
 	
         /// <summary>
         /// Gets or sets relationship.
+        /// The type of relation. Possible values are: pin, reuse.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relationship", Required = Newtonsoft.Json.Required.Default)]
         public RelationType? Relationship { get; set; }
     
         /// <summary>
         /// Gets or sets from term.
+        /// The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fromTerm", Required = Newtonsoft.Json.Required.Default)]
         public Term FromTerm { get; set; }
     
         /// <summary>
         /// Gets or sets set.
+        /// The [set] in which the relation is relevant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "set", Required = Newtonsoft.Json.Required.Default)]
         public Set Set { get; set; }
     
         /// <summary>
         /// Gets or sets to term.
+        /// The to [term] of the relation. The term to which the relationship is defined.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toTerm", Required = Newtonsoft.Json.Required.Default)]
         public Term ToTerm { get; set; }

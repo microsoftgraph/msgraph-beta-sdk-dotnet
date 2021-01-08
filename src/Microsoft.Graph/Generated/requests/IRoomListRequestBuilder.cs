@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IRoomListRoomsCollectionRequestBuilder"/>.</returns>
         IRoomListRoomsCollectionRequestBuilder Rooms { get; }
+
+        /// <summary>
+        /// Gets the request builder for Spaces.
+        /// </summary>
+        /// <returns>The <see cref="IRoomListSpacesCollectionRequestBuilder"/>.</returns>
+        IRoomListSpacesCollectionRequestBuilder Spaces { get; }
     
     }
 }

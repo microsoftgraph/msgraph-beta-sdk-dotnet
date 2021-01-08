@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate issuance state.
-        /// Issuance State
+        /// Issuance State. Possible values are: unknown, challengeIssued, challengeIssueFailed, requestCreationFailed, requestSubmitFailed, challengeValidationSucceeded, challengeValidationFailed, issueFailed, issuePending, issued, responseProcessingFailed, responsePending, enrollmentSucceeded, enrollmentNotNeeded, revoked, removedFromCollection, renewVerified, installFailed, installed, deleteFailed, deleted, renewalRequested, requested.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateIssuanceState", Required = Newtonsoft.Json.Required.Default)]
         public CertificateIssuanceStates? CertificateIssuanceState { get; set; }
@@ -81,14 +81,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate key storage provider.
-        /// Key Storage Provider
+        /// Key Storage Provider. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyStorageProvider", Required = Newtonsoft.Json.Required.Default)]
         public KeyStorageProviderOption? CertificateKeyStorageProvider { get; set; }
     
         /// <summary>
         /// Gets or sets certificate key usage.
-        /// Key usage
+        /// Key usage. Possible values are: keyEncipherment, digitalSignature.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateKeyUsage", Required = Newtonsoft.Json.Required.Default)]
         public KeyUsages? CertificateKeyUsage { get; set; }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate revoke status.
-        /// Revoke status
+        /// Revoke status. Possible values are: none, pending, issued, failed, revoked.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateRevokeStatus", Required = Newtonsoft.Json.Required.Default)]
         public CertificateRevocationStatus? CertificateRevokeStatus { get; set; }
@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate subject alternative name format.
-        /// Subject alternative name format
+        /// Subject alternative name format. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectAlternativeNameFormat", Required = Newtonsoft.Json.Required.Default)]
         public SubjectAlternativeNameType? CertificateSubjectAlternativeNameFormat { get; set; }
@@ -137,7 +137,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate subject name format.
-        /// Subject name format
+        /// Subject name format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateSubjectNameFormat", Required = Newtonsoft.Json.Required.Default)]
         public SubjectNameFormat? CertificateSubjectNameFormat { get; set; }
@@ -165,7 +165,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate validity period units.
-        /// Validity period units
+        /// Validity period units. Possible values are: days, months, years.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodUnits", Required = Newtonsoft.Json.Required.Default)]
         public CertificateValidityPeriodScale? CertificateValidityPeriodUnits { get; set; }
@@ -179,7 +179,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device platform.
-        /// Device platform
+        /// Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePlatform", Required = Newtonsoft.Json.Required.Default)]
         public DevicePlatformType? DevicePlatform { get; set; }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets templateType.
-        /// The template type that is sent with the collection request
+        /// The template type that is sent with the collection request. Possible values are: predefined.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceLogCollectionTemplateType? TemplateType { get; set; }

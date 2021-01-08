@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets deviceMode.
-        /// Applicability rule for device mode.
+        /// Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMode", Required = Newtonsoft.Json.Required.Default)]
         public Windows10DeviceModeType? DeviceMode { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ruleType.
-        /// Applicability Rule type.
+        /// Applicability Rule type. Possible values are: include, exclude.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementApplicabilityRuleType? RuleType { get; set; }

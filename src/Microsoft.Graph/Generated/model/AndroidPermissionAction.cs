@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets action.
-        /// Type of Android permission action.
+        /// Type of Android permission action. Possible values are: prompt, autoGrant, autoDeny.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public AndroidPermissionActionType? Action { get; set; }

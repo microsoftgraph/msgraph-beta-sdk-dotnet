@@ -32,72 +32,84 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets code.
+        /// High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationStatusCode? Code { get; set; }
     
         /// <summary>
         /// Gets or sets countSuccessiveCompleteFailures.
+        /// Number of consecutive times this job failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countSuccessiveCompleteFailures", Required = Newtonsoft.Json.Required.Default)]
         public Int64? CountSuccessiveCompleteFailures { get; set; }
     
         /// <summary>
         /// Gets or sets escrowsPruned.
+        /// true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "escrowsPruned", Required = Newtonsoft.Json.Required.Default)]
         public bool? EscrowsPruned { get; set; }
     
         /// <summary>
         /// Gets or sets lastExecution.
+        /// Details of the last execution of the job.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastExecution", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationTaskExecution LastExecution { get; set; }
     
         /// <summary>
         /// Gets or sets lastSuccessfulExecution.
+        /// Details of the last execution of this job, which didn't have any errors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSuccessfulExecution", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationTaskExecution LastSuccessfulExecution { get; set; }
     
         /// <summary>
         /// Gets or sets lastSuccessfulExecutionWithExports.
+        /// Details of the last execution of the job, which exported objects into the target directory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSuccessfulExecutionWithExports", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationTaskExecution LastSuccessfulExecutionWithExports { get; set; }
     
         /// <summary>
         /// Gets or sets progress.
+        /// Details of the progress of a job toward completion.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "progress", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SynchronizationProgress> Progress { get; set; }
     
         /// <summary>
         /// Gets or sets quarantine.
+        /// If job is in quarantine, quarantine details.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quarantine", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationQuarantine Quarantine { get; set; }
     
         /// <summary>
         /// Gets or sets steadyStateFirstAchievedTime.
+        /// The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "steadyStateFirstAchievedTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SteadyStateFirstAchievedTime { get; set; }
     
         /// <summary>
         /// Gets or sets steadyStateLastAchievedTime.
+        /// The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "steadyStateLastAchievedTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? SteadyStateLastAchievedTime { get; set; }
     
         /// <summary>
         /// Gets or sets synchronizedEntryCountByType.
+        /// Count of synchronized objects, listed by object type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizedEntryCountByType", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<StringKeyLongValuePair> SynchronizedEntryCountByType { get; set; }
     
         /// <summary>
         /// Gets or sets troubleshootingUrl.
+        /// In the event of an error, the URL with the troubleshooting steps for the issue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingUrl", Required = Newtonsoft.Json.Required.Default)]
         public string TroubleshootingUrl { get; set; }

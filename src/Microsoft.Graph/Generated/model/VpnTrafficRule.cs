@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets appType.
-        /// App type, if this traffic rule is triggered by an app.
+        /// App type, if this traffic rule is triggered by an app. Possible values are: none, desktop, universal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appType", Required = Newtonsoft.Json.Required.Default)]
         public VpnTrafficRuleAppType? AppType { get; set; }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets routingPolicyType.
-        /// When app triggered, indicates whether to enable split tunneling along this route.
+        /// When app triggered, indicates whether to enable split tunneling along this route. Possible values are: none, splitTunnel, forceTunnel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingPolicyType", Required = Newtonsoft.Json.Required.Default)]
         public VpnTrafficRuleRoutingPolicyType? RoutingPolicyType { get; set; }

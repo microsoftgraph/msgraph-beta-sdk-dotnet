@@ -32,60 +32,70 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applyActions.
+        /// Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AccessReviewApplyAction> ApplyActions { get; set; }
     
         /// <summary>
         /// Gets or sets autoApplyDecisionsEnabled.
+        /// Flag to indicate whether auto-apply feature is enabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoApplyDecisionsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? AutoApplyDecisionsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets defaultDecision.
+        /// Decision chosen if defaultDecisionEnabled is enabled. Can be one of 'Approve', 'Deny', or 'Recommendation'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDecision", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultDecision { get; set; }
     
         /// <summary>
         /// Gets or sets defaultDecisionEnabled.
+        /// Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDecisionEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? DefaultDecisionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets instanceDurationInDays.
+        /// Duration of each recurrence of review (accessReviewInstance) in number of days.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instanceDurationInDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? InstanceDurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets justificationRequiredOnApproval.
+        /// Flag to indicate whether reviewers are required to provide justification with their decision.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justificationRequiredOnApproval", Required = Newtonsoft.Json.Required.Default)]
         public bool? JustificationRequiredOnApproval { get; set; }
     
         /// <summary>
         /// Gets or sets mailNotificationsEnabled.
+        /// Flag to indicate whether emails are enabled/disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? MailNotificationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets recommendationsEnabled.
+        /// Flag to indicate whether decision recommendations are enabled/disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendationsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? RecommendationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
+        /// Detailed settings for recurrence. Using standard Outlook recurrence object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
         public PatternedRecurrence Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets reminderNotificationsEnabled.
+        /// Flag to indicate whether reminders are enabled/disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderNotificationsEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? ReminderNotificationsEnabled { get; set; }

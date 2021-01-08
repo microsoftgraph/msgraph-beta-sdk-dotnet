@@ -32,42 +32,49 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets change key.
+        /// The version of the task folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeKey", Required = Newtonsoft.Json.Required.Default)]
         public string ChangeKey { get; set; }
     
         /// <summary>
         /// Gets or sets is default folder.
+        /// True if the folder is the default task folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultFolder", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefaultFolder { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The name of the task folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets parent group key.
+        /// The unique GUID identifier for the task folder's parent group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentGroupKey", Required = Newtonsoft.Json.Required.Default)]
         public Guid? ParentGroupKey { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
+        /// The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IOutlookTaskFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
+        /// The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IOutlookTaskFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
+        /// The tasks in this task folder. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
         public IOutlookTaskFolderTasksCollectionPage Tasks { get; set; }

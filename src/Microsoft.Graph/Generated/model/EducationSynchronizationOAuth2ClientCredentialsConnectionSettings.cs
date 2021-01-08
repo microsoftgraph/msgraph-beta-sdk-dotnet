@@ -31,12 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets scope.
+        /// The scope of the access request (see RFC6749).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
         public string Scope { get; set; }
     
         /// <summary>
         /// Gets or sets tokenUrl.
+        /// The URL to get access tokens for the data provider.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenUrl", Required = Newtonsoft.Json.Required.Default)]
         public string TokenUrl { get; set; }

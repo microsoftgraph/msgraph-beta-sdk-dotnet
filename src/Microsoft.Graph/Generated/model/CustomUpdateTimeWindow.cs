@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets endDay.
-        /// End day of the time window
+        /// End day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDay", Required = Newtonsoft.Json.Required.Default)]
         public DayOfWeek? EndDay { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets startDay.
-        /// Start day of the time window
+        /// Start day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDay", Required = Newtonsoft.Json.Required.Default)]
         public DayOfWeek? StartDay { get; set; }

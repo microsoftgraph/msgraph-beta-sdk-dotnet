@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The Certificate Status Provisioned or not Provisioned.
+        /// The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public CertificateStatus? Status { get; set; }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isSingleLineQuestion.
+        /// Indicates whether the answer will be in single or multiple line format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSingleLineQuestion", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSingleLineQuestion { get; set; }

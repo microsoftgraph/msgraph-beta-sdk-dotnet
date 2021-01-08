@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets source.
-        /// The resource type which is the source for the assignment.
+        /// The resource type which is the source for the assignment. Possible values are: direct, policySets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }

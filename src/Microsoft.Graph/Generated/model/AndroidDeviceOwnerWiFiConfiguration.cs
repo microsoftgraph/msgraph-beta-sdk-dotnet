@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wi fi security type.
-        /// Indicates whether Wi-Fi endpoint uses an EAP based security type.
+        /// Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiSecurityType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerWiFiSecurityType? WiFiSecurityType { get; set; }

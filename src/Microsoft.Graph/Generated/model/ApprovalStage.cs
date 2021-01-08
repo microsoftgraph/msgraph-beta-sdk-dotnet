@@ -32,36 +32,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets approvalStageTimeOutInDays.
+        /// The number of days that a request can be pending a response before it is automatically denied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalStageTimeOutInDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ApprovalStageTimeOutInDays { get; set; }
     
         /// <summary>
         /// Gets or sets escalationApprovers.
+        /// If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "escalationApprovers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UserSet> EscalationApprovers { get; set; }
     
         /// <summary>
         /// Gets or sets escalationTimeInMinutes.
+        /// If escalation is required, the time a request can be pending a response from a primary approver.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "escalationTimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
         public Int32? EscalationTimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets isApproverJustificationRequired.
+        /// Indicates whether the approver is required to provide a justification for approving a request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isApproverJustificationRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsApproverJustificationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets isEscalationEnabled.
+        /// If true, then one or more escalation approvers are configured in this approval stage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEscalationEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEscalationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets primaryApprovers.
+        /// The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryApprovers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UserSet> PrimaryApprovers { get; set; }

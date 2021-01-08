@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets derivedCredentialProvider.
-        /// The Derived Credential Provider to use for this account.
+        /// The Derived Credential Provider to use for this account. Possible values are: notConfigured, entrustDataCard, purebred, xTec, intercede.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialProvider", Required = Newtonsoft.Json.Required.Default)]
         public DerivedCredentialProviderType? DerivedCredentialProvider { get; set; }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deviceComplianceCheckinThresholdDays.
-        /// The number of days a device is allowed to go without checking in to remain compliant. Valid values 0 to 120
+        /// The number of days a device is allowed to go without checking in to remain compliant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceCheckinThresholdDays", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DeviceComplianceCheckinThresholdDays { get; set; }

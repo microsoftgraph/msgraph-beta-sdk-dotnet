@@ -16,20 +16,20 @@ namespace Microsoft.Graph.TermStore
     /// <summary>
     /// The interface IStoreRequestBuilder.
     /// </summary>
-    public partial interface IStoreRequestBuilder : Microsoft.Graph.IBaseRequestBuilder
+    public partial interface IStoreRequestBuilder : Microsoft.Graph.IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        IStoreRequest Request();
+        new IStoreRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IStoreRequest Request(IEnumerable<Microsoft.Graph.Option> options);
+        new IStoreRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
         /// Gets the request builder for Groups.

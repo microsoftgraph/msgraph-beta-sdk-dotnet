@@ -32,14 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets action.
-        /// The action name.
+        /// The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public RemoteAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets action state.
-        /// Action state.
+        /// Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionState", Required = Newtonsoft.Json.Required.Default)]
         public ActionState? ActionState { get; set; }

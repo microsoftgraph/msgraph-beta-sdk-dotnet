@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets maxPoints.
+        /// Max points possible for this assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxPoints", Required = Newtonsoft.Json.Required.Default)]
         public Single? MaxPoints { get; set; }

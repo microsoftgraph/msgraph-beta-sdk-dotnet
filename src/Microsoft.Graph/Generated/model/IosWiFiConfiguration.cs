@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy settings.
-        /// Proxy Type for this Wi-Fi connection
+        /// Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxySettings", Required = Newtonsoft.Json.Required.Default)]
         public WiFiProxySetting? ProxySettings { get; set; }
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wi fi security type.
-        /// Indicates whether Wi-Fi endpoint uses an EAP based security type.
+        /// Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiSecurityType", Required = Newtonsoft.Json.Required.Default)]
         public WiFiSecurityType? WiFiSecurityType { get; set; }

@@ -39,21 +39,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deviceMode.
-        /// Device Mode that setting can be applied on
+        /// Device Mode that setting can be applied on. Possible values are: none, kiosk.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMode", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationDeviceMode? DeviceMode { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
-        /// Platform setting can be applied on
+        /// Platform setting can be applied on. Possible values are: none, macOS, windows10X, windows10.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationPlatforms? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Which technology channels this setting can be deployed through
+        /// Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technologies", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

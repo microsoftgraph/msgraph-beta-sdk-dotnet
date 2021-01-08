@@ -16,7 +16,6 @@ namespace Microsoft.Graph.TermStore
     /// The type StoreGroupsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
     public class StoreGroupsCollectionResponse
     {
         /// <summary>
