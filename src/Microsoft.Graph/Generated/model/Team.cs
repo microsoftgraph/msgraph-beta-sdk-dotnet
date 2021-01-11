@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Team.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Team : Entity
     {
     
@@ -34,174 +33,174 @@ namespace Microsoft.Graph
         /// Gets or sets classification.
         /// An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classification")]
         public string Classification { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// Read only. Timestamp at which the team was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// An optional description for the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets discovery settings.
         /// Settings to configure team discoverability by others.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverySettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("discoverySettings")]
         public TeamDiscoverySettings DiscoverySettings { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name of the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets fun settings.
         /// Settings to configure use of Giphy, memes, and stickers in the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "funSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("funSettings")]
         public TeamFunSettings FunSettings { get; set; }
     
         /// <summary>
         /// Gets or sets guest settings.
         /// Settings to configure whether guests can create, update, or delete channels in the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guestSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("guestSettings")]
         public TeamGuestSettings GuestSettings { get; set; }
     
         /// <summary>
         /// Gets or sets internal id.
         /// A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "internalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("internalId")]
         public string InternalId { get; set; }
     
         /// <summary>
         /// Gets or sets is archived.
         /// Whether this team is in read-only mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isArchived", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isArchived")]
         public bool? IsArchived { get; set; }
     
         /// <summary>
         /// Gets or sets is membership limited to owners.
         /// If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMembershipLimitedToOwners", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isMembershipLimitedToOwners")]
         public bool? IsMembershipLimitedToOwners { get; set; }
     
         /// <summary>
         /// Gets or sets member settings.
         /// Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberSettings")]
         public TeamMemberSettings MemberSettings { get; set; }
     
         /// <summary>
         /// Gets or sets messaging settings.
         /// Settings to configure messaging and mentions in the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messagingSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messagingSettings")]
         public TeamMessagingSettings MessagingSettings { get; set; }
     
         /// <summary>
         /// Gets or sets specialization.
         /// Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specialization", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("specialization")]
         public TeamSpecialization? Specialization { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
         /// The visibility of the group and team. Defaults to Public.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visibility")]
         public TeamVisibilityType? Visibility { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
         /// A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets schedule.
         /// The schedule of shifts for this team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schedule")]
         public Schedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets channels.
         /// The collection of channels &amp; messages associated with the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("channels")]
         public ITeamChannelsCollectionPage Channels { get; set; }
     
         /// <summary>
         /// Gets or sets group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("group")]
         public Group Group { get; set; }
     
         /// <summary>
         /// Gets or sets installed apps.
         /// The apps installed in this team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installedApps")]
         public ITeamInstalledAppsCollectionPage InstalledApps { get; set; }
     
         /// <summary>
         /// Gets or sets members.
         /// Members and owners of the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public ITeamMembersCollectionPage Members { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// The async operations that ran or are running on this team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public ITeamOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets owners.
         /// The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("owners")]
         public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
         /// Gets or sets photo.
         /// The team photo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("photo")]
         public ProfilePhoto Photo { get; set; }
     
         /// <summary>
         /// Gets or sets primary channel.
         /// The general channel for the team.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "primaryChannel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("primaryChannel")]
         public Channel PrimaryChannel { get; set; }
     
         /// <summary>
         /// Gets or sets template.
         /// The template this team was created from. See available templates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("template")]
         public TeamsTemplate Template { get; set; }
     
     }

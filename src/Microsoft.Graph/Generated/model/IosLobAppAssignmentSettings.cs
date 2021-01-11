@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosLobAppAssignmentSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class IosLobAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets uninstallOnDeviceRemoval.
         /// Whether or not to uninstall the app when device is removed from Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallOnDeviceRemoval", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uninstallOnDeviceRemoval")]
         public bool? UninstallOnDeviceRemoval { get; set; }
     
         /// <summary>
         /// Gets or sets vpnConfigurationId.
         /// The VPN Configuration Id to apply for this app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vpnConfigurationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vpnConfigurationId")]
         public string VpnConfigurationId { get; set; }
     
     }

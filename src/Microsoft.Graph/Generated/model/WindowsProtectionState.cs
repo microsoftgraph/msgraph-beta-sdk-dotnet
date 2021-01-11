@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Protection State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsProtectionState : Entity
     {
     
@@ -34,147 +33,147 @@ namespace Microsoft.Graph
         /// Gets or sets anti malware version.
         /// Current anti malware version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "antiMalwareVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("antiMalwareVersion")]
         public string AntiMalwareVersion { get; set; }
     
         /// <summary>
         /// Gets or sets device state.
         /// Computer's state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceState")]
         public WindowsDeviceHealthState? DeviceState { get; set; }
     
         /// <summary>
         /// Gets or sets engine version.
         /// Current endpoint protection engine's version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "engineVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("engineVersion")]
         public string EngineVersion { get; set; }
     
         /// <summary>
         /// Gets or sets full scan overdue.
         /// Full scan overdue or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanOverdue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fullScanOverdue")]
         public bool? FullScanOverdue { get; set; }
     
         /// <summary>
         /// Gets or sets full scan required.
         /// Full scan required or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullScanRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fullScanRequired")]
         public bool? FullScanRequired { get; set; }
     
         /// <summary>
         /// Gets or sets is virtual machine.
         /// Indicates whether the device is a virtual machine.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isVirtualMachine", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isVirtualMachine")]
         public bool? IsVirtualMachine { get; set; }
     
         /// <summary>
         /// Gets or sets last full scan date time.
         /// Last quick scan datetime
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastFullScanDateTime")]
         public DateTimeOffset? LastFullScanDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last full scan signature version.
         /// Last full scan signature version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastFullScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastFullScanSignatureVersion")]
         public string LastFullScanSignatureVersion { get; set; }
     
         /// <summary>
         /// Gets or sets last quick scan date time.
         /// Last quick scan datetime
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastQuickScanDateTime")]
         public DateTimeOffset? LastQuickScanDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last quick scan signature version.
         /// Last quick scan signature version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastQuickScanSignatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastQuickScanSignatureVersion")]
         public string LastQuickScanSignatureVersion { get; set; }
     
         /// <summary>
         /// Gets or sets last reported date time.
         /// Last device health status reported time
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastReportedDateTime")]
         public DateTimeOffset? LastReportedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets malware protection enabled.
         /// Anti malware is enabled or not
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "malwareProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("malwareProtectionEnabled")]
         public bool? MalwareProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets network inspection system enabled.
         /// Network inspection system enabled or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkInspectionSystemEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkInspectionSystemEnabled")]
         public bool? NetworkInspectionSystemEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets product status.
         /// Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productStatus")]
         public WindowsDefenderProductStatus? ProductStatus { get; set; }
     
         /// <summary>
         /// Gets or sets quick scan overdue.
         /// Quick scan overdue or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "quickScanOverdue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("quickScanOverdue")]
         public bool? QuickScanOverdue { get; set; }
     
         /// <summary>
         /// Gets or sets real time protection enabled.
         /// Real time protection is enabled or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realTimeProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("realTimeProtectionEnabled")]
         public bool? RealTimeProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets reboot required.
         /// Reboot required or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rebootRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rebootRequired")]
         public bool? RebootRequired { get; set; }
     
         /// <summary>
         /// Gets or sets signature update overdue.
         /// Signature out of date or not?
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureUpdateOverdue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signatureUpdateOverdue")]
         public bool? SignatureUpdateOverdue { get; set; }
     
         /// <summary>
         /// Gets or sets signature version.
         /// Current malware definitions version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signatureVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("signatureVersion")]
         public string SignatureVersion { get; set; }
     
         /// <summary>
         /// Gets or sets tamper protection enabled.
         /// Indicates whether the Windows Defender tamper protection feature is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tamperProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tamperProtectionEnabled")]
         public bool? TamperProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets detected malware state.
         /// Device malware list
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectedMalwareState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("detectedMalwareState")]
         public IWindowsProtectionStateDetectedMalwareStateCollectionPage DetectedMalwareState { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessReviewReviewerScope.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AccessReviewReviewerScope : AccessReviewScope
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets queryRoot.
         /// In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryRoot", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("queryRoot")]
         public string QueryRoot { get; set; }
     
     }

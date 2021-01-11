@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office365Services User Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Office365ServicesUserCounts : Entity
     {
     
@@ -34,112 +33,112 @@ namespace Microsoft.Graph
         /// Gets or sets exchange active.
         /// The number of active users on Exchange. Any user who can read and send email is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchangeActive")]
         public Int64? ExchangeActive { get; set; }
     
         /// <summary>
         /// Gets or sets exchange inactive.
         /// The number of inactive users on Exchange.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeInactive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchangeInactive")]
         public Int64? ExchangeInactive { get; set; }
     
         /// <summary>
         /// Gets or sets office365active.
         /// The number of active users on Microsoft 365.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365Active", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("office365Active")]
         public Int64? Office365Active { get; set; }
     
         /// <summary>
         /// Gets or sets office365inactive.
         /// The number of inactive users on Microsoft 365.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365Inactive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("office365Inactive")]
         public Int64? Office365Inactive { get; set; }
     
         /// <summary>
         /// Gets or sets one drive active.
         /// The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oneDriveActive")]
         public Int64? OneDriveActive { get; set; }
     
         /// <summary>
         /// Gets or sets one drive inactive.
         /// The number of inactive users on OneDrive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveInactive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oneDriveInactive")]
         public Int64? OneDriveInactive { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// The number of days the report covers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// The latest date of the content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point active.
         /// The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharePointActive")]
         public Int64? SharePointActive { get; set; }
     
         /// <summary>
         /// Gets or sets share point inactive.
         /// The number of inactive users on SharePoint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointInactive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharePointInactive")]
         public Int64? SharePointInactive { get; set; }
     
         /// <summary>
         /// Gets or sets skype for business active.
         /// The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusinessActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skypeForBusinessActive")]
         public Int64? SkypeForBusinessActive { get; set; }
     
         /// <summary>
         /// Gets or sets skype for business inactive.
         /// The number of inactive users on Skype For Business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusinessInactive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skypeForBusinessInactive")]
         public Int64? SkypeForBusinessInactive { get; set; }
     
         /// <summary>
         /// Gets or sets teams active.
         /// The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamsActive")]
         public Int64? TeamsActive { get; set; }
     
         /// <summary>
         /// Gets or sets teams inactive.
         /// The number of inactive users on Microsoft Teams.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsInactive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamsInactive")]
         public Int64? TeamsInactive { get; set; }
     
         /// <summary>
         /// Gets or sets yammer active.
         /// The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerActive")]
         public Int64? YammerActive { get; set; }
     
         /// <summary>
         /// Gets or sets yammer inactive.
         /// The number of inactive users on Yammer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerInactive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerInactive")]
         public Int64? YammerInactive { get; set; }
     
     }

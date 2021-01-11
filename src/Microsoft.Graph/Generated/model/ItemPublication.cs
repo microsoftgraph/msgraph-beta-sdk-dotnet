@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Publication.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ItemPublication : ItemFacet
     {
     
@@ -34,42 +33,42 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// Description of the publication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Title of the publication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets published date.
         /// The date that the publication was published.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedDate")]
         public Date PublishedDate { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
         /// Publication or publisher for the publication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
         /// URL referencing a thumbnail of the publication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
         /// URL referencing the publication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
     }

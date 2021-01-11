@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationJobProvisionOnDemandRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SynchronizationJobProvisionOnDemandRequestBody
     {
     
         /// <summary>
         /// Gets or sets Parameters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parameters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parameters")]
         public IEnumerable<SynchronizationJobApplicationParameters> Parameters { get; set; }
     
     }

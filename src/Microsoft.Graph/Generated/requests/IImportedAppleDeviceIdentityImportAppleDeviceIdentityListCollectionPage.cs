@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IImportedAppleDeviceIdentityImportAppleDeviceIdentityListCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ImportedAppleDeviceIdentityImportAppleDeviceIdentityListCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ImportedAppleDeviceIdentityImportAppleDeviceIdentityListCollectionPage>))]
     public interface IImportedAppleDeviceIdentityImportAppleDeviceIdentityListCollectionPage : ICollectionPage<ImportedAppleDeviceIdentityResult>
     {
         /// <summary>

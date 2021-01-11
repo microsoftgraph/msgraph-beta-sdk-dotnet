@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BusinessFlowRecordDecisionsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class BusinessFlowRecordDecisionsRequestBody
     {
     
         /// <summary>
         /// Gets or sets ReviewResult.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewResult")]
         public string ReviewResult { get; set; }
     
         /// <summary>
         /// Gets or sets Justification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
     }

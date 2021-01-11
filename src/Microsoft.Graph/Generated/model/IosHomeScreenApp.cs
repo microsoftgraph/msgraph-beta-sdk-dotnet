@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosHomeScreenApp.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class IosHomeScreenApp : IosHomeScreenItem
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets bundleID.
         /// BundleID of app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleID", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bundleID")]
         public string BundleID { get; set; }
     
     }

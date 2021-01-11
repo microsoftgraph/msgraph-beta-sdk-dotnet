@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSettingRequiredConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets notConfiguredValue.
         /// List of value which means not configured for the setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notConfiguredValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notConfiguredValue")]
         public string NotConfiguredValue { get; set; }
     
     }

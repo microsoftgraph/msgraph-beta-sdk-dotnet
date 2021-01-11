@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Terms Of Use Container.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class TermsOfUseContainer : Entity
     {
     
@@ -33,13 +32,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets agreement acceptances.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreementAcceptances", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agreementAcceptances")]
         public ITermsOfUseContainerAgreementAcceptancesCollectionPage AgreementAcceptances { get; set; }
     
         /// <summary>
         /// Gets or sets agreements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agreements", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agreements")]
         public ITermsOfUseContainerAgreementsCollectionPage Agreements { get; set; }
     
     }

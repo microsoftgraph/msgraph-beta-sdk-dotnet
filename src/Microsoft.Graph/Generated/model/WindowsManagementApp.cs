@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Management App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsManagementApp : Entity
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets available version.
         /// Windows management app available version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availableVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availableVersion")]
         public string AvailableVersion { get; set; }
     
         /// <summary>
         /// Gets or sets health states.
         /// The list of health states for installed Windows management app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("healthStates")]
         public IWindowsManagementAppHealthStatesCollectionPage HealthStates { get; set; }
     
     }

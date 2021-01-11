@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type App Log Collection Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AppLogCollectionRequestObject : Entity
     {
     
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets completed date time.
         /// Time at which the upload log request reached a terminal state
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets custom log folders.
         /// List of log folders.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customLogFolders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customLogFolders")]
         public IEnumerable<string> CustomLogFolders { get; set; }
     
         /// <summary>
         /// Gets or sets error message.
         /// Error message if any during the upload process
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorMessage")]
         public string ErrorMessage { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Log upload status. Possible values are: pending, completed, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public AppLogUploadState? Status { get; set; }
     
     }

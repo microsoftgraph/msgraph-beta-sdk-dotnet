@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile Lob App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MobileLobApp : MobileApp
     {
     
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets committed content version.
         /// The internal committed content version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "committedContentVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("committedContentVersion")]
         public string CommittedContentVersion { get; set; }
     
         /// <summary>
         /// Gets or sets file name.
         /// The name of the main Lob application file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileName")]
         public string FileName { get; set; }
     
         /// <summary>
         /// Gets or sets size.
         /// The total size, including all uploaded files.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("size")]
         public Int64? Size { get; set; }
     
         /// <summary>
         /// Gets or sets content versions.
         /// The list of content versions for this app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentVersions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentVersions")]
         public IMobileLobAppContentVersionsCollectionPage ContentVersions { get; set; }
     
     }

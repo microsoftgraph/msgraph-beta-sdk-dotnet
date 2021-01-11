@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsKioskUWPApp.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsKioskUWPApp : WindowsKioskAppBase
     {
         /// <summary>
@@ -33,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets appId.
         /// This references an Intune App that will be target to the same assignments as Kiosk configuration
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets appUserModelId.
         /// This is the only Application User Model ID (AUMID) that will be available to launch use while in Kiosk Mode
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUserModelId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appUserModelId")]
         public string AppUserModelId { get; set; }
     
         /// <summary>
         /// Gets or sets containedAppId.
         /// This references an contained App from an Intune App
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "containedAppId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("containedAppId")]
         public string ContainedAppId { get; set; }
     
     }

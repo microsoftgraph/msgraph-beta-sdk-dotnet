@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EdgeHomeButtonOpensCustomURL.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class EdgeHomeButtonOpensCustomURL : EdgeHomeButtonConfiguration
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets homeButtonCustomURL.
         /// The specific URL to load.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeButtonCustomURL", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("homeButtonCustomURL")]
         public string HomeButtonCustomURL { get; set; }
     
     }

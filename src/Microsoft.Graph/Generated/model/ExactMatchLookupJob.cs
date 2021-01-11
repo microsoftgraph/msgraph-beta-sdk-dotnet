@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Exact Match Lookup Job.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ExactMatchLookupJob : ExactMatchJobBase
     {
     
@@ -33,13 +32,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets matching rows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchingRows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matchingRows")]
         public IExactMatchLookupJobMatchingRowsCollectionPage MatchingRows { get; set; }
     
     }

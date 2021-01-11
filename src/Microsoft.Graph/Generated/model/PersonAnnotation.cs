@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Person Annotation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PersonAnnotation : ItemFacet
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets detail.
         /// Contains the detail of the note itself.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("detail")]
         public ItemBody Detail { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Contains a friendly name for the note.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
     }

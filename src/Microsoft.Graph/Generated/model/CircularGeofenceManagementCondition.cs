@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Circular Geofence Management Condition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class CircularGeofenceManagementCondition : LocationManagementCondition
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets latitude.
         /// Latitude in degrees, between -90 and +90 inclusive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "latitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("latitude")]
         public double? Latitude { get; set; }
     
         /// <summary>
         /// Gets or sets longitude.
         /// Longitude in degrees, between -180 and +180 inclusive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "longitude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("longitude")]
         public double? Longitude { get; set; }
     
         /// <summary>
         /// Gets or sets radius in meters.
         /// Radius in meters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "radiusInMeters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("radiusInMeters")]
         public Single? RadiusInMeters { get; set; }
     
     }

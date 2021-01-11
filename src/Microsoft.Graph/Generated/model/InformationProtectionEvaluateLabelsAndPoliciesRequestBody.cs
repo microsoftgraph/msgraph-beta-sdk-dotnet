@@ -9,35 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InformationProtectionEvaluateLabelsAndPoliciesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class InformationProtectionEvaluateLabelsAndPoliciesRequestBody
     {
     
         /// <summary>
         /// Gets or sets EvaluateSensitivityLabels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluateSensitivityLabels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluateSensitivityLabels")]
         public EvaluateSensitivityLabelsRequestObject EvaluateSensitivityLabels { get; set; }
     
         /// <summary>
         /// Gets or sets EvaluateDataLossPreventionPolicies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluateDataLossPreventionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluateDataLossPreventionPolicies")]
         public DlpEvaluatePoliciesRequestObject EvaluateDataLossPreventionPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets ClassifyText.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classifyText")]
         public TextClassificationRequestObject ClassifyText { get; set; }
     
     }

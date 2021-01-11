@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Intent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementIntent : Entity
     {
     
@@ -34,98 +33,98 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// The user given description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The user given display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is assigned.
         /// Signifies whether or not the intent is assigned to users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAssigned")]
         public bool? IsAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// When the intent was last modified
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this Entity instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets template id.
         /// The ID of the template this intent was created from (if any)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// Collection of assignments
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IDeviceManagementIntentAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
         /// Collection of setting categories within the intent
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("categories")]
         public IDeviceManagementIntentCategoriesCollectionPage Categories { get; set; }
     
         /// <summary>
         /// Gets or sets device setting state summaries.
         /// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSettingStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceSettingStateSummaries")]
         public IDeviceManagementIntentDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
     
         /// <summary>
         /// Gets or sets device states.
         /// Collection of states of all devices that the intent is applied to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStates")]
         public IDeviceManagementIntentDeviceStatesCollectionPage DeviceStates { get; set; }
     
         /// <summary>
         /// Gets or sets device state summary.
         /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStateSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStateSummary")]
         public DeviceManagementIntentDeviceStateSummary DeviceStateSummary { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// Collection of all settings to be applied
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public IDeviceManagementIntentSettingsCollectionPage Settings { get; set; }
     
         /// <summary>
         /// Gets or sets user states.
         /// Collection of states of all users that the intent is applied to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userStates")]
         public IDeviceManagementIntentUserStatesCollectionPage UserStates { get; set; }
     
         /// <summary>
         /// Gets or sets user state summary.
         /// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userStateSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userStateSummary")]
         public DeviceManagementIntentUserStateSummary UserStateSummary { get; set; }
     
     }

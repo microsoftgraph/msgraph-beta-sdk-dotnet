@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Owner Scep Certificate Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidDeviceOwnerScepCertificateProfile : AndroidDeviceOwnerCertificateProfileBase
     {
     
@@ -34,63 +33,63 @@ namespace Microsoft.Graph
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certificateStore")]
         public CertificateStore? CertificateStore { get; set; }
     
         /// <summary>
         /// Gets or sets custom subject alternative names.
         /// Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSubjectAlternativeNames", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customSubjectAlternativeNames")]
         public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
     
         /// <summary>
         /// Gets or sets hash algorithm.
         /// SCEP Hash Algorithm. Possible values are: sha1, sha2.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hashAlgorithm")]
         public HashAlgorithms? HashAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets key size.
         /// SCEP Key Size. Possible values are: size1024, size2048, size4096.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keySize", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keySize")]
         public KeySize? KeySize { get; set; }
     
         /// <summary>
         /// Gets or sets key usage.
         /// SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keyUsage")]
         public KeyUsages? KeyUsage { get; set; }
     
         /// <summary>
         /// Gets or sets scep server urls.
         /// SCEP Server Url(s)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scepServerUrls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scepServerUrls")]
         public IEnumerable<string> ScepServerUrls { get; set; }
     
         /// <summary>
         /// Gets or sets subject alternative name format string.
         /// Custom String that defines the AAD Attribute.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectAlternativeNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjectAlternativeNameFormatString")]
         public string SubjectAlternativeNameFormatString { get; set; }
     
         /// <summary>
         /// Gets or sets subject name format string.
         /// Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectNameFormatString", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjectNameFormatString")]
         public string SubjectNameFormatString { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.
         /// Certificate state for devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCertificateStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceCertificateStates")]
         public IAndroidDeviceOwnerScepCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }
     
     }

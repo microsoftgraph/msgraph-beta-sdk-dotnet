@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeliveryOptimizationMaxCacheSizeAbsolute.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeliveryOptimizationMaxCacheSizeAbsolute : DeliveryOptimizationMaxCacheSize
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets maximumCacheSizeInGigabytes.
         /// The value 0 (zero) means "unlimited" cache. Delivery Optimization will clear the cache when the device is running low on disk space. Valid values 0 to 4294967295
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumCacheSizeInGigabytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumCacheSizeInGigabytes")]
         public Int64? MaximumCacheSizeInGigabytes { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type B2c Authentication Methods Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class B2cAuthenticationMethodsPolicy : Entity
     {
     
@@ -34,20 +33,20 @@ namespace Microsoft.Graph
         /// Gets or sets is email password authentication enabled.
         /// The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEmailPasswordAuthenticationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEmailPasswordAuthenticationEnabled")]
         public bool? IsEmailPasswordAuthenticationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets is phone one time password authentication enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPhoneOneTimePasswordAuthenticationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isPhoneOneTimePasswordAuthenticationEnabled")]
         public bool? IsPhoneOneTimePasswordAuthenticationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets is user name authentication enabled.
         /// The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isUserNameAuthenticationEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isUserNameAuthenticationEnabled")]
         public bool? IsUserNameAuthenticationEnabled { get; set; }
     
     }

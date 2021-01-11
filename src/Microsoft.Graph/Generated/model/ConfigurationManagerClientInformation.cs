@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConfigurationManagerClientInformation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConfigurationManagerClientInformation>))]
     public partial class ConfigurationManagerClientInformation
     {
         /// <summary>
@@ -34,26 +32,26 @@ namespace Microsoft.Graph
         /// Gets or sets clientIdentifier.
         /// Configuration Manager Client Id from SCCM
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientIdentifier")]
         public string ClientIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets isBlocked.
         /// Configuration Manager Client blocked status from SCCM
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBlocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isBlocked")]
         public bool? IsBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

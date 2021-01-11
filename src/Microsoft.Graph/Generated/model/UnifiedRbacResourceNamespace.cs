@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Rbac Resource Namespace.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class UnifiedRbacResourceNamespace : Entity
     {
     
@@ -33,13 +32,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets resource actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceActions")]
         public IUnifiedRbacResourceNamespaceResourceActionsCollectionPage ResourceActions { get; set; }
     
     }

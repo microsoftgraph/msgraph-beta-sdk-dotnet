@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Directory Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DirectoryDefinition : Entity
     {
     
@@ -34,41 +33,41 @@ namespace Microsoft.Graph
         /// Gets or sets discoverabilities.
         /// Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverabilities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("discoverabilities")]
         public DirectoryDefinitionDiscoverabilities? Discoverabilities { get; set; }
     
         /// <summary>
         /// Gets or sets discovery date time.
         /// Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveryDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("discoveryDateTime")]
         public DateTimeOffset? DiscoveryDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Name of the directory. Must be unique within the synchronization schema. Not nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets objects.
         /// Collection of objects supported by the directory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objects", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("objects")]
         public IEnumerable<ObjectDefinition> Objects { get; set; }
     
         /// <summary>
         /// Gets or sets read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "readOnly", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("readOnly")]
         public bool? ReadOnly { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Read only value that indicates version discovered. Null if discovery has not yet occurred.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

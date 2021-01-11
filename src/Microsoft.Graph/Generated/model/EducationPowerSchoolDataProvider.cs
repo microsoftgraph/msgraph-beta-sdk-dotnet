@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationPowerSchoolDataProvider.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider
     {
         /// <summary>
@@ -33,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets allowTeachersInMultipleSchools.
         /// Indicates whether the source has multiple identifiers for a single student or teacher.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowTeachersInMultipleSchools", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowTeachersInMultipleSchools")]
         public bool? AllowTeachersInMultipleSchools { get; set; }
     
         /// <summary>
         /// Gets or sets clientId.
         /// The client ID used to connect to PowerSchool.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientId")]
         public string ClientId { get; set; }
     
         /// <summary>
         /// Gets or sets clientSecret.
         /// The client secret to authenticate the connection to the PowerSchool instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientSecret", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientSecret")]
         public string ClientSecret { get; set; }
     
         /// <summary>
         /// Gets or sets connectionUrl.
         /// The connection URL to the PowerSchool instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionUrl")]
         public string ConnectionUrl { get; set; }
     
         /// <summary>
         /// Gets or sets customizations.
         /// Optional customization to be applied to the synchronization profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customizations")]
         public EducationSynchronizationCustomizations Customizations { get; set; }
     
         /// <summary>
         /// Gets or sets schoolsIds.
         /// The list of schools to sync.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schoolsIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schoolsIds")]
         public IEnumerable<string> SchoolsIds { get; set; }
     
         /// <summary>
         /// Gets or sets schoolYear.
         /// The school year to sync.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schoolYear", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schoolYear")]
         public string SchoolYear { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Value Multi Text.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets values.
         /// A collection of non-empty strings for the associated presentation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("values")]
         public IEnumerable<string> Values { get; set; }
     
     }

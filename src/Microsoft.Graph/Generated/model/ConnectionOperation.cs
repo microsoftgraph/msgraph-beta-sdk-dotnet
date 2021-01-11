@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Connection Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ConnectionOperation : Entity
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets error.
         /// If status is failed, provides more information about the error that caused the failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public ErrorDetail Error { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ConnectionOperationStatus? Status { get; set; }
     
     }

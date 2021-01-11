@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessPackageLocalizedContent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessPackageLocalizedContent>))]
     public partial class AccessPackageLocalizedContent
     {
         /// <summary>
@@ -34,26 +32,26 @@ namespace Microsoft.Graph
         /// Gets or sets defaultText.
         /// The fallback string, which is used when a requested localization is not available. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultText")]
         public string DefaultText { get; set; }
     
         /// <summary>
         /// Gets or sets localizedTexts.
         /// Content represented in a format for a specific locale.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizedTexts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("localizedTexts")]
         public IEnumerable<AccessPackageLocalizedText> LocalizedTexts { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

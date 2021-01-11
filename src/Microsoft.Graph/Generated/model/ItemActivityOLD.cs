@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Activity OLD.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ItemActivityOLD : Entity
     {
     
@@ -33,31 +32,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("action")]
         public ItemActionSet Action { get; set; }
     
         /// <summary>
         /// Gets or sets actor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actor")]
         public IdentitySet Actor { get; set; }
     
         /// <summary>
         /// Gets or sets times.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "times", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("times")]
         public ItemActivityTimeSet Times { get; set; }
     
         /// <summary>
         /// Gets or sets drive item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "driveItem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("driveItem")]
         public DriveItem DriveItem { get; set; }
     
         /// <summary>
         /// Gets or sets list item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "listItem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("listItem")]
         public ListItem ListItem { get; set; }
     
     }

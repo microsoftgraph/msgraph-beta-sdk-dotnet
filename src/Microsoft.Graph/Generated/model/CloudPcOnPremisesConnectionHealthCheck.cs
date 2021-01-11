@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CloudPcOnPremisesConnectionHealthCheck.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CloudPcOnPremisesConnectionHealthCheck>))]
     public partial class CloudPcOnPremisesConnectionHealthCheck
     {
         /// <summary>
@@ -34,61 +32,61 @@ namespace Microsoft.Graph
         /// Gets or sets additionalDetails.
         /// Additional details about the health check or the recommended action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("additionalDetails")]
         public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The display name for this health check item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets endDateTime.
         /// The end time of the health check item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets errorType.
         /// The type of error that occurred during this health check. Possible values are: DnsCheckFqdnNotFound, DnsCheckUnknownError, AdJoinCheckFqdnNotFound, AdJoinCheckIncorrectCredentials, AdJoinCheckOrganizationalUnitNotFound, AdJoinCheckOrganizationalUnitIncorrectFormat, AdJoinCheckUnknownError, EndpointConnectivityCheckUrlNotWhitelisted, EndpointConnectivityCheckUnknownError, AadConnectivityCheckUnknownError.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorType")]
         public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedAction.
         /// The recommended action to fix the corresponding error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recommendedAction")]
         public string RecommendedAction { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
         /// The start time of the health check item. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The status of the health check item. Read-only. Possible values are: Pending, Running, Passed, Failed, UnknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public CloudPcOnPremisesConnectionStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

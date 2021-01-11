@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ItemActionSet.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ItemActionSet>))]
     public partial class ItemActionSet
     {
         /// <summary>
@@ -34,82 +32,82 @@ namespace Microsoft.Graph
         /// Gets or sets comment.
         /// A comment was added to the item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comment", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comment")]
         public CommentAction Comment { get; set; }
     
         /// <summary>
         /// Gets or sets create.
         /// An item was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "create", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("create")]
         public CreateAction Create { get; set; }
     
         /// <summary>
         /// Gets or sets delete.
         /// An item was deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "delete", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("delete")]
         public DeleteAction Delete { get; set; }
     
         /// <summary>
         /// Gets or sets edit.
         /// An item was edited.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "edit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("edit")]
         public EditAction Edit { get; set; }
     
         /// <summary>
         /// Gets or sets mention.
         /// A user was mentioned in the item.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mention", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mention")]
         public MentionAction Mention { get; set; }
     
         /// <summary>
         /// Gets or sets move.
         /// An item was moved.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "move", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("move")]
         public MoveAction Move { get; set; }
     
         /// <summary>
         /// Gets or sets rename.
         /// An item was renamed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rename", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rename")]
         public RenameAction Rename { get; set; }
     
         /// <summary>
         /// Gets or sets restore.
         /// An item was restored.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restore")]
         public RestoreAction Restore { get; set; }
     
         /// <summary>
         /// Gets or sets share.
         /// An item was shared.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "share", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("share")]
         public ShareAction Share { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// An item was versioned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public VersionAction Version { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

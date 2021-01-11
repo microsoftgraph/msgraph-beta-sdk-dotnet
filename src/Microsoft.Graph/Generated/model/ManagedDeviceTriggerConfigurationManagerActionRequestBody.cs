@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceTriggerConfigurationManagerActionRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ManagedDeviceTriggerConfigurationManagerActionRequestBody
     {
     
         /// <summary>
         /// Gets or sets ConfigurationManagerAction.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationManagerAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationManagerAction")]
         public ConfigurationManagerAction ConfigurationManagerAction { get; set; }
     
     }

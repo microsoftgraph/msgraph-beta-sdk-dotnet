@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Setting Category.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementSettingCategory : Entity
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// The category name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets has required setting.
         /// The category contains top level required setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasRequiredSetting", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasRequiredSetting")]
         public bool? HasRequiredSetting { get; set; }
     
         /// <summary>
         /// Gets or sets setting definitions.
         /// The setting definitions this category contains
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settingDefinitions")]
         public IDeviceManagementSettingCategorySettingDefinitionsCollectionPage SettingDefinitions { get; set; }
     
     }

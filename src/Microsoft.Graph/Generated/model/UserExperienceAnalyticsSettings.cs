@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserExperienceAnalyticsSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsSettings>))]
     public partial class UserExperienceAnalyticsSettings
     {
         /// <summary>
@@ -34,19 +32,19 @@ namespace Microsoft.Graph
         /// Gets or sets configurationManagerDataConnectorConfigured.
         /// True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationManagerDataConnectorConfigured", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationManagerDataConnectorConfigured")]
         public bool? ConfigurationManagerDataConnectorConfigured { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

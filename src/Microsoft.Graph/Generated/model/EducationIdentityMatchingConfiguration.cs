@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationIdentityMatchingConfiguration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class EducationIdentityMatchingConfiguration : EducationIdentitySynchronizationConfiguration
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets matchingOptions.
         /// Mapping between the user account and the options to use to uniquely identify the user to update.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchingOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matchingOptions")]
         public IEnumerable<EducationIdentityMatchingOptions> MatchingOptions { get; set; }
     
     }

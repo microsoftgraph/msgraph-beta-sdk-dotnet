@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MobileAppValidateXmlRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MobileAppValidateXmlRequestBody
     {
     
         /// <summary>
         /// Gets or sets OfficeConfigurationXml.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeConfigurationXml", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("officeConfigurationXml")]
         public byte[] OfficeConfigurationXml { get; set; }
     
     }

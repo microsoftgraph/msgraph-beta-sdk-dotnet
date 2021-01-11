@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrintJobStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PrintJobStatus>))]
     public partial class PrintJobStatus
     {
         /// <summary>
@@ -33,59 +31,59 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets acquiredByPrinter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acquiredByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("acquiredByPrinter")]
         public bool? AcquiredByPrinter { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// A human-readable description of the print job's current processing state. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets details.
         /// Additional details for print job state. Valid values are described in the following table. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("details")]
         public IEnumerable<PrintJobStateDetail> Details { get; set; }
     
         /// <summary>
         /// Gets or sets isAcquiredByPrinter.
         /// True if the job was acknowledged by a printer; false otherwise. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAcquiredByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAcquiredByPrinter")]
         public bool? IsAcquiredByPrinter { get; set; }
     
         /// <summary>
         /// Gets or sets processingState.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processingState")]
         public PrintJobProcessingState? ProcessingState { get; set; }
     
         /// <summary>
         /// Gets or sets processingStateDescription.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingStateDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processingStateDescription")]
         public string ProcessingStateDescription { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The print job's current processing state. Valid values are described in the following table. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public PrintJobProcessingState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

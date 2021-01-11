@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Password Authentication Method.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PasswordAuthenticationMethod : AuthenticationMethod
     {
     
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
@@ -41,14 +40,14 @@ namespace Microsoft.Graph
         /// The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [Obsolete("The creationDateTime property is deprecated and will stop returning data on December 31, 2020. Please use the createdDateTime property.")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets password.
         /// For security, the password is always returned as null from a LIST or GET operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "password", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("password")]
         public string Password { get; set; }
     
     }

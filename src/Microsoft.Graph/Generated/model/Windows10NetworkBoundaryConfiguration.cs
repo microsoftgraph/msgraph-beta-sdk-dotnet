@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10Network Boundary Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Windows10NetworkBoundaryConfiguration : DeviceConfiguration
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets windows network isolation policy.
         /// Windows Network Isolation Policy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsNetworkIsolationPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsNetworkIsolationPolicy")]
         public WindowsNetworkIsolationPolicy WindowsNetworkIsolationPolicy { get; set; }
     
     }

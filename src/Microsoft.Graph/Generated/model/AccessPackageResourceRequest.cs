@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Resource Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AccessPackageResourceRequestObject : Entity
     {
     
@@ -34,69 +33,69 @@ namespace Microsoft.Graph
         /// Gets or sets catalog id.
         /// The unique ID of the access package catalog.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "catalogId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("catalogId")]
         public string CatalogId { get; set; }
     
         /// <summary>
         /// Gets or sets execute immediately.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "executeImmediately", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("executeImmediately")]
         public bool? ExecuteImmediately { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets is validation only.
         /// If set, does not add the resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isValidationOnly", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isValidationOnly")]
         public bool? IsValidationOnly { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
         /// The requestor's justification for adding the resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets request state.
         /// The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added. Read-Only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestState")]
         public string RequestState { get; set; }
     
         /// <summary>
         /// Gets or sets request status.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestStatus")]
         public string RequestStatus { get; set; }
     
         /// <summary>
         /// Gets or sets request type.
         /// Use AdminAdd to add a resource, if the caller is an administrator or resource owner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestType")]
         public string RequestType { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource.
         /// Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResource")]
         public AccessPackageResource AccessPackageResource { get; set; }
     
         /// <summary>
         /// Gets or sets requestor.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestor")]
         public AccessPackageSubject Requestor { get; set; }
     
     }

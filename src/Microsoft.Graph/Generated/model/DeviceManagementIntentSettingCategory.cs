@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Intent Setting Category.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets settings.
         /// The settings this category contains
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public IDeviceManagementIntentSettingCategorySettingsCollectionPage Settings { get; set; }
     
     }

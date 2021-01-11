@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Employee.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Employee : Entity
     {
     
@@ -33,109 +32,109 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public PostalAddressType Address { get; set; }
     
         /// <summary>
         /// Gets or sets birth date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "birthDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("birthDate")]
         public Date BirthDate { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets email.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets employment date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employmentDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("employmentDate")]
         public Date EmploymentDate { get; set; }
     
         /// <summary>
         /// Gets or sets given name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "givenName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("givenName")]
         public string GivenName { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets middle name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "middleName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("middleName")]
         public string MiddleName { get; set; }
     
         /// <summary>
         /// Gets or sets mobile phone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobilePhone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
     
         /// <summary>
         /// Gets or sets number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("number")]
         public string Number { get; set; }
     
         /// <summary>
         /// Gets or sets personal email.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalEmail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("personalEmail")]
         public string PersonalEmail { get; set; }
     
         /// <summary>
         /// Gets or sets phone number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("phoneNumber")]
         public string PhoneNumber { get; set; }
     
         /// <summary>
         /// Gets or sets statistics group code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statisticsGroupCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("statisticsGroupCode")]
         public string StatisticsGroupCode { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("surname")]
         public string Surname { get; set; }
     
         /// <summary>
         /// Gets or sets termination date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "terminationDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("terminationDate")]
         public Date TerminationDate { get; set; }
     
         /// <summary>
         /// Gets or sets picture.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "picture", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("picture")]
         public IEmployeePictureCollectionPage Picture { get; set; }
     
     }

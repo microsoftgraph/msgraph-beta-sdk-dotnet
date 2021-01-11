@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Remote Action Audit.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class RemoteActionAudit : Entity
     {
     
@@ -34,63 +33,63 @@ namespace Microsoft.Graph
         /// Gets or sets action.
         /// The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("action")]
         public RemoteAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets action state.
         /// Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionState")]
         public ActionState? ActionState { get; set; }
     
         /// <summary>
         /// Gets or sets device display name.
         /// Intune device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device imei.
         /// IMEI of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceIMEI", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceIMEI")]
         public string DeviceIMEI { get; set; }
     
         /// <summary>
         /// Gets or sets device owner user principal name.
         /// Upn of the device owner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOwnerUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceOwnerUserPrincipalName")]
         public string DeviceOwnerUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets initiated by user principal name.
         /// User who initiated the device action, format is UPN.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiatedByUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiatedByUserPrincipalName")]
         public string InitiatedByUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
         /// Action target.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets request date time.
         /// Time when the action was issued, given in UTC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestDateTime")]
         public DateTimeOffset? RequestDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
         /// [deprecated] Please use InitiatedByUserPrincipalName instead.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userName")]
         public string UserName { get; set; }
     
     }

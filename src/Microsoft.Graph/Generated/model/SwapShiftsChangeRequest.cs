@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Swap Shifts Change Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SwapShiftsChangeRequestObject : OfferShiftRequestObject
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets recipient shift id.
         /// Shift ID for the recipient user with whom the request is to swap.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recipientShiftId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recipientShiftId")]
         public string RecipientShiftId { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Wifi Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsWifiConfiguration : DeviceConfiguration
     {
     
@@ -34,91 +33,91 @@ namespace Microsoft.Graph
         /// Gets or sets connect automatically.
         /// Specify whether the wifi connection should connect automatically when in range.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectAutomatically", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectAutomatically")]
         public bool? ConnectAutomatically { get; set; }
     
         /// <summary>
         /// Gets or sets connect to preferred network.
         /// Specify whether the wifi connection should connect to more preferred networks when already connected to this one.  Requires ConnectAutomatically to be true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectToPreferredNetwork", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectToPreferredNetwork")]
         public bool? ConnectToPreferredNetwork { get; set; }
     
         /// <summary>
         /// Gets or sets connect when network name is hidden.
         /// Specify whether the wifi connection should connect automatically even when the SSID is not broadcasting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectWhenNetworkNameIsHidden", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectWhenNetworkNameIsHidden")]
         public bool? ConnectWhenNetworkNameIsHidden { get; set; }
     
         /// <summary>
         /// Gets or sets force fipscompliance.
         /// Specify whether to force FIPS compliance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "forceFIPSCompliance", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("forceFIPSCompliance")]
         public bool? ForceFIPSCompliance { get; set; }
     
         /// <summary>
         /// Gets or sets metered connection limit.
         /// Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meteredConnectionLimit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meteredConnectionLimit")]
         public MeteredConnectionLimitType? MeteredConnectionLimit { get; set; }
     
         /// <summary>
         /// Gets or sets network name.
         /// Specify the network configuration name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkName")]
         public string NetworkName { get; set; }
     
         /// <summary>
         /// Gets or sets pre shared key.
         /// This is the pre-shared key for WPA Personal Wi-Fi network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preSharedKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preSharedKey")]
         public string PreSharedKey { get; set; }
     
         /// <summary>
         /// Gets or sets proxy automatic configuration url.
         /// Specify the URL for the proxy server configuration script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAutomaticConfigurationUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyAutomaticConfigurationUrl")]
         public string ProxyAutomaticConfigurationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets proxy manual address.
         /// Specify the IP address for the proxy server.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyManualAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyManualAddress")]
         public string ProxyManualAddress { get; set; }
     
         /// <summary>
         /// Gets or sets proxy manual port.
         /// Specify the port for the proxy server.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyManualPort", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyManualPort")]
         public Int32? ProxyManualPort { get; set; }
     
         /// <summary>
         /// Gets or sets proxy setting.
         /// Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxySetting", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxySetting")]
         public WiFiProxySetting? ProxySetting { get; set; }
     
         /// <summary>
         /// Gets or sets ssid.
         /// Specify the SSID of the wifi connection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ssid", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ssid")]
         public string Ssid { get; set; }
     
         /// <summary>
         /// Gets or sets wifi security type.
         /// Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiSecurityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wifiSecurityType")]
         public WiFiSecurityType? WifiSecurityType { get; set; }
     
     }

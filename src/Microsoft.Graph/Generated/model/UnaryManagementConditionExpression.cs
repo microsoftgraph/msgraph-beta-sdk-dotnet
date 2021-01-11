@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UnaryManagementConditionExpression.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class UnaryManagementConditionExpression : ManagementConditionExpressionModel
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets operand.
         /// The operand of the unary operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operand", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operand")]
         public ManagementConditionExpressionModel Operand { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
         /// The operator used in the evaluation of the unary operation. Possible values are: not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operator")]
         public UnaryManagementConditionExpressionOperatorType? Operator { get; set; }
     
     }

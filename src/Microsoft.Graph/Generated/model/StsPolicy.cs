@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Sts Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class StsPolicy : PolicyBase
     {
     
@@ -34,20 +33,20 @@ namespace Microsoft.Graph
         /// Gets or sets definition.
         /// A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("definition")]
         public IEnumerable<string> Definition { get; set; }
     
         /// <summary>
         /// Gets or sets is organization default.
         /// If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isOrganizationDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isOrganizationDefault")]
         public bool? IsOrganizationDefault { get; set; }
     
         /// <summary>
         /// Gets or sets applies to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appliesTo")]
         public IStsPolicyAppliesToCollectionWithReferencesPage AppliesTo { get; set; }
     
     }

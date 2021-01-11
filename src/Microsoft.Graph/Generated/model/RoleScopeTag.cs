@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Role Scope Tag.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class RoleScopeTag : Entity
     {
     
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// Description of the Role Scope Tag.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display or friendly name of the Role Scope Tag.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
         /// Description of the Role Scope Tag.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of assignments for this Role Scope Tag.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IRoleScopeTagAssignmentsCollectionPage Assignments { get; set; }
     
     }

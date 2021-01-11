@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Permission Grant Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PermissionGrantPolicy : PolicyBase
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets excludes.
         /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludes")]
         public IPermissionGrantPolicyExcludesCollectionPage Excludes { get; set; }
     
         /// <summary>
         /// Gets or sets includes.
         /// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includes")]
         public IPermissionGrantPolicyIncludesCollectionPage Includes { get; set; }
     
     }

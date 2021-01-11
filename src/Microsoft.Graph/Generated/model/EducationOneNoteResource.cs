@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationOneNoteResource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class EducationOneNoteResource : EducationResource
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets pageUrl.
         /// The Microsoft Graph URL to the page in OneNote.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pageUrl")]
         public string PageUrl { get; set; }
     
         /// <summary>
         /// Gets or sets sectionName.
         /// Section name that distributions should be copied into or were copied into.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sectionName")]
         public string SectionName { get; set; }
     
     }

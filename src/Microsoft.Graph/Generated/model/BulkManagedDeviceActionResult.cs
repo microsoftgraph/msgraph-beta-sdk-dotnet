@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BulkManagedDeviceActionResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BulkManagedDeviceActionResult>))]
     public partial class BulkManagedDeviceActionResult
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets failedDeviceIds.
         /// Failed devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedDeviceIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedDeviceIds")]
         public IEnumerable<string> FailedDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets notFoundDeviceIds.
         /// Not found devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notFoundDeviceIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notFoundDeviceIds")]
         public IEnumerable<string> NotFoundDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets notSupportedDeviceIds.
         /// Not supported devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notSupportedDeviceIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notSupportedDeviceIds")]
         public IEnumerable<string> NotSupportedDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets successfulDeviceIds.
         /// Successful devices
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulDeviceIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("successfulDeviceIds")]
         public IEnumerable<string> SuccessfulDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

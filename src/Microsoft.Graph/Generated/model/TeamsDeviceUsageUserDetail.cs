@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teams Device Usage User Detail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class TeamsDeviceUsageUserDetail : Entity
     {
     
@@ -33,73 +32,73 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets deleted date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedDate")]
         public Date DeletedDate { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivityDate")]
         public Date LastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets used android phone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedAndroidPhone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedAndroidPhone")]
         public bool? UsedAndroidPhone { get; set; }
     
         /// <summary>
         /// Gets or sets usedi os.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usediOS", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usediOS")]
         public bool? UsediOS { get; set; }
     
         /// <summary>
         /// Gets or sets used mac.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedMac", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedMac")]
         public bool? UsedMac { get; set; }
     
         /// <summary>
         /// Gets or sets used web.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedWeb", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedWeb")]
         public bool? UsedWeb { get; set; }
     
         /// <summary>
         /// Gets or sets used windows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedWindows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedWindows")]
         public bool? UsedWindows { get; set; }
     
         /// <summary>
         /// Gets or sets used windows phone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedWindowsPhone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedWindowsPhone")]
         public bool? UsedWindowsPhone { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

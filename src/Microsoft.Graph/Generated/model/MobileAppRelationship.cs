@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Relationship.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MobileAppRelationship : Entity
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets target display name.
         /// The target mobile app's display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetDisplayName")]
         public string TargetDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets target display version.
         /// The target mobile app's display version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDisplayVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetDisplayVersion")]
         public string TargetDisplayVersion { get; set; }
     
         /// <summary>
         /// Gets or sets target id.
         /// The target mobile app's app id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetId")]
         public string TargetId { get; set; }
     
         /// <summary>
         /// Gets or sets target publisher.
         /// The target mobile app's publisher.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetPublisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetPublisher")]
         public string TargetPublisher { get; set; }
     
         /// <summary>
         /// Gets or sets target type.
         /// The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetType")]
         public MobileAppRelationshipType? TargetType { get; set; }
     
     }

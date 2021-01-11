@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Room List.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class RoomList : Place
     {
     
@@ -34,20 +33,20 @@ namespace Microsoft.Graph
         /// Gets or sets email address.
         /// The email address of the room list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets rooms.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rooms", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rooms")]
         public IRoomListRoomsCollectionPage Rooms { get; set; }
     
         /// <summary>
         /// Gets or sets spaces.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spaces", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("spaces")]
         public IRoomListSpacesCollectionPage Spaces { get; set; }
     
     }

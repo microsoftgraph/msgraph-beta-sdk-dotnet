@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Privileged Access.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PrivilegedAccess : Entity
     {
     
@@ -34,42 +33,42 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// The display name of the provider managed by PIM.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
         /// A collection of resources for the provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resources")]
         public IPrivilegedAccessResourcesCollectionPage Resources { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment requests.
         /// A collection of role assignment requests for the provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignmentRequests")]
         public IPrivilegedAccessRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
         /// A collection of role assignments for the provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleAssignments")]
         public IPrivilegedAccessRoleAssignmentsCollectionPage RoleAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets role definitions.
         /// A collection of role defintions for the provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinitions")]
         public IPrivilegedAccessRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
         /// <summary>
         /// Gets or sets role settings.
         /// A collection of role settings for the provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleSettings")]
         public IPrivilegedAccessRoleSettingsCollectionPage RoleSettings { get; set; }
     
     }

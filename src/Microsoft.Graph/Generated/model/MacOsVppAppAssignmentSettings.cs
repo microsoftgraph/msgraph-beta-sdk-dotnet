@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOsVppAppAssignmentSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MacOsVppAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets uninstallOnDeviceRemoval.
         /// Whether or not to uninstall the app when device is removed from Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uninstallOnDeviceRemoval", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uninstallOnDeviceRemoval")]
         public bool? UninstallOnDeviceRemoval { get; set; }
     
         /// <summary>
         /// Gets or sets useDeviceLicensing.
         /// Whether or not to use device licensing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useDeviceLicensing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useDeviceLicensing")]
         public bool? UseDeviceLicensing { get; set; }
     
     }

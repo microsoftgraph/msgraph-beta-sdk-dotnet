@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Directory.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Directory : Entity
     {
     
@@ -33,27 +32,27 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets administrative units.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnits", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("administrativeUnits")]
         public IDirectoryAdministrativeUnitsCollectionPage AdministrativeUnits { get; set; }
     
         /// <summary>
         /// Gets or sets deleted items.
         /// Recently deleted items. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItems", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedItems")]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }
     
         /// <summary>
         /// Gets or sets shared email domains.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedEmailDomains", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedEmailDomains")]
         public IDirectorySharedEmailDomainsCollectionPage SharedEmailDomains { get; set; }
     
         /// <summary>
         /// Gets or sets feature rollout policies.
         /// Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureRolloutPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("featureRolloutPolicies")]
         public IDirectoryFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
     
     }

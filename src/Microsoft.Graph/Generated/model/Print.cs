@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Print.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Print>))]
     public partial class Print
     {
     
@@ -35,71 +33,71 @@ namespace Microsoft.Graph
         /// Gets or sets settings.
         /// Tenant-wide settings for the Universal Print service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public PrintSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets connectors.
         /// The list of available print connectors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectors")]
         public IPrintConnectorsCollectionPage Connectors { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public IPrintOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets printers.
         /// The list of printers registered in the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("printers")]
         public IPrintPrintersCollectionPage Printers { get; set; }
     
         /// <summary>
         /// Gets or sets printer shares.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerShares", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("printerShares")]
         public IPrintPrinterSharesCollectionPage PrinterShares { get; set; }
     
         /// <summary>
         /// Gets or sets reports.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reports", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reports")]
         public IPrintReportsCollectionPage Reports { get; set; }
     
         /// <summary>
         /// Gets or sets services.
         /// The list of available Universal Print service endpoints.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "services", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("services")]
         public IPrintServicesCollectionPage Services { get; set; }
     
         /// <summary>
         /// Gets or sets shares.
         /// The list of printer shares registered in the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shares", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shares")]
         public IPrintSharesCollectionPage Shares { get; set; }
     
         /// <summary>
         /// Gets or sets task definitions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskDefinitions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taskDefinitions")]
         public IPrintTaskDefinitionsCollectionPage TaskDefinitions { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

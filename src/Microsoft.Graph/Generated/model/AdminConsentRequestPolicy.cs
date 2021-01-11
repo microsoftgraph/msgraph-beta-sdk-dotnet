@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Admin Consent Request Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AdminConsentRequestPolicy : Entity
     {
     
@@ -33,37 +32,37 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets notify reviewers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notifyReviewers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notifyReviewers")]
         public bool? NotifyReviewers { get; set; }
     
         /// <summary>
         /// Gets or sets reminders enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remindersEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remindersEnabled")]
         public bool? RemindersEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets request duration in days.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestDurationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestDurationInDays")]
         public Int32? RequestDurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewers")]
         public IEnumerable<AccessReviewScope> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public Int32? Version { get; set; }
     
     }

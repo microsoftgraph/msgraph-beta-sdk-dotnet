@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Synchronization Schema.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SynchronizationSchema : Entity
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets synchronization rules.
         /// A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationRules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("synchronizationRules")]
         public IEnumerable<SynchronizationRule> SynchronizationRules { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// The version of the schema, updated automatically with every schema change.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets directories.
         /// Contains the collection of directories and all of their objects.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directories")]
         public ISynchronizationSchemaDirectoriesCollectionPage Directories { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Chat.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Chat : Entity
     {
     
@@ -34,55 +33,55 @@ namespace Microsoft.Graph
         /// Gets or sets chat type.
         /// Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("chatType")]
         public ChatType? ChatType { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// Date and time at which the chat was created. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
         /// Date and time at which the chat was renamed or list of members were last changed. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets topic.
         /// (Optional) Subject or topic for the chat. Only available for group chats.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "topic", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("topic")]
         public string Topic { get; set; }
     
         /// <summary>
         /// Gets or sets installed apps.
         /// A collection of all the apps in the chat. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installedApps")]
         public IChatInstalledAppsCollectionPage InstalledApps { get; set; }
     
         /// <summary>
         /// Gets or sets members.
         /// A collection of all the members in the chat. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IChatMembersCollectionPage Members { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
         /// A collection of all the messages in the chat. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("messages")]
         public IChatMessagesCollectionPage Messages { get; set; }
     
         /// <summary>
         /// Gets or sets tabs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tabs")]
         public IChatTabsCollectionPage Tabs { get; set; }
     
     }

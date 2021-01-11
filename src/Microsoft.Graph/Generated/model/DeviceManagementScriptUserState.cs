@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Script User State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementScriptUserState : Entity
     {
     
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets error device count.
         /// Error device count for specific user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDeviceCount")]
         public Int32? ErrorDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets success device count.
         /// Success device count for specific user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("successDeviceCount")]
         public Int32? SuccessDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// User principle name of specific user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets device run states.
         /// List of run states for this script across all devices of specific user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRunStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceRunStates")]
         public IDeviceManagementScriptUserStateDeviceRunStatesCollectionPage DeviceRunStates { get; set; }
     
     }

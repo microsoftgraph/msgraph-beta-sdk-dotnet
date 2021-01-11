@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBody
     {
     
         /// <summary>
         /// Gets or sets TokenValidityInSeconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenValidityInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tokenValidityInSeconds")]
         public Int32 TokenValidityInSeconds { get; set; }
     
     }

@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AppleVpnAlwaysOnConfiguration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AppleVpnAlwaysOnConfiguration>))]
     public partial class AppleVpnAlwaysOnConfiguration
     {
         /// <summary>
@@ -34,82 +32,82 @@ namespace Microsoft.Graph
         /// Gets or sets airPrintExceptionAction.
         /// Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "airPrintExceptionAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("airPrintExceptionAction")]
         public VpnServiceExceptionAction? AirPrintExceptionAction { get; set; }
     
         /// <summary>
         /// Gets or sets allowAllCaptiveNetworkPlugins.
         /// Specifies whether traffic from all captive network plugins should be allowed outside the vpn
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAllCaptiveNetworkPlugins", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowAllCaptiveNetworkPlugins")]
         public bool? AllowAllCaptiveNetworkPlugins { get; set; }
     
         /// <summary>
         /// Gets or sets allowCaptiveWebSheet.
         /// Determines whether traffic from the Websheet app is allowed outside of the VPN
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowCaptiveWebSheet", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowCaptiveWebSheet")]
         public bool? AllowCaptiveWebSheet { get; set; }
     
         /// <summary>
         /// Gets or sets allowedCaptiveNetworkPlugins.
         /// Determines whether all, some, or no non-native captive networking apps are allowed
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedCaptiveNetworkPlugins", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedCaptiveNetworkPlugins")]
         public SpecifiedCaptiveNetworkPlugins AllowedCaptiveNetworkPlugins { get; set; }
     
         /// <summary>
         /// Gets or sets cellularExceptionAction.
         /// Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularExceptionAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cellularExceptionAction")]
         public VpnServiceExceptionAction? CellularExceptionAction { get; set; }
     
         /// <summary>
         /// Gets or sets natKeepAliveIntervalInSeconds.
         /// Specifies how often in seconds to send a network address translation keepalive package through the VPN
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "natKeepAliveIntervalInSeconds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("natKeepAliveIntervalInSeconds")]
         public Int32? NatKeepAliveIntervalInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets natKeepAliveOffloadEnable.
         /// Enable hardware offloading of NAT keepalive signals when the device is asleep
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "natKeepAliveOffloadEnable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("natKeepAliveOffloadEnable")]
         public bool? NatKeepAliveOffloadEnable { get; set; }
     
         /// <summary>
         /// Gets or sets tunnelConfiguration.
         /// Determines what connections the specific tunnel configuration applies to. Possible values are: wifiAndCellular, cellular, wifi.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tunnelConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tunnelConfiguration")]
         public VpnTunnelConfigurationType? TunnelConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets userToggleEnabled.
         /// Allow the user to toggle the VPN configuration using the UI
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userToggleEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userToggleEnabled")]
         public bool? UserToggleEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets voicemailExceptionAction.
         /// Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "voicemailExceptionAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("voicemailExceptionAction")]
         public VpnServiceExceptionAction? VoicemailExceptionAction { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

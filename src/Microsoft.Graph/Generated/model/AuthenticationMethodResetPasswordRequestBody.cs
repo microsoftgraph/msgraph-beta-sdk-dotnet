@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AuthenticationMethodResetPasswordRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AuthenticationMethodResetPasswordRequestBody
     {
     
         /// <summary>
         /// Gets or sets NewPassword.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "newPassword", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("newPassword")]
         public string NewPassword { get; set; }
     
         /// <summary>
         /// Gets or sets RequireChangeOnNextSignIn.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireChangeOnNextSignIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requireChangeOnNextSignIn")]
         public bool? RequireChangeOnNextSignIn { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Case Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class CaseOperation : Entity
     {
     
@@ -33,43 +32,43 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("action")]
         public CaseAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets completed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets percent progress.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "percentProgress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("percentProgress")]
         public Int32? PercentProgress { get; set; }
     
         /// <summary>
         /// Gets or sets result info.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resultInfo")]
         public ResultInfo ResultInfo { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public CaseOperationStatus? Status { get; set; }
     
     }

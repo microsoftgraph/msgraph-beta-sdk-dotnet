@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class UnifiedRoleDefinition : Entity
     {
     
@@ -34,62 +33,62 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
         /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
         /// Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets resource scopes.
         /// List of scopes permissions granted by the role definition apply to. Currently only '/' is supported. Read-only when isBuiltIn is true. DO NOT USE. This is going to be deprecated soon. Attach scope to role assignment
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceScopes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceScopes")]
         public IEnumerable<string> ResourceScopes { get; set; }
     
         /// <summary>
         /// Gets or sets role permissions.
         /// List of permissions included in the role. Read-only when isBuiltIn is true. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rolePermissions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rolePermissions")]
         public IEnumerable<UnifiedRolePermission> RolePermissions { get; set; }
     
         /// <summary>
         /// Gets or sets template id.
         /// Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets inherits permissions from.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inheritsPermissionsFrom", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inheritsPermissionsFrom")]
         public IUnifiedRoleDefinitionInheritsPermissionsFromCollectionPage InheritsPermissionsFrom { get; set; }
     
     }

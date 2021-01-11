@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceHealthScriptParameter.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceHealthScriptParameter>))]
     public abstract partial class DeviceHealthScriptParameter
     {
 
@@ -27,40 +25,40 @@ namespace Microsoft.Graph
         /// Gets or sets applyDefaultValueWhenNotAssigned.
         /// Whether Apply DefaultValue When Not Assigned
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyDefaultValueWhenNotAssigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applyDefaultValueWhenNotAssigned")]
         public bool? ApplyDefaultValueWhenNotAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of the param
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets isRequired.
         /// Whether the param is required
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRequired")]
         public bool? IsRequired { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The name of the param
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

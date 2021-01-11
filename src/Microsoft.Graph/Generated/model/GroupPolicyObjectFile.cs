@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Object File.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class GroupPolicyObjectFile : Entity
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets content.
         /// The Group Policy Object file content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time at which the GroupPolicy was first uploaded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets group policy object id.
         /// The Group Policy Object GUID from GPO Xml content
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupPolicyObjectId")]
         public Guid? GroupPolicyObjectId { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time at which the GroupPolicyObjectFile was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets ou distinguished name.
         /// The distinguished name of the OU.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ouDistinguishedName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ouDistinguishedName")]
         public string OuDistinguishedName { get; set; }
     
     }

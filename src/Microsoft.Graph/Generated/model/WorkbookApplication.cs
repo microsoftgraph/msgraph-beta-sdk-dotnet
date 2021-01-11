@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Application.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WorkbookApplication : Entity
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets calculation mode.
         /// Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calculationMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calculationMode")]
         public string CalculationMode { get; set; }
     
     }

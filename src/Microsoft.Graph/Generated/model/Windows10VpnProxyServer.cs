@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10VpnProxyServer.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Windows10VpnProxyServer : VpnProxyServer
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets bypassProxyServerForLocalAddress.
         /// Bypass proxy server for local address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bypassProxyServerForLocalAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bypassProxyServerForLocalAddress")]
         public bool? BypassProxyServerForLocalAddress { get; set; }
     
     }

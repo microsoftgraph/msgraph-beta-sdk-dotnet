@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InformationProtectionLabelExtractLabelRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class InformationProtectionLabelExtractLabelRequestBody
     {
     
         /// <summary>
         /// Gets or sets ContentInfo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentInfo")]
         public ContentInfo ContentInfo { get; set; }
     
     }

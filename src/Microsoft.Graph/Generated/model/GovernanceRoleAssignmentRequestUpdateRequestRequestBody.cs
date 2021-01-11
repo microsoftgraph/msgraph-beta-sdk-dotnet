@@ -9,41 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GovernanceRoleAssignmentRequestUpdateRequestRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class GovernanceRoleAssignmentRequestUpdateRequestRequestBody
     {
     
         /// <summary>
         /// Gets or sets Decision.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decision", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("decision")]
         public string Decision { get; set; }
     
         /// <summary>
         /// Gets or sets AssignmentState.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignmentState")]
         public string AssignmentState { get; set; }
     
         /// <summary>
         /// Gets or sets Schedule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schedule")]
         public GovernanceSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets Reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
     }

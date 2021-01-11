@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Synchronization.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Synchronization : Entity
     {
     
@@ -33,19 +32,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets secrets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secrets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("secrets")]
         public IEnumerable<SynchronizationSecretKeyStringValuePair> Secrets { get; set; }
     
         /// <summary>
         /// Gets or sets jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobs")]
         public ISynchronizationJobsCollectionPage Jobs { get; set; }
     
         /// <summary>
         /// Gets or sets templates.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templates")]
         public ISynchronizationTemplatesCollectionPage Templates { get; set; }
     
     }

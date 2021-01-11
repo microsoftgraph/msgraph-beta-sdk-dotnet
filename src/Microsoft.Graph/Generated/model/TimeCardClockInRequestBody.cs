@@ -9,35 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TimeCardClockInRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class TimeCardClockInRequestBody
     {
     
         /// <summary>
         /// Gets or sets AtApprovedLocation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "atApprovedLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("atApprovedLocation")]
         public bool? AtApprovedLocation { get; set; }
     
         /// <summary>
         /// Gets or sets OnBehalfOfUserId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onBehalfOfUserId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onBehalfOfUserId")]
         public string OnBehalfOfUserId { get; set; }
     
         /// <summary>
         /// Gets or sets Notes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notes")]
         public ItemBody Notes { get; set; }
     
     }

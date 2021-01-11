@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ExternalDomainFederation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ExternalDomainFederation : IdentitySource
     {
         /// <summary>
@@ -33,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets displayName.
         /// The name of the identity source, typically also the domain name. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets domainName.
         /// The domain name. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domainName")]
         public string DomainName { get; set; }
     
         /// <summary>
         /// Gets or sets issuerUri.
         /// The issuerURI of the incoming federation. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issuerUri")]
         public string IssuerUri { get; set; }
     
     }

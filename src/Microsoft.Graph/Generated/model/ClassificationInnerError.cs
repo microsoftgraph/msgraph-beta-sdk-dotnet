@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ClassificationInnerError.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ClassificationInnerError>))]
     public partial class ClassificationInnerError
     {
         /// <summary>
@@ -33,37 +31,37 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets activityId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityId")]
         public string ActivityId { get; set; }
     
         /// <summary>
         /// Gets or sets clientRequestId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientRequestId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientRequestId")]
         public string ClientRequestId { get; set; }
     
         /// <summary>
         /// Gets or sets code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("code")]
         public string Code { get; set; }
     
         /// <summary>
         /// Gets or sets errorDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorDateTime")]
         public DateTimeOffset? ErrorDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

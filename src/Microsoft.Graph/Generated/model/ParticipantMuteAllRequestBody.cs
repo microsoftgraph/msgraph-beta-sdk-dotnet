@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ParticipantMuteAllRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ParticipantMuteAllRequestBody
     {
     
         /// <summary>
         /// Gets or sets Participants.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("participants")]
         public IEnumerable<string> Participants { get; set; }
     
         /// <summary>
         /// Gets or sets ClientContext.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clientContext", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clientContext")]
         public string ClientContext { get; set; }
     
     }

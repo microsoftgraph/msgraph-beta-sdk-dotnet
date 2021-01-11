@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAccessPackageSearchCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AccessPackageSearchCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AccessPackageSearchCollectionPage>))]
     public interface IAccessPackageSearchCollectionPage : ICollectionPage<AccessPackage>
     {
         /// <summary>

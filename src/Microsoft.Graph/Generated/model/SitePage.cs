@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Site Page.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SitePage : BaseItem
     {
     
@@ -34,31 +33,31 @@ namespace Microsoft.Graph
         /// Gets or sets content type.
         /// The content type of the page.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentType")]
         public ContentTypeInfo ContentType { get; set; }
     
         /// <summary>
         /// Gets or sets page layout type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageLayoutType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pageLayoutType")]
         public string PageLayoutType { get; set; }
     
         /// <summary>
         /// Gets or sets publishing state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishingState")]
         public PublicationFacet PublishingState { get; set; }
     
         /// <summary>
         /// Gets or sets title.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
     
         /// <summary>
         /// Gets or sets web parts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webParts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webParts")]
         public IEnumerable<WebPart> WebParts { get; set; }
     
     }

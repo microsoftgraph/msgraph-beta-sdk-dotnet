@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RiskyUserDismissRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class RiskyUserDismissRequestBody
     {
     
         /// <summary>
         /// Gets or sets UserIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userIds")]
         public IEnumerable<string> UserIds { get; set; }
     
     }

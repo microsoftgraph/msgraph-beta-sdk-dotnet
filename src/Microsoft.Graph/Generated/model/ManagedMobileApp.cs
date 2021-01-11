@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed Mobile App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ManagedMobileApp : Entity
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets mobile app identifier.
         /// The identifier for an app with it's operating system type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobileAppIdentifier")]
         public MobileAppIdentifier MobileAppIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// Version of the entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

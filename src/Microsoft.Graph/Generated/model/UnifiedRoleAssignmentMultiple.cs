@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Assignment Multiple.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class UnifiedRoleAssignmentMultiple : Entity
     {
     
@@ -34,72 +33,72 @@ namespace Microsoft.Graph
         /// Gets or sets app scope ids.
         /// Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopeIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appScopeIds")]
         public IEnumerable<string> AppScopeIds { get; set; }
     
         /// <summary>
         /// Gets or sets condition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "condition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("condition")]
         public string Condition { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the role assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope ids.
         /// Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryScopeIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directoryScopeIds")]
         public IEnumerable<string> DirectoryScopeIds { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the role assignment. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets principal ids.
         /// Objectids of the principals to which the assignment is granted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principalIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principalIds")]
         public IEnumerable<string> PrincipalIds { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
         /// ID of the unifiedRoleDefinition the assignment is for.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets app scopes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appScopes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appScopes")]
         public IUnifiedRoleAssignmentMultipleAppScopesCollectionPage AppScopes { get; set; }
     
         /// <summary>
         /// Gets or sets directory scopes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryScopes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directoryScopes")]
         public IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage DirectoryScopes { get; set; }
     
         /// <summary>
         /// Gets or sets principals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "principals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("principals")]
         public IUnifiedRoleAssignmentMultiplePrincipalsCollectionWithReferencesPage Principals { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinition")]
         public UnifiedRoleDefinition RoleDefinition { get; set; }
     
     }

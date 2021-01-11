@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Troubleshooting Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementTroubleshootingEvent : Entity
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets additional information.
         /// A set of string key and string value pairs which provides additional information on the Troubleshooting event
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("additionalInformation")]
         public IEnumerable<KeyValuePair> AdditionalInformation { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
         /// Id used for tracing the failure in the service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("correlationId")]
         public string CorrelationId { get; set; }
     
         /// <summary>
         /// Gets or sets event date time.
         /// Time when the event occurred .
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets event name.
         /// Event Name corresponding to the Troubleshooting Event. It is an Optional field
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventName")]
         public string EventName { get; set; }
     
         /// <summary>
         /// Gets or sets troubleshooting error details.
         /// Object containing detailed information about the error and its remediation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingErrorDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("troubleshootingErrorDetails")]
         public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
     
     }

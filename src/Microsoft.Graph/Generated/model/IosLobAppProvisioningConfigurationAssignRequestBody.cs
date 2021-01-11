@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosLobAppProvisioningConfigurationAssignRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class IosLobAppProvisioningConfigurationAssignRequestBody
     {
     
         /// <summary>
         /// Gets or sets AppProvisioningConfigurationGroupAssignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appProvisioningConfigurationGroupAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appProvisioningConfigurationGroupAssignments")]
         public IEnumerable<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets IOSLobAppProvisioningConfigAssignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iOSLobAppProvisioningConfigAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iOSLobAppProvisioningConfigAssignments")]
         public IEnumerable<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments { get; set; }
     
     }

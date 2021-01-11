@@ -9,26 +9,24 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GraphServiceRiskyUsersCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<GraphServiceRiskyUsersCollectionResponse>))]
     public class GraphServiceRiskyUsersCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="IGraphServiceRiskyUsersCollectionPage"/> value.
         /// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
+		[JsonPropertyName("value")]
         public IGraphServiceRiskyUsersCollectionPage Value { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

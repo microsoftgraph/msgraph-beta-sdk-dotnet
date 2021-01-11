@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ClassificationError.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ClassificationError : ClassifcationErrorBase
     {
         /// <summary>
@@ -32,7 +31,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets details.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("details")]
         public IEnumerable<ClassifcationErrorBase> Details { get; set; }
     
     }

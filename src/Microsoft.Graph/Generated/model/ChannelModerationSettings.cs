@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ChannelModerationSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ChannelModerationSettings>))]
     public partial class ChannelModerationSettings
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets allowNewMessageFromBots.
         /// Indicates whether bots are allowed to post messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewMessageFromBots", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowNewMessageFromBots")]
         public bool? AllowNewMessageFromBots { get; set; }
     
         /// <summary>
         /// Gets or sets allowNewMessageFromConnectors.
         /// Indicates whether connectors are allowed to post messages.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewMessageFromConnectors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowNewMessageFromConnectors")]
         public bool? AllowNewMessageFromConnectors { get; set; }
     
         /// <summary>
         /// Gets or sets replyRestriction.
         /// Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("replyRestriction")]
         public ReplyRestriction? ReplyRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets userNewMessageRestriction.
         /// Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userNewMessageRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userNewMessageRestriction")]
         public UserNewMessageRestriction? UserNewMessageRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

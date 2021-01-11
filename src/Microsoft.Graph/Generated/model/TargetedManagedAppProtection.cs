@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Targeted Managed App Protection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class TargetedManagedAppProtection : ManagedAppProtection
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets is assigned.
         /// Indicates if the policy is deployed to any inclusion groups or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAssigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAssigned")]
         public bool? IsAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets targeted app management levels.
         /// The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedAppManagementLevels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedAppManagementLevels")]
         public AppManagementLevel? TargetedAppManagementLevels { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public ITargetedManagedAppProtectionAssignmentsCollectionPage Assignments { get; set; }
     
     }

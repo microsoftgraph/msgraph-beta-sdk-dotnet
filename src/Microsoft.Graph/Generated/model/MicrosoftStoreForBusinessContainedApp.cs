@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Microsoft Store For Business Contained App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MicrosoftStoreForBusinessContainedApp : MobileContainedApp
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets app user model id.
         /// The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUserModelId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appUserModelId")]
         public string AppUserModelId { get; set; }
     
     }

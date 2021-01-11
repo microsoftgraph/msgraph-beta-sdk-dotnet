@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mailbox Usage Quota Status Mailbox Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MailboxUsageQuotaStatusMailboxCounts : Entity
     {
     
@@ -33,49 +32,49 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets indeterminate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "indeterminate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("indeterminate")]
         public Int64? Indeterminate { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportDate")]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets send prohibited.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendProhibited", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sendProhibited")]
         public Int64? SendProhibited { get; set; }
     
         /// <summary>
         /// Gets or sets send receive prohibited.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendReceiveProhibited", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sendReceiveProhibited")]
         public Int64? SendReceiveProhibited { get; set; }
     
         /// <summary>
         /// Gets or sets under limit.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "underLimit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("underLimit")]
         public Int64? UnderLimit { get; set; }
     
         /// <summary>
         /// Gets or sets warning issued.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "warningIssued", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("warningIssued")]
         public Int64? WarningIssued { get; set; }
     
     }

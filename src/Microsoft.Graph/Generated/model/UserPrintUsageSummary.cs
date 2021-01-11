@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserPrintUsageSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserPrintUsageSummary>))]
     public partial class UserPrintUsageSummary
     {
         /// <summary>
@@ -33,43 +31,43 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets completedJobCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedJobCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedJobCount")]
         public Int32? CompletedJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets incompleteJobCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteJobCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("incompleteJobCount")]
         public Int32? IncompleteJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("user")]
         public Identity User { get; set; }
     
         /// <summary>
         /// Gets or sets userDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

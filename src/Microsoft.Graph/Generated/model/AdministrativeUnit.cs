@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Administrative Unit.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AdministrativeUnit : DirectoryObject
     {
     
@@ -34,42 +33,42 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// An optional description for the administrative unit.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Display name for the administrative unit.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
         /// Controls whether the adminstrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visibility")]
         public string Visibility { get; set; }
     
         /// <summary>
         /// Gets or sets members.
         /// Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IAdministrativeUnitMembersCollectionWithReferencesPage Members { get; set; }
     
         /// <summary>
         /// Gets or sets scoped role members.
         /// Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopedRoleMembers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scopedRoleMembers")]
         public IAdministrativeUnitScopedRoleMembersCollectionPage ScopedRoleMembers { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for this Administrative Unit. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("extensions")]
         public IAdministrativeUnitExtensionsCollectionPage Extensions { get; set; }
     
     }

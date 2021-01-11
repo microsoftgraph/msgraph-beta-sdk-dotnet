@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Enrollment Platform Restrictions Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceEnrollmentPlatformRestrictionsConfiguration : DeviceEnrollmentConfiguration
     {
     
@@ -34,63 +33,63 @@ namespace Microsoft.Graph
         /// Gets or sets android for work restriction.
         /// Android for work restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidForWorkRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("androidForWorkRestriction")]
         public DeviceEnrollmentPlatformRestriction AndroidForWorkRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets android restriction.
         /// Android restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("androidRestriction")]
         public DeviceEnrollmentPlatformRestriction AndroidRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets aosp restriction.
         /// AOSP restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aospRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("aospRestriction")]
         public DeviceEnrollmentPlatformRestriction AospRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets ios restriction.
         /// Ios restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iosRestriction")]
         public DeviceEnrollmentPlatformRestriction IosRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets mac osrestriction.
         /// Mac restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macOSRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("macOSRestriction")]
         public DeviceEnrollmentPlatformRestriction MacOSRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets mac restriction.
         /// Mac restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("macRestriction")]
         public DeviceEnrollmentPlatformRestriction MacRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets windows home sku restriction.
         /// Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsHomeSkuRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsHomeSkuRestriction")]
         public DeviceEnrollmentPlatformRestriction WindowsHomeSkuRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets windows mobile restriction.
         /// Windows mobile restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsMobileRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsMobileRestriction")]
         public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets windows restriction.
         /// Windows restrictions based on platform, platform operating system version, and device ownership
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsRestriction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsRestriction")]
         public DeviceEnrollmentPlatformRestriction WindowsRestriction { get; set; }
     
     }

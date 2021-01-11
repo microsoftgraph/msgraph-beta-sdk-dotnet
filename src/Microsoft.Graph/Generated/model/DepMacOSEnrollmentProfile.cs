@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Dep Mac OSEnrollment Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile
     {
     
@@ -34,56 +33,56 @@ namespace Microsoft.Graph
         /// Gets or sets accessibility screen disabled.
         /// Indicates if Accessibility screen is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessibilityScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessibilityScreenDisabled")]
         public bool? AccessibilityScreenDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets choose your lock screen disabled.
         /// Indicates if iCloud Documents and Desktop screen is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chooseYourLockScreenDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("chooseYourLockScreenDisabled")]
         public bool? ChooseYourLockScreenDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets file vault disabled.
         /// Indicates if file vault is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileVaultDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileVaultDisabled")]
         public bool? FileVaultDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets i cloud diagnostics disabled.
         /// Indicates if iCloud Analytics screen is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudDiagnosticsDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iCloudDiagnosticsDisabled")]
         public bool? ICloudDiagnosticsDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets i cloud storage disabled.
         /// Indicates if iCloud Documents and Desktop screen is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudStorageDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iCloudStorageDisabled")]
         public bool? ICloudStorageDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets pass code disabled.
         /// Indicates if Passcode setup pane is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passCodeDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passCodeDisabled")]
         public bool? PassCodeDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets registration disabled.
         /// Indicates if registration is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("registrationDisabled")]
         public bool? RegistrationDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets zoom disabled.
         /// Indicates if zoom setup pane is disabled
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zoomDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("zoomDisabled")]
         public bool? ZoomDisabled { get; set; }
     
     }

@@ -9,26 +9,24 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PolicyRootTokenLifetimePoliciesCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PolicyRootTokenLifetimePoliciesCollectionResponse>))]
     public class PolicyRootTokenLifetimePoliciesCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="IPolicyRootTokenLifetimePoliciesCollectionPage"/> value.
         /// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
+		[JsonPropertyName("value")]
         public IPolicyRootTokenLifetimePoliciesCollectionPage Value { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

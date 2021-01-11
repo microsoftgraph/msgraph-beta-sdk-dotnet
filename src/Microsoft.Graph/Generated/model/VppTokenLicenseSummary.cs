@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VppTokenLicenseSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<VppTokenLicenseSummary>))]
     public partial class VppTokenLicenseSummary
     {
         /// <summary>
@@ -34,47 +32,47 @@ namespace Microsoft.Graph
         /// Gets or sets appleId.
         /// The Apple Id associated with the given Apple Volume Purchase Program Token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appleId")]
         public string AppleId { get; set; }
     
         /// <summary>
         /// Gets or sets availableLicenseCount.
         /// The number of VPP licenses available.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availableLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availableLicenseCount")]
         public Int32? AvailableLicenseCount { get; set; }
     
         /// <summary>
         /// Gets or sets organizationName.
         /// The organization associated with the Apple Volume Purchase Program Token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizationName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("organizationName")]
         public string OrganizationName { get; set; }
     
         /// <summary>
         /// Gets or sets usedLicenseCount.
         /// The number of VPP licenses in use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usedLicenseCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usedLicenseCount")]
         public Int32? UsedLicenseCount { get; set; }
     
         /// <summary>
         /// Gets or sets vppTokenId.
         /// Identifier of the VPP token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokenId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vppTokenId")]
         public string VppTokenId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

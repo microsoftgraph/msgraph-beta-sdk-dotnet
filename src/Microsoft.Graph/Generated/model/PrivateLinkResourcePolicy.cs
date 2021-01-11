@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Private Link Resource Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PrivateLinkResourcePolicy : Entity
     {
     
@@ -33,13 +32,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets external private link id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalPrivateLinkId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalPrivateLinkId")]
         public string ExternalPrivateLinkId { get; set; }
     
         /// <summary>
         /// Gets or sets tenant approvals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantApprovals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantApprovals")]
         public IEnumerable<TenantApprovals> TenantApprovals { get; set; }
     
     }

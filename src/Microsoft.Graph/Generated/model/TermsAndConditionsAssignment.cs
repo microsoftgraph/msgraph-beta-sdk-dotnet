@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Terms And Conditions Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class TermsAndConditionsAssignment : Entity
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets target.
         /// Assignment target that the T&amp;C policy is assigned to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

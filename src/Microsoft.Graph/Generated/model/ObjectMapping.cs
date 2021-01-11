@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ObjectMapping.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ObjectMapping>))]
     public partial class ObjectMapping
     {
         /// <summary>
@@ -34,68 +32,68 @@ namespace Microsoft.Graph
         /// Gets or sets attributeMappings.
         /// Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attributeMappings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attributeMappings")]
         public IEnumerable<AttributeMapping> AttributeMappings { get; set; }
     
         /// <summary>
         /// Gets or sets enabled.
         /// When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets flowTypes.
         /// Which flow types are enabled for this object mapping. Add creates new objects in the target directory, Update modifies existing objects, and Delete deprovisions existing users. The default is Add, Update, Delete.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flowTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("flowTypes")]
         public ObjectFlowTypes? FlowTypes { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
         /// Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metadata")]
         public IEnumerable<MetadataEntry> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Human-friendly name of the object mapping.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
         /// Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scope")]
         public Filter Scope { get; set; }
     
         /// <summary>
         /// Gets or sets sourceObjectName.
         /// Name of the object in the source directory. Must match the object name from the source directory definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceObjectName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceObjectName")]
         public string SourceObjectName { get; set; }
     
         /// <summary>
         /// Gets or sets targetObjectName.
         /// Name of the object in target directory. Must match the object name from the target directory definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetObjectName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetObjectName")]
         public string TargetObjectName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

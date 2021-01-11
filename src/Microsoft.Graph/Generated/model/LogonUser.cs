@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type LogonUser.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<LogonUser>))]
     public partial class LogonUser
     {
         /// <summary>
@@ -34,61 +32,61 @@ namespace Microsoft.Graph
         /// Gets or sets accountDomain.
         /// Domain of user account used to logon.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountDomain", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountDomain")]
         public string AccountDomain { get; set; }
     
         /// <summary>
         /// Gets or sets accountName.
         /// Account name of user account used to logon.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountName")]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets accountType.
         /// User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountType")]
         public UserAccountSecurityType? AccountType { get; set; }
     
         /// <summary>
         /// Gets or sets firstSeenDateTime.
         /// DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firstSeenDateTime")]
         public DateTimeOffset? FirstSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets lastSeenDateTime.
         /// DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSeenDateTime")]
         public DateTimeOffset? LastSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets logonId.
         /// User logon ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("logonId")]
         public string LogonId { get; set; }
     
         /// <summary>
         /// Gets or sets logonTypes.
         /// Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("logonTypes")]
         public IEnumerable<LogonType> LogonTypes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

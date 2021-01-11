@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationFormResource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class EducationFormResource : EducationResource
     {
         /// <summary>
@@ -33,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets editUrl.
         /// Teacher URL for the Form.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "editUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("editUrl")]
         public string EditUrl { get; set; }
     
         /// <summary>
         /// Gets or sets formId.
         /// Id of the Form.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "formId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("formId")]
         public string FormId { get; set; }
     
         /// <summary>
         /// Gets or sets isGroupForm.
         /// Whether the Form belongs to a class group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isGroupForm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isGroupForm")]
         public bool? IsGroupForm { get; set; }
     
         /// <summary>
         /// Gets or sets originalFormId.
         /// Original id of the Form.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalFormId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originalFormId")]
         public string OriginalFormId { get; set; }
     
         /// <summary>
         /// Gets or sets viewUrl.
         /// Student URL for the Form.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "viewUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("viewUrl")]
         public string ViewUrl { get; set; }
     
     }

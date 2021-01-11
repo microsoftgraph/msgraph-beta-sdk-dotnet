@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConfigurationManagerCollectionAssignmentTarget.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets collectionId.
         /// The collection Id that is the target of the assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collectionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("collectionId")]
         public string CollectionId { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceHealthScriptTimeSchedule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public abstract partial class DeviceHealthScriptTimeSchedule : DeviceHealthScriptRunSchedule
     {
 
@@ -26,14 +25,14 @@ namespace Microsoft.Graph
         /// Gets or sets time.
         /// At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "time", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("time")]
         public TimeOfDay Time { get; set; }
     
         /// <summary>
         /// Gets or sets useUtc.
         /// Indicate if the time is Utc or client local time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useUtc", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useUtc")]
         public bool? UseUtc { get; set; }
     
     }

@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationJobApplicationParameters.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SynchronizationJobApplicationParameters>))]
     public partial class SynchronizationJobApplicationParameters
     {
         /// <summary>
@@ -34,26 +32,26 @@ namespace Microsoft.Graph
         /// Gets or sets ruleId.
         /// The identifier of a the synchronizationRule to be applied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ruleId")]
         public string RuleId { get; set; }
     
         /// <summary>
         /// Gets or sets subjects.
         /// The identifiers of one or more objects to which a synchronizationJob is to be applied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjects", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjects")]
         public IEnumerable<SynchronizationJobSubject> Subjects { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

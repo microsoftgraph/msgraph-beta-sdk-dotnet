@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Edu Device Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class IosEduDeviceConfiguration : DeviceConfiguration
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets device certificate settings.
         /// The Trusted Root and PFX certificates for Device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCertificateSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCertificateSettings")]
         public IosEduCertificateSettings DeviceCertificateSettings { get; set; }
     
         /// <summary>
         /// Gets or sets student certificate settings.
         /// The Trusted Root and PFX certificates for Student
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "studentCertificateSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("studentCertificateSettings")]
         public IosEduCertificateSettings StudentCertificateSettings { get; set; }
     
         /// <summary>
         /// Gets or sets teacher certificate settings.
         /// The Trusted Root and PFX certificates for Teacher
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teacherCertificateSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teacherCertificateSettings")]
         public IosEduCertificateSettings TeacherCertificateSettings { get; set; }
     
     }

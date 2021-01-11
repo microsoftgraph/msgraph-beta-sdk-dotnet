@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MeetingParticipantInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MeetingParticipantInfo>))]
     public partial class MeetingParticipantInfo
     {
         /// <summary>
@@ -34,33 +32,33 @@ namespace Microsoft.Graph
         /// Gets or sets identity.
         /// Identity information of the participant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identity")]
         public IdentitySet Identity { get; set; }
     
         /// <summary>
         /// Gets or sets role.
         /// Specifies the participant's role in the meeting.  Possible values are attendee, presenter, and unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("role")]
         public OnlineMeetingRole? Role { get; set; }
     
         /// <summary>
         /// Gets or sets upn.
         /// User principal name of the participant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "upn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("upn")]
         public string Upn { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

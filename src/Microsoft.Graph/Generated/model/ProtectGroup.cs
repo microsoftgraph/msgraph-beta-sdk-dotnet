@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ProtectGroup.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ProtectGroup : LabelActionBase
     {
         /// <summary>
@@ -32,19 +31,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets allowEmailFromGuestUsers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowEmailFromGuestUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowEmailFromGuestUsers")]
         public bool? AllowEmailFromGuestUsers { get; set; }
     
         /// <summary>
         /// Gets or sets allowGuestUsers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowGuestUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowGuestUsers")]
         public bool? AllowGuestUsers { get; set; }
     
         /// <summary>
         /// Gets or sets privacy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("privacy")]
         public GroupPrivacy? Privacy { get; set; }
     
     }

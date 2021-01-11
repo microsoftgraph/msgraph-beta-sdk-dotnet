@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mailbox Usage Detail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MailboxUsageDetail : Entity
     {
     
@@ -33,91 +32,91 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets created date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDate")]
         public Date CreatedDate { get; set; }
     
         /// <summary>
         /// Gets or sets deleted date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedDate")]
         public Date DeletedDate { get; set; }
     
         /// <summary>
         /// Gets or sets deleted item count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItemCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedItemCount")]
         public Int64? DeletedItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets deleted item size in bytes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItemSizeInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedItemSizeInBytes")]
         public Int64? DeletedItemSizeInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets issue warning quota in bytes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueWarningQuotaInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issueWarningQuotaInBytes")]
         public Int64? IssueWarningQuotaInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets item count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemCount")]
         public Int64? ItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivityDate")]
         public Date LastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets prohibit send quota in bytes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prohibitSendQuotaInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("prohibitSendQuotaInBytes")]
         public Int64? ProhibitSendQuotaInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets prohibit send receive quota in bytes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prohibitSendReceiveQuotaInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("prohibitSendReceiveQuotaInBytes")]
         public Int64? ProhibitSendReceiveQuotaInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets storage used in bytes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageUsedInBytes")]
         public Int64? StorageUsedInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

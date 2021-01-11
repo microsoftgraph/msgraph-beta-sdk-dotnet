@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConfigurationManagerClientHealthState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConfigurationManagerClientHealthState>))]
     public partial class ConfigurationManagerClientHealthState
     {
         /// <summary>
@@ -34,33 +32,33 @@ namespace Microsoft.Graph
         /// Gets or sets errorCode.
         /// Error code for failed state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets lastSyncDateTime.
         /// Datetime for last sync with configuration manager management point.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ConfigurationManagerClientState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

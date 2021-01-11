@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationSynchronizationCustomization.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<EducationSynchronizationCustomization>))]
     public partial class EducationSynchronizationCustomization
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets allowDisplayNameUpdate.
         /// Indicates whether the display name of the resource can be overwritten by the sync.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDisplayNameUpdate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowDisplayNameUpdate")]
         public bool? AllowDisplayNameUpdate { get; set; }
     
         /// <summary>
         /// Gets or sets isSyncDeferred.
         /// Indicates whether synchronization of the parent entity is deferred to a later date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSyncDeferred", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSyncDeferred")]
         public bool? IsSyncDeferred { get; set; }
     
         /// <summary>
         /// Gets or sets optionalPropertiesToSync.
         /// The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "optionalPropertiesToSync", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("optionalPropertiesToSync")]
         public IEnumerable<string> OptionalPropertiesToSync { get; set; }
     
         /// <summary>
         /// Gets or sets synchronizationStartDate.
         /// The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "synchronizationStartDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("synchronizationStartDate")]
         public DateTimeOffset? SynchronizationStartDate { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

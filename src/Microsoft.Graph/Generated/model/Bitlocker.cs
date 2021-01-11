@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Bitlocker.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Bitlocker : Entity
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets recovery keys.
         /// The recovery keys associated with the bitlocker entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryKeys", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recoveryKeys")]
         public IBitlockerRecoveryKeysCollectionPage RecoveryKeys { get; set; }
     
     }

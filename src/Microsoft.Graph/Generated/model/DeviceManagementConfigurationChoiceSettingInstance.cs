@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationChoiceSettingInstance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementConfigurationChoiceSettingInstance : DeviceManagementConfigurationSettingInstance
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets choiceSettingValue.
         /// Choice setting value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "choiceSettingValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("choiceSettingValue")]
         public DeviceManagementConfigurationChoiceSettingValue ChoiceSettingValue { get; set; }
     
     }

@@ -12,20 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EncryptContent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public abstract partial class EncryptContent : LabelActionBase
     {
 
         /// <summary>
         /// Gets or sets encryptWith.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptWith", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptWith")]
         public EncryptWith? EncryptWith { get; set; }
     
     }

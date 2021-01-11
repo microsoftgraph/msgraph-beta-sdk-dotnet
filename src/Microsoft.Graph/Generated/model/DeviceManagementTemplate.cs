@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Template.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementTemplate : Entity
     {
     
@@ -34,84 +33,84 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// The template's description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The template's display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets intent count.
         /// Number of Intents created from this template.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intentCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intentCount")]
         public Int32? IntentCount { get; set; }
     
         /// <summary>
         /// Gets or sets is deprecated.
         /// The template is deprecated or not. Intents cannot be created from a deprecated template.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeprecated", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeprecated")]
         public bool? IsDeprecated { get; set; }
     
         /// <summary>
         /// Gets or sets platform type.
         /// The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platformType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platformType")]
         public PolicyPlatformType? PlatformType { get; set; }
     
         /// <summary>
         /// Gets or sets published date time.
         /// When the template was published
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedDateTime")]
         public DateTimeOffset? PublishedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets template subtype.
         /// The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateSubtype", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateSubtype")]
         public DeviceManagementTemplateSubtype? TemplateSubtype { get; set; }
     
         /// <summary>
         /// Gets or sets template type.
         /// The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateType")]
         public DeviceManagementTemplateType? TemplateType { get; set; }
     
         /// <summary>
         /// Gets or sets version info.
         /// The template's version information
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "versionInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("versionInfo")]
         public string VersionInfo { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
         /// Collection of setting categories within the template
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("categories")]
         public IDeviceManagementTemplateCategoriesCollectionPage Categories { get; set; }
     
         /// <summary>
         /// Gets or sets migratable to.
         /// Collection of templates this template can migrate to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migratableTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("migratableTo")]
         public IDeviceManagementTemplateMigratableToCollectionPage MigratableTo { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// Collection of all settings this template has
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public IDeviceManagementTemplateSettingsCollectionPage Settings { get; set; }
     
     }

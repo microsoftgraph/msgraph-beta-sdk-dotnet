@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeliveryOptimizationGroupIdCustom.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeliveryOptimizationGroupIdCustom : DeliveryOptimizationGroupIdSource
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupIdCustom.
         /// Specifies an arbitrary group ID that the device belongs to
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupIdCustom", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupIdCustom")]
         public string GroupIdCustom { get; set; }
     
     }

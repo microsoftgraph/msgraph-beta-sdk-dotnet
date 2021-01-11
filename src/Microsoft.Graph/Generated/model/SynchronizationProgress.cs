@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationProgress.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SynchronizationProgress>))]
     public partial class SynchronizationProgress
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets completedUnits.
         /// The numerator of a progress ratio; the number of units of changes already processed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedUnits", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedUnits")]
         public Int64? CompletedUnits { get; set; }
     
         /// <summary>
         /// Gets or sets progressObservationDateTime.
         /// The time of a progress observation as an offset in minutes from UTC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "progressObservationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("progressObservationDateTime")]
         public DateTimeOffset? ProgressObservationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets totalUnits.
         /// The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalUnits", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalUnits")]
         public Int64? TotalUnits { get; set; }
     
         /// <summary>
         /// Gets or sets units.
         /// An optional description of the units.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "units", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("units")]
         public string Units { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

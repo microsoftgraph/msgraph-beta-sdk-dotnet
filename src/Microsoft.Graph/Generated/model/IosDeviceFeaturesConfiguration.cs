@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Device Features Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     
@@ -34,91 +33,91 @@ namespace Microsoft.Graph
         /// Gets or sets asset tag template.
         /// Asset tag information for the device, displayed on the login window and lock screen.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assetTagTemplate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assetTagTemplate")]
         public string AssetTagTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets content filter settings.
         /// Gets or sets iOS Web Content Filter settings, supervised mode only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentFilterSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentFilterSettings")]
         public IosWebContentFilterBase ContentFilterSettings { get; set; }
     
         /// <summary>
         /// Gets or sets home screen dock icons.
         /// A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeScreenDockIcons", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("homeScreenDockIcons")]
         public IEnumerable<IosHomeScreenItem> HomeScreenDockIcons { get; set; }
     
         /// <summary>
         /// Gets or sets home screen pages.
         /// A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeScreenPages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("homeScreenPages")]
         public IEnumerable<IosHomeScreenPage> HomeScreenPages { get; set; }
     
         /// <summary>
         /// Gets or sets ios single sign on extension.
         /// Gets or sets a single sign-on extension profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosSingleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iosSingleSignOnExtension")]
         public IosSingleSignOnExtension IosSingleSignOnExtension { get; set; }
     
         /// <summary>
         /// Gets or sets lock screen footnote.
         /// A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lockScreenFootnote", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lockScreenFootnote")]
         public string LockScreenFootnote { get; set; }
     
         /// <summary>
         /// Gets or sets notification settings.
         /// Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationSettings")]
         public IEnumerable<IosNotificationSettings> NotificationSettings { get; set; }
     
         /// <summary>
         /// Gets or sets single sign on extension.
         /// Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtension", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleSignOnExtension")]
         public SingleSignOnExtension SingleSignOnExtension { get; set; }
     
         /// <summary>
         /// Gets or sets single sign on settings.
         /// The Kerberos login settings that enable apps on receiving devices to authenticate smoothly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleSignOnSettings")]
         public IosSingleSignOnSettings SingleSignOnSettings { get; set; }
     
         /// <summary>
         /// Gets or sets wallpaper display location.
         /// A wallpaper display location specifier. Possible values are: notConfigured, lockScreen, homeScreen, lockAndHomeScreens.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wallpaperDisplayLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wallpaperDisplayLocation")]
         public IosWallpaperDisplayLocation? WallpaperDisplayLocation { get; set; }
     
         /// <summary>
         /// Gets or sets wallpaper image.
         /// A wallpaper image must be in either PNG or JPEG format. It requires a supervised device with iOS 8 or later version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wallpaperImage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wallpaperImage")]
         public MimeContent WallpaperImage { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.
         /// Identity Certificate for the renewal of Kerberos ticket used in single sign-on settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificateForClientAuthentication", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificateForClientAuthentication")]
         public IosCertificateProfileBase IdentityCertificateForClientAuthentication { get; set; }
     
         /// <summary>
         /// Gets or sets single sign on extension pkinit certificate.
         /// PKINIT Certificate for the authentication with single sign-on extension settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnExtensionPkinitCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleSignOnExtensionPkinitCertificate")]
         public IosCertificateProfileBase SingleSignOnExtensionPkinitCertificate { get; set; }
     
     }

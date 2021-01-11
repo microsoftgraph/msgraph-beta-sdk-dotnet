@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BitLockerSystemDrivePolicy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BitLockerSystemDrivePolicy>))]
     public partial class BitLockerSystemDrivePolicy
     {
         /// <summary>
@@ -34,96 +32,96 @@ namespace Microsoft.Graph
         /// Gets or sets encryptionMethod.
         /// Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionMethod")]
         public BitLockerEncryptionMethod? EncryptionMethod { get; set; }
     
         /// <summary>
         /// Gets or sets minimumPinLength.
         /// Indicates the minimum length of startup pin. Valid values 4 to 20
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumPinLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumPinLength")]
         public Int32? MinimumPinLength { get; set; }
     
         /// <summary>
         /// Gets or sets prebootRecoveryEnableMessageAndUrl.
         /// Enable pre-boot recovery message and Url. If requireStartupAuthentication is false, this value does not affect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prebootRecoveryEnableMessageAndUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("prebootRecoveryEnableMessageAndUrl")]
         public bool? PrebootRecoveryEnableMessageAndUrl { get; set; }
     
         /// <summary>
         /// Gets or sets prebootRecoveryMessage.
         /// Defines a custom recovery message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prebootRecoveryMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("prebootRecoveryMessage")]
         public string PrebootRecoveryMessage { get; set; }
     
         /// <summary>
         /// Gets or sets prebootRecoveryUrl.
         /// Defines a custom recovery URL.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prebootRecoveryUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("prebootRecoveryUrl")]
         public string PrebootRecoveryUrl { get; set; }
     
         /// <summary>
         /// Gets or sets recoveryOptions.
         /// Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recoveryOptions")]
         public BitLockerRecoveryOptions RecoveryOptions { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationBlockWithoutTpmChip.
         /// Indicates whether to allow BitLocker without a compatible TPM (requires a password or a startup key on a USB flash drive).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationBlockWithoutTpmChip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupAuthenticationBlockWithoutTpmChip")]
         public bool? StartupAuthenticationBlockWithoutTpmChip { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationRequired.
         /// Require additional authentication at startup.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupAuthenticationRequired")]
         public bool? StartupAuthenticationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmKeyUsage.
         /// Indicates if TPM startup key is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmKeyUsage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupAuthenticationTpmKeyUsage")]
         public ConfigurationUsage? StartupAuthenticationTpmKeyUsage { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmPinAndKeyUsage.
         /// Indicates if TPM startup pin key and key are allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmPinAndKeyUsage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupAuthenticationTpmPinAndKeyUsage")]
         public ConfigurationUsage? StartupAuthenticationTpmPinAndKeyUsage { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmPinUsage.
         /// Indicates if TPM startup pin is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmPinUsage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupAuthenticationTpmPinUsage")]
         public ConfigurationUsage? StartupAuthenticationTpmPinUsage { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmUsage.
         /// Indicates if TPM startup is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmUsage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupAuthenticationTpmUsage")]
         public ConfigurationUsage? StartupAuthenticationTpmUsage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

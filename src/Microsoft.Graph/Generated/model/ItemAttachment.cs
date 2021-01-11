@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Attachment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ItemAttachment : Attachment
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets item.
         /// The attached contact, message or event. Navigation property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "item", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("item")]
         public OutlookItem Item { get; set; }
     
     }

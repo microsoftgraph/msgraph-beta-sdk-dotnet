@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Store App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsStoreApp : MobileApp
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets app store url.
         /// The Windows app store URL.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appStoreUrl")]
         public string AppStoreUrl { get; set; }
     
     }

@@ -9,25 +9,23 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementAuditEventsCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class DeviceManagementAuditEventsCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="IDeviceManagementAuditEventsCollectionPage"/> value.
         /// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
+		[JsonPropertyName("value")]
         public IDeviceManagementAuditEventsCollectionPage Value { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

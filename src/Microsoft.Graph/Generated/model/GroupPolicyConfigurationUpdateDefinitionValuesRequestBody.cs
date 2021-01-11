@@ -9,35 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GroupPolicyConfigurationUpdateDefinitionValuesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class GroupPolicyConfigurationUpdateDefinitionValuesRequestBody
     {
     
         /// <summary>
         /// Gets or sets Added.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "added", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("added")]
         public IEnumerable<GroupPolicyDefinitionValue> Added { get; set; }
     
         /// <summary>
         /// Gets or sets Updated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updated")]
         public IEnumerable<GroupPolicyDefinitionValue> Updated { get; set; }
     
         /// <summary>
         /// Gets or sets DeletedIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedIds")]
         public IEnumerable<string> DeletedIds { get; set; }
     
     }

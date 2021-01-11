@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceOverrideComplianceStateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ManagedDeviceOverrideComplianceStateRequestBody
     {
     
         /// <summary>
         /// Gets or sets ComplianceState.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("complianceState")]
         public AdministratorConfiguredDeviceComplianceState ComplianceState { get; set; }
     
         /// <summary>
         /// Gets or sets RemediationUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remediationUrl")]
         public string RemediationUrl { get; set; }
     
     }

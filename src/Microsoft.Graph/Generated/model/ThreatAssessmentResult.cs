@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Threat Assessment Result.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ThreatAssessmentResult : Entity
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets message.
         /// The result message for each threat assessment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets result type.
         /// The threat assessment result type. Possible values are: checkPolicy, rescan.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resultType")]
         public ThreatAssessmentResultType? ResultType { get; set; }
     
     }

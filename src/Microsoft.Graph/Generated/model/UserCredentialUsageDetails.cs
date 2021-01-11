@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Credential Usage Details.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class UserCredentialUsageDetails : Entity
     {
     
@@ -34,49 +33,49 @@ namespace Microsoft.Graph
         /// Gets or sets auth method.
         /// Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobileCall (supported only in registration).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authMethod")]
         public UsageAuthMethod? AuthMethod { get; set; }
     
         /// <summary>
         /// Gets or sets event date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets failure reason.
         /// Provides the failure reason for the corresponding reset or registration workflow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failureReason")]
         public string FailureReason { get; set; }
     
         /// <summary>
         /// Gets or sets feature.
         /// Possible values are: registration and reset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feature", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feature")]
         public FeatureType? Feature { get; set; }
     
         /// <summary>
         /// Gets or sets is success.
         /// Indicates success or failure of the workflow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSuccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSuccess")]
         public bool? IsSuccess { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.
         /// User name of the user performing the reset or registration workflow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// User principal name of the user performing the reset or registration workflow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

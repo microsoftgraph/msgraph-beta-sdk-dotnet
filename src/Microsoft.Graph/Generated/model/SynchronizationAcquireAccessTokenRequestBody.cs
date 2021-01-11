@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationAcquireAccessTokenRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SynchronizationAcquireAccessTokenRequestBody
     {
     
         /// <summary>
         /// Gets or sets Credentials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentials", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("credentials")]
         public IEnumerable<SynchronizationSecretKeyStringValuePair> Credentials { get; set; }
     
     }

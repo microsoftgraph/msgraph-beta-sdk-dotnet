@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Abstract Complex Setting Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementAbstractComplexSettingDefinition : DeviceManagementSettingDefinition
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets implementations.
         /// List of definition IDs for all possible implementations of this abstract complex setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "implementations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("implementations")]
         public IEnumerable<string> Implementations { get; set; }
     
     }

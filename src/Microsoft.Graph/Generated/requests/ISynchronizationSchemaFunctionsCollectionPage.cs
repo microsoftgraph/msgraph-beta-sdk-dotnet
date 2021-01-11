@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISynchronizationSchemaFunctionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SynchronizationSchemaFunctionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SynchronizationSchemaFunctionsCollectionPage>))]
     public interface ISynchronizationSchemaFunctionsCollectionPage : ICollectionPage<AttributeMappingFunctionSchema>
     {
         /// <summary>

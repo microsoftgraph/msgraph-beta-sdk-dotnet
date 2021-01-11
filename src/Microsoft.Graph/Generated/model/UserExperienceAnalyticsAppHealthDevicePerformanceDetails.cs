@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics App Health Device Performance Details.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets app display name.
         /// The friendly name of the application for which the event occurred.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device display name.
         /// The name of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// The id of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets event date time.
         /// The time the event occurred.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets event type.
         /// The type of the event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventType")]
         public string EventType { get; set; }
     
     }

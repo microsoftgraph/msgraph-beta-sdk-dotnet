@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SharedAppleDeviceUser.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SharedAppleDeviceUser>))]
     public partial class SharedAppleDeviceUser
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets dataQuota.
         /// Data quota
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataQuota", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataQuota")]
         public Int64? DataQuota { get; set; }
     
         /// <summary>
         /// Gets or sets dataToSync.
         /// Data to sync
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataToSync", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataToSync")]
         public bool? DataToSync { get; set; }
     
         /// <summary>
         /// Gets or sets dataUsed.
         /// Data quota
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataUsed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataUsed")]
         public Int64? DataUsed { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// User name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

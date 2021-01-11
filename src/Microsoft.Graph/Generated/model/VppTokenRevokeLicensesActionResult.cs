@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VppTokenRevokeLicensesActionResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class VppTokenRevokeLicensesActionResult : VppTokenActionResult
     {
         /// <summary>
@@ -33,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets actionFailureReason.
         /// The reason for the revoke licenses action failure. Possible values are: none, appleFailure, internalError, expiredVppToken, expiredApplePushNotificationCertificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionFailureReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionFailureReason")]
         public VppTokenActionFailureReason? ActionFailureReason { get; set; }
     
         /// <summary>
         /// Gets or sets failedLicensesCount.
         /// A count of the number of licenses that failed to revoke.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedLicensesCount")]
         public Int32? FailedLicensesCount { get; set; }
     
         /// <summary>
         /// Gets or sets totalLicensesCount.
         /// A count of the number of licenses that were attempted to revoke.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalLicensesCount")]
         public Int32? TotalLicensesCount { get; set; }
     
     }

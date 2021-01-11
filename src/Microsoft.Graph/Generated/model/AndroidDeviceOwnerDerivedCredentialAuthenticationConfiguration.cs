@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Owner Derived Credential Authentication Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration : DeviceConfiguration
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets derived credential settings.
         /// Tenant level settings for the Derived Credentials to be used for authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("derivedCredentialSettings")]
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
     }

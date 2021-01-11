@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessReviewRecurrenceSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessReviewRecurrenceSettings>))]
     public partial class AccessReviewRecurrenceSettings
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets durationInDays.
         /// The duration in days for recurrence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("durationInDays")]
         public Int32? DurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceCount.
         /// The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrenceCount")]
         public Int32? RecurrenceCount { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceEndType.
         /// How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceEndType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrenceEndType")]
         public string RecurrenceEndType { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceType.
         /// The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrenceType")]
         public string RecurrenceType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

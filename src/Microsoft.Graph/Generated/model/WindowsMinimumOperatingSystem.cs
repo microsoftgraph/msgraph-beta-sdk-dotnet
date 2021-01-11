@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsMinimumOperatingSystem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<WindowsMinimumOperatingSystem>))]
     public partial class WindowsMinimumOperatingSystem
     {
         /// <summary>
@@ -34,75 +32,75 @@ namespace Microsoft.Graph
         /// Gets or sets v10_0.
         /// Windows version 10.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_0")]
         public bool? V10_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_1607.
         /// Windows 10 1607 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1607", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_1607")]
         public bool? V10_1607 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_1703.
         /// Windows 10 1703 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1703", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_1703")]
         public bool? V10_1703 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_1709.
         /// Windows 10 1709 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1709", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_1709")]
         public bool? V10_1709 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_1803.
         /// Windows 10 1803 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1803", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_1803")]
         public bool? V10_1803 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_1809.
         /// Windows 10 1809 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1809", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_1809")]
         public bool? V10_1809 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_1903.
         /// Windows 10 1903 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_1903", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_1903")]
         public bool? V10_1903 { get; set; }
     
         /// <summary>
         /// Gets or sets v8_0.
         /// Windows version 8.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v8_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v8_0")]
         public bool? V8_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v8_1.
         /// Windows version 8.1 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v8_1", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v8_1")]
         public bool? V8_1 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

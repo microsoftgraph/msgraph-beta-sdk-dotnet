@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceConfigurationGetTargetedUsersAndDevicesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceConfigurationGetTargetedUsersAndDevicesRequestBody
     {
     
         /// <summary>
         /// Gets or sets DeviceConfigurationIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceConfigurationIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceConfigurationIds")]
         public IEnumerable<string> DeviceConfigurationIds { get; set; }
     
     }

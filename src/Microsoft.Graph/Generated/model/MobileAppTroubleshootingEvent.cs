@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Troubleshooting Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets application id.
         /// Intune application identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationId")]
         public string ApplicationId { get; set; }
     
         /// <summary>
         /// Gets or sets history.
         /// Intune Mobile Application Troubleshooting History Item
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "history", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("history")]
         public IEnumerable<MobileAppTroubleshootingHistoryItem> History { get; set; }
     
         /// <summary>
         /// Gets or sets managed device identifier.
         /// Device identifier created or collected by Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceIdentifier")]
         public string ManagedDeviceIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// Identifier for the user that tried to enroll the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets app log collection requests.
         /// The collection property of AppLogUploadRequest.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLogCollectionRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appLogCollectionRequests")]
         public IMobileAppTroubleshootingEventAppLogCollectionRequestsCollectionPage AppLogCollectionRequests { get; set; }
     
     }

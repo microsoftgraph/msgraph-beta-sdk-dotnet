@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android For Work Trusted Root Certificate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidForWorkTrustedRootCertificate : DeviceConfiguration
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets cert file name.
         /// File name to display in UI.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("certFileName")]
         public string CertFileName { get; set; }
     
         /// <summary>
         /// Gets or sets trusted root certificate.
         /// Trusted Root Certificate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trustedRootCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trustedRootCertificate")]
         public byte[] TrustedRootCertificate { get; set; }
     
     }

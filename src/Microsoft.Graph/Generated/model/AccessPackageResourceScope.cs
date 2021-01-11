@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Resource Scope.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AccessPackageResourceScope : Entity
     {
     
@@ -34,56 +33,56 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// The description of the scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is root scope.
         /// True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRootScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRootScope")]
         public bool? IsRootScope { get; set; }
     
         /// <summary>
         /// Gets or sets origin id.
         /// The unique identifier for the scope in the resource as defined in the origin system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originId")]
         public string OriginId { get; set; }
     
         /// <summary>
         /// Gets or sets origin system.
         /// The origin system for the scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originSystem")]
         public string OriginSystem { get; set; }
     
         /// <summary>
         /// Gets or sets role origin id.
         /// The origin system for the role, if different.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleOriginId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleOriginId")]
         public string RoleOriginId { get; set; }
     
         /// <summary>
         /// Gets or sets url.
         /// A resource locator for the scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResource")]
         public AccessPackageResource AccessPackageResource { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Supersedence.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MobileAppSupersedence : MobileAppRelationship
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets superseded app count.
         /// The total number of apps directly or indirectly superseded by the child app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supersededAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supersededAppCount")]
         public Int32? SupersededAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets supersedence type.
         /// The supersedence relationship type between the parent and child apps. Possible values are: update, replace.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supersedenceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supersedenceType")]
         public MobileAppSupersedenceType? SupersedenceType { get; set; }
     
         /// <summary>
         /// Gets or sets superseding app count.
         /// The total number of apps directly or indirectly superseding the parent app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supersedingAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supersedingAppCount")]
         public Int32? SupersedingAppCount { get; set; }
     
     }

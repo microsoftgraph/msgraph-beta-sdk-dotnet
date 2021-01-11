@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Host Security Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class HostSecurityProfile : Entity
     {
     
@@ -33,109 +32,109 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets azure subscription id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureSubscriptionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureSubscriptionId")]
         public string AzureSubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets azure tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureTenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureTenantId")]
         public string AzureTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets first seen date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "firstSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("firstSeenDateTime")]
         public DateTimeOffset? FirstSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets fqdn.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fqdn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fqdn")]
         public string Fqdn { get; set; }
     
         /// <summary>
         /// Gets or sets is azure ad joined.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAzureAdJoined", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAzureAdJoined")]
         public bool? IsAzureAdJoined { get; set; }
     
         /// <summary>
         /// Gets or sets is azure ad registered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isAzureAdRegistered", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isAzureAdRegistered")]
         public bool? IsAzureAdRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets is hybrid azure domain joined.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHybridAzureDomainJoined", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isHybridAzureDomainJoined")]
         public bool? IsHybridAzureDomainJoined { get; set; }
     
         /// <summary>
         /// Gets or sets last seen date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSeenDateTime")]
         public DateTimeOffset? LastSeenDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets logon users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "logonUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("logonUsers")]
         public IEnumerable<LogonUser> LogonUsers { get; set; }
     
         /// <summary>
         /// Gets or sets net bios name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "netBiosName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("netBiosName")]
         public string NetBiosName { get; set; }
     
         /// <summary>
         /// Gets or sets network interfaces.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkInterfaces", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkInterfaces")]
         public IEnumerable<NetworkInterface> NetworkInterfaces { get; set; }
     
         /// <summary>
         /// Gets or sets os.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "os", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("os")]
         public string Os { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets parent host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentHost", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentHost")]
         public string ParentHost { get; set; }
     
         /// <summary>
         /// Gets or sets related host ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relatedHostIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("relatedHostIds")]
         public IEnumerable<string> RelatedHostIds { get; set; }
     
         /// <summary>
         /// Gets or sets risk score.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("riskScore")]
         public string RiskScore { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets vendor information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendorInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendorInformation")]
         public SecurityVendorInformation VendorInformation { get; set; }
     
     }

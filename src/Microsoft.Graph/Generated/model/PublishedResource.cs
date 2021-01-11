@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Published Resource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PublishedResource : Entity
     {
     
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// Display Name of the publishedResource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets publishing type.
         /// Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishingType")]
         public OnPremisesPublishingType? PublishingType { get; set; }
     
         /// <summary>
         /// Gets or sets resource name.
         /// Name of the publishedResource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceName")]
         public string ResourceName { get; set; }
     
         /// <summary>
         /// Gets or sets agent groups.
         /// List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agentGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agentGroups")]
         public IPublishedResourceAgentGroupsCollectionPage AgentGroups { get; set; }
     
     }

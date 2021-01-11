@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSCustom App Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MacOSCustomAppConfiguration : DeviceConfiguration
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets bundle id.
         /// Bundle id for targeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bundleId")]
         public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets configuration xml.
         /// Configuration xml. (UTF8 encoded byte array)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationXml", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationXml")]
         public byte[] ConfigurationXml { get; set; }
     
         /// <summary>
         /// Gets or sets file name.
         /// Configuration file name (.plist
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileName")]
         public string FileName { get; set; }
     
     }

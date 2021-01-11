@@ -9,41 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrivilegedRoleSelfActivateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PrivilegedRoleSelfActivateRequestBody
     {
     
         /// <summary>
         /// Gets or sets Reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public string Reason { get; set; }
     
         /// <summary>
         /// Gets or sets Duration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("duration")]
         public string Duration { get; set; }
     
         /// <summary>
         /// Gets or sets TicketNumber.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ticketNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ticketNumber")]
         public string TicketNumber { get; set; }
     
         /// <summary>
         /// Gets or sets TicketSystem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ticketSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ticketSystem")]
         public string TicketSystem { get; set; }
     
     }

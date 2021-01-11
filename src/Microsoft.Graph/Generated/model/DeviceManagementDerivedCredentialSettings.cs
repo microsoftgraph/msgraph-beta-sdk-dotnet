@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Derived Credential Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementDerivedCredentialSettings : Entity
     {
     
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// The display name for the profile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets help url.
         /// The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "helpUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("helpUrl")]
         public string HelpUrl { get; set; }
     
         /// <summary>
         /// Gets or sets issuer.
         /// The derived credential provider to use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issuer")]
         public DeviceManagementDerivedCredentialIssuer? Issuer { get; set; }
     
         /// <summary>
         /// Gets or sets notification type.
         /// The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationType")]
         public DeviceManagementDerivedCredentialNotificationType? NotificationType { get; set; }
     
     }

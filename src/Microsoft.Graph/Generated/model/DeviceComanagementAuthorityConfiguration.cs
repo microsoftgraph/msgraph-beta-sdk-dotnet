@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Comanagement Authority Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets configuration manager agent command line argument.
         /// CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationManagerAgentCommandLineArgument", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationManagerAgentCommandLineArgument")]
         public string ConfigurationManagerAgentCommandLineArgument { get; set; }
     
         /// <summary>
         /// Gets or sets install configuration manager agent.
         /// CoManagement Authority configuration InstallConfigurationManagerAgent
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installConfigurationManagerAgent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installConfigurationManagerAgent")]
         public bool? InstallConfigurationManagerAgent { get; set; }
     
         /// <summary>
         /// Gets or sets managed device authority.
         /// CoManagement Authority configuration ManagedDeviceAuthority
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceAuthority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceAuthority")]
         public Int32? ManagedDeviceAuthority { get; set; }
     
     }

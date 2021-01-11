@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Attribute Mapping Function Schema.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AttributeMappingFunctionSchema : Entity
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets parameters.
         /// Collection of function parameters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parameters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parameters")]
         public IEnumerable<AttributeMappingParameterSchema> Parameters { get; set; }
     
     }

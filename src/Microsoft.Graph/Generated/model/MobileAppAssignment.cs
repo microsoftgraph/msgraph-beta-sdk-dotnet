@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MobileAppAssignment : Entity
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets intent.
         /// The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intent")]
         public InstallIntent? Intent { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// The settings for target assignment defined by the admin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public MobileAppAssignmentSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets source.
         /// The resource type which is the source for the assignment. Possible values are: direct, policySets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("source")]
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }
     
         /// <summary>
         /// Gets or sets source id.
         /// The identifier of the source of the assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceId")]
         public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets target.
         /// The target group assignment defined by the admin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Phone81App XBundle.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsPhone81AppXBundle : WindowsPhone81AppX
     {
     
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets app xpackage information list.
         /// The list of AppX Package Information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appXPackageInformationList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appXPackageInformationList")]
         public IEnumerable<WindowsPackageInformation> AppXPackageInformationList { get; set; }
     
     }

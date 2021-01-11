@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Privileged Approval.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PrivilegedApproval : Entity
     {
     
@@ -33,72 +32,72 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets approval duration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approvalDuration")]
         public Duration ApprovalDuration { get; set; }
     
         /// <summary>
         /// Gets or sets approval state.
         /// Possible values are: pending, approved, denied, aborted, canceled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approvalState")]
         public ApprovalState? ApprovalState { get; set; }
     
         /// <summary>
         /// Gets or sets approval type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approvalType")]
         public string ApprovalType { get; set; }
     
         /// <summary>
         /// Gets or sets approver reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approverReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approverReason")]
         public string ApproverReason { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets requestor reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestorReason")]
         public string RequestorReason { get; set; }
     
         /// <summary>
         /// Gets or sets role id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleId")]
         public string RoleId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets request.
         /// Read-only. The role assignment request for this approval object
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "request", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("request")]
         public PrivilegedRoleAssignmentRequest Request { get; set; }
     
         /// <summary>
         /// Gets or sets role info.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleInfo")]
         public PrivilegedRole RoleInfo { get; set; }
     
     }

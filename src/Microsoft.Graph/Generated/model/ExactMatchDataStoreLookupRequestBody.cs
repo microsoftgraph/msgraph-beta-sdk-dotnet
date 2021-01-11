@@ -9,35 +9,34 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ExactMatchDataStoreLookupRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ExactMatchDataStoreLookupRequestBody
     {
     
         /// <summary>
         /// Gets or sets Key.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("key")]
         public string Key { get; set; }
     
         /// <summary>
         /// Gets or sets Values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "values", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("values")]
         public IEnumerable<string> Values { get; set; }
     
         /// <summary>
         /// Gets or sets ResultColumnNames.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultColumnNames", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resultColumnNames")]
         public IEnumerable<string> ResultColumnNames { get; set; }
     
     }

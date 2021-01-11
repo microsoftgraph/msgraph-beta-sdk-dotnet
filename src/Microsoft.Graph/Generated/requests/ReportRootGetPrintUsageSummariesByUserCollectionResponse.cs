@@ -10,25 +10,23 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ReportRootGetPrintUsageSummariesByUserCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class ReportRootGetPrintUsageSummariesByUserCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="IReportRootGetPrintUsageSummariesByUserCollectionPage"/> value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Required.Default)]
+        [JsonPropertyName("value")]
         public IReportRootGetPrintUsageSummariesByUserCollectionPage Value { get; set; }
         
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

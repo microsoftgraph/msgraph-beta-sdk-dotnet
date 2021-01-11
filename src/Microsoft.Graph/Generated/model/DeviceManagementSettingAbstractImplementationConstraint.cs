@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSettingAbstractImplementationConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementSettingAbstractImplementationConstraint : DeviceManagementConstraint
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets allowedAbstractImplementationDefinitionIds.
         /// List of value which means not configured for the setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedAbstractImplementationDefinitionIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedAbstractImplementationDefinitionIds")]
         public IEnumerable<string> AllowedAbstractImplementationDefinitionIds { get; set; }
     
     }

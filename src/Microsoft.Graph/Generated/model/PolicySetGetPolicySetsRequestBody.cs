@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PolicySetGetPolicySetsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PolicySetGetPolicySetsRequestBody
     {
     
         /// <summary>
         /// Gets or sets PolicySetIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policySetIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policySetIds")]
         public IEnumerable<string> PolicySetIds { get; set; }
     
     }

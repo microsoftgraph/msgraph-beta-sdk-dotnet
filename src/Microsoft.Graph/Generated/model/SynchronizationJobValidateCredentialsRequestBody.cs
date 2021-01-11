@@ -9,41 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationJobValidateCredentialsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SynchronizationJobValidateCredentialsRequestBody
     {
     
         /// <summary>
         /// Gets or sets ApplicationIdentifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationIdentifier")]
         public string ApplicationIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets TemplateId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets UseSavedCredentials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useSavedCredentials", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useSavedCredentials")]
         public bool? UseSavedCredentials { get; set; }
     
         /// <summary>
         /// Gets or sets Credentials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentials", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("credentials")]
         public IEnumerable<SynchronizationSecretKeyStringValuePair> Credentials { get; set; }
     
     }

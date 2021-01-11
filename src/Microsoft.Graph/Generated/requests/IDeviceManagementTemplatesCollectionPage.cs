@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementTemplatesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementTemplatesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementTemplatesCollectionPage>))]
     public interface IDeviceManagementTemplatesCollectionPage : ICollectionPage<DeviceManagementTemplate>
     {
         /// <summary>

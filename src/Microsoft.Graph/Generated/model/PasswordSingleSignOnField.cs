@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PasswordSingleSignOnField.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PasswordSingleSignOnField>))]
     public partial class PasswordSingleSignOnField
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets customizedLabel.
         /// Title/label override for customization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customizedLabel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customizedLabel")]
         public string CustomizedLabel { get; set; }
     
         /// <summary>
         /// Gets or sets defaultLabel.
         /// Label that would be used if no customizedLabel is provided. Read only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLabel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultLabel")]
         public string DefaultLabel { get; set; }
     
         /// <summary>
         /// Gets or sets fieldId.
         /// Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fieldId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fieldId")]
         public string FieldId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// Type of the credential. The values can be text, password.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

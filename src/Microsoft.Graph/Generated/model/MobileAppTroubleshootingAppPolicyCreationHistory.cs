@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MobileAppTroubleshootingAppPolicyCreationHistory.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MobileAppTroubleshootingAppPolicyCreationHistory : MobileAppTroubleshootingHistoryItem
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets errorCode.
         /// Error code for the failure, empty if no failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets runState.
         /// Status of the item. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runState")]
         public RunState? RunState { get; set; }
     
     }

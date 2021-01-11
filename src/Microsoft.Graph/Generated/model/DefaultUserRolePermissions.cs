@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DefaultUserRolePermissions.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DefaultUserRolePermissions>))]
     public partial class DefaultUserRolePermissions
     {
         /// <summary>
@@ -34,33 +32,33 @@ namespace Microsoft.Graph
         /// Gets or sets allowedToCreateApps.
         /// Indicates whether the default user role can create applications.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToCreateApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedToCreateApps")]
         public bool? AllowedToCreateApps { get; set; }
     
         /// <summary>
         /// Gets or sets allowedToCreateSecurityGroups.
         /// Indicates whether the default user role can create security groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToCreateSecurityGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedToCreateSecurityGroups")]
         public bool? AllowedToCreateSecurityGroups { get; set; }
     
         /// <summary>
         /// Gets or sets allowedToReadOtherUsers.
         /// Indicates whether the default user role can read other users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedToReadOtherUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedToReadOtherUsers")]
         public bool? AllowedToReadOtherUsers { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

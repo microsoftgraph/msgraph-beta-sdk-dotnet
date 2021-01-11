@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android For Work Nine Work Eas Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidForWorkNineWorkEasConfiguration : AndroidForWorkEasEmailProfileBase
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets sync calendar.
         /// Toggles syncing the calendar. If set to false the calendar is turned off on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncCalendar", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("syncCalendar")]
         public bool? SyncCalendar { get; set; }
     
         /// <summary>
         /// Gets or sets sync contacts.
         /// Toggles syncing contacts. If set to false contacts are turned off on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncContacts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("syncContacts")]
         public bool? SyncContacts { get; set; }
     
         /// <summary>
         /// Gets or sets sync tasks.
         /// Toggles syncing tasks. If set to false tasks are turned off on the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncTasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("syncTasks")]
         public bool? SyncTasks { get; set; }
     
     }

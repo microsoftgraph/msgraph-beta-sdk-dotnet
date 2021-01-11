@@ -9,41 +9,40 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PolicySetUpdateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PolicySetUpdateRequestBody
     {
     
         /// <summary>
         /// Gets or sets AddedPolicySetItems.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedPolicySetItems", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addedPolicySetItems")]
         public IEnumerable<PolicySetItem> AddedPolicySetItems { get; set; }
     
         /// <summary>
         /// Gets or sets UpdatedPolicySetItems.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updatedPolicySetItems", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updatedPolicySetItems")]
         public IEnumerable<PolicySetItem> UpdatedPolicySetItems { get; set; }
     
         /// <summary>
         /// Gets or sets DeletedPolicySetItems.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedPolicySetItems", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deletedPolicySetItems")]
         public IEnumerable<string> DeletedPolicySetItems { get; set; }
     
         /// <summary>
         /// Gets or sets Assignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IEnumerable<PolicySetAssignment> Assignments { get; set; }
     
     }

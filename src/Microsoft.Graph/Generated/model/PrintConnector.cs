@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Print Connector.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PrintConnector : Entity
     {
     
@@ -34,55 +33,55 @@ namespace Microsoft.Graph
         /// Gets or sets app version.
         /// The connector's version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appVersion")]
         public string AppVersion { get; set; }
     
         /// <summary>
         /// Gets or sets device health.
         /// The connector's device health.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceHealth", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceHealth")]
         public DeviceHealth DeviceHealth { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name of the connector.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets fully qualified domain name.
         /// The connector machine's hostname.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fullyQualifiedDomainName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fullyQualifiedDomainName")]
         public string FullyQualifiedDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets location.
         /// The physical and/or organizational location of the connector.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("location")]
         public PrinterLocation Location { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
         /// The connector machine's operating system version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets registered date time.
         /// The DateTimeOffset when the connector was registered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("registeredDateTime")]
         public DateTimeOffset? RegisteredDateTime { get; set; }
     
     }

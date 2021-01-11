@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Exact Match Data Store.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ExactMatchDataStore : Entity
     {
     
@@ -33,31 +32,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets columns.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columns", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("columns")]
         public IEnumerable<ExactDataMatchStoreColumn> Columns { get; set; }
     
         /// <summary>
         /// Gets or sets data last updated date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataLastUpdatedDateTime")]
         public DateTimeOffset? DataLastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets sessions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sessions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sessions")]
         public IExactMatchDataStoreSessionsCollectionPage Sessions { get; set; }
     
     }

@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosVppAppRevokeLicensesActionResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IosVppAppRevokeLicensesActionResult>))]
     public partial class IosVppAppRevokeLicensesActionResult
     {
         /// <summary>
@@ -34,75 +32,75 @@ namespace Microsoft.Graph
         /// Gets or sets actionFailureReason.
         /// The reason for the revoke licenses action failure. Possible values are: none, appleFailure, internalError, expiredVppToken, expiredApplePushNotificationCertificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionFailureReason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionFailureReason")]
         public VppTokenActionFailureReason? ActionFailureReason { get; set; }
     
         /// <summary>
         /// Gets or sets actionName.
         /// Action name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionName")]
         public string ActionName { get; set; }
     
         /// <summary>
         /// Gets or sets actionState.
         /// State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionState")]
         public ActionState? ActionState { get; set; }
     
         /// <summary>
         /// Gets or sets failedLicensesCount.
         /// A count of the number of licenses for which revoke failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedLicensesCount")]
         public Int32? FailedLicensesCount { get; set; }
     
         /// <summary>
         /// Gets or sets lastUpdatedDateTime.
         /// Time the action state was last updated
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managedDeviceId.
         /// DeviceId associated with the action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
         /// Time the action was initiated
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets totalLicensesCount.
         /// A count of the number of licenses for which revoke was attempted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLicensesCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalLicensesCount")]
         public Int32? TotalLicensesCount { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
         /// UserId associated with the action.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

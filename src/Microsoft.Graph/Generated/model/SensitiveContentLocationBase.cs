@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SensitiveContentLocationBase.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SensitiveContentLocationBase>))]
     public partial class SensitiveContentLocationBase
     {
         /// <summary>
@@ -33,37 +31,37 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets evidences.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evidences", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evidences")]
         public IEnumerable<SensitiveContentEvidence> Evidences { get; set; }
     
         /// <summary>
         /// Gets or sets idMatch.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "idMatch", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("idMatch")]
         public string IdMatch { get; set; }
     
         /// <summary>
         /// Gets or sets length.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "length", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("length")]
         public Int32? Length { get; set; }
     
         /// <summary>
         /// Gets or sets offset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offset", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("offset")]
         public Int32? Offset { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

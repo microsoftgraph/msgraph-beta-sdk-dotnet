@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IInformationProtectionLabelEvaluateClassificationResultsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<InformationProtectionLabelEvaluateClassificationResultsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<InformationProtectionLabelEvaluateClassificationResultsCollectionPage>))]
     public interface IInformationProtectionLabelEvaluateClassificationResultsCollectionPage : ICollectionPage<InformationProtectionAction>
     {
         /// <summary>

@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBody
     {
     
         /// <summary>
         /// Gets or sets ParentUri.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentUri", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentUri")]
         public string ParentUri { get; set; }
     
     }

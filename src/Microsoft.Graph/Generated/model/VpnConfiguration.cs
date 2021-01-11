@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Vpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class VpnConfiguration : DeviceConfiguration
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets authentication method.
         /// Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethod")]
         public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets connection name.
         /// Connection name displayed to the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionName")]
         public string ConnectionName { get; set; }
     
         /// <summary>
         /// Gets or sets realm.
         /// Realm when connection type is set to Pulse Secure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("realm")]
         public string Realm { get; set; }
     
         /// <summary>
         /// Gets or sets role.
         /// Role when connection type is set to Pulse Secure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("role")]
         public string Role { get; set; }
     
         /// <summary>
         /// Gets or sets servers.
         /// List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servers")]
         public IEnumerable<VpnServer> Servers { get; set; }
     
     }

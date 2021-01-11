@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosVpnSecurityAssociationParameters.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IosVpnSecurityAssociationParameters>))]
     public partial class IosVpnSecurityAssociationParameters
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets lifetimeInMinutes.
         /// Lifetime (minutes)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lifetimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lifetimeInMinutes")]
         public Int32? LifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets securityDiffieHellmanGroup.
         /// Diffie-Hellman Group
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityDiffieHellmanGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityDiffieHellmanGroup")]
         public Int32? SecurityDiffieHellmanGroup { get; set; }
     
         /// <summary>
         /// Gets or sets securityEncryptionAlgorithm.
         /// Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityEncryptionAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityEncryptionAlgorithm")]
         public VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets securityIntegrityAlgorithm.
         /// Integrity algorithm. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityIntegrityAlgorithm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("securityIntegrityAlgorithm")]
         public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

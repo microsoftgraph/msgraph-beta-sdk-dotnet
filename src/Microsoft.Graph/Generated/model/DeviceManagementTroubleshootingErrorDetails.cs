@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementTroubleshootingErrorDetails.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementTroubleshootingErrorDetails>))]
     public partial class DeviceManagementTroubleshootingErrorDetails
     {
         /// <summary>
@@ -34,47 +32,47 @@ namespace Microsoft.Graph
         /// Gets or sets context.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "context", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("context")]
         public string Context { get; set; }
     
         /// <summary>
         /// Gets or sets failure.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failure", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failure")]
         public string Failure { get; set; }
     
         /// <summary>
         /// Gets or sets failureDetails.
         /// The detailed description of what went wrong.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failureDetails")]
         public string FailureDetails { get; set; }
     
         /// <summary>
         /// Gets or sets remediation.
         /// The detailed description of how to remediate this issue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remediation")]
         public string Remediation { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
         /// Links to helpful documentation about this failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resources")]
         public IEnumerable<DeviceManagementTroubleshootingErrorResource> Resources { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

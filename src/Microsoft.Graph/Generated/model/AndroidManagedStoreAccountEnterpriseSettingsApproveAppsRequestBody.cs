@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBody
     {
     
         /// <summary>
         /// Gets or sets PackageIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("packageIds")]
         public IEnumerable<string> PackageIds { get; set; }
     
         /// <summary>
         /// Gets or sets ApproveAllPermissions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approveAllPermissions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approveAllPermissions")]
         public bool ApproveAllPermissions { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Domain Join Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsDomainJoinConfiguration : DeviceConfiguration
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets active directory domain name.
         /// Active Directory domain name to join.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeDirectoryDomainName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeDirectoryDomainName")]
         public string ActiveDirectoryDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets computer name static prefix.
         /// Fixed prefix to be used for computer name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "computerNameStaticPrefix", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("computerNameStaticPrefix")]
         public string ComputerNameStaticPrefix { get; set; }
     
         /// <summary>
         /// Gets or sets computer name suffix random char count.
         /// Dynamically generated characters used as suffix for computer name. Valid values 3 to 14
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "computerNameSuffixRandomCharCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("computerNameSuffixRandomCharCount")]
         public Int32? ComputerNameSuffixRandomCharCount { get; set; }
     
         /// <summary>
         /// Gets or sets organizational unit.
         /// Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organizationalUnit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("organizationalUnit")]
         public string OrganizationalUnit { get; set; }
     
         /// <summary>
         /// Gets or sets network access configurations.
         /// Reference to device configurations required for network connectivity
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkAccessConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkAccessConfigurations")]
         public IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage NetworkAccessConfigurations { get; set; }
     
     }

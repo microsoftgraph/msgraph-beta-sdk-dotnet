@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner Plan Details.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PlannerPlanDetails : PlannerDelta
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets category descriptions.
         /// An object that specifies the descriptions of the six categories that can be associated with tasks in the plan
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryDescriptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("categoryDescriptions")]
         public PlannerCategoryDescriptions CategoryDescriptions { get; set; }
     
         /// <summary>
         /// Gets or sets context details.
         /// Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contextDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contextDetails")]
         public PlannerPlanContextDetailsCollection ContextDetails { get; set; }
     
         /// <summary>
         /// Gets or sets shared with.
         /// The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedWith", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedWith")]
         public PlannerUserIds SharedWith { get; set; }
     
     }

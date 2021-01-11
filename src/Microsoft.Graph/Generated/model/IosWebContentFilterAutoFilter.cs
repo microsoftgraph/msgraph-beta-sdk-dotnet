@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosWebContentFilterAutoFilter.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class IosWebContentFilterAutoFilter : IosWebContentFilterBase
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets allowedUrls.
         /// Additional URLs allowed for access
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUrls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedUrls")]
         public IEnumerable<string> AllowedUrls { get; set; }
     
         /// <summary>
         /// Gets or sets blockedUrls.
         /// Additional URLs blocked for access
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockedUrls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockedUrls")]
         public IEnumerable<string> BlockedUrls { get; set; }
     
     }

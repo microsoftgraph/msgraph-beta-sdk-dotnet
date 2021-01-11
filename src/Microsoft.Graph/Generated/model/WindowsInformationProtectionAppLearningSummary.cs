@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Information Protection App Learning Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsInformationProtectionAppLearningSummary : Entity
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets application name.
         /// Application Name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationName")]
         public string ApplicationName { get; set; }
     
         /// <summary>
         /// Gets or sets application type.
         /// Application Type. Possible values are: universal, desktop.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationType")]
         public ApplicationType? ApplicationType { get; set; }
     
         /// <summary>
         /// Gets or sets device count.
         /// Device Count
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCount")]
         public Int32? DeviceCount { get; set; }
     
     }

@@ -9,23 +9,22 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GroupPolicyMigrationReportCreateMigrationReportRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class GroupPolicyMigrationReportCreateMigrationReportRequestBody
     {
     
         /// <summary>
         /// Gets or sets GroupPolicyObjectFile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyObjectFile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupPolicyObjectFile")]
         public GroupPolicyObjectFile GroupPolicyObjectFile { get; set; }
     
     }

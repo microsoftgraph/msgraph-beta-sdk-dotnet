@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Aged Accounts Receivable.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AgedAccountsReceivable : Entity
     {
     
@@ -33,61 +32,61 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets aged as of date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agedAsOfDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agedAsOfDate")]
         public Date AgedAsOfDate { get; set; }
     
         /// <summary>
         /// Gets or sets balance due.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balanceDue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("balanceDue")]
         public Decimal? BalanceDue { get; set; }
     
         /// <summary>
         /// Gets or sets currency code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currencyCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currencyCode")]
         public string CurrencyCode { get; set; }
     
         /// <summary>
         /// Gets or sets current amount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentAmount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currentAmount")]
         public Decimal? CurrentAmount { get; set; }
     
         /// <summary>
         /// Gets or sets customer number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customerNumber")]
         public string CustomerNumber { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets period1amount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "period1Amount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("period1Amount")]
         public Decimal? Period1Amount { get; set; }
     
         /// <summary>
         /// Gets or sets period2amount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "period2Amount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("period2Amount")]
         public Decimal? Period2Amount { get; set; }
     
         /// <summary>
         /// Gets or sets period3amount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "period3Amount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("period3Amount")]
         public Decimal? Period3Amount { get; set; }
     
         /// <summary>
         /// Gets or sets period length filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "periodLengthFilter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("periodLengthFilter")]
         public string PeriodLengthFilter { get; set; }
     
     }

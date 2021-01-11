@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Compliance Policy Group Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceCompliancePolicyGroupAssignment : Entity
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets exclude group.
         /// Indicates if this group is should be excluded. Defaults that the group should be included
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeGroup")]
         public bool? ExcludeGroup { get; set; }
     
         /// <summary>
         /// Gets or sets target group id.
         /// The Id of the AAD group we are targeting the device compliance policy to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetGroupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetGroupId")]
         public string TargetGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets device compliance policy.
         /// The navigation link to the  device compliance polic targeted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCompliancePolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceCompliancePolicy")]
         public DeviceCompliancePolicy DeviceCompliancePolicy { get; set; }
     
     }

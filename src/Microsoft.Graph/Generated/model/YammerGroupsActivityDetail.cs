@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Yammer Groups Activity Detail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class YammerGroupsActivityDetail : Entity
     {
     
@@ -33,79 +32,79 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets group display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupDisplayName")]
         public string GroupDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets group type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupType")]
         public string GroupType { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivityDate")]
         public Date LastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets liked count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "likedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("likedCount")]
         public Int64? LikedCount { get; set; }
     
         /// <summary>
         /// Gets or sets member count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberCount")]
         public Int64? MemberCount { get; set; }
     
         /// <summary>
         /// Gets or sets network display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkDisplayName")]
         public string NetworkDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets office365connected.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "office365Connected", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("office365Connected")]
         public bool? Office365Connected { get; set; }
     
         /// <summary>
         /// Gets or sets owner principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerPrincipalName")]
         public string OwnerPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets posted count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postedCount")]
         public Int64? PostedCount { get; set; }
     
         /// <summary>
         /// Gets or sets read count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "readCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("readCount")]
         public Int64? ReadCount { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
     }

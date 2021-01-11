@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Phone81Vpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsPhone81VpnConfiguration : Windows81VpnConfiguration
     {
     
@@ -34,42 +33,42 @@ namespace Microsoft.Graph
         /// Gets or sets authentication method.
         /// Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethod")]
         public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets bypass vpn on company wifi.
         /// Bypass VPN on company Wi-Fi.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bypassVpnOnCompanyWifi", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bypassVpnOnCompanyWifi")]
         public bool? BypassVpnOnCompanyWifi { get; set; }
     
         /// <summary>
         /// Gets or sets bypass vpn on home wifi.
         /// Bypass VPN on home Wi-Fi.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bypassVpnOnHomeWifi", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bypassVpnOnHomeWifi")]
         public bool? BypassVpnOnHomeWifi { get; set; }
     
         /// <summary>
         /// Gets or sets dns suffix search list.
         /// DNS suffix search list.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSuffixSearchList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dnsSuffixSearchList")]
         public IEnumerable<string> DnsSuffixSearchList { get; set; }
     
         /// <summary>
         /// Gets or sets remember user credentials.
         /// Remember user credentials.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rememberUserCredentials", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rememberUserCredentials")]
         public bool? RememberUserCredentials { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificate")]
         public WindowsPhone81CertificateProfileBase IdentityCertificate { get; set; }
     
     }

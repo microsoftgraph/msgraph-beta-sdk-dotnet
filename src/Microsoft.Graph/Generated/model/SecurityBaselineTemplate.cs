@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Security Baseline Template.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SecurityBaselineTemplate : DeviceManagementTemplate
     {
     
@@ -34,21 +33,21 @@ namespace Microsoft.Graph
         /// Gets or sets category device state summaries.
         /// The security baseline per category device state summary
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categoryDeviceStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("categoryDeviceStateSummaries")]
         public ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage CategoryDeviceStateSummaries { get; set; }
     
         /// <summary>
         /// Gets or sets device states.
         /// The security baseline device states
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStates")]
         public ISecurityBaselineTemplateDeviceStatesCollectionPage DeviceStates { get; set; }
     
         /// <summary>
         /// Gets or sets device state summary.
         /// The security baseline device state summary
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStateSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStateSummary")]
         public SecurityBaselineStateSummary DeviceStateSummary { get; set; }
     
     }

@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ImportedAppleDeviceIdentityImportAppleDeviceIdentityListRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ImportedAppleDeviceIdentityImportAppleDeviceIdentityListRequestBody
     {
     
         /// <summary>
         /// Gets or sets ImportedAppleDeviceIdentities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedAppleDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("importedAppleDeviceIdentities")]
         public IEnumerable<ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities { get; set; }
     
         /// <summary>
         /// Gets or sets OverwriteImportedDeviceIdentities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overwriteImportedDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("overwriteImportedDeviceIdentities")]
         public bool OverwriteImportedDeviceIdentities { get; set; }
     
     }

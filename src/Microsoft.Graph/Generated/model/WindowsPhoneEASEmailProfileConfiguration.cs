@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Phone EASEmail Profile Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class WindowsPhoneEASEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     
@@ -34,70 +33,70 @@ namespace Microsoft.Graph
         /// Gets or sets account name.
         /// Account name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountName")]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets apply only to windows phone81.
         /// Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyOnlyToWindowsPhone81", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applyOnlyToWindowsPhone81")]
         public bool? ApplyOnlyToWindowsPhone81 { get; set; }
     
         /// <summary>
         /// Gets or sets duration of email to sync.
         /// Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationOfEmailToSync", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("durationOfEmailToSync")]
         public EmailSyncDuration? DurationOfEmailToSync { get; set; }
     
         /// <summary>
         /// Gets or sets email address source.
         /// Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddressSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailAddressSource")]
         public UserEmailSource? EmailAddressSource { get; set; }
     
         /// <summary>
         /// Gets or sets email sync schedule.
         /// Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailSyncSchedule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailSyncSchedule")]
         public EmailSyncSchedule? EmailSyncSchedule { get; set; }
     
         /// <summary>
         /// Gets or sets host name.
         /// Exchange location that (URL) that the native mail app connects to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hostName")]
         public string HostName { get; set; }
     
         /// <summary>
         /// Gets or sets require ssl.
         /// Indicates whether or not to use SSL.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireSsl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requireSsl")]
         public bool? RequireSsl { get; set; }
     
         /// <summary>
         /// Gets or sets sync calendar.
         /// Whether or not to sync the calendar.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncCalendar", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("syncCalendar")]
         public bool? SyncCalendar { get; set; }
     
         /// <summary>
         /// Gets or sets sync contacts.
         /// Whether or not to sync contacts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncContacts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("syncContacts")]
         public bool? SyncContacts { get; set; }
     
         /// <summary>
         /// Gets or sets sync tasks.
         /// Whether or not to sync tasks.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncTasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("syncTasks")]
         public bool? SyncTasks { get; set; }
     
     }

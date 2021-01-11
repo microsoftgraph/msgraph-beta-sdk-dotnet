@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SensitivityLabelEvaluateRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class SensitivityLabelEvaluateRequestBody
     {
     
         /// <summary>
         /// Gets or sets DiscoveredSensitiveTypes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoveredSensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("discoveredSensitiveTypes")]
         public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
     
         /// <summary>
         /// Gets or sets CurrentLabel.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentLabel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currentLabel")]
         public CurrentLabel CurrentLabel { get; set; }
     
     }

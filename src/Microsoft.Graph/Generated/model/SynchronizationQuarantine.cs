@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationQuarantine.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SynchronizationQuarantine>))]
     public partial class SynchronizationQuarantine
     {
         /// <summary>
@@ -34,54 +32,54 @@ namespace Microsoft.Graph
         /// Gets or sets currentBegan.
         /// Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currentBegan", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currentBegan")]
         public DateTimeOffset? CurrentBegan { get; set; }
     
         /// <summary>
         /// Gets or sets error.
         /// Describes the error(s) that occurred when putting the synchronization job into quarantine.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public SynchronizationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets nextAttempt.
         /// Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nextAttempt", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nextAttempt")]
         public DateTimeOffset? NextAttempt { get; set; }
     
         /// <summary>
         /// Gets or sets reason.
         /// A code that signifies why the quarantine was imposed. Possible values are: EncounteredBaseEscrowThreshold, EncounteredTotalEscrowThreshold, EncounteredEscrowProportionThreshold, EncounteredQuarantineException, QuarantinedOnDemand, TooManyDeletes, Unknown.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reason")]
         public QuarantineReason? Reason { get; set; }
     
         /// <summary>
         /// Gets or sets seriesBegan.
         /// Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "seriesBegan", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("seriesBegan")]
         public DateTimeOffset? SeriesBegan { get; set; }
     
         /// <summary>
         /// Gets or sets seriesCount.
         /// Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "seriesCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("seriesCount")]
         public Int64? SeriesCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

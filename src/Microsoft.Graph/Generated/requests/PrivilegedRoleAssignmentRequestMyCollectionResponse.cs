@@ -10,25 +10,23 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrivilegedRoleAssignmentRequestMyCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class PrivilegedRoleAssignmentRequestMyCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="IPrivilegedRoleAssignmentRequestMyCollectionPage"/> value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Required.Default)]
+        [JsonPropertyName("value")]
         public IPrivilegedRoleAssignmentRequestMyCollectionPage Value { get; set; }
         
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

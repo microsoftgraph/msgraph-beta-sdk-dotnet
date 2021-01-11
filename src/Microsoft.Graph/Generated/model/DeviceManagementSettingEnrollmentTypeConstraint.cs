@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSettingEnrollmentTypeConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementSettingEnrollmentTypeConstraint : DeviceManagementConstraint
     {
         /// <summary>
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets enrollmentTypes.
         /// List of enrollment types
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentTypes")]
         public IEnumerable<string> EnrollmentTypes { get; set; }
     
     }

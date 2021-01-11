@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Store App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidStoreApp : MobileApp
     {
     
@@ -34,28 +33,28 @@ namespace Microsoft.Graph
         /// Gets or sets app identifier.
         /// The Identity Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appIdentifier")]
         public string AppIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets app store url.
         /// The Android app store URL.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appStoreUrl")]
         public string AppStoreUrl { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumSupportedOperatingSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumSupportedOperatingSystem")]
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets package id.
         /// The package identifier.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("packageId")]
         public string PackageId { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Category.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class UserExperienceAnalyticsCategory : Entity
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets insights.
         /// The insights for the user experience analytics category.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("insights")]
         public IEnumerable<UserExperienceAnalyticsInsight> Insights { get; set; }
     
         /// <summary>
         /// Gets or sets metric values.
         /// The metric values for the user experience analytics category.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metricValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metricValues")]
         public IUserExperienceAnalyticsCategoryMetricValuesCollectionPage MetricValues { get; set; }
     
     }

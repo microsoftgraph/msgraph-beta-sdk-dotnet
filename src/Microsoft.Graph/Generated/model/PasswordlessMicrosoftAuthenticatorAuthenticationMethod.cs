@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Passwordless Microsoft Authenticator Authentication Method.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PasswordlessMicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod
     {
     
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
@@ -41,20 +40,20 @@ namespace Microsoft.Graph
         /// The timestamp when this method was registered to the user.
         /// </summary>
         [Obsolete("The creationDateTime property is deprecated and will stop returning data on December 31, 2020. Please use the createdDateTime property.")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the mobile device as given by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "device", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("device")]
         public Device Device { get; set; }
     
     }

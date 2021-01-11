@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeliveryOptimizationBandwidthPercentage.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeliveryOptimizationBandwidthPercentage : DeliveryOptimizationBandwidth
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets maximumBackgroundBandwidthPercentage.
         /// The default value 0 (zero) means that Delivery Optimization dynamically adjusts to use the available bandwidth for background downloads. Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumBackgroundBandwidthPercentage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumBackgroundBandwidthPercentage")]
         public Int32? MaximumBackgroundBandwidthPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets maximumForegroundBandwidthPercentage.
         /// The default value 0 (zero) means that Delivery Optimization dynamically adjusts to use the available bandwidth for foreground downloads. Valid values 0 to 100
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumForegroundBandwidthPercentage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumForegroundBandwidthPercentage")]
         public Int32? MaximumForegroundBandwidthPercentage { get; set; }
     
     }

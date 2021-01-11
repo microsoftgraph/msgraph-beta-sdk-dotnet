@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Information Protection Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class InformationProtectionPolicy : Entity
     {
     
@@ -33,7 +32,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets labels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("labels")]
         public IInformationProtectionPolicyLabelsCollectionPage Labels { get; set; }
     
     }

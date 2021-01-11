@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceRestrictionAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceRestrictionAction : DlpActionInfo
     {
         /// <summary>
@@ -32,19 +31,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets message.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets restrictionAction.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictionAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restrictionAction")]
         public RestrictionAction? RestrictionAction { get; set; }
     
         /// <summary>
         /// Gets or sets triggers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "triggers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("triggers")]
         public IEnumerable<RestrictionTrigger> Triggers { get; set; }
     
     }

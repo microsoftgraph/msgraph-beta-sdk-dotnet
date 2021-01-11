@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation List Box.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class GroupPolicyPresentationListBox : GroupPolicyPresentation
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets explicit value.
         /// If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "explicitValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("explicitValue")]
         public bool? ExplicitValue { get; set; }
     
         /// <summary>
         /// Gets or sets value prefix.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valuePrefix", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valuePrefix")]
         public string ValuePrefix { get; set; }
     
     }

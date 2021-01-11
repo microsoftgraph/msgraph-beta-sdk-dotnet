@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Legalhold.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class Legalhold : Entity
     {
     
@@ -33,79 +32,79 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets content query.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentQuery", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentQuery")]
         public string ContentQuery { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets errors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errors")]
         public IEnumerable<string> Errors { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public LegalHoldStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets site sources.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteSources")]
         public ILegalholdSiteSourcesCollectionPage SiteSources { get; set; }
     
         /// <summary>
         /// Gets or sets unified group sources.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unifiedGroupSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unifiedGroupSources")]
         public ILegalholdUnifiedGroupSourcesCollectionPage UnifiedGroupSources { get; set; }
     
         /// <summary>
         /// Gets or sets user sources.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userSources")]
         public ILegalholdUserSourcesCollectionPage UserSources { get; set; }
     
     }

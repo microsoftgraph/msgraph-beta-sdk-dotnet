@@ -9,29 +9,28 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type InformationProtectionLabelEvaluateRemovalRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class InformationProtectionLabelEvaluateRemovalRequestBody
     {
     
         /// <summary>
         /// Gets or sets ContentInfo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentInfo")]
         public ContentInfo ContentInfo { get; set; }
     
         /// <summary>
         /// Gets or sets DowngradeJustification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downgradeJustification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("downgradeJustification")]
         public DowngradeJustification DowngradeJustification { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Onenote Resource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class OnenoteResource : OnenoteEntityBaseModel
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets content.
         /// The content stream
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets content url.
         /// The URL for downloading the content
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentUrl")]
         public string ContentUrl { get; set; }
     
     }

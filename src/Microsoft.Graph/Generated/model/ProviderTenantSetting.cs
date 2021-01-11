@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Provider Tenant Setting.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ProviderTenantSetting : Entity
     {
     
@@ -33,31 +32,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets azure tenant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureTenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureTenantId")]
         public string AzureTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provider", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provider")]
         public string Provider { get; set; }
     
         /// <summary>
         /// Gets or sets vendor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendor")]
         public string Vendor { get; set; }
     
     }

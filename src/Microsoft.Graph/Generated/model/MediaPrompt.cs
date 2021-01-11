@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MediaPrompt.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class MediaPrompt : Prompt
     {
         /// <summary>
@@ -32,14 +31,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets loop.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "loop", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("loop")]
         public Int32? Loop { get; set; }
     
         /// <summary>
         /// Gets or sets mediaInfo.
         /// The media information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mediaInfo")]
         public MediaInfo MediaInfo { get; set; }
     
     }

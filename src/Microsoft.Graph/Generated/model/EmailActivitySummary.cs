@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Email Activity Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class EmailActivitySummary : Entity
     {
     
@@ -33,37 +32,37 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets read.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "read", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("read")]
         public Int64? Read { get; set; }
     
         /// <summary>
         /// Gets or sets receive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("receive")]
         public Int64? Receive { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportDate")]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets send.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "send", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("send")]
         public Int64? Send { get; set; }
     
     }

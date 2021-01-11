@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Approval Step.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class ApprovalStep : Entity
     {
     
@@ -33,31 +32,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewedBy")]
         public Identity ReviewedBy { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewedDateTime")]
         public DateTimeOffset? ReviewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review result.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewResult")]
         public string ReviewResult { get; set; }
     
     }

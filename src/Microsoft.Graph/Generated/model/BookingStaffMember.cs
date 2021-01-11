@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Booking Staff Member.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class BookingStaffMember : BookingPerson
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets availability is affected by personal calendar.
         /// True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "availabilityIsAffectedByPersonalCalendar", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("availabilityIsAffectedByPersonalCalendar")]
         public bool? AvailabilityIsAffectedByPersonalCalendar { get; set; }
     
         /// <summary>
         /// Gets or sets color index.
         /// Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorIndex", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("colorIndex")]
         public Int32? ColorIndex { get; set; }
     
         /// <summary>
         /// Gets or sets role.
         /// The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("role")]
         public BookingStaffRole? Role { get; set; }
     
         /// <summary>
         /// Gets or sets use business hours.
         /// True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useBusinessHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useBusinessHours")]
         public bool? UseBusinessHours { get; set; }
     
         /// <summary>
         /// Gets or sets working hours.
         /// The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workingHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("workingHours")]
         public IEnumerable<BookingWorkHours> WorkingHours { get; set; }
     
     }

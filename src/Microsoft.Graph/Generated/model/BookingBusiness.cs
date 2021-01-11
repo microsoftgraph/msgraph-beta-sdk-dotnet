@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Booking Business.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class BookingBusiness : BookingNamedEntity
     {
     
@@ -34,105 +33,105 @@ namespace Microsoft.Graph
         /// Gets or sets address.
         /// The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets business hours.
         /// The hours of operation for the business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("businessHours")]
         public IEnumerable<BookingWorkHours> BusinessHours { get; set; }
     
         /// <summary>
         /// Gets or sets business type.
         /// The type of business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("businessType")]
         public string BusinessType { get; set; }
     
         /// <summary>
         /// Gets or sets default currency iso.
         /// The code for the currency that the business operates in on Microsoft Bookings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultCurrencyIso", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultCurrencyIso")]
         public string DefaultCurrencyIso { get; set; }
     
         /// <summary>
         /// Gets or sets email.
         /// The email address for the business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets is published.
         /// The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPublished", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isPublished")]
         public bool? IsPublished { get; set; }
     
         /// <summary>
         /// Gets or sets phone.
         /// The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("phone")]
         public string Phone { get; set; }
     
         /// <summary>
         /// Gets or sets public url.
         /// The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publicUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publicUrl")]
         public string PublicUrl { get; set; }
     
         /// <summary>
         /// Gets or sets scheduling policy.
         /// Specifies how bookings can be created for this business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("schedulingPolicy")]
         public BookingSchedulingPolicy SchedulingPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets web site url.
         /// Example: https://www.contoso.com
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webSiteUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webSiteUrl")]
         public string WebSiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets appointments.
         /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appointments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appointments")]
         public IBookingBusinessAppointmentsCollectionPage Appointments { get; set; }
     
         /// <summary>
         /// Gets or sets calendar view.
         /// The set of appointments of this business in a specified date range. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarView", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendarView")]
         public IBookingBusinessCalendarViewCollectionPage CalendarView { get; set; }
     
         /// <summary>
         /// Gets or sets customers.
         /// All the customers of this business. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customers")]
         public IBookingBusinessCustomersCollectionPage Customers { get; set; }
     
         /// <summary>
         /// Gets or sets services.
         /// All the services offered by this business. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "services", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("services")]
         public IBookingBusinessServicesCollectionPage Services { get; set; }
     
         /// <summary>
         /// Gets or sets staff members.
         /// All the staff members that provide services in this business. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "staffMembers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("staffMembers")]
         public IBookingBusinessStaffMembersCollectionPage StaffMembers { get; set; }
     
     }

@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OmaSettingInteger.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class OmaSettingInteger : OmaSetting
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets isReadOnly.
         /// By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReadOnly", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isReadOnly")]
         public bool? IsReadOnly { get; set; }
     
         /// <summary>
         /// Gets or sets value.
         /// Value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public Int32? Value { get; set; }
     
     }

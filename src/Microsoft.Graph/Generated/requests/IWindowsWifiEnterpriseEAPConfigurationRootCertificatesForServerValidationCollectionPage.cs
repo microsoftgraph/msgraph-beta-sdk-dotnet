@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage>))]
     public interface IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage : ICollectionPage<Windows81TrustedRootCertificate>
     {
         /// <summary>

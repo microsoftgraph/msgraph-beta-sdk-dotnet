@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Intent User State Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class DeviceManagementIntentUserStateSummary : Entity
     {
     
@@ -34,35 +33,35 @@ namespace Microsoft.Graph
         /// Gets or sets conflict count.
         /// Number of users in conflict
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conflictCount")]
         public Int32? ConflictCount { get; set; }
     
         /// <summary>
         /// Gets or sets error count.
         /// Number of error users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCount")]
         public Int32? ErrorCount { get; set; }
     
         /// <summary>
         /// Gets or sets failed count.
         /// Number of failed users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedCount")]
         public Int32? FailedCount { get; set; }
     
         /// <summary>
         /// Gets or sets not applicable count.
         /// Number of not applicable users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notApplicableCount")]
         public Int32? NotApplicableCount { get; set; }
     
         /// <summary>
         /// Gets or sets success count.
         /// Number of succeeded users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("successCount")]
         public Int32? SuccessCount { get; set; }
     
     }

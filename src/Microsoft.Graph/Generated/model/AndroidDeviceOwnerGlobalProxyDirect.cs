@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidDeviceOwnerGlobalProxyDirect.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy
     {
         /// <summary>
@@ -33,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets excludedHosts.
         /// The excluded hosts
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludedHosts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludedHosts")]
         public IEnumerable<string> ExcludedHosts { get; set; }
     
         /// <summary>
         /// Gets or sets host.
         /// The host name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "host", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("host")]
         public string Host { get; set; }
     
         /// <summary>
         /// Gets or sets port.
         /// The port
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "port", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("port")]
         public Int32? Port { get; set; }
     
     }

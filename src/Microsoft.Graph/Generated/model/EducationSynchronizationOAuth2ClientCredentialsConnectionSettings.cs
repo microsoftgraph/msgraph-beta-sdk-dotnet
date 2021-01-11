@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationSynchronizationOAuth2ClientCredentialsConnectionSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : EducationSynchronizationConnectionSettings
     {
         /// <summary>
@@ -33,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets scope.
         /// The scope of the access request (see RFC6749).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scope")]
         public string Scope { get; set; }
     
         /// <summary>
         /// Gets or sets tokenUrl.
         /// The URL to get access tokens for the data provider.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tokenUrl")]
         public string TokenUrl { get; set; }
     
     }

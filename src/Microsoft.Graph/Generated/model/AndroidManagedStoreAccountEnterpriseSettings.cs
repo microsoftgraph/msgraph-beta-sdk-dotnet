@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Managed Store Account Enterprise Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class AndroidManagedStoreAccountEnterpriseSettings : Entity
     {
     
@@ -34,77 +33,77 @@ namespace Microsoft.Graph
         /// Gets or sets android device owner fully managed enrollment enabled.
         /// Company codes for AndroidManagedStoreAccountEnterpriseSettings
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidDeviceOwnerFullyManagedEnrollmentEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("androidDeviceOwnerFullyManagedEnrollmentEnabled")]
         public bool? AndroidDeviceOwnerFullyManagedEnrollmentEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets bind status.
         /// Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bindStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bindStatus")]
         public AndroidManagedStoreAccountBindStatus? BindStatus { get; set; }
     
         /// <summary>
         /// Gets or sets company codes.
         /// Company codes for AndroidManagedStoreAccountEnterpriseSettings
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyCodes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("companyCodes")]
         public IEnumerable<AndroidEnrollmentCompanyCode> CompanyCodes { get; set; }
     
         /// <summary>
         /// Gets or sets device owner management enabled.
         /// Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOwnerManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceOwnerManagementEnabled")]
         public bool? DeviceOwnerManagementEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment target.
         /// Indicates which users can enroll devices in Android Enterprise device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentTarget", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentTarget")]
         public AndroidManagedStoreAccountEnrollmentTarget? EnrollmentTarget { get; set; }
     
         /// <summary>
         /// Gets or sets last app sync date time.
         /// Last completion time for app sync
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastAppSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastAppSyncDateTime")]
         public DateTimeOffset? LastAppSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last app sync status.
         /// Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastAppSyncStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastAppSyncStatus")]
         public AndroidManagedStoreAccountAppSyncStatus? LastAppSyncStatus { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Last modification time for Android enterprise settings
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets owner organization name.
         /// Organization name used when onboarding Android Enterprise
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerOrganizationName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerOrganizationName")]
         public string OwnerOrganizationName { get; set; }
     
         /// <summary>
         /// Gets or sets owner user principal name.
         /// Owner UPN that created the enterprise
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerUserPrincipalName")]
         public string OwnerUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets target group ids.
         /// Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetGroupIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetGroupIds")]
         public IEnumerable<string> TargetGroupIds { get; set; }
     
     }

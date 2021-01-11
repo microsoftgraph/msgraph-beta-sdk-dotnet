@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PlannerPlanContext.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PlannerPlanContext>))]
     public partial class PlannerPlanContext
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets associationType.
         /// Nullable. An app-defined type of association between the plannerPlan and the app. The app can use this information to track different kinds of relationships to the same plannerPlan.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "associationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("associationType")]
         public string AssociationType { get; set; }
     
         /// <summary>
         /// Gets or sets createdDateTime.
         /// Read-only. The date and time when the plannerPlanContext was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets displayNameSegments.
         /// The segments of the name of the external experience. Segments represent a hierarchical structure that allows other apps to display the relationship.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayNameSegments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayNameSegments")]
         public IEnumerable<string> DisplayNameSegments { get; set; }
     
         /// <summary>
         /// Gets or sets ownerAppId.
         /// Read-only. ID of the app that created the plannerPlanContext.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerAppId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerAppId")]
         public string OwnerAppId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }
