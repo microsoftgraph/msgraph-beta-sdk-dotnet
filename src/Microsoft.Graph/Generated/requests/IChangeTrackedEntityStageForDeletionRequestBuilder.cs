@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IChangeTrackedEntityStageForDeletionRequestBuilder.
     /// </summary>
-    public partial interface IChangeTrackedEntityStageForDeletionRequestBuilder
+    public partial interface IChangeTrackedEntityStageForDeletionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

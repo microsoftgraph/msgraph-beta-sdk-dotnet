@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMobileAppGetRelatedAppStatesRequestBuilder.
     /// </summary>
-    public partial interface IMobileAppGetRelatedAppStatesRequestBuilder
+    public partial interface IMobileAppGetRelatedAppStatesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

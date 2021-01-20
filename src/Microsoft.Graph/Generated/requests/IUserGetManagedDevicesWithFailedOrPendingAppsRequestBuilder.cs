@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder.
     /// </summary>
-    public partial interface IUserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder
+    public partial interface IUserGetManagedDevicesWithFailedOrPendingAppsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

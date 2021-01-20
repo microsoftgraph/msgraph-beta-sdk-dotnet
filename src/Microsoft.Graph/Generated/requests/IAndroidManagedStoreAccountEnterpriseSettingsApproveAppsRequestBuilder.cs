@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder.
     /// </summary>
-    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder
+    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

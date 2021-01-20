@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIosVppAppRevokeDeviceLicenseRequestBuilder.
     /// </summary>
-    public partial interface IIosVppAppRevokeDeviceLicenseRequestBuilder
+    public partial interface IIosVppAppRevokeDeviceLicenseRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

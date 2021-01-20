@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("expiringBeforeDateTime", expiringBeforeDateTime, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

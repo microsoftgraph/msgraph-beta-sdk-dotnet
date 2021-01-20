@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceExecuteActionRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceExecuteActionRequestBuilder
+    public partial interface IManagedDeviceExecuteActionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

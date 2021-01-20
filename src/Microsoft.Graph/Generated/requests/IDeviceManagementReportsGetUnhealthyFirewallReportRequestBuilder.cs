@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementReportsGetUnhealthyFirewallReportRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementReportsGetUnhealthyFirewallReportRequestBuilder
+    public partial interface IDeviceManagementReportsGetUnhealthyFirewallReportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

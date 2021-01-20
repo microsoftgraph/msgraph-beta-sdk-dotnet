@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISitePagePublishRequestBuilder.
     /// </summary>
-    public partial interface ISitePagePublishRequestBuilder
+    public partial interface ISitePagePublishRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

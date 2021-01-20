@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IOutlookTaskCompleteRequestBuilder.
     /// </summary>
-    public partial interface IOutlookTaskCompleteRequestBuilder
+    public partial interface IOutlookTaskCompleteRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

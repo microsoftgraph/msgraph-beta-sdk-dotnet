@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("index", index, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>
@@ -44,6 +45,29 @@ namespace Microsoft.Graph
             var request = new WorkbookRangeBorderItemAtRequest(functionUrl, this.Client, options);
 
             return request;
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeBorderCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRangeBorderCountRequestBuilder"/>.</returns>
+        public IWorkbookRangeBorderCountRequestBuilder Count()
+        {
+            return new WorkbookRangeBorderCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeBorderItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeBorderItemAtRequestBuilder"/>.</returns>
+        public IWorkbookRangeBorderItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookRangeBorderItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IImportedAppleDeviceIdentityImportAppleDeviceIdentityListRequestBuilder.
     /// </summary>
-    public partial interface IImportedAppleDeviceIdentityImportAppleDeviceIdentityListRequestBuilder
+    public partial interface IImportedAppleDeviceIdentityImportAppleDeviceIdentityListRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

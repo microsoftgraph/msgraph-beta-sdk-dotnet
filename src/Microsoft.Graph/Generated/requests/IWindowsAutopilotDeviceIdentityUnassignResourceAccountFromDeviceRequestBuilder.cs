@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder.
     /// </summary>
-    public partial interface IWindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder
+    public partial interface IWindowsAutopilotDeviceIdentityUnassignResourceAccountFromDeviceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementIntentUpdateSettingsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementIntentUpdateSettingsRequestBuilder
+    public partial interface IDeviceManagementIntentUpdateSettingsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

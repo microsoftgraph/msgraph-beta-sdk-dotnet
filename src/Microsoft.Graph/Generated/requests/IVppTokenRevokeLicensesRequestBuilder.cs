@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IVppTokenRevokeLicensesRequestBuilder.
     /// </summary>
-    public partial interface IVppTokenRevokeLicensesRequestBuilder
+    public partial interface IVppTokenRevokeLicensesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -36,10 +36,6 @@ namespace Microsoft.Graph
             CancellationToken cancellationToken);
 
 
-
-
-
-
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>

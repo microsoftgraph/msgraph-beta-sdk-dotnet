@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessPackageAssignmentRequestCancelRequestBuilder.
     /// </summary>
-    public partial interface IAccessPackageAssignmentRequestCancelRequestBuilder
+    public partial interface IAccessPackageAssignmentRequestCancelRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

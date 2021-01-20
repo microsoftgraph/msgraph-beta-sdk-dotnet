@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IBusinessFlowRecordDecisionsRequestBuilder.
     /// </summary>
-    public partial interface IBusinessFlowRecordDecisionsRequestBuilder
+    public partial interface IBusinessFlowRecordDecisionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

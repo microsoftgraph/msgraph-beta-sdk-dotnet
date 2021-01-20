@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder
+    public partial interface IManagedDeviceCreateDeviceLogCollectionRequestRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

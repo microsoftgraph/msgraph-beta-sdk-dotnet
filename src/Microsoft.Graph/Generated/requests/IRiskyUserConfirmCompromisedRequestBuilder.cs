@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IRiskyUserConfirmCompromisedRequestBuilder.
     /// </summary>
-    public partial interface IRiskyUserConfirmCompromisedRequestBuilder
+    public partial interface IRiskyUserConfirmCompromisedRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

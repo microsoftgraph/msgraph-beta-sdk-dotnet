@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITiIndicatorUpdateTiIndicatorsRequestBuilder.
     /// </summary>
-    public partial interface ITiIndicatorUpdateTiIndicatorsRequestBuilder
+    public partial interface ITiIndicatorUpdateTiIndicatorsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

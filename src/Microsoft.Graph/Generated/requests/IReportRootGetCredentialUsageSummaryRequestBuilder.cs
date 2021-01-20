@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetCredentialUsageSummaryRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetCredentialUsageSummaryRequestBuilder
+    public partial interface IReportRootGetCredentialUsageSummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

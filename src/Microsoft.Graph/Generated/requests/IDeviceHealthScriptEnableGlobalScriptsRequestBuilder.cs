@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceHealthScriptEnableGlobalScriptsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceHealthScriptEnableGlobalScriptsRequestBuilder
+    public partial interface IDeviceHealthScriptEnableGlobalScriptsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

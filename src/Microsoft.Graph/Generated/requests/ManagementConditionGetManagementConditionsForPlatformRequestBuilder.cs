@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("platform", platform, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

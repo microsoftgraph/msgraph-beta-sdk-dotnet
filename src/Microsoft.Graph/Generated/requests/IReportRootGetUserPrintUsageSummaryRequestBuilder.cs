@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetUserPrintUsageSummaryRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetUserPrintUsageSummaryRequestBuilder
+    public partial interface IReportRootGetUserPrintUsageSummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

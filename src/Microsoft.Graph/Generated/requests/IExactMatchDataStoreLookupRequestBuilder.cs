@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IExactMatchDataStoreLookupRequestBuilder.
     /// </summary>
-    public partial interface IExactMatchDataStoreLookupRequestBuilder
+    public partial interface IExactMatchDataStoreLookupRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
