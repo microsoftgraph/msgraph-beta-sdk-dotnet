@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface IReportRootGetYammerGroupsActivityDetailRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,8 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
 
         /// <summary>
         /// Issues the PATCH request.
@@ -50,7 +47,7 @@ namespace Microsoft.Graph
         /// <param name="yammergroupsactivitydetail">The YammerGroupsActivityDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PatchAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, 
+        System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PatchAsync(YammerGroupsActivityDetail yammergroupsactivitydetail,
             CancellationToken cancellationToken);
 
 
@@ -67,10 +64,8 @@ namespace Microsoft.Graph
         /// <param name="yammergroupsactivitydetail">The YammerGroupsActivityDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PutAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, 
+        System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PutAsync(YammerGroupsActivityDetail yammergroupsactivitydetail,
             CancellationToken cancellationToken);
-
-
 
 
         /// <summary>

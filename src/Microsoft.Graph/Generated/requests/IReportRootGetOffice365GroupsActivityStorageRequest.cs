@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface IReportRootGetOffice365GroupsActivityStorageRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,8 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityStorageCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
 
         /// <summary>
         /// Issues the PATCH request.
@@ -50,7 +47,7 @@ namespace Microsoft.Graph
         /// <param name="office365groupsactivitystorage">The Office365GroupsActivityStorage object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityStorageCollectionPage> PatchAsync(Office365GroupsActivityStorage office365groupsactivitystorage, 
+        System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityStorageCollectionPage> PatchAsync(Office365GroupsActivityStorage office365groupsactivitystorage,
             CancellationToken cancellationToken);
 
 
@@ -67,10 +64,8 @@ namespace Microsoft.Graph
         /// <param name="office365groupsactivitystorage">The Office365GroupsActivityStorage object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityStorageCollectionPage> PutAsync(Office365GroupsActivityStorage office365groupsactivitystorage, 
+        System.Threading.Tasks.Task<IReportRootGetOffice365GroupsActivityStorageCollectionPage> PutAsync(Office365GroupsActivityStorage office365groupsactivitystorage,
             CancellationToken cancellationToken);
-
-
 
 
         /// <summary>

@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface IReportRootGetOneDriveActivityUserDetailRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,8 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetOneDriveActivityUserDetailCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
 
         /// <summary>
         /// Issues the PATCH request.
@@ -50,7 +47,7 @@ namespace Microsoft.Graph
         /// <param name="onedriveactivityuserdetail">The OneDriveActivityUserDetail object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOneDriveActivityUserDetailCollectionPage> PatchAsync(OneDriveActivityUserDetail onedriveactivityuserdetail, 
+        System.Threading.Tasks.Task<IReportRootGetOneDriveActivityUserDetailCollectionPage> PatchAsync(OneDriveActivityUserDetail onedriveactivityuserdetail,
             CancellationToken cancellationToken);
 
 
@@ -67,10 +64,8 @@ namespace Microsoft.Graph
         /// <param name="onedriveactivityuserdetail">The OneDriveActivityUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOneDriveActivityUserDetailCollectionPage> PutAsync(OneDriveActivityUserDetail onedriveactivityuserdetail, 
+        System.Threading.Tasks.Task<IReportRootGetOneDriveActivityUserDetailCollectionPage> PutAsync(OneDriveActivityUserDetail onedriveactivityuserdetail,
             CancellationToken cancellationToken);
-
-
 
 
         /// <summary>

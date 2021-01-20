@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface IServicePrincipalDeltaRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,9 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IServicePrincipalDeltaCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
-
 
 
         /// <summary>
