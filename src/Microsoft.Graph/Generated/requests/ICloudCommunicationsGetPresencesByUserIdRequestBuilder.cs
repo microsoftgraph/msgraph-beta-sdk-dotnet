@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICloudCommunicationsGetPresencesByUserIdRequestBuilder.
     /// </summary>
-    public partial interface ICloudCommunicationsGetPresencesByUserIdRequestBuilder
+    public partial interface ICloudCommunicationsGetPresencesByUserIdRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Review Reviewer.
     /// </summary>
-    
     public partial class AccessReviewReviewer : Entity
     {
     

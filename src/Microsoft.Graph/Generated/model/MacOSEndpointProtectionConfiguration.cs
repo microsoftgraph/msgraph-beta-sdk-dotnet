@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSEndpoint Protection Configuration.
     /// </summary>
-    
     public partial class MacOSEndpointProtectionConfiguration : DeviceConfiguration
     {
     

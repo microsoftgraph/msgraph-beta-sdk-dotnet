@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Onenote Page.
     /// </summary>
-    
     public partial class OnenotePage : OnenoteEntitySchemaObjectModel
     {
     

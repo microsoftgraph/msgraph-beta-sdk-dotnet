@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Health Script Assignment.
     /// </summary>
-    
     public partial class DeviceHealthScriptAssignment : Entity
     {
     

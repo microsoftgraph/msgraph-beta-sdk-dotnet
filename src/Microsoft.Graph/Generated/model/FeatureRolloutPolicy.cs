@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Feature Rollout Policy.
     /// </summary>
-    
     public partial class FeatureRolloutPolicy : Entity
     {
     

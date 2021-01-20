@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceCompliancePolicyValidateComplianceScriptRequestBody.
     /// </summary>
-    
     public partial class DeviceCompliancePolicyValidateComplianceScriptRequestBody
     {
     

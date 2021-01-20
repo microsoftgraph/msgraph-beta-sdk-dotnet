@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Booking Appointment.
     /// </summary>
-    
     public partial class BookingAppointment : Entity
     {
     

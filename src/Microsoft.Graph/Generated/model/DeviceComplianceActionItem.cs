@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance Action Item.
     /// </summary>
-    
     public partial class DeviceComplianceActionItem : Entity
     {
     

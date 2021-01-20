@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosVppAppRevokeAllLicensesRequestBody.
     /// </summary>
-    
     public partial class IosVppAppRevokeAllLicensesRequestBody
     {
     

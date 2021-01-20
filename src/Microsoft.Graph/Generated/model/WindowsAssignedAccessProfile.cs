@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Assigned Access Profile.
     /// </summary>
-    
     public partial class WindowsAssignedAccessProfile : Entity
     {
     

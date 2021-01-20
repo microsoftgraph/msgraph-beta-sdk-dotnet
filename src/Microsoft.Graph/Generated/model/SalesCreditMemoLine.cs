@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sales Credit Memo Line.
     /// </summary>
-    
     public partial class SalesCreditMemoLine : Entity
     {
     

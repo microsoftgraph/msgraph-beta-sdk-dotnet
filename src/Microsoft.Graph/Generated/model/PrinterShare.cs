@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Printer Share.
     /// </summary>
-    
     public partial class PrinterShare : PrinterBase
     {
     

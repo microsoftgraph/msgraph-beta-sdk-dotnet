@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Intent Assignment.
     /// </summary>
-    
     public partial class DeviceManagementIntentAssignment : Entity
     {
     

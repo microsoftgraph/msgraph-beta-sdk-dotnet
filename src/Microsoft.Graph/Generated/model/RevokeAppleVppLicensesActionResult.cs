@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RevokeAppleVppLicensesActionResult.
     /// </summary>
-    
     public partial class RevokeAppleVppLicensesActionResult : DeviceActionResult
     {
         /// <summary>

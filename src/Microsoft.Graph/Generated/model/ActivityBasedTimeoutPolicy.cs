@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Activity Based Timeout Policy.
     /// </summary>
-    
     public partial class ActivityBasedTimeoutPolicy : StsPolicy
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSGeneral Device Configuration.
     /// </summary>
-    
     public partial class MacOSGeneralDeviceConfiguration : DeviceConfiguration
     {
     

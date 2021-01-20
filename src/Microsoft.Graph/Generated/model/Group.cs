@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group.
     /// </summary>
-    
     public partial class Group : DirectoryObject
     {
     

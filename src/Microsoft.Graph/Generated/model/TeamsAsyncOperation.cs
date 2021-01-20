@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams Async Operation.
     /// </summary>
-    
     public partial class TeamsAsyncOperation : Entity
     {
     

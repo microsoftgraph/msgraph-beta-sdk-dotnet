@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsExpon_DistRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsExpon_DistRequestBody
     {
     

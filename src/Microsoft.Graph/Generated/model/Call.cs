@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Call.
     /// </summary>
-    
     public partial class Call : Entity
     {
     

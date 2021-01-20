@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeliveryOptimizationMaxCacheSizePercentage.
     /// </summary>
-    
     public partial class DeliveryOptimizationMaxCacheSizePercentage : DeliveryOptimizationMaxCacheSize
     {
         /// <summary>

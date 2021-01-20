@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Approval Step.
     /// </summary>
-    
     public partial class ApprovalStep : Entity
     {
     

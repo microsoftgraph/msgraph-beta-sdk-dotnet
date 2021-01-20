@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Schema.
     /// </summary>
-    
     public partial class Schema : Entity
     {
     

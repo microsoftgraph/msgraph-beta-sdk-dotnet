@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Schedule Change Request.
     /// </summary>
-    
     public partial class ScheduleChangeRequestObject : ChangeTrackedEntity
     {
     

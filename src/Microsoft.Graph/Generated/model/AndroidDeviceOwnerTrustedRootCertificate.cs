@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Trusted Root Certificate.
     /// </summary>
-    
     public partial class AndroidDeviceOwnerTrustedRootCertificate : DeviceConfiguration
     {
     

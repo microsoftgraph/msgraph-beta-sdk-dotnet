@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Connected Organization.
     /// </summary>
-    
     public partial class ConnectedOrganization : Entity
     {
     

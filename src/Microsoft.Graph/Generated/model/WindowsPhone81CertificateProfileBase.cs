@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone81Certificate Profile Base.
     /// </summary>
-    
     public partial class WindowsPhone81CertificateProfileBase : DeviceConfiguration
     {
     

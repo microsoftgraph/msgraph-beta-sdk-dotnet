@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Domain Dns Mx Record.
     /// </summary>
-    
     public partial class DomainDnsMxRecord : DomainDnsRecord
     {
     

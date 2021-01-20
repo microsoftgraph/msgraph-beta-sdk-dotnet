@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Comment.
     /// </summary>
-    
     public partial class WorkbookComment : Entity
     {
     

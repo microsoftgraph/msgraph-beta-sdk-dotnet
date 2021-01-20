@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Todo Task.
     /// </summary>
-    
     public partial class TodoTask : Entity
     {
     

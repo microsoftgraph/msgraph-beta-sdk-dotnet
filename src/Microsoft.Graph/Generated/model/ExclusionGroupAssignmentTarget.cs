@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExclusionGroupAssignmentTarget.
     /// </summary>
-    
     public partial class ExclusionGroupAssignmentTarget : GroupAssignmentTarget
     {
         /// <summary>

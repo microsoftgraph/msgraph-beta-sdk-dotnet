@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskLocalGroup.
     /// </summary>
-    
     public partial class WindowsKioskLocalGroup : WindowsKioskUser
     {
         /// <summary>

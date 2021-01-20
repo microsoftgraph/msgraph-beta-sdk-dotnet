@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDepOnboardingSettingGenerateEncryptionPublicKeyRequestBuilder.
     /// </summary>
-    public partial interface IDepOnboardingSettingGenerateEncryptionPublicKeyRequestBuilder
+    public partial interface IDepOnboardingSettingGenerateEncryptionPublicKeyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

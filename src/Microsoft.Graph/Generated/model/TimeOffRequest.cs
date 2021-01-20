@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Time Off Request.
     /// </summary>
-    
     public partial class TimeOffRequestObject : ScheduleChangeRequestObject
     {
     

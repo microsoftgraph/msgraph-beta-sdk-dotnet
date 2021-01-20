@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type File Classification Request.
     /// </summary>
-    
     public partial class FileClassificationRequestObject : Entity
     {
     

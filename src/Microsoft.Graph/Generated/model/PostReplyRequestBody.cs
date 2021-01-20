@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PostReplyRequestBody.
     /// </summary>
-    
     public partial class PostReplyRequestBody
     {
     

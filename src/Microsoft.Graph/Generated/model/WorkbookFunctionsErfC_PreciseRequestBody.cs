@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsErfC_PreciseRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsErfC_PreciseRequestBody
     {
     

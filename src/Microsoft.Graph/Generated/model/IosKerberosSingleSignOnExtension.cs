@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosKerberosSingleSignOnExtension.
     /// </summary>
-    
     public partial class IosKerberosSingleSignOnExtension : IosSingleSignOnExtension
     {
         /// <summary>

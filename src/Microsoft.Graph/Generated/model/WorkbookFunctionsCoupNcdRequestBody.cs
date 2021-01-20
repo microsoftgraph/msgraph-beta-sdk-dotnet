@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsCoupNcdRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsCoupNcdRequestBody
     {
     

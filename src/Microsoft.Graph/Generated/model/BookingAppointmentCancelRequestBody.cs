@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type BookingAppointmentCancelRequestBody.
     /// </summary>
-    
     public partial class BookingAppointmentCancelRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Protection Policy Set Item.
     /// </summary>
-    
     public partial class ManagedAppProtectionPolicySetItem : PolicySetItem
     {
     

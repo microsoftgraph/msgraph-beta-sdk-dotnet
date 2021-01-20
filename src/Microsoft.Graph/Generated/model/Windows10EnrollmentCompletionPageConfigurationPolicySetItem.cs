@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Enrollment Completion Page Configuration Policy Set Item.
     /// </summary>
-    
     public partial class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem
     {
     

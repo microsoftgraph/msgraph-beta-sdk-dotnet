@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppPowerShellScriptDetection.
     /// </summary>
-    
     public partial class Win32LobAppPowerShellScriptDetection : Win32LobAppDetection
     {
         /// <summary>

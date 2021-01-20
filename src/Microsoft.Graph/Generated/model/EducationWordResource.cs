@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationWordResource.
     /// </summary>
-    
     public partial class EducationWordResource : EducationResource
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Policy Set.
     /// </summary>
-    
     public partial class PolicySet : Entity
     {
     

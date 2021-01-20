@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TrustFrameworkKeySetUploadCertificateRequestBody.
     /// </summary>
-    
     public partial class TrustFrameworkKeySetUploadCertificateRequestBody
     {
     

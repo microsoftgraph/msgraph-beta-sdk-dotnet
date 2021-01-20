@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsSkew_pRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsSkew_pRequestBody
     {
     

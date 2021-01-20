@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Autopilot Deployment Profile Policy Set Item.
     /// </summary>
-    
     public partial class WindowsAutopilotDeploymentProfilePolicySetItem : PolicySetItem
     {
     

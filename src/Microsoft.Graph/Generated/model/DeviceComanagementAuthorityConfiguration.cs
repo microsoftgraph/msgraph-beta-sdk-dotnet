@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Comanagement Authority Configuration.
     /// </summary>
-    
     public partial class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Lob App.
     /// </summary>
-    
     public partial class AndroidLobApp : MobileLobApp
     {
     

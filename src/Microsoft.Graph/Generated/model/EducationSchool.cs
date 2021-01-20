@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education School.
     /// </summary>
-    
     public partial class EducationSchool : EducationOrganization
     {
     

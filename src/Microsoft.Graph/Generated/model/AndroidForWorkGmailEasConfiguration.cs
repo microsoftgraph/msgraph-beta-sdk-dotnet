@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Gmail Eas Configuration.
     /// </summary>
-    
     public partial class AndroidForWorkGmailEasConfiguration : AndroidForWorkEasEmailProfileBase
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type External Connection.
     /// </summary>
-    
     public partial class ExternalConnection : Entity
     {
     

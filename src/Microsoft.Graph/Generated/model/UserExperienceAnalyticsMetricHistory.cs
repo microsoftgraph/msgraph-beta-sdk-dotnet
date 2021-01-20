@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Metric History.
     /// </summary>
-    
     public partial class UserExperienceAnalyticsMetricHistory : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsRandBetweenRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsRandBetweenRequestBody
     {
     

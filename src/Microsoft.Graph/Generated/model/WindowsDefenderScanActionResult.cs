@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsDefenderScanActionResult.
     /// </summary>
-    
     public partial class WindowsDefenderScanActionResult : DeviceActionResult
     {
         /// <summary>

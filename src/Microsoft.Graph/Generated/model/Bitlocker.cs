@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Bitlocker.
     /// </summary>
-    
     public partial class Bitlocker : Entity
     {
     

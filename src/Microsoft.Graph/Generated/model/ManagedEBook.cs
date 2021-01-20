@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed EBook.
     /// </summary>
-    
     public partial class ManagedEBook : Entity
     {
     

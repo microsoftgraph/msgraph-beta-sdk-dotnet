@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Token Lifetime Policy.
     /// </summary>
-    
     public partial class TokenLifetimePolicy : StsPolicy
     {
     

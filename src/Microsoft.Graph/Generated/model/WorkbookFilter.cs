@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Filter.
     /// </summary>
-    
     public partial class WorkbookFilter : Entity
     {
     

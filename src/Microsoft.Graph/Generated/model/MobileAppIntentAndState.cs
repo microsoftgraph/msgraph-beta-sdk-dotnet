@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Intent And State.
     /// </summary>
-    
     public partial class MobileAppIntentAndState : Entity
     {
     

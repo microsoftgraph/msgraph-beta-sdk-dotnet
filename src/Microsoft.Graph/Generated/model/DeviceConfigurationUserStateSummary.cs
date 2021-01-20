@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Configuration User State Summary.
     /// </summary>
-    
     public partial class DeviceConfigurationUserStateSummary : Entity
     {
     

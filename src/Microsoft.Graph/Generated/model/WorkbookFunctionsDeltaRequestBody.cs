@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsDeltaRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsDeltaRequestBody
     {
     

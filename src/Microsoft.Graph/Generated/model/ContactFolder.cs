@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Contact Folder.
     /// </summary>
-    
     public partial class ContactFolder : Entity
     {
     

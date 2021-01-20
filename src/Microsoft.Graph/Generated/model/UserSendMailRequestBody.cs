@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserSendMailRequestBody.
     /// </summary>
-    
     public partial class UserSendMailRequestBody
     {
     

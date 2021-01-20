@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Task Definition.
     /// </summary>
-    
     public partial class PrintTaskDefinition : Entity
     {
     

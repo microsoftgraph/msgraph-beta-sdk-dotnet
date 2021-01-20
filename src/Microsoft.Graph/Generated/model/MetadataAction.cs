@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MetadataAction.
     /// </summary>
-    
     public partial class MetadataAction : InformationProtectionAction
     {
         /// <summary>

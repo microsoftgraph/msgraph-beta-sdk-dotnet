@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsNegBinom_DistRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsNegBinom_DistRequestBody
     {
     

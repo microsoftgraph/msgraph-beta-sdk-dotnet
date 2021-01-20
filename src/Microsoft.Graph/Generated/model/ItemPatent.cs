@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Patent.
     /// </summary>
-    
     public partial class ItemPatent : ItemFacet
     {
     

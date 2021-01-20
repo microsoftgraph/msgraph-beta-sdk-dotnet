@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Legend.
     /// </summary>
-    
     public partial class WorkbookChartLegend : Entity
     {
     

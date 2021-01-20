@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type On Premises Publishing Profile.
     /// </summary>
-    
     public partial class OnPremisesPublishingProfile : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceComplianceScriptRuleError.
     /// </summary>
-    
     public partial class DeviceComplianceScriptRuleError : DeviceComplianceScriptError
     {
         /// <summary>

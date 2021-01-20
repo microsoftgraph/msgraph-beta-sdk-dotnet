@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookRangeDeleteRequestBody.
     /// </summary>
-    
     public partial class WorkbookRangeDeleteRequestBody
     {
     

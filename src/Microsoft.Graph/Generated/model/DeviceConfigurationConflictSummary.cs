@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Configuration Conflict Summary.
     /// </summary>
-    
     public partial class DeviceConfigurationConflictSummary : Entity
     {
     

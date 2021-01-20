@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Overview.
     /// </summary>
-    
     public partial class UserExperienceAnalyticsOverview : Entity
     {
     

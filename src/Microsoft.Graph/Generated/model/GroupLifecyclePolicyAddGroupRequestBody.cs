@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupLifecyclePolicyAddGroupRequestBody.
     /// </summary>
-    
     public partial class GroupLifecyclePolicyAddGroupRequestBody
     {
     

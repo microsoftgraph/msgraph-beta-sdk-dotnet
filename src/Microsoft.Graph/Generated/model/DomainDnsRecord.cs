@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Domain Dns Record.
     /// </summary>
-    
     public partial class DomainDnsRecord : Entity
     {
     

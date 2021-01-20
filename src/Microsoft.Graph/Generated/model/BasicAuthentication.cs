@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type BasicAuthentication.
     /// </summary>
-    
     public partial class BasicAuthentication : ApiAuthenticationConfigurationBase
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mention.
     /// </summary>
-    
     public partial class Mention : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Role Definition.
     /// </summary>
-    
     public partial class RoleDefinition : Entity
     {
     

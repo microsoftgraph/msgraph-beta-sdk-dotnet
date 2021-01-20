@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Resource Access Profile Assignment.
     /// </summary>
-    
     public partial class DeviceManagementResourceAccessProfileAssignment : Entity
     {
     

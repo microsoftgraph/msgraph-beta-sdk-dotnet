@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Information Protection.
     /// </summary>
-    
     public partial class InformationProtection : Entity
     {
     

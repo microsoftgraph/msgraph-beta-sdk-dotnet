@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Operation.
     /// </summary>
-    
     public partial class WorkbookOperation : Entity
     {
     

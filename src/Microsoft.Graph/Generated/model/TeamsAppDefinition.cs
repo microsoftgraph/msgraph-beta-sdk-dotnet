@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams App Definition.
     /// </summary>
-    
     public partial class TeamsAppDefinition : Entity
     {
     

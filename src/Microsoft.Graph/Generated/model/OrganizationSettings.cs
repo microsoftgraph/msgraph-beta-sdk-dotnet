@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Organization Settings.
     /// </summary>
-    
     public partial class OrganizationSettings : Entity
     {
     

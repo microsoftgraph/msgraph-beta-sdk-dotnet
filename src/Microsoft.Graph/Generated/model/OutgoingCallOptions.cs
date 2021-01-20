@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OutgoingCallOptions.
     /// </summary>
-    
     public partial class OutgoingCallOptions : CallOptions
     {
         /// <summary>

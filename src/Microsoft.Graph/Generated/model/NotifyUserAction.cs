@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type NotifyUserAction.
     /// </summary>
-    
     public partial class NotifyUserAction : DlpActionInfo
     {
         /// <summary>

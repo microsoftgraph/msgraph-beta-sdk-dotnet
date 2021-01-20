@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Targeted Managed App Policy Assignment.
     /// </summary>
-    
     public partial class TargetedManagedAppPolicyAssignment : Entity
     {
     

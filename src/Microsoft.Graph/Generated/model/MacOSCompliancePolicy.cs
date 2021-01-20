@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSCompliance Policy.
     /// </summary>
-    
     public partial class MacOSCompliancePolicy : DeviceCompliancePolicy
     {
     

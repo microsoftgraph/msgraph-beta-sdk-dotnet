@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSMdatp App.
     /// </summary>
-    
     public partial class MacOSMdatpApp : MobileApp
     {
     

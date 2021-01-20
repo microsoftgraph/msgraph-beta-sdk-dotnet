@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Vpn Configuration.
     /// </summary>
-    
     public partial class AndroidForWorkVpnConfiguration : DeviceConfiguration
     {
     

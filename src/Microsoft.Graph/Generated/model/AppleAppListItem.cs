@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AppleAppListItem.
     /// </summary>
-    
     public partial class AppleAppListItem : AppListItem
     {
         /// <summary>

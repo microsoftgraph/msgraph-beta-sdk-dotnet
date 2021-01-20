@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsFisherInvRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsFisherInvRequestBody
     {
     

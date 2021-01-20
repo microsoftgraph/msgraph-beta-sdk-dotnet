@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagementConditionGetManagementConditionsForPlatformRequestBuilder.
     /// </summary>
-    public partial interface IManagementConditionGetManagementConditionsForPlatformRequestBuilder
+    public partial interface IManagementConditionGetManagementConditionsForPlatformRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

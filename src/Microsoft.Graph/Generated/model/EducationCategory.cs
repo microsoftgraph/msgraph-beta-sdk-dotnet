@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Category.
     /// </summary>
-    
     public partial class EducationCategory : Entity
     {
     

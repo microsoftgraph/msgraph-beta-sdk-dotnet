@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type One Drive Activity User Detail.
     /// </summary>
-    
     public partial class OneDriveActivityUserDetail : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OAuth2Permission Grant.
     /// </summary>
-    
     public partial class OAuth2PermissionGrant : Entity
     {
     

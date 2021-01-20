@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Axis Format.
     /// </summary>
-    
     public partial class WorkbookChartAxisFormat : Entity
     {
     

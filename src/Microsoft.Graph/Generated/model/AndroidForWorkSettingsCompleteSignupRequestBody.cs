@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidForWorkSettingsCompleteSignupRequestBody.
     /// </summary>
-    
     public partial class AndroidForWorkSettingsCompleteSignupRequestBody
     {
     

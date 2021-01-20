@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddContentFooterAction.
     /// </summary>
-    
     public partial class AddContentFooterAction : InformationProtectionAction
     {
         /// <summary>

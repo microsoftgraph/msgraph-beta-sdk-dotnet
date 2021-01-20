@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppRegistryRequirement.
     /// </summary>
-    
     public partial class Win32LobAppRegistryRequirement : Win32LobAppRequirement
     {
         /// <summary>

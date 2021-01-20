@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Enrollment Profile.
     /// </summary>
-    
     public partial class AndroidForWorkEnrollmentProfile : Entity
     {
     

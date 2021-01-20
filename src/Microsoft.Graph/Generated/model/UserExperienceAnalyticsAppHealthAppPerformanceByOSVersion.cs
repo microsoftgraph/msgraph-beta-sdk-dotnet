@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics App Health App Performance By OSVersion.
     /// </summary>
-    
     public partial class UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion : Entity
     {
     

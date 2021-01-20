@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SynchronizationJobProvisionOnDemandRequestBody.
     /// </summary>
-    
     public partial class SynchronizationJobProvisionOnDemandRequestBody
     {
     

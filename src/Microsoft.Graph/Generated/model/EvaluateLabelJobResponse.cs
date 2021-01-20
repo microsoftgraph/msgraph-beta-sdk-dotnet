@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Evaluate Label Job Response.
     /// </summary>
-    
     public partial class EvaluateLabelJobResponse : JobResponseBase
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InformationProtectionLabelExtractLabelRequestBody.
     /// </summary>
-    
     public partial class InformationProtectionLabelExtractLabelRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OfficeClientConfigurationUpdatePrioritiesRequestBody.
     /// </summary>
-    
     public partial class OfficeClientConfigurationUpdatePrioritiesRequestBody
     {
     

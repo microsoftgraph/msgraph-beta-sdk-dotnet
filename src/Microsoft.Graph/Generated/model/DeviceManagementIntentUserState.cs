@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Intent User State.
     /// </summary>
-    
     public partial class DeviceManagementIntentUserState : Entity
     {
     

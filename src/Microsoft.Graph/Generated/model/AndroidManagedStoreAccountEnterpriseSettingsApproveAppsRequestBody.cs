@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBody.
     /// </summary>
-    
     public partial class AndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBody
     {
     

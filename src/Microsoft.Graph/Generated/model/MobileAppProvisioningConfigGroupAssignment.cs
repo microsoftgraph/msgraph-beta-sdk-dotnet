@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Provisioning Config Group Assignment.
     /// </summary>
-    
     public partial class MobileAppProvisioningConfigGroupAssignment : Entity
     {
     

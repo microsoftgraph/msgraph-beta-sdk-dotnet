@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PersistentBrowserSessionControl.
     /// </summary>
-    
     public partial class PersistentBrowserSessionControl : ConditionalAccessSessionControl
     {
         /// <summary>

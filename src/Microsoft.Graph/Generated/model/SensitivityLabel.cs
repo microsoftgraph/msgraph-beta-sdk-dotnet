@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sensitivity Label.
     /// </summary>
-    
     public partial class SensitivityLabel : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Regression Summary.
     /// </summary>
-    
     public partial class UserExperienceAnalyticsRegressionSummary : Entity
     {
     

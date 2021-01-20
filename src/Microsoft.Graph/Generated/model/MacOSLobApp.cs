@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSLob App.
     /// </summary>
-    
     public partial class MacOSLobApp : MobileLobApp
     {
     

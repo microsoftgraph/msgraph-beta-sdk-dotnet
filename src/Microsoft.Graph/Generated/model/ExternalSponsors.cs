@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExternalSponsors.
     /// </summary>
-    
     public partial class ExternalSponsors : UserSet
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unsupported Device Configuration.
     /// </summary>
-    
     public partial class UnsupportedDeviceConfiguration : DeviceConfiguration
     {
     

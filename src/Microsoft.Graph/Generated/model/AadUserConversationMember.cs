@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Aad User Conversation Member.
     /// </summary>
-    
     public partial class AadUserConversationMember : ConversationMember
     {
     

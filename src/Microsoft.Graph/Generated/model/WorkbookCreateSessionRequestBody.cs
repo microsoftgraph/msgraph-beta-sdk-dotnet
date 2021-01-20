@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookCreateSessionRequestBody.
     /// </summary>
-    
     public partial class WorkbookCreateSessionRequestBody
     {
     

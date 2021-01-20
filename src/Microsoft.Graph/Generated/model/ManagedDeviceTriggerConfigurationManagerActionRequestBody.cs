@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceTriggerConfigurationManagerActionRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceTriggerConfigurationManagerActionRequestBody
     {
     

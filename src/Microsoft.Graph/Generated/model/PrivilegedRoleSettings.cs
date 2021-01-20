@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Privileged Role Settings.
     /// </summary>
-    
     public partial class PrivilegedRoleSettings : Entity
     {
     

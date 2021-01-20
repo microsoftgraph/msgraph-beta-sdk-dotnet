@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IJournalPostRequestBuilder.
     /// </summary>
-    public partial interface IJournalPostRequestBuilder
+    public partial interface IJournalPostRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

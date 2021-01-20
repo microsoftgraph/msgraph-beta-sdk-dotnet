@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrintDocumentUploadDataRequestBuilder.
     /// </summary>
-    public partial interface IPrintDocumentUploadDataRequestBuilder
+    public partial interface IPrintDocumentUploadDataRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Network Boundary Configuration.
     /// </summary>
-    
     public partial class Windows10NetworkBoundaryConfiguration : DeviceConfiguration
     {
     

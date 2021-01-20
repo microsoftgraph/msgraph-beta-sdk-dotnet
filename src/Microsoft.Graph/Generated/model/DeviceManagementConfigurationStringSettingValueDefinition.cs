@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementConfigurationStringSettingValueDefinition.
     /// </summary>
-    
     public partial class DeviceManagementConfigurationStringSettingValueDefinition : DeviceManagementConfigurationSettingValueDefinition
     {
         /// <summary>

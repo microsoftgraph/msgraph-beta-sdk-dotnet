@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Skill Proficiency.
     /// </summary>
-    
     public partial class SkillProficiency : ItemFacet
     {
     

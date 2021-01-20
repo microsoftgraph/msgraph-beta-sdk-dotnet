@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Single Value Legacy Extended Property.
     /// </summary>
-    
     public partial class SingleValueLegacyExtendedProperty : Entity
     {
     

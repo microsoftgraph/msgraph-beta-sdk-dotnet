@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFilterApplyBottomItemsFilterRequestBody.
     /// </summary>
-    
     public partial class WorkbookFilterApplyBottomItemsFilterRequestBody
     {
     

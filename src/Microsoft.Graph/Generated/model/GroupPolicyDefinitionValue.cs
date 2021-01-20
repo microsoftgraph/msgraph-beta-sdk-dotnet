@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Definition Value.
     /// </summary>
-    
     public partial class GroupPolicyDefinitionValue : Entity
     {
     

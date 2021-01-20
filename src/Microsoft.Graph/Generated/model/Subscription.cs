@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Subscription.
     /// </summary>
-    
     public partial class Subscription : Entity
     {
     

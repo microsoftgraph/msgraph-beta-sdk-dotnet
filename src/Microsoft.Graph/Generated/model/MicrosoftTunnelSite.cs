@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Tunnel Site.
     /// </summary>
-    
     public partial class MicrosoftTunnelSite : Entity
     {
     

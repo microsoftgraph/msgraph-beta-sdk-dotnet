@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProvisioningServicePrincipal.
     /// </summary>
-    
     public partial class ProvisioningServicePrincipal : Identity
     {
         /// <summary>

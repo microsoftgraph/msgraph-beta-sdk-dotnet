@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User.
     /// </summary>
-    
     public partial class User : DirectoryObject
     {
     

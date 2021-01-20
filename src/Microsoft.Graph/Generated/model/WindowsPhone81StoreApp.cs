@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone81Store App.
     /// </summary>
-    
     public partial class WindowsPhone81StoreApp : MobileApp
     {
     

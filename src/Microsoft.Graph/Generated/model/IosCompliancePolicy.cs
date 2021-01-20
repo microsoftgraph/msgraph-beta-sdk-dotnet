@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Compliance Policy.
     /// </summary>
-    
     public partial class IosCompliancePolicy : DeviceCompliancePolicy
     {
     

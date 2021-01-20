@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITiIndicatorDeleteTiIndicatorsByExternalIdRequestBuilder.
     /// </summary>
-    public partial interface ITiIndicatorDeleteTiIndicatorsByExternalIdRequestBuilder
+    public partial interface ITiIndicatorDeleteTiIndicatorsByExternalIdRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

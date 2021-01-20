@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetUnhealthyFirewallSummaryReportRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetUnhealthyFirewallSummaryReportRequestBody
     {
     

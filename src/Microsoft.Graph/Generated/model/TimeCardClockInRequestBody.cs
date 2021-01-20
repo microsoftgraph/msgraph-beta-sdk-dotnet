@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TimeCardClockInRequestBody.
     /// </summary>
-    
     public partial class TimeCardClockInRequestBody
     {
     

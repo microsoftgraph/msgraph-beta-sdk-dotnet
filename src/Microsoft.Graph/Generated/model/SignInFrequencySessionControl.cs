@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SignInFrequencySessionControl.
     /// </summary>
-    
     public partial class SignInFrequencySessionControl : ConditionalAccessSessionControl
     {
         /// <summary>

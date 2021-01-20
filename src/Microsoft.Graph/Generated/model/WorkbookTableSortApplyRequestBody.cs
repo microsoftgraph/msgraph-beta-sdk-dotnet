@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookTableSortApplyRequestBody.
     /// </summary>
-    
     public partial class WorkbookTableSortApplyRequestBody
     {
     

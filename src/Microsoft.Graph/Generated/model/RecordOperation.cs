@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Record Operation.
     /// </summary>
-    
     public partial class RecordOperation : CommsOperation
     {
     

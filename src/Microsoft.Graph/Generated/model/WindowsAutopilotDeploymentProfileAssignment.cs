@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Autopilot Deployment Profile Assignment.
     /// </summary>
-    
     public partial class WindowsAutopilotDeploymentProfileAssignment : Entity
     {
     

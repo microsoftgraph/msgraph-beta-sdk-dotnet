@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Risk Detection.
     /// </summary>
-    
     public partial class RiskDetection : Entity
     {
     

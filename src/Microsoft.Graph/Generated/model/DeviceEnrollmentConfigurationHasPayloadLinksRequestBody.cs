@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceEnrollmentConfigurationHasPayloadLinksRequestBody.
     /// </summary>
-    
     public partial class DeviceEnrollmentConfigurationHasPayloadLinksRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Annotation.
     /// </summary>
-    
     public partial class PersonAnnotation : ItemFacet
     {
     

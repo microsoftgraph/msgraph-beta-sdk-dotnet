@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Shared Insight.
     /// </summary>
-    
     public partial class SharedInsight : Entity
     {
     

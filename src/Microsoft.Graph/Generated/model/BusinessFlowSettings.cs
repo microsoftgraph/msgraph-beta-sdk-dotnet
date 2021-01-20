@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type BusinessFlowSettings.
     /// </summary>
-    
     public partial class BusinessFlowSettings : AccessReviewSettings
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Submission.
     /// </summary>
-    
     public partial class EducationSubmission : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Authentication.
     /// </summary>
-    
     public partial class Authentication : Entity
     {
     

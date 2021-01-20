@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Health Script Run Summary.
     /// </summary>
-    
     public partial class DeviceHealthScriptRunSummary : Entity
     {
     

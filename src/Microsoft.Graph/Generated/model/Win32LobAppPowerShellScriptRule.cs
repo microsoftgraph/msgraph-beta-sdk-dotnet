@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppPowerShellScriptRule.
     /// </summary>
-    
     public partial class Win32LobAppPowerShellScriptRule : Win32LobAppRule
     {
         /// <summary>

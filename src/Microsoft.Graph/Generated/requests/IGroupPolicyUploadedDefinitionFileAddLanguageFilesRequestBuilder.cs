@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupPolicyUploadedDefinitionFileAddLanguageFilesRequestBuilder.
     /// </summary>
-    public partial interface IGroupPolicyUploadedDefinitionFileAddLanguageFilesRequestBuilder
+    public partial interface IGroupPolicyUploadedDefinitionFileAddLanguageFilesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

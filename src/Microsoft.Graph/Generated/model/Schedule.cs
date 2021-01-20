@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Schedule.
     /// </summary>
-    
     public partial class Schedule : Entity
     {
     

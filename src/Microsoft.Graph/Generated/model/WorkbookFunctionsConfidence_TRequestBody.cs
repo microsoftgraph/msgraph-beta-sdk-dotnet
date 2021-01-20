@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsConfidence_TRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsConfidence_TRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner Bucket Task Board Task Format.
     /// </summary>
-    
     public partial class PlannerBucketTaskBoardTaskFormat : PlannerDelta
     {
     

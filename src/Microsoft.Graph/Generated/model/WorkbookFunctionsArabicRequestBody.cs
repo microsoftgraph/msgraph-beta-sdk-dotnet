@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsArabicRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsArabicRequestBody
     {
     

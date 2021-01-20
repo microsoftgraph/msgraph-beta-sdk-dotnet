@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Subscribe To Tone Operation.
     /// </summary>
-    
     public partial class SubscribeToToneOperation : CommsOperation
     {
     

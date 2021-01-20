@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Privileged Role Assignment Request.
     /// </summary>
-    
     public partial class PrivilegedRoleAssignmentRequestObject : Entity
     {
     

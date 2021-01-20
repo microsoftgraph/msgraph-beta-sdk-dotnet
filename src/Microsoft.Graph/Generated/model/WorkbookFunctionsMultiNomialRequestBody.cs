@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsMultiNomialRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsMultiNomialRequestBody
     {
     

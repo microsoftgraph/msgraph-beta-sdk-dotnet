@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsFloor_PreciseRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsFloor_PreciseRequestBody
     {
     

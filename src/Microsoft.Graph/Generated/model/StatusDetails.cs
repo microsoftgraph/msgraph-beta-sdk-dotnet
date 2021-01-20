@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type StatusDetails.
     /// </summary>
-    
     public partial class StatusDetails : StatusBase
     {
         /// <summary>

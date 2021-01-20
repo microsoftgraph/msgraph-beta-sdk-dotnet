@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Password Authentication Method.
     /// </summary>
-    
     public partial class PasswordAuthenticationMethod : AuthenticationMethod
     {
     

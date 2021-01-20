@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SensitivityLabelEvaluateRequestBody.
     /// </summary>
-    
     public partial class SensitivityLabelEvaluateRequestBody
     {
     

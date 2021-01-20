@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Subject.
     /// </summary>
-    
     public partial class AccessPackageSubject : Entity
     {
     

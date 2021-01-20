@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Web App.
     /// </summary>
-    
     public partial class WebApp : MobileApp
     {
     

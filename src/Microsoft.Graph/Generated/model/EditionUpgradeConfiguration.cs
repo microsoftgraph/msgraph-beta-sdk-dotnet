@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Edition Upgrade Configuration.
     /// </summary>
-    
     public partial class EditionUpgradeConfiguration : DeviceConfiguration
     {
     

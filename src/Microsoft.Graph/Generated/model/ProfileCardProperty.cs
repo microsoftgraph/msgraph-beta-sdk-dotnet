@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Profile Card Property.
     /// </summary>
-    
     public partial class ProfileCardProperty : Entity
     {
     

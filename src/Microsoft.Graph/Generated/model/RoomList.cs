@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Room List.
     /// </summary>
-    
     public partial class RoomList : Place
     {
     

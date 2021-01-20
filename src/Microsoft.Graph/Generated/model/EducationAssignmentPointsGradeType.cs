@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationAssignmentPointsGradeType.
     /// </summary>
-    
     public partial class EducationAssignmentPointsGradeType : EducationAssignmentGradeType
     {
         /// <summary>

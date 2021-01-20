@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Role Scope Tag.
     /// </summary>
-    
     public partial class RoleScopeTag : Entity
     {
     

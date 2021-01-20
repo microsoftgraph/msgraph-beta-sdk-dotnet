@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Job.
     /// </summary>
-    
     public partial class PrintJob : Entity
     {
     

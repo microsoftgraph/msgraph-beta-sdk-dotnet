@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsXnpvRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsXnpvRequestBody
     {
     

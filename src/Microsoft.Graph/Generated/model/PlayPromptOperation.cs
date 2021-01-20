@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Play Prompt Operation.
     /// </summary>
-    
     public partial class PlayPromptOperation : CommsOperation
     {
     

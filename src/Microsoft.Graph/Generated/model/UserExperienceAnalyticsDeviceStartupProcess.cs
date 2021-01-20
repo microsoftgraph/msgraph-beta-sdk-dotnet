@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Device Startup Process.
     /// </summary>
-    
     public partial class UserExperienceAnalyticsDeviceStartupProcess : Entity
     {
     

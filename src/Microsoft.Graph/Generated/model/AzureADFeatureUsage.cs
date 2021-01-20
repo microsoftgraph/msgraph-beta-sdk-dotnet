@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Azure ADFeature Usage.
     /// </summary>
-    
     public partial class AzureADFeatureUsage : Entity
     {
     

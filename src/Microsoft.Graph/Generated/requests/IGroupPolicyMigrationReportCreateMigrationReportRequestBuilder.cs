@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupPolicyMigrationReportCreateMigrationReportRequestBuilder.
     /// </summary>
-    public partial interface IGroupPolicyMigrationReportCreateMigrationReportRequestBuilder
+    public partial interface IGroupPolicyMigrationReportCreateMigrationReportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

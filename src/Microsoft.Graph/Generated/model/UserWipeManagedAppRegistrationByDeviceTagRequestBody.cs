@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserWipeManagedAppRegistrationByDeviceTagRequestBody.
     /// </summary>
-    
     public partial class UserWipeManagedAppRegistrationByDeviceTagRequestBody
     {
     

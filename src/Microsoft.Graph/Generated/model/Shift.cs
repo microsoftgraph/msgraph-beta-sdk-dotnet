@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Shift.
     /// </summary>
-    
     public partial class Shift : ChangeTrackedEntity
     {
     

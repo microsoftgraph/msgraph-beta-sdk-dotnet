@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsDeviceADAccount.
     /// </summary>
-    
     public partial class WindowsDeviceADAccount : WindowsDeviceAccount
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Account.
     /// </summary>
-    
     public partial class Account : Entity
     {
     

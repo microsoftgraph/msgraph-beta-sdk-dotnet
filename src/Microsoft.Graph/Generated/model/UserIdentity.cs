@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserIdentity.
     /// </summary>
-    
     public partial class UserIdentity : Identity
     {
         /// <summary>

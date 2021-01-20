@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Reference Attachment.
     /// </summary>
-    
     public partial class ReferenceAttachment : Attachment
     {
     

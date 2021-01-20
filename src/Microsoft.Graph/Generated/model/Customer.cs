@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Customer.
     /// </summary>
-    
     public partial class Customer : Entity
     {
     

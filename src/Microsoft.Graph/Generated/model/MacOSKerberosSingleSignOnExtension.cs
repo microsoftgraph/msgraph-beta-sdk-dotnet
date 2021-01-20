@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MacOSKerberosSingleSignOnExtension.
     /// </summary>
-    
     public partial class MacOSKerberosSingleSignOnExtension : MacOSSingleSignOnExtension
     {
         /// <summary>

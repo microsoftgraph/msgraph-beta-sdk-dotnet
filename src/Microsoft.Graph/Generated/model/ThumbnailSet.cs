@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Thumbnail Set.
     /// </summary>
-    
     public partial class ThumbnailSet : Entity
     {
     

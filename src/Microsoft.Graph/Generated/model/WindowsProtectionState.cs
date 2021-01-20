@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Protection State.
     /// </summary>
-    
     public partial class WindowsProtectionState : Entity
     {
     

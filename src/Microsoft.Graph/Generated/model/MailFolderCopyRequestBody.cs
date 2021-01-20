@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MailFolderCopyRequestBody.
     /// </summary>
-    
     public partial class MailFolderCopyRequestBody
     {
     

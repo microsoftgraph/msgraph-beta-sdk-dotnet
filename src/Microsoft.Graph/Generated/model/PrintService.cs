@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Service.
     /// </summary>
-    
     public partial class PrintService : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFilterApplyRequestBody.
     /// </summary>
-    
     public partial class WorkbookFilterApplyRequestBody
     {
     

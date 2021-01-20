@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RemoveProtectionAction.
     /// </summary>
-    
     public partial class RemoveProtectionAction : InformationProtectionAction
     {
         /// <summary>

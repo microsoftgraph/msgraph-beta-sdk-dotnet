@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Apple Vpp Token Troubleshooting Event.
     /// </summary>
-    
     public partial class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     

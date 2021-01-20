@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Registration Policy.
     /// </summary>
-    
     public partial class DeviceRegistrationPolicy : Entity
     {
     

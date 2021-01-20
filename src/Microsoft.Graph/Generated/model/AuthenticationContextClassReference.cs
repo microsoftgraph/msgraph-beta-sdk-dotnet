@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Authentication Context Class Reference.
     /// </summary>
-    
     public partial class AuthenticationContextClassReference : Entity
     {
     

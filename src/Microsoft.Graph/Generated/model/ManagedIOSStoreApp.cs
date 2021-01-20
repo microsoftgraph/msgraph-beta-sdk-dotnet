@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed IOSStore App.
     /// </summary>
-    
     public partial class ManagedIOSStoreApp : ManagedApp
     {
     

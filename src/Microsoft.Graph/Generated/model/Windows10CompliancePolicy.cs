@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Compliance Policy.
     /// </summary>
-    
     public partial class Windows10CompliancePolicy : DeviceCompliancePolicy
     {
     

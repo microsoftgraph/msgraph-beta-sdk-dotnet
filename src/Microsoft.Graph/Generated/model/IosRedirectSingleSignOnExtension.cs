@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosRedirectSingleSignOnExtension.
     /// </summary>
-    
     public partial class IosRedirectSingleSignOnExtension : IosSingleSignOnExtension
     {
         /// <summary>

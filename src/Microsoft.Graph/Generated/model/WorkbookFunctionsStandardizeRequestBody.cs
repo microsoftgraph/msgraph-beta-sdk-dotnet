@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsStandardizeRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsStandardizeRequestBody
     {
     

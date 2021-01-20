@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealthScriptUpdateGlobalScriptRequestBody.
     /// </summary>
-    
     public partial class DeviceHealthScriptUpdateGlobalScriptRequestBody
     {
     

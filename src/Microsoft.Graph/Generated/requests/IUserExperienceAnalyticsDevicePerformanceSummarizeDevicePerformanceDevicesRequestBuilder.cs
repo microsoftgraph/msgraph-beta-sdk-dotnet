@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesRequestBuilder.
     /// </summary>
-    public partial interface IUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesRequestBuilder
+    public partial interface IUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

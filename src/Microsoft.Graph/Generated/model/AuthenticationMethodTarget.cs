@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Authentication Method Target.
     /// </summary>
-    
     public partial class AuthenticationMethodTarget : Entity
     {
     

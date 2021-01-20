@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskVisitor.
     /// </summary>
-    
     public partial class WindowsKioskVisitor : WindowsKioskUser
     {
         /// <summary>

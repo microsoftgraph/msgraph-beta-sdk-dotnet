@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Session.
     /// </summary>
-    
     public partial class ExactMatchSession : ExactMatchJobBase
     {
     

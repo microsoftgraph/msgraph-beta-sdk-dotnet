@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Aged Accounts Receivable.
     /// </summary>
-    
     public partial class AgedAccountsReceivable : Entity
     {
     

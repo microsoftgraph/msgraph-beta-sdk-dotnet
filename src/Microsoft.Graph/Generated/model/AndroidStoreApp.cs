@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Store App.
     /// </summary>
-    
     public partial class AndroidStoreApp : MobileApp
     {
     

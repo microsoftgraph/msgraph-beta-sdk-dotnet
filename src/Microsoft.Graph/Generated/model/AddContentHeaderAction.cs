@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddContentHeaderAction.
     /// </summary>
-    
     public partial class AddContentHeaderAction : InformationProtectionAction
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Synchronization Error.
     /// </summary>
-    
     public partial class EducationSynchronizationError : Entity
     {
     

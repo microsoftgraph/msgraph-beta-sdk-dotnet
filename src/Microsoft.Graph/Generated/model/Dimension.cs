@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dimension.
     /// </summary>
-    
     public partial class Dimension : Entity
     {
     

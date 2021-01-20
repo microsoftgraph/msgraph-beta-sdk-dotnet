@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Mobile App Configuration.
     /// </summary>
-    
     public partial class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Application Sign In Detailed Summary.
     /// </summary>
-    
     public partial class ApplicationSignInDetailedSummary : Entity
     {
     

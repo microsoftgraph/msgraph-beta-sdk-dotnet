@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Program.
     /// </summary>
-    
     public partial class Program : Entity
     {
     

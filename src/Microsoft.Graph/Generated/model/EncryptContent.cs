@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EncryptContent.
     /// </summary>
-    
     public abstract partial class EncryptContent : LabelActionBase
     {
 

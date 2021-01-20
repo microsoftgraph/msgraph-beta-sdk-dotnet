@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Certificate Based Auth Configuration.
     /// </summary>
-    
     public partial class CertificateBasedAuthConfiguration : Entity
     {
     

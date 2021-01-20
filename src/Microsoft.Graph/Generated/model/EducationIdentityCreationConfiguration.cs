@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationIdentityCreationConfiguration.
     /// </summary>
-    
     public partial class EducationIdentityCreationConfiguration : EducationIdentitySynchronizationConfiguration
     {
         /// <summary>

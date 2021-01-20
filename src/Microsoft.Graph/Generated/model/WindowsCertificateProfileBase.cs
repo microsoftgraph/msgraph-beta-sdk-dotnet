@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Certificate Profile Base.
     /// </summary>
-    
     public partial class WindowsCertificateProfileBase : DeviceConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Report Schedule.
     /// </summary>
-    
     public partial class DeviceManagementReportSchedule : Entity
     {
     

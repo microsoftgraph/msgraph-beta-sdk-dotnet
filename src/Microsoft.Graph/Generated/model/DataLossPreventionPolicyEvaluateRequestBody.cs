@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DataLossPreventionPolicyEvaluateRequestBody.
     /// </summary>
-    
     public partial class DataLossPreventionPolicyEvaluateRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MobileAppHasPayloadLinksRequestBody.
     /// </summary>
-    
     public partial class MobileAppHasPayloadLinksRequestBody
     {
     

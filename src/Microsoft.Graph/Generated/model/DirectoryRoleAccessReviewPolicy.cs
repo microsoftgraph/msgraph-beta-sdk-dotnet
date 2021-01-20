@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Role Access Review Policy.
     /// </summary>
-    
     public partial class DirectoryRoleAccessReviewPolicy : Entity
     {
     

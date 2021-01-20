@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MachineLearningDetectedSensitiveContent.
     /// </summary>
-    
     public partial class MachineLearningDetectedSensitiveContent : DetectedSensitiveContent
     {
         /// <summary>

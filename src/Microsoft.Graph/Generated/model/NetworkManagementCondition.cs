@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Network Management Condition.
     /// </summary>
-    
     public partial class NetworkManagementCondition : ManagementCondition
     {
     

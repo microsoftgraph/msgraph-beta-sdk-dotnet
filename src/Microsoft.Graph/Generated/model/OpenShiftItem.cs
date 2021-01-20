@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OpenShiftItem.
     /// </summary>
-    
     public partial class OpenShiftItem : ShiftItem
     {
         /// <summary>

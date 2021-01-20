@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams User Activity User Counts.
     /// </summary>
-    
     public partial class TeamsUserActivityUserCounts : Entity
     {
     

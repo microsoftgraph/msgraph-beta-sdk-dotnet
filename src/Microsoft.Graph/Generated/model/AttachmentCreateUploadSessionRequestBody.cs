@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AttachmentCreateUploadSessionRequestBody.
     /// </summary>
-    
     public partial class AttachmentCreateUploadSessionRequestBody
     {
     

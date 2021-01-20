@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Network IPv4Configuration Management Condition.
     /// </summary>
-    
     public partial class NetworkIPv4ConfigurationManagementCondition : NetworkManagementCondition
     {
     

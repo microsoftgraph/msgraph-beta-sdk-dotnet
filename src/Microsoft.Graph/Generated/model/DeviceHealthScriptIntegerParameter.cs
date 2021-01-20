@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealthScriptIntegerParameter.
     /// </summary>
-    
     public partial class DeviceHealthScriptIntegerParameter : DeviceHealthScriptParameter
     {
         /// <summary>

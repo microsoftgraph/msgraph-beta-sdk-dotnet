@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Endpoint Protection Configuration.
     /// </summary>
-    
     public partial class Windows10EndpointProtectionConfiguration : DeviceConfiguration
     {
     

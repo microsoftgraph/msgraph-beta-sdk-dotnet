@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Export Job.
     /// </summary>
-    
     public partial class DeviceManagementExportJob : Entity
     {
     

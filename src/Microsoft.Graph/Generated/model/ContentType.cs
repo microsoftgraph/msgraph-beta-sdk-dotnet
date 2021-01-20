@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Content Type.
     /// </summary>
-    
     public partial class ContentType : Entity
     {
     

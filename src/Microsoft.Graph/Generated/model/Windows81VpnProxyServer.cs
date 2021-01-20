@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81VpnProxyServer.
     /// </summary>
-    
     public partial class Windows81VpnProxyServer : VpnProxyServer
     {
         /// <summary>

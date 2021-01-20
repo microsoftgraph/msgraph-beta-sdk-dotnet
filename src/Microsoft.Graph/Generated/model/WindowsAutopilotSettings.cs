@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Autopilot Settings.
     /// </summary>
-    
     public partial class WindowsAutopilotSettings : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealthScriptDailySchedule.
     /// </summary>
-    
     public partial class DeviceHealthScriptDailySchedule : DeviceHealthScriptTimeSchedule
     {
         /// <summary>

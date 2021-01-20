@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetAzureADFeatureUsageRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetAzureADFeatureUsageRequestBuilder
+    public partial interface IReportRootGetAzureADFeatureUsageRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

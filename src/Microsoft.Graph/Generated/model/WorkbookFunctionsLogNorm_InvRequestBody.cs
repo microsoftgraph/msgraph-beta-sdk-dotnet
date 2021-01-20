@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsLogNorm_InvRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsLogNorm_InvRequestBody
     {
     

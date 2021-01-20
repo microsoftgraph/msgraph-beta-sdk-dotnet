@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Risky User History Item.
     /// </summary>
-    
     public partial class RiskyUserHistoryItem : RiskyUser
     {
     

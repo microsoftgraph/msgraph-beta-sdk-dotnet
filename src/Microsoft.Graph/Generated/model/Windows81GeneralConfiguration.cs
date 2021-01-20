@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81General Configuration.
     /// </summary>
-    
     public partial class Windows81GeneralConfiguration : DeviceConfiguration
     {
     

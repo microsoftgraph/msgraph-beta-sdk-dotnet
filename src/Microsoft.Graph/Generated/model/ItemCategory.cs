@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Category.
     /// </summary>
-    
     public partial class ItemCategory : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsRoundDownRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsRoundDownRequestBody
     {
     

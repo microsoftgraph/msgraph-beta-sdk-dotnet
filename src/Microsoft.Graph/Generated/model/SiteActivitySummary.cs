@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Site Activity Summary.
     /// </summary>
-    
     public partial class SiteActivitySummary : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GovernanceResourceRegisterRequestBody.
     /// </summary>
-    
     public partial class GovernanceResourceRegisterRequestBody
     {
     

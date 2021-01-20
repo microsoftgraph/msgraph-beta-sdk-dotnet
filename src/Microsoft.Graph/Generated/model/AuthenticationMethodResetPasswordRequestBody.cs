@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AuthenticationMethodResetPasswordRequestBody.
     /// </summary>
-    
     public partial class AuthenticationMethodResetPasswordRequestBody
     {
     

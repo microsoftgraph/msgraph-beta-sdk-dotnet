@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Update For Business Configuration.
     /// </summary>
-    
     public partial class WindowsUpdateForBusinessConfiguration : DeviceConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GovernanceRoleAssignmentRequestUpdateRequestRequestBody.
     /// </summary>
-    
     public partial class GovernanceRoleAssignmentRequestUpdateRequestRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CustomTimeZone.
     /// </summary>
-    
     public partial class CustomTimeZone : TimeZoneBase
     {
         /// <summary>

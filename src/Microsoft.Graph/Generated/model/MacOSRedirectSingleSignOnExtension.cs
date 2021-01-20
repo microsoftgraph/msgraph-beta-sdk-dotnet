@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MacOSRedirectSingleSignOnExtension.
     /// </summary>
-    
     public partial class MacOSRedirectSingleSignOnExtension : MacOSSingleSignOnExtension
     {
         /// <summary>

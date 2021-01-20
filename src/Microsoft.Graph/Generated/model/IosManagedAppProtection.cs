@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Managed App Protection.
     /// </summary>
-    
     public partial class IosManagedAppProtection : TargetedManagedAppProtection
     {
     

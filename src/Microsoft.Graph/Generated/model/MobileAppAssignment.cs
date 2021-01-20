@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Assignment.
     /// </summary>
-    
     public partial class MobileAppAssignment : Entity
     {
     

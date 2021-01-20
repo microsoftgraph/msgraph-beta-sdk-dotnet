@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsPoisson_DistRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsPoisson_DistRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type BinaryManagementConditionExpression.
     /// </summary>
-    
     public partial class BinaryManagementConditionExpression : ManagementConditionExpressionModel
     {
         /// <summary>

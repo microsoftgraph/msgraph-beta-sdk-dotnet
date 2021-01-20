@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsImConjugateRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsImConjugateRequestBody
     {
     

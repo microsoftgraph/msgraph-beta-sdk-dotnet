@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Attendee.
     /// </summary>
-    
     public partial class Attendee : AttendeeBase
     {
         /// <summary>

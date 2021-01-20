@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Conditional Access Root.
     /// </summary>
-    
     public partial class ConditionalAccessRoot : Entity
     {
     

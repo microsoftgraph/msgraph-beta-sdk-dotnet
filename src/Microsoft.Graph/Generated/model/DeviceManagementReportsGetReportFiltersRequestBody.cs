@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetReportFiltersRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetReportFiltersRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Function Result.
     /// </summary>
-    
     public partial class WorkbookFunctionResult : Entity
     {
     

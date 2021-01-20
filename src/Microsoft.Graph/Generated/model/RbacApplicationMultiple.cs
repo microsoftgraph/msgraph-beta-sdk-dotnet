@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Rbac Application Multiple.
     /// </summary>
-    
     public partial class RbacApplicationMultiple : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppProductCodeRule.
     /// </summary>
-    
     public partial class Win32LobAppProductCodeRule : Win32LobAppRule
     {
         /// <summary>

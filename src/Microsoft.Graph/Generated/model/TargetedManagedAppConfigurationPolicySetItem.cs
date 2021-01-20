@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Targeted Managed App Configuration Policy Set Item.
     /// </summary>
-    
     public partial class TargetedManagedAppConfigurationPolicySetItem : PolicySetItem
     {
     

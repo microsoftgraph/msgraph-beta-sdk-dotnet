@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Insights Settings.
     /// </summary>
-    
     public partial class ItemInsightsSettings : Entity
     {
     

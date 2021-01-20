@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementEnumConstraint.
     /// </summary>
-    
     public partial class DeviceManagementEnumConstraint : DeviceManagementConstraint
     {
         /// <summary>

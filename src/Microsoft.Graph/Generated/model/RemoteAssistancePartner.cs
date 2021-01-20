@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Remote Assistance Partner.
     /// </summary>
-    
     public partial class RemoteAssistancePartner : Entity
     {
     

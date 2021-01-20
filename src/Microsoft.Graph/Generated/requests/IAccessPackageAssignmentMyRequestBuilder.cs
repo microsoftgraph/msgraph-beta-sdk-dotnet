@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessPackageAssignmentMyRequestBuilder.
     /// </summary>
-    public partial interface IAccessPackageAssignmentMyRequestBuilder
+    public partial interface IAccessPackageAssignmentMyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

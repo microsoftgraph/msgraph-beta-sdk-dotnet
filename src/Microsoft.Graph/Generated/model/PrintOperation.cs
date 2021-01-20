@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Operation.
     /// </summary>
-    
     public partial class PrintOperation : Entity
     {
     

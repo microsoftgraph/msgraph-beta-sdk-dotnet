@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsMedianRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsMedianRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Agreement File Properties.
     /// </summary>
-    
     public partial class AgreementFileProperties : Entity
     {
     

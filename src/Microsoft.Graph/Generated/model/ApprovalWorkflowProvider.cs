@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Approval Workflow Provider.
     /// </summary>
-    
     public partial class ApprovalWorkflowProvider : Entity
     {
     

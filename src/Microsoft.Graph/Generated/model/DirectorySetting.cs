@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Setting.
     /// </summary>
-    
     public partial class DirectorySetting : Entity
     {
     

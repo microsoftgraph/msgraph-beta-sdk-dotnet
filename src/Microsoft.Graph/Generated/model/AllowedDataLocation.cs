@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Allowed Data Location.
     /// </summary>
-    
     public partial class AllowedDataLocation : Entity
     {
     

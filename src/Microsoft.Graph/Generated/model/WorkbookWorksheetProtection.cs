@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Worksheet Protection.
     /// </summary>
-    
     public partial class WorkbookWorksheetProtection : Entity
     {
     

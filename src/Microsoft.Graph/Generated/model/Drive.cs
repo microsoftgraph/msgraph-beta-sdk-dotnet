@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Drive.
     /// </summary>
-    
     public partial class Drive : BaseItem
     {
     

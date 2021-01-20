@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Host Security Profile.
     /// </summary>
-    
     public partial class HostSecurityProfile : Entity
     {
     

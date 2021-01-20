@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsXirrRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsXirrRequestBody
     {
     

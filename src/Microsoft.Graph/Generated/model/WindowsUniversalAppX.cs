@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Universal App X.
     /// </summary>
-    
     public partial class WindowsUniversalAppX : MobileLobApp
     {
     

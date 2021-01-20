@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Lifecycle Policy.
     /// </summary>
-    
     public partial class GroupLifecyclePolicy : Entity
     {
     

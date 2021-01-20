@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Calendar Permission.
     /// </summary>
-    
     public partial class CalendarPermission : Entity
     {
     

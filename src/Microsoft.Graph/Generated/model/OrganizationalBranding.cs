@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Organizational Branding.
     /// </summary>
-    
     public partial class OrganizationalBranding : OrganizationalBrandingProperties
     {
     

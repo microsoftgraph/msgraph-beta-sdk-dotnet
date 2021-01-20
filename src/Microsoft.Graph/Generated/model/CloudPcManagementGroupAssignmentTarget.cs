@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudPcManagementGroupAssignmentTarget.
     /// </summary>
-    
     public partial class CloudPcManagementGroupAssignmentTarget : CloudPcManagementAssignmentTarget
     {
         /// <summary>

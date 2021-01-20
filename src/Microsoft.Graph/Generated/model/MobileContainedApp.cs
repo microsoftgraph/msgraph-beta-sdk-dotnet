@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile Contained App.
     /// </summary>
-    
     public partial class MobileContainedApp : Entity
     {
     

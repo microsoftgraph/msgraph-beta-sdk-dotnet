@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder
+    public partial interface IDeviceManagementReportsGetSettingNonComplianceReportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

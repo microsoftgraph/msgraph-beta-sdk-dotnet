@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Imported PFXCertificate Profile.
     /// </summary>
-    
     public partial class AndroidImportedPFXCertificateProfile : AndroidCertificateProfileBase
     {
     

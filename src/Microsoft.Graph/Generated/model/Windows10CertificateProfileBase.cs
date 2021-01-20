@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Certificate Profile Base.
     /// </summary>
-    
     public partial class Windows10CertificateProfileBase : WindowsCertificateProfileBase
     {
     

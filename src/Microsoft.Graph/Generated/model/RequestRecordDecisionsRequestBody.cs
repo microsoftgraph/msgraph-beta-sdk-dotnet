@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RequestRecordDecisionsRequestBody.
     /// </summary>
-    
     public partial class RequestRecordDecisionsRequestBody
     {
     

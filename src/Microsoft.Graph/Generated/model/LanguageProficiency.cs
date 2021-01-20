@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Language Proficiency.
     /// </summary>
-    
     public partial class LanguageProficiency : ItemFacet
     {
     

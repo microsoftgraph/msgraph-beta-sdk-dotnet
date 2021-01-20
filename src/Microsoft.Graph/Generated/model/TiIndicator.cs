@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ti Indicator.
     /// </summary>
-    
     public partial class TiIndicator : Entity
     {
     

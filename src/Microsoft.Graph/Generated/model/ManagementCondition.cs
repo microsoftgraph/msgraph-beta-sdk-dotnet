@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Management Condition.
     /// </summary>
-    
     public partial class ManagementCondition : Entity
     {
     

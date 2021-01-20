@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type VppTokenRevokeLicensesActionResult.
     /// </summary>
-    
     public partial class VppTokenRevokeLicensesActionResult : VppTokenActionResult
     {
         /// <summary>

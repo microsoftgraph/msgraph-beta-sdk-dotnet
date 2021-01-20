@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type LabelDetails.
     /// </summary>
-    
     public partial class LabelDetails : ParentLabelDetails
     {
         /// <summary>

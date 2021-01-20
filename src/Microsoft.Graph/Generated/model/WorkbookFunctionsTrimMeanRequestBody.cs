@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsTrimMeanRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsTrimMeanRequestBody
     {
     

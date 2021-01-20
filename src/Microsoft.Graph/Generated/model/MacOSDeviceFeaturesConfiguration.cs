@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSDevice Features Configuration.
     /// </summary>
-    
     public partial class MacOSDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Privileged Operation Event.
     /// </summary>
-    
     public partial class PrivilegedOperationEvent : Entity
     {
     

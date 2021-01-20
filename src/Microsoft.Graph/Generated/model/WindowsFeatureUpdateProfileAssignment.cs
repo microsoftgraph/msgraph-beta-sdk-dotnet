@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Feature Update Profile Assignment.
     /// </summary>
-    
     public partial class WindowsFeatureUpdateProfileAssignment : Entity
     {
     

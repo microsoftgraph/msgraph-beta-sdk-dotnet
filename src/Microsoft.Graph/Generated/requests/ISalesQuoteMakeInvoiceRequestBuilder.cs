@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISalesQuoteMakeInvoiceRequestBuilder.
     /// </summary>
-    public partial interface ISalesQuoteMakeInvoiceRequestBuilder
+    public partial interface ISalesQuoteMakeInvoiceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

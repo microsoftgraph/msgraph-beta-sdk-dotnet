@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Company.
     /// </summary>
-    
     public partial class Company : Entity
     {
     

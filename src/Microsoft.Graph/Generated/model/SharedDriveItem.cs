@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Shared Drive Item.
     /// </summary>
-    
     public partial class SharedDriveItem : BaseItem
     {
     

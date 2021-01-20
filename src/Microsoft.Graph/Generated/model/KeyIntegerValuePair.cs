@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type KeyIntegerValuePair.
     /// </summary>
-    
     public partial class KeyIntegerValuePair : KeyTypedValuePair
     {
         /// <summary>

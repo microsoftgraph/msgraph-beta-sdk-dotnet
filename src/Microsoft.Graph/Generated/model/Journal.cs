@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Journal.
     /// </summary>
-    
     public partial class Journal : Entity
     {
     

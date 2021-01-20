@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProgramResource.
     /// </summary>
-    
     public partial class ProgramResource : Identity
     {
         /// <summary>

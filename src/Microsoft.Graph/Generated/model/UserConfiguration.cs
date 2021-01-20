@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Configuration.
     /// </summary>
-    
     public partial class UserConfiguration : Entity
     {
     

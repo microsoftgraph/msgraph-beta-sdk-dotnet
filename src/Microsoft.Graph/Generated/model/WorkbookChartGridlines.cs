@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Gridlines.
     /// </summary>
-    
     public partial class WorkbookChartGridlines : Entity
     {
     

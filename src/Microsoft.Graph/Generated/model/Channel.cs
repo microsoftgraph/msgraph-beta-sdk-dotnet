@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Channel.
     /// </summary>
-    
     public partial class Channel : Entity
     {
     

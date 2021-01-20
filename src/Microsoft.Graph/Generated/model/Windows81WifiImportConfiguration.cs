@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81Wifi Import Configuration.
     /// </summary>
-    
     public partial class Windows81WifiImportConfiguration : DeviceConfiguration
     {
     

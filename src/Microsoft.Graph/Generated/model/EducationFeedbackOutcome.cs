@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Feedback Outcome.
     /// </summary>
-    
     public partial class EducationFeedbackOutcome : EducationOutcome
     {
     

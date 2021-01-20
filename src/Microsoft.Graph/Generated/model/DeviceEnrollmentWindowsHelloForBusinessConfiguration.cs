@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Enrollment Windows Hello For Business Configuration.
     /// </summary>
-    
     public partial class DeviceEnrollmentWindowsHelloForBusinessConfiguration : DeviceEnrollmentConfiguration
     {
     

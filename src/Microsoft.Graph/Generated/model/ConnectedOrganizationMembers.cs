@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ConnectedOrganizationMembers.
     /// </summary>
-    
     public partial class ConnectedOrganizationMembers : UserSet
     {
         /// <summary>

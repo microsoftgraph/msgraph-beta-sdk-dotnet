@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookNamedItemAddRequestBody.
     /// </summary>
-    
     public partial class WorkbookNamedItemAddRequestBody
     {
     

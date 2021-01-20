@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Compliance Local Action Lock Device.
     /// </summary>
-    
     public partial class AndroidDeviceComplianceLocalActionLockDevice : AndroidDeviceComplianceLocalActionBase
     {
     

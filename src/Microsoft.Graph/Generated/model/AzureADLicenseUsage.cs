@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Azure ADLicense Usage.
     /// </summary>
-    
     public partial class AzureADLicenseUsage : Entity
     {
     

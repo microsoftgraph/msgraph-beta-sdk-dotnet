@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsDaverageRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsDaverageRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementResourceAccessProfileBaseAssignRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementResourceAccessProfileBaseAssignRequestBody
     {
     

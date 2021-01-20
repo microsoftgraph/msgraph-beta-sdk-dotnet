@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EdgeHomeButtonOpensNewTab.
     /// </summary>
-    
     public partial class EdgeHomeButtonOpensNewTab : EdgeHomeButtonConfiguration
     {
         /// <summary>

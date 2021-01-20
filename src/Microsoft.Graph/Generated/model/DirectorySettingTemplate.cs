@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Setting Template.
     /// </summary>
-    
     public partial class DirectorySettingTemplate : DirectoryObject
     {
     

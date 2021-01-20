@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DomainForceDeleteRequestBody.
     /// </summary>
-    
     public partial class DomainForceDeleteRequestBody
     {
     

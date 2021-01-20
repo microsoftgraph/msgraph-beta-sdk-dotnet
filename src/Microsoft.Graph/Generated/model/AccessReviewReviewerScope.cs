@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessReviewReviewerScope.
     /// </summary>
-    
     public partial class AccessReviewReviewerScope : AccessReviewScope
     {
         /// <summary>

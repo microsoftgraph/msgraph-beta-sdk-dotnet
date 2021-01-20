@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MacOSAzureAdSingleSignOnExtension.
     /// </summary>
-    
     public partial class MacOSAzureAdSingleSignOnExtension : MacOSSingleSignOnExtension
     {
         /// <summary>

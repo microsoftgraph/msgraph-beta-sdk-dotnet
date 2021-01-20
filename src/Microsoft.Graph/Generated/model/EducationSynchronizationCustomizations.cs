@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationSynchronizationCustomizations.
     /// </summary>
-    
     public partial class EducationSynchronizationCustomizations : EducationSynchronizationCustomizationsBase
     {
         /// <summary>

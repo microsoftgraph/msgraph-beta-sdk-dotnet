@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Address.
     /// </summary>
-    
     public partial class ItemAddress : ItemFacet
     {
     

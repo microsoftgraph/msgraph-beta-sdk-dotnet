@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSPkcs Certificate Profile.
     /// </summary>
-    
     public partial class MacOSPkcsCertificateProfile : MacOSCertificateProfileBase
     {
     

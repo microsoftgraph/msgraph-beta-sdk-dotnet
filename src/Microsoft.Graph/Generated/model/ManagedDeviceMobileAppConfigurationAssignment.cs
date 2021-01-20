@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device Mobile App Configuration Assignment.
     /// </summary>
-    
     public partial class ManagedDeviceMobileAppConfigurationAssignment : Entity
     {
     

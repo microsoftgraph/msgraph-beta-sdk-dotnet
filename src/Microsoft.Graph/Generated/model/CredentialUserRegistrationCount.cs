@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Credential User Registration Count.
     /// </summary>
-    
     public partial class CredentialUserRegistrationCount : Entity
     {
     

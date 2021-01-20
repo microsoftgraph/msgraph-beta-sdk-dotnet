@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsMaxRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsMaxRequestBody
     {
     

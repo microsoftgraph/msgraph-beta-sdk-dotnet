@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Base Item Version.
     /// </summary>
-    
     public partial class BaseItemVersion : Entity
     {
     

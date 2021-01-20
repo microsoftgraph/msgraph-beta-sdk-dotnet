@@ -17,7 +17,6 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type ServiceUserAgent.
     /// </summary>
-    
     public partial class ServiceUserAgent : UserAgent
     {
         /// <summary>

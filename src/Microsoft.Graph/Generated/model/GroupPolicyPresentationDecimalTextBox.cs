@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Presentation Decimal Text Box.
     /// </summary>
-    
     public partial class GroupPolicyPresentationDecimalTextBox : GroupPolicyPresentation
     {
     

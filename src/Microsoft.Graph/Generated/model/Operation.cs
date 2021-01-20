@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Operation.
     /// </summary>
-    
     public partial class Operation : Entity
     {
     

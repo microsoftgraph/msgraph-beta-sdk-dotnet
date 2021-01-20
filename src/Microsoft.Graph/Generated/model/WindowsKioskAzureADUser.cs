@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskAzureADUser.
     /// </summary>
-    
     public partial class WindowsKioskAzureADUser : WindowsKioskUser
     {
         /// <summary>

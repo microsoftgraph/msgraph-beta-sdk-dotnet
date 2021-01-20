@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetCachedReportRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetCachedReportRequestBody
     {
     

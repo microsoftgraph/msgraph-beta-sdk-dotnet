@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mute Participants Operation.
     /// </summary>
-    
     public partial class MuteParticipantsOperation : CommsOperation
     {
     

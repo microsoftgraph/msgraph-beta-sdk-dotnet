@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Managed Store App Configuration Schema.
     /// </summary>
-    
     public partial class AndroidManagedStoreAppConfigurationSchema : Entity
     {
     

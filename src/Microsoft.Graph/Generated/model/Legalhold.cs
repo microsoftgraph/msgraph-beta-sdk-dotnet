@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Legalhold.
     /// </summary>
-    
     public partial class Legalhold : Entity
     {
     

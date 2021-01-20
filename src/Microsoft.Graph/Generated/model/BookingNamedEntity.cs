@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Booking Named Entity.
     /// </summary>
-    
     public partial class BookingNamedEntity : Entity
     {
     

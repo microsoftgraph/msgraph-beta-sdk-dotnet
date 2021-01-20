@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Activity History Item.
     /// </summary>
-    
     public partial class ActivityHistoryItem : Entity
     {
     

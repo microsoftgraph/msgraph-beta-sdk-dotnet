@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Comment Reply.
     /// </summary>
-    
     public partial class WorkbookCommentReply : Entity
     {
     

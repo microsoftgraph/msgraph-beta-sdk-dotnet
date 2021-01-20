@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type External Group Member.
     /// </summary>
-    
     public partial class ExternalGroupMember : Entity
     {
     

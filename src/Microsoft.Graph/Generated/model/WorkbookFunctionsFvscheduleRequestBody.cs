@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsFvscheduleRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsFvscheduleRequestBody
     {
     

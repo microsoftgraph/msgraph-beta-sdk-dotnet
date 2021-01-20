@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Side Loading Key.
     /// </summary>
-    
     public partial class SideLoadingKey : Entity
     {
     

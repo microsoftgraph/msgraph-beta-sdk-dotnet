@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceEnrollmentConfigurationAssignRequestBody.
     /// </summary>
-    
     public partial class DeviceEnrollmentConfigurationAssignRequestBody
     {
     

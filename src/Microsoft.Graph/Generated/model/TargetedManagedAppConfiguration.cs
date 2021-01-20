@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Targeted Managed App Configuration.
     /// </summary>
-    
     public partial class TargetedManagedAppConfiguration : ManagedAppConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DriveItemValidatePermissionRequestBody.
     /// </summary>
-    
     public partial class DriveItemValidatePermissionRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceEnableLostModeRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceEnableLostModeRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner Bucket.
     /// </summary>
-    
     public partial class PlannerBucket : PlannerDelta
     {
     

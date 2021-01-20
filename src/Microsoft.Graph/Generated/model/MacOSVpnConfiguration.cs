@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSVpn Configuration.
     /// </summary>
-    
     public partial class MacOSVpnConfiguration : AppleVpnConfiguration
     {
     

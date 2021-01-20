@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Table Sort.
     /// </summary>
-    
     public partial class WorkbookTableSort : Entity
     {
     

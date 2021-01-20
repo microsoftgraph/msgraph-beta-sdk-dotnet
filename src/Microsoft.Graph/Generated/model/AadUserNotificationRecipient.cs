@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AadUserNotificationRecipient.
     /// </summary>
-    
     public partial class AadUserNotificationRecipient : TeamworkNotificationRecipient
     {
         /// <summary>

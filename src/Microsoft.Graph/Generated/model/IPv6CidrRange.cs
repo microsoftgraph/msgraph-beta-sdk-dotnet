@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IPv6CidrRange.
     /// </summary>
-    
     public partial class IPv6CidrRange : IpRange
     {
         /// <summary>

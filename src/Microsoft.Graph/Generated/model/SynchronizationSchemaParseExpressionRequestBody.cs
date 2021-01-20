@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SynchronizationSchemaParseExpressionRequestBody.
     /// </summary>
-    
     public partial class SynchronizationSchemaParseExpressionRequestBody
     {
     

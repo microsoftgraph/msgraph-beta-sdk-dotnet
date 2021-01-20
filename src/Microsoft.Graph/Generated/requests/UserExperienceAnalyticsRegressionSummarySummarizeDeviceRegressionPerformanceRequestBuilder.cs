@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("summarizeBy", summarizeBy, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>
@@ -44,6 +45,55 @@ namespace Microsoft.Graph
             var request = new UserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequest(functionUrl, this.Client, options);
 
             return request;
+        }
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequestBuilder.
+        /// </summary>
+        /// <param name="summarizeBy">A summarizeBy parameter for the OData method call.</param>
+        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequestBuilder SummarizeDeviceRegressionPerformance(
+            UserExperienceAnalyticsSummarizedBy summarizeBy)
+        {
+            return new UserExperienceAnalyticsRegressionSummarySummarizeDeviceRegressionPerformanceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.summarizeDeviceRegressionPerformance"),
+                this.Client,
+                summarizeBy);
+        }
+        /// <summary>
+        /// Gets the request builder for ManufacturerRegression.
+        /// The metric values for the user experience analytics Manufacturer regression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsMetricRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsMetricRequestBuilder ManufacturerRegression
+        {
+            get
+            {
+                return new UserExperienceAnalyticsMetricRequestBuilder(this.AppendSegmentToRequestUrl("manufacturerRegression"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for ModelRegression.
+        /// The metric values for the user experience analytics model regression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsMetricRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsMetricRequestBuilder ModelRegression
+        {
+            get
+            {
+                return new UserExperienceAnalyticsMetricRequestBuilder(this.AppendSegmentToRequestUrl("modelRegression"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for OperatingSystemRegression.
+        /// The metric values for the user experience analytics operating system regression.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsMetricRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsMetricRequestBuilder OperatingSystemRegression
+        {
+            get
+            {
+                return new UserExperienceAnalyticsMetricRequestBuilder(this.AppendSegmentToRequestUrl("operatingSystemRegression"), this.Client);
+            }
         }
     }
 }

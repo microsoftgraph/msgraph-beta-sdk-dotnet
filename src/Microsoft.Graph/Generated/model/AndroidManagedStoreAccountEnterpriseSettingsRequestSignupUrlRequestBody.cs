@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBody.
     /// </summary>
-    
     public partial class AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBody
     {
     

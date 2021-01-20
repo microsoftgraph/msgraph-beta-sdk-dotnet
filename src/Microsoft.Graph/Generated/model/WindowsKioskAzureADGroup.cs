@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskAzureADGroup.
     /// </summary>
-    
     public partial class WindowsKioskAzureADGroup : WindowsKioskUser
     {
         /// <summary>

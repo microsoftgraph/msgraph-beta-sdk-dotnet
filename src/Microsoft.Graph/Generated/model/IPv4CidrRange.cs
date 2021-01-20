@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IPv4CidrRange.
     /// </summary>
-    
     public partial class IPv4CidrRange : IpRange
     {
         /// <summary>

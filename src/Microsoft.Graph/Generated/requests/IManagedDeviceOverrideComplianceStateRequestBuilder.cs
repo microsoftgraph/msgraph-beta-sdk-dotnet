@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceOverrideComplianceStateRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceOverrideComplianceStateRequestBuilder
+    public partial interface IManagedDeviceOverrideComplianceStateRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

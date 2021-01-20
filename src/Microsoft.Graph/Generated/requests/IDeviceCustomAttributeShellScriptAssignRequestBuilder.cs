@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceCustomAttributeShellScriptAssignRequestBuilder.
     /// </summary>
-    public partial interface IDeviceCustomAttributeShellScriptAssignRequestBuilder
+    public partial interface IDeviceCustomAttributeShellScriptAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

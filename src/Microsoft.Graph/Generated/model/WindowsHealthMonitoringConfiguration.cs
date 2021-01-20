@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Health Monitoring Configuration.
     /// </summary>
-    
     public partial class WindowsHealthMonitoringConfiguration : DeviceConfiguration
     {
     

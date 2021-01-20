@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Template Setting Category.
     /// </summary>
-    
     public partial class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory
     {
     

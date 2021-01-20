@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsLeftbRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsLeftbRequestBody
     {
     

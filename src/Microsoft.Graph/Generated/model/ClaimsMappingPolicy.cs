@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Claims Mapping Policy.
     /// </summary>
-    
     public partial class ClaimsMappingPolicy : StsPolicy
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OmaSettingBase64.
     /// </summary>
-    
     public partial class OmaSettingBase64 : OmaSetting
     {
         /// <summary>

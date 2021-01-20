@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Operation.
     /// </summary>
-    
     public partial class ManagedAppOperation : Entity
     {
     

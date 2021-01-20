@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsAppXAppAssignmentSettings.
     /// </summary>
-    
     public partial class WindowsAppXAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>

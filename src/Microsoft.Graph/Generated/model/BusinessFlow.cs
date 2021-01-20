@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Business Flow.
     /// </summary>
-    
     public partial class BusinessFlow : Entity
     {
     

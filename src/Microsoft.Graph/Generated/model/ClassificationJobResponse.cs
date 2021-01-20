@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Classification Job Response.
     /// </summary>
-    
     public partial class ClassificationJobResponse : JobResponseBase
     {
     

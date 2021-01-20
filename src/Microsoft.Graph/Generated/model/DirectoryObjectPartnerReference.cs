@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Object Partner Reference.
     /// </summary>
-    
     public partial class DirectoryObjectPartnerReference : DirectoryObject
     {
     

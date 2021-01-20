@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Presentation Value Multi Text.
     /// </summary>
-    
     public partial class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue
     {
     

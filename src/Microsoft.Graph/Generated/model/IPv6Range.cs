@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IPv6Range.
     /// </summary>
-    
     public partial class IPv6Range : IpRange
     {
         /// <summary>

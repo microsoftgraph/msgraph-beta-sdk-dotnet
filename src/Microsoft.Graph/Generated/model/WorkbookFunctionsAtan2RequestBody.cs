@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsAtan2RequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsAtan2RequestBody
     {
     

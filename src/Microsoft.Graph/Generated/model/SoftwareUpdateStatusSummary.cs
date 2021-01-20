@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Software Update Status Summary.
     /// </summary>
-    
     public partial class SoftwareUpdateStatusSummary : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Teamwork.
     /// </summary>
-    
     public partial class UserTeamwork : Entity
     {
     

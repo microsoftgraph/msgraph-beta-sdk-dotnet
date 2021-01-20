@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Award.
     /// </summary>
-    
     public partial class PersonAward : ItemFacet
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Scope Teams App Installation.
     /// </summary>
-    
     public partial class UserScopeTeamsAppInstallation : TeamsAppInstallation
     {
     

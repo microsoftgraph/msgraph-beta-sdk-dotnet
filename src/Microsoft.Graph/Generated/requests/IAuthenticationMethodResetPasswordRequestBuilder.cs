@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAuthenticationMethodResetPasswordRequestBuilder.
     /// </summary>
-    public partial interface IAuthenticationMethodResetPasswordRequestBuilder
+    public partial interface IAuthenticationMethodResetPasswordRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

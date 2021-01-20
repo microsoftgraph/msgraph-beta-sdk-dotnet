@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Email Activity Summary.
     /// </summary>
-    
     public partial class EmailActivitySummary : Entity
     {
     

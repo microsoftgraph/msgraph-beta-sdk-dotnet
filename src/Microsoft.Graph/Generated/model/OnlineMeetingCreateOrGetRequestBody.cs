@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OnlineMeetingCreateOrGetRequestBody.
     /// </summary>
-    
     public partial class OnlineMeetingCreateOrGetRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Work Profile Trusted Root Certificate.
     /// </summary>
-    
     public partial class AndroidWorkProfileTrustedRootCertificate : DeviceConfiguration
     {
     

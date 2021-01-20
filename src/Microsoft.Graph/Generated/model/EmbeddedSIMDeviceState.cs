@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Embedded SIMDevice State.
     /// </summary>
-    
     public partial class EmbeddedSIMDeviceState : Entity
     {
     

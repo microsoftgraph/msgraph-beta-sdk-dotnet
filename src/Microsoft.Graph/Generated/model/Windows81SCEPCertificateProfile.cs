@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81SCEPCertificate Profile.
     /// </summary>
-    
     public partial class Windows81SCEPCertificateProfile : Windows81CertificateProfileBase
     {
     

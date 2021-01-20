@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams Tab.
     /// </summary>
-    
     public partial class TeamsTab : Entity
     {
     

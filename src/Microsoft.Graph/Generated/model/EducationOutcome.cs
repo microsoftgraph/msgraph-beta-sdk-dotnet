@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Outcome.
     /// </summary>
-    
     public partial class EducationOutcome : Entity
     {
     

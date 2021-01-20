@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder.
     /// </summary>
-    public partial interface IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder
+    public partial interface IReportRootManagedDeviceEnrollmentFailureTrendsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

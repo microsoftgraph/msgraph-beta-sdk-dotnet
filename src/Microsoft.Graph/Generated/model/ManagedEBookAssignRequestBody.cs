@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedEBookAssignRequestBody.
     /// </summary>
-    
     public partial class ManagedEBookAssignRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsIso_CeilingRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsIso_CeilingRequestBody
     {
     

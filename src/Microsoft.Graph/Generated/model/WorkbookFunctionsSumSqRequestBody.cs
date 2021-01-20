@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsSumSqRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsSumSqRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams User Activity User Detail.
     /// </summary>
-    
     public partial class TeamsUserActivityUserDetail : Entity
     {
     

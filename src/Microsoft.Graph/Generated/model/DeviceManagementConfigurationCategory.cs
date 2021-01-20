@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Configuration Category.
     /// </summary>
-    
     public partial class DeviceManagementConfigurationCategory : Entity
     {
     

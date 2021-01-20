@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserTeamworkSendActivityNotificationRequestBuilder.
     /// </summary>
-    public partial interface IUserTeamworkSendActivityNotificationRequestBuilder
+    public partial interface IUserTeamworkSendActivityNotificationRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Oma Cp Configuration.
     /// </summary>
-    
     public partial class AndroidOmaCpConfiguration : DeviceConfiguration
     {
     

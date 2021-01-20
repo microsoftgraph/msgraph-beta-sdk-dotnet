@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Security Configuration Task.
     /// </summary>
-    
     public partial class SecurityConfigurationTask : DeviceAppManagementTask
     {
     

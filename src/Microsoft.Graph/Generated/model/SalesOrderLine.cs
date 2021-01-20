@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sales Order Line.
     /// </summary>
-    
     public partial class SalesOrderLine : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ApplicationRemoveKeyRequestBody.
     /// </summary>
-    
     public partial class ApplicationRemoveKeyRequestBody
     {
     

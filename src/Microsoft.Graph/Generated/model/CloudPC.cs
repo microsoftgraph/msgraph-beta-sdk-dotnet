@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud PC.
     /// </summary>
-    
     public partial class CloudPC : Entity
     {
     

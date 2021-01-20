@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSTrusted Root Certificate.
     /// </summary>
-    
     public partial class MacOSTrustedRootCertificate : DeviceConfiguration
     {
     

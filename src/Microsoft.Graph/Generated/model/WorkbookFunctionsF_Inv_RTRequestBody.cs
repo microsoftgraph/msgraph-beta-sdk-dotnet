@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsF_Inv_RTRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsF_Inv_RTRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Permission Grant Policy.
     /// </summary>
-    
     public partial class PermissionGrantPolicy : PolicyBase
     {
     

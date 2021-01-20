@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryDefinitionDiscoverRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryDefinitionDiscoverRequestBuilder
+    public partial interface IDirectoryDefinitionDiscoverRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

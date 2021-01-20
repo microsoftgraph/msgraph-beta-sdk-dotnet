@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Lookup Job.
     /// </summary>
-    
     public partial class ExactMatchLookupJob : ExactMatchJobBase
     {
     

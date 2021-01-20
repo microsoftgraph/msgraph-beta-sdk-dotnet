@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISalesInvoiceCancelRequestBuilder.
     /// </summary>
-    public partial interface ISalesInvoiceCancelRequestBuilder
+    public partial interface ISalesInvoiceCancelRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

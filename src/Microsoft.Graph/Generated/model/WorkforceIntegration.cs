@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workforce Integration.
     /// </summary>
-    
     public partial class WorkforceIntegration : ChangeTrackedEntity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type ParticipantEndpoint.
     /// </summary>
-    
     public partial class ParticipantEndpoint : Endpoint
     {
         /// <summary>

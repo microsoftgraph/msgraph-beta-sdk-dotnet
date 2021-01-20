@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Payment Method.
     /// </summary>
-    
     public partial class PaymentMethod : Entity
     {
     

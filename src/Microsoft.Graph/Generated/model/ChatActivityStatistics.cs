@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Chat Activity Statistics.
     /// </summary>
-    
     public partial class ChatActivityStatistics : ActivityStatistics
     {
     

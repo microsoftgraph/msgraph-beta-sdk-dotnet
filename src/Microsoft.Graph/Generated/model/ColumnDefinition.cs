@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Column Definition.
     /// </summary>
-    
     public partial class ColumnDefinition : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ediscovery.
     /// </summary>
-    
     public partial class Ediscovery : Entity
     {
     

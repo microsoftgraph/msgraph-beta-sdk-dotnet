@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Troubleshooting Event.
     /// </summary>
-    
     public partial class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     

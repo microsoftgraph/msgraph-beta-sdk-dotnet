@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RemoveContentFooterAction.
     /// </summary>
-    
     public partial class RemoveContentFooterAction : InformationProtectionAction
     {
         /// <summary>

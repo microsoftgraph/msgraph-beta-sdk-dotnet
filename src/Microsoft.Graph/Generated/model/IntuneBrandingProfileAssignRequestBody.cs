@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IntuneBrandingProfileAssignRequestBody.
     /// </summary>
-    
     public partial class IntuneBrandingProfileAssignRequestBody
     {
     

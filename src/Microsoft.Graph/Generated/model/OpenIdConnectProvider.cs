@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Id Connect Provider.
     /// </summary>
-    
     public partial class OpenIdConnectProvider : IdentityProvider
     {
     

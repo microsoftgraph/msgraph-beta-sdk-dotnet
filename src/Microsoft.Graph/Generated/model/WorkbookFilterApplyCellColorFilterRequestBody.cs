@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFilterApplyCellColorFilterRequestBody.
     /// </summary>
-    
     public partial class WorkbookFilterApplyCellColorFilterRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementSettingRequiredConstraint.
     /// </summary>
-    
     public partial class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook User.
     /// </summary>
-    
     public partial class OutlookUser : Entity
     {
     

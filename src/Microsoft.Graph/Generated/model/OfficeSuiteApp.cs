@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office Suite App.
     /// </summary>
-    
     public partial class OfficeSuiteApp : MobileApp
     {
     

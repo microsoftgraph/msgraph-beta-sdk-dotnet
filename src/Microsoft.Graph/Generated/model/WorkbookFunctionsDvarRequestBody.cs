@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsDvarRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsDvarRequestBody
     {
     

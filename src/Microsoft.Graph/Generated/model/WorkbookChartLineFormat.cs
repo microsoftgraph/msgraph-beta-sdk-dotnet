@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Line Format.
     /// </summary>
-    
     public partial class WorkbookChartLineFormat : Entity
     {
     

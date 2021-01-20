@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Policy Set Item.
     /// </summary>
-    
     public partial class MobileAppPolicySetItem : PolicySetItem
     {
     

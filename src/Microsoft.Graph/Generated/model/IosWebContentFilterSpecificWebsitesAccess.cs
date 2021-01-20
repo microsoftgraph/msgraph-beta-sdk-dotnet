@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosWebContentFilterSpecificWebsitesAccess.
     /// </summary>
-    
     public partial class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase
     {
         /// <summary>

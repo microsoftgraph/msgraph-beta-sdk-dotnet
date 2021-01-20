@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddWatermark.
     /// </summary>
-    
     public partial class AddWatermark : MarkContent
     {
         /// <summary>

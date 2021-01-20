@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Conditional Access Policy.
     /// </summary>
-    
     public partial class ConditionalAccessPolicy : Entity
     {
     

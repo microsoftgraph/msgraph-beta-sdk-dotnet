@@ -17,7 +17,6 @@ namespace Microsoft.Graph.TermStore
     /// <summary>
     /// The type Relation.
     /// </summary>
-    
     public partial class Relation : Microsoft.Graph.Entity
     {
     

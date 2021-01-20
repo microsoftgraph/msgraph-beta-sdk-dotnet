@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81Compliance Policy.
     /// </summary>
-    
     public partial class Windows81CompliancePolicy : DeviceCompliancePolicy
     {
     

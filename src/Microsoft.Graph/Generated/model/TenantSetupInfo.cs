@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Tenant Setup Info.
     /// </summary>
-    
     public partial class TenantSetupInfo : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Derived Credential Authentication Configuration.
     /// </summary>
-    
     public partial class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration : DeviceConfiguration
     {
     

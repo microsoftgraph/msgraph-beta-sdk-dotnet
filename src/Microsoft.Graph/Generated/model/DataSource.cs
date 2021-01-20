@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Data Source.
     /// </summary>
-    
     public partial class DataSource : Entity
     {
     

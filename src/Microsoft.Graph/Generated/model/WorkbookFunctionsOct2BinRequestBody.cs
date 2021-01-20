@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsOct2BinRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsOct2BinRequestBody
     {
     

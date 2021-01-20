@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Multi Value Legacy Extended Property.
     /// </summary>
-    
     public partial class MultiValueLegacyExtendedProperty : Entity
     {
     

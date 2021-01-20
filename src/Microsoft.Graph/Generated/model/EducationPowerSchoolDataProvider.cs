@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationPowerSchoolDataProvider.
     /// </summary>
-    
     public partial class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider
     {
         /// <summary>

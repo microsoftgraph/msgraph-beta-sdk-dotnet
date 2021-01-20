@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IdentityUserFlowAttributeAssignmentSetOrderRequestBody.
     /// </summary>
-    
     public partial class IdentityUserFlowAttributeAssignmentSetOrderRequestBody
     {
     

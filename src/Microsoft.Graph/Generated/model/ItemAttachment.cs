@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Attachment.
     /// </summary>
-    
     public partial class ItemAttachment : Attachment
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AadUserConversationMemberResult.
     /// </summary>
-    
     public partial class AadUserConversationMemberResult : ActionResultPart
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsWeibull_DistRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsWeibull_DistRequestBody
     {
     

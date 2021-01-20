@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc Device Image.
     /// </summary>
-    
     public partial class CloudPcDeviceImage : Entity
     {
     

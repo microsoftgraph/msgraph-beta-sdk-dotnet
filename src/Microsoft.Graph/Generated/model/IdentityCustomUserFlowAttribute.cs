@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity Custom User Flow Attribute.
     /// </summary>
-    
     public partial class IdentityCustomUserFlowAttribute : IdentityUserFlowAttribute
     {
     

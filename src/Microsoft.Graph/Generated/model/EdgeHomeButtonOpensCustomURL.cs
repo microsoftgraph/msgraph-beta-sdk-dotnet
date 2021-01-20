@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EdgeHomeButtonOpensCustomURL.
     /// </summary>
-    
     public partial class EdgeHomeButtonOpensCustomURL : EdgeHomeButtonConfiguration
     {
         /// <summary>

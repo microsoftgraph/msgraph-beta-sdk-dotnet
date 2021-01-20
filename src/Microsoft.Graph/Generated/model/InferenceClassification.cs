@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Inference Classification.
     /// </summary>
-    
     public partial class InferenceClassification : Entity
     {
     

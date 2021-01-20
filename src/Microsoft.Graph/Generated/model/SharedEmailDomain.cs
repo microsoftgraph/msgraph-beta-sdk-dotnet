@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Shared Email Domain.
     /// </summary>
-    
     public partial class SharedEmailDomain : Entity
     {
     

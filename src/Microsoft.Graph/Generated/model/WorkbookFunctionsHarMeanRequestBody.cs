@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsHarMeanRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsHarMeanRequestBody
     {
     

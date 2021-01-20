@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MobileAppUpdateRelationshipsRequestBody.
     /// </summary>
-    
     public partial class MobileAppUpdateRelationshipsRequestBody
     {
     

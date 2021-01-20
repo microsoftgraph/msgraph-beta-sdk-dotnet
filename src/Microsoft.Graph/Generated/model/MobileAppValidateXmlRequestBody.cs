@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MobileAppValidateXmlRequestBody.
     /// </summary>
-    
     public partial class MobileAppValidateXmlRequestBody
     {
     

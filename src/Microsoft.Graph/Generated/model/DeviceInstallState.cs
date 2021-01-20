@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Install State.
     /// </summary>
-    
     public partial class DeviceInstallState : Entity
     {
     

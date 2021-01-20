@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Project Participation.
     /// </summary>
-    
     public partial class ProjectParticipation : ItemFacet
     {
     

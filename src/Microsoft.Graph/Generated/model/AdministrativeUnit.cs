@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Administrative Unit.
     /// </summary>
-    
     public partial class AdministrativeUnit : DirectoryObject
     {
     

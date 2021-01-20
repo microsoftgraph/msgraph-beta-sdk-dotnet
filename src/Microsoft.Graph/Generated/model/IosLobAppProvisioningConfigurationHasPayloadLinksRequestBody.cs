@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosLobAppProvisioningConfigurationHasPayloadLinksRequestBody.
     /// </summary>
-    
     public partial class IosLobAppProvisioningConfigurationHasPayloadLinksRequestBody
     {
     

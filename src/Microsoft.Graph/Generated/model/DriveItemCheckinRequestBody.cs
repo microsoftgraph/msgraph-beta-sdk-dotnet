@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DriveItemCheckinRequestBody.
     /// </summary>
-    
     public partial class DriveItemCheckinRequestBody
     {
     

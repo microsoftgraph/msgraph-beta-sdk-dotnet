@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsEdateRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsEdateRequestBody
     {
     

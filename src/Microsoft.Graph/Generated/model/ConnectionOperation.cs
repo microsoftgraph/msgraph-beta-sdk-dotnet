@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Connection Operation.
     /// </summary>
-    
     public partial class ConnectionOperation : Entity
     {
     

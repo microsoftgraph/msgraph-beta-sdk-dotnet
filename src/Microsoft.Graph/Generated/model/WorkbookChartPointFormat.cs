@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Point Format.
     /// </summary>
-    
     public partial class WorkbookChartPointFormat : Entity
     {
     

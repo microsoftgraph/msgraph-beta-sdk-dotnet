@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TimeCardClockOutRequestBody.
     /// </summary>
-    
     public partial class TimeCardClockOutRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type KeyBooleanValuePair.
     /// </summary>
-    
     public partial class KeyBooleanValuePair : KeyTypedValuePair
     {
         /// <summary>

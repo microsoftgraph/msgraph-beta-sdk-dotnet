@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Audit Event.
     /// </summary>
-    
     public partial class AuditEvent : Entity
     {
     

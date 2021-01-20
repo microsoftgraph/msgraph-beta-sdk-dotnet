@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementGetRoleScopeTagsByResourceRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementGetRoleScopeTagsByResourceRequestBuilder
+    public partial interface IDeviceManagementGetRoleScopeTagsByResourceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

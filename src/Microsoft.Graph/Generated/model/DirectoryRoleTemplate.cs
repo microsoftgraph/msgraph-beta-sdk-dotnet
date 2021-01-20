@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Role Template.
     /// </summary>
-    
     public partial class DirectoryRoleTemplate : DirectoryObject
     {
     

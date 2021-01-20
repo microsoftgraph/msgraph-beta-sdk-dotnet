@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CalendarGetScheduleRequestBody.
     /// </summary>
-    
     public partial class CalendarGetScheduleRequestBody
     {
     

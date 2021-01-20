@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsPdurationRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsPdurationRequestBody
     {
     

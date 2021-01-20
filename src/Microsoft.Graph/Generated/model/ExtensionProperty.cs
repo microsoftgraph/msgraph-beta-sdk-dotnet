@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Extension Property.
     /// </summary>
-    
     public partial class ExtensionProperty : DirectoryObject
     {
     

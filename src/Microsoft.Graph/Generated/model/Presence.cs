@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Presence.
     /// </summary>
-    
     public partial class Presence : Entity
     {
     

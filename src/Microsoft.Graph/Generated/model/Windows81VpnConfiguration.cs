@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81Vpn Configuration.
     /// </summary>
-    
     public partial class Windows81VpnConfiguration : WindowsVpnConfiguration
     {
     

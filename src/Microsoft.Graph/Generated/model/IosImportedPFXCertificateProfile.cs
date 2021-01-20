@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Imported PFXCertificate Profile.
     /// </summary>
-    
     public partial class IosImportedPFXCertificateProfile : IosCertificateProfile
     {
     

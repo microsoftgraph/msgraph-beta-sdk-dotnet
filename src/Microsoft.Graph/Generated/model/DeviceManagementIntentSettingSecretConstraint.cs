@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementIntentSettingSecretConstraint.
     /// </summary>
-    
     public partial class DeviceManagementIntentSettingSecretConstraint : DeviceManagementConstraint
     {
         /// <summary>

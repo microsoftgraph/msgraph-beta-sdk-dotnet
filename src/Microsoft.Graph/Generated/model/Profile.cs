@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Profile.
     /// </summary>
-    
     public partial class Profile : Entity
     {
     

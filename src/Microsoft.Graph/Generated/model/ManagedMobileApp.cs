@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Mobile App.
     /// </summary>
-    
     public partial class ManagedMobileApp : Entity
     {
     

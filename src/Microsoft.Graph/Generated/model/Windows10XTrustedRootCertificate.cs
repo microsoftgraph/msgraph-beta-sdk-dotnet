@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10XTrusted Root Certificate.
     /// </summary>
-    
     public partial class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase
     {
     

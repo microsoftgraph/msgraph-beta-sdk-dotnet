@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Org Contact.
     /// </summary>
-    
     public partial class OrgContact : DirectoryObject
     {
     

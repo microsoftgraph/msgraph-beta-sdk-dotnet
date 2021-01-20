@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Regional And Language Settings.
     /// </summary>
-    
     public partial class RegionalAndLanguageSettings : Entity
     {
     

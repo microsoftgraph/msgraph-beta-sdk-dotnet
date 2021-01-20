@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dep Mac OSEnrollment Profile.
     /// </summary>
-    
     public partial class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile
     {
     

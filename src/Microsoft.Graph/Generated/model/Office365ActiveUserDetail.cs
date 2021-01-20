@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office365Active User Detail.
     /// </summary>
-    
     public partial class Office365ActiveUserDetail : Entity
     {
     

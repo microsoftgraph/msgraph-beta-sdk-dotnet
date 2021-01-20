@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationCsvDataProvider.
     /// </summary>
-    
     public partial class EducationCsvDataProvider : EducationSynchronizationDataProvider
     {
         /// <summary>

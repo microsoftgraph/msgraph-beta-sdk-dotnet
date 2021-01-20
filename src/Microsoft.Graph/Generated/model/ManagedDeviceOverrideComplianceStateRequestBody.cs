@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceOverrideComplianceStateRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceOverrideComplianceStateRequestBody
     {
     

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IExactMatchSessionCancelRequestBuilder.
     /// </summary>
-    public partial interface IExactMatchSessionCancelRequestBuilder
+    public partial interface IExactMatchSessionCancelRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

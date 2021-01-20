@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Activity.
     /// </summary>
-    
     public partial class ItemActivity : Entity
     {
     

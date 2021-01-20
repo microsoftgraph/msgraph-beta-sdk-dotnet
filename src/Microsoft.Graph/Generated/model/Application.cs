@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Application.
     /// </summary>
-    
     public partial class Application : DirectoryObject
     {
     

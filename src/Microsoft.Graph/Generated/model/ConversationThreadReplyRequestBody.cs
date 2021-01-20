@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ConversationThreadReplyRequestBody.
     /// </summary>
-    
     public partial class ConversationThreadReplyRequestBody
     {
     

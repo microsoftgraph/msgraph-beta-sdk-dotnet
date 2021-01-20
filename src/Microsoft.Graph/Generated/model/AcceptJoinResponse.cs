@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AcceptJoinResponse.
     /// </summary>
-    
     public partial class AcceptJoinResponse : ParticipantJoiningResponse
     {
         /// <summary>

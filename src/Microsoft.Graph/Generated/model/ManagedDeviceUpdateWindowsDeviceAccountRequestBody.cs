@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceUpdateWindowsDeviceAccountRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceUpdateWindowsDeviceAccountRequestBody
     {
     

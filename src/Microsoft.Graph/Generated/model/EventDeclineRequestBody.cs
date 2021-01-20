@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EventDeclineRequestBody.
     /// </summary>
-    
     public partial class EventDeclineRequestBody
     {
     

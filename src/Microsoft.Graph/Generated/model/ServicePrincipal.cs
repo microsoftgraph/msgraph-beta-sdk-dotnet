@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Service Principal.
     /// </summary>
-    
     public partial class ServicePrincipal : DirectoryObject
     {
     

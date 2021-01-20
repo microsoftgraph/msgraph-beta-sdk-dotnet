@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Default Managed App Protection.
     /// </summary>
-    
     public partial class DefaultManagedAppProtection : ManagedAppProtection
     {
     

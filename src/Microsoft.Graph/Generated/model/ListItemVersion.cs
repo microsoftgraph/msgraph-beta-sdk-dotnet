@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type List Item Version.
     /// </summary>
-    
     public partial class ListItemVersion : BaseItemVersion
     {
     

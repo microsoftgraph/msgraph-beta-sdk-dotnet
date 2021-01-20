@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Place.
     /// </summary>
-    
     public partial class Place : Entity
     {
     

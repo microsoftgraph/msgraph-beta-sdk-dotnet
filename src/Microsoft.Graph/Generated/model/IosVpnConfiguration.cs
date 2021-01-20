@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Vpn Configuration.
     /// </summary>
-    
     public partial class IosVpnConfiguration : AppleVpnConfiguration
     {
     

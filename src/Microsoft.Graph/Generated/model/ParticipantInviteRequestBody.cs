@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ParticipantInviteRequestBody.
     /// </summary>
-    
     public partial class ParticipantInviteRequestBody
     {
     

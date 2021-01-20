@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceSetDeviceNameRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceSetDeviceNameRequestBody
     {
     

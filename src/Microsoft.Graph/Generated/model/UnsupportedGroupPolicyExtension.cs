@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unsupported Group Policy Extension.
     /// </summary>
-    
     public partial class UnsupportedGroupPolicyExtension : Entity
     {
     

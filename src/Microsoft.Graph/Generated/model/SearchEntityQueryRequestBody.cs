@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SearchEntityQueryRequestBody.
     /// </summary>
-    
     public partial class SearchEntityQueryRequestBody
     {
     

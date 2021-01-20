@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Device Performance.
     /// </summary>
-    
     public partial class UserExperienceAnalyticsDevicePerformance : Entity
     {
     

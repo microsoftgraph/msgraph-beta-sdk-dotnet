@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsFeatureUpdateProfileAssignRequestBody.
     /// </summary>
-    
     public partial class WindowsFeatureUpdateProfileAssignRequestBody
     {
     

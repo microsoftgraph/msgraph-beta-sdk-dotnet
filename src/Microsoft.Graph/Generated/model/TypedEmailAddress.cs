@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TypedEmailAddress.
     /// </summary>
-    
     public partial class TypedEmailAddress : EmailAddress
     {
         /// <summary>

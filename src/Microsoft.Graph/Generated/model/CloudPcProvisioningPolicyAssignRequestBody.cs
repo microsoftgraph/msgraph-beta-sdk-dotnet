@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudPcProvisioningPolicyAssignRequestBody.
     /// </summary>
-    
     public partial class CloudPcProvisioningPolicyAssignRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ApplicationEnforcedRestrictionsSessionControl.
     /// </summary>
-    
     public partial class ApplicationEnforcedRestrictionsSessionControl : ConditionalAccessSessionControl
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Task Group.
     /// </summary>
-    
     public partial class OutlookTaskGroup : Entity
     {
     

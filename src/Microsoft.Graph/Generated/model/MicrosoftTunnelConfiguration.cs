@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Tunnel Configuration.
     /// </summary>
-    
     public partial class MicrosoftTunnelConfiguration : Entity
     {
     

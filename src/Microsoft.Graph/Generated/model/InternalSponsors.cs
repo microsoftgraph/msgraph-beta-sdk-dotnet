@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InternalSponsors.
     /// </summary>
-    
     public partial class InternalSponsors : UserSet
     {
         /// <summary>

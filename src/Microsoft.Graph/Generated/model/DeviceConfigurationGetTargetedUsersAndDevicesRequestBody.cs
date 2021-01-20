@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceConfigurationGetTargetedUsersAndDevicesRequestBody.
     /// </summary>
-    
     public partial class DeviceConfigurationGetTargetedUsersAndDevicesRequestBody
     {
     

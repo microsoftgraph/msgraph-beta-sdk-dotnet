@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TiIndicatorUpdateTiIndicatorsRequestBody.
     /// </summary>
-    
     public partial class TiIndicatorUpdateTiIndicatorsRequestBody
     {
     

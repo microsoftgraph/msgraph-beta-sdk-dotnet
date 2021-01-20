@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Organization.
     /// </summary>
-    
     public partial class EducationOrganization : Entity
     {
     

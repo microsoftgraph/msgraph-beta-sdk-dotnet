@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10XCertificate Profile.
     /// </summary>
-    
     public partial class Windows10XCertificateProfile : DeviceManagementResourceAccessProfileBase
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Wi Fi Configuration.
     /// </summary>
-    
     public partial class AndroidWiFiConfiguration : DeviceConfiguration
     {
     

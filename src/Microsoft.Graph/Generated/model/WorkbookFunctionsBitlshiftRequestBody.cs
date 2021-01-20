@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsBitlshiftRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsBitlshiftRequestBody
     {
     

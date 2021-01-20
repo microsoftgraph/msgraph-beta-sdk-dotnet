@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Shell Script.
     /// </summary>
-    
     public partial class DeviceShellScript : Entity
     {
     

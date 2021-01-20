@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Azure ADWindows Autopilot Deployment Profile.
     /// </summary>
-    
     public partial class AzureADWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile
     {
     

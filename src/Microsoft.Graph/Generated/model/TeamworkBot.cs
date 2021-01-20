@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teamwork Bot.
     /// </summary>
-    
     public partial class TeamworkBot : Entity
     {
     

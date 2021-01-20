@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Android Store App.
     /// </summary>
-    
     public partial class ManagedAndroidStoreApp : ManagedApp
     {
     

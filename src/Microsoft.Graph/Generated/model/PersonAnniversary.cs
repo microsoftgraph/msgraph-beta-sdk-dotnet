@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Anniversary.
     /// </summary>
-    
     public partial class PersonAnniversary : ItemFacet
     {
     

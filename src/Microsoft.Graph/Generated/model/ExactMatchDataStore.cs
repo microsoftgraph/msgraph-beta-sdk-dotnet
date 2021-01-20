@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Data Store.
     /// </summary>
-    
     public partial class ExactMatchDataStore : Entity
     {
     

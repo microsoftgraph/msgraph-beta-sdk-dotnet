@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work App Configuration Schema.
     /// </summary>
-    
     public partial class AndroidForWorkAppConfigurationSchema : Entity
     {
     

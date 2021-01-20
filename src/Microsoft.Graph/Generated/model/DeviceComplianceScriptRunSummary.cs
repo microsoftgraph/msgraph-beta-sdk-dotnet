@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance Script Run Summary.
     /// </summary>
-    
     public partial class DeviceComplianceScriptRunSummary : Entity
     {
     

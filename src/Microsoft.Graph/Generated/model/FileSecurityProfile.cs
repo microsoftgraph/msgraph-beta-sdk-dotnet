@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type File Security Profile.
     /// </summary>
-    
     public partial class FileSecurityProfile : Entity
     {
     

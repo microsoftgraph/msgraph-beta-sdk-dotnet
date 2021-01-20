@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddHeader.
     /// </summary>
-    
     public partial class AddHeader : MarkContent
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Security Baseline Category State Summary.
     /// </summary>
-    
     public partial class SecurityBaselineCategoryStateSummary : SecurityBaselineStateSummary
     {
     

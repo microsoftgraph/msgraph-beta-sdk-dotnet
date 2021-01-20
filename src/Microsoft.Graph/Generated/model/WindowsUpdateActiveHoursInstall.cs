@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsUpdateActiveHoursInstall.
     /// </summary>
-    
     public partial class WindowsUpdateActiveHoursInstall : WindowsUpdateInstallScheduleType
     {
         /// <summary>

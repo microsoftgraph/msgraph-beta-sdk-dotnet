@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Custom Configuration.
     /// </summary>
-    
     public partial class IosCustomConfiguration : DeviceConfiguration
     {
     

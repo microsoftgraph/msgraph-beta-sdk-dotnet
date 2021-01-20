@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device Certificate State.
     /// </summary>
-    
     public partial class ManagedDeviceCertificateState : Entity
     {
     

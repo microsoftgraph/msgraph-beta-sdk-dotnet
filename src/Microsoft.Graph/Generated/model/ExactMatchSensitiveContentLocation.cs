@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExactMatchSensitiveContentLocation.
     /// </summary>
-    
     public partial class ExactMatchSensitiveContentLocation : SensitiveContentLocationBase
     {
         /// <summary>

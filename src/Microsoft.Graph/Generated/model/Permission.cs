@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Permission.
     /// </summary>
-    
     public partial class Permission : Entity
     {
     

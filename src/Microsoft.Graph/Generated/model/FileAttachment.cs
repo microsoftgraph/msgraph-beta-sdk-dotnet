@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type File Attachment.
     /// </summary>
-    
     public partial class FileAttachment : Attachment
     {
     

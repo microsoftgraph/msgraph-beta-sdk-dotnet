@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Admin Consent Request Policy.
     /// </summary>
-    
     public partial class AdminConsentRequestPolicy : Entity
     {
     

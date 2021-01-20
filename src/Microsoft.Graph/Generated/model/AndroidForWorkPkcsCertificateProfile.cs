@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Pkcs Certificate Profile.
     /// </summary>
-    
     public partial class AndroidForWorkPkcsCertificateProfile : AndroidForWorkCertificateProfileBase
     {
     

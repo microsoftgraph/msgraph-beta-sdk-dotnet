@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSEnterprise Wi Fi Configuration.
     /// </summary>
-    
     public partial class MacOSEnterpriseWiFiConfiguration : MacOSWiFiConfiguration
     {
     

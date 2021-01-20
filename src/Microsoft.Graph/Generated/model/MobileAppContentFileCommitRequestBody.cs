@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MobileAppContentFileCommitRequestBody.
     /// </summary>
-    
     public partial class MobileAppContentFileCommitRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Activity Statistics.
     /// </summary>
-    
     public partial class ActivityStatistics : Entity
     {
     

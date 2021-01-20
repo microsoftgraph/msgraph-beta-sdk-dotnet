@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Tax Area.
     /// </summary>
-    
     public partial class TaxArea : Entity
     {
     

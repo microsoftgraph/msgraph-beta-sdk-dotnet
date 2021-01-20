@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceCompliancePolicySetScheduledRetireStateRequestBody.
     /// </summary>
-    
     public partial class DeviceCompliancePolicySetScheduledRetireStateRequestBody
     {
     

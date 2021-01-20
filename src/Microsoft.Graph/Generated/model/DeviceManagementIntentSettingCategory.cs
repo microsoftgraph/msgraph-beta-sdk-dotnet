@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Intent Setting Category.
     /// </summary>
-    
     public partial class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory
     {
     

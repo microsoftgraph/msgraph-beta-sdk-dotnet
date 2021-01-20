@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Autopilot Event.
     /// </summary>
-    
     public partial class DeviceManagementAutopilotEvent : Entity
     {
     

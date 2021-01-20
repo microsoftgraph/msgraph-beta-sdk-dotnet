@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Participant Left Notification.
     /// </summary>
-    
     public partial class ParticipantLeftNotification : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Policy Set Assignment.
     /// </summary>
-    
     public partial class PolicySetAssignment : Entity
     {
     

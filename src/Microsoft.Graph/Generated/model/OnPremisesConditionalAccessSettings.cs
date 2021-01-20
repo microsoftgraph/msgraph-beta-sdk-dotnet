@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type On Premises Conditional Access Settings.
     /// </summary>
-    
     public partial class OnPremisesConditionalAccessSettings : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsHourRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsHourRequestBody
     {
     

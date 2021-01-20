@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Policy Base.
     /// </summary>
-    
     public partial class PolicyBase : DirectoryObject
     {
     

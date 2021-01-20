@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MessageCreateReplyAllRequestBody.
     /// </summary>
-    
     public partial class MessageCreateReplyAllRequestBody
     {
     

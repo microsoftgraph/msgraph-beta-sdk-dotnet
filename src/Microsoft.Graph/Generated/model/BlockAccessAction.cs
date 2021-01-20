@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type BlockAccessAction.
     /// </summary>
-    
     public partial class BlockAccessAction : DlpActionInfo
     {
         /// <summary>

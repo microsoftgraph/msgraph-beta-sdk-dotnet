@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Content.
     /// </summary>
-    
     public partial class MobileAppContent : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Usage Summary By Printer.
     /// </summary>
-    
     public partial class PrintUsageSummaryByPrinter : Entity
     {
     

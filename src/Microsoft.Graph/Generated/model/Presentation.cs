@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Presentation.
     /// </summary>
-    
     public partial class Presentation : Entity
     {
     

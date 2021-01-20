@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBody.
     /// </summary>
-    
     public partial class AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBody
     {
     

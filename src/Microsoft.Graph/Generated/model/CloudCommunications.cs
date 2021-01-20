@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Communications.
     /// </summary>
-    
     public partial class CloudCommunications : Entity
     {
     

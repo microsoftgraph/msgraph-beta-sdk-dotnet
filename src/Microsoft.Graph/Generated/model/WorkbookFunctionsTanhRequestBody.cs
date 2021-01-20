@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsTanhRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsTanhRequestBody
     {
     

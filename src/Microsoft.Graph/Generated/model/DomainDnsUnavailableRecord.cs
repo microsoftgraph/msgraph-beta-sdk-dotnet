@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Domain Dns Unavailable Record.
     /// </summary>
-    
     public partial class DomainDnsUnavailableRecord : DomainDnsRecord
     {
     

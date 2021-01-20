@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Customer Payment.
     /// </summary>
-    
     public partial class CustomerPayment : Entity
     {
     

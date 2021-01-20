@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Review Set.
     /// </summary>
-    
     public partial class ReviewSet : Entity
     {
     

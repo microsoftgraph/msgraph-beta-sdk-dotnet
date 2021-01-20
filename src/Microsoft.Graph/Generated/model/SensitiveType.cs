@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sensitive Type.
     /// </summary>
-    
     public partial class SensitiveType : Entity
     {
     

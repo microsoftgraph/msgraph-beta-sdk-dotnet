@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsWeekdayRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsWeekdayRequestBody
     {
     

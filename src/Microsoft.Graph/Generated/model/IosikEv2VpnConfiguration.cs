@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Iosik Ev2Vpn Configuration.
     /// </summary>
-    
     public partial class IosikEv2VpnConfiguration : IosVpnConfiguration
     {
     

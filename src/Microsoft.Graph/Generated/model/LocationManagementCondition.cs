@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Location Management Condition.
     /// </summary>
-    
     public partial class LocationManagementCondition : ManagementCondition
     {
     

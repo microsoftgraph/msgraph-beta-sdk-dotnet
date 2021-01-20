@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type App Scope.
     /// </summary>
-    
     public partial class AppScope : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Synchronization.
     /// </summary>
-    
     public partial class Synchronization : Entity
     {
     

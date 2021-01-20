@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RequestorManager.
     /// </summary>
-    
     public partial class RequestorManager : UserSet
     {
         /// <summary>

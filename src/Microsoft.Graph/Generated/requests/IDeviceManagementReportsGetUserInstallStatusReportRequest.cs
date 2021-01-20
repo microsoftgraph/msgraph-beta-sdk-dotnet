@@ -20,7 +20,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementReportsGetUserInstallStatusReportRequest : IBaseRequest
     {
-
         /// <summary>
         /// Gets the request body.
         /// </summary>
@@ -41,9 +40,6 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Stream> PostAsync(
             CancellationToken cancellationToken,
             HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
-
-
-
 
 
     }

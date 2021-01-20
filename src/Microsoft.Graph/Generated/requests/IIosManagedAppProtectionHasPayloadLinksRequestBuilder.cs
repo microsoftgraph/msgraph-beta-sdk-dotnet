@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIosManagedAppProtectionHasPayloadLinksRequestBuilder.
     /// </summary>
-    public partial interface IIosManagedAppProtectionHasPayloadLinksRequestBuilder
+    public partial interface IIosManagedAppProtectionHasPayloadLinksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

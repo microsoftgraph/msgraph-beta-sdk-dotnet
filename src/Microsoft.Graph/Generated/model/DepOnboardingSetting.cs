@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dep Onboarding Setting.
     /// </summary>
-    
     public partial class DepOnboardingSetting : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSWired Network Configuration.
     /// </summary>
-    
     public partial class MacOSWiredNetworkConfiguration : DeviceConfiguration
     {
     

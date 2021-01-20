@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac Os Vpp App Assigned License.
     /// </summary>
-    
     public partial class MacOsVppAppAssignedLicense : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Task.
     /// </summary>
-    
     public partial class OutlookTask : OutlookItem
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Connector.
     /// </summary>
-    
     public partial class PrintConnector : Entity
     {
     

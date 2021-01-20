@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Enrollment Profile.
     /// </summary>
-    
     public partial class AndroidDeviceOwnerEnrollmentProfile : Entity
     {
     

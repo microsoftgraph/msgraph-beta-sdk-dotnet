@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Microsoft Edge App.
     /// </summary>
-    
     public partial class WindowsMicrosoftEdgeApp : MobileApp
     {
     

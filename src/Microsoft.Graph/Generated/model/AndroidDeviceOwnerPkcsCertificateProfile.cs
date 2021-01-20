@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner Pkcs Certificate Profile.
     /// </summary>
-    
     public partial class AndroidDeviceOwnerPkcsCertificateProfile : AndroidDeviceOwnerCertificateProfileBase
     {
     

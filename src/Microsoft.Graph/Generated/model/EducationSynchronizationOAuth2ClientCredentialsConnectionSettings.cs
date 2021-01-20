@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationSynchronizationOAuth2ClientCredentialsConnectionSettings.
     /// </summary>
-    
     public partial class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : EducationSynchronizationConnectionSettings
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Terms And Conditions Acceptance Status.
     /// </summary>
-    
     public partial class TermsAndConditionsAcceptanceStatus : Entity
     {
     

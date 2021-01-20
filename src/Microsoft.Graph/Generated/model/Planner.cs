@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner.
     /// </summary>
-    
     public partial class Planner : Entity
     {
     

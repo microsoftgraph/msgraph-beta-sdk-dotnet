@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSExtensions Configuration.
     /// </summary>
-    
     public partial class MacOSExtensionsConfiguration : DeviceConfiguration
     {
     

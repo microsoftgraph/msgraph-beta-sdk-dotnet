@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Presentation Value Boolean.
     /// </summary>
-    
     public partial class GroupPolicyPresentationValueBoolean : GroupPolicyPresentationValue
     {
     

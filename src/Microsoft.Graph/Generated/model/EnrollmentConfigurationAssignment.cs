@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Enrollment Configuration Assignment.
     /// </summary>
-    
     public partial class EnrollmentConfigurationAssignment : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsDefenderApplicationControlSupplementalPolicyAssignRequestBody.
     /// </summary>
-    
     public partial class WindowsDefenderApplicationControlSupplementalPolicyAssignRequestBody
     {
     

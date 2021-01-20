@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Restricted Apps Violation.
     /// </summary>
-    
     public partial class RestrictedAppsViolation : Entity
     {
     

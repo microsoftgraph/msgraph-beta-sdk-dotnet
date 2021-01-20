@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementSettingEnrollmentTypeConstraint.
     /// </summary>
-    
     public partial class DeviceManagementSettingEnrollmentTypeConstraint : DeviceManagementConstraint
     {
         /// <summary>

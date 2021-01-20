@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Imported Apple Device Identity Result.
     /// </summary>
-    
     public partial class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity
     {
     

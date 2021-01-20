@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ConversationMemberAddRequestBody.
     /// </summary>
-    
     public partial class ConversationMemberAddRequestBody
     {
     

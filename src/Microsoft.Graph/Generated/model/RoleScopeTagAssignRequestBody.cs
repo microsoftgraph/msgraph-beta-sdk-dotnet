@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RoleScopeTagAssignRequestBody.
     /// </summary>
-    
     public partial class RoleScopeTagAssignRequestBody
     {
     

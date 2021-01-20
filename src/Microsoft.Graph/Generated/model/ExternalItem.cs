@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type External Item.
     /// </summary>
-    
     public partial class ExternalItem : Entity
     {
     

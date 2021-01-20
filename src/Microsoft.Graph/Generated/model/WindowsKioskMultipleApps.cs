@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskMultipleApps.
     /// </summary>
-    
     public partial class WindowsKioskMultipleApps : WindowsKioskAppConfiguration
     {
         /// <summary>

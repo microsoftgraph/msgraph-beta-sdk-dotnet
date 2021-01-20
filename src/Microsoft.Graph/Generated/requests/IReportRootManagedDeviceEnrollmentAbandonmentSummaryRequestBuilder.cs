@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder.
     /// </summary>
-    public partial interface IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder
+    public partial interface IReportRootManagedDeviceEnrollmentAbandonmentSummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

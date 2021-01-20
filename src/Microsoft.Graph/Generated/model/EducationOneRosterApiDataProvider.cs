@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationOneRosterApiDataProvider.
     /// </summary>
-    
     public partial class EducationOneRosterApiDataProvider : EducationSynchronizationDataProvider
     {
         /// <summary>

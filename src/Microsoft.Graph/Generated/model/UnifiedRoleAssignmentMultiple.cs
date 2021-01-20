@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unified Role Assignment Multiple.
     /// </summary>
-    
     public partial class UnifiedRoleAssignmentMultiple : Entity
     {
     

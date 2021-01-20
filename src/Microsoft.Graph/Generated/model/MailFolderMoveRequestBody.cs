@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MailFolderMoveRequestBody.
     /// </summary>
-    
     public partial class MailFolderMoveRequestBody
     {
     

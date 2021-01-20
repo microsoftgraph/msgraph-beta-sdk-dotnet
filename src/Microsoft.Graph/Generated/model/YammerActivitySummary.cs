@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Yammer Activity Summary.
     /// </summary>
-    
     public partial class YammerActivitySummary : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskSingleUWPApp.
     /// </summary>
-    
     public partial class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration
     {
         /// <summary>

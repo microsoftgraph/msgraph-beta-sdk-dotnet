@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Enterprise Modern App Management Configuration.
     /// </summary>
-    
     public partial class Windows10EnterpriseModernAppManagementConfiguration : DeviceConfiguration
     {
     

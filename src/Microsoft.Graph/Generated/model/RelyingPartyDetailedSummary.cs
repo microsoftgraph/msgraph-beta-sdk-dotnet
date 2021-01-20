@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Relying Party Detailed Summary.
     /// </summary>
-    
     public partial class RelyingPartyDetailedSummary : Entity
     {
     

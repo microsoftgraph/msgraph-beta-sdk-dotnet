@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProtectGroup.
     /// </summary>
-    
     public partial class ProtectGroup : LabelActionBase
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Privileged Access.
     /// </summary>
-    
     public partial class PrivilegedAccess : Entity
     {
     

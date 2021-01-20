@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mdm Windows Information Protection Policy Policy Set Item.
     /// </summary>
-    
     public partial class MdmWindowsInformationProtectionPolicyPolicySetItem : PolicySetItem
     {
     

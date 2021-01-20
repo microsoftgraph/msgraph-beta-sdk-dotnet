@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Scep Certificate Profile.
     /// </summary>
-    
     public partial class AndroidForWorkScepCertificateProfile : AndroidForWorkCertificateProfileBase
     {
     

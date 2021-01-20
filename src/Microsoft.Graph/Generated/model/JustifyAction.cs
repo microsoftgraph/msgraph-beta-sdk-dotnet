@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type JustifyAction.
     /// </summary>
-    
     public partial class JustifyAction : InformationProtectionAction
     {
         /// <summary>

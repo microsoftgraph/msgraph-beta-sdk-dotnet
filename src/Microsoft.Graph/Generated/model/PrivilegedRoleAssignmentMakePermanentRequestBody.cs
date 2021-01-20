@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrivilegedRoleAssignmentMakePermanentRequestBody.
     /// </summary>
-    
     public partial class PrivilegedRoleAssignmentMakePermanentRequestBody
     {
     

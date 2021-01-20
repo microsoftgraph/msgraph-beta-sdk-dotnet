@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrintJobRedirectRequestBody.
     /// </summary>
-    
     public partial class PrintJobRedirectRequestBody
     {
     

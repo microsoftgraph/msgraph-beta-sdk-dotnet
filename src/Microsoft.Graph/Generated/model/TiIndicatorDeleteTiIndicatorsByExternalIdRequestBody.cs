@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TiIndicatorDeleteTiIndicatorsByExternalIdRequestBody.
     /// </summary>
-    
     public partial class TiIndicatorDeleteTiIndicatorsByExternalIdRequestBody
     {
     

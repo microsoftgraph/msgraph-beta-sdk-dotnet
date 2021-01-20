@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Currency.
     /// </summary>
-    
     public partial class Currency : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Trust Framework Key Set.
     /// </summary>
-    
     public partial class TrustFrameworkKeySet : Entity
     {
     

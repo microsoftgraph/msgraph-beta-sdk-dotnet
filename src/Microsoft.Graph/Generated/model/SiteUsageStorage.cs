@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Site Usage Storage.
     /// </summary>
-    
     public partial class SiteUsageStorage : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Type Extension.
     /// </summary>
-    
     public partial class OpenTypeExtension : Extension
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Site Page.
     /// </summary>
-    
     public partial class SitePage : BaseItem
     {
     

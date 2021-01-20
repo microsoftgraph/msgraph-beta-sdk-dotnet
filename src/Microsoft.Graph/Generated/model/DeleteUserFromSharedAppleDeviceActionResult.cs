@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeleteUserFromSharedAppleDeviceActionResult.
     /// </summary>
-    
     public partial class DeleteUserFromSharedAppleDeviceActionResult : DeviceActionResult
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TimeCardStartBreakRequestBody.
     /// </summary>
-    
     public partial class TimeCardStartBreakRequestBody
     {
     

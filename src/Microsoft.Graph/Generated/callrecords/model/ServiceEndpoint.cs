@@ -17,7 +17,6 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type ServiceEndpoint.
     /// </summary>
-    
     public partial class ServiceEndpoint : Endpoint
     {
         /// <summary>

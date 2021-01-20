@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Case Export Operation.
     /// </summary>
-    
     public partial class CaseExportOperation : CaseOperation
     {
     

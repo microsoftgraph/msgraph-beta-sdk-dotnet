@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Data Classification Service.
     /// </summary>
-    
     public partial class DataClassificationService : Entity
     {
     

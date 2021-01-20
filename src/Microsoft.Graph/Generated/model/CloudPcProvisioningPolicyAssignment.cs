@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc Provisioning Policy Assignment.
     /// </summary>
-    
     public partial class CloudPcProvisioningPolicyAssignment : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Message Rule.
     /// </summary>
-    
     public partial class MessageRule : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection App Locker File.
     /// </summary>
-    
     public partial class WindowsInformationProtectionAppLockerFile : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Management App Health State.
     /// </summary>
-    
     public partial class WindowsManagementAppHealthState : Entity
     {
     

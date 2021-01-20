@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Autopilot Device Identity.
     /// </summary>
-    
     public partial class WindowsAutopilotDeviceIdentity : Entity
     {
     

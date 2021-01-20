@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Secure Score Control Profile.
     /// </summary>
-    
     public partial class SecureScoreControlProfile : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection.
     /// </summary>
-    
     public partial class WindowsInformationProtection : ManagedAppPolicy
     {
     

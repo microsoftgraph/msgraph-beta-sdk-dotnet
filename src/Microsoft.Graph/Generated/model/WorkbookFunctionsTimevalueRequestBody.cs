@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsTimevalueRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsTimevalueRequestBody
     {
     

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRotateFileVaultKeyRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRotateFileVaultKeyRequestBuilder
+    public partial interface IManagedDeviceRotateFileVaultKeyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

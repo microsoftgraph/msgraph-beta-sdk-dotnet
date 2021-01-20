@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Document.
     /// </summary>
-    
     public partial class Document : Entity
     {
     

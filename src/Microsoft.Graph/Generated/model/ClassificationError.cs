@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ClassificationError.
     /// </summary>
-    
     public partial class ClassificationError : ClassifcationErrorBase
     {
         /// <summary>

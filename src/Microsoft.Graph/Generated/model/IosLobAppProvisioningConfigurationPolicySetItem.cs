@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Lob App Provisioning Configuration Policy Set Item.
     /// </summary>
-    
     public partial class IosLobAppProvisioningConfigurationPolicySetItem : PolicySetItem
     {
     

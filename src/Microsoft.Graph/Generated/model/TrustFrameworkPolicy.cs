@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Trust Framework Policy.
     /// </summary>
-    
     public partial class TrustFrameworkPolicy : Entity
     {
     

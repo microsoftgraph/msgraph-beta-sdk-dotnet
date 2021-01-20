@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Supersedence.
     /// </summary>
-    
     public partial class MobileAppSupersedence : MobileAppRelationship
     {
     

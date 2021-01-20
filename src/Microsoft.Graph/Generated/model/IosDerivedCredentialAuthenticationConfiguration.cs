@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Derived Credential Authentication Configuration.
     /// </summary>
-    
     public partial class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallChangeScreenSharingRoleRequestBody.
     /// </summary>
-    
     public partial class CallChangeScreenSharingRoleRequestBody
     {
     

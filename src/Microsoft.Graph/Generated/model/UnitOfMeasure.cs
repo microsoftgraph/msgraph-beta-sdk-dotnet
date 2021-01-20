@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unit Of Measure.
     /// </summary>
-    
     public partial class UnitOfMeasure : Entity
     {
     

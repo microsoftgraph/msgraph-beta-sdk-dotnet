@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Assignment.
     /// </summary>
-    
     public partial class AccessPackageAssignment : Entity
     {
     

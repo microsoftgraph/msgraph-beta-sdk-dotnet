@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsGammaLn_PreciseRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsGammaLn_PreciseRequestBody
     {
     

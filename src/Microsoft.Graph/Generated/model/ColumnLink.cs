@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Column Link.
     /// </summary>
-    
     public partial class ColumnLink : Entity
     {
     

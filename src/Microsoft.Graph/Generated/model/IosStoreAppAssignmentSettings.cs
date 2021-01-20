@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosStoreAppAssignmentSettings.
     /// </summary>
-    
     public partial class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Terms Of Use Container.
     /// </summary>
-    
     public partial class TermsOfUseContainer : Entity
     {
     

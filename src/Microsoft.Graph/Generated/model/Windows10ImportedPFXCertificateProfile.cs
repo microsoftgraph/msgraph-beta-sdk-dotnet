@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Imported PFXCertificate Profile.
     /// </summary>
-    
     public partial class Windows10ImportedPFXCertificateProfile : WindowsCertificateProfileBase
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Troubleshooting Event.
     /// </summary>
-    
     public partial class DeviceManagementTroubleshootingEvent : Entity
     {
     

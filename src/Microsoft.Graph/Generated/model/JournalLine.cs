@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Journal Line.
     /// </summary>
-    
     public partial class JournalLine : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Policy.
     /// </summary>
-    
     public partial class ManagedAppPolicy : Entity
     {
     
