@@ -20,7 +20,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IExactMatchDataStoreLookupRequest : IBaseRequest
     {
-
         /// <summary>
         /// Gets the request body.
         /// </summary>
@@ -39,10 +38,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IExactMatchDataStoreLookupCollectionPage> PostAsync(
             CancellationToken cancellationToken);
-
-
-
-
 
 
         /// <summary>

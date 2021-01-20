@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface IReportRootGetMailboxUsageStorageRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,8 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetMailboxUsageStorageCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
 
         /// <summary>
         /// Issues the PATCH request.
@@ -50,7 +47,7 @@ namespace Microsoft.Graph
         /// <param name="mailboxusagestorage">The MailboxUsageStorage object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetMailboxUsageStorageCollectionPage> PatchAsync(MailboxUsageStorage mailboxusagestorage, 
+        System.Threading.Tasks.Task<IReportRootGetMailboxUsageStorageCollectionPage> PatchAsync(MailboxUsageStorage mailboxusagestorage,
             CancellationToken cancellationToken);
 
 
@@ -67,10 +64,8 @@ namespace Microsoft.Graph
         /// <param name="mailboxusagestorage">The MailboxUsageStorage object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetMailboxUsageStorageCollectionPage> PutAsync(MailboxUsageStorage mailboxusagestorage, 
+        System.Threading.Tasks.Task<IReportRootGetMailboxUsageStorageCollectionPage> PutAsync(MailboxUsageStorage mailboxusagestorage,
             CancellationToken cancellationToken);
-
-
 
 
         /// <summary>
