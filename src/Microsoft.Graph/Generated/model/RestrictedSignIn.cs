@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Restricted Sign In.
     /// </summary>
-    
     public partial class RestrictedSignIn : SignIn
     {
     

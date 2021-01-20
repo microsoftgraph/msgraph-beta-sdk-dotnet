@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Compliance Management Partner.
     /// </summary>
-    
     public partial class ComplianceManagementPartner : Entity
     {
     

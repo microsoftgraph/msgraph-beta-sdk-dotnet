@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type On Premises Agent Group.
     /// </summary>
-    
     public partial class OnPremisesAgentGroup : Entity
     {
     

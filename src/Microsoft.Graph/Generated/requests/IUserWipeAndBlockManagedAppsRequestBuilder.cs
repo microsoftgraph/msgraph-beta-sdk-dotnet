@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUserWipeAndBlockManagedAppsRequestBuilder.
     /// </summary>
-    public partial interface IUserWipeAndBlockManagedAppsRequestBuilder
+    public partial interface IUserWipeAndBlockManagedAppsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

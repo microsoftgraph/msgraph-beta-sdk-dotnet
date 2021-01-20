@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrivilegedRoleSelfActivateRequestBody.
     /// </summary>
-    
     public partial class PrivilegedRoleSelfActivateRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupEvaluateDynamicMembershipRequestBody.
     /// </summary>
-    
     public partial class GroupEvaluateDynamicMembershipRequestBody
     {
     

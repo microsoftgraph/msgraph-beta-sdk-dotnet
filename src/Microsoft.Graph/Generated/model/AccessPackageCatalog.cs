@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Catalog.
     /// </summary>
-    
     public partial class AccessPackageCatalog : Entity
     {
     

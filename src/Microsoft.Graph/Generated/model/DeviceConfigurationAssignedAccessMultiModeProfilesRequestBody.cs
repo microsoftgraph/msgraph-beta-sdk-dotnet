@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceConfigurationAssignedAccessMultiModeProfilesRequestBody.
     /// </summary>
-    
     public partial class DeviceConfigurationAssignedAccessMultiModeProfilesRequestBody
     {
     

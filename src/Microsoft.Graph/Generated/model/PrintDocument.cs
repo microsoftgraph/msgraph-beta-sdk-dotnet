@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Document.
     /// </summary>
-    
     public partial class PrintDocument : Entity
     {
     

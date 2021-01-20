@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner Assigned To Task Board Task Format.
     /// </summary>
-    
     public partial class PlannerAssignedToTaskBoardTaskFormat : PlannerDelta
     {
     

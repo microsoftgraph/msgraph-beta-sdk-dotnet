@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Review Instance Decision Item.
     /// </summary>
-    
     public partial class AccessReviewInstanceDecisionItem : Entity
     {
     

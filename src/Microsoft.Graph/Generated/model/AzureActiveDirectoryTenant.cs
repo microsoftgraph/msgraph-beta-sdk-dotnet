@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AzureActiveDirectoryTenant.
     /// </summary>
-    
     public partial class AzureActiveDirectoryTenant : IdentitySource
     {
         /// <summary>

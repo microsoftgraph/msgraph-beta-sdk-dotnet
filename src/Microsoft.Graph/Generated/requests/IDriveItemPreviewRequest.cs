@@ -20,7 +20,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDriveItemPreviewRequest : IBaseRequest
     {
-
         /// <summary>
         /// Gets the request body.
         /// </summary>
@@ -39,10 +38,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<ItemPreviewInfo> PostAsync(
             CancellationToken cancellationToken);
-
-
-
-
 
 
         /// <summary>

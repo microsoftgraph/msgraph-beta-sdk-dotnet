@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementSettingStringLengthConstraint.
     /// </summary>
-    
     public partial class DeviceManagementSettingStringLengthConstraint : DeviceManagementConstraint
     {
         /// <summary>

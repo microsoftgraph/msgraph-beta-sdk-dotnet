@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallPlayPromptRequestBody.
     /// </summary>
-    
     public partial class CallPlayPromptRequestBody
     {
     

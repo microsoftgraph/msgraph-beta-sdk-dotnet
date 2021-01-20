@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Authorization Policy.
     /// </summary>
-    
     public partial class AuthorizationPolicy : PolicyBase
     {
     

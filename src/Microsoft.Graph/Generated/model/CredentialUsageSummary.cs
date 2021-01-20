@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Credential Usage Summary.
     /// </summary>
-    
     public partial class CredentialUsageSummary : Entity
     {
     

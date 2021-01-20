@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ApplicationAddKeyRequestBody.
     /// </summary>
-    
     public partial class ApplicationAddKeyRequestBody
     {
     

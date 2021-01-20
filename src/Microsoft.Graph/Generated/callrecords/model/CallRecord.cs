@@ -17,7 +17,6 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type Call Record.
     /// </summary>
-    
     public partial class CallRecord : Microsoft.Graph.Entity
     {
     

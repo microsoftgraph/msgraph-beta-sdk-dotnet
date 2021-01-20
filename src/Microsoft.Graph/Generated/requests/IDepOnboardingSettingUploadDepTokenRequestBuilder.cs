@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDepOnboardingSettingUploadDepTokenRequestBuilder.
     /// </summary>
-    public partial interface IDepOnboardingSettingUploadDepTokenRequestBuilder
+    public partial interface IDepOnboardingSettingUploadDepTokenRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

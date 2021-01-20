@@ -17,7 +17,6 @@ namespace Microsoft.Graph.TermStore
     /// <summary>
     /// The type Set.
     /// </summary>
-    
     public partial class Set : Microsoft.Graph.Entity
     {
     

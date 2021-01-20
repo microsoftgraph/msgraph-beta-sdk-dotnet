@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementIntentCreateCopyRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementIntentCreateCopyRequestBody
     {
     

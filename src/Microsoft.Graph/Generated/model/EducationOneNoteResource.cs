@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationOneNoteResource.
     /// </summary>
-    
     public partial class EducationOneNoteResource : EducationResource
     {
         /// <summary>

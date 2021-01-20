@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type BusinessFlowRecordDecisionsRequestBody.
     /// </summary>
-    
     public partial class BusinessFlowRecordDecisionsRequestBody
     {
     

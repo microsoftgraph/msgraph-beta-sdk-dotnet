@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Lookup Result Row.
     /// </summary>
-    
     public partial class LookupResultRow : Entity
     {
     

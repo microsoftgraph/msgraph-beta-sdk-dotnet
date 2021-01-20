@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cancel Media Processing Operation.
     /// </summary>
-    
     public partial class CancelMediaProcessingOperation : CommsOperation
     {
     

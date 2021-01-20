@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TeamArchiveRequestBody.
     /// </summary>
-    
     public partial class TeamArchiveRequestBody
     {
     

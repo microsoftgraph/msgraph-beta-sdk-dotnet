@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Detected App.
     /// </summary>
-    
     public partial class DetectedApp : Entity
     {
     

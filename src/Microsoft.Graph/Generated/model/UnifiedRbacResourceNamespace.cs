@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unified Rbac Resource Namespace.
     /// </summary>
-    
     public partial class UnifiedRbacResourceNamespace : Entity
     {
     

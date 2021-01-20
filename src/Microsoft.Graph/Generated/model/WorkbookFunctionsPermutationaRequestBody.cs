@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsPermutationaRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsPermutationaRequestBody
     {
     

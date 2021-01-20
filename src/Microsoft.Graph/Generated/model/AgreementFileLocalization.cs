@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Agreement File Localization.
     /// </summary>
-    
     public partial class AgreementFileLocalization : AgreementFileProperties
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Update Device Status.
     /// </summary>
-    
     public partial class IosUpdateDeviceStatus : Entity
     {
     

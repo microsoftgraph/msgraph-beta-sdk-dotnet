@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceGetNonCompliantSettingsRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceGetNonCompliantSettingsRequestBuilder
+    public partial interface IManagedDeviceGetNonCompliantSettingsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

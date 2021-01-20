@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementConfigurationWindowsSettingApplicability.
     /// </summary>
-    
     public partial class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability
     {
         /// <summary>

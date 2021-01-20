@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32Lob App.
     /// </summary>
-    
     public partial class Win32LobApp : MobileLobApp
     {
     

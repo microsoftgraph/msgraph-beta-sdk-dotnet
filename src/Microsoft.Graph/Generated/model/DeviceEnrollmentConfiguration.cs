@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Enrollment Configuration.
     /// </summary>
-    
     public partial class DeviceEnrollmentConfiguration : Entity
     {
     

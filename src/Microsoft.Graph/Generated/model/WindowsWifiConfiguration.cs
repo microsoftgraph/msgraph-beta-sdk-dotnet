@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Wifi Configuration.
     /// </summary>
-    
     public partial class WindowsWifiConfiguration : DeviceConfiguration
     {
     

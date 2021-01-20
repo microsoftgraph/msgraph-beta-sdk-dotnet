@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Phone Authentication Method.
     /// </summary>
-    
     public partial class PhoneAuthenticationMethod : AuthenticationMethod
     {
     

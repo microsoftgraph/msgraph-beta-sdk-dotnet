@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementScriptAssignRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementScriptAssignRequestBody
     {
     

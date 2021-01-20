@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DomainIdentitySource.
     /// </summary>
-    
     public partial class DomainIdentitySource : IdentitySource
     {
         /// <summary>

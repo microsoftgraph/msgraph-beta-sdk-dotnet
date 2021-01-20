@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Audit.
     /// </summary>
-    
     public partial class DirectoryAudit : Entity
     {
     

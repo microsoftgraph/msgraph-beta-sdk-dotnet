@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DlpEvaluationWindowsDevicesInput.
     /// </summary>
-    
     public partial class DlpEvaluationWindowsDevicesInput : DlpEvaluationInput
     {
         /// <summary>

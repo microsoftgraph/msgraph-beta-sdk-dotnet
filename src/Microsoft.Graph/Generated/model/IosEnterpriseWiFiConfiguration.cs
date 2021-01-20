@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Enterprise Wi Fi Configuration.
     /// </summary>
-    
     public partial class IosEnterpriseWiFiConfiguration : IosWiFiConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10XSCEPCertificate Profile.
     /// </summary>
-    
     public partial class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile
     {
     

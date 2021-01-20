@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestBody.
     /// </summary>
-    
     public partial class WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestBody
     {
     

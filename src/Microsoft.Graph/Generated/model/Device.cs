@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device.
     /// </summary>
-    
     public partial class Device : DirectoryObject
     {
     

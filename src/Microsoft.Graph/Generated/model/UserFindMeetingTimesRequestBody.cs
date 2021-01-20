@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserFindMeetingTimesRequestBody.
     /// </summary>
-    
     public partial class UserFindMeetingTimesRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Text Classification Request.
     /// </summary>
-    
     public partial class TextClassificationRequestObject : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Space.
     /// </summary>
-    
     public partial class Space : Place
     {
     

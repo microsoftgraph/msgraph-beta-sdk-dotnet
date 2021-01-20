@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Vendor.
     /// </summary>
-    
     public partial class Vendor : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OnenotePageOnenotePatchContentRequestBody.
     /// </summary>
-    
     public partial class OnenotePageOnenotePatchContentRequestBody
     {
     

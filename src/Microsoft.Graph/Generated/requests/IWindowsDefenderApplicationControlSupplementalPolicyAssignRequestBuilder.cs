@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsDefenderApplicationControlSupplementalPolicyAssignRequestBuilder.
     /// </summary>
-    public partial interface IWindowsDefenderApplicationControlSupplementalPolicyAssignRequestBuilder
+    public partial interface IWindowsDefenderApplicationControlSupplementalPolicyAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

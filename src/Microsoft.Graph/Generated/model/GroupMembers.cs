@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupMembers.
     /// </summary>
-    
     public partial class GroupMembers : UserSet
     {
         /// <summary>

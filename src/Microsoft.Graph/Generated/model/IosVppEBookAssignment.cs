@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Vpp EBook Assignment.
     /// </summary>
-    
     public partial class IosVppEBookAssignment : ManagedEBookAssignment
     {
     

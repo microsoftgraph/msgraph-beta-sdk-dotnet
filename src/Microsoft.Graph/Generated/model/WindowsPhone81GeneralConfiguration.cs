@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone81General Configuration.
     /// </summary>
-    
     public partial class WindowsPhone81GeneralConfiguration : DeviceConfiguration
     {
     

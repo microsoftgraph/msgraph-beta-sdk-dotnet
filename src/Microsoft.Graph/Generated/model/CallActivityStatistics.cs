@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Call Activity Statistics.
     /// </summary>
-    
     public partial class CallActivityStatistics : ActivityStatistics
     {
     

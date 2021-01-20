@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ConfigurationManagerCollectionAssignmentTarget.
     /// </summary>
-    
     public partial class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
         /// <summary>

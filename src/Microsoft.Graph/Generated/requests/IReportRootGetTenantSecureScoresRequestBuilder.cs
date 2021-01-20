@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetTenantSecureScoresRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetTenantSecureScoresRequestBuilder
+    public partial interface IReportRootGetTenantSecureScoresRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

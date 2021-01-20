@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TargetedManagedAppProtectionAssignRequestBody.
     /// </summary>
-    
     public partial class TargetedManagedAppProtectionAssignRequestBody
     {
     

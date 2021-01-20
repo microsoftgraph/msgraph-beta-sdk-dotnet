@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance Scheduled Action For Rule.
     /// </summary>
-    
     public partial class DeviceComplianceScheduledActionForRule : Entity
     {
     

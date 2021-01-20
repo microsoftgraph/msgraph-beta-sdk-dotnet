@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppProductCodeDetection.
     /// </summary>
-    
     public partial class Win32LobAppProductCodeDetection : Win32LobAppDetection
     {
         /// <summary>

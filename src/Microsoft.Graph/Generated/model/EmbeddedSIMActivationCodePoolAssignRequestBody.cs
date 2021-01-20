@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EmbeddedSIMActivationCodePoolAssignRequestBody.
     /// </summary>
-    
     public partial class EmbeddedSIMActivationCodePoolAssignRequestBody
     {
     

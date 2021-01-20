@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sign In.
     /// </summary>
-    
     public partial class SignIn : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type License Details.
     /// </summary>
-    
     public partial class LicenseDetails : Entity
     {
     

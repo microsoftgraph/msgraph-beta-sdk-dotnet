@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device And App Management Role Assignment.
     /// </summary>
-    
     public partial class DeviceAndAppManagementRoleAssignment : RoleAssignment
     {
     

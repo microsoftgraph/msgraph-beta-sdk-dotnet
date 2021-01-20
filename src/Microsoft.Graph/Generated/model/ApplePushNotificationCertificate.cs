@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Apple Push Notification Certificate.
     /// </summary>
-    
     public partial class ApplePushNotificationCertificate : Entity
     {
     

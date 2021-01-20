@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Chat Message Hosted Content.
     /// </summary>
-    
     public partial class ChatMessageHostedContent : Entity
     {
     

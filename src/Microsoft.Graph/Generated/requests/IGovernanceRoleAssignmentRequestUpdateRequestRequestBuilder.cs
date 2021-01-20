@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGovernanceRoleAssignmentRequestUpdateRequestRequestBuilder.
     /// </summary>
-    public partial interface IGovernanceRoleAssignmentRequestUpdateRequestRequestBuilder
+    public partial interface IGovernanceRoleAssignmentRequestUpdateRequestRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

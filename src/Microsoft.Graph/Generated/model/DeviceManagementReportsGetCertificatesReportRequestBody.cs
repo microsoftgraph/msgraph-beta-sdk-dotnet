@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetCertificatesReportRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetCertificatesReportRequestBody
     {
     

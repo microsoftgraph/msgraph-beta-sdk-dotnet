@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Continuous Access Evaluation Policy.
     /// </summary>
-    
     public partial class ContinuousAccessEvaluationPolicy : Entity
     {
     

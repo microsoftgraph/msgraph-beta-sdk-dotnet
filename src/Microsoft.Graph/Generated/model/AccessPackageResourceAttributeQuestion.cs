@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageResourceAttributeQuestion.
     /// </summary>
-    
     public partial class AccessPackageResourceAttributeQuestion : AccessPackageResourceAttributeSource
     {
         /// <summary>

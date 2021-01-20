@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskDesktopApp.
     /// </summary>
-    
     public partial class WindowsKioskDesktopApp : WindowsKioskAppBase
     {
         /// <summary>

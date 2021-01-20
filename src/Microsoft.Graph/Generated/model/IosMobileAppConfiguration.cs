@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Mobile App Configuration.
     /// </summary>
-    
     public partial class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration
     {
     

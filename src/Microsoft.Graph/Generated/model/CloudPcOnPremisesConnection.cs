@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc On Premises Connection.
     /// </summary>
-    
     public partial class CloudPcOnPremisesConnection : Entity
     {
     

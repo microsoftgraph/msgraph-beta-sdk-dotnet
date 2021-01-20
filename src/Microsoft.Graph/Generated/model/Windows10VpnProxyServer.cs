@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10VpnProxyServer.
     /// </summary>
-    
     public partial class Windows10VpnProxyServer : VpnProxyServer
     {
         /// <summary>

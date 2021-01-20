@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosCredentialSingleSignOnExtension.
     /// </summary>
-    
     public partial class IosCredentialSingleSignOnExtension : IosSingleSignOnExtension
     {
         /// <summary>

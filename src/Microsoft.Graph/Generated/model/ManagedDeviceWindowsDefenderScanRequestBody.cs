@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceWindowsDefenderScanRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceWindowsDefenderScanRequestBody
     {
     

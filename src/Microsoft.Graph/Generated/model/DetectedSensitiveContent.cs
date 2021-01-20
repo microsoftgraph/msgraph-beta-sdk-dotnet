@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DetectedSensitiveContent.
     /// </summary>
-    
     public partial class DetectedSensitiveContent : DetectedSensitiveContentBase
     {
         /// <summary>

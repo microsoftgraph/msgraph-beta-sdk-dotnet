@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone81App X.
     /// </summary>
-    
     public partial class WindowsPhone81AppX : MobileLobApp
     {
     

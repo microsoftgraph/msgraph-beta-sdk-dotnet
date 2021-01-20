@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type One Drive Usage Account Counts.
     /// </summary>
-    
     public partial class OneDriveUsageAccountCounts : Entity
     {
     

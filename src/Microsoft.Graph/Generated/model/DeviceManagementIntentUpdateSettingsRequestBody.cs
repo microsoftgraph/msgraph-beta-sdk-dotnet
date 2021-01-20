@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementIntentUpdateSettingsRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementIntentUpdateSettingsRequestBody
     {
     

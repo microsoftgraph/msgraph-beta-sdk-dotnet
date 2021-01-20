@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Autopilot Policy Status Detail.
     /// </summary>
-    
     public partial class DeviceManagementAutopilotPolicyStatusDetail : Entity
     {
     

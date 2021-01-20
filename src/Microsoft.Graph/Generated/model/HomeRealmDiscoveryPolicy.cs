@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Home Realm Discovery Policy.
     /// </summary>
-    
     public partial class HomeRealmDiscoveryPolicy : StsPolicy
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Enrollment Completion Page Configuration.
     /// </summary>
-    
     public partial class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration
     {
     

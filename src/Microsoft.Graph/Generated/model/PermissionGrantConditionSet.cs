@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Permission Grant Condition Set.
     /// </summary>
-    
     public partial class PermissionGrantConditionSet : Entity
     {
     

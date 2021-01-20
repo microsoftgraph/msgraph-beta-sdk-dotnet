@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MediaPrompt.
     /// </summary>
-    
     public partial class MediaPrompt : Prompt
     {
         /// <summary>

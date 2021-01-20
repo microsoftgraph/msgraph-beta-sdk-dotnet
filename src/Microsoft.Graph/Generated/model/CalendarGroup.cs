@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Calendar Group.
     /// </summary>
-    
     public partial class CalendarGroup : Entity
     {
     

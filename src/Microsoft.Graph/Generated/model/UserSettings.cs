@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Settings.
     /// </summary>
-    
     public partial class UserSettings : Entity
     {
     

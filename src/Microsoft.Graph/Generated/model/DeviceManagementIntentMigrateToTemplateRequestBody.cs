@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementIntentMigrateToTemplateRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementIntentMigrateToTemplateRequestBody
     {
     

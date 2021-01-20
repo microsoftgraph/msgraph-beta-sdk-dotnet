@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Approval.
     /// </summary>
-    
     public partial class Approval : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SiteAddRequestBody.
     /// </summary>
-    
     public partial class SiteAddRequestBody
     {
     

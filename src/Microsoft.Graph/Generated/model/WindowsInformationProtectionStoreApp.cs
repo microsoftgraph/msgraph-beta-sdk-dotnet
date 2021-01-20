@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsInformationProtectionStoreApp.
     /// </summary>
-    
     public partial class WindowsInformationProtectionStoreApp : WindowsInformationProtectionApp
     {
         /// <summary>

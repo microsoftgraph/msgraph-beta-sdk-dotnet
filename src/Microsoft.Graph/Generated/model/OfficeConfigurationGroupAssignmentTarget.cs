@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OfficeConfigurationGroupAssignmentTarget.
     /// </summary>
-    
     public partial class OfficeConfigurationGroupAssignmentTarget : OfficeConfigurationAssignmentTarget
     {
         /// <summary>

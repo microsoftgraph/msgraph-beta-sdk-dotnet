@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Update Configuration.
     /// </summary>
-    
     public partial class IosUpdateConfiguration : DeviceConfiguration
     {
     

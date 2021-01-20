@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFilterApplyTopPercentFilterRequestBody.
     /// </summary>
-    
     public partial class WorkbookFilterApplyTopPercentFilterRequestBody
     {
     

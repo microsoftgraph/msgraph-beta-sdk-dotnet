@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AlertUpdateAlertsRequestBody.
     /// </summary>
-    
     public partial class AlertUpdateAlertsRequestBody
     {
     

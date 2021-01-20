@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidMobileAppIdentifier.
     /// </summary>
-    
     public partial class AndroidMobileAppIdentifier : MobileAppIdentifier
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosMobileAppIdentifier.
     /// </summary>
-    
     public partial class IosMobileAppIdentifier : MobileAppIdentifier
     {
         /// <summary>

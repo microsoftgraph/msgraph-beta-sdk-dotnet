@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Privacy Data Access Control Item.
     /// </summary>
-    
     public partial class WindowsPrivacyDataAccessControlItem : Entity
     {
     

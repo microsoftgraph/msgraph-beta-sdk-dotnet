@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Long Running Operation.
     /// </summary>
-    
     public partial class LongRunningOperation : Entity
     {
     

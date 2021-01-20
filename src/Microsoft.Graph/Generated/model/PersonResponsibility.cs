@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Responsibility.
     /// </summary>
-    
     public partial class PersonResponsibility : ItemFacet
     {
     

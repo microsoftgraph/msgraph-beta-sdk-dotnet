@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("count", count, false);
             this.SetParameter("status", status, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

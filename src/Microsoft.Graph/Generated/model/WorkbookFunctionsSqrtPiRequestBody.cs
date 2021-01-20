@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsSqrtPiRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsSqrtPiRequestBody
     {
     

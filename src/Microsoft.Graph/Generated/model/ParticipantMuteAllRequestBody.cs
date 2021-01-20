@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ParticipantMuteAllRequestBody.
     /// </summary>
-    
     public partial class ParticipantMuteAllRequestBody
     {
     

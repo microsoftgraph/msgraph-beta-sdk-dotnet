@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Rubric Outcome.
     /// </summary>
-    
     public partial class EducationRubricOutcome : EducationOutcome
     {
     

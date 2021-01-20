@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Worksheet.
     /// </summary>
-    
     public partial class WorkbookWorksheet : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MacOsVppAppAssignmentSettings.
     /// </summary>
-    
     public partial class MacOsVppAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>

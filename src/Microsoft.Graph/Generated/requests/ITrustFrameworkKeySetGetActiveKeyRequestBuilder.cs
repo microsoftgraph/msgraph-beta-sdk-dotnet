@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITrustFrameworkKeySetGetActiveKeyRequestBuilder.
     /// </summary>
-    public partial interface ITrustFrameworkKeySetGetActiveKeyRequestBuilder
+    public partial interface ITrustFrameworkKeySetGetActiveKeyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

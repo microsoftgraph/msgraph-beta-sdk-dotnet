@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Field Value Set.
     /// </summary>
-    
     public partial class FieldValueSet : Entity
     {
     

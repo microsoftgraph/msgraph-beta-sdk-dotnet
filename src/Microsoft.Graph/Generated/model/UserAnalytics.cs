@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Analytics.
     /// </summary>
-    
     public partial class UserAnalytics : Entity
     {
     

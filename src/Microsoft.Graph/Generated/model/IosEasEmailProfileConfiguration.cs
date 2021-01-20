@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Eas Email Profile Configuration.
     /// </summary>
-    
     public partial class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     

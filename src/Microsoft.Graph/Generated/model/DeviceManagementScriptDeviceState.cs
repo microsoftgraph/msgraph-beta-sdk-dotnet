@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Script Device State.
     /// </summary>
-    
     public partial class DeviceManagementScriptDeviceState : Entity
     {
     

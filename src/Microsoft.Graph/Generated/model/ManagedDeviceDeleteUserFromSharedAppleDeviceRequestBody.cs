@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceDeleteUserFromSharedAppleDeviceRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceDeleteUserFromSharedAppleDeviceRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DisableAndDeleteUserApplyAction.
     /// </summary>
-    
     public partial class DisableAndDeleteUserApplyAction : AccessReviewApplyAction
     {
         /// <summary>

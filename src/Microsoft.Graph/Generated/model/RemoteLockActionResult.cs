@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RemoteLockActionResult.
     /// </summary>
-    
     public partial class RemoteLockActionResult : DeviceActionResult
     {
         /// <summary>

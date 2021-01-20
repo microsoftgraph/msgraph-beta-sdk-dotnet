@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceCleanWindowsDeviceRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceCleanWindowsDeviceRequestBody
     {
     

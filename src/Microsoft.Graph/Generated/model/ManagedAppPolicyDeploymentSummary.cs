@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Policy Deployment Summary.
     /// </summary>
-    
     public partial class ManagedAppPolicyDeploymentSummary : Entity
     {
     

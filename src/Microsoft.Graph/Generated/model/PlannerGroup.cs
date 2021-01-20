@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner Group.
     /// </summary>
-    
     public partial class PlannerGroup : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RemoveContentHeaderAction.
     /// </summary>
-    
     public partial class RemoveContentHeaderAction : InformationProtectionAction
     {
         /// <summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("policyId", policyId, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

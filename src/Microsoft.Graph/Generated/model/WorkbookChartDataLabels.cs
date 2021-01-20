@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Data Labels.
     /// </summary>
-    
     public partial class WorkbookChartDataLabels : Entity
     {
     

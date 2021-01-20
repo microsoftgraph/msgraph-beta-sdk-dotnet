@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Chat Message.
     /// </summary>
-    
     public partial class ChatMessage : Entity
     {
     

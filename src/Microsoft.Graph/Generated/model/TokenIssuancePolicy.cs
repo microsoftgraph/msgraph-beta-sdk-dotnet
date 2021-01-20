@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Token Issuance Policy.
     /// </summary>
-    
     public partial class TokenIssuancePolicy : StsPolicy
     {
     

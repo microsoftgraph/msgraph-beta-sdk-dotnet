@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Custodian.
     /// </summary>
-    
     public partial class Custodian : Entity
     {
     

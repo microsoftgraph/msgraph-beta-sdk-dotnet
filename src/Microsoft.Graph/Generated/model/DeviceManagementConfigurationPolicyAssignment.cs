@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Configuration Policy Assignment.
     /// </summary>
-    
     public partial class DeviceManagementConfigurationPolicyAssignment : Entity
     {
     

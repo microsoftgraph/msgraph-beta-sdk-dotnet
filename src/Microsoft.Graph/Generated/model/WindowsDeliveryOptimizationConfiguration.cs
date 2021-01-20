@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Delivery Optimization Configuration.
     /// </summary>
-    
     public partial class WindowsDeliveryOptimizationConfiguration : DeviceConfiguration
     {
     

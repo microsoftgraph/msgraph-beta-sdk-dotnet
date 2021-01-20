@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Analytics.
     /// </summary>
-    
     public partial class ItemAnalytics : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph.TermStore
     /// <summary>
     /// The type Store.
     /// </summary>
-    
     public partial class Store : Microsoft.Graph.Entity
     {
     

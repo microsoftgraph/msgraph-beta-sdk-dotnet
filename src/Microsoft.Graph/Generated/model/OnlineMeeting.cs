@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Online Meeting.
     /// </summary>
-    
     public partial class OnlineMeeting : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallUpdateRecordingStatusRequestBody.
     /// </summary>
-    
     public partial class CallUpdateRecordingStatusRequestBody
     {
     

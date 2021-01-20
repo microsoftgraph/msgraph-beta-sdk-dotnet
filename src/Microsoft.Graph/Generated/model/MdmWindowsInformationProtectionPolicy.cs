@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mdm Windows Information Protection Policy.
     /// </summary>
-    
     public partial class MdmWindowsInformationProtectionPolicy : WindowsInformationProtection
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Published Resource.
     /// </summary>
-    
     public partial class PublishedResource : Entity
     {
     

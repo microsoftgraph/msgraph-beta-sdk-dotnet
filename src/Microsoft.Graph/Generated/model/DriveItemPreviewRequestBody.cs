@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DriveItemPreviewRequestBody.
     /// </summary>
-    
     public partial class DriveItemPreviewRequestBody
     {
     

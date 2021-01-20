@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Fill.
     /// </summary>
-    
     public partial class WorkbookChartFill : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Presentation.
     /// </summary>
-    
     public partial class GroupPolicyPresentation : Entity
     {
     

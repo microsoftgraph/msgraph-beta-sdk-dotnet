@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsHex2OctRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsHex2OctRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity Security Defaults Enforcement Policy.
     /// </summary>
-    
     public partial class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase
     {
     

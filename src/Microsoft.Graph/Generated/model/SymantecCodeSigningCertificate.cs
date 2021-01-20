@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Symantec Code Signing Certificate.
     /// </summary>
-    
     public partial class SymantecCodeSigningCertificate : Entity
     {
     

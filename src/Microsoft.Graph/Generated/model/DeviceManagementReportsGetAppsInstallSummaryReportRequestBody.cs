@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetAppsInstallSummaryReportRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetAppsInstallSummaryReportRequestBody
     {
     

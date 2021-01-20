@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosHomeScreenFolder.
     /// </summary>
-    
     public partial class IosHomeScreenFolder : IosHomeScreenItem
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSMicrosoft Edge App.
     /// </summary>
-    
     public partial class MacOSMicrosoftEdgeApp : MobileApp
     {
     

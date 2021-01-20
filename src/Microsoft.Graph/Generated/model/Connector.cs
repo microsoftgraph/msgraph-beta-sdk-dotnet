@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Connector.
     /// </summary>
-    
     public partial class Connector : Entity
     {
     

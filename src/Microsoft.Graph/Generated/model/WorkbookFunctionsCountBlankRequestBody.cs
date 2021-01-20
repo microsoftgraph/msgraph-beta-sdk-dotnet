@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsCountBlankRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsCountBlankRequestBody
     {
     

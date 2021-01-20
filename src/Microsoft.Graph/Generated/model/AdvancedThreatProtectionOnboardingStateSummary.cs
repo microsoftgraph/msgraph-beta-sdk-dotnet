@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Advanced Threat Protection Onboarding State Summary.
     /// </summary>
-    
     public partial class AdvancedThreatProtectionOnboardingStateSummary : Entity
     {
     

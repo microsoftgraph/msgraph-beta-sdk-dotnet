@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Report Root.
     /// </summary>
-    
     public partial class ReportRoot : Entity
     {
     

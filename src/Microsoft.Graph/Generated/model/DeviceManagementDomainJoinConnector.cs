@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Domain Join Connector.
     /// </summary>
-    
     public partial class DeviceManagementDomainJoinConnector : Entity
     {
     

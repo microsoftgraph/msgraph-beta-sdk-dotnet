@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsUsdollarRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsUsdollarRequestBody
     {
     

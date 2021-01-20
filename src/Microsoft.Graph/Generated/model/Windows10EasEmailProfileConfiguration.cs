@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Eas Email Profile Configuration.
     /// </summary>
-    
     public partial class Windows10EasEmailProfileConfiguration : EasEmailProfileConfigurationBase
     {
     

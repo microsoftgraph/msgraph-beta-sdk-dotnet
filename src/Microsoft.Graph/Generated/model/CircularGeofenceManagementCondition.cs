@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Circular Geofence Management Condition.
     /// </summary>
-    
     public partial class CircularGeofenceManagementCondition : LocationManagementCondition
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsUpdateScheduledInstall.
     /// </summary>
-    
     public partial class WindowsUpdateScheduledInstall : WindowsUpdateInstallScheduleType
     {
         /// <summary>

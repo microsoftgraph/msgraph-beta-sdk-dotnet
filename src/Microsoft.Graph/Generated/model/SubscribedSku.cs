@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Subscribed Sku.
     /// </summary>
-    
     public partial class SubscribedSku : Entity
     {
     

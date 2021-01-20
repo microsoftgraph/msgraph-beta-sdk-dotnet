@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Extension.
     /// </summary>
-    
     public partial class Extension : Entity
     {
     

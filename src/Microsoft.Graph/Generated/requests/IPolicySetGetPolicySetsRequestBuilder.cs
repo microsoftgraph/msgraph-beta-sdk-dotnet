@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPolicySetGetPolicySetsRequestBuilder.
     /// </summary>
-    public partial interface IPolicySetGetPolicySetsRequestBuilder
+    public partial interface IPolicySetGetPolicySetsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

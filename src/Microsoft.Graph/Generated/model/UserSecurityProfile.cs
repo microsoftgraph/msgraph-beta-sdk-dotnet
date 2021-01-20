@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Security Profile.
     /// </summary>
-    
     public partial class UserSecurityProfile : Entity
     {
     

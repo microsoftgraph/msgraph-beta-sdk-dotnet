@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Attribute Mapping Function Schema.
     /// </summary>
-    
     public partial class AttributeMappingFunctionSchema : Entity
     {
     

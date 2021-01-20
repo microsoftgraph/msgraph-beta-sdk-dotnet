@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unified Rbac Resource Scope.
     /// </summary>
-    
     public partial class UnifiedRbacResourceScope : Entity
     {
     

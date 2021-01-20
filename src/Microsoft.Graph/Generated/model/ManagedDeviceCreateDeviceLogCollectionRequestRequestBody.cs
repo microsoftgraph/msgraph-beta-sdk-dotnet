@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceCreateDeviceLogCollectionRequestRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceCreateDeviceLogCollectionRequestRequestBody
     {
     

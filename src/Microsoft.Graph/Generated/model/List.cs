@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type List.
     /// </summary>
-    
     public partial class List : BaseItem
     {
     

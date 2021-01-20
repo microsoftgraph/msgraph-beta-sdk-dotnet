@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ServiceHostedMediaConfig.
     /// </summary>
-    
     public partial class ServiceHostedMediaConfig : MediaConfig
     {
         /// <summary>

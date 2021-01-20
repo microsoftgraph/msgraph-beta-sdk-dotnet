@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sales Quote Line.
     /// </summary>
-    
     public partial class SalesQuoteLine : Entity
     {
     

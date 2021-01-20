@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Category.
     /// </summary>
-    
     public partial class OutlookCategory : Entity
     {
     

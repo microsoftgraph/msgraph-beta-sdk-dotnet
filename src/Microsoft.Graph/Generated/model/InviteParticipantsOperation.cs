@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Invite Participants Operation.
     /// </summary>
-    
     public partial class InviteParticipantsOperation : CommsOperation
     {
     

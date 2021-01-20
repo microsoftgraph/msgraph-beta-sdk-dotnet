@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Presentation Combo Box.
     /// </summary>
-    
     public partial class GroupPolicyPresentationComboBox : GroupPolicyPresentation
     {
     

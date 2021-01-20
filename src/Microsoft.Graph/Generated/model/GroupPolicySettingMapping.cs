@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Setting Mapping.
     /// </summary>
-    
     public partial class GroupPolicySettingMapping : Entity
     {
     

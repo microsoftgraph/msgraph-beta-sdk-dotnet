@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone81App XBundle.
     /// </summary>
-    
     public partial class WindowsPhone81AppXBundle : WindowsPhone81AppX
     {
     

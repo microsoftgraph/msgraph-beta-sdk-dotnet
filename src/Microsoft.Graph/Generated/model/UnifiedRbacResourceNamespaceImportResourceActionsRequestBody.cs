@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UnifiedRbacResourceNamespaceImportResourceActionsRequestBody.
     /// </summary>
-    
     public partial class UnifiedRbacResourceNamespaceImportResourceActionsRequestBody
     {
     

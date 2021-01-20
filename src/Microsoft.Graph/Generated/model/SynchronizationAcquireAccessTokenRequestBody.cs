@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SynchronizationAcquireAccessTokenRequestBody.
     /// </summary>
-    
     public partial class SynchronizationAcquireAccessTokenRequestBody
     {
     

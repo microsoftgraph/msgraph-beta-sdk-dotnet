@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Printer.
     /// </summary>
-    
     public partial class Printer : PrinterBase
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsImSqrtRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsImSqrtRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Command.
     /// </summary>
-    
     public partial class Command : Entity
     {
     

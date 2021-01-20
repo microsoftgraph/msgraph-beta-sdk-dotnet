@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DepOnboardingSettingUploadDepTokenRequestBody.
     /// </summary>
-    
     public partial class DepOnboardingSettingUploadDepTokenRequestBody
     {
     

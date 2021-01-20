@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Localized Notification Message.
     /// </summary>
-    
     public partial class LocalizedNotificationMessage : Entity
     {
     

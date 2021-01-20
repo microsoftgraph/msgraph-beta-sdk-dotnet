@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Used Insight.
     /// </summary>
-    
     public partial class UsedInsight : Entity
     {
     

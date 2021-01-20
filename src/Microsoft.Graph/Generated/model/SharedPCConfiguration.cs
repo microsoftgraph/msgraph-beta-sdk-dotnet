@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Shared PCConfiguration.
     /// </summary>
-    
     public partial class SharedPCConfiguration : DeviceConfiguration
     {
     

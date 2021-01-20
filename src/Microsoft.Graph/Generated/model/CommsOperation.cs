@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Comms Operation.
     /// </summary>
-    
     public partial class CommsOperation : Entity
     {
     

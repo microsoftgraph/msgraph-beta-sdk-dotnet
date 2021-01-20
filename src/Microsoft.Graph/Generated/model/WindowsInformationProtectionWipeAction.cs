@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection Wipe Action.
     /// </summary>
-    
     public partial class WindowsInformationProtectionWipeAction : Entity
     {
     

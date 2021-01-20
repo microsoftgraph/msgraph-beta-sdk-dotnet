@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetConfigurationPoliciesReportForDeviceRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetConfigurationPoliciesReportForDeviceRequestBody
     {
     

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrinterGetCapabilitiesRequestBuilder.
     /// </summary>
-    public partial interface IPrinterGetCapabilitiesRequestBuilder
+    public partial interface IPrinterGetCapabilitiesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

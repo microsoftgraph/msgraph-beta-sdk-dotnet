@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Trending.
     /// </summary>
-    
     public partial class Trending : Entity
     {
     

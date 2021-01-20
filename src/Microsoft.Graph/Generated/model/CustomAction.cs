@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CustomAction.
     /// </summary>
-    
     public partial class CustomAction : InformationProtectionAction
     {
         /// <summary>

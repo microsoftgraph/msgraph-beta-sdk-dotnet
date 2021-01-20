@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile Threat Defense Connector.
     /// </summary>
-    
     public partial class MobileThreatDefenseConnector : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device.
     /// </summary>
-    
     public partial class ManagedDevice : Entity
     {
     

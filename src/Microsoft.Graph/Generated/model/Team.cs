@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Team.
     /// </summary>
-    
     public partial class Team : Entity
     {
     

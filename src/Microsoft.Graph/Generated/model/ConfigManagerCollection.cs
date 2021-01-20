@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Config Manager Collection.
     /// </summary>
-    
     public partial class ConfigManagerCollection : Entity
     {
     

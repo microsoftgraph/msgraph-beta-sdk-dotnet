@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SynchronizationJobRestartRequestBody.
     /// </summary>
-    
     public partial class SynchronizationJobRestartRequestBody
     {
     

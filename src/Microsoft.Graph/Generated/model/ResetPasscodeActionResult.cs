@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ResetPasscodeActionResult.
     /// </summary>
-    
     public partial class ResetPasscodeActionResult : DeviceActionResult
     {
         /// <summary>

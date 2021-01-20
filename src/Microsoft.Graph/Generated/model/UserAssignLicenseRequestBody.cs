@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserAssignLicenseRequestBody.
     /// </summary>
-    
     public partial class UserAssignLicenseRequestBody
     {
     

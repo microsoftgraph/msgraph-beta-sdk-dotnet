@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Title.
     /// </summary>
-    
     public partial class WorkbookChartTitle : Entity
     {
     

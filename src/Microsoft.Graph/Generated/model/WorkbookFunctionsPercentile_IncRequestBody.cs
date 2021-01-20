@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsPercentile_IncRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsPercentile_IncRequestBody
     {
     

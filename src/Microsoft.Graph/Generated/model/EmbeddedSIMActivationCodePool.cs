@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Embedded SIMActivation Code Pool.
     /// </summary>
-    
     public partial class EmbeddedSIMActivationCodePool : Entity
     {
     

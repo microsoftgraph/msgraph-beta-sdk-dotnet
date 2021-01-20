@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AddFooter.
     /// </summary>
-    
     public partial class AddFooter : MarkContent
     {
         /// <summary>

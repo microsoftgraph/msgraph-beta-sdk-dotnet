@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Print Task Trigger.
     /// </summary>
-    
     public partial class PrintTaskTrigger : Entity
     {
     

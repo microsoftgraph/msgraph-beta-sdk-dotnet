@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Email App Usage Versions User Counts.
     /// </summary>
-    
     public partial class EmailAppUsageVersionsUserCounts : Entity
     {
     

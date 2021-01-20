@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Enrollment Restrictions Configuration Policy Set Item.
     /// </summary>
-    
     public partial class EnrollmentRestrictionsConfigurationPolicySetItem : PolicySetItem
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Case Index Operation.
     /// </summary>
-    
     public partial class CaseIndexOperation : CaseOperation
     {
     

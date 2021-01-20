@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Share Point Activity Pages.
     /// </summary>
-    
     public partial class SharePointActivityPages : Entity
     {
     

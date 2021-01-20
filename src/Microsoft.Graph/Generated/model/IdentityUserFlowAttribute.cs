@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity User Flow Attribute.
     /// </summary>
-    
     public partial class IdentityUserFlowAttribute : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Category.
     /// </summary>
-    
     public partial class GroupPolicyCategory : Entity
     {
     

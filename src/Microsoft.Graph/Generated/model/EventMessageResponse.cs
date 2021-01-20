@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Event Message Response.
     /// </summary>
-    
     public partial class EventMessageResponse : EventMessage
     {
     

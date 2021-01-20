@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type NotebookCopyNotebookRequestBody.
     /// </summary>
-    
     public partial class NotebookCopyNotebookRequestBody
     {
     

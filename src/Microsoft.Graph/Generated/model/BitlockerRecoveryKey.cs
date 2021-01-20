@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Bitlocker Recovery Key.
     /// </summary>
-    
     public partial class BitlockerRecoveryKey : Entity
     {
     

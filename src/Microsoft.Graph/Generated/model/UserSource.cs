@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Source.
     /// </summary>
-    
     public partial class UserSource : DataSource
     {
     

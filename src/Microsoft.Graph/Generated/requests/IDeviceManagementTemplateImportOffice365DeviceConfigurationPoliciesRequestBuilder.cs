@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder
+    public partial interface IDeviceManagementTemplateImportOffice365DeviceConfigurationPoliciesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceWipeRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceWipeRequestBody
     {
     

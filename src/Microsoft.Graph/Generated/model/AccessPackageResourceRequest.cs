@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Resource Request.
     /// </summary>
-    
     public partial class AccessPackageResourceRequestObject : Entity
     {
     

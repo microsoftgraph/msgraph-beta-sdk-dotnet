@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner Delta.
     /// </summary>
-    
     public partial class PlannerDelta : Entity
     {
     

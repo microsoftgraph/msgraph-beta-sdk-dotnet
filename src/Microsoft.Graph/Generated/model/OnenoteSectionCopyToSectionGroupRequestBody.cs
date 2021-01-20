@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OnenoteSectionCopyToSectionGroupRequestBody.
     /// </summary>
-    
     public partial class OnenoteSectionCopyToSectionGroupRequestBody
     {
     

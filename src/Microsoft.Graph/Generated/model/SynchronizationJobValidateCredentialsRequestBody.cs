@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SynchronizationJobValidateCredentialsRequestBody.
     /// </summary>
-    
     public partial class SynchronizationJobValidateCredentialsRequestBody
     {
     

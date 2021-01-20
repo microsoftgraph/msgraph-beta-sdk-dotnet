@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InsightValueDouble.
     /// </summary>
-    
     public partial class InsightValueDouble : UserExperienceAnalyticsInsightValue
     {
         /// <summary>

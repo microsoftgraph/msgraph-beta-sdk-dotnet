@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Section Group.
     /// </summary>
-    
     public partial class SectionGroup : OnenoteEntityHierarchyModel
     {
     

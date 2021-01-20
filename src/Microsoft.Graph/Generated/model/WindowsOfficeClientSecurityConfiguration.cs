@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Office Client Security Configuration.
     /// </summary>
-    
     public partial class WindowsOfficeClientSecurityConfiguration : OfficeClientConfiguration
     {
     

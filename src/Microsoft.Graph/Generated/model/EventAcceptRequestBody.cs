@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EventAcceptRequestBody.
     /// </summary>
-    
     public partial class EventAcceptRequestBody
     {
     

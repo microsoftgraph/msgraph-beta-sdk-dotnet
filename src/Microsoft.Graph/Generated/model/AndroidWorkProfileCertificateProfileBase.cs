@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Work Profile Certificate Profile Base.
     /// </summary>
-    
     public partial class AndroidWorkProfileCertificateProfileBase : DeviceConfiguration
     {
     

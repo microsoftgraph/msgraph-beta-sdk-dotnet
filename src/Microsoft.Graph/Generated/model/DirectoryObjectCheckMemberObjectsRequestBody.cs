@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DirectoryObjectCheckMemberObjectsRequestBody.
     /// </summary>
-    
     public partial class DirectoryObjectCheckMemberObjectsRequestBody
     {
     

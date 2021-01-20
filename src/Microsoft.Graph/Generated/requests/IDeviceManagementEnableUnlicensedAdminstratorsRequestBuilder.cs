@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder
+    public partial interface IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

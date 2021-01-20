@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Change Tracked Entity.
     /// </summary>
-    
     public partial class ChangeTrackedEntity : Entity
     {
     

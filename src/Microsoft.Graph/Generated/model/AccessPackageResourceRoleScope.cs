@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Resource Role Scope.
     /// </summary>
-    
     public partial class AccessPackageResourceRoleScope : Entity
     {
     

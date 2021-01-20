@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Object File.
     /// </summary>
-    
     public partial class GroupPolicyObjectFile : Entity
     {
     

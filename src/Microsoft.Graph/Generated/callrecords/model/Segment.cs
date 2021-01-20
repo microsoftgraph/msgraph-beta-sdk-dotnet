@@ -17,7 +17,6 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type Segment.
     /// </summary>
-    
     public partial class Segment : Microsoft.Graph.Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Flow Language Configuration.
     /// </summary>
-    
     public partial class UserFlowLanguageConfiguration : Entity
     {
     

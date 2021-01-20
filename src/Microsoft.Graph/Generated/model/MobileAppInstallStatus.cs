@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Install Status.
     /// </summary>
-    
     public partial class MobileAppInstallStatus : Entity
     {
     

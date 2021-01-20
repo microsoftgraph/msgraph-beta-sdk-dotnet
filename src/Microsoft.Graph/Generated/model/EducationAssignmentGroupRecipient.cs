@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationAssignmentGroupRecipient.
     /// </summary>
-    
     public partial class EducationAssignmentGroupRecipient : EducationAssignmentRecipient
     {
         /// <summary>

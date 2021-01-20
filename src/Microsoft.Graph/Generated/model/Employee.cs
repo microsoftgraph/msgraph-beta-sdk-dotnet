@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Employee.
     /// </summary>
-    
     public partial class Employee : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Organization.
     /// </summary>
-    
     public partial class Organization : DirectoryObject
     {
     

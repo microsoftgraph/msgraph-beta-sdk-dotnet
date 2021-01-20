@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Format Protection.
     /// </summary>
-    
     public partial class WorkbookFormatProtection : Entity
     {
     

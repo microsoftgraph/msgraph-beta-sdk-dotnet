@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DriveItemRestoreRequestBody.
     /// </summary>
-    
     public partial class DriveItemRestoreRequestBody
     {
     

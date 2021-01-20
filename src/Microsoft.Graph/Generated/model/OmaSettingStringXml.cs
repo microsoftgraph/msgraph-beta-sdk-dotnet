@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OmaSettingStringXml.
     /// </summary>
-    
     public partial class OmaSettingStringXml : OmaSetting
     {
         /// <summary>

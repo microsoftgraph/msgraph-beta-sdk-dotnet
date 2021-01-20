@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceTriggerConfigurationManagerActionRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceTriggerConfigurationManagerActionRequestBuilder
+    public partial interface IManagedDeviceTriggerConfigurationManagerActionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

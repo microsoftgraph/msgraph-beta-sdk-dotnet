@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android For Work Custom Configuration.
     /// </summary>
-    
     public partial class AndroidForWorkCustomConfiguration : DeviceConfiguration
     {
     

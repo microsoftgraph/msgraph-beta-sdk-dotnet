@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Registration.
     /// </summary>
-    
     public partial class ManagedAppRegistration : Entity
     {
     

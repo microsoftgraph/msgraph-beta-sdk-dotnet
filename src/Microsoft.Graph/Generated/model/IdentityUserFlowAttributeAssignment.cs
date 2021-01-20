@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity User Flow Attribute Assignment.
     /// </summary>
-    
     public partial class IdentityUserFlowAttributeAssignment : Entity
     {
     

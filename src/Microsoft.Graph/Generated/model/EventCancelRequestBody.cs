@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EventCancelRequestBody.
     /// </summary>
-    
     public partial class EventCancelRequestBody
     {
     

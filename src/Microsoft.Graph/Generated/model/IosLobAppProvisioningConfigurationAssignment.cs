@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Lob App Provisioning Configuration Assignment.
     /// </summary>
-    
     public partial class IosLobAppProvisioningConfigurationAssignment : Entity
     {
     

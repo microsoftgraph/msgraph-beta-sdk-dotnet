@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Filter Operator Schema.
     /// </summary>
-    
     public partial class FilterOperatorSchema : Entity
     {
     

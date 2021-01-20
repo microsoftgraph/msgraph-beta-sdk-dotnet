@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Job Response Base.
     /// </summary>
-    
     public partial class JobResponseBase : Entity
     {
     

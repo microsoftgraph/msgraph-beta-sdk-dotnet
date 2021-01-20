@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Wifi Enterprise EAPConfiguration.
     /// </summary>
-    
     public partial class WindowsWifiEnterpriseEAPConfiguration : WindowsWifiConfiguration
     {
     

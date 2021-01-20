@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Skype For Business Peer To Peer Activity User Counts.
     /// </summary>
-    
     public partial class SkypeForBusinessPeerToPeerActivityUserCounts : Entity
     {
     

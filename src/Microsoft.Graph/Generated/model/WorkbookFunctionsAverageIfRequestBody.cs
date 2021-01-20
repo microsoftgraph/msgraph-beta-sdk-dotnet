@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsAverageIfRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsAverageIfRequestBody
     {
     

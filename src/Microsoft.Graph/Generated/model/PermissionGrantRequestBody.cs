@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PermissionGrantRequestBody.
     /// </summary>
-    
     public partial class PermissionGrantRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsGamma_InvRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsGamma_InvRequestBody
     {
     

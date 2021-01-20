@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type LocationConstraintItem.
     /// </summary>
-    
     public partial class LocationConstraintItem : Location
     {
         /// <summary>

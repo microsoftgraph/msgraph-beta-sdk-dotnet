@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EdgeSearchEngineCustom.
     /// </summary>
-    
     public partial class EdgeSearchEngineCustom : EdgeSearchEngineBase
     {
         /// <summary>

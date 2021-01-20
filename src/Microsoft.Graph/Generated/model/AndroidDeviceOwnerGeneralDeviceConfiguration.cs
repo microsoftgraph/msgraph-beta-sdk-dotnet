@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Owner General Device Configuration.
     /// </summary>
-    
     public partial class AndroidDeviceOwnerGeneralDeviceConfiguration : DeviceConfiguration
     {
     

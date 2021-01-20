@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Store For Business App.
     /// </summary>
-    
     public partial class MicrosoftStoreForBusinessApp : MobileApp
     {
     

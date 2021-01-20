@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Threat Assessment Result.
     /// </summary>
-    
     public partial class ThreatAssessmentResult : Entity
     {
     

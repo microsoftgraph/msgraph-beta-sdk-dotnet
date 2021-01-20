@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Teams Device Usage User Detail.
     /// </summary>
-    
     public partial class TeamsDeviceUsageUserDetail : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Imported Device Identity.
     /// </summary>
-    
     public partial class ImportedDeviceIdentity : Entity
     {
     

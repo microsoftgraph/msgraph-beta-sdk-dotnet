@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageAnswerString.
     /// </summary>
-    
     public partial class AccessPackageAnswerString : AccessPackageAnswer
     {
         /// <summary>

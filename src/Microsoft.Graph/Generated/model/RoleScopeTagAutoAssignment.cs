@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Role Scope Tag Auto Assignment.
     /// </summary>
-    
     public partial class RoleScopeTagAutoAssignment : Entity
     {
     

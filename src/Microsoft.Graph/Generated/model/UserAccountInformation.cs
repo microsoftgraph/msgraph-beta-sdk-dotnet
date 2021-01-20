@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Account Information.
     /// </summary>
-    
     public partial class UserAccountInformation : ItemFacet
     {
     

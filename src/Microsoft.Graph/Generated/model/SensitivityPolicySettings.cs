@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sensitivity Policy Settings.
     /// </summary>
-    
     public partial class SensitivityPolicySettings : Entity
     {
     

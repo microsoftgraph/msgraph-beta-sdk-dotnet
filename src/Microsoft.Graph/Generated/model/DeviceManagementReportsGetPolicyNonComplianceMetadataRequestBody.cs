@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBody
     {
     

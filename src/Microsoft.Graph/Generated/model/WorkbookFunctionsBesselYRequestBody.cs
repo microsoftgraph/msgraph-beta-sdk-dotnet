@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsBesselYRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsBesselYRequestBody
     {
     

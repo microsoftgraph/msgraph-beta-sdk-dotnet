@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Certificate Profile.
     /// </summary>
-    
     public partial class IosCertificateProfile : DeviceConfiguration
     {
     

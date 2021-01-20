@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Font.
     /// </summary>
-    
     public partial class WorkbookChartFont : Entity
     {
     

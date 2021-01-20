@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Booking Customer.
     /// </summary>
-    
     public partial class BookingCustomer : BookingPerson
     {
     

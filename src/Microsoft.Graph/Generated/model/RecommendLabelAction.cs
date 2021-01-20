@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RecommendLabelAction.
     /// </summary>
-    
     public partial class RecommendLabelAction : InformationProtectionAction
     {
         /// <summary>

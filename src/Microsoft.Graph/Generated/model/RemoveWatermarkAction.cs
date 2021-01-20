@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RemoveWatermarkAction.
     /// </summary>
-    
     public partial class RemoveWatermarkAction : InformationProtectionAction
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Share Point Site Usage Pages.
     /// </summary>
-    
     public partial class SharePointSiteUsagePages : Entity
     {
     

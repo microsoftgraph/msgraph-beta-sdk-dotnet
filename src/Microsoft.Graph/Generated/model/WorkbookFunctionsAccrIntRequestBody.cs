@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsAccrIntRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsAccrIntRequestBody
     {
     

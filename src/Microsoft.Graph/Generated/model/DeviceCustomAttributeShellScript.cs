@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Custom Attribute Shell Script.
     /// </summary>
-    
     public partial class DeviceCustomAttributeShellScript : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsIsLogicalRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsIsLogicalRequestBody
     {
     

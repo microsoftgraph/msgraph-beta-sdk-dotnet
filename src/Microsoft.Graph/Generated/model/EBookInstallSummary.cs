@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EBook Install Summary.
     /// </summary>
-    
     public partial class EBookInstallSummary : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type B2c Identity User Flow.
     /// </summary>
-    
     public partial class B2cIdentityUserFlow : IdentityUserFlow
     {
     

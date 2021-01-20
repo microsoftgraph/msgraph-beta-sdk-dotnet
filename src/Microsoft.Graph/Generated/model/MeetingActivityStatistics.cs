@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Meeting Activity Statistics.
     /// </summary>
-    
     public partial class MeetingActivityStatistics : ActivityStatistics
     {
     

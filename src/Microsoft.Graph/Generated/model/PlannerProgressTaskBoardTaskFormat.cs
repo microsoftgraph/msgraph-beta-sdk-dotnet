@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Planner Progress Task Board Task Format.
     /// </summary>
-    
     public partial class PlannerProgressTaskBoardTaskFormat : PlannerDelta
     {
     

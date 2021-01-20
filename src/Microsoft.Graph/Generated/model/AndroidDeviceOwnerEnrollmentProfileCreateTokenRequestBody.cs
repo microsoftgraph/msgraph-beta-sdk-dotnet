@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBody.
     /// </summary>
-    
     public partial class AndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBody
     {
     

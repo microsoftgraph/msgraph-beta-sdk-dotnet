@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Mobile Lob App.
     /// </summary>
-    
     public partial class ManagedMobileLobApp : ManagedApp
     {
     

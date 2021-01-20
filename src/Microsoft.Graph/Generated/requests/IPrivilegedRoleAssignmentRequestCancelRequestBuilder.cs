@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrivilegedRoleAssignmentRequestCancelRequestBuilder.
     /// </summary>
-    public partial interface IPrivilegedRoleAssignmentRequestCancelRequestBuilder
+    public partial interface IPrivilegedRoleAssignmentRequestCancelRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

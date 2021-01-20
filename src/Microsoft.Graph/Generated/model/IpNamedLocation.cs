@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ip Named Location.
     /// </summary>
-    
     public partial class IpNamedLocation : NamedLocation
     {
     

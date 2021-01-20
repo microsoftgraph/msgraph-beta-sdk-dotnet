@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceCustomAttributeShellScriptAssignRequestBody.
     /// </summary>
-    
     public partial class DeviceCustomAttributeShellScriptAssignRequestBody
     {
     

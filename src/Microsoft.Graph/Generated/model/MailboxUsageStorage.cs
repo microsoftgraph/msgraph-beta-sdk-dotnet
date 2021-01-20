@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mailbox Usage Storage.
     /// </summary>
-    
     public partial class MailboxUsageStorage : Entity
     {
     

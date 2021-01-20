@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Managed App Registration.
     /// </summary>
-    
     public partial class IosManagedAppRegistration : ManagedAppRegistration
     {
     

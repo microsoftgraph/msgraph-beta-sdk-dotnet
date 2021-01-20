@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupValidatePropertiesRequestBody.
     /// </summary>
-    
     public partial class GroupValidatePropertiesRequestBody
     {
     

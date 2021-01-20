@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceConfigurationWindowsPrivacyAccessControlsRequestBody.
     /// </summary>
-    
     public partial class DeviceConfigurationWindowsPrivacyAccessControlsRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosManagedAppProtectionHasPayloadLinksRequestBody.
     /// </summary>
-    
     public partial class IosManagedAppProtectionHasPayloadLinksRequestBody
     {
     

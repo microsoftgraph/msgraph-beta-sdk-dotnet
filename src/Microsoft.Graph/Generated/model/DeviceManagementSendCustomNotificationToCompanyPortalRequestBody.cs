@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementSendCustomNotificationToCompanyPortalRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementSendCustomNotificationToCompanyPortalRequestBody
     {
     

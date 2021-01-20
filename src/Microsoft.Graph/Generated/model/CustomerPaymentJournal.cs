@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Customer Payment Journal.
     /// </summary>
-    
     public partial class CustomerPaymentJournal : Entity
     {
     

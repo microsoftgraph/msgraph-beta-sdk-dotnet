@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IosLobAppAssignmentSettings.
     /// </summary>
-    
     public partial class IosLobAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>

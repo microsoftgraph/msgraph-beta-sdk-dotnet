@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mail Assessment Request.
     /// </summary>
-    
     public partial class MailAssessmentRequestObject : ThreatAssessmentRequestObject
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Certification.
     /// </summary>
-    
     public partial class PersonCertification : ItemFacet
     {
     

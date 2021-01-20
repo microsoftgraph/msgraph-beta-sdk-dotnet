@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Extension.
     /// </summary>
-    
     public partial class PersonExtension : Extension
     {
     

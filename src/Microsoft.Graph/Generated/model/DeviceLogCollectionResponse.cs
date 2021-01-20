@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Log Collection Response.
     /// </summary>
-    
     public partial class DeviceLogCollectionResponse : Entity
     {
     

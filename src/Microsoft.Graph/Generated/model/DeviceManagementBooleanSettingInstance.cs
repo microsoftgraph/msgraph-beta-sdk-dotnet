@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Boolean Setting Instance.
     /// </summary>
-    
     public partial class DeviceManagementBooleanSettingInstance : DeviceManagementSettingInstance
     {
     

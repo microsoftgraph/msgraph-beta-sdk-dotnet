@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Terms And Conditions.
     /// </summary>
-    
     public partial class TermsAndConditions : Entity
     {
     

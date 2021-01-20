@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EdgeSearchEngine.
     /// </summary>
-    
     public partial class EdgeSearchEngine : EdgeSearchEngineBase
     {
         /// <summary>

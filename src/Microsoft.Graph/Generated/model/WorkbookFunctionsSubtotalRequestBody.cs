@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsSubtotalRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsSubtotalRequestBody
     {
     

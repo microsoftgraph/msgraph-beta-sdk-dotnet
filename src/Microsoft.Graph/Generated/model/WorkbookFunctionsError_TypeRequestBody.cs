@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsError_TypeRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsError_TypeRequestBody
     {
     

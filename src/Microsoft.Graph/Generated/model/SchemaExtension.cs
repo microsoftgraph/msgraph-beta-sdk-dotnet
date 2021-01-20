@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Schema Extension.
     /// </summary>
-    
     public partial class SchemaExtension : Entity
     {
     

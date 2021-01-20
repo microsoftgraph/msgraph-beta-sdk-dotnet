@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Contact.
     /// </summary>
-    
     public partial class Contact : OutlookItem
     {
     

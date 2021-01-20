@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Managed App Protection.
     /// </summary>
-    
     public partial class AndroidManagedAppProtection : TargetedManagedAppProtection
     {
     

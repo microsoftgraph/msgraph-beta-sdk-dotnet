@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Country Region.
     /// </summary>
-    
     public partial class CountryRegion : Entity
     {
     

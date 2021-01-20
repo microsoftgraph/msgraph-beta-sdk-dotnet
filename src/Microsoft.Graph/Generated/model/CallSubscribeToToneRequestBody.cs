@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallSubscribeToToneRequestBody.
     /// </summary>
-    
     public partial class CallSubscribeToToneRequestBody
     {
     

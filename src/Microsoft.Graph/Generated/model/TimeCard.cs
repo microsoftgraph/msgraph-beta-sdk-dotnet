@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Time Card.
     /// </summary>
-    
     public partial class TimeCard : ChangeTrackedEntity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Compliance Policy.
     /// </summary>
-    
     public partial class AndroidCompliancePolicy : DeviceCompliancePolicy
     {
     

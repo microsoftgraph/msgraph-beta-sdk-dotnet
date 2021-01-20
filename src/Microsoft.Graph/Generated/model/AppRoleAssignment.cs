@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type App Role Assignment.
     /// </summary>
-    
     public partial class AppRoleAssignment : Entity
     {
     

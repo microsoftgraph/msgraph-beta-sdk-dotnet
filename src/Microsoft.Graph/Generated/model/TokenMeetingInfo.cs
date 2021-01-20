@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TokenMeetingInfo.
     /// </summary>
-    
     public partial class TokenMeetingInfo : MeetingInfo
     {
         /// <summary>

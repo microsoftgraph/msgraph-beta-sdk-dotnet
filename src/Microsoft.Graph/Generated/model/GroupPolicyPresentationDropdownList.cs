@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Presentation Dropdown List.
     /// </summary>
-    
     public partial class GroupPolicyPresentationDropdownList : GroupPolicyPresentation
     {
     

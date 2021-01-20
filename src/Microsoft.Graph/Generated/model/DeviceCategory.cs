@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Category.
     /// </summary>
-    
     public partial class DeviceCategory : Entity
     {
     

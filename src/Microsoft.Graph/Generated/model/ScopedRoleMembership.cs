@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Scoped Role Membership.
     /// </summary>
-    
     public partial class ScopedRoleMembership : Entity
     {
     

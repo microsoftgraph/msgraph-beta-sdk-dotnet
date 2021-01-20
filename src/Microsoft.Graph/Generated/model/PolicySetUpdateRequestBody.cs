@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PolicySetUpdateRequestBody.
     /// </summary>
-    
     public partial class PolicySetUpdateRequestBody
     {
     

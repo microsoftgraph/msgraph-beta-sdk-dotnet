@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ServicePrincipalGetPasswordSingleSignOnCredentialsRequestBody.
     /// </summary>
-    
     public partial class ServicePrincipalGetPasswordSingleSignOnCredentialsRequestBody
     {
     

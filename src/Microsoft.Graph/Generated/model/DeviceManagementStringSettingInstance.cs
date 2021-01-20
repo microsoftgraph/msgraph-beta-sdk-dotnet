@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management String Setting Instance.
     /// </summary>
-    
     public partial class DeviceManagementStringSettingInstance : DeviceManagementSettingInstance
     {
     

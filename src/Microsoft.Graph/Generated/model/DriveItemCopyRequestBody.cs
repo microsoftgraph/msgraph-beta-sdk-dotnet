@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DriveItemCopyRequestBody.
     /// </summary>
-    
     public partial class DriveItemCopyRequestBody
     {
     

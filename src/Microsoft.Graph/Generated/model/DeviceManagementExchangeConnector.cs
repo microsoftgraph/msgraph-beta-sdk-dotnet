@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Exchange Connector.
     /// </summary>
-    
     public partial class DeviceManagementExchangeConnector : Entity
     {
     

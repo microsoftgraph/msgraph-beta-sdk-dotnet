@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeliveryOptimizationGroupIdSourceOptions.
     /// </summary>
-    
     public partial class DeliveryOptimizationGroupIdSourceOptions : DeliveryOptimizationGroupIdSource
     {
         /// <summary>

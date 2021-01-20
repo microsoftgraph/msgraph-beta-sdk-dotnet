@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallLogTeleconferenceDeviceQualityRequestBody.
     /// </summary>
-    
     public partial class CallLogTeleconferenceDeviceQualityRequestBody
     {
     

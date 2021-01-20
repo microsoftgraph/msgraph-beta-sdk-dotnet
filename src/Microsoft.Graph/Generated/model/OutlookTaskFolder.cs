@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Task Folder.
     /// </summary>
-    
     public partial class OutlookTaskFolder : Entity
     {
     

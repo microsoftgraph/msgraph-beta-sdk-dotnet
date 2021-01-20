@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExternalDomainFederation.
     /// </summary>
-    
     public partial class ExternalDomainFederation : IdentitySource
     {
         /// <summary>

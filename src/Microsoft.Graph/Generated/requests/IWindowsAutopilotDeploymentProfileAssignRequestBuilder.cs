@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsAutopilotDeploymentProfileAssignRequestBuilder.
     /// </summary>
-    public partial interface IWindowsAutopilotDeploymentProfileAssignRequestBuilder
+    public partial interface IWindowsAutopilotDeploymentProfileAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

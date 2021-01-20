@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Domain Dns Cname Record.
     /// </summary>
-    
     public partial class DomainDnsCnameRecord : DomainDnsRecord
     {
     

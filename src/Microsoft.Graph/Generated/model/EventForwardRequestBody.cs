@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EventForwardRequestBody.
     /// </summary>
-    
     public partial class EventForwardRequestBody
     {
     

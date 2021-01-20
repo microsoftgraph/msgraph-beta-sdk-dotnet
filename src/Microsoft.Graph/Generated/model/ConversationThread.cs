@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Conversation Thread.
     /// </summary>
-    
     public partial class ConversationThread : Entity
     {
     

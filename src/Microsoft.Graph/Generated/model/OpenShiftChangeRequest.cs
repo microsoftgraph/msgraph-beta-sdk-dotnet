@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Shift Change Request.
     /// </summary>
-    
     public partial class OpenShiftChangeRequestObject : ScheduleChangeRequestObject
     {
     

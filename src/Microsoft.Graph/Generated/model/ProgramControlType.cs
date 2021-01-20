@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Program Control Type.
     /// </summary>
-    
     public partial class ProgramControlType : Entity
     {
     

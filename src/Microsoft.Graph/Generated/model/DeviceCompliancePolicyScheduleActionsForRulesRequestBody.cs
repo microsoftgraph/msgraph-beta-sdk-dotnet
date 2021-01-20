@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceCompliancePolicyScheduleActionsForRulesRequestBody.
     /// </summary>
-    
     public partial class DeviceCompliancePolicyScheduleActionsForRulesRequestBody
     {
     

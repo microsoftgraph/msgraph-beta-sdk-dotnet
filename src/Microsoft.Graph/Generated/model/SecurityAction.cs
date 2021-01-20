@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Security Action.
     /// </summary>
-    
     public partial class SecurityAction : Entity
     {
     

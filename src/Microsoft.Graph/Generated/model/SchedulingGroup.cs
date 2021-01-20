@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Scheduling Group.
     /// </summary>
-    
     public partial class SchedulingGroup : ChangeTrackedEntity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Calendar Sharing Message.
     /// </summary>
-    
     public partial class CalendarSharingMessage : Message
     {
     

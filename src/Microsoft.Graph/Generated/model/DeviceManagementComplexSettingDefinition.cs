@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Complex Setting Definition.
     /// </summary>
-    
     public partial class DeviceManagementComplexSettingDefinition : DeviceManagementSettingDefinition
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Participant Joining Notification.
     /// </summary>
-    
     public partial class ParticipantJoiningNotification : Entity
     {
     

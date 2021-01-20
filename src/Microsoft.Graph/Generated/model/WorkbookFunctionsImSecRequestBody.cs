@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsImSecRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsImSecRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsHyperlinkRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsHyperlinkRequestBody
     {
     

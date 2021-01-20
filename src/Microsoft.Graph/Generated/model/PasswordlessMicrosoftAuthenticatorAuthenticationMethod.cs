@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Passwordless Microsoft Authenticator Authentication Method.
     /// </summary>
-    
     public partial class PasswordlessMicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod
     {
     

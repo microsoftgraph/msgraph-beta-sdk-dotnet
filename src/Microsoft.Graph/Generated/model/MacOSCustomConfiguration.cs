@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSCustom Configuration.
     /// </summary>
-    
     public partial class MacOSCustomConfiguration : DeviceConfiguration
     {
     

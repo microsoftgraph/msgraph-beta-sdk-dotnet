@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dlp Evaluate Policies Job Response.
     /// </summary>
-    
     public partial class DlpEvaluatePoliciesJobResponse : JobResponseBase
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsZ_TestRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsZ_TestRequestBody
     {
     

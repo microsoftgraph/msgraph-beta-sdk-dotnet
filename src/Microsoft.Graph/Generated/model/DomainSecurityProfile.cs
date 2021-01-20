@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Domain Security Profile.
     /// </summary>
-    
     public partial class DomainSecurityProfile : Entity
     {
     

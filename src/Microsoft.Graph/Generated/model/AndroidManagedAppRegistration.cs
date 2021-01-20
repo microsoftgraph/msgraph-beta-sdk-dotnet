@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Managed App Registration.
     /// </summary>
-    
     public partial class AndroidManagedAppRegistration : ManagedAppRegistration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Data Loss Prevention Policy.
     /// </summary>
-    
     public partial class DataLossPreventionPolicy : Entity
     {
     

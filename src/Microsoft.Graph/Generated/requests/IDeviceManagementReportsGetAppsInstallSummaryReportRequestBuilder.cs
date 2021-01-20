@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementReportsGetAppsInstallSummaryReportRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementReportsGetAppsInstallSummaryReportRequestBuilder
+    public partial interface IDeviceManagementReportsGetAppsInstallSummaryReportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsT_Dist_RTRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsT_Dist_RTRequestBody
     {
     

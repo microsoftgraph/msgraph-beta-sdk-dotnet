@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RemoveAccessApplyAction.
     /// </summary>
-    
     public partial class RemoveAccessApplyAction : AccessReviewApplyAction
     {
         /// <summary>

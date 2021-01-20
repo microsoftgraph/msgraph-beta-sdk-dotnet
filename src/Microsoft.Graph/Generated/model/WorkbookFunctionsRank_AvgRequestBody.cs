@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsRank_AvgRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsRank_AvgRequestBody
     {
     

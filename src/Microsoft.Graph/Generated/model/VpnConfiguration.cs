@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Vpn Configuration.
     /// </summary>
-    
     public partial class VpnConfiguration : DeviceConfiguration
     {
     

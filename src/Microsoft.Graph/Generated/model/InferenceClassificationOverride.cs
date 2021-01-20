@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Inference Classification Override.
     /// </summary>
-    
     public partial class InferenceClassificationOverride : Entity
     {
     

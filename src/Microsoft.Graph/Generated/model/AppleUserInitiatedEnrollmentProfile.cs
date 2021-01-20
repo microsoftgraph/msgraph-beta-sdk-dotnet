@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Apple User Initiated Enrollment Profile.
     /// </summary>
-    
     public partial class AppleUserInitiatedEnrollmentProfile : Entity
     {
     

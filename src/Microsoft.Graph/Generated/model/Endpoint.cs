@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Endpoint.
     /// </summary>
-    
     public partial class Endpoint : DirectoryObject
     {
     

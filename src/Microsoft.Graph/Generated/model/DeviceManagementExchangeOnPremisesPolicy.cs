@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Exchange On Premises Policy.
     /// </summary>
-    
     public partial class DeviceManagementExchangeOnPremisesPolicy : Entity
     {
     

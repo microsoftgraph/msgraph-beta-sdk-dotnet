@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskAutologon.
     /// </summary>
-    
     public partial class WindowsKioskAutologon : WindowsKioskUser
     {
         /// <summary>

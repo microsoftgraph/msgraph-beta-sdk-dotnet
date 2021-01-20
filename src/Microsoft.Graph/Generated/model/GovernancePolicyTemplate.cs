@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Governance Policy Template.
     /// </summary>
-    
     public partial class GovernancePolicyTemplate : Entity
     {
     

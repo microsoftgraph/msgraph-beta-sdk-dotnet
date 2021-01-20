@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsGeoMeanRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsGeoMeanRequestBody
     {
     

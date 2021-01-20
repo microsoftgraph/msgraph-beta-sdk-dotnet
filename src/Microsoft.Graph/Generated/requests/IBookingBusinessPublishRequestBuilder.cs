@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IBookingBusinessPublishRequestBuilder.
     /// </summary>
-    public partial interface IBookingBusinessPublishRequestBuilder
+    public partial interface IBookingBusinessPublishRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

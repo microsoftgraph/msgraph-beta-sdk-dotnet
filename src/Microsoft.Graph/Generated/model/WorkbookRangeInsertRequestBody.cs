@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookRangeInsertRequestBody.
     /// </summary>
-    
     public partial class WorkbookRangeInsertRequestBody
     {
     

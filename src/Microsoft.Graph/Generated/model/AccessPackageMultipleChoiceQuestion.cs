@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageMultipleChoiceQuestion.
     /// </summary>
-    
     public partial class AccessPackageMultipleChoiceQuestion : AccessPackageQuestion
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cart To Class Association.
     /// </summary>
-    
     public partial class CartToClassAssociation : Entity
     {
     

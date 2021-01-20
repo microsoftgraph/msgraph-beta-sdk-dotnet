@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementConfigurationGroupSettingInstance.
     /// </summary>
-    
     public partial class DeviceManagementConfigurationGroupSettingInstance : DeviceManagementConfigurationSettingInstance
     {
         /// <summary>

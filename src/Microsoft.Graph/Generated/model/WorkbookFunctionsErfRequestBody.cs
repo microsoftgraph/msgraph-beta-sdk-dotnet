@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsErfRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsErfRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Country Named Location.
     /// </summary>
-    
     public partial class CountryNamedLocation : NamedLocation
     {
     

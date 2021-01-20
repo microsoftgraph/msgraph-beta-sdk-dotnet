@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Universal App XContained App.
     /// </summary>
-    
     public partial class WindowsUniversalAppXContainedApp : MobileContainedApp
     {
     

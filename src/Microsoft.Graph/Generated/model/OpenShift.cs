@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Shift.
     /// </summary>
-    
     public partial class OpenShift : ChangeTrackedEntity
     {
     

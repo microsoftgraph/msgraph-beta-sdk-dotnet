@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Yammer Groups Activity Group Counts.
     /// </summary>
-    
     public partial class YammerGroupsActivityGroupCounts : Entity
     {
     

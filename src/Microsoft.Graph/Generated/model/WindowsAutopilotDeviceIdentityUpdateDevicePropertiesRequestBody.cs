@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBody.
     /// </summary>
-    
     public partial class WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBody
     {
     

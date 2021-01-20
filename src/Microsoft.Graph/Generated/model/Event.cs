@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Event.
     /// </summary>
-    
     public partial class Event : OutlookItem
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Offer Shift Request.
     /// </summary>
-    
     public partial class OfferShiftRequestObject : ScheduleChangeRequestObject
     {
     

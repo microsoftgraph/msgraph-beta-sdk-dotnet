@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection Device Registration.
     /// </summary>
-    
     public partial class WindowsInformationProtectionDeviceRegistration : Entity
     {
     

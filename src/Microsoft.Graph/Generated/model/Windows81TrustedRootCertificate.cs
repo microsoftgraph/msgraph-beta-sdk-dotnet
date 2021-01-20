@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows81Trusted Root Certificate.
     /// </summary>
-    
     public partial class Windows81TrustedRootCertificate : DeviceConfiguration
     {
     

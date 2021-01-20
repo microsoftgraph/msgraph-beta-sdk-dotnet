@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsChiSq_Dist_RTRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsChiSq_Dist_RTRequestBody
     {
     

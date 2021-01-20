@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExactMatchDataStoreLookupRequestBody.
     /// </summary>
-    
     public partial class ExactMatchDataStoreLookupRequestBody
     {
     

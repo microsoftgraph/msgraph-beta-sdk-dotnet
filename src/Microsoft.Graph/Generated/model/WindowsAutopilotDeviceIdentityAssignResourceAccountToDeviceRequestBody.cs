@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBody.
     /// </summary>
-    
     public partial class WindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBody
     {
     

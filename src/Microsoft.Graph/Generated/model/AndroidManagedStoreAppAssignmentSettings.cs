@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidManagedStoreAppAssignmentSettings.
     /// </summary>
-    
     public partial class AndroidManagedStoreAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Vulnerable Managed Device.
     /// </summary>
-    
     public partial class VulnerableManagedDevice : Entity
     {
     

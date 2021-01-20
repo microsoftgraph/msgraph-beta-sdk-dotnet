@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsCombinaRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsCombinaRequestBody
     {
     

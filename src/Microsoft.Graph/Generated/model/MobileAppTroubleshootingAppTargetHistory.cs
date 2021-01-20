@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MobileAppTroubleshootingAppTargetHistory.
     /// </summary>
-    
     public partial class MobileAppTroubleshootingAppTargetHistory : MobileAppTroubleshootingHistoryItem
     {
         /// <summary>

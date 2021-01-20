@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DriveItemCreateLinkRequestBody.
     /// </summary>
-    
     public partial class DriveItemCreateLinkRequestBody
     {
     

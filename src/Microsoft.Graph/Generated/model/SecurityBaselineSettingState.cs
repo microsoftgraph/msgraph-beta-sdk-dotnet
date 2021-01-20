@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Security Baseline Setting State.
     /// </summary>
-    
     public partial class SecurityBaselineSettingState : Entity
     {
     

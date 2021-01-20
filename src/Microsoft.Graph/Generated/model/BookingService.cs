@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Booking Service.
     /// </summary>
-    
     public partial class BookingService : BookingNamedEntity
     {
     

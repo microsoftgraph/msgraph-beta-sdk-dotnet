@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Enrollment Troubleshooting Event.
     /// </summary>
-    
     public partial class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent
     {
     

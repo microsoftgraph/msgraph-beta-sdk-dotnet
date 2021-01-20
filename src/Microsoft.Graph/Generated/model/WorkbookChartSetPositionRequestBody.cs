@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookChartSetPositionRequestBody.
     /// </summary>
-    
     public partial class WorkbookChartSetPositionRequestBody
     {
     

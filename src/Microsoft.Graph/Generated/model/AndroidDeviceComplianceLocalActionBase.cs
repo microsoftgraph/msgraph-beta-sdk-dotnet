@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Device Compliance Local Action Base.
     /// </summary>
-    
     public partial class AndroidDeviceComplianceLocalActionBase : Entity
     {
     

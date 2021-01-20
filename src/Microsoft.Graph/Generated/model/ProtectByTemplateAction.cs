@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProtectByTemplateAction.
     /// </summary>
-    
     public partial class ProtectByTemplateAction : InformationProtectionAction
     {
         /// <summary>

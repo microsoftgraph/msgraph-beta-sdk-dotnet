@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type App Consent Approval Route.
     /// </summary>
-    
     public partial class AppConsentApprovalRoute : Entity
     {
     

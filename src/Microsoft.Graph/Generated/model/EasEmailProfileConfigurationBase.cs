@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Eas Email Profile Configuration Base.
     /// </summary>
-    
     public partial class EasEmailProfileConfigurationBase : DeviceConfiguration
     {
     

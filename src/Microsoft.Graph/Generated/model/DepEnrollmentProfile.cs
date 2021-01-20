@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dep Enrollment Profile.
     /// </summary>
-    
     public partial class DepEnrollmentProfile : EnrollmentProfile
     {
     

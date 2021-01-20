@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsWorkDay_IntlRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsWorkDay_IntlRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Room.
     /// </summary>
-    
     public partial class Room : Place
     {
     

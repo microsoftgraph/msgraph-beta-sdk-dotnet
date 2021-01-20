@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Document Comment Reply.
     /// </summary>
-    
     public partial class DocumentCommentReply : Entity
     {
     

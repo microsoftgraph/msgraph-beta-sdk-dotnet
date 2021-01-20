@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Install State Summary.
     /// </summary>
-    
     public partial class UserInstallStateSummary : Entity
     {
     

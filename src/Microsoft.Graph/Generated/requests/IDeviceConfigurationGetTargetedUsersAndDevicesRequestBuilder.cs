@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceConfigurationGetTargetedUsersAndDevicesRequestBuilder.
     /// </summary>
-    public partial interface IDeviceConfigurationGetTargetedUsersAndDevicesRequestBuilder
+    public partial interface IDeviceConfigurationGetTargetedUsersAndDevicesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

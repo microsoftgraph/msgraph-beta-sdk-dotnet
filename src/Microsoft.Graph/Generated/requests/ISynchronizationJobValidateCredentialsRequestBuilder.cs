@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISynchronizationJobValidateCredentialsRequestBuilder.
     /// </summary>
-    public partial interface ISynchronizationJobValidateCredentialsRequestBuilder
+    public partial interface ISynchronizationJobValidateCredentialsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

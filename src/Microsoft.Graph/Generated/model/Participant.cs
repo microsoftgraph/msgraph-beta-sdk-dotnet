@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Participant.
     /// </summary>
-    
     public partial class Participant : Entity
     {
     

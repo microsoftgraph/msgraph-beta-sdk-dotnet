@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InviteNewBotResponse.
     /// </summary>
-    
     public partial class InviteNewBotResponse : ParticipantJoiningResponse
     {
         /// <summary>

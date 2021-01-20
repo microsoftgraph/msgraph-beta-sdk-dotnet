@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Network IPv6Configuration Management Condition.
     /// </summary>
-    
     public partial class NetworkIPv6ConfigurationManagementCondition : NetworkManagementCondition
     {
     

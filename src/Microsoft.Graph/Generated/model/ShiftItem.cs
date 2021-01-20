@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ShiftItem.
     /// </summary>
-    
     public partial class ShiftItem : ScheduleEntity
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSCertificate Profile Base.
     /// </summary>
-    
     public partial class MacOSCertificateProfileBase : DeviceConfiguration
     {
     

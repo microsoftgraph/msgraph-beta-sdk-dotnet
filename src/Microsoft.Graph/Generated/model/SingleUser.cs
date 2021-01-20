@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SingleUser.
     /// </summary>
-    
     public partial class SingleUser : UserSet
     {
         /// <summary>

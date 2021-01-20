@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Printer Create Operation.
     /// </summary>
-    
     public partial class PrinterCreateOperation : PrintOperation
     {
     

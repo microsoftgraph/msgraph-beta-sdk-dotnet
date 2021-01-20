@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Vpp Token.
     /// </summary>
-    
     public partial class VppToken : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InformationProtectionLabelEvaluateClassificationResultsRequestBody.
     /// </summary>
-    
     public partial class InformationProtectionLabelEvaluateClassificationResultsRequestBody
     {
     

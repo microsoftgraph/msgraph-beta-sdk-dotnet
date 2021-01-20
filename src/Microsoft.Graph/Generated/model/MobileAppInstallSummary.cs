@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Install Summary.
     /// </summary>
-    
     public partial class MobileAppInstallSummary : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeliveryOptimizationBandwidthPercentage.
     /// </summary>
-    
     public partial class DeliveryOptimizationBandwidthPercentage : DeliveryOptimizationBandwidth
     {
         /// <summary>

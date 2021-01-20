@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device Encryption State.
     /// </summary>
-    
     public partial class ManagedDeviceEncryptionState : Entity
     {
     

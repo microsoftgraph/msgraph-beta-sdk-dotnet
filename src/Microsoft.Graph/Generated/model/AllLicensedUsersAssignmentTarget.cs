@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AllLicensedUsersAssignmentTarget.
     /// </summary>
-    
     public partial class AllLicensedUsersAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
         /// <summary>

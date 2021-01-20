@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Conversation.
     /// </summary>
-    
     public partial class Conversation : Entity
     {
     

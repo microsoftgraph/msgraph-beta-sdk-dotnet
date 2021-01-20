@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unified Role Definition.
     /// </summary>
-    
     public partial class UnifiedRoleDefinition : Entity
     {
     

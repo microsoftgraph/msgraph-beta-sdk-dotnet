@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Derived Credential Settings.
     /// </summary>
-    
     public partial class DeviceManagementDerivedCredentialSettings : Entity
     {
     

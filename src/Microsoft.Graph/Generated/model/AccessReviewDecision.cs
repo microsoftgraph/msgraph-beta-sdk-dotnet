@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Review Decision.
     /// </summary>
-    
     public partial class AccessReviewDecision : Entity
     {
     

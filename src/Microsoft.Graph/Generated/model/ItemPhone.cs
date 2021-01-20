@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Phone.
     /// </summary>
-    
     public partial class ItemPhone : ItemFacet
     {
     

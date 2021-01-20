@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Booking Currency.
     /// </summary>
-    
     public partial class BookingCurrency : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ConfigurationManagerActionResult.
     /// </summary>
-    
     public partial class ConfigurationManagerActionResult : DeviceActionResult
     {
         /// <summary>

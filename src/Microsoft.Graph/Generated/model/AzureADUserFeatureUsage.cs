@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Azure ADUser Feature Usage.
     /// </summary>
-    
     public partial class AzureADUserFeatureUsage : Entity
     {
     

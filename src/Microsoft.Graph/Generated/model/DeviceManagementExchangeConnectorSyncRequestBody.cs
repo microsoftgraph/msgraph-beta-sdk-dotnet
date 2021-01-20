@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementExchangeConnectorSyncRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementExchangeConnectorSyncRequestBody
     {
     

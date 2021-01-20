@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mobile App Dependency.
     /// </summary>
-    
     public partial class MobileAppDependency : MobileAppRelationship
     {
     

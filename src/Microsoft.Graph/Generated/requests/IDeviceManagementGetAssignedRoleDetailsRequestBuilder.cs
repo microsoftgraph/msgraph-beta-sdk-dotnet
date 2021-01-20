@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementGetAssignedRoleDetailsRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementGetAssignedRoleDetailsRequestBuilder
+    public partial interface IDeviceManagementGetAssignedRoleDetailsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

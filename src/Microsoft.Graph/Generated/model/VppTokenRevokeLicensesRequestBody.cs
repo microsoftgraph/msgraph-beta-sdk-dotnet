@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type VppTokenRevokeLicensesRequestBody.
     /// </summary>
-    
     public partial class VppTokenRevokeLicensesRequestBody
     {
     

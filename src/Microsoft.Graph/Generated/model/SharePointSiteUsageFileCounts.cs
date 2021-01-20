@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Share Point Site Usage File Counts.
     /// </summary>
-    
     public partial class SharePointSiteUsageFileCounts : Entity
     {
     

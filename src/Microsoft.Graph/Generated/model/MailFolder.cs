@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mail Folder.
     /// </summary>
-    
     public partial class MailFolder : Entity
     {
     

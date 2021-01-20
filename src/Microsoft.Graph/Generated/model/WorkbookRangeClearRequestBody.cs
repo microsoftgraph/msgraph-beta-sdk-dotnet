@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookRangeClearRequestBody.
     /// </summary>
-    
     public partial class WorkbookRangeClearRequestBody
     {
     

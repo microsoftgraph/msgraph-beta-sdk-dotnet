@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OmaSettingDateTime.
     /// </summary>
-    
     public partial class OmaSettingDateTime : OmaSetting
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EncryptWithUserDefinedRights.
     /// </summary>
-    
     public partial class EncryptWithUserDefinedRights : EncryptContent
     {
         /// <summary>

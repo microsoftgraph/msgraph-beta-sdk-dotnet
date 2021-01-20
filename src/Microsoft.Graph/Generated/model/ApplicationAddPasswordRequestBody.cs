@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ApplicationAddPasswordRequestBody.
     /// </summary>
-    
     public partial class ApplicationAddPasswordRequestBody
     {
     

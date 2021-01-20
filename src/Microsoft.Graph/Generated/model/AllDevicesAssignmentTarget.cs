@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AllDevicesAssignmentTarget.
     /// </summary>
-    
     public partial class AllDevicesAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
         /// <summary>

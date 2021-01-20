@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedAppPolicyTargetAppsRequestBody.
     /// </summary>
-    
     public partial class ManagedAppPolicyTargetAppsRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Outlook Item.
     /// </summary>
-    
     public partial class OutlookItem : Entity
     {
     

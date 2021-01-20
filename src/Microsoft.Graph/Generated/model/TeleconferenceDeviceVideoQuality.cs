@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TeleconferenceDeviceVideoQuality.
     /// </summary>
-    
     public partial class TeleconferenceDeviceVideoQuality : TeleconferenceDeviceMediaQuality
     {
         /// <summary>

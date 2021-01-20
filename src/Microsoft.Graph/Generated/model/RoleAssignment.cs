@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Role Assignment.
     /// </summary>
-    
     public partial class RoleAssignment : Entity
     {
     

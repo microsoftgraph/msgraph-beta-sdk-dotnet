@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Payload Response.
     /// </summary>
-    
     public partial class PayloadResponse : Entity
     {
     

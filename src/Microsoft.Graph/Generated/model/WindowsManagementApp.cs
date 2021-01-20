@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Management App.
     /// </summary>
-    
     public partial class WindowsManagementApp : Entity
     {
     

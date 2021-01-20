@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Rbac Application.
     /// </summary>
-    
     public partial class RbacApplication : Entity
     {
     

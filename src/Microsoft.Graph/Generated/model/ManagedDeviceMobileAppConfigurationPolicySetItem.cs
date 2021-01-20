@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed Device Mobile App Configuration Policy Set Item.
     /// </summary>
-    
     public partial class ManagedDeviceMobileAppConfigurationPolicySetItem : PolicySetItem
     {
     

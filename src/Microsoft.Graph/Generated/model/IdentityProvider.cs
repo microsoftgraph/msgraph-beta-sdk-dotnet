@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity Provider.
     /// </summary>
-    
     public partial class IdentityProvider : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Defender Advanced Threat Protection Configuration.
     /// </summary>
-    
     public partial class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration
     {
     

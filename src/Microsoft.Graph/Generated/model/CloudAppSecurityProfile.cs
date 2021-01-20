@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud App Security Profile.
     /// </summary>
-    
     public partial class CloudAppSecurityProfile : Entity
     {
     

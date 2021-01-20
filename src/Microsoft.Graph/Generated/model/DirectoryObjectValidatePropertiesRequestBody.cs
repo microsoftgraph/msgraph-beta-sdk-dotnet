@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DirectoryObjectValidatePropertiesRequestBody.
     /// </summary>
-    
     public partial class DirectoryObjectValidatePropertiesRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Swap Shifts Change Request.
     /// </summary>
-    
     public partial class SwapShiftsChangeRequestObject : OfferShiftRequestObject
     {
     

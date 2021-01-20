@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Post.
     /// </summary>
-    
     public partial class Post : OutlookItem
     {
     

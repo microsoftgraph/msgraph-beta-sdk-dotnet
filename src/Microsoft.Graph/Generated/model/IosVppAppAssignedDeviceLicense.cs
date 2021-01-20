@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Vpp App Assigned Device License.
     /// </summary>
-    
     public partial class IosVppAppAssignedDeviceLicense : IosVppAppAssignedLicense
     {
     

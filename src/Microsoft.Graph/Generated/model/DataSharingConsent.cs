@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Data Sharing Consent.
     /// </summary>
-    
     public partial class DataSharingConsent : Entity
     {
     

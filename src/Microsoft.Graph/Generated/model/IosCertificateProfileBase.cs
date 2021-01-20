@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Certificate Profile Base.
     /// </summary>
-    
     public partial class IosCertificateProfileBase : IosCertificateProfile
     {
     

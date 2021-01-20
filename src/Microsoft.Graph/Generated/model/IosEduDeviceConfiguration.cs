@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Edu Device Configuration.
     /// </summary>
-    
     public partial class IosEduDeviceConfiguration : DeviceConfiguration
     {
     

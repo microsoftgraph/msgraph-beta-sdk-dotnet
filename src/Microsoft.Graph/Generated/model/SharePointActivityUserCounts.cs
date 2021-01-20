@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Share Point Activity User Counts.
     /// </summary>
-    
     public partial class SharePointActivityUserCounts : Entity
     {
     

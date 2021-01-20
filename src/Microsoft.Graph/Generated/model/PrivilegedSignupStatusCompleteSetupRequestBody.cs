@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrivilegedSignupStatusCompleteSetupRequestBody.
     /// </summary>
-    
     public partial class PrivilegedSignupStatusCompleteSetupRequestBody
     {
     

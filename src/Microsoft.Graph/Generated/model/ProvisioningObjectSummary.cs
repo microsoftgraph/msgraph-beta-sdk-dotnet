@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Provisioning Object Summary.
     /// </summary>
-    
     public partial class ProvisioningObjectSummary : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsQuartile_ExcRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsQuartile_ExcRequestBody
     {
     

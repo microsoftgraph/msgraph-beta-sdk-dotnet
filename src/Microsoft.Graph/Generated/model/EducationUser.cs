@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education User.
     /// </summary>
-    
     public partial class EducationUser : Entity
     {
     

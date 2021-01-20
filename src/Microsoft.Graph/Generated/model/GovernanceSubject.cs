@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Governance Subject.
     /// </summary>
-    
     public partial class GovernanceSubject : Entity
     {
     

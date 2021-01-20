@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office365Activations User Counts.
     /// </summary>
-    
     public partial class Office365ActivationsUserCounts : Entity
     {
     

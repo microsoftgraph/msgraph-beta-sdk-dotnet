@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Managed App Status.
     /// </summary>
-    
     public partial class ManagedAppStatus : Entity
     {
     

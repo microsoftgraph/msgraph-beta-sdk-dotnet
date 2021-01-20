@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Provider Tenant Setting.
     /// </summary>
-    
     public partial class ProviderTenantSetting : Entity
     {
     

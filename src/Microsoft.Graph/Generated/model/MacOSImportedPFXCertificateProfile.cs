@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSImported PFXCertificate Profile.
     /// </summary>
-    
     public partial class MacOSImportedPFXCertificateProfile : MacOSCertificateProfileBase
     {
     

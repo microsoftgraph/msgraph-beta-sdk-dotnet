@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Person Interest.
     /// </summary>
-    
     public partial class PersonInterest : ItemFacet
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sales Invoice.
     /// </summary>
-    
     public partial class SalesInvoice : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Email Authentication Method.
     /// </summary>
-    
     public partial class EmailAuthenticationMethod : AuthenticationMethod
     {
     

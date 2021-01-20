@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RotateBitLockerKeysDeviceActionResult.
     /// </summary>
-    
     public partial class RotateBitLockerKeysDeviceActionResult : DeviceActionResult
     {
         /// <summary>

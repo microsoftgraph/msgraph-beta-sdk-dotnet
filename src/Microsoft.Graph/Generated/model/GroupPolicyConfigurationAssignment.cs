@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Configuration Assignment.
     /// </summary>
-    
     public partial class GroupPolicyConfigurationAssignment : Entity
     {
     

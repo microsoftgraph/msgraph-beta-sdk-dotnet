@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Credential User Registration Details.
     /// </summary>
-    
     public partial class CredentialUserRegistrationDetails : Entity
     {
     

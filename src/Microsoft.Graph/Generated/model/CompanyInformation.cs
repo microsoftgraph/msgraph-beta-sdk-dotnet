@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Company Information.
     /// </summary>
-    
     public partial class CompanyInformation : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ProtectSite.
     /// </summary>
-    
     public partial class ProtectSite : LabelActionBase
     {
         /// <summary>

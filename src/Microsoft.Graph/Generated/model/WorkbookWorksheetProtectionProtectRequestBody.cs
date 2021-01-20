@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookWorksheetProtectionProtectRequestBody.
     /// </summary>
-    
     public partial class WorkbookWorksheetProtectionProtectRequestBody
     {
     

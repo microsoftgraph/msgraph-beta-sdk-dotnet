@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Range Font.
     /// </summary>
-    
     public partial class WorkbookRangeFont : Entity
     {
     

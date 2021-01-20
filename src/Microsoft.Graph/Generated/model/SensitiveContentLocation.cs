@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SensitiveContentLocation.
     /// </summary>
-    
     public partial class SensitiveContentLocation : SensitiveContentLocationBase
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Vpp App Assigned User License.
     /// </summary>
-    
     public partial class IosVppAppAssignedUserLicense : IosVppAppAssignedLicense
     {
     

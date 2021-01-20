@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallRecordRequestBody.
     /// </summary>
-    
     public partial class CallRecordRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Identity Protection Configuration.
     /// </summary>
-    
     public partial class WindowsIdentityProtectionConfiguration : DeviceConfiguration
     {
     

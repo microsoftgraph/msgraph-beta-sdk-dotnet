@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Note.
     /// </summary>
-    
     public partial class Note : OutlookItem
     {
     

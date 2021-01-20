@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Named Location.
     /// </summary>
-    
     public partial class NamedLocation : Entity
     {
     

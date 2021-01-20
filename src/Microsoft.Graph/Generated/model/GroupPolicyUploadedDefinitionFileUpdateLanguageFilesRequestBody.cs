@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupPolicyUploadedDefinitionFileUpdateLanguageFilesRequestBody.
     /// </summary>
-    
     public partial class GroupPolicyUploadedDefinitionFileUpdateLanguageFilesRequestBody
     {
     

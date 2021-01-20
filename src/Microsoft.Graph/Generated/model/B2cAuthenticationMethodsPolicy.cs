@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type B2c Authentication Methods Policy.
     /// </summary>
-    
     public partial class B2cAuthenticationMethodsPolicy : Entity
     {
     

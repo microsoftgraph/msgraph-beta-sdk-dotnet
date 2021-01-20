@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Audit Log Root.
     /// </summary>
-    
     public partial class AuditLogRoot : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidManagedAppProtectionHasPayloadLinksRequestBody.
     /// </summary>
-    
     public partial class AndroidManagedAppProtectionHasPayloadLinksRequestBody
     {
     

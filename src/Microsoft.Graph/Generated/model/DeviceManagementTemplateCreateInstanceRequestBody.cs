@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementTemplateCreateInstanceRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementTemplateCreateInstanceRequestBody
     {
     

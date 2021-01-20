@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSSoftware Update Category Summary.
     /// </summary>
-    
     public partial class MacOSSoftwareUpdateCategorySummary : Entity
     {
     

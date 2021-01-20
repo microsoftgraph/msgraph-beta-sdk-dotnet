@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceMobileAppConfigurationAssignRequestBody.
     /// </summary>
-    
     public partial class ManagedDeviceMobileAppConfigurationAssignRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementSettingRegexConstraint.
     /// </summary>
-    
     public partial class DeviceManagementSettingRegexConstraint : DeviceManagementConstraint
     {
         /// <summary>

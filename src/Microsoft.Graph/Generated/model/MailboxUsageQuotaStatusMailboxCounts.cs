@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mailbox Usage Quota Status Mailbox Counts.
     /// </summary>
-    
     public partial class MailboxUsageQuotaStatusMailboxCounts : Entity
     {
     

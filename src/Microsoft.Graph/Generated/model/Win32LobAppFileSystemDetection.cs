@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppFileSystemDetection.
     /// </summary>
-    
     public partial class Win32LobAppFileSystemDetection : Win32LobAppDetection
     {
         /// <summary>

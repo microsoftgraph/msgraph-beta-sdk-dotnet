@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance Device Overview.
     /// </summary>
-    
     public partial class DeviceComplianceDeviceOverview : Entity
     {
     

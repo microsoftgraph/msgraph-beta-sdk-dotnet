@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupPolicyConfigurationAssignRequestBody.
     /// </summary>
-    
     public partial class GroupPolicyConfigurationAssignRequestBody
     {
     

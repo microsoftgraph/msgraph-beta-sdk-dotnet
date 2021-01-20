@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Enrollment Limit Configuration.
     /// </summary>
-    
     public partial class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidDeviceOwnerGlobalProxyDirect.
     /// </summary>
-    
     public partial class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy
     {
         /// <summary>

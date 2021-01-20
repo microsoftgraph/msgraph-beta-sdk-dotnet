@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office365Groups Activity Storage.
     /// </summary>
-    
     public partial class Office365GroupsActivityStorage : Entity
     {
     

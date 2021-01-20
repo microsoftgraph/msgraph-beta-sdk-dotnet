@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsConcatenateRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsConcatenateRequestBody
     {
     

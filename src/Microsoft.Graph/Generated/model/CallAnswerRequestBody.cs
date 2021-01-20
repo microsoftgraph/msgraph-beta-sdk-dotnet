@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallAnswerRequestBody.
     /// </summary>
-    
     public partial class CallAnswerRequestBody
     {
     

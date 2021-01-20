@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Device Firmware Configuration Interface.
     /// </summary>
-    
     public partial class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration
     {
     

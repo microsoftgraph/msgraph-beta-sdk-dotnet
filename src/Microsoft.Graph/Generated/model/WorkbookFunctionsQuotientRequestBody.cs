@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsQuotientRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsQuotientRequestBody
     {
     

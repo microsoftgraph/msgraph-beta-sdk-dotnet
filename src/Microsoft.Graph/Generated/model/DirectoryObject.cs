@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Directory Object.
     /// </summary>
-    
     public partial class DirectoryObject : Entity
     {
     

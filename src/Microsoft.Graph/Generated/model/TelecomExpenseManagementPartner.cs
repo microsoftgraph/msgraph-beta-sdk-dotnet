@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Telecom Expense Management Partner.
     /// </summary>
-    
     public partial class TelecomExpenseManagementPartner : Entity
     {
     

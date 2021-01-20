@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Expedited Checkin Configuration.
     /// </summary>
-    
     public partial class IosExpeditedCheckinConfiguration : AppleExpeditedCheckinConfigurationBase
     {
     

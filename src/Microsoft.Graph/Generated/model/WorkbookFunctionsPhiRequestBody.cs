@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsPhiRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsPhiRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Script Policy Set Item.
     /// </summary>
-    
     public partial class DeviceManagementScriptPolicySetItem : PolicySetItem
     {
     

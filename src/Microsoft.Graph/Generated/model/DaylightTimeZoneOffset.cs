@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DaylightTimeZoneOffset.
     /// </summary>
-    
     public partial class DaylightTimeZoneOffset : StandardTimeZoneOffset
     {
         /// <summary>

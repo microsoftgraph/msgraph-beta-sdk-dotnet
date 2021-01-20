@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Work Profile Eas Email Profile Base.
     /// </summary>
-    
     public partial class AndroidWorkProfileEasEmailProfileBase : DeviceConfiguration
     {
     

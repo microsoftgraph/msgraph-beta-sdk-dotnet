@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Payment Term.
     /// </summary>
-    
     public partial class PaymentTerm : Entity
     {
     

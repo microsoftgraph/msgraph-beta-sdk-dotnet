@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Secure Score.
     /// </summary>
-    
     public partial class SecureScore : Entity
     {
     

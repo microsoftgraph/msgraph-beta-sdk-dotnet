@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Defender Application Control Supplemental Policy.
     /// </summary>
-    
     public partial class WindowsDefenderApplicationControlSupplementalPolicy : Entity
     {
     

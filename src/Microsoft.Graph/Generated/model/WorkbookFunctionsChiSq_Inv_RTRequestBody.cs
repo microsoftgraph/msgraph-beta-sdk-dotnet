@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsChiSq_Inv_RTRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsChiSq_Inv_RTRequestBody
     {
     

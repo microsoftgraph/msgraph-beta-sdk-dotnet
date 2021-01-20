@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Table Row.
     /// </summary>
-    
     public partial class WorkbookTableRow : Entity
     {
     

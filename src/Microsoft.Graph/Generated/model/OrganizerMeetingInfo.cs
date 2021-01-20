@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OrganizerMeetingInfo.
     /// </summary>
-    
     public partial class OrganizerMeetingInfo : MeetingInfo
     {
         /// <summary>

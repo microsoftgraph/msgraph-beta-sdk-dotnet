@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceAppManagementTaskUpdateStatusRequestBody.
     /// </summary>
-    
     public partial class DeviceAppManagementTaskUpdateStatusRequestBody
     {
     

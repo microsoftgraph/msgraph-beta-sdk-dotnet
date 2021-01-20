@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Information Protection App Learning Summary.
     /// </summary>
-    
     public partial class WindowsInformationProtectionAppLearningSummary : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Management App Health Summary.
     /// </summary>
-    
     public partial class WindowsManagementAppHealthSummary : Entity
     {
     

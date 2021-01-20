@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsAmorDegrcRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsAmorDegrcRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EdgeHomeButtonLoadsStartPage.
     /// </summary>
-    
     public partial class EdgeHomeButtonLoadsStartPage : EdgeHomeButtonConfiguration
     {
         /// <summary>

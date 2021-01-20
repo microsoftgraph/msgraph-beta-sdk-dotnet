@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceRestrictionAction.
     /// </summary>
-    
     public partial class DeviceRestrictionAction : DlpActionInfo
     {
         /// <summary>

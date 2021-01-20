@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Configuration Assignment.
     /// </summary>
-    
     public partial class DeviceConfigurationAssignment : Entity
     {
     

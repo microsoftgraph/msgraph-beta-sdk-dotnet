@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Comanagement Eligible Device.
     /// </summary>
-    
     public partial class ComanagementEligibleDevice : Entity
     {
     

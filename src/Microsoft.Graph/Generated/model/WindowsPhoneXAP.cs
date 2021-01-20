@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Phone XAP.
     /// </summary>
-    
     public partial class WindowsPhoneXAP : MobileLobApp
     {
     

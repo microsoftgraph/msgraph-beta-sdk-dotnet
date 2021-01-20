@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Enterprise Code Signing Certificate.
     /// </summary>
-    
     public partial class EnterpriseCodeSigningCertificate : Entity
     {
     

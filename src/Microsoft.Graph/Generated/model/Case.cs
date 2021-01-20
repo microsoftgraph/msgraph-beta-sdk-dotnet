@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Case.
     /// </summary>
-    
     public partial class Case : Entity
     {
     

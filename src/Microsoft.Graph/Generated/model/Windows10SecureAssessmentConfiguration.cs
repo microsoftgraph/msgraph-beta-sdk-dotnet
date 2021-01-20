@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Secure Assessment Configuration.
     /// </summary>
-    
     public partial class Windows10SecureAssessmentConfiguration : DeviceConfiguration
     {
     

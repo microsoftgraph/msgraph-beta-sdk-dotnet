@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Email.
     /// </summary>
-    
     public partial class ItemEmail : ItemFacet
     {
     

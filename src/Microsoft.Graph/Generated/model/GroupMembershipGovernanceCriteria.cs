@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupMembershipGovernanceCriteria.
     /// </summary>
-    
     public partial class GroupMembershipGovernanceCriteria : GovernanceCriteria
     {
         /// <summary>

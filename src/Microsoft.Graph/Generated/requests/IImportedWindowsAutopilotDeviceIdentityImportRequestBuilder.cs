@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IImportedWindowsAutopilotDeviceIdentityImportRequestBuilder.
     /// </summary>
-    public partial interface IImportedWindowsAutopilotDeviceIdentityImportRequestBuilder
+    public partial interface IImportedWindowsAutopilotDeviceIdentityImportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

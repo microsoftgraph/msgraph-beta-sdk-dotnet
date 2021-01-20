@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSSoftware Update Configuration.
     /// </summary>
-    
     public partial class MacOSSoftwareUpdateConfiguration : DeviceConfiguration
     {
     

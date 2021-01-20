@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealthScriptRunOnceSchedule.
     /// </summary>
-    
     public partial class DeviceHealthScriptRunOnceSchedule : DeviceHealthScriptTimeSchedule
     {
         /// <summary>

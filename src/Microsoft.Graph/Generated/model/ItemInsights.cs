@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Insights.
     /// </summary>
-    
     public partial class ItemInsights : OfficeGraphInsights
     {
     

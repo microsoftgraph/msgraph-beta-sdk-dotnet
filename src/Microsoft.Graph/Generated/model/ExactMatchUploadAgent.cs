@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Exact Match Upload Agent.
     /// </summary>
-    
     public partial class ExactMatchUploadAgent : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Cached Report Configuration.
     /// </summary>
-    
     public partial class DeviceManagementCachedReportConfiguration : Entity
     {
     

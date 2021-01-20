@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InformationProtectionEvaluateLabelsAndPoliciesRequestBody.
     /// </summary>
-    
     public partial class InformationProtectionEvaluateLabelsAndPoliciesRequestBody
     {
     

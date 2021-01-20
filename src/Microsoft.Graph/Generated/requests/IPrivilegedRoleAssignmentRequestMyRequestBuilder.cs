@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrivilegedRoleAssignmentRequestMyRequestBuilder.
     /// </summary>
-    public partial interface IPrivilegedRoleAssignmentRequestMyRequestBuilder
+    public partial interface IPrivilegedRoleAssignmentRequestMyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

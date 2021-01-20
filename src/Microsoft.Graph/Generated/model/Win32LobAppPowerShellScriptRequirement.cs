@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppPowerShellScriptRequirement.
     /// </summary>
-    
     public partial class Win32LobAppPowerShellScriptRequirement : Win32LobAppRequirement
     {
         /// <summary>

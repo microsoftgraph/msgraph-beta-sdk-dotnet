@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OfficeClientConfigurationAssignRequestBody.
     /// </summary>
-    
     public partial class OfficeClientConfigurationAssignRequestBody
     {
     

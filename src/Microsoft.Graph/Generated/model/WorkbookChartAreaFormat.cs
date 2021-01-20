@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Chart Area Format.
     /// </summary>
-    
     public partial class WorkbookChartAreaFormat : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsAutopilotDeploymentProfileAssignRequestBody.
     /// </summary>
-    
     public partial class WindowsAutopilotDeploymentProfileAssignRequestBody
     {
     

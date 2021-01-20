@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Site.
     /// </summary>
-    
     public partial class Site : BaseItem
     {
     

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEducationSubmissionSubmitRequestBuilder.
     /// </summary>
-    public partial interface IEducationSubmissionSubmitRequestBuilder
+    public partial interface IEducationSubmissionSubmitRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

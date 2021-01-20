@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ip Security Profile.
     /// </summary>
-    
     public partial class IpSecurityProfile : Entity
     {
     

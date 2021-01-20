@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device And App Management Assignment Filter.
     /// </summary>
-    
     public partial class DeviceAndAppManagementAssignmentFilter : Entity
     {
     

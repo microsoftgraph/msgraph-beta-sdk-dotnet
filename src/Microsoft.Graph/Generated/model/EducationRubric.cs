@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Rubric.
     /// </summary>
-    
     public partial class EducationRubric : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TeamSendActivityNotificationRequestBody.
     /// </summary>
-    
     public partial class TeamSendActivityNotificationRequestBody
     {
     

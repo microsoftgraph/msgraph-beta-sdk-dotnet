@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management.
     /// </summary>
-    
     public partial class DeviceManagement : Entity
     {
     

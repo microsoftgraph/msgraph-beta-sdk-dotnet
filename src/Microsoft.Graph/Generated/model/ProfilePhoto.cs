@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Profile Photo.
     /// </summary>
-    
     public partial class ProfilePhoto : Entity
     {
     

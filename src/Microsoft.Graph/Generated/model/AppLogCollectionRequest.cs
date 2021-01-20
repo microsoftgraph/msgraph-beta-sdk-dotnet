@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type App Log Collection Request.
     /// </summary>
-    
     public partial class AppLogCollectionRequestObject : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessReviewInstanceDecisionItemServicePrincipalTarget.
     /// </summary>
-    
     public partial class AccessReviewInstanceDecisionItemServicePrincipalTarget : AccessReviewInstanceDecisionItemTarget
     {
         /// <summary>

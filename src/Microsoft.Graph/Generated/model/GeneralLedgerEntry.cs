@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type General Ledger Entry.
     /// </summary>
-    
     public partial class GeneralLedgerEntry : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EncryptWithTemplate.
     /// </summary>
-    
     public partial class EncryptWithTemplate : EncryptContent
     {
         /// <summary>

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Consent Request.
     /// </summary>
-    
     public partial class UserConsentRequestObject : RequestObject
     {
     

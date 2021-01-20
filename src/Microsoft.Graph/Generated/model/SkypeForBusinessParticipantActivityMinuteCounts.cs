@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Skype For Business Participant Activity Minute Counts.
     /// </summary>
-    
     public partial class SkypeForBusinessParticipantActivityMinuteCounts : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Workbook Range.
     /// </summary>
-    
     public partial class WorkbookRange : Entity
     {
     

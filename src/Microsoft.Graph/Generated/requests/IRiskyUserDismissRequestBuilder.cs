@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IRiskyUserDismissRequestBuilder.
     /// </summary>
-    public partial interface IRiskyUserDismissRequestBuilder
+    public partial interface IRiskyUserDismissRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

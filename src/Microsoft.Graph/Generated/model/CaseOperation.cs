@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Case Operation.
     /// </summary>
-    
     public partial class CaseOperation : Entity
     {
     

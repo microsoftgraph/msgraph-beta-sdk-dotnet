@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Onenote Entity Base Model.
     /// </summary>
-    
     public partial class OnenoteEntityBaseModel : Entity
     {
     

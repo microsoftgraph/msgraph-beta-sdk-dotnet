@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Skype For Business Activity User Detail.
     /// </summary>
-    
     public partial class SkypeForBusinessActivityUserDetail : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Private Link Resource Policy.
     /// </summary>
-    
     public partial class PrivateLinkResourcePolicy : Entity
     {
     

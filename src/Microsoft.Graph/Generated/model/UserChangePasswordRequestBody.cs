@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserChangePasswordRequestBody.
     /// </summary>
-    
     public partial class UserChangePasswordRequestBody
     {
     

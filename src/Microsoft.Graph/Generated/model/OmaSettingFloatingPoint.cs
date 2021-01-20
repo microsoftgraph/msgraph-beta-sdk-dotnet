@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OmaSettingFloatingPoint.
     /// </summary>
-    
     public partial class OmaSettingFloatingPoint : OmaSetting
     {
         /// <summary>

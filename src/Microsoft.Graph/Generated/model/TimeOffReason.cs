@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Time Off Reason.
     /// </summary>
-    
     public partial class TimeOffReason : ChangeTrackedEntity
     {
     

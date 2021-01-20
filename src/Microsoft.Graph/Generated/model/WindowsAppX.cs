@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows App X.
     /// </summary>
-    
     public partial class WindowsAppX : MobileLobApp
     {
     

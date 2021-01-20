@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsUpdateForBusinessConfigurationExtendQualityUpdatesPauseRequestBuilder.
     /// </summary>
-    public partial interface IWindowsUpdateForBusinessConfigurationExtendQualityUpdatesPauseRequestBuilder
+    public partial interface IWindowsUpdateForBusinessConfigurationExtendQualityUpdatesPauseRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

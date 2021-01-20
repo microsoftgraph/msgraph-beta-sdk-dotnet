@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsBinom_Dist_RangeRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsBinom_Dist_RangeRequestBody
     {
     

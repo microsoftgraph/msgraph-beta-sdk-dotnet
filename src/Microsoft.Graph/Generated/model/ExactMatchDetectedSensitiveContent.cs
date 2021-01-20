@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ExactMatchDetectedSensitiveContent.
     /// </summary>
-    
     public partial class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase
     {
         /// <summary>

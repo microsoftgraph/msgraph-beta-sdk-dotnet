@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sms Authentication Method Target.
     /// </summary>
-    
     public partial class SmsAuthenticationMethodTarget : AuthenticationMethodTarget
     {
     

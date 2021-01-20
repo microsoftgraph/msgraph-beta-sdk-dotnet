@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Intune Branding Profile Assignment.
     /// </summary>
-    
     public partial class IntuneBrandingProfileAssignment : Entity
     {
     

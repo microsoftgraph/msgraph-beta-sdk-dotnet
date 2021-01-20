@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Resource Specific Permission Grant.
     /// </summary>
-    
     public partial class ResourceSpecificPermissionGrant : DirectoryObject
     {
     

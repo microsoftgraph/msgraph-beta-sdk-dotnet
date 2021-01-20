@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Configuration Choice Setting Definition.
     /// </summary>
-    
     public partial class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition
     {
     

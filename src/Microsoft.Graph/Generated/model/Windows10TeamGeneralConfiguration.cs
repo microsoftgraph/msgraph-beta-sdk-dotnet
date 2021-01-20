@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows10Team General Configuration.
     /// </summary>
-    
     public partial class Windows10TeamGeneralConfiguration : DeviceConfiguration
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Governance Role Assignment.
     /// </summary>
-    
     public partial class GovernanceRoleAssignment : Entity
     {
     

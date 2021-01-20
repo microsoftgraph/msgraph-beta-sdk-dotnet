@@ -17,7 +17,6 @@ namespace Microsoft.Graph.CallRecords
     /// <summary>
     /// The type Session.
     /// </summary>
-    
     public partial class Session : Microsoft.Graph.Entity
     {
     

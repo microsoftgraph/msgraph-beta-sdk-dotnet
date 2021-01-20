@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementReportsGetWindowsUpdateAlertSummaryReportRequestBody
     {
     

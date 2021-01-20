@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SiteRemoveRequestBody.
     /// </summary>
-    
     public partial class SiteRemoveRequestBody
     {
     

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDataSharingConsentConsentToDataSharingRequestBuilder.
     /// </summary>
-    public partial interface IDataSharingConsentConsentToDataSharingRequestBuilder
+    public partial interface IDataSharingConsentConsentToDataSharingRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

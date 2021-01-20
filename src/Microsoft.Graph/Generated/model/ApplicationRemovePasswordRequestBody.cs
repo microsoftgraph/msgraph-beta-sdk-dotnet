@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ApplicationRemovePasswordRequestBody.
     /// </summary>
-    
     public partial class ApplicationRemovePasswordRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Linked Resource.
     /// </summary>
-    
     public partial class LinkedResource : Entity
     {
     

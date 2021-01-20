@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac Os Vpp App.
     /// </summary>
-    
     public partial class MacOsVppApp : MobileApp
     {
     

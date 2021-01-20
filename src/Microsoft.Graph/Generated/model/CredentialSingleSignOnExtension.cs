@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CredentialSingleSignOnExtension.
     /// </summary>
-    
     public partial class CredentialSingleSignOnExtension : SingleSignOnExtension
     {
         /// <summary>

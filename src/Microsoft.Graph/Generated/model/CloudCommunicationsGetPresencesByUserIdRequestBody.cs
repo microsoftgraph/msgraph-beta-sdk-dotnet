@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudCommunicationsGetPresencesByUserIdRequestBody.
     /// </summary>
-    
     public partial class CloudCommunicationsGetPresencesByUserIdRequestBody
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Office Client Configuration.
     /// </summary>
-    
     public partial class OfficeClientConfiguration : Entity
     {
     

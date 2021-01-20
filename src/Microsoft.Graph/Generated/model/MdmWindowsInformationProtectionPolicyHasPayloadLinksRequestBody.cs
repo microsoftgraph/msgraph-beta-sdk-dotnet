@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBody.
     /// </summary>
-    
     public partial class MdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBody
     {
     

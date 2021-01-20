@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Update State.
     /// </summary>
-    
     public partial class WindowsUpdateState : Entity
     {
     

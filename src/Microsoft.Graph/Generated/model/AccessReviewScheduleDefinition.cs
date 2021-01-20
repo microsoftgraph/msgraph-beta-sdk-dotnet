@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Review Schedule Definition.
     /// </summary>
-    
     public partial class AccessReviewScheduleDefinition : Entity
     {
     

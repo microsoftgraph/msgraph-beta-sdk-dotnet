@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Share Point Activity User Detail.
     /// </summary>
-    
     public partial class SharePointActivityUserDetail : Entity
     {
     

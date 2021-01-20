@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSScep Certificate Profile.
     /// </summary>
-    
     public partial class MacOSScepCertificateProfile : MacOSCertificateProfileBase
     {
     

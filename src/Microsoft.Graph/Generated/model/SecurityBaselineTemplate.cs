@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Security Baseline Template.
     /// </summary>
-    
     public partial class SecurityBaselineTemplate : DeviceManagementTemplate
     {
     

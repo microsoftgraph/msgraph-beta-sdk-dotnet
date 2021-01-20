@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Win32LobAppAssignmentSettings.
     /// </summary>
-    
     public partial class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>

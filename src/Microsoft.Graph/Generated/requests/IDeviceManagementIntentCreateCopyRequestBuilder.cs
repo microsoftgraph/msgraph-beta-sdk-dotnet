@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementIntentCreateCopyRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementIntentCreateCopyRequestBuilder
+    public partial interface IDeviceManagementIntentCreateCopyRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

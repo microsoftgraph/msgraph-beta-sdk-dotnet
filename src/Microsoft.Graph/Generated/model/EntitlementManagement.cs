@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Entitlement Management.
     /// </summary>
-    
     public partial class EntitlementManagement : Entity
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsFactDoubleRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsFactDoubleRequestBody
     {
     

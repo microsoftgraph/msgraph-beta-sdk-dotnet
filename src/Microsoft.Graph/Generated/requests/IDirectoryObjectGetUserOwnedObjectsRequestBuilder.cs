@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryObjectGetUserOwnedObjectsRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryObjectGetUserOwnedObjectsRequestBuilder
+    public partial interface IDirectoryObjectGetUserOwnedObjectsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

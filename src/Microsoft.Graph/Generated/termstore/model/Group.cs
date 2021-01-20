@@ -17,7 +17,6 @@ namespace Microsoft.Graph.TermStore
     /// <summary>
     /// The type Group.
     /// </summary>
-    
     public partial class Group : Microsoft.Graph.Entity
     {
     

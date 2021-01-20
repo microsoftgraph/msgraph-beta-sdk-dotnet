@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceManagementIntentAssignRequestBody.
     /// </summary>
-    
     public partial class DeviceManagementIntentAssignRequestBody
     {
     

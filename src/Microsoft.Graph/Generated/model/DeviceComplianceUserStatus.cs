@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Compliance User Status.
     /// </summary>
-    
     public partial class DeviceComplianceUserStatus : Entity
     {
     

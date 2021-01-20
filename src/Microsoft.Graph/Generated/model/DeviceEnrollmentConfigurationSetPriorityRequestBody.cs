@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceEnrollmentConfigurationSetPriorityRequestBody.
     /// </summary>
-    
     public partial class DeviceEnrollmentConfigurationSetPriorityRequestBody
     {
     

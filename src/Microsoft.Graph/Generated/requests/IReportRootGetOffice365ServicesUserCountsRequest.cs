@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface IReportRootGetOffice365ServicesUserCountsRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,8 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetOffice365ServicesUserCountsCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
 
         /// <summary>
         /// Issues the PATCH request.
@@ -50,7 +47,7 @@ namespace Microsoft.Graph
         /// <param name="office365servicesusercounts">The Office365ServicesUserCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOffice365ServicesUserCountsCollectionPage> PatchAsync(Office365ServicesUserCounts office365servicesusercounts, 
+        System.Threading.Tasks.Task<IReportRootGetOffice365ServicesUserCountsCollectionPage> PatchAsync(Office365ServicesUserCounts office365servicesusercounts,
             CancellationToken cancellationToken);
 
 
@@ -67,10 +64,8 @@ namespace Microsoft.Graph
         /// <param name="office365servicesusercounts">The Office365ServicesUserCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOffice365ServicesUserCountsCollectionPage> PutAsync(Office365ServicesUserCounts office365servicesusercounts, 
+        System.Threading.Tasks.Task<IReportRootGetOffice365ServicesUserCountsCollectionPage> PutAsync(Office365ServicesUserCounts office365servicesusercounts,
             CancellationToken cancellationToken);
-
-
 
 
         /// <summary>

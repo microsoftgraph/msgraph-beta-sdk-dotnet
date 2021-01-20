@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Data Policy Operation.
     /// </summary>
-    
     public partial class DataPolicyOperation : Entity
     {
     

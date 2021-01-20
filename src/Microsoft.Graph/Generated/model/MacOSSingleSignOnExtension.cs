@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MacOSSingleSignOnExtension.
     /// </summary>
-    
     public abstract partial class MacOSSingleSignOnExtension : SingleSignOnExtension
     {
 

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Windows Domain Join Configuration.
     /// </summary>
-    
     public partial class WindowsDomainJoinConfiguration : DeviceConfiguration
     {
     

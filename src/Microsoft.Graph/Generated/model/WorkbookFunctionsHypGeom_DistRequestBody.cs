@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WorkbookFunctionsHypGeom_DistRequestBody.
     /// </summary>
-    
     public partial class WorkbookFunctionsHypGeom_DistRequestBody
     {
     

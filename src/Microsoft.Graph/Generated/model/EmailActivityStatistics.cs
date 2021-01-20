@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Email Activity Statistics.
     /// </summary>
-    
     public partial class EmailActivityStatistics : ActivityStatistics
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MessageCreateForwardRequestBody.
     /// </summary>
-    
     public partial class MessageCreateForwardRequestBody
     {
     

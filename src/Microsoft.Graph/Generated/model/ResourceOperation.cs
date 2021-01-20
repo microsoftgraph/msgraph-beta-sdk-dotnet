@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Resource Operation.
     /// </summary>
-    
     public partial class ResourceOperation : Entity
     {
     

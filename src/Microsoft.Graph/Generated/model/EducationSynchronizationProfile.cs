@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Education Synchronization Profile.
     /// </summary>
-    
     public partial class EducationSynchronizationProfile : Entity
     {
     

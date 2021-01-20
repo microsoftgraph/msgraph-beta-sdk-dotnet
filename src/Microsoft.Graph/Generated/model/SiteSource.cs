@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Site Source.
     /// </summary>
-    
     public partial class SiteSource : DataSource
     {
     

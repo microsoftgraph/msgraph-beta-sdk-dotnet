@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Ios Lob App.
     /// </summary>
-    
     public partial class IosLobApp : MobileLobApp
     {
     

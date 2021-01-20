@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WindowsKioskActiveDirectoryGroup.
     /// </summary>
-    
     public partial class WindowsKioskActiveDirectoryGroup : WindowsKioskUser
     {
         /// <summary>

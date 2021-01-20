@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Onenote Operation.
     /// </summary>
-    
     public partial class OnenoteOperation : Operation
     {
     

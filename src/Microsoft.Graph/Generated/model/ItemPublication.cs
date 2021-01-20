@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item Publication.
     /// </summary>
-    
     public partial class ItemPublication : ItemFacet
     {
     

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Yammer Device Usage User Detail.
     /// </summary>
-    
     public partial class YammerDeviceUsageUserDetail : Entity
     {
     

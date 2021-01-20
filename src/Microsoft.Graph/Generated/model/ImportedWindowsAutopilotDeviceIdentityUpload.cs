@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Imported Windows Autopilot Device Identity Upload.
     /// </summary>
-    
     public partial class ImportedWindowsAutopilotDeviceIdentityUpload : Entity
     {
     
