@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ICalendarGroupCalendarsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ICalendarGroupCalendarsCollectionPage Value { get; set; }
 
         /// <summary>

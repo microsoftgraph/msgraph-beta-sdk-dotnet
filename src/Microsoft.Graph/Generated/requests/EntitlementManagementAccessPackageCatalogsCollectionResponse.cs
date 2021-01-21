@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IEntitlementManagementAccessPackageCatalogsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IEntitlementManagementAccessPackageCatalogsCollectionPage Value { get; set; }
 
         /// <summary>

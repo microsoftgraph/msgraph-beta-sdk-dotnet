@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ICompanyDimensionValuesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ICompanyDimensionValuesCollectionPage Value { get; set; }
 
         /// <summary>

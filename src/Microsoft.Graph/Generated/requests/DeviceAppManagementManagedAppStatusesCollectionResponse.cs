@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceAppManagementManagedAppStatusesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceAppManagementManagedAppStatusesCollectionPage Value { get; set; }
 
         /// <summary>

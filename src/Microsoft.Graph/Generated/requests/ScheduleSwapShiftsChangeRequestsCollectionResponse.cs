@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IScheduleSwapShiftsChangeRequestsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IScheduleSwapShiftsChangeRequestsCollectionPage Value { get; set; }
 
         /// <summary>

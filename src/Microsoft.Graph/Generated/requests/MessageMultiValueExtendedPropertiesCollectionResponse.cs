@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IMessageMultiValueExtendedPropertiesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IMessageMultiValueExtendedPropertiesCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IAccessPackageAccessPackageResourceRoleScopesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IAccessPackageAccessPackageResourceRoleScopesCollectionPage Value { get; set; }
 
         /// <summary>

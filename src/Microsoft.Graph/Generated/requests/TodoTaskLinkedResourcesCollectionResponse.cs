@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ITodoTaskLinkedResourcesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ITodoTaskLinkedResourcesCollectionPage Value { get; set; }
 
         /// <summary>

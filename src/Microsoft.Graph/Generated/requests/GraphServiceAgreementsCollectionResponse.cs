@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IGraphServiceAgreementsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IGraphServiceAgreementsCollectionPage Value { get; set; }
 
         /// <summary>

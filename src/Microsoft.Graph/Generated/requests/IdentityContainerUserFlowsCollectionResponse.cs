@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IIdentityContainerUserFlowsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IIdentityContainerUserFlowsCollectionPage Value { get; set; }
 
         /// <summary>

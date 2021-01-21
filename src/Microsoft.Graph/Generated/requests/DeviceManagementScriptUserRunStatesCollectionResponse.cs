@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceManagementScriptUserRunStatesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceManagementScriptUserRunStatesCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IApprovalWorkflowProviderPolicyTemplatesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IApprovalWorkflowProviderPolicyTemplatesCollectionPage Value { get; set; }
 
         /// <summary>

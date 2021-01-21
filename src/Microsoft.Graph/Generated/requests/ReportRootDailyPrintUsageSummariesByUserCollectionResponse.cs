@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IReportRootDailyPrintUsageSummariesByUserCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IReportRootDailyPrintUsageSummariesByUserCollectionPage Value { get; set; }
 
         /// <summary>

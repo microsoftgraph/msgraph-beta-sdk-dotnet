@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IUserFlowLanguageConfigurationDefaultPagesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IUserFlowLanguageConfigurationDefaultPagesCollectionPage Value { get; set; }
 
         /// <summary>

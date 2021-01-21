@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ICloudPcProvisioningPolicyAssignmentsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ICloudPcProvisioningPolicyAssignmentsCollectionPage Value { get; set; }
 
         /// <summary>

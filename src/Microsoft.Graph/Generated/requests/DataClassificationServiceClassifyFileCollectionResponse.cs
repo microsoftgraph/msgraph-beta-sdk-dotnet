@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDataClassificationServiceClassifyFileCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDataClassificationServiceClassifyFileCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IUserScopedRoleMemberOfCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IUserScopedRoleMemberOfCollectionPage Value { get; set; }
 
         /// <summary>

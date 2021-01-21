@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IAppConsentApprovalRouteAppConsentRequestsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IAppConsentApprovalRouteAppConsentRequestsCollectionPage Value { get; set; }
 
         /// <summary>

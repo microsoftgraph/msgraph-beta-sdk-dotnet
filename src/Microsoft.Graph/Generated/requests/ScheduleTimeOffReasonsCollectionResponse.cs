@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IScheduleTimeOffReasonsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IScheduleTimeOffReasonsCollectionPage Value { get; set; }
 
         /// <summary>

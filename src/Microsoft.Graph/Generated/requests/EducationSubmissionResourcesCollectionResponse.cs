@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IEducationSubmissionResourcesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IEducationSubmissionResourcesCollectionPage Value { get; set; }
 
         /// <summary>

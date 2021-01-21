@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ICommsApplicationOnlineMeetingsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ICommsApplicationOnlineMeetingsCollectionPage Value { get; set; }
 
         /// <summary>

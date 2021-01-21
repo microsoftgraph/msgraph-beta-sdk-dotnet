@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceManagementAndroidForWorkAppConfigurationSchemasCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceManagementAndroidForWorkAppConfigurationSchemasCollectionPage Value { get; set; }
 
         /// <summary>

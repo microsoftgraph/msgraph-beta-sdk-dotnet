@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionPage Value { get; set; }
 
         /// <summary>

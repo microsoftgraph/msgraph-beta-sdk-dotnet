@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ISecurityBaselineTemplateDeviceStatesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ISecurityBaselineTemplateDeviceStatesCollectionPage Value { get; set; }
 
         /// <summary>

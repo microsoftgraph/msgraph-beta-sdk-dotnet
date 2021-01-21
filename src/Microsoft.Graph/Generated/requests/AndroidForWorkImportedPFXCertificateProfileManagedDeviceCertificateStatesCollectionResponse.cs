@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IAndroidForWorkImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IAndroidForWorkImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionPage Value { get; set; }
 
         /// <summary>

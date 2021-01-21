@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IPolicyRootPrivateLinkResourcePoliciesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IPolicyRootPrivateLinkResourcePoliciesCollectionPage Value { get; set; }
 
         /// <summary>

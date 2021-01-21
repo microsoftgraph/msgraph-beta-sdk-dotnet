@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IPolicyRootConditionalAccessPoliciesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IPolicyRootConditionalAccessPoliciesCollectionPage Value { get; set; }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ITrustFrameworkKeySetsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ITrustFrameworkKeySetsCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IMobileAppTroubleshootingEventAppLogCollectionRequestsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IMobileAppTroubleshootingEventAppLogCollectionRequestsCollectionPage Value { get; set; }
 
         /// <summary>

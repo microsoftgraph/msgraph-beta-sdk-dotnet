@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IMailFolderSingleValueExtendedPropertiesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IMailFolderSingleValueExtendedPropertiesCollectionPage Value { get; set; }
 
         /// <summary>

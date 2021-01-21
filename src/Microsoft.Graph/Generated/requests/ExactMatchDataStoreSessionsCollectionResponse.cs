@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IExactMatchDataStoreSessionsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IExactMatchDataStoreSessionsCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IBookingBusinessStaffMembersCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IBookingBusinessStaffMembersCollectionPage Value { get; set; }
 
         /// <summary>

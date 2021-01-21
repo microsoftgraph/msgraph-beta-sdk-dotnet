@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ISensitivityLabelSublabelsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ISensitivityLabelSublabelsCollectionPage Value { get; set; }
 
         /// <summary>

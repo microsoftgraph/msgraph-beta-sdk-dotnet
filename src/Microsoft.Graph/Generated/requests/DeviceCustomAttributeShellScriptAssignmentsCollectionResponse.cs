@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceCustomAttributeShellScriptAssignmentsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceCustomAttributeShellScriptAssignmentsCollectionPage Value { get; set; }
 
         /// <summary>

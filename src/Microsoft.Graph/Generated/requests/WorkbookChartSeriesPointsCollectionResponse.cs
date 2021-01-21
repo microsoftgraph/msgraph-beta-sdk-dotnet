@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWorkbookChartSeriesPointsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWorkbookChartSeriesPointsCollectionPage Value { get; set; }
 
         /// <summary>

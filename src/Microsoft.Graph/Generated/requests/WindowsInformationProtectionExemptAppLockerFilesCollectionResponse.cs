@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWindowsInformationProtectionExemptAppLockerFilesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWindowsInformationProtectionExemptAppLockerFilesCollectionPage Value { get; set; }
 
         /// <summary>

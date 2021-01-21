@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage Value { get; set; }
 
         /// <summary>

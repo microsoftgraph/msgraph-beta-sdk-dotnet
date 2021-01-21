@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IConditionalAccessRootAuthenticationContextClassReferencesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IConditionalAccessRootAuthenticationContextClassReferencesCollectionPage Value { get; set; }
 
         /// <summary>

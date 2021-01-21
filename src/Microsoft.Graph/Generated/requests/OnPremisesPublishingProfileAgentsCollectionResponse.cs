@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IOnPremisesPublishingProfileAgentsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IOnPremisesPublishingProfileAgentsCollectionPage Value { get; set; }
 
         /// <summary>

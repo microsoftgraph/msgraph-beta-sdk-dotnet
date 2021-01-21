@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IOutlookUserTaskFoldersCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IOutlookUserTaskFoldersCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IExactMatchLookupJobMatchingRowsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IExactMatchLookupJobMatchingRowsCollectionPage Value { get; set; }
 
         /// <summary>

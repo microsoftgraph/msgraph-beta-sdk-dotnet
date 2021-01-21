@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IOfficeConfigurationClientConfigurationsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IOfficeConfigurationClientConfigurationsCollectionPage Value { get; set; }
 
         /// <summary>

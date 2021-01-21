@@ -19,7 +19,7 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Gets or sets the <see cref="IGroupSetsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IGroupSetsCollectionPage Value { get; set; }
 
         /// <summary>

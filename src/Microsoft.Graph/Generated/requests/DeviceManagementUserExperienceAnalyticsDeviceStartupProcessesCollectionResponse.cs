@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessesCollectionPage Value { get; set; }
 
         /// <summary>

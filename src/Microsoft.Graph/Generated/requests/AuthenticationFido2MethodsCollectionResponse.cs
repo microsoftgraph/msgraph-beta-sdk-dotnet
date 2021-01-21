@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IAuthenticationFido2MethodsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IAuthenticationFido2MethodsCollectionPage Value { get; set; }
 
         /// <summary>

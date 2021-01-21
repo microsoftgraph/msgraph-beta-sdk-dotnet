@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IUnifiedRbacResourceNamespaceResourceActionsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IUnifiedRbacResourceNamespaceResourceActionsCollectionPage Value { get; set; }
 
         /// <summary>

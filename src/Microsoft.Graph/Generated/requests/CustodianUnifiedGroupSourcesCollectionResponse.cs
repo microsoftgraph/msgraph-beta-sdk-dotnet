@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ICustodianUnifiedGroupSourcesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ICustodianUnifiedGroupSourcesCollectionPage Value { get; set; }
 
         /// <summary>

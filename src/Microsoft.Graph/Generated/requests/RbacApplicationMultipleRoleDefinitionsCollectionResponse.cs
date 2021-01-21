@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IRbacApplicationMultipleRoleDefinitionsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IRbacApplicationMultipleRoleDefinitionsCollectionPage Value { get; set; }
 
         /// <summary>

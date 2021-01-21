@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IInferenceClassificationOverridesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IInferenceClassificationOverridesCollectionPage Value { get; set; }
 
         /// <summary>

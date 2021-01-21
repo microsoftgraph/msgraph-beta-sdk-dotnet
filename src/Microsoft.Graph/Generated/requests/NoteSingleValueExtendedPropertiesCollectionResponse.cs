@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="INoteSingleValueExtendedPropertiesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public INoteSingleValueExtendedPropertiesCollectionPage Value { get; set; }
 
         /// <summary>

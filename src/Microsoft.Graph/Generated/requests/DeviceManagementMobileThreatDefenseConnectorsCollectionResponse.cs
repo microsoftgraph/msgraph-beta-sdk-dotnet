@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceManagementMobileThreatDefenseConnectorsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceManagementMobileThreatDefenseConnectorsCollectionPage Value { get; set; }
 
         /// <summary>

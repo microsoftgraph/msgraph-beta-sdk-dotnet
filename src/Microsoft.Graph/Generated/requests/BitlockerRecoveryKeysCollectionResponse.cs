@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IBitlockerRecoveryKeysCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IBitlockerRecoveryKeysCollectionPage Value { get; set; }
 
         /// <summary>

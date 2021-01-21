@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ITeamworkWorkforceIntegrationsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ITeamworkWorkforceIntegrationsCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IIntuneBrandingProfileAssignmentsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IIntuneBrandingProfileAssignmentsCollectionPage Value { get; set; }
 
         /// <summary>

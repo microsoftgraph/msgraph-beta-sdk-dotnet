@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ILegalholdUnifiedGroupSourcesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ILegalholdUnifiedGroupSourcesCollectionPage Value { get; set; }
 
         /// <summary>

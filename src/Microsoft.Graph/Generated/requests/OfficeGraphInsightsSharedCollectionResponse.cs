@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IOfficeGraphInsightsSharedCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IOfficeGraphInsightsSharedCollectionPage Value { get; set; }
 
         /// <summary>

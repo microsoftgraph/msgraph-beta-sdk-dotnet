@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionPage Value { get; set; }
 
         /// <summary>

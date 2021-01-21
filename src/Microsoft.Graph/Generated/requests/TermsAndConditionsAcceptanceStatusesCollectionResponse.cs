@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ITermsAndConditionsAcceptanceStatusesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ITermsAndConditionsAcceptanceStatusesCollectionPage Value { get; set; }
 
         /// <summary>

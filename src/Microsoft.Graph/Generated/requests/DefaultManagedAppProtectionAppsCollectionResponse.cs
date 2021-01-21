@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDefaultManagedAppProtectionAppsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDefaultManagedAppProtectionAppsCollectionPage Value { get; set; }
 
         /// <summary>

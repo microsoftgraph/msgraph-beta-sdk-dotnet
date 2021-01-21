@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IVirtualEndpointProvisioningPoliciesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IVirtualEndpointProvisioningPoliciesCollectionPage Value { get; set; }
 
         /// <summary>

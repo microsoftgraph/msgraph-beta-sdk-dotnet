@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IMacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IMacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IAuthenticationPasswordMethodsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IAuthenticationPasswordMethodsCollectionPage Value { get; set; }
 
         /// <summary>

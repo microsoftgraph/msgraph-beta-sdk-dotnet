@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IItemAnalyticsItemActivityStatsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IItemAnalyticsItemActivityStatsCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ISynchronizationSchemaDirectoriesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ISynchronizationSchemaDirectoriesCollectionPage Value { get; set; }
 
         /// <summary>
