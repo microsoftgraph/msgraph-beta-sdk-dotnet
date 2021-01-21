@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ISecurityConfigurationTaskManagedDevicesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ISecurityConfigurationTaskManagedDevicesCollectionPage Value { get; set; }
 
         /// <summary>

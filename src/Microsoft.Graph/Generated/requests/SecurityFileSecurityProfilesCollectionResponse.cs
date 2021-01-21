@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ISecurityFileSecurityProfilesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ISecurityFileSecurityProfilesCollectionPage Value { get; set; }
 
         /// <summary>

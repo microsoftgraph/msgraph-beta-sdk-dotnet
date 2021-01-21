@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IOrganizationSettingsProfileCardPropertiesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IOrganizationSettingsProfileCardPropertiesCollectionPage Value { get; set; }
 
         /// <summary>

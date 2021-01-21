@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDomainSharedEmailDomainInvitationsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDomainSharedEmailDomainInvitationsCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage Value { get; set; }
 
         /// <summary>

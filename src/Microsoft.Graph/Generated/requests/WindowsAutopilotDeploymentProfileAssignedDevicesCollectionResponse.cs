@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWindowsAutopilotDeploymentProfileAssignedDevicesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWindowsAutopilotDeploymentProfileAssignedDevicesCollectionPage Value { get; set; }
 
         /// <summary>

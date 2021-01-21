@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IPermissionGrantPolicyIncludesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IPermissionGrantPolicyIncludesCollectionPage Value { get; set; }
 
         /// <summary>

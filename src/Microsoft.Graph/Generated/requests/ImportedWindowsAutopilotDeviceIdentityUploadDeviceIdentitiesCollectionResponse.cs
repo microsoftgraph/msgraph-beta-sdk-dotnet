@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionPage Value { get; set; }
 
         /// <summary>

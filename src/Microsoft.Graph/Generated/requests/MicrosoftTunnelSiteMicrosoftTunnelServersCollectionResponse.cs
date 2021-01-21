@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionPage Value { get; set; }
 
         /// <summary>

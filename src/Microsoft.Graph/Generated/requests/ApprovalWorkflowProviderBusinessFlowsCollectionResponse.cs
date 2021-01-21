@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IApprovalWorkflowProviderBusinessFlowsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IApprovalWorkflowProviderBusinessFlowsCollectionPage Value { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IAuthenticationPhoneMethodsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IAuthenticationPhoneMethodsCollectionPage Value { get; set; }
 
         /// <summary>

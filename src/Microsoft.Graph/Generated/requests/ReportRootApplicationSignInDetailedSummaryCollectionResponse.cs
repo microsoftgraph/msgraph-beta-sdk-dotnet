@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IReportRootApplicationSignInDetailedSummaryCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IReportRootApplicationSignInDetailedSummaryCollectionPage Value { get; set; }
 
         /// <summary>

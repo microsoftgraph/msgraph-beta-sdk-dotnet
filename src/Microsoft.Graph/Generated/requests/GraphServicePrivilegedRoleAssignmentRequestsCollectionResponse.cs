@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IGraphServicePrivilegedRoleAssignmentRequestsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IGraphServicePrivilegedRoleAssignmentRequestsCollectionPage Value { get; set; }
 
         /// <summary>

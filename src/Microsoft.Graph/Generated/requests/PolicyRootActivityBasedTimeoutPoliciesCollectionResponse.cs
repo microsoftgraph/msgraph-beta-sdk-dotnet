@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IPolicyRootActivityBasedTimeoutPoliciesCollectionPage Value { get; set; }
 
         /// <summary>

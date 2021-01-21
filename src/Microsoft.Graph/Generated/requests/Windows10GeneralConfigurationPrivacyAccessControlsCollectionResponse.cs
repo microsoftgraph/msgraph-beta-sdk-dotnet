@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage Value { get; set; }
 
         /// <summary>

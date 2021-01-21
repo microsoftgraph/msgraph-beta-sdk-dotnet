@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage Value { get; set; }
 
         /// <summary>

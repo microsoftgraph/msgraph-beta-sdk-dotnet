@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IGroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IGroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionPage Value { get; set; }
 
         /// <summary>

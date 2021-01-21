@@ -20,7 +20,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IIdentityProtectionRootRiskyUsersCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IIdentityProtectionRootRiskyUsersCollectionPage Value { get; set; }
 
         /// <summary>

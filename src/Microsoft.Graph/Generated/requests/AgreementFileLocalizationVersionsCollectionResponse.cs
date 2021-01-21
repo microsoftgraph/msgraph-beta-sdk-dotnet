@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IAgreementFileLocalizationVersionsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IAgreementFileLocalizationVersionsCollectionPage Value { get; set; }
 
         /// <summary>

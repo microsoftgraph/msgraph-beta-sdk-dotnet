@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDirectoryFeatureRolloutPoliciesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDirectoryFeatureRolloutPoliciesCollectionPage Value { get; set; }
 
         /// <summary>

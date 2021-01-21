@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IIosLobAppProvisioningConfigurationUserStatusesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IIosLobAppProvisioningConfigurationUserStatusesCollectionPage Value { get; set; }
 
         /// <summary>

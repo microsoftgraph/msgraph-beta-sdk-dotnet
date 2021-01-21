@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IWindowsUniversalAppXCommittedContainedAppsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IWindowsUniversalAppXCommittedContainedAppsCollectionPage Value { get; set; }
 
         /// <summary>

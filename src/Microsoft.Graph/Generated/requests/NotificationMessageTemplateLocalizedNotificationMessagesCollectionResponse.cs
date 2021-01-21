@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage Value { get; set; }
 
         /// <summary>

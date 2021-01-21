@@ -19,7 +19,7 @@ namespace Microsoft.Graph.CallRecords
         /// <summary>
         /// Gets or sets the <see cref="ISessionSegmentsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ISessionSegmentsCollectionPage Value { get; set; }
 
         /// <summary>

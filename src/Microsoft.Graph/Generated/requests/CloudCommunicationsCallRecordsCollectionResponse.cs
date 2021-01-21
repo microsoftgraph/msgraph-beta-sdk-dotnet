@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="ICloudCommunicationsCallRecordsCollectionPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ICloudCommunicationsCallRecordsCollectionPage Value { get; set; }
 
         /// <summary>
