@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBuilder.
     /// </summary>
-    public partial interface IAndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBuilder
+    public partial interface IAndroidDeviceOwnerEnrollmentProfileCreateTokenRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

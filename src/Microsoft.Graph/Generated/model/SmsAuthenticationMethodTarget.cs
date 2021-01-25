@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Sms Authentication Method Target.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SmsAuthenticationMethodTarget : AuthenticationMethodTarget
     {
     
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets is usable for sign in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isUsableForSignIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isUsableForSignIn")]
         public bool? IsUsableForSignIn { get; set; }
     
     }

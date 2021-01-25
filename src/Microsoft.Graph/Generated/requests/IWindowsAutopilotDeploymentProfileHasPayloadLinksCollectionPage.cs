@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IWindowsAutopilotDeploymentProfileHasPayloadLinksCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<WindowsAutopilotDeploymentProfileHasPayloadLinksCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<WindowsAutopilotDeploymentProfileHasPayloadLinksCollectionPage>))]
     public interface IWindowsAutopilotDeploymentProfileHasPayloadLinksCollectionPage : ICollectionPage<HasPayloadLinkResultItem>
     {
         /// <summary>

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BusinessFlowSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class BusinessFlowSettings : AccessReviewSettings
     {
         /// <summary>
@@ -32,7 +30,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets durationInDays.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("durationInDays")]
         public Int32? DurationInDays { get; set; }
     
     }

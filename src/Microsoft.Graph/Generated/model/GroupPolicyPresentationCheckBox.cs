@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Check Box.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationCheckBox : GroupPolicyPresentation
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets default checked.
         /// Default value for the check box. The default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultChecked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultChecked")]
         public bool? DefaultChecked { get; set; }
     
     }

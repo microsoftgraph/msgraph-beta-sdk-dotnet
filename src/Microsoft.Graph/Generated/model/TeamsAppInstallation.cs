@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teams App Installation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamsAppInstallation : Entity
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets teams app.
         /// The app that is installed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsApp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamsApp")]
         public TeamsApp TeamsApp { get; set; }
     
         /// <summary>
         /// Gets or sets teams app definition.
         /// The details of this version of the app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamsAppDefinition")]
         public TeamsAppDefinition TeamsAppDefinition { get; set; }
     
     }

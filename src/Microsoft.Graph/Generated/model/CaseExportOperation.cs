@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Case Export Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CaseExportOperation : CaseOperation
     {
     
@@ -33,49 +31,49 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets azure blob container.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureBlobContainer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureBlobContainer")]
         public string AzureBlobContainer { get; set; }
     
         /// <summary>
         /// Gets or sets azure blob token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureBlobToken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureBlobToken")]
         public string AzureBlobToken { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets export options.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exportOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exportOptions")]
         public ExportOptions? ExportOptions { get; set; }
     
         /// <summary>
         /// Gets or sets export structure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exportStructure", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exportStructure")]
         public ExportFileStructure? ExportStructure { get; set; }
     
         /// <summary>
         /// Gets or sets output folder id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputFolderId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outputFolderId")]
         public string OutputFolderId { get; set; }
     
         /// <summary>
         /// Gets or sets output name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outputName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outputName")]
         public string OutputName { get; set; }
     
         /// <summary>
         /// Gets or sets review set.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewSet", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewSet")]
         public ReviewSet ReviewSet { get; set; }
     
     }

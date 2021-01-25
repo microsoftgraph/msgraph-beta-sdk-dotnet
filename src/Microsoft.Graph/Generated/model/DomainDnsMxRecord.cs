@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Domain Dns Mx Record.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DomainDnsMxRecord : DomainDnsRecord
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets mail exchange.
         /// Value used when configuring the answer/destination/value of the MX record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailExchange", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mailExchange")]
         public string MailExchange { get; set; }
     
         /// <summary>
         /// Gets or sets preference.
         /// Value used when configuring the Preference/Priority property of the MX record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preference", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preference")]
         public Int32? Preference { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph.TermStore
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Term.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Term : Microsoft.Graph.Entity
     {
     
@@ -34,55 +32,55 @@ namespace Microsoft.Graph.TermStore
         /// Gets or sets created date time.
         /// Date and time of term creation. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets descriptions.
         /// Description about term that is dependent on the languageTag
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "descriptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("descriptions")]
         public IEnumerable<LocalizedDescription> Descriptions { get; set; }
     
         /// <summary>
         /// Gets or sets labels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("labels")]
         public IEnumerable<LocalizedLabel> Labels { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Last date and time of term modification. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
         /// Collection of properties on the term
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("properties")]
         public IEnumerable<Microsoft.Graph.KeyValue> Properties { get; set; }
     
         /// <summary>
         /// Gets or sets children.
         /// Children of current term
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("children")]
         public ITermChildrenCollectionPage Children { get; set; }
     
         /// <summary>
         /// Gets or sets relations.
         /// To indicate which terms are related to the current term as either pinned or reused
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("relations")]
         public ITermRelationsCollectionPage Relations { get; set; }
     
         /// <summary>
         /// Gets or sets set.
         /// The [set] in which the term is created
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "set", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("set")]
         public Set Set { get; set; }
     
     }

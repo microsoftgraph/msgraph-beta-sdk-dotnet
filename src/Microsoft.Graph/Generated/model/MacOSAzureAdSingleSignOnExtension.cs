@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOSAzureAdSingleSignOnExtension.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSAzureAdSingleSignOnExtension : MacOSSingleSignOnExtension
     {
         /// <summary>
@@ -33,21 +31,21 @@ namespace Microsoft.Graph
         /// Gets or sets bundleIdAccessControlList.
         /// An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleIdAccessControlList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bundleIdAccessControlList")]
         public IEnumerable<string> BundleIdAccessControlList { get; set; }
     
         /// <summary>
         /// Gets or sets configurations.
         /// Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurations")]
         public IEnumerable<KeyTypedValuePair> Configurations { get; set; }
     
         /// <summary>
         /// Gets or sets enableSharedDeviceMode.
         /// Enables or disables shared device mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableSharedDeviceMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableSharedDeviceMode")]
         public bool? EnableSharedDeviceMode { get; set; }
     
     }

@@ -72,11 +72,18 @@ namespace Microsoft.Graph.TermStore
         {
             var baseUrl = this.Client.BaseUrl;
             var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
-            var payload = new Newtonsoft.Json.Linq.JObject(
-                            new Newtonsoft.Json.Linq.JProperty("@odata.id", objectUri));
+            var stream = new System.IO.MemoryStream();
+            using (var writer = new System.Text.Json.Utf8JsonWriter(stream))
+            {
+                writer.WriteStartObject();
+                writer.WriteString("@odata.id", objectUri);
+                writer.WriteEndObject();
+                await writer.FlushAsync();
+            }
+            var payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
             this.Method = "PUT";
             this.ContentType = "application/json";
-            await this.SendAsync(payload.ToString(), cancellationToken).ConfigureAwait(false);
+            await this.SendAsync(payload, cancellationToken).ConfigureAwait(false);
         }
     }
 }

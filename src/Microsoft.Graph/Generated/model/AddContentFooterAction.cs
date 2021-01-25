@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AddContentFooterAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddContentFooterAction : InformationProtectionAction
     {
         /// <summary>
@@ -33,49 +31,49 @@ namespace Microsoft.Graph
         /// Gets or sets alignment.
         /// Possible values are: left, right, center.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alignment", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alignment")]
         public ContentAlignment? Alignment { get; set; }
     
         /// <summary>
         /// Gets or sets fontColor.
         /// Color of the font to use for the footer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontColor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontColor")]
         public string FontColor { get; set; }
     
         /// <summary>
         /// Gets or sets fontName.
         /// Name of the font to use for the footer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontName")]
         public string FontName { get; set; }
     
         /// <summary>
         /// Gets or sets fontSize.
         /// Font size to use for the footer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontSize", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontSize")]
         public Int32? FontSize { get; set; }
     
         /// <summary>
         /// Gets or sets margin.
         /// The margin of the header from the bottom of the document.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "margin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("margin")]
         public Int32? Margin { get; set; }
     
         /// <summary>
         /// Gets or sets text.
         /// The contents of the footer itself.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets uiElementName.
         /// The name of the UI element where the footer should be placed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uiElementName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uiElementName")]
         public string UiElementName { get; set; }
     
     }

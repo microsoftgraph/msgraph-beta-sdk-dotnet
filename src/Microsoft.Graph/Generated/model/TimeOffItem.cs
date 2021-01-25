@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TimeOffItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TimeOffItem : ScheduleEntity
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets timeOffReasonId.
         /// ID of the timeOffReason for this timeOffItem. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeOffReasonId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeOffReasonId")]
         public string TimeOffReasonId { get; set; }
     
     }

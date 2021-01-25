@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Microsoft Tunnel Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MicrosoftTunnelConfiguration : Entity
     {
     
@@ -34,84 +32,84 @@ namespace Microsoft.Graph
         /// Gets or sets advanced settings.
         /// Additional settings that may be applied to the server
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("advancedSettings")]
         public IEnumerable<KeyValuePair> AdvancedSettings { get; set; }
     
         /// <summary>
         /// Gets or sets default domain suffix.
         /// The Default Domain appendix that will be used by the clients
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDomainSuffix", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultDomainSuffix")]
         public string DefaultDomainSuffix { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The MicrosoftTunnelConfiguration's description
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The MicrosoftTunnelConfiguration's display name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets dns servers.
         /// The DNS servers that will be used by the clients
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsServers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dnsServers")]
         public IEnumerable<string> DnsServers { get; set; }
     
         /// <summary>
         /// Gets or sets last update date time.
         /// When the MicrosoftTunnelConfiguration was last updated
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdateDateTime")]
         public DateTimeOffset? LastUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets listen port.
         /// The port that both TCP and UPD will listen over on the server
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "listenPort", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("listenPort")]
         public Int32? ListenPort { get; set; }
     
         /// <summary>
         /// Gets or sets network.
         /// The subnet that will be used to allocate virtual address for the clients
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "network", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("network")]
         public string Network { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this Entity instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets routes exclude.
         /// Subsets of the routes that will not be routed by the server
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routesExclude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("routesExclude")]
         public IEnumerable<string> RoutesExclude { get; set; }
     
         /// <summary>
         /// Gets or sets routes include.
         /// The routs that will be routed by the server
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routesInclude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("routesInclude")]
         public IEnumerable<string> RoutesInclude { get; set; }
     
         /// <summary>
         /// Gets or sets split dns.
         /// The domains that will be resolved using the provided dns servers
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "splitDNS", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("splitDNS")]
         public IEnumerable<string> SplitDNS { get; set; }
     
     }

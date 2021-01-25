@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Privacy Data Access Control Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsPrivacyDataAccessControlItem : Entity
     {
     
@@ -34,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets access level.
         /// This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessLevel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessLevel")]
         public WindowsPrivacyDataAccessLevel? AccessLevel { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
         /// The Package Family Name of a Windows app. When set, the access level applies to the specified application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app package family name.
         /// The Package Family Name of a Windows app. When set, the access level applies to the specified application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appPackageFamilyName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appPackageFamilyName")]
         public string AppPackageFamilyName { get; set; }
     
         /// <summary>
         /// Gets or sets data category.
         /// This indicates a privacy data category to which the specific access control will apply. Possible values are: notConfigured, accountInfo, appsRunInBackground, calendar, callHistory, camera, contacts, diagnosticsInfo, email, location, messaging, microphone, motion, notifications, phone, radios, tasks, syncWithDevices, trustedDevices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataCategory")]
         public WindowsPrivacyDataCategory? DataCategory { get; set; }
     
     }

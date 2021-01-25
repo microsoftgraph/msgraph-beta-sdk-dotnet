@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Security Configuration Task.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SecurityConfigurationTask : DeviceAppManagementTask
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets applicable platform.
         /// The applicable platform. Possible values are: unknown, macOS, windows10AndLater, windows10AndWindowsServer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicablePlatform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicablePlatform")]
         public EndpointSecurityConfigurationApplicablePlatform? ApplicablePlatform { get; set; }
     
         /// <summary>
         /// Gets or sets endpoint security policy.
         /// The endpoint security policy type. Possible values are: unknown, antivirus, diskEncryption, firewall, endpointDetectionAndResponse, attackSurfaceReduction, accountProtection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointSecurityPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endpointSecurityPolicy")]
         public EndpointSecurityConfigurationType? EndpointSecurityPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets endpoint security policy profile.
         /// The endpoint security policy profile. Possible values are: unknown, antivirus, windowsSecurity, bitLocker, fileVault, firewall, firewallRules, endpointDetectionAndResponse, deviceControl, appAndBrowserIsolation, exploitProtection, webProtection, applicationControl, attackSurfaceReductionRules, accountProtection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointSecurityPolicyProfile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endpointSecurityPolicyProfile")]
         public EndpointSecurityConfigurationProfileType? EndpointSecurityPolicyProfile { get; set; }
     
         /// <summary>
         /// Gets or sets insights.
         /// Information about the mitigation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "insights", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("insights")]
         public string Insights { get; set; }
     
         /// <summary>
         /// Gets or sets intended settings.
         /// The intended settings and their values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intendedSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intendedSettings")]
         public IEnumerable<KeyValuePair> IntendedSettings { get; set; }
     
         /// <summary>
         /// Gets or sets managed device count.
         /// The number of vulnerable devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceCount")]
         public Int32? ManagedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets managed devices.
         /// The vulnerable managed devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDevices")]
         public ISecurityConfigurationTaskManagedDevicesCollectionPage ManagedDevices { get; set; }
     
     }

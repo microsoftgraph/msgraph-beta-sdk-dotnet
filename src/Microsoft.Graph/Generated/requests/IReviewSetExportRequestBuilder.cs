@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReviewSetExportRequestBuilder.
     /// </summary>
-    public partial interface IReviewSetExportRequestBuilder
+    public partial interface IReviewSetExportRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

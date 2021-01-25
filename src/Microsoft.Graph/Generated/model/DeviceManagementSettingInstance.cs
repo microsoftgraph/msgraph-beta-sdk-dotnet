@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Setting Instance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementSettingInstance : Entity
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets definition id.
         /// The ID of the setting definition for this instance
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("definitionId")]
         public string DefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets value json.
         /// JSON representation of the value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueJson", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueJson")]
         public string ValueJson { get; set; }
     
     }

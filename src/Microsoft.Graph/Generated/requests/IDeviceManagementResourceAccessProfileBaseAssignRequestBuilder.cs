@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementResourceAccessProfileBaseAssignRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementResourceAccessProfileBaseAssignRequestBuilder
+    public partial interface IDeviceManagementResourceAccessProfileBaseAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

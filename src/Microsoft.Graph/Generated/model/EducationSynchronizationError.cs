@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Education Synchronization Error.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationSynchronizationError : Entity
     {
     
@@ -34,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets entry type.
         /// Represents the sync entity (school, section, student, teacher).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entryType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("entryType")]
         public string EntryType { get; set; }
     
         /// <summary>
         /// Gets or sets error code.
         /// Represents the error code for this error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets error message.
         /// Contains a description of the error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorMessage")]
         public string ErrorMessage { get; set; }
     
         /// <summary>
         /// Gets or sets joining value.
         /// The unique identifier for the entry.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joiningValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("joiningValue")]
         public string JoiningValue { get; set; }
     
         /// <summary>
         /// Gets or sets recorded date time.
         /// The time of occurrence of this error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recordedDateTime")]
         public DateTimeOffset? RecordedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reportable identifier.
         /// The identifier of this error entry.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportableIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportableIdentifier")]
         public string ReportableIdentifier { get; set; }
     
     }

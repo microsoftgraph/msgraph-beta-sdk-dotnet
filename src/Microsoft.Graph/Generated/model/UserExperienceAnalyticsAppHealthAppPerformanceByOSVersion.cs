@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics App Health App Performance By OSVersion.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion : Entity
     {
     
@@ -34,63 +32,63 @@ namespace Microsoft.Graph
         /// Gets or sets active device count.
         /// The number of devices where the app has been active. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeDeviceCount")]
         public Int32? ActiveDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets app crash count.
         /// The number of crashes for the app. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appCrashCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appCrashCount")]
         public Int32? AppCrashCount { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
         /// The friendly name of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app name.
         /// The name of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appName")]
         public string AppName { get; set; }
     
         /// <summary>
         /// Gets or sets app publisher.
         /// The publisher of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appPublisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appPublisher")]
         public string AppPublisher { get; set; }
     
         /// <summary>
         /// Gets or sets app usage duration.
         /// The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUsageDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appUsageDuration")]
         public Int32? AppUsageDuration { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
         /// The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meanTimeToFailureInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets os build number.
         /// The os build number of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osBuildNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osBuildNumber")]
         public string OsBuildNumber { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// The os version of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
     }

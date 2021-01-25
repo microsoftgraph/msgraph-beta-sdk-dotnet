@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Authentication.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Authentication : Entity
     {
     
@@ -33,43 +31,43 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets email methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailMethods")]
         public IAuthenticationEmailMethodsCollectionPage EmailMethods { get; set; }
     
         /// <summary>
         /// Gets or sets fido2methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fido2Methods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fido2Methods")]
         public IAuthenticationFido2MethodsCollectionPage Fido2Methods { get; set; }
     
         /// <summary>
         /// Gets or sets methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "methods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("methods")]
         public IAuthenticationMethodsCollectionPage Methods { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public IAuthenticationOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets passwordless microsoft authenticator methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordlessMicrosoftAuthenticatorMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordlessMicrosoftAuthenticatorMethods")]
         public IAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionPage PasswordlessMicrosoftAuthenticatorMethods { get; set; }
     
         /// <summary>
         /// Gets or sets password methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passwordMethods")]
         public IAuthenticationPasswordMethodsCollectionPage PasswordMethods { get; set; }
     
         /// <summary>
         /// Gets or sets phone methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("phoneMethods")]
         public IAuthenticationPhoneMethodsCollectionPage PhoneMethods { get; set; }
     
     }

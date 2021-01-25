@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Terms And Conditions Group Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TermsAndConditionsGroupAssignment : Entity
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets target group id.
         /// Unique identifier of a group that the T&amp;C policy is assigned to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetGroupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetGroupId")]
         public string TargetGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets terms and conditions.
         /// Navigation link to the terms and conditions that are assigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsAndConditions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("termsAndConditions")]
         public TermsAndConditions TermsAndConditions { get; set; }
     
     }

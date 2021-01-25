@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MobileAppTroubleshootingAppStateHistory.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MobileAppTroubleshootingAppStateHistory : MobileAppTroubleshootingHistoryItem
     {
         /// <summary>
@@ -33,21 +31,21 @@ namespace Microsoft.Graph
         /// Gets or sets actionType.
         /// Action type for Intune Application. Possible values are: unknown, installCommandSent, installed, uninstalled, userRequestedInstall.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionType")]
         public MobileAppActionType? ActionType { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
         /// Error code for the failure, empty if no failure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets runState.
         /// Status of the item. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runState")]
         public RunState? RunState { get; set; }
     
     }

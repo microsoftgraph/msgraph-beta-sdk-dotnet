@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Decimal Text Box.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationDecimalTextBox : GroupPolicyPresentation
     {
     
@@ -34,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets default value.
         /// An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultValue")]
         public Int64? DefaultValue { get; set; }
     
         /// <summary>
         /// Gets or sets max value.
         /// An unsigned integer that specifies the maximum allowed value. The default value is 9999.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxValue")]
         public Int64? MaxValue { get; set; }
     
         /// <summary>
         /// Gets or sets min value.
         /// An unsigned integer that specifies the minimum allowed value. The default value is 0.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minValue")]
         public Int64? MinValue { get; set; }
     
         /// <summary>
         /// Gets or sets required.
         /// Requirement to enter a value in the parameter box. The default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("required")]
         public bool? Required { get; set; }
     
         /// <summary>
         /// Gets or sets spin.
         /// If true, create a spin control; otherwise, create a text box for numeric entry. The default value is true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("spin")]
         public bool? Spin { get; set; }
     
         /// <summary>
         /// Gets or sets spin step.
         /// An unsigned integer that specifies the increment of change for the spin control. The default value is 1.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spinStep", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("spinStep")]
         public Int64? SpinStep { get; set; }
     
     }

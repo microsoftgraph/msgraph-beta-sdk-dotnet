@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Value.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationValue : Entity
     {
     
@@ -34,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// The date and time the object was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the object was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets definition value.
         /// The group policy definition value associated with the presentation value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definitionValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("definitionValue")]
         public GroupPolicyDefinitionValue DefinitionValue { get; set; }
     
         /// <summary>
         /// Gets or sets presentation.
         /// The group policy presentation associated with the presentation value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presentation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("presentation")]
         public GroupPolicyPresentation Presentation { get; set; }
     
     }

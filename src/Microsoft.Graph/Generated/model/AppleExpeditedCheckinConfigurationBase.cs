@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Apple Expedited Checkin Configuration Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AppleExpeditedCheckinConfigurationBase : DeviceConfiguration
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets enable expedited checkin.
         /// Gets or sets whether to enable expedited device check-ins.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableExpeditedCheckin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableExpeditedCheckin")]
         public bool? EnableExpeditedCheckin { get; set; }
     
     }

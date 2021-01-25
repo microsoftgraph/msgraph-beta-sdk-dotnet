@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Shared Email Domain Invitation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SharedEmailDomainInvitation : Entity
     {
     
@@ -33,19 +31,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets expiry time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiryTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expiryTime")]
         public DateTimeOffset? ExpiryTime { get; set; }
     
         /// <summary>
         /// Gets or sets invitation domain.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invitationDomain", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("invitationDomain")]
         public string InvitationDomain { get; set; }
     
         /// <summary>
         /// Gets or sets invitation status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invitationStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("invitationStatus")]
         public string InvitationStatus { get; set; }
     
     }

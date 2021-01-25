@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Health Script Device State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceHealthScriptDeviceState : Entity
     {
     
@@ -34,77 +32,77 @@ namespace Microsoft.Graph
         /// Gets or sets detection state.
         /// Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("detectionState")]
         public RunState? DetectionState { get; set; }
     
         /// <summary>
         /// Gets or sets expected state update date time.
         /// The next timestamp of when the device health script is expected to execute
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expectedStateUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expectedStateUpdateDateTime")]
         public DateTimeOffset? ExpectedStateUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last state update date time.
         /// The last timestamp of when the device health script executed
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastStateUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastStateUpdateDateTime")]
         public DateTimeOffset? LastStateUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
         /// The last time that Intune Managment Extension synced with Intune
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets post remediation detection script error.
         /// Error from the detection script after remediation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postRemediationDetectionScriptError", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postRemediationDetectionScriptError")]
         public string PostRemediationDetectionScriptError { get; set; }
     
         /// <summary>
         /// Gets or sets post remediation detection script output.
         /// Detection script output after remediation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postRemediationDetectionScriptOutput", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postRemediationDetectionScriptOutput")]
         public string PostRemediationDetectionScriptOutput { get; set; }
     
         /// <summary>
         /// Gets or sets pre remediation detection script error.
         /// Error from the detection script before remediation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preRemediationDetectionScriptError", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preRemediationDetectionScriptError")]
         public string PreRemediationDetectionScriptError { get; set; }
     
         /// <summary>
         /// Gets or sets pre remediation detection script output.
         /// Output of the detection script before remediation
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preRemediationDetectionScriptOutput", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preRemediationDetectionScriptOutput")]
         public string PreRemediationDetectionScriptOutput { get; set; }
     
         /// <summary>
         /// Gets or sets remediation script error.
         /// Error output of the remediation script
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationScriptError", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remediationScriptError")]
         public string RemediationScriptError { get; set; }
     
         /// <summary>
         /// Gets or sets remediation state.
         /// Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediationState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remediationState")]
         public RemediationState? RemediationState { get; set; }
     
         /// <summary>
         /// Gets or sets managed device.
         /// The managed device on which the device health script executed
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevice", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDevice")]
         public ManagedDevice ManagedDevice { get; set; }
     
     }

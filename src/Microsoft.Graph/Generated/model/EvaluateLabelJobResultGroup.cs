@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EvaluateLabelJobResultGroup.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<EvaluateLabelJobResultGroup>))]
     public partial class EvaluateLabelJobResultGroup
     {
         /// <summary>
@@ -33,25 +31,25 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets automatic.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "automatic", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("automatic")]
         public EvaluateLabelJobResult Automatic { get; set; }
     
         /// <summary>
         /// Gets or sets recommended.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommended", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recommended")]
         public EvaluateLabelJobResult Recommended { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

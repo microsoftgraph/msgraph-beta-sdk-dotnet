@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IIdentityProviderAvailableProviderTypesRequestBuilder.
     /// </summary>
-    public partial interface IIdentityProviderAvailableProviderTypesRequestBuilder
+    public partial interface IIdentityProviderAvailableProviderTypesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

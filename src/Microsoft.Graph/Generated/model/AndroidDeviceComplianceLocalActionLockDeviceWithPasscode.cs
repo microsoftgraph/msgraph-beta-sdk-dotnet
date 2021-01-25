@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Compliance Local Action Lock Device With Passcode.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidDeviceComplianceLocalActionLockDeviceWithPasscode : AndroidDeviceComplianceLocalActionBase
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets passcode.
         /// Passcode to reset to Android device. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passcode")]
         public string Passcode { get; set; }
     
         /// <summary>
         /// Gets or sets passcode sign in failure count before wipe.
         /// Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeSignInFailureCountBeforeWipe", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("passcodeSignInFailureCountBeforeWipe")]
         public Int32? PasscodeSignInFailureCountBeforeWipe { get; set; }
     
     }

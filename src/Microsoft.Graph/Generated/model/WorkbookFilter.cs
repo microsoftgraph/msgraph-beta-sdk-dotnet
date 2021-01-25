@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook Filter.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkbookFilter : Entity
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets criteria.
         /// The currently applied filter on the given column. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criteria", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("criteria")]
         public WorkbookFilterCriteria Criteria { get; set; }
     
     }

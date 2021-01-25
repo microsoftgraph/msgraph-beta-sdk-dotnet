@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android For Work Mobile App Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration
     {
     
@@ -34,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets package id.
         /// Android For Work app configuration package id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "packageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("packageId")]
         public string PackageId { get; set; }
     
         /// <summary>
         /// Gets or sets payload json.
         /// Android For Work app configuration JSON payload.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadJson", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadJson")]
         public string PayloadJson { get; set; }
     
         /// <summary>
         /// Gets or sets permission actions.
         /// List of Android app permissions and corresponding permission actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permissionActions")]
         public IEnumerable<AndroidPermissionAction> PermissionActions { get; set; }
     
         /// <summary>
         /// Gets or sets profile applicability.
         /// Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileApplicability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileApplicability")]
         public AndroidProfileApplicability? ProfileApplicability { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph.TermStore
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Group : Microsoft.Graph.Entity
     {
     
@@ -34,35 +32,35 @@ namespace Microsoft.Graph.TermStore
         /// Gets or sets created date time.
         /// Date and time of group creation. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description giving details on the term usage.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
         /// Returns type of group. Possible values are 'global', 'system' and 'siteCollection'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scope")]
         public TermGroupScope? Scope { get; set; }
     
         /// <summary>
         /// Gets or sets sets.
         /// All sets under the group in a term [store].
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sets")]
         public IGroupSetsCollectionPage Sets { get; set; }
     
     }

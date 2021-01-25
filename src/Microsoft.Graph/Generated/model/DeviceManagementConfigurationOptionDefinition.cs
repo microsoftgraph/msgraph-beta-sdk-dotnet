@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationOptionDefinition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationOptionDefinition>))]
     public partial class DeviceManagementConfigurationOptionDefinition
     {
         /// <summary>
@@ -34,68 +32,68 @@ namespace Microsoft.Graph
         /// Gets or sets dependedOnBy.
         /// List of Settings that depends on this option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependedOnBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dependedOnBy")]
         public IEnumerable<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy { get; set; }
     
         /// <summary>
         /// Gets or sets dependentOn.
         /// List of dependent settings for this option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependentOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dependentOn")]
         public IEnumerable<DeviceManagementConfigurationDependentOn> DependentOn { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// Friendly name of the option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets helpText.
         /// Help text of the option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "helpText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("helpText")]
         public string HelpText { get; set; }
     
         /// <summary>
         /// Gets or sets itemId.
         /// Identifier of option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemId")]
         public string ItemId { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Name of the option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets optionValue.
         /// Value of the option
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "optionValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("optionValue")]
         public DeviceManagementConfigurationSettingValue OptionValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

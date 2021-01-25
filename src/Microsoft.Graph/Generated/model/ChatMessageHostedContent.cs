@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Chat Message Hosted Content.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ChatMessageHostedContent : Entity
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets content bytes.
         /// Write-only. When posting new chat message hosted content, represents the bytes of the payload. These are represented as a base64Encoded string.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentBytes")]
         public byte[] ContentBytes { get; set; }
     
         /// <summary>
         /// Gets or sets content type.
         /// Write-only. When posting new chat message hosted content, represents the type of content, such as image/png.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentType")]
         public string ContentType { get; set; }
     
     }

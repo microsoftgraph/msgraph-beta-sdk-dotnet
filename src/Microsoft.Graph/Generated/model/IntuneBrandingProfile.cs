@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Intune Branding Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IntuneBrandingProfile : Entity
     {
     
@@ -34,224 +32,224 @@ namespace Microsoft.Graph
         /// Gets or sets company portal blocked actions.
         /// Collection of blocked actions on the company portal as per platform and device ownership types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyPortalBlockedActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("companyPortalBlockedActions")]
         public IEnumerable<CompanyPortalBlockedAction> CompanyPortalBlockedActions { get; set; }
     
         /// <summary>
         /// Gets or sets contact itemail address.
         /// E-mail address of the person/organization responsible for IT support
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITEmailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contactITEmailAddress")]
         public string ContactITEmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets contact itname.
         /// Name of the person/organization responsible for IT support
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contactITName")]
         public string ContactITName { get; set; }
     
         /// <summary>
         /// Gets or sets contact itnotes.
         /// Text comments regarding the person/organization responsible for IT support
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITNotes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contactITNotes")]
         public string ContactITNotes { get; set; }
     
         /// <summary>
         /// Gets or sets contact itphone number.
         /// Phone number of the person/organization responsible for IT support
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contactITPhoneNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contactITPhoneNumber")]
         public string ContactITPhoneNumber { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// Time when the BrandingProfile was created
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets custom can see privacy message.
         /// Text comments regarding what the admin has access to on the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customCanSeePrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customCanSeePrivacyMessage")]
         public string CustomCanSeePrivacyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets custom cant see privacy message.
         /// Text comments regarding what the admin doesn't have access to on the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customCantSeePrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customCantSeePrivacyMessage")]
         public string CustomCantSeePrivacyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets custom privacy message.
         /// Text comments regarding what the admin doesn't have access to on the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customPrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customPrivacyMessage")]
         public string CustomPrivacyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets disable client telemetry.
         /// Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableClientTelemetry", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("disableClientTelemetry")]
         public bool? DisableClientTelemetry { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Company/organization name that is displayed to end users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment availability.
         /// Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentAvailability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentAvailability")]
         public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
     
         /// <summary>
         /// Gets or sets is default profile.
         /// Boolean that represents whether the profile is used as default or not
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultProfile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefaultProfile")]
         public bool? IsDefaultProfile { get; set; }
     
         /// <summary>
         /// Gets or sets is factory reset disabled.
         /// Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFactoryResetDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isFactoryResetDisabled")]
         public bool? IsFactoryResetDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets is remove device disabled.
         /// Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemoveDeviceDisabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRemoveDeviceDisabled")]
         public bool? IsRemoveDeviceDisabled { get; set; }
     
         /// <summary>
         /// Gets or sets landing page customized image.
         /// Customized image displayed in Company Portal apps landing page
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "landingPageCustomizedImage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("landingPageCustomizedImage")]
         public MimeContent LandingPageCustomizedImage { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Time when the BrandingProfile was last modified
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets light background logo.
         /// Logo image displayed in Company Portal apps which have a light background behind the logo
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lightBackgroundLogo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lightBackgroundLogo")]
         public MimeContent LightBackgroundLogo { get; set; }
     
         /// <summary>
         /// Gets or sets online support site name.
         /// Display name of the company/organization’s IT helpdesk site
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onlineSupportSiteName")]
         public string OnlineSupportSiteName { get; set; }
     
         /// <summary>
         /// Gets or sets online support site url.
         /// URL to the company/organization’s IT helpdesk site
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineSupportSiteUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onlineSupportSiteUrl")]
         public string OnlineSupportSiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets privacy url.
         /// URL to the company/organization’s privacy policy
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("privacyUrl")]
         public string PrivacyUrl { get; set; }
     
         /// <summary>
         /// Gets or sets profile description.
         /// Description of the profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileDescription")]
         public string ProfileDescription { get; set; }
     
         /// <summary>
         /// Gets or sets profile name.
         /// Name of the profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileName")]
         public string ProfileName { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of scope tags assigned to the branding profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets send device ownership change push notification.
         /// Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendDeviceOwnershipChangePushNotification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sendDeviceOwnershipChangePushNotification")]
         public bool? SendDeviceOwnershipChangePushNotification { get; set; }
     
         /// <summary>
         /// Gets or sets show azure adenterprise apps.
         /// Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showAzureADEnterpriseApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showAzureADEnterpriseApps")]
         public bool? ShowAzureADEnterpriseApps { get; set; }
     
         /// <summary>
         /// Gets or sets show display name next to logo.
         /// Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showDisplayNameNextToLogo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showDisplayNameNextToLogo")]
         public bool? ShowDisplayNameNextToLogo { get; set; }
     
         /// <summary>
         /// Gets or sets show logo.
         /// Boolean that represents whether the administrator-supplied logo images are shown or not
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showLogo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showLogo")]
         public bool? ShowLogo { get; set; }
     
         /// <summary>
         /// Gets or sets show office web apps.
         /// Boolean that indicates if Office WebApps will be shown in Company Portal
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showOfficeWebApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showOfficeWebApps")]
         public bool? ShowOfficeWebApps { get; set; }
     
         /// <summary>
         /// Gets or sets theme color.
         /// Primary theme color used in the Company Portal applications and web portal
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "themeColor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("themeColor")]
         public RgbColor ThemeColor { get; set; }
     
         /// <summary>
         /// Gets or sets theme color logo.
         /// Logo image displayed in Company Portal apps which have a theme color background behind the logo
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "themeColorLogo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("themeColorLogo")]
         public MimeContent ThemeColorLogo { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the branding profile
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IIntuneBrandingProfileAssignmentsCollectionPage Assignments { get; set; }
     
     }

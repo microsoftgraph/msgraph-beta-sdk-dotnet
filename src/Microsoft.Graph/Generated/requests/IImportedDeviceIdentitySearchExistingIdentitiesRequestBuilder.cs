@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IImportedDeviceIdentitySearchExistingIdentitiesRequestBuilder.
     /// </summary>
-    public partial interface IImportedDeviceIdentitySearchExistingIdentitiesRequestBuilder
+    public partial interface IImportedDeviceIdentitySearchExistingIdentitiesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

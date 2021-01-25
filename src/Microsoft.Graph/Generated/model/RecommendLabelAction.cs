@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RecommendLabelAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class RecommendLabelAction : InformationProtectionAction
     {
         /// <summary>
@@ -33,28 +31,28 @@ namespace Microsoft.Graph
         /// Gets or sets actions.
         /// Actions to take if the label is accepted by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actions")]
         public IEnumerable<InformationProtectionAction> Actions { get; set; }
     
         /// <summary>
         /// Gets or sets actionSource.
         /// Possible values are: manual, automatic, recommended, default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionSource")]
         public ActionSource? ActionSource { get; set; }
     
         /// <summary>
         /// Gets or sets label.
         /// The label that is being recommended.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("label")]
         public LabelDetails Label { get; set; }
     
         /// <summary>
         /// Gets or sets responsibleSensitiveTypeIds.
         /// The sensitive information type GUIDs that caused the recommendation to be given.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsibleSensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("responsibleSensitiveTypeIds")]
         public IEnumerable<Guid> ResponsibleSensitiveTypeIds { get; set; }
     
     }

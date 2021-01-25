@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ExpressionEvaluationDetails.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ExpressionEvaluationDetails>))]
     public partial class ExpressionEvaluationDetails
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets expression.
         /// Represents expression which has been evaluated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expression", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expression")]
         public string Expression { get; set; }
     
         /// <summary>
         /// Gets or sets expressionEvaluationDetails.
         /// Represents the details of the evaluation of the expression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressionEvaluationDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expressionEvaluationDetails")]
         public IEnumerable<ExpressionEvaluationDetails> ExpressionEvaluationDetailsProperty { get; set; }
     
         /// <summary>
         /// Gets or sets expressionResult.
         /// Represents the value of the result of the current expression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressionResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expressionResult")]
         public bool? ExpressionResult { get; set; }
     
         /// <summary>
         /// Gets or sets propertyToEvaluate.
         /// Defines the name of the property and the value of that property.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propertyToEvaluate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("propertyToEvaluate")]
         public PropertyToEvaluate PropertyToEvaluate { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

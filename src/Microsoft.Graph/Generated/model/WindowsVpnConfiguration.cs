@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Vpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsVpnConfiguration : DeviceConfiguration
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets connection name.
         /// Connection name displayed to the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionName")]
         public string ConnectionName { get; set; }
     
         /// <summary>
         /// Gets or sets custom xml.
         /// Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customXml", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customXml")]
         public byte[] CustomXml { get; set; }
     
         /// <summary>
         /// Gets or sets servers.
         /// List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servers")]
         public IEnumerable<VpnServer> Servers { get; set; }
     
     }

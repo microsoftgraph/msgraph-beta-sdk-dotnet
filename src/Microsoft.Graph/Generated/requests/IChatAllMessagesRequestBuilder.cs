@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IChatAllMessagesRequestBuilder.
     /// </summary>
-    public partial interface IChatAllMessagesRequestBuilder
+    public partial interface IChatAllMessagesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

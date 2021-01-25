@@ -7,6 +7,7 @@ pr:
   branches:
     include:
       - master
+      - feature/2.0
   paths:
     exclude:
       - .github/*
@@ -24,10 +25,7 @@ pr:
 trigger: none # will disable CI builds entirely
 
 pool:
-  name: Hosted VS2017
-  demands:
-  - msbuild
-  - vstest
+  vmImage: 'windows-latest'
 
 steps:
 - checkout: self

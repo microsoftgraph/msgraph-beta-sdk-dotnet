@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Approval.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Approval : Entity
     {
     
@@ -33,13 +31,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets completed steps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedSteps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedSteps")]
         public IApprovalCompletedStepsCollectionPage CompletedSteps { get; set; }
     
         /// <summary>
         /// Gets or sets pending steps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingSteps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingSteps")]
         public IApprovalPendingStepsCollectionPage PendingSteps { get; set; }
     
     }

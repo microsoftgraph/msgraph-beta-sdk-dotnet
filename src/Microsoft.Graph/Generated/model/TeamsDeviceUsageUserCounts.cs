@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Teams Device Usage User Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamsDeviceUsageUserCounts : Entity
     {
     
@@ -33,55 +31,55 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets android phone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidPhone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("androidPhone")]
         public Int64? AndroidPhone { get; set; }
     
         /// <summary>
         /// Gets or sets ios.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ios", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ios")]
         public Int64? Ios { get; set; }
     
         /// <summary>
         /// Gets or sets mac.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mac", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mac")]
         public Int64? Mac { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportDate")]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets web.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "web", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("web")]
         public Int64? Web { get; set; }
     
         /// <summary>
         /// Gets or sets windows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windows")]
         public Int64? Windows { get; set; }
     
         /// <summary>
         /// Gets or sets windows phone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsPhone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsPhone")]
         public Int64? WindowsPhone { get; set; }
     
     }

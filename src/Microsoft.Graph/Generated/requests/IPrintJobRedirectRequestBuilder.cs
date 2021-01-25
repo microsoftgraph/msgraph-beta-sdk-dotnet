@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPrintJobRedirectRequestBuilder.
     /// </summary>
-    public partial interface IPrintJobRedirectRequestBuilder
+    public partial interface IPrintJobRedirectRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

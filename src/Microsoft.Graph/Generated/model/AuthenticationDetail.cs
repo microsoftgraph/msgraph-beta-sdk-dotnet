@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AuthenticationDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationDetail>))]
     public partial class AuthenticationDetail
     {
         /// <summary>
@@ -34,54 +32,54 @@ namespace Microsoft.Graph
         /// Gets or sets authenticationMethod.
         /// The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethod")]
         public string AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationMethodDetail.
         /// Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodDetail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethodDetail")]
         public string AuthenticationMethodDetail { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepDateTime.
         /// Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationStepDateTime")]
         public DateTimeOffset? AuthenticationStepDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepRequirement.
         /// The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepRequirement", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationStepRequirement")]
         public string AuthenticationStepRequirement { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepResultDetail.
         /// Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepResultDetail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationStepResultDetail")]
         public string AuthenticationStepResultDetail { get; set; }
     
         /// <summary>
         /// Gets or sets succeeded.
         /// Indicates the status of the authentication step. Possible values: succeeded, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeeded", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("succeeded")]
         public bool? Succeeded { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

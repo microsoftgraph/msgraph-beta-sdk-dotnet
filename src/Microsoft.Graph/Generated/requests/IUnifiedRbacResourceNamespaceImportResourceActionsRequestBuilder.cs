@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUnifiedRbacResourceNamespaceImportResourceActionsRequestBuilder.
     /// </summary>
-    public partial interface IUnifiedRbacResourceNamespaceImportResourceActionsRequestBuilder
+    public partial interface IUnifiedRbacResourceNamespaceImportResourceActionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

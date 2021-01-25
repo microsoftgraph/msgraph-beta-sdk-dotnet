@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DetectedSensitiveContent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DetectedSensitiveContent : DetectedSensitiveContentBase
     {
         /// <summary>
@@ -32,31 +30,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets classificationAttributes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationAttributes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classificationAttributes")]
         public IEnumerable<ClassificationAttribute> ClassificationAttributes { get; set; }
     
         /// <summary>
         /// Gets or sets classificationMethod.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classificationMethod")]
         public ClassificationMethod? ClassificationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets matches.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matches", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matches")]
         public IEnumerable<SensitiveContentLocation> Matches { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scope")]
         public SensitiveTypeScope? Scope { get; set; }
     
         /// <summary>
         /// Gets or sets sensitiveTypeSource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypeSource")]
         public SensitiveTypeSource? SensitiveTypeSource { get; set; }
     
     }

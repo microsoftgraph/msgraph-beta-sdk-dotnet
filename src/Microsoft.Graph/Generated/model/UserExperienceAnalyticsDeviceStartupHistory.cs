@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Device Startup History.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsDeviceStartupHistory : Entity
     {
     
@@ -34,112 +32,112 @@ namespace Microsoft.Graph
         /// Gets or sets core boot time in ms.
         /// The user experience analytics device core boot time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coreBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("coreBootTimeInMs")]
         public Int32? CoreBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets core login time in ms.
         /// The user experience analytics device core login time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coreLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("coreLoginTimeInMs")]
         public Int32? CoreLoginTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// The user experience analytics device id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets feature update boot time in ms.
         /// The user experience analytics device feature update time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureUpdateBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("featureUpdateBootTimeInMs")]
         public Int32? FeatureUpdateBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets group policy boot time in ms.
         /// The User experience analytics Device group policy boot time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupPolicyBootTimeInMs")]
         public Int32? GroupPolicyBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets group policy login time in ms.
         /// The User experience analytics Device group policy login time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupPolicyLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupPolicyLoginTimeInMs")]
         public Int32? GroupPolicyLoginTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets is feature update.
         /// The user experience analytics device boot record is a feature update.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFeatureUpdate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isFeatureUpdate")]
         public bool? IsFeatureUpdate { get; set; }
     
         /// <summary>
         /// Gets or sets is first login.
         /// The user experience analytics device first login.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFirstLogin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isFirstLogin")]
         public bool? IsFirstLogin { get; set; }
     
         /// <summary>
         /// Gets or sets operating system version.
         /// The user experience analytics device boot record's operating system version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }
     
         /// <summary>
         /// Gets or sets responsive desktop time in ms.
         /// The user experience analytics responsive desktop time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsiveDesktopTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("responsiveDesktopTimeInMs")]
         public Int32? ResponsiveDesktopTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets restart category.
         /// OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restartCategory")]
         public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory { get; set; }
     
         /// <summary>
         /// Gets or sets restart fault bucket.
         /// OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartFaultBucket", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restartFaultBucket")]
         public string RestartFaultBucket { get; set; }
     
         /// <summary>
         /// Gets or sets restart stop code.
         /// OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartStopCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("restartStopCode")]
         public string RestartStopCode { get; set; }
     
         /// <summary>
         /// Gets or sets start time.
         /// The user experience analytics device boot start time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startTime")]
         public DateTimeOffset? StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets total boot time in ms.
         /// The user experience analytics device total boot time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalBootTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalBootTimeInMs")]
         public Int32? TotalBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets total login time in ms.
         /// The user experience analytics device total login time in milliseconds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalLoginTimeInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalLoginTimeInMs")]
         public Int32? TotalLoginTimeInMs { get; set; }
     
     }

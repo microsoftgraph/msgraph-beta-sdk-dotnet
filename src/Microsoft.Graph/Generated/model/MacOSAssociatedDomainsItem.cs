@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOSAssociatedDomainsItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSAssociatedDomainsItem>))]
     public partial class MacOSAssociatedDomainsItem
     {
         /// <summary>
@@ -34,33 +32,33 @@ namespace Microsoft.Graph
         /// Gets or sets applicationIdentifier.
         /// The application identifier of the app to associate domains with.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationIdentifier")]
         public string ApplicationIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets directDownloadsEnabled.
         /// Determines whether data should be downloaded directly or via a CDN.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directDownloadsEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directDownloadsEnabled")]
         public bool? DirectDownloadsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets domains.
         /// The list of domains to associate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domains", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domains")]
         public IEnumerable<string> Domains { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

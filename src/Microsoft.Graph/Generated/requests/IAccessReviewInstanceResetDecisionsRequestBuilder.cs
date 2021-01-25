@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccessReviewInstanceResetDecisionsRequestBuilder.
     /// </summary>
-    public partial interface IAccessReviewInstanceResetDecisionsRequestBuilder
+    public partial interface IAccessReviewInstanceResetDecisionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

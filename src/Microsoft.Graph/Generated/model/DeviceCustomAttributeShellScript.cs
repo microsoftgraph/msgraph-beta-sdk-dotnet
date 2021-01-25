@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Custom Attribute Shell Script.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceCustomAttributeShellScript : Entity
     {
     
@@ -34,105 +32,105 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// The date and time the device management script was created. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets custom attribute name.
         /// The name of the custom attribute.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customAttributeName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customAttributeName")]
         public string CustomAttributeName { get; set; }
     
         /// <summary>
         /// Gets or sets custom attribute type.
         /// The expected type of the custom attribute's value. Possible values are: integer, string, dateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customAttributeType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customAttributeType")]
         public DeviceCustomAttributeValueType? CustomAttributeType { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Optional description for the device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets file name.
         /// Script file name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileName")]
         public string FileName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the device management script was last modified. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tag IDs for this PowerShellScript instance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets run as account.
         /// Indicates the type of execution context. Possible values are: system, user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runAsAccount")]
         public RunAsAccountType? RunAsAccount { get; set; }
     
         /// <summary>
         /// Gets or sets script content.
         /// The script content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scriptContent")]
         public byte[] ScriptContent { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IDeviceCustomAttributeShellScriptAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets device run states.
         /// List of run states for this script across all devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRunStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceRunStates")]
         public IDeviceCustomAttributeShellScriptDeviceRunStatesCollectionPage DeviceRunStates { get; set; }
     
         /// <summary>
         /// Gets or sets group assignments.
         /// The list of group assignments for the device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupAssignments")]
         public IDeviceCustomAttributeShellScriptGroupAssignmentsCollectionPage GroupAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets run summary.
         /// Run summary for device management script.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runSummary")]
         public DeviceManagementScriptRunSummary RunSummary { get; set; }
     
         /// <summary>
         /// Gets or sets user run states.
         /// List of run states for this script across all users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRunStates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userRunStates")]
         public IDeviceCustomAttributeShellScriptUserRunStatesCollectionPage UserRunStates { get; set; }
     
     }

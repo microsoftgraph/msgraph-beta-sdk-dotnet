@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITimeCardClockInRequestBuilder.
     /// </summary>
-    public partial interface ITimeCardClockInRequestBuilder
+    public partial interface ITimeCardClockInRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

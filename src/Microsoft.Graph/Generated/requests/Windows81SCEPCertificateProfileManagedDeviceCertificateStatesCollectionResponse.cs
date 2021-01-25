@@ -9,25 +9,23 @@
 namespace Microsoft.Graph
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class Windows81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="IWindows81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionPage"/> value.
         /// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public IWindows81SCEPCertificateProfileManagedDeviceCertificateStatesCollectionPage Value { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

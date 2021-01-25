@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RegistrationAndResetTarget.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<RegistrationAndResetTarget>))]
     public partial class RegistrationAndResetTarget
     {
         /// <summary>
@@ -33,37 +31,37 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets minAuthMethodsToRegister.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minAuthMethodsToRegister", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minAuthMethodsToRegister")]
         public Int32? MinAuthMethodsToRegister { get; set; }
     
         /// <summary>
         /// Gets or sets minAuthMethodsToReset.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minAuthMethodsToReset", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minAuthMethodsToReset")]
         public Int32? MinAuthMethodsToReset { get; set; }
     
         /// <summary>
         /// Gets or sets targetType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetType")]
         public AuthenticationMethodTargetType? TargetType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

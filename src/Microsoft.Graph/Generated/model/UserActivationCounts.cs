@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserActivationCounts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserActivationCounts>))]
     public partial class UserActivationCounts
     {
         /// <summary>
@@ -34,68 +32,68 @@ namespace Microsoft.Graph
         /// Gets or sets activatedOnSharedComputer.
         /// True if the user used the product on a shared computer before.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activatedOnSharedComputer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activatedOnSharedComputer")]
         public bool? ActivatedOnSharedComputer { get; set; }
     
         /// <summary>
         /// Gets or sets android.
         /// The activation count on an Android device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "android", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("android")]
         public Int64? Android { get; set; }
     
         /// <summary>
         /// Gets or sets ios.
         /// The activation count on iOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ios", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ios")]
         public Int64? Ios { get; set; }
     
         /// <summary>
         /// Gets or sets lastActivatedDate.
         /// The date of the latest activation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivatedDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivatedDate")]
         public Date LastActivatedDate { get; set; }
     
         /// <summary>
         /// Gets or sets mac.
         /// The activation count on Mac OS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mac", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mac")]
         public Int64? Mac { get; set; }
     
         /// <summary>
         /// Gets or sets productType.
         /// The product type, such as 'Microsoft 365 ProPlus'or 'Project Client'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productType")]
         public string ProductType { get; set; }
     
         /// <summary>
         /// Gets or sets windows.
         /// The activation count on Windows. This number includes every activation on any Windows computer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windows")]
         public Int64? Windows { get; set; }
     
         /// <summary>
         /// Gets or sets windows10Mobile.
         /// The activation count on Windows 10 mobile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10Mobile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windows10Mobile")]
         public Int64? Windows10Mobile { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

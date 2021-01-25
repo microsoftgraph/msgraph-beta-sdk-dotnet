@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Outlook Task.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OutlookTask : OutlookItem
     {
     
@@ -34,116 +32,116 @@ namespace Microsoft.Graph
         /// Gets or sets assigned to.
         /// The name of the person who has been assigned the task in Outlook. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedTo")]
         public string AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets body.
         /// The task body that typically contains information about the task. Note that only HTML type is supported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "body", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("body")]
         public ItemBody Body { get; set; }
     
         /// <summary>
         /// Gets or sets completed date time.
         /// The date in the specified time zone that the task was finished.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedDateTime")]
         public DateTimeTimeZone CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets due date time.
         /// The date in the specified time zone that the task is to be finished.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dueDateTime")]
         public DateTimeTimeZone DueDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets has attachments.
         /// Set to true if the task has attachments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasAttachments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets importance.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importance", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("importance")]
         public Importance? Importance { get; set; }
     
         /// <summary>
         /// Gets or sets is reminder on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReminderOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isReminderOn")]
         public bool? IsReminderOn { get; set; }
     
         /// <summary>
         /// Gets or sets owner.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("owner")]
         public string Owner { get; set; }
     
         /// <summary>
         /// Gets or sets parent folder id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentFolderId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parentFolderId")]
         public string ParentFolderId { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrence")]
         public PatternedRecurrence Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets reminder date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminderDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reminderDateTime")]
         public DateTimeTimeZone ReminderDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitivity")]
         public Sensitivity? Sensitivity { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeTimeZone StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public TaskStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subject")]
         public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.
         /// The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attachments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attachments")]
         public IOutlookTaskAttachmentsCollectionPage Attachments { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
         /// The collection of multi-value extended properties defined for the task. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multiValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("multiValueExtendedProperties")]
         public IOutlookTaskMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
         /// The collection of single-value extended properties defined for the task. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleValueExtendedProperties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("singleValueExtendedProperties")]
         public IOutlookTaskSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
     
     }

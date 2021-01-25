@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics App Health App Performance By App Version.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Entity
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets app crash count.
         /// The number of crashes for the app. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appCrashCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appCrashCount")]
         public Int32? AppCrashCount { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
         /// The friendly name of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app name.
         /// The name of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appName")]
         public string AppName { get; set; }
     
         /// <summary>
         /// Gets or sets app publisher.
         /// The publisher of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appPublisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appPublisher")]
         public string AppPublisher { get; set; }
     
         /// <summary>
         /// Gets or sets app usage duration.
         /// The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUsageDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appUsageDuration")]
         public Int32? AppUsageDuration { get; set; }
     
         /// <summary>
         /// Gets or sets app version.
         /// The version of the application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appVersion")]
         public string AppVersion { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
         /// The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meanTimeToFailureInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
     }

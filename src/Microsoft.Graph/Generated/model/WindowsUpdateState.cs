@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Update State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsUpdateState : Entity
     {
     
@@ -34,63 +32,63 @@ namespace Microsoft.Graph
         /// Gets or sets device display name.
         /// Device display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// The id of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets feature update version.
         /// The current feature update version of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureUpdateVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("featureUpdateVersion")]
         public string FeatureUpdateVersion { get; set; }
     
         /// <summary>
         /// Gets or sets last scan date time.
         /// The date time that the Windows Update Agent did a successful scan.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastScanDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastScanDateTime")]
         public DateTimeOffset? LastScanDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
         /// Last date time that the device sync with with Microsoft Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets quality update version.
         /// The Quality Update Version of the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityUpdateVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("qualityUpdateVersion")]
         public string QualityUpdateVersion { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Windows udpate status. Possible values are: upToDate, pendingInstallation, pendingReboot, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public WindowsUpdateStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The id of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// User principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
     }

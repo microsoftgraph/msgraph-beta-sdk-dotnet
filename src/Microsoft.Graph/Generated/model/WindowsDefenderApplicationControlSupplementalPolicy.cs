@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Defender Application Control Supplemental Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsDefenderApplicationControlSupplementalPolicy : Entity
     {
     
@@ -34,77 +32,77 @@ namespace Microsoft.Graph
         /// Gets or sets content.
         /// The WindowsDefenderApplicationControl supplemental policy content in byte array format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "content", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("content")]
         public byte[] Content { get; set; }
     
         /// <summary>
         /// Gets or sets content file name.
         /// The WindowsDefenderApplicationControl supplemental policy content's file name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentFileName")]
         public string ContentFileName { get; set; }
     
         /// <summary>
         /// Gets or sets creation date time.
         /// The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of WindowsDefenderApplicationControl supplemental policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of WindowsDefenderApplicationControl supplemental policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTagIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// The WindowsDefenderApplicationControl supplemental policy's version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IWindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets deploy summary.
         /// WindowsDefenderApplicationControl supplemental policy deployment summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploySummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploySummary")]
         public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary DeploySummary { get; set; }
     
         /// <summary>
         /// Gets or sets device statuses.
         /// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceStatuses")]
         public IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage DeviceStatuses { get; set; }
     
     }

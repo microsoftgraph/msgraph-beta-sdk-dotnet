@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSVpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSVpnConfiguration : AppleVpnConfiguration
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificate")]
         public MacOSCertificateProfileBase IdentityCertificate { get; set; }
     
     }

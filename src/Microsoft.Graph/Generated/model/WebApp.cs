@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Web App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WebApp : MobileApp
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets app url.
         /// The web app URL.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appUrl")]
         public string AppUrl { get; set; }
     
         /// <summary>
         /// Gets or sets use managed browser.
         /// Whether or not to use managed browser. This property is only applicable for Android and IOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "useManagedBrowser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("useManagedBrowser")]
         public bool? UseManagedBrowser { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows81Wifi Import Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows81WifiImportConfiguration : DeviceConfiguration
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets payload.
         /// Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payload", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payload")]
         public byte[] Payload { get; set; }
     
         /// <summary>
         /// Gets or sets payload file name.
         /// Payload file name (.xml).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadFileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("payloadFileName")]
         public string PayloadFileName { get; set; }
     
         /// <summary>
         /// Gets or sets profile name.
         /// Profile name displayed in the UI.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("profileName")]
         public string ProfileName { get; set; }
     
     }

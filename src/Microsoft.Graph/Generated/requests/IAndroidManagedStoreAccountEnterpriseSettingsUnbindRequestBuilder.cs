@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilder.
     /// </summary>
-    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilder
+    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

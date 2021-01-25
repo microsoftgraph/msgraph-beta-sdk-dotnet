@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Managed App Protection Policy Set Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedAppProtectionPolicySetItem : PolicySetItem
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets targeted app management levels.
         /// TargetedAppManagementLevels of the ManagedAppPolicySetItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedAppManagementLevels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedAppManagementLevels")]
         public string TargetedAppManagementLevels { get; set; }
     
     }

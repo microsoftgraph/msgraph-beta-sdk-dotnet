@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Item : Entity
     {
     
@@ -33,103 +31,103 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets base unit of measure id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "baseUnitOfMeasureId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("baseUnitOfMeasureId")]
         public Guid? BaseUnitOfMeasureId { get; set; }
     
         /// <summary>
         /// Gets or sets blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blocked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blocked")]
         public bool? Blocked { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets gtin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gtin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("gtin")]
         public string Gtin { get; set; }
     
         /// <summary>
         /// Gets or sets inventory.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inventory")]
         public Decimal? Inventory { get; set; }
     
         /// <summary>
         /// Gets or sets item category code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemCategoryCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemCategoryCode")]
         public string ItemCategoryCode { get; set; }
     
         /// <summary>
         /// Gets or sets item category id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemCategoryId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemCategoryId")]
         public Guid? ItemCategoryId { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("number")]
         public string Number { get; set; }
     
         /// <summary>
         /// Gets or sets price includes tax.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priceIncludesTax", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priceIncludesTax")]
         public bool? PriceIncludesTax { get; set; }
     
         /// <summary>
         /// Gets or sets tax group code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxGroupCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taxGroupCode")]
         public string TaxGroupCode { get; set; }
     
         /// <summary>
         /// Gets or sets tax group id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxGroupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taxGroupId")]
         public Guid? TaxGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets unit cost.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unitCost", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unitCost")]
         public Decimal? UnitCost { get; set; }
     
         /// <summary>
         /// Gets or sets unit price.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unitPrice", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unitPrice")]
         public Decimal? UnitPrice { get; set; }
     
         /// <summary>
         /// Gets or sets item category.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemCategory")]
         public ItemCategory ItemCategory { get; set; }
     
         /// <summary>
         /// Gets or sets picture.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "picture", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("picture")]
         public IItemPictureCollectionPage Picture { get; set; }
     
     }

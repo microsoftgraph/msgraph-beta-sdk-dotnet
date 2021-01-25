@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Sensitivity Label.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SensitivityLabel : Entity
     {
     
@@ -33,79 +31,79 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets applicable to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicableTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicableTo")]
         public SensitivityLabelTarget? ApplicableTo { get; set; }
     
         /// <summary>
         /// Gets or sets application mode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationMode")]
         public ApplicationMode? ApplicationMode { get; set; }
     
         /// <summary>
         /// Gets or sets assigned policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedPolicies")]
         public IEnumerable<LabelPolicy> AssignedPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets auto labeling.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoLabeling", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoLabeling")]
         public AutoLabeling AutoLabeling { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is default.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets is endpoint protection enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEndpointProtectionEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEndpointProtectionEnabled")]
         public bool? IsEndpointProtectionEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets label actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("labelActions")]
         public IEnumerable<LabelActionBase> LabelActions { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets tool tip.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "toolTip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("toolTip")]
         public string ToolTip { get; set; }
     
         /// <summary>
         /// Gets or sets sublabels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sublabels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sublabels")]
         public ISensitivityLabelSublabelsCollectionPage Sublabels { get; set; }
     
     }

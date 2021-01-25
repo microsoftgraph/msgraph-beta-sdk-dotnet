@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Resource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageResource : Entity
     {
     
@@ -34,83 +32,83 @@ namespace Microsoft.Graph
         /// Gets or sets added by.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addedBy")]
         public string AddedBy { get; set; }
     
         /// <summary>
         /// Gets or sets added on.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addedOn")]
         public DateTimeOffset? AddedOn { get; set; }
     
         /// <summary>
         /// Gets or sets attributes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attributes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("attributes")]
         public IEnumerable<AccessPackageResourceAttribute> Attributes { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// A description for the resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the resource, such as the application name, group name or site name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is pending onboarding.
         /// True if the resource is not yet available for assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPendingOnboarding", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isPendingOnboarding")]
         public bool? IsPendingOnboarding { get; set; }
     
         /// <summary>
         /// Gets or sets origin id.
         /// The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originId")]
         public string OriginId { get; set; }
     
         /// <summary>
         /// Gets or sets origin system.
         /// The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originSystem")]
         public string OriginSystem { get; set; }
     
         /// <summary>
         /// Gets or sets resource type.
         /// The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceType")]
         public string ResourceType { get; set; }
     
         /// <summary>
         /// Gets or sets url.
         /// A unique resource locator for the resource, such as the URL for signing a user into an application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource roles.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceRoles")]
         public IAccessPackageResourceAccessPackageResourceRolesCollectionPage AccessPackageResourceRoles { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource scopes.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScopes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceScopes")]
         public IAccessPackageResourceAccessPackageResourceScopesCollectionPage AccessPackageResourceScopes { get; set; }
     
     }

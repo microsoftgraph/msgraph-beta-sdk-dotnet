@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device App Management Task.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceAppManagementTask : Entity
     {
     
@@ -34,70 +32,70 @@ namespace Microsoft.Graph
         /// Gets or sets assigned to.
         /// The name or email of the admin this task is assigned to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedTo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedTo")]
         public string AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets category.
         /// The category. Possible values are: unknown, advancedThreatProtection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("category")]
         public DeviceAppManagementTaskCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The created date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets creator.
         /// The email address of the creator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creator")]
         public string Creator { get; set; }
     
         /// <summary>
         /// Gets or sets creator notes.
         /// Notes from the creator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creatorNotes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creatorNotes")]
         public string CreatorNotes { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets due date time.
         /// The due date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dueDateTime")]
         public DateTimeOffset? DueDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
         /// The priority. Possible values are: none, high, low.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priority")]
         public DeviceAppManagementTaskPriority? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The status. Possible values are: unknown, pending, active, completed, rejected.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public DeviceAppManagementTaskStatus? Status { get; set; }
     
     }

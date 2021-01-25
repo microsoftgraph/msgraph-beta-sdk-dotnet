@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceConfigurationAssignedAccessMultiModeProfilesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceConfigurationAssignedAccessMultiModeProfilesRequestBody
     {
     
         /// <summary>
         /// Gets or sets AssignedAccessMultiModeProfiles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedAccessMultiModeProfiles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignedAccessMultiModeProfiles")]
         public IEnumerable<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles { get; set; }
     
     }

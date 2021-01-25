@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceComplianceScriptAssignRequestBuilder.
     /// </summary>
-    public partial interface IDeviceComplianceScriptAssignRequestBuilder
+    public partial interface IDeviceComplianceScriptAssignRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

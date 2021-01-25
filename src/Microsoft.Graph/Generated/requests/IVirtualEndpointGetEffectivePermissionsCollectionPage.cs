@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IVirtualEndpointGetEffectivePermissionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<VirtualEndpointGetEffectivePermissionsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<VirtualEndpointGetEffectivePermissionsCollectionPage>))]
     public interface IVirtualEndpointGetEffectivePermissionsCollectionPage : ICollectionPage<string>
     {
         /// <summary>

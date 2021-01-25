@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office365Groups Activity Detail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Office365GroupsActivityDetail : Entity
     {
     
@@ -34,133 +32,133 @@ namespace Microsoft.Graph
         /// Gets or sets exchange mailbox storage used in bytes.
         /// The storage used of the group mailbox.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeMailboxStorageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchangeMailboxStorageUsedInBytes")]
         public Int64? ExchangeMailboxStorageUsedInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets exchange mailbox total item count.
         /// The number of items in the group mailbox.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeMailboxTotalItemCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchangeMailboxTotalItemCount")]
         public Int64? ExchangeMailboxTotalItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets exchange received email count.
         /// The number of email that the group mailbox received.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeReceivedEmailCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchangeReceivedEmailCount")]
         public Int64? ExchangeReceivedEmailCount { get; set; }
     
         /// <summary>
         /// Gets or sets external member count.
         /// The group external member count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalMemberCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalMemberCount")]
         public Int64? ExternalMemberCount { get; set; }
     
         /// <summary>
         /// Gets or sets group display name.
         /// The display name of the group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupDisplayName")]
         public string GroupDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets group id.
         /// The group id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
     
         /// <summary>
         /// Gets or sets group type.
         /// The group type. Possible values are: Public or Private.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupType")]
         public string GroupType { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
         /// Whether this user has been deleted or soft deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
         /// The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivityDate")]
         public Date LastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets member count.
         /// The group member count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberCount")]
         public Int64? MemberCount { get; set; }
     
         /// <summary>
         /// Gets or sets owner principal name.
         /// The group owner principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerPrincipalName")]
         public string OwnerPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// The number of days the report covers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// The latest date of the content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point active file count.
         /// The number of active files in SharePoint Group site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointActiveFileCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharePointActiveFileCount")]
         public Int64? SharePointActiveFileCount { get; set; }
     
         /// <summary>
         /// Gets or sets share point site storage used in bytes.
         /// The storage used by SharePoint Group site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointSiteStorageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharePointSiteStorageUsedInBytes")]
         public Int64? SharePointSiteStorageUsedInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets share point total file count.
         /// The total number of files in SharePoint Group site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointTotalFileCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharePointTotalFileCount")]
         public Int64? SharePointTotalFileCount { get; set; }
     
         /// <summary>
         /// Gets or sets yammer liked message count.
         /// The number of messages liked in Yammer groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerLikedMessageCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerLikedMessageCount")]
         public Int64? YammerLikedMessageCount { get; set; }
     
         /// <summary>
         /// Gets or sets yammer posted message count.
         /// The number of messages posted to Yammer groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerPostedMessageCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerPostedMessageCount")]
         public Int64? YammerPostedMessageCount { get; set; }
     
         /// <summary>
         /// Gets or sets yammer read message count.
         /// The number of messages read in Yammer groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerReadMessageCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerReadMessageCount")]
         public Int64? YammerReadMessageCount { get; set; }
     
     }

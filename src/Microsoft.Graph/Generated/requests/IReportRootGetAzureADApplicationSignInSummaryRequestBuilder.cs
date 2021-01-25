@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IReportRootGetAzureADApplicationSignInSummaryRequestBuilder.
     /// </summary>
-    public partial interface IReportRootGetAzureADApplicationSignInSummaryRequestBuilder
+    public partial interface IReportRootGetAzureADApplicationSignInSummaryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

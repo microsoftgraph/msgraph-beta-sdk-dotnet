@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Information Protection Label.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class InformationProtectionLabel : Entity
     {
     
@@ -34,48 +32,48 @@ namespace Microsoft.Graph
         /// Gets or sets color.
         /// The color that the UI should display for the label, if configured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "color", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("color")]
         public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The admin-defined description for the label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets is active.
         /// Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The plaintext name of the label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets parent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("parent")]
         public ParentLabelDetails Parent { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity.
         /// The sensitivity value of the label, where lower is less sensitive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitivity")]
         public Int32? Sensitivity { get; set; }
     
         /// <summary>
         /// Gets or sets tooltip.
         /// The tooltip that should be displayed for the label in a UI.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tooltip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tooltip")]
         public string Tooltip { get; set; }
     
     }

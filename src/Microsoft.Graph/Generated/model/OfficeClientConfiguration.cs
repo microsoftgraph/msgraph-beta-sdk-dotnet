@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office Client Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OfficeClientConfiguration : Entity
     {
     
@@ -34,56 +32,56 @@ namespace Microsoft.Graph
         /// Gets or sets checkin statuses.
         /// List of office Client check-in status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checkinStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("checkinStatuses")]
         public IEnumerable<OfficeClientCheckinStatus> CheckinStatuses { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Not yet documented
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Admin provided description of the office client configuration policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets policy payload.
         /// Policy settings JSON string in binary format, these values cannot be changed by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyPayload", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyPayload")]
         public Stream PolicyPayload { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
         /// Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets user checkin summary.
         /// User check-in summary for the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userCheckinSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userCheckinSummary")]
         public OfficeUserCheckinSummary UserCheckinSummary { get; set; }
     
         /// <summary>
         /// Gets or sets user preference payload.
         /// Preference settings JSON string in binary format, these values can be overridden by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPreferencePayload", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPreferencePayload")]
         public Stream UserPreferencePayload { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments for the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IOfficeClientConfigurationAssignmentsCollectionPage Assignments { get; set; }
     
     }

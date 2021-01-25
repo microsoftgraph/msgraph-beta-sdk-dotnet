@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Item Address.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ItemAddress : ItemFacet
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets detail.
         /// Details about the address itself.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("detail")]
         public PhysicalAddress Detail { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Friendly name the user has assigned to this address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets geo coordinates.
         /// The geocoordinates of the address.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geoCoordinates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("geoCoordinates")]
         public GeoCoordinates GeoCoordinates { get; set; }
     
     }

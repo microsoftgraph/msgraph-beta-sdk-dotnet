@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConfigManagerPolicySummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ConfigManagerPolicySummary>))]
     public partial class ConfigManagerPolicySummary
     {
         /// <summary>
@@ -34,54 +32,54 @@ namespace Microsoft.Graph
         /// Gets or sets compliantDeviceCount.
         /// The number of devices evaluated to be compliant by the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliantDeviceCount")]
         public Int32? CompliantDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets enforcedDeviceCount.
         /// The number of devices that have have been remediated by the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enforcedDeviceCount")]
         public Int32? EnforcedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets failedDeviceCount.
         /// The number of devices that failed to be evaluated by the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedDeviceCount")]
         public Int32? FailedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets nonCompliantDeviceCount.
         /// The number of devices evaluated to be noncompliant by the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nonCompliantDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nonCompliantDeviceCount")]
         public Int32? NonCompliantDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingDeviceCount.
         /// The number of devices that have acknowledged the policy but are pending evaluation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pendingDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pendingDeviceCount")]
         public Int32? PendingDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets targetedDeviceCount.
         /// The number of devices targeted by the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedDeviceCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedDeviceCount")]
         public Int32? TargetedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

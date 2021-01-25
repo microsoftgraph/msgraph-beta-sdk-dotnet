@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AssignmentReviewSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AssignmentReviewSettings>))]
     public partial class AssignmentReviewSettings
     {
         /// <summary>
@@ -34,54 +32,54 @@ namespace Microsoft.Graph
         /// Gets or sets durationInDays.
         /// The number of days to allow input from reviewers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("durationInDays")]
         public Int32? DurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
         /// If true, access reviews are required for assignments from this policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceType.
         /// The interval for recurrence, such as monthly or quarterly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrenceType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrenceType")]
         public string RecurrenceType { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
         /// If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewers")]
         public IEnumerable<UserSet> Reviewers { get; set; }
     
         /// <summary>
         /// Gets or sets reviewerType.
         /// Who should be asked to do the review, either Self or Reviewers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewerType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewerType")]
         public string ReviewerType { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
         /// When the first review should start.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

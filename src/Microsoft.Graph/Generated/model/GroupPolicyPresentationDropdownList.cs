@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Dropdown List.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationDropdownList : GroupPolicyPresentation
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets default item.
         /// Localized string value identifying the default choice of the list of items.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultItem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultItem")]
         public GroupPolicyPresentationDropdownListItem DefaultItem { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// Represents a set of localized display names and their associated values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("items")]
         public IEnumerable<GroupPolicyPresentationDropdownListItem> Items { get; set; }
     
         /// <summary>
         /// Gets or sets required.
         /// Requirement to enter a value in the parameter box. The default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("required")]
         public bool? Required { get; set; }
     
     }

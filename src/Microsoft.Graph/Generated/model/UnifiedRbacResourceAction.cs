@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Rbac Resource Action.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnifiedRbacResourceAction : Entity
     {
     
@@ -33,31 +31,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets action verb.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionVerb", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actionVerb")]
         public string ActionVerb { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets resource scope id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceScopeId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceScopeId")]
         public string ResourceScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets resource scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceScope")]
         public UnifiedRbacResourceScope ResourceScope { get; set; }
     
     }

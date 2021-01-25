@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Configuration User State Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceConfigurationUserStateSummary : Entity
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets compliant user count.
         /// Number of compliant users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliantUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliantUserCount")]
         public Int32? CompliantUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets conflict user count.
         /// Number of conflict users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflictUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conflictUserCount")]
         public Int32? ConflictUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets error user count.
         /// Number of error users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorUserCount")]
         public Int32? ErrorUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets non compliant user count.
         /// Number of NonCompliant users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nonCompliantUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nonCompliantUserCount")]
         public Int32? NonCompliantUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets not applicable user count.
         /// Number of not applicable users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notApplicableUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notApplicableUserCount")]
         public Int32? NotApplicableUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets remediated user count.
         /// Number of remediated users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remediatedUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remediatedUserCount")]
         public Int32? RemediatedUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets unknown user count.
         /// Number of unknown users
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unknownUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unknownUserCount")]
         public Int32? UnknownUserCount { get; set; }
     
     }

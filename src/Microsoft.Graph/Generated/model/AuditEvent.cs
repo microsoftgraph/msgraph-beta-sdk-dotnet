@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Audit Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AuditEvent : Entity
     {
     
@@ -34,77 +32,77 @@ namespace Microsoft.Graph
         /// Gets or sets activity.
         /// Friendly name of the activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activity")]
         public string Activity { get; set; }
     
         /// <summary>
         /// Gets or sets activity date time.
         /// The date time in UTC when the activity was performed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activity operation type.
         /// The HTTP operation type of the activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityOperationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityOperationType")]
         public string ActivityOperationType { get; set; }
     
         /// <summary>
         /// Gets or sets activity result.
         /// The result of the activity.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityResult", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityResult")]
         public string ActivityResult { get; set; }
     
         /// <summary>
         /// Gets or sets activity type.
         /// The type of activity that was being performed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityType")]
         public string ActivityType { get; set; }
     
         /// <summary>
         /// Gets or sets actor.
         /// AAD user and application that are associated with the audit event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actor")]
         public AuditActor Actor { get; set; }
     
         /// <summary>
         /// Gets or sets category.
         /// Audit category.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("category")]
         public string Category { get; set; }
     
         /// <summary>
         /// Gets or sets component name.
         /// Component name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "componentName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("componentName")]
         public string ComponentName { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
         /// The client request Id that is used to correlate activity within the system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "correlationId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("correlationId")]
         public Guid? CorrelationId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Event display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
         /// Resources being modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resources")]
         public IEnumerable<AuditResource> Resources { get; set; }
     
     }

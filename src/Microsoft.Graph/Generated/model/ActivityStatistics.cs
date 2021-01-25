@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Activity Statistics.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ActivityStatistics : Entity
     {
     
@@ -34,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets activity.
         /// The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activity")]
         public AnalyticsActivityType? Activity { get; set; }
     
         /// <summary>
         /// Gets or sets duration.
         /// Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("duration")]
         public Duration Duration { get; set; }
     
         /// <summary>
         /// Gets or sets end date.
         /// Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDate")]
         public Date EndDate { get; set; }
     
         /// <summary>
         /// Gets or sets start date.
         /// Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDate")]
         public Date StartDate { get; set; }
     
         /// <summary>
         /// Gets or sets time zone used.
         /// The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeZoneUsed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeZoneUsed")]
         public string TimeZoneUsed { get; set; }
     
     }

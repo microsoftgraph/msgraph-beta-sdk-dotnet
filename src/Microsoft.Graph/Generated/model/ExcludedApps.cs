@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ExcludedApps.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ExcludedApps>))]
     public partial class ExcludedApps
     {
         /// <summary>
@@ -34,117 +32,117 @@ namespace Microsoft.Graph
         /// Gets or sets access.
         /// The value for if MS Office Access should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "access", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("access")]
         public bool? Access { get; set; }
     
         /// <summary>
         /// Gets or sets bing.
         /// The value for if Microsoft Search as default should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bing")]
         public bool? Bing { get; set; }
     
         /// <summary>
         /// Gets or sets excel.
         /// The value for if MS Office Excel should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excel")]
         public bool? Excel { get; set; }
     
         /// <summary>
         /// Gets or sets groove.
         /// The value for if MS Office OneDrive for Business - Groove should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groove", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groove")]
         public bool? Groove { get; set; }
     
         /// <summary>
         /// Gets or sets infoPath.
         /// The value for if MS Office InfoPath should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "infoPath", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("infoPath")]
         public bool? InfoPath { get; set; }
     
         /// <summary>
         /// Gets or sets lync.
         /// The value for if MS Office Skype for Business - Lync should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lync", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lync")]
         public bool? Lync { get; set; }
     
         /// <summary>
         /// Gets or sets oneDrive.
         /// The value for if MS Office OneDrive should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDrive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oneDrive")]
         public bool? OneDrive { get; set; }
     
         /// <summary>
         /// Gets or sets oneNote.
         /// The value for if MS Office OneNote should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneNote", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("oneNote")]
         public bool? OneNote { get; set; }
     
         /// <summary>
         /// Gets or sets outlook.
         /// The value for if MS Office Outlook should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlook")]
         public bool? Outlook { get; set; }
     
         /// <summary>
         /// Gets or sets powerPoint.
         /// The value for if MS Office PowerPoint should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "powerPoint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("powerPoint")]
         public bool? PowerPoint { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
         /// The value for if MS Office Publisher should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publisher")]
         public bool? Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets sharePointDesigner.
         /// The value for if MS Office SharePointDesigner should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointDesigner", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharePointDesigner")]
         public bool? SharePointDesigner { get; set; }
     
         /// <summary>
         /// Gets or sets teams.
         /// The value for if MS Office Teams should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teams", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teams")]
         public bool? Teams { get; set; }
     
         /// <summary>
         /// Gets or sets visio.
         /// The value for if MS Office Visio should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visio", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visio")]
         public bool? Visio { get; set; }
     
         /// <summary>
         /// Gets or sets word.
         /// The value for if MS Office Word should be excluded or not.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "word", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("word")]
         public bool? Word { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Compliance Local Action Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidDeviceComplianceLocalActionBase : Entity
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets grace period in minutes.
         /// Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gracePeriodInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("gracePeriodInMinutes")]
         public Int32? GracePeriodInMinutes { get; set; }
     
     }

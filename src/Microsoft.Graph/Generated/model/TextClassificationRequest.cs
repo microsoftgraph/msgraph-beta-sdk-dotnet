@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Text Classification Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TextClassificationRequestObject : Entity
     {
     
@@ -33,31 +31,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets file extension.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileExtension", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileExtension")]
         public string FileExtension { get; set; }
     
         /// <summary>
         /// Gets or sets match tolerances to include.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchTolerancesToInclude", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("matchTolerancesToInclude")]
         public MlClassificationMatchTolerance? MatchTolerancesToInclude { get; set; }
     
         /// <summary>
         /// Gets or sets scopes to run.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scopesToRun", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scopesToRun")]
         public SensitiveTypeScope? ScopesToRun { get; set; }
     
         /// <summary>
         /// Gets or sets sensitive type ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypeIds")]
         public IEnumerable<string> SensitiveTypeIds { get; set; }
     
         /// <summary>
         /// Gets or sets text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
     }

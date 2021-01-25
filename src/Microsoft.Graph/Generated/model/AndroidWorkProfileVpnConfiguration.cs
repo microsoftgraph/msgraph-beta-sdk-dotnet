@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Work Profile Vpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidWorkProfileVpnConfiguration : DeviceConfiguration
     {
     
@@ -34,112 +32,112 @@ namespace Microsoft.Graph
         /// Gets or sets always on.
         /// Whether or not to enable always-on VPN connection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alwaysOn")]
         public bool? AlwaysOn { get; set; }
     
         /// <summary>
         /// Gets or sets always on lockdown.
         /// If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alwaysOnLockdown", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("alwaysOnLockdown")]
         public bool? AlwaysOnLockdown { get; set; }
     
         /// <summary>
         /// Gets or sets authentication method.
         /// Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethod")]
         public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets connection name.
         /// Connection name displayed to the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionName")]
         public string ConnectionName { get; set; }
     
         /// <summary>
         /// Gets or sets connection type.
         /// Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, paloAltoGlobalProtect, microsoftTunnel, netMotionMobility.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionType")]
         public AndroidWorkProfileVpnConnectionType? ConnectionType { get; set; }
     
         /// <summary>
         /// Gets or sets custom data.
         /// Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customData")]
         public IEnumerable<KeyValue> CustomData { get; set; }
     
         /// <summary>
         /// Gets or sets custom key value data.
         /// Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customKeyValueData", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customKeyValueData")]
         public IEnumerable<KeyValuePair> CustomKeyValueData { get; set; }
     
         /// <summary>
         /// Gets or sets fingerprint.
         /// Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fingerprint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fingerprint")]
         public string Fingerprint { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel site id.
         /// Microsoft Tunnel site ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelSiteId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftTunnelSiteId")]
         public string MicrosoftTunnelSiteId { get; set; }
     
         /// <summary>
         /// Gets or sets proxy server.
         /// Proxy server.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyServer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyServer")]
         public VpnProxyServer ProxyServer { get; set; }
     
         /// <summary>
         /// Gets or sets realm.
         /// Realm when connection type is set to Pulse Secure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "realm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("realm")]
         public string Realm { get; set; }
     
         /// <summary>
         /// Gets or sets role.
         /// Role when connection type is set to Pulse Secure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "role", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("role")]
         public string Role { get; set; }
     
         /// <summary>
         /// Gets or sets servers.
         /// List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("servers")]
         public IEnumerable<VpnServer> Servers { get; set; }
     
         /// <summary>
         /// Gets or sets targeted mobile apps.
         /// Targeted mobile apps. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedMobileApps")]
         public IEnumerable<AppListItem> TargetedMobileApps { get; set; }
     
         /// <summary>
         /// Gets or sets targeted package ids.
         /// Targeted App package IDs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedPackageIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedPackageIds")]
         public IEnumerable<string> TargetedPackageIds { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificate")]
         public AndroidWorkProfileCertificateProfileBase IdentityCertificate { get; set; }
     
     }

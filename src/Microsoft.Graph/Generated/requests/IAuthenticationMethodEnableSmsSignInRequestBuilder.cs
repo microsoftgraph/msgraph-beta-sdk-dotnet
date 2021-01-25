@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAuthenticationMethodEnableSmsSignInRequestBuilder.
     /// </summary>
-    public partial interface IAuthenticationMethodEnableSmsSignInRequestBuilder
+    public partial interface IAuthenticationMethodEnableSmsSignInRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

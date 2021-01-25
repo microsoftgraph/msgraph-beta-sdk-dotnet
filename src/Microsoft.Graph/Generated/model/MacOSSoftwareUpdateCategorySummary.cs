@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSSoftware Update Category Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSSoftwareUpdateCategorySummary : Entity
     {
     
@@ -34,63 +32,63 @@ namespace Microsoft.Graph
         /// Gets or sets device id.
         /// The device ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name of the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets failed update count.
         /// Number of failed updates on the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedUpdateCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("failedUpdateCount")]
         public Int32? FailedUpdateCount { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
         /// Last date time the report for this device was updated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets successful update count.
         /// Number of successful updates on the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulUpdateCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("successfulUpdateCount")]
         public Int32? SuccessfulUpdateCount { get; set; }
     
         /// <summary>
         /// Gets or sets total update count.
         /// Number of total updates on the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalUpdateCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalUpdateCount")]
         public Int32? TotalUpdateCount { get; set; }
     
         /// <summary>
         /// Gets or sets update category.
         /// Software update type. Possible values are: critical, configurationDataFile, firmware, other.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateCategory", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updateCategory")]
         public MacOSSoftwareUpdateCategory? UpdateCategory { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The user ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets update state summaries.
         /// Summary of the update states.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateStateSummaries", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updateStateSummaries")]
         public IMacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionPage UpdateStateSummaries { get; set; }
     
     }

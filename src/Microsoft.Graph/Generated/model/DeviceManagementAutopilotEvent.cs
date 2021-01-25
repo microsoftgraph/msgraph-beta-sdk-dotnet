@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Autopilot Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementAutopilotEvent : Entity
     {
     
@@ -34,168 +32,168 @@ namespace Microsoft.Graph
         /// Gets or sets account setup duration.
         /// Time spent in user ESP.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountSetupDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountSetupDuration")]
         public Duration AccountSetupDuration { get; set; }
     
         /// <summary>
         /// Gets or sets deployment duration.
         /// Autopilot deployment duration including enrollment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploymentDuration")]
         public Duration DeploymentDuration { get; set; }
     
         /// <summary>
         /// Gets or sets deployment end date time.
         /// Deployment end time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentEndDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploymentEndDateTime")]
         public DateTimeOffset? DeploymentEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deployment start date time.
         /// Deployment start time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentStartDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploymentStartDateTime")]
         public DateTimeOffset? DeploymentStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deployment state.
         /// Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploymentState")]
         public WindowsAutopilotDeploymentState? DeploymentState { get; set; }
     
         /// <summary>
         /// Gets or sets deployment total duration.
         /// Total deployment duration from enrollment to Desktop screen.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentTotalDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deploymentTotalDuration")]
         public Duration DeploymentTotalDuration { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
         /// Device id associated with the object
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets device preparation duration.
         /// Time spent in device enrollment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePreparationDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("devicePreparationDuration")]
         public Duration DevicePreparationDuration { get; set; }
     
         /// <summary>
         /// Gets or sets device registered date time.
         /// Device registration date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegisteredDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceRegisteredDateTime")]
         public DateTimeOffset? DeviceRegisteredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets device serial number.
         /// Device serial number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSerialNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceSerialNumber")]
         public string DeviceSerialNumber { get; set; }
     
         /// <summary>
         /// Gets or sets device setup duration.
         /// Time spent in device ESP.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSetupDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceSetupDuration")]
         public Duration DeviceSetupDuration { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment failure details.
         /// Enrollment failure details.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentFailureDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentFailureDetails")]
         public string EnrollmentFailureDetails { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment start date time.
         /// Device enrollment start date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentStartDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentStartDateTime")]
         public DateTimeOffset? EnrollmentStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment state.
         /// Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentState")]
         public EnrollmentState? EnrollmentState { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment type.
         /// Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentType")]
         public WindowsAutopilotEnrollmentType? EnrollmentType { get; set; }
     
         /// <summary>
         /// Gets or sets event date time.
         /// Time when the event occurred .
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
         /// Managed device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedDeviceName")]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
         /// Device operating system version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "osVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets targeted app count.
         /// Count of applications targeted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedAppCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedAppCount")]
         public Int32? TargetedAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets targeted policy count.
         /// Count of policies targeted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedPolicyCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedPolicyCount")]
         public Int32? TargetedPolicyCount { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
         /// User principal name used to enroll the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets windows10enrollment completion page configuration display name.
         /// Enrollment Status Page profile name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10EnrollmentCompletionPageConfigurationDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windows10EnrollmentCompletionPageConfigurationDisplayName")]
         public string Windows10EnrollmentCompletionPageConfigurationDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets windows autopilot deployment profile display name.
         /// Autopilot profile name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotDeploymentProfileDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsAutopilotDeploymentProfileDisplayName")]
         public string WindowsAutopilotDeploymentProfileDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets policy status details.
         /// Policy and application status details for this device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyStatusDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policyStatusDetails")]
         public IDeviceManagementAutopilotEventPolicyStatusDetailsCollectionPage PolicyStatusDetails { get; set; }
     
     }

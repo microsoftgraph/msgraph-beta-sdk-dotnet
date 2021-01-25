@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessPackageAnswer.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessPackageAnswer>))]
     public abstract partial class AccessPackageAnswer
     {
 
@@ -27,26 +25,26 @@ namespace Microsoft.Graph
         /// Gets or sets answeredQuestion.
         /// The question the answer is for. Required and Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "answeredQuestion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("answeredQuestion")]
         public AccessPackageQuestion AnsweredQuestion { get; set; }
     
         /// <summary>
         /// Gets or sets displayValue.
         /// The display value of the answer. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayValue")]
         public string DisplayValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

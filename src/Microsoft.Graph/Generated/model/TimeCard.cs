@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Time Card.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TimeCard : ChangeTrackedEntity
     {
     
@@ -33,49 +31,49 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets breaks.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "breaks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("breaks")]
         public IEnumerable<TimeCardBreak> Breaks { get; set; }
     
         /// <summary>
         /// Gets or sets clock in event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clockInEvent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clockInEvent")]
         public TimeCardEvent ClockInEvent { get; set; }
     
         /// <summary>
         /// Gets or sets clock out event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "clockOutEvent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("clockOutEvent")]
         public TimeCardEvent ClockOutEvent { get; set; }
     
         /// <summary>
         /// Gets or sets confirmed by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confirmedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("confirmedBy")]
         public ConfirmedBy? ConfirmedBy { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notes")]
         public ItemBody Notes { get; set; }
     
         /// <summary>
         /// Gets or sets original entry.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originalEntry", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originalEntry")]
         public TimeCardEntry OriginalEntry { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public TimeCardState? State { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Sensitive Type.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SensitiveType : Entity
     {
     
@@ -33,55 +31,55 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets classification method.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classificationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classificationMethod")]
         public ClassificationMethod? ClassificationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets publisher name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisherName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publisherName")]
         public string PublisherName { get; set; }
     
         /// <summary>
         /// Gets or sets rule package id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rulePackageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rulePackageId")]
         public string RulePackageId { get; set; }
     
         /// <summary>
         /// Gets or sets rule package type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rulePackageType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rulePackageType")]
         public string RulePackageType { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scope")]
         public SensitiveTypeScope? Scope { get; set; }
     
         /// <summary>
         /// Gets or sets sensitive type source.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypeSource")]
         public SensitiveTypeSource? SensitiveTypeSource { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
     }

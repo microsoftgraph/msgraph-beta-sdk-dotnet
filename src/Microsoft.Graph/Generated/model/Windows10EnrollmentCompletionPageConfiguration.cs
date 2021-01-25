@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10Enrollment Completion Page Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration
     {
     
@@ -34,70 +32,70 @@ namespace Microsoft.Graph
         /// Gets or sets allow device reset on install failure.
         /// Allow or block device reset on installation failure
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeviceResetOnInstallFailure", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowDeviceResetOnInstallFailure")]
         public bool? AllowDeviceResetOnInstallFailure { get; set; }
     
         /// <summary>
         /// Gets or sets allow device use on install failure.
         /// Allow the user to continue using the device on installation failure
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowDeviceUseOnInstallFailure", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowDeviceUseOnInstallFailure")]
         public bool? AllowDeviceUseOnInstallFailure { get; set; }
     
         /// <summary>
         /// Gets or sets allow log collection on install failure.
         /// Allow or block log collection on installation failure
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowLogCollectionOnInstallFailure", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowLogCollectionOnInstallFailure")]
         public bool? AllowLogCollectionOnInstallFailure { get; set; }
     
         /// <summary>
         /// Gets or sets block device setup retry by user.
         /// Allow the user to retry the setup on installation failure
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockDeviceSetupRetryByUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockDeviceSetupRetryByUser")]
         public bool? BlockDeviceSetupRetryByUser { get; set; }
     
         /// <summary>
         /// Gets or sets custom error message.
         /// Set custom error message to show upon installation failure
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customErrorMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customErrorMessage")]
         public string CustomErrorMessage { get; set; }
     
         /// <summary>
         /// Gets or sets disable user status tracking after first user.
         /// Only show installation progress for first user post enrollment
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disableUserStatusTrackingAfterFirstUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("disableUserStatusTrackingAfterFirstUser")]
         public bool? DisableUserStatusTrackingAfterFirstUser { get; set; }
     
         /// <summary>
         /// Gets or sets install progress timeout in minutes.
         /// Set installation progress timeout in minutes
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installProgressTimeoutInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installProgressTimeoutInMinutes")]
         public Int32? InstallProgressTimeoutInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets selected mobile app ids.
         /// Selected applications to track the installation status
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selectedMobileAppIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("selectedMobileAppIds")]
         public IEnumerable<string> SelectedMobileAppIds { get; set; }
     
         /// <summary>
         /// Gets or sets show installation progress.
         /// Show or hide installation progress to user
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showInstallationProgress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showInstallationProgress")]
         public bool? ShowInstallationProgress { get; set; }
     
         /// <summary>
         /// Gets or sets track install progress for autopilot only.
         /// Only show installation progress for Autopilot enrollment scenarios
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trackInstallProgressForAutopilotOnly", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trackInstallProgressForAutopilotOnly")]
         public bool? TrackInstallProgressForAutopilotOnly { get; set; }
     
     }

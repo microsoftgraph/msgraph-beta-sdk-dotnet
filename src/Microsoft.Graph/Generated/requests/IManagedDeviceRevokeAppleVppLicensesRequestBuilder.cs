@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IManagedDeviceRevokeAppleVppLicensesRequestBuilder.
     /// </summary>
-    public partial interface IManagedDeviceRevokeAppleVppLicensesRequestBuilder
+    public partial interface IManagedDeviceRevokeAppleVppLicensesRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

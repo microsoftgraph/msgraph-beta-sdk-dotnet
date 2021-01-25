@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDeviceManagementScopedForResourceRequestBuilder.
     /// </summary>
-    public partial interface IDeviceManagementScopedForResourceRequestBuilder
+    public partial interface IDeviceManagementScopedForResourceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Reports.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementReports : Entity
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets cached report configurations.
         /// Entity representing the configuration of a cached report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cachedReportConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cachedReportConfigurations")]
         public IDeviceManagementReportsCachedReportConfigurationsCollectionPage CachedReportConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets export jobs.
         /// Entity representing a job to export a report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exportJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exportJobs")]
         public IDeviceManagementReportsExportJobsCollectionPage ExportJobs { get; set; }
     
         /// <summary>
         /// Gets or sets report schedules.
         /// Entity representing a schedule for which reports are delivered
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportSchedules", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportSchedules")]
         public IDeviceManagementReportsReportSchedulesCollectionPage ReportSchedules { get; set; }
     
     }

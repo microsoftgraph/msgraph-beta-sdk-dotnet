@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Domain Dns Cname Record.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DomainDnsCnameRecord : DomainDnsRecord
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets canonical name.
         /// The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canonicalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("canonicalName")]
         public string CanonicalName { get; set; }
     
     }

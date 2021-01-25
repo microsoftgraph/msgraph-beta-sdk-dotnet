@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DepOnboardingSettingUploadDepTokenRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DepOnboardingSettingUploadDepTokenRequestBody
     {
     
         /// <summary>
         /// Gets or sets AppleId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appleId")]
         public string AppleId { get; set; }
     
         /// <summary>
         /// Gets or sets DepToken.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "depToken", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("depToken")]
         public string DepToken { get; set; }
     
     }

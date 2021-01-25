@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Todo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Todo : Entity
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets lists.
         /// The task lists in the users mailbox.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lists", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lists")]
         public ITodoListsCollectionPage Lists { get; set; }
     
     }

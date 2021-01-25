@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSMicrosoft Edge App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSMicrosoftEdgeApp : MobileApp
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets channel.
         /// The channel to install on target devices. Possible values are: dev, beta, stable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("channel")]
         public MicrosoftEdgeChannel? Channel { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Domain Join Connector.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementDomainJoinConnector : Entity
     {
     
@@ -34,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// The connector display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last connection date time.
         /// Last time connector contacted Intune.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConnectionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastConnectionDateTime")]
         public DateTimeOffset? LastConnectionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The connector state. Possible values are: active, error, inactive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public DeviceManagementDomainJoinConnectorState? State { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// The version of the connector.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office365Groups Activity Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Office365GroupsActivityCounts : Entity
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets exchange emails received.
         /// The number of emails received by Group mailboxes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeEmailsReceived", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exchangeEmailsReceived")]
         public Int64? ExchangeEmailsReceived { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
         /// The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportDate")]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// The number of days the report covers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// The latest date of the content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets yammer messages liked.
         /// The number of messages liked in Yammer groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesLiked", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerMessagesLiked")]
         public Int64? YammerMessagesLiked { get; set; }
     
         /// <summary>
         /// Gets or sets yammer messages posted.
         /// The number of messages posted to Yammer groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesPosted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerMessagesPosted")]
         public Int64? YammerMessagesPosted { get; set; }
     
         /// <summary>
         /// Gets or sets yammer messages read.
         /// The number of messages read in Yammer groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerMessagesRead", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("yammerMessagesRead")]
         public Int64? YammerMessagesRead { get; set; }
     
     }

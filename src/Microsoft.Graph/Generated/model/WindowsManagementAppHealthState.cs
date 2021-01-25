@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Management App Health State.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsManagementAppHealthState : Entity
     {
     
@@ -34,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets device name.
         /// Name of the device on which Windows management app is installed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets device osversion.
         /// Windows 10 OS version of the device on which Windows management app is installed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOSVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceOSVersion")]
         public string DeviceOSVersion { get; set; }
     
         /// <summary>
         /// Gets or sets health state.
         /// Windows management app health state. Possible values are: unknown, healthy, unhealthy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "healthState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("healthState")]
         public HealthState? HealthState { get; set; }
     
         /// <summary>
         /// Gets or sets installed version.
         /// Windows management app installed version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installedVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installedVersion")]
         public string InstalledVersion { get; set; }
     
         /// <summary>
         /// Gets or sets last check in date time.
         /// Windows management app last check-in time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastCheckInDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastCheckInDateTime")]
         public DateTimeOffset? LastCheckInDateTime { get; set; }
     
     }

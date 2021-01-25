@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ProtectSite.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ProtectSite : LabelActionBase
     {
         /// <summary>
@@ -32,13 +30,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets accessType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessType")]
         public SiteAccessType? AccessType { get; set; }
     
         /// <summary>
         /// Gets or sets conditionalAccessProtectionLevelId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessProtectionLevelId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionalAccessProtectionLevelId")]
         public string ConditionalAccessProtectionLevelId { get; set; }
     
     }

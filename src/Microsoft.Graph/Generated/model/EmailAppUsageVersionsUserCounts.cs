@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Email App Usage Versions User Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EmailAppUsageVersionsUserCounts : Entity
     {
     
@@ -33,55 +31,55 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets outlook2007.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook2007", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlook2007")]
         public Int64? Outlook2007 { get; set; }
     
         /// <summary>
         /// Gets or sets outlook2010.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook2010", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlook2010")]
         public Int64? Outlook2010 { get; set; }
     
         /// <summary>
         /// Gets or sets outlook2013.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook2013", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlook2013")]
         public Int64? Outlook2013 { get; set; }
     
         /// <summary>
         /// Gets or sets outlook2016.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook2016", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlook2016")]
         public Int64? Outlook2016 { get; set; }
     
         /// <summary>
         /// Gets or sets outlook2019.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlook2019", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlook2019")]
         public Int64? Outlook2019 { get; set; }
     
         /// <summary>
         /// Gets or sets outlook m365.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outlookM365", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outlookM365")]
         public Int64? OutlookM365 { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets undetermined.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "undetermined", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("undetermined")]
         public Int64? Undetermined { get; set; }
     
     }

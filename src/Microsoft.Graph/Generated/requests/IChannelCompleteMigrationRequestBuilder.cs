@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IChannelCompleteMigrationRequestBuilder.
     /// </summary>
-    public partial interface IChannelCompleteMigrationRequestBuilder
+    public partial interface IChannelCompleteMigrationRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

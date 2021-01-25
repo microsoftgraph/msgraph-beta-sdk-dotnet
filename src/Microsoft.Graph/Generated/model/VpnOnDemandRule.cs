@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VpnOnDemandRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<VpnOnDemandRule>))]
     public partial class VpnOnDemandRule
     {
         /// <summary>
@@ -34,61 +32,61 @@ namespace Microsoft.Graph
         /// Gets or sets action.
         /// Action. Possible values are: connect, evaluateConnection, ignore, disconnect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("action")]
         public VpnOnDemandRuleConnectionAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets dnsSearchDomains.
         /// DNS Search Domains.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dnsSearchDomains", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dnsSearchDomains")]
         public IEnumerable<string> DnsSearchDomains { get; set; }
     
         /// <summary>
         /// Gets or sets domainAction.
         /// Domain Action (Only applicable when Action is evaluate connection). Possible values are: connectIfNeeded, neverConnect.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainAction", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domainAction")]
         public VpnOnDemandRuleConnectionDomainAction? DomainAction { get; set; }
     
         /// <summary>
         /// Gets or sets domains.
         /// Domains (Only applicable when Action is evaluate connection).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domains", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("domains")]
         public IEnumerable<string> Domains { get; set; }
     
         /// <summary>
         /// Gets or sets probeRequiredUrl.
         /// Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probeRequiredUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("probeRequiredUrl")]
         public string ProbeRequiredUrl { get; set; }
     
         /// <summary>
         /// Gets or sets probeUrl.
         /// A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "probeUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("probeUrl")]
         public string ProbeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets ssids.
         /// Network Service Set Identifiers (SSIDs).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ssids", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ssids")]
         public IEnumerable<string> Ssids { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

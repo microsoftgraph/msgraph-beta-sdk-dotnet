@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AddWatermarkAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AddWatermarkAction : InformationProtectionAction
     {
         /// <summary>
@@ -33,42 +31,42 @@ namespace Microsoft.Graph
         /// Gets or sets fontColor.
         /// Color of the font to use for the watermark.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontColor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontColor")]
         public string FontColor { get; set; }
     
         /// <summary>
         /// Gets or sets fontName.
         /// Name of the font to use for the watermark.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontName")]
         public string FontName { get; set; }
     
         /// <summary>
         /// Gets or sets fontSize.
         /// Font size to use for the watermark.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontSize", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontSize")]
         public Int32? FontSize { get; set; }
     
         /// <summary>
         /// Gets or sets layout.
         /// Possible values are: horizontal, diagonal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "layout", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("layout")]
         public WatermarkLayout? Layout { get; set; }
     
         /// <summary>
         /// Gets or sets text.
         /// The contents of the watermark itself.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets uiElementName.
         /// The name of the UI element where the watermark should be placed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uiElementName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uiElementName")]
         public string UiElementName { get; set; }
     
     }

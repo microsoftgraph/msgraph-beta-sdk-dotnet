@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Scope Teams App Installation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserScopeTeamsAppInstallation : TeamsAppInstallation
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets chat.
         /// The chat between the user and Teams app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chat", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("chat")]
         public Chat Chat { get; set; }
     
     }

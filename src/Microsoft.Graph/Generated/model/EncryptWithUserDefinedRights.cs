@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EncryptWithUserDefinedRights.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EncryptWithUserDefinedRights : EncryptContent
     {
         /// <summary>
@@ -32,19 +30,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets allowAdHocPermissions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAdHocPermissions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowAdHocPermissions")]
         public bool? AllowAdHocPermissions { get; set; }
     
         /// <summary>
         /// Gets or sets allowMailForwarding.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowMailForwarding", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowMailForwarding")]
         public bool? AllowMailForwarding { get; set; }
     
         /// <summary>
         /// Gets or sets decryptionRightsManagementTemplateId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decryptionRightsManagementTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("decryptionRightsManagementTemplateId")]
         public string DecryptionRightsManagementTemplateId { get; set; }
     
     }

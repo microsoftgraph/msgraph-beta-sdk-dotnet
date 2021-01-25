@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Vpn Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosVpnConfiguration : AppleVpnConfiguration
     {
     
@@ -34,56 +32,56 @@ namespace Microsoft.Graph
         /// Gets or sets cloud name.
         /// Zscaler only. Zscaler cloud which the user is assigned to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudName")]
         public string CloudName { get; set; }
     
         /// <summary>
         /// Gets or sets exclude list.
         /// Zscaler only. List of network addresses which are not sent through the Zscaler cloud.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeList")]
         public IEnumerable<string> ExcludeList { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft tunnel site id.
         /// Microsoft Tunnel site ID.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelSiteId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftTunnelSiteId")]
         public string MicrosoftTunnelSiteId { get; set; }
     
         /// <summary>
         /// Gets or sets strict enforcement.
         /// Zscaler only. Blocks network traffic until the user signs into Zscaler app. 'True' means traffic is blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "strictEnforcement", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("strictEnforcement")]
         public bool? StrictEnforcement { get; set; }
     
         /// <summary>
         /// Gets or sets targeted mobile apps.
         /// Targeted mobile apps. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedMobileApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedMobileApps")]
         public IEnumerable<AppListItem> TargetedMobileApps { get; set; }
     
         /// <summary>
         /// Gets or sets user domain.
         /// Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDomain", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userDomain")]
         public string UserDomain { get; set; }
     
         /// <summary>
         /// Gets or sets derived credential settings.
         /// Tenant level settings for the Derived Credentials to be used for authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "derivedCredentialSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("derivedCredentialSettings")]
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate.
         /// Identity certificate for client authentication when authentication method is certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificate")]
         public IosCertificateProfileBase IdentityCertificate { get; set; }
     
     }

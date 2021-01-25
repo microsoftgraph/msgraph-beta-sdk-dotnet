@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidForWorkSettingsCompleteSignupRequestBuilder.
     /// </summary>
-    public partial interface IAndroidForWorkSettingsCompleteSignupRequestBuilder
+    public partial interface IAndroidForWorkSettingsCompleteSignupRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workbook.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Workbook : Entity
     {
     
@@ -33,47 +31,47 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "application", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("application")]
         public WorkbookApplication Application { get; set; }
     
         /// <summary>
         /// Gets or sets comments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "comments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("comments")]
         public IWorkbookCommentsCollectionPage Comments { get; set; }
     
         /// <summary>
         /// Gets or sets functions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "functions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("functions")]
         public WorkbookFunctions Functions { get; set; }
     
         /// <summary>
         /// Gets or sets names.
         /// Represents a collection of workbook scoped named items (named ranges and constants). Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "names", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("names")]
         public IWorkbookNamesCollectionPage Names { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public IWorkbookOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets tables.
         /// Represents a collection of tables associated with the workbook. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tables", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tables")]
         public IWorkbookTablesCollectionPage Tables { get; set; }
     
         /// <summary>
         /// Gets or sets worksheets.
         /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "worksheets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("worksheets")]
         public IWorkbookWorksheetsCollectionPage Worksheets { get; set; }
     
     }

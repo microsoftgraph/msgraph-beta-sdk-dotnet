@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Privileged Role Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrivilegedRoleSettings : Entity
     {
     
@@ -34,70 +32,70 @@ namespace Microsoft.Graph
         /// Gets or sets approval on elevation.
         /// true if the approval is required when activate the role. false if the approval is not required when activate the role.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalOnElevation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approvalOnElevation")]
         public bool? ApprovalOnElevation { get; set; }
     
         /// <summary>
         /// Gets or sets approver ids.
         /// List of Approval ids, if approval is required for activation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approverIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approverIds")]
         public IEnumerable<string> ApproverIds { get; set; }
     
         /// <summary>
         /// Gets or sets elevation duration.
         /// The duration when the role is activated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "elevationDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("elevationDuration")]
         public Duration ElevationDuration { get; set; }
     
         /// <summary>
         /// Gets or sets is mfa on elevation configurable.
         /// true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMfaOnElevationConfigurable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isMfaOnElevationConfigurable")]
         public bool? IsMfaOnElevationConfigurable { get; set; }
     
         /// <summary>
         /// Gets or sets last global admin.
         /// Internal used only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastGlobalAdmin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastGlobalAdmin")]
         public bool? LastGlobalAdmin { get; set; }
     
         /// <summary>
         /// Gets or sets max elavation duration.
         /// Maximal duration for the activated role.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxElavationDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxElavationDuration")]
         public Duration MaxElavationDuration { get; set; }
     
         /// <summary>
         /// Gets or sets mfa on elevation.
         /// true if MFA is required to activate the role. false if MFA is not required to activate the role.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mfaOnElevation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mfaOnElevation")]
         public bool? MfaOnElevation { get; set; }
     
         /// <summary>
         /// Gets or sets min elevation duration.
         /// Minimal duration for the activated role.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minElevationDuration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minElevationDuration")]
         public Duration MinElevationDuration { get; set; }
     
         /// <summary>
         /// Gets or sets notification to user on elevation.
         /// true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationToUserOnElevation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notificationToUserOnElevation")]
         public bool? NotificationToUserOnElevation { get; set; }
     
         /// <summary>
         /// Gets or sets ticketing info on elevation.
         /// true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ticketingInfoOnElevation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ticketingInfoOnElevation")]
         public bool? TicketingInfoOnElevation { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Data Classification Service.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DataClassificationService : Entity
     {
     
@@ -33,73 +31,73 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets exact match data stores.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exactMatchDataStores", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exactMatchDataStores")]
         public IDataClassificationServiceExactMatchDataStoresCollectionPage ExactMatchDataStores { get; set; }
     
         /// <summary>
         /// Gets or sets classify file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyFile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classifyFile")]
         public IDataClassificationServiceClassifyFileCollectionPage ClassifyFile { get; set; }
     
         /// <summary>
         /// Gets or sets classify file jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyFileJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classifyFileJobs")]
         public IDataClassificationServiceClassifyFileJobsCollectionPage ClassifyFileJobs { get; set; }
     
         /// <summary>
         /// Gets or sets classify text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyText", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classifyText")]
         public IDataClassificationServiceClassifyTextCollectionPage ClassifyText { get; set; }
     
         /// <summary>
         /// Gets or sets classify text jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classifyTextJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classifyTextJobs")]
         public IDataClassificationServiceClassifyTextJobsCollectionPage ClassifyTextJobs { get; set; }
     
         /// <summary>
         /// Gets or sets evaluate dlp policies jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluateDlpPoliciesJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluateDlpPoliciesJobs")]
         public IDataClassificationServiceEvaluateDlpPoliciesJobsCollectionPage EvaluateDlpPoliciesJobs { get; set; }
     
         /// <summary>
         /// Gets or sets evaluate label jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluateLabelJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("evaluateLabelJobs")]
         public IDataClassificationServiceEvaluateLabelJobsCollectionPage EvaluateLabelJobs { get; set; }
     
         /// <summary>
         /// Gets or sets jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jobs")]
         public IDataClassificationServiceJobsCollectionPage Jobs { get; set; }
     
         /// <summary>
         /// Gets or sets labels and policies evaluation jobs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelsAndPoliciesEvaluationJobs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("labelsAndPoliciesEvaluationJobs")]
         public IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionPage LabelsAndPoliciesEvaluationJobs { get; set; }
     
         /// <summary>
         /// Gets or sets sensitive types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypes")]
         public IDataClassificationServiceSensitiveTypesCollectionPage SensitiveTypes { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity labels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitivityLabels")]
         public IDataClassificationServiceSensitivityLabelsCollectionPage SensitivityLabels { get; set; }
     
         /// <summary>
         /// Gets or sets exact match upload agents.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exactMatchUploadAgents", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exactMatchUploadAgents")]
         public IDataClassificationServiceExactMatchUploadAgentsCollectionPage ExactMatchUploadAgents { get; set; }
     
     }

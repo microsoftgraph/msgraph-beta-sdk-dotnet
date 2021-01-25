@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceComplianceScriptAssignRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceComplianceScriptAssignRequestBody
     {
     
         /// <summary>
         /// Gets or sets DeviceHealthScriptAssignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceHealthScriptAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceHealthScriptAssignments")]
         public IEnumerable<DeviceHealthScriptAssignment> DeviceHealthScriptAssignments { get; set; }
     
     }

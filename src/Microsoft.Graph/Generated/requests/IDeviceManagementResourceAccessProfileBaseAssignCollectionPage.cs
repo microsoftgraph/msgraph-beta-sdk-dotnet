@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementResourceAccessProfileBaseAssignCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementResourceAccessProfileBaseAssignCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementResourceAccessProfileBaseAssignCollectionPage>))]
     public interface IDeviceManagementResourceAccessProfileBaseAssignCollectionPage : ICollectionPage<DeviceManagementResourceAccessProfileAssignment>
     {
         /// <summary>

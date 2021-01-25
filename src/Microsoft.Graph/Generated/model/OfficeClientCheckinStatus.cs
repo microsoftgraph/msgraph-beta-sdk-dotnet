@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OfficeClientCheckinStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OfficeClientCheckinStatus>))]
     public partial class OfficeClientCheckinStatus
     {
         /// <summary>
@@ -34,75 +32,75 @@ namespace Microsoft.Graph
         /// Gets or sets appliedPolicies.
         /// List of policies delivered to the device as last checkin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appliedPolicies")]
         public IEnumerable<string> AppliedPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets checkinDateTime.
         /// Last device check-in time in UTC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "checkinDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("checkinDateTime")]
         public DateTimeOffset? CheckinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deviceName.
         /// Device name trying to check-in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets devicePlatform.
         /// Device platform trying to check-in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePlatform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("devicePlatform")]
         public string DevicePlatform { get; set; }
     
         /// <summary>
         /// Gets or sets devicePlatformVersion.
         /// Device platform version trying to check-in.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "devicePlatformVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("devicePlatformVersion")]
         public string DevicePlatformVersion { get; set; }
     
         /// <summary>
         /// Gets or sets errorMessage.
         /// Error message if any associated for the last checkin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorMessage")]
         public string ErrorMessage { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
         /// User identifier using the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// User principal name using the device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets wasSuccessful.
         /// If the last checkin was successful.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wasSuccessful", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wasSuccessful")]
         public bool? WasSuccessful { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

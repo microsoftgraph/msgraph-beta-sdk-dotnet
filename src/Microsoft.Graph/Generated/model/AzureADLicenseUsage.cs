@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Azure ADLicense Usage.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AzureADLicenseUsage : Entity
     {
     
@@ -33,13 +31,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets license info details.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseInfoDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("licenseInfoDetails")]
         public IEnumerable<LicenseInfoDetail> LicenseInfoDetails { get; set; }
     
         /// <summary>
         /// Gets or sets snapshot date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "snapshotDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("snapshotDateTime")]
         public DateTimeOffset? SnapshotDateTime { get; set; }
     
     }

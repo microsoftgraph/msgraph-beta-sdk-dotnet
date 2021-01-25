@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISynchronizationSchemaDirectoriesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SynchronizationSchemaDirectoriesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SynchronizationSchemaDirectoriesCollectionPage>))]
     public interface ISynchronizationSchemaDirectoriesCollectionPage : ICollectionPage<DirectoryDefinition>
     {
         /// <summary>

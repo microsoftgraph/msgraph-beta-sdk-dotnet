@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BitLockerFixedDrivePolicy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BitLockerFixedDrivePolicy>))]
     public partial class BitLockerFixedDrivePolicy
     {
         /// <summary>
@@ -34,33 +32,33 @@ namespace Microsoft.Graph
         /// Gets or sets encryptionMethod.
         /// Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionMethod")]
         public BitLockerEncryptionMethod? EncryptionMethod { get; set; }
     
         /// <summary>
         /// Gets or sets recoveryOptions.
         /// This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recoveryOptions")]
         public BitLockerRecoveryOptions RecoveryOptions { get; set; }
     
         /// <summary>
         /// Gets or sets requireEncryptionForWriteAccess.
         /// This policy setting determines whether BitLocker protection is required for fixed data drives to be writable on a computer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requireEncryptionForWriteAccess", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requireEncryptionForWriteAccess")]
         public bool? RequireEncryptionForWriteAccess { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

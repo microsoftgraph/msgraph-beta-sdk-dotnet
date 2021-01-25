@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Participant Left Notification.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ParticipantLeftNotification : Entity
     {
     
@@ -33,13 +31,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets participant id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("participantId")]
         public string ParticipantId { get; set; }
     
         /// <summary>
         /// Gets or sets call.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "call", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("call")]
         public Call Call { get; set; }
     
     }

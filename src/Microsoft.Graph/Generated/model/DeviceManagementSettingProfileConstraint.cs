@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSettingProfileConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementSettingProfileConstraint : DeviceManagementConstraint
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets source.
         /// The source of the entity
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("source")]
         public string Source { get; set; }
     
         /// <summary>
         /// Gets or sets types.
         /// A collection of types this entity carries
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "types", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("types")]
         public IEnumerable<string> Types { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Site Source.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SiteSource : DataSource
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets site.
         /// The SharePoint site associated with the siteSource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "site", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("site")]
         public Site Site { get; set; }
     
     }

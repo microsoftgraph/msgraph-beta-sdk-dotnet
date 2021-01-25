@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Person Name.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PersonName : ItemFacet
     {
     
@@ -34,77 +32,77 @@ namespace Microsoft.Graph
         /// Gets or sets display name.
         /// Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets first.
         /// First name of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "first", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("first")]
         public string First { get; set; }
     
         /// <summary>
         /// Gets or sets initials.
         /// Initials of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initials", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initials")]
         public string Initials { get; set; }
     
         /// <summary>
         /// Gets or sets language tag.
         /// Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets last.
         /// Last name of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("last")]
         public string Last { get; set; }
     
         /// <summary>
         /// Gets or sets maiden.
         /// Maiden name of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maiden", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maiden")]
         public string Maiden { get; set; }
     
         /// <summary>
         /// Gets or sets middle.
         /// Middle name of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "middle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("middle")]
         public string Middle { get; set; }
     
         /// <summary>
         /// Gets or sets nickname.
         /// Nickname of the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nickname", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("nickname")]
         public string Nickname { get; set; }
     
         /// <summary>
         /// Gets or sets pronunciation.
         /// Guidance on how to pronounce the users name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pronunciation")]
         public YomiPersonName Pronunciation { get; set; }
     
         /// <summary>
         /// Gets or sets suffix.
         /// Designators used after the users name (eg: PhD.)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "suffix", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("suffix")]
         public string Suffix { get; set; }
     
         /// <summary>
         /// Gets or sets title.
         /// Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
     
     }

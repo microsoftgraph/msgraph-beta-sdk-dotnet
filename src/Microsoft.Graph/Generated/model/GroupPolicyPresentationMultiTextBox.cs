@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Presentation Multi Text Box.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupPolicyPresentationMultiTextBox : GroupPolicyPresentation
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets max length.
         /// An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxLength")]
         public Int64? MaxLength { get; set; }
     
         /// <summary>
         /// Gets or sets max strings.
         /// An unsigned integer that specifies the maximum number of strings. Default value is 0.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxStrings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxStrings")]
         public Int64? MaxStrings { get; set; }
     
         /// <summary>
         /// Gets or sets required.
         /// Requirement to enter a value in the text box. Default value is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("required")]
         public bool? Required { get; set; }
     
     }

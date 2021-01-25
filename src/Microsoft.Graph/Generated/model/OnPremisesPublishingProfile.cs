@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type On Premises Publishing Profile.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OnPremisesPublishingProfile : Entity
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets hybrid agent updater configuration.
         /// Represents a hybridAgentUpdaterConfiguration object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hybridAgentUpdaterConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hybridAgentUpdaterConfiguration")]
         public HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
         /// Represents if Azure AD Application Proxy is enabled for the tenant.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets agent groups.
         /// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agentGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agentGroups")]
         public IOnPremisesPublishingProfileAgentGroupsCollectionPage AgentGroups { get; set; }
     
         /// <summary>
         /// Gets or sets agents.
         /// List of existing onPremisesAgent objects. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agents", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agents")]
         public IOnPremisesPublishingProfileAgentsCollectionPage Agents { get; set; }
     
         /// <summary>
         /// Gets or sets connector groups.
         /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectorGroups")]
         public IOnPremisesPublishingProfileConnectorGroupsCollectionPage ConnectorGroups { get; set; }
     
         /// <summary>
         /// Gets or sets connectors.
         /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectors")]
         public IOnPremisesPublishingProfileConnectorsCollectionPage Connectors { get; set; }
     
         /// <summary>
         /// Gets or sets published resources.
         /// List of existing publishedResource objects. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedResources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedResources")]
         public IOnPremisesPublishingProfilePublishedResourcesCollectionPage PublishedResources { get; set; }
     
     }

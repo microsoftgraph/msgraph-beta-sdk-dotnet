@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementSettingFileConstraint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementSettingFileConstraint : DeviceManagementConstraint
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets supportedExtensions.
         /// Acceptable file extensions to upload for this setting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedExtensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportedExtensions")]
         public IEnumerable<string> SupportedExtensions { get; set; }
     
     }

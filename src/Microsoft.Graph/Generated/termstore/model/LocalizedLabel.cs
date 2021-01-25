@@ -12,14 +12,12 @@ namespace Microsoft.Graph.TermStore
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type LocalizedLabel.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<LocalizedLabel>))]
     public partial class LocalizedLabel
     {
         /// <summary>
@@ -34,33 +32,33 @@ namespace Microsoft.Graph.TermStore
         /// Gets or sets isDefault.
         /// Indicates whether the label is the default label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets languageTag.
         /// The anguage tag for the label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTag", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The name of the label.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

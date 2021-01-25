@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder.
     /// </summary>
-    public partial interface IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder
+    public partial interface IAndroidForWorkEnrollmentProfileRevokeTokenRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

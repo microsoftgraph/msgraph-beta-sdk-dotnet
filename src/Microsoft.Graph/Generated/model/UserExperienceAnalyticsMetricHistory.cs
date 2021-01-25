@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Metric History.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsMetricHistory : Entity
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets metric date time.
         /// The user experience analytics metric date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metricDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metricDateTime")]
         public DateTimeOffset? MetricDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics metric.
         /// User experience analytics metric.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsMetric", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userExperienceAnalyticsMetric")]
         public UserExperienceAnalyticsMetric UserExperienceAnalyticsMetric { get; set; }
     
     }

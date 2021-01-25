@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Conditional Access Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ConditionalAccessRoot : Entity
     {
     
@@ -33,19 +31,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets authentication context class references.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationContextClassReferences", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationContextClassReferences")]
         public IConditionalAccessRootAuthenticationContextClassReferencesCollectionPage AuthenticationContextClassReferences { get; set; }
     
         /// <summary>
         /// Gets or sets named locations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "namedLocations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("namedLocations")]
         public IConditionalAccessRootNamedLocationsCollectionPage NamedLocations { get; set; }
     
         /// <summary>
         /// Gets or sets policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policies")]
         public IConditionalAccessRootPoliciesCollectionPage Policies { get; set; }
     
     }

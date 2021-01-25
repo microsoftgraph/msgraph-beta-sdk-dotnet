@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder.
     /// </summary>
-    public partial interface IMdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder
+    public partial interface IMdmWindowsInformationProtectionPolicyHasPayloadLinksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

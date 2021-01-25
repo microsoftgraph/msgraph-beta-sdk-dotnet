@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessPackageTextInputQuestion.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageTextInputQuestion : AccessPackageQuestion
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets isSingleLineQuestion.
         /// Indicates whether the answer will be in single or multiple line format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSingleLineQuestion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSingleLineQuestion")]
         public bool? IsSingleLineQuestion { get; set; }
     
     }

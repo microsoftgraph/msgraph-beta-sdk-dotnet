@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppPowerShellScriptRequirement.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Win32LobAppPowerShellScriptRequirement : Win32LobAppRequirement
     {
         /// <summary>
@@ -33,42 +31,42 @@ namespace Microsoft.Graph
         /// Gets or sets detectionType.
         /// The detection type for script output. Possible values are: notConfigured, string, dateTime, integer, float, version, boolean.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("detectionType")]
         public Win32LobAppPowerShellScriptDetectionType? DetectionType { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The unique display name for this rule
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enforceSignatureCheck.
         /// A value indicating whether signature check is enforced
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceSignatureCheck", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enforceSignatureCheck")]
         public bool? EnforceSignatureCheck { get; set; }
     
         /// <summary>
         /// Gets or sets runAs32Bit.
         /// A value indicating whether this script should run as 32-bit
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAs32Bit", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runAs32Bit")]
         public bool? RunAs32Bit { get; set; }
     
         /// <summary>
         /// Gets or sets runAsAccount.
         /// Indicates the type of execution context the script runs in. Possible values are: system, user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("runAsAccount")]
         public RunAsAccountType? RunAsAccount { get; set; }
     
         /// <summary>
         /// Gets or sets scriptContent.
         /// The base64 encoded script content to detect Win32 Line of Business (LoB) app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scriptContent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("scriptContent")]
         public string ScriptContent { get; set; }
     
     }

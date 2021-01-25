@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Virtual Endpoint.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class VirtualEndpoint : Entity
     {
     
@@ -34,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets cloud pcs.
         /// Cloud managed virtual desktops.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cloudPCs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cloudPCs")]
         public IVirtualEndpointCloudPCsCollectionPage CloudPCs { get; set; }
     
         /// <summary>
         /// Gets or sets device images.
         /// The image resource on cloud PC.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceImages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceImages")]
         public IVirtualEndpointDeviceImagesCollectionPage DeviceImages { get; set; }
     
         /// <summary>
         /// Gets or sets on premises connections.
         /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesConnections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onPremisesConnections")]
         public IVirtualEndpointOnPremisesConnectionsCollectionPage OnPremisesConnections { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning policies.
         /// cloud PC provisioning policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("provisioningPolicies")]
         public IVirtualEndpointProvisioningPoliciesCollectionPage ProvisioningPolicies { get; set; }
     
     }

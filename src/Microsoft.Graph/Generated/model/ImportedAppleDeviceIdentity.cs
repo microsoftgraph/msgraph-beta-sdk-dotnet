@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Imported Apple Device Identity.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ImportedAppleDeviceIdentity : Entity
     {
     
@@ -34,77 +32,77 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// Created Date Time of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets discovery source.
         /// Apple device discovery source. Possible values are: unknown, adminImport, deviceEnrollmentProgram.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverySource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("discoverySource")]
         public DiscoverySource? DiscoverySource { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment state.
         /// The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enrollmentState")]
         public EnrollmentState? EnrollmentState { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
         /// Indicates if the device is deleted from Apple Business Manager
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets is supervised.
         /// Indicates if the Apple device is supervised. More information is at: https://support.apple.com/HT202837
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSupervised", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSupervised")]
         public bool? IsSupervised { get; set; }
     
         /// <summary>
         /// Gets or sets last contacted date time.
         /// Last Contacted Date Time of the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastContactedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastContactedDateTime")]
         public DateTimeOffset? LastContactedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
         /// The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platform")]
         public Platform? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets requested enrollment profile assignment date time.
         /// The time enrollment profile was assigned to the device
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedEnrollmentProfileAssignmentDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestedEnrollmentProfileAssignmentDateTime")]
         public DateTimeOffset? RequestedEnrollmentProfileAssignmentDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets requested enrollment profile id.
         /// Enrollment profile Id admin intends to apply to the device during next enrollment
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestedEnrollmentProfileId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestedEnrollmentProfileId")]
         public string RequestedEnrollmentProfileId { get; set; }
     
         /// <summary>
         /// Gets or sets serial number.
         /// Device serial number
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serialNumber")]
         public string SerialNumber { get; set; }
     
     }

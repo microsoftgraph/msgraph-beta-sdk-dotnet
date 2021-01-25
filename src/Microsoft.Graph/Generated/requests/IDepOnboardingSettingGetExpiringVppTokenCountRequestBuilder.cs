@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDepOnboardingSettingGetExpiringVppTokenCountRequestBuilder.
     /// </summary>
-    public partial interface IDepOnboardingSettingGetExpiringVppTokenCountRequestBuilder
+    public partial interface IDepOnboardingSettingGetExpiringVppTokenCountRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

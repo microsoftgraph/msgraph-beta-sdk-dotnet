@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder.
     /// </summary>
-    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder
+    public partial interface IAndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

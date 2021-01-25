@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Policy Set.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PolicySet : Entity
     {
     
@@ -34,70 +32,70 @@ namespace Microsoft.Graph
         /// Gets or sets created date time.
         /// Creation time of the PolicySet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the PolicySet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// DisplayName of the PolicySet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets error code.
         /// Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public ErrorCode? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets guided deployment tags.
         /// Tags of the guided deployment
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guidedDeploymentTags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("guidedDeploymentTags")]
         public IEnumerable<string> GuidedDeploymentTags { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// Last modified time of the PolicySet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tags.
         /// RoleScopeTags of the PolicySet
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleScopeTags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleScopeTags")]
         public IEnumerable<string> RoleScopeTags { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public PolicySetStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
         /// Assignments of the PolicySet.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public IPolicySetAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// Items of the PolicySet with maximum count 100.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("items")]
         public IPolicySetItemsCollectionPage Items { get; set; }
     
     }

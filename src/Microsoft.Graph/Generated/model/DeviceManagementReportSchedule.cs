@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Report Schedule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementReportSchedule : Entity
     {
     
@@ -34,84 +32,84 @@ namespace Microsoft.Graph
         /// Gets or sets emails.
         /// Emails to which the scheduled reports are delivered
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emails")]
         public IEnumerable<string> Emails { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
         /// Time that the delivery of the scheduled reports ends
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets filter.
         /// Filters applied on the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("filter")]
         public string Filter { get; set; }
     
         /// <summary>
         /// Gets or sets format.
         /// Format of the scheduled report. Possible values are: csv, pdf.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public DeviceManagementReportFileFormat? Format { get; set; }
     
         /// <summary>
         /// Gets or sets order by.
         /// Ordering of columns in the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("orderBy")]
         public IEnumerable<string> OrderBy { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
         /// Frequency of scheduled report delivery. Possible values are: none, daily, weekly, monthly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurrence")]
         public DeviceManagementScheduledReportRecurrence? Recurrence { get; set; }
     
         /// <summary>
         /// Gets or sets report name.
         /// Name of the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportName")]
         public string ReportName { get; set; }
     
         /// <summary>
         /// Gets or sets report schedule name.
         /// Name of the schedule
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportScheduleName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportScheduleName")]
         public string ReportScheduleName { get; set; }
     
         /// <summary>
         /// Gets or sets select.
         /// Columns selected from the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "select", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("select")]
         public IEnumerable<string> Select { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// Time that the delivery of the scheduled reports starts
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
         /// Subject of the scheduled reports that are delivered
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subject")]
         public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The Id of the User who created the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
     }

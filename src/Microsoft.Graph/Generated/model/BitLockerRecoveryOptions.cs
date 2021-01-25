@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type BitLockerRecoveryOptions.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<BitLockerRecoveryOptions>))]
     public partial class BitLockerRecoveryOptions
     {
         /// <summary>
@@ -34,61 +32,61 @@ namespace Microsoft.Graph
         /// Gets or sets blockDataRecoveryAgent.
         /// Indicates whether to block certificate-based data recovery agent.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockDataRecoveryAgent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockDataRecoveryAgent")]
         public bool? BlockDataRecoveryAgent { get; set; }
     
         /// <summary>
         /// Gets or sets enableBitLockerAfterRecoveryInformationToStore.
         /// Indicates whether or not to enable BitLocker until recovery information is stored in AD DS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableBitLockerAfterRecoveryInformationToStore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableBitLockerAfterRecoveryInformationToStore")]
         public bool? EnableBitLockerAfterRecoveryInformationToStore { get; set; }
     
         /// <summary>
         /// Gets or sets enableRecoveryInformationSaveToStore.
         /// Indicates whether or not to allow BitLocker recovery information to store in AD DS.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableRecoveryInformationSaveToStore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableRecoveryInformationSaveToStore")]
         public bool? EnableRecoveryInformationSaveToStore { get; set; }
     
         /// <summary>
         /// Gets or sets hideRecoveryOptions.
         /// Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideRecoveryOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hideRecoveryOptions")]
         public bool? HideRecoveryOptions { get; set; }
     
         /// <summary>
         /// Gets or sets recoveryInformationToStore.
         /// Configure what pieces of BitLocker recovery information are stored to AD DS. Possible values are: passwordAndKey, passwordOnly.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryInformationToStore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recoveryInformationToStore")]
         public BitLockerRecoveryInformationType? RecoveryInformationToStore { get; set; }
     
         /// <summary>
         /// Gets or sets recoveryKeyUsage.
         /// Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryKeyUsage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recoveryKeyUsage")]
         public ConfigurationUsage? RecoveryKeyUsage { get; set; }
     
         /// <summary>
         /// Gets or sets recoveryPasswordUsage.
         /// Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryPasswordUsage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recoveryPasswordUsage")]
         public ConfigurationUsage? RecoveryPasswordUsage { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IParticipantMuteAllRequestBuilder.
     /// </summary>
-    public partial interface IParticipantMuteAllRequestBuilder
+    public partial interface IParticipantMuteAllRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

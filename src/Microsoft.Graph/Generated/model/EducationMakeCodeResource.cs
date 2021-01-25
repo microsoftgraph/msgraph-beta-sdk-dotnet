@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationMakeCodeResource.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EducationMakeCodeResource : EducationResource
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets hostWebUrl.
         /// Host for the type of MakeCode resource (for example, arcade, microbit)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostWebUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hostWebUrl")]
         public string HostWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets projectId.
         /// ID of the MakeCode project
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "projectId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("projectId")]
         public string ProjectId { get; set; }
     
     }

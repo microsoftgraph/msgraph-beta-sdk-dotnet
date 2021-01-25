@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office Graph Insights.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OfficeGraphInsights : Entity
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets shared.
         /// Access this property from the derived type itemInsights.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shared", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shared")]
         public IOfficeGraphInsightsSharedCollectionPage Shared { get; set; }
     
         /// <summary>
         /// Gets or sets trending.
         /// Access this property from the derived type itemInsights.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "trending", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("trending")]
         public IOfficeGraphInsightsTrendingCollectionPage Trending { get; set; }
     
         /// <summary>
         /// Gets or sets used.
         /// Access this property from the derived type itemInsights.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "used", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("used")]
         public IOfficeGraphInsightsUsedCollectionPage Used { get; set; }
     
     }

@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IRoleScopeTagAssignCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<RoleScopeTagAssignCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<RoleScopeTagAssignCollectionPage>))]
     public interface IRoleScopeTagAssignCollectionPage : ICollectionPage<RoleScopeTagAutoAssignment>
     {
         /// <summary>

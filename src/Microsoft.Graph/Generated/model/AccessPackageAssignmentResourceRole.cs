@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Assignment Resource Role.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageAssignmentResourceRole : Entity
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets origin id.
         /// A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originId")]
         public string OriginId { get; set; }
     
         /// <summary>
         /// Gets or sets origin system.
         /// The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originSystem")]
         public string OriginSystem { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignments.
         /// The access package assignments resulting in this role assignment. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageAssignments")]
         public IAccessPackageAssignmentResourceRoleAccessPackageAssignmentsCollectionPage AccessPackageAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRole", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceRole")]
         public AccessPackageResourceRole AccessPackageResourceRole { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource scope.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceScope")]
         public AccessPackageResourceScope AccessPackageResourceScope { get; set; }
     
         /// <summary>
         /// Gets or sets access package subject.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageSubject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageSubject")]
         public AccessPackageSubject AccessPackageSubject { get; set; }
     
     }

@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VppLicensingType.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<VppLicensingType>))]
     public partial class VppLicensingType
     {
         /// <summary>
@@ -34,40 +32,40 @@ namespace Microsoft.Graph
         /// Gets or sets supportDeviceLicensing.
         /// Whether the program supports the device licensing type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportDeviceLicensing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportDeviceLicensing")]
         public bool? SupportDeviceLicensing { get; set; }
     
         /// <summary>
         /// Gets or sets supportsDeviceLicensing.
         /// Whether the program supports the device licensing type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportsDeviceLicensing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportsDeviceLicensing")]
         public bool? SupportsDeviceLicensing { get; set; }
     
         /// <summary>
         /// Gets or sets supportsUserLicensing.
         /// Whether the program supports the user licensing type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportsUserLicensing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportsUserLicensing")]
         public bool? SupportsUserLicensing { get; set; }
     
         /// <summary>
         /// Gets or sets supportUserLicensing.
         /// Whether the program supports the user licensing type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportUserLicensing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportUserLicensing")]
         public bool? SupportUserLicensing { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

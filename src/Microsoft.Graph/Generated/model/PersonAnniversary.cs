@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Person Anniversary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PersonAnniversary : ItemFacet
     {
     
@@ -34,14 +32,14 @@ namespace Microsoft.Graph
         /// Gets or sets date.
         /// Contains the date associated with the anniversary type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "date", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("date")]
         public Date Date { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// The type of anniversary the date represents. Possible values are: birthday, wedding, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public AnniversaryType? Type { get; set; }
     
     }

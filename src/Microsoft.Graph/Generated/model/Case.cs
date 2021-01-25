@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Case.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Case : Entity
     {
     
@@ -33,79 +31,79 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets closed by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("closedBy")]
         public IdentitySet ClosedBy { get; set; }
     
         /// <summary>
         /// Gets or sets closed date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("closedDateTime")]
         public DateTimeOffset? ClosedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public CaseStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets custodians.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custodians", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("custodians")]
         public ICaseCustodiansCollectionPage Custodians { get; set; }
     
         /// <summary>
         /// Gets or sets legalholds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legalholds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("legalholds")]
         public ICaseLegalholdsCollectionPage Legalholds { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operations")]
         public ICaseOperationsCollectionPage Operations { get; set; }
     
         /// <summary>
         /// Gets or sets review sets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewSets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewSets")]
         public ICaseReviewSetsCollectionPage ReviewSets { get; set; }
     
     }

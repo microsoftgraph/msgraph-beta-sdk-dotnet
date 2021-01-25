@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEducationAssignmentPublishRequestBuilder.
     /// </summary>
-    public partial interface IEducationAssignmentPublishRequestBuilder
+    public partial interface IEducationAssignmentPublishRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

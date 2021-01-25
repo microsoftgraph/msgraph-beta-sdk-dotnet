@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Office365Activations User Counts.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Office365ActivationsUserCounts : Entity
     {
     
@@ -34,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets activated.
         /// The number of users who have activated the product.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activated", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activated")]
         public Int64? Activated { get; set; }
     
         /// <summary>
         /// Gets or sets assigned.
         /// The number of users have been assigned for the product license.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assigned")]
         public Int64? Assigned { get; set; }
     
         /// <summary>
         /// Gets or sets product type.
         /// The product type such as 'Microsoft 365 ProPlus' or 'Project Client'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productType")]
         public string ProductType { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// The latest date of the content.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets shared computer activation.
         /// The number of users who have used the product on a shared computer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedComputerActivation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedComputerActivation")]
         public Int64? SharedComputerActivation { get; set; }
     
     }

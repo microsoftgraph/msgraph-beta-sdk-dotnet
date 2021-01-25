@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPurchaseInvoicePostRequestBuilder.
     /// </summary>
-    public partial interface IPurchaseInvoicePostRequestBuilder
+    public partial interface IPurchaseInvoicePostRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

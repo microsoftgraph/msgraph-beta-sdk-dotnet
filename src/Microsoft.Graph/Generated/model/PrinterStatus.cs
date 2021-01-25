@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PrinterStatus.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PrinterStatus>))]
     public partial class PrinterStatus
     {
         /// <summary>
@@ -34,51 +32,51 @@ namespace Microsoft.Graph
         /// Gets or sets description.
         /// A human-readable description of the printer's current processing state. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets details.
         /// The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("details")]
         public IEnumerable<PrinterProcessingStateDetail> Details { get; set; }
     
         /// <summary>
         /// Gets or sets processingState.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processingState")]
         public PrinterProcessingState? ProcessingState { get; set; }
     
         /// <summary>
         /// Gets or sets processingStateDescription.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingStateDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processingStateDescription")]
         public string ProcessingStateDescription { get; set; }
     
         /// <summary>
         /// Gets or sets processingStateReasons.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingStateReasons", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processingStateReasons")]
         public IEnumerable<PrinterProcessingStateReason> ProcessingStateReasons { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The current processing state. Valid values are described in the following table. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public PrinterProcessingState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

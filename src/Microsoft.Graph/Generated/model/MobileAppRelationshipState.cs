@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MobileAppRelationshipState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppRelationshipState>))]
     public partial class MobileAppRelationshipState
     {
         /// <summary>
@@ -34,68 +32,68 @@ namespace Microsoft.Graph
         /// Gets or sets deviceId.
         /// The corresponding device id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
         /// The error code for install or uninstall failures of target app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("errorCode")]
         public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets installState.
         /// The install state of the app of target app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installState")]
         public ResultantAppState? InstallState { get; set; }
     
         /// <summary>
         /// Gets or sets installStateDetail.
         /// The install state detail of the app. Possible values are: noAdditionalDetails, dependencyFailedToInstall, dependencyWithRequirementsNotMet, dependencyPendingReboot, dependencyWithAutoInstallDisabled, iosAppStoreUpdateFailedToInstall, vppAppHasUpdateAvailable, userRejectedUpdate, seeInstallErrorCode, autoInstallDisabled, managedAppNoLongerPresent, userRejectedInstall, userIsNotLoggedIntoAppStore, seeUninstallErrorCode, pendingReboot, installingDependencies, contentDownloaded, powerShellScriptRequirementNotMet, registryRequirementNotMet, fileSystemRequirementNotMet, platformNotApplicable, minimumCpuSpeedNotMet, minimumLogicalProcessorCountNotMet, minimumPhysicalMemoryNotMet, minimumOsVersionNotMet, minimumDiskSpaceNotMet, processorArchitectureNotApplicable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installStateDetail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("installStateDetail")]
         public ResultantAppStateDetail? InstallStateDetail { get; set; }
     
         /// <summary>
         /// Gets or sets sourceIds.
         /// The collection of source mobile app's ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceIds")]
         public IEnumerable<string> SourceIds { get; set; }
     
         /// <summary>
         /// Gets or sets targetDisplayName.
         /// The related target app's display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetDisplayName")]
         public string TargetDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets targetId.
         /// The related target app's id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetId")]
         public string TargetId { get; set; }
     
         /// <summary>
         /// Gets or sets targetLastSyncDateTime.
         /// The last sync time of the target app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetLastSyncDateTime")]
         public DateTimeOffset? TargetLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSExtensions Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MacOSExtensionsConfiguration : DeviceConfiguration
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets kernel extension allowed team identifiers.
         /// All kernel extensions validly signed by the team identifiers in this list will be allowed to load.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kernelExtensionAllowedTeamIdentifiers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kernelExtensionAllowedTeamIdentifiers")]
         public IEnumerable<string> KernelExtensionAllowedTeamIdentifiers { get; set; }
     
         /// <summary>
         /// Gets or sets kernel extension overrides allowed.
         /// If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kernelExtensionOverridesAllowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kernelExtensionOverridesAllowed")]
         public bool? KernelExtensionOverridesAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets kernel extensions allowed.
         /// A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kernelExtensionsAllowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kernelExtensionsAllowed")]
         public IEnumerable<MacOSKernelExtension> KernelExtensionsAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets system extensions allowed.
         /// Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsAllowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemExtensionsAllowed")]
         public IEnumerable<MacOSSystemExtension> SystemExtensionsAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets system extensions allowed team identifiers.
         /// Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsAllowedTeamIdentifiers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemExtensionsAllowedTeamIdentifiers")]
         public IEnumerable<string> SystemExtensionsAllowedTeamIdentifiers { get; set; }
     
         /// <summary>
         /// Gets or sets system extensions allowed types.
         /// Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsAllowedTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemExtensionsAllowedTypes")]
         public IEnumerable<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes { get; set; }
     
         /// <summary>
         /// Gets or sets system extensions block override.
         /// Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemExtensionsBlockOverride", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemExtensionsBlockOverride")]
         public bool? SystemExtensionsBlockOverride { get; set; }
     
     }

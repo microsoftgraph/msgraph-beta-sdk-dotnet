@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type EducationalActivityDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<EducationalActivityDetail>))]
     public partial class EducationalActivityDetail
     {
         /// <summary>
@@ -34,75 +32,75 @@ namespace Microsoft.Graph
         /// Gets or sets abbreviation.
         /// Shortened name of the degree or program (example: PhD, MBA)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "abbreviation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("abbreviation")]
         public string Abbreviation { get; set; }
     
         /// <summary>
         /// Gets or sets activities.
         /// Extracurricular activities undertaken alongside the program.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activities")]
         public IEnumerable<string> Activities { get; set; }
     
         /// <summary>
         /// Gets or sets awards.
         /// Any awards or honors associated with the program.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "awards", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("awards")]
         public IEnumerable<string> Awards { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Short description of the program provided by the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// Long-form name of the program that the user has provided.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets fieldsOfStudy.
         /// Majors and minors associated with the program. (if applicable)
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fieldsOfStudy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fieldsOfStudy")]
         public IEnumerable<string> FieldsOfStudy { get; set; }
     
         /// <summary>
         /// Gets or sets grade.
         /// The final grade, class, GPA or score.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grade", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("grade")]
         public string Grade { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
         /// Additional notes the user has provided.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("notes")]
         public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.
         /// Link to the degree or program page.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

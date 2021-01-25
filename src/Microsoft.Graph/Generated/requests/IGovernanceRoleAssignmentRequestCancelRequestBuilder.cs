@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGovernanceRoleAssignmentRequestCancelRequestBuilder.
     /// </summary>
-    public partial interface IGovernanceRoleAssignmentRequestCancelRequestBuilder
+    public partial interface IGovernanceRoleAssignmentRequestCancelRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

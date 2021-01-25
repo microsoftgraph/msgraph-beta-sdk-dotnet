@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICaseExportOperationGetDownloadUrlRequestBuilder.
     /// </summary>
-    public partial interface ICaseExportOperationGetDownloadUrlRequestBuilder
+    public partial interface ICaseExportOperationGetDownloadUrlRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

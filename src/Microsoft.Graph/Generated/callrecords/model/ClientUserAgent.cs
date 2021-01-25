@@ -12,13 +12,11 @@ namespace Microsoft.Graph.CallRecords
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ClientUserAgent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ClientUserAgent : UserAgent
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph.CallRecords
         /// Gets or sets platform.
         /// Identifies the platform used by this endpoint. Possible values are: unknown, windows, macOS, iOS, android, web, ipPhone, roomSystem, surfaceHub, holoLens, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("platform")]
         public ClientPlatform? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets productFamily.
         /// Identifies the family of application software used by this endpoint. Possible values are: unknown, teams, skypeForBusiness, lync, unknownFutureValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productFamily", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("productFamily")]
         public ProductFamily? ProductFamily { get; set; }
     
     }

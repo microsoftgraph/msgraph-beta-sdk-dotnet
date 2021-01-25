@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type General Ledger Entry.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GeneralLedgerEntry : Entity
     {
     
@@ -33,61 +31,61 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets account id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountId")]
         public Guid? AccountId { get; set; }
     
         /// <summary>
         /// Gets or sets account number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accountNumber")]
         public string AccountNumber { get; set; }
     
         /// <summary>
         /// Gets or sets credit amount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creditAmount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creditAmount")]
         public Decimal? CreditAmount { get; set; }
     
         /// <summary>
         /// Gets or sets debit amount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "debitAmount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("debitAmount")]
         public Decimal? DebitAmount { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets document number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("documentNumber")]
         public string DocumentNumber { get; set; }
     
         /// <summary>
         /// Gets or sets document type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("documentType")]
         public string DocumentType { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets posting date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postingDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postingDate")]
         public Date PostingDate { get; set; }
     
         /// <summary>
         /// Gets or sets account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("account")]
         public Account Account { get; set; }
     
     }

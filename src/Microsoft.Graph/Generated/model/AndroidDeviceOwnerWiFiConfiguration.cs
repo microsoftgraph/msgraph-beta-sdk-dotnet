@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Device Owner Wi Fi Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidDeviceOwnerWiFiConfiguration : DeviceConfiguration
     {
     
@@ -34,49 +32,49 @@ namespace Microsoft.Graph
         /// Gets or sets connect automatically.
         /// Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectAutomatically", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectAutomatically")]
         public bool? ConnectAutomatically { get; set; }
     
         /// <summary>
         /// Gets or sets connect when network name is hidden.
         /// When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectWhenNetworkNameIsHidden", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectWhenNetworkNameIsHidden")]
         public bool? ConnectWhenNetworkNameIsHidden { get; set; }
     
         /// <summary>
         /// Gets or sets network name.
         /// Network Name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("networkName")]
         public string NetworkName { get; set; }
     
         /// <summary>
         /// Gets or sets pre shared key.
         /// This is the pre-shared key for WPA Personal Wi-Fi network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preSharedKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preSharedKey")]
         public string PreSharedKey { get; set; }
     
         /// <summary>
         /// Gets or sets pre shared key is set.
         /// This is the pre-shared key for WPA Personal Wi-Fi network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preSharedKeyIsSet", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("preSharedKeyIsSet")]
         public bool? PreSharedKeyIsSet { get; set; }
     
         /// <summary>
         /// Gets or sets ssid.
         /// This is the name of the Wi-Fi network that is broadcast to all devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ssid", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ssid")]
         public string Ssid { get; set; }
     
         /// <summary>
         /// Gets or sets wi fi security type.
         /// Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wiFiSecurityType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wiFiSecurityType")]
         public AndroidDeviceOwnerWiFiSecurityType? WiFiSecurityType { get; set; }
     
     }

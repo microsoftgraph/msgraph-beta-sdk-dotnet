@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Work Position.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkPosition : ItemFacet
     {
     
@@ -34,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets categories.
         /// Categories that the user has associated with this position.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("categories")]
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
         /// Gets or sets colleagues.
         /// Colleagues that are associated with this position.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colleagues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("colleagues")]
         public IEnumerable<RelatedPerson> Colleagues { get; set; }
     
         /// <summary>
         /// Gets or sets detail.
         /// Contains detailed information about the position.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("detail")]
         public PositionDetail Detail { get; set; }
     
         /// <summary>
         /// Gets or sets is current.
         /// Denotes whether or not the position is current.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCurrent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isCurrent")]
         public bool? IsCurrent { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
         /// Contains detail of the user's manager in this position.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manager")]
         public RelatedPerson Manager { get; set; }
     
     }

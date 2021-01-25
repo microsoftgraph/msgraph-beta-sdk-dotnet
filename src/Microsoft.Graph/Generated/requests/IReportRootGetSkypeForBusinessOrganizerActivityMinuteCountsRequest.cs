@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,8 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
 
         /// <summary>
         /// Issues the PATCH request.
@@ -50,7 +47,7 @@ namespace Microsoft.Graph
         /// <param name="skypeforbusinessorganizeractivityminutecounts">The SkypeForBusinessOrganizerActivityMinuteCounts object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsCollectionPage> PatchAsync(SkypeForBusinessOrganizerActivityMinuteCounts skypeforbusinessorganizeractivityminutecounts, 
+        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsCollectionPage> PatchAsync(SkypeForBusinessOrganizerActivityMinuteCounts skypeforbusinessorganizeractivityminutecounts,
             CancellationToken cancellationToken);
 
 
@@ -67,10 +64,8 @@ namespace Microsoft.Graph
         /// <param name="skypeforbusinessorganizeractivityminutecounts">The SkypeForBusinessOrganizerActivityMinuteCounts object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsCollectionPage> PutAsync(SkypeForBusinessOrganizerActivityMinuteCounts skypeforbusinessorganizeractivityminutecounts, 
+        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityMinuteCountsCollectionPage> PutAsync(SkypeForBusinessOrganizerActivityMinuteCounts skypeforbusinessorganizeractivityminutecounts,
             CancellationToken cancellationToken);
-
-
 
 
         /// <summary>

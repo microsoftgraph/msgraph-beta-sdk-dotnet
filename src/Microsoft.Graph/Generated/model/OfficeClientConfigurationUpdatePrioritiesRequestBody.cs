@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OfficeClientConfigurationUpdatePrioritiesRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OfficeClientConfigurationUpdatePrioritiesRequestBody
     {
     
         /// <summary>
         /// Gets or sets OfficeConfigurationPolicyIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeConfigurationPolicyIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("officeConfigurationPolicyIds")]
         public IEnumerable<string> OfficeConfigurationPolicyIds { get; set; }
     
         /// <summary>
         /// Gets or sets OfficeConfigurationPriorities.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeConfigurationPriorities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("officeConfigurationPriorities")]
         public IEnumerable<Int32> OfficeConfigurationPriorities { get; set; }
     
     }

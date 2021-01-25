@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Reference Attachment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ReferenceAttachment : Attachment
     {
     
@@ -34,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets is folder.
         /// Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isFolder")]
         public bool? IsFolder { get; set; }
     
         /// <summary>
         /// Gets or sets permission.
         /// Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permission", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permission")]
         public ReferenceAttachmentPermission? Permission { get; set; }
     
         /// <summary>
         /// Gets or sets preview url.
         /// Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previewUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("previewUrl")]
         public string PreviewUrl { get; set; }
     
         /// <summary>
         /// Gets or sets provider type.
         /// The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("providerType")]
         public ReferenceAttachmentProvider? ProviderType { get; set; }
     
         /// <summary>
         /// Gets or sets source url.
         /// URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceUrl")]
         public string SourceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
         /// Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
     
     }

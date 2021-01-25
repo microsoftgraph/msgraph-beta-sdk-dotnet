@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Audio Routing Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AudioRoutingGroup : Entity
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets receivers.
         /// List of receiving participant ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "receivers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("receivers")]
         public IEnumerable<string> Receivers { get; set; }
     
         /// <summary>
         /// Gets or sets routing mode.
         /// Routing group mode.  Possible values are: oneToOne, multicast.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("routingMode")]
         public RoutingMode? RoutingMode { get; set; }
     
         /// <summary>
         /// Gets or sets sources.
         /// List of source participant ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sources")]
         public IEnumerable<string> Sources { get; set; }
     
     }

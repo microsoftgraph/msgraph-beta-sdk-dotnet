@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Privileged Role Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrivilegedRoleAssignment : Entity
     {
     
@@ -34,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets expiration date time.
         /// The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets is elevated.
         /// true if the role assignment is activated. false if the role assignment is deactivated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isElevated", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isElevated")]
         public bool? IsElevated { get; set; }
     
         /// <summary>
         /// Gets or sets result message.
         /// Result message set by the service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resultMessage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resultMessage")]
         public string ResultMessage { get; set; }
     
         /// <summary>
         /// Gets or sets role id.
         /// Role identifier. In GUID string format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleId")]
         public string RoleId { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// User identifier. In GUID string format.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets role info.
         /// Read-only. Nullable. The associated role information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleInfo")]
         public PrivilegedRole RoleInfo { get; set; }
     
     }

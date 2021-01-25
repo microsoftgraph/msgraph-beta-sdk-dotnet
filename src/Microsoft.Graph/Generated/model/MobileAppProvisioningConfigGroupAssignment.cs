@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Provisioning Config Group Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MobileAppProvisioningConfigGroupAssignment : Entity
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets target group id.
         /// The ID of the AAD group in which the app provisioning configuration is being targeted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetGroupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetGroupId")]
         public string TargetGroupId { get; set; }
     
     }

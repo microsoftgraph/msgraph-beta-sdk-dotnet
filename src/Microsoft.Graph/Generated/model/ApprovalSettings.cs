@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ApprovalSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ApprovalSettings>))]
     public partial class ApprovalSettings
     {
         /// <summary>
@@ -34,47 +32,47 @@ namespace Microsoft.Graph
         /// Gets or sets approvalMode.
         /// One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalMode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approvalMode")]
         public string ApprovalMode { get; set; }
     
         /// <summary>
         /// Gets or sets approvalStages.
         /// If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalStages", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("approvalStages")]
         public IEnumerable<ApprovalStage> ApprovalStages { get; set; }
     
         /// <summary>
         /// Gets or sets isApprovalRequired.
         /// If false, then approval is not required for requests in this policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isApprovalRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isApprovalRequired")]
         public bool? IsApprovalRequired { get; set; }
     
         /// <summary>
         /// Gets or sets isApprovalRequiredForExtension.
         /// If false, then approval is not required for a user who already has an assignment to extend their assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isApprovalRequiredForExtension", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isApprovalRequiredForExtension")]
         public bool? IsApprovalRequiredForExtension { get; set; }
     
         /// <summary>
         /// Gets or sets isRequestorJustificationRequired.
         /// Indicates whether the requestor is required to supply a justification in their request.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRequestorJustificationRequired", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isRequestorJustificationRequired")]
         public bool? IsRequestorJustificationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

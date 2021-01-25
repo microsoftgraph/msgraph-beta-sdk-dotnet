@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type File Classification Request.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class FileClassificationRequestObject : Entity
     {
     
@@ -33,13 +31,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "file", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("file")]
         public Stream File { get; set; }
     
         /// <summary>
         /// Gets or sets sensitive type ids.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypeIds")]
         public IEnumerable<string> SensitiveTypeIds { get; set; }
     
     }

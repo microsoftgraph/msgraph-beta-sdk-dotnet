@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Meeting Activity Statistics.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class MeetingActivityStatistics : ActivityStatistics
     {
     
@@ -34,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets after hours.
         /// Time spent on meetings outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "afterHours", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("afterHours")]
         public Duration AfterHours { get; set; }
     
         /// <summary>
         /// Gets or sets conflicting.
         /// Time spent in conflicting meetings (meetings that overlap with other meetings that the person accepted and where the person’s status is set to Busy). The value is represented in ISO 8601 format for durations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conflicting", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conflicting")]
         public Duration Conflicting { get; set; }
     
         /// <summary>
         /// Gets or sets long.
         /// Time spent in long meetings (more than an hour in duration). The value is represented in ISO 8601 format for durations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "long", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("long")]
         public Duration Long { get; set; }
     
         /// <summary>
         /// Gets or sets multitasking.
         /// Time spent in meetings where the person was multitasking (read/sent more than a minimum number of emails and/or sent more than a minimum number of messages in Teams or in Skype for Business). The value is represented in ISO 8601 format for durations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "multitasking", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("multitasking")]
         public Duration Multitasking { get; set; }
     
         /// <summary>
         /// Gets or sets organized.
         /// Time spent in meetings organized by the user. The value is represented in ISO 8601 format for durations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "organized", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("organized")]
         public Duration Organized { get; set; }
     
         /// <summary>
         /// Gets or sets recurring.
         /// Time spent on recurring meetings. The value is represented in ISO 8601 format for durations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurring", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recurring")]
         public Duration Recurring { get; set; }
     
     }

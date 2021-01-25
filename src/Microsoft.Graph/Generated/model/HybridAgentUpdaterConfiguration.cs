@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type HybridAgentUpdaterConfiguration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<HybridAgentUpdaterConfiguration>))]
     public partial class HybridAgentUpdaterConfiguration
     {
         /// <summary>
@@ -34,32 +32,32 @@ namespace Microsoft.Graph
         /// Gets or sets allowUpdateConfigurationOverride.
         /// Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowUpdateConfigurationOverride", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowUpdateConfigurationOverride")]
         public bool? AllowUpdateConfigurationOverride { get; set; }
     
         /// <summary>
         /// Gets or sets deferUpdateDateTime.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deferUpdateDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deferUpdateDateTime")]
         public DateTimeOffset? DeferUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets updateWindow.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateWindow", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("updateWindow")]
         public UpdateWindow UpdateWindow { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

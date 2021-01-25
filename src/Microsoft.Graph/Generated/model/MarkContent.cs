@@ -12,32 +12,30 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MarkContent.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public abstract partial class MarkContent : LabelActionBase
     {
 
         /// <summary>
         /// Gets or sets fontColor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontColor", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontColor")]
         public string FontColor { get; set; }
     
         /// <summary>
         /// Gets or sets fontSize.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fontSize", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fontSize")]
         public Int64? FontSize { get; set; }
     
         /// <summary>
         /// Gets or sets text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
     }

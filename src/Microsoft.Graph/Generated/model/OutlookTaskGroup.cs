@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Outlook Task Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class OutlookTaskGroup : Entity
     {
     
@@ -34,35 +32,35 @@ namespace Microsoft.Graph
         /// Gets or sets change key.
         /// The version of the task group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("changeKey")]
         public string ChangeKey { get; set; }
     
         /// <summary>
         /// Gets or sets group key.
         /// The unique GUID identifier for the task group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupKey")]
         public Guid? GroupKey { get; set; }
     
         /// <summary>
         /// Gets or sets is default group.
         /// True if the task group is the default task group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefaultGroup")]
         public bool? IsDefaultGroup { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The name of the task group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets task folders.
         /// The collection of task folders in the task group. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskFolders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taskFolders")]
         public IOutlookTaskGroupTaskFoldersCollectionPage TaskFolders { get; set; }
     
     }

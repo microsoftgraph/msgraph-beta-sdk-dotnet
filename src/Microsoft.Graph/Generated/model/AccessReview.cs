@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Review.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessReview : Entity
     {
     
@@ -34,98 +32,98 @@ namespace Microsoft.Graph
         /// Gets or sets business flow template id.
         /// The business flow template identifier. Required on create.  This value is case sensitive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessFlowTemplateId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("businessFlowTemplateId")]
         public string BusinessFlowTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// The user who created this review.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description provided by the access review creator, to show to the reviewers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The access review name. Required on create.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
         /// The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed entity.
         /// The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedEntity", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewedEntity")]
         public Identity ReviewedEntity { get; set; }
     
         /// <summary>
         /// Gets or sets reviewer type.
         /// The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewerType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewerType")]
         public string ReviewerType { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// The settings of an accessReview, see type definition below.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public AccessReviewSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets decisions.
         /// The collection of decisions for this access review.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decisions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("decisions")]
         public IAccessReviewDecisionsCollectionPage Decisions { get; set; }
     
         /// <summary>
         /// Gets or sets instances.
         /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instances", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("instances")]
         public IAccessReviewInstancesCollectionPage Instances { get; set; }
     
         /// <summary>
         /// Gets or sets my decisions.
         /// The collection of decisions for the caller, if the caller is a reviewer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "myDecisions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("myDecisions")]
         public IAccessReviewMyDecisionsCollectionPage MyDecisions { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
         /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reviewers")]
         public IAccessReviewReviewersCollectionPage Reviewers { get; set; }
     
     }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IWindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder.
     /// </summary>
-    public partial interface IWindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder
+    public partial interface IWindowsAutopilotDeploymentProfileHasPayloadLinksRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

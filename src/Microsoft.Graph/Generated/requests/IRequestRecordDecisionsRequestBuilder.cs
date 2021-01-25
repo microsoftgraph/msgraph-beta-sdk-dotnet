@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IRequestRecordDecisionsRequestBuilder.
     /// </summary>
-    public partial interface IRequestRecordDecisionsRequestBuilder
+    public partial interface IRequestRecordDecisionsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

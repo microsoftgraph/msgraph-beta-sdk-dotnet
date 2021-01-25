@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Connector.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Connector : Entity
     {
     
@@ -34,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets external ip.
         /// The external IP address as detected by the the connector server. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalIp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalIp")]
         public string ExternalIp { get; set; }
     
         /// <summary>
         /// Gets or sets machine name.
         /// The machine name the connector is installed and running on.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "machineName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("machineName")]
         public string MachineName { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Indicates the status of the connector. Possible values are: active, inactive. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ConnectorStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets member of.
         /// The connectorGroup that the connector is a member of. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberOf")]
         public IConnectorMemberOfCollectionPage MemberOf { get; set; }
     
     }

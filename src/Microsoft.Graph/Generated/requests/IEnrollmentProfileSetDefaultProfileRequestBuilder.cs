@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEnrollmentProfileSetDefaultProfileRequestBuilder.
     /// </summary>
-    public partial interface IEnrollmentProfileSetDefaultProfileRequestBuilder
+    public partial interface IEnrollmentProfileSetDefaultProfileRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

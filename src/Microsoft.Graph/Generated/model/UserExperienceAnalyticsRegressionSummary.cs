@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Regression Summary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsRegressionSummary : Entity
     {
     
@@ -34,21 +32,21 @@ namespace Microsoft.Graph
         /// Gets or sets manufacturer regression.
         /// The metric values for the user experience analytics Manufacturer regression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturerRegression", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturerRegression")]
         public IUserExperienceAnalyticsRegressionSummaryManufacturerRegressionCollectionPage ManufacturerRegression { get; set; }
     
         /// <summary>
         /// Gets or sets model regression.
         /// The metric values for the user experience analytics model regression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modelRegression", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modelRegression")]
         public IUserExperienceAnalyticsRegressionSummaryModelRegressionCollectionPage ModelRegression { get; set; }
     
         /// <summary>
         /// Gets or sets operating system regression.
         /// The metric values for the user experience analytics operating system regression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operatingSystemRegression", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("operatingSystemRegression")]
         public IUserExperienceAnalyticsRegressionSummaryOperatingSystemRegressionCollectionPage OperatingSystemRegression { get; set; }
     
     }

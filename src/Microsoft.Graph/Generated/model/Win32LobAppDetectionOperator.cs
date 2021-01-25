@@ -10,13 +10,12 @@
 
 namespace Microsoft.Graph
 {
-    using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum Win32LobAppDetectionOperator.
     /// </summary>
-    [JsonConverter(typeof(EnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
 	[System.Flags]
     public enum Win32LobAppDetectionOperator
     {

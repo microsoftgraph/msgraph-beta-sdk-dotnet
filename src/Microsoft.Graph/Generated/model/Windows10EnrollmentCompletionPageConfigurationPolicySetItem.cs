@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows10Enrollment Completion Page Configuration Policy Set Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem
     {
     
@@ -34,7 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets priority.
         /// Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
     }

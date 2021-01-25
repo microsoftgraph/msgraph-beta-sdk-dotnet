@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Privileged Operation Event.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PrivilegedOperationEvent : Entity
     {
     
@@ -34,98 +32,98 @@ namespace Microsoft.Graph
         /// Gets or sets additional information.
         /// Detailed human readable information for the event.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("additionalInformation")]
         public string AdditionalInformation { get; set; }
     
         /// <summary>
         /// Gets or sets creation date time.
         /// Indicates the time when the event is created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
         /// This is only used when the requestType is 'Activate', and it indicates the expiration time for the role activation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reference key.
         /// Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceKey", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("referenceKey")]
         public string ReferenceKey { get; set; }
     
         /// <summary>
         /// Gets or sets reference system.
         /// Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referenceSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("referenceSystem")]
         public string ReferenceSystem { get; set; }
     
         /// <summary>
         /// Gets or sets requestor id.
         /// The user id of the requestor who initiates the operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestorId")]
         public string RequestorId { get; set; }
     
         /// <summary>
         /// Gets or sets requestor name.
         /// The user name of the requestor who initiates the operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestorName")]
         public string RequestorName { get; set; }
     
         /// <summary>
         /// Gets or sets request type.
         /// The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlersNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue), AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review), AccessReview_Update (update an Access Review), and AccessReview_Delete (delete an Access Review).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestType")]
         public string RequestType { get; set; }
     
         /// <summary>
         /// Gets or sets role id.
         /// The id of the role that is associated with the operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleId")]
         public string RoleId { get; set; }
     
         /// <summary>
         /// Gets or sets role name.
         /// The name of the role.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleName")]
         public string RoleName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
         /// The tenant (organization) id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
         /// The id of the user that is associated with the operation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets user mail.
         /// The user's email.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userMail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userMail")]
         public string UserMail { get; set; }
     
         /// <summary>
         /// Gets or sets user name.
         /// The user's display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userName")]
         public string UserName { get; set; }
     
     }

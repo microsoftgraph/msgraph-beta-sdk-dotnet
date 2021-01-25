@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeliveryOptimizationGroupIdSourceOptions.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeliveryOptimizationGroupIdSourceOptions : DeliveryOptimizationGroupIdSource
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupIdSourceOption.
         /// Set this policy to restrict peer selection to a specific source. Possible values are: notConfigured, adSite, authenticatedDomainSid, dhcpUserOption, dnsSuffix.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupIdSourceOption", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupIdSourceOption")]
         public DeliveryOptimizationGroupIdOptionsType? GroupIdSourceOption { get; set; }
     
     }

@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ItemPreviewInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ItemPreviewInfo>))]
     public partial class ItemPreviewInfo
     {
         /// <summary>
@@ -33,31 +31,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets getUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "getUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("getUrl")]
         public string GetUrl { get; set; }
     
         /// <summary>
         /// Gets or sets postParameters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postParameters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postParameters")]
         public string PostParameters { get; set; }
     
         /// <summary>
         /// Gets or sets postUrl.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postUrl")]
         public string PostUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

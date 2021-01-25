@@ -21,7 +21,6 @@ namespace Microsoft.Graph
     public partial interface ISynchronizationSchemaFilterOperatorsRequest : IBaseRequest
     {
 
-
         /// <summary>
         /// Issues the GET request.
         /// </summary>
@@ -34,9 +33,6 @@ namespace Microsoft.Graph
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<ISynchronizationSchemaFilterOperatorsCollectionPage> GetAsync(
             CancellationToken cancellationToken);
-
-
-
 
 
         /// <summary>

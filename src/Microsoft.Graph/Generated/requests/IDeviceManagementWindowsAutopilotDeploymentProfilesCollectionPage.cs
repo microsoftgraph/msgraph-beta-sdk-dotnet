@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage>))]
     public interface IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage : ICollectionPage<WindowsAutopilotDeploymentProfile>
     {
         /// <summary>
