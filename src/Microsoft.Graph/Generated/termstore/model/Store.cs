@@ -19,7 +19,8 @@ namespace Microsoft.Graph.TermStore
     /// The type Store.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class Store : Microsoft.Graph.Entity
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    public partial class Store
     {
     
 		///<summary>
@@ -32,31 +33,39 @@ namespace Microsoft.Graph.TermStore
 	
         /// <summary>
         /// Gets or sets default language tag.
-        /// Default language of the term store.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLanguageTag", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultLanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets language tags.
-        /// List of languages for the term store.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageTags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> LanguageTags { get; set; }
     
         /// <summary>
         /// Gets or sets groups.
-        /// Collection of all groups available in the term store.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groups", Required = Newtonsoft.Json.Required.Default)]
         public IStoreGroupsCollectionPage Groups { get; set; }
     
         /// <summary>
         /// Gets or sets sets.
-        /// Collection of all sets available in the term store.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sets", Required = Newtonsoft.Json.Required.Default)]
         public IStoreSetsCollectionPage Sets { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
+        /// Current configuration manager client state.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationManagerClientState? State { get; set; }

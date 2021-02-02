@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets error code.
-        /// Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+        /// Error code if any occured.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public ErrorCode? ErrorCode { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+        /// Status of the PolicySetItem.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public PolicySetStatus? Status { get; set; }

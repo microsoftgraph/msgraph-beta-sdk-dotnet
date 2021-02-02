@@ -32,63 +32,54 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets control id.
-        /// The controlId of the control, in particular the identifier of an access review. Required on create.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlId", Required = Newtonsoft.Json.Required.Default)]
         public string ControlId { get; set; }
     
         /// <summary>
         /// Gets or sets control type id.
-        /// The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlTypeId", Required = Newtonsoft.Json.Required.Default)]
         public string ControlTypeId { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The creation date and time of the program control.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name of the control.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets owner.
-        /// The user who created the program control.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity Owner { get; set; }
     
         /// <summary>
         /// Gets or sets program id.
-        /// The programId of the program this control is a part of. Required on create.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "programId", Required = Newtonsoft.Json.Required.Default)]
         public string ProgramId { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
-        /// The resource, a group or an app, targeted by this program control's access review.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public ProgramResource Resource { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// The life cycle status of the control.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets program.
-        /// The program this control is part of.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "program", Required = Newtonsoft.Json.Required.Default)]
         public Program Program { get; set; }

@@ -32,56 +32,48 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets editable.
-        /// true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "editable", Required = Newtonsoft.Json.Required.Default)]
         public bool? Editable { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
-        /// Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<StringKeyStringValuePair> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// Human-readable name of the synchronization rule. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets objectMappings.
-        /// Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectMappings", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ObjectMapping> ObjectMappings { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
-        /// Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets sourceDirectoryName.
-        /// Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceDirectoryName", Required = Newtonsoft.Json.Required.Default)]
         public string SourceDirectoryName { get; set; }
     
         /// <summary>
         /// Gets or sets targetDirectoryName.
-        /// Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetDirectoryName", Required = Newtonsoft.Json.Required.Default)]
         public string TargetDirectoryName { get; set; }

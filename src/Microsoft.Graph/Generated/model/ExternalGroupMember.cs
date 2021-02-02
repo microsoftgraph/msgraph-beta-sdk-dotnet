@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets identity source.
-        /// The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySource", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySourceType? IdentitySource { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public ExternalGroupMemberType? Type { get; set; }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets bind status.
-        /// Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
+        /// Bind status of the tenant with the Google EMM API
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bindStatus", Required = Newtonsoft.Json.Required.Default)]
         public AndroidForWorkBindStatus? BindStatus { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment target.
-        /// Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
+        /// Indicates which users can enroll devices in Android for Work device management
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentTarget", Required = Newtonsoft.Json.Required.Default)]
         public AndroidForWorkEnrollmentTarget? EnrollmentTarget { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last app sync status.
-        /// Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+        /// Last application sync result
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastAppSyncStatus", Required = Newtonsoft.Json.Required.Default)]
         public AndroidForWorkSyncStatus? LastAppSyncStatus { get; set; }

@@ -32,49 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets android.
-        /// The activation count on an Android device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "android", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Android { get; set; }
     
         /// <summary>
         /// Gets or sets ios.
-        /// The activation count on iOS.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ios", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Ios { get; set; }
     
         /// <summary>
         /// Gets or sets mac.
-        /// The activation count on Mac OS.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mac", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Mac { get; set; }
     
         /// <summary>
         /// Gets or sets product type.
-        /// The product type, such as 'Microsoft 365 ProPlus' or 'Project Client'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productType", Required = Newtonsoft.Json.Required.Default)]
         public string ProductType { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
-        /// The latest date of the content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets windows.
-        /// The activation count on Windows. This number includes every activation on any Windows computer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Windows { get; set; }
     
         /// <summary>
         /// Gets or sets windows10mobile.
-        /// The activation count on Windows 10 mobile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10Mobile", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Windows10Mobile { get; set; }

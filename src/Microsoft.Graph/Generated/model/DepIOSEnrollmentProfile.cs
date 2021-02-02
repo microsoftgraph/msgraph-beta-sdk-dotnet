@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i tunes pairing mode.
-        /// Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+        /// Indicates the iTunes pairing mode
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iTunesPairingMode", Required = Newtonsoft.Json.Required.Default)]
         public ITunesPairingMode? ITunesPairingMode { get; set; }

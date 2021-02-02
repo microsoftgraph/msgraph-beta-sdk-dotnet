@@ -32,21 +32,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication method.
-        /// Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
+        /// Authentication method for Exchange ActiveSync.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public EasAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets duration of email to sync.
-        /// Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+        /// Duration of time email should be synced to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationOfEmailToSync", Required = Newtonsoft.Json.Required.Default)]
         public EmailSyncDuration? DurationOfEmailToSync { get; set; }
     
         /// <summary>
         /// Gets or sets email address source.
-        /// Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+        /// Email attribute that is picked from AAD and injected into this profile before installing on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddressSource", Required = Newtonsoft.Json.Required.Default)]
         public UserEmailSource? EmailAddressSource { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets username source.
-        /// Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
+        /// Username attribute that is picked from AAD and injected into this profile before installing on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usernameSource", Required = Newtonsoft.Json.Required.Default)]
         public AndroidUsernameSource? UsernameSource { get; set; }

@@ -60,14 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device manufacturer.
-        /// The device manufacturer for the current app registration
+        /// The device manufacturer for the current app registration 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceManufacturer", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceManufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets device model.
-        /// The device model for the current app registration
+        /// The device model for the current app registration 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceModel", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceModel { get; set; }

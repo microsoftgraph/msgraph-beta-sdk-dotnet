@@ -60,14 +60,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets metadata.
-        /// A blob of data provided by the participant in the roster.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
         public string Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets recording info.
-        /// Information on whether the participant has recording capability.
+        /// Information about whether the participant has recording capability.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordingInfo", Required = Newtonsoft.Json.Required.Default)]
         public RecordingInfo RecordingInfo { get; set; }

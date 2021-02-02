@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appliesTo.
-        /// The user role type to assign to license. Possible values are: student, teacher, faculty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliesTo", Required = Newtonsoft.Json.Required.Default)]
         public EducationUserRole? AppliesTo { get; set; }
     
         /// <summary>
         /// Gets or sets skuIds.
-        /// Represents the SKU identifiers of the licenses to assign.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skuIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> SkuIds { get; set; }

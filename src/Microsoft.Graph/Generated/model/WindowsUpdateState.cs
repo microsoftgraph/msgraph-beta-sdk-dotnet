@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Windows udpate status. Possible values are: upToDate, pendingInstallation, pendingReboot, failed.
+        /// Windows udpate status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public WindowsUpdateStatus? Status { get; set; }

@@ -74,14 +74,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customCantSeePrivacyMessage.
-        /// The custom privacy message used to explain what the organization can’t see or do on managed devices.
+        /// The custom privacy message used to explain what the organization can???t see or do on managed devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customCantSeePrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
         public string CustomCantSeePrivacyMessage { get; set; }
     
         /// <summary>
         /// Gets or sets customPrivacyMessage.
-        /// The custom privacy message used to explain what the organization can’t see or do on managed devices.
+        /// The custom privacy message used to explain what the organization can???t see or do on managed devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customPrivacyMessage", Required = Newtonsoft.Json.Required.Default)]
         public string CustomPrivacyMessage { get; set; }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollmentAvailability.
-        /// Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
+        /// Customized device enrollment flow displayed to the end user 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentAvailability", Required = Newtonsoft.Json.Required.Default)]
         public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }

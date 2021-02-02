@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets orderHint.
-        /// Hint used to order items of this type in a list view. The format is defined in Using order hints in Planner.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderHint", Required = Newtonsoft.Json.Required.Default)]
         public string OrderHint { get; set; }
     
         /// <summary>
         /// Gets or sets planTitle.
-        /// Title of the plan at the time the user marked it as a favorite.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "planTitle", Required = Newtonsoft.Json.Required.Default)]
         public string PlanTitle { get; set; }

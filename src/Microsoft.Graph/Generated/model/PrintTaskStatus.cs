@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// A human-readable description of the current processing state of the printTask.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets state.
-        /// The current processing state of the printTask. Valid values are described in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public PrintTaskProcessingState? State { get; set; }

@@ -44,13 +44,6 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roles", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Roles { get; set; }
     
-        /// <summary>
-        /// Gets or sets visible history start date time.
-        /// The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibleHistoryStartDateTime", Required = Newtonsoft.Json.Required.Default)]
-        public DateTimeOffset? VisibleHistoryStartDateTime { get; set; }
-    
     }
 }
 

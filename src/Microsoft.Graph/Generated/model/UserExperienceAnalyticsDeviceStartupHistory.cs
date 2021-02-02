@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets restart category.
-        /// OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError.
+        /// OS restart category
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restartCategory", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory { get; set; }

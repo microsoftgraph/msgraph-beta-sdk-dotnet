@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actualValue.
-        /// The actual value of the selected choice. This is typically a string value which is understandable by applications. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actualValue", Required = Newtonsoft.Json.Required.Default)]
         public string ActualValue { get; set; }
     
         /// <summary>
         /// Gets or sets displayValue.
-        /// The localized display values shown to the requestor and approvers. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayValue", Required = Newtonsoft.Json.Required.Default)]
         public AccessPackageLocalizedContent DisplayValue { get; set; }

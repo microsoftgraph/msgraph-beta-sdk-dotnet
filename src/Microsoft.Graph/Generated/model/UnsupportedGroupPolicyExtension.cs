@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting scope.
-        /// Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
+        /// Setting Scope of the unsupported extension.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingScope", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicySettingScope? SettingScope { get; set; }

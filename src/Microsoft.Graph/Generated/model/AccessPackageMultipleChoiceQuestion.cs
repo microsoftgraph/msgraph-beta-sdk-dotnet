@@ -31,14 +31,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowsMultipleSelection.
-        /// Indicates whether requestor can select multiple choices as their answer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowsMultipleSelection", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowsMultipleSelection { get; set; }
     
         /// <summary>
         /// Gets or sets choices.
-        /// List of answer choices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "choices", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AccessPackageAnswerChoice> Choices { get; set; }

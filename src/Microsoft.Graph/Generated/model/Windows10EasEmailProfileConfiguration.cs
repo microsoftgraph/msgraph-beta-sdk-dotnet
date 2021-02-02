@@ -39,21 +39,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets duration of email to sync.
-        /// Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+        /// Duration of email to sync.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationOfEmailToSync", Required = Newtonsoft.Json.Required.Default)]
         public EmailSyncDuration? DurationOfEmailToSync { get; set; }
     
         /// <summary>
         /// Gets or sets email address source.
-        /// Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+        /// Email attribute that is picked from AAD and injected into this profile before installing on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddressSource", Required = Newtonsoft.Json.Required.Default)]
         public UserEmailSource? EmailAddressSource { get; set; }
     
         /// <summary>
         /// Gets or sets email sync schedule.
-        /// Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
+        /// Email sync schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailSyncSchedule", Required = Newtonsoft.Json.Required.Default)]
         public EmailSyncSchedule? EmailSyncSchedule { get; set; }

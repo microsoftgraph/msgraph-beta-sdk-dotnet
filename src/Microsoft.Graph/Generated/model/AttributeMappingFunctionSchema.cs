@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets parameters.
-        /// Collection of function parameters.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parameters", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AttributeMappingParameterSchema> Parameters { get; set; }

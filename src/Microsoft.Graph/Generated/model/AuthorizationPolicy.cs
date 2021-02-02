@@ -74,21 +74,18 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enabled preview features.
-        /// List of features enabled for private preview on the tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabledPreviewFeatures", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EnabledPreviewFeatures { get; set; }
     
         /// <summary>
         /// Gets or sets guest user role id.
-        /// Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported: User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "guestUserRoleId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? GuestUserRoleId { get; set; }
     
         /// <summary>
         /// Gets or sets permission grant policy ids assigned to default user role.
-        /// Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrantPolicyIdsAssignedToDefaultUserRole", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> PermissionGrantPolicyIdsAssignedToDefaultUserRole { get; set; }

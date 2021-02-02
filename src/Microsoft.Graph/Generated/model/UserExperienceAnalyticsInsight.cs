@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets severity.
-        /// The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
+        /// The value of the user experience analytics insight.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsInsightSeverity? Severity { get; set; }

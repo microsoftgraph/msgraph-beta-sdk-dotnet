@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets change key.
-        /// The version of the task group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "changeKey", Required = Newtonsoft.Json.Required.Default)]
         public string ChangeKey { get; set; }
     
         /// <summary>
         /// Gets or sets group key.
-        /// The unique GUID identifier for the task group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupKey", Required = Newtonsoft.Json.Required.Default)]
         public Guid? GroupKey { get; set; }
     
         /// <summary>
         /// Gets or sets is default group.
-        /// True if the task group is the default task group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultGroup", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefaultGroup { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// The name of the task group.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets task folders.
-        /// The collection of task folders in the task group. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taskFolders", Required = Newtonsoft.Json.Required.Default)]
         public IOutlookTaskGroupTaskFoldersCollectionPage TaskFolders { get; set; }

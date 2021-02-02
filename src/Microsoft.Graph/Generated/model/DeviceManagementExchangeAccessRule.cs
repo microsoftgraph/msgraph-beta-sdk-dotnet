@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accessLevel.
-        /// Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
+        /// Access Level for Exchange granted by this rule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessLevel", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementExchangeAccessLevel? AccessLevel { get; set; }

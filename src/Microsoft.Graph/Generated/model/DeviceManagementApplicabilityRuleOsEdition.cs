@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ruleType.
-        /// Applicability Rule type. Possible values are: include, exclude.
+        /// Applicability Rule type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementApplicabilityRuleType? RuleType { get; set; }

@@ -130,7 +130,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets run as account.
-        /// Indicates the type of execution context. Possible values are: system, user.
+        /// Indicates the type of execution context
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
         public RunAsAccountType? RunAsAccount { get; set; }

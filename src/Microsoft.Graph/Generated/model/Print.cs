@@ -33,14 +33,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets settings.
-        /// Tenant-wide settings for the Universal Print service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public PrintSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets connectors.
-        /// The list of available print connectors.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectors", Required = Newtonsoft.Json.Required.Default)]
         public IPrintConnectorsCollectionPage Connectors { get; set; }
@@ -53,7 +51,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets printers.
-        /// The list of printers registered in the tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printers", Required = Newtonsoft.Json.Required.Default)]
         public IPrintPrintersCollectionPage Printers { get; set; }
@@ -72,14 +69,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets services.
-        /// The list of available Universal Print service endpoints.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "services", Required = Newtonsoft.Json.Required.Default)]
         public IPrintServicesCollectionPage Services { get; set; }
     
         /// <summary>
         /// Gets or sets shares.
-        /// The list of printer shares registered in the tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shares", Required = Newtonsoft.Json.Required.Default)]
         public IPrintSharesCollectionPage Shares { get; set; }

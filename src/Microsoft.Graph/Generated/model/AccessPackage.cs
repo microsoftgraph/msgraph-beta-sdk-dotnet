@@ -32,84 +32,72 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets catalog id.
-        /// ID of the access package catalog referencing this access package. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "catalogId", Required = Newtonsoft.Json.Required.Default)]
         public string CatalogId { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
-        /// UPN of the user or identity of the subject who created this resource. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public string CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// The description of the access package.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the access package.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is hidden.
-        /// Whether the access package is hidden from the requestor.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHidden", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsHidden { get; set; }
     
         /// <summary>
         /// Gets or sets is role scopes visible.
-        /// Indicates whether role scopes are visible.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRoleScopesVisible", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsRoleScopesVisible { get; set; }
     
         /// <summary>
         /// Gets or sets modified by.
-        /// The UPN of the user who last modified this resource. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedBy", Required = Newtonsoft.Json.Required.Default)]
         public string ModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment policies.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageAssignmentPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets access package catalog.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageCatalog", Required = Newtonsoft.Json.Required.Default)]
         public AccessPackageCatalog AccessPackageCatalog { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role scopes.
-        /// Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRoleScopes", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }

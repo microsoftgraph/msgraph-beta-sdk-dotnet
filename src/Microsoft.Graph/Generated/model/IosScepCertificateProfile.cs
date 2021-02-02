@@ -32,14 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets certificate store.
-        /// Target store certificate. Possible values are: user, machine.
+        /// Target store certificate
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateStore", Required = Newtonsoft.Json.Required.Default)]
         public CertificateStore? CertificateStore { get; set; }
     
         /// <summary>
         /// Gets or sets custom subject alternative names.
-        /// Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
+        /// Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: http://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customSubjectAlternativeNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
@@ -53,14 +53,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets key size.
-        /// SCEP Key Size. Possible values are: size1024, size2048, size4096.
+        /// SCEP Key Size.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keySize", Required = Newtonsoft.Json.Required.Default)]
         public KeySize? KeySize { get; set; }
     
         /// <summary>
         /// Gets or sets key usage.
-        /// SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+        /// SCEP Key Usage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
         public KeyUsages? KeyUsage { get; set; }

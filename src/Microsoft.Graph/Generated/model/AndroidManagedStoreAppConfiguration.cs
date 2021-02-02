@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets profile applicability.
-        /// Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
+        /// Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profileApplicability", Required = Newtonsoft.Json.Required.Default)]
         public AndroidProfileApplicability? ProfileApplicability { get; set; }

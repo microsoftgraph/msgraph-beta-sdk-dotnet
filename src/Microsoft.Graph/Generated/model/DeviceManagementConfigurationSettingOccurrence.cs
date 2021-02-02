@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets maxDeviceOccurrence.
-        /// Maximum times setting can be set on device.
+        /// Maximum times setting can be set on device. 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxDeviceOccurrence", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaxDeviceOccurrence { get; set; }

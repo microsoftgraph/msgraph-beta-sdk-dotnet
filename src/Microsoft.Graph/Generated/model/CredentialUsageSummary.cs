@@ -32,28 +32,24 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets auth method.
-        /// Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and  alternateMobileCall (only supported for registration).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authMethod", Required = Newtonsoft.Json.Required.Default)]
         public UsageAuthMethod? AuthMethod { get; set; }
     
         /// <summary>
         /// Gets or sets failure activity count.
-        /// Provides the count of failed resets or registration data.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failureActivityCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? FailureActivityCount { get; set; }
     
         /// <summary>
         /// Gets or sets feature.
-        /// Defines the feature to report. Possible values are: registration and reset.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feature", Required = Newtonsoft.Json.Required.Default)]
         public FeatureType? Feature { get; set; }
     
         /// <summary>
         /// Gets or sets successful activity count.
-        /// Provides the count of successful registrations or resets.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulActivityCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SuccessfulActivityCount { get; set; }

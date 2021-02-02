@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets activated.
-        /// The number of users who have activated the product.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activated", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Activated { get; set; }
     
         /// <summary>
         /// Gets or sets assigned.
-        /// The number of users have been assigned for the product license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assigned", Required = Newtonsoft.Json.Required.Default)]
         public Int64? Assigned { get; set; }
     
         /// <summary>
         /// Gets or sets product type.
-        /// The product type such as 'Microsoft 365 ProPlus' or 'Project Client'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "productType", Required = Newtonsoft.Json.Required.Default)]
         public string ProductType { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
-        /// The latest date of the content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets shared computer activation.
-        /// The number of users who have used the product on a shared computer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedComputerActivation", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SharedComputerActivation { get; set; }

@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
+        /// Status of the cached report
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementReportStatus? Status { get; set; }

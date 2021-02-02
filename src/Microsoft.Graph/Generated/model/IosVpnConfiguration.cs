@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets strict enforcement.
-        /// Zscaler only. Blocks network traffic until the user signs into Zscaler app. 'True' means traffic is blocked.
+        /// Zscaler only. Blocks network traffic until the user signs into Zscaler app. "True" means traffic is blocked.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "strictEnforcement", Required = Newtonsoft.Json.Required.Default)]
         public bool? StrictEnforcement { get; set; }

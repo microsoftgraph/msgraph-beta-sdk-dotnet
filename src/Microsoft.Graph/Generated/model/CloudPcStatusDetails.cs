@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additionalInformation.
-        /// Any additional information about the cloud PC status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> AdditionalInformation { get; set; }
     
         /// <summary>
         /// Gets or sets code.
-        /// The code associated with the cloud PC status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
         public string Code { get; set; }
     
         /// <summary>
         /// Gets or sets message.
-        /// The status message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }

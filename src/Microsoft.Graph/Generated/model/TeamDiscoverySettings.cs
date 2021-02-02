@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets showInTeamsSearchAndSuggestions.
-        /// If set to true, the team is visible via search and suggestions from the Teams client.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showInTeamsSearchAndSuggestions", Required = Newtonsoft.Json.Required.Default)]
         public bool? ShowInTeamsSearchAndSuggestions { get; set; }

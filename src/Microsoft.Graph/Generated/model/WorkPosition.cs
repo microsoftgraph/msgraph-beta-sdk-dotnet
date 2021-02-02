@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets categories.
-        /// Categories that the user has associated with this position.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
         /// Gets or sets colleagues.
-        /// Colleagues that are associated with this position.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colleagues", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RelatedPerson> Colleagues { get; set; }
     
         /// <summary>
         /// Gets or sets detail.
-        /// Contains detailed information about the position.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
         public PositionDetail Detail { get; set; }
     
         /// <summary>
         /// Gets or sets is current.
-        /// Denotes whether or not the position is current.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCurrent", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsCurrent { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
-        /// Contains detail of the user's manager in this position.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
         public RelatedPerson Manager { get; set; }

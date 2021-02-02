@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets source.
-        /// The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
+        /// The assignment source for the device compliance policy, direct or parcel/policySet.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }

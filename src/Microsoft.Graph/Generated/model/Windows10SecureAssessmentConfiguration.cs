@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets configuration account type.
-        /// The account type used to by ConfigurationAccount. Possible values are: azureADAccount, domainAccount, localAccount, localGuestAccount.
+        /// The account type used to by ConfigurationAccount.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationAccountType", Required = Newtonsoft.Json.Required.Default)]
         public SecureAssessmentAccountType? ConfigurationAccountType { get; set; }

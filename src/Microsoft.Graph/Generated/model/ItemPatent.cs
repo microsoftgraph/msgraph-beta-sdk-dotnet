@@ -32,49 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets description.
-        /// Descpription of the patent or filing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Title of the patent or filing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is pending.
-        /// Indicates the patent is pending.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPending", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsPending { get; set; }
     
         /// <summary>
         /// Gets or sets issued date.
-        /// The date that the patent was granted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuedDate", Required = Newtonsoft.Json.Required.Default)]
         public Date IssuedDate { get; set; }
     
         /// <summary>
         /// Gets or sets issuing authority.
-        /// Authority which granted the patent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuingAuthority", Required = Newtonsoft.Json.Required.Default)]
         public string IssuingAuthority { get; set; }
     
         /// <summary>
         /// Gets or sets number.
-        /// The patent number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
         public string Number { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
-        /// URL referencing the patent or filing.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }

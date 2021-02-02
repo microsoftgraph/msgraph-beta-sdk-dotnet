@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedTypes.
-        /// Gets or sets the allowed macOS system extension types. Possible values are: driverExtensionsAllowed, networkExtensionsAllowed, endpointSecurityExtensionsAllowed.
+        /// Gets or sets the allowed macOS system extension types.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedTypes", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSystemExtensionType? AllowedTypes { get; set; }

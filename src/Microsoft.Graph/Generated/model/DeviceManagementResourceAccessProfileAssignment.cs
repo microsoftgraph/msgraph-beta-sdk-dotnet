@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets intent.
-        /// The assignment intent for the resource access profile. Possible values are: apply, remove.
+        /// The assignment intent for the resource access profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intent", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementResourceAccessProfileIntent? Intent { get; set; }

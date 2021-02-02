@@ -39,14 +39,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operation status.
-        /// The group policy operation status. Possible values are: unknown, inProgress, success, failed.
+        /// The group policy operation status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationStatus", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyOperationStatus? OperationStatus { get; set; }
     
         /// <summary>
         /// Gets or sets operation type.
-        /// The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
+        /// The type of group policy operation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operationType", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyOperationType? OperationType { get; set; }

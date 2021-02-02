@@ -32,42 +32,36 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets address.
-        /// Address of the company.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
         public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets department.
-        /// Department Name within a company.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "department", Required = Newtonsoft.Json.Required.Default)]
         public string Department { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
-        /// Company name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets officeLocation.
-        /// Office Location of the person referred to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
         public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets pronunciation.
-        /// Pronunciation guide for the company name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
         public string Pronunciation { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.
-        /// Link to the company home page.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }

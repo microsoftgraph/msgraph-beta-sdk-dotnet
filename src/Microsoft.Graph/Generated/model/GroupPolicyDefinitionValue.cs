@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets configuration type.
-        /// Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
+        /// Specifies how the value should be configured. This can be either as a Policy or as a Preference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationType", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyConfigurationType? ConfigurationType { get; set; }

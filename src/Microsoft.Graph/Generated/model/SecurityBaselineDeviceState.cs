@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// Security baseline compliance state. Possible values are: unknown, secure, notApplicable, notSecure, error, conflict.
+        /// Security baseline compliance state
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
         public SecurityBaselineComplianceState? State { get; set; }

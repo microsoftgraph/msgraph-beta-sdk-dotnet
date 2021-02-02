@@ -39,7 +39,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permissionIds.
-        /// The unique identifier for the oauth2PermissionScopes the application requires.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> PermissionIds { get; set; }

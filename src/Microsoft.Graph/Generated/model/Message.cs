@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets body preview.
-        /// The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+        /// The first 255 characters of the message body. It is in text format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bodyPreview", Required = Newtonsoft.Json.Required.Default)]
         public string BodyPreview { get; set; }
@@ -246,7 +246,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mentions.
-        /// A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mentions", Required = Newtonsoft.Json.Required.Default)]
         public IMessageMentionsCollectionPage Mentions { get; set; }

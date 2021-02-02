@@ -61,18 +61,6 @@ namespace Microsoft.Graph
                 return new RoomListRoomsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rooms"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for Spaces.
-        /// </summary>
-        /// <returns>The <see cref="IRoomListSpacesCollectionRequestBuilder"/>.</returns>
-        public IRoomListSpacesCollectionRequestBuilder Spaces
-        {
-            get
-            {
-                return new RoomListSpacesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("spaces"), this.Client);
-            }
-        }
     
     }
 }

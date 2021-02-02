@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets display name.
-        /// Friendly name the user has assigned this phone number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets number.
-        /// Phone number provided by the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
         public string Number { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public PhoneType? Type { get; set; }

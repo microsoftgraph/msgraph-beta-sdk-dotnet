@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets event.
-        /// The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "event", Required = Newtonsoft.Json.Required.Default)]
         public PrintEvent? Event { get; set; }
     
         /// <summary>
         /// Gets or sets definition.
-        /// An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definition", Required = Newtonsoft.Json.Required.Default)]
         public PrintTaskDefinition Definition { get; set; }

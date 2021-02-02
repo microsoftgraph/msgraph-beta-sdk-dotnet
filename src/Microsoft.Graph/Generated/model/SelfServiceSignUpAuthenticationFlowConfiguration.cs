@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isEnabled.
-        /// Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabled { get; set; }

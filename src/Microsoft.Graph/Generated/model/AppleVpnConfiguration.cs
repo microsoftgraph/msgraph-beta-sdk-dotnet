@@ -32,7 +32,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication method.
-        /// Authentication method for this VPN connection. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+        /// Authentication method for this VPN connection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public VpnAuthenticationMethod? AuthenticationMethod { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connection type.
-        /// Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, customVpn, ciscoIPSec, citrix, ciscoAnyConnectV2, paloAltoGlobalProtect, zscalerPrivateAccess, f5Access2018, citrixSso, paloAltoGlobalProtectV2, ikEv2, alwaysOn, microsoftTunnel, netMotionMobility.
+        /// Connection type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionType", Required = Newtonsoft.Json.Required.Default)]
         public AppleVpnConnectionType? ConnectionType { get; set; }
@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provider type.
-        /// Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
+        /// Provider type for per-app VPN.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "providerType", Required = Newtonsoft.Json.Required.Default)]
         public VpnProviderType? ProviderType { get; set; }

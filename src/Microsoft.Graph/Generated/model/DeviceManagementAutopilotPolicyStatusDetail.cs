@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets compliance status.
-        /// The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
+        /// The policy compliance status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "complianceStatus", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus { get; set; }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policy type.
-        /// The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
+        /// The type of policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementAutopilotPolicyType? PolicyType { get; set; }

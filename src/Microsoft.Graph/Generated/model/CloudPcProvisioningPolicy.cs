@@ -32,49 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets description.
-        /// The provisioning policy description.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the provisioning policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets image display name.
-        /// The display name for the OS image you’re provisioning.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imageDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string ImageDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets image id.
-        /// The ID of the OS image you want to provision on cloud PCs. The format for a gallery type image is: {publisher_offer_sku}.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imageId", Required = Newtonsoft.Json.Required.Default)]
         public string ImageId { get; set; }
     
         /// <summary>
         /// Gets or sets image type.
-        /// The type of OS image (custom or gallery) you want to provision on cloud PCs. Possible values are: gallery, custom.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imageType", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcProvisioningPolicyImageType? ImageType { get; set; }
     
         /// <summary>
         /// Gets or sets on premises connection id.
-        /// The ID of the cloudPcOnPremisesConnection. To ensure that cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the cloud PC service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesConnectionId", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesConnectionId { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
-        /// A defined collection of provisioning policy assignments. Returned only on $expand. See an example of getting the assignments relationship.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
         public ICloudPcProvisioningPolicyAssignmentsCollectionPage Assignments { get; set; }

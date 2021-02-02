@@ -38,28 +38,24 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default duration.
-        /// The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration DefaultDuration { get; set; }
     
         /// <summary>
         /// Gets or sets default location.
-        /// The default physical location for the service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLocation", Required = Newtonsoft.Json.Required.Default)]
         public Location DefaultLocation { get; set; }
     
         /// <summary>
         /// Gets or sets default price.
-        /// The default monetary price for the service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultPrice", Required = Newtonsoft.Json.Required.Default)]
         public double? DefaultPrice { get; set; }
     
         /// <summary>
         /// Gets or sets default price type.
-        /// The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultPriceType", Required = Newtonsoft.Json.Required.Default)]
         public BookingPriceType? DefaultPriceType { get; set; }
@@ -73,14 +69,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// A text description for the service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets is hidden from customers.
-        /// True means this service is not available to customers for booking.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isHiddenFromCustomers", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsHiddenFromCustomers { get; set; }
@@ -93,35 +87,30 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notes.
-        /// Additional information about this service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notes", Required = Newtonsoft.Json.Required.Default)]
         public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets post buffer.
-        /// The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postBuffer", Required = Newtonsoft.Json.Required.Default)]
         public Duration PostBuffer { get; set; }
     
         /// <summary>
         /// Gets or sets pre buffer.
-        /// The time to buffer before an appointment for this service can start.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preBuffer", Required = Newtonsoft.Json.Required.Default)]
         public Duration PreBuffer { get; set; }
     
         /// <summary>
         /// Gets or sets scheduling policy.
-        /// The set of policies that determine how appointments for this type of service should be created and managed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schedulingPolicy", Required = Newtonsoft.Json.Required.Default)]
         public BookingSchedulingPolicy SchedulingPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets staff member ids.
-        /// Represents those staff members who provide this service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "staffMemberIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> StaffMemberIds { get; set; }

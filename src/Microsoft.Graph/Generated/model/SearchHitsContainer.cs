@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets aggregations.
-        /// Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregations", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SearchAggregation> Aggregations { get; set; }

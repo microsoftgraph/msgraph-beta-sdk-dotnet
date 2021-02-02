@@ -32,56 +32,48 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assignment state.
-        /// The state of the assignment. The value can be  Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentState", Required = Newtonsoft.Json.Required.Default)]
         public string AssignmentState { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
-        /// For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
-        /// The external ID the resource that is used to identify the role assignment in the provider.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets linked eligible role assignment id.
-        /// If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkedEligibleRoleAssignmentId", Required = Newtonsoft.Json.Required.Default)]
         public string LinkedEligibleRoleAssignmentId { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
-        /// The type of member. The value can be: Inherited - the role assignment is inherited from a parent resource scopeGroup- the role assignment is not inherited, but comes from the membership of a group assignmentUser - the role assignment is neither inherited nor from a group assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberType", Required = Newtonsoft.Json.Required.Default)]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
-        /// Required. The ID of the resource which the role assignment is associated with.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
-        /// Required. The ID of the role definition which the role assignment is associated with.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
-        /// The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
@@ -94,35 +86,30 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subject id.
-        /// Required. The ID of the subject which the role assignment is associated with.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectId", Required = Newtonsoft.Json.Required.Default)]
         public string SubjectId { get; set; }
     
         /// <summary>
         /// Gets or sets linked eligible role assignment.
-        /// Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linkedEligibleRoleAssignment", Required = Newtonsoft.Json.Required.Default)]
         public GovernanceRoleAssignment LinkedEligibleRoleAssignment { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
-        /// Read-only. The resource associated with the role assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public GovernanceResource Resource { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.
-        /// Read-only. The role definition associated with the role assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
         public GovernanceRoleDefinition RoleDefinition { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
-        /// Read-only. The subject associated with the role assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subject", Required = Newtonsoft.Json.Required.Default)]
         public GovernanceSubject Subject { get; set; }

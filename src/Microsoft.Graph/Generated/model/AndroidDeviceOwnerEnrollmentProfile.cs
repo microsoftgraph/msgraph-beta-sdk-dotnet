@@ -67,14 +67,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment mode.
-        /// The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile, corporateOwnedAOSPUserlessDevice.
+        /// The enrollment mode of devices that use this enrollment profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentMode", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerEnrollmentMode? EnrollmentMode { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment token type.
-        /// The enrollment token type for an enrollment profile. Possible values are: default, corporateOwnedDedicatedDeviceWithAzureADSharedMode.
+        /// The enrollment token type for an enrollment profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentTokenType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerEnrollmentTokenType? EnrollmentTokenType { get; set; }

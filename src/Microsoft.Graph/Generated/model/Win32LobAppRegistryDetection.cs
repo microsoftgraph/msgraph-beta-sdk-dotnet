@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets detectionType.
-        /// The registry data detection type. Possible values are: notConfigured, exists, doesNotExist, string, integer, version.
+        /// The registry data detection type
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRegistryDetectionType? DetectionType { get; set; }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operator.
-        /// The operator for registry data detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.
+        /// The operator for registry data detection
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppDetectionOperator? Operator { get; set; }

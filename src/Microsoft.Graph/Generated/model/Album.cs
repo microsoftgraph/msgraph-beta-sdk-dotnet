@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets coverImageItemId.
-        /// Unique identifier of the [driveItem][] that is the cover of the album.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "coverImageItemId", Required = Newtonsoft.Json.Required.Default)]
         public string CoverImageItemId { get; set; }

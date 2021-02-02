@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication method.
-        /// Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
+        /// Authentication method for this Email profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public EasAuthenticationMethod? AuthenticationMethod { get; set; }
@@ -67,14 +67,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets duration of email to sync.
-        /// Duration of time email should be synced back to. . Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+        /// Duration of time email should be synced back to. 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationOfEmailToSync", Required = Newtonsoft.Json.Required.Default)]
         public EmailSyncDuration? DurationOfEmailToSync { get; set; }
     
         /// <summary>
         /// Gets or sets eas services.
-        /// Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
+        /// Exchange data to sync.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "easServices", Required = Newtonsoft.Json.Required.Default)]
         public EasServices? EasServices { get; set; }
@@ -88,14 +88,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets email address source.
-        /// Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+        /// Email attribute that is picked from AAD and injected into this profile before installing on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddressSource", Required = Newtonsoft.Json.Required.Default)]
         public UserEmailSource? EmailAddressSource { get; set; }
     
         /// <summary>
         /// Gets or sets encryption certificate type.
-        /// Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
+        /// Encryption Certificate type for this Email profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionCertificateType", Required = Newtonsoft.Json.Required.Default)]
         public EmailCertificateType? EncryptionCertificateType { get; set; }
@@ -130,7 +130,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets signing certificate type.
-        /// Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
+        /// Signing Certificate type for this Email profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signingCertificateType", Required = Newtonsoft.Json.Required.Default)]
         public EmailCertificateType? SigningCertificateType { get; set; }
@@ -158,7 +158,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets smime encryption certificate user override enabled.
-        /// If set to true the user can select the S/MIME encryption identity.
+        /// If set to true the user can select the S/MIME encryption identity. 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "smimeEncryptionCertificateUserOverrideEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SmimeEncryptionCertificateUserOverrideEnabled { get; set; }

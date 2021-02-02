@@ -32,28 +32,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// The description of this rubric level.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public EducationItemBody Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
-        /// The name of this rubric level.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets grading.
-        /// Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grading", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentGradeType Grading { get; set; }
     
         /// <summary>
         /// Gets or sets levelId.
-        /// The ID of this resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "levelId", Required = Newtonsoft.Json.Required.Default)]
         public string LevelId { get; set; }

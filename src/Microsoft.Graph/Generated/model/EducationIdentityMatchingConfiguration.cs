@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets matchingOptions.
-        /// Mapping between the user account and the options to use to uniquely identify the user to update.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "matchingOptions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<EducationIdentityMatchingOptions> MatchingOptions { get; set; }

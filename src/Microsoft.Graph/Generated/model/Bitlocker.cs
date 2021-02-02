@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets recovery keys.
-        /// The recovery keys associated with the bitlocker entity.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recoveryKeys", Required = Newtonsoft.Json.Required.Default)]
         public IBitlockerRecoveryKeysCollectionPage RecoveryKeys { get; set; }

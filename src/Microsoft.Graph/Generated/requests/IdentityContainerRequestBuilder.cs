@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ApiConnectors.
-        /// </summary>
-        /// <returns>The <see cref="IIdentityContainerApiConnectorsCollectionRequestBuilder"/>.</returns>
-        public IIdentityContainerApiConnectorsCollectionRequestBuilder ApiConnectors
-        {
-            get
-            {
-                return new IdentityContainerApiConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("apiConnectors"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>

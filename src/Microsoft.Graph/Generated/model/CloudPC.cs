@@ -32,77 +32,66 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets display name.
-        /// The cloud PC display name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets image display name.
-        /// Name of the OS image that's on the cloud PC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imageDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string ImageDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// The cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
-        /// The cloud PC’s Intune device ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceId", Required = Newtonsoft.Json.Required.Default)]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
-        /// The cloud PC’s Intune device name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDeviceName", Required = Newtonsoft.Json.Required.Default)]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning policy id.
-        /// The cloud PC's provisioning policy ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioningPolicyId", Required = Newtonsoft.Json.Required.Default)]
         public string ProvisioningPolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets service plan id.
-        /// The cloud PC's service plan ID.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePlanId", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePlanId { get; set; }
     
         /// <summary>
         /// Gets or sets service plan name.
-        /// The cloud PC's service plan name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePlanName", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePlanName { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets status details.
-        /// The details of the cloud PC status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statusDetails", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcStatusDetails StatusDetails { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user assigned to the cloud PC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }

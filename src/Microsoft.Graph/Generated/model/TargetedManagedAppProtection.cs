@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets targeted app management levels.
-        /// The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
+        /// The intended app management levels for this policy
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedAppManagementLevels", Required = Newtonsoft.Json.Required.Default)]
         public AppManagementLevel? TargetedAppManagementLevels { get; set; }

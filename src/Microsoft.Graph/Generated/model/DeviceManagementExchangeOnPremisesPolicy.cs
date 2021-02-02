@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default access level.
-        /// Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+        /// Default access state in Exchange. This rule applies globally to the entire Exchange organization
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultAccessLevel", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementExchangeAccessLevel? DefaultAccessLevel { get; set; }

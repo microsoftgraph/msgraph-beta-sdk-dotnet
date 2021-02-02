@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets type.
-        /// Type of the resource, indicating whether it is a group or an app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }

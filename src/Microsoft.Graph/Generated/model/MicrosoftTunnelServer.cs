@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tunnel server health status.
-        /// The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
+        /// The MicrosoftTunnelServer's health status
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tunnelServerHealthStatus", Required = Newtonsoft.Json.Required.Default)]
         public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus { get; set; }

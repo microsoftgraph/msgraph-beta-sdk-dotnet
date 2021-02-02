@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target type.
-        /// The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+        /// The type of relationship indicating whether the target is a parent or child.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetType", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppRelationshipType? TargetType { get; set; }

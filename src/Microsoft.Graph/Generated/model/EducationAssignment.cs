@@ -31,155 +31,121 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets added student action.
-        /// Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addedStudentAction", Required = Newtonsoft.Json.Required.Default)]
-        public EducationAddedStudentAction? AddedStudentAction { get; set; }
-    
-        /// <summary>
         /// Gets or sets allow late submissions.
-        /// Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowLateSubmissions", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowLateSubmissions { get; set; }
     
         /// <summary>
         /// Gets or sets allow students to add resources to submission.
-        /// Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStudentsToAddResourcesToSubmission", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowStudentsToAddResourcesToSubmission { get; set; }
     
         /// <summary>
         /// Gets or sets assign date time.
-        /// The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AssignDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets assigned date time.
-        /// The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AssignedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets assign to.
-        /// Which users, or whole class should receive a submission object once the assignment is published.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignTo", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentRecipient AssignTo { get; set; }
     
         /// <summary>
         /// Gets or sets class id.
-        /// Class which this assignment belongs.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classId", Required = Newtonsoft.Json.Required.Default)]
         public string ClassId { get; set; }
     
         /// <summary>
         /// Gets or sets close date time.
-        /// Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "closeDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CloseDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
-        /// Who created the assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Name of the assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets due date time.
-        /// Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dueDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? DueDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets grading.
-        /// How the assignment will be graded.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grading", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentGradeType Grading { get; set; }
     
         /// <summary>
         /// Gets or sets instructions.
-        /// Instructions for the assignment.  This along with the display name tell the student what to do.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instructions", Required = Newtonsoft.Json.Required.Default)]
         public EducationItemBody Instructions { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
-        /// Who last modified the assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedBy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets notification channel url.
-        /// Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationChannelUrl", Required = Newtonsoft.Json.Required.Default)]
-        public string NotificationChannelUrl { get; set; }
-    
-        /// <summary>
         /// Gets or sets status.
-        /// Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
-        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
         public IEducationAssignmentCategoriesCollectionPage Categories { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
-        /// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resources", Required = Newtonsoft.Json.Required.Default)]
         public IEducationAssignmentResourcesCollectionPage Resources { get; set; }
     
         /// <summary>
         /// Gets or sets rubric.
-        /// When set, the grading rubric attached to this assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubric", Required = Newtonsoft.Json.Required.Default)]
         public EducationRubric Rubric { get; set; }
     
         /// <summary>
         /// Gets or sets submissions.
-        /// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "submissions", Required = Newtonsoft.Json.Required.Default)]
         public IEducationAssignmentSubmissionsCollectionPage Submissions { get; set; }

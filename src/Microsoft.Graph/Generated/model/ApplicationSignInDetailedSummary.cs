@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets aggregated event date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregatedEventDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AggregatedEventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
-        /// Name of the application that the user signed in to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app id.
-        /// ID of the application that the user signed in to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets sign in count.
-        /// Count of sign-ins made by the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SignInCount { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Details of the sign-in status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public SignInStatus Status { get; set; }

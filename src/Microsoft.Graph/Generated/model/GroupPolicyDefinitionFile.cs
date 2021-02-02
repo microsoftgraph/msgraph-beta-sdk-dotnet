@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policy type.
-        /// Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+        /// Specifies the type of group policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policyType", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyType? PolicyType { get; set; }

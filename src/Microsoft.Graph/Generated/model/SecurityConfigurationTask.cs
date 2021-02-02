@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets applicable platform.
-        /// The applicable platform. Possible values are: unknown, macOS, windows10AndLater, windows10AndWindowsServer.
+        /// The applicable platform.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicablePlatform", Required = Newtonsoft.Json.Required.Default)]
         public EndpointSecurityConfigurationApplicablePlatform? ApplicablePlatform { get; set; }
     
         /// <summary>
         /// Gets or sets endpoint security policy.
-        /// The endpoint security policy type. Possible values are: unknown, antivirus, diskEncryption, firewall, endpointDetectionAndResponse, attackSurfaceReduction, accountProtection.
+        /// The endpoint security policy type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointSecurityPolicy", Required = Newtonsoft.Json.Required.Default)]
         public EndpointSecurityConfigurationType? EndpointSecurityPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets endpoint security policy profile.
-        /// The endpoint security policy profile. Possible values are: unknown, antivirus, windowsSecurity, bitLocker, fileVault, firewall, firewallRules, endpointDetectionAndResponse, deviceControl, appAndBrowserIsolation, exploitProtection, webProtection, applicationControl, attackSurfaceReductionRules, accountProtection.
+        /// The endpoint security policy profile.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointSecurityPolicyProfile", Required = Newtonsoft.Json.Required.Default)]
         public EndpointSecurityConfigurationProfileType? EndpointSecurityPolicyProfile { get; set; }

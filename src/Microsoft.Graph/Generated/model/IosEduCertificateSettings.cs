@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificateValidityPeriodScale.
-        /// Scale for the Certificate Validity Period. Possible values are: days, months, years.
+        /// Scale for the Certificate Validity Period.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateValidityPeriodScale", Required = Newtonsoft.Json.Required.Default)]
         public CertificateValidityPeriodScale? CertificateValidityPeriodScale { get; set; }

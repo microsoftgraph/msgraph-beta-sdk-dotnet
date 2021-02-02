@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Languages.
-        /// </summary>
-        /// <returns>The <see cref="IB2cIdentityUserFlowLanguagesCollectionRequestBuilder"/>.</returns>
-        public IB2cIdentityUserFlowLanguagesCollectionRequestBuilder Languages
-        {
-            get
-            {
-                return new B2cIdentityUserFlowLanguagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("languages"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for UserAttributeAssignments.
         /// </summary>
         /// <returns>The <see cref="IB2cIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder"/>.</returns>

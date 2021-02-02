@@ -32,49 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets action.
-        /// The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public TiAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets activity group names.
-        /// The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityGroupNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ActivityGroupNames { get; set; }
     
         /// <summary>
         /// Gets or sets additional information.
-        /// A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalInformation", Required = Newtonsoft.Json.Required.Default)]
         public string AdditionalInformation { get; set; }
     
         /// <summary>
         /// Gets or sets azure tenant id.
-        /// Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureTenantId", Required = Newtonsoft.Json.Required.Default)]
         public string AzureTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets confidence.
-        /// An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Confidence { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Brief description (100 characters or less) of the threat represented by the indicator. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets diamond model.
-        /// The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "diamondModel", Required = Newtonsoft.Json.Required.Default)]
         public DiamondModel? DiamondModel { get; set; }
@@ -141,14 +134,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
-        /// An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalId { get; set; }
@@ -215,42 +206,36 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ingested date time.
-        /// Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ingestedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? IngestedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets is active.
-        /// Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets kill chain.
-        /// A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "killChain", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> KillChain { get; set; }
     
         /// <summary>
         /// Gets or sets known false positives.
-        /// Scenarios in which the indicator may cause false positives. This should be human-readable text.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "knownFalsePositives", Required = Newtonsoft.Json.Required.Default)]
         public string KnownFalsePositives { get; set; }
     
         /// <summary>
         /// Gets or sets last reported date time.
-        /// The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastReportedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastReportedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets malware family names.
-        /// The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "malwareFamilyNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> MalwareFamilyNames { get; set; }
@@ -347,42 +332,36 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets passive only.
-        /// Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passiveOnly", Required = Newtonsoft.Json.Required.Default)]
         public bool? PassiveOnly { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
-        /// An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "severity", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
-        /// A JSON array of strings that stores arbitrary tags/keywords.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets target product.
-        /// A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetProduct", Required = Newtonsoft.Json.Required.Default)]
         public string TargetProduct { get; set; }
     
         /// <summary>
         /// Gets or sets threat type.
-        /// Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threatType", Required = Newtonsoft.Json.Required.Default)]
         public string ThreatType { get; set; }
     
         /// <summary>
         /// Gets or sets tlp level.
-        /// Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tlpLevel", Required = Newtonsoft.Json.Required.Default)]
         public TlpLevel? TlpLevel { get; set; }

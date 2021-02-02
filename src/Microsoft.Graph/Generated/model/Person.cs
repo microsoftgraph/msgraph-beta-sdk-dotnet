@@ -60,7 +60,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets email addresses.
-        /// The person's email addresses.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RankedEmailAddress> EmailAddresses { get; set; }
@@ -81,7 +80,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mailbox type.
-        /// The type of mailbox that is represented by the person's email address.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailboxType", Required = Newtonsoft.Json.Required.Default)]
         public string MailboxType { get; set; }
@@ -102,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets person type.
-        /// The type of person, for example distribution list.
+        /// The type of person.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personType", Required = Newtonsoft.Json.Required.Default)]
         public string PersonType { get; set; }
@@ -130,7 +128,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sources.
-        /// The sources the user data comes from, for example Directory or Outlook Contacts.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sources", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<PersonDataSource> Sources { get; set; }
@@ -144,7 +141,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets title.
-        /// The person's title.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
         public string Title { get; set; }

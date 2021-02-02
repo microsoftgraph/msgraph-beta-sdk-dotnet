@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets value.
-        /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Value { get; set; }

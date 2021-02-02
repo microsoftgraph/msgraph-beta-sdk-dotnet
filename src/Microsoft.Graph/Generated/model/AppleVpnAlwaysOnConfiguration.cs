@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets airPrintExceptionAction.
-        /// Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+        /// Determine whether AirPrint service will be exempt from the always-on VPN connection
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "airPrintExceptionAction", Required = Newtonsoft.Json.Required.Default)]
         public VpnServiceExceptionAction? AirPrintExceptionAction { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cellularExceptionAction.
-        /// Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+        /// Determine whether Cellular service will be exempt from the always-on VPN connection
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellularExceptionAction", Required = Newtonsoft.Json.Required.Default)]
         public VpnServiceExceptionAction? CellularExceptionAction { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tunnelConfiguration.
-        /// Determines what connections the specific tunnel configuration applies to. Possible values are: wifiAndCellular, cellular, wifi.
+        /// Determines what connections the specific tunnel configuration applies to
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tunnelConfiguration", Required = Newtonsoft.Json.Required.Default)]
         public VpnTunnelConfigurationType? TunnelConfiguration { get; set; }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets voicemailExceptionAction.
-        /// Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+        /// Determine whether voicemail service will be exempt from the always-on VPN connection
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "voicemailExceptionAction", Required = Newtonsoft.Json.Required.Default)]
         public VpnServiceExceptionAction? VoicemailExceptionAction { get; set; }

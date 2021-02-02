@@ -32,70 +32,60 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets access review id.
-        /// The identifier of the accessReviewInstance parent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewId", Required = Newtonsoft.Json.Required.Default)]
         public string AccessReviewId { get; set; }
     
         /// <summary>
         /// Gets or sets applied by.
-        /// The identifier of the user who applied the decision.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity AppliedBy { get; set; }
     
         /// <summary>
         /// Gets or sets applied date time.
-        /// The DateTime when the approval decision was applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appliedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AppliedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets apply result.
-        /// The result of applying the decision. Possible values: NotApplied, Success, Failed, NotFound, or NotSupported.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyResult", Required = Newtonsoft.Json.Required.Default)]
         public string ApplyResult { get; set; }
     
         /// <summary>
         /// Gets or sets decision.
-        /// Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "decision", Required = Newtonsoft.Json.Required.Default)]
         public string Decision { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
-        /// The review decision justification.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "justification", Required = Newtonsoft.Json.Required.Default)]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets recommendation.
-        /// A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendation", Required = Newtonsoft.Json.Required.Default)]
         public string Recommendation { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed by.
-        /// The identifier of the reviewer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity ReviewedBy { get; set; }
     
         /// <summary>
         /// Gets or sets reviewed date time.
-        /// The DateTime when the review occurred.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reviewedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ReviewedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets target.
-        /// The target of this specific decision. Decision targets can be of different types – each one with its own specific properties. See accessReviewInstanceDecisionItemTarget.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
         public AccessReviewInstanceDecisionItemTarget Target { get; set; }

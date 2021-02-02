@@ -31,14 +31,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets pageUrl.
-        /// The Microsoft Graph URL to the page in OneNote.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageUrl", Required = Newtonsoft.Json.Required.Default)]
         public string PageUrl { get; set; }
     
         /// <summary>
         /// Gets or sets sectionName.
-        /// Section name that distributions should be copied into or were copied into.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sectionName", Required = Newtonsoft.Json.Required.Default)]
         public string SectionName { get; set; }

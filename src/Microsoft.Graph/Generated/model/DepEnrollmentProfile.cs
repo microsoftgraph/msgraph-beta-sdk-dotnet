@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i tunes pairing mode.
-        /// Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+        /// Indicates the iTunes pairing mode
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iTunesPairingMode", Required = Newtonsoft.Json.Required.Default)]
         public ITunesPairingMode? ITunesPairingMode { get; set; }
@@ -158,7 +158,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supervised mode enabled.
-        /// Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+        /// Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supervisedModeEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SupervisedModeEnabled { get; set; }

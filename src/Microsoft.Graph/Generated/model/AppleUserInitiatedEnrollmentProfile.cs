@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default enrollment type.
-        /// The default profile enrollment type. Possible values are: unknown, device, user.
+        /// The default profile enrollment type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultEnrollmentType", Required = Newtonsoft.Json.Required.Default)]
         public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType { get; set; }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform.
-        /// The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+        /// The platform of the Device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
         public DevicePlatformType? Platform { get; set; }

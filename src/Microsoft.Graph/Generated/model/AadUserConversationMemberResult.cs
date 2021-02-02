@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets userId.
-        /// The user object ID of the Azure AD user that was being added as part of the bulk operation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
         public string UserId { get; set; }

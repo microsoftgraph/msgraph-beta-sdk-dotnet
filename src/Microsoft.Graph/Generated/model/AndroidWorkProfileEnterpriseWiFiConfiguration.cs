@@ -32,28 +32,28 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets authentication method.
-        /// Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
+        /// Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets eap type.
-        /// Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
+        /// Indicates the type of EAP protocol set on the Wi-Fi endpoint (router).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidEapType? EapType { get; set; }
     
         /// <summary>
         /// Gets or sets inner authentication protocol for eap ttls.
-        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerAuthenticationProtocolForEapTtls", Required = Newtonsoft.Json.Required.Default)]
         public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEapTtls { get; set; }
     
         /// <summary>
         /// Gets or sets inner authentication protocol for peap.
-        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
+        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerAuthenticationProtocolForPeap", Required = Newtonsoft.Json.Required.Default)]
         public NonEapAuthenticationMethodForPeap? InnerAuthenticationProtocolForPeap { get; set; }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy settings.
-        /// Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
+        /// Proxy Type for this Wi-Fi connection
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxySettings", Required = Newtonsoft.Json.Required.Default)]
         public WiFiProxySetting? ProxySettings { get; set; }

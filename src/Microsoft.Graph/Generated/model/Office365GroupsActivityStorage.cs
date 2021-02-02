@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets mailbox storage used in bytes.
-        /// The storage used in group mailbox.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mailboxStorageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
         public Int64? MailboxStorageUsedInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets report date.
-        /// The snapshot date for Exchange and SharePoint used storage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ReportDate { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
-        /// The number of days the report covers.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
-        /// The latest date of the content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets site storage used in bytes.
-        /// The storage used in SharePoint document library.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteStorageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SiteStorageUsedInBytes { get; set; }

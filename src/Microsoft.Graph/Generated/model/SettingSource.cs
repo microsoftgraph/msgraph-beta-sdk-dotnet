@@ -46,7 +46,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sourceType.
-        /// Not yet documented. Possible values are: deviceConfiguration, deviceIntent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceType", Required = Newtonsoft.Json.Required.Default)]
         public SettingSourceType? SourceType { get; set; }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom log folders.
-        /// List of log folders.
+        /// List of log folders. 
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customLogFolders", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> CustomLogFolders { get; set; }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Log upload status. Possible values are: pending, completed, failed.
+        /// Log upload status
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public AppLogUploadState? Status { get; set; }

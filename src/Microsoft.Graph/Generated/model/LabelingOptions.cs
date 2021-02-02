@@ -32,28 +32,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignmentMethod.
-        /// Possible values are: standard, privileged, auto.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentMethod", Required = Newtonsoft.Json.Required.Default)]
         public AssignmentMethod? AssignmentMethod { get; set; }
     
         /// <summary>
         /// Gets or sets downgradeJustification.
-        /// The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "downgradeJustification", Required = Newtonsoft.Json.Required.Default)]
         public DowngradeJustification DowngradeJustification { get; set; }
     
         /// <summary>
         /// Gets or sets extendedProperties.
-        /// Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "extendedProperties", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> ExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets labelId.
-        /// The GUID of the label that should be applied to the information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "labelId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? LabelId { get; set; }

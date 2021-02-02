@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets lastConnectionTime.
-        /// The last time the device was connected.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastConnectionTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastConnectionTime { get; set; }

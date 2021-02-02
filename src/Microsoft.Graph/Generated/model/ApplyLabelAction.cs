@@ -31,28 +31,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actions.
-        /// The collection of specific actions that should be taken by the consuming application to label the document. See  informationProtectionAction for the full list.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<InformationProtectionAction> Actions { get; set; }
     
         /// <summary>
         /// Gets or sets actionSource.
-        /// Possible values are: manual, automatic, recommended, default.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionSource", Required = Newtonsoft.Json.Required.Default)]
         public ActionSource? ActionSource { get; set; }
     
         /// <summary>
         /// Gets or sets label.
-        /// Object that describes the details of the label to apply.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "label", Required = Newtonsoft.Json.Required.Default)]
         public LabelDetails Label { get; set; }
     
         /// <summary>
         /// Gets or sets responsibleSensitiveTypeIds.
-        /// If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "responsibleSensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Guid> ResponsibleSensitiveTypeIds { get; set; }

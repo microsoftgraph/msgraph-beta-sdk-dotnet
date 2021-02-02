@@ -32,49 +32,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additionalDetails.
-        /// Additional details about the health check or the recommended action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "additionalDetails", Required = Newtonsoft.Json.Required.Default)]
         public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
-        /// The display name for this health check item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets endDateTime.
-        /// The end time of the health check item. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets errorType.
-        /// The type of error that occurred during this health check. Possible values are: DnsCheckFqdnNotFound, DnsCheckUnknownError, AdJoinCheckFqdnNotFound, AdJoinCheckIncorrectCredentials, AdJoinCheckOrganizationalUnitNotFound, AdJoinCheckOrganizationalUnitIncorrectFormat, AdJoinCheckUnknownError, EndpointConnectivityCheckUrlNotWhitelisted, EndpointConnectivityCheckUnknownError, AadConnectivityCheckUnknownError.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorType", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType { get; set; }
     
         /// <summary>
         /// Gets or sets recommendedAction.
-        /// The recommended action to fix the corresponding error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recommendedAction", Required = Newtonsoft.Json.Required.Default)]
         public string RecommendedAction { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
-        /// The start time of the health check item. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the health check item. Read-only. Possible values are: Pending, Running, Passed, Failed, UnknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcOnPremisesConnectionStatus? Status { get; set; }

@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets metered connection limit.
-        /// Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
+        /// Specify the metered connection limit type for the wifi connection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meteredConnectionLimit", Required = Newtonsoft.Json.Required.Default)]
         public MeteredConnectionLimitType? MeteredConnectionLimit { get; set; }
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy setting.
-        /// Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
+        /// Specify the proxy setting for Wi-Fi configuration
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxySetting", Required = Newtonsoft.Json.Required.Default)]
         public WiFiProxySetting? ProxySetting { get; set; }
@@ -116,7 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wifi security type.
-        /// Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+        /// Specify the Wifi Security Type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wifiSecurityType", Required = Newtonsoft.Json.Required.Default)]
         public WiFiSecurityType? WifiSecurityType { get; set; }

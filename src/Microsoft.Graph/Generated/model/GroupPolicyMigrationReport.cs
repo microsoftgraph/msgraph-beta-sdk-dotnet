@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets migration readiness.
-        /// The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
+        /// The Intune coverage for the associated Group Policy Object file.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migrationReadiness", Required = Newtonsoft.Json.Required.Default)]
         public GroupPolicyMigrationReadiness? MigrationReadiness { get; set; }

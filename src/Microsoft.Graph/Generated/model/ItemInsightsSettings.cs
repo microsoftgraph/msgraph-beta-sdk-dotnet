@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets disabled for group.
-        /// The ID of an Azure AD group, of which the members' item insights are disabled. Default is empty. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "disabledForGroup", Required = Newtonsoft.Json.Required.Default)]
         public string DisabledForGroup { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled in organization.
-        /// true if organization item insights are enabled; false if organization item insights are disabled for all users without exceptions. Default is true. Optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabledInOrganization", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEnabledInOrganization { get; set; }

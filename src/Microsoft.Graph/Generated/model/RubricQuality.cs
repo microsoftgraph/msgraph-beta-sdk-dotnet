@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets criteria.
-        /// The collection of criteria for this rubric quality.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "criteria", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RubricCriterion> Criteria { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// The description of this rubric quality.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public EducationItemBody Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
-        /// The name of this rubric quality.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets qualityId.
-        /// The ID of this resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "qualityId", Required = Newtonsoft.Json.Required.Default)]
         public string QualityId { get; set; }
     
         /// <summary>
         /// Gets or sets weight.
-        /// If present, a numerical weight for this quality.  Weights must add up to 100.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "weight", Required = Newtonsoft.Json.Required.Default)]
         public Single? Weight { get; set; }

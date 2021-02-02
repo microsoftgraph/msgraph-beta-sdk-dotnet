@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deployment state.
-        /// Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout.
+        /// Deployment state like Success, Failure, InProgress, SuccessWithTimeout.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentState", Required = Newtonsoft.Json.Required.Default)]
         public WindowsAutopilotDeploymentState? DeploymentState { get; set; }
@@ -123,14 +123,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment state.
-        /// Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+        /// Enrollment state like Enrolled, Failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
         public EnrollmentState? EnrollmentState { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment type.
-        /// Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.
+        /// Enrollment type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentType", Required = Newtonsoft.Json.Required.Default)]
         public WindowsAutopilotEnrollmentType? EnrollmentType { get; set; }

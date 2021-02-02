@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets points.
-        /// Number of points a teacher is giving this submission object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "points", Required = Newtonsoft.Json.Required.Default)]
         public Single? Points { get; set; }

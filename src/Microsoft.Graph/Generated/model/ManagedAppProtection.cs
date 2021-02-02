@@ -74,21 +74,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app action if device compliance required.
-        /// Defines a managed app behavior, either block or wipe, when the device is either rooted or jailbroken, if DeviceComplianceRequired is set to true. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either block or wipe, when the device is either rooted or jailbroken, if DeviceComplianceRequired is set to true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfDeviceComplianceRequired", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfDeviceComplianceRequired { get; set; }
     
         /// <summary>
         /// Gets or sets app action if maximum pin retries exceeded.
-        /// Defines a managed app behavior, either block or wipe, based on maximum number of incorrect pin retry attempts. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either block or wipe, based on maximum number of incorrect pin retry attempts.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfMaximumPinRetriesExceeded", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfMaximumPinRetriesExceeded { get; set; }
     
         /// <summary>
         /// Gets or sets app action if unable to authenticate user.
-        /// If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn.
+        /// If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfUnableToAuthenticateUser", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser { get; set; }
@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets dialer restriction level.
-        /// The classes of dialer apps that are allowed to click-to-open a phone number. Possible values are: allApps, managedApps, customApp, blocked.
+        /// The classes of dialer apps that are allowed to click-to-open a phone number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dialerRestrictionLevel", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppPhoneNumberRedirectLevel? DialerRestrictionLevel { get; set; }
@@ -158,7 +158,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximum allowed device threat level.
-        /// Maximum allowed device threat level, as reported by the MTD app. Possible values are: notConfigured, secured, low, medium, high.
+        /// Maximum allowed device threat level, as reported by the MTD app
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAllowedDeviceThreatLevel", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppDeviceThreatLevel? MaximumAllowedDeviceThreatLevel { get; set; }
@@ -221,14 +221,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mobile threat defense remediation action.
-        /// Determines what action to take if the mobile threat defense threat threshold isn't met. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.
+        /// Determines what action to take if the mobile threat defense threat threshold isn't met. Warn isn't a supported value for this property
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileThreatDefenseRemediationAction", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction { get; set; }
     
         /// <summary>
         /// Gets or sets notification restriction.
-        /// Specify app notification restriction. Possible values are: allow, blockOrganizationalData, block.
+        /// Specify app notification restriction
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationRestriction", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppNotificationRestriction? NotificationRestriction { get; set; }

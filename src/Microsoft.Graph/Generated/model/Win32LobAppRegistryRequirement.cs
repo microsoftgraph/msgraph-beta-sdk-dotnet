@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets detectionType.
-        /// The registry data detection type. Possible values are: notConfigured, exists, doesNotExist, string, integer, version.
+        /// The registry data detection type
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppRegistryDetectionType? DetectionType { get; set; }

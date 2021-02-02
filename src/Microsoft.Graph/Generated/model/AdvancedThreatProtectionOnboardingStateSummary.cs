@@ -88,7 +88,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets advanced threat protection onboarding device setting states.
-        /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "advancedThreatProtectionOnboardingDeviceSettingStates", Required = Newtonsoft.Json.Required.Default)]
         public IAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionPage AdvancedThreatProtectionOnboardingDeviceSettingStates { get; set; }

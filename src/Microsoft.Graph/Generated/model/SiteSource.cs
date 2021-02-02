@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets site.
-        /// The SharePoint site associated with the siteSource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "site", Required = Newtonsoft.Json.Required.Default)]
         public Site Site { get; set; }

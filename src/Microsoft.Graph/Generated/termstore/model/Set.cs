@@ -32,56 +32,48 @@ namespace Microsoft.Graph.TermStore
 	
         /// <summary>
         /// Gets or sets created date time.
-        /// Date and time of set creation. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Description giving details on the term usage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets localized names.
-        /// Name of the set for each languageTag.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizedNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<LocalizedName> LocalizedNames { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
-        /// Custom properties for the set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Microsoft.Graph.KeyValue> Properties { get; set; }
     
         /// <summary>
         /// Gets or sets children.
-        /// Children terms of set in term [store].
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
         public ISetChildrenCollectionPage Children { get; set; }
     
         /// <summary>
         /// Gets or sets parent group.
-        /// The parent [group] that contains the set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentGroup", Required = Newtonsoft.Json.Required.Default)]
         public Group ParentGroup { get; set; }
     
         /// <summary>
         /// Gets or sets relations.
-        /// Indicates which terms have been pinned or reused directly under the set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relations", Required = Newtonsoft.Json.Required.Default)]
         public ISetRelationsCollectionPage Relations { get; set; }
     
         /// <summary>
         /// Gets or sets terms.
-        /// All the terms under the set.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "terms", Required = Newtonsoft.Json.Required.Default)]
         public ISetTermsCollectionPage Terms { get; set; }

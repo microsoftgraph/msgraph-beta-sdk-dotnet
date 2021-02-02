@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets propertyName.
-        /// Provides the property name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propertyName", Required = Newtonsoft.Json.Required.Default)]
         public string PropertyName { get; set; }
     
         /// <summary>
         /// Gets or sets propertyValue.
-        /// Provides the property value.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propertyValue", Required = Newtonsoft.Json.Required.Default)]
         public string PropertyValue { get; set; }

@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets intended purpose.
-        /// Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+        /// Certificate's intended purpose from the point-of-view of deployment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intendedPurpose", Required = Newtonsoft.Json.Required.Default)]
         public UserPfxIntendedPurpose? IntendedPurpose { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets padding scheme.
-        /// Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
+        /// Padding scheme used by the provider during encryption/decryption.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paddingScheme", Required = Newtonsoft.Json.Required.Default)]
         public UserPfxPaddingScheme? PaddingScheme { get; set; }

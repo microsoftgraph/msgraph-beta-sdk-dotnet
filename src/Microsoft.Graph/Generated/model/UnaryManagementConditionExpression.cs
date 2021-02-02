@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operator.
-        /// The operator used in the evaluation of the unary operation. Possible values are: not.
+        /// The operator used in the evaluation of the unary operation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
         public UnaryManagementConditionExpressionOperatorType? Operator { get; set; }

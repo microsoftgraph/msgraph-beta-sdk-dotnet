@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actionDeliveryStatus.
-        /// State of the action being delivered to on-prem server. Possible values are: unknown, pendingDelivery, deliveredToConnectorService, failedToDeliverToConnectorService, deliveredToOnPremisesServer.
+        /// State of the action being delivered to on-prem server
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actionDeliveryStatus", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationManagerActionDeliveryStatus? ActionDeliveryStatus { get; set; }

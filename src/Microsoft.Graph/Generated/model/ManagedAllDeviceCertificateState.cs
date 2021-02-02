@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certificate revoke status.
-        /// Revoke status. Possible values are: none, pending, issued, failed, revoked.
+        /// Revoke status
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateRevokeStatus", Required = Newtonsoft.Json.Required.Default)]
         public CertificateRevocationStatus? CertificateRevokeStatus { get; set; }

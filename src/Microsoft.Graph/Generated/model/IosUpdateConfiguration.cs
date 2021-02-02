@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets update schedule type.
-        /// Update schedule type. Possible values are: updateOutsideOfActiveHours, alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
+        /// Update schedule type
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateScheduleType", Required = Newtonsoft.Json.Required.Default)]
         public IosSoftwareUpdateScheduleType? UpdateScheduleType { get; set; }

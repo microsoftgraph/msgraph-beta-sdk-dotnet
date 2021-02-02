@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets points.
-        /// The numeric grade the teacher has given the student for this assignment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "points", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentPointsGrade Points { get; set; }
     
         /// <summary>
         /// Gets or sets published points.
-        /// A copy of the points property that is made when the grade is released to the student.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedPoints", Required = Newtonsoft.Json.Required.Default)]
         public EducationAssignmentPointsGrade PublishedPoints { get; set; }

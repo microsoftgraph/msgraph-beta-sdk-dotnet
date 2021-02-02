@@ -115,7 +115,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pages.
-        /// The collection of pages in the SitePages list in this site.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pages", Required = Newtonsoft.Json.Required.Default)]
         public ISitePagesCollectionPage Pages { get; set; }

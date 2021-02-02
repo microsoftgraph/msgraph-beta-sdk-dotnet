@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fileUrl.
-        /// Pointer to the Excel file object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileUrl", Required = Newtonsoft.Json.Required.Default)]
         public string FileUrl { get; set; }

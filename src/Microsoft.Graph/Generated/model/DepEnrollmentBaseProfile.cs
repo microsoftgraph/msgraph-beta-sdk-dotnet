@@ -130,7 +130,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supervised mode enabled.
-        /// Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+        /// Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supervisedModeEnabled", Required = Newtonsoft.Json.Required.Default)]
         public bool? SupervisedModeEnabled { get; set; }

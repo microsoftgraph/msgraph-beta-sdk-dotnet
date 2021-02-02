@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets active modalities.
-        /// The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeModalities", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Modality> ActiveModalities { get; set; }
     
         /// <summary>
         /// Gets or sets answered by.
-        /// The participant that answered the call. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "answeredBy", Required = Newtonsoft.Json.Required.Default)]
         public ParticipantInfo AnsweredBy { get; set; }
@@ -73,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets chat info.
-        /// The chat information. Required information for meeting scenarios.
+        /// The chat information. Required information for joining a meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatInfo", Required = Newtonsoft.Json.Required.Default)]
         public ChatInfo ChatInfo { get; set; }
@@ -87,14 +85,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets incoming context.
-        /// The context associated with an incoming call. Read-only. Server generated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incomingContext", Required = Newtonsoft.Json.Required.Default)]
         public IncomingContext IncomingContext { get; set; }
     
         /// <summary>
         /// Gets or sets media config.
-        /// The media configuration. Required information for creating peer to peer calls or joining meetings.
+        /// The media configuration. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaConfig", Required = Newtonsoft.Json.Required.Default)]
         public MediaConfig MediaConfig { get; set; }
@@ -108,14 +105,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets meeting capability.
-        /// Contains the capabilities of a meeting. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingCapability", Required = Newtonsoft.Json.Required.Default)]
         public MeetingCapability MeetingCapability { get; set; }
     
         /// <summary>
         /// Gets or sets meeting info.
-        /// The meeting information. Required information for meeting scenarios.
+        /// The meeting information that's required for joining a meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingInfo", Required = Newtonsoft.Json.Required.Default)]
         public MeetingInfo MeetingInfo { get; set; }
@@ -194,14 +190,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transcription.
-        /// The transcription information for the call. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transcription", Required = Newtonsoft.Json.Required.Default)]
         public CallTranscriptionInfo Transcription { get; set; }
     
         /// <summary>
         /// Gets or sets audio routing groups.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "audioRoutingGroups", Required = Newtonsoft.Json.Required.Default)]
         public ICallAudioRoutingGroupsCollectionPage AudioRoutingGroups { get; set; }

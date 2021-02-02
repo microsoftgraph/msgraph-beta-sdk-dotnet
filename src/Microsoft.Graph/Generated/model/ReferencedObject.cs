@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets referencedObjectName.
-        /// Name of the referenced object. Must match one of the objects in the directory definition.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencedObjectName", Required = Newtonsoft.Json.Required.Default)]
         public string ReferencedObjectName { get; set; }
     
         /// <summary>
         /// Gets or sets referencedProperty.
-        /// Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "referencedProperty", Required = Newtonsoft.Json.Required.Default)]
         public string ReferencedProperty { get; set; }

@@ -38,7 +38,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customer email address.
-        /// The SMTP address of the bookingCustomer who is booking the appointment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerEmailAddress", Required = Newtonsoft.Json.Required.Default)]
         public string CustomerEmailAddress { get; set; }
@@ -52,14 +51,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customer location.
-        /// Represents location information for the bookingCustomer who is booking the appointment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerLocation", Required = Newtonsoft.Json.Required.Default)]
         public Location CustomerLocation { get; set; }
     
         /// <summary>
         /// Gets or sets customer name.
-        /// The customer's name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerName", Required = Newtonsoft.Json.Required.Default)]
         public string CustomerName { get; set; }
@@ -73,56 +70,48 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customer phone.
-        /// The customer's phone number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerPhone", Required = Newtonsoft.Json.Required.Default)]
         public string CustomerPhone { get; set; }
     
         /// <summary>
         /// Gets or sets duration.
-        /// The length of the appointment, denoted in ISO8601 format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
         public Duration Duration { get; set; }
     
         /// <summary>
         /// Gets or sets end.
-        /// The date, time, and time zone that the appointment ends.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "end", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone End { get; set; }
     
         /// <summary>
         /// Gets or sets invoice amount.
-        /// The billed amount on the invoice.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceAmount", Required = Newtonsoft.Json.Required.Default)]
         public double? InvoiceAmount { get; set; }
     
         /// <summary>
         /// Gets or sets invoice date.
-        /// The date, time, and time zone of the invoice for this appointment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceDate", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone InvoiceDate { get; set; }
     
         /// <summary>
         /// Gets or sets invoice id.
-        /// The ID of the invoice.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceId", Required = Newtonsoft.Json.Required.Default)]
         public string InvoiceId { get; set; }
     
         /// <summary>
         /// Gets or sets invoice status.
-        /// The status of the invoice. Possible values are: draft, reviewing, open, canceled, paid, corrective.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceStatus", Required = Newtonsoft.Json.Required.Default)]
         public BookingInvoiceStatus? InvoiceStatus { get; set; }
     
         /// <summary>
         /// Gets or sets invoice url.
-        /// The URL of the invoice in Microsoft Bookings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoiceUrl", Required = Newtonsoft.Json.Required.Default)]
         public string InvoiceUrl { get; set; }
@@ -141,35 +130,30 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets opt out of customer email.
-        /// True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "optOutOfCustomerEmail", Required = Newtonsoft.Json.Required.Default)]
         public bool? OptOutOfCustomerEmail { get; set; }
     
         /// <summary>
         /// Gets or sets post buffer.
-        /// The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postBuffer", Required = Newtonsoft.Json.Required.Default)]
         public Duration PostBuffer { get; set; }
     
         /// <summary>
         /// Gets or sets pre buffer.
-        /// The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "preBuffer", Required = Newtonsoft.Json.Required.Default)]
         public Duration PreBuffer { get; set; }
     
         /// <summary>
         /// Gets or sets price.
-        /// The regular price for an appointment for the specified bookingService.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price", Required = Newtonsoft.Json.Required.Default)]
         public double? Price { get; set; }
     
         /// <summary>
         /// Gets or sets price type.
-        /// A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priceType", Required = Newtonsoft.Json.Required.Default)]
         public BookingPriceType? PriceType { get; set; }
@@ -183,21 +167,19 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets self service appointment id.
-        /// An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selfServiceAppointmentId", Required = Newtonsoft.Json.Required.Default)]
         public string SelfServiceAppointmentId { get; set; }
     
         /// <summary>
         /// Gets or sets service id.
-        /// The ID of the bookingService associated with this appointment.
+        /// The id of the booking service associated with this appointment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceId", Required = Newtonsoft.Json.Required.Default)]
         public string ServiceId { get; set; }
     
         /// <summary>
         /// Gets or sets service location.
-        /// The location where the service is delivered.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceLocation", Required = Newtonsoft.Json.Required.Default)]
         public Location ServiceLocation { get; set; }
@@ -218,14 +200,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets staff member ids.
-        /// The ID of each bookingStaffMember who is scheduled in this appointment.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "staffMemberIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> StaffMemberIds { get; set; }
     
         /// <summary>
         /// Gets or sets start.
-        /// The date, time, and time zone that the appointment begins.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "start", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeTimeZone Start { get; set; }

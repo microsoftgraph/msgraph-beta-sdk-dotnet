@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets error.
-        /// Error details, if expression evaluation resulted in an error.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets evaluationResult.
-        /// A collection of values produced by the evaluation of the expression.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationResult", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> EvaluationResult { get; set; }
     
         /// <summary>
         /// Gets or sets evaluationSucceeded.
-        /// true if the evaluation was successful.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "evaluationSucceeded", Required = Newtonsoft.Json.Required.Default)]
         public bool? EvaluationSucceeded { get; set; }
     
         /// <summary>
         /// Gets or sets parsedExpression.
-        /// An attributeMappingSource object representing the parsed expression.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parsedExpression", Required = Newtonsoft.Json.Required.Default)]
         public AttributeMappingSource ParsedExpression { get; set; }
     
         /// <summary>
         /// Gets or sets parsingSucceeded.
-        /// true if the expression was parsed successfully.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parsingSucceeded", Required = Newtonsoft.Json.Required.Default)]
         public bool? ParsingSucceeded { get; set; }

@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sync status.
-        /// Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.
+        /// Indicates the status of sync with Device data sync (DDS) service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "syncStatus", Required = Newtonsoft.Json.Required.Default)]
         public WindowsAutopilotSyncStatus? SyncStatus { get; set; }

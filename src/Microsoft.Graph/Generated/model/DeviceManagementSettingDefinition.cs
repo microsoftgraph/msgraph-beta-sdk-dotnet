@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets value type.
-        /// The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
+        /// The data type of the value
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManangementIntentValueType? ValueType { get; set; }

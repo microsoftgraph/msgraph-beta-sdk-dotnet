@@ -39,7 +39,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets text.
-        /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
         public string Text { get; set; }

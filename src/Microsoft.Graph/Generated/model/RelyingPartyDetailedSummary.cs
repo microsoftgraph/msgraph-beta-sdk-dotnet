@@ -32,77 +32,66 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets failed sign in count.
-        /// Number of failed sign in on Active Directory Federation Service in the period specified.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failedSignInCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? FailedSignInCount { get; set; }
     
         /// <summary>
         /// Gets or sets migration status.
-        /// Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migrationStatus", Required = Newtonsoft.Json.Required.Default)]
         public MigrationStatus? MigrationStatus { get; set; }
     
         /// <summary>
         /// Gets or sets migration validation details.
-        /// Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult. Possible result values are 0, 1, or 2. 0 when the validation check passed, 1 when the validation check failed and 2 when the validation check is a warning.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "migrationValidationDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> MigrationValidationDetails { get; set; }
     
         /// <summary>
         /// Gets or sets relying party id.
-        /// This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relyingPartyId", Required = Newtonsoft.Json.Required.Default)]
         public string RelyingPartyId { get; set; }
     
         /// <summary>
         /// Gets or sets relying party name.
-        /// Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "relyingPartyName", Required = Newtonsoft.Json.Required.Default)]
         public string RelyingPartyName { get; set; }
     
         /// <summary>
         /// Gets or sets reply urls.
-        /// Specifies where the relying party expects to receive the token.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyUrls", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ReplyUrls { get; set; }
     
         /// <summary>
         /// Gets or sets service id.
-        /// Uniquely identifies the Active Directory forest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceId", Required = Newtonsoft.Json.Required.Default)]
         public string ServiceId { get; set; }
     
         /// <summary>
         /// Gets or sets sign in success rate.
-        /// Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInSuccessRate", Required = Newtonsoft.Json.Required.Default)]
         public double? SignInSuccessRate { get; set; }
     
         /// <summary>
         /// Gets or sets successful sign in count.
-        /// Number of successful sign ins on Active Directory Federation Service.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "successfulSignInCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? SuccessfulSignInCount { get; set; }
     
         /// <summary>
         /// Gets or sets total sign in count.
-        /// Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalSignInCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? TotalSignInCount { get; set; }
     
         /// <summary>
         /// Gets or sets unique user count.
-        /// Number of unique users that have signed into the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uniqueUserCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? UniqueUserCount { get; set; }

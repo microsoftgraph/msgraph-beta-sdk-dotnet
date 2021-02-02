@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets definition.
-        /// Definition of the test object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definition", Required = Newtonsoft.Json.Required.Default)]
         public ObjectDefinition Definition { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
-        /// Property values of the test object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<StringKeyObjectValuePair> Properties { get; set; }

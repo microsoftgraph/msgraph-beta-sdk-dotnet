@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pin lowercase characters usage.
-        /// This value configures the use of lowercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+        /// This value configures the use of lowercase characters in the Windows Hello for Business PIN.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinLowercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? PinLowercaseCharactersUsage { get; set; }
@@ -81,14 +81,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pin special characters usage.
-        /// Controls the ability to use special characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+        /// Controls the ability to use special characters in the Windows Hello for Business PIN.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinSpecialCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? PinSpecialCharactersUsage { get; set; }
     
         /// <summary>
         /// Gets or sets pin uppercase characters usage.
-        /// This value configures the use of uppercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+        /// This value configures the use of uppercase characters in the Windows Hello for Business PIN.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pinUppercaseCharactersUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? PinUppercaseCharactersUsage { get; set; }

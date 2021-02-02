@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets languageCode.
-        /// The ISO code for the intended language. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "languageCode", Required = Newtonsoft.Json.Required.Default)]
         public string LanguageCode { get; set; }
     
         /// <summary>
         /// Gets or sets text.
-        /// The text in the specific language. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
         public string Text { get; set; }

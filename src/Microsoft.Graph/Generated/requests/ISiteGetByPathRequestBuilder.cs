@@ -111,7 +111,7 @@ namespace Microsoft.Graph
         IOnenoteRequestBuilder Onenote  { get; }
         /// <summary>
         /// Gets the request builder for Pages.
-        /// The collection of pages in the SitePages list in this site.
+        /// 
         /// </summary>
         /// <returns>The <see cref="ISitePageRequestBuilder"/>.</returns>
         ISitePageRequestBuilder Pages  { get; }

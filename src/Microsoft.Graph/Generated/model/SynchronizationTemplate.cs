@@ -32,49 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets application id.
-        /// Identifier of the application this template belongs to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? ApplicationId { get; set; }
     
         /// <summary>
         /// Gets or sets default.
-        /// true if this template is recommended to be the default for the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "default", Required = Newtonsoft.Json.Required.Default)]
         public bool? Default { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Description of the template.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets discoverable.
-        /// true if this template should appear in the collection of templates available for the application instance (service principal).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverable", Required = Newtonsoft.Json.Required.Default)]
         public bool? Discoverable { get; set; }
     
         /// <summary>
         /// Gets or sets factory tag.
-        /// One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "factoryTag", Required = Newtonsoft.Json.Required.Default)]
         public string FactoryTag { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
-        /// Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MetadataEntry> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets schema.
-        /// Default synchronization schema for the jobs based on this template.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schema", Required = Newtonsoft.Json.Required.Default)]
         public SynchronizationSchema Schema { get; set; }

@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         IB2cIdentityUserFlowIdentityProvidersCollectionWithReferencesRequestBuilder IdentityProviders { get; }
 
         /// <summary>
-        /// Gets the request builder for Languages.
-        /// </summary>
-        /// <returns>The <see cref="IB2cIdentityUserFlowLanguagesCollectionRequestBuilder"/>.</returns>
-        IB2cIdentityUserFlowLanguagesCollectionRequestBuilder Languages { get; }
-
-        /// <summary>
         /// Gets the request builder for UserAttributeAssignments.
         /// </summary>
         /// <returns>The <see cref="IB2cIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder"/>.</returns>

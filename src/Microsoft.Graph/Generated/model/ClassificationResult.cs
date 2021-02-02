@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets confidenceLevel.
-        /// The confidence level, 0 to 100, of the result.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidenceLevel", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ConfidenceLevel { get; set; }
     
         /// <summary>
         /// Gets or sets count.
-        /// The number of instances of the specific information type in the input.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "count", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Count { get; set; }
     
         /// <summary>
         /// Gets or sets sensitiveTypeId.
-        /// The GUID of the discovered sensitive information type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? SensitiveTypeId { get; set; }

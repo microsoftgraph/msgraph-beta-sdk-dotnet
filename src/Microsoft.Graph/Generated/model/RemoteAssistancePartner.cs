@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onboarding status.
-        /// A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+        /// TBD. Possible values are: notOnboarded, onboarding, onboarded.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
         public RemoteAssistanceOnboardingStatus? OnboardingStatus { get; set; }

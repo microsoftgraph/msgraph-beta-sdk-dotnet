@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets favorite plan references.
-        /// A collection containing the references to the plans that the user has marked as favorites.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "favoritePlanReferences", Required = Newtonsoft.Json.Required.Default)]
         public PlannerFavoritePlanReferenceCollection FavoritePlanReferences { get; set; }
     
         /// <summary>
         /// Gets or sets recent plan references.
-        /// A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recentPlanReferences", Required = Newtonsoft.Json.Required.Default)]
         public PlannerRecentPlanReferenceCollection RecentPlanReferences { get; set; }
@@ -52,7 +50,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets favorite plans.
-        /// Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "favoritePlans", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerUserFavoritePlansCollectionWithReferencesPage FavoritePlans { get; set; }
@@ -66,14 +63,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recent plans.
-        /// Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recentPlans", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerUserRecentPlansCollectionWithReferencesPage RecentPlans { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
-        /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
+        /// Read-only. Nullable. Returns the plannerPlans shared with the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerUserTasksCollectionPage Tasks { get; set; }

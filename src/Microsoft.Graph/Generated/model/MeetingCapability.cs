@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowAnonymousUsersToDialOut.
-        /// Indicates whether anonymous users dialout is allowed in a meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAnonymousUsersToDialOut", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowAnonymousUsersToDialOut { get; set; }
     
         /// <summary>
         /// Gets or sets allowAnonymousUsersToStartMeeting.
-        /// Indicates whether anonymous users are allowed to start a meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowAnonymousUsersToStartMeeting", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowAnonymousUsersToStartMeeting { get; set; }
     
         /// <summary>
         /// Gets or sets autoAdmittedUsers.
-        /// Possible values are: everyoneInCompany, everyone.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoAdmittedUsers", Required = Newtonsoft.Json.Required.Default)]
         public AutoAdmittedUsersType? AutoAdmittedUsers { get; set; }

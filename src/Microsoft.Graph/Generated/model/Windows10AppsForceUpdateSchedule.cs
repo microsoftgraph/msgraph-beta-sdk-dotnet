@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets recurrence.
-        /// Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+        /// Recurrence schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
         public Windows10AppsUpdateRecurrence? Recurrence { get; set; }

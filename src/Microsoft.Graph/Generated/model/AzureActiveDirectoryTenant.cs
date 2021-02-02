@@ -31,14 +31,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
-        /// The name of the Azure Active Directory tenant. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
-        /// The ID of the Azure Active Directory tenant. Read only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
         public string TenantId { get; set; }

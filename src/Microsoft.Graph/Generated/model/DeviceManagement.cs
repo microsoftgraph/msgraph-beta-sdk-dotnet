@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets intune account id.
-        /// Intune Account ID for given tenant
+        /// Intune Account Id for given tenant
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intuneAccountId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? IntuneAccountId { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximum dep tokens.
-        /// Maximum number of DEP tokens allowed per-tenant.
+        /// Maximum number of dep tokens allowed per-tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumDepTokens", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MaximumDepTokens { get; set; }
@@ -116,14 +116,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscriptions.
-        /// Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
+        /// Tenant's Subscription.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptions", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementSubscriptions? Subscriptions { get; set; }
     
         /// <summary>
         /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionState", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }

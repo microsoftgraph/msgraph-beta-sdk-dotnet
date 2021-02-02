@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets description.
-        /// The description of the program.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name of the program.  Required on create.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets controls.
-        /// Controls associated with the program.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controls", Required = Newtonsoft.Json.Required.Default)]
         public IProgramControlsCollectionPage Controls { get; set; }

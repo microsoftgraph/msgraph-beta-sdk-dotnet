@@ -53,7 +53,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets postOfficeBox.
-        /// The post office box number.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postOfficeBox", Required = Newtonsoft.Json.Required.Default)]
         public string PostOfficeBox { get; set; }
@@ -74,7 +73,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of address. Possible values are: unknown, home, business, other.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public PhysicalAddressType? Type { get; set; }

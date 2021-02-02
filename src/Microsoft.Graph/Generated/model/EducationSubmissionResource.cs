@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assignment resource url.
-        /// Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentResourceUrl", Required = Newtonsoft.Json.Required.Default)]
         public string AssignmentResourceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
-        /// Resource object.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
         public EducationResource Resource { get; set; }

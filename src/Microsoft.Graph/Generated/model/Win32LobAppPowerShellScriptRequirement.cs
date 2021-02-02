@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets detectionType.
-        /// The detection type for script output. Possible values are: notConfigured, string, dateTime, integer, float, version, boolean.
+        /// The detection type for script output
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppPowerShellScriptDetectionType? DetectionType { get; set; }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets runAsAccount.
-        /// Indicates the type of execution context the script runs in. Possible values are: system, user.
+        /// Indicates the type of execution context the script runs in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "runAsAccount", Required = Newtonsoft.Json.Required.Default)]
         public RunAsAccountType? RunAsAccount { get; set; }

@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token type.
-        /// Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
+        /// Gets or sets the Dep Token Type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenType", Required = Newtonsoft.Json.Required.Default)]
         public DepTokenType? TokenType { get; set; }

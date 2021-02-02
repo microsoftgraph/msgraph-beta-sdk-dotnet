@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed accounts.
-        /// Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
+        /// Indicates which type of accounts are allowed to use on a shared PC. Possible values are: guest, domain.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedAccounts", Required = Newtonsoft.Json.Required.Default)]
         public SharedPCAllowedAccountType? AllowedAccounts { get; set; }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fast first sign in.
-        /// Specifies whether to auto connect new non-admin Azure AD accounts to pre-configured candidate local accounts. Possible values are: notConfigured, enabled, disabled.
+        /// Specifies whether to auto connect new non-admin Azure AD accounts to pre-configured candidate local accounts
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fastFirstSignIn", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? FastFirstSignIn { get; set; }
@@ -116,7 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local storage.
-        /// Specifies whether local storage is allowed on a shared PC. Possible values are: notConfigured, enabled, disabled.
+        /// Specifies whether local storage is allowed on a shared PC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localStorage", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? LocalStorage { get; set; }
@@ -130,28 +130,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets set account manager.
-        /// Disables the account manager for shared PC mode. Possible values are: notConfigured, enabled, disabled.
+        /// Disables the account manager for shared PC mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setAccountManager", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? SetAccountManager { get; set; }
     
         /// <summary>
         /// Gets or sets set edu policies.
-        /// Specifies whether the default shared PC education environment policies should be enabled/disabled/not configured. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true. Possible values are: notConfigured, enabled, disabled.
+        /// Specifies whether the default shared PC education environment policies should be enabled/disabled/not configured. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setEduPolicies", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? SetEduPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets set power policies.
-        /// Specifies whether the default shared PC power policies should be enabled/disabled. Possible values are: notConfigured, enabled, disabled.
+        /// Specifies whether the default shared PC power policies should be enabled/disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "setPowerPolicies", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? SetPowerPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets sign in on resume.
-        /// Specifies the requirement to sign in whenever the device wakes up from sleep mode. Possible values are: notConfigured, enabled, disabled.
+        /// Specifies the requirement to sign in whenever the device wakes up from sleep mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInOnResume", Required = Newtonsoft.Json.Required.Default)]
         public Enablement? SignInOnResume { get; set; }

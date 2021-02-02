@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets details.
-        /// A collection of inner errors, if any. Read-only, nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "details", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<InnerErrorDetail> Details { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
-        /// The error code associated with the error, if any. Read-only, nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets message.
-        /// The human-readable error message. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message", Required = Newtonsoft.Json.Required.Default)]
         public string Message { get; set; }

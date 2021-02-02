@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authorizedApps.
-        /// A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizedApps", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AuthorizedApps { get; set; }

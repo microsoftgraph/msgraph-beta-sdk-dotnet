@@ -32,168 +32,144 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets assigned products.
-        /// All the products assigned for the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignedProducts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AssignedProducts { get; set; }
     
         /// <summary>
         /// Gets or sets deleted date.
-        /// The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedDate", Required = Newtonsoft.Json.Required.Default)]
         public Date DeletedDate { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets exchange last activity date.
-        /// The date when user last read or sent email.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ExchangeLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets exchange license assign date.
-        /// The last date when the user was assigned an Exchange license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exchangeLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ExchangeLicenseAssignDate { get; set; }
     
         /// <summary>
         /// Gets or sets has exchange license.
-        /// Whether the user has been assigned an Exchange license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasExchangeLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasExchangeLicense { get; set; }
     
         /// <summary>
         /// Gets or sets has one drive license.
-        /// Whether the user has been assigned a OneDrive license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasOneDriveLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasOneDriveLicense { get; set; }
     
         /// <summary>
         /// Gets or sets has share point license.
-        /// Whether the user has been assigned a SharePoint license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasSharePointLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasSharePointLicense { get; set; }
     
         /// <summary>
         /// Gets or sets has skype for business license.
-        /// Whether the user has been assigned a Skype For Business license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasSkypeForBusinessLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasSkypeForBusinessLicense { get; set; }
     
         /// <summary>
         /// Gets or sets has teams license.
-        /// Whether the user has been assigned a Teams license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasTeamsLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasTeamsLicense { get; set; }
     
         /// <summary>
         /// Gets or sets has yammer license.
-        /// Whether the user has been assigned a Yammer license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasYammerLicense", Required = Newtonsoft.Json.Required.Default)]
         public bool? HasYammerLicense { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
-        /// Whether this user has been deleted or soft deleted.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets one drive last activity date.
-        /// The date when user last viewed or edited files, shared files internally or externally, or synced files.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
         public Date OneDriveLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets one drive license assign date.
-        /// The last date when the user was assigned a OneDrive license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "oneDriveLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date OneDriveLicenseAssignDate { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
-        /// The latest date of the content.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point last activity date.
-        /// The date when user last viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
         public Date SharePointLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets share point license assign date.
-        /// The last date when the user was assigned a SharePoint license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharePointLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date SharePointLicenseAssignDate { get; set; }
     
         /// <summary>
         /// Gets or sets skype for business last activity date.
-        /// The date when user last organized or participated in conferences, or joined peer-to-peer sessions.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusinessLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
         public Date SkypeForBusinessLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets skype for business license assign date.
-        /// The last date when the user was assigned a Skype For Business license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skypeForBusinessLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date SkypeForBusinessLicenseAssignDate { get; set; }
     
         /// <summary>
         /// Gets or sets teams last activity date.
-        /// The date when user last posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
         public Date TeamsLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets teams license assign date.
-        /// The last date when the user was assigned a Teams license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date TeamsLicenseAssignDate { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets yammer last activity date.
-        /// The date when user last posted, read, or liked message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerLastActivityDate", Required = Newtonsoft.Json.Required.Default)]
         public Date YammerLastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets yammer license assign date.
-        /// The last date when the user was assigned a Yammer license.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yammerLicenseAssignDate", Required = Newtonsoft.Json.Required.Default)]
         public Date YammerLicenseAssignDate { get; set; }

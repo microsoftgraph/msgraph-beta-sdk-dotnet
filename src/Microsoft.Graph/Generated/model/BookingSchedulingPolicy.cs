@@ -32,35 +32,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowStaffSelection.
-        /// True if to allow customers to choose a specific person for the booking.
+        /// Allow customers to choose a specific person for the booking.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowStaffSelection", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowStaffSelection { get; set; }
     
         /// <summary>
         /// Gets or sets maximumAdvance.
-        /// Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
+        /// Maximum number of days in advance that a booking can be made.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumAdvance", Required = Newtonsoft.Json.Required.Default)]
         public Duration MaximumAdvance { get; set; }
     
         /// <summary>
         /// Gets or sets minimumLeadTime.
-        /// The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
+        /// Minimum lead time for bookings and cancellations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLeadTime", Required = Newtonsoft.Json.Required.Default)]
         public Duration MinimumLeadTime { get; set; }
     
         /// <summary>
         /// Gets or sets sendConfirmationsToOwner.
-        /// True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
+        /// Notify the business via email when a booking is created or changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sendConfirmationsToOwner", Required = Newtonsoft.Json.Required.Default)]
         public bool? SendConfirmationsToOwner { get; set; }
     
         /// <summary>
         /// Gets or sets timeSlotInterval.
-        /// Duration of each time slot, denoted in ISO 8601 format.
+        /// Duration of each time slot.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeSlotInterval", Required = Newtonsoft.Json.Required.Default)]
         public Duration TimeSlotInterval { get; set; }

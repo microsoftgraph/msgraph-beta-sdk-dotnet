@@ -32,28 +32,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets bottom.
-        /// The margin in microns from the bottom edge.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bottom", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Bottom { get; set; }
     
         /// <summary>
         /// Gets or sets left.
-        /// The margin in microns from the left edge.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "left", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Left { get; set; }
     
         /// <summary>
         /// Gets or sets right.
-        /// The margin in microns from the right edge.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "right", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Right { get; set; }
     
         /// <summary>
         /// Gets or sets top.
-        /// The margin in microns from the top edge.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Top { get; set; }

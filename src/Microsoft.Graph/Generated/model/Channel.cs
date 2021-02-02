@@ -67,14 +67,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets membership type.
-        /// The type of the channel. Can be set during creation and cannot be changed. Default: standard.
+        /// The type of the channel. Can be set during creation and cannot be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipType", Required = Newtonsoft.Json.Required.Default)]
         public ChannelMembershipType? MembershipType { get; set; }
     
         /// <summary>
         /// Gets or sets moderation settings.
-        /// Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "moderationSettings", Required = Newtonsoft.Json.Required.Default)]
         public ChannelModerationSettings ModerationSettings { get; set; }

@@ -51,9 +51,24 @@ namespace Microsoft.Graph
         Deprovisioning = 5,
 	
         /// <summary>
-        /// Failed
+        /// Upgrade Failed
         /// </summary>
-        Failed = 6,
+        UpgradeFailed = 6,
+	
+        /// <summary>
+        /// Provision Failed
+        /// </summary>
+        ProvisionFailed = 7,
+	
+        /// <summary>
+        /// Deprovision Failed
+        /// </summary>
+        DeprovisionFailed = 8,
+	
+        /// <summary>
+        /// Reprovision Failed
+        /// </summary>
+        ReprovisionFailed = 9,
 	
     }
 }

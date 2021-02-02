@@ -46,14 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets securityEncryptionAlgorithm.
-        /// Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
+        /// Encryption algorithm
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityEncryptionAlgorithm", Required = Newtonsoft.Json.Required.Default)]
         public VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets securityIntegrityAlgorithm.
-        /// Integrity algorithm. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
+        /// Integrity algorithm
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "securityIntegrityAlgorithm", Required = Newtonsoft.Json.Required.Default)]
         public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm { get; set; }

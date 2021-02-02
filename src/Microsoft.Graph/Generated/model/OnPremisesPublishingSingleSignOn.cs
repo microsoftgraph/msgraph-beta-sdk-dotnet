@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets kerberosSignOnSettings.
-        /// The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kerberosSignOnSettings", Required = Newtonsoft.Json.Required.Default)]
         public KerberosSignOnSettings KerberosSignOnSettings { get; set; }
     
         /// <summary>
         /// Gets or sets singleSignOnMode.
-        /// The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, headerBased.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "singleSignOnMode", Required = Newtonsoft.Json.Required.Default)]
         public SingleSignOnMode? SingleSignOnMode { get; set; }

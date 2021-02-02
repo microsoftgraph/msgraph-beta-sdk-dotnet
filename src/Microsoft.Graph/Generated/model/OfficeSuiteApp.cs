@@ -46,14 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets install progress display level.
-        /// To specify the level of display for the Installation Progress Setup UI on the Device. Possible values are: none, full.
+        /// To specify the level of display for the Installation Progress Setup UI on the Device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installProgressDisplayLevel", Required = Newtonsoft.Json.Required.Default)]
         public OfficeSuiteInstallProgressDisplayLevel? InstallProgressDisplayLevel { get; set; }
     
         /// <summary>
         /// Gets or sets locales to install.
-        /// The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx
+        /// The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/en-us/library/cc179219(v=office.16).aspx
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localesToInstall", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> LocalesToInstall { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets office platform architecture.
-        /// The property to represent the Office365 app suite version. Possible values are: none, x86, x64, arm, neutral, arm64.
+        /// The property to represent the Office365 app suite version.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officePlatformArchitecture", Required = Newtonsoft.Json.Required.Default)]
         public WindowsArchitecture? OfficePlatformArchitecture { get; set; }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets update channel.
-        /// The property to represent the Office365 Update Channel. Possible values are: none, current, deferred, firstReleaseCurrent, firstReleaseDeferred, monthlyEnterprise.
+        /// The property to represent the Office365 Update Channel.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateChannel", Required = Newtonsoft.Json.Required.Default)]
         public OfficeUpdateChannel? UpdateChannel { get; set; }

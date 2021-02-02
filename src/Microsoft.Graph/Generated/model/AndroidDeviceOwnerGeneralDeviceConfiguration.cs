@@ -46,14 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets apps auto update policy.
-        /// Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
+        /// Indicates the value of the app auto update policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsAutoUpdatePolicy", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerAppAutoUpdatePolicyType? AppsAutoUpdatePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets apps default permission policy.
-        /// Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+        /// Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appsDefaultPermissionPolicy", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerDefaultAppPermissionPolicyType? AppsDefaultPermissionPolicy { get; set; }
@@ -116,7 +116,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment profile.
-        /// Indicates which enrollment profile you want to configure. Possible values are: notConfigured, dedicatedDevice, fullyManaged.
+        /// Indicates which enrollment profile you want to configure.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentProfile", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile { get; set; }
@@ -151,7 +151,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk customization device settings blocked.
-        /// Indicates whether a user can access the device's Settings app while in Kiosk Mode.
+        /// Indicates whether a user can access the device's Settings app while in Kiosk Mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationDeviceSettingsBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskCustomizationDeviceSettingsBlocked { get; set; }
@@ -165,7 +165,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk customization status bar.
-        /// Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
+        /// Indicates whether system info and notifications are disabled in Kiosk Mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationStatusBar", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerKioskCustomizationStatusBar? KioskCustomizationStatusBar { get; set; }
@@ -179,7 +179,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk customization system navigation.
-        /// Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
+        /// Indicates which navigation features are enabled in Kiosk Mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskCustomizationSystemNavigation", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerKioskCustomizationSystemNavigation? KioskCustomizationSystemNavigation { get; set; }
@@ -221,14 +221,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode folder icon.
-        /// Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
+        /// Folder icon configuration for managed home screen in Kiosk Mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeFolderIcon", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode icon size.
-        /// Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
+        /// Icon size configuration for managed home screen in Kiosk Mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeIconSize", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize { get; set; }
@@ -249,7 +249,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode screen orientation.
-        /// Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
+        /// Screen orientation configuration for managed home screen in Kiosk Mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeScreenOrientation", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerKioskModeScreenOrientation? KioskModeScreenOrientation { get; set; }
@@ -312,7 +312,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode virtual home button type.
-        /// Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
+        /// Indicates whether the virtual home button is a swipe up home button or a floating home button.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeVirtualHomeButtonType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerVirtualHomeButtonType? KioskModeVirtualHomeButtonType { get; set; }
@@ -382,7 +382,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets microsoft launcher dock presence configuration.
-        /// Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
+        /// Indicates whether or not you want to configure the device dock.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherDockPresenceConfiguration", Required = Newtonsoft.Json.Required.Default)]
         public MicrosoftLauncherDockPresence? MicrosoftLauncherDockPresenceConfiguration { get; set; }
@@ -403,7 +403,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets microsoft launcher search bar placement configuration.
-        /// Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
+        /// Indicates the search bar placement configuration on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftLauncherSearchBarPlacementConfiguration", Required = Newtonsoft.Json.Required.Default)]
         public MicrosoftLauncherSearchBarPlacement? MicrosoftLauncherSearchBarPlacementConfiguration { get; set; }
@@ -508,7 +508,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password required type.
-        /// Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+        /// Indicates the minimum password quality required on the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
@@ -543,7 +543,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets play store mode.
-        /// Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
+        /// Indicates the Play Store mode of the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "playStoreMode", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerPlayStoreMode? PlayStoreMode { get; set; }
@@ -613,7 +613,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets system update install type.
-        /// The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
+        /// The type of system update configuration.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemUpdateInstallType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType { get; set; }
@@ -753,7 +753,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets work profile password required type.
-        /// Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+        /// Indicates the minimum password quality required on the work profile password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerRequiredPasswordType? WorkProfilePasswordRequiredType { get; set; }

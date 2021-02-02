@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets payload file name.
-        /// Payload file name (.mobileprovision
+        /// Payload file name (*.mobileprovision | *.xml).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payloadFileName", Required = Newtonsoft.Json.Required.Default)]
         public string PayloadFileName { get; set; }

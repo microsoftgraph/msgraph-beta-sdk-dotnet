@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets defaultText.
-        /// The fallback string, which is used when a requested localization is not available. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultText", Required = Newtonsoft.Json.Required.Default)]
         public string DefaultText { get; set; }
     
         /// <summary>
         /// Gets or sets localizedTexts.
-        /// Content represented in a format for a specific locale.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizedTexts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AccessPackageLocalizedText> LocalizedTexts { get; set; }

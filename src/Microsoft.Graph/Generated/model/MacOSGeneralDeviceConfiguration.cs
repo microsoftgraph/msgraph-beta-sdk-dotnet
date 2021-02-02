@@ -382,7 +382,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets update delay policy.
-        /// Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility.
+        /// Determines whether to delay OS and/or app updates for macOS.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updateDelayPolicy", Required = Newtonsoft.Json.Required.Default)]
         public MacOSSoftwareUpdateDelayPolicy? UpdateDelayPolicy { get; set; }

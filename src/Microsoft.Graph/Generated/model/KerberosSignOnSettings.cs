@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets kerberosServicePrincipalName.
-        /// The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kerberosServicePrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string KerberosServicePrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets kerberosSignOnMappingAttributeType.
-        /// The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kerberosSignOnMappingAttributeType", Required = Newtonsoft.Json.Required.Default)]
         public KerberosSignOnMappingAttributeType? KerberosSignOnMappingAttributeType { get; set; }

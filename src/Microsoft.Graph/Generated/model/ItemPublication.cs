@@ -32,42 +32,36 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets description.
-        /// Description of the publication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Title of the publication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets published date.
-        /// The date that the publication was published.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedDate", Required = Newtonsoft.Json.Required.Default)]
         public Date PublishedDate { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
-        /// Publication or publisher for the publication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publisher", Required = Newtonsoft.Json.Required.Default)]
         public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
-        /// URL referencing a thumbnail of the publication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
         public string ThumbnailUrl { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
-        /// URL referencing the publication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }

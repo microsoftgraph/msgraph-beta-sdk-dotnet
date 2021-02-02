@@ -25,7 +25,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isBackup.
-        /// For a user in an approval stage, this property indicates whether the user is a backup fallback approver.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBackup", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsBackup { get; set; }

@@ -32,42 +32,36 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authenticationMethod.
-        /// The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public string AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationMethodDetail.
-        /// Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodDetail", Required = Newtonsoft.Json.Required.Default)]
         public string AuthenticationMethodDetail { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepDateTime.
-        /// Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AuthenticationStepDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepRequirement.
-        /// The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepRequirement", Required = Newtonsoft.Json.Required.Default)]
         public string AuthenticationStepRequirement { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationStepResultDetail.
-        /// Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationStepResultDetail", Required = Newtonsoft.Json.Required.Default)]
         public string AuthenticationStepResultDetail { get; set; }
     
         /// <summary>
         /// Gets or sets succeeded.
-        /// Indicates the status of the authentication step. Possible values: succeeded, failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "succeeded", Required = Newtonsoft.Json.Required.Default)]
         public bool? Succeeded { get; set; }

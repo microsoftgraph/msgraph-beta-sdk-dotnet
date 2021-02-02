@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets action.
-        /// Action. Possible values are: connect, evaluateConnection, ignore, disconnect.
+        /// Action.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action", Required = Newtonsoft.Json.Required.Default)]
         public VpnOnDemandRuleConnectionAction? Action { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets domainAction.
-        /// Domain Action (Only applicable when Action is evaluate connection). Possible values are: connectIfNeeded, neverConnect.
+        /// Domain Action (Only applicable when Action is evaluate connection).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainAction", Required = Newtonsoft.Json.Required.Default)]
         public VpnOnDemandRuleConnectionDomainAction? DomainAction { get; set; }

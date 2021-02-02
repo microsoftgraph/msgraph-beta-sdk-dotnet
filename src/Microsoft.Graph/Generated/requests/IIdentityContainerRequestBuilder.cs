@@ -38,12 +38,6 @@ namespace Microsoft.Graph
         IConditionalAccessRootRequestBuilder ConditionalAccess { get; }
 
         /// <summary>
-        /// Gets the request builder for ApiConnectors.
-        /// </summary>
-        /// <returns>The <see cref="IIdentityContainerApiConnectorsCollectionRequestBuilder"/>.</returns>
-        IIdentityContainerApiConnectorsCollectionRequestBuilder ApiConnectors { get; }
-
-        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>

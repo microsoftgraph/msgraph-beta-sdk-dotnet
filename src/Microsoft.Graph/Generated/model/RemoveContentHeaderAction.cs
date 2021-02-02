@@ -31,7 +31,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets uiElementNames.
-        /// The name of the UI element of the header to be removed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uiElementNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> UiElementNames { get; set; }

@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identifierType.
-        /// Use bundle ID for an app or path for a process or executable that receives the Apple Event. Possible values are: bundleID, path.
+        /// Use bundle ID for an app or path for a process or executable that receives the Apple Event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierType", Required = Newtonsoft.Json.Required.Default)]
         public MacOSProcessIdentifierType? IdentifierType { get; set; }

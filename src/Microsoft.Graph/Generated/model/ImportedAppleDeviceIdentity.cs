@@ -46,14 +46,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets discovery source.
-        /// Apple device discovery source. Possible values are: unknown, adminImport, deviceEnrollmentProgram.
+        /// Apple device discovery source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverySource", Required = Newtonsoft.Json.Required.Default)]
         public DiscoverySource? DiscoverySource { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment state.
-        /// The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+        /// The state of the device in Intune
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentState", Required = Newtonsoft.Json.Required.Default)]
         public EnrollmentState? EnrollmentState { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is supervised.
-        /// Indicates if the Apple device is supervised. More information is at: https://support.apple.com/HT202837
+        /// Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSupervised", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSupervised { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform.
-        /// The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
+        /// The platform of the Device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platform", Required = Newtonsoft.Json.Required.Default)]
         public Platform? Platform { get; set; }

@@ -39,7 +39,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets value prefix.
-        /// Not yet documented
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valuePrefix", Required = Newtonsoft.Json.Required.Default)]
         public string ValuePrefix { get; set; }

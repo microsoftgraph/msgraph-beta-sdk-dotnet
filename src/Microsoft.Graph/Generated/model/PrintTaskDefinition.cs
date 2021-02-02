@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets created by.
-        /// The application that created the printTaskDefinition. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public AppIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name of the printTaskDefinition.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
-        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
         public IPrintTaskDefinitionTasksCollectionPage Tasks { get; set; }

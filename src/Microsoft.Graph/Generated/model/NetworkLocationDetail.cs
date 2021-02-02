@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets networkNames.
-        /// Provides the name of the network used when signing in.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkNames", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> NetworkNames { get; set; }
     
         /// <summary>
         /// Gets or sets networkType.
-        /// Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkType", Required = Newtonsoft.Json.Required.Default)]
         public NetworkType? NetworkType { get; set; }

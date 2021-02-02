@@ -39,14 +39,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets dayofWeek.
-        /// Day of week. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+        /// Day of week.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dayofWeek", Required = Newtonsoft.Json.Required.Default)]
         public DayOfWeek? DayofWeek { get; set; }
     
         /// <summary>
         /// Gets or sets recurrence.
-        /// Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+        /// Recurrence schedule.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recurrence", Required = Newtonsoft.Json.Required.Default)]
         public Windows10AppsUpdateRecurrence? Recurrence { get; set; }

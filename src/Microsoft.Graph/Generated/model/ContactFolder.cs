@@ -46,7 +46,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets well known name.
-        /// The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wellKnownName", Required = Newtonsoft.Json.Required.Default)]
         public string WellKnownName { get; set; }

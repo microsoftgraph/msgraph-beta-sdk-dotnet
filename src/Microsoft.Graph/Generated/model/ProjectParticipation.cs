@@ -32,49 +32,42 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets categories.
-        /// Contains categories a user has associated with the project (for example, digital transformation, oil rig).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "categories", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
         /// Gets or sets client.
-        /// Contains detailed information about the client the project was for.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "client", Required = Newtonsoft.Json.Required.Default)]
         public CompanyDetail Client { get; set; }
     
         /// <summary>
         /// Gets or sets collaboration tags.
-        /// Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collaborationTags", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> CollaborationTags { get; set; }
     
         /// <summary>
         /// Gets or sets colleagues.
-        /// Lists people that also worked on the project.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colleagues", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RelatedPerson> Colleagues { get; set; }
     
         /// <summary>
         /// Gets or sets detail.
-        /// Contains detail about the user's role on the project.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail", Required = Newtonsoft.Json.Required.Default)]
         public PositionDetail Detail { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Contains a friendly name for the project.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets sponsors.
-        /// The Person or people who sponsored the project.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sponsors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RelatedPerson> Sponsors { get; set; }

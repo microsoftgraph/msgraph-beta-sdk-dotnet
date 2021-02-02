@@ -32,28 +32,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// Short description of the institution the user studied at.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
-        /// Name of the institution the user studied at.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets location.
-        /// Address or location of the institute.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location", Required = Newtonsoft.Json.Required.Default)]
         public PhysicalAddress Location { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.
-        /// Link to the institution or department homepage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
         public string WebUrl { get; set; }

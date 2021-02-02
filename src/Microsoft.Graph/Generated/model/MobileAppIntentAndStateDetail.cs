@@ -53,14 +53,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets installState.
-        /// The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+        /// The install state of the app.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "installState", Required = Newtonsoft.Json.Required.Default)]
         public ResultantAppState? InstallState { get; set; }
     
         /// <summary>
         /// Gets or sets mobileAppIntent.
-        /// Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
+        /// Mobile App Intent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppIntent", Required = Newtonsoft.Json.Required.Default)]
         public MobileAppIntent? MobileAppIntent { get; set; }

@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets authentication method.
-        /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
+        /// Authentication Method when EAP Type is configured to PEAP or EAP-TTLS.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
         public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets eap fast configuration.
-        /// EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
+        /// EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapFastConfiguration", Required = Newtonsoft.Json.Required.Default)]
         public EapFastConfiguration? EapFastConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets eap type.
-        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the wired network. Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast.
+        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the wired network.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
         public EapType? EapType { get; set; }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets network interface.
-        /// Network interface. Possible values are: anyEthernet, firstActiveEthernet, secondActiveEthernet, thirdActiveEthernet, firstEthernet, secondEthernet, thirdEthernet.
+        /// Network interface.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "networkInterface", Required = Newtonsoft.Json.Required.Default)]
         public WiredNetworkInterface? NetworkInterface { get; set; }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets non eap authentication method for eap ttls.
-        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+        /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nonEapAuthenticationMethodForEapTtls", Required = Newtonsoft.Json.Required.Default)]
         public NonEapAuthenticationMethodForEapTtlsType? NonEapAuthenticationMethodForEapTtls { get; set; }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets encryptionMethod.
-        /// Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
+        /// Select the encryption method for operating system drives.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionMethod", Required = Newtonsoft.Json.Required.Default)]
         public BitLockerEncryptionMethod? EncryptionMethod { get; set; }
@@ -88,28 +88,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmKeyUsage.
-        /// Indicates if TPM startup key is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+        /// Indicates if TPM startup key is allowed/required/disallowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmKeyUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? StartupAuthenticationTpmKeyUsage { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmPinAndKeyUsage.
-        /// Indicates if TPM startup pin key and key are allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+        /// Indicates if TPM startup pin key and key are allowed/required/disallowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmPinAndKeyUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? StartupAuthenticationTpmPinAndKeyUsage { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmPinUsage.
-        /// Indicates if TPM startup pin is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+        /// Indicates if TPM startup pin is allowed/required/disallowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmPinUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? StartupAuthenticationTpmPinUsage { get; set; }
     
         /// <summary>
         /// Gets or sets startupAuthenticationTpmUsage.
-        /// Indicates if TPM startup is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+        /// Indicates if TPM startup is allowed/required/disallowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupAuthenticationTpmUsage", Required = Newtonsoft.Json.Required.Default)]
         public ConfigurationUsage? StartupAuthenticationTpmUsage { get; set; }

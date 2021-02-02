@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets feedback.
-        /// Teacher's written feedback to the student.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feedback", Required = Newtonsoft.Json.Required.Default)]
         public EducationFeedback Feedback { get; set; }
     
         /// <summary>
         /// Gets or sets published feedback.
-        /// A copy of the feedback property that is made when the grade is released to the student.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedFeedback", Required = Newtonsoft.Json.Required.Default)]
         public EducationFeedback PublishedFeedback { get; set; }

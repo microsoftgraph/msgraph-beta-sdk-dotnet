@@ -38,7 +38,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets contributors.
-        /// For broadcast meeting only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contributors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MeetingParticipantInfo> Contributors { get; set; }
@@ -51,7 +50,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets producers.
-        /// For broadcast meeting only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "producers", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<MeetingParticipantInfo> Producers { get; set; }

@@ -39,7 +39,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Read only. Timestamp at which the team was created.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -53,7 +52,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets discovery settings.
-        /// Settings to configure team discoverability by others.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discoverySettings", Required = Newtonsoft.Json.Required.Default)]
         public TeamDiscoverySettings DiscoverySettings { get; set; }
@@ -95,7 +93,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is membership limited to owners.
-        /// If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMembershipLimitedToOwners", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsMembershipLimitedToOwners { get; set; }
@@ -178,14 +175,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owners", Required = Newtonsoft.Json.Required.Default)]
         public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
         /// Gets or sets photo.
-        /// The team photo.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
         public ProfilePhoto Photo { get; set; }

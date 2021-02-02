@@ -32,77 +32,66 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
-        /// The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalId", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets registered date time.
-        /// Represents the date time when the resource is registered in PIM.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RegisteredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets registered root.
-        /// The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registeredRoot", Required = Newtonsoft.Json.Required.Default)]
         public string RegisteredRoot { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets parent.
-        /// Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent", Required = Newtonsoft.Json.Required.Default)]
         public GovernanceResource Parent { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment requests.
-        /// The collection of role assignment requests for the resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
         public IGovernanceResourceRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
     
         /// <summary>
         /// Gets or sets role assignments.
-        /// The collection of role assignments for the resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignments", Required = Newtonsoft.Json.Required.Default)]
         public IGovernanceResourceRoleAssignmentsCollectionPage RoleAssignments { get; set; }
     
         /// <summary>
         /// Gets or sets role definitions.
-        /// The collection of role defintions for the resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
         public IGovernanceResourceRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
         /// <summary>
         /// Gets or sets role settings.
-        /// The collection of role settings for the resource.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleSettings", Required = Newtonsoft.Json.Required.Default)]
         public IGovernanceResourceRoleSettingsCollectionPage RoleSettings { get; set; }

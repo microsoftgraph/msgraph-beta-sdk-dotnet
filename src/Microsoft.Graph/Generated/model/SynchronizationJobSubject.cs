@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets objectId.
-        /// The identifier of an object to which a synchronizationJob  is to be applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectId", Required = Newtonsoft.Json.Required.Default)]
         public string ObjectId { get; set; }
     
         /// <summary>
         /// Gets or sets objectTypeName.
-        /// The type of the object to which a synchronizationJob  is to be applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectTypeName", Required = Newtonsoft.Json.Required.Default)]
         public string ObjectTypeName { get; set; }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets channel.
-        /// The channel to install on target devices. Possible values are: dev, beta, stable.
+        /// The channel to install on target devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channel", Required = Newtonsoft.Json.Required.Default)]
         public MicrosoftEdgeChannel? Channel { get; set; }

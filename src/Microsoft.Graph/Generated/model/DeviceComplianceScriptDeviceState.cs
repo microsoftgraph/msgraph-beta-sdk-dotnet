@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets detection state.
-        /// Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+        /// Detection state from the lastest device compliance script execution
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionState", Required = Newtonsoft.Json.Required.Default)]
         public RunState? DetectionState { get; set; }

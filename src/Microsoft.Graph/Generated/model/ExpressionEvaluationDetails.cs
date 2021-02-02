@@ -32,28 +32,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets expression.
-        /// Represents expression which has been evaluated.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expression", Required = Newtonsoft.Json.Required.Default)]
         public string Expression { get; set; }
     
         /// <summary>
         /// Gets or sets expressionEvaluationDetails.
-        /// Represents the details of the evaluation of the expression.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressionEvaluationDetails", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ExpressionEvaluationDetails> ExpressionEvaluationDetailsProperty { get; set; }
     
         /// <summary>
         /// Gets or sets expressionResult.
-        /// Represents the value of the result of the current expression.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expressionResult", Required = Newtonsoft.Json.Required.Default)]
         public bool? ExpressionResult { get; set; }
     
         /// <summary>
         /// Gets or sets propertyToEvaluate.
-        /// Defines the name of the property and the value of that property.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propertyToEvaluate", Required = Newtonsoft.Json.Required.Default)]
         public PropertyToEvaluate PropertyToEvaluate { get; set; }

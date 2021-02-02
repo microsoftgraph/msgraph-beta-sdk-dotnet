@@ -144,7 +144,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app store blocked.
-        /// Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using the App Store.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appStoreBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? AppStoreBlocked { get; set; }
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets camera blocked.
-        /// Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from accessing the camera of the device.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cameraBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? CameraBlocked { get; set; }
@@ -347,7 +347,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets date and time force set automatically.
-        /// Indicates whether or not the Date and Time 'Set Automatically' feature is enabled and cannot be turned off by the user (iOS 12.0 and later).
+        /// Indicates whether or not the Date and Time "Set Automatically" feature is enabled and cannot be turned off by the user (iOS 12.0 and later).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dateAndTimeForceSetAutomatically", Required = Newtonsoft.Json.Required.Default)]
         public bool? DateAndTimeForceSetAutomatically { get; set; }
@@ -424,7 +424,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enterprise app block trust modification.
-        /// [Deprecated] Configuring this setting and setting the value to 'true' has no effect on the device.
+        /// Indicates whether or not to block the user from modifying the enterprise app trust settings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseAppBlockTrustModification", Required = Newtonsoft.Json.Required.Default)]
         public bool? EnterpriseAppBlockTrustModification { get; set; }
@@ -452,7 +452,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets face time blocked.
-        /// Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using FaceTime.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "faceTimeBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? FaceTimeBlocked { get; set; }
@@ -480,7 +480,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets find my friends blocked.
-        /// Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
+        /// Indicates whether or not to block Find My Friends when the device is in supervised mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "findMyFriendsBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? FindMyFriendsBlocked { get; set; }
@@ -501,14 +501,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets gaming block game center friends.
-        /// Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from having friends in Game Center.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gamingBlockGameCenterFriends", Required = Newtonsoft.Json.Required.Default)]
         public bool? GamingBlockGameCenterFriends { get; set; }
     
         /// <summary>
         /// Gets or sets gaming block multiplayer.
-        /// Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using multiplayer gaming.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gamingBlockMultiplayer", Required = Newtonsoft.Json.Required.Default)]
         public bool? GamingBlockMultiplayer { get; set; }
@@ -543,14 +543,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i cloud block backup.
-        /// Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block iCloud backup.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudBlockBackup", Required = Newtonsoft.Json.Required.Default)]
         public bool? ICloudBlockBackup { get; set; }
     
         /// <summary>
         /// Gets or sets i cloud block document sync.
-        /// Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block iCloud document sync.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iCloudBlockDocumentSync", Required = Newtonsoft.Json.Required.Default)]
         public bool? ICloudBlockDocumentSync { get; set; }
@@ -599,7 +599,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets i tunes block explicit content.
-        /// Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iTunesBlockExplicitContent", Required = Newtonsoft.Json.Required.Default)]
         public bool? ITunesBlockExplicitContent { get; set; }
@@ -676,7 +676,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode allow auto lock.
-        /// Indicates whether or not to allow device auto lock while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.
+        /// Indicates whether or not to allow device auto lock while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowAutoLock", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowAutoLock { get; set; }
@@ -690,28 +690,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode allow ringer switch.
-        /// Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.
+        /// Indicates whether or not to allow use of the ringer switch while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowRingerSwitch", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowRingerSwitch { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow screen rotation.
-        /// Indicates whether or not to allow screen rotation while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.
+        /// Indicates whether or not to allow screen rotation while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowScreenRotation", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowScreenRotation { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow sleep button.
-        /// Indicates whether or not to allow use of the sleep button while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.
+        /// Indicates whether or not to allow use of the sleep button while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowSleepButton", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowSleepButton { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode allow touchscreen.
-        /// Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.
+        /// Indicates whether or not to allow use of the touchscreen while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowTouchscreen", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowTouchscreen { get; set; }
@@ -732,7 +732,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode allow volume buttons.
-        /// Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.
+        /// Indicates whether or not to allow use of the volume buttons while in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAllowVolumeButtons", Required = Newtonsoft.Json.Required.Default)]
         public bool? KioskModeAllowVolumeButtons { get; set; }
@@ -753,7 +753,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode app type.
-        /// Type of app to run in kiosk mode. Possible values are: notConfigured, appStoreApp, managedApp, builtInApp.
+        /// Type of app to run in kiosk mode.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAppType", Required = Newtonsoft.Json.Required.Default)]
         public IosKioskModeAppType? KioskModeAppType { get; set; }
@@ -1061,7 +1061,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets passcode sign in failure count before wipe.
-        /// Number of sign in failures allowed before wiping the device. Valid values 2 to 11
+        /// Number of sign in failures allowed before wiping the device. Valid values 4 to 11
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passcodeSignInFailureCountBeforeWipe", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PasscodeSignInFailureCountBeforeWipe { get; set; }
@@ -1117,14 +1117,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets safari block autofill.
-        /// Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using Auto fill in Safari.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safariBlockAutofill", Required = Newtonsoft.Json.Required.Default)]
         public bool? SafariBlockAutofill { get; set; }
     
         /// <summary>
         /// Gets or sets safari blocked.
-        /// Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.
+        /// Indicates whether or not to block the user from using Safari.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "safariBlocked", Required = Newtonsoft.Json.Required.Default)]
         public bool? SafariBlocked { get; set; }

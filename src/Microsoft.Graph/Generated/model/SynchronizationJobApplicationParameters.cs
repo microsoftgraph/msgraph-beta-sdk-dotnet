@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ruleId.
-        /// The identifier of a the synchronizationRule to be applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ruleId", Required = Newtonsoft.Json.Required.Default)]
         public string RuleId { get; set; }
     
         /// <summary>
         /// Gets or sets subjects.
-        /// The identifiers of one or more objects to which a synchronizationJob is to be applied.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjects", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SynchronizationJobSubject> Subjects { get; set; }

@@ -32,56 +32,48 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets display name.
-        /// Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is per device acceptance required.
-        /// This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isPerDeviceAcceptanceRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsPerDeviceAcceptanceRequired { get; set; }
     
         /// <summary>
         /// Gets or sets is viewing before acceptance required.
-        /// Indicates whether the user has to expand the agreement before accepting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isViewingBeforeAcceptanceRequired", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsViewingBeforeAcceptanceRequired { get; set; }
     
         /// <summary>
         /// Gets or sets terms expiration.
-        /// Expiration schedule and frequency of agreement for all users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsExpiration", Required = Newtonsoft.Json.Required.Default)]
         public TermsExpiration TermsExpiration { get; set; }
     
         /// <summary>
         /// Gets or sets user reaccept required frequency.
-        /// The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userReacceptRequiredFrequency", Required = Newtonsoft.Json.Required.Default)]
         public Duration UserReacceptRequiredFrequency { get; set; }
     
         /// <summary>
         /// Gets or sets acceptances.
-        /// Read-only. Information about acceptances of this agreement.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptances", Required = Newtonsoft.Json.Required.Default)]
         public IAgreementAcceptancesCollectionPage Acceptances { get; set; }
     
         /// <summary>
         /// Gets or sets file.
-        /// Default PDF linked to this agreement.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "file", Required = Newtonsoft.Json.Required.Default)]
         public AgreementFile File { get; set; }
     
         /// <summary>
         /// Gets or sets files.
-        /// PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "files", Required = Newtonsoft.Json.Required.Default)]
         public IAgreementFilesCollectionPage Files { get; set; }

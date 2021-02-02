@@ -32,98 +32,84 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets acquiredByPrinter.
-        /// True if the job was acquired by a printer; false otherwise. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acquiredByPrinter", Required = Newtonsoft.Json.Required.Default)]
         public bool? AcquiredByPrinter { get; set; }
     
         /// <summary>
         /// Gets or sets acquiredDateTime.
-        /// The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acquiredDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? AcquiredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets blackAndWhitePageCount.
-        /// The number of black and white pages that were printed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blackAndWhitePageCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? BlackAndWhitePageCount { get; set; }
     
         /// <summary>
         /// Gets or sets colorPageCount.
-        /// The number of color pages that were printed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "colorPageCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? ColorPageCount { get; set; }
     
         /// <summary>
         /// Gets or sets completionDateTime.
-        /// The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets copiesPrinted.
-        /// The number of copies that were printed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "copiesPrinted", Required = Newtonsoft.Json.Required.Default)]
         public Int32? CopiesPrinted { get; set; }
     
         /// <summary>
         /// Gets or sets createdBy.
-        /// The user who created the print job. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
         public UserIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets createdDateTime.
-        /// The dateTimeOffset when the job was created. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets duplexPageCount.
-        /// The number of duplex (double-sided) pages that were printed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duplexPageCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DuplexPageCount { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// The archived print job's GUID. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets pageCount.
-        /// The total number of pages that were printed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? PageCount { get; set; }
     
         /// <summary>
         /// Gets or sets printerId.
-        /// The printer ID that the job was queued for. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "printerId", Required = Newtonsoft.Json.Required.Default)]
         public string PrinterId { get; set; }
     
         /// <summary>
         /// Gets or sets processingState.
-        /// The print job's final processing state. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingState", Required = Newtonsoft.Json.Required.Default)]
         public PrintJobProcessingState? ProcessingState { get; set; }
     
         /// <summary>
         /// Gets or sets simplexPageCount.
-        /// The number of simplex (single-sided) pages that were printed. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "simplexPageCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? SimplexPageCount { get; set; }

@@ -50,17 +50,5 @@ namespace Microsoft.Graph
             return new TeamsAppDefinitionRequest(this.RequestUrl, this.Client, options);
         }
     
-        /// <summary>
-        /// Gets the request builder for Bot.
-        /// </summary>
-        /// <returns>The <see cref="ITeamworkBotRequestBuilder"/>.</returns>
-        public ITeamworkBotRequestBuilder Bot
-        {
-            get
-            {
-                return new TeamworkBotRequestBuilder(this.AppendSegmentToRequestUrl("bot"), this.Client);
-            }
-        }
-    
     }
 }

@@ -31,14 +31,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appId.
-        /// The appId for the service principal entity being reviewed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets servicePrincipalDisplayName.
-        /// The display name of the service principal whose access is being reviewed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "servicePrincipalDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string ServicePrincipalDisplayName { get; set; }

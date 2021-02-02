@@ -39,28 +39,27 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets calendar group id.
-        /// The calendarGroup in which to create the calendar. If the user has never explicitly set a group for the calendar, this property is  null.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendarGroupId", Required = Newtonsoft.Json.Required.Default)]
         public string CalendarGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets can edit.
-        /// True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.
+        /// True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canEdit", Required = Newtonsoft.Json.Required.Default)]
         public bool? CanEdit { get; set; }
     
         /// <summary>
         /// Gets or sets can share.
-        /// True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.
+        /// True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canShare", Required = Newtonsoft.Json.Required.Default)]
         public bool? CanShare { get; set; }
     
         /// <summary>
         /// Gets or sets can view private items.
-        /// True if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.
+        /// True if the user can read calendar items that have been marked private, false otherwise.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canViewPrivateItems", Required = Newtonsoft.Json.Required.Default)]
         public bool? CanViewPrivateItems { get; set; }
@@ -88,14 +87,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hex color.
-        /// The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hexColor", Required = Newtonsoft.Json.Required.Default)]
         public string HexColor { get; set; }
     
         /// <summary>
         /// Gets or sets is default calendar.
-        /// True if this is the default calendar where new events are created by default, false otherwise.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultCalendar", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefaultCalendar { get; set; }
@@ -109,14 +106,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is shared.
-        /// True if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isShared", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsShared { get; set; }
     
         /// <summary>
         /// Gets or sets is shared with me.
-        /// True if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSharedWithMe", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSharedWithMe { get; set; }
@@ -137,7 +132,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owner.
-        /// If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.
+        /// If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "owner", Required = Newtonsoft.Json.Required.Default)]
         public EmailAddress Owner { get; set; }

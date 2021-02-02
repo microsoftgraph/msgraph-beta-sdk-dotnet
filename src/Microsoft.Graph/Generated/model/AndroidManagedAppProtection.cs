@@ -46,7 +46,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app action if android device manufacturer not allowed.
-        /// Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidDeviceManufacturerNotAllowed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed { get; set; }
@@ -60,14 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app action if android safety net apps verification failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidSafetyNetAppsVerificationFailed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed { get; set; }
     
         /// <summary>
         /// Gets or sets app action if android safety net device attestation failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidSafetyNetDeviceAttestationFailed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed { get; set; }
@@ -102,14 +102,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom browser display name.
-        /// Friendly name of the preferred custom browser to open weblink on Android.
+        /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string CustomBrowserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets custom browser package id.
-        /// Unique identifier of a custom browser to open weblink on Android.
+        /// Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customBrowserPackageId", Required = Newtonsoft.Json.Required.Default)]
         public string CustomBrowserPackageId { get; set; }
@@ -214,14 +214,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets required android safety net apps verification type.
-        /// Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
+        /// Defines the Android SafetyNet Apps Verification requirement for a managed app to work.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAndroidSafetyNetAppsVerificationType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidManagedAppSafetyNetAppsVerificationType? RequiredAndroidSafetyNetAppsVerificationType { get; set; }
     
         /// <summary>
         /// Gets or sets required android safety net device attestation type.
-        /// Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
+        /// Defines the Android SafetyNet Device Attestation requirement for a managed app to work.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requiredAndroidSafetyNetDeviceAttestationType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidManagedAppSafetyNetDeviceAttestationType? RequiredAndroidSafetyNetDeviceAttestationType { get; set; }

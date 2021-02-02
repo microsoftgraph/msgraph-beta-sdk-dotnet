@@ -88,7 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password required type.
-        /// Type of password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+        /// Type of password that is required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidForWorkRequiredPasswordType? PasswordRequiredType { get; set; }
@@ -193,14 +193,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets work profile data sharing type.
-        /// Type of data sharing that is allowed. Possible values are: deviceDefault, preventAny, allowPersonalToWork, noRestrictions.
+        /// Type of data sharing that is allowed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileDataSharingType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidForWorkCrossProfileDataSharingType? WorkProfileDataSharingType { get; set; }
     
         /// <summary>
         /// Gets or sets work profile default app permission policy.
-        /// Type of password that is required. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+        /// Type of password that is required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfileDefaultAppPermissionPolicy", Required = Newtonsoft.Json.Required.Default)]
         public AndroidForWorkDefaultAppPermissionPolicyType? WorkProfileDefaultAppPermissionPolicy { get; set; }
@@ -305,7 +305,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets work profile password required type.
-        /// Type of work profile password that is required. Possible values are: deviceDefault, lowSecurityBiometric, required, atLeastNumeric, numericComplex, atLeastAlphabetic, atLeastAlphanumeric, alphanumericWithSymbols.
+        /// Type of work profile password that is required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workProfilePasswordRequiredType", Required = Newtonsoft.Json.Required.Default)]
         public AndroidForWorkRequiredPasswordType? WorkProfilePasswordRequiredType { get; set; }

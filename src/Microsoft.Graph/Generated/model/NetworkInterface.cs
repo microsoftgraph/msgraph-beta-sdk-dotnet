@@ -32,35 +32,30 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection &amp;lt;#&amp;gt;, etc.).
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets ipV4Address.
-        /// Last IPv4 address associated with this NIC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV4Address", Required = Newtonsoft.Json.Required.Default)]
         public string IpV4Address { get; set; }
     
         /// <summary>
         /// Gets or sets ipV6Address.
-        /// Last Public (aka global) IPv6 address associated with this NIC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipV6Address", Required = Newtonsoft.Json.Required.Default)]
         public string IpV6Address { get; set; }
     
         /// <summary>
         /// Gets or sets localIpV6Address.
-        /// Last local (link-local or site-local) IPv6 address associated with this NIC.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localIpV6Address", Required = Newtonsoft.Json.Required.Default)]
         public string LocalIpV6Address { get; set; }
     
         /// <summary>
         /// Gets or sets macAddress.
-        /// MAC address of the NIC on this host.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "macAddress", Required = Newtonsoft.Json.Required.Default)]
         public string MacAddress { get; set; }

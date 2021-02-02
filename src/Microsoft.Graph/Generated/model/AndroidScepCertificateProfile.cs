@@ -32,21 +32,21 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets hash algorithm.
-        /// SCEP Hash Algorithm. Possible values are: sha1, sha2.
+        /// SCEP Hash Algorithm
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hashAlgorithm", Required = Newtonsoft.Json.Required.Default)]
         public HashAlgorithms? HashAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets key size.
-        /// SCEP Key Size. Possible values are: size1024, size2048, size4096.
+        /// SCEP Key Size
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keySize", Required = Newtonsoft.Json.Required.Default)]
         public KeySize? KeySize { get; set; }
     
         /// <summary>
         /// Gets or sets key usage.
-        /// SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+        /// SCEP Key Usage
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyUsage", Required = Newtonsoft.Json.Required.Default)]
         public KeyUsages? KeyUsage { get; set; }

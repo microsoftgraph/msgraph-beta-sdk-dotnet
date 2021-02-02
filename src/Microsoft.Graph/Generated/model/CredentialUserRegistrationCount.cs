@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets total user count.
-        /// Provides the total user count in the tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalUserCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? TotalUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets user registration counts.
-        /// A collection of registration count and status information for users in your tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRegistrationCounts", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<UserRegistrationCount> UserRegistrationCounts { get; set; }

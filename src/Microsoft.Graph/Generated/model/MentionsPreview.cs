@@ -32,7 +32,6 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isMentioned.
-        /// True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isMentioned", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsMentioned { get; set; }

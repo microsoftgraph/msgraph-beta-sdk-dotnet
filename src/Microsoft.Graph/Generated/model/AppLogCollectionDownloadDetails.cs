@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appLogDecryptionAlgorithm.
-        /// DecryptionAlgorithm for Content. Possible values are: aes256.
+        /// DecryptionAlgorithm for Content
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appLogDecryptionAlgorithm", Required = Newtonsoft.Json.Required.Default)]
         public AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm { get; set; }

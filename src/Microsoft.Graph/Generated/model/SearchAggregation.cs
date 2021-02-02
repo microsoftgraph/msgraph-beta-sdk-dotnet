@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets buckets.
-        /// Defines the actual buckets of the computed aggregation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buckets", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<SearchBucket> Buckets { get; set; }
     
         /// <summary>
         /// Gets or sets field.
-        /// Defines on which field the aggregation was computed on.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "field", Required = Newtonsoft.Json.Required.Default)]
         public string Field { get; set; }

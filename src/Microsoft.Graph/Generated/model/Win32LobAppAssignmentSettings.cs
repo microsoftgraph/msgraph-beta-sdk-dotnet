@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets deliveryOptimizationPriority.
-        /// The delivery optimization priority for this app assignment. This setting is not supported in National Cloud environments. Possible values are: notConfigured, foreground.
+        /// The delivery optimization priority for this app assignment. This setting is not supported in National Cloud environments.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deliveryOptimizationPriority", Required = Newtonsoft.Json.Required.Default)]
         public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority { get; set; }

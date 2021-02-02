@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets destination store.
-        /// Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
+        /// Destination store location for the Trusted Root Certificate.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationStore", Required = Newtonsoft.Json.Required.Default)]
         public CertificateDestinationStore? DestinationStore { get; set; }

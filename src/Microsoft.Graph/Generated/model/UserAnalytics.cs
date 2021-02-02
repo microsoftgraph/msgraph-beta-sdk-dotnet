@@ -32,14 +32,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets settings.
-        /// The current settings for a user to use the analytics API.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
         public Settings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets activity statistics.
-        /// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityStatistics", Required = Newtonsoft.Json.Required.Default)]
         public IUserAnalyticsActivityStatisticsCollectionPage ActivityStatistics { get; set; }

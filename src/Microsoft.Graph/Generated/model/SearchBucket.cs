@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets aggregationFilterToken.
-        /// A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aggregationFilterToken", Required = Newtonsoft.Json.Required.Default)]
         public string AggregationFilterToken { get; set; }
     
         /// <summary>
         /// Gets or sets count.
-        /// The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "count", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Count { get; set; }
     
         /// <summary>
         /// Gets or sets key.
-        /// The discrete value of the field that an aggregation was computed on.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "key", Required = Newtonsoft.Json.Required.Default)]
         public string Key { get; set; }

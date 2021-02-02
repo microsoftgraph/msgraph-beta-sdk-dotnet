@@ -66,14 +66,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activities.
-        /// The list of recent activities that took place under this drive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
         public IDriveActivitiesCollectionPage Activities { get; set; }
     
         /// <summary>
         /// Gets or sets bundles.
-        /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundles", Required = Newtonsoft.Json.Required.Default)]
         public IDriveBundlesCollectionPage Bundles { get; set; }

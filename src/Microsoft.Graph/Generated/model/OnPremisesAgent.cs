@@ -32,21 +32,18 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets external ip.
-        /// The external IP address as detected by the service for the agent machine. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalIp", Required = Newtonsoft.Json.Required.Default)]
         public string ExternalIp { get; set; }
     
         /// <summary>
         /// Gets or sets machine name.
-        /// The name of the machine that the aggent is running on. Read-only
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "machineName", Required = Newtonsoft.Json.Required.Default)]
         public string MachineName { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Possible values are: active, inactive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public AgentStatus? Status { get; set; }
@@ -59,7 +56,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets agent groups.
-        /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agentGroups", Required = Newtonsoft.Json.Required.Default)]
         public IOnPremisesAgentAgentGroupsCollectionPage AgentGroups { get; set; }

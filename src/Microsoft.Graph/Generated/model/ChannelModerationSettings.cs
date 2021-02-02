@@ -32,28 +32,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowNewMessageFromBots.
-        /// Indicates whether bots are allowed to post messages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewMessageFromBots", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowNewMessageFromBots { get; set; }
     
         /// <summary>
         /// Gets or sets allowNewMessageFromConnectors.
-        /// Indicates whether connectors are allowed to post messages.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowNewMessageFromConnectors", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllowNewMessageFromConnectors { get; set; }
     
         /// <summary>
         /// Gets or sets replyRestriction.
-        /// Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "replyRestriction", Required = Newtonsoft.Json.Required.Default)]
         public ReplyRestriction? ReplyRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets userNewMessageRestriction.
-        /// Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userNewMessageRestriction", Required = Newtonsoft.Json.Required.Default)]
         public UserNewMessageRestriction? UserNewMessageRestriction { get; set; }

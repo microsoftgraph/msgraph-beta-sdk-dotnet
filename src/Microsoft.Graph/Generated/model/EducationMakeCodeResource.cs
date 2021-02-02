@@ -31,14 +31,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hostWebUrl.
-        /// Host for the type of MakeCode resource (for example, arcade, microbit)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hostWebUrl", Required = Newtonsoft.Json.Required.Default)]
         public string HostWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets projectId.
-        /// ID of the MakeCode project
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "projectId", Required = Newtonsoft.Json.Required.Default)]
         public string ProjectId { get; set; }

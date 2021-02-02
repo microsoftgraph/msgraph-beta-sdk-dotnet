@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platforms.
-        /// Platforms for this policy. Possible values are: none, macOS, windows10X, windows10.
+        /// Platforms for this policy
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager.
+        /// Technologies for this policy
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "technologies", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

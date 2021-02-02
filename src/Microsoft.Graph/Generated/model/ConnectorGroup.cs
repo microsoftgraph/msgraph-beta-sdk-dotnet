@@ -32,42 +32,36 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets connector group type.
-        /// Indicates the type of hybrid agent. This pre-set by the system. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectorGroupType", Required = Newtonsoft.Json.Required.Default)]
         public ConnectorGroupType? ConnectorGroupType { get; set; }
     
         /// <summary>
         /// Gets or sets is default.
-        /// Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// The name associated with the connectorGroup.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets region.
-        /// The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The regions available include: North America, Europe, Australia, Asia, and India. Possible values are: nam, eur, aus, asia, ind.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "region", Required = Newtonsoft.Json.Required.Default)]
         public ConnectorGroupRegion? Region { get; set; }
     
         /// <summary>
         /// Gets or sets applications.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applications", Required = Newtonsoft.Json.Required.Default)]
         public IConnectorGroupApplicationsCollectionWithReferencesPage Applications { get; set; }
     
         /// <summary>
         /// Gets or sets members.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public IConnectorGroupMembersCollectionPage Members { get; set; }

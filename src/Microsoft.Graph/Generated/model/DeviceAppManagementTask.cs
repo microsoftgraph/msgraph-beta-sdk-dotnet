@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets category.
-        /// The category. Possible values are: unknown, advancedThreatProtection.
+        /// The category.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAppManagementTaskCategory? Category { get; set; }
@@ -88,14 +88,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets priority.
-        /// The priority. Possible values are: none, high, low.
+        /// The priority.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "priority", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAppManagementTaskPriority? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// The status. Possible values are: unknown, pending, active, completed, rejected.
+        /// The status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public DeviceAppManagementTaskStatus? Status { get; set; }
