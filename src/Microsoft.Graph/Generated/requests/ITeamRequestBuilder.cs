@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         IChannelRequestBuilder PrimaryChannel { get; }
 
         /// <summary>
+        /// Gets the request builder for Tags.
+        /// </summary>
+        /// <returns>The <see cref="ITeamTagsCollectionRequestBuilder"/>.</returns>
+        ITeamTagsCollectionRequestBuilder Tags { get; }
+
+        /// <summary>
         /// Gets the request builder for Template.
         /// </summary>
         /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>

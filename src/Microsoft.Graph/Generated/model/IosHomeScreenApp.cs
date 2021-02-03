@@ -36,5 +36,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bundleID", Required = Newtonsoft.Json.Required.Default)]
         public string BundleID { get; set; }
     
+        /// <summary>
+        /// Gets or sets isWebClip.
+        /// When true, the bundle ID will be handled as a URL for a web clip.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isWebClip", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsWebClip { get; set; }
+    
     }
 }

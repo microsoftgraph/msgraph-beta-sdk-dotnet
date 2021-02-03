@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterRequestBuilder"/>.</returns>
         IDeviceAndAppManagementAssignmentFilterRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterValidateFilter.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder"/>.</returns>
+        IDeviceAndAppManagementAssignmentFilterValidateFilterRequestBuilder ValidateFilter(
+            DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter = null);
     }
 }

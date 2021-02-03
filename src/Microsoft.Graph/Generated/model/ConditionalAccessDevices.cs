@@ -31,11 +31,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets excludeDevices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ExcludeDevices { get; set; }
+    
+        /// <summary>
         /// Gets or sets excludeDeviceStates.
         /// States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeDeviceStates", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ExcludeDeviceStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includeDevices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeDevices", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> IncludeDevices { get; set; }
     
         /// <summary>
         /// Gets or sets includeDeviceStates.

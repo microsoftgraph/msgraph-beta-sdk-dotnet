@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IPrintDocumentContentRequestBuilder"/>.</returns>
+        public IPrintDocumentContentRequestBuilder Content
+        {
+            get
+            {
+                return new PrintDocumentContentRequestBuilder(this.AppendSegmentToRequestUrl("$value"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for PrintDocumentCreateUploadSession.
         /// </summary>
         /// <returns>The <see cref="IPrintDocumentCreateUploadSessionRequestBuilder"/>.</returns>

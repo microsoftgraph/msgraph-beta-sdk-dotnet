@@ -73,6 +73,13 @@ namespace Microsoft.Graph
         public Int32? AndroidWorkProfileCount { get; set; }
     
         /// <summary>
+        /// Gets or sets aospUserAssociatedCount.
+        /// Number of AOSP user-associated Android devices. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aospUserAssociatedCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? AospUserAssociatedCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets aospUserlessCount.
         /// Number of AOSP dedicated Android devices. Valid values 0 to 2147483647
         /// </summary>

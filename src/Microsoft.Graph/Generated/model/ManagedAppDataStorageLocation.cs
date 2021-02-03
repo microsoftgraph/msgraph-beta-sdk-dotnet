@@ -31,6 +31,11 @@ namespace Microsoft.Graph
         SharePoint = 2,
 	
         /// <summary>
+        /// Box
+        /// </summary>
+        Box = 3,
+	
+        /// <summary>
         /// Local Storage
         /// </summary>
         LocalStorage = 6,

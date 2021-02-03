@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IPrintDocumentRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Content.
+        /// </summary>
+        /// <returns>The <see cref="IPrintDocumentContentRequestBuilder"/>.</returns>
+        IPrintDocumentContentRequestBuilder Content { get; }
+    
+        /// <summary>
         /// Gets the request builder for PrintDocumentCreateUploadSession.
         /// </summary>
         /// <returns>The <see cref="IPrintDocumentCreateUploadSessionRequestBuilder"/>.</returns>

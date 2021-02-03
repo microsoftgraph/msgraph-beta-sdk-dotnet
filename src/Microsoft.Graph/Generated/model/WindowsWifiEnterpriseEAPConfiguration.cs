@@ -193,7 +193,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user based virtual lan.
-        /// Specifiy whether to change the virtual LAN used by the device based on the user’s credentials. Cannot be used when NetworkSingleSignOnType is set to ​Disabled.
+        /// Specifiy whether to change the virtual LAN used by the device based on the user’s credentials. Cannot be used when NetworkSingleSignOnType is set to Disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userBasedVirtualLan", Required = Newtonsoft.Json.Required.Default)]
         public bool? UserBasedVirtualLan { get; set; }

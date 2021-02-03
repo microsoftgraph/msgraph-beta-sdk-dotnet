@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "regionalFormatOverrides", Required = Newtonsoft.Json.Required.Default)]
         public RegionalFormatOverrides RegionalFormatOverrides { get; set; }
     
+        /// <summary>
+        /// Gets or sets translation preferences.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "translationPreferences", Required = Newtonsoft.Json.Required.Default)]
+        public TranslationPreferences TranslationPreferences { get; set; }
+    
     }
 }
 

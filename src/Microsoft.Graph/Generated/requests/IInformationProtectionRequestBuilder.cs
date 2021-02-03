@@ -67,14 +67,5 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder"/>.</returns>
         IInformationProtectionThreatAssessmentRequestsCollectionRequestBuilder ThreatAssessmentRequests { get; }
     
-        /// <summary>
-        /// Gets the request builder for InformationProtectionEvaluateLabelsAndPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder"/>.</returns>
-        IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder EvaluateLabelsAndPolicies(
-            EvaluateSensitivityLabelsRequestObject evaluateSensitivityLabels = null,
-            DlpEvaluatePoliciesRequestObject evaluateDataLossPreventionPolicies = null,
-            TextClassificationRequestObject classifyText = null);
-    
     }
 }

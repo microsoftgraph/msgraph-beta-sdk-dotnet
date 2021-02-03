@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public Code? Code { get; set; }
     
         /// <summary>
+        /// Gets or sets deviceComplianceScriptRulesValidationError.
+        /// Error code.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceComplianceScriptRulesValidationError", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceComplianceScriptRulesValidationError? DeviceComplianceScriptRulesValidationError { get; set; }
+    
+        /// <summary>
         /// Gets or sets message.
         /// Error message.
         /// </summary>

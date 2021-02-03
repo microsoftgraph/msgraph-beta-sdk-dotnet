@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IUserAnalyticsRequestBuilder Analytics { get; }
 
         /// <summary>
+        /// Gets the request builder for UsageRights.
+        /// </summary>
+        /// <returns>The <see cref="IUserUsageRightsCollectionRequestBuilder"/>.</returns>
+        IUserUsageRightsCollectionRequestBuilder UsageRights { get; }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>

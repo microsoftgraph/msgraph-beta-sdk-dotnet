@@ -50,5 +50,15 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 5,
 	
+        /// <summary>
+        /// Teamify Group
+        /// </summary>
+        TeamifyGroup = 6,
+	
+        /// <summary>
+        /// Create Channel
+        /// </summary>
+        CreateChannel = 7,
+	
     }
 }

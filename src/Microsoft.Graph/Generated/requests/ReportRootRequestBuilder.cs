@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsRootRequestBuilder"/>.</returns>
+        public IAuthenticationMethodsRootRequestBuilder AuthenticationMethods
+        {
+            get
+            {
+                return new AuthenticationMethodsRootRequestBuilder(this.AppendSegmentToRequestUrl("authenticationMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CredentialUserRegistrationDetails.
         /// </summary>
         /// <returns>The <see cref="IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>

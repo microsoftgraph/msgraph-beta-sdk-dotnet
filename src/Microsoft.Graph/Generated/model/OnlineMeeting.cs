@@ -45,12 +45,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alternative recording.
+        /// The content stream of the alternative recording of a live event. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alternativeRecording", Required = Newtonsoft.Json.Required.Default)]
         public Stream AlternativeRecording { get; set; }
     
         /// <summary>
         /// Gets or sets attendee report.
+        /// The content stream of the attendee report of a live event. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "attendeeReport", Required = Newtonsoft.Json.Required.Default)]
         public Stream AttendeeReport { get; set; }
@@ -64,6 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets broadcast settings.
+        /// Settings related to a live event
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "broadcastSettings", Required = Newtonsoft.Json.Required.Default)]
         public BroadcastMeetingSettings BroadcastSettings { get; set; }
@@ -123,6 +126,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is broadcast.
+        /// Indicates if this is a live event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBroadcast", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsBroadcast { get; set; }
@@ -169,6 +173,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recording.
+        /// The content stream of the recording of a live event. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recording", Required = Newtonsoft.Json.Required.Default)]
         public Stream Recording { get; set; }

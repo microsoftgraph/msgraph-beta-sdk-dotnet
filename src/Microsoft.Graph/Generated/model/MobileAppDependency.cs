@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependentAppCount", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DependentAppCount { get; set; }
     
+        /// <summary>
+        /// Gets or sets depends on app count.
+        /// The total number of apps the child app directly or indirectly depends on.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dependsOnAppCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? DependsOnAppCount { get; set; }
+    
     }
 }
 

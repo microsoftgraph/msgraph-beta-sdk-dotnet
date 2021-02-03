@@ -35,10 +35,5 @@ namespace Microsoft.Graph
         /// </summary>
         CorporateOwnedWorkProfile = 2,
 	
-        /// <summary>
-        /// Corporate Owned AOSPUserless Device
-        /// </summary>
-        CorporateOwnedAOSPUserlessDevice = 3,
-	
     }
 }

@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public IReportRootApplicationSignInDetailedSummaryCollectionPage ApplicationSignInDetailedSummary { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication methods.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethods", Required = Newtonsoft.Json.Required.Default)]
+        public AuthenticationMethodsRoot AuthenticationMethods { get; set; }
+    
+        /// <summary>
         /// Gets or sets credential user registration details.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentialUserRegistrationDetails", Required = Newtonsoft.Json.Required.Default)]

@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAuditLogRootRequestBuilder.
     /// </summary>
-    public partial interface IAuditLogRootRequestBuilder : IEntityRequestBuilder
+    public partial interface IAuditLogRootRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IAuditLogRootRequest Request();
+        IAuditLogRootRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IAuditLogRootRequest Request(IEnumerable<Option> options);
+        IAuditLogRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for DirectoryAudits.

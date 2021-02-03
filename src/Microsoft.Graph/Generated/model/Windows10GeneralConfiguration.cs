@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app management package family names to launch after log on.
-        /// List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.​
+        /// List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementPackageFamilyNamesToLaunchAfterLogOn", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> AppManagementPackageFamilyNamesToLaunchAfterLogOn { get; set; }
@@ -1327,7 +1327,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets privacy disable launch experience.
-        /// This policy prevents the privacy experience from launching during user logon for new and upgraded users.​
+        /// This policy prevents the privacy experience from launching during user logon for new and upgraded users.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "privacyDisableLaunchExperience", Required = Newtonsoft.Json.Required.Default)]
         public bool? PrivacyDisableLaunchExperience { get; set; }

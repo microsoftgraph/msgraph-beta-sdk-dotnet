@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UsageRights.
+        /// </summary>
+        /// <returns>The <see cref="IUserUsageRightsCollectionRequestBuilder"/>.</returns>
+        public IUserUsageRightsCollectionRequestBuilder UsageRights
+        {
+            get
+            {
+                return new UserUsageRightsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("usageRights"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>
