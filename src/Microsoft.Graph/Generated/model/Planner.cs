@@ -45,6 +45,12 @@ namespace Microsoft.Graph
         public IPlannerPlansCollectionPage Plans { get; set; }
     
         /// <summary>
+        /// Gets or sets rosters.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rosters", Required = Newtonsoft.Json.Required.Default)]
+        public IPlannerRostersCollectionPage Rosters { get; set; }
+    
+        /// <summary>
         /// Gets or sets tasks.
         /// Read-only. Nullable. Returns a collection of the specified tasks
         /// </summary>

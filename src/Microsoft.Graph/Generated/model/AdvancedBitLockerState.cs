@@ -32,9 +32,9 @@ namespace Microsoft.Graph
         NoUserConsent = 1,
 	
         /// <summary>
-        /// Os Volume Encryption Method Mismatch
+        /// Os Volume Unprotected
         /// </summary>
-        OsVolumeEncryptionMethodMismatch = 2,
+        OsVolumeUnprotected = 2,
 	
         /// <summary>
         /// Os Volume Tpm Required
@@ -62,9 +62,9 @@ namespace Microsoft.Graph
         OsVolumeTpmPinStartupKeyRequired = 64,
 	
         /// <summary>
-        /// Os Volume Unprotected
+        /// Os Volume Encryption Method Mismatch
         /// </summary>
-        OsVolumeUnprotected = 128,
+        OsVolumeEncryptionMethodMismatch = 128,
 	
         /// <summary>
         /// Recovery Key Backup Failed

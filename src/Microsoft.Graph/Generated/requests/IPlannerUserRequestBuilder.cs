@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IPlannerUserRecentPlansCollectionWithReferencesRequestBuilder RecentPlans { get; }
 
         /// <summary>
+        /// Gets the request builder for RosterPlans.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerUserRosterPlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        IPlannerUserRosterPlansCollectionWithReferencesRequestBuilder RosterPlans { get; }
+
+        /// <summary>
         /// Gets the request builder for Tasks.
         /// </summary>
         /// <returns>The <see cref="IPlannerUserTasksCollectionRequestBuilder"/>.</returns>

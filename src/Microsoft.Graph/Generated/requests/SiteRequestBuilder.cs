@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Permissions.
+        /// </summary>
+        /// <returns>The <see cref="ISitePermissionsCollectionRequestBuilder"/>.</returns>
+        public ISitePermissionsCollectionRequestBuilder Permissions
+        {
+            get
+            {
+                return new SitePermissionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Sites.
         /// </summary>
         /// <returns>The <see cref="ISiteSitesCollectionRequestBuilder"/>.</returns>

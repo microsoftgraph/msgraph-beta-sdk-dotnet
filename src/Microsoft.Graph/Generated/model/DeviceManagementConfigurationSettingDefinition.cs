@@ -129,6 +129,13 @@ namespace Microsoft.Graph
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }
     
         /// <summary>
+        /// Gets or sets ux behavior.
+        /// Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uxBehavior", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementConfigurationControlType? UxBehavior { get; set; }
+    
+        /// <summary>
         /// Gets or sets version.
         /// Item Version
         /// </summary>

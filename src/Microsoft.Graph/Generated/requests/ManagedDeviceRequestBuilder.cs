@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SecurityBaselineStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates
-        {
-            get
-            {
-                return new ManagedDeviceSecurityBaselineStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityBaselineStates"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicyStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentFilterEvaluationStatusDetails.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder AssignmentFilterEvaluationStatusDetails
+        {
+            get
+            {
+                return new ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentFilterEvaluationStatusDetails"), this.Client);
             }
         }
 
@@ -95,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new ManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedDeviceMobileAppConfigurationStates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for SecurityBaselineStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates
+        {
+            get
+            {
+                return new ManagedDeviceSecurityBaselineStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("securityBaselineStates"), this.Client);
             }
         }
 

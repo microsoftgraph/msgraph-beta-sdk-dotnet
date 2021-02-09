@@ -31,5 +31,29 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IMicrosoftTunnelServerRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerCreateServerLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerCreateServerLogCollectionRequestRequestBuilder"/>.</returns>
+        IMicrosoftTunnelServerCreateServerLogCollectionRequestRequestBuilder CreateServerLogCollectionRequest(
+            DateTimeOffset startDateTime,
+            DateTimeOffset endDateTime);
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerGetHealthMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricsRequestBuilder"/>.</returns>
+        IMicrosoftTunnelServerGetHealthMetricsRequestBuilder GetHealthMetrics(
+            IEnumerable<string> metricNames = null);
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerGetHealthMetricTimeSeries.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder"/>.</returns>
+        IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries(
+            DateTimeOffset startTime,
+            DateTimeOffset endTime,
+            string metricName = null);
+    
     }
 }

@@ -26,11 +26,6 @@ namespace Microsoft.Graph
         Paused = 0,
 	
         /// <summary>
-        /// Disconnected
-        /// </summary>
-        Disconnected = 1,
-	
-        /// <summary>
         /// Media Jam
         /// </summary>
         MediaJam = 2,
@@ -61,11 +56,6 @@ namespace Microsoft.Graph
         InterlockOpen = 7,
 	
         /// <summary>
-        /// Queue Full
-        /// </summary>
-        QueueFull = 8,
-	
-        /// <summary>
         /// Output Tray Missing
         /// </summary>
         OutputTrayMissing = 9,
@@ -91,9 +81,9 @@ namespace Microsoft.Graph
         InputTrayMissing = 13,
 	
         /// <summary>
-        /// Output Almost Full
+        /// Output Area Almost Full
         /// </summary>
-        OutputAlmostFull = 14,
+        OutputAreaAlmostFull = 14,
 	
         /// <summary>
         /// Marker Waste Almost Full
@@ -121,9 +111,89 @@ namespace Microsoft.Graph
         Other = 19,
 	
         /// <summary>
+        /// None
+        /// </summary>
+        None = 20,
+	
+        /// <summary>
+        /// Moving To Paused
+        /// </summary>
+        MovingToPaused = 21,
+	
+        /// <summary>
+        /// Shutdown
+        /// </summary>
+        Shutdown = 22,
+	
+        /// <summary>
+        /// Connecting To Device
+        /// </summary>
+        ConnectingToDevice = 23,
+	
+        /// <summary>
+        /// Timed Out
+        /// </summary>
+        TimedOut = 24,
+	
+        /// <summary>
+        /// Stopping
+        /// </summary>
+        Stopping = 25,
+	
+        /// <summary>
+        /// Stopped Partially
+        /// </summary>
+        StoppedPartially = 26,
+	
+        /// <summary>
+        /// Toner Low
+        /// </summary>
+        TonerLow = 27,
+	
+        /// <summary>
+        /// Toner Empty
+        /// </summary>
+        TonerEmpty = 28,
+	
+        /// <summary>
+        /// Spool Area Full
+        /// </summary>
+        SpoolAreaFull = 29,
+	
+        /// <summary>
+        /// Door Open
+        /// </summary>
+        DoorOpen = 30,
+	
+        /// <summary>
+        /// Optical Photo Conductor Near End Of Life
+        /// </summary>
+        OpticalPhotoConductorNearEndOfLife = 31,
+	
+        /// <summary>
+        /// Optical Photo Conductor Life Over
+        /// </summary>
+        OpticalPhotoConductorLifeOver = 32,
+	
+        /// <summary>
+        /// Developer Low
+        /// </summary>
+        DeveloperLow = 33,
+	
+        /// <summary>
+        /// Developer Empty
+        /// </summary>
+        DeveloperEmpty = 34,
+	
+        /// <summary>
+        /// Interpreter Resource Unavailable
+        /// </summary>
+        InterpreterResourceUnavailable = 35,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 20,
+        UnknownFutureValue = 36,
 	
     }
 }

@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         public IPlannerUserRecentPlansCollectionWithReferencesPage RecentPlans { get; set; }
     
         /// <summary>
+        /// Gets or sets roster plans.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rosterPlans", Required = Newtonsoft.Json.Required.Default)]
+        public IPlannerUserRosterPlansCollectionWithReferencesPage RosterPlans { get; set; }
+    
+        /// <summary>
         /// Gets or sets tasks.
         /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
         /// </summary>

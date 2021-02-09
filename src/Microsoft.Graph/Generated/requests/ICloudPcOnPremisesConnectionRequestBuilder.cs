@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICloudPcOnPremisesConnectionRunHealthChecksRequestBuilder"/>.</returns>
         ICloudPcOnPremisesConnectionRunHealthChecksRequestBuilder RunHealthChecks();
+
+        /// <summary>
+        /// Gets the request builder for CloudPcOnPremisesConnectionUpdateAdDomainPassword.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcOnPremisesConnectionUpdateAdDomainPasswordRequestBuilder"/>.</returns>
+        ICloudPcOnPremisesConnectionUpdateAdDomainPasswordRequestBuilder UpdateAdDomainPassword(
+            string adDomainPassword = null);
     
     }
 }
