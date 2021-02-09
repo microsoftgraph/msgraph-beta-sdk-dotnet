@@ -59,7 +59,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets plans.
-        /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerUserPlansCollectionPage Plans { get; set; }
@@ -70,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recentPlans", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerUserRecentPlansCollectionWithReferencesPage RecentPlans { get; set; }
+    
+        /// <summary>
+        /// Gets or sets roster plans.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rosterPlans", Required = Newtonsoft.Json.Required.Default)]
+        public IPlannerUserRosterPlansCollectionWithReferencesPage RosterPlans { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.

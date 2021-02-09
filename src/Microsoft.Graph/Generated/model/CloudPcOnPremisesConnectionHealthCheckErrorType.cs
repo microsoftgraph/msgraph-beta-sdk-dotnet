@@ -76,9 +76,34 @@ namespace Microsoft.Graph
         ResourceAvailabilityCheckNoSubnetIP = 500,
 	
         /// <summary>
+        /// Resource Availability Check Subscription Disabled
+        /// </summary>
+        ResourceAvailabilityCheckSubscriptionDisabled = 501,
+	
+        /// <summary>
         /// Resource Availability Check Unknown Error
         /// </summary>
         ResourceAvailabilityCheckUnknownError = 599,
+	
+        /// <summary>
+        /// Permission Check No Subscription Reader Role
+        /// </summary>
+        PermissionCheckNoSubscriptionReaderRole = 600,
+	
+        /// <summary>
+        /// Permission Check No Resource Group Owner Role
+        /// </summary>
+        PermissionCheckNoResourceGroupOwnerRole = 601,
+	
+        /// <summary>
+        /// Permission Check No VNet Contributor Role
+        /// </summary>
+        PermissionCheckNoVNetContributorRole = 602,
+	
+        /// <summary>
+        /// Permission Check Unknown Error
+        /// </summary>
+        PermissionCheckUnknownError = 699,
 	
         /// <summary>
         /// Internal Server Unknown Error

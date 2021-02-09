@@ -130,7 +130,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mtu size in bytes.
-        /// Maximum transmission unit. Valid values 1 to 65536
+        /// Maximum transmission unit. Valid values 1280 to 1400
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mtuSizeInBytes", Required = Newtonsoft.Json.Required.Default)]
         public Int32? MtuSizeInBytes { get; set; }

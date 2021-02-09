@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDirectoryRequestBuilder.
     /// </summary>
-    public partial interface IDirectoryRequestBuilder : IEntityRequestBuilder
+    public partial interface IDirectoryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IDirectoryRequest Request();
+        IDirectoryRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IDirectoryRequest Request(IEnumerable<Option> options);
+        IDirectoryRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for AdministrativeUnits.

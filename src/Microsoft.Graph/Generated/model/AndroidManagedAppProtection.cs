@@ -60,14 +60,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app action if android safety net apps verification failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either warn or block, if the specified Android App Verification requirement fails. Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidSafetyNetAppsVerificationFailed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed { get; set; }
     
         /// <summary>
         /// Gets or sets app action if android safety net device attestation failed.
-        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
+        /// Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirement fails. Possible values are: block, wipe, warn.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appActionIfAndroidSafetyNetDeviceAttestationFailed", Required = Newtonsoft.Json.Required.Default)]
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed { get; set; }

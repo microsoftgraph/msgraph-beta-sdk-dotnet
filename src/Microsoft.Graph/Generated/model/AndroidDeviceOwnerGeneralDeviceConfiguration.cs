@@ -185,11 +185,32 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerKioskCustomizationSystemNavigation? KioskCustomizationSystemNavigation { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode app order enabled.
+        /// Whether or not to enable app ordering in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAppOrderEnabled", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeAppOrderEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode app positions.
+        /// The ordering of items on Kiosk Mode Managed Home Screen. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAppPositions", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AndroidDeviceOwnerKioskModeAppPositionItem> KioskModeAppPositions { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode apps.
         /// A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeApps", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<AppListItem> KioskModeApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode apps in folder ordered by name.
+        /// Whether or not to alphabetize applications within a folder in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeAppsInFolderOrderedByName", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeAppsInFolderOrderedByName { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode bluetooth configuration enabled.
@@ -227,11 +248,39 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode grid height.
+        /// Number of rows for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeGridHeight", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? KioskModeGridHeight { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode grid width.
+        /// Number of columns for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeGridWidth", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? KioskModeGridWidth { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode icon size.
         /// Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeIconSize", Required = Newtonsoft.Json.Required.Default)]
         public AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode lock home screen.
+        /// Whether or not to lock home screen to the end user in Kiosk Mode.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeLockHomeScreen", Required = Newtonsoft.Json.Required.Default)]
+        public bool? KioskModeLockHomeScreen { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed folders.
+        /// A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kioskModeManagedFolders", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<AndroidDeviceOwnerKioskModeManagedFolder> KioskModeManagedFolders { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode managed settings entry disabled.

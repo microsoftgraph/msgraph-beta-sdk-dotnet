@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> DisplayNameSegments { get; set; }
     
         /// <summary>
+        /// Gets or sets isCreationContext.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCreationContext", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsCreationContext { get; set; }
+    
+        /// <summary>
         /// Gets or sets ownerAppId.
         /// Read-only. ID of the app that created the plannerPlanContext.
         /// </summary>

@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets isRemovable.
+        /// Whether or not the app can be removed by the user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRemovable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsRemovable { get; set; }
+    
+        /// <summary>
         /// Gets or sets uninstallOnDeviceRemoval.
         /// Whether or not to uninstall the app when device is removed from Intune.
         /// </summary>

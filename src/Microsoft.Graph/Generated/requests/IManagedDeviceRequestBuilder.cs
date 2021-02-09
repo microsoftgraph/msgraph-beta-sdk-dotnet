@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IManagedDeviceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for SecurityBaselineStates.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates { get; }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyStates.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder"/>.</returns>
         IManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder DeviceCompliancePolicyStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentFilterEvaluationStatusDetails.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionRequestBuilder AssignmentFilterEvaluationStatusDetails { get; }
 
         /// <summary>
         /// Gets the request builder for DeviceConfigurationStates.
@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder"/>.</returns>
         IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionRequestBuilder ManagedDeviceMobileAppConfigurationStates { get; }
+
+        /// <summary>
+        /// Gets the request builder for SecurityBaselineStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceSecurityBaselineStatesCollectionRequestBuilder SecurityBaselineStates { get; }
 
         /// <summary>
         /// Gets the request builder for DetectedApps.

@@ -174,6 +174,64 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetFailedMobileAppsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetFailedMobileAppsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetFailedMobileAppsReportRequestBuilder GetFailedMobileAppsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetFailedMobileAppsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFailedMobileAppsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetFailedMobileAppsSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetFailedMobileAppsSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetFailedMobileAppsSummaryReportRequestBuilder GetFailedMobileAppsSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetFailedMobileAppsSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFailedMobileAppsSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetUserInstallStatusReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetUserInstallStatusReportRequestBuilder"/>.</returns>
@@ -573,6 +631,180 @@ namespace Microsoft.Graph
                 orderBy,
                 skip,
                 top);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCompliancePolicyNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder GetCompliancePolicyNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCompliancePolicyNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder GetCompliancePolicyNonComplianceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCompliancePolicyNonComplianceSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetComplianceSettingNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder GetComplianceSettingNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getComplianceSettingNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicyNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder GetConfigurationPolicyNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getConfigurationPolicyNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder GetConfigurationPolicyNonComplianceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getConfigurationPolicyNonComplianceSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationSettingNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getConfigurationSettingNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
         }
 
         /// <summary>

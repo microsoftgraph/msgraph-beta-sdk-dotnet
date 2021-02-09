@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         IEntitlementManagementAccessPackageCatalogsCollectionRequestBuilder AccessPackageCatalogs { get; }
 
         /// <summary>
+        /// Gets the request builder for AccessPackageResourceEnvironments.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder AccessPackageResourceEnvironments { get; }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageResourceRequests.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder"/>.</returns>

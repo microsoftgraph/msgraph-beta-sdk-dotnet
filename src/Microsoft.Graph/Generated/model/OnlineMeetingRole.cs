@@ -31,14 +31,14 @@ namespace Microsoft.Graph
         Presenter = 1,
 	
         /// <summary>
-        /// Producer
-        /// </summary>
-        Producer = 2,
-	
-        /// <summary>
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 3,
+	
+        /// <summary>
+        /// Producer
+        /// </summary>
+        Producer = 2,
 	
     }
 }

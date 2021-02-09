@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SecurityRequestBuilder.
     /// </summary>
-    public partial class SecurityRequestBuilder : EntityRequestBuilder, ISecurityRequestBuilder
+    public partial class SecurityRequestBuilder : BaseRequestBuilder, ISecurityRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ISecurityRequest Request()
+        public ISecurityRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ISecurityRequest Request(IEnumerable<Option> options)
+        public ISecurityRequest Request(IEnumerable<Option> options)
         {
             return new SecurityRequest(this.RequestUrl, this.Client, options);
         }

@@ -50,5 +50,50 @@ namespace Microsoft.Graph
             return new MicrosoftTunnelServerRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerCreateServerLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerCreateServerLogCollectionRequestRequestBuilder"/>.</returns>
+        public IMicrosoftTunnelServerCreateServerLogCollectionRequestRequestBuilder CreateServerLogCollectionRequest(
+            DateTimeOffset startDateTime,
+            DateTimeOffset endDateTime)
+        {
+            return new MicrosoftTunnelServerCreateServerLogCollectionRequestRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createServerLogCollectionRequest"),
+                this.Client,
+                startDateTime,
+                endDateTime);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerGetHealthMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricsRequestBuilder"/>.</returns>
+        public IMicrosoftTunnelServerGetHealthMetricsRequestBuilder GetHealthMetrics(
+            IEnumerable<string> metricNames = null)
+        {
+            return new MicrosoftTunnelServerGetHealthMetricsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getHealthMetrics"),
+                this.Client,
+                metricNames);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerGetHealthMetricTimeSeries.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder"/>.</returns>
+        public IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries(
+            DateTimeOffset startTime,
+            DateTimeOffset endTime,
+            string metricName = null)
+        {
+            return new MicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getHealthMetricTimeSeries"),
+                this.Client,
+                startTime,
+                endTime,
+                metricName);
+        }
+    
     }
 }

@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         IListRequestBuilder Lists  { get; }
         /// <summary>
         /// Gets the request builder for Onenote.
-        /// Calls the OneNote service for notebook related operations.
+        /// 
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         IOnenoteRequestBuilder Onenote  { get; }
@@ -115,6 +115,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISitePageRequestBuilder"/>.</returns>
         ISitePageRequestBuilder Pages  { get; }
+        /// <summary>
+        /// Gets the request builder for Permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRequestBuilder"/>.</returns>
+        IPermissionRequestBuilder Permissions  { get; }
         /// <summary>
         /// Gets the request builder for Sites.
         /// The collection of the sub-sites under this site.

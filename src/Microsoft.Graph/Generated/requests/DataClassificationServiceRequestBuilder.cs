@@ -147,18 +147,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for LabelsAndPoliciesEvaluationJobs.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder LabelsAndPoliciesEvaluationJobs
-        {
-            get
-            {
-                return new DataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("labelsAndPoliciesEvaluationJobs"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for SensitiveTypes.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>
