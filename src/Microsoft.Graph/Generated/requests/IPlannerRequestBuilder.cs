@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IPlannerPlansCollectionRequestBuilder Plans { get; }
 
         /// <summary>
+        /// Gets the request builder for Rosters.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerRostersCollectionRequestBuilder"/>.</returns>
+        IPlannerRostersCollectionRequestBuilder Rosters { get; }
+
+        /// <summary>
         /// Gets the request builder for Tasks.
         /// </summary>
         /// <returns>The <see cref="IPlannerTasksCollectionRequestBuilder"/>.</returns>

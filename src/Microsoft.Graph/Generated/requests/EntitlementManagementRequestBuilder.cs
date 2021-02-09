@@ -111,6 +111,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AccessPackageResourceEnvironments.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder AccessPackageResourceEnvironments
+        {
+            get
+            {
+                return new EntitlementManagementAccessPackageResourceEnvironmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceEnvironments"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageResourceRequests.
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementAccessPackageResourceRequestsCollectionRequestBuilder"/>.</returns>

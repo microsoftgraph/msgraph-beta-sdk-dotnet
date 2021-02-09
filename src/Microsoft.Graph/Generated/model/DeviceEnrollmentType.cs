@@ -71,6 +71,11 @@ namespace Microsoft.Graph
         WindowsCoManagement = 9,
 	
         /// <summary>
+        /// Windows Azure ADJoin Using Device Auth
+        /// </summary>
+        WindowsAzureADJoinUsingDeviceAuth = 10,
+	
+        /// <summary>
         /// Apple User Enrollment
         /// </summary>
         AppleUserEnrollment = 11,

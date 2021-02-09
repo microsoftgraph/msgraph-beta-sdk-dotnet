@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAccessPackageResourceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AccessPackageResourceEnvironment.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageResourceEnvironmentWithReferenceRequestBuilder"/>.</returns>
+        IAccessPackageResourceEnvironmentWithReferenceRequestBuilder AccessPackageResourceEnvironment { get; }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageResourceRoles.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageResourceAccessPackageResourceRolesCollectionRequestBuilder"/>.</returns>

@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceRegistrationPolicy.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>
-        public IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
-        {
-            get
-            {
-                return new DeviceRegistrationPolicyRequestBuilder(this.AppendSegmentToRequestUrl("deviceRegistrationPolicy"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>

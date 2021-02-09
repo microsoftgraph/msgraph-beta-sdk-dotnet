@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IUserExperienceAnalyticsBaselineRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AppHealthMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder AppHealthMetrics { get; }
+
+        /// <summary>
         /// Gets the request builder for BestPracticesMetrics.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
@@ -48,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
         IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder RebootAnalyticsMetrics { get; }
+
+        /// <summary>
+        /// Gets the request builder for ResourcePerformanceMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder ResourcePerformanceMetrics { get; }
     
     }
 }

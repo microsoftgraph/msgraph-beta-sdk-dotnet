@@ -108,6 +108,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets creation source.
+        /// Contains information about the origin of the task.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationSource", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerTaskCreation CreationSource { get; set; }
+    
+        /// <summary>
         /// Gets or sets due date time.
         /// Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>

@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IUserAnalyticsRequestBuilder Analytics { get; }
 
         /// <summary>
+        /// Gets the request builder for UsageRights.
+        /// </summary>
+        /// <returns>The <see cref="IUserUsageRightsCollectionRequestBuilder"/>.</returns>
+        IUserUsageRightsCollectionRequestBuilder UsageRights { get; }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>
@@ -379,6 +385,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITodoRequestBuilder"/>.</returns>
         ITodoRequestBuilder Todo { get; }
     
+        /// <summary>
+        /// Gets the request builder for UserActivateServicePlan.
+        /// </summary>
+        /// <returns>The <see cref="IUserActivateServicePlanRequestBuilder"/>.</returns>
+        IUserActivateServicePlanRequestBuilder ActivateServicePlan(
+            Guid servicePlanId,
+            Guid skuId);
+
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
         /// </summary>

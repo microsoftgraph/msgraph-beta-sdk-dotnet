@@ -44,12 +44,6 @@ namespace Microsoft.Graph
         public B2cAuthenticationMethodsPolicy B2cAuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
-        /// Gets or sets device registration policy.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceRegistrationPolicy", Required = Newtonsoft.Json.Required.Default)]
-        public DeviceRegistrationPolicy DeviceRegistrationPolicy { get; set; }
-    
-        /// <summary>
         /// Gets or sets activity based timeout policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityBasedTimeoutPolicies", Required = Newtonsoft.Json.Required.Default)]

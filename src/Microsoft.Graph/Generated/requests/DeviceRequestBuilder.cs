@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for UsageRights.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceUsageRightsCollectionRequestBuilder"/>.</returns>
+        public IDeviceUsageRightsCollectionRequestBuilder UsageRights
+        {
+            get
+            {
+                return new DeviceUsageRightsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("usageRights"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for MemberOf.
         /// </summary>
         /// <returns>The <see cref="IDeviceMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>

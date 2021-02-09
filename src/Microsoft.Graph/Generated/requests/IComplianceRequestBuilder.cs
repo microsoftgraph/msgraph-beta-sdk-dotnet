@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Ediscovery.
         /// </summary>
-        /// <returns>The <see cref="IEdiscoveryRequestBuilder"/>.</returns>
-        IEdiscoveryRequestBuilder Ediscovery { get; }
+        /// <returns>The <see cref="Microsoft.Graph.Ediscovery.IEdiscoveryrootRequestBuilder"/>.</returns>
+        Microsoft.Graph.Ediscovery.IEdiscoveryrootRequestBuilder Ediscovery { get; }
     
     }
 }

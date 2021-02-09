@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
+        /// Gets or sets app health metrics.
+        /// The user experience analytics app health metrics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appHealthMetrics", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsCategory AppHealthMetrics { get; set; }
+    
+        /// <summary>
         /// Gets or sets best practices metrics.
         /// The user experience analytics best practices metrics.
         /// </summary>
@@ -71,6 +78,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rebootAnalyticsMetrics", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsCategory RebootAnalyticsMetrics { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource performance metrics.
+        /// The user experience analytics resource performance metrics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourcePerformanceMetrics", Required = Newtonsoft.Json.Required.Default)]
+        public UserExperienceAnalyticsCategory ResourcePerformanceMetrics { get; set; }
     
     }
 }

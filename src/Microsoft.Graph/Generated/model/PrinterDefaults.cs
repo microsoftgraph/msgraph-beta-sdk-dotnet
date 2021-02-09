@@ -92,6 +92,12 @@ namespace Microsoft.Graph
         public bool? FitPdfToPage { get; set; }
     
         /// <summary>
+        /// Gets or sets inputBin.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputBin", Required = Newtonsoft.Json.Required.Default)]
+        public string InputBin { get; set; }
+    
+        /// <summary>
         /// Gets or sets mediaColor.
         /// The default media (such as paper) color to print the document on.
         /// </summary>

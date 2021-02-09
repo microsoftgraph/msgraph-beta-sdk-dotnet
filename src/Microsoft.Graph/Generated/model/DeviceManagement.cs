@@ -632,6 +632,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage UserExperienceAnalyticsDeviceStartupProcessPerformance { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics devices without cloud identity.
+        /// User experience analytics devices without cloud identity.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsDevicesWithoutCloudIdentity", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionPage UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics metric history.
         /// User experience analytics metric history
         /// </summary>
@@ -651,6 +658,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsRegressionSummary", Required = Newtonsoft.Json.Required.Default)]
         public UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics resource performance.
+        /// User experience analytics resource performance
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userExperienceAnalyticsResourcePerformance", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementUserExperienceAnalyticsResourcePerformanceCollectionPage UserExperienceAnalyticsResourcePerformance { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics score history.
@@ -800,6 +814,20 @@ namespace Microsoft.Graph
         public IDeviceManagementMicrosoftTunnelConfigurationsCollectionPage MicrosoftTunnelConfigurations { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft tunnel health thresholds.
+        /// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelHealthThresholds", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementMicrosoftTunnelHealthThresholdsCollectionPage MicrosoftTunnelHealthThresholds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft tunnel server log collection responses.
+        /// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftTunnelServerLogCollectionResponses", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage MicrosoftTunnelServerLogCollectionResponses { get; set; }
+    
+        /// <summary>
         /// Gets or sets microsoft tunnel sites.
         /// Collection of MicrosoftTunnelSite settings associated with account.
         /// </summary>
@@ -903,6 +931,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsFeatureUpdateProfiles", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementWindowsFeatureUpdateProfilesCollectionPage WindowsFeatureUpdateProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows quality update profiles.
+        /// A collection of windows quality update profiles
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsQualityUpdateProfiles", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementWindowsQualityUpdateProfilesCollectionPage WindowsQualityUpdateProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows update catalog items.
+        /// A collection of windows update catalog items (fetaure updates item , quality updates item)
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsUpdateCatalogItems", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementWindowsUpdateCatalogItemsCollectionPage WindowsUpdateCatalogItems { get; set; }
     
         /// <summary>
         /// Gets or sets intune branding profiles.

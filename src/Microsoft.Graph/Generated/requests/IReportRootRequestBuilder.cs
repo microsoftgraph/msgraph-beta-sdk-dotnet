@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IReportRootApplicationSignInDetailedSummaryCollectionRequestBuilder ApplicationSignInDetailedSummary { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsRootRequestBuilder"/>.</returns>
+        IAuthenticationMethodsRootRequestBuilder AuthenticationMethods { get; }
+
+        /// <summary>
         /// Gets the request builder for CredentialUserRegistrationDetails.
         /// </summary>
         /// <returns>The <see cref="IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>

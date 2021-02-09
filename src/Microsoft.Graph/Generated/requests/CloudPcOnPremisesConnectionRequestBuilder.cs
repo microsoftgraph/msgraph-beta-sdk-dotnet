@@ -60,6 +60,19 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.runHealthChecks"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for CloudPcOnPremisesConnectionUpdateAdDomainPassword.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcOnPremisesConnectionUpdateAdDomainPasswordRequestBuilder"/>.</returns>
+        public ICloudPcOnPremisesConnectionUpdateAdDomainPasswordRequestBuilder UpdateAdDomainPassword(
+            string adDomainPassword = null)
+        {
+            return new CloudPcOnPremisesConnectionUpdateAdDomainPasswordRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateAdDomainPassword"),
+                this.Client,
+                adDomainPassword);
+        }
     
     }
 }

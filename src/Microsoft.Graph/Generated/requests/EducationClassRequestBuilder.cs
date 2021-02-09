@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AssignmentSettings.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSettingsRequestBuilder"/>.</returns>
+        public IEducationAssignmentSettingsRequestBuilder AssignmentSettings
+        {
+            get
+            {
+                return new EducationAssignmentSettingsRequestBuilder(this.AppendSegmentToRequestUrl("assignmentSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Group.
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
