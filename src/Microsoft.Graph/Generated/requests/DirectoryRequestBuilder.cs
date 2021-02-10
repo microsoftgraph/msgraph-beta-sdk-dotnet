@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DirectoryRequestBuilder.
     /// </summary>
-    public partial class DirectoryRequestBuilder : EntityRequestBuilder, IDirectoryRequestBuilder
+    public partial class DirectoryRequestBuilder : BaseRequestBuilder, IDirectoryRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IDirectoryRequest Request()
+        public IDirectoryRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IDirectoryRequest Request(IEnumerable<Option> options)
+        public IDirectoryRequest Request(IEnumerable<Option> options)
         {
             return new DirectoryRequest(this.RequestUrl, this.Client, options);
         }

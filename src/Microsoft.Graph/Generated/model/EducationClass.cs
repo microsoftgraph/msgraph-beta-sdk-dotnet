@@ -128,8 +128,13 @@ namespace Microsoft.Graph
         public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
+        /// Gets or sets assignment settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentSettings", Required = Newtonsoft.Json.Required.Default)]
+        public EducationAssignmentSettings AssignmentSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets group.
-        /// The directory group corresponding to this class.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
         public Group Group { get; set; }

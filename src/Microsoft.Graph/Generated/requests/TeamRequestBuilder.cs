@@ -159,6 +159,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Tags.
+        /// </summary>
+        /// <returns>The <see cref="ITeamTagsCollectionRequestBuilder"/>.</returns>
+        public ITeamTagsCollectionRequestBuilder Tags
+        {
+            get
+            {
+                return new TeamTagsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tags"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Template.
         /// </summary>
         /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>

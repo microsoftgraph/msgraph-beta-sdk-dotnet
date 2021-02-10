@@ -122,22 +122,5 @@ namespace Microsoft.Graph
             }
         }
     
-        /// <summary>
-        /// Gets the request builder for InformationProtectionEvaluateLabelsAndPolicies.
-        /// </summary>
-        /// <returns>The <see cref="IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder"/>.</returns>
-        public IInformationProtectionEvaluateLabelsAndPoliciesRequestBuilder EvaluateLabelsAndPolicies(
-            EvaluateSensitivityLabelsRequestObject evaluateSensitivityLabels = null,
-            DlpEvaluatePoliciesRequestObject evaluateDataLossPreventionPolicies = null,
-            TextClassificationRequestObject classifyText = null)
-        {
-            return new InformationProtectionEvaluateLabelsAndPoliciesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.evaluateLabelsAndPolicies"),
-                this.Client,
-                evaluateSensitivityLabels,
-                evaluateDataLossPreventionPolicies,
-                classifyText);
-        }
-    
     }
 }

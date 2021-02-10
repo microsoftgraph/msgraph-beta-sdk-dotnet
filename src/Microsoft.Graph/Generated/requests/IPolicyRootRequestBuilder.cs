@@ -44,12 +44,6 @@ namespace Microsoft.Graph
         IB2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy { get; }
 
         /// <summary>
-        /// Gets the request builder for DeviceRegistrationPolicy.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>
-        IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy { get; }
-
-        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>

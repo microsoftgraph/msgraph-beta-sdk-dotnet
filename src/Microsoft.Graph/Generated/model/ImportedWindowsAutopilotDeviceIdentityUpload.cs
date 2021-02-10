@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Upload status. Possible values are: noUpload, pending, complete, error.
+        /// Upload status.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public ImportedWindowsAutopilotDeviceIdentityUploadStatus? Status { get; set; }

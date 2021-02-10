@@ -362,22 +362,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs != null && dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.CurrentPage != null)
-                {
-                    dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("labelsAndPoliciesEvaluationJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.LabelsAndPoliciesEvaluationJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (dataClassificationServiceToInitialize.SensitiveTypes != null && dataClassificationServiceToInitialize.SensitiveTypes.CurrentPage != null)
                 {
                     dataClassificationServiceToInitialize.SensitiveTypes.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;

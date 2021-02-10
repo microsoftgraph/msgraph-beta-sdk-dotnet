@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Rosters.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerRostersCollectionRequestBuilder"/>.</returns>
+        public IPlannerRostersCollectionRequestBuilder Rosters
+        {
+            get
+            {
+                return new PlannerRostersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rosters"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Tasks.
         /// </summary>
         /// <returns>The <see cref="IPlannerTasksCollectionRequestBuilder"/>.</returns>

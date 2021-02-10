@@ -67,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the image on cloud PC. Possible status include upload pending, failed to upload, or ready to use. Possible values are: pending, ready, failed.
+        /// The status of the image on cloud PC. Possible values are: pending, ready, failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcDeviceImageStatus? Status { get; set; }

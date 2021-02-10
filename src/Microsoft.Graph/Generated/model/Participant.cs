@@ -32,7 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets info.
-        /// The participant of the participant.
+        /// Information about the participant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "info", Required = Newtonsoft.Json.Required.Default)]
         public ParticipantInfo Info { get; set; }

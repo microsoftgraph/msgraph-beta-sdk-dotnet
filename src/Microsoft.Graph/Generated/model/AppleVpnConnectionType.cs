@@ -110,5 +110,10 @@ namespace Microsoft.Graph
         /// </summary>
         NetMotionMobility = 17,
 	
+        /// <summary>
+        /// Microsoft Protect
+        /// </summary>
+        MicrosoftProtect = 18,
+	
     }
 }

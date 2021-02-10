@@ -250,22 +250,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (roomListToInitialize.Spaces != null && roomListToInitialize.Spaces.CurrentPage != null)
-                {
-                    roomListToInitialize.Spaces.AdditionalData = roomListToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    roomListToInitialize.AdditionalData.TryGetValue("spaces@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        roomListToInitialize.Spaces.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
             }
 
 

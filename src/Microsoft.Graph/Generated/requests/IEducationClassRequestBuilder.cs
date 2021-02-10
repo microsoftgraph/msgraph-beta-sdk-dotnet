@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IEducationClassAssignmentsCollectionRequestBuilder Assignments { get; }
 
         /// <summary>
+        /// Gets the request builder for AssignmentSettings.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSettingsRequestBuilder"/>.</returns>
+        IEducationAssignmentSettingsRequestBuilder AssignmentSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for Group.
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>

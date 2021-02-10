@@ -128,11 +128,29 @@ namespace Microsoft.Graph
         public DeviceDetail DeviceDetail { get; set; }
     
         /// <summary>
+        /// Gets or sets flagged for review.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "flaggedForReview", Required = Newtonsoft.Json.Required.Default)]
+        public bool? FlaggedForReview { get; set; }
+    
+        /// <summary>
+        /// Gets or sets home tenant id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeTenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string HomeTenantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets ip address.
         /// The IP address of the client from where the sign-in occurred.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddress", Required = Newtonsoft.Json.Required.Default)]
         public string IpAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ip address from resource provider.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ipAddressFromResourceProvider", Required = Newtonsoft.Json.Required.Default)]
+        public string IpAddressFromResourceProvider { get; set; }
     
         /// <summary>
         /// Gets or sets is interactive.
@@ -258,6 +276,18 @@ namespace Microsoft.Graph
         public IEnumerable<string> SignInEventTypes { get; set; }
     
         /// <summary>
+        /// Gets or sets sign in identifier.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        public string SignInIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sign in identifier type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInIdentifierType", Required = Newtonsoft.Json.Required.Default)]
+        public SignInIdentifierType? SignInIdentifierType { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).
         /// </summary>
@@ -305,6 +335,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
+        public SignInUserType? UserType { get; set; }
     
     }
 }

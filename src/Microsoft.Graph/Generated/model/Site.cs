@@ -121,6 +121,13 @@ namespace Microsoft.Graph
         public ISitePagesCollectionPage Pages { get; set; }
     
         /// <summary>
+        /// Gets or sets permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissions", Required = Newtonsoft.Json.Required.Default)]
+        public ISitePermissionsCollectionPage Permissions { get; set; }
+    
+        /// <summary>
         /// Gets or sets sites.
         /// The collection of the sub-sites under this site.
         /// </summary>
@@ -129,7 +136,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onenote.
-        /// Calls the OneNote service for notebook related operations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
         public Onenote Onenote { get; set; }

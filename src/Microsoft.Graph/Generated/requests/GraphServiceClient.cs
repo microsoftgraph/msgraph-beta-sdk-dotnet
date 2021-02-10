@@ -132,6 +132,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceDevices request builder.
+        /// </summary>
+        public IGraphServiceDevicesCollectionRequestBuilder Devices
+        {
+            get
+            {
+                return new GraphServiceDevicesCollectionRequestBuilder(this.BaseUrl + "/devices", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
         /// </summary>
         public IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders
@@ -216,17 +227,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceContractsCollectionRequestBuilder(this.BaseUrl + "/contracts", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceDevices request builder.
-        /// </summary>
-        public IGraphServiceDevicesCollectionRequestBuilder Devices
-        {
-            get
-            {
-                return new GraphServiceDevicesCollectionRequestBuilder(this.BaseUrl + "/devices", this);
             }
         }
     
