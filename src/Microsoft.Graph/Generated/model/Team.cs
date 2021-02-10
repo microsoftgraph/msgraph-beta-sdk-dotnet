@@ -198,6 +198,12 @@ namespace Microsoft.Graph
         public Channel PrimaryChannel { get; set; }
     
         /// <summary>
+        /// Gets or sets tags.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
+        public ITeamTagsCollectionPage Tags { get; set; }
+    
+        /// <summary>
         /// Gets or sets template.
         /// The template this team was created from. See available templates.
         /// </summary>

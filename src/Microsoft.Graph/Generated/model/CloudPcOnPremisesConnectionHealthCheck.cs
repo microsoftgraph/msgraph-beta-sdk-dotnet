@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets errorType.
-        /// The type of error that occurred during this health check. Possible values are: DnsCheckFqdnNotFound, DnsCheckUnknownError, AdJoinCheckFqdnNotFound, AdJoinCheckIncorrectCredentials, AdJoinCheckOrganizationalUnitNotFound, AdJoinCheckOrganizationalUnitIncorrectFormat, AdJoinCheckUnknownError, EndpointConnectivityCheckUrlNotWhitelisted, EndpointConnectivityCheckUnknownError, AadConnectivityCheckUnknownError.
+        /// The type of error that occurred during this health check.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorType", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType { get; set; }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the health check item. Read-only. Possible values are: Pending, Running, Passed, Failed, UnknownFutureValue.
+        /// The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public CloudPcOnPremisesConnectionStatus? Status { get; set; }

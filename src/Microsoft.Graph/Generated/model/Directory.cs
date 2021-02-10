@@ -19,7 +19,8 @@ namespace Microsoft.Graph
     /// The type Directory.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public partial class Directory : Entity
+    [JsonConverter(typeof(DerivedTypeConverter))]
+    public partial class Directory
     {
     
 		///<summary>
@@ -38,7 +39,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deleted items.
-        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deletedItems", Required = Newtonsoft.Json.Required.Default)]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }
@@ -55,6 +55,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureRolloutPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IDirectoryFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData(ReadData = true, WriteData = true)]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

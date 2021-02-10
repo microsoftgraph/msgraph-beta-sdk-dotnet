@@ -32,18 +32,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets errorMessage.
+        /// Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorMessage", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorMessage { get; set; }
     
         /// <summary>
         /// Gets or sets lastMembershipUpdated.
+        /// Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastMembershipUpdated", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? LastMembershipUpdated { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public MembershipRuleProcessingStatusDetails? Status { get; set; }

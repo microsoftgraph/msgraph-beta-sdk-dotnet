@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Gets or sets ediscovery.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ediscovery", Required = Newtonsoft.Json.Required.Default)]
-        public Ediscovery Ediscovery { get; set; }
+        public Microsoft.Graph.Ediscovery.Ediscoveryroot Ediscovery { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

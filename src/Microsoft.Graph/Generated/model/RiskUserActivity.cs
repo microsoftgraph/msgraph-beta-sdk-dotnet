@@ -46,7 +46,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets riskEventTypes.
-        /// The type of risk event detected.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskEventTypes", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> RiskEventTypes { get; set; }

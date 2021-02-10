@@ -100,6 +100,13 @@ namespace Microsoft.Graph
         public string Url { get; set; }
     
         /// <summary>
+        /// Gets or sets access package resource environment.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceEnvironment", Required = Newtonsoft.Json.Required.Default)]
+        public AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }
+    
+        /// <summary>
         /// Gets or sets access package resource roles.
         /// Read-only. Nullable.
         /// </summary>

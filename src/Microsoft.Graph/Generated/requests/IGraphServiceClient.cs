@@ -52,6 +52,11 @@ namespace Microsoft.Graph
         IGraphServiceBookingCurrenciesCollectionRequestBuilder BookingCurrencies { get; }
     
         /// <summary>
+        /// Gets the GraphServiceDevices request builder.
+        /// </summary>
+        IGraphServiceDevicesCollectionRequestBuilder Devices { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
         /// </summary>
         IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
@@ -90,11 +95,6 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceContracts request builder.
         /// </summary>
         IGraphServiceContractsCollectionRequestBuilder Contracts { get; }
-    
-        /// <summary>
-        /// Gets the GraphServiceDevices request builder.
-        /// </summary>
-        IGraphServiceDevicesCollectionRequestBuilder Devices { get; }
     
         /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.

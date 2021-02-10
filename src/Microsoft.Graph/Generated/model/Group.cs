@@ -351,6 +351,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets membership rule processing status.
+        /// Describes the processing status for rules-based dynamic groups. The property is null for non-rule based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supports $filter. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRuleProcessingStatus", Required = Newtonsoft.Json.Required.Default)]
         public MembershipRuleProcessingStatus MembershipRuleProcessingStatus { get; set; }
@@ -439,7 +440,7 @@ namespace Microsoft.Graph
         /// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "acceptedSenders", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupAcceptedSendersCollectionPage AcceptedSenders { get; set; }
+        public IGroupAcceptedSendersCollectionWithReferencesPage AcceptedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -488,7 +489,7 @@ namespace Microsoft.Graph
         /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rejectedSenders", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupRejectedSendersCollectionPage RejectedSenders { get; set; }
+        public IGroupRejectedSendersCollectionWithReferencesPage RejectedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets threads.

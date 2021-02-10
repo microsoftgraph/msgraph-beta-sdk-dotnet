@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public Duration AccountSetupDuration { get; set; }
     
         /// <summary>
+        /// Gets or sets account setup status.
+        /// Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accountSetupStatus", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsAutopilotDeploymentState? AccountSetupStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets deployment duration.
         /// Autopilot deployment duration including enrollment.
         /// </summary>
@@ -60,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deployment state.
-        /// Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout.
+        /// Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deploymentState", Required = Newtonsoft.Json.Required.Default)]
         public WindowsAutopilotDeploymentState? DeploymentState { get; set; }
@@ -106,6 +113,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSetupDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration DeviceSetupDuration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device setup status.
+        /// Deployment status for the enrollment status page device setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceSetupStatus", Required = Newtonsoft.Json.Required.Default)]
+        public WindowsAutopilotDeploymentState? DeviceSetupStatus { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment failure details.
@@ -183,6 +197,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10EnrollmentCompletionPageConfigurationDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string Windows10EnrollmentCompletionPageConfigurationDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows10enrollment completion page configuration id.
+        /// Enrollment Status Page profile ID
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windows10EnrollmentCompletionPageConfigurationId", Required = Newtonsoft.Json.Required.Default)]
+        public string Windows10EnrollmentCompletionPageConfigurationId { get; set; }
     
         /// <summary>
         /// Gets or sets windows autopilot deployment profile display name.

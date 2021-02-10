@@ -95,6 +95,36 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetFailedMobileAppsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetFailedMobileAppsReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetFailedMobileAppsReportRequestBuilder GetFailedMobileAppsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetFailedMobileAppsSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetFailedMobileAppsSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetFailedMobileAppsSummaryReportRequestBuilder GetFailedMobileAppsSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetUserInstallStatusReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetUserInstallStatusReportRequestBuilder"/>.</returns>
@@ -301,6 +331,96 @@ namespace Microsoft.Graph
             IEnumerable<string> orderBy = null,
             Int32? skip = null,
             Int32? top = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCompliancePolicyNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder GetCompliancePolicyNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder GetCompliancePolicyNonComplianceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetComplianceSettingNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder GetComplianceSettingNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicyNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder GetConfigurationPolicyNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder GetConfigurationPolicyNonComplianceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetConfigurationSettingNonComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDeviceNonComplianceReport.

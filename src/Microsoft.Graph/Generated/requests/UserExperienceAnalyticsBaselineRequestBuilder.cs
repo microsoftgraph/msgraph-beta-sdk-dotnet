@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppHealthMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder AppHealthMetrics
+        {
+            get
+            {
+                return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("appHealthMetrics"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for BestPracticesMetrics.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
@@ -83,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rebootAnalyticsMetrics"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ResourcePerformanceMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder ResourcePerformanceMetrics
+        {
+            get
+            {
+                return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("resourcePerformanceMetrics"), this.Client);
             }
         }
     

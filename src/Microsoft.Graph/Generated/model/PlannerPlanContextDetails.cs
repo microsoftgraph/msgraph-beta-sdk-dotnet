@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets customLinkText.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customLinkText", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomLinkText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets displayLinkType.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayLinkType", Required = Newtonsoft.Json.Required.Default)]
+        public PlannerPlanContextType? DisplayLinkType { get; set; }
+    
+        /// <summary>
         /// Gets or sets url.
         /// URL of the user experience represented by the associated plannerPlanContext.
         /// </summary>
