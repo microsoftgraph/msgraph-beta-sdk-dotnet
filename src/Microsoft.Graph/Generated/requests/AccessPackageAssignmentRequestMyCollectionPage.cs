@@ -12,7 +12,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageAssignmentRequestMyCollectionPage.
     /// </summary>
-    public partial class AccessPackageAssignmentRequestMyCollectionPage : CollectionPage<AccessPackageAssignmentRequest>, IAccessPackageAssignmentRequestMyCollectionPage
+    public partial class AccessPackageAssignmentRequestMyCollectionPage : CollectionPage<AccessPackageAssignmentRequestObject>, IAccessPackageAssignmentRequestMyCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IAccessPackageAssignmentRequestMyRequest"/> instance.

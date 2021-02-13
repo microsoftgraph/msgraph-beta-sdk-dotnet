@@ -95,6 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets vendor information.
+        /// Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendorInformation", Required = Newtonsoft.Json.Required.Default)]
         public SecurityVendorInformation VendorInformation { get; set; }

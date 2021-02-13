@@ -81,6 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets frameRate.
+        /// Frame rate of the video.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "frameRate", Required = Newtonsoft.Json.Required.Default)]
         public double? FrameRate { get; set; }

@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEducationRootRequestBuilder.
     /// </summary>
-    public partial interface IEducationRootRequestBuilder : IBaseRequestBuilder
+    public partial interface IEducationRootRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        IEducationRootRequest Request();
+        new IEducationRootRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IEducationRootRequest Request(IEnumerable<Option> options);
+        new IEducationRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for SynchronizationProfiles.

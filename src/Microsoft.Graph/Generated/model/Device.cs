@@ -262,6 +262,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
+        /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }
