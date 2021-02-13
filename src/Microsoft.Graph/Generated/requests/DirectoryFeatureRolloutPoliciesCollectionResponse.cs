@@ -16,7 +16,6 @@ namespace Microsoft.Graph
     /// The type DirectoryFeatureRolloutPoliciesCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
     public class DirectoryFeatureRolloutPoliciesCollectionResponse
     {
         /// <summary>

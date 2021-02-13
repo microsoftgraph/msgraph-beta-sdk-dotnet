@@ -16,7 +16,6 @@ namespace Microsoft.Graph
     /// The type EducationRootSchoolsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
     public class EducationRootSchoolsCollectionResponse
     {
         /// <summary>

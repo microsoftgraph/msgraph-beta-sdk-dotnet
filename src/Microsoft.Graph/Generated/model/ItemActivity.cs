@@ -39,6 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity date time.
+        /// Details about when the activity took place. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? ActivityDateTime { get; set; }

@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISecurityRequestBuilder.
     /// </summary>
-    public partial interface ISecurityRequestBuilder : IBaseRequestBuilder
+    public partial interface ISecurityRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        ISecurityRequest Request();
+        new ISecurityRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        ISecurityRequest Request(IEnumerable<Option> options);
+        new ISecurityRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Alerts.

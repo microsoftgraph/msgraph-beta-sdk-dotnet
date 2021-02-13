@@ -587,6 +587,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license details.
+        /// A collection of this user's license details. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseDetails", Required = Newtonsoft.Json.Required.Default)]
         public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
@@ -889,6 +890,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activities.
+        /// The user's activities across devices. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activities", Required = Newtonsoft.Json.Required.Default)]
         public IUserActivitiesCollectionPage Activities { get; set; }
